@@ -1,9 +1,29 @@
 from __future__ import annotations
 
+import re
 from copy import deepcopy
 from typing import Any
 
 from app.services import audit_service, registry_service
+
+
+HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
+
+OSHB_FIELDS = ("lemma", "strong", "morph_code", "morph_readable", "part_of_speech", "stem")
+MACULA_FIELDS = ("syntax_role", "semantic_role", "referent", "word_sense")
+ENRICHMENT_FIELDS = {"oshb": OSHB_FIELDS, "macula": MACULA_FIELDS}
+STEM_MAP = {
+    "q": "qal",
+    "N": "niphal",
+    "p": "piel",
+    "P": "pual",
+    "h": "hiphil",
+    "H": "hophal",
+    "t": "hithpael",
+}
+MISSING_ENRICHMENT_OVERRIDES = {
+    "ps019.v001.t002": {"macula": ["referent"]},
+}
 
 
 FIXTURE_UNITS: list[dict[str, Any]] = [
@@ -14,7 +34,6 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "segmentation_type": "colon",
         "source_hebrew": "אַשְׁרֵי הָאִישׁ",
         "source_transliteration": "ashrei ha-ish",
-        "token_ids": ["ps001.v001.t001", "ps001.v001.t002"],
         "concept_ids": ["cpt.ps001.v001.a.0001"],
         "status": "under_review",
         "current_layer_state": {"locked_layers": ["gloss"], "latest_layer": "literal"},
@@ -23,12 +42,9 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "audit_ids": [],
         "issue_links": [],
         "pr_links": [],
-        "tokens": [
+        "seed_tokens": [
             {
-                "token_id": "ps001.v001.t001",
-                "ref": "Psalm 1:1a#1",
                 "surface": "אַשְׁרֵי",
-                "normalized": "אשרי",
                 "transliteration": "ashrei",
                 "lemma": "אשר",
                 "strong": "H835",
@@ -39,15 +55,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "blessing",
                 "referent": "the righteous",
                 "word_sense": "fortunate/blessed",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": ["Psalm 1:1b"],
                 "corpus_occurrence_refs": ["Psalm 32:1"],
                 "psalms_occurrence_refs": ["Psalm 32:1"],
             },
             {
-                "token_id": "ps001.v001.t002",
-                "ref": "Psalm 1:1a#2",
                 "surface": "הָאִישׁ",
-                "normalized": "האיש",
                 "transliteration": "ha-ish",
                 "lemma": "איש",
                 "strong": "H376",
@@ -58,7 +71,7 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "agent",
                 "referent": "the man",
                 "word_sense": "man/person",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": ["Psalm 1:1b"],
                 "corpus_occurrence_refs": ["Psalm 37:23"],
                 "psalms_occurrence_refs": ["Psalm 37:23"],
             },
@@ -95,7 +108,7 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "unit_id": "ps001.v001.a",
                 "layer": "gloss",
                 "status": "canonical",
-                "text": "Blessed — the man",
+                "text": "Blessed - the man",
                 "style_tags": ["gloss", "study_literal"],
                 "target_spans": [
                     {"span_id": "spn.ps001.v001.a.gloss.0001", "text": "Blessed", "token_start": 0, "token_end": 0},
@@ -180,7 +193,6 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "segmentation_type": "colon",
         "source_hebrew": "הַשָּׁמַיִם מְסַפְּרִים",
         "source_transliteration": "ha-shamayim mesapperim",
-        "token_ids": ["ps019.v001.t001", "ps019.v001.t002"],
         "concept_ids": ["cpt.ps019.v001.a.0001"],
         "status": "draft",
         "current_layer_state": {"locked_layers": [], "latest_layer": "literal"},
@@ -189,12 +201,9 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "audit_ids": [],
         "issue_links": [],
         "pr_links": [],
-        "tokens": [
+        "seed_tokens": [
             {
-                "token_id": "ps019.v001.t001",
-                "ref": "Psalm 19:1a#1",
                 "surface": "הַשָּׁמַיִם",
-                "normalized": "השמים",
                 "transliteration": "ha-shamayim",
                 "lemma": "שמים",
                 "strong": "H8064",
@@ -205,15 +214,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "agent",
                 "referent": "heavens",
                 "word_sense": "sky/heavens",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": [],
                 "corpus_occurrence_refs": ["Genesis 1:1"],
                 "psalms_occurrence_refs": ["Psalm 8:3"],
             },
             {
-                "token_id": "ps019.v001.t002",
-                "ref": "Psalm 19:1a#2",
                 "surface": "מְסַפְּרִים",
-                "normalized": "מספרים",
                 "transliteration": "mesapperim",
                 "lemma": "ספר",
                 "strong": "H5608",
@@ -224,7 +230,7 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "communication",
                 "referent": "heavens",
                 "word_sense": "declare/tell",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": [],
                 "corpus_occurrence_refs": ["Psalm 71:15"],
                 "psalms_occurrence_refs": ["Psalm 71:15"],
             },
@@ -272,7 +278,6 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "segmentation_type": "colon",
         "source_hebrew": "יְהוָה רֹעִי",
         "source_transliteration": "yhwh ro'i",
-        "token_ids": ["ps023.v001.t001", "ps023.v001.t002"],
         "concept_ids": ["cpt.ps023.v001.a.0001"],
         "status": "under_review",
         "current_layer_state": {"locked_layers": ["gloss", "literal"], "latest_layer": "lyric"},
@@ -281,12 +286,9 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "audit_ids": [],
         "issue_links": [],
         "pr_links": [],
-        "tokens": [
+        "seed_tokens": [
             {
-                "token_id": "ps023.v001.t001",
-                "ref": "Psalm 23:1a#1",
                 "surface": "יְהוָה",
-                "normalized": "יהוה",
                 "transliteration": "yhwh",
                 "lemma": "יהוה",
                 "strong": "H3068",
@@ -297,15 +299,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "deity",
                 "referent": "the LORD",
                 "word_sense": "divine name",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": [],
                 "corpus_occurrence_refs": ["Genesis 2:4"],
                 "psalms_occurrence_refs": ["Psalm 27:1"],
             },
             {
-                "token_id": "ps023.v001.t002",
-                "ref": "Psalm 23:1a#2",
                 "surface": "רֹעִי",
-                "normalized": "רעי",
                 "transliteration": "ro'i",
                 "lemma": "רעה",
                 "strong": "H7462",
@@ -316,7 +315,7 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "semantic_role": "caregiver",
                 "referent": "my shepherd",
                 "word_sense": "shepherd",
-                "occurrence_index": 1,
+                "same_psalm_occurrence_refs": [],
                 "corpus_occurrence_refs": ["Genesis 48:15"],
                 "psalms_occurrence_refs": ["Psalm 80:1"],
             },
@@ -367,7 +366,7 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "metrics": {"syllables": 8, "singability_score": 0.74},
                 "rationale": "Alternate candidate for common meter development.",
                 "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": "human-seed"},
-            }
+            },
         ],
         "audit_records": [],
         "review_decisions": [],
@@ -385,12 +384,113 @@ def _psalm_meta(units: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _normalized_hebrew(text: str) -> str:
+    return HEBREW_MARKS_RE.sub("", text)
+
+
+def _token_id(unit_id: str, index: int) -> str:
+    head = ".".join(unit_id.split(".")[:2])
+    return f"{head}.t{index:03d}"
+
+
+def _derive_stem(morph_code: str | None, part_of_speech: str | None) -> str | None:
+    if not morph_code or part_of_speech != "verb" or not morph_code.startswith("V") or len(morph_code) < 2:
+        return None
+    return STEM_MAP.get(morph_code[1])
+
+
+def _source_payload(token_id: str, source_id: str, seed_token: dict[str, Any]) -> dict[str, Any]:
+    removed = set(MISSING_ENRICHMENT_OVERRIDES.get(token_id, {}).get(source_id, []))
+    field_values: dict[str, Any] = {}
+    for field in ENRICHMENT_FIELDS[source_id]:
+        if field == "stem":
+            value = _derive_stem(seed_token.get("morph_code"), seed_token.get("part_of_speech"))
+        else:
+            value = seed_token.get(field)
+        if field in removed:
+            value = None
+        field_values[field] = value
+    return field_values
+
+
+def _applicable_fields(source_id: str, seed_token: dict[str, Any]) -> tuple[str, ...]:
+    if source_id == "oshb" and seed_token.get("part_of_speech") != "verb":
+        return tuple(field for field in OSHB_FIELDS if field != "stem")
+    return ENRICHMENT_FIELDS[source_id]
+
+
+def _source_status(available_fields: list[str], applicable_fields: tuple[str, ...]) -> str:
+    if not applicable_fields:
+        return "missing"
+    if not available_fields:
+        return "missing"
+    if len(available_fields) == len(applicable_fields):
+        return "complete"
+    return "partial"
+
+
+def _build_enriched_token(unit: dict[str, Any], seed_token: dict[str, Any], position: int) -> dict[str, Any]:
+    token_id = _token_id(unit["unit_id"], position)
+    oshb_payload = _source_payload(token_id, "oshb", seed_token)
+    macula_payload = _source_payload(token_id, "macula", seed_token)
+    token: dict[str, Any] = {
+        "token_id": token_id,
+        "ref": f"{unit['ref']}#{position}",
+        "surface": seed_token["surface"],
+        "normalized": _normalized_hebrew(seed_token["surface"]),
+        "transliteration": seed_token.get("transliteration"),
+        "lemma": oshb_payload.get("lemma"),
+        "strong": oshb_payload.get("strong"),
+        "morph_code": oshb_payload.get("morph_code"),
+        "morph_readable": oshb_payload.get("morph_readable"),
+        "part_of_speech": oshb_payload.get("part_of_speech"),
+        "stem": oshb_payload.get("stem"),
+        "syntax_role": macula_payload.get("syntax_role"),
+        "semantic_role": macula_payload.get("semantic_role"),
+        "referent": macula_payload.get("referent"),
+        "word_sense": macula_payload.get("word_sense"),
+        "occurrence_index": 1,
+        "same_psalm_occurrence_refs": seed_token.get("same_psalm_occurrence_refs", []),
+        "corpus_occurrence_refs": seed_token.get("corpus_occurrence_refs", []),
+        "psalms_occurrence_refs": seed_token.get("psalms_occurrence_refs", []),
+    }
+    enrichment_sources: dict[str, dict[str, Any]] = {}
+    missing_enrichments: list[str] = []
+    for source_id, payload in (("oshb", oshb_payload), ("macula", macula_payload)):
+        applicable_fields = _applicable_fields(source_id, seed_token)
+        available_fields = [field for field in applicable_fields if payload.get(field) is not None]
+        missing_fields = [field for field in applicable_fields if payload.get(field) is None]
+        enrichment_sources[source_id] = {
+            "status": _source_status(available_fields, applicable_fields),
+            "available_fields": available_fields,
+            "missing_fields": missing_fields,
+        }
+        missing_enrichments.extend(f"{source_id}:{field}" for field in missing_fields)
+    token["enrichment_sources"] = enrichment_sources
+    token["missing_enrichments"] = missing_enrichments
+    return token
+
+
+def _tokenize_and_enrich(unit: dict[str, Any]) -> dict[str, Any]:
+    token_surfaces = unit["source_hebrew"].split()
+    seed_tokens = unit.pop("seed_tokens")
+    if len(token_surfaces) != len(seed_tokens):
+        raise ValueError(f"Tokenization mismatch for {unit['unit_id']}: {len(token_surfaces)} surfaces vs {len(seed_tokens)} seed tokens")
+    enriched_tokens = []
+    for index, (surface, seed_token) in enumerate(zip(token_surfaces, seed_tokens, strict=True), start=1):
+        seed_payload = {**seed_token, "surface": surface}
+        enriched_tokens.append(_build_enriched_token(unit, seed_payload, index))
+    unit["token_ids"] = [token["token_id"] for token in enriched_tokens]
+    unit["tokens"] = enriched_tokens
+    return unit
+
+
 def import_fixture_psalms() -> list[dict[str, Any]]:
     registry_service.bootstrap_project()
     imported: list[dict[str, Any]] = []
     psalm_groups: dict[str, list[dict[str, Any]]] = {}
     for unit in FIXTURE_UNITS:
-        seeded = deepcopy(unit)
+        seeded = _tokenize_and_enrich(deepcopy(unit))
         initial_hash = registry_service.file_hash({"unit_id": seeded["unit_id"], "seed": True})
         final_hash = registry_service.file_hash(seeded)
         audit_service.create_audit_record(
@@ -398,7 +498,7 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
             before_hash=initial_hash,
             after_hash=final_hash,
             summary="Seed fixture unit",
-            rationale="Bootstrap milestone fixtures",
+            rationale="Bootstrap milestone fixtures with OSHB and MACULA enrichment",
             created_by="import-psalms",
             change_type="create",
         )
@@ -413,11 +513,26 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
 def attach_fixture_annotations() -> int:
     count = 0
     for unit in registry_service.list_units():
-        if any(token.get("morph_readable") for token in unit.get("tokens", [])):
-            count += 1
-            continue
+        updated = False
         for token in unit.get("tokens", []):
+            if token.get("morph_readable"):
+                continue
             token["morph_readable"] = token.get("morph_code", "unknown")
-        registry_service.save_unit(unit)
-        count += 1
+            if "oshb:morph_readable" in token.get("missing_enrichments", []):
+                token["missing_enrichments"] = [item for item in token["missing_enrichments"] if item != "oshb:morph_readable"]
+                source = token.setdefault("enrichment_sources", {}).setdefault(
+                    "oshb",
+                    {"status": "partial", "available_fields": [], "missing_fields": []},
+                )
+                if "morph_readable" not in source["available_fields"]:
+                    source["available_fields"].append("morph_readable")
+                source["missing_fields"] = [field for field in source["missing_fields"] if field != "morph_readable"]
+                source["status"] = _source_status(
+                    source["available_fields"],
+                    tuple(field for field in _applicable_fields("oshb", token) if field != "morph_readable" or token.get("morph_readable") is not None),
+                )
+            updated = True
+        if updated:
+            registry_service.save_unit(unit)
+            count += 1
     return count

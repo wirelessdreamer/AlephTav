@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from app.db.session import get_connection, init_db
 from app.services import registry_service
 
@@ -10,11 +12,10 @@ def rebuild_indexes() -> dict[str, int]:
     token_count = 0
     rendering_count = 0
     alignment_count = 0
+    occurrence_count = 0
+    enrichment_count = 0
+    missing_count = 0
     with get_connection() as connection:
-        connection.execute("DELETE FROM token_index")
-        connection.execute("DELETE FROM unit_index")
-        connection.execute("DELETE FROM rendering_index")
-        connection.execute("DELETE FROM alignment_index")
         for unit in units:
             connection.execute(
                 "INSERT INTO unit_index(unit_id, psalm_id, ref, status, source_hebrew) VALUES (?, ?, ?, ?, ?)",
@@ -25,8 +26,9 @@ def rebuild_indexes() -> dict[str, int]:
                     """
                     INSERT INTO token_index(
                         token_id, unit_id, psalm_id, ref, surface, normalized, transliteration, lemma, strong,
-                        morph_code, morph_readable, part_of_speech, syntax_role, semantic_role, referent, word_sense
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        morph_code, morph_readable, part_of_speech, stem, syntax_role, semantic_role, referent, word_sense,
+                        occurrence_index
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         token["token_id"],
@@ -41,12 +43,47 @@ def rebuild_indexes() -> dict[str, int]:
                         token.get("morph_code"),
                         token.get("morph_readable"),
                         token.get("part_of_speech"),
+                        token.get("stem"),
                         token.get("syntax_role"),
                         token.get("semantic_role"),
                         token.get("referent"),
                         token.get("word_sense"),
+                        token["occurrence_index"],
                     ),
                 )
+                for scope, refs in (
+                    ("same_psalm", token.get("same_psalm_occurrence_refs", [])),
+                    ("psalms", token.get("psalms_occurrence_refs", [])),
+                    ("corpus", token.get("corpus_occurrence_refs", [])),
+                ):
+                    for occurrence_ref in refs:
+                        connection.execute(
+                            "INSERT INTO token_occurrence_index(token_id, scope, occurrence_ref) VALUES (?, ?, ?)",
+                            (token["token_id"], scope, occurrence_ref),
+                        )
+                        occurrence_count += 1
+                for source_id, payload in token.get("enrichment_sources", {}).items():
+                    connection.execute(
+                        """
+                        INSERT INTO token_enrichment_index(token_id, source_id, status, available_fields, missing_fields)
+                        VALUES (?, ?, ?, ?, ?)
+                        """,
+                        (
+                            token["token_id"],
+                            source_id,
+                            payload["status"],
+                            json.dumps(payload.get("available_fields", []), sort_keys=True),
+                            json.dumps(payload.get("missing_fields", []), sort_keys=True),
+                        ),
+                    )
+                    enrichment_count += 1
+                for item in token.get("missing_enrichments", []):
+                    source_id, field_name = item.split(":", maxsplit=1)
+                    connection.execute(
+                        "INSERT INTO missing_enrichment_index(token_id, source_id, field_name) VALUES (?, ?, ?)",
+                        (token["token_id"], source_id, field_name),
+                    )
+                    missing_count += 1
                 token_count += 1
             for rendering in unit.get("renderings", []):
                 connection.execute(
@@ -65,4 +102,7 @@ def rebuild_indexes() -> dict[str, int]:
         "tokens": token_count,
         "renderings": rendering_count,
         "alignments": alignment_count,
+        "occurrences": occurrence_count,
+        "enrichment_rows": enrichment_count,
+        "missing_enrichments": missing_count,
     }

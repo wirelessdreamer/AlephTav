@@ -41,16 +41,16 @@
   ],
   "audit_records": [
     {
-      "after_hash": "d9ebb2c3f7893ed6d60e9baca13d4647b768566aa755bda261c90bfb4d94713f",
+      "after_hash": "8a8ac5c4335f5dfaff97597751284902c93782da64abd2e6178b7e493092097f",
       "audit_id": "aud.ps001.v001.a.0001",
       "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
       "change_type": "create",
       "checks": [],
-      "created_at": "2026-04-09T04:55:04.645800+00:00",
+      "created_at": "2026-04-09T14:44:04.202914+00:00",
       "created_by": "import-psalms",
       "entity_id": "ps001.v001.a",
       "entity_type": "unit",
-      "rationale": "Bootstrap milestone fixtures",
+      "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
       "review_signoff": {},
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
@@ -114,7 +114,7 @@
           "token_start": 2
         }
       ],
-      "text": "Blessed — the man",
+      "text": "Blessed - the man",
       "unit_id": "ps001.v001.a"
     },
     {
@@ -232,7 +232,31 @@
       "corpus_occurrence_refs": [
         "Psalm 32:1"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent",
+            "word_sense"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "אשר",
+      "missing_enrichments": [],
       "morph_code": "Tm",
       "morph_readable": "interjection of blessing",
       "normalized": "אשרי",
@@ -243,7 +267,11 @@
       ],
       "ref": "Psalm 1:1a#1",
       "referent": "the righteous",
+      "same_psalm_occurrence_refs": [
+        "Psalm 1:1b"
+      ],
       "semantic_role": "blessing",
+      "stem": null,
       "strong": "H835",
       "surface": "אַשְׁרֵי",
       "syntax_role": "predicate",
@@ -255,7 +283,31 @@
       "corpus_occurrence_refs": [
         "Psalm 37:23"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent",
+            "word_sense"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "איש",
+      "missing_enrichments": [],
       "morph_code": "Td/Ncmsa",
       "morph_readable": "article + noun masculine singular absolute",
       "normalized": "האיש",
@@ -266,7 +318,11 @@
       ],
       "ref": "Psalm 1:1a#2",
       "referent": "the man",
+      "same_psalm_occurrence_refs": [
+        "Psalm 1:1b"
+      ],
       "semantic_role": "agent",
+      "stem": null,
       "strong": "H376",
       "surface": "הָאִישׁ",
       "syntax_role": "subject",

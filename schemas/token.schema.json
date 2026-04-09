@@ -13,13 +13,17 @@
     "morph_code",
     "morph_readable",
     "part_of_speech",
+    "stem",
     "syntax_role",
     "semantic_role",
     "referent",
     "word_sense",
     "occurrence_index",
+    "same_psalm_occurrence_refs",
     "corpus_occurrence_refs",
-    "psalms_occurrence_refs"
+    "psalms_occurrence_refs",
+    "enrichment_sources",
+    "missing_enrichments"
   ],
   "additionalProperties": false,
   "properties": {
@@ -27,18 +31,42 @@
     "ref": { "type": "string" },
     "surface": { "type": "string" },
     "normalized": { "type": "string" },
-    "transliteration": { "type": "string" },
-    "lemma": { "type": "string" },
-    "strong": { "type": "string" },
-    "morph_code": { "type": "string" },
-    "morph_readable": { "type": "string" },
-    "part_of_speech": { "type": "string" },
-    "syntax_role": { "type": "string" },
-    "semantic_role": { "type": "string" },
-    "referent": { "type": "string" },
-    "word_sense": { "type": "string" },
+    "transliteration": { "type": ["string", "null"] },
+    "lemma": { "type": ["string", "null"] },
+    "strong": { "type": ["string", "null"] },
+    "morph_code": { "type": ["string", "null"] },
+    "morph_readable": { "type": ["string", "null"] },
+    "part_of_speech": { "type": ["string", "null"] },
+    "stem": { "type": ["string", "null"] },
+    "syntax_role": { "type": ["string", "null"] },
+    "semantic_role": { "type": ["string", "null"] },
+    "referent": { "type": ["string", "null"] },
+    "word_sense": { "type": ["string", "null"] },
     "occurrence_index": { "type": "integer", "minimum": 1 },
+    "same_psalm_occurrence_refs": { "type": "array", "items": { "type": "string" } },
     "corpus_occurrence_refs": { "type": "array", "items": { "type": "string" } },
-    "psalms_occurrence_refs": { "type": "array", "items": { "type": "string" } }
+    "psalms_occurrence_refs": { "type": "array", "items": { "type": "string" } },
+    "enrichment_sources": {
+      "type": "object",
+      "required": ["oshb", "macula"],
+      "additionalProperties": false,
+      "properties": {
+        "oshb": { "$ref": "#/$defs/enrichmentSource" },
+        "macula": { "$ref": "#/$defs/enrichmentSource" }
+      }
+    },
+    "missing_enrichments": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+  },
+  "$defs": {
+    "enrichmentSource": {
+      "type": "object",
+      "required": ["status", "available_fields", "missing_fields"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["complete", "partial", "missing"] },
+        "available_fields": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "missing_fields": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    }
   }
 }

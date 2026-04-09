@@ -11,15 +11,21 @@ export interface Token {
   token_id: string;
   surface: string;
   normalized: string;
-  transliteration: string;
-  lemma: string;
-  strong: string;
-  morph_readable: string;
-  syntax_role: string;
-  semantic_role: string;
-  referent: string;
-  word_sense: string;
+  transliteration: string | null;
+  lemma: string | null;
+  strong: string | null;
+  morph_readable: string | null;
+  stem?: string | null;
+  syntax_role: string | null;
+  semantic_role: string | null;
+  referent: string | null;
+  word_sense: string | null;
   ref: string;
+  same_psalm_occurrence_refs?: string[];
+  corpus_occurrence_refs?: string[];
+  psalms_occurrence_refs?: string[];
+  enrichment_sources?: Record<string, { status: string; available_fields: string[]; missing_fields: string[] }>;
+  missing_enrichments?: string[];
 }
 
 export interface Alignment {
@@ -117,9 +123,10 @@ export interface Project {
 }
 
 export interface TokenCard extends Token {
-  gloss_list: string[];
+  gloss_list: Array<string | null>;
   nearby_usage_examples: string[];
   copy_reference: string;
+  same_psalm?: string[];
   same_psalms?: string[];
   wider_corpus?: string[];
 }

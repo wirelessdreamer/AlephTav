@@ -24,16 +24,16 @@
   ],
   "audit_records": [
     {
-      "after_hash": "b90a746f226b9cb2a1c759312d5342f311d05f6a9c97c5638bf30411665bc93f",
+      "after_hash": "bba88ea445cadad2af5b23d8d476141e68116281382124fe3a45f674047fb267",
       "audit_id": "aud.ps019.v001.a.0001",
       "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
       "change_type": "create",
       "checks": [],
-      "created_at": "2026-04-09T04:55:04.646504+00:00",
+      "created_at": "2026-04-09T14:44:04.203415+00:00",
       "created_by": "import-psalms",
       "entity_id": "ps019.v001.a",
       "entity_type": "unit",
-      "rationale": "Bootstrap milestone fixtures",
+      "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
       "review_signoff": {},
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
@@ -105,7 +105,31 @@
       "corpus_occurrence_refs": [
         "Genesis 1:1"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent",
+            "word_sense"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "שמים",
+      "missing_enrichments": [],
       "morph_code": "Td/Ncmpa",
       "morph_readable": "article + noun masculine plural absolute",
       "normalized": "השמים",
@@ -116,7 +140,9 @@
       ],
       "ref": "Psalm 19:1a#1",
       "referent": "heavens",
+      "same_psalm_occurrence_refs": [],
       "semantic_role": "agent",
+      "stem": null,
       "strong": "H8064",
       "surface": "הַשָּׁמַיִם",
       "syntax_role": "subject",
@@ -128,7 +154,35 @@
       "corpus_occurrence_refs": [
         "Psalm 71:15"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "ספר",
+      "missing_enrichments": [
+        "macula:referent"
+      ],
       "morph_code": "Vprmpa",
       "morph_readable": "verb participle piel masculine plural absolute",
       "normalized": "מספרים",
@@ -138,8 +192,10 @@
         "Psalm 71:15"
       ],
       "ref": "Psalm 19:1a#2",
-      "referent": "heavens",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
       "semantic_role": "communication",
+      "stem": "piel",
       "strong": "H5608",
       "surface": "מְסַפְּרִים",
       "syntax_role": "predicate",

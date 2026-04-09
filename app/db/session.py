@@ -3,7 +3,16 @@ from __future__ import annotations
 import sqlite3
 
 from app.core.config import get_settings
-from app.db.models import ALIGNMENT_TABLE_SQL, JOB_TABLE_SQL, RENDERING_TABLE_SQL, TOKEN_TABLE_SQL, UNIT_TABLE_SQL
+from app.db.models import (
+    ALIGNMENT_TABLE_SQL,
+    JOB_TABLE_SQL,
+    MISSING_ENRICHMENT_TABLE_SQL,
+    RENDERING_TABLE_SQL,
+    TOKEN_ENRICHMENT_TABLE_SQL,
+    TOKEN_OCCURRENCE_TABLE_SQL,
+    TOKEN_TABLE_SQL,
+    UNIT_TABLE_SQL,
+)
 
 
 def get_connection() -> sqlite3.Connection:
@@ -16,4 +25,22 @@ def get_connection() -> sqlite3.Connection:
 
 def init_db() -> None:
     with get_connection() as connection:
-        connection.executescript(TOKEN_TABLE_SQL + UNIT_TABLE_SQL + RENDERING_TABLE_SQL + ALIGNMENT_TABLE_SQL + JOB_TABLE_SQL)
+        connection.executescript(
+            """
+            DROP TABLE IF EXISTS missing_enrichment_index;
+            DROP TABLE IF EXISTS token_enrichment_index;
+            DROP TABLE IF EXISTS token_occurrence_index;
+            DROP TABLE IF EXISTS token_index;
+            DROP TABLE IF EXISTS unit_index;
+            DROP TABLE IF EXISTS rendering_index;
+            DROP TABLE IF EXISTS alignment_index;
+            """
+            + TOKEN_TABLE_SQL
+            + UNIT_TABLE_SQL
+            + RENDERING_TABLE_SQL
+            + ALIGNMENT_TABLE_SQL
+            + TOKEN_OCCURRENCE_TABLE_SQL
+            + TOKEN_ENRICHMENT_TABLE_SQL
+            + MISSING_ENRICHMENT_TABLE_SQL
+            + JOB_TABLE_SQL
+        )

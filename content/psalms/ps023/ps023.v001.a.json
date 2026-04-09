@@ -26,16 +26,16 @@
   ],
   "audit_records": [
     {
-      "after_hash": "7eee7418a14139e6450c8ce7bbba6459d1303fc8467bebd5402bb59f6822bc09",
+      "after_hash": "d1388c090cee02e2df57b0be70c79be4c4297003ff827bcb1906e21fb8bf8410",
       "audit_id": "aud.ps023.v001.a.0001",
       "before_hash": "e71b4881425b9d95dc2c461150a38092d77c23ffe2fd5f25eea5d14842e0401f",
       "change_type": "create",
       "checks": [],
-      "created_at": "2026-04-09T04:55:04.647204+00:00",
+      "created_at": "2026-04-09T14:44:04.203826+00:00",
       "created_by": "import-psalms",
       "entity_id": "ps023.v001.a",
       "entity_type": "unit",
-      "rationale": "Bootstrap milestone fixtures",
+      "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
       "review_signoff": {},
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
@@ -148,7 +148,31 @@
       "corpus_occurrence_refs": [
         "Genesis 2:4"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent",
+            "word_sense"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "יהוה",
+      "missing_enrichments": [],
       "morph_code": "Np",
       "morph_readable": "proper noun divine name",
       "normalized": "יהוה",
@@ -159,7 +183,9 @@
       ],
       "ref": "Psalm 23:1a#1",
       "referent": "the LORD",
+      "same_psalm_occurrence_refs": [],
       "semantic_role": "deity",
+      "stem": null,
       "strong": "H3068",
       "surface": "יְהוָה",
       "syntax_role": "subject",
@@ -171,7 +197,31 @@
       "corpus_occurrence_refs": [
         "Genesis 48:15"
       ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent",
+            "word_sense"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
       "lemma": "רעה",
+      "missing_enrichments": [],
       "morph_code": "Ncmsg+Sp1cs",
       "morph_readable": "noun masculine singular construct + suffix first common singular",
       "normalized": "רעי",
@@ -182,7 +232,9 @@
       ],
       "ref": "Psalm 23:1a#2",
       "referent": "my shepherd",
+      "same_psalm_occurrence_refs": [],
       "semantic_role": "caregiver",
+      "stem": null,
       "strong": "H7462",
       "surface": "רֹעִי",
       "syntax_role": "predicate",
