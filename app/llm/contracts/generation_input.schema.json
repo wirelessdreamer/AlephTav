@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenerationInput",
+  "type": "object",
+  "required": ["unit_id", "layer", "locked_inputs", "style_profile"],
+  "additionalProperties": false,
+  "properties": {
+    "unit_id": { "type": "string" },
+    "layer": { "type": "string" },
+    "locked_inputs": { "type": "object" },
+    "style_profile": { "type": "object" }
+  }
+}

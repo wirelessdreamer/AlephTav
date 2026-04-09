@@ -1,0 +1,289 @@
+{
+  "alignments": [
+    {
+      "alignment_id": "aln.ps001.v001.a.gloss.0001",
+      "alignment_type": "direct",
+      "confidence": 0.97,
+      "created_by": "seed",
+      "created_via": "fixture",
+      "layer": "gloss",
+      "notes": "ashrei -> blessed",
+      "source_token_ids": [
+        "ps001.v001.t001"
+      ],
+      "target_span_ids": [
+        "spn.ps001.v001.a.gloss.0001"
+      ],
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_id": "aln.ps001.v001.a.gloss.0002",
+      "alignment_type": "direct",
+      "confidence": 0.95,
+      "created_by": "seed",
+      "created_via": "fixture",
+      "layer": "gloss",
+      "notes": "ha-ish -> the man",
+      "source_token_ids": [
+        "ps001.v001.t002"
+      ],
+      "target_span_ids": [
+        "spn.ps001.v001.a.gloss.0002"
+      ],
+      "unit_id": "ps001.v001.a"
+    }
+  ],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps001.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d9ebb2c3f7893ed6d60e9baca13d4647b768566aa755bda261c90bfb4d94713f",
+      "audit_id": "aud.ps001.v001.a.0001",
+      "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-09T04:55:04.645800+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps001.v001.a",
+      "entity_type": "unit",
+      "rationale": "Bootstrap milestone fixtures",
+      "review_signoff": {},
+      "summary": "Seed fixture unit",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
+  "canonical_rendering_ids": [
+    "rnd.ps001.v001.a.gloss.can.0001",
+    "rnd.ps001.v001.a.literal.can.0001"
+  ],
+  "concept_ids": [
+    "cpt.ps001.v001.a.0001"
+  ],
+  "current_layer_state": {
+    "latest_layer": "literal",
+    "locked_layers": [
+      "gloss"
+    ]
+  },
+  "issue_links": [],
+  "pr_links": [],
+  "psalm_id": "ps001",
+  "ref": "Psalm 1:1a",
+  "renderings": [
+    {
+      "alignment_ids": [
+        "aln.ps001.v001.a.gloss.0001",
+        "aln.ps001.v001.a.gloss.0002"
+      ],
+      "drift_flags": [],
+      "layer": "gloss",
+      "metrics": {
+        "tokens": 3
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Gloss-level lexical rendering.",
+      "rendering_id": "rnd.ps001.v001.a.gloss.can.0001",
+      "status": "canonical",
+      "style_tags": [
+        "gloss",
+        "study_literal"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps001.v001.a.gloss.0001",
+          "text": "Blessed",
+          "token_end": 0,
+          "token_start": 0
+        },
+        {
+          "span_id": "spn.ps001.v001.a.gloss.0002",
+          "text": "the man",
+          "token_end": 3,
+          "token_start": 2
+        }
+      ],
+      "text": "Blessed — the man",
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps001.v001.a.gloss.0001",
+        "aln.ps001.v001.a.gloss.0002"
+      ],
+      "drift_flags": [],
+      "layer": "literal",
+      "metrics": {
+        "syllables": 5
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Literal English line for review.",
+      "rendering_id": "rnd.ps001.v001.a.literal.can.0001",
+      "status": "canonical",
+      "style_tags": [
+        "literal",
+        "study_literal"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps001.v001.a.literal.0001",
+          "text": "Happy",
+          "token_end": 0,
+          "token_start": 0
+        },
+        {
+          "span_id": "spn.ps001.v001.a.literal.0002",
+          "text": "the man",
+          "token_end": 3,
+          "token_start": 2
+        }
+      ],
+      "text": "Happy is the man",
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps001.v001.a.gloss.0001",
+        "aln.ps001.v001.a.gloss.0002"
+      ],
+      "drift_flags": [
+        "semantic_overcompression:low"
+      ],
+      "layer": "lyric",
+      "metrics": {
+        "parallelism_preservation": 0.84,
+        "syllables": 5
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Compact singable alternate.",
+      "rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
+      "status": "accepted_as_alternate",
+      "style_tags": [
+        "lyric",
+        "formal_liturgical"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps001.v001.a.lyric.0001",
+          "text": "Blessed is the one",
+          "token_end": 3,
+          "token_start": 0
+        }
+      ],
+      "text": "Blessed is the one",
+      "unit_id": "ps001.v001.a"
+    }
+  ],
+  "review_decisions": [
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps001.v001.a.0001",
+      "notes": "Literal line acceptable.",
+      "reviewer": "seed-reviewer-1",
+      "reviewer_role": "Hebrew reviewer",
+      "target_id": "rnd.ps001.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:00:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps001.v001.a.0002",
+      "notes": "Alignment coverage complete.",
+      "reviewer": "seed-reviewer-2",
+      "reviewer_role": "alignment reviewer",
+      "target_id": "rnd.ps001.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:01:00Z"
+    }
+  ],
+  "segmentation_type": "colon",
+  "source_hebrew": "אַשְׁרֵי הָאִישׁ",
+  "source_transliteration": "ashrei ha-ish",
+  "status": "under_review",
+  "token_ids": [
+    "ps001.v001.t001",
+    "ps001.v001.t002"
+  ],
+  "tokens": [
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 32:1"
+      ],
+      "lemma": "אשר",
+      "morph_code": "Tm",
+      "morph_readable": "interjection of blessing",
+      "normalized": "אשרי",
+      "occurrence_index": 1,
+      "part_of_speech": "particle",
+      "psalms_occurrence_refs": [
+        "Psalm 32:1"
+      ],
+      "ref": "Psalm 1:1a#1",
+      "referent": "the righteous",
+      "semantic_role": "blessing",
+      "strong": "H835",
+      "surface": "אַשְׁרֵי",
+      "syntax_role": "predicate",
+      "token_id": "ps001.v001.t001",
+      "transliteration": "ashrei",
+      "word_sense": "fortunate/blessed"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 37:23"
+      ],
+      "lemma": "איש",
+      "morph_code": "Td/Ncmsa",
+      "morph_readable": "article + noun masculine singular absolute",
+      "normalized": "האיש",
+      "occurrence_index": 1,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 37:23"
+      ],
+      "ref": "Psalm 1:1a#2",
+      "referent": "the man",
+      "semantic_role": "agent",
+      "strong": "H376",
+      "surface": "הָאִישׁ",
+      "syntax_role": "subject",
+      "token_id": "ps001.v001.t002",
+      "transliteration": "ha-ish",
+      "word_sense": "man/person"
+    }
+  ],
+  "unit_id": "ps001.v001.a",
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalms 1:1",
+      "source_id": "sefaria",
+      "source_url": "https://www.sefaria.org/Psalms.1.1",
+      "text": "Optional witness text stored separately.",
+      "versionTitle": "Fixture Witness"
+    }
+  ]
+}

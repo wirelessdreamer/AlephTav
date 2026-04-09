@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: psalms-copyleft
+Version: 0.1.0
+Summary: Local-first Psalms translation workbench
+Author: AlphaOmega Contributors
+License: MIT License
+        
+        Copyright (c) 2026 AlphaOmega Contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE-code
+License-File: LICENSE-text-template
+License-File: NOTICE-template
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: typer>=0.12.3
+Requires-Dist: pydantic>=2.8.0
+Requires-Dist: pydantic-settings>=2.3.4
+Requires-Dist: sqlalchemy>=2.0.31
+Requires-Dist: jsonschema>=4.23.0
+Requires-Dist: orjson>=3.10.6
+Requires-Dist: python-multipart>=0.0.9
+Provides-Extra: dev
+Requires-Dist: pytest>=8.2.0; extra == "dev"
+Requires-Dist: httpx>=0.27.0; extra == "dev"
+Requires-Dist: ruff>=0.5.5; extra == "dev"
+Requires-Dist: mypy>=1.10.1; extra == "dev"
+Dynamic: license-file
+
+# Psalms Copyleft Workbench
+
+Local-first workbench for Hebrew-source Psalms translation, alignment, review, audit, and release packaging.
+
+## What is included
+
+- Git-friendly JSON content as canonical source of truth.
+- SQLite-derived indexes for concordance, lexical cards, and jobs.
+- FastAPI backend and Typer CLI.
+- React + TypeScript workbench UI.
+- Schema validation, license auditing, audit trails, issue/PR linkage, and release bundles.
+
+## Quick start
+
+### Backend
+
+```bash
+python -m venv .venv
+source /home/dreamer/src/AlphaOmega/.venv/bin/activate
+pip install -e .[dev]
+python scripts/seed_project.py
+python scripts/import_psalms.py
+python scripts/build_indexes.py
+python scripts/validate_content.py
+uvicorn app.api.main:app --reload
+```
+
+### UI
+
+```bash
+npm install
+npm run dev
+```
+
+### CLI
+
+```bash
+psalms-workbench validate-content
+psalms-workbench audit-licenses
+psalms-workbench export-release --release-id v0.1.0
+```
+
+## Branch protection
+
+The committed `.github/settings.yml` and `docs/RELEASE_PROCESS.md` capture the intended GitHub protection rules for `main`: required approvals, required CODEOWNERS review, and required passing workflows.

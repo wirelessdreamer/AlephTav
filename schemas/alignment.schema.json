@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Alignment",
+  "type": "object",
+  "required": [
+    "alignment_id",
+    "unit_id",
+    "layer",
+    "source_token_ids",
+    "target_span_ids",
+    "alignment_type",
+    "confidence",
+    "created_by",
+    "created_via",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "alignment_id": { "type": "string", "pattern": "^aln\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.[a-z_]+\\.\\d{4}$" },
+    "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+    "layer": {
+      "type": "string",
+      "enum": ["gloss", "literal", "phrase", "concept", "lyric", "metered_lyric", "parallelism_lyric"]
+    },
+    "source_token_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "target_span_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "alignment_type": {
+      "type": "string",
+      "enum": ["direct", "grouped", "idiom", "conceptual", "editorial_expansion", "omission_accounted_for", "uncertain"]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "created_by": { "type": "string" },
+    "created_via": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

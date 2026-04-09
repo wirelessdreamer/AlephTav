@@ -1,0 +1,35 @@
+name: Lexical issue
+description: Report a lemma, morphology, syntax, semantic role, or lexical card problem.
+title: "[Lexical Issue]: "
+labels: [lexical, triage]
+body:
+  - type: input
+    id: token_id
+    attributes:
+      label: Token ID
+      placeholder: ps023.v001.t002
+    validations:
+      required: true
+  - type: input
+    id: lemma
+    attributes:
+      label: Lemma
+      placeholder: רעה
+  - type: textarea
+    id: current_payload
+    attributes:
+      label: Current lexical payload
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: Proposed fix
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+    validations:
+      required: true

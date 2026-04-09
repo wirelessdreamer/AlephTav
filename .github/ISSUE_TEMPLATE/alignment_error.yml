@@ -1,0 +1,42 @@
+name: Alignment error
+description: Report broken or missing Hebrew-English alignment.
+title: "[Alignment Error]: "
+labels: [alignment, triage]
+body:
+  - type: input
+    id: psalm
+    attributes:
+      label: Psalm
+      placeholder: ps001
+    validations:
+      required: true
+  - type: input
+    id: unit_id
+    attributes:
+      label: Unit ID
+      placeholder: ps001.v001.a
+    validations:
+      required: true
+  - type: input
+    id: token_or_span
+    attributes:
+      label: Token ID or span ID
+      placeholder: ps001.v001.t001 / spn.ps001.v001.a.literal.0001
+  - type: textarea
+    id: observed_problem
+    attributes:
+      label: Observed problem
+    validations:
+      required: true
+  - type: textarea
+    id: expected_alignment
+    attributes:
+      label: Expected alignment
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+    validations:
+      required: true

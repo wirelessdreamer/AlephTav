@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StyleProfile",
+  "type": "object",
+  "required": [
+    "style_profile_id",
+    "literalness",
+    "lyric_freedom",
+    "target_syllables",
+    "rhyme_mode",
+    "register",
+    "parallelism_priority"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "style_profile_id": { "type": "string" },
+    "literalness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "lyric_freedom": { "type": "number", "minimum": 0, "maximum": 1 },
+    "target_syllables": { "type": "integer", "minimum": 0 },
+    "rhyme_mode": { "type": "string" },
+    "register": { "type": "string" },
+    "parallelism_priority": { "type": "string" }
+  }
+}

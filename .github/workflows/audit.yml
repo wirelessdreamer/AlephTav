@@ -1,0 +1,21 @@
+name: audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -e .[dev]
+      - run: python scripts/seed_project.py
+      - run: python scripts/import_psalms.py
+      - run: python scripts/build_indexes.py
+      - run: python -m app.cli audit-licenses
+      - run: python scripts/generate_reports.py --release-id audit-dry-run

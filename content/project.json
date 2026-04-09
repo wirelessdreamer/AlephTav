@@ -1,0 +1,104 @@
+{
+  "allowed_sources": [
+    "uxlc",
+    "oshb",
+    "macula",
+    "sefaria"
+  ],
+  "code_license": "MIT",
+  "default_model_profile": "demo-local",
+  "divine_name_policy": "preserve source distinctions",
+  "model_backend": "local-only",
+  "output_text_license": "TBD per release",
+  "project_id": "proj.main",
+  "release_channel": "local-dev",
+  "review_policy": {
+    "alternate_required_approvals": 1,
+    "canonical_required_approvals": 2,
+    "release_required_role": "release reviewer"
+  },
+  "source_manifests": [
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": true,
+      "allowed_for_generation": true,
+      "import_hash": "fixture-uxlc",
+      "imported_at": "2026-04-09T00:00:00Z",
+      "license": "Public Domain",
+      "name": "UXLC/WLC Derived Hebrew",
+      "notes": "Canonical Hebrew source",
+      "source_id": "uxlc",
+      "upstream_url": "https://tanach.us/",
+      "version": "fixture-2026.04"
+    },
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": true,
+      "allowed_for_generation": false,
+      "import_hash": "fixture-oshb",
+      "imported_at": "2026-04-09T00:00:00Z",
+      "license": "Open Scriptural Data",
+      "name": "Open Scriptures Hebrew Bible",
+      "notes": "Morphology and readable morphology only",
+      "source_id": "oshb",
+      "upstream_url": "https://github.com/openscriptures/morphhb",
+      "version": "fixture-2026.04"
+    },
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": true,
+      "allowed_for_generation": false,
+      "import_hash": "fixture-macula",
+      "imported_at": "2026-04-09T00:00:00Z",
+      "license": "CC BY 4.0",
+      "name": "MACULA Hebrew",
+      "notes": "Syntax and semantic enrichment",
+      "source_id": "macula",
+      "upstream_url": "https://github.com/Clear-Bible/macula-hebrew",
+      "version": "fixture-2026.04"
+    },
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": false,
+      "allowed_for_generation": false,
+      "import_hash": "fixture-sefaria",
+      "imported_at": "2026-04-09T00:00:00Z",
+      "license": "Custom-Restricted-Witness",
+      "name": "Sefaria Witness Snapshot",
+      "notes": "Witness-only and version-pinned",
+      "source_id": "sefaria",
+      "upstream_url": "https://developers.sefaria.org/",
+      "version": "fixture-2026.04"
+    }
+  ],
+  "style_profiles": [
+    {
+      "literalness": 0.7,
+      "lyric_freedom": 0.4,
+      "parallelism_priority": "high",
+      "register": "liturgical",
+      "rhyme_mode": "off",
+      "style_profile_id": "formal_liturgical",
+      "target_syllables": 9
+    },
+    {
+      "literalness": 0.95,
+      "lyric_freedom": 0.1,
+      "parallelism_priority": "high",
+      "register": "formal",
+      "rhyme_mode": "off",
+      "style_profile_id": "study_literal",
+      "target_syllables": 0
+    },
+    {
+      "literalness": 0.55,
+      "lyric_freedom": 0.7,
+      "parallelism_priority": "high",
+      "register": "literary",
+      "rhyme_mode": "off",
+      "style_profile_id": "metered_common_meter",
+      "target_syllables": 8
+    }
+  ],
+  "title": "Psalms Copyleft Workbench"
+}

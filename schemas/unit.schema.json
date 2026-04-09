@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PsalmUnit",
+  "type": "object",
+  "required": [
+    "psalm_id",
+    "unit_id",
+    "ref",
+    "segmentation_type",
+    "source_hebrew",
+    "source_transliteration",
+    "token_ids",
+    "concept_ids",
+    "status",
+    "current_layer_state",
+    "canonical_rendering_ids",
+    "alternate_rendering_ids",
+    "audit_ids",
+    "issue_links",
+    "pr_links",
+    "tokens",
+    "alignments",
+    "renderings",
+    "audit_records",
+    "review_decisions",
+    "witnesses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+    "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+    "ref": { "type": "string" },
+    "segmentation_type": { "type": "string", "enum": ["verse", "colon"] },
+    "source_hebrew": { "type": "string" },
+    "source_transliteration": { "type": "string" },
+    "token_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "concept_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "proposed", "under_review", "canonical", "accepted_as_alternate", "rejected", "deprecated"]
+    },
+    "current_layer_state": {
+      "type": "object",
+      "required": ["locked_layers", "latest_layer"],
+      "additionalProperties": false,
+      "properties": {
+        "locked_layers": { "type": "array", "items": { "type": "string" } },
+        "latest_layer": { "type": "string" }
+      }
+    },
+    "canonical_rendering_ids": { "type": "array", "items": { "type": "string" } },
+    "alternate_rendering_ids": { "type": "array", "items": { "type": "string" } },
+    "audit_ids": { "type": "array", "items": { "type": "string" } },
+    "issue_links": { "type": "array", "items": { "type": "string" } },
+    "pr_links": { "type": "array", "items": { "type": "string" } },
+    "tokens": { "type": "array", "items": { "$ref": "token.schema.json" } },
+    "alignments": { "type": "array", "items": { "$ref": "alignment.schema.json" } },
+    "renderings": { "type": "array", "items": { "$ref": "rendering.schema.json" } },
+    "audit_records": { "type": "array", "items": { "$ref": "audit_record.schema.json" } },
+    "review_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["decision_id", "target_id", "reviewer_role", "reviewer", "decision", "notes", "timestamp"],
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": { "type": "string", "pattern": "^rev\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$" },
+          "target_id": { "type": "string" },
+          "reviewer_role": { "type": "string" },
+          "reviewer": { "type": "string" },
+          "decision": { "type": "string" },
+          "notes": { "type": "string" },
+          "timestamp": { "type": "string" }
+        }
+      }
+    },
+    "witnesses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "versionTitle", "language", "ref", "source_url", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": { "type": "string" },
+          "versionTitle": { "type": "string" },
+          "language": { "type": "string" },
+          "ref": { "type": "string" },
+          "source_url": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}

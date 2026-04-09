@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuditRecord",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "entity_type",
+    "entity_id",
+    "change_type",
+    "before_hash",
+    "after_hash",
+    "summary",
+    "rationale",
+    "triggered_by_issue",
+    "triggered_by_pr",
+    "created_by",
+    "created_at",
+    "checks",
+    "review_signoff"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "audit_id": { "type": "string", "pattern": "^aud\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$" },
+    "entity_type": { "type": "string" },
+    "entity_id": { "type": "string" },
+    "change_type": { "type": "string" },
+    "before_hash": { "type": "string" },
+    "after_hash": { "type": "string" },
+    "summary": { "type": "string" },
+    "rationale": { "type": "string" },
+    "triggered_by_issue": { "type": ["string", "null"] },
+    "triggered_by_pr": { "type": ["string", "null"] },
+    "created_by": { "type": "string" },
+    "created_at": { "type": "string" },
+    "checks": { "type": "array", "items": { "type": "string" } },
+    "review_signoff": { "type": "object" }
+  }
+}

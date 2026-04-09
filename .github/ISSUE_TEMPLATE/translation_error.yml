@@ -1,0 +1,69 @@
+name: Translation error
+description: Report an error in a canonical or alternate rendering.
+title: "[Translation Error]: "
+labels: [translation, triage]
+body:
+  - type: input
+    id: psalm
+    attributes:
+      label: Psalm
+      placeholder: ps023
+    validations:
+      required: true
+  - type: input
+    id: unit_id
+    attributes:
+      label: Unit ID
+      placeholder: ps023.v001.a
+    validations:
+      required: true
+  - type: input
+    id: token_id
+    attributes:
+      label: Token ID (optional)
+      placeholder: ps023.v001.t002
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      options: [gloss, literal, phrase, concept, lyric, metered_lyric, parallelism_lyric]
+    validations:
+      required: true
+  - type: textarea
+    id: current_text
+    attributes:
+      label: Current text
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options: [low, medium, high, release_blocker]
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+    validations:
+      required: true
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: Canonical change or alternate proposal
+      options: [canonical_change, alternate_proposal]
+    validations:
+      required: true

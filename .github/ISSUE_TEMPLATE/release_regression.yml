@@ -1,0 +1,35 @@
+name: Release regression
+description: Report a regression found in a generated release bundle.
+title: "[Release Regression]: "
+labels: [release, triage]
+body:
+  - type: input
+    id: release_id
+    attributes:
+      label: Release ID
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: affected_unit
+    attributes:
+      label: Affected unit ID
+      placeholder: ps019.v001.a
+  - type: textarea
+    id: regression_description
+    attributes:
+      label: Regression description
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+    validations:
+      required: true

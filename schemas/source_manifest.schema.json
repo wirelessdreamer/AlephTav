@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceManifestEntry",
+  "type": "object",
+  "required": [
+    "source_id",
+    "name",
+    "version",
+    "license",
+    "upstream_url",
+    "imported_at",
+    "import_hash",
+    "allowed_for_generation",
+    "allowed_for_display",
+    "allowed_for_export",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "source_id": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "license": { "type": "string" },
+    "upstream_url": { "type": "string" },
+    "imported_at": { "type": "string" },
+    "import_hash": { "type": "string" },
+    "allowed_for_generation": { "type": "boolean" },
+    "allowed_for_display": { "type": "boolean" },
+    "allowed_for_export": { "type": "boolean" },
+    "notes": { "type": "string" }
+  }
+}

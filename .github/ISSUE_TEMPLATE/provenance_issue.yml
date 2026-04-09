@@ -1,0 +1,24 @@
+name: Provenance issue
+description: Report missing provenance or source manifest problems.
+title: "[Provenance Issue]: "
+labels: [provenance, triage]
+body:
+  - type: input
+    id: entity_id
+    attributes:
+      label: Target entity ID
+      placeholder: rnd.ps023.v001.a.literal.can.0001
+    validations:
+      required: true
+  - type: textarea
+    id: missing_or_incorrect
+    attributes:
+      label: Missing or incorrect provenance
+    validations:
+      required: true
+  - type: textarea
+    id: source_details
+    attributes:
+      label: Source details
+    validations:
+      required: true

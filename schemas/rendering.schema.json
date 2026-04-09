@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rendering",
+  "type": "object",
+  "required": [
+    "rendering_id",
+    "unit_id",
+    "layer",
+    "status",
+    "text",
+    "style_tags",
+    "target_spans",
+    "alignment_ids",
+    "drift_flags",
+    "metrics",
+    "rationale",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "rendering_id": { "type": "string", "pattern": "^rnd\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.[a-z_]+\\.(can|alt)\\.\\d{4}$" },
+    "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+    "layer": {
+      "type": "string",
+      "enum": ["gloss", "literal", "phrase", "concept", "lyric", "metered_lyric", "parallelism_lyric"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "proposed", "under_review", "canonical", "accepted_as_alternate", "rejected", "deprecated"]
+    },
+    "text": { "type": "string" },
+    "style_tags": { "type": "array", "items": { "type": "string" } },
+    "target_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["span_id", "text", "token_start", "token_end"],
+        "additionalProperties": false,
+        "properties": {
+          "span_id": { "type": "string", "pattern": "^spn\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.[a-z_]+\\.\\d{4}$" },
+          "text": { "type": "string" },
+          "token_start": { "type": "integer", "minimum": 0 },
+          "token_end": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "alignment_ids": { "type": "array", "items": { "type": "string" } },
+    "drift_flags": { "type": "array", "items": { "type": "string" } },
+    "metrics": { "type": "object" },
+    "rationale": { "type": "string" },
+    "provenance": {
+      "type": "object",
+      "required": ["source_ids", "generator"],
+      "additionalProperties": true,
+      "properties": {
+        "source_ids": { "type": "array", "items": { "type": "string" } },
+        "generator": { "type": "string" }
+      }
+    }
+  }
+}

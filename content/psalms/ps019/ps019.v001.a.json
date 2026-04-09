@@ -1,0 +1,153 @@
+{
+  "alignments": [
+    {
+      "alignment_id": "aln.ps019.v001.a.literal.0001",
+      "alignment_type": "grouped",
+      "confidence": 0.96,
+      "created_by": "seed",
+      "created_via": "fixture",
+      "layer": "literal",
+      "notes": "Predicate phrase rendered together.",
+      "source_token_ids": [
+        "ps019.v001.t001",
+        "ps019.v001.t002"
+      ],
+      "target_span_ids": [
+        "spn.ps019.v001.a.literal.0001"
+      ],
+      "unit_id": "ps019.v001.a"
+    }
+  ],
+  "alternate_rendering_ids": [],
+  "audit_ids": [
+    "aud.ps019.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b90a746f226b9cb2a1c759312d5342f311d05f6a9c97c5638bf30411665bc93f",
+      "audit_id": "aud.ps019.v001.a.0001",
+      "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-09T04:55:04.646504+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps019.v001.a",
+      "entity_type": "unit",
+      "rationale": "Bootstrap milestone fixtures",
+      "review_signoff": {},
+      "summary": "Seed fixture unit",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
+  "canonical_rendering_ids": [
+    "rnd.ps019.v001.a.literal.can.0001"
+  ],
+  "concept_ids": [
+    "cpt.ps019.v001.a.0001"
+  ],
+  "current_layer_state": {
+    "latest_layer": "literal",
+    "locked_layers": []
+  },
+  "issue_links": [],
+  "pr_links": [],
+  "psalm_id": "ps019",
+  "ref": "Psalm 19:1a",
+  "renderings": [
+    {
+      "alignment_ids": [
+        "aln.ps019.v001.a.literal.0001"
+      ],
+      "drift_flags": [],
+      "layer": "literal",
+      "metrics": {
+        "syllables": 8
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Initial literal line.",
+      "rendering_id": "rnd.ps019.v001.a.literal.can.0001",
+      "status": "canonical",
+      "style_tags": [
+        "literal",
+        "study_literal"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps019.v001.a.literal.0001",
+          "text": "The heavens are declaring",
+          "token_end": 3,
+          "token_start": 0
+        }
+      ],
+      "text": "The heavens are declaring",
+      "unit_id": "ps019.v001.a"
+    }
+  ],
+  "review_decisions": [],
+  "segmentation_type": "colon",
+  "source_hebrew": "הַשָּׁמַיִם מְסַפְּרִים",
+  "source_transliteration": "ha-shamayim mesapperim",
+  "status": "draft",
+  "token_ids": [
+    "ps019.v001.t001",
+    "ps019.v001.t002"
+  ],
+  "tokens": [
+    {
+      "corpus_occurrence_refs": [
+        "Genesis 1:1"
+      ],
+      "lemma": "שמים",
+      "morph_code": "Td/Ncmpa",
+      "morph_readable": "article + noun masculine plural absolute",
+      "normalized": "השמים",
+      "occurrence_index": 1,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 8:3"
+      ],
+      "ref": "Psalm 19:1a#1",
+      "referent": "heavens",
+      "semantic_role": "agent",
+      "strong": "H8064",
+      "surface": "הַשָּׁמַיִם",
+      "syntax_role": "subject",
+      "token_id": "ps019.v001.t001",
+      "transliteration": "ha-shamayim",
+      "word_sense": "sky/heavens"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 71:15"
+      ],
+      "lemma": "ספר",
+      "morph_code": "Vprmpa",
+      "morph_readable": "verb participle piel masculine plural absolute",
+      "normalized": "מספרים",
+      "occurrence_index": 1,
+      "part_of_speech": "verb",
+      "psalms_occurrence_refs": [
+        "Psalm 71:15"
+      ],
+      "ref": "Psalm 19:1a#2",
+      "referent": "heavens",
+      "semantic_role": "communication",
+      "strong": "H5608",
+      "surface": "מְסַפְּרִים",
+      "syntax_role": "predicate",
+      "token_id": "ps019.v001.t002",
+      "transliteration": "mesapperim",
+      "word_sense": "declare/tell"
+    }
+  ],
+  "unit_id": "ps019.v001.a",
+  "witnesses": []
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project",
+  "type": "object",
+  "required": [
+    "project_id",
+    "title",
+    "output_text_license",
+    "code_license",
+    "model_backend",
+    "default_model_profile",
+    "allowed_sources",
+    "style_profiles",
+    "divine_name_policy",
+    "review_policy",
+    "release_channel",
+    "source_manifests"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "project_id": { "type": "string", "pattern": "^proj\\.[a-z0-9_]+$" },
+    "title": { "type": "string" },
+    "output_text_license": { "type": "string" },
+    "code_license": { "type": "string" },
+    "model_backend": { "type": "string" },
+    "default_model_profile": { "type": "string" },
+    "allowed_sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "style_profiles": {
+      "type": "array",
+      "items": { "$ref": "style_profile.schema.json" }
+    },
+    "divine_name_policy": { "type": "string" },
+    "review_policy": {
+      "type": "object",
+      "required": ["canonical_required_approvals", "alternate_required_approvals", "release_required_role"],
+      "additionalProperties": false,
+      "properties": {
+        "canonical_required_approvals": { "type": "integer", "minimum": 1 },
+        "alternate_required_approvals": { "type": "integer", "minimum": 1 },
+        "release_required_role": { "type": "string" }
+      }
+    },
+    "release_channel": { "type": "string" },
+    "source_manifests": {
+      "type": "array",
+      "items": { "$ref": "source_manifest.schema.json" }
+    }
+  }
+}

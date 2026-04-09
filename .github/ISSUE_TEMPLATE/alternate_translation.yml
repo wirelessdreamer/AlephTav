@@ -1,0 +1,58 @@
+name: Alternate translation proposal
+description: Propose a new alternate rendering without overwriting canonical text.
+title: "[Alternate Proposal]: "
+labels: [alternate, triage]
+body:
+  - type: input
+    id: psalm
+    attributes:
+      label: Psalm
+      placeholder: ps019
+    validations:
+      required: true
+  - type: input
+    id: unit_id
+    attributes:
+      label: Unit ID
+      placeholder: ps019.v001.a
+    validations:
+      required: true
+  - type: dropdown
+    id: target_layer
+    attributes:
+      label: Target layer
+      options: [gloss, literal, phrase, concept, lyric, metered_lyric, parallelism_lyric]
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_text
+    attributes:
+      label: Proposed text
+    validations:
+      required: true
+  - type: input
+    id: style_goal
+    attributes:
+      label: Style goal
+      placeholder: best lyric flow
+    validations:
+      required: true
+  - type: input
+    id: expected_metric_gain
+    attributes:
+      label: Expected metric gain
+      placeholder: +2 singability, preserve imagery
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+    validations:
+      required: true

@@ -1,0 +1,266 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.workbench-shell {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  gap: 0.75rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.topbar,
+.status-strip,
+.bottom-drawer,
+.pane,
+.inspector-card {
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.24);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.topbar h1,
+.pane-header h2,
+.inspector-card h3 {
+  margin: 0;
+}
+
+.topbar-controls,
+.status-strip,
+.tag-row,
+.tab-row,
+.horizontal-between {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.horizontal-between {
+  justify-content: space-between;
+}
+
+.status-strip {
+  padding: 0.75rem 1rem;
+  flex-wrap: wrap;
+}
+
+.status-pill,
+.tag,
+.warning-inline {
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.status-pill,
+.tag {
+  background: rgba(51, 65, 85, 0.85);
+}
+
+.warning,
+.warning-inline {
+  background: rgba(217, 119, 6, 0.18);
+  color: #fdba74;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) 320px;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.scroll-panel {
+  min-height: 0;
+  overflow: auto;
+}
+
+.pane,
+.inspector-rail {
+  height: 100%;
+}
+
+.pane {
+  padding: 1rem;
+}
+
+.pane-header {
+  margin-bottom: 1rem;
+}
+
+.subtle {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.hebrew-token-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hebrew-token {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  background: rgba(30, 41, 59, 0.95);
+  color: inherit;
+  border-radius: 14px;
+  padding: 0.75rem;
+  min-width: 120px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.hebrew-token.active,
+.hebrew-token.linked,
+.rendering-card.linked,
+.tab.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+.surface {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.token-meta {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.rendering-list,
+.source-list,
+.simple-list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rendering-card,
+.compare-card {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.rendering-text {
+  font-size: 1.05rem;
+}
+
+.warning-box {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: rgba(127, 29, 29, 0.2);
+  color: #fecaca;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.inspector-rail {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.inspector-card {
+  padding: 1rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 0.75rem;
+}
+
+.detail-grid dt {
+  color: #94a3b8;
+}
+
+.detail-grid dd {
+  margin: 0;
+}
+
+.bottom-drawer {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.drawer-header {
+  margin-bottom: 0.75rem;
+}
+
+.tab {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  background: rgba(30, 41, 59, 0.95);
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  cursor: pointer;
+}
+
+.drawer-panel {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.compare-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.compact-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.compact-field input,
+.compact-field select {
+  border-radius: 10px;
+  border: 1px solid rgba(71, 85, 105, 0.9);
+  background: rgba(15, 23, 42, 0.95);
+  color: inherit;
+  padding: 0.55rem 0.7rem;
+}
+
+.empty-state {
+  color: #94a3b8;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}

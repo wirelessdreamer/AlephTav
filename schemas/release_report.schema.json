@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReleaseReport",
+  "type": "object",
+  "required": ["release_id", "generated_at", "source_manifests", "render_counts", "unresolved_warnings", "signoff_summary"],
+  "additionalProperties": false,
+  "properties": {
+    "release_id": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "source_manifests": { "type": "array", "items": { "$ref": "source_manifest.schema.json" } },
+    "render_counts": { "type": "object" },
+    "unresolved_warnings": { "type": "object" },
+    "signoff_summary": { "type": "object" }
+  }
+}
