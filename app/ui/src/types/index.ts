@@ -123,12 +123,50 @@ export interface Project {
 }
 
 export interface TokenCard extends Token {
-  gloss_list: Array<string | null>;
+  gloss_list: string[];
   nearby_usage_examples: string[];
   copy_reference: string;
-  same_psalm?: string[];
-  same_psalms?: string[];
-  wider_corpus?: string[];
+  same_psalm: string[];
+  same_psalms: string[];
+  wider_corpus: string[];
+  counts: {
+    same_psalm: number;
+    same_psalms: number;
+    wider_corpus: number;
+  };
+  concordance_entry: {
+    lemma: { value: string | null; match_count: number };
+    strong: { value: string | null; match_count: number };
+  };
+}
+
+export interface ConcordanceResult {
+  token_id: string;
+  unit_id: string;
+  psalm_id: string;
+  ref: string;
+  surface: string;
+  normalized: string;
+  transliteration: string | null;
+  lemma: string | null;
+  strong: string | null;
+  morph_code: string | null;
+  morph_readable: string | null;
+  part_of_speech: string | null;
+  stem: string | null;
+  syntax_role: string | null;
+  semantic_role: string | null;
+  referent: string | null;
+  word_sense: string | null;
+  occurrence_index: number;
+  gloss_list: string[];
+  query_field: string;
+}
+
+export interface PinnedLexicalCardState {
+  token_id: string | null;
+  updated_at: string | null;
+  token: TokenCard | null;
 }
 
 export interface OpenConcerns {

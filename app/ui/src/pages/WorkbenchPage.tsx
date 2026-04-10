@@ -5,7 +5,7 @@ import { BottomDrawer } from '../components/BottomDrawer';
 import { EnglishPane } from '../components/EnglishPane';
 import { HebrewPane } from '../components/HebrewPane';
 import { InspectorRail } from '../components/InspectorRail';
-import { useCurrentPsalm, useOpenConcerns, useProject, usePsalms, useTokenCard, useUnit } from '../hooks/useWorkbench';
+import { useCurrentPsalm, useOpenConcerns, usePinnedLexicalCard, useProject, usePsalms, useSetPinnedLexicalCard, useTokenCard, useUnit } from '../hooks/useWorkbench';
 import type { Alignment, Layer, Psalm, Rendering } from '../types';
 
 export function WorkbenchPage() {
@@ -14,15 +14,18 @@ export function WorkbenchPage() {
   const [activeLayer, setActiveLayer] = useState<Layer>('literal');
   const [granularity, setGranularity] = useState<'colon' | 'verse'>('colon');
   const [hoveredTokenId, setHoveredTokenId] = useState<string | null>(null);
-  const [pinnedTokenId, setPinnedTokenId] = useState<string | null>(null);
 
   const { data: project } = useProject();
   const { data: psalms } = usePsalms();
   const { data: unit } = useUnit(selectedUnitId);
   const { data: concerns } = useOpenConcerns();
+  const { data: pinnedLexicalCard } = usePinnedLexicalCard();
+  const setPinnedLexicalCard = useSetPinnedLexicalCard();
 
-  const tokenId = pinnedTokenId ?? hoveredTokenId;
-  const { data: tokenCard } = useTokenCard(tokenId);
+  const pinnedTokenId = pinnedLexicalCard?.token_id ?? null;
+  const hoveredToken = useTokenCard(!pinnedTokenId ? hoveredTokenId : null);
+  const tokenCard = pinnedLexicalCard?.token ?? hoveredToken.data;
+  const tokenId = tokenCard?.token_id ?? hoveredTokenId;
 
   const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
 
@@ -64,6 +67,11 @@ export function WorkbenchPage() {
 
   const handleGranularityChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGranularity(event.target.value as 'colon' | 'verse');
+  };
+
+  const handlePinToken = (nextTokenId: string) => {
+    const tokenIdToPersist = pinnedTokenId === nextTokenId ? null : nextTokenId;
+    setPinnedLexicalCard.mutate(tokenIdToPersist);
   };
 
   return (
@@ -115,7 +123,7 @@ export function WorkbenchPage() {
             activeTokenId={tokenId}
             highlightedTokenIds={linkedTokenIds}
             onHoverToken={setHoveredTokenId}
-            onPinToken={setPinnedTokenId}
+            onPinToken={handlePinToken}
           />
         </div>
         <div className="scroll-panel" ref={englishRef} onScroll={() => syncScroll('english')}>
@@ -126,7 +134,7 @@ export function WorkbenchPage() {
             onSelectLayer={setActiveLayer}
           />
         </div>
-        <InspectorRail tokenCard={tokenCard} unit={unit} project={project} concerns={concerns} />
+        <InspectorRail tokenCard={tokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={() => setPinnedLexicalCard.mutate(null)} />
       </section>
       <BottomDrawer unit={unit} concerns={concerns} concordanceSeed={tokenCard?.lemma} />
     </main>

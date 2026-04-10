@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import { useConcordance } from '../hooks/useWorkbench';
@@ -15,7 +15,8 @@ interface BottomDrawerProps {
 export function BottomDrawer({ unit, concerns, concordanceSeed }: BottomDrawerProps) {
   const [tab, setTab] = useState<DrawerTab>('concordance');
   const [query, setQuery] = useState(concordanceSeed ?? '');
-  const concordance = useConcordance(query, 'lemma');
+  const [field, setField] = useState<'lemma' | 'strong'>('lemma');
+  const concordance = useConcordance(query, field);
 
   const alternates = useMemo(
     () => unit?.renderings.filter((rendering) => rendering.status === 'accepted_as_alternate' || rendering.status === 'proposed') ?? [],
@@ -25,6 +26,17 @@ export function BottomDrawer({ unit, concerns, concordanceSeed }: BottomDrawerPr
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
+
+  const handleFieldChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setField(event.target.value as 'lemma' | 'strong');
+  };
+
+  useEffect(() => {
+    if (!concordanceSeed) return;
+    if (field === 'lemma' && !query.trim()) {
+      setQuery(concordanceSeed);
+    }
+  }, [concordanceSeed, field, query]);
 
   return (
     <section className="bottom-drawer">
@@ -39,10 +51,19 @@ export function BottomDrawer({ unit, concerns, concordanceSeed }: BottomDrawerPr
       </header>
       {tab === 'concordance' ? (
         <div className="drawer-panel">
-          <label className="compact-field">
-            <span>Search lemma/Strong's</span>
-            <input value={query} onChange={handleQueryChange} placeholder="e.g. רעה or H7462" />
-          </label>
+          <div className="tab-row">
+            <label className="compact-field">
+              <span>Query</span>
+              <input value={query} onChange={handleQueryChange} placeholder="e.g. רעה or H7462" />
+            </label>
+            <label className="compact-field">
+              <span>Field</span>
+              <select value={field} onChange={handleFieldChange}>
+                <option value="lemma">lemma</option>
+                <option value="strong">strong</option>
+              </select>
+            </label>
+          </div>
           <ul className="simple-list">
             {concordance.data?.map((item) => (
               <li key={item.token_id}>{item.ref} — {item.surface} / {item.lemma} / {item.strong}</li>

@@ -106,3 +106,11 @@ CREATE TABLE IF NOT EXISTS generation_jobs (
     output_payload TEXT
 );
 """
+
+LEXICAL_STATE_TABLE_SQL = """
+CREATE TABLE IF NOT EXISTS lexical_card_state (
+    state_id TEXT PRIMARY KEY,
+    token_id TEXT,
+    updated_at TEXT NOT NULL
+);
+"""

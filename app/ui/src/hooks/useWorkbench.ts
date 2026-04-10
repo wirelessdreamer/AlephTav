@@ -1,10 +1,22 @@
 import { useMemo } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import type { OpenConcerns, Project, Psalm, TokenCard, Unit } from '../types';
+import type { ConcordanceResult, OpenConcerns, PinnedLexicalCardState, Project, Psalm, TokenCard, Unit } from '../types';
 
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Request failed for ${url}`);
+  }
+  return response.json() as Promise<T>;
+}
+
+async function putJson<T>(url: string, payload: unknown): Promise<T> {
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
   if (!response.ok) {
     throw new Error(`Request failed for ${url}`);
   }
@@ -42,8 +54,25 @@ export function useOpenConcerns() {
 export function useConcordance(query: string, field = 'lemma') {
   return useQuery({
     queryKey: ['concordance', query, field],
-    queryFn: () => getJson<Array<Record<string, string>>>(`/search/concordance?query=${encodeURIComponent(query)}&field=${field}`),
+    queryFn: () => getJson<ConcordanceResult[]>(`/search/concordance?query=${encodeURIComponent(query)}&field=${field}`),
     enabled: query.trim().length > 0,
+  });
+}
+
+export function usePinnedLexicalCard() {
+  return useQuery({
+    queryKey: ['pinned-lexical-card'],
+    queryFn: () => getJson<PinnedLexicalCardState>('/state/lexical-card'),
+  });
+}
+
+export function useSetPinnedLexicalCard() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (tokenId: string | null) => putJson<PinnedLexicalCardState>('/state/lexical-card', { token_id: tokenId }),
+    onSuccess: (data) => {
+      queryClient.setQueryData(['pinned-lexical-card'], data);
+    },
   });
 }
 

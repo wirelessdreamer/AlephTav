@@ -5,11 +5,16 @@ interface InspectorRailProps {
   unit?: Unit;
   project?: Project;
   concerns?: OpenConcerns;
+  onUnpinToken: () => void;
 }
 
-export function InspectorRail({ tokenCard, unit, project, concerns }: InspectorRailProps) {
+export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken }: InspectorRailProps) {
   const unitFlags = concerns?.open_drift_flags.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const unitUncovered = concerns?.uncovered_tokens.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
+  const handleCopyReference = async () => {
+    if (!tokenCard || !navigator.clipboard) return;
+    await navigator.clipboard.writeText(tokenCard.copy_reference);
+  };
 
   return (
     <aside className="inspector-rail">
@@ -20,6 +25,14 @@ export function InspectorRail({ tokenCard, unit, project, concerns }: InspectorR
           <>
             <h4>{tokenCard.surface}</h4>
             <p className="subtle">{tokenCard.copy_reference}</p>
+            <div className="tab-row">
+              <button type="button" className="tab" onClick={() => void handleCopyReference()}>
+                Copy ref
+              </button>
+              <button type="button" className="tab" onClick={onUnpinToken}>
+                Unpin
+              </button>
+            </div>
             <dl className="detail-grid">
               <dt>Lemma</dt>
               <dd>{tokenCard.lemma}</dd>
@@ -33,14 +46,23 @@ export function InspectorRail({ tokenCard, unit, project, concerns }: InspectorR
               <dd>{tokenCard.semantic_role}</dd>
               <dt>Sense</dt>
               <dd>{tokenCard.word_sense}</dd>
+              <dt>Psalm matches</dt>
+              <dd>{tokenCard.counts.same_psalms}</dd>
+              <dt>Corpus matches</dt>
+              <dd>{tokenCard.counts.wider_corpus}</dd>
             </dl>
             <div className="tag-row">
-              {tokenCard.gloss_list.filter(Boolean).map((gloss) => (
+              {tokenCard.gloss_list.map((gloss) => (
                 <span key={gloss} className="tag">
                   {gloss}
                 </span>
               ))}
             </div>
+            <ul className="simple-list">
+              {tokenCard.nearby_usage_examples.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </>
         ) : null}
       </section>

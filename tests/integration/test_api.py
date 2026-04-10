@@ -55,12 +55,17 @@ def test_unit_and_token_endpoints_return_fixture_data() -> None:
     assert token.json()["lemma"] == "אשר"
     assert token.json()["enrichment_sources"]["oshb"]["status"] == "complete"
     assert token.json()["same_psalm_occurrence_refs"] == ["Psalm 1:1b"]
+    assert token.json()["same_psalms"] == ["Psalm 32:1"]
+    assert token.json()["wider_corpus"] == ["Psalm 32:1"]
+    assert token.json()["concordance_entry"]["lemma"]["match_count"] >= 1
+    assert token.json()["copy_reference"] == "Psalm 1:1a • אַשְׁרֵי • ps001.v001.t001"
 
 
 def test_concordance_search_returns_local_results() -> None:
     response = client.get("/search/concordance", params={"query": "H7462", "field": "strong"})
     assert response.status_code == 200
     assert response.json()[0]["token_id"] == "ps023.v001.t002"
+    assert response.json()[0]["gloss_list"] == ["shepherd", "my shepherd"]
 
     stem = client.get("/search/concordance", params={"query": "piel", "field": "stem"})
     assert stem.status_code == 200
@@ -78,6 +83,7 @@ def test_missing_enrichments_are_explicit_in_token_card_and_occurrences() -> Non
     assert occurrences.status_code == 200
     assert occurrences.json()["same_psalm"] == ["Psalm 1:1b"]
     assert occurrences.json()["same_psalms"] == ["Psalm 32:1"]
+    assert occurrences.json()["counts"]["wider_corpus"] == 1
 
 
 def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None:
@@ -138,3 +144,33 @@ def test_locked_layer_rejects_generation(monkeypatch) -> None:
 
     assert response.status_code == 400
     assert "locked" in response.json()["detail"]
+
+
+def test_lexicon_routes_return_indexed_matches() -> None:
+    lemma = client.get("/lexicon/lemma/אשר")
+    assert lemma.status_code == 200
+    assert lemma.json()["lemma"] == "אשר"
+    assert lemma.json()["match_count"] == 1
+    assert lemma.json()["matches"][0]["token_id"] == "ps001.v001.t001"
+
+    strong = client.get("/lexicon/strong/H7462")
+    assert strong.status_code == 200
+    assert strong.json()["strong"] == "H7462"
+    assert strong.json()["match_count"] == 1
+    assert strong.json()["matches"][0]["token_id"] == "ps023.v001.t002"
+
+
+def test_pinned_lexical_card_state_round_trip() -> None:
+    initial = client.get("/state/lexical-card")
+    assert initial.status_code == 200
+    assert initial.json()["token_id"] is None
+
+    pinned = client.put("/state/lexical-card", json={"token_id": "ps023.v001.t002"})
+    assert pinned.status_code == 200
+    assert pinned.json()["token_id"] == "ps023.v001.t002"
+    assert pinned.json()["token"]["strong"] == "H7462"
+
+    cleared = client.put("/state/lexical-card", json={"token_id": None})
+    assert cleared.status_code == 200
+    assert cleared.json()["token_id"] is None
+    assert cleared.json()["token"] is None

@@ -6,6 +6,7 @@ from app.core.config import get_settings
 from app.db.models import (
     ALIGNMENT_TABLE_SQL,
     JOB_TABLE_SQL,
+    LEXICAL_STATE_TABLE_SQL,
     MISSING_ENRICHMENT_TABLE_SQL,
     RENDERING_TABLE_SQL,
     TOKEN_ENRICHMENT_TABLE_SQL,
@@ -34,6 +35,7 @@ def init_db() -> None:
             DROP TABLE IF EXISTS unit_index;
             DROP TABLE IF EXISTS rendering_index;
             DROP TABLE IF EXISTS alignment_index;
+            DROP TABLE IF EXISTS lexical_card_state;
             """
             + TOKEN_TABLE_SQL
             + UNIT_TABLE_SQL
@@ -43,4 +45,5 @@ def init_db() -> None:
             + TOKEN_ENRICHMENT_TABLE_SQL
             + MISSING_ENRICHMENT_TABLE_SQL
             + JOB_TABLE_SQL
+            + LEXICAL_STATE_TABLE_SQL
         )
