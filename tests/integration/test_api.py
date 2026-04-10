@@ -129,6 +129,60 @@ def test_unit_witness_endpoint_returns_isolated_metadata() -> None:
     assert witness["versionTitle"] == "Fixture Witness"
 
 
+def test_alternates_endpoints_support_filters_and_lifecycle_actions() -> None:
+    list_response = client.get(
+        "/units/ps023.v001.a/alternates",
+        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "true"},
+    )
+    assert list_response.status_code == 200
+    assert [item["rendering_id"] for item in list_response.json()] == ["rnd.ps023.v001.a.lyric.alt.0001"]
+
+    created = client.post(
+        "/units/ps019.v001.a/alternates",
+        json={
+            "layer": "lyric",
+            "text": "A proposed lyric alternate",
+            "rationale": "Keep a singable option in review",
+            "style_goal": "best_lyric_flow",
+            "metric_profile": "common_meter",
+            "style_tags": ["lyric-flow", "contemporary"],
+            "issue_links": ["issue.alt.ps019.v001.a.0001"],
+            "pr_links": ["pr.alt.ps019.v001.a.0001"],
+        },
+    )
+    assert created.status_code == 200
+    rendering_id = created.json()["rendering_id"]
+    assert created.json()["style_goal"] == "best_lyric_flow"
+    assert created.json()["metric_profile"] == "common_meter"
+
+    accepted = client.post(f"/alternates/{rendering_id}/accept", json={"created_by": "test"})
+    assert accepted.status_code == 200
+    assert accepted.json()["status"] == "accepted_as_alternate"
+
+    deprecated = client.post(f"/alternates/{rendering_id}/deprecate", json={"created_by": "test"})
+    assert deprecated.status_code == 200
+    assert deprecated.json()["status"] == "deprecated"
+
+    rejected = client.post(f"/alternates/{rendering_id}/reject", json={"created_by": "test"})
+    assert rejected.status_code == 200
+    assert rejected.json()["status"] == "rejected"
+
+
+def test_compare_endpoint_supports_cross_layer_selection() -> None:
+    response = client.get(
+        "/units/ps001.v001.a/renderings/compare",
+        params={
+            "left_id": "rnd.ps001.v001.a.gloss.can.0001",
+            "right_id": "rnd.ps001.v001.a.literal.can.0001",
+        },
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["comparison"]["same_layer"] is False
+    assert body["comparison"]["left_is_canonical"] is True
+    assert body["comparison"]["right_is_canonical"] is True
+
+
 def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None:
     monkeypatch.setattr("app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile))
 

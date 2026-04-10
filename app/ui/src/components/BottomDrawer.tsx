@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import {
+  useAddAlternate,
   useAdvancedSearch,
   useApproveRendering,
+  useAlternates,
   useConcordance,
   useCreateAlignment,
   useCreateRendering,
   useDeleteAlignment,
   useExportRelease,
   usePromoteRendering,
+  useRenderingComparison,
   useSearchPreset,
   useUnitWitnesses,
 } from '../hooks/useWorkbench';
@@ -35,9 +38,33 @@ interface BottomDrawerProps {
   concordanceSeed?: string;
   activeLayer: Layer;
   onNavigateToUnit: (unitId: string, psalmId: string) => void;
+  compareLeftId: string | null;
+  compareRightId: string | null;
+  onCompareLeftChange: (renderingId: string | null) => void;
+  onCompareRightChange: (renderingId: string | null) => void;
 }
 
-export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activeLayer, onNavigateToUnit }: BottomDrawerProps) {
+const alternateFilters = [
+  ['most_literal', 'Most literal'],
+  ['best_lyric_flow', 'Best lyric flow'],
+  ['best_meter_fit', 'Best meter fit'],
+  ['best_imagery_preservation', 'Best imagery preservation'],
+  ['formal', 'Formal'],
+  ['contemporary', 'Contemporary'],
+] as const;
+
+export function BottomDrawer({
+  unit,
+  concerns,
+  tokenCard,
+  concordanceSeed,
+  onNavigateToUnit,
+  activeLayer,
+  compareLeftId,
+  compareRightId,
+  onCompareLeftChange,
+  onCompareRightChange,
+}: BottomDrawerProps) {
   const [tab, setTab] = useState<DrawerTab>('concordance');
   const [concordanceField, setConcordanceField] = useState('lemma');
   const [concordanceQuery, setConcordanceQuery] = useState(concordanceSeed ?? '');
@@ -51,6 +78,13 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activ
   const [alternateText, setAlternateText] = useState('');
   const [selectedAlternateId, setSelectedAlternateId] = useState('');
   const [workflowMessage, setWorkflowMessage] = useState('');
+  const [alternateFilter, setAlternateFilter] = useState<string>('');
+  const [releaseApprovedOnly, setReleaseApprovedOnly] = useState(false);
+  const [alternateProposalText, setAlternateProposalText] = useState('');
+  const [alternateRationale, setAlternateRationale] = useState('');
+  const [alternateStyleGoal, setAlternateStyleGoal] = useState('');
+  const [alternateMetricProfile, setAlternateMetricProfile] = useState('');
+  const [alternateTags, setAlternateTags] = useState('');
 
   const concordance = useConcordance(concordanceQuery, concordanceField);
   const advancedSearch = useAdvancedSearch(searchQuery, searchScope, includeWitnesses);
@@ -62,6 +96,9 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activ
   const approveRendering = useApproveRendering(unit?.unit_id ?? null);
   const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
   const exportRelease = useExportRelease();
+  const alternates = useAlternates(unit?.unit_id ?? null, activeLayer, alternateFilter || undefined, releaseApprovedOnly);
+  const addAlternate = useAddAlternate(unit?.unit_id ?? null);
+  const comparison = useRenderingComparison(unit?.unit_id ?? null, compareLeftId, compareRightId);
 
   useEffect(() => {
     if (!concordanceSeed) {
@@ -72,6 +109,8 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activ
 
   const unresolvedDriftCount = concerns?.open_drift_flags.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const uncoveredCount = concerns?.uncovered_tokens.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
+  const activeLayerCanonical = unit?.renderings.find((item) => item.layer === activeLayer && item.status === 'canonical') ?? null;
+  const availableCompareRenderings = unit?.renderings ?? [];
 
   const handleNavigate = (unitId: string, psalmId: string) => {
     onNavigateToUnit(unitId, psalmId);
@@ -173,6 +212,35 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activ
     } catch (error) {
       setWorkflowMessage(error instanceof Error ? error.message : 'Release export failed');
     }
+  };
+
+  const handleProposeAlternate = () => {
+    if (!alternateProposalText.trim() || !unit) {
+      return;
+    }
+    addAlternate.mutate(
+      {
+        layer: activeLayer,
+        text: alternateProposalText.trim(),
+        rationale: alternateRationale.trim() || 'manual alternate proposal',
+        style_goal: alternateStyleGoal.trim() || undefined,
+        metric_profile: alternateMetricProfile.trim() || undefined,
+        style_tags: alternateTags
+          .split(',')
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+      },
+      {
+        onSuccess: (rendering) => {
+          setAlternateProposalText('');
+          setAlternateRationale('');
+          onCompareRightChange(rendering.rendering_id);
+          if (!compareLeftId && activeLayerCanonical) {
+            onCompareLeftChange(activeLayerCanonical.rendering_id);
+          }
+        },
+      },
+    );
   };
 
   return (
@@ -468,26 +536,127 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activ
       {tab === 'compare' ? (
         <div className="drawer-panel compare-grid">
           <article className="compare-card">
-            <h4>Canonical</h4>
-            {unit?.renderings.filter((item) => item.status === 'canonical').map((item) => (
-              <p key={item.rendering_id}>{item.layer}: {item.text}</p>
-            ))}
-          </article>
-          <article className="compare-card">
-            <h4>Alternates</h4>
-            {unit?.renderings.filter((item) => item.status !== 'canonical').length ? (
-              unit?.renderings.filter((item) => item.status !== 'canonical').map((item) => <p key={item.rendering_id}>{item.layer}: {item.text}</p>)
+            <h4>Compare left</h4>
+            <label className="compact-field">
+              <span>Rendering</span>
+              <select value={compareLeftId ?? ''} onChange={(event) => onCompareLeftChange(event.target.value || null)}>
+                <option value="">Select rendering</option>
+                {availableCompareRenderings.map((item) => (
+                  <option key={item.rendering_id} value={item.rendering_id}>
+                    {item.layer} • {item.status} • {item.rendering_id}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {comparison.data?.left ? (
+              <>
+                <p className="subtle">{comparison.data.left.rendering_id}</p>
+                <p>{comparison.data.left.text}</p>
+              </>
             ) : (
-              <p className="empty-state">No alternates for compare.</p>
+              <p className="empty-state">Choose a left-side rendering.</p>
             )}
           </article>
           <article className="compare-card">
-            <h4>Witness layer</h4>
-            {witnesses.data?.length ? (
-              witnesses.data.map((item) => <p key={`${item.source_id}-${item.ref}`}>{item.versionTitle}: {item.text}</p>)
+            <h4>Compare right</h4>
+            <label className="compact-field">
+              <span>Rendering</span>
+              <select value={compareRightId ?? ''} onChange={(event) => onCompareRightChange(event.target.value || null)}>
+                <option value="">Select rendering</option>
+                {availableCompareRenderings.map((item) => (
+                  <option key={item.rendering_id} value={item.rendering_id}>
+                    {item.layer} • {item.status} • {item.rendering_id}
+                  </option>
+                ))}
+              </select>
+            </label>
+            {comparison.data?.right ? (
+              <>
+                <p className="subtle">{comparison.data.right.rendering_id}</p>
+                <p>{comparison.data.right.text}</p>
+              </>
             ) : (
-              <p className="empty-state">No witness material for compare.</p>
+              <p className="empty-state">Choose a right-side rendering.</p>
             )}
+          </article>
+          <article className="compare-card">
+            <h4>Compare notes</h4>
+            {comparison.data ? (
+              <>
+                <p>{comparison.data.comparison.same_layer ? 'Same layer comparison' : 'Cross-layer comparison'}</p>
+                <p className="subtle">
+                  Left canonical: {comparison.data.comparison.left_is_canonical ? 'yes' : 'no'} • Right canonical: {comparison.data.comparison.right_is_canonical ? 'yes' : 'no'}
+                </p>
+                <div className="warning-box">
+                  <div>Canonical vs alternate, alternate vs alternate, and layer vs layer are all supported.</div>
+                  <div>Witness material remains isolated from canonical comparison state.</div>
+                </div>
+              </>
+            ) : (
+              <p className="empty-state">Pick any two renderings to compare side by side.</p>
+            )}
+          </article>
+          <article className="compare-card">
+            <h4>Alternate filters</h4>
+            <label className="compact-field">
+              <span>View</span>
+              <select value={alternateFilter} onChange={(event) => setAlternateFilter(event.target.value)}>
+                <option value="">All alternates</option>
+                {alternateFilters.map(([value, label]) => (
+                  <option key={value} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="checkbox-field">
+              <input type="checkbox" checked={releaseApprovedOnly} onChange={(event) => setReleaseApprovedOnly(event.target.checked)} />
+              <span>Release-approved only</span>
+            </label>
+            <ul className="simple-list">
+              {alternates.data?.map((item) => (
+                <li key={item.rendering_id} className="search-result-card">
+                  <div className="horizontal-between">
+                    <strong>{item.status}</strong>
+                    <span className="subtle">{item.rendering_id}</span>
+                  </div>
+                  <p className="result-snippet">{item.text}</p>
+                  <div className="result-meta">
+                    <span>{item.layer}</span>
+                    <button type="button" className="link-button" onClick={() => onCompareRightChange(item.rendering_id)}>
+                      Send to compare
+                    </button>
+                  </div>
+                </li>
+              ))}
+              {!alternates.data?.length ? <li className="empty-state">No alternates match the current filters.</li> : null}
+            </ul>
+          </article>
+          <article className="compare-card">
+            <h4>Add alternate</h4>
+            <label className="compact-field">
+              <span>Text</span>
+              <textarea value={alternateProposalText} onChange={(event) => setAlternateProposalText(event.target.value)} rows={4} placeholder={`Add ${activeLayer} alternate text`} />
+            </label>
+            <label className="compact-field">
+              <span>Rationale</span>
+              <input value={alternateRationale} onChange={(event) => setAlternateRationale(event.target.value)} placeholder="Why this alternate should exist" />
+            </label>
+            <label className="compact-field">
+              <span>Style goal</span>
+              <input value={alternateStyleGoal} onChange={(event) => setAlternateStyleGoal(event.target.value)} placeholder="e.g. best_meter_fit" />
+            </label>
+            <label className="compact-field">
+              <span>Metric profile</span>
+              <input value={alternateMetricProfile} onChange={(event) => setAlternateMetricProfile(event.target.value)} placeholder="e.g. common_meter" />
+            </label>
+            <label className="compact-field">
+              <span>Style tags</span>
+              <input value={alternateTags} onChange={(event) => setAlternateTags(event.target.value)} placeholder="comma,separated,tags" />
+            </label>
+            <button type="button" className="tab" onClick={handleProposeAlternate}>
+              Propose alternate
+            </button>
           </article>
         </div>
       ) : null}

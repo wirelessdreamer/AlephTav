@@ -59,6 +59,10 @@ export interface Rendering {
   metrics: Record<string, number>;
   rationale: string;
   provenance: { source_ids: string[]; generator: string };
+  style_goal?: string | null;
+  metric_profile?: string | null;
+  issue_links?: string[];
+  pr_links?: string[];
 }
 
 export interface ReviewDecision {
@@ -209,6 +213,17 @@ export interface SearchResult {
   language?: string;
   source_url?: string;
   witness_ref?: string;
+}
+
+export interface RenderingComparison {
+  unit_id: string;
+  left: Rendering;
+  right: Rendering;
+  comparison: {
+    same_layer: boolean;
+    left_is_canonical: boolean;
+    right_is_canonical: boolean;
+  };
 }
 
 export interface ConcordanceRow {

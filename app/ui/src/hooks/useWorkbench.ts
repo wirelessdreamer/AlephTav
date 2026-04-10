@@ -7,6 +7,8 @@ import type {
   PinnedLexicalCardState,
   Project,
   Psalm,
+  Rendering,
+  RenderingComparison,
   SearchResult,
   TokenCard,
   Unit,
@@ -47,6 +49,18 @@ async function postJson<T>(url: string, payload: unknown): Promise<T> {
 
 async function deleteJson<T>(url: string): Promise<T> {
   const response = await fetch(url, { method: 'DELETE' });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  return response.json() as Promise<T>;
+}
+
+async function patchJson<T>(url: string, payload: unknown): Promise<T> {
+  const response = await fetch(url, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
   if (!response.ok) {
     throw new Error(await response.text());
   }
@@ -203,6 +217,75 @@ export function useUnitWitnesses(unitId: string | null) {
     queryKey: ['unit-witnesses', unitId],
     queryFn: () => getJson<Witness[]>(`/units/${unitId}/witnesses`),
     enabled: Boolean(unitId),
+  });
+}
+
+export function useAlternates(unitId: string | null, layer?: string, styleFilter?: string, releaseApprovedOnly = false) {
+  return useQuery({
+    queryKey: ['alternates', unitId, layer, styleFilter, releaseApprovedOnly],
+    queryFn: () =>
+      getJson<Rendering[]>(
+        `/units/${unitId}/alternates?${new URLSearchParams({
+          ...(layer ? { layer } : {}),
+          ...(styleFilter ? { style_filter: styleFilter } : {}),
+          release_approved_only: String(releaseApprovedOnly),
+        }).toString()}`,
+      ),
+    enabled: Boolean(unitId),
+  });
+}
+
+export function useRenderingComparison(unitId: string | null, leftId: string | null, rightId: string | null) {
+  return useQuery({
+    queryKey: ['rendering-compare', unitId, leftId, rightId],
+    queryFn: () =>
+      getJson<RenderingComparison>(
+        `/units/${unitId}/renderings/compare?${new URLSearchParams({ left_id: leftId ?? '', right_id: rightId ?? '' }).toString()}`,
+      ),
+    enabled: Boolean(unitId && leftId && rightId),
+  });
+}
+
+function invalidateUnitRenderings(queryClient: ReturnType<typeof useQueryClient>, unitId: string | null) {
+  if (!unitId) {
+    return;
+  }
+  queryClient.invalidateQueries({ queryKey: ['unit', unitId] });
+  queryClient.invalidateQueries({ queryKey: ['alternates', unitId] });
+  queryClient.invalidateQueries({ queryKey: ['rendering-compare', unitId] });
+}
+
+export function useAddAlternate(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: Record<string, unknown>) => postJson<Rendering>(`/units/${unitId}/alternates`, payload),
+    onSuccess: () => invalidateUnitRenderings(queryClient, unitId),
+  });
+}
+
+export function useAlternateLifecycleAction(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ renderingId, action, payload }: { renderingId: string; action: 'accept' | 'reject' | 'deprecate' | 'promote'; payload?: Record<string, unknown> }) =>
+      postJson<Rendering>(`/alternates/${renderingId}/${action}`, payload ?? {}),
+    onSuccess: () => invalidateUnitRenderings(queryClient, unitId),
+  });
+}
+
+export function useDemoteRendering(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (renderingId: string) => postJson<Rendering>(`/renderings/${renderingId}/demote`, {}),
+    onSuccess: () => invalidateUnitRenderings(queryClient, unitId),
+  });
+}
+
+export function useUpdateRendering(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ renderingId, payload }: { renderingId: string; payload: Record<string, unknown> }) =>
+      patchJson<Rendering>(`/renderings/${renderingId}`, payload),
+    onSuccess: () => invalidateUnitRenderings(queryClient, unitId),
   });
 }
 

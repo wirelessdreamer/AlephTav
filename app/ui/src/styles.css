@@ -264,6 +264,88 @@ select {
   gap: 0.35rem;
 }
 
+.compare-grid .compare-card:nth-child(4),
+.compare-grid .compare-card:nth-child(5) {
+  grid-column: span 3;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  background: rgba(15, 23, 42, 0.95);
+  color: inherit;
+  border-radius: 12px;
+  padding: 0.7rem 0.8rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.checkbox-field {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.checkbox-field input {
+  width: auto;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  border-radius: 999px;
+  background: rgba(30, 41, 59, 0.95);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.horizontal-between {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.link-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #7dd3fc;
+  cursor: pointer;
+}
+
+.search-result-card {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.result-snippet {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 1024px) {
+  .compare-grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-grid .compare-card:nth-child(4),
+  .compare-grid .compare-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
 .compact-field input,
 .compact-field select {
   border-radius: 10px;

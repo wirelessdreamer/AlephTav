@@ -5,7 +5,18 @@ import { BottomDrawer } from '../components/BottomDrawer';
 import { EnglishPane } from '../components/EnglishPane';
 import { HebrewPane } from '../components/HebrewPane';
 import { InspectorRail } from '../components/InspectorRail';
-import { useCurrentPsalm, useOpenConcerns, usePinnedLexicalCard, useProject, usePsalms, useSetPinnedLexicalCard, useTokenCard, useUnit } from '../hooks/useWorkbench';
+import {
+  useAlternateLifecycleAction,
+  useCurrentPsalm,
+  useDemoteRendering,
+  useOpenConcerns,
+  usePinnedLexicalCard,
+  useProject,
+  usePsalms,
+  useSetPinnedLexicalCard,
+  useTokenCard,
+  useUnit,
+} from '../hooks/useWorkbench';
 import type { Alignment, Layer, Psalm, Rendering } from '../types';
 
 export function WorkbenchPage() {
@@ -14,6 +25,8 @@ export function WorkbenchPage() {
   const [activeLayer, setActiveLayer] = useState<Layer>('literal');
   const [granularity, setGranularity] = useState<'colon' | 'verse'>('colon');
   const [hoveredTokenId, setHoveredTokenId] = useState<string | null>(null);
+  const [compareLeftId, setCompareLeftId] = useState<string | null>(null);
+  const [compareRightId, setCompareRightId] = useState<string | null>(null);
 
   const { data: project } = useProject();
   const { data: psalms } = usePsalms();
@@ -21,6 +34,8 @@ export function WorkbenchPage() {
   const { data: concerns } = useOpenConcerns();
   const { data: pinnedLexicalCard } = usePinnedLexicalCard();
   const setPinnedLexicalCard = useSetPinnedLexicalCard();
+  const alternateAction = useAlternateLifecycleAction(selectedUnitId);
+  const demoteRendering = useDemoteRendering(selectedUnitId);
 
   const pinnedTokenId = pinnedLexicalCard?.token_id ?? null;
   const hoveredToken = useTokenCard(!pinnedTokenId ? hoveredTokenId : null);
@@ -77,6 +92,22 @@ export function WorkbenchPage() {
   const handlePinToken = (nextTokenId: string) => {
     const tokenIdToPersist = pinnedTokenId === nextTokenId ? null : nextTokenId;
     setPinnedLexicalCard.mutate(tokenIdToPersist);
+  };
+
+  const handlePromoteAlternate = (renderingId: string) => {
+    alternateAction.mutate({ renderingId, action: 'promote', payload: { reviewer: 'ui', reviewer_role: 'release reviewer' } });
+  };
+
+  const handleAcceptAlternate = (renderingId: string) => {
+    alternateAction.mutate({ renderingId, action: 'accept', payload: { created_by: 'ui' } });
+  };
+
+  const handleRejectAlternate = (renderingId: string) => {
+    alternateAction.mutate({ renderingId, action: 'reject', payload: { created_by: 'ui' } });
+  };
+
+  const handleDeprecateAlternate = (renderingId: string) => {
+    alternateAction.mutate({ renderingId, action: 'deprecate', payload: { created_by: 'ui' } });
   };
 
   return (
@@ -137,6 +168,13 @@ export function WorkbenchPage() {
             activeLayer={activeLayer}
             highlightedRenderingIds={linkedRenderingIds}
             onSelectLayer={setActiveLayer}
+            onCompareLeft={setCompareLeftId}
+            onCompareRight={setCompareRightId}
+            onPromoteAlternate={handlePromoteAlternate}
+            onDemoteCanonical={(renderingId) => demoteRendering.mutate(renderingId)}
+            onAcceptAlternate={handleAcceptAlternate}
+            onRejectAlternate={handleRejectAlternate}
+            onDeprecateAlternate={handleDeprecateAlternate}
           />
         </div>
         <InspectorRail tokenCard={tokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={() => setPinnedLexicalCard.mutate(null)} />
@@ -146,8 +184,12 @@ export function WorkbenchPage() {
         concerns={concerns}
         tokenCard={tokenCard}
         concordanceSeed={tokenCard?.lemma ?? undefined}
-        activeLayer={activeLayer}
         onNavigateToUnit={handleNavigateToUnit}
+        activeLayer={activeLayer}
+        compareLeftId={compareLeftId}
+        compareRightId={compareRightId}
+        onCompareLeftChange={setCompareLeftId}
+        onCompareRightChange={setCompareRightId}
       />
     </main>
   );

@@ -48,6 +48,10 @@
     "drift_flags": { "type": "array", "items": { "type": "string" } },
     "metrics": { "type": "object" },
     "rationale": { "type": "string" },
+    "style_goal": { "type": ["string", "null"] },
+    "metric_profile": { "type": ["string", "null"] },
+    "issue_links": { "type": "array", "items": { "type": "string" } },
+    "pr_links": { "type": "array", "items": { "type": "string" } },
     "provenance": {
       "type": "object",
       "required": ["source_ids", "generator"],
