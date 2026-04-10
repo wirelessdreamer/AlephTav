@@ -32,7 +32,7 @@ def project_template() -> dict[str, Any]:
     return {
         "project_id": "proj.main",
         "title": "Psalms Copyleft Workbench",
-        "output_text_license": "TBD per release",
+        "output_text_license": "CC BY-SA 4.0",
         "code_license": "MIT",
         "model_backend": "local-only",
         "default_model_profile": "demo-local",

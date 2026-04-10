@@ -29,7 +29,7 @@
   ],
   "audit_records": [
     {
-      "after_hash": "bba88ea445cadad2af5b23d8d476141e68116281382124fe3a45f674047fb267",
+      "after_hash": "83fedef2e8b5a905237b1b14a5cef7e67d94fd5e28e32be9f58c747f35ea23b5",
       "audit_id": "aud.ps019.v001.a.0001",
       "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
       "change_type": "create",
@@ -192,7 +192,35 @@
       "unit_id": "ps019.v001.a"
     }
   ],
-  "review_decisions": [],
+  "review_decisions": [
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps019.v001.a.0001",
+      "notes": "Literal line preserves the clause faithfully.",
+      "reviewer": "seed-reviewer-1",
+      "reviewer_role": "Hebrew reviewer",
+      "target_id": "rnd.ps019.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:10:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps019.v001.a.0002",
+      "notes": "Grouped span coverage is complete.",
+      "reviewer": "seed-reviewer-2",
+      "reviewer_role": "alignment reviewer",
+      "target_id": "rnd.ps019.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:11:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps019.v001.a.0003",
+      "notes": "Unit cleared for release bundle.",
+      "reviewer": "release-seed",
+      "reviewer_role": "release reviewer",
+      "target_id": "rnd.ps019.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:12:00Z"
+    }
+  ],
   "segmentation_type": "colon",
   "source_hebrew": "הַשָּׁמַיִם מְסַפְּרִים",
   "source_transliteration": "ha-shamayim mesapperim",

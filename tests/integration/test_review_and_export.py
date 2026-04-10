@@ -47,8 +47,13 @@ def test_promoting_alternate_preserves_id_and_rehomes_prior_canonical() -> None:
 def test_release_export_generates_bundle() -> None:
     destination = export_service.export_release("v0.1.0")
     assert (destination / "text.json").exists()
+    assert (destination / "text.md").exists()
+    assert (destination / "text.txt").exists()
+    assert (destination / "text.html").exists()
     assert (destination / "AUDIT_REPORT.json").exists()
     assert (destination / "OPEN_CONCERNS.md").exists()
+    assert (destination / "provenance_manifest.json").exists()
+    assert (destination / "bundle_manifest.json").exists()
 
 
 def test_high_drift_lyric_cannot_be_promoted_to_canonical() -> None:
@@ -93,3 +98,11 @@ def test_export_blocks_canonical_high_severity_drift() -> None:
 
     with pytest.raises(PublicationConstraintError):
         export_service.export_release("v0.1.0")
+
+
+def test_release_export_is_reproducible_for_same_content() -> None:
+    first = export_service.export_release("v0.1.0")
+    first_report = (first / "release_manifest.json").read_text(encoding="utf-8")
+    second = export_service.export_release("v0.1.0")
+    second_report = (second / "release_manifest.json").read_text(encoding="utf-8")
+    assert first_report == second_report

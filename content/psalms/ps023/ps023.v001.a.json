@@ -144,7 +144,35 @@
       "unit_id": "ps023.v001.a"
     }
   ],
-  "review_decisions": [],
+  "review_decisions": [
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps023.v001.a.0001",
+      "notes": "Canonical line is faithful to the source naming policy.",
+      "reviewer": "seed-reviewer-1",
+      "reviewer_role": "Hebrew reviewer",
+      "target_id": "rnd.ps023.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:20:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps023.v001.a.0002",
+      "notes": "Predicate sentence alignment is complete.",
+      "reviewer": "seed-reviewer-2",
+      "reviewer_role": "alignment reviewer",
+      "target_id": "rnd.ps023.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:21:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps023.v001.a.0003",
+      "notes": "Unit cleared for release bundle.",
+      "reviewer": "release-seed",
+      "reviewer_role": "release reviewer",
+      "target_id": "rnd.ps023.v001.a.literal.can.0001",
+      "timestamp": "2026-04-09T00:22:00Z"
+    }
+  ],
   "segmentation_type": "colon",
   "source_hebrew": "יְהוָה רֹעִי",
   "source_transliteration": "yhwh ro'i",

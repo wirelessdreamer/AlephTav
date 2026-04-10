@@ -2,14 +2,29 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ReleaseReport",
   "type": "object",
-  "required": ["release_id", "generated_at", "source_manifests", "render_counts", "unresolved_warnings", "signoff_summary"],
+  "required": [
+    "release_id",
+    "generated_at",
+    "previous_release_id",
+    "source_manifests",
+    "render_counts",
+    "unresolved_warnings",
+    "signoff_summary",
+    "change_sets",
+    "inventory",
+    "contributor_credits"
+  ],
   "additionalProperties": false,
   "properties": {
     "release_id": { "type": "string" },
     "generated_at": { "type": "string" },
+    "previous_release_id": { "type": ["string", "null"] },
     "source_manifests": { "type": "array", "items": { "$ref": "source_manifest.schema.json" } },
     "render_counts": { "type": "object" },
     "unresolved_warnings": { "type": "object" },
-    "signoff_summary": { "type": "object" }
+    "signoff_summary": { "type": "object" },
+    "change_sets": { "type": "object" },
+    "inventory": { "type": "object" },
+    "contributor_credits": { "type": "array", "items": { "type": "object" } }
   }
 }

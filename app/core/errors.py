@@ -24,3 +24,7 @@ class PublicationConstraintError(ContentError):
 
 class GenerationError(ContentError):
     """Raised when local-model generation or orchestration fails."""
+
+
+class ReleaseValidationError(ContentError):
+    """Raised when release validation fails required policy gates."""
