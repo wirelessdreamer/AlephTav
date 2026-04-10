@@ -7,6 +7,7 @@
     "dev": "vite --config app/ui/vite.config.ts",
     "build": "tsc -p app/ui/tsconfig.json && vite build --config app/ui/vite.config.ts",
     "preview": "vite preview --config app/ui/vite.config.ts",
+    "capture:screenshots": "playwright test tests/e2e/screenshots.spec.ts",
     "lint": "ruff check . --select F",
     "bootstrap:test-repo": "sh -c 'PY=python; [ -x .venv/bin/python ] && PY=.venv/bin/python; \"$PY\" scripts/bootstrap_fixture_repo.py'",
     "test:python": "sh -c 'PY=python; [ -x .venv/bin/python ] && PY=.venv/bin/python; \"$PY\" -m pytest tests/unit tests/integration'",

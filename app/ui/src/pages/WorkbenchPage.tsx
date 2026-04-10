@@ -32,11 +32,16 @@ export function WorkbenchPage() {
   const [compareLeftId, setCompareLeftId] = useState<string | null>(null);
   const [compareRightId, setCompareRightId] = useState<string | null>(null);
 
-  const { data: project } = useProject();
-  const { data: psalms } = usePsalms();
-  const { data: unit } = useUnit(selectedUnitId);
-  const { data: concerns } = useOpenConcerns();
-  const { data: pinnedLexicalCard } = usePinnedLexicalCard();
+  const projectQuery = useProject();
+  const psalmsQuery = usePsalms();
+  const unitQuery = useUnit(selectedUnitId);
+  const concernsQuery = useOpenConcerns();
+  const pinnedLexicalCardQuery = usePinnedLexicalCard();
+  const { data: project } = projectQuery;
+  const { data: psalms } = psalmsQuery;
+  const { data: unit } = unitQuery;
+  const { data: concerns } = concernsQuery;
+  const { data: pinnedLexicalCard } = pinnedLexicalCardQuery;
   const setPinnedLexicalCard = useSetPinnedLexicalCard();
   const alternateAction = useAlternateLifecycleAction(selectedUnitId);
   const demoteRendering = useDemoteRendering(selectedUnitId);
@@ -53,6 +58,30 @@ export function WorkbenchPage() {
   const tokenId = displayedTokenCard?.token_id ?? tokenCard?.token_id ?? hoveredTokenId;
 
   const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
+  const bootstrapError = projectQuery.error ?? psalmsQuery.error;
+  const unitError = unitQuery.error;
+
+  if (bootstrapError) {
+    return (
+      <main className="workbench-shell workbench-shell--empty">
+        <section className="empty-state-card">
+          <p className="eyebrow">Workbench Unavailable</p>
+          <h1>Start the local API before opening the workbench.</h1>
+          <p className="subtle">
+            The workbench expects the FastAPI backend on <code>127.0.0.1:8000</code>. GitHub Pages can show the welcome page, but the live editor remains local-only.
+          </p>
+          <pre>
+            <code>{['source .venv/bin/activate', 'python scripts/bootstrap_fixture_repo.py', 'uvicorn app.api.main:app --reload'].join('\n')}</code>
+          </pre>
+          <div className="hero-actions">
+            <a className="hero-link hero-link-primary" href="#/">
+              Back to welcome page
+            </a>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
 
@@ -266,6 +295,7 @@ export function WorkbenchPage() {
         <span className="status-pill">Human review required for canonical promotion</span>
         <span className="status-pill">Divine name policy: {project?.divine_name_policy}</span>
         <span className="status-pill warning">Warnings: {(concerns?.open_drift_flags.length ?? 0) + (concerns?.uncovered_tokens.length ?? 0)}</span>
+        {unitError ? <span className="status-pill warning">Unit load failed: {(unitError as Error).message}</span> : null}
       </section>
       <section className="workspace-grid">
         <div className="scroll-panel" ref={hebrewRef} onScroll={() => syncScroll('hebrew')}>

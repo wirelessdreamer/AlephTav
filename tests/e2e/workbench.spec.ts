@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('hovering and pinning a token updates the inspector', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#/workbench');
 
   const firstToken = page.getByTitle(/ps001\.v001\.t001/);
   await firstToken.hover();
@@ -15,7 +15,7 @@ test('hovering and pinning a token updates the inspector', async ({ page }) => {
 });
 
 test('pinned inspector stays fixed while hovering another token', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#/workbench');
 
   const firstToken = page.getByTitle(/ps001\.v001\.t001/);
   const secondToken = page.getByTitle(/ps001\.v001\.t002/);
@@ -29,7 +29,7 @@ test('pinned inspector stays fixed while hovering another token', async ({ page 
 });
 
 test('workflow actions cover alignment creation, alternate promotion, and release export', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#/workbench');
   await page.getByRole('button', { name: 'workflow' }).click();
   const reviewPanel = page.locator('article').filter({ has: page.getByRole('heading', { name: 'Review actions' }) });
 
@@ -65,7 +65,7 @@ test('workflow actions cover alignment creation, alternate promotion, and releas
 });
 
 test('hovering an English span highlights linked Hebrew tokens', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#/workbench');
 
   const englishSpan = page.getByTitle(/spn\.ps001\.v001\.a\.literal\.0001/);
   const hebrewToken = page.getByTitle(/ps001\.v001\.t001/);
@@ -75,9 +75,17 @@ test('hovering an English span highlights linked Hebrew tokens', async ({ page }
 });
 
 test('source visibility and unresolved warning details are surfaced', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#/workbench');
 
   await expect(page.getByText('export blocked', { exact: true })).toBeVisible();
   await expect(page.getByText('Witness text present and version-pinned separately.')).toBeVisible();
   await expect(page.getByLabel('Unit warning details')).toContainText('parallelism_break');
+});
+
+test('welcome page renders without requiring the api-backed workbench route', async ({ page }) => {
+  await page.goto('/');
+
+  await expect(page.getByRole('heading', { name: 'Psalms Copyleft Workbench' })).toBeVisible();
+  await expect(page.getByText('Quick local demo')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open Workbench' })).toBeVisible();
 });

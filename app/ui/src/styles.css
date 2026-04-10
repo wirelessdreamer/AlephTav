@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   background: #0f172a;
   color: #e2e8f0;
 }
@@ -13,8 +13,201 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+code,
+pre {
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: #f59e0b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-link,
+.tab,
+.link-button {
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.hero-link:hover,
+.tab:hover,
+.link-button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.62);
+  text-decoration: none;
+}
+
+.hero-link-primary {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(249, 115, 22, 0.28));
+}
+
+.welcome-shell {
+  min-height: 100vh;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(56, 189, 248, 0.16), transparent 30%),
+    linear-gradient(180deg, #020617 0%, #0f172a 48%, #111827 100%);
+}
+
+.welcome-hero,
+.welcome-section,
+.command-card,
+.workflow-card,
+.doc-card,
+.empty-state-card {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.28);
+}
+
+.welcome-hero,
+.welcome-section {
+  max-width: 1180px;
+  margin: 0 auto 1rem;
+}
+
+.welcome-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.8fr);
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.command-card h3,
+.workflow-copy h3,
+.doc-card strong,
+.empty-state-card h1 {
+  margin: 0;
+}
+
+.hero-summary {
+  max-width: 58ch;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.hero-card {
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.88));
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1.15rem;
+  color: #cbd5e1;
+}
+
+.welcome-section {
+  padding: 1.4rem;
+}
+
+.welcome-section--compact {
+  margin-bottom: 0;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.section-heading p,
+.workflow-copy p,
+.doc-card span {
+  color: #cbd5e1;
+}
+
+.command-grid,
+.workflow-grid,
+.docs-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.command-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.docs-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.command-card,
+.workflow-card,
+.doc-card {
+  overflow: hidden;
+}
+
+.command-card,
+.doc-card {
+  padding: 1.1rem;
+}
+
+.command-card pre {
+  overflow: auto;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.workflow-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: rgba(2, 6, 23, 0.9);
+}
+
+.workflow-copy {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.doc-card {
+  display: grid;
+  gap: 0.65rem;
+  text-decoration: none;
 }
 
 .workbench-shell {
@@ -24,6 +217,24 @@ select {
   gap: 0.75rem;
   padding: 1rem;
   box-sizing: border-box;
+}
+
+.workbench-shell--empty {
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+
+.empty-state-card {
+  width: min(720px, 100%);
+  padding: 1.5rem;
+}
+
+.empty-state-card pre {
+  overflow: auto;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.72);
 }
 
 .topbar,
@@ -257,6 +468,36 @@ select {
 
 .bottom-drawer {
   padding: 0.75rem 1rem 1rem;
+}
+
+@media (max-width: 1100px) {
+  .welcome-hero,
+  .workflow-grid,
+  .command-grid,
+  .docs-grid,
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .welcome-shell,
+  .workbench-shell {
+    padding: 0.75rem;
+  }
+
+  .topbar {
+    align-items: start;
+  }
+
+  .topbar,
+  .topbar-controls {
+    flex-direction: column;
+  }
+
+  .scroll-panel {
+    max-height: none;
+  }
 }
 
 .drawer-header {
