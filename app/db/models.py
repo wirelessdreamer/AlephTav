@@ -102,6 +102,7 @@ CREATE TABLE IF NOT EXISTS generation_jobs (
     model_profile TEXT NOT NULL,
     prompt_version TEXT NOT NULL,
     seed INTEGER NOT NULL,
-    runtime_metadata TEXT NOT NULL
+    runtime_metadata TEXT NOT NULL,
+    output_payload TEXT
 );
 """

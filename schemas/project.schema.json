@@ -9,6 +9,7 @@
     "code_license",
     "model_backend",
     "default_model_profile",
+    "local_model_profiles",
     "allowed_sources",
     "style_profiles",
     "divine_name_policy",
@@ -24,6 +25,25 @@
     "code_license": { "type": "string" },
     "model_backend": { "type": "string" },
     "default_model_profile": { "type": "string" },
+    "local_model_profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["model_profile_id", "adapter", "base_url", "model"],
+        "additionalProperties": false,
+        "properties": {
+          "model_profile_id": { "type": "string" },
+          "adapter": { "type": "string", "enum": ["llama.cpp", "ollama", "openai-compatible", "vllm"] },
+          "base_url": { "type": "string" },
+          "model": { "type": "string" },
+          "api_key": { "type": "string" },
+          "temperature": { "type": "number" },
+          "max_tokens": { "type": "integer", "minimum": 1 },
+          "timeout_seconds": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
     "allowed_sources": {
       "type": "array",
       "items": { "type": "string" },

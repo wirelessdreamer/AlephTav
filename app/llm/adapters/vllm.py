@@ -1,5 +1,5 @@
-from app.llm.base import BaseAdapter
+from app.llm.adapters.openai_compatible import OpenAICompatibleAdapter
 
 
-class VllmAdapter(BaseAdapter):
+class VllmAdapter(OpenAICompatibleAdapter):
     name = "vllm"

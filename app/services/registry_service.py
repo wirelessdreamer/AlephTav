@@ -36,6 +36,17 @@ def project_template() -> dict[str, Any]:
         "code_license": "MIT",
         "model_backend": "local-only",
         "default_model_profile": "demo-local",
+        "local_model_profiles": [
+            {
+                "model_profile_id": "demo-local",
+                "adapter": "openai-compatible",
+                "base_url": "http://127.0.0.1:11434/v1",
+                "model": "local-demo",
+                "temperature": 0.0,
+                "max_tokens": 384,
+                "timeout_seconds": 30,
+            }
+        ],
         "allowed_sources": ["uxlc", "oshb", "macula", "sefaria"],
         "style_profiles": [
             {

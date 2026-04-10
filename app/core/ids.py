@@ -16,7 +16,7 @@ ID_PATTERNS = {
     "issue_link_id": re.compile(r"^iss\.\d{6}$"),
     "pr_link_id": re.compile(r"^pr\.\d{6}$"),
     "decision_id": re.compile(r"^rev\.ps\d{3}\.v\d{3}\.[a-z]\.\d{4}$"),
-    "job_id": re.compile(r"^job\.\d{8}$"),
+    "job_id": re.compile(r"^job\.[0-9a-f]{12}$"),
 }
 
 

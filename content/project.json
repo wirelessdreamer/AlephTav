@@ -8,6 +8,17 @@
   "code_license": "MIT",
   "default_model_profile": "demo-local",
   "divine_name_policy": "preserve source distinctions",
+  "local_model_profiles": [
+    {
+      "adapter": "openai-compatible",
+      "base_url": "http://127.0.0.1:11434/v1",
+      "max_tokens": 384,
+      "model": "local-demo",
+      "model_profile_id": "demo-local",
+      "temperature": 0.0,
+      "timeout_seconds": 30
+    }
+  ],
   "model_backend": "local-only",
   "output_text_license": "TBD per release",
   "project_id": "proj.main",

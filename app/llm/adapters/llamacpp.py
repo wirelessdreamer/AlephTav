@@ -1,5 +1,5 @@
-from app.llm.base import BaseAdapter
+from app.llm.adapters.openai_compatible import OpenAICompatibleAdapter
 
 
-class LlamaCppAdapter(BaseAdapter):
+class LlamaCppAdapter(OpenAICompatibleAdapter):
     name = "llama.cpp"

@@ -22,6 +22,11 @@ def create_rendering(
     rationale: str,
     created_by: str,
     style_tags: list[str] | None = None,
+    target_spans: list[dict[str, Any]] | None = None,
+    alignment_ids: list[str] | None = None,
+    drift_flags: list[str] | None = None,
+    metrics: dict[str, Any] | None = None,
+    provenance: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     hint = "can" if status == "canonical" else "alt"
@@ -33,12 +38,12 @@ def create_rendering(
         "status": status,
         "text": text,
         "style_tags": style_tags or [layer],
-        "target_spans": [],
-        "alignment_ids": [],
-        "drift_flags": [],
-        "metrics": {},
+        "target_spans": target_spans or [],
+        "alignment_ids": alignment_ids or [],
+        "drift_flags": drift_flags or [],
+        "metrics": metrics or {},
         "rationale": rationale,
-        "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": created_by},
+        "provenance": provenance or {"source_ids": ["uxlc", "oshb", "macula"], "generator": created_by},
     }
     unit.setdefault("renderings", []).append(item)
     key = "canonical_rendering_ids" if status == "canonical" else "alternate_rendering_ids"
