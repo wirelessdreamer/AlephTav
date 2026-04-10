@@ -148,7 +148,6 @@ export function BottomDrawer({
   const workflowAlignments = unit?.alignments.filter((item) => item.layer === activeLayer) ?? [];
   const selectedAlternate = workflowAlternates.find((item) => item.rendering_id === selectedAlternateId) ?? null;
   const selectedAlignment = workflowAlignments.find((item) => item.alignment_id === selectedAlignmentId) ?? null;
-  const selectedAlignment = workflowAlignments.find((item) => item.alignment_id === selectedAlignmentId) ?? null;
 
   useEffect(() => {
     if (!selectedAlternateId && workflowAlternates.length > 0) {

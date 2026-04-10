@@ -1,10 +1,11 @@
 import type { ChangeEvent } from 'react';
 
-import type { Layer, Rendering } from '../types';
+import type { Layer, Project, Rendering } from '../types';
 
 interface EnglishPaneProps {
   renderings: Rendering[];
   activeLayer: Layer;
+  project?: Project;
   highlightedRenderingIds: string[];
   highlightedSpanIds: string[];
   selectedSpanIds: string[];
@@ -26,6 +27,7 @@ const layers: Layer[] = ['gloss', 'literal', 'phrase', 'concept', 'lyric', 'mete
 export function EnglishPane({
   renderings,
   activeLayer,
+  project,
   highlightedRenderingIds,
   highlightedSpanIds,
   selectedSpanIds,
@@ -56,6 +58,8 @@ export function EnglishPane({
     onSelectLayer(event.target.value as Layer);
   };
 
+  const sourcePolicies = new Map(project?.source_manifests.map((source) => [source.source_id, source]) ?? []);
+
   return (
     <section className="pane pane-english">
       <header className="pane-header horizontal-between">
@@ -81,6 +85,19 @@ export function EnglishPane({
             <div className="horizontal-between">
               <strong>{rendering.status}</strong>
               <span className="subtle">{rendering.rendering_id}</span>
+            </div>
+            <div className="tag-row" aria-label={`Sources for ${rendering.rendering_id}`}>
+              {rendering.provenance.source_ids.map((sourceId) => {
+                const source = sourcePolicies.get(sourceId);
+                const restricted = source ? !source.allowed_for_export : false;
+                return (
+                  <span key={sourceId} className={`tag ${restricted ? 'warning-inline' : ''}`}>
+                    {sourceId}
+                    {source ? ` · ${source.allowed_for_export ? 'exportable' : 'export blocked'}` : ''}
+                  </span>
+                );
+              })}
+              <span className="tag subtle-tag">generator: {rendering.provenance.generator}</span>
             </div>
             <div className="rendering-span-row" aria-label={`Rendering spans for ${rendering.rendering_id}`}>
               {rendering.target_spans.length > 0 ? (
@@ -152,7 +169,7 @@ export function EnglishPane({
             {rendering.drift_flags.length > 0 ? (
               <div className="warning-box">
                 {rendering.drift_flags.map((flag) => (
-                  <span key={`${flag.code}-${flag.severity}`}>{flag.code}:{flag.severity}</span>
+                  <span key={`${flag.code}-${flag.severity}`}>{flag.code}:{flag.severity} - {flag.message}</span>
                 ))}
               </div>
             ) : null}

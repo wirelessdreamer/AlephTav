@@ -13,6 +13,7 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
   const unitUncovered = concerns?.uncovered_tokens.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const unitUnalignedSpans = concerns?.unaligned_spans.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const unitLowConfidence = concerns?.low_confidence_alignments.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
+  const unitProvenanceGaps = concerns?.provenance_gaps.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const handleCopyReference = async () => {
     if (!tokenCard || !navigator.clipboard) return;
     await navigator.clipboard.writeText(tokenCard.copy_reference);
@@ -75,6 +76,14 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
             <li key={source.source_id}>
               <strong>{source.source_id}</strong> — {source.version}
               <div className="subtle">{source.license}</div>
+              <div className="tag-row">
+                <span className="tag">{source.allowed_for_display ? 'display allowed' : 'display blocked'}</span>
+                <span className="tag">{source.allowed_for_generation ? 'generation allowed' : 'generation blocked'}</span>
+                <span className={`tag ${source.allowed_for_export ? '' : 'warning-inline'}`}>
+                  {source.allowed_for_export ? 'export allowed' : 'export blocked'}
+                </span>
+              </div>
+              <div className="subtle">{source.notes}</div>
               {!source.allowed_for_export ? <div className="warning-inline">Restricted witness/export blocked</div> : null}
             </li>
           ))}
@@ -84,7 +93,7 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
         <h3>Warnings</h3>
         <p>
           {unitFlags.length} drift flags, {unitUncovered.length} uncovered token(s), {unitUnalignedSpans.length} unaligned span(s),{' '}
-          {unitLowConfidence.length} low-confidence alignment(s)
+          {unitLowConfidence.length} low-confidence alignment(s), {unitProvenanceGaps.length} provenance gap(s)
         </p>
         {unit?.coverage ? (
           <ul className="simple-list compact-list">
@@ -93,6 +102,32 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
             <li>Low confidence: {unit.coverage.low_confidence_alignments.length}</li>
           </ul>
         ) : null}
+        {unitFlags.length || unitUncovered.length || unitUnalignedSpans.length || unitLowConfidence.length || unitProvenanceGaps.length ? (
+          <ul className="simple-list compact-list" aria-label="Unit warning details">
+            {unitFlags.map((item) => (
+              <li key={`${item.rendering_id}-${item.flag.code}`}>
+                {item.flag.severity} drift in {item.rendering_id}: {item.flag.code} - {item.flag.message}
+              </li>
+            ))}
+            {unitUncovered.map((item) => (
+              <li key={item.token_id}>Uncovered token: {item.token_id}</li>
+            ))}
+            {unitUnalignedSpans.map((item) => (
+              <li key={item.span_id}>
+                Unaligned span: {item.span_id}
+                {item.rendering_id ? ` (${item.rendering_id})` : ''}
+              </li>
+            ))}
+            {unitLowConfidence.map((item) => (
+              <li key={item.alignment_id}>Low-confidence alignment: {item.alignment_id}</li>
+            ))}
+            {unitProvenanceGaps.map((item) => (
+              <li key={item.rendering_id}>Missing provenance: {item.rendering_id}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="empty-state">No unresolved warnings in this unit.</p>
+        )}
         {unit?.witnesses?.length ? <div className="warning-inline">Witness text present and version-pinned separately.</div> : null}
       </section>
     </aside>

@@ -14,6 +14,20 @@ test('hovering and pinning a token updates the inspector', async ({ page }) => {
   await expect(page.getByText('Hover or pin a Hebrew token to inspect lexical details.')).toBeVisible();
 });
 
+test('pinned inspector stays fixed while hovering another token', async ({ page }) => {
+  await page.goto('/');
+
+  const firstToken = page.getByTitle(/ps001\.v001\.t001/);
+  const secondToken = page.getByTitle(/ps001\.v001\.t002/);
+
+  await firstToken.click();
+  await expect(page.getByText('fortunate/blessed')).toBeVisible();
+
+  await secondToken.hover();
+  await expect(page.getByText('fortunate/blessed')).toBeVisible();
+  await expect(page.getByText('man/person')).not.toBeVisible();
+});
+
 test('workflow actions cover alignment creation, alternate promotion, and release export', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'workflow' }).click();
@@ -45,4 +59,12 @@ test('hovering an English span highlights linked Hebrew tokens', async ({ page }
 
   await englishSpan.hover();
   await expect(hebrewToken).toHaveClass(/linked/);
+});
+
+test('source visibility and unresolved warning details are surfaced', async ({ page }) => {
+  await page.goto('/');
+
+  await expect(page.getByText('export blocked')).toBeVisible();
+  await expect(page.getByText('Witness text present and version-pinned separately.')).toBeVisible();
+  await expect(page.getByLabel('Unit warning details')).toContainText('parallelism_break');
 });

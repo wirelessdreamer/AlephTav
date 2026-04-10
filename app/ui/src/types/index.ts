@@ -147,6 +147,7 @@ export interface Project {
     name: string;
     version: string;
     license: string;
+    upstream_url?: string;
     allowed_for_generation: boolean;
     allowed_for_display: boolean;
     allowed_for_export: boolean;
@@ -219,8 +220,8 @@ export interface PinnedLexicalCardState {
 export interface OpenConcerns {
   uncovered_tokens: Array<{ unit_id: string; token_id: string }>;
   unaligned_spans: Array<{ unit_id: string; rendering_id: string | null; span_id: string }>;
-  open_drift_flags: Array<{ unit_id: string; rendering_id: string; flag: DriftFlag }>;
-  provenance_gaps: Array<{ unit_id: string; rendering_id: string }>;
+  open_drift_flags: Array<{ unit_id: string; rendering_id: string; status?: string; flag: DriftFlag }>;
+  provenance_gaps: Array<{ unit_id: string; rendering_id: string; status?: string }>;
   low_confidence_alignments: Array<{ unit_id: string; alignment_id: string }>;
 }
 

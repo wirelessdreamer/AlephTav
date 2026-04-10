@@ -86,6 +86,10 @@ select {
   background: rgba(51, 65, 85, 0.85);
 }
 
+.subtle-tag {
+  color: #cbd5e1;
+}
+
 .warning,
 .warning-inline {
   background: rgba(217, 119, 6, 0.18);
@@ -102,6 +106,7 @@ select {
 .scroll-panel {
   min-height: 0;
   overflow: auto;
+  max-height: min(64vh, 720px);
 }
 
 .pane,
@@ -227,6 +232,13 @@ select {
 
 .inspector-card {
   padding: 1rem;
+}
+
+.source-list li {
+  border: 1px solid rgba(51, 65, 85, 0.75);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: rgba(15, 23, 42, 0.55);
 }
 
 .detail-grid {

@@ -135,12 +135,18 @@ export function WorkbenchPage() {
 
   const hebrewRef = useRef<HTMLDivElement>(null);
   const englishRef = useRef<HTMLDivElement>(null);
+  const syncingPaneRef = useRef<'hebrew' | 'english' | null>(null);
 
   const syncScroll = (source: 'hebrew' | 'english') => {
+    if (syncingPaneRef.current === source) {
+      syncingPaneRef.current = null;
+      return;
+    }
     const from = source === 'hebrew' ? hebrewRef.current : englishRef.current;
     const to = source === 'hebrew' ? englishRef.current : hebrewRef.current;
     if (!from || !to) return;
     const percent = from.scrollTop / Math.max(from.scrollHeight - from.clientHeight, 1);
+    syncingPaneRef.current = source === 'hebrew' ? 'english' : 'hebrew';
     to.scrollTop = percent * Math.max(to.scrollHeight - to.clientHeight, 0);
   };
 
@@ -251,6 +257,7 @@ export function WorkbenchPage() {
           <EnglishPane
             renderings={unit?.renderings ?? []}
             activeLayer={activeLayer}
+            project={project}
             highlightedRenderingIds={highlightedRenderingIds}
             highlightedSpanIds={highlightedSpanIds}
             selectedSpanIds={selectedSpanIds}
