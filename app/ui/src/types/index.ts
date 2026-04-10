@@ -90,6 +90,19 @@ export interface Unit {
   coverage?: { uncovered_tokens: string[]; unaligned_renderings: string[] };
 }
 
+export interface Witness {
+  source_id: string;
+  versionTitle: string;
+  language: string;
+  ref: string;
+  source_url: string;
+  text: string;
+  unit_id: string;
+  psalm_id: string;
+  canonical_ref: string;
+  namespace: 'witness';
+}
+
 export interface Psalm {
   psalm_id: string;
   title: string;
@@ -174,4 +187,39 @@ export interface OpenConcerns {
   unaligned_spans: Array<{ unit_id: string; rendering_id: string }>;
   open_drift_flags: Array<{ unit_id: string; rendering_id: string; flag: string }>;
   provenance_gaps: Array<{ unit_id: string; rendering_id: string }>;
+}
+
+export interface SearchResult {
+  kind: string;
+  namespace: 'canonical' | 'witness';
+  scope: string;
+  label: string;
+  snippet: string;
+  unit_id: string;
+  psalm_id: string;
+  ref: string;
+  token_id?: string;
+  rendering_id?: string;
+  audit_id?: string;
+  decision_id?: string;
+  status?: string;
+  layer?: string;
+  source_id?: string;
+  versionTitle?: string;
+  language?: string;
+  source_url?: string;
+  witness_ref?: string;
+}
+
+export interface ConcordanceRow {
+  token_id: string;
+  unit_id: string;
+  ref: string;
+  surface: string;
+  normalized: string;
+  lemma: string | null;
+  strong: string | null;
+  morph_code: string | null;
+  stem: string | null;
+  syntax_role: string | null;
 }

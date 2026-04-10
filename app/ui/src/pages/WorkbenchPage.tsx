@@ -65,6 +65,11 @@ export function WorkbenchPage() {
     setSelectedUnitId(event.target.value);
   };
 
+  const handleNavigateToUnit = (unitId: string, psalmId: string) => {
+    setSelectedPsalmId(psalmId);
+    setSelectedUnitId(unitId);
+  };
+
   const handleGranularityChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGranularity(event.target.value as 'colon' | 'verse');
   };
@@ -136,7 +141,13 @@ export function WorkbenchPage() {
         </div>
         <InspectorRail tokenCard={tokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={() => setPinnedLexicalCard.mutate(null)} />
       </section>
-      <BottomDrawer unit={unit} concerns={concerns} concordanceSeed={tokenCard?.lemma} />
+      <BottomDrawer
+        unit={unit}
+        concerns={concerns}
+        tokenCard={tokenCard}
+        concordanceSeed={tokenCard?.lemma}
+        onNavigateToUnit={handleNavigateToUnit}
+      />
     </main>
   );
 }

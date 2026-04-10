@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
-from app.services import alignment_service, audit_service, registry_service
+from app.services import alignment_service, audit_service, registry_service, search_service
 
 router = APIRouter(tags=["units"])
 
@@ -33,5 +33,13 @@ def patch_unit(unit_id: str, payload: dict) -> dict:
         )
         registry_service.save_unit(unit)
         return unit
+    except Exception as error:  # pragma: no cover
+        raise_as_http(error)
+
+
+@router.get("/units/{unit_id}/witnesses")
+def get_unit_witnesses(unit_id: str) -> list[dict]:
+    try:
+        return search_service.list_witnesses(unit_id)
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

@@ -1,7 +1,17 @@
 import { useMemo } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import type { ConcordanceResult, OpenConcerns, PinnedLexicalCardState, Project, Psalm, TokenCard, Unit } from '../types';
+import type {
+  ConcordanceResult,
+  OpenConcerns,
+  PinnedLexicalCardState,
+  Project,
+  Psalm,
+  SearchResult,
+  TokenCard,
+  Unit,
+  Witness,
+} from '../types';
 
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
@@ -73,6 +83,36 @@ export function useSetPinnedLexicalCard() {
     onSuccess: (data) => {
       queryClient.setQueryData(['pinned-lexical-card'], data);
     },
+  });
+}
+
+export function useAdvancedSearch(query: string, scope = 'all', includeWitnesses = false) {
+  return useQuery({
+    queryKey: ['advanced-search', query, scope, includeWitnesses],
+    queryFn: () =>
+      getJson<SearchResult[]>(
+        `/search/advanced?query=${encodeURIComponent(query)}&scope=${encodeURIComponent(scope)}&include_witnesses=${includeWitnesses}`,
+      ),
+    enabled: query.trim().length > 0,
+  });
+}
+
+export function useSearchPreset(name: string | null, releaseId?: string) {
+  return useQuery({
+    queryKey: ['search-preset', name, releaseId],
+    queryFn: () =>
+      getJson<SearchResult[]>(
+        `/search/presets/${name}${releaseId ? `?release_id=${encodeURIComponent(releaseId)}` : ''}`,
+      ),
+    enabled: Boolean(name) && (name !== 'units_changed_since_release' || Boolean(releaseId?.trim())),
+  });
+}
+
+export function useUnitWitnesses(unitId: string | null) {
+  return useQuery({
+    queryKey: ['unit-witnesses', unitId],
+    queryFn: () => getJson<Witness[]>(`/units/${unitId}/witnesses`),
+    enabled: Boolean(unitId),
   });
 }
 

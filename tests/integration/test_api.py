@@ -86,6 +86,46 @@ def test_missing_enrichments_are_explicit_in_token_card_and_occurrences() -> Non
     assert occurrences.json()["counts"]["wider_corpus"] == 1
 
 
+def test_advanced_search_can_include_witness_namespace_without_mixing_it() -> None:
+    canonical_only = client.get("/search/advanced", params={"query": "Optional", "scope": "all"})
+    assert canonical_only.status_code == 200
+    assert canonical_only.json() == []
+
+    with_witnesses = client.get(
+        "/search/advanced",
+        params={"query": "Optional", "scope": "all", "include_witnesses": "true"},
+    )
+    assert with_witnesses.status_code == 200
+    assert with_witnesses.json()[0]["namespace"] == "witness"
+    assert with_witnesses.json()[0]["unit_id"] == "ps001.v001.a"
+
+
+def test_advanced_search_and_preset_views_return_navigation_targets() -> None:
+    search_response = client.get("/search/advanced", params={"query": "declaring", "scope": "english_renderings"})
+    assert search_response.status_code == 200
+    assert search_response.json()[0]["unit_id"] == "ps019.v001.a"
+    assert search_response.json()[0]["kind"] == "rendering"
+
+    drift_response = client.get("/search/presets/units_with_unresolved_drift")
+    assert drift_response.status_code == 200
+    unit_ids = {item["unit_id"] for item in drift_response.json()}
+    assert "ps001.v001.a" in unit_ids
+    assert "ps023.v001.a" in unit_ids
+
+    meter_response = client.get("/search/presets/alternates_meter_fit")
+    assert meter_response.status_code == 200
+    assert {item["unit_id"] for item in meter_response.json()} == {"ps023.v001.a"}
+
+
+def test_unit_witness_endpoint_returns_isolated_metadata() -> None:
+    response = client.get("/units/ps001.v001.a/witnesses")
+    assert response.status_code == 200
+    witness = response.json()[0]
+    assert witness["namespace"] == "witness"
+    assert witness["canonical_ref"] == "Psalm 1:1a"
+    assert witness["versionTitle"] == "Fixture Witness"
+
+
 def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None:
     monkeypatch.setattr("app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile))
 
