@@ -5,16 +5,28 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
       - run: pip install -e .[dev]
-      - run: python scripts/seed_project.py
-      - run: python scripts/import_psalms.py
-      - run: python scripts/build_indexes.py
-      - run: pytest
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test
+      - run: npm run test:e2e

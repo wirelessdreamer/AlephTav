@@ -163,7 +163,10 @@ def load_project() -> dict[str, Any]:
 
 
 def save_project(project: dict[str, Any]) -> None:
-    write_json(get_settings().project_file, project)
+    settings = get_settings()
+    write_json(settings.project_file, project)
+    for entry in project.get("source_manifests", []):
+        write_json(settings.raw_dir / entry["source_id"] / "manifest.json", entry)
 
 
 def psalm_dir(psalm_id: str) -> Path:

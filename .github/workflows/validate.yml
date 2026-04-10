@@ -5,15 +5,29 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
       - run: pip install -e .[dev]
-      - run: python scripts/seed_project.py
-      - run: python scripts/import_psalms.py
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run bootstrap:test-repo
       - run: python scripts/validate_content.py
+      - run: npm run build

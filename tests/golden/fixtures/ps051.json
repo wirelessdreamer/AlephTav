@@ -1,0 +1,254 @@
+{
+  "psalm_id": "ps051",
+  "title": "Psalm 51",
+  "unit_ids": [
+    "ps051.v001.a"
+  ],
+  "units": [
+    {
+      "alignments": [
+        {
+          "alignment_id": "aln.ps051.v001.a.literal.0001",
+          "alignment_type": "grouped",
+          "confidence": 0.97,
+          "created_by": "seed",
+          "created_via": "fixture",
+          "layer": "literal",
+          "notes": "Imperative petition preserved as a single English span.",
+          "source_token_ids": [
+            "ps051.v001.t001",
+            "ps051.v001.t002"
+          ],
+          "target_span_ids": [
+            "spn.ps051.v001.a.literal.0001"
+          ],
+          "unit_id": "ps051.v001.a"
+        }
+      ],
+      "alternate_rendering_ids": [
+        "rnd.ps051.v001.a.phrase.alt.0001"
+      ],
+      "audit_ids": [
+        "aud.ps051.v001.a.0001"
+      ],
+      "audit_records": [
+        {
+          "after_hash": "1584bce88e02e64956bdcdcbfb7f045765b3f1ffe3a2f3a947d55666103fa644",
+          "audit_id": "aud.ps051.v001.a.0001",
+          "before_hash": "618d26d7ae028e4f73ba3926156fdc9032ff87e65888ded529584a98313c6b1d",
+          "change_type": "create",
+          "checks": [],
+          "created_at": "2026-04-09T00:00:03Z",
+          "created_by": "import-psalms",
+          "entity_id": "ps051.v001.a",
+          "entity_type": "unit",
+          "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
+          "review_signoff": {},
+          "summary": "Seed fixture unit",
+          "triggered_by_issue": null,
+          "triggered_by_pr": null
+        }
+      ],
+      "canonical_rendering_ids": [
+        "rnd.ps051.v001.a.literal.can.0001"
+      ],
+      "concept_ids": [
+        "cpt.ps051.v001.a.0001"
+      ],
+      "current_layer_state": {
+        "latest_layer": "literal",
+        "locked_layers": [
+          "gloss"
+        ]
+      },
+      "issue_links": [],
+      "pr_links": [],
+      "psalm_id": "ps051",
+      "ref": "Psalm 51:1a",
+      "renderings": [
+        {
+          "alignment_ids": [
+            "aln.ps051.v001.a.literal.0001"
+          ],
+          "drift_flags": [],
+          "layer": "literal",
+          "metrics": {
+            "syllables": 8
+          },
+          "provenance": {
+            "generator": "human-seed",
+            "source_ids": [
+              "uxlc",
+              "oshb",
+              "macula"
+            ]
+          },
+          "rationale": "Literal petition line for golden coverage.",
+          "rendering_id": "rnd.ps051.v001.a.literal.can.0001",
+          "status": "canonical",
+          "style_tags": [
+            "literal",
+            "study_literal"
+          ],
+          "target_spans": [
+            {
+              "span_id": "spn.ps051.v001.a.literal.0001",
+              "text": "Be gracious to me, O God",
+              "token_end": 5,
+              "token_start": 0
+            }
+          ],
+          "text": "Be gracious to me, O God",
+          "unit_id": "ps051.v001.a"
+        },
+        {
+          "alignment_ids": [
+            "aln.ps051.v001.a.literal.0001"
+          ],
+          "drift_flags": [],
+          "layer": "phrase",
+          "metrics": {
+            "syllables": 5
+          },
+          "provenance": {
+            "generator": "human-seed",
+            "source_ids": [
+              "uxlc",
+              "oshb",
+              "macula"
+            ]
+          },
+          "rationale": "Reviewable alternate with compact phrasing.",
+          "rendering_id": "rnd.ps051.v001.a.phrase.alt.0001",
+          "status": "proposed",
+          "style_tags": [
+            "phrase",
+            "formal_liturgical"
+          ],
+          "target_spans": [
+            {
+              "span_id": "spn.ps051.v001.a.phrase.0001",
+              "text": "God, show me mercy",
+              "token_end": 3,
+              "token_start": 0
+            }
+          ],
+          "text": "God, show me mercy",
+          "unit_id": "ps051.v001.a"
+        }
+      ],
+      "review_decisions": [],
+      "segmentation_type": "colon",
+      "source_hebrew": "חָנֵּנִי אֱלֹהִים",
+      "source_transliteration": "chaneni elohim",
+      "status": "under_review",
+      "token_ids": [
+        "ps051.v001.t001",
+        "ps051.v001.t002"
+      ],
+      "tokens": [
+        {
+          "corpus_occurrence_refs": [
+            "Psalm 86:3"
+          ],
+          "enrichment_sources": {
+            "macula": {
+              "available_fields": [
+                "syntax_role",
+                "semantic_role",
+                "referent",
+                "word_sense"
+              ],
+              "missing_fields": [],
+              "status": "complete"
+            },
+            "oshb": {
+              "available_fields": [
+                "lemma",
+                "strong",
+                "morph_code",
+                "morph_readable",
+                "part_of_speech",
+                "stem"
+              ],
+              "missing_fields": [],
+              "status": "complete"
+            }
+          },
+          "lemma": "חנן",
+          "missing_enrichments": [],
+          "morph_code": "Vqami+Sp1cs",
+          "morph_readable": "verb qal imperative masculine singular + suffix first common singular",
+          "normalized": "חנני",
+          "occurrence_index": 1,
+          "part_of_speech": "verb",
+          "psalms_occurrence_refs": [
+            "Psalm 86:3"
+          ],
+          "ref": "Psalm 51:1a#1",
+          "referent": "me",
+          "same_psalm_occurrence_refs": [],
+          "semantic_role": "petition",
+          "stem": "qal",
+          "strong": "H2603",
+          "surface": "חָנֵּנִי",
+          "syntax_role": "predicate",
+          "token_id": "ps051.v001.t001",
+          "transliteration": "chaneni",
+          "word_sense": "show favor/be gracious"
+        },
+        {
+          "corpus_occurrence_refs": [
+            "Genesis 1:1"
+          ],
+          "enrichment_sources": {
+            "macula": {
+              "available_fields": [
+                "syntax_role",
+                "semantic_role",
+                "referent",
+                "word_sense"
+              ],
+              "missing_fields": [],
+              "status": "complete"
+            },
+            "oshb": {
+              "available_fields": [
+                "lemma",
+                "strong",
+                "morph_code",
+                "morph_readable",
+                "part_of_speech"
+              ],
+              "missing_fields": [],
+              "status": "complete"
+            }
+          },
+          "lemma": "אלהים",
+          "missing_enrichments": [],
+          "morph_code": "Ncmpa",
+          "morph_readable": "noun masculine plural absolute",
+          "normalized": "אלהים",
+          "occurrence_index": 1,
+          "part_of_speech": "noun",
+          "psalms_occurrence_refs": [
+            "Psalm 50:6"
+          ],
+          "ref": "Psalm 51:1a#2",
+          "referent": "God",
+          "same_psalm_occurrence_refs": [],
+          "semantic_role": "deity",
+          "stem": null,
+          "strong": "H430",
+          "surface": "אֱלֹהִים",
+          "syntax_role": "vocative",
+          "token_id": "ps051.v001.t002",
+          "transliteration": "elohim",
+          "word_sense": "God"
+        }
+      ],
+      "unit_id": "ps051.v001.a",
+      "witnesses": []
+    }
+  ]
+}

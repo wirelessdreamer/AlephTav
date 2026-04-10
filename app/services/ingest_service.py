@@ -372,6 +372,107 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "review_decisions": [],
         "witnesses": [],
     },
+    {
+        "psalm_id": "ps051",
+        "unit_id": "ps051.v001.a",
+        "ref": "Psalm 51:1a",
+        "segmentation_type": "colon",
+        "source_hebrew": "חָנֵּנִי אֱלֹהִים",
+        "source_transliteration": "chaneni elohim",
+        "concept_ids": ["cpt.ps051.v001.a.0001"],
+        "status": "under_review",
+        "current_layer_state": {"locked_layers": ["gloss"], "latest_layer": "literal"},
+        "canonical_rendering_ids": ["rnd.ps051.v001.a.literal.can.0001"],
+        "alternate_rendering_ids": ["rnd.ps051.v001.a.phrase.alt.0001"],
+        "audit_ids": [],
+        "issue_links": [],
+        "pr_links": [],
+        "seed_tokens": [
+            {
+                "surface": "חָנֵּנִי",
+                "transliteration": "chaneni",
+                "lemma": "חנן",
+                "strong": "H2603",
+                "morph_code": "Vqami+Sp1cs",
+                "morph_readable": "verb qal imperative masculine singular + suffix first common singular",
+                "part_of_speech": "verb",
+                "syntax_role": "predicate",
+                "semantic_role": "petition",
+                "referent": "me",
+                "word_sense": "show favor/be gracious",
+                "same_psalm_occurrence_refs": [],
+                "corpus_occurrence_refs": ["Psalm 86:3"],
+                "psalms_occurrence_refs": ["Psalm 86:3"],
+            },
+            {
+                "surface": "אֱלֹהִים",
+                "transliteration": "elohim",
+                "lemma": "אלהים",
+                "strong": "H430",
+                "morph_code": "Ncmpa",
+                "morph_readable": "noun masculine plural absolute",
+                "part_of_speech": "noun",
+                "syntax_role": "vocative",
+                "semantic_role": "deity",
+                "referent": "God",
+                "word_sense": "God",
+                "same_psalm_occurrence_refs": [],
+                "corpus_occurrence_refs": ["Genesis 1:1"],
+                "psalms_occurrence_refs": ["Psalm 50:6"],
+            },
+        ],
+        "alignments": [
+            {
+                "alignment_id": "aln.ps051.v001.a.literal.0001",
+                "unit_id": "ps051.v001.a",
+                "layer": "literal",
+                "source_token_ids": ["ps051.v001.t001", "ps051.v001.t002"],
+                "target_span_ids": ["spn.ps051.v001.a.literal.0001"],
+                "alignment_type": "grouped",
+                "confidence": 0.97,
+                "created_by": "seed",
+                "created_via": "fixture",
+                "notes": "Imperative petition preserved as a single English span.",
+            }
+        ],
+        "renderings": [
+            {
+                "rendering_id": "rnd.ps051.v001.a.literal.can.0001",
+                "unit_id": "ps051.v001.a",
+                "layer": "literal",
+                "status": "canonical",
+                "text": "Be gracious to me, O God",
+                "style_tags": ["literal", "study_literal"],
+                "target_spans": [
+                    {"span_id": "spn.ps051.v001.a.literal.0001", "text": "Be gracious to me, O God", "token_start": 0, "token_end": 5}
+                ],
+                "alignment_ids": ["aln.ps051.v001.a.literal.0001"],
+                "drift_flags": [],
+                "metrics": {"syllables": 8},
+                "rationale": "Literal petition line for golden coverage.",
+                "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": "human-seed"},
+            },
+            {
+                "rendering_id": "rnd.ps051.v001.a.phrase.alt.0001",
+                "unit_id": "ps051.v001.a",
+                "layer": "phrase",
+                "status": "proposed",
+                "text": "God, show me mercy",
+                "style_tags": ["phrase", "formal_liturgical"],
+                "target_spans": [
+                    {"span_id": "spn.ps051.v001.a.phrase.0001", "text": "God, show me mercy", "token_start": 0, "token_end": 3}
+                ],
+                "alignment_ids": ["aln.ps051.v001.a.literal.0001"],
+                "drift_flags": [],
+                "metrics": {"syllables": 5},
+                "rationale": "Reviewable alternate with compact phrasing.",
+                "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": "human-seed"},
+            },
+        ],
+        "audit_records": [],
+        "review_decisions": [],
+        "witnesses": [],
+    },
 ]
 
 
@@ -493,6 +594,7 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
         seeded = _tokenize_and_enrich(deepcopy(unit))
         initial_hash = registry_service.file_hash({"unit_id": seeded["unit_id"], "seed": True})
         final_hash = registry_service.file_hash(seeded)
+        fixture_timestamp = f"2026-04-09T00:00:{len(imported):02d}Z"
         audit_service.create_audit_record(
             seeded,
             before_hash=initial_hash,
@@ -501,6 +603,7 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
             rationale="Bootstrap milestone fixtures with OSHB and MACULA enrichment",
             created_by="import-psalms",
             change_type="create",
+            created_at=fixture_timestamp,
         )
         registry_service.save_unit(seeded)
         psalm_groups.setdefault(seeded["psalm_id"], []).append(seeded)

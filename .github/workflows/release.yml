@@ -8,17 +8,23 @@ on:
         required: true
         default: v0.1.0
 
+permissions:
+  contents: read
+
 jobs:
   release:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -e .[dev]
-      - run: python scripts/seed_project.py
-      - run: python scripts/import_psalms.py
-      - run: python scripts/build_indexes.py
+      - run: python scripts/bootstrap_fixture_repo.py
       - run: python scripts/generate_reports.py --release-id "${{ github.event.inputs.release_id }}"
       - run: python -m app.cli export-release "${{ github.event.inputs.release_id }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.event.inputs.release_id }}
+          path: reports/release/${{ github.event.inputs.release_id }}/bundle

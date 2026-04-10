@@ -33,6 +33,26 @@ async function putJson<T>(url: string, payload: unknown): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+async function postJson<T>(url: string, payload: unknown): Promise<T> {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  return response.json() as Promise<T>;
+}
+
+async function deleteJson<T>(url: string): Promise<T> {
+  const response = await fetch(url, { method: 'DELETE' });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  return response.json() as Promise<T>;
+}
+
 export function useProject() {
   return useQuery({ queryKey: ['project'], queryFn: () => getJson<Project>('/project') });
 }
@@ -83,6 +103,76 @@ export function useSetPinnedLexicalCard() {
     onSuccess: (data) => {
       queryClient.setQueryData(['pinned-lexical-card'], data);
     },
+  });
+}
+
+export function useCreateAlignment(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: unknown) => postJson('/alignments', payload),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
+export function useDeleteAlignment(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (alignmentId: string) => deleteJson(`/alignments/${alignmentId}`),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
+export function useCreateRendering(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: unknown) => postJson(`/units/${unitId}/renderings`, payload),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
+export function useApproveRendering(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ renderingId, payload }: { renderingId: string; payload: unknown }) =>
+      postJson(`/review/${renderingId}/approve`, payload),
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ['unit', unitId] });
+    },
+  });
+}
+
+export function usePromoteRendering(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ renderingId, payload }: { renderingId: string; payload: unknown }) =>
+      postJson(`/renderings/${renderingId}/promote`, payload),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
+export function useExportRelease() {
+  return useMutation({
+    mutationFn: (payload: unknown) => postJson<{ path: string }>('/export/release', payload),
   });
 }
 

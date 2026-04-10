@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import unicodedata
 from datetime import datetime, timezone
 from typing import Any
 
@@ -160,6 +161,8 @@ def token_occurrences(token_id: str) -> dict[str, Any]:
 def lexical_card(token_id: str) -> dict[str, Any]:
     token = get_token(token_id)
     groups = _occurrence_groups(token)
+    display_ref = token["ref"].split("#", maxsplit=1)[0]
+    display_surface = unicodedata.normalize("NFC", token["surface"])
     lemma_entry = _lexicon_entry(token["lemma"], "lemma", "lemma") if token.get("lemma") else {"lemma": None, "match_count": 0, "matches": []}
     strong_entry = _lexicon_entry(token["strong"], "strong", "strong") if token.get("strong") else {"strong": None, "match_count": 0, "matches": []}
     return {
@@ -167,7 +170,7 @@ def lexical_card(token_id: str) -> dict[str, Any]:
         **groups,
         "gloss_list": _gloss_list(token),
         "nearby_usage_examples": groups["same_psalms"][:3] or groups["wider_corpus"][:3],
-        "copy_reference": f"{token['ref']} • {token['surface']} • {token['token_id']}",
+        "copy_reference": f"{display_ref} • {display_surface} • {token['token_id']}",
         "concordance_entry": {
             "lemma": {
                 "value": token.get("lemma"),

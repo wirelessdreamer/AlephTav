@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
-import { useAdvancedSearch, useConcordance, useSearchPreset, useUnitWitnesses } from '../hooks/useWorkbench';
-import type { OpenConcerns, TokenCard, Unit } from '../types';
+import {
+  useAdvancedSearch,
+  useApproveRendering,
+  useConcordance,
+  useCreateAlignment,
+  useCreateRendering,
+  useDeleteAlignment,
+  useExportRelease,
+  usePromoteRendering,
+  useSearchPreset,
+  useUnitWitnesses,
+} from '../hooks/useWorkbench';
+import type { Layer, OpenConcerns, TokenCard, Unit } from '../types';
 
-type DrawerTab = 'concordance' | 'search' | 'witnesses' | 'audit' | 'compare';
+type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
 type SearchScope =
   | 'all'
   | 'hebrew_surface'
@@ -22,10 +33,11 @@ interface BottomDrawerProps {
   concerns?: OpenConcerns;
   tokenCard?: TokenCard;
   concordanceSeed?: string;
+  activeLayer: Layer;
   onNavigateToUnit: (unitId: string, psalmId: string) => void;
 }
 
-export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, onNavigateToUnit }: BottomDrawerProps) {
+export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, activeLayer, onNavigateToUnit }: BottomDrawerProps) {
   const [tab, setTab] = useState<DrawerTab>('concordance');
   const [concordanceField, setConcordanceField] = useState('lemma');
   const [concordanceQuery, setConcordanceQuery] = useState(concordanceSeed ?? '');
@@ -34,11 +46,22 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, onNav
   const [includeWitnesses, setIncludeWitnesses] = useState(false);
   const [presetName, setPresetName] = useState<PresetName>(null);
   const [releaseId, setReleaseId] = useState('');
+  const [alignmentSpanText, setAlignmentSpanText] = useState('');
+  const [alternateLayer, setAlternateLayer] = useState<Layer>('lyric');
+  const [alternateText, setAlternateText] = useState('');
+  const [selectedAlternateId, setSelectedAlternateId] = useState('');
+  const [workflowMessage, setWorkflowMessage] = useState('');
 
   const concordance = useConcordance(concordanceQuery, concordanceField);
   const advancedSearch = useAdvancedSearch(searchQuery, searchScope, includeWitnesses);
   const preset = useSearchPreset(presetName, presetName === 'units_changed_since_release' ? releaseId : undefined);
   const witnesses = useUnitWitnesses(unit?.unit_id ?? null);
+  const createAlignment = useCreateAlignment(unit?.unit_id ?? null);
+  const deleteAlignment = useDeleteAlignment(unit?.unit_id ?? null);
+  const createRendering = useCreateRendering(unit?.unit_id ?? null);
+  const approveRendering = useApproveRendering(unit?.unit_id ?? null);
+  const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
+  const exportRelease = useExportRelease();
 
   useEffect(() => {
     if (!concordanceSeed) {
@@ -61,11 +84,102 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, onNav
     }
   };
 
+  const workflowAlternates = unit?.renderings.filter((item) => item.status !== 'canonical') ?? [];
+  const workflowAlignments = unit?.alignments.filter((item) => item.layer === activeLayer) ?? [];
+
+  useEffect(() => {
+    if (!selectedAlternateId && workflowAlternates.length > 0) {
+      setSelectedAlternateId(workflowAlternates[0].rendering_id);
+    }
+  }, [selectedAlternateId, workflowAlternates]);
+
+  const handleCreateAlignment = async () => {
+    if (!unit) return;
+    const spanText = alignmentSpanText.trim() || `Linked ${activeLayer} span`;
+    const payload = {
+      unit_id: unit.unit_id,
+      layer: activeLayer,
+      source_token_ids: unit.token_ids,
+      target_span_ids: [`spn.${unit.unit_id}.${activeLayer}.${workflowAlignments.length + 1}`],
+      alignment_type: unit.token_ids.length > 1 ? 'grouped' : 'direct',
+      confidence: 0.9,
+      notes: spanText,
+    };
+    try {
+      const response = (await createAlignment.mutateAsync(payload)) as { alignment_id: string };
+      setWorkflowMessage(`Alignment created: ${response.alignment_id}`);
+      setAlignmentSpanText('');
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Alignment creation failed');
+    }
+  };
+
+  const handleDeleteLatestAlignment = async () => {
+    const latest = workflowAlignments[workflowAlignments.length - 1];
+    if (!latest) return;
+    try {
+      await deleteAlignment.mutateAsync(latest.alignment_id);
+      setWorkflowMessage(`Alignment deleted: ${latest.alignment_id}`);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Alignment deletion failed');
+    }
+  };
+
+  const handleAddAlternate = async () => {
+    if (!unit || !alternateText.trim()) return;
+    try {
+      const rendering = (await createRendering.mutateAsync({
+        layer: alternateLayer,
+        text: alternateText.trim(),
+        status: 'proposed',
+        rationale: 'UI workflow alternate',
+        created_by: 'ui-workflow',
+        style_tags: [alternateLayer, 'workflow'],
+      })) as { rendering_id: string };
+      setWorkflowMessage(`Alternate added: ${rendering.rendering_id}`);
+      setAlternateText('');
+      setSelectedAlternateId(rendering.rendering_id);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Alternate creation failed');
+    }
+  };
+
+  const handlePromoteAlternate = async () => {
+    if (!selectedAlternateId) return;
+    try {
+      await approveRendering.mutateAsync({
+        renderingId: selectedAlternateId,
+        payload: { reviewer: 'ui-reviewer-a', reviewer_role: 'alignment reviewer', notes: 'UI approval A' },
+      });
+      await approveRendering.mutateAsync({
+        renderingId: selectedAlternateId,
+        payload: { reviewer: 'ui-reviewer-b', reviewer_role: 'Hebrew reviewer', notes: 'UI approval B' },
+      });
+      const response = (await promoteRendering.mutateAsync({
+        renderingId: selectedAlternateId,
+        payload: { reviewer: 'ui-release', reviewer_role: 'release reviewer' },
+      })) as { rendering_id: string };
+      setWorkflowMessage(`Alternate promoted: ${response.rendering_id}`);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Alternate promotion failed');
+    }
+  };
+
+  const handleExportRelease = async () => {
+    if (!releaseId.trim()) return;
+    try {
+      const response = await exportRelease.mutateAsync({ release_id: releaseId.trim() });
+      setWorkflowMessage(`Release exported: ${response.path}`);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Release export failed');
+    }
+  };
+
   return (
     <section className="bottom-drawer">
       <header className="drawer-header">
         <div className="tab-row">
-          {(['concordance', 'search', 'witnesses', 'audit', 'compare'] as DrawerTab[]).map((item) => (
+          {(['concordance', 'workflow', 'search', 'witnesses', 'audit', 'compare'] as DrawerTab[]).map((item) => (
             <button key={item} type="button" className={tab === item ? 'tab active' : 'tab'} onClick={() => setTab(item)}>
               {item}
             </button>
@@ -143,6 +257,96 @@ export function BottomDrawer({ unit, concerns, tokenCard, concordanceSeed, onNav
                 </>
               ) : null}
             </article>
+          </div>
+        </div>
+      ) : null}
+      {tab === 'workflow' ? (
+        <div className="drawer-panel">
+          <div className="result-grid workflow-grid">
+            <article className="compare-card">
+              <h4>Create alignment</h4>
+              <p className="subtle">Create a quick alignment covering the current unit for the active layer.</p>
+              <label className="compact-field">
+                <span>Alignment notes</span>
+                <input
+                  aria-label="Alignment notes"
+                  value={alignmentSpanText}
+                  onChange={(event) => setAlignmentSpanText(event.target.value)}
+                  placeholder={`Linked ${activeLayer} span`}
+                />
+              </label>
+              <div className="inline-actions">
+                <button type="button" className="tab" onClick={() => void handleCreateAlignment()}>
+                  Create alignment
+                </button>
+                <button type="button" className="tab" onClick={() => void handleDeleteLatestAlignment()} disabled={!workflowAlignments.length}>
+                  Delete latest alignment
+                </button>
+              </div>
+              <p className="subtle">Current {activeLayer} alignments: {workflowAlignments.length}</p>
+            </article>
+            <article className="compare-card">
+              <h4>Add alternate</h4>
+              <label className="compact-field">
+                <span>Alternate layer</span>
+                <select aria-label="Alternate layer" value={alternateLayer} onChange={(event) => setAlternateLayer(event.target.value as Layer)}>
+                  <option value="gloss">gloss</option>
+                  <option value="literal">literal</option>
+                  <option value="phrase">phrase</option>
+                  <option value="concept">concept</option>
+                  <option value="lyric">lyric</option>
+                  <option value="metered_lyric">metered_lyric</option>
+                  <option value="parallelism_lyric">parallelism_lyric</option>
+                </select>
+              </label>
+              <label className="compact-field">
+                <span>Alternate text</span>
+                <input
+                  aria-label="Alternate text"
+                  value={alternateText}
+                  onChange={(event) => setAlternateText(event.target.value)}
+                  placeholder="Enter alternate rendering text"
+                />
+              </label>
+              <button type="button" className="tab" onClick={() => void handleAddAlternate()} disabled={!alternateText.trim()}>
+                Add alternate
+              </button>
+            </article>
+            <article className="compare-card">
+              <h4>Promote alternate</h4>
+              <label className="compact-field">
+                <span>Alternate rendering</span>
+                <select
+                  aria-label="Alternate rendering"
+                  value={selectedAlternateId}
+                  onChange={(event) => setSelectedAlternateId(event.target.value)}
+                  disabled={!workflowAlternates.length}
+                >
+                  {workflowAlternates.map((item) => (
+                    <option key={item.rendering_id} value={item.rendering_id}>
+                      {item.rendering_id}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button type="button" className="tab" onClick={() => void handlePromoteAlternate()} disabled={!selectedAlternateId}>
+                Approve and promote alternate
+              </button>
+            </article>
+            <article className="compare-card">
+              <h4>Export release</h4>
+              <label className="compact-field">
+                <span>Release id</span>
+                <input aria-label="Release id" value={releaseId} onChange={(event) => setReleaseId(event.target.value)} placeholder="v0.1.0-ui" />
+              </label>
+              <button type="button" className="tab" onClick={() => void handleExportRelease()} disabled={!releaseId.trim()}>
+                Export release
+              </button>
+            </article>
+          </div>
+          <div className="warning-box" aria-live="polite">
+            <div>Workflow status</div>
+            <div>{workflowMessage || 'No workflow action run yet.'}</div>
           </div>
         </div>
       ) : null}

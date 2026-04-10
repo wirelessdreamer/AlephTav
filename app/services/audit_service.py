@@ -21,6 +21,7 @@ def create_audit_record(
     triggered_by_pr: str | None = None,
     checks: list[str] | None = None,
     review_signoff: dict[str, Any] | None = None,
+    created_at: str | None = None,
 ) -> dict[str, Any]:
     existing_ids = [record["audit_id"] for record in unit.get("audit_records", [])]
     record = {
@@ -35,7 +36,7 @@ def create_audit_record(
         "triggered_by_issue": triggered_by_issue,
         "triggered_by_pr": triggered_by_pr,
         "created_by": created_by,
-        "created_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": created_at or datetime.now(timezone.utc).isoformat(),
         "checks": checks or [],
         "review_signoff": review_signoff or {},
     }

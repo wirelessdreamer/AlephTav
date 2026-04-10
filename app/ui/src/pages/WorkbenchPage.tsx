@@ -145,7 +145,8 @@ export function WorkbenchPage() {
         unit={unit}
         concerns={concerns}
         tokenCard={tokenCard}
-        concordanceSeed={tokenCard?.lemma}
+        concordanceSeed={tokenCard?.lemma ?? undefined}
+        activeLayer={activeLayer}
         onNavigateToUnit={handleNavigateToUnit}
       />
     </main>

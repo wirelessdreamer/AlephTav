@@ -1,3 +1,5 @@
+import unicodedata
+
 from fastapi.testclient import TestClient
 
 from app.api.main import app
@@ -58,7 +60,8 @@ def test_unit_and_token_endpoints_return_fixture_data() -> None:
     assert token.json()["same_psalms"] == ["Psalm 32:1"]
     assert token.json()["wider_corpus"] == ["Psalm 32:1"]
     assert token.json()["concordance_entry"]["lemma"]["match_count"] >= 1
-    assert token.json()["copy_reference"] == "Psalm 1:1a • אַשְׁרֵי • ps001.v001.t001"
+    expected_copy_reference = unicodedata.normalize("NFC", "Psalm 1:1a • אַשְׁרֵי • ps001.v001.t001")
+    assert unicodedata.normalize("NFC", token.json()["copy_reference"]) == expected_copy_reference
 
 
 def test_concordance_search_returns_local_results() -> None:

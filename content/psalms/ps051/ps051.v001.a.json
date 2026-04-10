@@ -1,39 +1,39 @@
 {
   "alignments": [
     {
-      "alignment_id": "aln.ps023.v001.a.literal.0001",
+      "alignment_id": "aln.ps051.v001.a.literal.0001",
       "alignment_type": "grouped",
-      "confidence": 0.98,
+      "confidence": 0.97,
       "created_by": "seed",
       "created_via": "fixture",
       "layer": "literal",
-      "notes": "Predicate nominal sentence.",
+      "notes": "Imperative petition preserved as a single English span.",
       "source_token_ids": [
-        "ps023.v001.t001",
-        "ps023.v001.t002"
+        "ps051.v001.t001",
+        "ps051.v001.t002"
       ],
       "target_span_ids": [
-        "spn.ps023.v001.a.literal.0001"
+        "spn.ps051.v001.a.literal.0001"
       ],
-      "unit_id": "ps023.v001.a"
+      "unit_id": "ps051.v001.a"
     }
   ],
   "alternate_rendering_ids": [
-    "rnd.ps023.v001.a.lyric.alt.0001"
+    "rnd.ps051.v001.a.phrase.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps023.v001.a.0001"
+    "aud.ps051.v001.a.0001"
   ],
   "audit_records": [
     {
-      "after_hash": "d1388c090cee02e2df57b0be70c79be4c4297003ff827bcb1906e21fb8bf8410",
-      "audit_id": "aud.ps023.v001.a.0001",
-      "before_hash": "e71b4881425b9d95dc2c461150a38092d77c23ffe2fd5f25eea5d14842e0401f",
+      "after_hash": "1584bce88e02e64956bdcdcbfb7f045765b3f1ffe3a2f3a947d55666103fa644",
+      "audit_id": "aud.ps051.v001.a.0001",
+      "before_hash": "618d26d7ae028e4f73ba3926156fdc9032ff87e65888ded529584a98313c6b1d",
       "change_type": "create",
       "checks": [],
-      "created_at": "2026-04-09T00:00:02Z",
+      "created_at": "2026-04-09T00:00:03Z",
       "created_by": "import-psalms",
-      "entity_id": "ps023.v001.a",
+      "entity_id": "ps051.v001.a",
       "entity_type": "unit",
       "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
       "review_signoff": {},
@@ -43,68 +43,29 @@
     }
   ],
   "canonical_rendering_ids": [
-    "rnd.ps023.v001.a.literal.can.0001"
+    "rnd.ps051.v001.a.literal.can.0001"
   ],
   "concept_ids": [
-    "cpt.ps023.v001.a.0001"
+    "cpt.ps051.v001.a.0001"
   ],
   "current_layer_state": {
-    "latest_layer": "lyric",
+    "latest_layer": "literal",
     "locked_layers": [
-      "gloss",
-      "literal"
+      "gloss"
     ]
   },
   "issue_links": [],
   "pr_links": [],
-  "psalm_id": "ps023",
-  "ref": "Psalm 23:1a",
+  "psalm_id": "ps051",
+  "ref": "Psalm 51:1a",
   "renderings": [
     {
       "alignment_ids": [
-        "aln.ps023.v001.a.literal.0001"
+        "aln.ps051.v001.a.literal.0001"
       ],
       "drift_flags": [],
       "layer": "literal",
       "metrics": {
-        "syllables": 6
-      },
-      "provenance": {
-        "generator": "human-seed",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "Literal canonical line.",
-      "rendering_id": "rnd.ps023.v001.a.literal.can.0001",
-      "status": "canonical",
-      "style_tags": [
-        "literal",
-        "study_literal"
-      ],
-      "target_spans": [
-        {
-          "span_id": "spn.ps023.v001.a.literal.0001",
-          "text": "The LORD is my shepherd",
-          "token_end": 4,
-          "token_start": 0
-        }
-      ],
-      "text": "The LORD is my shepherd",
-      "unit_id": "ps023.v001.a"
-    },
-    {
-      "alignment_ids": [
-        "aln.ps023.v001.a.literal.0001"
-      ],
-      "drift_flags": [
-        "editorial_expansion:medium"
-      ],
-      "layer": "lyric",
-      "metrics": {
-        "singability_score": 0.74,
         "syllables": 8
       },
       "provenance": {
@@ -115,38 +76,73 @@
           "macula"
         ]
       },
-      "rationale": "Alternate candidate for common meter development.",
-      "rendering_id": "rnd.ps023.v001.a.lyric.alt.0001",
-      "status": "proposed",
+      "rationale": "Literal petition line for golden coverage.",
+      "rendering_id": "rnd.ps051.v001.a.literal.can.0001",
+      "status": "canonical",
       "style_tags": [
-        "lyric",
-        "metered_common_meter"
+        "literal",
+        "study_literal"
       ],
       "target_spans": [
         {
-          "span_id": "spn.ps023.v001.a.lyric.0001",
-          "text": "The LORD, my shepherd, stays near",
+          "span_id": "spn.ps051.v001.a.literal.0001",
+          "text": "Be gracious to me, O God",
           "token_end": 5,
           "token_start": 0
         }
       ],
-      "text": "The LORD, my shepherd, stays near",
-      "unit_id": "ps023.v001.a"
+      "text": "Be gracious to me, O God",
+      "unit_id": "ps051.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps051.v001.a.literal.0001"
+      ],
+      "drift_flags": [],
+      "layer": "phrase",
+      "metrics": {
+        "syllables": 5
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Reviewable alternate with compact phrasing.",
+      "rendering_id": "rnd.ps051.v001.a.phrase.alt.0001",
+      "status": "proposed",
+      "style_tags": [
+        "phrase",
+        "formal_liturgical"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps051.v001.a.phrase.0001",
+          "text": "God, show me mercy",
+          "token_end": 3,
+          "token_start": 0
+        }
+      ],
+      "text": "God, show me mercy",
+      "unit_id": "ps051.v001.a"
     }
   ],
   "review_decisions": [],
   "segmentation_type": "colon",
-  "source_hebrew": "יְהוָה רֹעִי",
-  "source_transliteration": "yhwh ro'i",
+  "source_hebrew": "חָנֵּנִי אֱלֹהִים",
+  "source_transliteration": "chaneni elohim",
   "status": "under_review",
   "token_ids": [
-    "ps023.v001.t001",
-    "ps023.v001.t002"
+    "ps051.v001.t001",
+    "ps051.v001.t002"
   ],
   "tokens": [
     {
       "corpus_occurrence_refs": [
-        "Genesis 2:4"
+        "Psalm 86:3"
       ],
       "enrichment_sources": {
         "macula": {
@@ -165,37 +161,38 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech"
+            "part_of_speech",
+            "stem"
           ],
           "missing_fields": [],
           "status": "complete"
         }
       },
-      "lemma": "יהוה",
+      "lemma": "חנן",
       "missing_enrichments": [],
-      "morph_code": "Np",
-      "morph_readable": "proper noun divine name",
-      "normalized": "יהוה",
+      "morph_code": "Vqami+Sp1cs",
+      "morph_readable": "verb qal imperative masculine singular + suffix first common singular",
+      "normalized": "חנני",
       "occurrence_index": 1,
-      "part_of_speech": "proper_noun",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
-        "Psalm 27:1"
+        "Psalm 86:3"
       ],
-      "ref": "Psalm 23:1a#1",
-      "referent": "the LORD",
+      "ref": "Psalm 51:1a#1",
+      "referent": "me",
       "same_psalm_occurrence_refs": [],
-      "semantic_role": "deity",
-      "stem": null,
-      "strong": "H3068",
-      "surface": "יְהוָה",
-      "syntax_role": "subject",
-      "token_id": "ps023.v001.t001",
-      "transliteration": "yhwh",
-      "word_sense": "divine name"
+      "semantic_role": "petition",
+      "stem": "qal",
+      "strong": "H2603",
+      "surface": "חָנֵּנִי",
+      "syntax_role": "predicate",
+      "token_id": "ps051.v001.t001",
+      "transliteration": "chaneni",
+      "word_sense": "show favor/be gracious"
     },
     {
       "corpus_occurrence_refs": [
-        "Genesis 48:15"
+        "Genesis 1:1"
       ],
       "enrichment_sources": {
         "macula": {
@@ -220,29 +217,29 @@
           "status": "complete"
         }
       },
-      "lemma": "רעה",
+      "lemma": "אלהים",
       "missing_enrichments": [],
-      "morph_code": "Ncmsg+Sp1cs",
-      "morph_readable": "noun masculine singular construct + suffix first common singular",
-      "normalized": "רעי",
+      "morph_code": "Ncmpa",
+      "morph_readable": "noun masculine plural absolute",
+      "normalized": "אלהים",
       "occurrence_index": 1,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
-        "Psalm 80:1"
+        "Psalm 50:6"
       ],
-      "ref": "Psalm 23:1a#2",
-      "referent": "my shepherd",
+      "ref": "Psalm 51:1a#2",
+      "referent": "God",
       "same_psalm_occurrence_refs": [],
-      "semantic_role": "caregiver",
+      "semantic_role": "deity",
       "stem": null,
-      "strong": "H7462",
-      "surface": "רֹעִי",
-      "syntax_role": "predicate",
-      "token_id": "ps023.v001.t002",
-      "transliteration": "ro'i",
-      "word_sense": "shepherd"
+      "strong": "H430",
+      "surface": "אֱלֹהִים",
+      "syntax_role": "vocative",
+      "token_id": "ps051.v001.t002",
+      "transliteration": "elohim",
+      "word_sense": "God"
     }
   ],
-  "unit_id": "ps023.v001.a",
+  "unit_id": "ps051.v001.a",
   "witnesses": []
 }
