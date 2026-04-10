@@ -5,7 +5,7 @@ from typing import Any
 
 from app.core.config import get_settings
 from app.core.errors import ReleaseValidationError
-from app.services import audit_service, registry_service
+from app.services import audit_service, registry_service, review_service
 from scripts.validate_content import validate_all_content
 
 
@@ -334,12 +334,24 @@ def generate_release_report(release_id: str) -> dict[str, Any]:
     canonical_renderings: list[dict[str, Any]] = []
     accepted_alternates: list[dict[str, Any]] = []
     render_count = 0
+    signoff_details: list[dict[str, Any]] = []
     for unit in registry_service.list_units():
+        review_service.hydrate_unit_review_state(unit)
         for rendering in unit.get("renderings", []):
             render_count += 1
             snapshot = _rendering_snapshot(unit, rendering)
             if rendering["status"] == "canonical":
                 canonical_renderings.append(snapshot)
+                signoff_details.append(
+                    {
+                        "unit_id": unit["unit_id"],
+                        "rendering_id": rendering["rendering_id"],
+                        "status": rendering["review_signoff"]["status"],
+                        "approval_count": rendering["review_signoff"]["approval_count"],
+                        "has_release_signoff": rendering["review_signoff"]["has_release_signoff"],
+                        "publication_ready": rendering["review_signoff"]["publication_ready"],
+                    }
+                )
             if rendering["status"] == "accepted_as_alternate":
                 accepted_alternates.append(snapshot)
 
@@ -365,8 +377,10 @@ def generate_release_report(release_id: str) -> dict[str, Any]:
         },
         "unresolved_warnings": concerns,
         "signoff_summary": {
-            "review_policy": project.get("review_policy", {}),
+            **review_service.review_policy(project),
             "validation": validation,
+            "canonical_renderings": signoff_details,
+            "publication_ready_count": sum(1 for item in signoff_details if item["publication_ready"]),
         },
         "change_sets": {
             "canonical_changes_since_previous_release": canonical_changes,

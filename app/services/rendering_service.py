@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from typing import Any
 
 from app.core.errors import NotFoundError, PublicationConstraintError, ReviewRequiredError, ValidationError
@@ -74,6 +75,9 @@ def list_renderings(
     release_approved_only: bool = False,
 ) -> list[dict[str, Any]]:
     unit = registry_service.load_unit(unit_id)
+    from app.services import review_service
+
+    review_service.hydrate_unit_review_state(unit)
     _sync_rendering_membership(unit)
     renderings = unit.get("renderings", [])
     if alternates_only:
@@ -107,6 +111,8 @@ def create_rendering(
 ) -> dict[str, Any]:
     if status == "canonical":
         raise ReviewRequiredError("Create proposed or alternate renderings first, then promote after review")
+    if status == "accepted_as_alternate":
+        raise ReviewRequiredError("Create proposed or under-review renderings first, then accept after review")
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
@@ -135,9 +141,29 @@ def create_rendering(
         "metric_profile": metric_profile,
         "issue_links": issue_links or [],
         "pr_links": pr_links or [],
+        "review_signoff": {
+            "status": "unreviewed",
+            "approval_count": 0,
+            "alternate_approval_count": 0,
+            "required_approvals": {},
+            "approvers": [],
+            "alternate_approvers": [],
+            "reviewer_roles": [],
+            "release_required_role": "release reviewer",
+            "has_release_signoff": False,
+            "release_signoff": {},
+            "eligible_for_alternate": False,
+            "eligible_for_canonical": False,
+            "publication_ready": False,
+            "latest_decision": None,
+            "updated_at": None,
+        },
     }
     _ensure_publication_constraints(item)
     unit.setdefault("renderings", []).append(item)
+    from app.services import review_service
+
+    review_service.hydrate_unit_review_state(unit)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -172,6 +198,8 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
     rendering["drift_flags"] = analyzed_flags
     rendering["metrics"] = analyzed_metrics
     _ensure_publication_constraints(rendering)
+    if payload.get("status") != "canonical":
+        rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
     if rendering["status"] == "canonical":
         for candidate in unit.get("renderings", []):
             if candidate["rendering_id"] != rendering_id_value and candidate["layer"] == rendering["layer"] and candidate["status"] == "canonical":
@@ -187,6 +215,9 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
         )
         if replacement is None and payload.get("status") != "canonical":
             rendering["status"] = "accepted_as_alternate"
+    from app.services import review_service
+
+    review_service.hydrate_unit_review_state(unit)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -209,8 +240,12 @@ def _approvals_for(unit: dict[str, Any], target_id: str) -> int:
 def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str) -> dict[str, Any]:
     unit_id = _rendering_unit_id(rendering_id_value)
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
-    if _approvals_for(unit, rendering_id_value) < registry_service.load_project()["review_policy"]["canonical_required_approvals"]:
-        raise ReviewRequiredError("Human review is required before promotion to canonical")
+    from app.services import review_service
+
+    reviewer, reviewer_role = review_service.validate_reviewer_identity(reviewer, reviewer_role)
+    policy = review_service.review_policy()
+    if reviewer_role != policy["release_required_role"]:
+        raise ReviewRequiredError(f"Canonical promotion requires {policy['release_required_role']} signoff")
     target = _rendering_lookup(unit, rendering_id_value)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
@@ -223,11 +258,24 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
     )
     target["drift_flags"] = analyzed_flags
     target["metrics"] = analyzed_metrics
+    summary = review_service.summarize_rendering_review(unit, rendering_id_value, target)
+    if not summary["eligible_for_canonical"]:
+        raise ReviewRequiredError("Human review is required before promotion to canonical")
     for rendering in unit.get("renderings", []):
         if rendering["rendering_id"] != target["rendering_id"] and rendering["layer"] == target["layer"] and rendering["status"] == "canonical":
             rendering["status"] = "accepted_as_alternate"
     target["status"] = "canonical"
     _ensure_publication_constraints(target)
+    target.setdefault("review_signoff", {}).update(
+        {
+            "release_signoff": {
+                "reviewer": reviewer,
+                "role": reviewer_role,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+        }
+    )
+    review_service.hydrate_unit_review_state(unit)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -249,6 +297,10 @@ def demote_rendering(rendering_id_value: str, created_by: str = "api") -> dict[s
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     rendering = _rendering_lookup(unit, rendering_id_value)
     rendering["status"] = "accepted_as_alternate"
+    rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
+    from app.services import review_service
+
+    review_service.hydrate_unit_review_state(unit)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -272,9 +324,16 @@ def set_alternate_status(
 ) -> dict[str, Any]:
     if status not in ALTERNATE_STATUSES:
         raise ValidationError(f"invalid alternate status: {status}")
-    rendering = _rendering_lookup(registry_service.load_unit(_rendering_unit_id(rendering_id_value)), rendering_id_value)
+    unit = registry_service.load_unit(_rendering_unit_id(rendering_id_value))
+    rendering = _rendering_lookup(unit, rendering_id_value)
     if rendering["status"] == "canonical":
         raise ValidationError("canonical rendering must be demoted instead of using alternate actions")
+    if status == "accepted_as_alternate":
+        from app.services import review_service
+
+        summary = review_service.summarize_rendering_review(unit, rendering_id_value, rendering)
+        if not summary["eligible_for_alternate"]:
+            raise ReviewRequiredError("A qualified reviewer signoff is required before accepting an alternate")
     return update_rendering(
         rendering_id_value,
         {"status": status, "rationale": rationale or f"set alternate status to {status}"},

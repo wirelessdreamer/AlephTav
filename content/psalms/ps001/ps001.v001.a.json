@@ -41,7 +41,7 @@
   ],
   "audit_records": [
     {
-      "after_hash": "1fe98d1a0fe9cef1c5a1acf458caee2cfa06932eaeb8531964117c57ae0838a5",
+      "after_hash": "9552f052d20dd97edfc31f8bb013d8d315eb18326e53bae8a519750657f9f19b",
       "audit_id": "aud.ps001.v001.a.0001",
       "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
       "change_type": "create",
@@ -95,6 +95,51 @@
       },
       "rationale": "Gloss-level lexical rendering.",
       "rendering_id": "rnd.ps001.v001.a.gloss.can.0001",
+      "review_signoff": {
+        "alternate_approval_count": 1,
+        "alternate_approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          }
+        ],
+        "approval_count": 2,
+        "approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          },
+          {
+            "reviewer": "seed-reviewer-2",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "eligible_for_alternate": true,
+        "eligible_for_canonical": true,
+        "has_release_signoff": true,
+        "latest_decision": null,
+        "publication_ready": true,
+        "release_required_role": "release reviewer",
+        "release_signoff": {
+          "reviewer": "seed-release-reviewer",
+          "role": "release reviewer",
+          "timestamp": "2026-04-09T00:00:00Z"
+        },
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "canonical_signed_off",
+        "updated_at": "2026-04-09T00:00:00Z"
+      },
       "status": "canonical",
       "style_tags": [
         "gloss",
@@ -137,6 +182,51 @@
       },
       "rationale": "Literal English line for review.",
       "rendering_id": "rnd.ps001.v001.a.literal.can.0001",
+      "review_signoff": {
+        "alternate_approval_count": 2,
+        "alternate_approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          }
+        ],
+        "approval_count": 2,
+        "approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          },
+          {
+            "reviewer": "seed-reviewer-2",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "eligible_for_alternate": true,
+        "eligible_for_canonical": true,
+        "has_release_signoff": true,
+        "latest_decision": "approve",
+        "publication_ready": true,
+        "release_required_role": "release reviewer",
+        "release_signoff": {
+          "reviewer": "seed-release-reviewer",
+          "role": "release reviewer",
+          "timestamp": "2026-04-09T00:00:00Z"
+        },
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "canonical_signed_off",
+        "updated_at": "2026-04-09T00:01:00Z"
+      },
       "status": "canonical",
       "style_tags": [
         "literal",
@@ -199,6 +289,47 @@
       },
       "rationale": "Compact singable alternate.",
       "rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 1,
+        "alternate_approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          }
+        ],
+        "approval_count": 2,
+        "approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          },
+          {
+            "reviewer": "seed-reviewer-2",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "eligible_for_alternate": true,
+        "eligible_for_canonical": true,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "approved_for_canonical",
+        "updated_at": "2026-04-09T00:00:00Z"
+      },
       "status": "accepted_as_alternate",
       "style_tags": [
         "lyric",

@@ -4,8 +4,8 @@ import hashlib
 from pathlib import Path
 
 from app.core.config import get_settings
-from app.core.errors import LicensePolicyError, PublicationConstraintError
-from app.services import poetic_analysis_service, registry_service, report_service
+from app.core.errors import LicensePolicyError, PublicationConstraintError, ReviewRequiredError
+from app.services import audit_service, poetic_analysis_service, registry_service, report_service, review_service
 
 
 def _ensure_exportable() -> None:
@@ -13,6 +13,18 @@ def _ensure_exportable() -> None:
     if any("forbidden_for_export" in item["warnings"] for item in audit["evaluations"]):
         raise LicensePolicyError("Export blocked by forbidden source license policy")
     _ensure_canonical_publication_constraints()
+    missing_signoff: list[str] = []
+    for unit in registry_service.list_units():
+        review_service.hydrate_unit_review_state(unit)
+        for rendering in unit.get("renderings", []):
+            if rendering.get("status") != "canonical":
+                continue
+            if not rendering.get("review_signoff", {}).get("publication_ready"):
+                missing_signoff.append(rendering["rendering_id"])
+    if missing_signoff:
+        raise ReviewRequiredError(
+            f"Export blocked until canonical signoff is complete: {', '.join(sorted(missing_signoff))}"
+        )
 
 
 def _ensure_canonical_publication_constraints() -> None:
@@ -78,10 +90,13 @@ def _filter_exportable_units(psalm: dict[str, object]) -> dict[str, object]:
 
 
 def _release_text_payload() -> list[dict[str, object]]:
-    return [
-        _filter_exportable_units(registry_service.load_psalm(item))
-        for item in registry_service.list_psalm_ids()
-    ]
+    payload = []
+    for item in registry_service.list_psalm_ids():
+        psalm = registry_service.load_psalm(item)
+        for unit in psalm["units"]:
+            review_service.hydrate_unit_review_state(unit)
+        payload.append(_filter_exportable_units(psalm))
+    return payload
 
 
 def _plain_text_release(export_payload: list[dict[str, object]]) -> str:
@@ -198,6 +213,9 @@ def export_book(psalm_id: str | None = None, output_dir: Path | None = None) -> 
         if psalm_id
         else [registry_service.load_psalm(item) for item in registry_service.list_psalm_ids()]
     )
+    for psalm in psalms:
+        for unit in psalm["units"]:
+            review_service.hydrate_unit_review_state(unit)
     export_payload = [_filter_exportable_units(psalm) for psalm in psalms]
     registry_service.write_json(destination / "book.json", export_payload)
     (destination / "book.md").write_text(_markdown_release(export_payload), encoding="utf-8")
@@ -213,6 +231,7 @@ def export_release(release_id: str) -> Path:
     destination = settings.release_reports_dir / release_id / "bundle"
     destination.mkdir(parents=True, exist_ok=True)
 
+    report_service.generate_audit_reports()
     release_report = report_service.generate_release_report(release_id)
     export_payload = _release_text_payload()
     project = registry_service.load_project()

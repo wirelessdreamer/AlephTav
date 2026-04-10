@@ -56,12 +56,18 @@
     "divine_name_policy": { "type": "string" },
     "review_policy": {
       "type": "object",
-      "required": ["canonical_required_approvals", "alternate_required_approvals", "release_required_role"],
+      "required": ["canonical_required_approvals", "alternate_required_approvals", "release_required_role", "reviewer_roles"],
       "additionalProperties": false,
       "properties": {
         "canonical_required_approvals": { "type": "integer", "minimum": 1 },
         "alternate_required_approvals": { "type": "integer", "minimum": 1 },
-        "release_required_role": { "type": "string" }
+        "release_required_role": { "type": "string" },
+        "reviewer_roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        }
       }
     },
     "release_channel": { "type": "string" },

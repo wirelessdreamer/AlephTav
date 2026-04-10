@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 from typing import Any
 
-from app.services import audit_service, registry_service
+from app.services import audit_service, registry_service, review_service
 
 
 HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
@@ -24,6 +24,57 @@ STEM_MAP = {
 MISSING_ENRICHMENT_OVERRIDES = {
     "ps019.v001.t002": {"macula": ["referent"]},
 }
+
+
+def _seed_review_signoff(status: str, timestamp: str) -> dict[str, Any]:
+    base = {
+        "approval_count": 2,
+        "alternate_approval_count": 1,
+        "required_approvals": {"alternate": 1, "canonical": 2},
+        "approvers": [
+            {"reviewer": "seed-reviewer-1", "reviewer_role": "Hebrew reviewer"},
+            {"reviewer": "seed-reviewer-2", "reviewer_role": "alignment reviewer"},
+        ],
+        "alternate_approvers": [
+            {"reviewer": "seed-reviewer-1", "reviewer_role": "Hebrew reviewer"},
+        ],
+        "reviewer_roles": list(review_service.REVIEWER_ROLES),
+        "release_required_role": "release reviewer",
+        "has_release_signoff": status == "canonical",
+        "release_signoff": {
+            "reviewer": "seed-release-reviewer",
+            "role": "release reviewer",
+            "timestamp": timestamp,
+        }
+        if status == "canonical"
+        else {},
+        "eligible_for_alternate": True,
+        "eligible_for_canonical": status == "canonical",
+        "publication_ready": status == "canonical",
+        "latest_decision": "approve",
+        "updated_at": timestamp,
+    }
+    if status == "canonical":
+        base["status"] = "canonical_signed_off"
+    elif status == "accepted_as_alternate":
+        base["status"] = "approved_for_alternate"
+    else:
+        base.update(
+            {
+                "status": "unreviewed",
+                "approval_count": 0,
+                "alternate_approval_count": 0,
+                "approvers": [],
+                "alternate_approvers": [],
+                "has_release_signoff": False,
+                "release_signoff": {},
+                "eligible_for_alternate": False,
+                "eligible_for_canonical": False,
+                "publication_ready": False,
+                "latest_decision": None,
+            }
+        )
+    return base
 
 
 FIXTURE_UNITS: list[dict[str, Any]] = [
@@ -722,8 +773,11 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
     for unit in FIXTURE_UNITS:
         seeded = _tokenize_and_enrich(deepcopy(unit))
         initial_hash = registry_service.file_hash({"unit_id": seeded["unit_id"], "seed": True})
-        final_hash = registry_service.file_hash(seeded)
         fixture_timestamp = f"2026-04-09T00:00:{len(imported):02d}Z"
+        for rendering in seeded.get("renderings", []):
+            rendering["review_signoff"] = _seed_review_signoff(rendering["status"], fixture_timestamp)
+        review_service.hydrate_unit_review_state(seeded)
+        final_hash = registry_service.file_hash(seeded)
         audit_service.create_audit_record(
             seeded,
             before_hash=initial_hash,

@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Query
 
 from app.api.deps import raise_as_http
-from app.services import rendering_service
+from app.services import registry_service, rendering_service, review_service
 
 router = APIRouter(tags=["alternates"])
 
@@ -56,12 +56,15 @@ def create_alternate(unit_id: str, payload: dict) -> dict:
 def accept_alternate(rendering_id: str, payload: dict | None = None) -> dict:
     try:
         request = payload or {}
-        return rendering_service.set_alternate_status(
-            rendering_id,
-            "accepted_as_alternate",
-            rationale=request.get("rationale", "accepted alternate"),
-            created_by=request.get("created_by", "api"),
+        review_service.add_review_decision(
+            target_id=rendering_id,
+            decision="accept-alternate",
+            reviewer=request.get("reviewer", request.get("created_by", "api-reviewer")),
+            reviewer_role=request.get("reviewer_role", "alignment reviewer"),
+            notes=request.get("rationale", "accepted alternate"),
         )
+        unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
+        return next(item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id)
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 
@@ -70,12 +73,15 @@ def accept_alternate(rendering_id: str, payload: dict | None = None) -> dict:
 def reject_alternate(rendering_id: str, payload: dict | None = None) -> dict:
     try:
         request = payload or {}
-        return rendering_service.set_alternate_status(
-            rendering_id,
-            "rejected",
-            rationale=request.get("rationale", "rejected alternate"),
-            created_by=request.get("created_by", "api"),
+        review_service.add_review_decision(
+            target_id=rendering_id,
+            decision="reject",
+            reviewer=request.get("reviewer", request.get("created_by", "api-reviewer")),
+            reviewer_role=request.get("reviewer_role", "alignment reviewer"),
+            notes=request.get("rationale", "rejected alternate"),
         )
+        unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
+        return next(item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id)
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 

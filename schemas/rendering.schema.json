@@ -65,6 +65,7 @@
     "metric_profile": { "type": ["string", "null"] },
     "issue_links": { "type": "array", "items": { "type": "string" } },
     "pr_links": { "type": "array", "items": { "type": "string" } },
+    "review_signoff": { "type": "object" },
     "provenance": {
       "type": "object",
       "required": ["source_ids", "generator"],

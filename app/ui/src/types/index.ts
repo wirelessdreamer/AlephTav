@@ -63,6 +63,23 @@ export interface Rendering {
   metric_profile?: string | null;
   issue_links?: string[];
   pr_links?: string[];
+  review_signoff?: {
+    status: string;
+    approval_count: number;
+    alternate_approval_count: number;
+    required_approvals: { alternate?: number; canonical?: number };
+    approvers: Array<{ reviewer: string; reviewer_role: string }>;
+    alternate_approvers: Array<{ reviewer: string; reviewer_role: string }>;
+    reviewer_roles: string[];
+    release_required_role: string;
+    has_release_signoff: boolean;
+    release_signoff: { reviewer?: string; role?: string; timestamp?: string };
+    eligible_for_alternate: boolean;
+    eligible_for_canonical: boolean;
+    publication_ready: boolean;
+    latest_decision: string | null;
+    updated_at: string | null;
+  };
 }
 
 export interface ReviewDecision {
@@ -137,6 +154,12 @@ export interface Project {
     register: string;
     parallelism_priority: string;
   }>;
+  review_policy: {
+    canonical_required_approvals: number;
+    alternate_required_approvals: number;
+    release_required_role: string;
+    reviewer_roles: string[];
+  };
 }
 
 export interface TokenCard extends Token {

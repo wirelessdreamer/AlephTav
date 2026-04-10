@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
-from app.services import alignment_service, audit_service, registry_service, search_service
+from app.services import alignment_service, audit_service, registry_service, review_service, search_service
 
 router = APIRouter(tags=["units"])
 
@@ -12,6 +12,7 @@ router = APIRouter(tags=["units"])
 def get_unit(unit_id: str) -> dict:
     try:
         unit = registry_service.load_unit(unit_id)
+        review_service.hydrate_unit_review_state(unit)
         unit["coverage"] = alignment_service.coverage(unit)
         return unit
     except Exception as error:  # pragma: no cover

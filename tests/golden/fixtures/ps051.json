@@ -33,7 +33,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "1584bce88e02e64956bdcdcbfb7f045765b3f1ffe3a2f3a947d55666103fa644",
+          "after_hash": "e2cf4705af16d742b2e184fefbe2338d941c1d4cf4c3830923ef96416da715df",
           "audit_id": "aud.ps051.v001.a.0001",
           "before_hash": "618d26d7ae028e4f73ba3926156fdc9032ff87e65888ded529584a98313c6b1d",
           "change_type": "create",
@@ -85,6 +85,51 @@
           },
           "rationale": "Literal petition line for golden coverage.",
           "rendering_id": "rnd.ps051.v001.a.literal.can.0001",
+          "review_signoff": {
+            "alternate_approval_count": 1,
+            "alternate_approvers": [
+              {
+                "reviewer": "seed-reviewer-1",
+                "reviewer_role": "Hebrew reviewer"
+              }
+            ],
+            "approval_count": 2,
+            "approvers": [
+              {
+                "reviewer": "seed-reviewer-1",
+                "reviewer_role": "Hebrew reviewer"
+              },
+              {
+                "reviewer": "seed-reviewer-2",
+                "reviewer_role": "alignment reviewer"
+              }
+            ],
+            "eligible_for_alternate": true,
+            "eligible_for_canonical": true,
+            "has_release_signoff": true,
+            "latest_decision": null,
+            "publication_ready": true,
+            "release_required_role": "release reviewer",
+            "release_signoff": {
+              "reviewer": "seed-release-reviewer",
+              "role": "release reviewer",
+              "timestamp": "2026-04-09T00:00:03Z"
+            },
+            "required_approvals": {
+              "alternate": 1,
+              "canonical": 2
+            },
+            "reviewer_roles": [
+              "lexical reviewer",
+              "Hebrew reviewer",
+              "alignment reviewer",
+              "lyric reviewer",
+              "theology reviewer",
+              "release reviewer"
+            ],
+            "status": "canonical_signed_off",
+            "updated_at": "2026-04-09T00:00:03Z"
+          },
           "status": "canonical",
           "style_tags": [
             "literal",
@@ -120,6 +165,33 @@
           },
           "rationale": "Reviewable alternate with compact phrasing.",
           "rendering_id": "rnd.ps051.v001.a.phrase.alt.0001",
+          "review_signoff": {
+            "alternate_approval_count": 0,
+            "alternate_approvers": [],
+            "approval_count": 0,
+            "approvers": [],
+            "eligible_for_alternate": false,
+            "eligible_for_canonical": false,
+            "has_release_signoff": false,
+            "latest_decision": null,
+            "publication_ready": false,
+            "release_required_role": "release reviewer",
+            "release_signoff": {},
+            "required_approvals": {
+              "alternate": 1,
+              "canonical": 2
+            },
+            "reviewer_roles": [
+              "lexical reviewer",
+              "Hebrew reviewer",
+              "alignment reviewer",
+              "lyric reviewer",
+              "theology reviewer",
+              "release reviewer"
+            ],
+            "status": "unreviewed",
+            "updated_at": "2026-04-09T00:00:03Z"
+          },
           "status": "proposed",
           "style_tags": [
             "phrase",

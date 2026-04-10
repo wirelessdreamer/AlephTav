@@ -4,7 +4,6 @@ import type { ChangeEvent } from 'react';
 import {
   useAddAlternate,
   useAdvancedSearch,
-  useApproveRendering,
   useAlternates,
   useConcordance,
   useCreateAlignment,
@@ -12,6 +11,8 @@ import {
   useDeleteAlignment,
   useExportRelease,
   usePromoteRendering,
+  useProject,
+  useReviewAction,
   useRenderingComparison,
   useSearchPreset,
   useUnitWitnesses,
@@ -85,7 +86,11 @@ export function BottomDrawer({
   const [alternateStyleGoal, setAlternateStyleGoal] = useState('');
   const [alternateMetricProfile, setAlternateMetricProfile] = useState('');
   const [alternateTags, setAlternateTags] = useState('');
+  const [reviewerName, setReviewerName] = useState('ui-reviewer');
+  const [reviewerRole, setReviewerRole] = useState('alignment reviewer');
+  const [reviewNotes, setReviewNotes] = useState('');
 
+  const { data: project } = useProject();
   const concordance = useConcordance(concordanceQuery, concordanceField);
   const advancedSearch = useAdvancedSearch(searchQuery, searchScope, includeWitnesses);
   const preset = useSearchPreset(presetName, presetName === 'units_changed_since_release' ? releaseId : undefined);
@@ -93,7 +98,7 @@ export function BottomDrawer({
   const createAlignment = useCreateAlignment(unit?.unit_id ?? null);
   const deleteAlignment = useDeleteAlignment(unit?.unit_id ?? null);
   const createRendering = useCreateRendering(unit?.unit_id ?? null);
-  const approveRendering = useApproveRendering(unit?.unit_id ?? null);
+  const reviewAction = useReviewAction(unit?.unit_id ?? null);
   const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
   const exportRelease = useExportRelease();
   const alternates = useAlternates(unit?.unit_id ?? null, activeLayer, alternateFilter || undefined, releaseApprovedOnly);
@@ -125,6 +130,7 @@ export function BottomDrawer({
 
   const workflowAlternates = unit?.renderings.filter((item) => item.status !== 'canonical') ?? [];
   const workflowAlignments = unit?.alignments.filter((item) => item.layer === activeLayer) ?? [];
+  const selectedAlternate = workflowAlternates.find((item) => item.rendering_id === selectedAlternateId) ?? null;
 
   useEffect(() => {
     if (!selectedAlternateId && workflowAlternates.length > 0) {
@@ -183,20 +189,28 @@ export function BottomDrawer({
     }
   };
 
+  const reviewPayload = {
+    reviewer: reviewerName.trim() || 'ui-reviewer',
+    reviewer_role: reviewerRole,
+    notes: reviewNotes.trim(),
+  };
+
+  const handleReviewAction = async (action: 'approve' | 'request-changes' | 'accept-alternate' | 'reject') => {
+    if (!selectedAlternateId) return;
+    try {
+      await reviewAction.mutateAsync({ renderingId: selectedAlternateId, action, payload: reviewPayload });
+      setWorkflowMessage(`Review action recorded: ${action}`);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Review action failed');
+    }
+  };
+
   const handlePromoteAlternate = async () => {
     if (!selectedAlternateId) return;
     try {
-      await approveRendering.mutateAsync({
-        renderingId: selectedAlternateId,
-        payload: { reviewer: 'ui-reviewer-a', reviewer_role: 'alignment reviewer', notes: 'UI approval A' },
-      });
-      await approveRendering.mutateAsync({
-        renderingId: selectedAlternateId,
-        payload: { reviewer: 'ui-reviewer-b', reviewer_role: 'Hebrew reviewer', notes: 'UI approval B' },
-      });
       const response = (await promoteRendering.mutateAsync({
         renderingId: selectedAlternateId,
-        payload: { reviewer: 'ui-release', reviewer_role: 'release reviewer' },
+        payload: { reviewer: reviewerName.trim() || 'ui-release', reviewer_role: reviewerRole },
       })) as { rendering_id: string };
       setWorkflowMessage(`Alternate promoted: ${response.rendering_id}`);
     } catch (error) {
@@ -381,7 +395,7 @@ export function BottomDrawer({
               </button>
             </article>
             <article className="compare-card">
-              <h4>Promote alternate</h4>
+              <h4>Review actions</h4>
               <label className="compact-field">
                 <span>Alternate rendering</span>
                 <select
@@ -397,9 +411,53 @@ export function BottomDrawer({
                   ))}
                 </select>
               </label>
-              <button type="button" className="tab" onClick={() => void handlePromoteAlternate()} disabled={!selectedAlternateId}>
-                Approve and promote alternate
-              </button>
+              <label className="compact-field">
+                <span>Reviewer</span>
+                <input value={reviewerName} onChange={(event) => setReviewerName(event.target.value)} placeholder="reviewer handle" />
+              </label>
+              <label className="compact-field">
+                <span>Role</span>
+                <select value={reviewerRole} onChange={(event) => setReviewerRole(event.target.value)}>
+                  {(project?.review_policy.reviewer_roles ?? []).map((role) => (
+                    <option key={role} value={role}>
+                      {role}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="compact-field">
+                <span>Notes</span>
+                <textarea value={reviewNotes} onChange={(event) => setReviewNotes(event.target.value)} rows={3} placeholder="decision notes" />
+              </label>
+              <div className="inline-actions">
+                <button type="button" className="tab" onClick={() => void handleReviewAction('approve')} disabled={!selectedAlternateId}>
+                  Approve
+                </button>
+                <button type="button" className="tab" onClick={() => void handleReviewAction('request-changes')} disabled={!selectedAlternateId}>
+                  Request changes
+                </button>
+                <button type="button" className="tab" onClick={() => void handleReviewAction('accept-alternate')} disabled={!selectedAlternateId}>
+                  Accept as alternate
+                </button>
+                <button type="button" className="tab" onClick={() => void handleReviewAction('reject')} disabled={!selectedAlternateId}>
+                  Reject
+                </button>
+                <button type="button" className="tab" onClick={() => void handlePromoteAlternate()} disabled={!selectedAlternateId}>
+                  Promote to canonical
+                </button>
+              </div>
+              <div className="warning-box">
+                <div>Review status: {selectedAlternate?.review_signoff?.status ?? 'unreviewed'}</div>
+                <div>
+                  Alternate signoff: {selectedAlternate?.review_signoff?.alternate_approval_count ?? 0}/
+                  {selectedAlternate?.review_signoff?.required_approvals?.alternate ?? project?.review_policy.alternate_required_approvals ?? 1}
+                </div>
+                <div>
+                  Canonical signoff: {selectedAlternate?.review_signoff?.approval_count ?? 0}/
+                  {selectedAlternate?.review_signoff?.required_approvals?.canonical ?? project?.review_policy.canonical_required_approvals ?? 2}
+                </div>
+                <div>Release signoff: {selectedAlternate?.review_signoff?.has_release_signoff ? 'recorded' : 'pending'}</div>
+              </div>
             </article>
             <article className="compare-card">
               <h4>Export release</h4>
@@ -517,7 +575,7 @@ export function BottomDrawer({
               <h4>Review trail</h4>
               <ul className="simple-list">
                 {unit?.review_decisions.map((decision) => (
-                  <li key={decision.decision_id}>{decision.timestamp} - {decision.reviewer_role}: {decision.decision}</li>
+                  <li key={decision.decision_id}>{decision.timestamp} - {decision.reviewer_role} {decision.reviewer}: {decision.decision}</li>
                 ))}
                 {!unit?.review_decisions.length ? <li className="empty-state">No review decisions recorded.</li> : null}
               </ul>

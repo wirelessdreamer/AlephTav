@@ -170,6 +170,20 @@ export function useApproveRendering(unitId: string | null) {
   });
 }
 
+export function useReviewAction(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ renderingId, action, payload }: { renderingId: string; action: 'approve' | 'request-changes' | 'accept-alternate' | 'reject'; payload: unknown }) =>
+      postJson(`/review/${renderingId}/${action}`, payload),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['alternates', unitId] }),
+      ]);
+    },
+  });
+}
+
 export function usePromoteRendering(unitId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({

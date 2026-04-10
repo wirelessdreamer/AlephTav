@@ -31,7 +31,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "bba88ea445cadad2af5b23d8d476141e68116281382124fe3a45f674047fb267",
+          "after_hash": "907dbb3e17eabd81783db080f8b501e377b8d983ae05bca6c204b0d30893f82e",
           "audit_id": "aud.ps019.v001.a.0001",
           "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
           "change_type": "create",
@@ -81,6 +81,51 @@
           },
           "rationale": "Initial literal line.",
           "rendering_id": "rnd.ps019.v001.a.literal.can.0001",
+          "review_signoff": {
+            "alternate_approval_count": 1,
+            "alternate_approvers": [
+              {
+                "reviewer": "seed-reviewer-1",
+                "reviewer_role": "Hebrew reviewer"
+              }
+            ],
+            "approval_count": 2,
+            "approvers": [
+              {
+                "reviewer": "seed-reviewer-1",
+                "reviewer_role": "Hebrew reviewer"
+              },
+              {
+                "reviewer": "seed-reviewer-2",
+                "reviewer_role": "alignment reviewer"
+              }
+            ],
+            "eligible_for_alternate": true,
+            "eligible_for_canonical": true,
+            "has_release_signoff": true,
+            "latest_decision": null,
+            "publication_ready": true,
+            "release_required_role": "release reviewer",
+            "release_signoff": {
+              "reviewer": "seed-release-reviewer",
+              "role": "release reviewer",
+              "timestamp": "2026-04-09T00:00:01Z"
+            },
+            "required_approvals": {
+              "alternate": 1,
+              "canonical": 2
+            },
+            "reviewer_roles": [
+              "lexical reviewer",
+              "Hebrew reviewer",
+              "alignment reviewer",
+              "lyric reviewer",
+              "theology reviewer",
+              "release reviewer"
+            ],
+            "status": "canonical_signed_off",
+            "updated_at": "2026-04-09T00:00:01Z"
+          },
           "status": "canonical",
           "style_tags": [
             "literal",
