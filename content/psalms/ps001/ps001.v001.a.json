@@ -31,17 +31,38 @@
         "spn.ps001.v001.a.gloss.0002"
       ],
       "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_id": "aln.ps001.v001.a.literal.0001",
+      "alignment_type": "direct",
+      "confidence": 0.9,
+      "created_by": "api",
+      "created_via": "manual",
+      "layer": "literal",
+      "notes": "Playwright alignment coverage",
+      "source_token_ids": [
+        "ps001.v001.t001"
+      ],
+      "target_span_ids": [
+        "spn.ps001.v001.a.literal.0001"
+      ],
+      "unit_id": "ps001.v001.a"
     }
   ],
   "alternate_rendering_ids": [
     "rnd.ps001.v001.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps001.v001.a.0001"
+    "aud.ps001.v001.a.0001",
+    "aud.ps001.v001.a.0002",
+    "aud.ps001.v001.a.0003",
+    "aud.ps001.v001.a.0004",
+    "aud.ps001.v001.a.0005",
+    "aud.ps001.v001.a.0006"
   ],
   "audit_records": [
     {
-      "after_hash": "9552f052d20dd97edfc31f8bb013d8d315eb18326e53bae8a519750657f9f19b",
+      "after_hash": "d1ed73d72e181af91be06c63ab4245070804d54c683cf85f8d299c85053024ce",
       "audit_id": "aud.ps001.v001.a.0001",
       "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
       "change_type": "create",
@@ -55,11 +76,103 @@
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f3969937732d290f4b1c2eaff32ec992ecf547ece7af310ef5fa7779012dbe39",
+      "audit_id": "aud.ps001.v001.a.0002",
+      "before_hash": "8ee943324f7c03a5d842e3938949f9458f7f1d840b5e5a71ba9fde3b847c6de8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T16:04:25.888448+00:00",
+      "created_by": "api",
+      "entity_id": "aln.ps001.v001.a.literal.0001",
+      "entity_type": "alignment",
+      "rationale": "Playwright alignment coverage",
+      "review_signoff": {},
+      "summary": "Create alignment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a8c3c23cca666d431e12c9c26345e8c22f1ac7ada5d010b0443d0eb4ad964ee1",
+      "audit_id": "aud.ps001.v001.a.0003",
+      "before_hash": "ceedcb3d54f6a2b2c8b280ac6db18922ef66a26a3276752b92fab6e7d30101c8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T16:04:26.097559+00:00",
+      "created_by": "ui-workflow",
+      "entity_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "UI workflow alternate",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a2577c69da8da39856f8821132293f50cc93086fd0d569c7a975de9919cb936b",
+      "audit_id": "aud.ps001.v001.a.0004",
+      "before_hash": "1472153e7d19898c6234bab0f0286f8c3f322692982de9f4e1462029cde5d254",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T16:04:26.316862+00:00",
+      "created_by": "playwright-reviewer-1",
+      "entity_id": "rev.ps001.v001.a.0007",
+      "entity_type": "review_decision",
+      "rationale": "alignment reviewer approve",
+      "review_signoff": {
+        "decision": "approve",
+        "reviewer": "playwright-reviewer-1",
+        "role": "alignment reviewer"
+      },
+      "summary": "Review decision: approve",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "deb9bfd008fec39559b801f70b3fff773633fa7682132e5eb524339b21345410",
+      "audit_id": "aud.ps001.v001.a.0005",
+      "before_hash": "26a55da1c10afb503fa8c5541bd569b4eea465ea6000385484c005f950df1ad5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T16:04:26.534426+00:00",
+      "created_by": "playwright-reviewer-2",
+      "entity_id": "rev.ps001.v001.a.0008",
+      "entity_type": "review_decision",
+      "rationale": "theology reviewer approve",
+      "review_signoff": {
+        "decision": "approve",
+        "reviewer": "playwright-reviewer-2",
+        "role": "theology reviewer"
+      },
+      "summary": "Review decision: approve",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "60f73fca0a8166c0f7cfdfda39910e03b6c807ff145531fcac6826ee9a10f19d",
+      "audit_id": "aud.ps001.v001.a.0006",
+      "before_hash": "6cdcd0ff70050b8c0ebf3a1fba82b55c228007948b5d83764e5d1c2745d019ab",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-04-10T16:04:26.648660+00:00",
+      "created_by": "playwright-release-reviewer",
+      "entity_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Approved by release reviewer:playwright-release-reviewer",
+      "review_signoff": {
+        "reviewer": "playwright-release-reviewer",
+        "role": "release reviewer"
+      },
+      "summary": "Promote rendering to canonical",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [
     "rnd.ps001.v001.a.gloss.can.0001",
-    "rnd.ps001.v001.a.literal.can.0001"
+    "rnd.ps001.v001.a.literal.can.0001",
+    "rnd.ps001.v001.a.lyric.alt.0002"
   ],
   "concept_ids": [
     "cpt.ps001.v001.a.0001"
@@ -95,93 +208,6 @@
       },
       "rationale": "Gloss-level lexical rendering.",
       "rendering_id": "rnd.ps001.v001.a.gloss.can.0001",
-      "review_signoff": {
-        "alternate_approval_count": 1,
-        "alternate_approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          }
-        ],
-        "approval_count": 2,
-        "approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          },
-          {
-            "reviewer": "seed-reviewer-2",
-            "reviewer_role": "alignment reviewer"
-          }
-        ],
-        "eligible_for_alternate": true,
-        "eligible_for_canonical": true,
-        "has_release_signoff": true,
-        "latest_decision": null,
-        "publication_ready": true,
-        "release_required_role": "release reviewer",
-        "release_signoff": {
-          "reviewer": "seed-release-reviewer",
-          "role": "release reviewer",
-          "timestamp": "2026-04-09T00:00:00Z"
-        },
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "canonical_signed_off",
-        "updated_at": "2026-04-09T00:00:00Z"
-      },
-      "status": "canonical",
-      "style_tags": [
-        "gloss",
-        "study_literal"
-      ],
-      "target_spans": [
-        {
-          "span_id": "spn.ps001.v001.a.gloss.0001",
-          "text": "Blessed",
-          "token_end": 0,
-          "token_start": 0
-        },
-        {
-          "span_id": "spn.ps001.v001.a.gloss.0002",
-          "text": "the man",
-          "token_end": 3,
-          "token_start": 2
-        }
-      ],
-      "text": "Blessed - the man",
-      "unit_id": "ps001.v001.a"
-    },
-    {
-      "alignment_ids": [
-        "aln.ps001.v001.a.gloss.0001",
-        "aln.ps001.v001.a.gloss.0002"
-      ],
-      "drift_flags": [],
-      "layer": "literal",
-      "metrics": {
-        "syllables": 5
-      },
-      "provenance": {
-        "generator": "human-seed",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "Literal English line for review.",
-      "rendering_id": "rnd.ps001.v001.a.literal.can.0001",
       "review_signoff": {
         "alternate_approval_count": 2,
         "alternate_approvers": [
@@ -225,7 +251,93 @@
           "release reviewer"
         ],
         "status": "canonical_signed_off",
-        "updated_at": "2026-04-09T00:01:00Z"
+        "updated_at": "2026-04-09T00:05:00Z"
+      },
+      "status": "canonical",
+      "style_tags": [
+        "gloss",
+        "study_literal"
+      ],
+      "target_spans": [
+        {
+          "span_id": "spn.ps001.v001.a.gloss.0001",
+          "text": "Blessed",
+          "token_end": 0,
+          "token_start": 0
+        },
+        {
+          "span_id": "spn.ps001.v001.a.gloss.0002",
+          "text": "the man",
+          "token_end": 3,
+          "token_start": 2
+        }
+      ],
+      "text": "Blessed - the man",
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps001.v001.a.literal.0001"
+      ],
+      "drift_flags": [],
+      "layer": "literal",
+      "metrics": {
+        "syllables": 5
+      },
+      "provenance": {
+        "generator": "human-seed",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "Literal English line for review.",
+      "rendering_id": "rnd.ps001.v001.a.literal.can.0001",
+      "review_signoff": {
+        "alternate_approval_count": 3,
+        "alternate_approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          }
+        ],
+        "approval_count": 3,
+        "approvers": [
+          {
+            "reviewer": "seed-reviewer-1",
+            "reviewer_role": "Hebrew reviewer"
+          },
+          {
+            "reviewer": "seed-reviewer-2",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "eligible_for_alternate": true,
+        "eligible_for_canonical": true,
+        "has_release_signoff": true,
+        "latest_decision": "approve",
+        "publication_ready": true,
+        "release_required_role": "release reviewer",
+        "release_signoff": {
+          "reviewer": "seed-release-reviewer",
+          "role": "release reviewer",
+          "timestamp": "2026-04-09T00:00:00Z"
+        },
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "canonical_signed_off",
+        "updated_at": "2026-04-09T00:04:00Z"
       },
       "status": "canonical",
       "style_tags": [
@@ -250,10 +362,7 @@
       "unit_id": "ps001.v001.a"
     },
     {
-      "alignment_ids": [
-        "aln.ps001.v001.a.gloss.0001",
-        "aln.ps001.v001.a.gloss.0002"
-      ],
+      "alignment_ids": [],
       "drift_flags": [
         {
           "code": "semantic_overcompression",
@@ -311,7 +420,7 @@
         "eligible_for_alternate": true,
         "eligible_for_canonical": true,
         "has_release_signoff": false,
-        "latest_decision": null,
+        "latest_decision": "approve",
         "publication_ready": false,
         "release_required_role": "release reviewer",
         "release_signoff": {},
@@ -328,7 +437,7 @@
           "release reviewer"
         ],
         "status": "approved_for_canonical",
-        "updated_at": "2026-04-09T00:00:00Z"
+        "updated_at": "2026-04-09T00:03:00Z"
       },
       "status": "accepted_as_alternate",
       "style_tags": [
@@ -344,6 +453,90 @@
         }
       ],
       "text": "Blessed is the one",
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_ids": [],
+      "drift_flags": [
+        {
+          "code": "parallelism_break",
+          "confidence": 0.72,
+          "message": "Lyric line compresses a multi-span source into a single span.",
+          "severity": "medium"
+        }
+      ],
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 3,
+        "parallelism_preservation_score": 0.21,
+        "repetition_score": 0.0,
+        "singability_score": 0.69,
+        "stress_approximation": 1.0,
+        "syllable_count": 8,
+        "syllables": 8
+      },
+      "pr_links": [],
+      "provenance": {
+        "generator": "ui-workflow",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "UI workflow alternate",
+      "rendering_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 2,
+        "alternate_approvers": [
+          {
+            "reviewer": "playwright-reviewer-1",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "approval_count": 2,
+        "approvers": [
+          {
+            "reviewer": "playwright-reviewer-1",
+            "reviewer_role": "alignment reviewer"
+          }
+        ],
+        "eligible_for_alternate": true,
+        "eligible_for_canonical": true,
+        "has_release_signoff": true,
+        "latest_decision": "approve",
+        "publication_ready": true,
+        "release_required_role": "release reviewer",
+        "release_signoff": {
+          "reviewer": "playwright-release-reviewer",
+          "role": "release reviewer",
+          "timestamp": "2026-04-10T16:04:26.647806+00:00"
+        },
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "canonical_signed_off",
+        "updated_at": "2026-04-10T16:04:26.534121+00:00"
+      },
+      "status": "canonical",
+      "style_goal": null,
+      "style_tags": [
+        "lyric",
+        "workflow"
+      ],
+      "target_spans": [],
+      "text": "Playwright alternate line",
       "unit_id": "ps001.v001.a"
     }
   ],
@@ -401,6 +594,24 @@
       "reviewer_role": "alignment reviewer",
       "target_id": "rnd.ps001.v001.a.gloss.can.0001",
       "timestamp": "2026-04-09T00:05:00Z"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps001.v001.a.0007",
+      "notes": "",
+      "reviewer": "playwright-reviewer-1",
+      "reviewer_role": "alignment reviewer",
+      "target_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "timestamp": "2026-04-10T16:04:26.316345+00:00"
+    },
+    {
+      "decision": "approve",
+      "decision_id": "rev.ps001.v001.a.0008",
+      "notes": "",
+      "reviewer": "playwright-reviewer-2",
+      "reviewer_role": "theology reviewer",
+      "target_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "timestamp": "2026-04-10T16:04:26.534121+00:00"
     }
   ],
   "segmentation_type": "colon",

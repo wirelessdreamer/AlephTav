@@ -6,6 +6,9 @@ A fresh local install can ingest Psalms and build a working project without clou
 Every Hebrew token has a stable ID and a hoverable lexical card.
 Every English layer is explicitly aligned back to Hebrew token anchors.
 Every unit supports canonical and alternate renderings in parallel.
+The system preserves a full auditable path from source Hebrew through intermediate analysis to final English outputs.
+The system can retrieve alternates by semantic similarity, stylistic similarity, and rhythmic or prosodic fit.
+Embedding records and retrieval indexes are versioned, explainable, and rebuildable without changing approved content.
 Contributors can open GitHub issues against exact Psalm, unit, token, span, or alternate IDs.
 Contributors can submit PRs that either fix canonical text or add alternates.
 CI blocks invalid schema, broken alignments, missing provenance, and forbidden source licenses.
@@ -14,14 +17,16 @@ The app can lock earlier layers and rerun later layers only.
 The app can export a release bundle with text, sources, audit, notices, and unresolved concerns.
 Final architecture to lock now
 
-Use a hybrid file-plus-database design.
+Use a hybrid file-plus-relational-plus-vector design.
 
-Source-of-truth content lives in Git-friendly JSON files.
-Derived indexes and caches live in SQLite.
+Git-friendly JSON remains the reviewable interchange and release snapshot format.
+SQLite is the authoritative local relational store for structured truth, lineage, review state, and audit trail.
+Derived vector indexes live in local rebuildable storage and are never the sole source of truth.
 The backend is a local API plus CLI.
 The frontend is a local workbench UI.
 All generation jobs go through a single orchestrator.
 All content mutations create audit records.
+Vector retrieval augments the existing authoritative and rule-driven translation process; it does not replace it.
 
 Recommended stack:
 
@@ -30,9 +35,12 @@ API: FastAPI
 CLI: Typer
 Schemas: Pydantic
 DB: SQLite
+Vector retrieval: pluggable local vector index adapter behind a service boundary
 UI: React + TypeScript
 Local state/data fetch: TanStack Query or equivalent
 Model adapters: llama.cpp, Ollama, vLLM, and OpenAI-compatible local endpoints
+Embedding generation: local embedding model or OpenAI-compatible local endpoint
+Prosody analysis: structured numeric feature extraction with optional phonetic utilities
 Test stack: pytest for backend, Playwright for UI, schema tests for content
 Repository layout
 
@@ -191,11 +199,14 @@ token_id: ps019.v001.t003
 alignment_id: aln.ps019.v001.a.literal.0001
 rendering_id: rnd.ps019.v001.a.literal.can.0001
 alternate_id: rnd.ps019.v001.a.lyric.alt.0007
+revision_id: rev.rnd.ps019.v001.a.lyric.alt.0007.0001
+embedding_id: emb.rnd.ps019.v001.a.lyric.alt.0007.semantic.0001
 span_id: spn.ps019.v001.a.literal.0003
 concept_id: cpt.ps019.v001.a.0002
 audit_id: aud.ps019.v001.a.0009
 issue_link_id: iss.000123
 pr_link_id: pr.000456
+retrieval_query_id: ret.000123
 
 Rules:
 
@@ -203,6 +214,8 @@ IDs are immutable.
 IDs never depend on display text.
 IDs never change when a rendering becomes canonical or alternate.
 Canonical status is metadata, not identity.
+Embedding IDs are immutable for a given entity, embedding version, and source text hash.
+Retrieval query IDs identify explainable query events, not canonical content.
 File names must match unit IDs.
 Core domain model
 
@@ -238,7 +251,17 @@ allowed_for_export
 notes
 
 5.3 PsalmUnit
-One record per editable unit.
+One record per editable or addressable source unit.
+
+The unit model must support these granularities:
+
+word
+token group
+phrase
+clause
+verse
+verse segment
+passage
 
 Required fields:
 
@@ -246,10 +269,16 @@ psalm_id
 unit_id
 ref
 segmentation_type
+unit_kind
+parent_unit_id
+child_unit_ids
 source_hebrew
 source_transliteration
 token_ids
+source_token_range
 concept_ids
+lexical_links
+morphology_links
 status
 current_layer_state
 canonical_rendering_ids
@@ -304,18 +333,47 @@ omission_accounted_for
 uncertain
 
 5.6 Rendering
+
+Rendering is the project's translation-candidate entity.
+It must support parallel candidate storage, lineage, prosody fields, and retrieval metadata.
+
 Required fields:
 
 rendering_id
 unit_id
+translation_mode
 layer
 status
+author_id
+reviewer_id
+parent_rendering_id
+derived_from_rendering_ids
 text
+semantic_tags
+approved_for_use_cases
 style_tags
 target_spans
 alignment_ids
+source_hebrew_span
+lexical_notes
+morphology_notes
+literal_gloss
+intermediate_phrasing
+notes
 drift_flags
+syllable_count
+stress_pattern
+word_count
+character_count
+phrase_break_structure
+beat_group_annotations
+meter_fit_annotations
+singability_notes
 metrics
+decision_rationale
+related_rendering_ids
+selected_reason
+embedding_refs
 rationale
 provenance
 
@@ -339,7 +397,75 @@ accepted_as_alternate
 rejected
 deprecated
 
-5.7 AuditRecord
+translation_mode enum:
+
+literal
+poetic
+musical
+idiomatic
+interpretive
+study
+devotional
+
+Important rule:
+
+Do not rely on embeddings alone for rhythm, cadence, or syllable fit.
+Syllable count, stress pattern, meter fit, line length, and related prosodic features must be stored as first-class structured fields and indexed numerics.
+
+5.7 RenderingRevision
+
+Required fields:
+
+revision_id
+rendering_id
+prior_text
+new_text
+changed_by
+changed_at
+change_reason
+prior_status
+new_status
+prior_rationale
+new_rationale
+prior_metrics
+new_metrics
+
+5.8 EmbeddingRecord
+
+Required fields:
+
+embedding_id
+entity_type
+entity_id
+embedding_model
+embedding_version
+embedding_created_at
+source_text_hash
+source_text_snapshot
+vector_store_key
+dimensions
+similarity_purpose
+status
+
+5.9 RetrievalResult
+
+Required fields:
+
+retrieval_query_id
+target_id
+candidate_id
+matched_similarity_types
+structured_filters_applied
+semantic_similarity_score
+style_similarity_score
+syllable_distance
+stress_pattern_distance
+approval_priority
+explanation
+returned_at
+
+5.10 AuditRecord
+
 Required fields:
 
 audit_id
@@ -357,7 +483,7 @@ created_at
 checks
 review_signoff
 
-5.8 ReviewDecision
+5.11 ReviewDecision
 Required fields:
 
 decision_id
@@ -369,21 +495,118 @@ notes
 timestamp
 File storage strategy
 
-Use a two-layer storage model.
+Use a three-layer storage model.
 
-Layer 1: Git source of truth
+Layer 1: Git-friendly review and release snapshots
 
-content/psalms/... contains human-reviewed content JSON.
-This is what PRs modify.
+content/psalms/... contains deterministic JSON snapshots for review, release packaging, and contributor workflows.
+PRs may still modify these snapshots directly, but operational query behavior must not depend on vector indexes alone.
 
-Layer 2: local derived DB
+Layer 2: local relational system of record
 
-SQLite stores fast indexes, search caches, lexical joins, job history, UI state, and generated reports.
-The DB can be rebuilt from source JSON plus upstream data.
+SQLite stores source units, renderings, revisions, review state, audit trail, issue links, prosody features, exact relationships, fast indexes, search caches, lexical joins, job history, UI state, and generated reports.
+The relational store is the authoritative local system of record for structured truth.
+
+Layer 3: local vector retrieval layer
+
+The vector layer stores embeddings for candidate text, intermediate phrasing stages, style summaries, semantic summaries, and other retrieval-oriented representations.
+The vector layer is derived from relational records and must be rebuildable.
 
 Rule:
 
+SQL remains the system of record for structured truth.
+Vector retrieval is an augmentation layer for discovery, comparison, and candidate matching.
+Apply structured filters before vector similarity search.
+Blend vector scores with structured scores such as syllable distance, stress fit, style overlap, approval state, and reviewer confidence.
+Embeddings must be versioned and regenerable without breaking auditability.
 Never store generated cache fields back into canonical content files unless they are intentionally part of the audit trail.
+
+Hybrid translation storage and retrieval augmentation
+
+This feature augments the existing authoritative text and rule-driven translation workflow.
+It is not a replacement for the source Hebrew store, exact relational data storage, approval state, or human review.
+
+The system must support:
+
+Multiple parallel English renderings for the same source unit.
+Full translation flow capture from Hebrew source span through lexical analysis, morphology notes, glossing, intermediate phrasing, and final English wording.
+Similarity retrieval for semantic likeness, style likeness, rhythmic likeness, syllable-count likeness, and stress-pattern likeness.
+Parallel preservation of valid alternatives rather than premature collapse into a single wording.
+Filtering by source unit, passage scope, translation mode, style tags, approval status, and prosodic constraints.
+Explainable retrieval so reviewers can see why each alternate was returned.
+Versioned embeddings that can be regenerated if the embedding model changes.
+
+Retrieval inputs must support:
+
+Hebrew source span
+English candidate text
+gloss text
+semantic intent
+style intent
+rhythm or syllable constraints
+similar prior approved renderings
+translator note context
+
+Retrieval outputs must expose:
+
+which similarity types matched
+which structured filters were applied
+relevant numeric metrics such as syllable distance
+source context
+candidate status
+why the candidate was ranked where it was
+
+Dependency analysis for hybrid translation storage and retrieval
+
+Current baseline already present in the repo:
+
+rendering_service.py manages parallel renderings but only as flat records
+review_service.py and audit_service.py already record review and audit events
+app/db/models.py and app/db/session.py currently index units, tokens, renderings, alignments, and jobs in SQLite
+schemas/rendering.schema.json currently models only the minimal rendering shape
+app/api/routes/search.py is lexical-only and does not yet provide candidate retrieval
+
+Required change set by subsystem:
+
+Content contracts
+Expand rendering contracts to include translation-mode metadata, lineage fields, prosody fields, semantic tags, and embedding references.
+Add schemas for rendering revisions, embedding records, retrieval results, and any retrieval explanation payloads.
+Expand unit contracts so addressable source units can represent word, phrase, clause, verse segment, verse, and passage scopes.
+
+Core IDs and configuration
+Add stable ID generation for revisions, embeddings, and retrieval query events.
+Extend configuration for embedding model selection, embedding versioning, vector index locations, and optional feature flags for retrieval backends.
+
+Relational storage
+Extend SQLite models and initialization to store candidate metadata, revision history, prosody fields, embedding metadata, retrieval logs, and ranking inputs.
+Add indexes for translation mode, status, style tags, source unit scope, syllable count, stress pattern representation, and approved use cases.
+
+Service layer
+Refactor rendering_service.py into a fuller candidate lifecycle service.
+Add dedicated services for revision history, embeddings, retrieval, ranking, and prosody analysis.
+Update generation, review, audit, export, and reporting services to preserve lineage and revision-aware links.
+
+API layer
+Extend rendering and alternates APIs to expose candidate history, revision history, retrieval queries, and explainable result payloads.
+Extend search APIs beyond lexical concordance into candidate similarity search and fit-constrained alternate discovery.
+
+UI layer
+Add workbench views for alternate comparison, retrieval filters, retrieval explanations, revision history, and decision-trail inspection.
+Add controls for semantic, stylistic, and rhythmic constraint entry.
+
+Dependencies and operational tooling
+The current Python dependencies do not yet include a vector retrieval backend, embedding client, or dedicated prosody toolkit.
+Implementation must add a pluggable local vector adapter plus an embedding-generation path compatible with the local-first architecture.
+Implementation may add optional phonetic or syllabification helpers, but exact fit fields must remain stored as structured data even when helpers are unavailable.
+
+Implementation ordering dependencies:
+
+First lock the schema and ID strategy.
+Then add relational persistence for candidate metadata, revisions, and prosody fields.
+Then add embedding metadata and vector indexing.
+Then add hybrid ranking and explainable retrieval APIs.
+Then add UI comparison and retrieval workflows.
+Then extend audit, review, export, reporting, and CI coverage.
 Build sequence from start to finish
 
 Phase 0. Repo bootstrap and governance
@@ -695,6 +918,155 @@ Promotion to canonical does not delete the prior canonical rendering.
 Alternates can be included or excluded from export.
 
 Sefaria's own documentation explicitly describes support for multiple translations and comparison, which matches the alternate-translation design you want, even though your project will maintain its own data model and governance.
+
+Phase 9A. Translation candidate model expansion
+
+Goal:
+Turn the current rendering record into a full translation-candidate store without losing canonical versus alternate discipline.
+
+Tasks:
+
+Add translation_mode metadata separate from layer.
+Add author, reviewer, parent candidate, derived-from candidates, related candidates, and approved-use-case fields.
+Add semantic tags and style tags as first-class query fields.
+Add source-span, lexical-note, morphology-note, gloss, and intermediate-phrasing fields.
+Move core prosody values out of generic metrics and into first-class fields.
+Define which rendering fields are mutable versus revisioned.
+
+Acceptance:
+
+A unit can store multiple literal, poetic, lyrical, musical, or study-oriented candidates in parallel.
+Candidate metadata is queryable without reading opaque note blobs.
+
+Phase 9B. Immutable revision history and decision trail
+
+Goal:
+Preserve how every final wording was reached.
+
+Tasks:
+
+Add immutable rendering revision records.
+Capture prior text, new text, changed-by, changed-at, change-reason, and rationale deltas.
+Store reviewer comments, decision rationale, alternates considered, and why a wording was selected.
+Expose full lineage from Hebrew source span through intermediate phrasing stages to final wording.
+Link issues and review decisions to exact candidate revisions, not just current candidate heads.
+
+Acceptance:
+
+A reviewer can inspect the full derivation path for any candidate.
+An issue can target a specific candidate revision and remain stable after later edits.
+
+Phase 9C. Prosody and fit analysis
+
+Goal:
+Make rhythmic and syllabic fit retrievable as structured data rather than guesswork.
+
+Tasks:
+
+Compute or capture syllable count, stress pattern, word count, character count, phrase-break structure, and optional beat-group or meter annotations.
+Add optional singability notes and meter-fit annotations.
+Index structured prosody fields in SQLite.
+Add support for constraint queries such as same meaning with fewer syllables, fits 8 syllables, stronger cadence, or better stress fit.
+Define fallback behavior when exact stress data is unavailable.
+
+Acceptance:
+
+Rhythmic-fit queries work through structured indexed fields.
+Prosodic search does not depend on embeddings alone.
+
+Phase 9D. Embedding lifecycle and vector indexing
+
+Goal:
+Add auditable vector search without making the vector store authoritative.
+
+Tasks:
+
+Create an embedding service abstraction.
+Generate embeddings for full candidate text, phrase-level candidates, verse segments, intermediate phrasing, and style or rationale summaries where useful.
+Store embedding model name, embedding version, embedding timestamp, and source text hash.
+Persist embedding references in relational records and vector payloads in the vector layer.
+Add batch re-embed and reindex jobs.
+Add invalidation rules when source text or embedding versions change.
+
+Acceptance:
+
+Embeddings can be regenerated safely after a model change.
+Audit trails continue to identify which embedding version informed retrieval.
+
+Phase 9E. Hybrid retrieval and ranking
+
+Goal:
+Retrieve alternate renderings by meaning, rhythm, and style with explainable hybrid ranking.
+
+Tasks:
+
+Apply structured filters first by source unit, passage scope, translation mode, status, style tags, syllable range, and use case.
+Run vector similarity search across eligible candidates.
+Blend semantic similarity, style overlap, syllable distance, stress-pattern fit, approval priority, reviewer confidence, and recency into final ranking.
+Support same-Psalm, cross-Psalm, and whole-corpus retrieval scopes.
+Support target-based retrieval from Hebrew span, candidate text, gloss text, semantic intent, or translator note context.
+Log retrieval query inputs and ranking explanations.
+
+Acceptance:
+
+Users can retrieve semantically similar candidates.
+Users can retrieve rhythmically compatible candidates.
+Returned candidates expose why they matched and how they were ranked.
+
+Phase 9F. Retrieval API and workbench UX
+
+Goal:
+Make candidate discovery, comparison, and explanation usable in the editor.
+
+Tasks:
+
+Add APIs for candidate history, candidate revisions, semantic retrieval, rhythmic retrieval, style retrieval, and retrieval explanation.
+Add compare views for literal versus poetic versus lyrical alternatives.
+Add UI filters for translation mode, approval state, style, syllables, stress fit, and scope.
+Add workbench surfaces for viewing decision trail, linked alternates, revision history, and retrieval reasons.
+Support side-by-side comparison between current draft and retrieved prior solutions.
+
+Acceptance:
+
+An editor can inspect alternates, history, and retrieval explanations without leaving the workbench.
+Retrieved candidates can be compared side by side with the current draft.
+
+Phase 9G. Review, issue, audit, and export integration
+
+Goal:
+Ensure the new retrieval layer increases discoverability without reducing governance.
+
+Tasks:
+
+Link issues to source units, candidate heads, and exact candidate revisions.
+Extend review decisions to reference candidate revisions and retrieval evidence.
+Update audit reports to include candidate-history integrity, embedding version coverage, and retrieval provenance where needed.
+Update exports to distinguish approved outputs from experimental or retrieval-only candidates.
+Define which retrieval metadata is exportable and which remains local operational data.
+
+Acceptance:
+
+Review and issue workflows remain fully auditable after the candidate model expands.
+Exported bundles clearly separate approved text from exploratory retrieval data.
+
+Phase 9H. Migration, reindexing, and scale hardening
+
+Goal:
+Introduce the new storage and retrieval layer without orphaning existing renderings.
+
+Tasks:
+
+Design migration or backfill from current flat rendering records into expanded candidate, revision, and prosody models.
+Backfill derived prosody fields for existing renderings.
+Seed or defer embeddings for legacy records with explicit status tracking.
+Add rebuild commands for relational indexes, prosody indexes, and vector indexes.
+Set performance targets for interactive verse-level retrieval and batch reindexing.
+Document how the design scales beyond Psalms to additional books.
+
+Acceptance:
+
+Existing content remains usable after migration.
+Interactive retrieval remains fast enough for workbench use.
 
 Phase 10. LLM orchestration and pass pipeline
 
@@ -1106,8 +1478,11 @@ Renderings
 GET /units/{unit_id}/renderings
 POST /units/{unit_id}/renderings
 PATCH /renderings/{rendering_id}
+GET /renderings/{rendering_id}/history
+GET /renderings/{rendering_id}/revisions
 POST /renderings/{rendering_id}/promote
 POST /renderings/{rendering_id}/demote
+POST /renderings/{rendering_id}/retrieve-similar
 
 Generation
 
@@ -1121,6 +1496,12 @@ POST /review/{target_id}/approve
 POST /review/{target_id}/request-changes
 POST /review/{target_id}/accept-alternate
 POST /review/{target_id}/reject
+
+Retrieval
+
+POST /search/renderings
+POST /search/renderings/rhythm
+POST /search/renderings/style
 
 Audit
 
@@ -1149,6 +1530,10 @@ list-alternates
 add-alternate
 promote-alternate
 demote-canonical
+show-rendering-history
+rebuild-prosody-index
+rebuild-embedding-index
+retrieve-alternates
 link-issue
 link-pr
 generate-audit-report

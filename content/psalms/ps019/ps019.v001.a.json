@@ -18,18 +18,13 @@
       "unit_id": "ps019.v001.a"
     }
   ],
-  "alternate_rendering_ids": [
-    "rnd.ps019.v001.a.phrase.alt.0001",
-    "rnd.ps019.v001.a.phrase.alt.0002"
-  ],
+  "alternate_rendering_ids": [],
   "audit_ids": [
-    "aud.ps019.v001.a.0001",
-    "aud.ps019.v001.a.0002",
-    "aud.ps019.v001.a.0003"
+    "aud.ps019.v001.a.0001"
   ],
   "audit_records": [
     {
-      "after_hash": "907dbb3e17eabd81783db080f8b501e377b8d983ae05bca6c204b0d30893f82e",
+      "after_hash": "f7097cd882f5f3ef17bd67feb2c8fa244fb5fd3e834c3d4f74d74ffda73628a3",
       "audit_id": "aud.ps019.v001.a.0001",
       "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
       "change_type": "create",
@@ -43,38 +38,6 @@
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
       "triggered_by_pr": null
-    },
-    {
-      "after_hash": "de5759d19f96fe07d157b9b9b6d41d4e0c44cbfe2be651da8abc50642c33b563",
-      "audit_id": "aud.ps019.v001.a.0002",
-      "before_hash": "672f474f45e971541998dd4729d52c3977350ed70322c77391bb4809d21bef6d",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-10T13:19:11.488134+00:00",
-      "created_by": "generation-service",
-      "entity_id": "rnd.ps019.v001.a.phrase.alt.0001",
-      "entity_type": "rendering",
-      "rationale": "phrase rationale 1",
-      "review_signoff": {},
-      "summary": "Create rendering",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
-    },
-    {
-      "after_hash": "ab148fc7c191c6e4ae5a50ee08d858be926257b1eb9551ce79a586c18eb60467",
-      "audit_id": "aud.ps019.v001.a.0003",
-      "before_hash": "e7bec3fa2cc7d9bd0f89f615206a959c9de12441dac355289ac34998e1ed1732",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-10T13:19:11.489194+00:00",
-      "created_by": "generation-service",
-      "entity_id": "rnd.ps019.v001.a.phrase.alt.0002",
-      "entity_type": "rendering",
-      "rationale": "phrase rationale 2",
-      "review_signoff": {},
-      "summary": "Create rendering",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [
@@ -84,7 +47,7 @@
     "cpt.ps019.v001.a.0001"
   ],
   "current_layer_state": {
-    "latest_layer": "phrase",
+    "latest_layer": "literal",
     "locked_layers": []
   },
   "issue_links": [],
@@ -112,14 +75,14 @@
       "rationale": "Initial literal line.",
       "rendering_id": "rnd.ps019.v001.a.literal.can.0001",
       "review_signoff": {
-        "alternate_approval_count": 1,
+        "alternate_approval_count": 3,
         "alternate_approvers": [
           {
             "reviewer": "seed-reviewer-1",
             "reviewer_role": "Hebrew reviewer"
           }
         ],
-        "approval_count": 2,
+        "approval_count": 3,
         "approvers": [
           {
             "reviewer": "seed-reviewer-1",
@@ -133,7 +96,7 @@
         "eligible_for_alternate": true,
         "eligible_for_canonical": true,
         "has_release_signoff": true,
-        "latest_decision": null,
+        "latest_decision": "approve",
         "publication_ready": true,
         "release_required_role": "release reviewer",
         "release_signoff": {
@@ -154,7 +117,7 @@
           "release reviewer"
         ],
         "status": "canonical_signed_off",
-        "updated_at": "2026-04-09T00:00:01Z"
+        "updated_at": "2026-04-09T00:12:00Z"
       },
       "status": "canonical",
       "style_tags": [
@@ -170,70 +133,6 @@
         }
       ],
       "text": "The heavens are declaring",
-      "unit_id": "ps019.v001.a"
-    },
-    {
-      "alignment_ids": [
-        "aln.ps019.v001.a.phrase.0001"
-      ],
-      "drift_flags": [],
-      "layer": "phrase",
-      "metrics": {
-        "syllables": 4
-      },
-      "provenance": {
-        "generator": "generation-service",
-        "job_id": "job.4ccab37ac605",
-        "model_profile_id": "demo-local",
-        "prompt_version": "pass_03_phrase",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "phrase rationale 1",
-      "rendering_id": "rnd.ps019.v001.a.phrase.alt.0001",
-      "status": "proposed",
-      "style_tags": [
-        "phrase",
-        "study_literal",
-        "demo-local"
-      ],
-      "target_spans": [],
-      "text": "phrase candidate 1",
-      "unit_id": "ps019.v001.a"
-    },
-    {
-      "alignment_ids": [
-        "aln.ps019.v001.a.phrase.0002"
-      ],
-      "drift_flags": [],
-      "layer": "phrase",
-      "metrics": {
-        "syllables": 5
-      },
-      "provenance": {
-        "generator": "generation-service",
-        "job_id": "job.4ccab37ac605",
-        "model_profile_id": "demo-local",
-        "prompt_version": "pass_03_phrase",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "phrase rationale 2",
-      "rendering_id": "rnd.ps019.v001.a.phrase.alt.0002",
-      "status": "proposed",
-      "style_tags": [
-        "phrase",
-        "study_literal",
-        "demo-local"
-      ],
-      "target_spans": [],
-      "text": "phrase candidate 2",
       "unit_id": "ps019.v001.a"
     }
   ],
