@@ -148,8 +148,30 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                     {"span_id": "spn.ps001.v001.a.lyric.0001", "text": "Blessed is the one", "token_start": 0, "token_end": 3}
                 ],
                 "alignment_ids": ["aln.ps001.v001.a.gloss.0001", "aln.ps001.v001.a.gloss.0002"],
-                "drift_flags": ["semantic_overcompression:low"],
-                "metrics": {"syllables": 5, "parallelism_preservation": 0.84},
+                "drift_flags": [
+                    {
+                        "code": "semantic_overcompression",
+                        "severity": "low",
+                        "confidence": 0.5,
+                        "message": "semantic overcompression",
+                    },
+                    {
+                        "code": "parallelism_break",
+                        "severity": "medium",
+                        "confidence": 0.72,
+                        "message": "Lyric line compresses a multi-span source into a single span.",
+                    },
+                ],
+                "metrics": {
+                    "syllables": 6,
+                    "syllable_count": 6,
+                    "stress_approximation": 0.75,
+                    "line_length": 4,
+                    "repetition_score": 0.0,
+                    "singability_score": 0.56,
+                    "parallelism_preservation": 0.84,
+                    "parallelism_preservation_score": 0.59,
+                },
                 "rationale": "Compact singable alternate.",
                 "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": "human-seed"},
             },
@@ -362,8 +384,23 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                     {"span_id": "spn.ps023.v001.a.lyric.0001", "text": "The LORD, my shepherd, stays near", "token_start": 0, "token_end": 5}
                 ],
                 "alignment_ids": ["aln.ps023.v001.a.literal.0001"],
-                "drift_flags": ["editorial_expansion:medium"],
-                "metrics": {"syllables": 8, "singability_score": 0.74},
+                "drift_flags": [
+                    {
+                        "code": "editorial_expansion",
+                        "severity": "medium",
+                        "confidence": 0.5,
+                        "message": "editorial expansion",
+                    }
+                ],
+                "metrics": {
+                    "syllables": 7,
+                    "syllable_count": 7,
+                    "stress_approximation": 0.58,
+                    "line_length": 6,
+                    "repetition_score": 0.0,
+                    "singability_score": 0.74,
+                    "parallelism_preservation_score": 0.81,
+                },
                 "rationale": "Alternate candidate for common meter development.",
                 "provenance": {"source_ids": ["uxlc", "oshb", "macula"], "generator": "human-seed"},
             },

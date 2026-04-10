@@ -18,9 +18,14 @@
       "unit_id": "ps019.v001.a"
     }
   ],
-  "alternate_rendering_ids": [],
+  "alternate_rendering_ids": [
+    "rnd.ps019.v001.a.phrase.alt.0001",
+    "rnd.ps019.v001.a.phrase.alt.0002"
+  ],
   "audit_ids": [
-    "aud.ps019.v001.a.0001"
+    "aud.ps019.v001.a.0001",
+    "aud.ps019.v001.a.0002",
+    "aud.ps019.v001.a.0003"
   ],
   "audit_records": [
     {
@@ -38,6 +43,38 @@
       "summary": "Seed fixture unit",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "de5759d19f96fe07d157b9b9b6d41d4e0c44cbfe2be651da8abc50642c33b563",
+      "audit_id": "aud.ps019.v001.a.0002",
+      "before_hash": "672f474f45e971541998dd4729d52c3977350ed70322c77391bb4809d21bef6d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T13:19:11.488134+00:00",
+      "created_by": "generation-service",
+      "entity_id": "rnd.ps019.v001.a.phrase.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "phrase rationale 1",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ab148fc7c191c6e4ae5a50ee08d858be926257b1eb9551ce79a586c18eb60467",
+      "audit_id": "aud.ps019.v001.a.0003",
+      "before_hash": "e7bec3fa2cc7d9bd0f89f615206a959c9de12441dac355289ac34998e1ed1732",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-10T13:19:11.489194+00:00",
+      "created_by": "generation-service",
+      "entity_id": "rnd.ps019.v001.a.phrase.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "phrase rationale 2",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [
@@ -47,7 +84,7 @@
     "cpt.ps019.v001.a.0001"
   ],
   "current_layer_state": {
-    "latest_layer": "literal",
+    "latest_layer": "phrase",
     "locked_layers": []
   },
   "issue_links": [],
@@ -88,6 +125,70 @@
         }
       ],
       "text": "The heavens are declaring",
+      "unit_id": "ps019.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps019.v001.a.phrase.0001"
+      ],
+      "drift_flags": [],
+      "layer": "phrase",
+      "metrics": {
+        "syllables": 4
+      },
+      "provenance": {
+        "generator": "generation-service",
+        "job_id": "job.4ccab37ac605",
+        "model_profile_id": "demo-local",
+        "prompt_version": "pass_03_phrase",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "phrase rationale 1",
+      "rendering_id": "rnd.ps019.v001.a.phrase.alt.0001",
+      "status": "proposed",
+      "style_tags": [
+        "phrase",
+        "study_literal",
+        "demo-local"
+      ],
+      "target_spans": [],
+      "text": "phrase candidate 1",
+      "unit_id": "ps019.v001.a"
+    },
+    {
+      "alignment_ids": [
+        "aln.ps019.v001.a.phrase.0002"
+      ],
+      "drift_flags": [],
+      "layer": "phrase",
+      "metrics": {
+        "syllables": 5
+      },
+      "provenance": {
+        "generator": "generation-service",
+        "job_id": "job.4ccab37ac605",
+        "model_profile_id": "demo-local",
+        "prompt_version": "pass_03_phrase",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "phrase rationale 2",
+      "rendering_id": "rnd.ps019.v001.a.phrase.alt.0002",
+      "status": "proposed",
+      "style_tags": [
+        "phrase",
+        "study_literal",
+        "demo-local"
+      ],
+      "target_spans": [],
+      "text": "phrase candidate 2",
       "unit_id": "ps019.v001.a"
     }
   ],

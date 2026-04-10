@@ -3,14 +3,32 @@ from __future__ import annotations
 from pathlib import Path
 
 from app.core.config import get_settings
-from app.core.errors import LicensePolicyError
-from app.services import audit_service, registry_service, report_service
+from app.core.errors import LicensePolicyError, PublicationConstraintError
+from app.services import audit_service, poetic_analysis_service, registry_service, report_service
 
 
 def _ensure_exportable() -> None:
     audit = registry_service.audit_licenses()
     if any("forbidden_for_export" in item["warnings"] for item in audit["evaluations"]):
         raise LicensePolicyError("Export blocked by forbidden source license policy")
+    _ensure_canonical_publication_constraints()
+
+
+def _ensure_canonical_publication_constraints() -> None:
+    violations: list[str] = []
+    for unit in registry_service.list_units():
+        for rendering in unit.get("renderings", []):
+            if rendering.get("status") != "canonical":
+                continue
+            missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
+            if missing_metrics:
+                violations.append(
+                    f"{rendering['rendering_id']}: missing lyric metrics {', '.join(missing_metrics)}"
+                )
+            if poetic_analysis_service.has_blocking_drift(rendering):
+                violations.append(f"{rendering['rendering_id']}: unresolved high-severity drift")
+    if violations:
+        raise PublicationConstraintError("Export blocked by canonical publication constraints: " + "; ".join(violations))
 
 
 def export_book(psalm_id: str | None = None, output_dir: Path | None = None) -> Path:

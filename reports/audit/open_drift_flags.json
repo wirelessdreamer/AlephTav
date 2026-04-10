@@ -1,11 +1,31 @@
 [
   {
-    "flag": "semantic_overcompression:low",
+    "flag": {
+      "code": "semantic_overcompression",
+      "confidence": 0.5,
+      "message": "semantic overcompression",
+      "severity": "low"
+    },
     "rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
     "unit_id": "ps001.v001.a"
   },
   {
-    "flag": "editorial_expansion:medium",
+    "flag": {
+      "code": "parallelism_break",
+      "confidence": 0.72,
+      "message": "Lyric line compresses a multi-span source into a single span.",
+      "severity": "medium"
+    },
+    "rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
+    "unit_id": "ps001.v001.a"
+  },
+  {
+    "flag": {
+      "code": "editorial_expansion",
+      "confidence": 0.5,
+      "message": "editorial expansion",
+      "severity": "medium"
+    },
     "rendering_id": "rnd.ps023.v001.a.lyric.alt.0001",
     "unit_id": "ps023.v001.a"
   }

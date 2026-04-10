@@ -45,7 +45,20 @@
       }
     },
     "alignment_ids": { "type": "array", "items": { "type": "string" } },
-    "drift_flags": { "type": "array", "items": { "type": "string" } },
+    "drift_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "confidence", "message"],
+        "additionalProperties": false,
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "message": { "type": "string" }
+        }
+      }
+    },
     "metrics": { "type": "object" },
     "rationale": { "type": "string" },
     "style_goal": { "type": ["string", "null"] },

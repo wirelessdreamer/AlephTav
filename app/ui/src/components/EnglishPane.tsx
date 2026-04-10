@@ -118,7 +118,7 @@ export function EnglishPane({
             {rendering.drift_flags.length > 0 ? (
               <div className="warning-box">
                 {rendering.drift_flags.map((flag) => (
-                  <span key={flag}>{flag}</span>
+                  <span key={`${flag.code}-${flag.severity}`}>{flag.code}:{flag.severity}</span>
                 ))}
               </div>
             ) : null}

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from app.core.errors import NotFoundError, ReviewRequiredError, ValidationError
+from app.core.errors import NotFoundError, PublicationConstraintError, ReviewRequiredError, ValidationError
 from app.core.ids import rendering_id
-from app.services import audit_service, registry_service
+from app.services import audit_service, poetic_analysis_service, registry_service
 
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
@@ -97,7 +97,7 @@ def create_rendering(
     style_tags: list[str] | None = None,
     target_spans: list[dict[str, Any]] | None = None,
     alignment_ids: list[str] | None = None,
-    drift_flags: list[str] | None = None,
+    drift_flags: list[dict[str, Any] | str] | None = None,
     metrics: dict[str, Any] | None = None,
     provenance: dict[str, Any] | None = None,
     style_goal: str | None = None,
@@ -108,10 +108,18 @@ def create_rendering(
     if status == "canonical":
         raise ReviewRequiredError("Create proposed or alternate renderings first, then promote after review")
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
-    hint = "alt"
+    analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
+        unit=unit,
+        layer=layer,
+        text=text,
+        style_tags=style_tags,
+        target_spans=target_spans,
+        existing_flags=drift_flags,
+        existing_metrics=metrics,
+    )
     existing_ids = [item["rendering_id"] for item in unit.get("renderings", [])]
     item = {
-        "rendering_id": rendering_id(unit_id, layer, hint, existing_ids),
+        "rendering_id": rendering_id(unit_id, layer, "alt", existing_ids),
         "unit_id": unit_id,
         "layer": layer,
         "status": status,
@@ -119,8 +127,8 @@ def create_rendering(
         "style_tags": style_tags or [layer],
         "target_spans": target_spans or [],
         "alignment_ids": alignment_ids or [],
-        "drift_flags": drift_flags or [],
-        "metrics": metrics or {},
+        "drift_flags": analyzed_flags,
+        "metrics": analyzed_metrics,
         "rationale": rationale,
         "provenance": provenance or {"source_ids": ["uxlc", "oshb", "macula"], "generator": created_by},
         "style_goal": style_goal,
@@ -128,6 +136,7 @@ def create_rendering(
         "issue_links": issue_links or [],
         "pr_links": pr_links or [],
     }
+    _ensure_publication_constraints(item)
     unit.setdefault("renderings", []).append(item)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
@@ -151,6 +160,18 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
     rendering = _rendering_lookup(unit, rendering_id_value)
     previous_status = rendering["status"]
     rendering.update(payload)
+    analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
+        unit=unit,
+        layer=rendering["layer"],
+        text=rendering["text"],
+        style_tags=rendering.get("style_tags"),
+        target_spans=rendering.get("target_spans"),
+        existing_flags=rendering.get("drift_flags"),
+        existing_metrics=rendering.get("metrics"),
+    )
+    rendering["drift_flags"] = analyzed_flags
+    rendering["metrics"] = analyzed_metrics
+    _ensure_publication_constraints(rendering)
     if rendering["status"] == "canonical":
         for candidate in unit.get("renderings", []):
             if candidate["rendering_id"] != rendering_id_value and candidate["layer"] == rendering["layer"] and candidate["status"] == "canonical":
@@ -191,10 +212,22 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
     if _approvals_for(unit, rendering_id_value) < registry_service.load_project()["review_policy"]["canonical_required_approvals"]:
         raise ReviewRequiredError("Human review is required before promotion to canonical")
     target = _rendering_lookup(unit, rendering_id_value)
+    analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
+        unit=unit,
+        layer=target["layer"],
+        text=target["text"],
+        style_tags=target.get("style_tags"),
+        target_spans=target.get("target_spans"),
+        existing_flags=target.get("drift_flags"),
+        existing_metrics=target.get("metrics"),
+    )
+    target["drift_flags"] = analyzed_flags
+    target["metrics"] = analyzed_metrics
     for rendering in unit.get("renderings", []):
         if rendering["rendering_id"] != target["rendering_id"] and rendering["layer"] == target["layer"] and rendering["status"] == "canonical":
             rendering["status"] = "accepted_as_alternate"
     target["status"] = "canonical"
+    _ensure_publication_constraints(target)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -263,3 +296,15 @@ def compare_renderings(unit_id: str, left_id: str, right_id: str) -> dict[str, A
             "right_is_canonical": right["status"] == "canonical",
         },
     }
+
+
+def _ensure_publication_constraints(rendering: dict[str, Any]) -> None:
+    if rendering.get("status") != "canonical":
+        return
+    missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
+    if missing_metrics:
+        raise PublicationConstraintError(
+            f"Canonical {rendering['layer']} rendering is missing lyric metrics: {', '.join(missing_metrics)}"
+        )
+    if poetic_analysis_service.has_blocking_drift(rendering):
+        raise PublicationConstraintError("Canonical rendering has unresolved high-severity drift flags")

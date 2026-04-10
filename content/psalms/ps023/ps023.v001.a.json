@@ -26,7 +26,7 @@
   ],
   "audit_records": [
     {
-      "after_hash": "d1388c090cee02e2df57b0be70c79be4c4297003ff827bcb1906e21fb8bf8410",
+      "after_hash": "0152f6180c8a3df45829f1f8a2b0709741fdb6c60e118c6a3d48e2f8d362d405",
       "audit_id": "aud.ps023.v001.a.0001",
       "before_hash": "e71b4881425b9d95dc2c461150a38092d77c23ffe2fd5f25eea5d14842e0401f",
       "change_type": "create",
@@ -100,12 +100,22 @@
         "aln.ps023.v001.a.literal.0001"
       ],
       "drift_flags": [
-        "editorial_expansion:medium"
+        {
+          "code": "editorial_expansion",
+          "confidence": 0.5,
+          "message": "editorial expansion",
+          "severity": "medium"
+        }
       ],
       "layer": "lyric",
       "metrics": {
+        "line_length": 6,
+        "parallelism_preservation_score": 0.81,
+        "repetition_score": 0.0,
         "singability_score": 0.74,
-        "syllables": 8
+        "stress_approximation": 0.58,
+        "syllable_count": 7,
+        "syllables": 7
       },
       "provenance": {
         "generator": "human-seed",

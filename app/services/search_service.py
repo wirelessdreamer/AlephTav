@@ -7,7 +7,7 @@ from typing import Any
 
 from app.core.config import get_settings
 from app.core.errors import NotFoundError, ValidationError
-from app.services import registry_service
+from app.services import poetic_analysis_service, registry_service
 
 
 CANONICAL_SCOPES = {
@@ -254,7 +254,13 @@ def _meter_fit_alternates() -> list[dict[str, Any]]:
 def _units_with_unresolved_drift() -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     for unit in registry_service.list_units():
-        flags = sorted({flag for rendering in unit.get("renderings", []) for flag in rendering.get("drift_flags", [])})
+        flags = sorted(
+            {
+                poetic_analysis_service.format_flag(flag)
+                for rendering in unit.get("renderings", [])
+                for flag in rendering.get("drift_flags", [])
+            }
+        )
         if not flags:
             continue
         results.append(

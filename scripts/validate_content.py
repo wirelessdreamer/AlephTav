@@ -12,7 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app.core.config import get_settings
-from app.services import registry_service
+from app.services import poetic_analysis_service, registry_service
 
 
 def _load_schema(path: Path) -> dict[str, Any]:
@@ -70,6 +70,7 @@ def validate_all_content() -> dict[str, Any]:
             _register_unique(seen_ids["alignment"], alignment["alignment_id"], errors, f"duplicate alignment_id {alignment['alignment_id']}")
         for rendering in unit.get("renderings", []):
             _register_unique(seen_ids["rendering"], rendering["rendering_id"], errors, f"duplicate rendering_id {rendering['rendering_id']}")
+            _validate_rendering_analysis(path, unit, rendering, errors)
         for audit in unit.get("audit_records", []):
             _register_unique(seen_ids["audit"], audit["audit_id"], errors, f"duplicate audit_id {audit['audit_id']}")
         if len(unit.get("token_ids", [])) != len(unit.get("tokens", [])):
@@ -87,6 +88,33 @@ def _register_unique(bucket: set[str], value: str | None, errors: list[str], mes
     if value in bucket:
         errors.append(message)
     bucket.add(value)
+
+
+def _validate_rendering_analysis(path: Path, unit: dict[str, Any], rendering: dict[str, Any], errors: list[str]) -> None:
+    analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
+        unit=unit,
+        layer=rendering["layer"],
+        text=rendering["text"],
+        style_tags=rendering.get("style_tags"),
+        target_spans=rendering.get("target_spans"),
+        existing_flags=rendering.get("drift_flags"),
+        existing_metrics=rendering.get("metrics"),
+    )
+    current_flags = [poetic_analysis_service.normalize_flag(flag) for flag in rendering.get("drift_flags", [])]
+    if current_flags != analyzed_flags:
+        errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} drift_flags are stale")
+    for key, value in analyzed_metrics.items():
+        if rendering.get("metrics", {}).get(key) != value:
+            errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} metric {key} is stale")
+    if rendering.get("status") != "canonical":
+        return
+    missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
+    if missing_metrics:
+        errors.append(
+            f"{path.relative_to(ROOT)}: {rendering['rendering_id']} missing canonical lyric metrics {', '.join(missing_metrics)}"
+        )
+    if poetic_analysis_service.has_blocking_drift(rendering):
+        errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} has unresolved high-severity drift")
 
 
 def main() -> None:

@@ -55,7 +55,7 @@ export interface Rendering {
   style_tags: string[];
   target_spans: RenderingSpan[];
   alignment_ids: string[];
-  drift_flags: string[];
+  drift_flags: DriftFlag[];
   metrics: Record<string, number>;
   rationale: string;
   provenance: { source_ids: string[]; generator: string };
@@ -189,8 +189,15 @@ export interface PinnedLexicalCardState {
 export interface OpenConcerns {
   uncovered_tokens: Array<{ unit_id: string; token_id: string }>;
   unaligned_spans: Array<{ unit_id: string; rendering_id: string }>;
-  open_drift_flags: Array<{ unit_id: string; rendering_id: string; flag: string }>;
+  open_drift_flags: Array<{ unit_id: string; rendering_id: string; flag: DriftFlag }>;
   provenance_gaps: Array<{ unit_id: string; rendering_id: string }>;
+}
+
+export interface DriftFlag {
+  code: string;
+  severity: 'low' | 'medium' | 'high';
+  confidence: number;
+  message: string;
 }
 
 export interface SearchResult {

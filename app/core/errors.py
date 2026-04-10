@@ -18,5 +18,9 @@ class ReviewRequiredError(ContentError):
     """Raised when canonical promotion lacks required human review."""
 
 
+class PublicationConstraintError(ContentError):
+    """Raised when a canonical rendering fails publication constraints."""
+
+
 class GenerationError(ContentError):
     """Raised when local-model generation or orchestration fails."""

@@ -41,7 +41,7 @@
   ],
   "audit_records": [
     {
-      "after_hash": "8a8ac5c4335f5dfaff97597751284902c93782da64abd2e6178b7e493092097f",
+      "after_hash": "1fe98d1a0fe9cef1c5a1acf458caee2cfa06932eaeb8531964117c57ae0838a5",
       "audit_id": "aud.ps001.v001.a.0001",
       "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
       "change_type": "create",
@@ -165,12 +165,29 @@
         "aln.ps001.v001.a.gloss.0002"
       ],
       "drift_flags": [
-        "semantic_overcompression:low"
+        {
+          "code": "semantic_overcompression",
+          "confidence": 0.5,
+          "message": "semantic overcompression",
+          "severity": "low"
+        },
+        {
+          "code": "parallelism_break",
+          "confidence": 0.72,
+          "message": "Lyric line compresses a multi-span source into a single span.",
+          "severity": "medium"
+        }
       ],
       "layer": "lyric",
       "metrics": {
+        "line_length": 4,
         "parallelism_preservation": 0.84,
-        "syllables": 5
+        "parallelism_preservation_score": 0.59,
+        "repetition_score": 0.0,
+        "singability_score": 0.56,
+        "stress_approximation": 0.75,
+        "syllable_count": 6,
+        "syllables": 6
       },
       "provenance": {
         "generator": "human-seed",

@@ -1,6 +1,6 @@
 import pytest
 
-from app.core.errors import ReviewRequiredError
+from app.core.errors import PublicationConstraintError, ReviewRequiredError
 from app.services import export_service, registry_service, rendering_service, review_service
 
 
@@ -49,3 +49,47 @@ def test_release_export_generates_bundle() -> None:
     assert (destination / "text.json").exists()
     assert (destination / "AUDIT_REPORT.json").exists()
     assert (destination / "OPEN_CONCERNS.md").exists()
+
+
+def test_high_drift_lyric_cannot_be_promoted_to_canonical() -> None:
+    review_service.add_review_decision(
+        "rnd.ps023.v001.a.lyric.alt.0001",
+        decision="approve",
+        reviewer="reviewer-1",
+        reviewer_role="lyric reviewer",
+    )
+    review_service.add_review_decision(
+        "rnd.ps023.v001.a.lyric.alt.0001",
+        decision="approve",
+        reviewer="reviewer-2",
+        reviewer_role="theology reviewer",
+    )
+    rendering_service.update_rendering(
+        "rnd.ps023.v001.a.lyric.alt.0001",
+        {"text": "The gospel shepherd saves me"},
+    )
+
+    with pytest.raises(PublicationConstraintError):
+        rendering_service.promote_rendering(
+            "rnd.ps023.v001.a.lyric.alt.0001",
+            reviewer="tester",
+            reviewer_role="release reviewer",
+        )
+
+
+def test_export_blocks_canonical_high_severity_drift() -> None:
+    _, unit = registry_service.update_unit("ps023.v001.a", lambda existing: existing)
+    for rendering in unit["renderings"]:
+        if rendering["rendering_id"] == "rnd.ps023.v001.a.literal.can.0001":
+            rendering["drift_flags"] = [
+                {
+                    "code": "added_doctrine",
+                    "severity": "high",
+                    "confidence": 0.99,
+                    "message": "Injected doctrine absent from source.",
+                }
+            ]
+    registry_service.save_unit(unit)
+
+    with pytest.raises(PublicationConstraintError):
+        export_service.export_release("v0.1.0")

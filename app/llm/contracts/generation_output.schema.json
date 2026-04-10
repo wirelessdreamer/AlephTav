@@ -17,7 +17,25 @@
           "text": { "type": "string" },
           "rationale": { "type": "string" },
           "alignment_hints": { "type": "array" },
-          "drift_flags": { "type": "array" },
+          "drift_flags": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                { "type": "string" },
+                {
+                  "type": "object",
+                  "required": ["code", "severity", "confidence", "message"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "code": { "type": "string" },
+                    "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+                    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "message": { "type": "string" }
+                  }
+                }
+              ]
+            }
+          },
           "metrics": { "type": "object" }
         }
       }

@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from app.core.ids import audit_id
-from app.services import registry_service
+from app.services import poetic_analysis_service, registry_service
 
 
 def create_audit_record(
@@ -64,7 +64,14 @@ def open_concerns() -> dict[str, Any]:
             if not rendering.get("alignment_ids"):
                 unaligned_spans.append({"unit_id": unit["unit_id"], "rendering_id": rendering["rendering_id"]})
             for flag in rendering.get("drift_flags", []):
-                drift_flags.append({"unit_id": unit["unit_id"], "rendering_id": rendering["rendering_id"], "flag": flag})
+                normalized = poetic_analysis_service.normalize_flag(flag)
+                drift_flags.append(
+                    {
+                        "unit_id": unit["unit_id"],
+                        "rendering_id": rendering["rendering_id"],
+                        "flag": normalized,
+                    }
+                )
             if not rendering.get("provenance"):
                 provenance_gaps.append({"unit_id": unit["unit_id"], "rendering_id": rendering["rendering_id"]})
     return {
