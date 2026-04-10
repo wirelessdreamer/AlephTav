@@ -6,7 +6,12 @@ interface EnglishPaneProps {
   renderings: Rendering[];
   activeLayer: Layer;
   highlightedRenderingIds: string[];
+  highlightedSpanIds: string[];
+  selectedSpanIds: string[];
+  hoveredSpanId: string | null;
   onSelectLayer: (layer: Layer) => void;
+  onHoverSpan: (spanId: string | null) => void;
+  onToggleSpan: (spanId: string) => void;
   onCompareLeft: (renderingId: string) => void;
   onCompareRight: (renderingId: string) => void;
   onPromoteAlternate: (renderingId: string) => void;
@@ -22,7 +27,12 @@ export function EnglishPane({
   renderings,
   activeLayer,
   highlightedRenderingIds,
+  highlightedSpanIds,
+  selectedSpanIds,
+  hoveredSpanId,
   onSelectLayer,
+  onHoverSpan,
+  onToggleSpan,
   onCompareLeft,
   onCompareRight,
   onPromoteAlternate,
@@ -72,7 +82,31 @@ export function EnglishPane({
               <strong>{rendering.status}</strong>
               <span className="subtle">{rendering.rendering_id}</span>
             </div>
-            <p className="rendering-text">{rendering.text}</p>
+            <div className="rendering-span-row" aria-label={`Rendering spans for ${rendering.rendering_id}`}>
+              {rendering.target_spans.length > 0 ? (
+                rendering.target_spans.map((span) => {
+                  const linked = highlightedSpanIds.includes(span.span_id);
+                  const selected = selectedSpanIds.includes(span.span_id);
+                  const active = hoveredSpanId === span.span_id;
+                  return (
+                    <button
+                      key={span.span_id}
+                      type="button"
+                      className={`rendering-span ${linked ? 'linked' : ''} ${selected ? 'selected' : ''} ${active ? 'active' : ''}`}
+                      onMouseEnter={() => onHoverSpan(span.span_id)}
+                      onMouseLeave={() => onHoverSpan(null)}
+                      onClick={() => onToggleSpan(span.span_id)}
+                      aria-pressed={selected}
+                      title={span.span_id}
+                    >
+                      {span.text}
+                    </button>
+                  );
+                })
+              ) : (
+                <p className="rendering-text">{rendering.text}</p>
+              )}
+            </div>
             <div className="tag-row">
               {rendering.style_tags.map((tag) => (
                 <span key={tag} className="tag">

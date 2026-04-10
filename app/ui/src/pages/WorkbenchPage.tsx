@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import { BottomDrawer } from '../components/BottomDrawer';
@@ -25,6 +25,10 @@ export function WorkbenchPage() {
   const [activeLayer, setActiveLayer] = useState<Layer>('literal');
   const [granularity, setGranularity] = useState<'colon' | 'verse'>('colon');
   const [hoveredTokenId, setHoveredTokenId] = useState<string | null>(null);
+  const [hoveredSpanId, setHoveredSpanId] = useState<string | null>(null);
+  const [selectedTokenIds, setSelectedTokenIds] = useState<string[]>([]);
+  const [selectedSpanIds, setSelectedSpanIds] = useState<string[]>([]);
+  const [selectedAlignmentId, setSelectedAlignmentId] = useState<string | null>(null);
   const [compareLeftId, setCompareLeftId] = useState<string | null>(null);
   const [compareRightId, setCompareRightId] = useState<string | null>(null);
 
@@ -44,19 +48,90 @@ export function WorkbenchPage() {
 
   const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
 
-  const linkedTokenIds = useMemo(() => {
-    if (!unit) return [];
-    return unit.alignments
-      .filter((alignment: Alignment) => alignment.layer === activeLayer || activeLayer === 'literal')
-      .flatMap((alignment: Alignment) => alignment.source_token_ids);
+  const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
+
+  const activeAlignment = useMemo(
+    () => activeAlignments.find((alignment: Alignment) => alignment.alignment_id === selectedAlignmentId) ?? null,
+    [activeAlignments, selectedAlignmentId],
+  );
+
+  const tokenToAlignments = useMemo(() => {
+    const mapping = new Map<string, Alignment[]>();
+    activeAlignments.forEach((alignment) => {
+      alignment.source_token_ids.forEach((tokenId) => {
+        mapping.set(tokenId, [...(mapping.get(tokenId) ?? []), alignment]);
+      });
+    });
+    return mapping;
   }, [unit, activeLayer]);
 
-  const linkedRenderingIds = useMemo(() => {
+  const spanToAlignments = useMemo(() => {
+    const mapping = new Map<string, Alignment[]>();
+    activeAlignments.forEach((alignment) => {
+      alignment.target_span_ids.forEach((spanId) => {
+        mapping.set(spanId, [...(mapping.get(spanId) ?? []), alignment]);
+      });
+    });
+    return mapping;
+  }, [activeAlignments]);
+
+  const highlightedTokenIds = useMemo(() => {
+    const ids = new Set<string>(selectedTokenIds);
+    selectedSpanIds.forEach((spanId) => {
+      (spanToAlignments.get(spanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((tokenId) => ids.add(tokenId)));
+    });
+    if (hoveredSpanId) {
+      (spanToAlignments.get(hoveredSpanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((tokenId) => ids.add(tokenId)));
+    }
+    activeAlignment?.source_token_ids.forEach((tokenId) => ids.add(tokenId));
+    return [...ids];
+  }, [activeAlignment, hoveredSpanId, selectedTokenIds, selectedSpanIds, spanToAlignments]);
+
+  const highlightedSpanIds = useMemo(() => {
+    const ids = new Set<string>(selectedSpanIds);
+    selectedTokenIds.forEach((tokenId) => {
+      (tokenToAlignments.get(tokenId) ?? []).forEach((alignment) => alignment.target_span_ids.forEach((spanId) => ids.add(spanId)));
+    });
+    if (hoveredTokenId) {
+      (tokenToAlignments.get(hoveredTokenId) ?? []).forEach((alignment) => alignment.target_span_ids.forEach((spanId) => ids.add(spanId)));
+    }
+    activeAlignment?.target_span_ids.forEach((spanId) => ids.add(spanId));
+    return [...ids];
+  }, [activeAlignment, hoveredTokenId, selectedSpanIds, selectedTokenIds, tokenToAlignments]);
+
+  const highlightedRenderingIds = useMemo(() => {
     if (!unit) return [];
+    const spans = new Set(highlightedSpanIds);
     return unit.renderings
       .filter((rendering: Rendering) => rendering.layer === activeLayer)
+      .filter((rendering: Rendering) => rendering.target_spans.some((span) => spans.has(span.span_id)))
       .map((rendering: Rendering) => rendering.rendering_id);
-  }, [unit, activeLayer]);
+  }, [unit, activeLayer, highlightedSpanIds]);
+
+  useEffect(() => {
+    setHoveredTokenId(null);
+    setHoveredSpanId(null);
+    setSelectedTokenIds([]);
+    setSelectedSpanIds([]);
+    setSelectedAlignmentId(null);
+  }, [selectedUnitId, activeLayer]);
+
+  useEffect(() => {
+    if (!selectedAlignmentId) {
+      return;
+    }
+    if (!activeAlignments.some((alignment) => alignment.alignment_id === selectedAlignmentId)) {
+      setSelectedAlignmentId(null);
+    }
+  }, [activeAlignments, selectedAlignmentId]);
+
+  useEffect(() => {
+    if (!activeAlignment) {
+      return;
+    }
+    setSelectedTokenIds(activeAlignment.source_token_ids);
+    setSelectedSpanIds(activeAlignment.target_span_ids);
+  }, [activeAlignment]);
 
   const hebrewRef = useRef<HTMLDivElement>(null);
   const englishRef = useRef<HTMLDivElement>(null);
@@ -92,6 +167,14 @@ export function WorkbenchPage() {
   const handlePinToken = (nextTokenId: string) => {
     const tokenIdToPersist = pinnedTokenId === nextTokenId ? null : nextTokenId;
     setPinnedLexicalCard.mutate(tokenIdToPersist);
+  };
+
+  const handleToggleToken = (tokenId: string) => {
+    setSelectedTokenIds((existing) => (existing.includes(tokenId) ? existing.filter((item) => item !== tokenId) : [...existing, tokenId]));
+  };
+
+  const handleToggleSpan = (spanId: string) => {
+    setSelectedSpanIds((existing) => (existing.includes(spanId) ? existing.filter((item) => item !== spanId) : [...existing, spanId]));
   };
 
   const handlePromoteAlternate = (renderingId: string) => {
@@ -157,17 +240,24 @@ export function WorkbenchPage() {
           <HebrewPane
             tokens={unit?.tokens ?? []}
             activeTokenId={tokenId}
-            highlightedTokenIds={linkedTokenIds}
+            highlightedTokenIds={highlightedTokenIds}
+            selectedTokenIds={selectedTokenIds}
             onHoverToken={setHoveredTokenId}
             onPinToken={handlePinToken}
+            onToggleToken={handleToggleToken}
           />
         </div>
         <div className="scroll-panel" ref={englishRef} onScroll={() => syncScroll('english')}>
           <EnglishPane
             renderings={unit?.renderings ?? []}
             activeLayer={activeLayer}
-            highlightedRenderingIds={linkedRenderingIds}
+            highlightedRenderingIds={highlightedRenderingIds}
+            highlightedSpanIds={highlightedSpanIds}
+            selectedSpanIds={selectedSpanIds}
+            hoveredSpanId={hoveredSpanId}
             onSelectLayer={setActiveLayer}
+            onHoverSpan={setHoveredSpanId}
+            onToggleSpan={handleToggleSpan}
             onCompareLeft={setCompareLeftId}
             onCompareRight={setCompareRightId}
             onPromoteAlternate={handlePromoteAlternate}
@@ -186,6 +276,15 @@ export function WorkbenchPage() {
         concordanceSeed={tokenCard?.lemma ?? undefined}
         onNavigateToUnit={handleNavigateToUnit}
         activeLayer={activeLayer}
+        selectedTokenIds={selectedTokenIds}
+        selectedSpanIds={selectedSpanIds}
+        selectedAlignmentId={selectedAlignmentId}
+        onSelectedAlignmentChange={setSelectedAlignmentId}
+        onClearAlignmentSelection={() => {
+          setSelectedAlignmentId(null);
+          setSelectedTokenIds([]);
+          setSelectedSpanIds([]);
+        }}
         compareLeftId={compareLeftId}
         compareRightId={compareRightId}
         onCompareLeftChange={setCompareLeftId}

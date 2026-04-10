@@ -280,12 +280,16 @@ def generate_audit_reports() -> dict[str, Any]:
     registry_service.write_json(
         settings.audit_reports_dir / "provenance_gaps.json", concerns["provenance_gaps"]
     )
+    registry_service.write_json(
+        settings.audit_reports_dir / "low_confidence_alignments.json", concerns["low_confidence_alignments"]
+    )
     settings.audit_reports_dir.mkdir(parents=True, exist_ok=True)
 
     open_concerns_md = (
         "# Open Concerns\n\n"
         f"- Uncovered tokens: {len(concerns['uncovered_tokens'])}\n"
         f"- Unaligned spans: {len(concerns['unaligned_spans'])}\n"
+        f"- Low-confidence alignments: {len(concerns['low_confidence_alignments'])}\n"
         f"- Drift flags: {len(concerns['open_drift_flags'])}\n"
         f"- Provenance gaps: {len(concerns['provenance_gaps'])}\n"
     )

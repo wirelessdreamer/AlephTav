@@ -15,9 +15,10 @@ import {
   useReviewAction,
   useRenderingComparison,
   useSearchPreset,
+  useUpdateAlignment,
   useUnitWitnesses,
 } from '../hooks/useWorkbench';
-import type { Layer, OpenConcerns, TokenCard, Unit } from '../types';
+import type { Alignment, Layer, OpenConcerns, TokenCard, Unit } from '../types';
 
 type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
 type SearchScope =
@@ -38,6 +39,11 @@ interface BottomDrawerProps {
   tokenCard?: TokenCard;
   concordanceSeed?: string;
   activeLayer: Layer;
+  selectedTokenIds: string[];
+  selectedSpanIds: string[];
+  selectedAlignmentId: string | null;
+  onSelectedAlignmentChange: (alignmentId: string | null) => void;
+  onClearAlignmentSelection: () => void;
   onNavigateToUnit: (unitId: string, psalmId: string) => void;
   compareLeftId: string | null;
   compareRightId: string | null;
@@ -61,6 +67,11 @@ export function BottomDrawer({
   concordanceSeed,
   onNavigateToUnit,
   activeLayer,
+  selectedTokenIds,
+  selectedSpanIds,
+  selectedAlignmentId,
+  onSelectedAlignmentChange,
+  onClearAlignmentSelection,
   compareLeftId,
   compareRightId,
   onCompareLeftChange,
@@ -75,6 +86,8 @@ export function BottomDrawer({
   const [presetName, setPresetName] = useState<PresetName>(null);
   const [releaseId, setReleaseId] = useState('');
   const [alignmentSpanText, setAlignmentSpanText] = useState('');
+  const [alignmentType, setAlignmentType] = useState('direct');
+  const [alignmentConfidence, setAlignmentConfidence] = useState('0.9');
   const [alternateLayer, setAlternateLayer] = useState<Layer>('lyric');
   const [alternateText, setAlternateText] = useState('');
   const [selectedAlternateId, setSelectedAlternateId] = useState('');
@@ -97,6 +110,7 @@ export function BottomDrawer({
   const witnesses = useUnitWitnesses(unit?.unit_id ?? null);
   const createAlignment = useCreateAlignment(unit?.unit_id ?? null);
   const deleteAlignment = useDeleteAlignment(unit?.unit_id ?? null);
+  const updateAlignment = useUpdateAlignment(unit?.unit_id ?? null);
   const createRendering = useCreateRendering(unit?.unit_id ?? null);
   const reviewAction = useReviewAction(unit?.unit_id ?? null);
   const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
@@ -114,6 +128,8 @@ export function BottomDrawer({
 
   const unresolvedDriftCount = concerns?.open_drift_flags.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const uncoveredCount = concerns?.uncovered_tokens.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
+  const unalignedSpanCount = concerns?.unaligned_spans.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
+  const lowConfidenceCount = concerns?.low_confidence_alignments.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const activeLayerCanonical = unit?.renderings.find((item) => item.layer === activeLayer && item.status === 'canonical') ?? null;
   const availableCompareRenderings = unit?.renderings ?? [];
 
@@ -131,6 +147,8 @@ export function BottomDrawer({
   const workflowAlternates = unit?.renderings.filter((item) => item.status !== 'canonical') ?? [];
   const workflowAlignments = unit?.alignments.filter((item) => item.layer === activeLayer) ?? [];
   const selectedAlternate = workflowAlternates.find((item) => item.rendering_id === selectedAlternateId) ?? null;
+  const selectedAlignment = workflowAlignments.find((item) => item.alignment_id === selectedAlignmentId) ?? null;
+  const selectedAlignment = workflowAlignments.find((item) => item.alignment_id === selectedAlignmentId) ?? null;
 
   useEffect(() => {
     if (!selectedAlternateId && workflowAlternates.length > 0) {
@@ -138,33 +156,68 @@ export function BottomDrawer({
     }
   }, [selectedAlternateId, workflowAlternates]);
 
+  useEffect(() => {
+    if (selectedAlignment) {
+      setAlignmentSpanText(selectedAlignment.notes ?? '');
+      setAlignmentType(selectedAlignment.alignment_type);
+      setAlignmentConfidence(String(selectedAlignment.confidence));
+      return;
+    }
+    setAlignmentType(selectedTokenIds.length > 1 ? 'grouped' : 'direct');
+    setAlignmentConfidence('0.9');
+    setAlignmentSpanText('');
+  }, [selectedAlignment, selectedTokenIds.length, activeLayer]);
+
   const handleCreateAlignment = async () => {
-    if (!unit) return;
+    if (!unit || selectedTokenIds.length === 0 || selectedSpanIds.length === 0) return;
     const spanText = alignmentSpanText.trim() || `Linked ${activeLayer} span`;
     const payload = {
       unit_id: unit.unit_id,
       layer: activeLayer,
-      source_token_ids: unit.token_ids,
-      target_span_ids: [`spn.${unit.unit_id}.${activeLayer}.${workflowAlignments.length + 1}`],
-      alignment_type: unit.token_ids.length > 1 ? 'grouped' : 'direct',
-      confidence: 0.9,
+      source_token_ids: selectedTokenIds,
+      target_span_ids: selectedSpanIds,
+      alignment_type: alignmentType,
+      confidence: Number(alignmentConfidence),
       notes: spanText,
     };
     try {
       const response = (await createAlignment.mutateAsync(payload)) as { alignment_id: string };
       setWorkflowMessage(`Alignment created: ${response.alignment_id}`);
-      setAlignmentSpanText('');
+      onSelectedAlignmentChange(response.alignment_id);
     } catch (error) {
       setWorkflowMessage(error instanceof Error ? error.message : 'Alignment creation failed');
     }
   };
 
-  const handleDeleteLatestAlignment = async () => {
-    const latest = workflowAlignments[workflowAlignments.length - 1];
-    if (!latest) return;
+  const handleUpdateAlignment = async () => {
+    if (!selectedAlignment || selectedTokenIds.length === 0 || selectedSpanIds.length === 0) {
+      return;
+    }
     try {
-      await deleteAlignment.mutateAsync(latest.alignment_id);
-      setWorkflowMessage(`Alignment deleted: ${latest.alignment_id}`);
+      const response = (await updateAlignment.mutateAsync({
+        alignmentId: selectedAlignment.alignment_id,
+        payload: {
+          layer: activeLayer,
+          source_token_ids: selectedTokenIds,
+          target_span_ids: selectedSpanIds,
+          alignment_type: alignmentType,
+          confidence: Number(alignmentConfidence),
+          notes: alignmentSpanText.trim(),
+        },
+      })) as Alignment;
+      setWorkflowMessage(`Alignment updated: ${response.alignment_id}`);
+    } catch (error) {
+      setWorkflowMessage(error instanceof Error ? error.message : 'Alignment update failed');
+    }
+  };
+
+  const handleDeleteSelectedAlignment = async () => {
+    const target = selectedAlignment ?? workflowAlignments[workflowAlignments.length - 1];
+    if (!target) return;
+    try {
+      await deleteAlignment.mutateAsync(target.alignment_id);
+      onClearAlignmentSelection();
+      setWorkflowMessage(`Alignment deleted: ${target.alignment_id}`);
     } catch (error) {
       setWorkflowMessage(error instanceof Error ? error.message : 'Alignment deletion failed');
     }
@@ -346,8 +399,48 @@ export function BottomDrawer({
         <div className="drawer-panel">
           <div className="result-grid workflow-grid">
             <article className="compare-card">
-              <h4>Create alignment</h4>
-              <p className="subtle">Create a quick alignment covering the current unit for the active layer.</p>
+              <h4>Alignment editor</h4>
+              <p className="subtle">Select Hebrew token(s) and English span(s), then create or revise an alignment for the active layer.</p>
+              <div className="mini-section">
+                <strong>Selection</strong>
+                <div className="tag-row">
+                  {selectedTokenIds.map((tokenId) => (
+                    <span key={tokenId} className="tag">
+                      {tokenId}
+                    </span>
+                  ))}
+                  {selectedSpanIds.map((spanId) => (
+                    <span key={spanId} className="tag">
+                      {spanId}
+                    </span>
+                  ))}
+                  {!selectedTokenIds.length && !selectedSpanIds.length ? <span className="subtle">No tokens or spans selected yet.</span> : null}
+                </div>
+              </div>
+              <label className="compact-field">
+                <span>Alignment type</span>
+                <select value={alignmentType} onChange={(event) => setAlignmentType(event.target.value)}>
+                  <option value="direct">direct</option>
+                  <option value="grouped">grouped</option>
+                  <option value="idiom">idiom</option>
+                  <option value="conceptual">conceptual</option>
+                  <option value="editorial_expansion">editorial_expansion</option>
+                  <option value="omission_accounted_for">omission_accounted_for</option>
+                  <option value="uncertain">uncertain</option>
+                </select>
+              </label>
+              <label className="compact-field">
+                <span>Confidence</span>
+                <input
+                  aria-label="Alignment confidence"
+                  type="number"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  value={alignmentConfidence}
+                  onChange={(event) => setAlignmentConfidence(event.target.value)}
+                />
+              </label>
               <label className="compact-field">
                 <span>Alignment notes</span>
                 <input
@@ -358,14 +451,56 @@ export function BottomDrawer({
                 />
               </label>
               <div className="inline-actions">
-                <button type="button" className="tab" onClick={() => void handleCreateAlignment()}>
+                <button
+                  type="button"
+                  className="tab"
+                  onClick={() => void handleCreateAlignment()}
+                  disabled={!selectedTokenIds.length || !selectedSpanIds.length}
+                >
                   Create alignment
                 </button>
-                <button type="button" className="tab" onClick={() => void handleDeleteLatestAlignment()} disabled={!workflowAlignments.length}>
-                  Delete latest alignment
+                <button
+                  type="button"
+                  className="tab"
+                  onClick={() => void handleUpdateAlignment()}
+                  disabled={!selectedAlignmentId || !selectedTokenIds.length || !selectedSpanIds.length}
+                >
+                  Update alignment
+                </button>
+                <button type="button" className="tab" onClick={() => void handleDeleteSelectedAlignment()} disabled={!workflowAlignments.length}>
+                  Delete selected alignment
+                </button>
+                <button type="button" className="tab" onClick={onClearAlignmentSelection}>
+                  Clear selection
                 </button>
               </div>
               <p className="subtle">Current {activeLayer} alignments: {workflowAlignments.length}</p>
+              <div className="mini-section">
+                <strong>Coverage</strong>
+                <ul className="simple-list compact-list">
+                  <li>{uncoveredCount} uncovered token(s)</li>
+                  <li>{unalignedSpanCount} unaligned span(s)</li>
+                  <li>{lowConfidenceCount} low-confidence alignment(s)</li>
+                  <li>{unresolvedDriftCount} unresolved drift flag(s)</li>
+                </ul>
+              </div>
+              <div className="mini-section">
+                <strong>Existing alignments</strong>
+                <ul className="simple-list compact-list">
+                  {workflowAlignments.map((alignment) => (
+                    <li key={alignment.alignment_id}>
+                      <button
+                        type="button"
+                        className={selectedAlignmentId === alignment.alignment_id ? 'tab active' : 'tab'}
+                        onClick={() => onSelectedAlignmentChange(alignment.alignment_id)}
+                      >
+                        {alignment.alignment_id} ({Math.round(alignment.confidence * 100)}%)
+                      </button>
+                    </li>
+                  ))}
+                  {!workflowAlignments.length ? <li className="empty-state">No alignments in this layer yet.</li> : null}
+                </ul>
+              </div>
             </article>
             <article className="compare-card">
               <h4>Add alternate</h4>

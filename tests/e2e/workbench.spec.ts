@@ -18,6 +18,8 @@ test('workflow actions cover alignment creation, alternate promotion, and releas
   await page.goto('/');
   await page.getByRole('button', { name: 'workflow' }).click();
 
+  await page.getByTitle(/ps001\.v001\.t001/).click();
+  await page.getByTitle(/spn\.ps001\.v001\.a\.literal\.0001/).click();
   await page.getByLabel('Alignment notes').fill('Playwright alignment coverage');
   await page.getByRole('button', { name: 'Create alignment' }).click();
   await expect(page.getByText(/Alignment created:/)).toBeVisible();
@@ -33,4 +35,14 @@ test('workflow actions cover alignment creation, alternate promotion, and releas
   await page.getByLabel('Release id').fill('v0.1.0-e2e');
   await page.getByRole('button', { name: 'Export release' }).click();
   await expect(page.getByText(/Release exported:/)).toBeVisible();
+});
+
+test('hovering an English span highlights linked Hebrew tokens', async ({ page }) => {
+  await page.goto('/');
+
+  const englishSpan = page.getByTitle(/spn\.ps001\.v001\.a\.literal\.0001/);
+  const hebrewToken = page.getByTitle(/ps001\.v001\.t001/);
+
+  await englishSpan.hover();
+  await expect(hebrewToken).toHaveClass(/linked/);
 });

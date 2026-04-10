@@ -37,6 +37,8 @@ export interface Alignment {
   alignment_type: string;
   confidence: number;
   notes: string;
+  created_by?: string;
+  created_via?: string;
 }
 
 export interface RenderingSpan {
@@ -108,7 +110,12 @@ export interface Unit {
   issue_links: string[];
   pr_links: string[];
   witnesses: Array<{ source_id: string; versionTitle: string; language: string; ref: string; source_url: string; text: string }>;
-  coverage?: { uncovered_tokens: string[]; unaligned_renderings: string[] };
+  coverage?: {
+    uncovered_tokens: string[];
+    unaligned_spans: string[];
+    unaligned_renderings: string[];
+    low_confidence_alignments: string[];
+  };
 }
 
 export interface Witness {
@@ -211,9 +218,10 @@ export interface PinnedLexicalCardState {
 
 export interface OpenConcerns {
   uncovered_tokens: Array<{ unit_id: string; token_id: string }>;
-  unaligned_spans: Array<{ unit_id: string; rendering_id: string }>;
+  unaligned_spans: Array<{ unit_id: string; rendering_id: string | null; span_id: string }>;
   open_drift_flags: Array<{ unit_id: string; rendering_id: string; flag: DriftFlag }>;
   provenance_gaps: Array<{ unit_id: string; rendering_id: string }>;
+  low_confidence_alignments: Array<{ unit_id: string; alignment_id: string }>;
 }
 
 export interface DriftFlag {

@@ -5,7 +5,7 @@ from typing import Any
 
 from app.core.errors import NotFoundError, PublicationConstraintError, ReviewRequiredError, ValidationError
 from app.core.ids import rendering_id
-from app.services import audit_service, poetic_analysis_service, registry_service
+from app.services import alignment_service, audit_service, poetic_analysis_service, registry_service
 
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
@@ -164,6 +164,7 @@ def create_rendering(
     from app.services import review_service
 
     review_service.hydrate_unit_review_state(unit)
+    alignment_service._sync_rendering_alignment_ids(unit)
     _sync_rendering_membership(unit)
     audit_service.create_audit_record(
         unit,
@@ -200,6 +201,7 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
     _ensure_publication_constraints(rendering)
     if payload.get("status") != "canonical":
         rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
+    alignment_service._sync_rendering_alignment_ids(unit)
     if rendering["status"] == "canonical":
         for candidate in unit.get("renderings", []):
             if candidate["rendering_id"] != rendering_id_value and candidate["layer"] == rendering["layer"] and candidate["status"] == "canonical":

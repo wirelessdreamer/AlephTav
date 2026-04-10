@@ -12,7 +12,17 @@ def test_alignment_coverage_flags_uncovered_tokens_and_unaligned_renderings() ->
     result = alignment_service.coverage(unit)
 
     assert result["uncovered_tokens"] == ["ps019.v001.t001", "ps019.v001.t002"]
+    assert result["unaligned_spans"] == ["spn.ps019.v001.a.literal.0001"]
     assert result["unaligned_renderings"] == ["rnd.ps019.v001.a.literal.can.0001"]
+
+
+def test_alignment_coverage_flags_low_confidence_alignments() -> None:
+    unit = registry_service.load_unit("ps019.v001.a")
+    unit["alignments"][0]["confidence"] = 0.6
+
+    result = alignment_service.coverage(unit)
+
+    assert result["low_confidence_alignments"] == ["aln.ps019.v001.a.literal.0001"]
 
 
 def test_audit_and_release_reports_write_required_artifacts() -> None:
@@ -23,6 +33,7 @@ def test_audit_and_release_reports_write_required_artifacts() -> None:
 
     assert (settings.audit_reports_dir / "uncovered_tokens.json").exists()
     assert (settings.audit_reports_dir / "unaligned_spans.json").exists()
+    assert (settings.audit_reports_dir / "low_confidence_alignments.json").exists()
     assert (settings.audit_reports_dir / "open_drift_flags.json").exists()
     assert (settings.audit_reports_dir / "provenance_gaps.json").exists()
     assert (settings.audit_reports_dir / "open_concerns.md").exists()

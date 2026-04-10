@@ -146,6 +146,20 @@ export function useDeleteAlignment(unitId: string | null) {
   });
 }
 
+export function useUpdateAlignment(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ alignmentId, payload }: { alignmentId: string; payload: unknown }) =>
+      patchJson(`/alignments/${alignmentId}`, payload),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
 export function useCreateRendering(unitId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({

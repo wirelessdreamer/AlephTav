@@ -141,7 +141,11 @@ select {
 
 .hebrew-token.active,
 .hebrew-token.linked,
+.hebrew-token.selected,
 .rendering-card.linked,
+.rendering-span.active,
+.rendering-span.linked,
+.rendering-span.selected,
 .tab.active {
   border-color: #38bdf8;
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
@@ -188,6 +192,22 @@ select {
 
 .rendering-text {
   font-size: 1.05rem;
+}
+
+.rendering-span-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.rendering-span {
+  border: 1px solid rgba(71, 85, 105, 0.95);
+  background: rgba(30, 41, 59, 0.65);
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
 }
 
 .warning-box {
@@ -298,6 +318,15 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+.mini-section {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.compact-list {
+  gap: 0.35rem;
 }
 
 .tag {

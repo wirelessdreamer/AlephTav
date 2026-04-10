@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from app.core.ids import audit_id
-from app.services import poetic_analysis_service, registry_service
+from app.services import alignment_service, poetic_analysis_service, registry_service
 
 
 def _parse_timestamp(value: str | None) -> datetime | None:
@@ -92,20 +92,23 @@ def open_concerns() -> dict[str, Any]:
     unaligned_spans: list[dict[str, Any]] = []
     drift_flags: list[dict[str, Any]] = []
     provenance_gaps: list[dict[str, Any]] = []
+    low_confidence_alignments: list[dict[str, Any]] = []
     for unit in registry_service.list_units():
-        aligned_tokens = {
-            token_id
-            for alignment in unit.get("alignments", [])
-            for token_id in alignment.get("source_token_ids", [])
+        unit_coverage = alignment_service.coverage(unit)
+        for token_id in unit_coverage["uncovered_tokens"]:
+            uncovered_tokens.append({"unit_id": unit["unit_id"], "token_id": token_id})
+        span_to_rendering = {
+            span["span_id"]: rendering["rendering_id"]
+            for rendering in unit.get("renderings", [])
+            for span in rendering.get("target_spans", [])
         }
-        for token_id in unit.get("token_ids", []):
-            if token_id not in aligned_tokens:
-                uncovered_tokens.append({"unit_id": unit["unit_id"], "token_id": token_id})
+        for span_id in unit_coverage["unaligned_spans"]:
+            unaligned_spans.append(
+                {"unit_id": unit["unit_id"], "rendering_id": span_to_rendering.get(span_id), "span_id": span_id}
+            )
+        for alignment_id in unit_coverage["low_confidence_alignments"]:
+            low_confidence_alignments.append({"unit_id": unit["unit_id"], "alignment_id": alignment_id})
         for rendering in unit.get("renderings", []):
-            if not rendering.get("alignment_ids"):
-                unaligned_spans.append(
-                    {"unit_id": unit["unit_id"], "rendering_id": rendering["rendering_id"]}
-                )
             for flag in rendering.get("drift_flags", []):
                 normalized = poetic_analysis_service.normalize_flag(flag)
                 drift_flags.append(
@@ -129,4 +132,5 @@ def open_concerns() -> dict[str, Any]:
         "unaligned_spans": unaligned_spans,
         "open_drift_flags": drift_flags,
         "provenance_gaps": provenance_gaps,
+        "low_confidence_alignments": low_confidence_alignments,
     }

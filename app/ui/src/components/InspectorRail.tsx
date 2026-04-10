@@ -11,6 +11,8 @@ interface InspectorRailProps {
 export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken }: InspectorRailProps) {
   const unitFlags = concerns?.open_drift_flags.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const unitUncovered = concerns?.uncovered_tokens.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
+  const unitUnalignedSpans = concerns?.unaligned_spans.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
+  const unitLowConfidence = concerns?.low_confidence_alignments.filter((flag) => flag.unit_id === unit?.unit_id) ?? [];
   const handleCopyReference = async () => {
     if (!tokenCard || !navigator.clipboard) return;
     await navigator.clipboard.writeText(tokenCard.copy_reference);
@@ -80,7 +82,17 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
       </section>
       <section className="inspector-card">
         <h3>Warnings</h3>
-        <p>{unitFlags.length} drift flags, {unitUncovered.length} uncovered token(s)</p>
+        <p>
+          {unitFlags.length} drift flags, {unitUncovered.length} uncovered token(s), {unitUnalignedSpans.length} unaligned span(s),{' '}
+          {unitLowConfidence.length} low-confidence alignment(s)
+        </p>
+        {unit?.coverage ? (
+          <ul className="simple-list compact-list">
+            <li>Coverage gaps: {unit.coverage.uncovered_tokens.length} token(s)</li>
+            <li>Unaligned spans: {unit.coverage.unaligned_spans.length}</li>
+            <li>Low confidence: {unit.coverage.low_confidence_alignments.length}</li>
+          </ul>
+        ) : null}
         {unit?.witnesses?.length ? <div className="warning-inline">Witness text present and version-pinned separately.</div> : null}
       </section>
     </aside>
