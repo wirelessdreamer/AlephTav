@@ -41,7 +41,7 @@ export function HebrewPane({
                 onPinToken(token.token_id);
               }}
               type="button"
-              title={`${token.surface} • ${token.lemma} • ${token.strong}`}
+              title={`${token.token_id} • ${token.surface} • ${token.lemma} • ${token.strong}`}
               aria-pressed={selected}
             >
               <span className="surface">{token.surface}</span>

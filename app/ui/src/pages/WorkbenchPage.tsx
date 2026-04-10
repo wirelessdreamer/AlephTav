@@ -17,7 +17,7 @@ import {
   useTokenCard,
   useUnit,
 } from '../hooks/useWorkbench';
-import type { Alignment, Layer, Psalm, Rendering } from '../types';
+import type { Alignment, Layer, Psalm, Rendering, TokenCard } from '../types';
 
 export function WorkbenchPage() {
   const [selectedPsalmId, setSelectedPsalmId] = useState<string | null>('ps001');
@@ -42,9 +42,15 @@ export function WorkbenchPage() {
   const demoteRendering = useDemoteRendering(selectedUnitId);
 
   const pinnedTokenId = pinnedLexicalCard?.token_id ?? null;
-  const hoveredToken = useTokenCard(!pinnedTokenId ? hoveredTokenId : null);
-  const tokenCard = pinnedLexicalCard?.token ?? hoveredToken.data;
-  const tokenId = tokenCard?.token_id ?? hoveredTokenId;
+  const [pinOverrideTokenId, setPinOverrideTokenId] = useState<string | null | undefined>(undefined);
+  const effectivePinnedTokenId = pinOverrideTokenId !== undefined ? pinOverrideTokenId : pinnedTokenId;
+  const hoveredToken = useTokenCard(!effectivePinnedTokenId ? hoveredTokenId : null);
+  const pendingPinnedToken = useTokenCard(
+    pinOverrideTokenId !== undefined && pinOverrideTokenId !== null && pinOverrideTokenId !== pinnedTokenId ? pinOverrideTokenId : null,
+  );
+  const tokenCard = pinnedLexicalCard?.token ?? pendingPinnedToken.data ?? hoveredToken.data;
+  const [displayedTokenCard, setDisplayedTokenCard] = useState<TokenCard | undefined>(undefined);
+  const tokenId = displayedTokenCard?.token_id ?? tokenCard?.token_id ?? hoveredTokenId;
 
   const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
 
@@ -133,6 +139,20 @@ export function WorkbenchPage() {
     setSelectedSpanIds(activeAlignment.target_span_ids);
   }, [activeAlignment]);
 
+  useEffect(() => {
+    setPinOverrideTokenId(undefined);
+  }, [pinnedTokenId]);
+
+  useEffect(() => {
+    if (tokenCard) {
+      setDisplayedTokenCard(tokenCard);
+      return;
+    }
+    if (!effectivePinnedTokenId && !hoveredTokenId) {
+      setDisplayedTokenCard(undefined);
+    }
+  }, [effectivePinnedTokenId, hoveredTokenId, tokenCard]);
+
   const hebrewRef = useRef<HTMLDivElement>(null);
   const englishRef = useRef<HTMLDivElement>(null);
   const syncingPaneRef = useRef<'hebrew' | 'english' | null>(null);
@@ -171,8 +191,14 @@ export function WorkbenchPage() {
   };
 
   const handlePinToken = (nextTokenId: string) => {
-    const tokenIdToPersist = pinnedTokenId === nextTokenId ? null : nextTokenId;
+    const tokenIdToPersist = effectivePinnedTokenId === nextTokenId ? null : nextTokenId;
+    setPinOverrideTokenId(tokenIdToPersist);
     setPinnedLexicalCard.mutate(tokenIdToPersist);
+  };
+
+  const handleUnpinToken = () => {
+    setPinOverrideTokenId(null);
+    setPinnedLexicalCard.mutate(null);
   };
 
   const handleToggleToken = (tokenId: string) => {
@@ -274,13 +300,13 @@ export function WorkbenchPage() {
             onDeprecateAlternate={handleDeprecateAlternate}
           />
         </div>
-        <InspectorRail tokenCard={tokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={() => setPinnedLexicalCard.mutate(null)} />
+        <InspectorRail tokenCard={displayedTokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={handleUnpinToken} />
       </section>
       <BottomDrawer
         unit={unit}
         concerns={concerns}
-        tokenCard={tokenCard}
-        concordanceSeed={tokenCard?.lemma ?? undefined}
+        tokenCard={displayedTokenCard}
+        concordanceSeed={displayedTokenCard?.lemma ?? undefined}
         onNavigateToUnit={handleNavigateToUnit}
         activeLayer={activeLayer}
         selectedTokenIds={selectedTokenIds}
