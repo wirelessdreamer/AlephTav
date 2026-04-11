@@ -4,7 +4,7 @@ from fastapi.testclient import TestClient
 
 from app.api.main import app
 from app.llm.base import GenerationResponse
-from app.services import registry_service
+from app.services import registry_service, settings_service
 
 
 client = TestClient(app)
@@ -40,11 +40,137 @@ class FakeAdapter:
         )
 
 
+class FakeAssistantAdapter:
+    name = "fake-assistant"
+
+    def __init__(self, profile: dict) -> None:
+        self.profile = profile
+
+    def generate_json(self, generation_request) -> GenerationResponse:
+        prompt = generation_request.prompt
+        if "User message:\nShow me the project configuration" in prompt:
+            payload = {"reply": "Loading the project.", "tool_calls": [{"action_id": "project.get", "input": {}}]}
+        elif "User message:\nOpen the workbench" in prompt:
+            payload = {
+                "reply": "Opening the workbench.",
+                "tool_calls": [{"action_id": "navigate.route", "input": {"route": "workbench"}}],
+            }
+        else:
+            payload = {
+                "reply": "I can prepare a rendering.",
+                "tool_calls": [
+                    {
+                        "action_id": "renderings.create",
+                        "input": {
+                            "unit_id": "ps019.v001.a",
+                            "layer": "lyric",
+                            "text": "Assistant drafted line",
+                            "status": "proposed",
+                            "rationale": "assistant test",
+                        },
+                    }
+                ],
+            }
+        return GenerationResponse(payload=payload, raw_text="{}", runtime_metadata={})
+
+
 def test_health_and_project_endpoints() -> None:
     assert client.get("/health").json() == {"status": "ok"}
     project = client.get("/project")
     assert project.status_code == 200
     assert project.json()["project_id"] == "proj.main"
+
+
+def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(monkeypatch) -> None:
+    monkeypatch.setattr("app.services.assistant_service.build_adapter", lambda profile: FakeAssistantAdapter(profile))
+    settings_service.update_settings({"assistant": {"model_profile_id": "demo-local"}})
+
+    tools = client.get("/assistant/tools")
+    assert tools.status_code == 200
+    assert any(item["action_id"] == "renderings.create" for item in tools.json())
+
+    session = client.post("/assistant/sessions")
+    assert session.status_code == 200
+    session_id = session.json()["session_id"]
+
+    navigation = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={"message": "Open the workbench", "context": {"route": "welcome"}},
+    )
+    assert navigation.status_code == 200
+    assert navigation.json()["message"]["client_actions"][0]["action_id"] == "navigate.route"
+
+    read_result = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={"message": "Show me the project configuration", "context": {"route": "welcome"}},
+    )
+    assert read_result.status_code == 200
+    assert read_result.json()["message"]["tool_results"][0]["action_id"] == "project.get"
+
+    write_result = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={"message": "Draft a lyric rendering", "context": {"route": "workbench"}},
+    )
+    assert write_result.status_code == 200
+    preview = write_result.json()["message"]["pending_actions"][0]
+    assert preview["action_id"] == "renderings.create"
+
+    denied = client.post(
+        "/assistant/actions/execute",
+        json={"action_id": "renderings.create", "input": preview["input"]},
+    )
+    assert denied.status_code == 400
+    assert "requires confirmation" in denied.json()["detail"]
+
+    executed = client.post(
+        "/assistant/actions/execute",
+        json={
+            "action_id": "renderings.create",
+            "input": preview["input"],
+            "confirmation_token": preview["confirmation_token"],
+        },
+    )
+    assert executed.status_code == 200
+    assert executed.json()["result"]["text"] == "Assistant drafted line"
+
+
+def test_speech_transcription_uses_saved_openai_settings(monkeypatch) -> None:
+    settings_service.update_settings(
+        {
+            "openai": {
+                "api_key": "sk-test",
+                "base_url": "https://api.openai.example/v1",
+                "whisper_model": "whisper-fixture",
+            }
+        }
+    )
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self):
+            return b'{"text":"Fixture transcript"}'
+
+    def fake_urlopen(request, timeout):
+        assert request.full_url == "https://api.openai.example/v1/audio/transcriptions"
+        assert request.headers["Authorization"] == "Bearer sk-test"
+        assert timeout == 60
+        return FakeResponse()
+
+    monkeypatch.setattr("app.services.speech_service.request.urlopen", fake_urlopen)
+
+    response = client.post(
+        "/speech/transcriptions",
+        files={"file": ("fixture.wav", b"audio-bytes", "audio/wav")},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["text"] == "Fixture transcript"
+    assert response.json()["model"] == "whisper-fixture"
 
 
 def test_unit_and_token_endpoints_return_fixture_data() -> None:

@@ -12,6 +12,7 @@ def bootstrap_fixture_repo() -> Path:
     for path in (settings.content_dir, settings.reports_dir):
         shutil.rmtree(path, ignore_errors=True)
     settings.db_path.unlink(missing_ok=True)
+    settings.assistant_settings_file.unlink(missing_ok=True)
     registry_service.bootstrap_project()
     ingest_service.import_fixture_psalms()
     concordance_service.rebuild_indexes()

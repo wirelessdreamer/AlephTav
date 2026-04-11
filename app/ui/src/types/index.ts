@@ -277,3 +277,89 @@ export interface ConcordanceRow {
   stem: string | null;
   syntax_role: string | null;
 }
+
+export interface AssistantActionDefinition {
+  action_id: string;
+  label: string;
+  description: string;
+  kind: 'read' | 'write' | 'client';
+  requires_confirmation: boolean;
+  input_schema: Record<string, unknown>;
+  required_fields: string[];
+}
+
+export interface AssistantActionPreview {
+  action_id: string;
+  kind: 'write';
+  summary: string;
+  input: Record<string, unknown>;
+  input_preview: string;
+  confirmation_token: string;
+  expires_at: string;
+}
+
+export interface AssistantToolResult {
+  action_id: string;
+  kind?: 'read' | 'write' | 'client';
+  summary?: string;
+  result?: unknown;
+  error?: string;
+}
+
+export interface AssistantClientAction {
+  action_id: string;
+  kind: 'client';
+  summary: string;
+  payload: Record<string, unknown>;
+}
+
+export interface AssistantMessage {
+  role: 'user' | 'assistant';
+  content: string;
+  created_at: string;
+  tool_results?: AssistantToolResult[];
+  pending_actions?: AssistantActionPreview[];
+  client_actions?: AssistantClientAction[];
+}
+
+export interface AssistantSession {
+  session_id: string;
+  created_at: string;
+  messages: AssistantMessage[];
+}
+
+export interface AssistantMessageResponse {
+  session_id: string;
+  message: AssistantMessage;
+}
+
+export interface AssistantExecuteResponse {
+  action_id: string;
+  kind: 'read' | 'write' | 'client';
+  summary: string;
+  result: unknown;
+}
+
+export interface AssistantSettings {
+  assistant: {
+    model_profile_id: string | null;
+  };
+  openai: {
+    base_url: string;
+    api_key: string;
+    has_api_key: boolean;
+    whisper_model: string;
+  };
+  voice: {
+    output_enabled: boolean;
+    output_provider: string | null;
+    output_voice: string | null;
+  };
+}
+
+export interface SpeechTranscriptionResponse {
+  text: string;
+  provider: string;
+  model: string;
+  filename: string;
+}

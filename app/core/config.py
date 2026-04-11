@@ -21,6 +21,7 @@ class Settings:
     release_reports_dir: Path
     project_file: Path
     db_path: Path
+    assistant_settings_file: Path
 
     def as_dict(self) -> dict[str, str]:
         return {key: str(value) for key, value in asdict(self).items()}
@@ -44,6 +45,7 @@ def get_settings() -> Settings:
         release_reports_dir=root / "reports" / "release",
         project_file=root / "content" / "project.json",
         db_path=root / "data" / "derived" / "indexes" / "workbench.sqlite3",
+        assistant_settings_file=root / "data" / "derived" / "caches" / "assistant_settings.json",
     )
     for path in (
         settings.content_dir,

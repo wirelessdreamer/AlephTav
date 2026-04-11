@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
+import { useAppRuntime } from '../app/AppContext';
 import { BottomDrawer } from '../components/BottomDrawer';
 import { EnglishPane } from '../components/EnglishPane';
 import { HebrewPane } from '../components/HebrewPane';
@@ -20,10 +21,11 @@ import {
 import type { Alignment, Layer, Psalm, Rendering, TokenCard } from '../types';
 
 export function WorkbenchPage() {
-  const [selectedPsalmId, setSelectedPsalmId] = useState<string | null>('ps001');
-  const [selectedUnitId, setSelectedUnitId] = useState<string | null>('ps001.v001.a');
-  const [activeLayer, setActiveLayer] = useState<Layer>('literal');
-  const [granularity, setGranularity] = useState<'colon' | 'verse'>('colon');
+  const { workbenchSelection, updateWorkbenchSelection } = useAppRuntime();
+  const selectedPsalmId = workbenchSelection.psalmId;
+  const selectedUnitId = workbenchSelection.unitId;
+  const activeLayer = workbenchSelection.layer;
+  const granularity = workbenchSelection.granularity;
   const [hoveredTokenId, setHoveredTokenId] = useState<string | null>(null);
   const [hoveredSpanId, setHoveredSpanId] = useState<string | null>(null);
   const [selectedTokenIds, setSelectedTokenIds] = useState<string[]>([]);
@@ -201,22 +203,23 @@ export function WorkbenchPage() {
 
   const handlePsalmChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const nextPsalmId = event.target.value;
-    setSelectedPsalmId(nextPsalmId);
     const nextPsalm = psalms?.find((psalm: Psalm) => psalm.psalm_id === nextPsalmId);
-    setSelectedUnitId(nextPsalm?.unit_ids[0] ?? null);
+    updateWorkbenchSelection({
+      psalmId: nextPsalmId,
+      unitId: nextPsalm?.unit_ids[0] ?? null,
+    });
   };
 
   const handleUnitChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedUnitId(event.target.value);
+    updateWorkbenchSelection({ unitId: event.target.value });
   };
 
   const handleNavigateToUnit = (unitId: string, psalmId: string) => {
-    setSelectedPsalmId(psalmId);
-    setSelectedUnitId(unitId);
+    updateWorkbenchSelection({ psalmId, unitId });
   };
 
   const handleGranularityChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setGranularity(event.target.value as 'colon' | 'verse');
+    updateWorkbenchSelection({ granularity: event.target.value as 'colon' | 'verse' });
   };
 
   const handlePinToken = (nextTokenId: string) => {
@@ -318,7 +321,7 @@ export function WorkbenchPage() {
             highlightedSpanIds={highlightedSpanIds}
             selectedSpanIds={selectedSpanIds}
             hoveredSpanId={hoveredSpanId}
-            onSelectLayer={setActiveLayer}
+            onSelectLayer={(layer) => updateWorkbenchSelection({ layer })}
             onHoverSpan={setHoveredSpanId}
             onToggleSpan={handleToggleSpan}
             onCompareLeft={setCompareLeftId}

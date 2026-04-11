@@ -9,7 +9,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/project': 'http://127.0.0.1:8000',
+      '/assistant': 'http://127.0.0.1:8000',
       '/psalms': 'http://127.0.0.1:8000',
+      '/speech': 'http://127.0.0.1:8000',
       '/units': 'http://127.0.0.1:8000',
       '/tokens': 'http://127.0.0.1:8000',
       '/lexicon': 'http://127.0.0.1:8000',
