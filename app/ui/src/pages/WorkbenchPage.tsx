@@ -68,10 +68,10 @@ export function WorkbenchPage() {
           <p className="eyebrow">Workbench Unavailable</p>
           <h1>Start the local API before opening the workbench.</h1>
           <p className="subtle">
-            The workbench expects the FastAPI backend on <code>127.0.0.1:8000</code>. GitHub Pages can show the welcome page, but the live editor remains local-only.
+            The workbench expects the FastAPI backend on <code>127.0.0.1:8000</code>. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
           </p>
           <pre>
-            <code>{['source .venv/bin/activate', 'python scripts/bootstrap_fixture_repo.py', 'uvicorn app.api.main:app --reload'].join('\n')}</code>
+            <code>{['./setup.sh', '.\\setup.ps1'].join('\n')}</code>
           </pre>
           <div className="hero-actions">
             <a className="hero-link hero-link-primary" href="#/">

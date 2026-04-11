@@ -3,20 +3,18 @@ const docsUrl = `${repoUrl}/blob/main/docs/README.md`;
 const readmeUrl = `${repoUrl}/blob/main/README.md`;
 
 const quickStart = [
-  'python -m venv .venv',
-  'source .venv/bin/activate',
-  'pip install -e .[dev]',
-  'npm install',
-  'python scripts/bootstrap_fixture_repo.py',
-  'uvicorn app.api.main:app --reload',
-  'npm run dev',
+  './setup.sh',
+  '.\\setup.ps1',
 ];
 
 const fullSetup = [
+  'source .venv/bin/activate',
   'python scripts/seed_project.py',
   'python scripts/import_psalms.py',
   'python scripts/build_indexes.py',
   'python scripts/validate_content.py',
+  'python -m uvicorn app.api.main:app --reload',
+  'npm run dev',
 ];
 
 const workflows = [
@@ -70,18 +68,18 @@ export function WelcomePage() {
       <section className="welcome-section">
         <div className="section-heading">
           <p className="eyebrow">Run It</p>
-          <h2>Quick local demo</h2>
-          <p>Use the fixture bootstrap when you want a working dataset fast. Start the API and UI in separate terminals.</p>
+          <h2>Quick local startup</h2>
+          <p>Use the platform setup script to verify runtimes, install dependencies, run the default full rebuild, and launch both local services.</p>
         </div>
         <div className="command-grid">
           <article className="command-card">
-            <h3>Bootstrap</h3>
+            <h3>Setup scripts</h3>
             <pre>
               <code>{quickStart.join('\n')}</code>
             </pre>
           </article>
           <article className="command-card">
-            <h3>Full content rebuild</h3>
+            <h3>Manual full rebuild</h3>
             <pre>
               <code>{fullSetup.join('\n')}</code>
             </pre>

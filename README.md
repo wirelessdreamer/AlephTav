@@ -12,46 +12,54 @@ GitHub Pages welcome site: https://wirelessdreamer.github.io/AlephTav/
 - React + TypeScript workbench UI for lexical analysis and translation review
 - Audit, provenance, review, and release-export workflows
 
-## Quick demo run
+## Quick start
 
-This is the fastest path to a working local demo with the fixture dataset used by the UI tests and screenshots.
+Use the platform setup script from the repo root. It verifies required runtimes, installs project dependencies, runs the default full rebuild pipeline, and then starts both the FastAPI backend and the Vite UI for you.
 
-### 1. Create the environment
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .[dev]
-npm install
-```
-
-### 2. Seed fixture data
+### macOS / Linux
 
 ```bash
-python scripts/bootstrap_fixture_repo.py
+./setup.sh
 ```
 
-### 3. Start the backend
+### Windows PowerShell
 
-```bash
-source .venv/bin/activate
-uvicorn app.api.main:app --reload
+```powershell
+.\setup.ps1
 ```
 
-### 4. Start the UI
+By default the scripts:
 
-```bash
-npm run dev
-```
+- require Python `>=3.11`, Node.js, and npm
+- create or reuse `.venv`
+- install `pip install -e .[dev]`
+- run `npm install`
+- run the full content rebuild pipeline
+- start the API on `http://127.0.0.1:8000`
+- start the UI on `http://127.0.0.1:5173`
 
 Open:
 
 - `http://127.0.0.1:5173/` for the welcome page
 - `http://127.0.0.1:5173/workbench` or `http://127.0.0.1:5173/#/workbench` for the live workbench
 
+### Useful options
+
+```bash
+./setup.sh --fixture
+./setup.sh --skip-start
+./setup.sh --api-port 8010 --ui-port 5174
+```
+
+```powershell
+.\setup.ps1 -DataMode fixture
+.\setup.ps1 -SkipStart
+.\setup.ps1 -ApiPort 8010 -UiPort 5174
+```
+
 ## Full content rebuild
 
-Use this path when you want to regenerate the local project state from the repo scripts instead of using the fixture bootstrap.
+This is the explicit manual sequence behind the setup scripts when you want to regenerate the local project state yourself.
 
 ```bash
 source .venv/bin/activate
@@ -59,7 +67,7 @@ python scripts/seed_project.py
 python scripts/import_psalms.py
 python scripts/build_indexes.py
 python scripts/validate_content.py
-uvicorn app.api.main:app --reload
+python -m uvicorn app.api.main:app --reload
 ```
 
 ## Common commands
@@ -75,6 +83,7 @@ psalms-workbench export-release --release-id v0.1.0
 ### Tests
 
 ```bash
+./setup.sh --fixture --skip-start
 npm test
 npm run test:e2e
 ```
