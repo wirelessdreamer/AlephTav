@@ -49,15 +49,27 @@ class FakeAssistantAdapter:
     def generate_json(self, generation_request) -> GenerationResponse:
         prompt = generation_request.prompt
         if "User message:\nShow me the project configuration" in prompt:
-            payload = {"reply": "Loading the project.", "tool_calls": [{"action_id": "project.get", "input": {}}]}
+            payload = {
+                "reply": "Loading the project.",
+                "speakable_text": "Loading the project.",
+                "tool_calls": [{"action_id": "project.get", "input": {}}],
+            }
         elif "User message:\nOpen the workbench" in prompt:
             payload = {
                 "reply": "Opening the workbench.",
+                "speakable_text": "Opening the workbench.",
                 "tool_calls": [{"action_id": "navigate.route", "input": {"route": "workbench"}}],
+            }
+        elif "User message:\nOpen the compare tab" in prompt:
+            payload = {
+                "reply": "Opening compare mode.",
+                "speakable_text": "Opening compare mode.",
+                "tool_calls": [{"action_id": "workbench.set_drawer_tab", "input": {"tab": "compare"}}],
             }
         else:
             payload = {
                 "reply": "I can prepare a rendering.",
+                "speakable_text": "I can prepare a rendering.",
                 "tool_calls": [
                     {
                         "action_id": "renderings.create",
@@ -88,6 +100,8 @@ def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(
     tools = client.get("/assistant/tools")
     assert tools.status_code == 200
     assert any(item["action_id"] == "renderings.create" for item in tools.json())
+    assert any(item["action_id"] == "workbench.set_drawer_tab" for item in tools.json())
+    assert any(item["result_schema"]["type"] == "object" for item in tools.json())
 
     session = client.post("/assistant/sessions")
     assert session.status_code == 200
@@ -99,6 +113,14 @@ def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(
     )
     assert navigation.status_code == 200
     assert navigation.json()["message"]["client_actions"][0]["action_id"] == "navigate.route"
+    assert navigation.json()["message"]["speakable_text"] == "Opening the workbench."
+
+    compare_tab = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={"message": "Open the compare tab", "context": {"route": "workbench", "ui": {"drawerTab": "workflow"}}},
+    )
+    assert compare_tab.status_code == 200
+    assert compare_tab.json()["message"]["client_actions"][0]["action_id"] == "workbench.set_drawer_tab"
 
     read_result = client.post(
         f"/assistant/sessions/{session_id}/messages",
@@ -171,6 +193,16 @@ def test_speech_transcription_uses_saved_openai_settings(monkeypatch) -> None:
     assert response.status_code == 200
     assert response.json()["text"] == "Fixture transcript"
     assert response.json()["model"] == "whisper-fixture"
+
+
+def test_public_assistant_settings_expose_provider_capabilities() -> None:
+    settings_service.update_settings({"openai": {"api_key": ""}})
+    response = client.get("/assistant/settings")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["providers"]["speech_to_text"]["provider"] == "openai"
+    assert payload["providers"]["speech_to_text"]["auth_status"] == "not_configured"
+    assert payload["providers"]["speech_to_text"]["account_link_available"] is False
 
 
 def test_unit_and_token_endpoints_return_fixture_data() -> None:

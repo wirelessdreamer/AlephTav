@@ -18,9 +18,7 @@ import {
   useUpdateAlignment,
   useUnitWitnesses,
 } from '../hooks/useWorkbench';
-import type { Alignment, Layer, OpenConcerns, TokenCard, Unit } from '../types';
-
-type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
+import type { Alignment, DrawerTab, Layer, OpenConcerns, TokenCard, Unit } from '../types';
 type SearchScope =
   | 'all'
   | 'hebrew_surface'
@@ -38,6 +36,8 @@ interface BottomDrawerProps {
   concerns?: OpenConcerns;
   tokenCard?: TokenCard;
   concordanceSeed?: string;
+  tab: DrawerTab;
+  onTabChange: (tab: DrawerTab) => void;
   activeLayer: Layer;
   selectedTokenIds: string[];
   selectedSpanIds: string[];
@@ -65,6 +65,8 @@ export function BottomDrawer({
   concerns,
   tokenCard,
   concordanceSeed,
+  tab,
+  onTabChange,
   onNavigateToUnit,
   activeLayer,
   selectedTokenIds,
@@ -77,7 +79,6 @@ export function BottomDrawer({
   onCompareLeftChange,
   onCompareRightChange,
 }: BottomDrawerProps) {
-  const [tab, setTab] = useState<DrawerTab>('concordance');
   const [concordanceField, setConcordanceField] = useState('lemma');
   const [concordanceQuery, setConcordanceQuery] = useState(concordanceSeed ?? '');
   const [searchQuery, setSearchQuery] = useState('');
@@ -140,7 +141,7 @@ export function BottomDrawer({
   const handlePreset = (nextPreset: PresetName) => {
     setPresetName(nextPreset);
     if (tab !== 'search') {
-      setTab('search');
+      onTabChange('search');
     }
   };
 
@@ -314,7 +315,7 @@ export function BottomDrawer({
       <header className="drawer-header">
         <div className="tab-row">
           {(['concordance', 'workflow', 'search', 'witnesses', 'audit', 'compare'] as DrawerTab[]).map((item) => (
-            <button key={item} type="button" className={tab === item ? 'tab active' : 'tab'} onClick={() => setTab(item)}>
+            <button key={item} type="button" className={tab === item ? 'tab active' : 'tab'} onClick={() => onTabChange(item)}>
               {item}
             </button>
           ))}

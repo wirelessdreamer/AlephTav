@@ -225,6 +225,8 @@ pre {
 
 .app-shell {
   min-height: 100vh;
+  padding-bottom: 23rem;
+  box-sizing: border-box;
 }
 
 .app-shell__page {
@@ -268,8 +270,28 @@ pre {
   padding: 0 1.1rem 1.1rem;
 }
 
+.assistant-panel__main,
+.assistant-sidebar {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.assistant-sidebar__section,
+.assistant-context {
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.assistant-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .assistant-thread {
-  max-height: 18rem;
+  max-height: 16rem;
   overflow: auto;
   display: grid;
   gap: 0.85rem;
@@ -313,6 +335,17 @@ pre {
   border-color: rgba(245, 158, 11, 0.35);
 }
 
+.assistant-card--client {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.assistant-quick-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
 .assistant-composer,
 .assistant-settings {
   display: grid;
@@ -340,6 +373,13 @@ pre {
   justify-content: space-between;
   gap: 0.75rem;
   align-items: center;
+}
+
+.assistant-composer__tools {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .workbench-shell--empty {

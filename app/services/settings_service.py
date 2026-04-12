@@ -62,4 +62,19 @@ def public_settings() -> dict[str, Any]:
     api_key = masked["openai"].get("api_key", "")
     masked["openai"]["has_api_key"] = bool(api_key)
     masked["openai"]["api_key"] = ""
+    masked["providers"] = {
+        "speech_to_text": {
+            "provider": "openai",
+            "available": True,
+            "auth_mode": "api_key",
+            "auth_status": "configured" if api_key else "not_configured",
+            "account_link_available": False,
+        },
+        "voice_output": {
+            "available": False,
+            "enabled": bool(masked["voice"].get("output_enabled")),
+            "provider": masked["voice"].get("output_provider"),
+            "voice": masked["voice"].get("output_voice"),
+        },
+    }
     return masked

@@ -59,6 +59,18 @@ def _required_properties(schema: dict[str, Any]) -> list[str]:
     return list(schema.get("required", []))
 
 
+def _empty_schema() -> dict[str, Any]:
+    return {"type": "object", "properties": {}, "additionalProperties": False}
+
+
+def _object_result_schema() -> dict[str, Any]:
+    return {"type": "object"}
+
+
+def _array_result_schema() -> dict[str, Any]:
+    return {"type": "array"}
+
+
 def _validate_payload(action: dict[str, Any], payload: dict[str, Any]) -> None:
     validator = Draft202012Validator(action["input_schema"])
     errors = sorted(validator.iter_errors(payload), key=lambda item: list(item.path))
@@ -81,6 +93,42 @@ def _navigate_unit(payload: dict[str, Any]) -> dict[str, Any]:
 
 def _navigate_layer(payload: dict[str, Any]) -> dict[str, Any]:
     return {"route": "workbench", "layer": payload["layer"]}
+
+
+def _set_granularity(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"granularity": payload["granularity"]}
+
+
+def _set_drawer_tab(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"tab": payload["tab"]}
+
+
+def _set_compare_target(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"side": payload["side"], "rendering_id": payload.get("rendering_id")}
+
+
+def _pin_token(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"token_id": payload["token_id"]}
+
+
+def _clear_pinned_token(_: dict[str, Any]) -> dict[str, Any]:
+    return {}
+
+
+def _toggle_token_selection(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"token_id": payload["token_id"]}
+
+
+def _toggle_span_selection(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"span_id": payload["span_id"]}
+
+
+def _clear_selection(_: dict[str, Any]) -> dict[str, Any]:
+    return {}
+
+
+def _select_alignment(payload: dict[str, Any]) -> dict[str, Any]:
+    return {"alignment_id": payload.get("alignment_id")}
 
 
 def _patch_project(payload: dict[str, Any]) -> dict[str, Any]:
@@ -303,11 +351,131 @@ ACTION_DEFINITIONS: list[dict[str, Any]] = [
         "summary": lambda payload: f"Switch layer to {payload['layer']}",
     },
     {
+        "action_id": "workbench.set_granularity",
+        "label": "Set Granularity",
+        "description": "Switch the active workbench granularity.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {"granularity": {"type": "string", "enum": ["colon", "verse"]}},
+            "required": ["granularity"],
+            "additionalProperties": False,
+        },
+        "executor": _set_granularity,
+        "summary": lambda payload: f"Set granularity to {payload['granularity']}",
+    },
+    {
+        "action_id": "workbench.set_drawer_tab",
+        "label": "Open Drawer Tab",
+        "description": "Switch the bottom drawer tab.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "tab": {"type": "string", "enum": ["concordance", "workflow", "search", "witnesses", "audit", "compare"]}
+            },
+            "required": ["tab"],
+            "additionalProperties": False,
+        },
+        "executor": _set_drawer_tab,
+        "summary": lambda payload: f"Open {payload['tab']} tab",
+    },
+    {
+        "action_id": "workbench.set_compare_target",
+        "label": "Set Compare Target",
+        "description": "Set the left or right rendering used by compare mode.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "side": {"type": "string", "enum": ["left", "right"]},
+                "rendering_id": {"type": ["string", "null"]},
+            },
+            "required": ["side"],
+            "additionalProperties": False,
+        },
+        "executor": _set_compare_target,
+        "summary": lambda payload: f"Set {payload['side']} compare target",
+    },
+    {
+        "action_id": "workbench.pin_token",
+        "label": "Pin Token",
+        "description": "Pin a token in the inspector.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {"token_id": {"type": "string"}},
+            "required": ["token_id"],
+            "additionalProperties": False,
+        },
+        "executor": _pin_token,
+        "summary": lambda payload: f"Pin token {payload['token_id']}",
+    },
+    {
+        "action_id": "workbench.clear_pinned_token",
+        "label": "Clear Pinned Token",
+        "description": "Clear the pinned lexical card.",
+        "kind": "client",
+        "input_schema": _empty_schema(),
+        "executor": _clear_pinned_token,
+        "summary": lambda _: "Clear pinned token",
+    },
+    {
+        "action_id": "workbench.toggle_token_selection",
+        "label": "Toggle Token Selection",
+        "description": "Add or remove a token from the active selection.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {"token_id": {"type": "string"}},
+            "required": ["token_id"],
+            "additionalProperties": False,
+        },
+        "executor": _toggle_token_selection,
+        "summary": lambda payload: f"Toggle token {payload['token_id']}",
+    },
+    {
+        "action_id": "workbench.toggle_span_selection",
+        "label": "Toggle Span Selection",
+        "description": "Add or remove a rendering span from the active selection.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {"span_id": {"type": "string"}},
+            "required": ["span_id"],
+            "additionalProperties": False,
+        },
+        "executor": _toggle_span_selection,
+        "summary": lambda payload: f"Toggle span {payload['span_id']}",
+    },
+    {
+        "action_id": "workbench.clear_selection",
+        "label": "Clear Workbench Selection",
+        "description": "Clear selected tokens, spans, and active alignment.",
+        "kind": "client",
+        "input_schema": _empty_schema(),
+        "executor": _clear_selection,
+        "summary": lambda _: "Clear current selection",
+    },
+    {
+        "action_id": "workbench.select_alignment",
+        "label": "Select Alignment",
+        "description": "Set the active alignment in the workflow drawer.",
+        "kind": "client",
+        "input_schema": {
+            "type": "object",
+            "properties": {"alignment_id": {"type": ["string", "null"]}},
+            "additionalProperties": False,
+        },
+        "executor": _select_alignment,
+        "summary": lambda payload: f"Select alignment {payload.get('alignment_id') or 'none'}",
+    },
+    {
         "action_id": "project.get",
         "label": "Get Project",
         "description": "Load the project configuration.",
         "kind": "read",
-        "input_schema": {"type": "object", "properties": {}, "additionalProperties": False},
+        "input_schema": _empty_schema(),
         "executor": _get_project,
         "summary": lambda _: "Load project",
     },
@@ -330,7 +498,7 @@ ACTION_DEFINITIONS: list[dict[str, Any]] = [
         "label": "List Psalms",
         "description": "List all psalms in the project.",
         "kind": "read",
-        "input_schema": {"type": "object", "properties": {}, "additionalProperties": False},
+        "input_schema": _empty_schema(),
         "executor": _list_psalms,
         "summary": lambda _: "List psalms",
     },
@@ -441,7 +609,7 @@ ACTION_DEFINITIONS: list[dict[str, Any]] = [
         "label": "Open Concerns",
         "description": "Load unresolved drift, alignment, and provenance warnings.",
         "kind": "read",
-        "input_schema": {"type": "object", "properties": {}, "additionalProperties": False},
+        "input_schema": _empty_schema(),
         "executor": _open_concerns,
         "summary": lambda _: "Load open concerns",
     },
@@ -783,6 +951,7 @@ def _public_action_definition(action: dict[str, Any]) -> dict[str, Any]:
         "kind": action["kind"],
         "requires_confirmation": action["kind"] == "write",
         "input_schema": action["input_schema"],
+        "result_schema": action.get("result_schema", _object_result_schema()),
         "required_fields": _required_properties(action["input_schema"]),
     }
 
@@ -868,7 +1037,15 @@ def _tool_prompt() -> str:
 
 
 def _context_prompt(context: dict[str, Any] | None) -> str:
-    return json.dumps(context or {}, ensure_ascii=False, indent=2)
+    return json.dumps(
+        {
+            "route": (context or {}).get("route"),
+            "workbench": (context or {}).get("workbench", {}),
+            "ui": (context or {}).get("ui", {}),
+        },
+        ensure_ascii=False,
+        indent=2,
+    )
 
 
 def _conversation_prompt(session: dict[str, Any]) -> str:
@@ -880,6 +1057,7 @@ def _assistant_contract() -> dict[str, Any]:
         "type": "object",
         "properties": {
             "reply": {"type": "string"},
+            "speakable_text": {"type": "string"},
             "tool_calls": {
                 "type": "array",
                 "items": {
@@ -893,7 +1071,7 @@ def _assistant_contract() -> dict[str, Any]:
                 },
             },
         },
-        "required": ["reply", "tool_calls"],
+        "required": ["reply", "speakable_text", "tool_calls"],
         "additionalProperties": False,
     }
 
@@ -906,6 +1084,7 @@ def _run_assistant_model(session: dict[str, Any], message: str, context: dict[st
         "Rules:\n"
         "- Prefer precise tool calls over guessing.\n"
         "- Use client navigation actions when the user wants the UI to move.\n"
+        "- Use client workbench actions for local UI state such as selection, compare mode, tabs, and pinned token state.\n"
         "- Use write actions only when the user clearly wants a state change.\n"
         "- Keep reply concise.\n\n"
         f"Context:\n{_context_prompt(context)}\n\n"
@@ -934,10 +1113,22 @@ def _run_assistant_model(session: dict[str, Any], message: str, context: dict[st
 def _fallback_response(message: str) -> dict[str, Any]:
     lower = message.lower()
     if "open" in lower and "workbench" in lower:
-        return {"reply": "Opening the workbench.", "tool_calls": [{"action_id": "navigate.route", "input": {"route": "workbench"}}]}
+        return {
+            "reply": "Opening the workbench.",
+            "speakable_text": "Opening the workbench.",
+            "tool_calls": [{"action_id": "navigate.route", "input": {"route": "workbench"}}],
+        }
     if "project" in lower:
-        return {"reply": "Loading the project configuration.", "tool_calls": [{"action_id": "project.get", "input": {}}]}
-    return {"reply": "I can inspect the project, navigate the workbench, and prepare write actions for confirmation.", "tool_calls": []}
+        return {
+            "reply": "Loading the project configuration.",
+            "speakable_text": "Loading the project configuration.",
+            "tool_calls": [{"action_id": "project.get", "input": {}}],
+        }
+    return {
+        "reply": "I can inspect the project, navigate the workbench, control the local UI, and prepare write actions for confirmation.",
+        "speakable_text": "I can inspect the project, navigate the workbench, control the local UI, and prepare write actions for confirmation.",
+        "tool_calls": [],
+    }
 
 
 def post_message(session_id: str, message: str, context: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -982,6 +1173,7 @@ def post_message(session_id: str, message: str, context: dict[str, Any] | None =
     assistant_message = {
         "role": "assistant",
         "content": model_response.get("reply", ""),
+        "speakable_text": model_response.get("speakable_text") or model_response.get("reply", ""),
         "created_at": _iso_now(),
         "tool_results": tool_results,
         "pending_actions": pending_actions,

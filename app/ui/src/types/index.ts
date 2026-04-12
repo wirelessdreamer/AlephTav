@@ -7,6 +7,8 @@ export type Layer =
   | 'metered_lyric'
   | 'parallelism_lyric';
 
+export type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
+
 export interface Token {
   token_id: string;
   surface: string;
@@ -285,6 +287,7 @@ export interface AssistantActionDefinition {
   kind: 'read' | 'write' | 'client';
   requires_confirmation: boolean;
   input_schema: Record<string, unknown>;
+  result_schema?: Record<string, unknown>;
   required_fields: string[];
 }
 
@@ -317,6 +320,7 @@ export interface AssistantMessage {
   role: 'user' | 'assistant';
   content: string;
   created_at: string;
+  speakable_text?: string;
   tool_results?: AssistantToolResult[];
   pending_actions?: AssistantActionPreview[];
   client_actions?: AssistantClientAction[];
@@ -354,6 +358,21 @@ export interface AssistantSettings {
     output_enabled: boolean;
     output_provider: string | null;
     output_voice: string | null;
+  };
+  providers: {
+    speech_to_text: {
+      provider: string;
+      available: boolean;
+      auth_mode: 'api_key' | 'oauth_link';
+      auth_status: 'configured' | 'not_configured' | 'unsupported';
+      account_link_available: boolean;
+    };
+    voice_output: {
+      available: boolean;
+      enabled: boolean;
+      provider: string | null;
+      voice: string | null;
+    };
   };
 }
 

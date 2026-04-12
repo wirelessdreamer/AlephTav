@@ -21,18 +21,26 @@ import {
 import type { Alignment, Layer, Psalm, Rendering, TokenCard } from '../types';
 
 export function WorkbenchPage() {
-  const { workbenchSelection, updateWorkbenchSelection } = useAppRuntime();
+  const {
+    workbenchSelection,
+    updateWorkbenchSelection,
+    workbenchUi,
+    updateWorkbenchUi,
+    toggleWorkbenchTokenSelection,
+    toggleWorkbenchSpanSelection,
+    clearWorkbenchSelections,
+  } = useAppRuntime();
   const selectedPsalmId = workbenchSelection.psalmId;
   const selectedUnitId = workbenchSelection.unitId;
   const activeLayer = workbenchSelection.layer;
   const granularity = workbenchSelection.granularity;
-  const [hoveredTokenId, setHoveredTokenId] = useState<string | null>(null);
-  const [hoveredSpanId, setHoveredSpanId] = useState<string | null>(null);
-  const [selectedTokenIds, setSelectedTokenIds] = useState<string[]>([]);
-  const [selectedSpanIds, setSelectedSpanIds] = useState<string[]>([]);
-  const [selectedAlignmentId, setSelectedAlignmentId] = useState<string | null>(null);
-  const [compareLeftId, setCompareLeftId] = useState<string | null>(null);
-  const [compareRightId, setCompareRightId] = useState<string | null>(null);
+  const hoveredTokenId = workbenchUi.hoveredTokenId;
+  const hoveredSpanId = workbenchUi.hoveredSpanId;
+  const selectedTokenIds = workbenchUi.selectedTokenIds;
+  const selectedSpanIds = workbenchUi.selectedSpanIds;
+  const selectedAlignmentId = workbenchUi.selectedAlignmentId;
+  const compareLeftId = workbenchUi.compareLeftId;
+  const compareRightId = workbenchUi.compareRightId;
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
@@ -48,7 +56,7 @@ export function WorkbenchPage() {
   const alternateAction = useAlternateLifecycleAction(selectedUnitId);
   const demoteRendering = useDemoteRendering(selectedUnitId);
 
-  const pinnedTokenId = pinnedLexicalCard?.token_id ?? null;
+  const pinnedTokenId = workbenchUi.pinnedTokenId ?? pinnedLexicalCard?.token_id ?? null;
   const [pinOverrideTokenId, setPinOverrideTokenId] = useState<string | null | undefined>(undefined);
   const effectivePinnedTokenId = pinOverrideTokenId !== undefined ? pinOverrideTokenId : pinnedTokenId;
   const hoveredToken = useTokenCard(!effectivePinnedTokenId ? hoveredTokenId : null);
@@ -146,11 +154,13 @@ export function WorkbenchPage() {
   }, [unit, activeLayer, highlightedSpanIds]);
 
   useEffect(() => {
-    setHoveredTokenId(null);
-    setHoveredSpanId(null);
-    setSelectedTokenIds([]);
-    setSelectedSpanIds([]);
-    setSelectedAlignmentId(null);
+    updateWorkbenchUi({
+      hoveredTokenId: null,
+      hoveredSpanId: null,
+      selectedTokenIds: [],
+      selectedSpanIds: [],
+      selectedAlignmentId: null,
+    });
   }, [selectedUnitId, activeLayer]);
 
   useEffect(() => {
@@ -158,7 +168,7 @@ export function WorkbenchPage() {
       return;
     }
     if (!activeAlignments.some((alignment) => alignment.alignment_id === selectedAlignmentId)) {
-      setSelectedAlignmentId(null);
+      updateWorkbenchUi({ selectedAlignmentId: null });
     }
   }, [activeAlignments, selectedAlignmentId]);
 
@@ -166,13 +176,21 @@ export function WorkbenchPage() {
     if (!activeAlignment) {
       return;
     }
-    setSelectedTokenIds(activeAlignment.source_token_ids);
-    setSelectedSpanIds(activeAlignment.target_span_ids);
+    updateWorkbenchUi({
+      selectedTokenIds: activeAlignment.source_token_ids,
+      selectedSpanIds: activeAlignment.target_span_ids,
+    });
   }, [activeAlignment]);
 
   useEffect(() => {
     setPinOverrideTokenId(undefined);
   }, [pinnedTokenId]);
+
+  useEffect(() => {
+    if (pinnedLexicalCard?.token_id && workbenchUi.pinnedTokenId === null) {
+      updateWorkbenchUi({ pinnedTokenId: pinnedLexicalCard.token_id });
+    }
+  }, [pinnedLexicalCard?.token_id]);
 
   useEffect(() => {
     if (tokenCard) {
@@ -225,20 +243,14 @@ export function WorkbenchPage() {
   const handlePinToken = (nextTokenId: string) => {
     const tokenIdToPersist = effectivePinnedTokenId === nextTokenId ? null : nextTokenId;
     setPinOverrideTokenId(tokenIdToPersist);
+    updateWorkbenchUi({ pinnedTokenId: tokenIdToPersist });
     setPinnedLexicalCard.mutate(tokenIdToPersist);
   };
 
   const handleUnpinToken = () => {
     setPinOverrideTokenId(null);
+    updateWorkbenchUi({ pinnedTokenId: null });
     setPinnedLexicalCard.mutate(null);
-  };
-
-  const handleToggleToken = (tokenId: string) => {
-    setSelectedTokenIds((existing) => (existing.includes(tokenId) ? existing.filter((item) => item !== tokenId) : [...existing, tokenId]));
-  };
-
-  const handleToggleSpan = (spanId: string) => {
-    setSelectedSpanIds((existing) => (existing.includes(spanId) ? existing.filter((item) => item !== spanId) : [...existing, spanId]));
   };
 
   const handlePromoteAlternate = (renderingId: string) => {
@@ -307,9 +319,9 @@ export function WorkbenchPage() {
             activeTokenId={tokenId}
             highlightedTokenIds={highlightedTokenIds}
             selectedTokenIds={selectedTokenIds}
-            onHoverToken={setHoveredTokenId}
+            onHoverToken={(tokenId) => updateWorkbenchUi({ hoveredTokenId: tokenId })}
             onPinToken={handlePinToken}
-            onToggleToken={handleToggleToken}
+            onToggleToken={toggleWorkbenchTokenSelection}
           />
         </div>
         <div className="scroll-panel" ref={englishRef} onScroll={() => syncScroll('english')}>
@@ -322,10 +334,10 @@ export function WorkbenchPage() {
             selectedSpanIds={selectedSpanIds}
             hoveredSpanId={hoveredSpanId}
             onSelectLayer={(layer) => updateWorkbenchSelection({ layer })}
-            onHoverSpan={setHoveredSpanId}
-            onToggleSpan={handleToggleSpan}
-            onCompareLeft={setCompareLeftId}
-            onCompareRight={setCompareRightId}
+            onHoverSpan={(spanId) => updateWorkbenchUi({ hoveredSpanId: spanId })}
+            onToggleSpan={toggleWorkbenchSpanSelection}
+            onCompareLeft={(renderingId) => updateWorkbenchUi({ compareLeftId: renderingId })}
+            onCompareRight={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })}
             onPromoteAlternate={handlePromoteAlternate}
             onDemoteCanonical={(renderingId) => demoteRendering.mutate(renderingId)}
             onAcceptAlternate={handleAcceptAlternate}
@@ -340,21 +352,19 @@ export function WorkbenchPage() {
         concerns={concerns}
         tokenCard={displayedTokenCard}
         concordanceSeed={displayedTokenCard?.lemma ?? undefined}
+        tab={workbenchUi.drawerTab}
+        onTabChange={(tab) => updateWorkbenchUi({ drawerTab: tab })}
         onNavigateToUnit={handleNavigateToUnit}
         activeLayer={activeLayer}
         selectedTokenIds={selectedTokenIds}
         selectedSpanIds={selectedSpanIds}
         selectedAlignmentId={selectedAlignmentId}
-        onSelectedAlignmentChange={setSelectedAlignmentId}
-        onClearAlignmentSelection={() => {
-          setSelectedAlignmentId(null);
-          setSelectedTokenIds([]);
-          setSelectedSpanIds([]);
-        }}
+        onSelectedAlignmentChange={(alignmentId) => updateWorkbenchUi({ selectedAlignmentId: alignmentId })}
+        onClearAlignmentSelection={clearWorkbenchSelections}
         compareLeftId={compareLeftId}
         compareRightId={compareRightId}
-        onCompareLeftChange={setCompareLeftId}
-        onCompareRightChange={setCompareRightId}
+        onCompareLeftChange={(renderingId) => updateWorkbenchUi({ compareLeftId: renderingId })}
+        onCompareRightChange={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })}
       />
     </main>
   );
