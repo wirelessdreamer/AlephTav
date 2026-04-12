@@ -876,3 +876,115 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+.visual-cloud-panel {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.82));
+}
+
+.visual-cloud-header {
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cloud-band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.cloud-node {
+  border: 1px solid rgba(71, 85, 105, 0.95);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: rgba(30, 41, 59, 0.72);
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: baseline;
+}
+
+.cloud-node small {
+  color: #cbd5e1;
+}
+
+.cloud-node-phrase {
+  background: rgba(14, 116, 144, 0.28);
+}
+
+.cloud-node-concept {
+  background: rgba(21, 94, 117, 0.42);
+}
+
+.cloud-node.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+.visual-cloud-summary {
+  margin-top: 0.75rem;
+}
+
+.visual-unit-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.flow-unit-card {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  border-radius: 18px;
+  padding: 0.9rem;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.flow-unit-card.active {
+  border-color: rgba(56, 189, 248, 0.75);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.28);
+}
+
+.flow-unit-card-translation {
+  background: rgba(15, 23, 42, 0.88);
+}
+
+.flow-unit-header {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0;
+  margin-bottom: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.support-row,
+.retrieval-stack {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.support-row {
+  margin-top: 0.8rem;
+}
+
+.support-tag {
+  width: fit-content;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(8, 47, 73, 0.45);
+  color: #e0f2fe;
+}
+
+.retrieval-hit-card {
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 14px;
+  padding: 0.75rem;
+  background: rgba(30, 41, 59, 0.45);
+}

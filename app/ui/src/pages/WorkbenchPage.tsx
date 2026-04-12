@@ -3,8 +3,6 @@ import type { ChangeEvent } from 'react';
 
 import { useAppRuntime } from '../app/AppContext';
 import { BottomDrawer } from '../components/BottomDrawer';
-import { EnglishPane } from '../components/EnglishPane';
-import { HebrewPane } from '../components/HebrewPane';
 import { InspectorRail } from '../components/InspectorRail';
 import {
   useAlternateLifecycleAction,
@@ -13,12 +11,15 @@ import {
   useOpenConcerns,
   usePinnedLexicalCard,
   useProject,
+  usePsalmCloud,
+  usePsalmRetrieval,
+  usePsalmVisualFlow,
   usePsalms,
   useSetPinnedLexicalCard,
   useTokenCard,
   useUnit,
 } from '../hooks/useWorkbench';
-import type { Alignment, Layer, Psalm, Rendering, TokenCard } from '../types';
+import type { Alignment, CloudNode, Psalm, RetrievalHit, RenderingSpan, Token, TokenCard, VisualFlowUnit } from '../types';
 
 export function WorkbenchPage() {
   const {
@@ -41,14 +42,19 @@ export function WorkbenchPage() {
   const selectedAlignmentId = workbenchUi.selectedAlignmentId;
   const compareLeftId = workbenchUi.compareLeftId;
   const compareRightId = workbenchUi.compareRightId;
+  const [selectedCloudNodeId, setSelectedCloudNodeId] = useState<string | null>(null);
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
+  const visualFlowQuery = usePsalmVisualFlow(selectedPsalmId);
+  const cloudQuery = usePsalmCloud(selectedPsalmId);
+  const retrievalQuery = usePsalmRetrieval(selectedPsalmId, selectedCloudNodeId);
   const unitQuery = useUnit(selectedUnitId);
   const concernsQuery = useOpenConcerns();
   const pinnedLexicalCardQuery = usePinnedLexicalCard();
   const { data: project } = projectQuery;
   const { data: psalms } = psalmsQuery;
+  const { data: visualFlow } = visualFlowQuery;
   const { data: unit } = unitQuery;
   const { data: concerns } = concernsQuery;
   const { data: pinnedLexicalCard } = pinnedLexicalCardQuery;
@@ -68,30 +74,8 @@ export function WorkbenchPage() {
   const tokenId = displayedTokenCard?.token_id ?? tokenCard?.token_id ?? hoveredTokenId;
 
   const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
-  const bootstrapError = projectQuery.error ?? psalmsQuery.error;
+  const bootstrapError = projectQuery.error ?? psalmsQuery.error ?? visualFlowQuery.error;
   const unitError = unitQuery.error;
-
-  if (bootstrapError) {
-    return (
-      <main className="workbench-shell workbench-shell--empty">
-        <section className="empty-state-card">
-          <p className="eyebrow">Workbench Unavailable</p>
-          <h1>Start the local API before opening the workbench.</h1>
-          <p className="subtle">
-            The workbench expects the FastAPI backend on <code>127.0.0.1:8000</code>. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
-          </p>
-          <pre>
-            <code>{['./setup.sh', '.\\setup.ps1'].join('\n')}</code>
-          </pre>
-          <div className="hero-actions">
-            <a className="hero-link hero-link-primary" href="#/">
-              Back to welcome page
-            </a>
-          </div>
-        </section>
-      </main>
-    );
-  }
 
   const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
 
@@ -103,12 +87,12 @@ export function WorkbenchPage() {
   const tokenToAlignments = useMemo(() => {
     const mapping = new Map<string, Alignment[]>();
     activeAlignments.forEach((alignment) => {
-      alignment.source_token_ids.forEach((tokenId) => {
-        mapping.set(tokenId, [...(mapping.get(tokenId) ?? []), alignment]);
+      alignment.source_token_ids.forEach((alignmentTokenId) => {
+        mapping.set(alignmentTokenId, [...(mapping.get(alignmentTokenId) ?? []), alignment]);
       });
     });
     return mapping;
-  }, [unit, activeLayer]);
+  }, [activeAlignments]);
 
   const spanToAlignments = useMemo(() => {
     const mapping = new Map<string, Alignment[]>();
@@ -123,19 +107,19 @@ export function WorkbenchPage() {
   const highlightedTokenIds = useMemo(() => {
     const ids = new Set<string>(selectedTokenIds);
     selectedSpanIds.forEach((spanId) => {
-      (spanToAlignments.get(spanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((tokenId) => ids.add(tokenId)));
+      (spanToAlignments.get(spanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((alignmentTokenId) => ids.add(alignmentTokenId)));
     });
     if (hoveredSpanId) {
-      (spanToAlignments.get(hoveredSpanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((tokenId) => ids.add(tokenId)));
+      (spanToAlignments.get(hoveredSpanId) ?? []).forEach((alignment) => alignment.source_token_ids.forEach((alignmentTokenId) => ids.add(alignmentTokenId)));
     }
-    activeAlignment?.source_token_ids.forEach((tokenId) => ids.add(tokenId));
+    activeAlignment?.source_token_ids.forEach((alignmentTokenId) => ids.add(alignmentTokenId));
     return [...ids];
   }, [activeAlignment, hoveredSpanId, selectedTokenIds, selectedSpanIds, spanToAlignments]);
 
   const highlightedSpanIds = useMemo(() => {
     const ids = new Set<string>(selectedSpanIds);
-    selectedTokenIds.forEach((tokenId) => {
-      (tokenToAlignments.get(tokenId) ?? []).forEach((alignment) => alignment.target_span_ids.forEach((spanId) => ids.add(spanId)));
+    selectedTokenIds.forEach((selectedTokenId) => {
+      (tokenToAlignments.get(selectedTokenId) ?? []).forEach((alignment) => alignment.target_span_ids.forEach((spanId) => ids.add(spanId)));
     });
     if (hoveredTokenId) {
       (tokenToAlignments.get(hoveredTokenId) ?? []).forEach((alignment) => alignment.target_span_ids.forEach((spanId) => ids.add(spanId)));
@@ -144,14 +128,19 @@ export function WorkbenchPage() {
     return [...ids];
   }, [activeAlignment, hoveredTokenId, selectedSpanIds, selectedTokenIds, tokenToAlignments]);
 
-  const highlightedRenderingIds = useMemo(() => {
-    if (!unit) return [];
-    const spans = new Set(highlightedSpanIds);
-    return unit.renderings
-      .filter((rendering: Rendering) => rendering.layer === activeLayer)
-      .filter((rendering: Rendering) => rendering.target_spans.some((span) => spans.has(span.span_id)))
-      .map((rendering: Rendering) => rendering.rendering_id);
-  }, [unit, activeLayer, highlightedSpanIds]);
+  const cloudNodes = cloudQuery.data?.nodes ?? visualFlow?.cloud_nodes ?? [];
+  const activeCloudNode = useMemo(
+    () => cloudNodes.find((node) => node.node_id === selectedCloudNodeId) ?? retrievalQuery.data?.node ?? null,
+    [cloudNodes, retrievalQuery.data?.node, selectedCloudNodeId],
+  );
+
+  const retrievalHitsByUnit = useMemo(() => {
+    const grouped = new Map<string, RetrievalHit[]>();
+    (retrievalQuery.data?.hits ?? []).forEach((hit) => {
+      grouped.set(hit.unit_id, [...(grouped.get(hit.unit_id) ?? []), hit]);
+    });
+    return grouped;
+  }, [retrievalQuery.data?.hits]);
 
   useEffect(() => {
     updateWorkbenchUi({
@@ -162,6 +151,10 @@ export function WorkbenchPage() {
       selectedAlignmentId: null,
     });
   }, [selectedUnitId, activeLayer]);
+
+  useEffect(() => {
+    setSelectedCloudNodeId(null);
+  }, [selectedPsalmId]);
 
   useEffect(() => {
     if (!selectedAlignmentId) {
@@ -253,6 +246,22 @@ export function WorkbenchPage() {
     setPinnedLexicalCard.mutate(null);
   };
 
+  const ensureSelectedUnit = (unitId: string) => {
+    if (selectedUnitId !== unitId) {
+      updateWorkbenchSelection({ unitId });
+    }
+  };
+
+  const handleToggleToken = (unitId: string, nextTokenId: string) => {
+    ensureSelectedUnit(unitId);
+    toggleWorkbenchTokenSelection(nextTokenId);
+  };
+
+  const handleToggleSpan = (unitId: string, spanId: string) => {
+    ensureSelectedUnit(unitId);
+    toggleWorkbenchSpanSelection(spanId);
+  };
+
   const handlePromoteAlternate = (renderingId: string) => {
     alternateAction.mutate({ renderingId, action: 'promote', payload: { reviewer: 'ui', reviewer_role: 'release reviewer' } });
   };
@@ -269,12 +278,34 @@ export function WorkbenchPage() {
     alternateAction.mutate({ renderingId, action: 'deprecate', payload: { created_by: 'ui' } });
   };
 
+  if (bootstrapError) {
+    return (
+      <main className="workbench-shell workbench-shell--empty">
+        <section className="empty-state-card">
+          <p className="eyebrow">Workbench Unavailable</p>
+          <h1>Start the local API before opening the workbench.</h1>
+          <p className="subtle">
+            The workbench expects the FastAPI backend on <code>127.0.0.1:8000</code>. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
+          </p>
+          <pre>
+            <code>{['./setup.sh', '.\\setup.ps1'].join('\n')}</code>
+          </pre>
+          <div className="hero-actions">
+            <a className="hero-link hero-link-primary" href="#/">
+              Back to welcome page
+            </a>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="workbench-shell">
       <header className="topbar">
         <div>
           <h1>{project?.title ?? 'Psalms Copyleft Workbench'}</h1>
-          <p className="subtle">Local-first Hebrew-source translation, alignment, review, audit, and export.</p>
+          <p className="subtle">Visual Hebrew-to-literal flow with phrase and concept retrieval.</p>
         </div>
         <div className="topbar-controls">
           <label className="compact-field">
@@ -290,9 +321,9 @@ export function WorkbenchPage() {
           <label className="compact-field">
             <span>Unit</span>
             <select value={selectedUnitId ?? ''} onChange={handleUnitChange}>
-              {currentPsalm?.unit_ids.map((unitId) => (
-                <option key={unitId} value={unitId}>
-                  {unitId}
+              {currentPsalm?.unit_ids.map((unitIdOption) => (
+                <option key={unitIdOption} value={unitIdOption}>
+                  {unitIdOption}
                 </option>
               ))}
             </select>
@@ -304,46 +335,214 @@ export function WorkbenchPage() {
               <option value="verse">verse</option>
             </select>
           </label>
+          <label className="compact-field">
+            <span>Workflow layer</span>
+            <select value={activeLayer} onChange={(event) => updateWorkbenchSelection({ layer: event.target.value as typeof activeLayer })}>
+              <option value="gloss">gloss</option>
+              <option value="literal">literal</option>
+              <option value="phrase">phrase</option>
+              <option value="concept">concept</option>
+              <option value="lyric">lyric</option>
+              <option value="metered_lyric">metered_lyric</option>
+              <option value="parallelism_lyric">parallelism_lyric</option>
+            </select>
+          </label>
         </div>
       </header>
       <section className="status-strip">
         <span className="status-pill">Human review required for canonical promotion</span>
         <span className="status-pill">Divine name policy: {project?.divine_name_policy}</span>
+        <span className="status-pill">Retrieval: {visualFlow?.embedding_model ?? 'loading'} </span>
         <span className="status-pill warning">Warnings: {(concerns?.open_drift_flags.length ?? 0) + (concerns?.uncovered_tokens.length ?? 0)}</span>
         {unitError ? <span className="status-pill warning">Unit load failed: {(unitError as Error).message}</span> : null}
       </section>
+      <section className="visual-cloud-panel">
+        <div className="horizontal-between visual-cloud-header">
+          <div>
+            <h2>Phrase And Concept Cloud</h2>
+            <p className="subtle">Choose a node to drive the literal-first right pane. Same-Psalm hits are ranked ahead of cross-Psalm support.</p>
+          </div>
+          {activeCloudNode ? (
+            <button type="button" className="tab" onClick={() => setSelectedCloudNodeId(null)}>
+              Clear filter
+            </button>
+          ) : null}
+        </div>
+        <div className="cloud-band" aria-label="Phrase and concept cloud">
+          {cloudNodes.map((node: CloudNode) => (
+            <button
+              key={node.node_id}
+              type="button"
+              className={`cloud-node cloud-node-${node.kind} ${selectedCloudNodeId === node.node_id ? 'active' : ''}`}
+              style={{ fontSize: `${1 + Math.min(node.weight * 0.09, 1.1)}rem` }}
+              onClick={() => setSelectedCloudNodeId((existing) => (existing === node.node_id ? null : node.node_id))}
+            >
+              <span>{node.label}</span>
+              <small>{node.support_count}</small>
+            </button>
+          ))}
+        </div>
+        <div className="visual-cloud-summary subtle">
+          {activeCloudNode
+            ? `${activeCloudNode.label} selected · ${retrievalQuery.data?.hits.length ?? 0} ranked phrase/rendering hits`
+            : 'No cloud node selected. The right pane is showing the default literal-first flow for the selected Psalm.'}
+        </div>
+      </section>
       <section className="workspace-grid">
         <div className="scroll-panel" ref={hebrewRef} onScroll={() => syncScroll('hebrew')}>
-          <HebrewPane
-            tokens={unit?.tokens ?? []}
-            activeTokenId={tokenId}
-            highlightedTokenIds={highlightedTokenIds}
-            selectedTokenIds={selectedTokenIds}
-            onHoverToken={(tokenId) => updateWorkbenchUi({ hoveredTokenId: tokenId })}
-            onPinToken={handlePinToken}
-            onToggleToken={toggleWorkbenchTokenSelection}
-          />
+          <section className="pane pane-hebrew">
+            <header className="pane-header">
+              <h2>Hebrew Source</h2>
+              <span className="subtle">Full Psalm canvas with the active unit pinned into inspector and workflow tools.</span>
+            </header>
+            <div className="visual-unit-list">
+              {visualFlow?.units.map((visualUnit: VisualFlowUnit) => {
+                const selected = visualUnit.unit_id === selectedUnitId;
+                return (
+                  <article key={visualUnit.unit_id} className={`flow-unit-card ${selected ? 'active' : ''}`}>
+                    <button type="button" className="flow-unit-header" onClick={() => ensureSelectedUnit(visualUnit.unit_id)}>
+                      <strong>{visualUnit.ref}</strong>
+                      <span className="subtle">{visualUnit.unit_id}</span>
+                    </button>
+                    <div className="hebrew-token-grid" dir="rtl">
+                      {visualUnit.tokens.map((token: Token) => {
+                        const active = selected && tokenId === token.token_id;
+                        const linked = selected && highlightedTokenIds.includes(token.token_id);
+                        const tokenSelected = selected && selectedTokenIds.includes(token.token_id);
+                        return (
+                          <button
+                            key={token.token_id}
+                            className={`hebrew-token ${active ? 'active' : ''} ${linked ? 'linked' : ''} ${tokenSelected ? 'selected' : ''}`}
+                            onMouseEnter={() => {
+                              ensureSelectedUnit(visualUnit.unit_id);
+                              updateWorkbenchUi({ hoveredTokenId: token.token_id });
+                            }}
+                            onMouseLeave={() => updateWorkbenchUi({ hoveredTokenId: null })}
+                            onClick={() => {
+                              handleToggleToken(visualUnit.unit_id, token.token_id);
+                              handlePinToken(token.token_id);
+                            }}
+                            type="button"
+                            title={`${token.token_id} • ${token.surface} • ${token.lemma} • ${token.strong}`}
+                            aria-pressed={tokenSelected}
+                          >
+                            <span className="surface">{token.surface}</span>
+                            <span className="token-meta">{token.token_id}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
         </div>
         <div className="scroll-panel" ref={englishRef} onScroll={() => syncScroll('english')}>
-          <EnglishPane
-            renderings={unit?.renderings ?? []}
-            activeLayer={activeLayer}
-            project={project}
-            highlightedRenderingIds={highlightedRenderingIds}
-            highlightedSpanIds={highlightedSpanIds}
-            selectedSpanIds={selectedSpanIds}
-            hoveredSpanId={hoveredSpanId}
-            onSelectLayer={(layer) => updateWorkbenchSelection({ layer })}
-            onHoverSpan={(spanId) => updateWorkbenchUi({ hoveredSpanId: spanId })}
-            onToggleSpan={toggleWorkbenchSpanSelection}
-            onCompareLeft={(renderingId) => updateWorkbenchUi({ compareLeftId: renderingId })}
-            onCompareRight={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })}
-            onPromoteAlternate={handlePromoteAlternate}
-            onDemoteCanonical={(renderingId) => demoteRendering.mutate(renderingId)}
-            onAcceptAlternate={handleAcceptAlternate}
-            onRejectAlternate={handleRejectAlternate}
-            onDeprecateAlternate={handleDeprecateAlternate}
-          />
+          <section className="pane pane-english">
+            <header className="pane-header">
+              <h2>Initial Translation Flow</h2>
+              <span className="subtle">Literal-first renderings stay stable until a phrase or concept node is selected.</span>
+            </header>
+            <div className="visual-unit-list">
+              {visualFlow?.units.map((visualUnit: VisualFlowUnit) => {
+                const selected = visualUnit.unit_id === selectedUnitId;
+                const defaultRendering = visualUnit.default_rendering;
+                const retrievalHits = retrievalHitsByUnit.get(visualUnit.unit_id) ?? [];
+                return (
+                  <article key={visualUnit.unit_id} className={`flow-unit-card flow-unit-card-translation ${selected ? 'active' : ''}`}>
+                    <button type="button" className="flow-unit-header" onClick={() => ensureSelectedUnit(visualUnit.unit_id)}>
+                      <strong>{visualUnit.ref}</strong>
+                      <span className="subtle">Literal-first</span>
+                    </button>
+                    {defaultRendering ? (
+                      <div className={`rendering-card ${selected ? 'linked' : ''}`}>
+                        <div className="horizontal-between">
+                          <strong>{defaultRendering.layer}</strong>
+                          <span className="subtle">{defaultRendering.status}</span>
+                        </div>
+                        <p className="rendering-text">{defaultRendering.text}</p>
+                        <div className="rendering-span-row" aria-label={`Rendering spans for ${defaultRendering.rendering_id}`}>
+                          {defaultRendering.target_spans.map((span: RenderingSpan) => {
+                            const linked = selected && highlightedSpanIds.includes(span.span_id);
+                            const spanSelected = selected && selectedSpanIds.includes(span.span_id);
+                            const active = selected && hoveredSpanId === span.span_id;
+                            return (
+                              <button
+                                key={span.span_id}
+                                type="button"
+                                className={`rendering-span ${linked ? 'linked' : ''} ${spanSelected ? 'selected' : ''} ${active ? 'active' : ''}`}
+                                onMouseEnter={() => {
+                                  ensureSelectedUnit(visualUnit.unit_id);
+                                  updateWorkbenchUi({ hoveredSpanId: span.span_id });
+                                }}
+                                onMouseLeave={() => updateWorkbenchUi({ hoveredSpanId: null })}
+                                onClick={() => handleToggleSpan(visualUnit.unit_id, span.span_id)}
+                                aria-pressed={spanSelected}
+                                title={span.span_id}
+                              >
+                                {span.text}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        <div className="inline-actions">
+                          <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareLeftId: defaultRendering.rendering_id })}>
+                            Compare left
+                          </button>
+                          <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareRightId: defaultRendering.rendering_id })}>
+                            Compare right
+                          </button>
+                          {defaultRendering.status === 'canonical' ? (
+                            <button type="button" className="tab" onClick={() => demoteRendering.mutate(defaultRendering.rendering_id)}>
+                              Demote
+                            </button>
+                          ) : (
+                            <>
+                              <button type="button" className="tab" onClick={() => handleAcceptAlternate(defaultRendering.rendering_id)}>
+                                Accept
+                              </button>
+                              <button type="button" className="tab" onClick={() => handlePromoteAlternate(defaultRendering.rendering_id)}>
+                                Promote
+                              </button>
+                              <button type="button" className="tab" onClick={() => handleDeprecateAlternate(defaultRendering.rendering_id)}>
+                                Deprecate
+                              </button>
+                              <button type="button" className="tab" onClick={() => handleRejectAlternate(defaultRendering.rendering_id)}>
+                                Reject
+                              </button>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="empty-state">No translation candidate available for this unit yet.</p>
+                    )}
+                    <div className="support-row" aria-label={`Supporting nodes for ${visualUnit.unit_id}`}>
+                      {visualUnit.supporting_nodes.map((node) => (
+                        <button key={node.node_id} type="button" className="tag support-tag" onClick={() => setSelectedCloudNodeId(node.node_id)}>
+                          {node.kind}: {node.label}
+                        </button>
+                      ))}
+                    </div>
+                    {selectedCloudNodeId ? (
+                      <div className="retrieval-stack">
+                        <div className="horizontal-between">
+                          <strong>Retrieved support</strong>
+                          <span className="subtle">{retrievalHits.length} hit(s)</span>
+                        </div>
+                        {retrievalHits.length > 0 ? (
+                          retrievalHits.slice(0, 3).map((hit) => <RetrievedHit key={hit.hit_id} hit={hit} onCompare={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })} />)
+                        ) : (
+                          <p className="empty-state">No ranked matches for this unit under the active cloud node.</p>
+                        )}
+                      </div>
+                    ) : null}
+                  </article>
+                );
+              })}
+            </div>
+          </section>
         </div>
         <InspectorRail tokenCard={displayedTokenCard} unit={unit} project={project} concerns={concerns} onUnpinToken={handleUnpinToken} />
       </section>
@@ -367,5 +566,29 @@ export function WorkbenchPage() {
         onCompareRightChange={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })}
       />
     </main>
+  );
+}
+
+function RetrievedHit({ hit, onCompare }: { hit: RetrievalHit; onCompare: (renderingId: string) => void }) {
+  return (
+    <article className="retrieval-hit-card">
+      <div className="horizontal-between">
+        <strong>{hit.scope === 'same_psalm' ? hit.ref : `${hit.ref} · cross-Psalm`}</strong>
+        <span className="subtle">score {hit.explanation.final_score.toFixed(2)}</span>
+      </div>
+      <p className="result-snippet">{hit.label}</p>
+      <div className="result-meta">
+        <span>{hit.layer}</span>
+        <span>{hit.status}</span>
+        {hit.rendering_id ? (
+          <button type="button" className="link-button" onClick={() => onCompare(hit.rendering_id!)}>
+            Send to compare
+          </button>
+        ) : null}
+      </div>
+      <p className="subtle">
+        vector {hit.explanation.vector_score.toFixed(2)} · overlap {hit.explanation.phrase_concept_overlap.toFixed(2)} · literal priority {hit.explanation.literal_priority.toFixed(2)}
+      </p>
+    </article>
   );
 }

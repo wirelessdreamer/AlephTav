@@ -290,10 +290,17 @@ def test_unit_witness_endpoint_returns_isolated_metadata() -> None:
 def test_alternates_endpoints_support_filters_and_lifecycle_actions() -> None:
     list_response = client.get(
         "/units/ps023.v001.a/alternates",
-        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "true"},
+        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "false"},
     )
     assert list_response.status_code == 200
     assert [item["rendering_id"] for item in list_response.json()] == ["rnd.ps023.v001.a.lyric.alt.0001"]
+
+    approved_only = client.get(
+        "/units/ps023.v001.a/alternates",
+        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "true"},
+    )
+    assert approved_only.status_code == 200
+    assert approved_only.json() == []
 
     created = client.post(
         "/units/ps019.v001.a/alternates",
@@ -429,3 +436,32 @@ def test_pinned_lexical_card_state_round_trip() -> None:
     assert cleared.status_code == 200
     assert cleared.json()["token_id"] is None
     assert cleared.json()["token"] is None
+
+
+def test_visual_flow_endpoints_return_full_psalm_canvas_and_cloud() -> None:
+    visual_flow = client.get('/psalms/ps001/visual-flow')
+    assert visual_flow.status_code == 200
+    payload = visual_flow.json()
+    assert payload['psalm_id'] == 'ps001'
+    assert len(payload['units']) >= 1
+    assert payload['units'][0]['default_rendering']['layer'] == 'literal'
+    assert payload['cloud_nodes']
+
+    cloud = client.get('/psalms/ps001/cloud')
+    assert cloud.status_code == 200
+    assert any(item['kind'] == 'concept' for item in cloud.json()['nodes'])
+    assert any(item['kind'] == 'phrase' for item in cloud.json()['nodes'])
+
+
+
+def test_retrieval_prefers_same_psalm_hits_before_cross_psalm_support() -> None:
+    cloud = client.get('/psalms/ps001/cloud')
+    assert cloud.status_code == 200
+    node_id = cloud.json()['nodes'][0]['node_id']
+
+    retrieval = client.get('/psalms/ps001/retrieval', params={'node_id': node_id, 'include_cross_psalm': 'true'})
+    assert retrieval.status_code == 200
+    hits = retrieval.json()['hits']
+    assert hits
+    assert hits[0]['scope'] == 'same_psalm'
+    assert any(hit['scope'] == 'cross_psalm' for hit in hits)

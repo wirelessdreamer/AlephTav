@@ -4,7 +4,7 @@ import shutil
 from pathlib import Path
 
 from app.core.config import get_settings
-from app.services import concordance_service, ingest_service, registry_service, report_service
+from app.services import concordance_service, ingest_service, registry_service, report_service, visual_flow_service
 
 
 def bootstrap_fixture_repo() -> Path:
@@ -16,5 +16,6 @@ def bootstrap_fixture_repo() -> Path:
     registry_service.bootstrap_project()
     ingest_service.import_fixture_psalms()
     concordance_service.rebuild_indexes()
+    visual_flow_service.rebuild_vector_index()
     report_service.generate_audit_reports()
     return settings.root_dir

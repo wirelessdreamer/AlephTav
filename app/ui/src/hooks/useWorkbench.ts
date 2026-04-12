@@ -7,8 +7,11 @@ import type {
   PinnedLexicalCardState,
   Project,
   Psalm,
+  PsalmCloudResponse,
+  PsalmVisualFlow,
   Rendering,
   RenderingComparison,
+  RetrievalResponse,
   SearchResult,
   TokenCard,
   Unit,
@@ -73,6 +76,38 @@ export function useProject() {
 
 export function usePsalms() {
   return useQuery({ queryKey: ['psalms'], queryFn: () => getJson<Psalm[]>('/psalms') });
+}
+
+export function usePsalmVisualFlow(psalmId: string | null) {
+  return useQuery({
+    queryKey: ['psalm-visual-flow', psalmId],
+    queryFn: () => getJson<PsalmVisualFlow>(`/psalms/${psalmId}/visual-flow`),
+    enabled: Boolean(psalmId),
+  });
+}
+
+export function usePsalmCloud(psalmId: string | null, scope = 'selected_psalm', limit = 24) {
+  return useQuery({
+    queryKey: ['psalm-cloud', psalmId, scope, limit],
+    queryFn: () => getJson<PsalmCloudResponse>(`/psalms/${psalmId}/cloud?scope=${encodeURIComponent(scope)}&limit=${limit}`),
+    enabled: Boolean(psalmId),
+  });
+}
+
+export function usePsalmRetrieval(psalmId: string | null, nodeId: string | null, scope = 'selected_psalm', includeCrossPsalm = true, limit = 12) {
+  return useQuery({
+    queryKey: ['psalm-retrieval', psalmId, nodeId, scope, includeCrossPsalm, limit],
+    queryFn: () =>
+      getJson<RetrievalResponse>(
+        `/psalms/${psalmId}/retrieval?${new URLSearchParams({
+          node_id: nodeId ?? '',
+          scope,
+          include_cross_psalm: String(includeCrossPsalm),
+          limit: String(limit),
+        }).toString()}`,
+      ),
+    enabled: Boolean(psalmId && nodeId),
+  });
 }
 
 export function useUnit(unitId: string | null) {

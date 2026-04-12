@@ -89,3 +89,14 @@ test('welcome page renders without requiring the api-backed workbench route', as
   await expect(page.getByText('Quick local demo')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Open Workbench' })).toBeVisible();
 });
+
+
+test('workbench defaults to a full-psalm visual flow canvas with cloud-driven retrieval', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  await expect(page.getByRole('heading', { name: 'Phrase And Concept Cloud' })).toBeVisible();
+  await expect(page.locator('.flow-unit-card').filter({ has: page.getByText('Psalm 1:1a') })).toHaveCount(2);
+
+  await page.locator('.cloud-node').first().click();
+  await expect(page.getByText(/Retrieved support/).first()).toBeVisible();
+});

@@ -58,7 +58,7 @@ def _matches_style_filter(rendering: dict[str, Any], style_filter: str | None) -
     synonyms = {
         "most_literal": {"literal", "most-literal", "study_literal"},
         "best_lyric_flow": {"lyric-flow", "flow", "best-lyric-flow"},
-        "best_meter_fit": {"meter-fit", "meter", "common-meter", "best-meter-fit"},
+        "best_meter_fit": {"meter-fit", "meter", "common-meter", "common_meter", "metered_common_meter", "best-meter-fit"},
         "best_imagery_preservation": {"imagery", "imagery-preservation", "best-imagery-preservation"},
         "formal": {"formal", "liturgical"},
         "contemporary": {"contemporary", "modern"},

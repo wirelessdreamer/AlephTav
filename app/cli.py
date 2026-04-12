@@ -7,7 +7,7 @@ from typing import Optional
 import typer
 
 from app.core.config import get_settings
-from app.services import concordance_service, export_service, generation_service, github_link_service, ingest_service, registry_service, rendering_service, report_service
+from app.services import concordance_service, export_service, generation_service, github_link_service, ingest_service, registry_service, rendering_service, report_service, visual_flow_service
 
 app = typer.Typer(help="Psalms translation workbench CLI")
 
@@ -137,6 +137,11 @@ def export_book(psalm_id: Optional[str] = None, output_dir: Optional[Path] = Non
 def export_release(release_id: str) -> None:
     destination = export_service.export_release(release_id)
     typer.echo(str(destination))
+
+
+@app.command("rebuild-vector-index")
+def rebuild_vector_index() -> None:
+    typer.echo(json.dumps(visual_flow_service.rebuild_vector_index(), indent=2))
 
 
 @app.command("open-settings")

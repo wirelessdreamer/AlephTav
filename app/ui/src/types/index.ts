@@ -267,6 +267,81 @@ export interface RenderingComparison {
   };
 }
 
+export interface CloudNode {
+  node_id: string;
+  label: string;
+  kind: 'phrase' | 'concept';
+  psalm_id: string;
+  source_text: string;
+  weight: number;
+  support_count: number;
+  unit_ids: string[];
+  concept_ids: string[];
+}
+
+export interface RetrievalExplanation {
+  matched_concept_ids: string[];
+  matched_phrase: string | null;
+  vector_score: number;
+  phrase_concept_overlap: number;
+  literal_priority: number;
+  approval_priority: number;
+  scope_bonus: number;
+  final_score: number;
+}
+
+export interface RetrievalHit {
+  hit_id: string;
+  unit_id: string;
+  psalm_id: string;
+  ref: string;
+  label: string;
+  layer: string;
+  status: string;
+  source_type: 'rendering' | 'phrase';
+  rendering_id?: string;
+  scope: 'same_psalm' | 'cross_psalm';
+  explanation: RetrievalExplanation;
+}
+
+export interface VisualFlowUnit {
+  unit_id: string;
+  ref: string;
+  source_hebrew: string;
+  tokens: Token[];
+  concept_ids: string[];
+  default_rendering: Rendering | null;
+  supporting_nodes: CloudNode[];
+}
+
+export interface PsalmVisualFlow {
+  psalm_id: string;
+  title: string;
+  retrieval_status: string;
+  embedding_model: string;
+  embedding_version: string;
+  units: VisualFlowUnit[];
+  cloud_nodes: CloudNode[];
+}
+
+export interface PsalmCloudResponse {
+  psalm_id: string;
+  scope: string;
+  retrieval_status: string;
+  embedding_model: string;
+  embedding_version: string;
+  nodes: CloudNode[];
+}
+
+export interface RetrievalResponse {
+  psalm_id: string;
+  node: CloudNode;
+  scope: string;
+  include_cross_psalm: boolean;
+  retrieval_status: string;
+  hits: RetrievalHit[];
+}
+
 export interface ConcordanceRow {
   token_id: string;
   unit_id: string;
