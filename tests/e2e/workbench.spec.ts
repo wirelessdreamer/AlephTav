@@ -100,3 +100,35 @@ test('workbench defaults to a full-psalm visual flow canvas with cloud-driven re
   await page.locator('.cloud-node').first().click();
   await expect(page.getByText(/Retrieved support/).first()).toBeVisible();
 });
+
+test('psalm selector exposes the full audited corpus', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
+  await expect(psalmSelect.locator('option')).toHaveCount(4);
+  await expect(psalmSelect.locator('option')).toHaveText(['Psalm 1', 'Psalm 19', 'Psalm 23', 'Psalm 51']);
+});
+
+test('layered english flow renders populated content and falls back when the selected layer is missing', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
+  const layerSelect = page.locator('label').filter({ hasText: 'Workflow layer' }).locator('select');
+  await expect(layerSelect.locator('option')).toHaveText(['gloss', 'literal', 'phrase', 'lyric']);
+
+  await psalmSelect.selectOption('ps023');
+  await layerSelect.selectOption('lyric');
+  await expect(page.getByText('The LORD, my shepherd, stays near')).toBeVisible();
+
+  await psalmSelect.selectOption('ps051');
+  await layerSelect.selectOption('phrase');
+  await expect(page.getByText('God, show me mercy')).toBeVisible();
+
+  await psalmSelect.selectOption('ps019');
+  await layerSelect.selectOption('literal');
+  await expect(page.getByText('The heavens are declaring')).toBeVisible();
+
+  await page.getByRole('button', { name: 'compare' }).click();
+  await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare left' }) }).getByText('rnd.ps051.v001.a.literal.can.0001')).toBeVisible();
+  await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare right' }) }).getByText('rnd.ps051.v001.a.phrase.alt.0001')).toBeVisible();
+});

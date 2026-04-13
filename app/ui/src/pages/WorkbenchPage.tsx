@@ -9,6 +9,7 @@ import {
   useCurrentPsalm,
   useDemoteRendering,
   useOpenConcerns,
+  usePsalm,
   usePinnedLexicalCard,
   useProject,
   usePsalmCloud,
@@ -19,6 +20,15 @@ import {
   useTokenCard,
   useUnit,
 } from '../hooks/useWorkbench';
+import {
+  getAvailableCorpusLayers,
+  getDefaultPsalmSelection,
+  getPreferredSelectableLayer,
+  getSelectableLayers,
+  getSelectablePsalmOptions,
+  resolveLayerState,
+  sortRenderingsByStatus,
+} from '../lib/layers';
 import type { Alignment, CloudNode, Psalm, RetrievalHit, RenderingSpan, Token, TokenCard, VisualFlowUnit } from '../types';
 
 export function WorkbenchPage() {
@@ -46,14 +56,23 @@ export function WorkbenchPage() {
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
-  const visualFlowQuery = usePsalmVisualFlow(selectedPsalmId);
-  const cloudQuery = usePsalmCloud(selectedPsalmId);
-  const retrievalQuery = usePsalmRetrieval(selectedPsalmId, selectedCloudNodeId);
+  const { data: psalms } = psalmsQuery;
+  const selectablePsalms = useMemo(() => getSelectablePsalmOptions(psalms), [psalms]);
+  const selectedPsalm = useCurrentPsalm(selectablePsalms, selectedPsalmId);
+  const defaultPsalm = useMemo(
+    () => getDefaultPsalmSelection(selectablePsalms, selectedPsalmId),
+    [selectablePsalms, selectedPsalmId],
+  );
+  const effectivePsalmId = selectedPsalm?.psalm_id ?? defaultPsalm?.psalm_id ?? null;
+  const currentPsalmQuery = usePsalm(effectivePsalmId);
+  const visualFlowQuery = usePsalmVisualFlow(effectivePsalmId);
+  const cloudQuery = usePsalmCloud(effectivePsalmId);
+  const retrievalQuery = usePsalmRetrieval(effectivePsalmId, selectedCloudNodeId);
   const unitQuery = useUnit(selectedUnitId);
   const concernsQuery = useOpenConcerns();
   const pinnedLexicalCardQuery = usePinnedLexicalCard();
   const { data: project } = projectQuery;
-  const { data: psalms } = psalmsQuery;
+  const { data: currentPsalm } = currentPsalmQuery;
   const { data: visualFlow } = visualFlowQuery;
   const { data: unit } = unitQuery;
   const { data: concerns } = concernsQuery;
@@ -73,11 +92,23 @@ export function WorkbenchPage() {
   const [displayedTokenCard, setDisplayedTokenCard] = useState<TokenCard | undefined>(undefined);
   const tokenId = displayedTokenCard?.token_id ?? tokenCard?.token_id ?? hoveredTokenId;
 
-  const currentPsalm = useCurrentPsalm(psalms, selectedPsalmId);
-  const bootstrapError = projectQuery.error ?? psalmsQuery.error ?? visualFlowQuery.error;
+  const bootstrapError = projectQuery.error ?? psalmsQuery.error ?? currentPsalmQuery.error ?? visualFlowQuery.error;
   const unitError = unitQuery.error;
+  const unitMap = useMemo(
+    () => new Map((currentPsalm?.units ?? []).map((item) => [item.unit_id, item])),
+    [currentPsalm?.units],
+  );
 
   const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
+  const selectedUnitLayerState = useMemo(() => resolveLayerState(unit, activeLayer), [unit, activeLayer]);
+  const selectableLayers = useMemo(
+    () => getSelectableLayers(getAvailableCorpusLayers(selectablePsalms)),
+    [selectablePsalms],
+  );
+  const selectedWorkflowLayer = useMemo(
+    () => getPreferredSelectableLayer(activeLayer, selectableLayers),
+    [activeLayer, selectableLayers],
+  );
 
   const activeAlignment = useMemo(
     () => activeAlignments.find((alignment: Alignment) => alignment.alignment_id === selectedAlignmentId) ?? null,
@@ -157,6 +188,38 @@ export function WorkbenchPage() {
   }, [selectedPsalmId]);
 
   useEffect(() => {
+    if (!selectablePsalms.length) {
+      return;
+    }
+    const nextPsalm = getDefaultPsalmSelection(selectablePsalms, selectedPsalmId);
+    if (!nextPsalm) {
+      return;
+    }
+    const nextUnitId = nextPsalm.unit_ids[0] ?? null;
+    if (nextPsalm.psalm_id !== selectedPsalmId || !workbenchSelection.unitId || !nextPsalm.unit_ids.includes(workbenchSelection.unitId)) {
+      updateWorkbenchSelection({
+        psalmId: nextPsalm.psalm_id,
+        unitId: nextUnitId,
+      });
+    }
+  }, [selectablePsalms, selectedPsalmId, updateWorkbenchSelection, workbenchSelection.unitId]);
+
+  useEffect(() => {
+    if (!currentPsalm) {
+      return;
+    }
+    if (!selectedUnitId || !currentPsalm.unit_ids.includes(selectedUnitId)) {
+      updateWorkbenchSelection({ unitId: currentPsalm.unit_ids[0] ?? null });
+    }
+  }, [currentPsalm, selectedUnitId, updateWorkbenchSelection]);
+
+  useEffect(() => {
+    if (activeLayer !== selectedWorkflowLayer) {
+      updateWorkbenchSelection({ layer: selectedWorkflowLayer });
+    }
+  }, [activeLayer, selectedWorkflowLayer, updateWorkbenchSelection]);
+
+  useEffect(() => {
     if (!selectedAlignmentId) {
       return;
     }
@@ -195,6 +258,26 @@ export function WorkbenchPage() {
     }
   }, [effectivePinnedTokenId, hoveredTokenId, tokenCard]);
 
+  useEffect(() => {
+    if (!unit) {
+      return;
+    }
+    const renderingIds = new Set(unit.renderings.map((rendering) => rendering.rendering_id));
+    const patch: {
+      compareLeftId?: string | null;
+      compareRightId?: string | null;
+    } = {};
+    if (compareLeftId && !renderingIds.has(compareLeftId)) {
+      patch.compareLeftId = null;
+    }
+    if (compareRightId && !renderingIds.has(compareRightId)) {
+      patch.compareRightId = null;
+    }
+    if (Object.keys(patch).length > 0) {
+      updateWorkbenchUi(patch);
+    }
+  }, [compareLeftId, compareRightId, unit, updateWorkbenchUi]);
+
   const hebrewRef = useRef<HTMLDivElement>(null);
   const englishRef = useRef<HTMLDivElement>(null);
   const syncingPaneRef = useRef<'hebrew' | 'english' | null>(null);
@@ -214,7 +297,7 @@ export function WorkbenchPage() {
 
   const handlePsalmChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const nextPsalmId = event.target.value;
-    const nextPsalm = psalms?.find((psalm: Psalm) => psalm.psalm_id === nextPsalmId);
+    const nextPsalm = selectablePsalms.find((psalm: Psalm) => psalm.psalm_id === nextPsalmId);
     updateWorkbenchSelection({
       psalmId: nextPsalmId,
       unitId: nextPsalm?.unit_ids[0] ?? null,
@@ -310,8 +393,8 @@ export function WorkbenchPage() {
         <div className="topbar-controls">
           <label className="compact-field">
             <span>Psalm</span>
-            <select value={selectedPsalmId ?? ''} onChange={handlePsalmChange}>
-              {psalms?.map((psalm: Psalm) => (
+            <select value={effectivePsalmId ?? ''} onChange={handlePsalmChange}>
+              {selectablePsalms.map((psalm: Psalm) => (
                 <option key={psalm.psalm_id} value={psalm.psalm_id}>
                   {psalm.title}
                 </option>
@@ -337,14 +420,12 @@ export function WorkbenchPage() {
           </label>
           <label className="compact-field">
             <span>Workflow layer</span>
-            <select value={activeLayer} onChange={(event) => updateWorkbenchSelection({ layer: event.target.value as typeof activeLayer })}>
-              <option value="gloss">gloss</option>
-              <option value="literal">literal</option>
-              <option value="phrase">phrase</option>
-              <option value="concept">concept</option>
-              <option value="lyric">lyric</option>
-              <option value="metered_lyric">metered_lyric</option>
-              <option value="parallelism_lyric">parallelism_lyric</option>
+            <select value={selectedWorkflowLayer} onChange={(event) => updateWorkbenchSelection({ layer: event.target.value as typeof activeLayer })}>
+              {selectableLayers.map((layer) => (
+                <option key={layer} value={layer}>
+                  {layer}
+                </option>
+              ))}
             </select>
           </label>
         </div>
@@ -441,80 +522,88 @@ export function WorkbenchPage() {
         <div className="scroll-panel" ref={englishRef} onScroll={() => syncScroll('english')}>
           <section className="pane pane-english">
             <header className="pane-header">
-              <h2>Initial Translation Flow</h2>
-              <span className="subtle">Literal-first renderings stay stable until a phrase or concept node is selected.</span>
+              <h2>Layered English Flow</h2>
+              <span className="subtle">The selected workflow layer stays active; when that layer is missing, the nearest populated audited layer is shown instead.</span>
             </header>
+            {unit && selectedUnitLayerState.notice ? <p className="subtle">{selectedUnitLayerState.notice}</p> : null}
             <div className="visual-unit-list">
               {visualFlow?.units.map((visualUnit: VisualFlowUnit) => {
                 const selected = visualUnit.unit_id === selectedUnitId;
-                const defaultRendering = visualUnit.default_rendering;
+                const contentUnit = unitMap.get(visualUnit.unit_id);
+                const layerState = resolveLayerState(contentUnit, activeLayer);
+                const renderedItems = sortRenderingsByStatus(
+                  (contentUnit?.renderings ?? []).filter((rendering) => rendering.layer === layerState.renderLayer),
+                );
                 const retrievalHits = retrievalHitsByUnit.get(visualUnit.unit_id) ?? [];
                 return (
                   <article key={visualUnit.unit_id} className={`flow-unit-card flow-unit-card-translation ${selected ? 'active' : ''}`}>
                     <button type="button" className="flow-unit-header" onClick={() => ensureSelectedUnit(visualUnit.unit_id)}>
                       <strong>{visualUnit.ref}</strong>
-                      <span className="subtle">Literal-first</span>
+                      <span className="subtle">{layerState.renderLayer ?? 'No rendered layer'}</span>
                     </button>
-                    {defaultRendering ? (
-                      <div className={`rendering-card ${selected ? 'linked' : ''}`}>
-                        <div className="horizontal-between">
-                          <strong>{defaultRendering.layer}</strong>
-                          <span className="subtle">{defaultRendering.status}</span>
-                        </div>
-                        <p className="rendering-text">{defaultRendering.text}</p>
-                        <div className="rendering-span-row" aria-label={`Rendering spans for ${defaultRendering.rendering_id}`}>
-                          {defaultRendering.target_spans.map((span: RenderingSpan) => {
-                            const linked = selected && highlightedSpanIds.includes(span.span_id);
-                            const spanSelected = selected && selectedSpanIds.includes(span.span_id);
-                            const active = selected && hoveredSpanId === span.span_id;
-                            return (
-                              <button
-                                key={span.span_id}
-                                type="button"
-                                className={`rendering-span ${linked ? 'linked' : ''} ${spanSelected ? 'selected' : ''} ${active ? 'active' : ''}`}
-                                onMouseEnter={() => {
-                                  ensureSelectedUnit(visualUnit.unit_id);
-                                  updateWorkbenchUi({ hoveredSpanId: span.span_id });
-                                }}
-                                onMouseLeave={() => updateWorkbenchUi({ hoveredSpanId: null })}
-                                onClick={() => handleToggleSpan(visualUnit.unit_id, span.span_id)}
-                                aria-pressed={spanSelected}
-                                title={span.span_id}
-                              >
-                                {span.text}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <div className="inline-actions">
-                          <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareLeftId: defaultRendering.rendering_id })}>
-                            Compare left
-                          </button>
-                          <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareRightId: defaultRendering.rendering_id })}>
-                            Compare right
-                          </button>
-                          {defaultRendering.status === 'canonical' ? (
-                            <button type="button" className="tab" onClick={() => demoteRendering.mutate(defaultRendering.rendering_id)}>
-                              Demote
+                    {layerState.notice ? <p className="subtle">{layerState.notice}</p> : null}
+                    {renderedItems.length > 0 ? (
+                      renderedItems.map((rendering) => (
+                        <div key={rendering.rendering_id} className={`rendering-card ${selected ? 'linked' : ''}`}>
+                          <div className="horizontal-between">
+                            <strong>{rendering.layer}</strong>
+                            <span className="subtle">{rendering.status}</span>
+                          </div>
+                          <p className="rendering-text">{rendering.text}</p>
+                          <div className="rendering-span-row" aria-label={`Rendering spans for ${rendering.rendering_id}`}>
+                            {rendering.target_spans.map((span: RenderingSpan) => {
+                              const linked = selected && highlightedSpanIds.includes(span.span_id);
+                              const spanSelected = selected && selectedSpanIds.includes(span.span_id);
+                              const active = selected && hoveredSpanId === span.span_id;
+                              return (
+                                <button
+                                  key={span.span_id}
+                                  type="button"
+                                  className={`rendering-span ${linked ? 'linked' : ''} ${spanSelected ? 'selected' : ''} ${active ? 'active' : ''}`}
+                                  onMouseEnter={() => {
+                                    ensureSelectedUnit(visualUnit.unit_id);
+                                    updateWorkbenchUi({ hoveredSpanId: span.span_id });
+                                  }}
+                                  onMouseLeave={() => updateWorkbenchUi({ hoveredSpanId: null })}
+                                  onClick={() => handleToggleSpan(visualUnit.unit_id, span.span_id)}
+                                  aria-pressed={spanSelected}
+                                  title={span.span_id}
+                                >
+                                  {span.text}
+                                </button>
+                              );
+                            })}
+                          </div>
+                          <div className="inline-actions">
+                            <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareLeftId: rendering.rendering_id })}>
+                              Compare left
                             </button>
-                          ) : (
-                            <>
-                              <button type="button" className="tab" onClick={() => handleAcceptAlternate(defaultRendering.rendering_id)}>
-                                Accept
+                            <button type="button" className="tab" onClick={() => updateWorkbenchUi({ compareRightId: rendering.rendering_id })}>
+                              Compare right
+                            </button>
+                            {rendering.status === 'canonical' ? (
+                              <button type="button" className="tab" onClick={() => demoteRendering.mutate(rendering.rendering_id)}>
+                                Demote
                               </button>
-                              <button type="button" className="tab" onClick={() => handlePromoteAlternate(defaultRendering.rendering_id)}>
-                                Promote
-                              </button>
-                              <button type="button" className="tab" onClick={() => handleDeprecateAlternate(defaultRendering.rendering_id)}>
-                                Deprecate
-                              </button>
-                              <button type="button" className="tab" onClick={() => handleRejectAlternate(defaultRendering.rendering_id)}>
-                                Reject
-                              </button>
-                            </>
-                          )}
+                            ) : (
+                              <>
+                                <button type="button" className="tab" onClick={() => handleAcceptAlternate(rendering.rendering_id)}>
+                                  Accept
+                                </button>
+                                <button type="button" className="tab" onClick={() => handlePromoteAlternate(rendering.rendering_id)}>
+                                  Promote
+                                </button>
+                                <button type="button" className="tab" onClick={() => handleDeprecateAlternate(rendering.rendering_id)}>
+                                  Deprecate
+                                </button>
+                                <button type="button" className="tab" onClick={() => handleRejectAlternate(rendering.rendering_id)}>
+                                  Reject
+                                </button>
+                              </>
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      ))
                     ) : (
                       <p className="empty-state">No translation candidate available for this unit yet.</p>
                     )}
@@ -555,6 +644,9 @@ export function WorkbenchPage() {
         onTabChange={(tab) => updateWorkbenchUi({ drawerTab: tab })}
         onNavigateToUnit={handleNavigateToUnit}
         activeLayer={activeLayer}
+        resolvedLayer={selectedUnitLayerState.renderLayer}
+        layerNotice={selectedUnitLayerState.notice}
+        selectableLayers={selectableLayers}
         selectedTokenIds={selectedTokenIds}
         selectedSpanIds={selectedSpanIds}
         selectedAlignmentId={selectedAlignmentId}

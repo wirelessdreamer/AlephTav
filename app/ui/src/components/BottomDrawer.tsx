@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import {
@@ -18,6 +18,7 @@ import {
   useUpdateAlignment,
   useUnitWitnesses,
 } from '../hooks/useWorkbench';
+import { getPreferredSelectableLayer, getSelectableLayers } from '../lib/layers';
 import type { Alignment, DrawerTab, Layer, OpenConcerns, TokenCard, Unit } from '../types';
 type SearchScope =
   | 'all'
@@ -39,6 +40,9 @@ interface BottomDrawerProps {
   tab: DrawerTab;
   onTabChange: (tab: DrawerTab) => void;
   activeLayer: Layer;
+  resolvedLayer: Layer | null;
+  layerNotice: string | null;
+  selectableLayers: Layer[];
   selectedTokenIds: string[];
   selectedSpanIds: string[];
   selectedAlignmentId: string | null;
@@ -69,6 +73,9 @@ export function BottomDrawer({
   onTabChange,
   onNavigateToUnit,
   activeLayer,
+  resolvedLayer,
+  layerNotice,
+  selectableLayers,
   selectedTokenIds,
   selectedSpanIds,
   selectedAlignmentId,
@@ -116,9 +123,15 @@ export function BottomDrawer({
   const reviewAction = useReviewAction(unit?.unit_id ?? null);
   const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
   const exportRelease = useExportRelease();
-  const alternates = useAlternates(unit?.unit_id ?? null, activeLayer, alternateFilter || undefined, releaseApprovedOnly);
+  const alternatesLayer = resolvedLayer ?? activeLayer;
+  const alternates = useAlternates(unit?.unit_id ?? null, alternatesLayer, alternateFilter || undefined, releaseApprovedOnly);
   const addAlternate = useAddAlternate(unit?.unit_id ?? null);
   const comparison = useRenderingComparison(unit?.unit_id ?? null, compareLeftId, compareRightId);
+  const resolvedSelectableLayers = useMemo(() => getSelectableLayers(selectableLayers), [selectableLayers]);
+  const selectedAlternateLayer = useMemo(
+    () => getPreferredSelectableLayer(alternateLayer, resolvedSelectableLayers),
+    [alternateLayer, resolvedSelectableLayers],
+  );
 
   useEffect(() => {
     if (!concordanceSeed) {
@@ -127,11 +140,18 @@ export function BottomDrawer({
     setConcordanceQuery((existing) => existing || concordanceSeed);
   }, [concordanceSeed]);
 
+  useEffect(() => {
+    if (alternateLayer !== selectedAlternateLayer) {
+      setAlternateLayer(selectedAlternateLayer);
+    }
+  }, [alternateLayer, selectedAlternateLayer]);
+
   const unresolvedDriftCount = concerns?.open_drift_flags.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const uncoveredCount = concerns?.uncovered_tokens.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const unalignedSpanCount = concerns?.unaligned_spans.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const lowConfidenceCount = concerns?.low_confidence_alignments.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const activeLayerCanonical = unit?.renderings.find((item) => item.layer === activeLayer && item.status === 'canonical') ?? null;
+  const resolvedLayerCanonical = resolvedLayer ? unit?.renderings.find((item) => item.layer === resolvedLayer && item.status === 'canonical') ?? null : null;
   const availableCompareRenderings = unit?.renderings ?? [];
 
   const handleNavigate = (unitId: string, psalmId: string) => {
@@ -146,15 +166,57 @@ export function BottomDrawer({
   };
 
   const workflowAlternates = unit?.renderings.filter((item) => item.status !== 'canonical') ?? [];
+  const workflowAlternatesForResolvedLayer = workflowAlternates.filter((item) => item.layer === alternatesLayer);
   const workflowAlignments = unit?.alignments.filter((item) => item.layer === activeLayer) ?? [];
-  const selectedAlternate = workflowAlternates.find((item) => item.rendering_id === selectedAlternateId) ?? null;
+  const selectedAlternate = workflowAlternatesForResolvedLayer.find((item) => item.rendering_id === selectedAlternateId) ?? null;
   const selectedAlignment = workflowAlignments.find((item) => item.alignment_id === selectedAlignmentId) ?? null;
 
   useEffect(() => {
-    if (!selectedAlternateId && workflowAlternates.length > 0) {
-      setSelectedAlternateId(workflowAlternates[0].rendering_id);
+    const alternateIds = new Set(workflowAlternatesForResolvedLayer.map((item) => item.rendering_id));
+    if (selectedAlternateId && alternateIds.has(selectedAlternateId)) {
+      return;
     }
-  }, [selectedAlternateId, workflowAlternates]);
+    setSelectedAlternateId(workflowAlternatesForResolvedLayer[0]?.rendering_id ?? '');
+  }, [selectedAlternateId, workflowAlternatesForResolvedLayer]);
+
+  useEffect(() => {
+    if (!unit) {
+      return;
+    }
+    const renderingIds = new Set(unit.renderings.map((item) => item.rendering_id));
+    const nextLeftId = compareLeftId && renderingIds.has(compareLeftId)
+      ? compareLeftId
+      : (activeLayerCanonical ?? resolvedLayerCanonical ?? unit.renderings[0] ?? null)?.rendering_id ?? null;
+    if (nextLeftId !== compareLeftId) {
+      onCompareLeftChange(nextLeftId);
+    }
+  }, [activeLayerCanonical, compareLeftId, onCompareLeftChange, resolvedLayerCanonical, unit]);
+
+  useEffect(() => {
+    if (!unit) {
+      return;
+    }
+    const renderingIds = new Set(unit.renderings.map((item) => item.rendering_id));
+    if (compareRightId && renderingIds.has(compareRightId)) {
+      return;
+    }
+    const nextRightId =
+      workflowAlternatesForResolvedLayer[0]?.rendering_id
+      ?? availableCompareRenderings.find((item) => item.layer === alternatesLayer && item.rendering_id !== compareLeftId)?.rendering_id
+      ?? availableCompareRenderings.find((item) => item.rendering_id !== compareLeftId)?.rendering_id
+      ?? null;
+    if (nextRightId !== compareRightId) {
+      onCompareRightChange(nextRightId);
+    }
+  }, [
+    alternatesLayer,
+    availableCompareRenderings,
+    compareLeftId,
+    compareRightId,
+    onCompareRightChange,
+    unit,
+    workflowAlternatesForResolvedLayer,
+  ]);
 
   useEffect(() => {
     if (selectedAlignment) {
@@ -227,12 +289,12 @@ export function BottomDrawer({
     if (!unit || !alternateText.trim()) return;
     try {
       const rendering = (await createRendering.mutateAsync({
-        layer: alternateLayer,
+        layer: selectedAlternateLayer,
         text: alternateText.trim(),
         status: 'proposed',
         rationale: 'UI workflow alternate',
         created_by: 'ui-workflow',
-        style_tags: [alternateLayer, 'workflow'],
+        style_tags: [selectedAlternateLayer, 'workflow'],
       })) as { rendering_id: string };
       setWorkflowMessage(`Alternate added: ${rendering.rendering_id}`);
       setAlternateText('');
@@ -401,6 +463,7 @@ export function BottomDrawer({
             <article className="compare-card">
               <h4>Alignment editor</h4>
               <p className="subtle">Select Hebrew token(s) and English span(s), then create or revise an alignment for the active layer.</p>
+              {layerNotice ? <p className="subtle">{layerNotice}</p> : null}
               <div className="mini-section">
                 <strong>Selection</strong>
                 <div className="tag-row">
@@ -506,14 +569,12 @@ export function BottomDrawer({
               <h4>Add alternate</h4>
               <label className="compact-field">
                 <span>Alternate layer</span>
-                <select aria-label="Alternate layer" value={alternateLayer} onChange={(event) => setAlternateLayer(event.target.value as Layer)}>
-                  <option value="gloss">gloss</option>
-                  <option value="literal">literal</option>
-                  <option value="phrase">phrase</option>
-                  <option value="concept">concept</option>
-                  <option value="lyric">lyric</option>
-                  <option value="metered_lyric">metered_lyric</option>
-                  <option value="parallelism_lyric">parallelism_lyric</option>
+                <select aria-label="Alternate layer" value={selectedAlternateLayer} onChange={(event) => setAlternateLayer(event.target.value as Layer)}>
+                  {resolvedSelectableLayers.map((layer) => (
+                    <option key={layer} value={layer}>
+                      {layer}
+                    </option>
+                  ))}
                 </select>
               </label>
               <label className="compact-field">
@@ -537,9 +598,9 @@ export function BottomDrawer({
                   aria-label="Alternate rendering"
                   value={selectedAlternateId}
                   onChange={(event) => setSelectedAlternateId(event.target.value)}
-                  disabled={!workflowAlternates.length}
+                  disabled={!workflowAlternatesForResolvedLayer.length}
                 >
-                  {workflowAlternates.map((item) => (
+                  {workflowAlternatesForResolvedLayer.map((item) => (
                     <option key={item.rendering_id} value={item.rendering_id}>
                       {item.rendering_id}
                     </option>
@@ -791,6 +852,7 @@ export function BottomDrawer({
           </article>
           <article className="compare-card">
             <h4>Alternate filters</h4>
+            {layerNotice ? <p className="subtle">{layerNotice}</p> : null}
             <label className="compact-field">
               <span>View</span>
               <select value={alternateFilter} onChange={(event) => setAlternateFilter(event.target.value)}>
@@ -806,6 +868,7 @@ export function BottomDrawer({
               <input type="checkbox" checked={releaseApprovedOnly} onChange={(event) => setReleaseApprovedOnly(event.target.checked)} />
               <span>Release-approved only</span>
             </label>
+            {resolvedLayer && resolvedLayer !== activeLayer ? <p className="subtle">Alternate list is showing {resolvedLayer} because {activeLayer} has no renderings for this unit.</p> : null}
             <ul className="simple-list">
               {alternates.data?.map((item) => (
                 <li key={item.rendering_id} className="search-result-card">
