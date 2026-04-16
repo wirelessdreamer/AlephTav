@@ -78,6 +78,14 @@ export function usePsalms() {
   return useQuery({ queryKey: ['psalms'], queryFn: () => getJson<Psalm[]>('/psalms') });
 }
 
+export function usePsalm(psalmId: string | null) {
+  return useQuery({
+    queryKey: ['psalm', psalmId],
+    queryFn: () => getJson<Psalm>(`/psalms/${psalmId}`),
+    enabled: Boolean(psalmId),
+  });
+}
+
 export function usePsalmVisualFlow(psalmId: string | null) {
   return useQuery({
     queryKey: ['psalm-visual-flow', psalmId],
