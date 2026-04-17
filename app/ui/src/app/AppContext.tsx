@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 
 import type { DrawerTab, Layer } from '../types';
@@ -24,6 +24,11 @@ export interface WorkbenchUiState {
   pinnedTokenId: string | null;
 }
 
+export interface AssistantUiState {
+  visibility: 'open' | 'closed';
+  placement: 'side' | 'footer';
+}
+
 interface AppRuntimeValue {
   route: AppRoute;
   navigate: (route: AppRoute) => void;
@@ -31,6 +36,8 @@ interface AppRuntimeValue {
   updateWorkbenchSelection: (patch: Partial<WorkbenchSelectionState>) => void;
   workbenchUi: WorkbenchUiState;
   updateWorkbenchUi: (patch: Partial<WorkbenchUiState>) => void;
+  assistantUi: AssistantUiState;
+  updateAssistantUi: (patch: Partial<AssistantUiState>) => void;
   toggleWorkbenchTokenSelection: (tokenId: string) => void;
   toggleWorkbenchSpanSelection: (spanId: string) => void;
   clearWorkbenchSelections: () => void;
@@ -38,6 +45,7 @@ interface AppRuntimeValue {
     route: AppRoute;
     workbench: WorkbenchSelectionState;
     ui: WorkbenchUiState;
+    assistant: AssistantUiState;
   };
   applyClientAction: (actionId: string, payload: Record<string, unknown>) => void;
 }
@@ -71,6 +79,34 @@ const DEFAULT_UI_STATE: WorkbenchUiState = {
   pinnedTokenId: null,
 };
 
+const ASSISTANT_UI_STORAGE_KEY = 'aleph-tav.assistant-ui';
+
+function getDefaultAssistantUiState(): AssistantUiState {
+  if (typeof window === 'undefined') {
+    return { visibility: 'open', placement: 'side' };
+  }
+  return { visibility: 'open', placement: window.innerWidth <= 720 ? 'footer' : 'side' };
+}
+
+function resolveAssistantUiState(): AssistantUiState {
+  if (typeof window === 'undefined') {
+    return getDefaultAssistantUiState();
+  }
+  try {
+    const raw = window.localStorage.getItem(ASSISTANT_UI_STORAGE_KEY);
+    if (!raw) {
+      return getDefaultAssistantUiState();
+    }
+    const parsed = JSON.parse(raw) as Partial<AssistantUiState>;
+    return {
+      visibility: parsed.visibility === 'closed' ? 'closed' : 'open',
+      placement: parsed.placement === 'footer' ? 'footer' : getDefaultAssistantUiState().placement,
+    };
+  } catch {
+    return getDefaultAssistantUiState();
+  }
+}
+
 function toggleValue(values: string[], nextValue: string) {
   return values.includes(nextValue) ? values.filter((value) => value !== nextValue) : [...values, nextValue];
 }
@@ -79,6 +115,7 @@ export function AppRuntimeProvider({ children }: PropsWithChildren) {
   const [route, setRoute] = useState<AppRoute>(resolveRoute);
   const [workbenchSelection, setWorkbenchSelection] = useState<WorkbenchSelectionState>(DEFAULT_SELECTION);
   const [workbenchUi, setWorkbenchUi] = useState<WorkbenchUiState>(DEFAULT_UI_STATE);
+  const [assistantUi, setAssistantUi] = useState<AssistantUiState>(resolveAssistantUiState);
 
   useEffect(() => {
     const syncRoute = () => setRoute(resolveRoute());
@@ -90,43 +127,54 @@ export function AppRuntimeProvider({ children }: PropsWithChildren) {
     };
   }, []);
 
-  const navigate = (nextRoute: AppRoute) => {
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    window.localStorage.setItem(ASSISTANT_UI_STORAGE_KEY, JSON.stringify(assistantUi));
+  }, [assistantUi]);
+
+  const navigate = useCallback((nextRoute: AppRoute) => {
     window.location.hash = nextRoute === 'workbench' ? '#/workbench' : '#/';
     setRoute(nextRoute);
-  };
+  }, []);
 
-  const updateWorkbenchSelection = (patch: Partial<WorkbenchSelectionState>) => {
+  const updateWorkbenchSelection = useCallback((patch: Partial<WorkbenchSelectionState>) => {
     setWorkbenchSelection((existing) => ({ ...existing, ...patch }));
-  };
+  }, []);
 
-  const updateWorkbenchUi = (patch: Partial<WorkbenchUiState>) => {
+  const updateWorkbenchUi = useCallback((patch: Partial<WorkbenchUiState>) => {
     setWorkbenchUi((existing) => ({ ...existing, ...patch }));
-  };
+  }, []);
 
-  const toggleWorkbenchTokenSelection = (tokenId: string) => {
+  const updateAssistantUi = useCallback((patch: Partial<AssistantUiState>) => {
+    setAssistantUi((existing) => ({ ...existing, ...patch }));
+  }, []);
+
+  const toggleWorkbenchTokenSelection = useCallback((tokenId: string) => {
     setWorkbenchUi((existing) => ({
       ...existing,
       selectedTokenIds: toggleValue(existing.selectedTokenIds, tokenId),
     }));
-  };
+  }, []);
 
-  const toggleWorkbenchSpanSelection = (spanId: string) => {
+  const toggleWorkbenchSpanSelection = useCallback((spanId: string) => {
     setWorkbenchUi((existing) => ({
       ...existing,
       selectedSpanIds: toggleValue(existing.selectedSpanIds, spanId),
     }));
-  };
+  }, []);
 
-  const clearWorkbenchSelections = () => {
+  const clearWorkbenchSelections = useCallback(() => {
     setWorkbenchUi((existing) => ({
       ...existing,
       selectedTokenIds: [],
       selectedSpanIds: [],
       selectedAlignmentId: null,
     }));
-  };
+  }, []);
 
-  const applyClientAction = (actionId: string, payload: Record<string, unknown>) => {
+  const applyClientAction = useCallback((actionId: string, payload: Record<string, unknown>) => {
     if (actionId === 'navigate.route') {
       navigate(String(payload.route) === 'workbench' ? 'workbench' : 'welcome');
       return;
@@ -183,15 +231,16 @@ export function AppRuntimeProvider({ children }: PropsWithChildren) {
       updateWorkbenchUi({ selectedAlignmentId: payload.alignment_id ? String(payload.alignment_id) : null });
       return;
     }
-  };
+  }, [clearWorkbenchSelections, navigate, toggleWorkbenchSpanSelection, toggleWorkbenchTokenSelection, updateWorkbenchSelection, updateWorkbenchUi, workbenchSelection.layer]);
 
   const assistantContext = useMemo(
     () => ({
       route,
       workbench: workbenchSelection,
       ui: workbenchUi,
+      assistant: assistantUi,
     }),
-    [route, workbenchSelection, workbenchUi],
+    [assistantUi, route, workbenchSelection, workbenchUi],
   );
 
   const value = useMemo(
@@ -202,13 +251,15 @@ export function AppRuntimeProvider({ children }: PropsWithChildren) {
       updateWorkbenchSelection,
       workbenchUi,
       updateWorkbenchUi,
+      assistantUi,
+      updateAssistantUi,
       toggleWorkbenchTokenSelection,
       toggleWorkbenchSpanSelection,
       clearWorkbenchSelections,
       assistantContext,
       applyClientAction,
     }),
-    [route, workbenchSelection, workbenchUi, assistantContext],
+    [route, workbenchSelection, workbenchUi, assistantUi, assistantContext],
   );
 
   return <AppRuntimeContext.Provider value={value}>{children}</AppRuntimeContext.Provider>;

@@ -29,8 +29,7 @@ const QUICK_PROMPTS = [
 ];
 
 export function AssistantPanel() {
-  const { assistantContext, applyClientAction } = useAppRuntime();
-  const [isExpanded, setIsExpanded] = useState(true);
+  const { assistantContext, applyClientAction, assistantUi, updateAssistantUi } = useAppRuntime();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
@@ -82,6 +81,17 @@ export function AssistantPanel() {
     };
   }, []);
 
+  useEffect(() => {
+    const syncPlacement = () => {
+      updateAssistantUi({ placement: window.innerWidth <= 720 ? 'footer' : 'side' });
+    };
+    syncPlacement();
+    window.addEventListener('resize', syncPlacement);
+    return () => {
+      window.removeEventListener('resize', syncPlacement);
+    };
+  }, [updateAssistantUi]);
+
   const pendingCount = useMemo(
     () => messages.reduce((count, message) => count + (message.pending_actions?.length ?? 0), 0),
     [messages],
@@ -89,6 +99,7 @@ export function AssistantPanel() {
 
   const speechSettings = settingsQuery.data?.providers.speech_to_text;
   const canUseMicrophone = Boolean(speechSettings?.available) && typeof navigator !== 'undefined' && 'mediaDevices' in navigator;
+  const isOpen = assistantUi.visibility === 'open';
 
   const appendTranscript = (text: string) => {
     setDraft((existing) => `${existing}${existing ? '\n' : ''}${text}`.trim());
@@ -246,8 +257,34 @@ export function AssistantPanel() {
     setApiKeyDraft('');
   };
 
+  const handleOpen = () => updateAssistantUi({ visibility: 'open' });
+
+  const handleClose = () => {
+    setIsSettingsOpen(false);
+    updateAssistantUi({ visibility: 'closed' });
+  };
+
+  if (!isOpen) {
+    return (
+      <div className={`assistant-launcher assistant-launcher--${assistantUi.placement}`}>
+        <button
+          type="button"
+          className="assistant-launcher__button"
+          onClick={handleOpen}
+          aria-label={assistantUi.placement === 'side' ? 'Open assistant side panel' : 'Open assistant footer'}
+        >
+          <span className="eyebrow">Assistant</span>
+          <strong>Open</strong>
+          <span className="assistant-launcher__meta">
+            {toolsQuery.data?.length ?? 0} actions {' • '} {pendingCount} pending
+          </span>
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <aside className={`assistant-panel${isExpanded ? ' assistant-panel--expanded' : ''}`}>
+    <aside className={`assistant-panel assistant-panel--${assistantUi.placement}`}>
       <div className="assistant-panel__bar">
         <div>
           <p className="eyebrow">Assistant</p>
@@ -260,140 +297,138 @@ export function AssistantPanel() {
           <button type="button" className="link-button" onClick={() => setIsSettingsOpen((existing) => !existing)}>
             Settings
           </button>
-          <button type="button" className="link-button" onClick={() => setIsExpanded((existing) => !existing)}>
-            {isExpanded ? 'Collapse' : 'Expand'}
+          <button type="button" className="link-button" onClick={handleClose}>
+            Close
           </button>
         </div>
       </div>
 
-      {isExpanded ? (
-        <div className="assistant-panel__body">
-          <div className="assistant-panel__main">
-            <div className="assistant-context">
-              <span className="tag">Route: {assistantContext.route}</span>
-              <span className="tag">Unit: {assistantContext.workbench.unitId ?? 'none'}</span>
-              <span className="tag">Layer: {assistantContext.workbench.layer}</span>
-              <span className="tag">Tab: {assistantContext.ui.drawerTab}</span>
-            </div>
-
-            <div className="assistant-thread">
-              {messages.length === 0 ? (
-                <article className="assistant-message assistant-message--assistant">
-                  <p>Use chat to inspect project data, navigate the workbench, manage selections, or stage writes for confirmation.</p>
-                  <div className="assistant-quick-prompts">
-                    {QUICK_PROMPTS.map((prompt) => (
-                      <button key={prompt} type="button" className="tab" onClick={() => handleSend(prompt)}>
-                        {prompt}
-                      </button>
-                    ))}
-                  </div>
-                </article>
-              ) : null}
-              {messages.map((message, index) => (
-                <article key={`${message.created_at}-${index}`} className={`assistant-message assistant-message--${message.role}`}>
-                  <p>{message.content}</p>
-                  {message.client_actions?.map((action, actionIndex) => (
-                    <div key={`${action.action_id}-${actionIndex}`} className="assistant-card assistant-card--client">
-                      <strong>{action.summary}</strong>
-                    </div>
-                  ))}
-                  {message.tool_results?.map((result, resultIndex) => (
-                    <div key={`${result.action_id}-${resultIndex}`} className="assistant-card">
-                      <strong>{result.summary ?? result.action_id}</strong>
-                      <pre>{result.error ?? formatToolResult(result.result)}</pre>
-                    </div>
-                  ))}
-                  {message.pending_actions?.map((preview) => (
-                    <div key={preview.confirmation_token} className="assistant-card assistant-card--pending">
-                      <strong>{preview.summary}</strong>
-                      <pre>{preview.input_preview}</pre>
-                      <button type="button" className="hero-link hero-link-primary" onClick={() => handleConfirmAction(preview)}>
-                        Confirm write
-                      </button>
-                    </div>
-                  ))}
-                </article>
-              ))}
-            </div>
-
-            <div className="assistant-composer">
-              <textarea
-                value={draft}
-                onChange={(event) => setDraft(event.target.value)}
-                onKeyDown={handleComposerKeyDown}
-                placeholder="Ask the app to inspect, navigate, select, compare, review, transcribe, or prepare a change."
-                rows={3}
-              />
-              <div className="assistant-composer__actions">
-                <div className="assistant-composer__tools">
-                  <button type="button" className="link-button" onClick={() => fileInputRef.current?.click()}>
-                    Upload audio
-                  </button>
-                  <button
-                    type="button"
-                    className="link-button"
-                    onClick={() => void handleToggleRecording()}
-                    disabled={!canUseMicrophone || transcription.isPending}
-                  >
-                    {isRecording ? 'Stop recording' : 'Record audio'}
-                  </button>
-                </div>
-                <button type="button" className="hero-link hero-link-primary" onClick={() => handleSend()} disabled={!sessionId || sendMessage.isPending}>
-                  Send
-                </button>
-              </div>
-              <input ref={fileInputRef} type="file" accept="audio/*" hidden onChange={handleAudioSelection} />
-            </div>
+      <div className="assistant-panel__body">
+        <div className="assistant-panel__main">
+          <div className="assistant-context">
+            <span className="tag">Route: {assistantContext.route}</span>
+            <span className="tag">Unit: {assistantContext.workbench.unitId ?? 'none'}</span>
+            <span className="tag">Layer: {assistantContext.workbench.layer}</span>
+            <span className="tag">Tab: {assistantContext.ui.drawerTab}</span>
           </div>
 
-          <aside className="assistant-sidebar">
-            <section className="assistant-settings assistant-sidebar__section">
-              <div className="horizontal-between">
-                <strong>Providers</strong>
-                <span className="subtle">
-                  {speechSettings?.provider ?? 'speech'}: {speechSettings?.auth_status ?? 'unknown'}
-                </span>
-              </div>
-              <p className="subtle">
-                OpenAI account linking is reserved for a future provider-supported flow. Whisper transcription currently uses configured API credentials.
-              </p>
-              <label>
-                <span>Assistant model profile</span>
-                <input value={assistantModelDraft} onChange={(event) => setAssistantModelDraft(event.target.value)} placeholder="demo-local" />
-              </label>
-              <label>
-                <span>OpenAI base URL</span>
-                <input value={baseUrlDraft} onChange={(event) => setBaseUrlDraft(event.target.value)} placeholder="https://api.openai.com/v1" />
-              </label>
-              <label>
-                <span>Whisper model</span>
-                <input value={whisperModelDraft} onChange={(event) => setWhisperModelDraft(event.target.value)} placeholder="whisper-1" />
-              </label>
-              {isSettingsOpen ? (
-                <>
-                  <label>
-                    <span>OpenAI API key</span>
-                    <input
-                      type="password"
-                      value={apiKeyDraft}
-                      onChange={(event) => setApiKeyDraft(event.target.value)}
-                      placeholder={settingsQuery.data?.openai.has_api_key ? 'Stored locally' : 'sk-...'}
-                    />
-                  </label>
-                  <button type="button" className="hero-link hero-link-primary" onClick={() => handleSaveSettings(settingsQuery.data)}>
-                    Save assistant settings
-                  </button>
-                </>
-              ) : null}
-            </section>
+          <div className="assistant-thread">
+            {messages.length === 0 ? (
+              <article className="assistant-message assistant-message--assistant">
+                <p>Use chat to inspect project data, navigate the workbench, manage selections, or stage writes for confirmation.</p>
+                <div className="assistant-quick-prompts">
+                  {QUICK_PROMPTS.map((prompt) => (
+                    <button key={prompt} type="button" className="tab" onClick={() => handleSend(prompt)}>
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
+              </article>
+            ) : null}
+            {messages.map((message, index) => (
+              <article key={`${message.created_at}-${index}`} className={`assistant-message assistant-message--${message.role}`}>
+                <p>{message.content}</p>
+                {message.client_actions?.map((action, actionIndex) => (
+                  <div key={`${action.action_id}-${actionIndex}`} className="assistant-card assistant-card--client">
+                    <strong>{action.summary}</strong>
+                  </div>
+                ))}
+                {message.tool_results?.map((result, resultIndex) => (
+                  <div key={`${result.action_id}-${resultIndex}`} className="assistant-card">
+                    <strong>{result.summary ?? result.action_id}</strong>
+                    <pre>{result.error ?? formatToolResult(result.result)}</pre>
+                  </div>
+                ))}
+                {message.pending_actions?.map((preview) => (
+                  <div key={preview.confirmation_token} className="assistant-card assistant-card--pending">
+                    <strong>{preview.summary}</strong>
+                    <pre>{preview.input_preview}</pre>
+                    <button type="button" className="hero-link hero-link-primary" onClick={() => handleConfirmAction(preview)}>
+                      Confirm write
+                    </button>
+                  </div>
+                ))}
+              </article>
+            ))}
+          </div>
 
-            <section className="assistant-sidebar__section">
-              <strong>Context Snapshot</strong>
-              <pre>{formatToolResult(assistantContext)}</pre>
-            </section>
-          </aside>
+          <div className="assistant-composer">
+            <textarea
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+              onKeyDown={handleComposerKeyDown}
+              placeholder="Ask the app to inspect, navigate, select, compare, review, transcribe, or prepare a change."
+              rows={3}
+            />
+            <div className="assistant-composer__actions">
+              <div className="assistant-composer__tools">
+                <button type="button" className="link-button" onClick={() => fileInputRef.current?.click()}>
+                  Upload audio
+                </button>
+                <button
+                  type="button"
+                  className="link-button"
+                  onClick={() => void handleToggleRecording()}
+                  disabled={!canUseMicrophone || transcription.isPending}
+                >
+                  {isRecording ? 'Stop recording' : 'Record audio'}
+                </button>
+              </div>
+              <button type="button" className="hero-link hero-link-primary" onClick={() => handleSend()} disabled={!sessionId || sendMessage.isPending}>
+                Send
+              </button>
+            </div>
+            <input ref={fileInputRef} type="file" accept="audio/*" hidden onChange={handleAudioSelection} />
+          </div>
         </div>
-      ) : null}
+
+        <aside className="assistant-sidebar">
+          <section className="assistant-settings assistant-sidebar__section">
+            <div className="horizontal-between">
+              <strong>Providers</strong>
+              <span className="subtle">
+                {speechSettings?.provider ?? 'speech'}: {speechSettings?.auth_status ?? 'unknown'}
+              </span>
+            </div>
+            <p className="subtle">
+              OpenAI account linking is reserved for a future provider-supported flow. Whisper transcription currently uses configured API credentials.
+            </p>
+            <label>
+              <span>Assistant model profile</span>
+              <input value={assistantModelDraft} onChange={(event) => setAssistantModelDraft(event.target.value)} placeholder="demo-local" />
+            </label>
+            <label>
+              <span>OpenAI base URL</span>
+              <input value={baseUrlDraft} onChange={(event) => setBaseUrlDraft(event.target.value)} placeholder="https://api.openai.com/v1" />
+            </label>
+            <label>
+              <span>Whisper model</span>
+              <input value={whisperModelDraft} onChange={(event) => setWhisperModelDraft(event.target.value)} placeholder="whisper-1" />
+            </label>
+            {isSettingsOpen ? (
+              <>
+                <label>
+                  <span>OpenAI API key</span>
+                  <input
+                    type="password"
+                    value={apiKeyDraft}
+                    onChange={(event) => setApiKeyDraft(event.target.value)}
+                    placeholder={settingsQuery.data?.openai.has_api_key ? 'Stored locally' : 'sk-...'}
+                  />
+                </label>
+                <button type="button" className="hero-link hero-link-primary" onClick={() => handleSaveSettings(settingsQuery.data)}>
+                  Save assistant settings
+                </button>
+              </>
+            ) : null}
+          </section>
+
+          <section className="assistant-sidebar__section">
+            <strong>Context Snapshot</strong>
+            <pre>{formatToolResult(assistantContext)}</pre>
+          </section>
+        </aside>
+      </div>
     </aside>
   );
 }

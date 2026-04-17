@@ -111,6 +111,10 @@ export interface Unit {
   review_decisions: ReviewDecision[];
   issue_links: string[];
   pr_links: string[];
+  current_layer_state?: {
+    latest_layer?: Layer | null;
+    locked_layers?: Layer[];
+  };
   witnesses: Array<{ source_id: string; versionTitle: string; language: string; ref: string; source_url: string; text: string }>;
   coverage?: {
     uncovered_tokens: string[];

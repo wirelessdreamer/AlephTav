@@ -90,6 +90,49 @@ test('welcome page renders without requiring the api-backed workbench route', as
   await expect(page.getByRole('link', { name: 'Open Workbench' })).toBeVisible();
 });
 
+test('assistant docks beside the workbench and can be reopened after closing', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  const workspaceGrid = page.locator('.workspace-grid');
+  const assistantPanel = page.locator('.assistant-panel');
+  await expect(assistantPanel).toBeVisible();
+
+  const workspaceBox = await workspaceGrid.boundingBox();
+  const assistantBox = await assistantPanel.boundingBox();
+  expect(workspaceBox).not.toBeNull();
+  expect(assistantBox).not.toBeNull();
+  expect(assistantBox!.x).toBeGreaterThan(workspaceBox!.x + workspaceBox!.width - 20);
+
+  await page.getByRole('button', { name: 'Close' }).click();
+  await expect(page.locator('.assistant-launcher__button')).toBeVisible();
+  await expect(assistantPanel).toHaveCount(0);
+
+  await page.getByRole('button', { name: 'Open assistant side panel' }).click();
+  await expect(assistantPanel).toBeVisible();
+});
+
+test('assistant visibility persists across reloads', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  await page.getByRole('button', { name: 'Close' }).click();
+  await page.reload();
+  await expect(page.locator('.assistant-launcher__button')).toBeVisible();
+
+  await page.getByRole('button', { name: 'Open assistant side panel' }).click();
+  await page.reload();
+  await expect(page.locator('.assistant-panel')).toBeVisible();
+});
+
+test('assistant uses the footer launcher on mobile without blocking the workbench route', async ({ page }) => {
+  await page.setViewportSize({ width: 430, height: 1100 });
+  await page.goto('/#/workbench');
+
+  await page.getByRole('button', { name: 'Close' }).click();
+  const launcher = page.getByRole('button', { name: 'Open assistant footer' });
+  await expect(launcher).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Phrase And Concept Cloud' })).toBeVisible();
+});
+
 
 test('workbench defaults to a full-psalm visual flow canvas with cloud-driven retrieval', async ({ page }) => {
   await page.goto('/#/workbench');
