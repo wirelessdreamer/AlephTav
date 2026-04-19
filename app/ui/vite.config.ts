@@ -20,6 +20,7 @@ export default defineConfig({
       '/renderings': 'http://127.0.0.1:8000',
       '/review': 'http://127.0.0.1:8000',
       '/audit': 'http://127.0.0.1:8000',
+      '/state': 'http://127.0.0.1:8000',
       '/reports': 'http://127.0.0.1:8000',
       '/export': 'http://127.0.0.1:8000',
       '/jobs': 'http://127.0.0.1:8000'
