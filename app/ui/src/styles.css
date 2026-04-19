@@ -629,6 +629,45 @@ pre {
   background: rgba(15, 23, 42, 0.8);
 }
 
+.guided-translation-card {
+  display: grid;
+  gap: 0.9rem;
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: linear-gradient(180deg, rgba(8, 47, 73, 0.24), rgba(15, 23, 42, 0.82));
+}
+
+.guided-translation-source {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+.guided-translation-source p,
+.guided-translation-field span {
+  margin: 0;
+}
+
+.guided-translation-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.guided-translation-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.9);
+  color: inherit;
+  padding: 0.8rem 0.9rem;
+  resize: vertical;
+}
+
 .field-row,
 .inline-actions,
 .result-meta {

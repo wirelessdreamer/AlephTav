@@ -6,8 +6,10 @@ import { BottomDrawer } from '../components/BottomDrawer';
 import { InspectorRail } from '../components/InspectorRail';
 import {
   useAlternateLifecycleAction,
+  useCreateRendering,
   useCurrentPsalm,
   useDemoteRendering,
+  useGenerateJob,
   useOpenConcerns,
   usePsalm,
   usePinnedLexicalCard,
@@ -29,7 +31,7 @@ import {
   resolveLayerState,
   sortRenderingsByStatus,
 } from '../lib/layers';
-import type { Alignment, CloudNode, Psalm, RetrievalHit, RenderingSpan, Token, TokenCard, VisualFlowUnit } from '../types';
+import type { Alignment, CloudNode, Layer, Psalm, RetrievalHit, RenderingSpan, Token, TokenCard, VisualFlowUnit } from '../types';
 
 export function WorkbenchPage() {
   const {
@@ -80,6 +82,10 @@ export function WorkbenchPage() {
   const setPinnedLexicalCard = useSetPinnedLexicalCard();
   const alternateAction = useAlternateLifecycleAction(selectedUnitId);
   const demoteRendering = useDemoteRendering(selectedUnitId);
+  const createRendering = useCreateRendering(selectedUnitId);
+  const generateJob = useGenerateJob(selectedUnitId);
+  const [guidedDraftText, setGuidedDraftText] = useState('');
+  const [guidedMessage, setGuidedMessage] = useState<string | null>(null);
 
   const pinnedTokenId = workbenchUi.pinnedTokenId ?? pinnedLexicalCard?.token_id ?? null;
   const [pinOverrideTokenId, setPinOverrideTokenId] = useState<string | null | undefined>(undefined);
@@ -259,6 +265,11 @@ export function WorkbenchPage() {
   }, [effectivePinnedTokenId, hoveredTokenId, tokenCard]);
 
   useEffect(() => {
+    setGuidedDraftText('');
+    setGuidedMessage(null);
+  }, [activeLayer, selectedUnitId]);
+
+  useEffect(() => {
     if (!unit) {
       return;
     }
@@ -359,6 +370,53 @@ export function WorkbenchPage() {
 
   const handleDeprecateAlternate = (renderingId: string) => {
     alternateAction.mutate({ renderingId, action: 'deprecate', payload: { created_by: 'ui' } });
+  };
+
+  const handleGuidedDraftSave = () => {
+    const nextText = guidedDraftText.trim();
+    if (!selectedUnitId || !nextText) {
+      return;
+    }
+    setGuidedMessage(null);
+    createRendering.mutate(
+      {
+        layer: activeLayer,
+        text: nextText,
+        status: 'proposed',
+        rationale: 'guided draft from workbench fallback',
+        created_by: 'ui-guided-draft',
+        style_tags: [activeLayer, 'guided-draft'],
+      },
+      {
+        onError: (error) => {
+          setGuidedMessage(error instanceof Error ? error.message : 'Unable to save draft.');
+        },
+        onSuccess: () => {
+          setGuidedDraftText('');
+          setGuidedMessage(`Saved proposed ${activeLayer} draft.`);
+        },
+      },
+    );
+  };
+
+  const handleGenerateStarter = () => {
+    if (!selectedUnitId) {
+      return;
+    }
+    setGuidedMessage(null);
+    generateJob.mutate(
+      { layer: activeLayer, candidate_count: 1 },
+      {
+        onError: (error) => {
+          setGuidedMessage(error instanceof Error ? error.message : 'Unable to generate starter.');
+        },
+        onSuccess: (job) => {
+          const candidateText = job.output?.candidates[0]?.text?.trim() ?? '';
+          setGuidedDraftText(candidateText);
+          setGuidedMessage(candidateText ? `Generated starter for ${activeLayer}.` : `Generation completed for ${activeLayer}.`);
+        },
+      },
+    );
   };
 
   if (bootstrapError) {
@@ -534,6 +592,7 @@ export function WorkbenchPage() {
                 const renderedItems = sortRenderingsByStatus(
                   (contentUnit?.renderings ?? []).filter((rendering) => rendering.layer === layerState.renderLayer),
                 );
+                const showGuidedFallback = selected && renderedItems.length === 0;
                 const retrievalHits = retrievalHitsByUnit.get(visualUnit.unit_id) ?? [];
                 return (
                   <article key={visualUnit.unit_id} className={`flow-unit-card flow-unit-card-translation ${selected ? 'active' : ''}`}>
@@ -604,6 +663,20 @@ export function WorkbenchPage() {
                           </div>
                         </div>
                       ))
+                    ) : showGuidedFallback ? (
+                      <GuidedTranslationCard
+                        layer={activeLayer}
+                        refLabel={visualUnit.ref}
+                        sourceText={contentUnit?.source_hebrew ?? visualUnit.tokens.map((token) => token.surface).reverse().join(' ')}
+                        transliteration={contentUnit?.source_transliteration ?? null}
+                        draftText={guidedDraftText}
+                        message={guidedMessage}
+                        isSaving={createRendering.isPending}
+                        isGenerating={generateJob.isPending}
+                        onDraftTextChange={setGuidedDraftText}
+                        onSave={handleGuidedDraftSave}
+                        onGenerate={handleGenerateStarter}
+                      />
                     ) : (
                       <p className="empty-state">No translation candidate available for this unit yet.</p>
                     )}
@@ -658,6 +731,69 @@ export function WorkbenchPage() {
         onCompareRightChange={(renderingId) => updateWorkbenchUi({ compareRightId: renderingId })}
       />
     </main>
+  );
+}
+
+function GuidedTranslationCard({
+  layer,
+  refLabel,
+  sourceText,
+  transliteration,
+  draftText,
+  message,
+  isSaving,
+  isGenerating,
+  onDraftTextChange,
+  onSave,
+  onGenerate,
+}: {
+  layer: Layer;
+  refLabel: string;
+  sourceText: string;
+  transliteration: string | null;
+  draftText: string;
+  message: string | null;
+  isSaving: boolean;
+  isGenerating: boolean;
+  onDraftTextChange: (value: string) => void;
+  onSave: () => void;
+  onGenerate: () => void;
+}) {
+  return (
+    <section className="guided-translation-card">
+      <div className="horizontal-between">
+        <div>
+          <strong>Guided translation</strong>
+          <p className="subtle">
+            {refLabel} has no saved {layer} rendering yet. Draft one here or generate a starter.
+          </p>
+        </div>
+        <span className="tag">layer: {layer}</span>
+      </div>
+      <div className="guided-translation-source">
+        <strong>Hebrew source</strong>
+        <p dir="rtl">{sourceText}</p>
+        {transliteration ? <p className="subtle">{transliteration}</p> : null}
+      </div>
+      <label className="guided-translation-field">
+        <span>Draft translation</span>
+        <textarea
+          value={draftText}
+          onChange={(event) => onDraftTextChange(event.target.value)}
+          placeholder={`Draft a ${layer} rendering for ${refLabel}`}
+          rows={4}
+        />
+      </label>
+      <div className="inline-actions">
+        <button type="button" className="tab" onClick={onGenerate} disabled={isGenerating || isSaving}>
+          {isGenerating ? 'Generating…' : 'Generate starter'}
+        </button>
+        <button type="button" className="tab" onClick={onSave} disabled={isSaving || draftText.trim().length === 0}>
+          {isSaving ? 'Saving…' : 'Save proposed draft'}
+        </button>
+      </div>
+      {message ? <p className="subtle">{message}</p> : null}
+    </section>
   );
 }
 

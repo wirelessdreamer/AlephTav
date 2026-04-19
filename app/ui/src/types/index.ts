@@ -137,6 +137,36 @@ export interface Witness {
   namespace: 'witness';
 }
 
+export interface GenerationJob {
+  job_id: string;
+  unit_id: string;
+  layer: Layer;
+  status: string;
+  input_hash: string;
+  model_profile: string;
+  prompt_version: string;
+  seed: number;
+  runtime_metadata: {
+    adapter: string;
+    completed_at?: string;
+    candidate_count: number;
+    created_rendering_ids: string[];
+    downstream_layers: Layer[];
+    [key: string]: unknown;
+  };
+  output: {
+    unit_id: string;
+    layer: Layer;
+    candidates: Array<{
+      text: string;
+      rationale: string;
+      alignment_hints: string[];
+      drift_flags: DriftFlag[];
+      metrics: Record<string, number>;
+    }>;
+  } | null;
+}
+
 export interface Psalm {
   psalm_id: string;
   title: string;

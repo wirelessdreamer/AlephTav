@@ -175,3 +175,15 @@ test('layered english flow renders populated content and falls back when the sel
   await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare left' }) }).getByText('rnd.ps051.v001.a.literal.can.0001')).toBeVisible();
   await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare right' }) }).getByText('rnd.ps051.v001.a.phrase.alt.0001')).toBeVisible();
 });
+
+test('selected untranslated unit opens guided translation controls in the right pane', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  await page.getByRole('button', { name: 'Psalm 1:2 ps001.v002.a' }).click();
+
+  const guidedCard = page.locator('.guided-translation-card');
+  await expect(guidedCard.getByText('Guided translation')).toBeVisible();
+  await expect(guidedCard.getByRole('button', { name: 'Generate starter' })).toBeVisible();
+  await expect(guidedCard.getByRole('button', { name: 'Save proposed draft' })).toBeDisabled();
+  await expect(guidedCard.getByRole('textbox', { name: 'Draft translation' })).toBeVisible();
+});

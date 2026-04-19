@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import type {
   ConcordanceResult,
+  GenerationJob,
   OpenConcerns,
   PinnedLexicalCardState,
   Project,
@@ -211,6 +212,26 @@ export function useCreateRendering(unitId: string | null) {
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
         queryClient.invalidateQueries({ queryKey: ['open-concerns'] }),
+      ]);
+    },
+  });
+}
+
+export function useGenerateJob(unitId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ layer, style_profile, candidate_count }: { layer: string; style_profile?: string; candidate_count?: number }) =>
+      postJson<GenerationJob>('/jobs/generate', {
+        unit_id: unitId,
+        layer,
+        ...(style_profile ? { style_profile } : {}),
+        ...(candidate_count ? { candidate_count } : {}),
+      }),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['unit', unitId] }),
+        queryClient.invalidateQueries({ queryKey: ['psalm'] }),
+        queryClient.invalidateQueries({ queryKey: ['psalms'] }),
       ]);
     },
   });
