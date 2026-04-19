@@ -1,240 +1,67 @@
 {
-  "alignments": [
-    {
-      "alignment_id": "aln.ps019.v001.a.literal.0001",
-      "alignment_type": "grouped",
-      "confidence": 0.96,
-      "created_by": "seed",
-      "created_via": "fixture",
-      "layer": "literal",
-      "notes": "Predicate phrase rendered together.",
-      "source_token_ids": [
-        "ps019.v001.t001",
-        "ps019.v001.t002"
-      ],
-      "target_span_ids": [
-        "spn.ps019.v001.a.literal.0001"
-      ],
-      "unit_id": "ps019.v001.a"
-    }
-  ],
+  "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [
-    "aud.ps019.v001.a.0001"
-  ],
-  "audit_records": [
-    {
-      "after_hash": "f7097cd882f5f3ef17bd67feb2c8fa244fb5fd3e834c3d4f74d74ffda73628a3",
-      "audit_id": "aud.ps019.v001.a.0001",
-      "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-09T00:00:01Z",
-      "created_by": "import-psalms",
-      "entity_id": "ps019.v001.a",
-      "entity_type": "unit",
-      "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
-      "review_signoff": {},
-      "summary": "Seed fixture unit",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
-    }
-  ],
-  "canonical_rendering_ids": [
-    "rnd.ps019.v001.a.literal.can.0001"
-  ],
+  "audit_ids": [],
+  "audit_records": [],
+  "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps019.v001.a.0001"
   ],
   "current_layer_state": {
-    "latest_layer": "literal",
+    "latest_layer": "source",
     "locked_layers": []
   },
   "issue_links": [],
   "pr_links": [],
   "psalm_id": "ps019",
-  "ref": "Psalm 19:1a",
-  "renderings": [
-    {
-      "alignment_ids": [
-        "aln.ps019.v001.a.literal.0001"
-      ],
-      "drift_flags": [],
-      "layer": "literal",
-      "metrics": {
-        "syllables": 8
-      },
-      "provenance": {
-        "generator": "human-seed",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "Initial literal line.",
-      "rendering_id": "rnd.ps019.v001.a.literal.can.0001",
-      "review_signoff": {
-        "alternate_approval_count": 3,
-        "alternate_approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          }
-        ],
-        "approval_count": 3,
-        "approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          },
-          {
-            "reviewer": "seed-reviewer-2",
-            "reviewer_role": "alignment reviewer"
-          }
-        ],
-        "eligible_for_alternate": true,
-        "eligible_for_canonical": true,
-        "has_release_signoff": true,
-        "latest_decision": "approve",
-        "publication_ready": true,
-        "release_required_role": "release reviewer",
-        "release_signoff": {
-          "reviewer": "seed-release-reviewer",
-          "role": "release reviewer",
-          "timestamp": "2026-04-09T00:00:01Z"
-        },
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "canonical_signed_off",
-        "updated_at": "2026-04-09T00:12:00Z"
-      },
-      "status": "canonical",
-      "style_tags": [
-        "literal",
-        "study_literal"
-      ],
-      "target_spans": [
-        {
-          "span_id": "spn.ps019.v001.a.literal.0001",
-          "text": "The heavens are declaring",
-          "token_end": 3,
-          "token_start": 0
-        }
-      ],
-      "text": "The heavens are declaring",
-      "unit_id": "ps019.v001.a"
-    }
-  ],
-  "review_decisions": [
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps019.v001.a.0001",
-      "notes": "Literal line preserves the clause faithfully.",
-      "reviewer": "seed-reviewer-1",
-      "reviewer_role": "Hebrew reviewer",
-      "target_id": "rnd.ps019.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:10:00Z"
-    },
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps019.v001.a.0002",
-      "notes": "Grouped span coverage is complete.",
-      "reviewer": "seed-reviewer-2",
-      "reviewer_role": "alignment reviewer",
-      "target_id": "rnd.ps019.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:11:00Z"
-    },
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps019.v001.a.0003",
-      "notes": "Unit cleared for release bundle.",
-      "reviewer": "release-seed",
-      "reviewer_role": "release reviewer",
-      "target_id": "rnd.ps019.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:12:00Z"
-    }
-  ],
-  "segmentation_type": "colon",
-  "source_hebrew": "הַשָּׁמַיִם מְסַפְּרִים",
-  "source_transliteration": "ha-shamayim mesapperim",
+  "ref": "Psalm 19:1",
+  "renderings": [],
+  "review_decisions": [],
+  "segmentation_type": "verse",
+  "source_hebrew": "לַמְנַצֵּ֗חַ מִזְמ֥וֹר לְדָוִֽד׃",
+  "source_transliteration": "la–mənaṣṣēᵃḥ mizmôr ləḏāwiḏ:",
   "status": "draft",
   "token_ids": [
     "ps019.v001.t001",
-    "ps019.v001.t002"
+    "ps019.v001.t002",
+    "ps019.v001.t003"
   ],
   "tokens": [
     {
       "corpus_occurrence_refs": [
-        "Genesis 1:1"
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 18:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 31:1",
+        "Psalm 36:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 42:1",
+        "Psalm 44:1",
+        "Psalm 45:1",
+        "Psalm 46:1",
+        "Psalm 47:1",
+        "Psalm 49:1"
       ],
       "enrichment_sources": {
         "macula": {
           "available_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "missing_fields": [],
-          "status": "complete"
-        },
-        "oshb": {
-          "available_fields": [
-            "lemma",
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [],
-          "status": "complete"
-        }
-      },
-      "lemma": "שמים",
-      "missing_enrichments": [],
-      "morph_code": "Td/Ncmpa",
-      "morph_readable": "article + noun masculine plural absolute",
-      "normalized": "השמים",
-      "occurrence_index": 1,
-      "part_of_speech": "noun",
-      "psalms_occurrence_refs": [
-        "Psalm 8:3"
-      ],
-      "ref": "Psalm 19:1a#1",
-      "referent": "heavens",
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": "agent",
-      "stem": null,
-      "strong": "H8064",
-      "surface": "הַשָּׁמַיִם",
-      "syntax_role": "subject",
-      "token_id": "ps019.v001.t001",
-      "transliteration": "ha-shamayim",
-      "word_sense": "sky/heavens"
-    },
-    {
-      "corpus_occurrence_refs": [
-        "Psalm 71:15"
-      ],
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [
-            "syntax_role",
-            "semantic_role",
             "word_sense"
           ],
           "missing_fields": [
+            "syntax_role",
+            "semantic_role",
             "referent"
           ],
           "status": "partial"
@@ -252,29 +79,259 @@
           "status": "complete"
         }
       },
-      "lemma": "ספר",
+      "lemma": "נָצַח",
       "missing_enrichments": [
+        "macula:syntax_role",
+        "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vprmpa",
-      "morph_readable": "verb participle piel masculine plural absolute",
-      "normalized": "מספרים",
-      "occurrence_index": 1,
+      "morph_code": "Rd/Vprmsa",
+      "morph_readable": "Rd/Vprmsa",
+      "normalized": "למנצח",
+      "occurrence_index": 11,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
-        "Psalm 71:15"
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 18:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 31:1",
+        "Psalm 36:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 42:1",
+        "Psalm 44:1",
+        "Psalm 45:1",
+        "Psalm 46:1",
+        "Psalm 47:1",
+        "Psalm 49:1"
       ],
-      "ref": "Psalm 19:1a#2",
+      "ref": "Psalm 19:1#1",
       "referent": null,
       "same_psalm_occurrence_refs": [],
-      "semantic_role": "communication",
+      "semantic_role": null,
       "stem": "piel",
-      "strong": "H5608",
-      "surface": "מְסַפְּרִים",
-      "syntax_role": "predicate",
+      "strong": "H5329",
+      "surface": "לַמְנַצֵּ֗חַ",
+      "syntax_role": null,
+      "token_id": "ps019.v001.t001",
+      "transliteration": "la–mənaṣṣēᵃḥ",
+      "word_sense": "choirmaster"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 15:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 23:1",
+        "Psalm 24:1",
+        "Psalm 29:1",
+        "Psalm 30:1",
+        "Psalm 31:1",
+        "Psalm 38:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 47:1",
+        "Psalm 48:1",
+        "Psalm 49:1"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "lemma": "מִזְמוֹר",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Ncmsa",
+      "morph_readable": "Ncmsa",
+      "normalized": "מזמור",
+      "occurrence_index": 10,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 15:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 23:1",
+        "Psalm 24:1",
+        "Psalm 29:1",
+        "Psalm 30:1",
+        "Psalm 31:1",
+        "Psalm 38:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 47:1",
+        "Psalm 48:1",
+        "Psalm 49:1"
+      ],
+      "ref": "Psalm 19:1#2",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H4210",
+      "surface": "מִזְמ֥וֹר",
+      "syntax_role": "s",
       "token_id": "ps019.v001.t002",
-      "transliteration": "mesapperim",
-      "word_sense": "declare/tell"
+      "transliteration": "mizmôr",
+      "word_sense": "a.psalm"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 7:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 15:1",
+        "Psalm 16:1",
+        "Psalm 17:1",
+        "Psalm 18:1",
+        "Psalm 18:51",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 23:1",
+        "Psalm 24:1",
+        "Psalm 25:1",
+        "Psalm 26:1",
+        "Psalm 27:1"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "lemma": "דָּוִד",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "R/Np",
+      "morph_readable": "R/Np",
+      "normalized": "לדוד",
+      "occurrence_index": 17,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 7:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 15:1",
+        "Psalm 16:1",
+        "Psalm 17:1",
+        "Psalm 18:1",
+        "Psalm 18:51",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 23:1",
+        "Psalm 24:1",
+        "Psalm 25:1",
+        "Psalm 26:1",
+        "Psalm 27:1"
+      ],
+      "ref": "Psalm 19:1#3",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H1732",
+      "surface": "לְדָוִֽד",
+      "syntax_role": null,
+      "token_id": "ps019.v001.t003",
+      "transliteration": "ləḏāwiḏ:",
+      "word_sense": "David"
     }
   ],
   "unit_id": "ps019.v001.a",

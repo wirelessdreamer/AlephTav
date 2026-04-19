@@ -20,8 +20,8 @@ def init_project() -> None:
 
 @app.command("import-psalms")
 def import_psalms() -> None:
-    units = ingest_service.import_fixture_psalms()
-    typer.echo(f"Imported {len(units)} unit fixture(s)")
+    units = ingest_service.import_vendored_psalms()
+    typer.echo(f"Imported {len(units)} unit(s)")
 
 
 @app.command("attach-annotations")

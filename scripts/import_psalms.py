@@ -9,7 +9,7 @@ from app.services import ingest_service
 
 
 def main() -> None:
-    ingest_service.import_fixture_psalms()
+    ingest_service.import_vendored_psalms()
 
 
 if __name__ == "__main__":

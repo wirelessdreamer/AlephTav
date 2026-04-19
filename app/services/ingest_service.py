@@ -5,6 +5,7 @@ from copy import deepcopy
 from typing import Any
 
 from app.services import audit_service, registry_service, review_service
+from app.services.full_psalm_import_service import import_vendored_psalms
 
 
 HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")

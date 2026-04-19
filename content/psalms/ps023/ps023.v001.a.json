@@ -1,273 +1,73 @@
 {
-  "alignments": [
-    {
-      "alignment_id": "aln.ps023.v001.a.literal.0001",
-      "alignment_type": "grouped",
-      "confidence": 0.98,
-      "created_by": "seed",
-      "created_via": "fixture",
-      "layer": "literal",
-      "notes": "Predicate nominal sentence.",
-      "source_token_ids": [
-        "ps023.v001.t001",
-        "ps023.v001.t002"
-      ],
-      "target_span_ids": [
-        "spn.ps023.v001.a.literal.0001"
-      ],
-      "unit_id": "ps023.v001.a"
-    }
-  ],
-  "alternate_rendering_ids": [
-    "rnd.ps023.v001.a.lyric.alt.0001"
-  ],
-  "audit_ids": [
-    "aud.ps023.v001.a.0001"
-  ],
-  "audit_records": [
-    {
-      "after_hash": "601bb6810a20c56f01084846fbde5cd96a7134b0e32694c73c21f7c55797cc25",
-      "audit_id": "aud.ps023.v001.a.0001",
-      "before_hash": "e71b4881425b9d95dc2c461150a38092d77c23ffe2fd5f25eea5d14842e0401f",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-09T00:00:02Z",
-      "created_by": "import-psalms",
-      "entity_id": "ps023.v001.a",
-      "entity_type": "unit",
-      "rationale": "Bootstrap milestone fixtures with OSHB and MACULA enrichment",
-      "review_signoff": {},
-      "summary": "Seed fixture unit",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
-    }
-  ],
-  "canonical_rendering_ids": [
-    "rnd.ps023.v001.a.literal.can.0001"
-  ],
+  "alignments": [],
+  "alternate_rendering_ids": [],
+  "audit_ids": [],
+  "audit_records": [],
+  "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps023.v001.a.0001"
   ],
   "current_layer_state": {
-    "latest_layer": "lyric",
-    "locked_layers": [
-      "gloss",
-      "literal"
-    ]
+    "latest_layer": "source",
+    "locked_layers": []
   },
   "issue_links": [],
   "pr_links": [],
   "psalm_id": "ps023",
-  "ref": "Psalm 23:1a",
-  "renderings": [
-    {
-      "alignment_ids": [
-        "aln.ps023.v001.a.literal.0001"
-      ],
-      "drift_flags": [],
-      "layer": "literal",
-      "metrics": {
-        "syllables": 6
-      },
-      "provenance": {
-        "generator": "human-seed",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "Literal canonical line.",
-      "rendering_id": "rnd.ps023.v001.a.literal.can.0001",
-      "review_signoff": {
-        "alternate_approval_count": 3,
-        "alternate_approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          }
-        ],
-        "approval_count": 3,
-        "approvers": [
-          {
-            "reviewer": "seed-reviewer-1",
-            "reviewer_role": "Hebrew reviewer"
-          },
-          {
-            "reviewer": "seed-reviewer-2",
-            "reviewer_role": "alignment reviewer"
-          }
-        ],
-        "eligible_for_alternate": true,
-        "eligible_for_canonical": true,
-        "has_release_signoff": true,
-        "latest_decision": "approve",
-        "publication_ready": true,
-        "release_required_role": "release reviewer",
-        "release_signoff": {
-          "reviewer": "seed-release-reviewer",
-          "role": "release reviewer",
-          "timestamp": "2026-04-09T00:00:02Z"
-        },
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "canonical_signed_off",
-        "updated_at": "2026-04-09T00:22:00Z"
-      },
-      "status": "canonical",
-      "style_tags": [
-        "literal",
-        "study_literal"
-      ],
-      "target_spans": [
-        {
-          "span_id": "spn.ps023.v001.a.literal.0001",
-          "text": "The LORD is my shepherd",
-          "token_end": 4,
-          "token_start": 0
-        }
-      ],
-      "text": "The LORD is my shepherd",
-      "unit_id": "ps023.v001.a"
-    },
-    {
-      "alignment_ids": [
-        "aln.ps023.v001.a.literal.0001"
-      ],
-      "drift_flags": [
-        {
-          "code": "editorial_expansion",
-          "confidence": 0.5,
-          "message": "editorial expansion",
-          "severity": "medium"
-        }
-      ],
-      "layer": "lyric",
-      "metrics": {
-        "line_length": 6,
-        "parallelism_preservation_score": 0.81,
-        "repetition_score": 0.0,
-        "singability_score": 0.74,
-        "stress_approximation": 0.58,
-        "syllable_count": 7,
-        "syllables": 7
-      },
-      "provenance": {
-        "generator": "human-seed",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "Alternate candidate for common meter development.",
-      "rendering_id": "rnd.ps023.v001.a.lyric.alt.0001",
-      "review_signoff": {
-        "alternate_approval_count": 0,
-        "alternate_approvers": [],
-        "approval_count": 0,
-        "approvers": [],
-        "eligible_for_alternate": false,
-        "eligible_for_canonical": false,
-        "has_release_signoff": false,
-        "latest_decision": null,
-        "publication_ready": false,
-        "release_required_role": "release reviewer",
-        "release_signoff": {},
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "unreviewed",
-        "updated_at": "2026-04-09T00:00:02Z"
-      },
-      "status": "proposed",
-      "style_tags": [
-        "lyric",
-        "metered_common_meter"
-      ],
-      "target_spans": [
-        {
-          "span_id": "spn.ps023.v001.a.lyric.0001",
-          "text": "The LORD, my shepherd, stays near",
-          "token_end": 5,
-          "token_start": 0
-        }
-      ],
-      "text": "The LORD, my shepherd, stays near",
-      "unit_id": "ps023.v001.a"
-    }
-  ],
-  "review_decisions": [
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps023.v001.a.0001",
-      "notes": "Canonical line is faithful to the source naming policy.",
-      "reviewer": "seed-reviewer-1",
-      "reviewer_role": "Hebrew reviewer",
-      "target_id": "rnd.ps023.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:20:00Z"
-    },
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps023.v001.a.0002",
-      "notes": "Predicate sentence alignment is complete.",
-      "reviewer": "seed-reviewer-2",
-      "reviewer_role": "alignment reviewer",
-      "target_id": "rnd.ps023.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:21:00Z"
-    },
-    {
-      "decision": "approve",
-      "decision_id": "rev.ps023.v001.a.0003",
-      "notes": "Unit cleared for release bundle.",
-      "reviewer": "release-seed",
-      "reviewer_role": "release reviewer",
-      "target_id": "rnd.ps023.v001.a.literal.can.0001",
-      "timestamp": "2026-04-09T00:22:00Z"
-    }
-  ],
-  "segmentation_type": "colon",
-  "source_hebrew": "יְהוָה רֹעִי",
-  "source_transliteration": "yhwh ro'i",
-  "status": "under_review",
+  "ref": "Psalm 23:1",
+  "renderings": [],
+  "review_decisions": [],
+  "segmentation_type": "verse",
+  "source_hebrew": "מִזְמ֥וֹר לְדָוִ֑ד יְהוָ֥ה רֹ֝עִ֗י לֹ֣א אֶחְסָֽר׃",
+  "source_transliteration": "mizmôr ləḏāwiḏ yəhwāh lōʾ ʾeḥsār:",
+  "status": "draft",
   "token_ids": [
     "ps023.v001.t001",
-    "ps023.v001.t002"
+    "ps023.v001.t002",
+    "ps023.v001.t003",
+    "ps023.v001.t004",
+    "ps023.v001.t005",
+    "ps023.v001.t006"
   ],
   "tokens": [
     {
       "corpus_occurrence_refs": [
-        "Genesis 2:4"
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 15:1",
+        "Psalm 19:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 24:1",
+        "Psalm 29:1",
+        "Psalm 30:1",
+        "Psalm 31:1",
+        "Psalm 38:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 47:1",
+        "Psalm 48:1",
+        "Psalm 49:1"
       ],
       "enrichment_sources": {
         "macula": {
           "available_fields": [
             "syntax_role",
-            "semantic_role",
-            "referent",
             "word_sense"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
         },
         "oshb": {
           "available_fields": [
@@ -277,46 +77,99 @@
             "morph_readable",
             "part_of_speech"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
         }
       },
-      "lemma": "יהוה",
-      "missing_enrichments": [],
-      "morph_code": "Np",
-      "morph_readable": "proper noun divine name",
-      "normalized": "יהוה",
-      "occurrence_index": 1,
-      "part_of_speech": "proper_noun",
-      "psalms_occurrence_refs": [
-        "Psalm 27:1"
+      "lemma": "מִזְמוֹר",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
       ],
-      "ref": "Psalm 23:1a#1",
-      "referent": "the LORD",
+      "morph_code": "Ncmsa",
+      "morph_readable": "Ncmsa",
+      "normalized": "מזמור",
+      "occurrence_index": 14,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 15:1",
+        "Psalm 19:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 24:1",
+        "Psalm 29:1",
+        "Psalm 30:1",
+        "Psalm 31:1",
+        "Psalm 38:1",
+        "Psalm 39:1",
+        "Psalm 40:1",
+        "Psalm 41:1",
+        "Psalm 47:1",
+        "Psalm 48:1",
+        "Psalm 49:1"
+      ],
+      "ref": "Psalm 23:1#1",
+      "referent": null,
       "same_psalm_occurrence_refs": [],
-      "semantic_role": "deity",
+      "semantic_role": null,
       "stem": null,
-      "strong": "H3068",
-      "surface": "יְהוָה",
-      "syntax_role": "subject",
+      "strong": "H4210",
+      "surface": "מִזְמ֥וֹר",
+      "syntax_role": "s",
       "token_id": "ps023.v001.t001",
-      "transliteration": "yhwh",
-      "word_sense": "divine name"
+      "transliteration": "mizmôr",
+      "word_sense": "a.psalm"
     },
     {
       "corpus_occurrence_refs": [
-        "Genesis 48:15"
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 7:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 15:1",
+        "Psalm 16:1",
+        "Psalm 17:1",
+        "Psalm 18:1",
+        "Psalm 18:51",
+        "Psalm 19:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 24:1",
+        "Psalm 25:1",
+        "Psalm 26:1",
+        "Psalm 27:1"
       ],
       "enrichment_sources": {
         "macula": {
           "available_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
             "word_sense"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
         },
         "oshb": {
           "available_fields": [
@@ -326,31 +179,430 @@
             "morph_readable",
             "part_of_speech"
           ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "lemma": "דָּוִד",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "R/Np",
+      "morph_readable": "R/Np",
+      "normalized": "לדוד",
+      "occurrence_index": 21,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 3:1",
+        "Psalm 4:1",
+        "Psalm 5:1",
+        "Psalm 6:1",
+        "Psalm 7:1",
+        "Psalm 8:1",
+        "Psalm 9:1",
+        "Psalm 11:1",
+        "Psalm 12:1",
+        "Psalm 13:1",
+        "Psalm 14:1",
+        "Psalm 15:1",
+        "Psalm 16:1",
+        "Psalm 17:1",
+        "Psalm 18:1",
+        "Psalm 18:51",
+        "Psalm 19:1",
+        "Psalm 20:1",
+        "Psalm 21:1",
+        "Psalm 22:1",
+        "Psalm 24:1",
+        "Psalm 25:1",
+        "Psalm 26:1",
+        "Psalm 27:1"
+      ],
+      "ref": "Psalm 23:1#2",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H1732",
+      "surface": "לְדָוִ֑ד",
+      "syntax_role": null,
+      "token_id": "ps023.v001.t002",
+      "transliteration": "ləḏāwiḏ",
+      "word_sense": "David"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:6",
+        "Psalm 2:2",
+        "Psalm 2:7",
+        "Psalm 2:11",
+        "Psalm 3:2",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:4",
+        "Psalm 4:6",
+        "Psalm 4:7",
+        "Psalm 4:9",
+        "Psalm 5:2",
+        "Psalm 5:4",
+        "Psalm 5:7",
+        "Psalm 5:9",
+        "Psalm 5:13",
+        "Psalm 6:2",
+        "Psalm 6:3",
+        "Psalm 6:4",
+        "Psalm 6:5"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "lemma": "יהוה",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Np",
+      "morph_readable": "Np",
+      "normalized": "יהוה",
+      "occurrence_index": 121,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:6",
+        "Psalm 2:2",
+        "Psalm 2:7",
+        "Psalm 2:11",
+        "Psalm 3:2",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:4",
+        "Psalm 4:6",
+        "Psalm 4:7",
+        "Psalm 4:9",
+        "Psalm 5:2",
+        "Psalm 5:4",
+        "Psalm 5:7",
+        "Psalm 5:9",
+        "Psalm 5:13",
+        "Psalm 6:2",
+        "Psalm 6:3",
+        "Psalm 6:4",
+        "Psalm 6:5"
+      ],
+      "ref": "Psalm 23:1#3",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 23:6"
+      ],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H3068",
+      "surface": "יְהוָ֥ה",
+      "syntax_role": "s",
+      "token_id": "ps023.v001.t003",
+      "transliteration": "yəhwāh",
+      "word_sense": "Yahweh"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
           "missing_fields": [],
           "status": "complete"
         }
       },
-      "lemma": "רעה",
-      "missing_enrichments": [],
-      "morph_code": "Ncmsg+Sp1cs",
-      "morph_readable": "noun masculine singular construct + suffix first common singular",
-      "normalized": "רעי",
-      "occurrence_index": 1,
-      "part_of_speech": "noun",
-      "psalms_occurrence_refs": [
-        "Psalm 80:1"
+      "lemma": "הוּא",
+      "missing_enrichments": [
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
       ],
-      "ref": "Psalm 23:1a#2",
-      "referent": "my shepherd",
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": "caregiver",
-      "stem": null,
+      "morph_code": "Vqrmsc/Sp1cs",
+      "morph_readable": "Vqrmsc/Sp1cs",
+      "normalized": "רעי",
+      "occurrence_index": 617,
+      "part_of_speech": "suffix",
+      "psalms_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "ref": "Psalm 23:1#4",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 23:2",
+        "Psalm 23:3",
+        "Psalm 23:4",
+        "Psalm 23:5",
+        "Psalm 23:6"
+      ],
+      "semantic_role": null,
+      "stem": "qal",
       "strong": "H7462",
-      "surface": "רֹעִי",
-      "syntax_role": "predicate",
-      "token_id": "ps023.v001.t002",
-      "transliteration": "ro'i",
+      "surface": "רֹ֝עִ֗י",
+      "syntax_role": null,
+      "token_id": "ps023.v001.t004",
+      "transliteration": null,
       "word_sense": "shepherd"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 1:1",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 1:5",
+        "Psalm 3:7",
+        "Psalm 5:5",
+        "Psalm 5:6",
+        "Psalm 7:13",
+        "Psalm 9:11",
+        "Psalm 9:13",
+        "Psalm 9:19",
+        "Psalm 10:6",
+        "Psalm 10:13",
+        "Psalm 14:4",
+        "Psalm 15:3",
+        "Psalm 15:4",
+        "Psalm 15:5",
+        "Psalm 16:10",
+        "Psalm 17:1",
+        "Psalm 18:22",
+        "Psalm 18:23",
+        "Psalm 18:37",
+        "Psalm 18:38",
+        "Psalm 18:39"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "lemma": "לֹא",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Tn",
+      "morph_readable": "Tn",
+      "normalized": "לא",
+      "occurrence_index": 44,
+      "part_of_speech": "particle",
+      "psalms_occurrence_refs": [
+        "Psalm 1:1",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 1:5",
+        "Psalm 3:7",
+        "Psalm 5:5",
+        "Psalm 5:6",
+        "Psalm 7:13",
+        "Psalm 9:11",
+        "Psalm 9:13",
+        "Psalm 9:19",
+        "Psalm 10:6",
+        "Psalm 10:13",
+        "Psalm 14:4",
+        "Psalm 15:3",
+        "Psalm 15:4",
+        "Psalm 15:5",
+        "Psalm 16:10",
+        "Psalm 17:1",
+        "Psalm 18:22",
+        "Psalm 18:23",
+        "Psalm 18:37",
+        "Psalm 18:38",
+        "Psalm 18:39"
+      ],
+      "ref": "Psalm 23:1#5",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 23:4"
+      ],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H3808",
+      "surface": "לֹ֣א",
+      "syntax_role": "adv",
+      "token_id": "ps023.v001.t005",
+      "transliteration": "lōʾ",
+      "word_sense": "not"
+    },
+    {
+      "corpus_occurrence_refs": [
+        "Psalm 34:11"
+      ],
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
+      "lemma": "חָסֵר",
+      "missing_enrichments": [
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Vqi1cs",
+      "morph_readable": "Vqi1cs",
+      "normalized": "אחסר",
+      "occurrence_index": 1,
+      "part_of_speech": "verb",
+      "psalms_occurrence_refs": [
+        "Psalm 34:11"
+      ],
+      "ref": "Psalm 23:1#6",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": "qal",
+      "strong": "H2637",
+      "surface": "אֶחְסָֽר",
+      "syntax_role": "v",
+      "token_id": "ps023.v001.t006",
+      "transliteration": "ʾeḥsār:",
+      "word_sense": "I.lack"
     }
   ],
   "unit_id": "ps023.v001.a",

@@ -7,6 +7,7 @@ GitHub Pages welcome site: https://wirelessdreamer.github.io/AlephTav/
 ## What the project includes
 
 - Git-friendly JSON content as the canonical text source of truth
+- Vendored Psalms source inputs under `data/raw/` so the full Hebrew corpus rebuild works offline
 - SQLite-derived indexes for concordance, lexical cards, witnesses, and jobs
 - FastAPI backend plus a Typer CLI
 - React + TypeScript workbench UI for lexical analysis and translation review
