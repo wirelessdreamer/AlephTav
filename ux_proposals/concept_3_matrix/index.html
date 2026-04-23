@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlephTav - Rhythmic Alignment Matrix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Noto+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f111a;
+      --panel-bg: rgba(255, 255, 255, 0.04);
+      --panel-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #64748b;
+      --accent: #0ea5e9;
+      --drift-alert: #ef4444;    /* Red for mismatch */
+      --drift-warn: #eab308;     /* Yellow for minor mismatch */
+      --drift-ok: #22c55e;       /* Green for perfect match */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bg-gradient {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: radial-gradient(circle at top, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      z-index: 1;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .subtitle {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .matrix-panel {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 1200px;
+      overflow-x: auto;
+    }
+
+    .grid-container {
+      display: grid;
+      /* Row Label + 8 beats */
+      grid-template-columns: 180px repeat(8, 1fr);
+      gap: 12px;
+    }
+
+    .row-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-right: 1px solid var(--panel-border);
+    }
+    .row-header.hebrew {
+      color: #38bdf8;
+    }
+
+    .cell {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    /* Col span classes */
+    .span-1 { grid-column: span 1; }
+    .span-2 { grid-column: span 2; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+
+    .token {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-block;
+      margin: 2px;
+    }
+    
+    .hebrew .token {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+      font-size: 1.3rem;
+      direction: rtl;
+    }
+
+    .token:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Drift states */
+    .cell.drift-alert {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.5);
+      box-shadow: inset 0 0 15px rgba(239, 68, 68, 0.1);
+    }
+    .cell.drift-warn {
+      background: rgba(234, 179, 8, 0.1);
+      border-color: rgba(234, 179, 8, 0.4);
+    }
+    .cell.drift-ok {
+      background: rgba(34, 197, 94, 0.05);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    /* Beat Header */
+    .beat-header {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <header>
+    <h1>Rhythmic Matrix</h1>
+    <p class="subtitle">Detect prosodic drift across layers using a cellular heat-map.</p>
+  </header>
+
+  <main>
+    <div class="matrix-panel">
+      <div class="grid-container">
+        
+        <!-- Headers -->
+        <div></div> <!-- empty row label header -->
+        <div class="beat-header">Beat 1</div>
+        <div class="beat-header">Beat 2</div>
+        <div class="beat-header">Beat 3</div>
+        <div class="beat-header">Beat 4</div>
+        <div class="beat-header">Beat 5</div>
+        <div class="beat-header">Beat 6</div>
+        <div class="beat-header">Beat 7</div>
+        <div class="beat-header">Beat 8</div>
+
+        <!-- Hebrew Row -->
+        <div class="row-header hebrew">Source (Hebrew)</div>
+        <div class="cell span-3 hebrew drift-ok">
+          <div class="token">הַשָּׁמַיִם</div>
+        </div>
+        <div class="cell span-2 hebrew drift-ok">
+          <div class="token">מְסַפְּרִים</div>
+        </div>
+        <div class="cell span-3 hebrew drift-ok">
+          <div class="token">כְּבוֹד־אֵל</div>
+        </div>
+
+        <!-- Literal Translation -->
+        <div class="row-header">Literal</div>
+        <div class="cell span-3">
+          <div class="token">The heavens</div>
+        </div>
+        <div class="cell span-2">
+          <div class="token">declare</div>
+        </div>
+        <div class="cell span-3 drift-alert" title="Prosody Overload: 4 syllables in 3 beats">
+          <div class="token">the glory</div>
+          <div class="token">of God</div>
+          <!-- Too crammed, indicated by the red border/bg -->
+        </div>
+
+        <!-- Lyric Target (Editable/Draggable in Real app) -->
+        <div class="row-header" style="color: #f1f5f9;">Lyric Layer</div>
+        <div class="cell span-1 drift-ok">
+          <div class="token">The</div>
+        </div>
+        <div class="cell span-2 drift-ok">
+          <div class="token">hea-vens</div>
+        </div>
+        <div class="cell span-2 drift-ok">
+          <div class="token">de-clare</div>
+        </div>
+        <div class="cell span-1 drift-warn" title="Slight syncopation">
+          <div class="token">the</div>
+        </div>
+        <div class="cell span-1 drift-ok">
+          <div class="token">glo-ry</div>
+        </div>
+        <div class="cell span-1 drift-ok">
+          <div class="token">of God</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem; text-align: center;">
+        <span style="display:inline-block; margin-right:1rem;"><span style="display:inline-block;width:12px;height:12px;background:rgba(34, 197, 94, 0.4);border-radius:3px;margin-right:4px;"></span> Fits Pulse</span>
+        <span style="display:inline-block; margin-right:1rem;"><span style="display:inline-block;width:12px;height:12px;background:rgba(234, 179, 8, 0.4);border-radius:3px;margin-right:4px;"></span> Minor Drift</span>
+        <span style="display:inline-block;"><span style="display:inline-block;width:12px;height:12px;background:rgba(239, 68, 68, 0.4);border-radius:3px;margin-right:4px;"></span> Syllable Overload</span>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Interaction script would allow the tokens to be dragged and dropped into adjacent cells,
+    // recalculating the class (drift-ok, drift-warn, drift-alert) dynamically based on the 
+    // ratio of token syllables to column span.
+    
+    // For POC, simple click-to-split interaction
+    document.querySelectorAll('.token').forEach(token => {
+      token.addEventListener('click', (e) => {
+        // Just visual feedback of interaction for the mockup
+        const cell = e.target.closest('.cell');
+        cell.style.transform = 'scale(0.95)';
+        setTimeout(() => cell.style.transform = 'scale(1)', 150);
+      });
+    });
+  </script>
+</body>
+</html>

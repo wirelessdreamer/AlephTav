@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlephTav - Bilingual Staff Concept</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --panel-bg: rgba(255, 255, 255, 0.03);
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f0f4f8;
+      --text-muted: #8a9bb2;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.4);
+      --accent-hebrew: #eab308;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glows */
+    .bg-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: 0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .bg-glow.top-right { top: -200px; right: -200px; }
+    .bg-glow.bottom-left { bottom: -200px; left: -200px; background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, transparent 70%); }
+
+    h1 {
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.5rem;
+      margin-top: 3rem;
+      z-index: 1;
+      background: linear-gradient(90deg, #fff, #a5b4fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 4rem;
+      z-index: 1;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+      position: relative;
+      flex: 1;
+    }
+
+    .staff-board {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    .staff-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .measure-lines {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .measure-line {
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+    }
+    .measure-line.strong {
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .track {
+      position: relative;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+
+    .track.hebrew {
+      justify-content: flex-end;
+      direction: rtl;
+    }
+
+    .word-block {
+      background: rgba(20, 25, 40, 0.8);
+      border: 1px solid var(--panel-border);
+      padding: 0.5rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      position: absolute;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: auto;
+    }
+
+    .hebrew .word-block {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+      font-size: 1.8rem;
+      color: var(--accent-hebrew);
+      border-color: rgba(234, 179, 8, 0.2);
+      background: rgba(234, 179, 8, 0.05);
+    }
+
+    .english .word-block {
+      cursor: grab;
+      border-color: rgba(59, 130, 246, 0.3);
+      resize: horizontal;
+      overflow: hidden;
+      min-width: 80px;
+    }
+    
+    .english .word-block:active {
+      cursor: grabbing;
+      transform: scale(1.05);
+      border-color: rgba(59, 130, 246, 0.8);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .word-meaning {
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      direction: ltr;
+    }
+
+    /* Connections SVG */
+    #connections {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    path.connection {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.15);
+      stroke-width: 2;
+      stroke-dasharray: 4 4;
+      transition: stroke 0.3s;
+    }
+    .word-block:hover ~ #connections path.active-hover,
+    .word-block.hover-target {
+      stroke: var(--accent-hebrew);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 5px var(--accent-glow));
+    }
+
+    .syllable-ticks {
+      position: absolute;
+      bottom: -15px;
+      left: 0; width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+    .tick {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="bg-glow top-right"></div>
+  <div class="bg-glow bottom-left"></div>
+
+  <h1>Bilingual Staff Context</h1>
+  <p class="subtitle">Visually map syllables as notes across a musical measure to balance phrasing.</p>
+
+  <div class="container">
+    <div class="staff-board">
+      <div class="toolbar">
+        <div>
+          <button class="btn">Psalm 19:1</button>
+          <button class="btn">Passage Context</button>
+        </div>
+        <div>
+          <button class="btn primary">Save Prosody Match</button>
+        </div>
+      </div>
+
+      <div class="staff-container" id="staffContainer">
+        <!-- Render vertical beat lines (8 beats in a measure) -->
+        <div class="measure-lines">
+          <div class="measure-line strong"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line strong"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line"></div>
+          <div class="measure-line strong"></div>
+        </div>
+
+        <!-- SVG for structural links -->
+        <svg id="connections"></svg>
+
+        <!-- Hebrew Source Track (Top) -->
+        <div class="track hebrew" id="hebrewTrack">
+          <!-- Positioned via percentages for POC (Right to Left logically) -->
+          <div class="word-block" style="right: 5%;" id="h1">
+            הַשָּׁמַיִם
+            <span class="word-meaning">the heavens</span>
+          </div>
+          <div class="word-block" style="right: 35%;" id="h2">
+            מְסַפְּרִים
+            <span class="word-meaning">declare</span>
+          </div>
+          <div class="word-block" style="right: 70%;" id="h3">
+            כְּבוֹד־אֵל
+            <span class="word-meaning">glory of God</span>
+          </div>
+        </div>
+
+        <!-- English Lyric Track (Bottom) -->
+        <div class="track english" id="englishTrack">
+          <div class="word-block draggable" style="left: 5%; width: 15%;" id="e1" data-link="h1">
+            The heav - ens
+            <div class="syllable-ticks">
+              <span class="tick"></span><span class="tick"></span><span class="tick"></span>
+            </div>
+          </div>
+          <div class="word-block draggable" style="left: 35%; width: 12%;" id="e2" data-link="h2">
+            de - clare
+            <div class="syllable-ticks">
+              <span class="tick"></span><span class="tick"></span>
+            </div>
+          </div>
+          <div class="word-block draggable" style="left: 65%; width: 25%;" id="e3" data-link="h3">
+            the glo - ry of God
+            <div class="syllable-ticks">
+              <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 3rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+        <p>Instructions: Drag English phrases horizontally to align them with musical downbeats. Resize (pull right edge) to stretch a word over a melisma or condense it. Hover over English blocks to see alignment to Hebrew.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Draw SVG connections between linked blocks
+    function drawConnections() {
+      const svg = document.getElementById('connections');
+      svg.innerHTML = '';
+      const containerRect = document.getElementById('staffContainer').getBoundingClientRect();
+      const englishBlocks = document.querySelectorAll('.english .word-block');
+
+      englishBlocks.forEach(eb => {
+        const linkId = eb.getAttribute('data-link');
+        const hb = document.getElementById(linkId);
+        if (hb) {
+          const eRect = eb.getBoundingClientRect();
+          const hRect = hb.getBoundingClientRect();
+
+          const startX = (eRect.left + eRect.width / 2) - containerRect.left;
+          const startY = eRect.top - containerRect.top;
+          const endX = (hRect.left + hRect.width / 2) - containerRect.left;
+          const endY = hRect.bottom - containerRect.top;
+
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          // Bezier curve for smooth linking
+          const d = `M ${startX} ${startY + 20} C ${startX} ${(startY+endY)/2}, ${endX} ${(startY+endY)/2}, ${endX} ${endY - 20}`;
+          
+          path.setAttribute('d', d);
+          path.classList.add('connection');
+          path.id = `path-${eb.id}`;
+          svg.appendChild(path);
+
+          // Add hover effect
+          eb.addEventListener('mouseenter', () => {
+            path.classList.add('active-hover');
+            hb.style.borderColor = 'rgba(234, 179, 8, 0.8)';
+            hb.style.boxShadow = '0 0 15px rgba(234, 179, 8, 0.3)';
+          });
+          eb.addEventListener('mouseleave', () => {
+            path.classList.remove('active-hover');
+            hb.style.borderColor = '';
+            hb.style.boxShadow = '';
+          });
+        }
+      });
+    }
+
+    // Init and window resize
+    window.onload = drawConnections;
+    window.onresize = drawConnections;
+
+    // Simple Drag and Drop POC (Horizontal only)
+    let isDragging = false;
+    let currentEl = null;
+    let startX = 0;
+    let startLeft = 0;
+
+    document.querySelectorAll('.draggable').forEach(el => {
+      el.addEventListener('mousedown', (e) => {
+        // Only drag if not resizing (right 15px reserved for native UI resize in CSS)
+        const rect = el.getBoundingClientRect();
+        if (e.clientX > rect.right - 15) return;
+
+        isDragging = true;
+        currentEl = el;
+        startX = e.clientX;
+        // Parse left percentage or px
+        startLeft = parseFloat(el.style.left) || 0;
+        if(el.style.left.includes('%')) {
+          startLeft = (startLeft / 100) * el.parentElement.clientWidth;
+        }
+        el.style.zIndex = 10;
+        e.preventDefault();
+      });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging && currentEl) {
+        const dx = e.clientX - startX;
+        const newLeft = startLeft + dx;
+        currentEl.style.left = `${newLeft}px`;
+        drawConnections(); // Redraw line during drag
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (currentEl) {
+        currentEl.style.zIndex = '';
+      }
+      isDragging = false;
+      currentEl = null;
+    });
+    
+    // Use MutationObserver to update lines if elements are resized natively
+    const observer = new MutationObserver(drawConnections);
+    document.querySelectorAll('.draggable').forEach(el => {
+      observer.observe(el, { attributes: true, attributeFilter: ['style'] });
+    });
+
+  </script>
+</body>
+</html>

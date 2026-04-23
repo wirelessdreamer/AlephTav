@@ -36,7 +36,7 @@ By default the scripts:
 - install `pip install -e .[dev]`
 - run `npm install`
 - run the full content rebuild pipeline
-- start the API on `http://127.0.0.1:8000`
+- start the API on `http://127.0.0.1:8765`
 - start the UI on `http://127.0.0.1:5173`
 
 Open:
@@ -68,7 +68,7 @@ python scripts/seed_project.py
 python scripts/import_psalms.py
 python scripts/build_indexes.py
 python scripts/validate_content.py
-python -m uvicorn app.api.main:app --reload
+python -m uvicorn app.api.main:app --host 127.0.0.1 --port 8765 --reload
 ```
 
 ## Common commands

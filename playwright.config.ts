@@ -9,8 +9,8 @@ export default defineConfig({
   },
   webServer: [
     {
-      command: "sh -c 'PY=python; [ -x .venv/bin/python ] && PY=.venv/bin/python; \"$PY\" scripts/bootstrap_fixture_repo.py && \"$PY\" -m uvicorn app.api.main:app --host 127.0.0.1 --port 8000'",
-      url: 'http://127.0.0.1:8000/health',
+      command: "sh -c 'PY=python; [ -x .venv/bin/python ] && PY=.venv/bin/python; \"$PY\" scripts/bootstrap_fixture_repo.py && \"$PY\" -m uvicorn app.api.main:app --host 127.0.0.1 --port 8765'",
+      url: 'http://127.0.0.1:8765/health',
       reuseExistingServer: !process.env.CI,
       timeout: 120_000,
     },

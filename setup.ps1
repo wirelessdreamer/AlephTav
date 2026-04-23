@@ -5,7 +5,7 @@ param(
     [switch]$SkipInstall,
     [switch]$SkipRebuild,
     [switch]$SkipStart,
-    [int]$ApiPort = 8000,
+    [int]$ApiPort = 8765,
     [int]$UiPort = 5173,
     [switch]$Yes
 )
@@ -16,6 +16,8 @@ $RootDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RunDir = Join-Path $RootDir '.run'
 $VenvDir = Join-Path $RootDir '.venv'
 $VenvPython = Join-Path $VenvDir 'Scripts\python.exe'
+$RebuildStateScript = Join-Path $RootDir 'scripts\setup_rebuild_state.py'
+$ManagedServicesFile = Join-Path $RunDir 'managed-services.json'
 
 $ApiProcess = $null
 $UiProcess = $null
@@ -32,18 +34,150 @@ function Fail-Setup {
     throw "[setup] ERROR: $Message"
 }
 
+function Clear-ManagedServicesState {
+    if (Test-Path $ManagedServicesFile) {
+        Remove-Item -Path $ManagedServicesFile -Force -ErrorAction SilentlyContinue
+    }
+}
+
+function Write-ManagedServicesState {
+    $payload = @{
+        api = @{ pid = if ($null -ne $ApiProcess) { $ApiProcess.Id } else { $null }; port = $ApiPort }
+        ui  = @{ pid = if ($null -ne $UiProcess) { $UiProcess.Id } else { $null }; port = $UiPort }
+    }
+    $payload | ConvertTo-Json -Depth 4 | Set-Content -Path $ManagedServicesFile -Encoding UTF8
+}
+
+function Stop-ManagedProcess {
+    param(
+        [int]$Pid,
+        [string]$Label
+    )
+
+    if (-not $Pid) {
+        return
+    }
+
+    $process = Get-Process -Id $Pid -ErrorAction SilentlyContinue
+    if ($null -eq $process) {
+        return
+    }
+
+    Stop-Process -Id $Pid -ErrorAction SilentlyContinue
+    for ($i = 0; $i -lt 5; $i++) {
+        Start-Sleep -Seconds 1
+        $process = Get-Process -Id $Pid -ErrorAction SilentlyContinue
+        if ($null -eq $process) {
+            return
+        }
+    }
+
+    Write-Warning "[setup] $Label process $Pid did not exit cleanly; forcing shutdown."
+    Stop-Process -Id $Pid -Force -ErrorAction SilentlyContinue
+}
+
+function Get-ListenerProcessId {
+    param([int]$Port)
+
+    $connection = Get-NetTCPConnection -LocalAddress 127.0.0.1 -LocalPort $Port -State Listen -ErrorAction SilentlyContinue |
+        Select-Object -First 1
+    if ($null -eq $connection) {
+        $connection = Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1
+    }
+    if ($null -eq $connection) {
+        return $null
+    }
+    return [int]$connection.OwningProcess
+}
+
+function Test-RepoOwnedListener {
+    param(
+        [int]$Pid,
+        [ValidateSet('api', 'ui')]
+        [string]$Kind
+    )
+
+    $process = Get-CimInstance Win32_Process -Filter "ProcessId = $Pid" -ErrorAction SilentlyContinue
+    if ($null -eq $process) {
+        return $false
+    }
+
+    $commandLine = $process.CommandLine
+    if ([string]::IsNullOrWhiteSpace($commandLine)) {
+        return $false
+    }
+
+    switch ($Kind) {
+        'api' {
+            return $commandLine -like '*uvicorn*' -and $commandLine -like '*app.api.main:app*'
+        }
+        'ui' {
+            return $commandLine -like '*vite*' -and $commandLine -like '*app/ui/vite.config.ts*' -and $commandLine -like "*$RootDir*"
+        }
+    }
+
+    return $false
+}
+
+function Reclaim-RepoOwnedPort {
+    param(
+        [int]$Port,
+        [ValidateSet('api', 'ui')]
+        [string]$Kind
+    )
+
+    $pid = Get-ListenerProcessId -Port $Port
+    if ($null -eq $pid) {
+        return
+    }
+
+    if (Test-RepoOwnedListener -Pid $pid -Kind $Kind) {
+        Write-Setup "Stopping existing repo-owned $($Kind.ToUpperInvariant()) process $pid on port $Port."
+        Stop-ManagedProcess -Pid $pid -Label $Kind.ToUpperInvariant()
+    }
+}
+
+function Cleanup-StaleManagedServices {
+    if (-not (Test-Path $ManagedServicesFile)) {
+        return
+    }
+
+    try {
+        $payload = Get-Content -Path $ManagedServicesFile -Raw | ConvertFrom-Json
+    }
+    catch {
+        Write-Warning "[setup] Unable to parse $ManagedServicesFile; clearing stale setup state."
+        Clear-ManagedServicesState
+        return
+    }
+
+    foreach ($label in @('api', 'ui')) {
+        $entry = $payload.$label
+        if ($null -ne $entry -and $entry.pid) {
+            $process = Get-Process -Id ([int]$entry.pid) -ErrorAction SilentlyContinue
+            if ($null -ne $process) {
+                Write-Setup "Stopping stale setup-managed $($label.ToUpperInvariant()) process $($entry.pid) on port $($entry.port)."
+                Stop-ManagedProcess -Pid ([int]$entry.pid) -Label $label.ToUpperInvariant()
+            }
+        }
+    }
+
+    Clear-ManagedServicesState
+}
+
 function Cleanup-Children {
     foreach ($process in @($UiProcess, $ApiProcess)) {
         if ($null -ne $process) {
             try {
                 if (-not $process.HasExited) {
-                    Stop-Process -Id $process.Id -Force
+                    Stop-ManagedProcess -Pid $process.Id -Label 'setup child'
                 }
             }
             catch {
             }
         }
     }
+    Clear-ManagedServicesState
 }
 
 function Test-PythonVersion {
@@ -254,6 +388,51 @@ function Run-DataPipeline {
     }
 }
 
+function Invoke-RebuildState {
+    param(
+        [ValidateSet('check', 'mark')]
+        [string]$Action,
+        [string]$Mode
+    )
+
+    $output = & $VenvPython $RebuildStateScript $Action '--mode' $Mode 2>&1
+    $exitCode = $LASTEXITCODE
+    return [pscustomobject]@{
+        ExitCode = $exitCode
+        Output = ($output | Out-String).Trim()
+    }
+}
+
+function Invoke-TrackedDataPipeline {
+    $status = Invoke-RebuildState -Action check -Mode $DataMode
+    if ($status.Output) {
+        Write-Setup $status.Output
+    }
+
+    if ($status.ExitCode -eq 0) {
+        $mark = Invoke-RebuildState -Action mark -Mode $DataMode
+        if ($mark.ExitCode -ne 0) {
+            $message = if ($mark.Output) { $mark.Output } else { 'Unable to record rebuild state.' }
+            Fail-Setup $message
+        }
+        if ($mark.Output) {
+            Write-Setup $mark.Output
+        }
+        Write-Setup 'Skipping data bootstrap/rebuild because tracked outputs are current.'
+        return
+    }
+
+    Run-DataPipeline
+    $mark = Invoke-RebuildState -Action mark -Mode $DataMode
+    if ($mark.ExitCode -ne 0) {
+        $message = if ($mark.Output) { $mark.Output } else { 'Unable to record rebuild state.' }
+        Fail-Setup $message
+    }
+    if ($mark.Output) {
+        Write-Setup $mark.Output
+    }
+}
+
 function Test-PortFree {
     param([int]$Port)
 
@@ -271,6 +450,26 @@ function Test-PortFree {
             $listener.Stop()
         }
     }
+}
+
+function Get-AvailablePort {
+    param(
+        [int]$StartingPort,
+        [string]$Label
+    )
+
+    if (Test-PortFree -Port $StartingPort) {
+        return $StartingPort
+    }
+
+    for ($candidate = $StartingPort + 1; $candidate -le $StartingPort + 25; $candidate++) {
+        if (Test-PortFree -Port $candidate) {
+            Write-Warning "[setup] $Label port $StartingPort is already in use by another process. Falling back to $candidate."
+            return $candidate
+        }
+    }
+
+    Fail-Setup "$Label port $StartingPort is already in use and no fallback port was available in the next 25 ports. Pass an override flag."
 }
 
 function Wait-ForUrl {
@@ -298,6 +497,12 @@ function Wait-ForUrl {
 }
 
 function Start-Services {
+    Reclaim-RepoOwnedPort -Port $ApiPort -Kind api
+    Reclaim-RepoOwnedPort -Port $UiPort -Kind ui
+
+    $script:ApiPort = Get-AvailablePort -StartingPort $ApiPort -Label 'API'
+    $script:UiPort = Get-AvailablePort -StartingPort $UiPort -Label 'UI'
+
     if (-not (Test-PortFree -Port $ApiPort)) {
         Fail-Setup "API port $ApiPort is already in use. Stop the conflicting process or pass -ApiPort."
     }
@@ -311,10 +516,12 @@ function Start-Services {
 
     Write-Setup "Starting API on http://127.0.0.1:$ApiPort"
     $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $ApiLog -PassThru
+    Write-ManagedServicesState
     Wait-ForUrl -Url "http://127.0.0.1:$ApiPort/health" -Label 'API'
 
     Write-Setup "Starting UI on http://127.0.0.1:$UiPort"
     $script:UiProcess = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run', 'dev', '--', '--host', '127.0.0.1', '--port', "$UiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $UiLog -RedirectStandardError $UiLog -PassThru
+    Write-ManagedServicesState
     Wait-ForUrl -Url "http://127.0.0.1:$UiPort" -Label 'UI'
 
     Write-Host ''
@@ -343,6 +550,7 @@ function Start-Services {
 }
 
 New-Item -ItemType Directory -Force -Path $RunDir | Out-Null
+Cleanup-StaleManagedServices
 
 try {
     Ensure-SystemRuntimes
@@ -356,7 +564,7 @@ try {
     }
 
     if (-not $SkipRebuild) {
-        Run-DataPipeline
+        Invoke-TrackedDataPipeline
     }
     else {
         Write-Setup 'Skipping data bootstrap/rebuild.'

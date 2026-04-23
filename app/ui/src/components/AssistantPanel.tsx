@@ -28,7 +28,11 @@ const QUICK_PROMPTS = [
   'Compare canonical and alternate renderings for this unit.',
 ];
 
-export function AssistantPanel() {
+interface AssistantPanelProps {
+  embedded?: boolean;
+}
+
+export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
   const { assistantContext, applyClientAction, assistantUi, updateAssistantUi } = useAppRuntime();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -266,7 +270,7 @@ export function AssistantPanel() {
 
   if (!isOpen) {
     return (
-      <div className={`assistant-launcher assistant-launcher--${assistantUi.placement}`}>
+      <div className={`assistant-launcher assistant-launcher--${assistantUi.placement} ${embedded ? 'assistant-launcher--embedded' : ''}`}>
         <button
           type="button"
           className="assistant-launcher__button"
@@ -284,7 +288,7 @@ export function AssistantPanel() {
   }
 
   return (
-    <aside className={`assistant-panel assistant-panel--${assistantUi.placement}`}>
+    <aside className={`assistant-panel assistant-panel--${assistantUi.placement} ${embedded ? 'assistant-panel--embedded' : ''}`}>
       <div className="assistant-panel__bar">
         <div>
           <p className="eyebrow">Assistant</p>

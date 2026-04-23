@@ -6,13 +6,15 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RUN_DIR="${ROOT_DIR}/.run"
 VENV_DIR="${ROOT_DIR}/.venv"
 LOG_PREFIX="setup"
+REBUILD_STATE_SCRIPT="${ROOT_DIR}/scripts/setup_rebuild_state.py"
+MANAGED_SERVICES_FILE="${RUN_DIR}/managed-services.json"
 
 DATA_MODE="full"
 SKIP_INSTALL=0
 SKIP_REBUILD=0
 SKIP_START=0
 NONINTERACTIVE=0
-API_PORT=8000
+API_PORT=8765
 UI_PORT=5173
 
 API_PID=""
@@ -30,7 +32,7 @@ Options:
   --skip-install     Skip Python and Node dependency installation
   --skip-rebuild     Skip data bootstrap/rebuild
   --skip-start       Verify and install only; do not start the app
-  --api-port PORT    Override the API port (default: 8000)
+  --api-port PORT    Override the API port (default: 8765)
   --ui-port PORT     Override the UI port (default: 5173)
   --yes              Non-interactive mode; auto-approve derived system package manager commands
   --help             Show this help message
@@ -50,16 +52,164 @@ die() {
   exit 1
 }
 
+clear_managed_services_state() {
+  rm -f "${MANAGED_SERVICES_FILE}"
+}
+
+write_managed_services_state() {
+  cat >"${MANAGED_SERVICES_FILE}" <<EOF
+{
+  "api": {"pid": ${API_PID:-null}, "port": ${API_PORT}},
+  "ui": {"pid": ${UI_PID:-null}, "port": ${UI_PORT}}
+}
+EOF
+}
+
+stop_pid_if_running() {
+  local pid="$1"
+  local label="$2"
+  local signal="${3:-TERM}"
+
+  [[ -n "${pid}" ]] || return 0
+  if ! kill -0 "${pid}" 2>/dev/null; then
+    return 0
+  fi
+
+  kill "-${signal}" "${pid}" 2>/dev/null || kill "${pid}" 2>/dev/null || true
+  for _ in 1 2 3 4 5; do
+    if ! kill -0 "${pid}" 2>/dev/null; then
+      return 0
+    fi
+    sleep 1
+  done
+
+  if [[ "${signal}" != "KILL" ]]; then
+    warn "${label} process ${pid} did not exit after SIG${signal}; forcing shutdown."
+    stop_pid_if_running "${pid}" "${label}" KILL
+  fi
+}
+
+get_listener_pid() {
+  local port="$1"
+  if have_cmd lsof; then
+    lsof -nP -iTCP:"${port}" -sTCP:LISTEN -t 2>/dev/null | head -n 1
+    return 0
+  fi
+  if have_cmd ss; then
+    ss -lptn "sport = :${port}" 2>/dev/null | sed -n 's/.*pid=\([0-9][0-9]*\).*/\1/p' | head -n 1
+    return 0
+  fi
+  return 0
+}
+
+get_process_cmdline() {
+  local pid="$1"
+  if [[ -r "/proc/${pid}/cmdline" ]]; then
+    tr '\0' ' ' <"/proc/${pid}/cmdline" | sed 's/[[:space:]]\+$//'
+    return 0
+  fi
+  ps -o command= -p "${pid}" 2>/dev/null || true
+}
+
+get_process_cwd() {
+  local pid="$1"
+  if [[ -L "/proc/${pid}/cwd" ]]; then
+    readlink -f "/proc/${pid}/cwd" 2>/dev/null || true
+    return 0
+  fi
+  if have_cmd lsof; then
+    lsof -a -p "${pid}" -d cwd -Fn 2>/dev/null | sed -n 's/^n//p' | head -n 1
+  fi
+}
+
+is_repo_owned_listener() {
+  local pid="$1"
+  local kind="$2"
+  local cmdline cwd
+
+  cmdline="$(get_process_cmdline "${pid}")"
+  cwd="$(get_process_cwd "${pid}")"
+
+  case "${kind}" in
+    api)
+      [[ "${cmdline}" == *"app.api.main:app"* ]] || return 1
+      [[ "${cmdline}" == *"uvicorn"* ]] || return 1
+      ;;
+    ui)
+      [[ "${cmdline}" == *"vite"* ]] || return 1
+      [[ "${cmdline}" == *"app/ui/vite.config.ts"* ]] || return 1
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+
+  [[ -n "${cwd}" && "${cwd}" == "${ROOT_DIR}" ]] || return 1
+  return 0
+}
+
+reclaim_repo_owned_port() {
+  local port="$1"
+  local kind="$2"
+  local pid
+
+  pid="$(get_listener_pid "${port}")"
+  [[ -n "${pid}" ]] || return 0
+  if ! kill -0 "${pid}" 2>/dev/null; then
+    return 0
+  fi
+  if is_repo_owned_listener "${pid}" "${kind}"; then
+    log "Stopping existing repo-owned ${kind^^} process ${pid} on port ${port}."
+    stop_pid_if_running "${pid}" "${kind^^}"
+  fi
+}
+
+cleanup_stale_managed_services() {
+  [[ -f "${MANAGED_SERVICES_FILE}" ]] || return 0
+
+  local stale_entries
+  stale_entries="$(python3 - "${MANAGED_SERVICES_FILE}" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+try:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+except Exception:
+    raise SystemExit(1)
+
+for label in ("api", "ui"):
+    item = payload.get(label) or {}
+    pid = item.get("pid")
+    port = item.get("port")
+    if pid:
+        print(f"{label}:{pid}:{port}")
+PY
+)" || {
+    warn "Unable to parse ${MANAGED_SERVICES_FILE}; clearing stale setup state."
+    clear_managed_services_state
+    return 0
+  }
+
+  local entry label pid port
+  while IFS= read -r entry; do
+    [[ -n "${entry}" ]] || continue
+    IFS=':' read -r label pid port <<<"${entry}"
+    if kill -0 "${pid}" 2>/dev/null; then
+      log "Stopping stale setup-managed ${label^^} process ${pid} on port ${port}."
+      stop_pid_if_running "${pid}" "${label^^}"
+    fi
+  done <<<"${stale_entries}"
+
+  clear_managed_services_state
+}
+
 cleanup() {
   local exit_code=$?
-  if [[ -n "${UI_PID}" ]] && kill -0 "${UI_PID}" 2>/dev/null; then
-    kill "${UI_PID}" 2>/dev/null || true
-    wait "${UI_PID}" 2>/dev/null || true
-  fi
-  if [[ -n "${API_PID}" ]] && kill -0 "${API_PID}" 2>/dev/null; then
-    kill "${API_PID}" 2>/dev/null || true
-    wait "${API_PID}" 2>/dev/null || true
-  fi
+  stop_pid_if_running "${UI_PID}" "UI"
+  stop_pid_if_running "${API_PID}" "API"
+  clear_managed_services_state
   exit "${exit_code}"
 }
 
@@ -113,6 +263,7 @@ done
 
 cd "${ROOT_DIR}"
 mkdir -p "${RUN_DIR}"
+cleanup_stale_managed_services
 
 have_cmd() {
   command -v "$1" >/dev/null 2>&1
@@ -285,11 +436,10 @@ except Exception:
 PY
 }
 
-require_free_port() {
+is_port_free() {
   local python_bin="$1"
   local port="$2"
-  local label="$3"
-  "${python_bin}" - "$port" <<'PY' || die "${label} port ${port} is already in use. Stop the conflicting process or pass an override flag."
+  "${python_bin}" - "$port" <<'PY'
 import socket
 import sys
 
@@ -302,6 +452,35 @@ except OSError:
 finally:
     sock.close()
 PY
+}
+
+resolve_port_conflict() {
+  local python_bin="$1"
+  local requested_port="$2"
+  local label="$3"
+  local candidate
+
+  if is_port_free "${python_bin}" "${requested_port}"; then
+    printf '%s\n' "${requested_port}"
+    return 0
+  fi
+
+  for ((candidate=requested_port + 1; candidate<=requested_port + 25; candidate++)); do
+    if is_port_free "${python_bin}" "${candidate}"; then
+      warn "${label} port ${requested_port} is already in use by another process. Falling back to ${candidate}."
+      printf '%s\n' "${candidate}"
+      return 0
+    fi
+  done
+
+  die "${label} port ${requested_port} is already in use and no fallback port was available in the next 25 ports. Pass an override flag."
+}
+
+require_free_port() {
+  local python_bin="$1"
+  local port="$2"
+  local label="$3"
+  is_port_free "${python_bin}" "${port}" || die "${label} port ${port} is already in use. Stop the conflicting process or pass an override flag."
 }
 
 run_step() {
@@ -338,6 +517,30 @@ run_data_pipeline() {
   run_step "Validating content" "${VENV_PYTHON}" scripts/validate_content.py
 }
 
+sync_rebuild_state() {
+  local action="$1"
+  local output
+  if ! output="$("${VENV_PYTHON}" "${REBUILD_STATE_SCRIPT}" "${action}" --mode "${DATA_MODE}" 2>&1)"; then
+    printf '%s\n' "${output}" >&2
+    return 1
+  fi
+  [[ -n "${output}" ]] && log "${output}"
+}
+
+maybe_run_data_pipeline() {
+  local output
+  if output="$("${VENV_PYTHON}" "${REBUILD_STATE_SCRIPT}" check --mode "${DATA_MODE}" 2>&1)"; then
+    [[ -n "${output}" ]] && log "${output}"
+    sync_rebuild_state mark
+    log "Skipping data bootstrap/rebuild because tracked outputs are current."
+    return 0
+  fi
+
+  [[ -n "${output}" ]] && log "${output}"
+  run_data_pipeline
+  sync_rebuild_state mark
+}
+
 wait_for_url() {
   local python_bin="$1"
   local url="$2"
@@ -357,9 +560,17 @@ wait_for_url() {
 
 start_services() {
   local timestamp
+  local requested_api_port="${API_PORT}"
+  local requested_ui_port="${UI_PORT}"
   timestamp="$(date +%Y%m%d-%H%M%S)"
   API_LOG="${RUN_DIR}/${LOG_PREFIX}-api-${timestamp}.log"
   UI_LOG="${RUN_DIR}/${LOG_PREFIX}-ui-${timestamp}.log"
+
+  reclaim_repo_owned_port "${API_PORT}" api
+  reclaim_repo_owned_port "${UI_PORT}" ui
+
+  API_PORT="$(resolve_port_conflict "${VENV_PYTHON}" "${requested_api_port}" "API")"
+  UI_PORT="$(resolve_port_conflict "${VENV_PYTHON}" "${requested_ui_port}" "UI")"
 
   require_free_port "${VENV_PYTHON}" "${API_PORT}" "API"
   require_free_port "${VENV_PYTHON}" "${UI_PORT}" "UI"
@@ -367,6 +578,7 @@ start_services() {
   log "Starting API on http://127.0.0.1:${API_PORT}"
   "${VENV_PYTHON}" -m uvicorn app.api.main:app --host 127.0.0.1 --port "${API_PORT}" >"${API_LOG}" 2>&1 &
   API_PID=$!
+  write_managed_services_state
 
   if ! wait_for_url "${VENV_PYTHON}" "http://127.0.0.1:${API_PORT}/health" "API" 60; then
     warn "API failed to report healthy startup. See ${API_LOG}"
@@ -376,6 +588,7 @@ start_services() {
   log "Starting UI on http://127.0.0.1:${UI_PORT}"
   npm run dev -- --host 127.0.0.1 --port "${UI_PORT}" >"${UI_LOG}" 2>&1 &
   UI_PID=$!
+  write_managed_services_state
 
   if ! wait_for_url "${VENV_PYTHON}" "http://127.0.0.1:${UI_PORT}" "UI" 60; then
     warn "UI failed to report ready startup. See ${UI_LOG}"
@@ -417,7 +630,7 @@ else
 fi
 
 if [[ "${SKIP_REBUILD}" -eq 0 ]]; then
-  run_data_pipeline
+  maybe_run_data_pipeline
 else
   log "Skipping data bootstrap/rebuild."
 fi

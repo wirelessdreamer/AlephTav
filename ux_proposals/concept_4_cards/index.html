@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlephTav - Stacked Prosody Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0c0a09;
+      --card-bg: rgba(28, 25, 23, 0.7);
+      --card-border: rgba(68, 64, 60, 0.5);
+      --text-main: #fafaf9;
+      --text-muted: #a8a29e;
+      --accent-hebrew: #ca8a04;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bg-pattern {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+    }
+
+    header {
+      padding: 3rem 2rem 1rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 1rem 0;
+      background: linear-gradient(90deg, #fcd34d, #f9a8d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      z-index: 1;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Cards */
+    .prosody-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .prosody-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Statuses */
+    .prosody-card.match {
+      border-color: rgba(22, 163, 74, 0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(22, 163, 74, 0.15);
+    }
+    .prosody-card.mismatch {
+      border-color: rgba(217, 119, 6, 0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(217, 119, 6, 0.15);
+    }
+
+    .hebrew-section {
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .hebrew-text {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-hebrew);
+      direction: rtl;
+    }
+    .transliteration {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* Prosody Graph Middle Section */
+    .prosody-graph {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--card-border);
+    }
+    
+    .prosody-row {
+      display: flex;
+      gap: 8px;
+    }
+    .syl {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+    .syl.stressed {
+      background: var(--text-main);
+      transform: scale(1.4);
+      box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    }
+    .syl.extra {
+      background: var(--warning);
+    }
+
+    .prosody-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      width: 100%;
+      text-align: left;
+      margin-bottom: -5px;
+    }
+
+    /* English Section */
+    .english-section {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .translation-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0.5rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .translation-input:focus {
+      border-color: #fcd34d;
+    }
+
+    /* Badges */
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      align-self: center;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .match .status-badge { background: rgba(22, 163, 74, 0.2); color: #4ade80; }
+    .mismatch .status-badge { background: rgba(217, 119, 6, 0.2); color: #fbbf24; }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <header>
+    <h1>Stacked Prosody Cards</h1>
+    <p style="color: var(--text-muted);">Edit English translation to instantly visualize syllable/stress mapping against the source.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Card 1 (Match) -->
+    <div class="prosody-card match" id="card1">
+      <div class="hebrew-section">
+        <div class="hebrew-text">הַשָּׁמַיִם</div>
+        <div class="transliteration">hasha-ma-yim</div>
+      </div>
+      
+      <div class="prosody-graph">
+        <div class="prosody-label">Hebrew</div>
+        <div class="prosody-row">
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+          <div class="syl"></div>
+        </div>
+        
+        <div style="height: 1px; width: 80%; background: var(--card-border); margin: 5px 0;"></div>
+        
+        <div class="prosody-label">English</div>
+        <div class="prosody-row" id="e-prosody-1">
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+          <div class="syl"></div>
+        </div>
+      </div>
+      
+      <div class="english-section">
+        <input type="text" class="translation-input" value="The heavens" id="input1">
+        <div class="status-badge" id="badge1">Prosody Match</div>
+      </div>
+    </div>
+
+    <!-- Card 2 (Mismatch) -->
+    <div class="prosody-card mismatch" id="card2">
+      <div class="hebrew-section">
+        <div class="hebrew-text">מְסַפְּרִים</div>
+        <div class="transliteration">m'sap-rim</div>
+      </div>
+      
+      <div class="prosody-graph">
+        <div class="prosody-label">Hebrew</div>
+        <div class="prosody-row">
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+        </div>
+        
+        <div style="height: 1px; width: 80%; background: var(--card-border); margin: 5px 0;"></div>
+        
+        <div class="prosody-label">English</div>
+        <div class="prosody-row" id="e-prosody-2">
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+          <div class="syl"></div>
+          <div class="syl extra"></div>
+        </div>
+      </div>
+      
+      <div class="english-section">
+        <input type="text" class="translation-input" value="are declaring" id="input2">
+        <div class="status-badge" id="badge2">Syllable Drift</div>
+      </div>
+    </div>
+
+    <!-- Card 3 (Match) -->
+    <div class="prosody-card match" id="card3">
+      <div class="hebrew-section">
+        <div class="hebrew-text">כְּבוֹד־אֵל</div>
+        <div class="transliteration">k'vod-el</div>
+      </div>
+      
+      <div class="prosody-graph">
+        <div class="prosody-label">Hebrew</div>
+        <div class="prosody-row">
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+        </div>
+        
+        <div style="height: 1px; width: 80%; background: var(--card-border); margin: 5px 0;"></div>
+        
+        <div class="prosody-label">English</div>
+        <div class="prosody-row" id="e-prosody-3">
+          <div class="syl stressed"></div>
+          <div class="syl"></div>
+        </div>
+      </div>
+      
+      <div class="english-section">
+        <input type="text" class="translation-input" value="God's glory" id="input3">
+        <div class="status-badge" id="badge3">Prosody Match</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Dummy logic for POC to simulate live prosody updating on input
+    const input2 = document.getElementById('input2');
+    const card2 = document.getElementById('card2');
+    const badge2 = document.getElementById('badge2');
+    const eProsody2 = document.getElementById('e-prosody-2');
+
+    input2.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase();
+      // Hardcode a match if they type "declare"
+      if (val === "declare") {
+        card2.classList.remove('mismatch');
+        card2.classList.add('match');
+        badge2.innerText = "Prosody Match";
+        eProsody2.innerHTML = `
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+        `;
+      } else {
+        card2.classList.add('mismatch');
+        card2.classList.remove('match');
+        badge2.innerText = "Syllable Drift";
+        eProsody2.innerHTML = `
+          <div class="syl"></div>
+          <div class="syl stressed"></div>
+          <div class="syl"></div>
+          <div class="syl extra"></div>
+        `;
+      }
+    });
+
+  </script>
+</body>
+</html>

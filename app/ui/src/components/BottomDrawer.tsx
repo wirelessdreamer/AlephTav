@@ -756,7 +756,7 @@ export function BottomDrawer({
                 <div className="result-meta">
                   <span>{witness.ref}</span>
                   <span>{witness.language}</span>
-                  <a href={witness.source_url} target="_blank" rel="noreferrer">source</a>
+                  {witness.source_url ? <a href={witness.source_url} target="_blank" rel="noreferrer">source</a> : null}
                 </div>
               </li>
             ))}

@@ -1,8 +1,47 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v001.a.literal.alt.0001",
+    "rnd.ps001.v001.a.literal.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v001.a.0001",
+    "aud.ps001.v001.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3beafd72a41337a4d585ac5bf39954cc2040358ea2fd5b69245a02bf71e0077d",
+      "audit_id": "aud.ps001.v001.a.0001",
+      "before_hash": "36d2d1c77b0d8e0747d758069242d5cfee30cd866b28bbcafd29fc02f527be11",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-20T14:04:33.093970+00:00",
+      "created_by": "ui-click-approval",
+      "entity_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "click-approved from Lyric witness",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ae8c59f6e489c6ff3eb1905f4e37ceb5ca84cc25e27fdb96c3d8112c54ec0e5f",
+      "audit_id": "aud.ps001.v001.a.0002",
+      "before_hash": "fb71047493eb358f122175d196d038004e6f1f7e160b29fab65210d3c8229817",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-04-23T20:26:44.086990+00:00",
+      "created_by": "ui-guided-composer",
+      "entity_id": "rnd.ps001.v001.a.literal.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "guided verse composer completion",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps001.v001.a.0001"
@@ -15,7 +54,120 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "drift_flags": [],
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "provenance": {
+        "generator": "ui-click-approval",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "click-approved from Lyric witness",
+      "rendering_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal",
+        "click-only",
+        "lyric-witness"
+      ],
+      "target_spans": [],
+      "text": "Blessed",
+      "unit_id": "ps001.v001.a"
+    },
+    {
+      "alignment_ids": [],
+      "drift_flags": [],
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "provenance": {
+        "generator": "ui-guided-composer",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ]
+      },
+      "rationale": "guided verse composer completion",
+      "rendering_id": "rnd.ps001.v001.a.literal.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal",
+        "guided-composer",
+        "verse-complete"
+      ],
+      "target_spans": [],
+      "text": "How blessed is the one Who does not walk with the wicked who does not stand with sinners nor sit among the scornful",
+      "unit_id": "ps001.v001.a"
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ אֲשֶׁ֤ר׀ לֹ֥א הָלַךְ֮ בַּעֲצַ֢ת רְשָׁ֫עִ֥ים וּבְדֶ֣רֶךְ חַ֭טָּאִים לֹ֥א עָמָ֑ד וּבְמוֹשַׁ֥ב לֵ֝צִ֗ים לֹ֣א יָשָֽׁב׃",
@@ -1428,5 +1580,30 @@
     }
   ],
   "unit_id": "ps001.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 1:1",
+      "source_id": "kjv",
+      "source_url": "",
+      "text": "Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 1:1",
+      "source_id": "asv",
+      "source_url": "",
+      "text": "Blessed is the man that walketh not in the counsel of the wicked, Nor standeth in the way of sinners, Nor sitteth in the seat of scoffers:",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 1:1",
+      "source_id": "web",
+      "source_url": "",
+      "text": "Blessed is the man who does not walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers;",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

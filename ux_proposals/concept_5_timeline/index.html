@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlephTav - DAW Timeline Scrubber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #121212;
+      --panel-bg: #1e1e1e;
+      --border-color: #333;
+      --text-main: #e0e0e0;
+      --text-muted: #888;
+      --accent: #4ade80;
+      --track-bg: #181818;
+      --clip-hebrew: #ca8a04;
+      --clip-english: #3b82f6;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--panel-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .btn {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn:hover { background: #333; }
+    .btn.primary {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-container {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Time Ruler */
+    .ruler {
+      height: 30px;
+      background: #252525;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+    .tick {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      border-left: 1px solid #444;
+      padding-left: 4px;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      box-sizing: border-box;
+    }
+    .tick.sub {
+      border-left: 1px solid #333;
+      height: 50%;
+      top: 50%;
+    }
+
+    /* Tracks */
+    .track-headers {
+      position: absolute;
+      left: 0;
+      top: 30px; /* height of ruler */
+      width: 150px;
+      bottom: 0;
+      background: #2a2a2a;
+      border-right: 1px solid var(--border-color);
+      z-index: 10;
+    }
+    .track-header {
+      height: 120px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .track-header.hebrew { color: var(--clip-hebrew); }
+    .track-header.english { color: var(--clip-english); }
+
+    .tracks {
+      margin-left: 150px;
+      position: relative;
+      overflow-x: auto;
+      background: var(--track-bg);
+      /* Grid lines for beats */
+      background-image: linear-gradient(to right, #222 1px, transparent 1px);
+      background-size: 100px 100%; /* 100px per beat */
+    }
+
+    .track {
+      height: 120px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Clips (DAW style) */
+    .clip {
+      position: absolute;
+      top: 20px;
+      height: 80px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 6px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+
+    .clip-hebrew {
+      background: rgba(202, 138, 4, 0.2);
+      border: 1px solid var(--clip-hebrew);
+      direction: rtl;
+    }
+    .clip-hebrew .text {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+      font-size: 1.5rem;
+      color: #fde047;
+    }
+
+    .clip-english {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid var(--clip-english);
+      cursor: grab;
+      resize: horizontal;
+      overflow: hidden;
+    }
+    .clip-english:active {
+      cursor: grabbing;
+      background: rgba(59, 130, 246, 0.3);
+    }
+    .clip-english .text {
+      font-size: 1rem;
+      color: #93c5fd;
+      white-space: nowrap;
+    }
+
+    /* Scrubber Playhead */
+    .playhead {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 300px;
+      width: 2px;
+      background: rgba(239, 68, 68, 0.8);
+      z-index: 20;
+      pointer-events: none;
+    }
+    .playhead::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -4px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 8px solid rgba(239, 68, 68, 0.8);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Timeline Scrubber <span>/ DAW View</span></h1>
+    <div class="toolbar">
+      <button class="btn">Snap to Grid</button>
+      <button class="btn primary">Export Alignment</button>
+    </div>
+  </header>
+
+  <main>
+    <div style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+      Drag English syllable blocks underneath the fixed Hebrew track. Align visually with the musical grid marks (100px per beat).
+    </div>
+
+    <div class="timeline-container">
+      
+      <div class="track-headers">
+        <div class="track-header hebrew">Source (Fixed)</div>
+        <div class="track-header english">Lyric (Movable)</div>
+      </div>
+
+      <div class="ruler" id="ruler">
+        <!-- Ticks generated via JS -->
+      </div>
+
+      <div class="tracks" id="tracksContainer">
+        <div class="playhead" id="playhead"></div>
+
+        <!-- Hebrew Track -->
+        <div class="track">
+          <div class="clip clip-hebrew" style="left: 100px; width: 300px;">
+            <div class="text">הַשָּׁמַיִם</div>
+          </div>
+          <div class="clip clip-hebrew" style="left: 450px; width: 200px;">
+            <div class="text">מְסַפְּרִים</div>
+          </div>
+          <div class="clip clip-hebrew" style="left: 700px; width: 250px;">
+            <div class="text">כְּבוֹד־אֵל</div>
+          </div>
+        </div>
+
+        <!-- English Track -->
+        <div class="track">
+          <div class="clip clip-english draggable" style="left: 100px; width: 100px;">
+            <div class="text">The</div>
+          </div>
+          <div class="clip clip-english draggable" style="left: 200px; width: 200px;">
+            <div class="text">heavens</div>
+          </div>
+          <div class="clip clip-english draggable" style="left: 450px; width: 100px;">
+            <div class="text">are</div>
+          </div>
+          <div class="clip clip-english draggable" style="left: 550px; width: 100px;">
+            <div class="text">de-</div>
+          </div>
+          <div class="clip clip-english draggable" style="left: 650px; width: 100px;">
+            <div class="text">clar-</div>
+          </div>
+          <div class="clip clip-english draggable" style="left: 750px; width: 100px;">
+            <div class="text">ing</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Generate Ruler Ticks
+    const ruler = document.getElementById('ruler');
+    for (let i = 0; i < 20; i++) {
+      const beat = document.createElement('div');
+      beat.className = 'tick';
+      beat.style.left = `${i * 100 + 150}px`; // offset for track headers
+      beat.innerText = i + 1;
+      ruler.appendChild(beat);
+
+      const sub = document.createElement('div');
+      sub.className = 'tick sub';
+      sub.style.left = `${i * 100 + 50 + 150}px`;
+      ruler.appendChild(sub);
+    }
+
+    // Draggable Logic for Clips
+    let isDragging = false;
+    let currentEl = null;
+    let startX = 0;
+    let startLeft = 0;
+    const SNAP = 50; // Snap to 8th notes (half beats)
+
+    document.querySelectorAll('.draggable').forEach(el => {
+      el.addEventListener('mousedown', (e) => {
+        // Prevent drag on right edge (which is for resize)
+        const rect = el.getBoundingClientRect();
+        if (e.clientX > rect.right - 15) return;
+
+        isDragging = true;
+        currentEl = el;
+        startX = e.clientX;
+        startLeft = parseFloat(el.style.left) || 0;
+        el.style.zIndex = 50;
+        e.preventDefault();
+      });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging && currentEl) {
+        let dx = e.clientX - startX;
+        let newLeft = startLeft + dx;
+        
+        // Simple snapping calculation
+        newLeft = Math.round(newLeft / SNAP) * SNAP;
+        
+        currentEl.style.left = `${newLeft}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (currentEl) currentEl.style.zIndex = '';
+      isDragging = false;
+      currentEl = null;
+    });
+
+    // Playhead Animation simulation
+    const playhead = document.getElementById('playhead');
+    let pos = 100;
+    setInterval(() => {
+      pos += 2;
+      if (pos > 1000) pos = 100;
+      playhead.style.left = `${pos}px`;
+    }, 50);
+
+  </script>
+</body>
+</html>

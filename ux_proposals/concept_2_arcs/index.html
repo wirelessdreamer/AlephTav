@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlephTav - Interactive Phrasing Arcs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --panel-bg: rgba(30, 41, 59, 0.7);
+      --panel-border: rgba(148, 163, 184, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --arc-color: #8b5cf6;
+      --arc-glow: rgba(139, 92, 246, 0.4);
+      --accent-hebrew: #10b981;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--arc-glow) 0%, transparent 60%);
+      filter: blur(100px);
+      z-index: 0;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .c1 { width: 500px; height: 500px; top: -100px; left: -100px; }
+    .c2 { width: 400px; height: 400px; bottom: -50px; right: -50px; background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 60%); }
+
+    h1 {
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-top: 3rem;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      z-index: 1;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      z-index: 1;
+      position: relative;
+    }
+
+    .arcs-board {
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    /* Track Layout */
+    .track-wrapper {
+      position: relative;
+      padding: 60px 0;
+    }
+
+    /* SVG for Arcs */
+    #arcs-svg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .arc {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.1);
+      stroke-width: 2;
+      transition: all 0.3s ease;
+      stroke-linecap: round;
+    }
+    .arc.hovered, .arc.selected {
+      stroke: var(--arc-color);
+      stroke-width: 4;
+      filter: drop-shadow(0 0 8px var(--arc-glow));
+    }
+    
+    .alignment-line {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.05);
+      stroke-width: 1.5;
+      stroke-dasharray: 2 4;
+      transition: stroke 0.3s;
+    }
+
+    /* Blocks */
+    .text-layer {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      height: 80px;
+    }
+
+    .text-layer.hebrew {
+      direction: rtl;
+      justify-content: flex-end;
+      margin-bottom: 200px;
+    }
+
+    .text-layer.english {
+      direction: ltr;
+      justify-content: flex-start;
+    }
+
+    .word {
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255,255,255, 0.05);
+      font-size: 1.1rem;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .hebrew .word {
+      font-family: 'Noto Sans Hebrew', sans-serif;
+      font-size: 1.6rem;
+      color: var(--accent-hebrew);
+    }
+    
+    .hebrew .word:hover {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .english .word {
+      color: #e2e8f0;
+    }
+    
+    .english .word:hover {
+      background: rgba(139, 92, 246, 0.1);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    /* Interaction panels */
+    .side-panel {
+      position: absolute;
+      right: -320px;
+      top: 50px;
+      width: 280px;
+      background: var(--panel-bg);
+      border: 1px solid var(--arc-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .side-panel.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .panel-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--arc-color);
+      margin-bottom: 1rem;
+    }
+    
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="bg-circle c1"></div>
+  <div class="bg-circle c2"></div>
+
+  <h1>Interactive Phrasing Arcs</h1>
+  <p class="subtitle">Sweep over musical phrases to analyze prosody drift between translation and original text.</p>
+
+  <div class="container">
+    <div class="arcs-board" id="arcsBoard">
+      
+      <div class="track-wrapper">
+        <svg id="arcs-svg"></svg>
+        
+        <!-- Hebrew Layer -->
+        <div class="text-layer hebrew" id="hebrewLayer">
+          <!-- Phrasing Unit 1 -->
+          <div class="word phrase-1" id="h1">הַשָּׁמַיִם</div>
+          <div class="word phrase-1" id="h2">מְסַפְּרִים</div>
+          <div class="word phrase-1" id="h3">כְּבוֹד־אֵל</div>
+          
+          <div class="word phrase-2" style="margin-right: 50px;" id="h4">וּמַעֲשֵׂה</div>
+          <div class="word phrase-2" id="h5">יָדָיו</div>
+          <div class="word phrase-2" id="h6">מַגִּיד</div>
+          <div class="word phrase-2" id="h7">הָרָקִיעַ</div>
+        </div>
+
+        <!-- English Layer -->
+        <div class="text-layer english" id="englishLayer">
+          <!-- Phrasing Unit 1 -->
+          <div class="word phrase-1" id="e1">The heavens</div>
+          <div class="word phrase-1" id="e2">are telling</div>
+          <div class="word phrase-1" id="e3">the glory of God;</div>
+          
+          <div class="word phrase-2" style="margin-left: 50px;" id="e4">and to the work</div>
+          <div class="word phrase-2" id="e5">of his hands</div>
+          <div class="word phrase-2" id="e6">the firmament</div>
+          <div class="word phrase-2" id="e7">bears witness.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="side-panel" id="sidePanel">
+    <div class="panel-title">Phrase Analytics</div>
+    <div class="stat-row">
+      <span style="color: var(--text-muted)">Hebrew Syllables</span>
+      <span id="h-syl">10</span>
+    </div>
+    <div class="stat-row">
+      <span style="color: var(--text-muted)">English Syllables</span>
+      <span id="e-syl">11</span>
+    </div>
+    <div class="stat-row" style="margin-top: 1rem; border-top: 1px solid var(--panel-border); padding-top: 1rem;">
+      <span style="color: var(--text-muted)">Match Score</span>
+      <span id="match-score" style="color: #f59e0b">Amber (Drift)</span>
+    </div>
+  </div>
+
+  <script>
+    function getCenter(el, containerRect) {
+      const rect = el.getBoundingClientRect();
+      return {
+        x: rect.left + rect.width / 2 - containerRect.left,
+        y: rect.top + rect.height / 2 - containerRect.top,
+        bottom: rect.bottom - containerRect.top,
+        top: rect.top - containerRect.top
+      };
+    }
+
+    function drawArcs() {
+      const svg = document.getElementById('arcs-svg');
+      svg.innerHTML = '';
+      const containerRect = document.getElementById('arcsBoard').getBoundingClientRect();
+
+      // Draw Hebrew Phrase Arcs (top)
+      drawPhraseArc(svg, '.hebrew .phrase-1', 'hebrew-arc-1', containerRect, true);
+      drawPhraseArc(svg, '.hebrew .phrase-2', 'hebrew-arc-2', containerRect, true);
+
+      // Draw English Phrase Arcs (bottom)
+      drawPhraseArc(svg, '.english .phrase-1', 'english-arc-1', containerRect, false);
+      drawPhraseArc(svg, '.english .phrase-2', 'english-arc-2', containerRect, false);
+      
+      // Draw alignment lines (literal connections)
+      for(let i=1; i<=7; i++) {
+        drawAlignmentLine(svg, `h${i}`, `e${i}`, containerRect);
+      }
+    }
+
+    function drawAlignmentLine(svg, idH, idE, containerRect) {
+      const elH = document.getElementById(idH);
+      const elE = document.getElementById(idE);
+      if(!elH || !elE) return;
+
+      const p1 = getCenter(elH, containerRect);
+      const p2 = getCenter(elE, containerRect);
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      path.setAttribute('x1', p1.x);
+      path.setAttribute('y1', p1.bottom);
+      path.setAttribute('x2', p2.x);
+      path.setAttribute('y2', p2.top);
+      path.classList.add('alignment-line');
+      svg.appendChild(path);
+    }
+
+    function drawPhraseArc(svg, selector, id, containerRect, isTop) {
+      const elements = Array.from(document.querySelectorAll(selector));
+      if (elements.length === 0) return;
+
+      // Ensure proper DOM order for finding first/last visually
+      const firstEl = elements.reduce((a, b) => a.getBoundingClientRect().left < b.getBoundingClientRect().left ? a : b);
+      const lastEl = elements.reduce((a, b) => a.getBoundingClientRect().right > b.getBoundingClientRect().right ? a : b);
+
+      const pStart = getCenter(firstEl, containerRect);
+      const pEnd = getCenter(lastEl, containerRect);
+
+      // Control point logic for the arc curve
+      const controlY = isTop ? pStart.top - 80 : pStart.bottom + 80;
+      const startY = isTop ? pStart.top - 10 : pStart.bottom + 10;
+      
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const d = `M ${pStart.x} ${startY} Q ${(pStart.x + pEnd.x) / 2} ${controlY} ${pEnd.x} ${startY}`;
+      
+      path.setAttribute('d', d);
+      path.setAttribute('id', id);
+      path.classList.add('arc');
+      svg.appendChild(path);
+
+      // Interaction Wrapper (invisible thick line for easier hovering)
+      const hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      hitArea.setAttribute('d', d);
+      hitArea.setAttribute('stroke', 'transparent');
+      hitArea.setAttribute('stroke-width', '30');
+      hitArea.setAttribute('fill', 'none');
+      hitArea.style.cursor = 'pointer';
+      
+      // Events
+      const handleHover = (isHover) => {
+        path.classList.toggle('hovered', isHover);
+        elements.forEach(el => el.style.boxShadow = isHover ? '0 0 15px rgba(139, 92, 246, 0.4)' : '');
+        if(isHover) showPanel(id.includes('1') ? 1 : 2);
+        else hidePanel();
+      };
+      
+      hitArea.addEventListener('mouseenter', () => handleHover(true));
+      hitArea.addEventListener('mouseleave', () => handleHover(false));
+      elements.forEach(el => {
+        el.addEventListener('mouseenter', () => handleHover(true));
+        el.addEventListener('mouseleave', () => handleHover(false));
+      });
+
+      svg.appendChild(hitArea);
+    }
+
+    const panel = document.getElementById('sidePanel');
+    function showPanel(phraseNum) {
+      if(phraseNum === 1) {
+        document.getElementById('h-syl').innerText = '10';
+        document.getElementById('e-syl').innerText = '9';
+        document.getElementById('match-score').innerText = 'Green (Fit)';
+        document.getElementById('match-score').style.color = '#10b981';
+      } else {
+        document.getElementById('h-syl').innerText = '13';
+        document.getElementById('e-syl').innerText = '16';
+        document.getElementById('match-score').innerText = 'Amber (Drift)';
+        document.getElementById('match-score').style.color = '#f59e0b';
+      }
+      panel.classList.add('visible');
+    }
+    
+    function hidePanel() {
+      panel.classList.remove('visible');
+    }
+
+    window.onload = drawArcs;
+    window.onresize = drawArcs;
+
+  </script>
+</body>
+</html>

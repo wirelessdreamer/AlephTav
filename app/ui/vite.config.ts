@@ -8,22 +8,22 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/project': 'http://127.0.0.1:8000',
-      '/assistant': 'http://127.0.0.1:8000',
-      '/psalms': 'http://127.0.0.1:8000',
-      '/speech': 'http://127.0.0.1:8000',
-      '/units': 'http://127.0.0.1:8000',
-      '/tokens': 'http://127.0.0.1:8000',
-      '/lexicon': 'http://127.0.0.1:8000',
-      '/search': 'http://127.0.0.1:8000',
-      '/alignments': 'http://127.0.0.1:8000',
-      '/renderings': 'http://127.0.0.1:8000',
-      '/review': 'http://127.0.0.1:8000',
-      '/audit': 'http://127.0.0.1:8000',
-      '/state': 'http://127.0.0.1:8000',
-      '/reports': 'http://127.0.0.1:8000',
-      '/export': 'http://127.0.0.1:8000',
-      '/jobs': 'http://127.0.0.1:8000'
+      '/project': 'http://127.0.0.1:8765',
+      '/assistant': 'http://127.0.0.1:8765',
+      '/psalms': 'http://127.0.0.1:8765',
+      '/speech': 'http://127.0.0.1:8765',
+      '/units': 'http://127.0.0.1:8765',
+      '/tokens': 'http://127.0.0.1:8765',
+      '/lexicon': 'http://127.0.0.1:8765',
+      '/search': 'http://127.0.0.1:8765',
+      '/alignments': 'http://127.0.0.1:8765',
+      '/renderings': 'http://127.0.0.1:8765',
+      '/review': 'http://127.0.0.1:8765',
+      '/audit': 'http://127.0.0.1:8765',
+      '/state': 'http://127.0.0.1:8765',
+      '/reports': 'http://127.0.0.1:8765',
+      '/export': 'http://127.0.0.1:8765',
+      '/jobs': 'http://127.0.0.1:8765'
     }
   },
   build: {

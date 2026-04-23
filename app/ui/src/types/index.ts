@@ -16,7 +16,9 @@ export interface Token {
   transliteration: string | null;
   lemma: string | null;
   strong: string | null;
+  morph_code?: string | null;
   morph_readable: string | null;
+  part_of_speech?: string | null;
   stem?: string | null;
   syntax_role: string | null;
   semantic_role: string | null;
