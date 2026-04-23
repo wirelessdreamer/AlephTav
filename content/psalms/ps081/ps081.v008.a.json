@@ -36,6 +36,35 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "this",
+          "distress"
+        ],
+        "gloss_fragments": [
+          "in",
+          "trouble"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 20:2",
         "Psalm 22:12",
@@ -52,6 +81,7 @@
         "Psalm 138:7",
         "Psalm 143:11"
       ],
+      "display_gloss": "in trouble this",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -78,6 +108,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "(the)",
+        "trouble"
+      ],
       "lemma": "צָרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -119,6 +154,28 @@
       "word_sense": "trouble"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "called"
+        ],
+        "gloss_fragments": [
+          "you called out"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:5",
         "Psalm 14:4",
@@ -145,6 +202,7 @@
         "Psalm 99:6",
         "Psalm 102:3"
       ],
+      "display_gloss": "you called out",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -170,6 +228,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you.called.out"
+      ],
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -219,6 +280,41 @@
       "word_sense": "you.called.out"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "rescued",
+          "you"
+        ],
+        "gloss_fragments": [
+          "and",
+          "I",
+          "rescued you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -245,6 +341,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and rescued you I",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -270,6 +367,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "I",
+        "rescued.you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -332,6 +434,37 @@
       "word_sense": "rescued.you"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "answered",
+          "you"
+        ],
+        "gloss_fragments": [
+          "I",
+          "answered you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -358,6 +491,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "answered you I",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -383,6 +517,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I",
+        "answered.you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -445,6 +583,32 @@
       "word_sense": "answered.you"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "secret place"
+        ],
+        "gloss_fragments": [
+          "in the",
+          "hiding place"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 27:5",
         "Psalm 31:21",
@@ -454,6 +618,7 @@
         "Psalm 101:5",
         "Psalm 139:15"
       ],
+      "display_gloss": "in the hiding place",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -480,6 +645,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in.[the]",
+        "hiding.place"
+      ],
       "lemma": "סֵתֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,7 +683,30 @@
       "word_sense": "hiding.place"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "thunder"
+        ],
+        "gloss_fragments": [
+          "of thunder"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "of thunder",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -541,6 +733,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.thunder"
+      ],
       "lemma": "רַעַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -567,6 +762,37 @@
       "word_sense": "of.thunder"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "tested",
+          "you"
+        ],
+        "gloss_fragments": [
+          "I",
+          "tested you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -593,6 +819,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "tested you I",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -618,6 +845,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I",
+        "tested.you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -680,6 +911,28 @@
       "word_sense": "tested.you"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "at"
+        ],
+        "gloss_fragments": [
+          "at"
+        ],
+        "preposition_role": "at",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 1:5",
@@ -706,6 +959,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
+      "display_gloss": "at",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -732,6 +986,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "at"
+      ],
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -787,6 +1044,28 @@
       "word_sense": "at"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "waters"
+        ],
+        "gloss_fragments": [
+          "the waters"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 18:12",
@@ -813,6 +1092,7 @@
         "Psalm 77:20",
         "Psalm 78:13"
       ],
+      "display_gloss": "the waters",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -839,6 +1119,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.waters"
+      ],
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -890,10 +1173,33 @@
       "word_sense": "the.waters"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "Meribah"
+        ],
+        "gloss_fragments": [
+          "of Meribah"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 95:8",
         "Psalm 106:32"
       ],
+      "display_gloss": "of Meribah",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -920,6 +1226,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.Meribah"
+      ],
       "lemma": "מְרִיבָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -949,6 +1258,28 @@
       "word_sense": "of.Meribah"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "selah"
+        ],
+        "gloss_fragments": [
+          "Selah"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "ij"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:3",
         "Psalm 3:5",
@@ -975,6 +1306,7 @@
         "Psalm 49:14",
         "Psalm 49:16"
       ],
+      "display_gloss": "Selah",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1001,6 +1333,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "Selah"
+      ],
       "lemma": "סֶלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1053,5 +1388,30 @@
     }
   ],
   "unit_id": "ps081.v008.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 81:8",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA081.htm",
+      "text": "Hear, O my people, and I will testify unto thee: O Israel, if thou wilt hearken unto me;",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 81:8",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA081.htm",
+      "text": "Hear, O my people, and I will testify unto thee: O Israel, if thou wouldest hearken unto me!",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 81:8",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA081.htm",
+      "text": "“Hear, my people, and I will testify to you, Israel, if you would listen to me!",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

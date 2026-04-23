@@ -29,11 +29,38 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "stoops down"
+        ],
+        "gloss_fragments": [
+          "who makes",
+          "low"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "verb"
+        ],
+        "raw_pos": [
+          "particle",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 18:28",
         "Psalm 75:8",
         "Psalm 147:6"
       ],
+      "display_gloss": "low who makes",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -59,6 +86,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[who].makes",
+        "low"
+      ],
       "lemma": "שָׁפֵל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -87,6 +118,32 @@
       "word_sense": "low"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "look"
+        ],
+        "gloss_fragments": [
+          "to",
+          "look"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 8:4",
         "Psalm 9:14",
@@ -113,6 +170,7 @@
         "Psalm 37:35",
         "Psalm 37:37"
       ],
+      "display_gloss": "to look",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -138,6 +196,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "look"
+      ],
       "lemma": "רָאָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -187,6 +249,36 @@
       "word_sense": "look"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "on",
+          "the",
+          "heavens"
+        ],
+        "gloss_fragments": [
+          "on",
+          "the",
+          "heavens"
+        ],
+        "preposition_role": "on",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:4",
         "Psalm 8:2",
@@ -213,6 +305,7 @@
         "Psalm 69:35",
         "Psalm 73:9"
       ],
+      "display_gloss": "on heavens the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -239,6 +332,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "on",
+        "the",
+        "heavens"
+      ],
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -292,6 +390,40 @@
       "word_sense": "heavens"
     },
     {
+      "compiler_features": {
+        "component_count": 4,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "in",
+          "the",
+          "earth"
+        ],
+        "gloss_fragments": [
+          "and",
+          "on",
+          "the",
+          "earth"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:2",
         "Psalm 2:8",
@@ -318,6 +450,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
+      "display_gloss": "and on earth the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -344,6 +477,12 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "on",
+        "the",
+        "earth"
+      ],
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -396,5 +535,30 @@
     }
   ],
   "unit_id": "ps113.v006.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 113:6",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA113.htm",
+      "text": "Who humbleth [himself] to behold [the things that are] in heaven, and in the earth!",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 113:6",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA113.htm",
+      "text": "That humbleth himself to behold [The things that are] in heaven and in the earth?",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 113:6",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA113.htm",
+      "text": "who stoops down to see in heaven and in the earth?",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

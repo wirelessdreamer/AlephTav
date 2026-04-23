@@ -28,6 +28,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "song"
+        ],
+        "gloss_fragments": [
+          "a song"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 7:1",
         "Psalm 13:6",
@@ -54,6 +76,7 @@
         "Psalm 76:1",
         "Psalm 83:1"
       ],
+      "display_gloss": "a song",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -80,6 +103,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.song"
+      ],
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -132,6 +158,28 @@
       "word_sense": "a.song"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "psalm"
+        ],
+        "gloss_fragments": [
+          "a psalm"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -158,6 +206,7 @@
         "Psalm 47:1",
         "Psalm 48:1"
       ],
+      "display_gloss": "a psalm",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -184,6 +233,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.psalm"
+      ],
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -234,6 +286,32 @@
       "word_sense": "a.psalm"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "David"
+        ],
+        "gloss_fragments": [
+          "of",
+          "David"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -260,6 +338,7 @@
         "Psalm 25:1",
         "Psalm 26:1"
       ],
+      "display_gloss": "of David",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -286,6 +365,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "David"
+      ],
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -338,5 +421,30 @@
     }
   ],
   "unit_id": "ps108.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 108:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA108.htm",
+      "text": "A Song [or] Psalm of David. O God, my heart is fixed; I will sing and give praise, even with my glory.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 108:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA108.htm",
+      "text": "A Song, a Psalm of David. My heart is fixed, O God; I will sing, yea, I will sing praises, even with my glory.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 108:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA108.htm",
+      "text": "A Song. A Psalm by David. My heart is steadfast, God. I will sing and I will make music with my soul.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

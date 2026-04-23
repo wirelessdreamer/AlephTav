@@ -32,6 +32,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "O Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -58,6 +80,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "O Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -84,6 +107,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "O.Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -140,6 +166,28 @@
       "word_sense": "O.Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "love"
+        ],
+        "gloss_fragments": [
+          "I love"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 11:5",
@@ -166,6 +214,7 @@
         "Psalm 119:48",
         "Psalm 119:97"
       ],
+      "display_gloss": "I love",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -191,6 +240,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I.love"
+      ],
       "lemma": "אָהֵב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -240,11 +292,34 @@
       "word_sense": "I.love"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "habitation"
+        ],
+        "gloss_fragments": [
+          "the habitation"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 68:6",
         "Psalm 71:3",
         "Psalm 90:1"
       ],
+      "display_gloss": "the habitation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -271,6 +346,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.habitation"
+      ],
       "lemma": "מָעוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -301,6 +379,37 @@
       "word_sense": "the.habitation"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "house",
+          "you"
+        ],
+        "gloss_fragments": [
+          "your house",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -327,6 +436,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "your your house",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -353,6 +463,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "your.house",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -414,6 +528,32 @@
       "word_sense": "your"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "place"
+        ],
+        "gloss_fragments": [
+          "and",
+          "the place"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 24:3",
         "Psalm 44:20",
@@ -421,6 +561,7 @@
         "Psalm 104:8",
         "Psalm 132:5"
       ],
+      "display_gloss": "and the place",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -447,6 +588,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "the.place"
+      ],
       "lemma": "מָקוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -479,6 +624,28 @@
       "word_sense": "the.place"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "where ~ dwells"
+        ],
+        "gloss_fragments": [
+          "of the dwelling"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 46:5",
         "Psalm 74:7",
@@ -486,6 +653,7 @@
         "Psalm 87:2",
         "Psalm 132:5"
       ],
+      "display_gloss": "of the dwelling",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -512,6 +680,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.the.dwelling"
+      ],
       "lemma": "מִשְׁכָּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -544,6 +715,37 @@
       "word_sense": "of.the.dwelling"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "glory",
+          "your"
+        ],
+        "gloss_fragments": [
+          "your glory",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "your"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -570,6 +772,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "your your glory",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -596,6 +799,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "your.glory",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -658,5 +865,30 @@
     }
   ],
   "unit_id": "ps026.v008.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 26:8",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA026.htm",
+      "text": "LORD, I have loved the habitation of thy house, and the place where thine honour dwelleth.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 26:8",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA026.htm",
+      "text": "Jehovah, I love the habitation of thy house, And the place where thy glory dwelleth.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 26:8",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA026.htm",
+      "text": "LORD, I love the habitation of your house, the place where your glory dwells.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

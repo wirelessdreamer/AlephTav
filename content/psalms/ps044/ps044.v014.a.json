@@ -31,6 +31,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "made",
+          "us"
+        ],
+        "gloss_fragments": [
+          "you",
+          "have made us"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "us"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -57,6 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "have made us you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -82,6 +114,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you",
+        "have.made.us"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -144,6 +180,28 @@
       "word_sense": "have.made.us"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "taunt"
+        ],
+        "gloss_fragments": [
+          "a reproach"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 15:3",
         "Psalm 22:7",
@@ -161,6 +219,7 @@
         "Psalm 109:25",
         "Psalm 119:22"
       ],
+      "display_gloss": "a reproach",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -187,6 +246,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.reproach"
+      ],
       "lemma": "חֶרְפָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -228,6 +290,41 @@
       "word_sense": "a.reproach"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "neighbors",
+          "our"
+        ],
+        "gloss_fragments": [
+          "to",
+          "neighbors",
+          "our"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "adjective",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "our"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -254,6 +351,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "to our neighbors",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -280,6 +378,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "neighbors",
+        "our"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -344,10 +447,33 @@
       "word_sense": "our"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "derision"
+        ],
+        "gloss_fragments": [
+          "mockery"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 79:4",
         "Psalm 123:4"
       ],
+      "display_gloss": "mockery",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -374,6 +500,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "mockery"
+      ],
       "lemma": "לַעַג",
       "missing_enrichments": [
         "oshb:stem",
@@ -403,9 +532,36 @@
       "word_sense": "mockery"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "scorn"
+        ],
+        "gloss_fragments": [
+          "and",
+          "derision"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 79:4"
       ],
+      "display_gloss": "and derision",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -432,6 +588,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "derision"
+      ],
       "lemma": "קֶלֶס",
       "missing_enrichments": [
         "oshb:stem",
@@ -460,6 +620,41 @@
       "word_sense": "derision"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "around",
+          "us"
+        ],
+        "gloss_fragments": [
+          "to those",
+          "around",
+          "us"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "adv",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "us"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -486,6 +681,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "to those us around",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -512,6 +708,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to.[those]",
+        "around",
+        "us"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -577,5 +778,30 @@
     }
   ],
   "unit_id": "ps044.v014.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 44:14",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "text": "Thou makest us a byword among the heathen, a shaking of the head among the people.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 44:14",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "text": "Thou makest us a byword among the nations, A shaking of the head among the peoples.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 44:14",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "text": "You make us a byword among the nations, a shaking of the head among the peoples.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

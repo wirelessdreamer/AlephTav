@@ -27,8 +27,8 @@ def rebuild_indexes() -> dict[str, int]:
                     INSERT INTO token_index(
                         token_id, unit_id, psalm_id, ref, surface, normalized, transliteration, lemma, strong,
                         morph_code, morph_readable, part_of_speech, stem, syntax_role, semantic_role, referent, word_sense,
-                        occurrence_index
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        gloss_parts, display_gloss, compiler_features, occurrence_index
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         token["token_id"],
@@ -48,6 +48,9 @@ def rebuild_indexes() -> dict[str, int]:
                         token.get("semantic_role"),
                         token.get("referent"),
                         token.get("word_sense"),
+                        json.dumps(token.get("gloss_parts", []), sort_keys=True),
+                        token.get("display_gloss"),
+                        json.dumps(token.get("compiler_features", {}), sort_keys=True),
                         token["occurrence_index"],
                     ),
                 )

@@ -31,9 +31,36 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "made ~ fruitful"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he made fruitful"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 128:3"
       ],
+      "display_gloss": "and he made fruitful",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -59,6 +86,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "he.made.fruitful"
+      ],
       "lemma": "פָּרָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -85,6 +116,24 @@
       "word_sense": "he.made.fruitful"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "om"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:3",
         "Psalm 2:11",
@@ -111,6 +160,7 @@
         "Psalm 31:24",
         "Psalm 33:13"
       ],
+      "display_gloss": null,
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -137,6 +187,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(et)"
+      ],
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -195,6 +248,37 @@
       "word_sense": "(et)"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "people",
+          "his"
+        ],
+        "gloss_fragments": [
+          "people",
+          "his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -221,6 +305,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "his people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -247,6 +332,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "people",
+        "his"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -311,6 +400,28 @@
       "word_sense": "his"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "very"
+        ],
+        "gloss_fragments": [
+          "exceedingly"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
@@ -337,6 +448,7 @@
         "Psalm 119:8",
         "Psalm 119:43"
       ],
+      "display_gloss": "exceedingly",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -363,6 +475,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "exceedingly"
+      ],
       "lemma": "מְאֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -413,6 +528,41 @@
       "word_sense": "exceedingly"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "stronger",
+          "them"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he",
+          "made it strong"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -439,6 +589,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and made it strong he",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -464,6 +615,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "he",
+        "made.it.strong"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -526,6 +682,41 @@
       "word_sense": "made.it.strong"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "than",
+          "foes",
+          "their"
+        ],
+        "gloss_fragments": [
+          "more",
+          "than",
+          "its foes"
+        ],
+        "preposition_role": "than",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -552,6 +743,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "more its foes than",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -578,6 +770,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "more",
+        "than",
+        "its.foes"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -643,5 +840,30 @@
     }
   ],
   "unit_id": "ps105.v024.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 105:24",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA105.htm",
+      "text": "And he increased his people greatly; and made them stronger than their enemies.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 105:24",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA105.htm",
+      "text": "And he increased his people greatly, And made them stronger than their adversaries.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 105:24",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA105.htm",
+      "text": "He increased his people greatly, and made them stronger than their adversaries.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

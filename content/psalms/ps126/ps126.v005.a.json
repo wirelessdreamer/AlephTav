@@ -29,10 +29,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "those",
+          "sow"
+        ],
+        "gloss_fragments": [
+          "those",
+          "who sow"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "verb"
+        ],
+        "raw_pos": [
+          "particle",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 97:11",
         "Psalm 107:37"
       ],
+      "display_gloss": "who sow those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -58,6 +85,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[those",
+        "who].sow"
+      ],
       "lemma": "זָרַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -85,10 +116,37 @@
       "word_sense": "who].sow"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "tears"
+        ],
+        "gloss_fragments": [
+          "with",
+          "tears"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 80:6",
         "Psalm 116:8"
       ],
+      "display_gloss": "with tears",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -115,6 +173,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "with",
+        "tear[s]"
+      ],
       "lemma": "דִּמְעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -144,6 +206,32 @@
       "word_sense": "tear[s]"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "with",
+          "shouts of joy"
+        ],
+        "gloss_fragments": [
+          "with",
+          "a shout of joy"
+        ],
+        "preposition_role": "with",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 30:6",
         "Psalm 42:5",
@@ -152,6 +240,7 @@
         "Psalm 107:22",
         "Psalm 118:15"
       ],
+      "display_gloss": "with a shout of joy",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -178,6 +267,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "with",
+        "a.shout.of.joy"
+      ],
       "lemma": "רִנָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -214,9 +307,32 @@
       "word_sense": "a.shout.of.joy"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "reap"
+        ],
+        "gloss_fragments": [
+          "they will reap"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 129:7"
       ],
+      "display_gloss": "they will reap",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -242,6 +358,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "they.will.reap"
+      ],
       "lemma": "קָצַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -269,5 +388,30 @@
     }
   ],
   "unit_id": "ps126.v005.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 126:5",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA126.htm",
+      "text": "They that sow in tears shall reap in joy.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 126:5",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA126.htm",
+      "text": "They that sow in tears shall reap in joy.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 126:5",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA126.htm",
+      "text": "Those who sow in tears will reap in joy.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

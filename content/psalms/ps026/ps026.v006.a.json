@@ -32,10 +32,33 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "wash"
+        ],
+        "gloss_fragments": [
+          "I wash"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 58:11",
         "Psalm 73:13"
       ],
+      "display_gloss": "I wash",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -61,6 +84,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I.wash"
+      ],
       "lemma": "רָחַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -88,9 +114,36 @@
       "word_sense": "I.wash"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "innocence"
+        ],
+        "gloss_fragments": [
+          "in",
+          "innocence"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 73:13"
       ],
+      "display_gloss": "in innocence",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -117,6 +170,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "innocence"
+      ],
       "lemma": "נִקָּיוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -145,6 +202,37 @@
       "word_sense": "innocence"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "hands",
+          "my"
+        ],
+        "gloss_fragments": [
+          "palms",
+          "my"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -171,6 +259,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "my palms",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -197,6 +286,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "palms",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -258,6 +351,32 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "go around"
+        ],
+        "gloss_fragments": [
+          "and",
+          "I go around"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 48:13",
         "Psalm 59:7",
@@ -266,6 +385,7 @@
         "Psalm 114:3",
         "Psalm 114:5"
       ],
+      "display_gloss": "and I go around",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -291,6 +411,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "I.go.around"
+      ],
       "lemma": "סָבַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -322,6 +446,24 @@
       "word_sense": "I.go.around"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "om"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:3",
         "Psalm 2:11",
@@ -348,6 +490,7 @@
         "Psalm 33:13",
         "Psalm 34:1"
       ],
+      "display_gloss": null,
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -374,6 +517,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(et)"
+      ],
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -425,6 +571,37 @@
       "word_sense": "(et)"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "altar",
+          "your"
+        ],
+        "gloss_fragments": [
+          "altar",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "your"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -451,6 +628,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "your altar",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -477,6 +655,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "altar",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -538,6 +720,28 @@
       "word_sense": "your"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "O Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -564,6 +768,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "O Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -590,6 +795,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "O.Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -647,5 +855,30 @@
     }
   ],
   "unit_id": "ps026.v006.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 26:6",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA026.htm",
+      "text": "I will wash mine hands in innocency: so will I compass thine altar, O LORD:",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 26:6",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA026.htm",
+      "text": "I will wash my hands in innocency: So will I compass thine altar, O Jehovah;",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 26:6",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA026.htm",
+      "text": "I will wash my hands in innocence, so I will go about your altar, LORD,",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

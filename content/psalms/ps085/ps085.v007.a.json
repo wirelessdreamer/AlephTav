@@ -32,6 +32,32 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "?",
+          "not"
+        ],
+        "gloss_fragments": [
+          "?",
+          "not"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "ptcl",
+          "adv"
+        ],
+        "raw_pos": [
+          "particle",
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:1",
         "Psalm 1:3",
@@ -58,6 +84,7 @@
         "Psalm 18:38",
         "Psalm 18:39"
       ],
+      "display_gloss": "? not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -84,6 +111,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "?",
+        "not"
+      ],
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -135,6 +166,28 @@
       "word_sense": "not"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "you"
+        ],
+        "gloss_fragments": [
+          "you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "pron"
+        ],
+        "raw_pos": [
+          "pronoun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 3:4",
@@ -161,6 +214,7 @@
         "Psalm 32:5",
         "Psalm 32:7"
       ],
+      "display_gloss": "you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -187,6 +241,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "you"
+      ],
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -237,6 +294,28 @@
       "word_sense": "you"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "again"
+        ],
+        "gloss_fragments": [
+          "will you return"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 6:11",
         "Psalm 7:13",
@@ -263,6 +342,7 @@
         "Psalm 68:23",
         "Psalm 69:5"
       ],
+      "display_gloss": "will you return",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -288,6 +368,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "will.you.return"
+      ],
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -341,6 +424,37 @@
       "word_sense": "will.you.return"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "revive",
+          "us"
+        ],
+        "gloss_fragments": [
+          "will",
+          "you give us life?"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "us"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -367,6 +481,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "you give us life? will",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -392,6 +507,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "will",
+        "you.give.us.life?"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -452,6 +571,41 @@
       "word_sense": "you.give.us.life?"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "conjunctive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "that",
+          "people",
+          "your"
+        ],
+        "gloss_fragments": [
+          "and",
+          "people",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "your"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -478,6 +632,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and your people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -504,6 +659,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "people",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -566,6 +726,28 @@
       "word_sense": "your"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "rejoice"
+        ],
+        "gloss_fragments": [
+          "they will rejoice"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 9:3",
@@ -592,6 +774,7 @@
         "Psalm 64:11",
         "Psalm 66:6"
       ],
+      "display_gloss": "they will rejoice",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -617,6 +800,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "they.will.rejoice"
+      ],
       "lemma": "שָׂמַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -666,6 +852,37 @@
       "word_sense": "they.will.rejoice"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "you"
+        ],
+        "gloss_fragments": [
+          "in",
+          "you"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "feminine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -692,6 +909,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "in",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -718,6 +936,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -782,5 +1004,30 @@
     }
   ],
   "unit_id": "ps085.v007.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 85:7",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA085.htm",
+      "text": "Shew us thy mercy, O LORD, and grant us thy salvation.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 85:7",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA085.htm",
+      "text": "Show us thy lovingkindness, O Jehovah, And grant us thy salvation.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 85:7",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA085.htm",
+      "text": "Show us your loving kindness, LORD. Grant us your salvation.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

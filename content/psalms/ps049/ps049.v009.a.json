@@ -30,10 +30,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "disjunctive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "costly"
+        ],
+        "gloss_fragments": [
+          "and",
+          "it is precious"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 72:14",
         "Psalm 139:17"
       ],
+      "display_gloss": "and it is precious",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -59,6 +86,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "it.is.precious"
+      ],
       "lemma": "יָקַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -86,7 +117,30 @@
       "word_sense": "it.is.precious"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "ransom"
+        ],
+        "gloss_fragments": [
+          "the ransom"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "the ransom",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -113,6 +167,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.ransom"
+      ],
       "lemma": "פִּדְיוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -139,6 +196,37 @@
       "word_sense": "the.ransom"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "life",
+          "their"
+        ],
+        "gloss_fragments": [
+          "their life",
+          "their"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -165,6 +253,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "their their life",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -191,6 +280,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "their.life",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -255,9 +348,36 @@
       "word_sense": "their"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "stop"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he will cease"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 36:4"
       ],
+      "display_gloss": "and he will cease",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -283,6 +403,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "he.will.cease"
+      ],
       "lemma": "חָדַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -309,6 +433,32 @@
       "word_sense": "he.will.cease"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "forever"
+        ],
+        "gloss_fragments": [
+          "forever",
+          "of perpetuity"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 9:6",
@@ -335,6 +485,7 @@
         "Psalm 45:3",
         "Psalm 45:7"
       ],
+      "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -361,6 +512,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "forever",
+        "of.perpetuity"
+      ],
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -415,5 +570,30 @@
     }
   ],
   "unit_id": "ps049.v009.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 49:9",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA049.htm",
+      "text": "That he should still live for ever, [and] not see corruption.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 49:9",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA049.htm",
+      "text": "That he should still live alway, That he should not see corruption.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 49:9",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA049.htm",
+      "text": "that he should live on forever, that he should not see corruption.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

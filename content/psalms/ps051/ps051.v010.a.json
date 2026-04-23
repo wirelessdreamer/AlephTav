@@ -31,6 +31,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "hear",
+          "me"
+        ],
+        "gloss_fragments": [
+          "you",
+          "will make me hear"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "me"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -57,6 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "will make me hear you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -82,6 +114,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you",
+        "will.make.me.hear"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -144,11 +180,34 @@
       "word_sense": "will.make.me.hear"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "joy"
+        ],
+        "gloss_fragments": [
+          "joy"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 45:8",
         "Psalm 105:43",
         "Psalm 119:111"
       ],
+      "display_gloss": "joy",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -175,6 +234,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "joy"
+      ],
       "lemma": "שָׂשׂוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -207,6 +269,32 @@
       "word_sense": "joy"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "gladness"
+        ],
+        "gloss_fragments": [
+          "and",
+          "gladness"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:8",
         "Psalm 16:11",
@@ -220,6 +308,7 @@
         "Psalm 106:5",
         "Psalm 137:3"
       ],
+      "display_gloss": "and gladness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -246,6 +335,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "gladness"
+      ],
       "lemma": "שִׂמְחָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -284,6 +377,28 @@
       "word_sense": "gladness"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "rejoice"
+        ],
+        "gloss_fragments": [
+          "let them rejoice"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:11",
         "Psalm 9:15",
@@ -305,6 +420,7 @@
         "Psalm 118:24",
         "Psalm 149:2"
       ],
+      "display_gloss": "let them rejoice",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -330,6 +446,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "let.them.rejoice"
+      ],
       "lemma": "גִּיל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -374,7 +493,30 @@
       "word_sense": "let.them.rejoice"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "bones"
+        ],
+        "gloss_fragments": [
+          "the bones"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "the bones",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -401,6 +543,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "[the].bones"
+      ],
       "lemma": "עֶצֶם",
       "missing_enrichments": [
         "oshb:stem",
@@ -427,10 +572,33 @@
       "word_sense": "[the].bones"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "crushed"
+        ],
+        "gloss_fragments": [
+          "which you have crushed"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:10",
         "Psalm 38:9"
       ],
+      "display_gloss": "which you have crushed",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -456,6 +624,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[which].you.have.crushed"
+      ],
       "lemma": "דָּכָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -486,5 +657,30 @@
     }
   ],
   "unit_id": "ps051.v010.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 51:10",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA051.htm",
+      "text": "Create in me a clean heart, O God; and renew a right spirit within me.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 51:10",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA051.htm",
+      "text": "Create in me a clean heart, O God; And renew a right spirit within me.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 51:10",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA051.htm",
+      "text": "Create in me a clean heart, O God. Renew a right spirit within me.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -31,6 +31,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sent"
+        ],
+        "gloss_fragments": [
+          "he sent"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 18:15",
         "Psalm 18:17",
@@ -57,6 +79,7 @@
         "Psalm 138:7",
         "Psalm 144:6"
       ],
+      "display_gloss": "he sent",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -82,6 +105,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "he.sent"
+      ],
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -134,6 +160,37 @@
       "word_sense": "he.sent"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "among",
+          "them"
+        ],
+        "gloss_fragments": [
+          "among",
+          "them"
+        ],
+        "preposition_role": "among",
+        "raw_classes": [
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -160,6 +217,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "among",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -186,6 +244,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "among",
+        "them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -251,9 +313,32 @@
       "word_sense": "them"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "swarms of flies"
+        ],
+        "gloss_fragments": [
+          "a swarm of flies"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 105:31"
       ],
+      "display_gloss": "a swarm of flies",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -280,6 +365,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.swarm.of.flies"
+      ],
       "lemma": "עָרֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -307,6 +395,41 @@
       "word_sense": "a.swarm.of.flies"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "devoured",
+          "them"
+        ],
+        "gloss_fragments": [
+          "and",
+          "it",
+          "devoured them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -333,6 +456,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and devoured them it",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -358,6 +482,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "it",
+        "devoured.them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -420,9 +549,36 @@
       "word_sense": "devoured.them"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "frogs"
+        ],
+        "gloss_fragments": [
+          "and",
+          "frogs"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 105:30"
       ],
+      "display_gloss": "and frogs",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -449,6 +605,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "frog[s]"
+      ],
       "lemma": "צְפַרְדֵּעַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -476,6 +636,41 @@
       "word_sense": "frog[s]"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "destroyed",
+          "them"
+        ],
+        "gloss_fragments": [
+          "and",
+          "it",
+          "ruined them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -502,6 +697,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and ruined them it",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -527,6 +723,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "it",
+        "ruined.them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -590,5 +791,30 @@
     }
   ],
   "unit_id": "ps078.v045.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 78:45",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA078.htm",
+      "text": "He sent divers sorts of flies among them, which devoured them; and frogs, which destroyed them.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 78:45",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA078.htm",
+      "text": "He sent among them swarms of flies, which devoured them; And frogs, which destroyed them.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 78:45",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA078.htm",
+      "text": "He sent among them swarms of flies, which devoured them; and frogs, which destroyed them.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -3,7 +3,9 @@
     "uxlc",
     "oshb",
     "macula",
-    "sefaria"
+    "kjv",
+    "asv",
+    "web"
   ],
   "code_license": "MIT",
   "default_model_profile": "demo-local",
@@ -78,16 +80,42 @@
     },
     {
       "allowed_for_display": true,
-      "allowed_for_export": false,
+      "allowed_for_export": true,
       "allowed_for_generation": false,
-      "import_hash": "fixture-sefaria",
-      "imported_at": "2026-04-09T00:00:00Z",
-      "license": "Custom-Restricted-Witness",
-      "name": "Sefaria Witness Snapshot",
-      "notes": "Witness-only and version-pinned",
-      "source_id": "sefaria",
-      "upstream_url": "https://developers.sefaria.org/",
-      "version": "fixture-2026.04"
+      "import_hash": "432092e246ecc09603f2b02aa764e36ffcd8d8f64de604e8571ba63c78f0a9ea",
+      "imported_at": "2026-04-17T00:00:00Z",
+      "license": "Public Domain",
+      "name": "King James (Authorized) Version",
+      "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+      "source_id": "kjv",
+      "upstream_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+      "version": "eng-kjv2006"
+    },
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": true,
+      "allowed_for_generation": false,
+      "import_hash": "50dc0e599b2b57afb077ec8f4c38deec26d6a1bf676c7ed3f2a6a4fb161a6210",
+      "imported_at": "2026-04-17T00:00:00Z",
+      "license": "Public Domain",
+      "name": "American Standard Version (1901)",
+      "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+      "source_id": "asv",
+      "upstream_url": "https://ebible.org/find/details.php?id=eng-asv",
+      "version": "eng-asv"
+    },
+    {
+      "allowed_for_display": true,
+      "allowed_for_export": true,
+      "allowed_for_generation": false,
+      "import_hash": "1f3407ff48dabf42f1b453d72d325e7d8425f7e89e2d6ffb941a70b7fe6df532",
+      "imported_at": "2026-04-17T00:00:00Z",
+      "license": "Public Domain",
+      "name": "World English Bible",
+      "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+      "source_id": "web",
+      "upstream_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+      "version": "engwebp"
     }
   ],
   "style_profiles": [

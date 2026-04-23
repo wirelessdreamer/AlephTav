@@ -31,6 +31,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sweep ~ away",
+          "them"
+        ],
+        "gloss_fragments": [
+          "you",
+          "flood them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -57,6 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "flood them you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -82,6 +114,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you",
+        "flood.them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -144,9 +180,32 @@
       "word_sense": "flood.them"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sleep"
+        ],
+        "gloss_fragments": [
+          "sleep"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 132:4"
       ],
+      "display_gloss": "sleep",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -173,6 +232,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "sleep"
+      ],
       "lemma": "שֵׁנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -200,6 +262,28 @@
       "word_sense": "sleep"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "are"
+        ],
+        "gloss_fragments": [
+          "they are"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 9:10",
@@ -226,6 +310,7 @@
         "Psalm 45:17",
         "Psalm 50:21"
       ],
+      "display_gloss": "they are",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -251,6 +336,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "they.are"
+      ],
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -303,6 +391,36 @@
       "word_sense": "they.are"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "the",
+          "morning"
+        ],
+        "gloss_fragments": [
+          "in",
+          "the",
+          "morning"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": true
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:4",
         "Psalm 30:6",
@@ -318,6 +436,7 @@
         "Psalm 130:6",
         "Psalm 143:8"
       ],
+      "display_gloss": "in morning the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -344,6 +463,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "the",
+        "morning"
+      ],
       "lemma": "בֹּקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -387,6 +511,35 @@
       "word_sense": "morning"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "like",
+          "the",
+          "grass"
+        ],
+        "gloss_fragments": [
+          "like",
+          "grass"
+        ],
+        "preposition_role": "like",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 37:2",
         "Psalm 103:15",
@@ -394,6 +547,7 @@
         "Psalm 129:6",
         "Psalm 147:8"
       ],
+      "display_gloss": "like grass the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -420,6 +574,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "like",
+        "(the)",
+        "grass"
+      ],
       "lemma": "חָצִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -452,9 +611,32 @@
       "word_sense": "grass"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sprouts anew"
+        ],
+        "gloss_fragments": [
+          "which it sprouts up"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 102:27"
       ],
+      "display_gloss": "which it sprouts up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -480,6 +662,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[which].it.sprouts.up"
+      ],
       "lemma": "חָלַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -509,5 +694,30 @@
     }
   ],
   "unit_id": "ps090.v005.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 90:5",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA090.htm",
+      "text": "Thou carriest them away as with a flood; they are [as] a sleep: in the morning [they are] like grass [which] groweth up.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 90:5",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA090.htm",
+      "text": "Thou carriest them away as with a flood; they are as a sleep: In the morning they are like grass which groweth up.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 90:5",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA090.htm",
+      "text": "You sweep them away as they sleep. In the morning they sprout like new grass.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

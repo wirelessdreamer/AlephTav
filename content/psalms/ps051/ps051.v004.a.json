@@ -30,7 +30,9 @@
   ],
   "tokens": [
     {
+      "compiler_features": {},
       "corpus_occurrence_refs": [],
+      "display_gloss": null,
       "enrichment_sources": {
         "macula": {
           "available_fields": [],
@@ -56,6 +58,7 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [],
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -83,6 +86,28 @@
       "word_sense": null
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "thoroughly"
+        ],
+        "gloss_fragments": [
+          "increase"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 16:4",
         "Psalm 44:13",
@@ -92,6 +117,7 @@
         "Psalm 107:38",
         "Psalm 130:7"
       ],
+      "display_gloss": "increase",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -117,6 +143,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "increase"
+      ],
       "lemma": "רָבָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -149,6 +178,37 @@
       "word_sense": "increase"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "wash",
+          "me"
+        ],
+        "gloss_fragments": [
+          "wash",
+          "me"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "me"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -175,6 +235,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "me wash",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -200,6 +261,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "wash",
+        "me"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -262,6 +327,41 @@
       "word_sense": "me"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "from",
+          "iniquity",
+          "my"
+        ],
+        "gloss_fragments": [
+          "from",
+          "iniquity",
+          "my"
+        ],
+        "preposition_role": "from",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -288,6 +388,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "from my iniquity",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -314,6 +415,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "from",
+        "iniquity",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -378,6 +484,45 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 4,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "from",
+          "sin",
+          "my"
+        ],
+        "gloss_fragments": [
+          "and",
+          "from",
+          "sin",
+          "my"
+        ],
+        "preposition_role": "from",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -404,6 +549,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and from my sin",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -430,6 +576,12 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "from",
+        "sin",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -495,5 +647,30 @@
     }
   ],
   "unit_id": "ps051.v004.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 51:4",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA051.htm",
+      "text": "Against thee, thee only, have I sinned, and done [this] evil in thy sight: that thou mightest be justified when thou speakest, [and] be clear when thou judgest.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 51:4",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA051.htm",
+      "text": "Against thee, thee only, have I sinned, And done that which is evil in thy sight; That thou mayest be justified when thou speakest, And be clear when thou judgest.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 51:4",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA051.htm",
+      "text": "Against you, and you only, I have sinned, and done that which is evil in your sight, so you may be proved right when you speak, and justified when you judge.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

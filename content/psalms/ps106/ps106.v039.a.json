@@ -29,9 +29,36 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "became unclean"
+        ],
+        "gloss_fragments": [
+          "and",
+          "they became unclean"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 79:1"
       ],
+      "display_gloss": "and they became unclean",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -57,6 +84,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "they.became.unclean"
+      ],
       "lemma": "טָמֵא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -83,6 +114,41 @@
       "word_sense": "they.became.unclean"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "by",
+          "acts",
+          "their"
+        ],
+        "gloss_fragments": [
+          "by",
+          "works",
+          "their"
+        ],
+        "preposition_role": "by",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -109,6 +175,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "by their works",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -135,6 +202,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "by",
+        "works",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -199,9 +271,36 @@
       "word_sense": "their"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "prostituted"
+        ],
+        "gloss_fragments": [
+          "and",
+          "they played the prostitute"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 73:27"
       ],
+      "display_gloss": "and they played the prostitute",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -227,6 +326,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "they.played.the.prostitute"
+      ],
       "lemma": "זָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -253,6 +356,41 @@
       "word_sense": "they.played.the.prostitute"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "deeds",
+          "their"
+        ],
+        "gloss_fragments": [
+          "by",
+          "deeds",
+          "their"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -279,6 +417,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "by their deeds",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -305,6 +444,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "by",
+        "deeds",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -370,5 +514,30 @@
     }
   ],
   "unit_id": "ps106.v039.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 106:39",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA106.htm",
+      "text": "Thus were they defiled with their own works, and went a whoring with their own inventions.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 106:39",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA106.htm",
+      "text": "Thus were they defiled with their works, And played the harlot in their doings.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 106:39",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA106.htm",
+      "text": "Thus they were defiled with their works, and prostituted themselves in their deeds.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

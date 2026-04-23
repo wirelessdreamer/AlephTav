@@ -28,6 +28,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "maskil"
+        ],
+        "gloss_fragments": [
+          "a poem"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 32:1",
         "Psalm 42:1",
@@ -43,6 +65,7 @@
         "Psalm 88:1",
         "Psalm 142:1"
       ],
+      "display_gloss": "a poem",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -69,6 +92,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.poem"
+      ],
       "lemma": "מַשְׂכִּיל",
       "missing_enrichments": [
         "oshb:stem",
@@ -108,9 +134,36 @@
       "word_sense": "a.poem"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "Ethan"
+        ],
+        "gloss_fragments": [
+          "of",
+          "Ethan"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 74:15"
       ],
+      "display_gloss": "of Ethan",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -137,6 +190,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "Ethan"
+      ],
       "lemma": "אֵיתָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -165,9 +222,36 @@
       "word_sense": "Ethan"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "Ezrahite"
+        ],
+        "gloss_fragments": [
+          "the",
+          "Ezrachite"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 88:1"
       ],
+      "display_gloss": "Ezrachite the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -194,6 +278,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the",
+        "Ezrachite"
+      ],
       "lemma": "אֶזְרָחִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -223,5 +311,30 @@
     }
   ],
   "unit_id": "ps089.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 89:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA089.htm",
+      "text": "Maschil of Ethan the Ezrahite. I will sing of the mercies of the LORD for ever: with my mouth will I make known thy faithfulness to all generations.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 89:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA089.htm",
+      "text": "Maschil of Ethan the Ezrahite. I will sing of the lovingkindness of Jehovah for ever: With my mouth will I make known thy faithfulness to all generations.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 89:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA089.htm",
+      "text": "A contemplation by Ethan, the Ezrahite. I will sing of the loving kindness of the LORD forever. With my mouth, I will make known your faithfulness to all generations.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

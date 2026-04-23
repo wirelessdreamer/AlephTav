@@ -48,7 +48,7 @@ export function InspectorRail({ tokenCard, unit, project, concerns, onUnpinToken
               <dt>Semantic</dt>
               <dd>{tokenCard.semantic_role}</dd>
               <dt>Sense</dt>
-              <dd>{tokenCard.word_sense}</dd>
+              <dd>{tokenCard.display_gloss ?? tokenCard.word_sense}</dd>
               <dt>Psalm matches</dt>
               <dd>{tokenCard.counts.same_psalms}</dd>
               <dt>Corpus matches</dt>

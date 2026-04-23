@@ -125,7 +125,7 @@ def _compute_drift_flags(
     source_hint_text = " ".join(
         str(token.get(field) or "")
         for token in unit.get("tokens", [])
-        for field in ("surface", "normalized", "lemma", "referent", "word_sense", "morph_code", "morph_readable")
+        for field in ("surface", "normalized", "lemma", "referent", "display_gloss", "word_sense", "morph_code", "morph_readable")
     ).casefold()
     flags: list[dict[str, Any]] = []
 
@@ -299,9 +299,10 @@ def _has_tense_shift(source_hint_text: str, text: str) -> bool:
 def _has_omitted_image(unit: dict[str, Any], lowered_words: set[str]) -> bool:
     image_terms = {
         str(token.get("word_sense") or "").casefold()
+        or str(token.get("display_gloss") or "").casefold()
         for token in unit.get("tokens", [])
         if str(token.get("semantic_role") or "").casefold() in {"caregiver", "animal", "object", "place", "natural_phenomenon"}
-        and token.get("word_sense")
+        and (token.get("display_gloss") or token.get("word_sense"))
     }
     image_terms -= {"the", "a", "an", "man", "person"}
     return bool(image_terms) and not any(term in lowered_words for term in image_terms)
@@ -309,7 +310,7 @@ def _has_omitted_image(unit: dict[str, Any], lowered_words: set[str]) -> bool:
 
 def _has_metaphor_flattening(unit: dict[str, Any], lowered_words: set[str]) -> bool:
     source_images = {
-        str(token.get("referent") or token.get("word_sense") or "").casefold()
+        str(token.get("referent") or token.get("display_gloss") or token.get("word_sense") or "").casefold()
         for token in unit.get("tokens", [])
         if token.get("semantic_role") or token.get("word_sense") or token.get("referent")
     }

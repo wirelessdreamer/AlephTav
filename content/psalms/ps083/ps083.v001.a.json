@@ -28,6 +28,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "song"
+        ],
+        "gloss_fragments": [
+          "a song"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 7:1",
         "Psalm 13:6",
@@ -54,6 +76,7 @@
         "Psalm 76:1",
         "Psalm 87:1"
       ],
+      "display_gloss": "a song",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -80,6 +103,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.song"
+      ],
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -130,6 +156,28 @@
       "word_sense": "a.song"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "psalm"
+        ],
+        "gloss_fragments": [
+          "a psalm"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -156,6 +204,7 @@
         "Psalm 47:1",
         "Psalm 48:1"
       ],
+      "display_gloss": "a psalm",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -182,6 +231,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.psalm"
+      ],
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -232,6 +284,32 @@
       "word_sense": "a.psalm"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "Asaph"
+        ],
+        "gloss_fragments": [
+          "of",
+          "Asaph"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 50:1",
         "Psalm 73:1",
@@ -245,6 +323,7 @@
         "Psalm 81:1",
         "Psalm 82:1"
       ],
+      "display_gloss": "of Asaph",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -271,6 +350,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "Asaph"
+      ],
       "lemma": "אָסָף",
       "missing_enrichments": [
         "oshb:stem",
@@ -310,5 +393,30 @@
     }
   ],
   "unit_id": "ps083.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 83:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA083.htm",
+      "text": "A Song [or] Psalm of Asaph. Keep not thou silence, O God: hold not thy peace, and be not still, O God.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 83:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA083.htm",
+      "text": "A Song, a Psalm of Asaph. O God, keep not thou silence: Hold not thy peace, and be not still, O God.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 83:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA083.htm",
+      "text": "A song. A Psalm by Asaph. God, don’t keep silent. Don’t keep silent, and don’t be still, God.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

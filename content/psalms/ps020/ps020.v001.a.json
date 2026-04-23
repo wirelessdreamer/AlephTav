@@ -28,6 +28,36 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "the",
+          "director"
+        ],
+        "gloss_fragments": [
+          "to",
+          "the",
+          "choirmaster"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "art",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:1",
         "Psalm 5:1",
@@ -54,6 +84,7 @@
         "Psalm 47:1",
         "Psalm 49:1"
       ],
+      "display_gloss": "to choirmaster the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -79,6 +110,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "the",
+        "choirmaster"
+      ],
       "lemma": "נָצַח",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -129,6 +165,28 @@
       "word_sense": "choirmaster"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "psalm"
+        ],
+        "gloss_fragments": [
+          "a psalm"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -155,6 +213,7 @@
         "Psalm 48:1",
         "Psalm 49:1"
       ],
+      "display_gloss": "a psalm",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -181,6 +240,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.psalm"
+      ],
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -231,6 +293,32 @@
       "word_sense": "a.psalm"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "David"
+        ],
+        "gloss_fragments": [
+          "of",
+          "David"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -257,6 +345,7 @@
         "Psalm 26:1",
         "Psalm 27:1"
       ],
+      "display_gloss": "of David",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -283,6 +372,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "David"
+      ],
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -335,5 +428,30 @@
     }
   ],
   "unit_id": "ps020.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 20:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA020.htm",
+      "text": "To the chief Musician, A Psalm of David. The LORD hear thee in the day of trouble; the name of the God of Jacob defend thee;",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 20:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA020.htm",
+      "text": "For the Chief Musician. A Psalm of David. Jehovah answer thee in the day of trouble; The name of the God of Jacob set thee up on high;",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 20:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA020.htm",
+      "text": "For the Chief Musician. A Psalm by David. May the LORD answer you in the day of trouble. May the name of the God of Jacob set you up on high,",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

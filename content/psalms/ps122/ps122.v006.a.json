@@ -30,6 +30,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "pray"
+        ],
+        "gloss_fragments": [
+          "ask for"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:8",
         "Psalm 21:5",
@@ -39,6 +61,7 @@
         "Psalm 105:40",
         "Psalm 109:10"
       ],
+      "display_gloss": "ask for",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -64,6 +87,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "ask.for"
+      ],
       "lemma": "שָׁאַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -96,6 +122,28 @@
       "word_sense": "ask.for"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "peace"
+        ],
+        "gloss_fragments": [
+          "the peace"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:9",
         "Psalm 28:3",
@@ -120,6 +168,7 @@
         "Psalm 128:6",
         "Psalm 147:14"
       ],
+      "display_gloss": "the peace",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -146,6 +195,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.peace"
+      ],
       "lemma": "שָׁלוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -198,6 +250,28 @@
       "word_sense": "the.peace"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "Jerusalem"
+        ],
+        "gloss_fragments": [
+          "of Jerusalem"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 51:20",
         "Psalm 68:30",
@@ -214,6 +288,7 @@
         "Psalm 147:2",
         "Psalm 147:12"
       ],
+      "display_gloss": "of Jerusalem",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -240,6 +315,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.Jerusalem"
+      ],
       "lemma": "יְרוּשָׁלִַ͏ם",
       "missing_enrichments": [
         "oshb:stem",
@@ -284,7 +362,30 @@
       "word_sense": "of.Jerusalem"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "prosper"
+        ],
+        "gloss_fragments": [
+          "may they be at ease"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "may they be at ease",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -310,6 +411,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "may.they.be.at.ease"
+      ],
       "lemma": "שָׁלָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -334,6 +438,37 @@
       "word_sense": "may.they.be.at.ease"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "love",
+          "you"
+        ],
+        "gloss_fragments": [
+          "those",
+          "who love you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "feminine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -360,6 +495,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "who love you those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -385,6 +521,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[those",
+        "who].love.you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -443,5 +583,30 @@
     }
   ],
   "unit_id": "ps122.v006.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 122:6",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA122.htm",
+      "text": "Pray for the peace of Jerusalem: they shall prosper that love thee.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 122:6",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA122.htm",
+      "text": "Pray for the peace of Jerusalem: They shall prosper that love thee.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 122:6",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA122.htm",
+      "text": "Pray for the peace of Jerusalem. Those who love you will prosper.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

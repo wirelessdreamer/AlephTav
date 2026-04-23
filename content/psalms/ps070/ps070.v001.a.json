@@ -28,6 +28,36 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "the",
+          "director"
+        ],
+        "gloss_fragments": [
+          "to",
+          "the",
+          "choirmaster"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "art",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:1",
         "Psalm 5:1",
@@ -54,6 +84,7 @@
         "Psalm 46:1",
         "Psalm 47:1"
       ],
+      "display_gloss": "to choirmaster the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -79,6 +110,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "the",
+        "choirmaster"
+      ],
       "lemma": "נָצַח",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -129,6 +165,32 @@
       "word_sense": "choirmaster"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "David"
+        ],
+        "gloss_fragments": [
+          "of",
+          "David"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -155,6 +217,7 @@
         "Psalm 25:1",
         "Psalm 26:1"
       ],
+      "display_gloss": "of David",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -181,6 +244,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "David"
+      ],
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -232,6 +299,32 @@
       "word_sense": "David"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "memorial offering"
+        ],
+        "gloss_fragments": [
+          "to",
+          "make remembrance"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 9:13",
         "Psalm 20:4",
@@ -258,6 +351,7 @@
         "Psalm 89:48",
         "Psalm 89:51"
       ],
+      "display_gloss": "to make remembrance",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -283,6 +377,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "make.remembrance"
+      ],
       "lemma": "זָכַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -333,5 +431,30 @@
     }
   ],
   "unit_id": "ps070.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 70:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA070.htm",
+      "text": "To the chief Musician, [A Psalm] of David, to bring to remembrance. [Make haste], O God, to deliver me; make haste to help me, O LORD.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 70:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA070.htm",
+      "text": "For the Chief Musician. [A Psalm] of David; to bring to remembrance. [Make haste], O God, to deliver me; Make haste to help me, O Jehovah.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 70:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA070.htm",
+      "text": "For the Chief Musician. By David. A reminder. Hurry, God, to deliver me. Come quickly to help me, LORD.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -37,6 +37,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "why"
+        ],
+        "gloss_fragments": [
+          "why?"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "pron"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:1",
         "Psalm 3:2",
@@ -63,6 +85,7 @@
         "Psalm 50:16",
         "Psalm 52:3"
       ],
+      "display_gloss": "why?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -89,6 +112,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "why?"
+      ],
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -142,10 +168,33 @@
       "word_sense": "why?"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in despair"
+        ],
+        "gloss_fragments": [
+          "are you bowed down"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 43:5",
         "Psalm 44:26"
       ],
+      "display_gloss": "are you bowed down",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -171,6 +220,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "are.you.bowed.down"
+      ],
       "lemma": "שׁיח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -201,6 +253,37 @@
       "word_sense": "are.you.bowed.down"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "soul",
+          "my"
+        ],
+        "gloss_fragments": [
+          "my soul",
+          "my"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -227,6 +310,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "my my soul",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -253,6 +337,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "my.soul",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -315,6 +403,32 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "disturbed"
+        ],
+        "gloss_fragments": [
+          "and",
+          "were you in turmoil?"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 43:5",
         "Psalm 46:4",
@@ -324,6 +438,7 @@
         "Psalm 59:15",
         "Psalm 77:4"
       ],
+      "display_gloss": "and were you in turmoil?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -349,6 +464,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "were.you.in.turmoil?"
+      ],
       "lemma": "הָמָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -383,6 +502,37 @@
       "word_sense": "were.you.in.turmoil?"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "within",
+          "me"
+        ],
+        "gloss_fragments": [
+          "on",
+          "me"
+        ],
+        "preposition_role": "within",
+        "raw_classes": [
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "me"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -409,6 +559,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "on",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -435,6 +586,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "on",
+        "me"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -497,6 +652,28 @@
       "word_sense": "me"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "hope"
+        ],
+        "gloss_fragments": [
+          "wait"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 31:25",
         "Psalm 33:18",
@@ -514,6 +691,7 @@
         "Psalm 131:3",
         "Psalm 147:11"
       ],
+      "display_gloss": "wait",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -539,6 +717,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "wait"
+      ],
       "lemma": "יָחַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -581,6 +762,32 @@
       "word_sense": "wait"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "God"
+        ],
+        "gloss_fragments": [
+          "for",
+          "God"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:3",
         "Psalm 4:2",
@@ -607,6 +814,7 @@
         "Psalm 43:1",
         "Psalm 43:2"
       ],
+      "display_gloss": "for God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -633,6 +841,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "for",
+        "God"
+      ],
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -689,6 +901,26 @@
       "word_sense": "God"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": "disjunctive",
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [
+          "for"
+        ],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj"
+        ],
+        "raw_pos": [
+          "conjunction"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:4",
@@ -715,6 +947,7 @@
         "Psalm 10:3",
         "Psalm 10:14"
       ],
+      "display_gloss": "for",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -741,6 +974,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(dm)"
+      ],
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -795,6 +1031,28 @@
       "word_sense": "(dm)"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "again"
+        ],
+        "gloss_fragments": [
+          "again"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:18",
         "Psalm 37:10",
@@ -813,6 +1071,7 @@
         "Psalm 104:35",
         "Psalm 141:5"
       ],
+      "display_gloss": "again",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -839,6 +1098,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "again"
+      ],
       "lemma": "עוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -883,6 +1145,37 @@
       "word_sense": "again"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "praise",
+          "him"
+        ],
+        "gloss_fragments": [
+          "I",
+          "will give thanks to him"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "him"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -909,6 +1202,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "will give thanks to him I",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -934,6 +1228,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I",
+        "will.give.thanks.to.him"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -994,6 +1292,28 @@
       "word_sense": "will.give.thanks.to.him"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "savior"
+        ],
+        "gloss_fragments": [
+          "the salvation(s)"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:9",
         "Psalm 14:7",
@@ -1011,6 +1331,7 @@
         "Psalm 119:155",
         "Psalm 149:4"
       ],
+      "display_gloss": "the salvation(s)",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1037,6 +1358,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.salvation(s)"
+      ],
       "lemma": "יְשׁוּעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1081,6 +1405,37 @@
       "word_sense": "the.salvation(s)"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "presence",
+          "his"
+        ],
+        "gloss_fragments": [
+          "his presence",
+          "his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1107,6 +1462,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "his his presence",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1133,6 +1489,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "his.presence",
+        "his"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1196,5 +1556,30 @@
     }
   ],
   "unit_id": "ps042.v006.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 42:6",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA042.htm",
+      "text": "O my God, my soul is cast down within me: therefore will I remember thee from the land of Jordan, and of the Hermonites, from the hill Mizar.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 42:6",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA042.htm",
+      "text": "O my God, my soul is cast down within me: Therefore do I remember thee from the land of the Jordan, And the Hermons, from the hill Mizar.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 42:6",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA042.htm",
+      "text": "My God, my soul is in despair within me. Therefore I remember you from the land of the Jordan, the heights of Hermon, from the hill Mizar.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

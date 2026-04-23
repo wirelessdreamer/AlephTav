@@ -32,6 +32,32 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "glad"
+        ],
+        "gloss_fragments": [
+          "and",
+          "they rejoiced"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 9:3",
@@ -58,6 +84,7 @@
         "Psalm 64:11",
         "Psalm 66:6"
       ],
+      "display_gloss": "and they rejoiced",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -83,6 +110,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "they.rejoiced"
+      ],
       "lemma": "שָׂמַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -134,6 +165,26 @@
       "word_sense": "they.rejoiced"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": "conjunctive",
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [
+          "because"
+        ],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj"
+        ],
+        "raw_pos": [
+          "conjunction"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:4",
@@ -160,6 +211,7 @@
         "Psalm 10:3",
         "Psalm 10:14"
       ],
+      "display_gloss": "because",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -186,6 +238,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(dm)"
+      ],
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -242,7 +297,30 @@
       "word_sense": "(dm)"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "quiet"
+        ],
+        "gloss_fragments": [
+          "they were quiet"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "they were quiet",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -268,6 +346,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "they.were.quiet"
+      ],
       "lemma": "שָׁתַק",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -292,6 +373,41 @@
       "word_sense": "they.were.quiet"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "guided",
+          "them"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he",
+          "guided them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -318,6 +434,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and guided them he",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -343,6 +460,11 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "he",
+        "guided.them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -405,6 +527,28 @@
       "word_sense": "guided.them"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to"
+        ],
+        "gloss_fragments": [
+          "to"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 3:5",
@@ -431,6 +575,7 @@
         "Psalm 41:2",
         "Psalm 42:8"
       ],
+      "display_gloss": "to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -457,6 +602,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to"
+      ],
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,7 +662,30 @@
       "word_sense": "to"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "haven"
+        ],
+        "gloss_fragments": [
+          "the harbor"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "the harbor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -541,6 +712,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the.harbor"
+      ],
       "lemma": "מָחוֹז",
       "missing_enrichments": [
         "oshb:stem",
@@ -567,6 +741,37 @@
       "word_sense": "the.harbor"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "desired",
+          "their"
+        ],
+        "gloss_fragments": [
+          "their desire",
+          "their"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -593,6 +798,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "their their desire",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -619,6 +825,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "their.desire",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -684,5 +894,30 @@
     }
   ],
   "unit_id": "ps107.v030.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 107:30",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA107.htm",
+      "text": "Then are they glad because they be quiet; so he bringeth them unto their desired haven.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 107:30",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA107.htm",
+      "text": "Then are they glad because they are quiet; So he bringeth them unto their desired haven.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 107:30",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA107.htm",
+      "text": "Then they are glad because it is calm, so he brings them to their desired haven.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

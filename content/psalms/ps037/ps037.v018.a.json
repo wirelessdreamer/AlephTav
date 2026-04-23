@@ -32,6 +32,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "knows"
+        ],
+        "gloss_fragments": [
+          "knowing"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:6",
         "Psalm 4:4",
@@ -58,6 +80,7 @@
         "Psalm 56:10",
         "Psalm 59:14"
       ],
+      "display_gloss": "knowing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -83,6 +106,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[is].knowing"
+      ],
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -132,6 +158,28 @@
       "word_sense": "[is].knowing"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -158,6 +206,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -184,6 +233,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -247,6 +299,28 @@
       "word_sense": "Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "days"
+        ],
+        "gloss_fragments": [
+          "the days"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": true
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 7:12",
@@ -273,6 +347,7 @@
         "Psalm 44:16",
         "Psalm 44:23"
       ],
+      "display_gloss": "the days",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -299,6 +374,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "[the].days"
+      ],
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -353,6 +431,28 @@
       "word_sense": "[the].days"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "blameless"
+        ],
+        "gloss_fragments": [
+          "of blameless people"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 15:2",
         "Psalm 18:24",
@@ -366,6 +466,7 @@
         "Psalm 119:1",
         "Psalm 119:80"
       ],
+      "display_gloss": "of blameless people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -392,6 +493,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.blameless.[people]"
+      ],
       "lemma": "תָּמִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -430,6 +534,41 @@
       "word_sense": "of.blameless.[people]"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "inheritance",
+          "their"
+        ],
+        "gloss_fragments": [
+          "and",
+          "inheritance",
+          "their"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -456,6 +595,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and their inheritance",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -482,6 +622,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "inheritance",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -546,6 +691,32 @@
       "word_sense": "their"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "forever"
+        ],
+        "gloss_fragments": [
+          "forever",
+          "of perpetuity"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 9:6",
@@ -572,6 +743,7 @@
         "Psalm 48:9",
         "Psalm 48:15"
       ],
+      "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -598,6 +770,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "forever",
+        "of.perpetuity"
+      ],
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -652,6 +828,28 @@
       "word_sense": "of.perpetuity"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "be"
+        ],
+        "gloss_fragments": [
+          "it will be"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 9:10",
@@ -678,6 +876,7 @@
         "Psalm 53:6",
         "Psalm 55:19"
       ],
+      "display_gloss": "it will be",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -703,6 +902,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "it.will.be"
+      ],
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -755,5 +957,30 @@
     }
   ],
   "unit_id": "ps037.v018.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 37:18",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "text": "The LORD knoweth the days of the upright: and their inheritance shall be for ever.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 37:18",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "text": "Jehovah knoweth the days of the perfect; And their inheritance shall be for ever.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 37:18",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "text": "The LORD knows the days of the perfect. Their inheritance shall be forever.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -1,47 +1,8 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [
-    "rnd.ps001.v001.a.literal.alt.0001",
-    "rnd.ps001.v001.a.literal.alt.0002"
-  ],
-  "audit_ids": [
-    "aud.ps001.v001.a.0001",
-    "aud.ps001.v001.a.0002"
-  ],
-  "audit_records": [
-    {
-      "after_hash": "3beafd72a41337a4d585ac5bf39954cc2040358ea2fd5b69245a02bf71e0077d",
-      "audit_id": "aud.ps001.v001.a.0001",
-      "before_hash": "36d2d1c77b0d8e0747d758069242d5cfee30cd866b28bbcafd29fc02f527be11",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-20T14:04:33.093970+00:00",
-      "created_by": "ui-click-approval",
-      "entity_id": "rnd.ps001.v001.a.literal.alt.0001",
-      "entity_type": "rendering",
-      "rationale": "click-approved from Lyric witness",
-      "review_signoff": {},
-      "summary": "Create rendering",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
-    },
-    {
-      "after_hash": "ae8c59f6e489c6ff3eb1905f4e37ceb5ca84cc25e27fdb96c3d8112c54ec0e5f",
-      "audit_id": "aud.ps001.v001.a.0002",
-      "before_hash": "fb71047493eb358f122175d196d038004e6f1f7e160b29fab65210d3c8229817",
-      "change_type": "create",
-      "checks": [],
-      "created_at": "2026-04-23T20:26:44.086990+00:00",
-      "created_by": "ui-guided-composer",
-      "entity_id": "rnd.ps001.v001.a.literal.alt.0002",
-      "entity_type": "rendering",
-      "rationale": "guided verse composer completion",
-      "review_signoff": {},
-      "summary": "Create rendering",
-      "triggered_by_issue": null,
-      "triggered_by_pr": null
-    }
-  ],
+  "alternate_rendering_ids": [],
+  "audit_ids": [],
+  "audit_records": [],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps001.v001.a.0001"
@@ -54,120 +15,7 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:1",
-  "renderings": [
-    {
-      "alignment_ids": [],
-      "drift_flags": [],
-      "issue_links": [],
-      "layer": "literal",
-      "metric_profile": null,
-      "metrics": {},
-      "pr_links": [],
-      "provenance": {
-        "generator": "ui-click-approval",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "click-approved from Lyric witness",
-      "rendering_id": "rnd.ps001.v001.a.literal.alt.0001",
-      "review_signoff": {
-        "alternate_approval_count": 0,
-        "alternate_approvers": [],
-        "approval_count": 0,
-        "approvers": [],
-        "eligible_for_alternate": false,
-        "eligible_for_canonical": false,
-        "has_release_signoff": false,
-        "latest_decision": null,
-        "publication_ready": false,
-        "release_required_role": "release reviewer",
-        "release_signoff": {},
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "unreviewed",
-        "updated_at": null
-      },
-      "status": "proposed",
-      "style_goal": null,
-      "style_tags": [
-        "literal",
-        "click-only",
-        "lyric-witness"
-      ],
-      "target_spans": [],
-      "text": "Blessed",
-      "unit_id": "ps001.v001.a"
-    },
-    {
-      "alignment_ids": [],
-      "drift_flags": [],
-      "issue_links": [],
-      "layer": "literal",
-      "metric_profile": null,
-      "metrics": {},
-      "pr_links": [],
-      "provenance": {
-        "generator": "ui-guided-composer",
-        "source_ids": [
-          "uxlc",
-          "oshb",
-          "macula"
-        ]
-      },
-      "rationale": "guided verse composer completion",
-      "rendering_id": "rnd.ps001.v001.a.literal.alt.0002",
-      "review_signoff": {
-        "alternate_approval_count": 0,
-        "alternate_approvers": [],
-        "approval_count": 0,
-        "approvers": [],
-        "eligible_for_alternate": false,
-        "eligible_for_canonical": false,
-        "has_release_signoff": false,
-        "latest_decision": null,
-        "publication_ready": false,
-        "release_required_role": "release reviewer",
-        "release_signoff": {},
-        "required_approvals": {
-          "alternate": 1,
-          "canonical": 2
-        },
-        "reviewer_roles": [
-          "lexical reviewer",
-          "Hebrew reviewer",
-          "alignment reviewer",
-          "lyric reviewer",
-          "theology reviewer",
-          "release reviewer"
-        ],
-        "status": "unreviewed",
-        "updated_at": null
-      },
-      "status": "proposed",
-      "style_goal": null,
-      "style_tags": [
-        "literal",
-        "guided-composer",
-        "verse-complete"
-      ],
-      "target_spans": [],
-      "text": "How blessed is the one Who does not walk with the wicked who does not stand with sinners nor sit among the scornful",
-      "unit_id": "ps001.v001.a"
-    }
-  ],
+  "renderings": [],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ אֲשֶׁ֤ר׀ לֹ֥א הָלַךְ֮ בַּעֲצַ֢ת רְשָׁ֫עִ֥ים וּבְדֶ֣רֶךְ חַ֭טָּאִים לֹ֥א עָמָ֑ד וּבְמוֹשַׁ֥ב לֵ֝צִ֗ים לֹ֣א יָשָֽׁב׃",
@@ -192,6 +40,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "blessed"
+        ],
+        "gloss_fragments": [
+          "how blessed!"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "ij"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:12",
         "Psalm 32:1",
@@ -217,6 +87,7 @@
         "Psalm 144:15",
         "Psalm 146:5"
       ],
+      "display_gloss": "how blessed!",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -243,6 +114,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "how.blessed!"
+      ],
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -292,6 +166,32 @@
       "word_sense": "how.blessed!"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "man"
+        ],
+        "gloss_fragments": [
+          "the",
+          "person"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 5:7",
@@ -318,6 +218,7 @@
         "Psalm 62:10",
         "Psalm 62:13"
       ],
+      "display_gloss": "person the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -344,6 +245,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "[is].the",
+        "person"
+      ],
       "lemma": "אִישׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -395,6 +300,28 @@
       "word_sense": "person"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "who"
+        ],
+        "gloss_fragments": [
+          "who"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "rel"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 7:1",
@@ -421,6 +348,7 @@
         "Psalm 47:5",
         "Psalm 48:9"
       ],
+      "display_gloss": "who",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -447,6 +375,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "who"
+      ],
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -501,6 +432,28 @@
       "word_sense": "who"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "not"
+        ],
+        "gloss_fragments": [
+          "not"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 5:5",
@@ -527,6 +480,7 @@
         "Psalm 22:3",
         "Psalm 22:6"
       ],
+      "display_gloss": "not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -553,6 +507,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "not"
+      ],
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -607,6 +564,28 @@
       "word_sense": "not"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "walk"
+        ],
+        "gloss_fragments": [
+          "he walks"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 15:2",
         "Psalm 26:1",
@@ -633,6 +612,7 @@
         "Psalm 101:2",
         "Psalm 101:6"
       ],
+      "display_gloss": "he walks",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -658,6 +638,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "he.walks"
+      ],
       "lemma": "הָלַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -707,6 +690,32 @@
       "word_sense": "he.walks"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "advice"
+        ],
+        "gloss_fragments": [
+          "in the",
+          "counsel"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 13:3",
         "Psalm 14:6",
@@ -714,6 +723,7 @@
         "Psalm 33:11",
         "Psalm 107:11"
       ],
+      "display_gloss": "in the counsel",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -740,6 +750,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in.[the]",
+        "counsel"
+      ],
       "lemma": "עֵצָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -772,6 +786,28 @@
       "word_sense": "counsel"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "wicked"
+        ],
+        "gloss_fragments": [
+          "of wicked people"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:8",
         "Psalm 7:10",
@@ -798,6 +834,7 @@
         "Psalm 36:12",
         "Psalm 37:10"
       ],
+      "display_gloss": "of wicked people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -824,6 +861,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.wicked.[people]"
+      ],
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -879,6 +919,36 @@
       "word_sense": "of.wicked.[people]"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "disjunctive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "or",
+          "in",
+          "way"
+        ],
+        "gloss_fragments": [
+          "and",
+          "in the",
+          "way"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:12",
         "Psalm 18:22",
@@ -905,6 +975,7 @@
         "Psalm 119:29",
         "Psalm 119:30"
       ],
+      "display_gloss": "and in the way",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -931,6 +1002,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "in.[the]",
+        "way"
+      ],
       "lemma": "דֶּרֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -984,12 +1060,35 @@
       "word_sense": "way"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sinners"
+        ],
+        "gloss_fragments": [
+          "of sinners"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 25:8",
         "Psalm 26:9",
         "Psalm 51:15",
         "Psalm 104:35"
       ],
+      "display_gloss": "of sinners",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1016,6 +1115,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.sinners"
+      ],
       "lemma": "חַטָּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1049,6 +1151,28 @@
       "word_sense": "of.sinners"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "nor"
+        ],
+        "gloss_fragments": [
+          "not"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 5:5",
@@ -1075,6 +1199,7 @@
         "Psalm 22:3",
         "Psalm 22:6"
       ],
+      "display_gloss": "not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1101,6 +1226,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "not"
+      ],
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1155,6 +1283,28 @@
       "word_sense": "not"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "stand"
+        ],
+        "gloss_fragments": [
+          "he stands"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:1",
         "Psalm 19:10",
@@ -1181,6 +1331,7 @@
         "Psalm 122:2",
         "Psalm 130:3"
       ],
+      "display_gloss": "he stands",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1206,6 +1357,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "he.stands"
+      ],
       "lemma": "עָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1255,6 +1409,36 @@
       "word_sense": "he.stands"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "disjunctive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "or",
+          "in",
+          "seat"
+        ],
+        "gloss_fragments": [
+          "and",
+          "in the",
+          "seat"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 107:4",
         "Psalm 107:7",
@@ -1262,6 +1446,7 @@
         "Psalm 107:36",
         "Psalm 132:13"
       ],
+      "display_gloss": "and in the seat",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1288,6 +1473,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "in.[the]",
+        "seat"
+      ],
       "lemma": "מוֹשָׁב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1320,7 +1510,30 @@
       "word_sense": "seat"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "mockers"
+        ],
+        "gloss_fragments": [
+          "of mockers"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "of mockers",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1347,6 +1560,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.mockers"
+      ],
       "lemma": "לֵץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1373,6 +1589,28 @@
       "word_sense": "of.mockers"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "nor"
+        ],
+        "gloss_fragments": [
+          "not"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 5:5",
@@ -1399,6 +1637,7 @@
         "Psalm 22:3",
         "Psalm 22:6"
       ],
+      "display_gloss": "not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1425,6 +1664,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "not"
+      ],
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1479,6 +1721,28 @@
       "word_sense": "not"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sit"
+        ],
+        "gloss_fragments": [
+          "he sits"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:4",
         "Psalm 9:5",
@@ -1505,6 +1769,7 @@
         "Psalm 69:26",
         "Psalm 69:36"
       ],
+      "display_gloss": "he sits",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1530,6 +1795,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "he.sits"
+      ],
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1585,15 +1853,15 @@
       "language": "en",
       "ref": "Psalm 1:1",
       "source_id": "kjv",
-      "source_url": "",
-      "text": "Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA001.htm",
+      "text": "Blessed [is] the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.",
       "versionTitle": "King James Version"
     },
     {
       "language": "en",
       "ref": "Psalm 1:1",
       "source_id": "asv",
-      "source_url": "",
+      "source_url": "https://ebible.org/eng-asv/PSA001.htm",
       "text": "Blessed is the man that walketh not in the counsel of the wicked, Nor standeth in the way of sinners, Nor sitteth in the seat of scoffers:",
       "versionTitle": "American Standard Version"
     },
@@ -1601,8 +1869,8 @@
       "language": "en",
       "ref": "Psalm 1:1",
       "source_id": "web",
-      "source_url": "",
-      "text": "Blessed is the man who does not walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers;",
+      "source_url": "https://ebible.org/engwebp/PSA001.htm",
+      "text": "Blessed is the man who doesn’t walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers;",
       "versionTitle": "World English Bible"
     }
   ]

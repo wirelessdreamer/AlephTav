@@ -32,6 +32,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "happy"
+        ],
+        "gloss_fragments": [
+          "how blessed!"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "ij"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:1",
         "Psalm 2:12",
@@ -56,6 +78,7 @@
         "Psalm 144:15",
         "Psalm 146:5"
       ],
+      "display_gloss": "how blessed!",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -82,6 +105,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "how.blessed!"
+      ],
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -132,11 +158,38 @@
       "word_sense": "how.blessed!"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "who",
+          "seizes"
+        ],
+        "gloss_fragments": [
+          "is",
+          "the one who he will seize"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "rel",
+          "verb"
+        ],
+        "raw_pos": [
+          "particle",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 56:1",
         "Psalm 73:23",
         "Psalm 77:5"
       ],
+      "display_gloss": "the one who he will seize is",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -162,6 +215,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[is",
+        "the.one].who.he.will.seize"
+      ],
       "lemma": "אָחַז",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -190,7 +247,34 @@
       "word_sense": "the.one].who.he.will.seize"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "dashes"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he will smash"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "and he will smash",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -216,6 +300,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "he.will.smash"
+      ],
       "lemma": "נָפַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -240,6 +328,24 @@
       "word_sense": "he.will.smash"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "om"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:3",
         "Psalm 2:11",
@@ -266,6 +372,7 @@
         "Psalm 31:24",
         "Psalm 33:13"
       ],
+      "display_gloss": null,
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -292,6 +399,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(et)"
+      ],
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -349,6 +459,37 @@
       "word_sense": "(et)"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "little ones",
+          "your"
+        ],
+        "gloss_fragments": [
+          "children",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "feminine",
+          "number": "singular",
+          "person": "second",
+          "text": "your"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -375,6 +516,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "your children",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -401,6 +543,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "children",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -460,6 +606,28 @@
       "word_sense": "your"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "against"
+        ],
+        "gloss_fragments": [
+          "to"
+        ],
+        "preposition_role": "against",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 3:5",
@@ -486,6 +654,7 @@
         "Psalm 41:2",
         "Psalm 42:8"
       ],
+      "display_gloss": "to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -512,6 +681,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to"
+      ],
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -563,12 +735,39 @@
       "word_sense": "to"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "rock"
+        ],
+        "gloss_fragments": [
+          "the",
+          "rock"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 40:3",
         "Psalm 78:16",
         "Psalm 104:18",
         "Psalm 141:6"
       ],
+      "display_gloss": "rock the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -595,6 +794,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the",
+        "rock"
+      ],
       "lemma": "סֶלַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -627,5 +830,30 @@
     }
   ],
   "unit_id": "ps137.v009.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 137:9",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA137.htm",
+      "text": "Happy [shall he be], that taketh and dasheth thy little ones against the stones.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 137:9",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA137.htm",
+      "text": "Happy shall he be, that taketh and dasheth thy little ones Against the rock.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 137:9",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA137.htm",
+      "text": "Happy shall he be, who takes and dashes your little ones against the rock.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

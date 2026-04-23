@@ -31,7 +31,9 @@
   ],
   "tokens": [
     {
+      "compiler_features": {},
       "corpus_occurrence_refs": [],
+      "display_gloss": null,
       "enrichment_sources": {
         "macula": {
           "available_fields": [],
@@ -57,6 +59,7 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [],
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -84,6 +87,28 @@
       "word_sense": null
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "set"
+        ],
+        "gloss_fragments": [
+          "you set"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 8:7",
@@ -105,6 +130,7 @@
         "Psalm 139:5",
         "Psalm 140:6"
       ],
+      "display_gloss": "you set",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -130,6 +156,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you.set"
+      ],
       "lemma": "שִׁית",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -174,6 +203,37 @@
       "word_sense": "you.set"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "iniquities",
+          "our"
+        ],
+        "gloss_fragments": [
+          "iniquities",
+          "our"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "our"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -200,6 +260,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "our iniquities",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -226,6 +287,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "iniquities",
+        "our"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -290,6 +355,41 @@
       "word_sense": "our"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "at",
+          "before",
+          "you"
+        ],
+        "gloss_fragments": [
+          "to",
+          "before",
+          "you"
+        ],
+        "preposition_role": "at",
+        "raw_classes": [
+          "prep",
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "you"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -316,6 +416,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -342,6 +443,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "before",
+        "you"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -406,6 +512,37 @@
       "word_sense": "you"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "secret",
+          "our"
+        ],
+        "gloss_fragments": [
+          "our concealed",
+          "sins"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "plural",
+          "person": "first",
+          "text": "our"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -432,6 +569,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "sins our concealed",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -457,6 +595,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "our.concealed",
+        "[sins]"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -520,9 +662,36 @@
       "word_sense": "[sins]"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "light"
+        ],
+        "gloss_fragments": [
+          "to",
+          "the light"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 74:16"
       ],
+      "display_gloss": "to the light",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -549,6 +718,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "the.light"
+      ],
       "lemma": "מָאוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -578,5 +751,30 @@
     }
   ],
   "unit_id": "ps090.v008.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 90:8",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA090.htm",
+      "text": "Thou hast set our iniquities before thee, our secret [sins] in the light of thy countenance.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 90:8",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA090.htm",
+      "text": "Thou hast set our iniquities before thee, Our secret sins in the light of thy countenance.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 90:8",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA090.htm",
+      "text": "You have set our iniquities before you, our secret sins in the light of your presence.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

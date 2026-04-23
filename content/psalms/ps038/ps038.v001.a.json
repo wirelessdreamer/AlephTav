@@ -28,6 +28,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "psalm"
+        ],
+        "gloss_fragments": [
+          "a psalm"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -54,6 +76,7 @@
         "Psalm 48:1",
         "Psalm 49:1"
       ],
+      "display_gloss": "a psalm",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -80,6 +103,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.psalm"
+      ],
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -130,6 +156,32 @@
       "word_sense": "a.psalm"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "of",
+          "David"
+        ],
+        "gloss_fragments": [
+          "of",
+          "David"
+        ],
+        "preposition_role": "of",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:1",
         "Psalm 4:1",
@@ -156,6 +208,7 @@
         "Psalm 25:1",
         "Psalm 26:1"
       ],
+      "display_gloss": "of David",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -182,6 +235,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of",
+        "David"
+      ],
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -233,6 +290,32 @@
       "word_sense": "David"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "memorial offering"
+        ],
+        "gloss_fragments": [
+          "to",
+          "make remembrance"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 9:13",
         "Psalm 20:4",
@@ -259,6 +342,7 @@
         "Psalm 89:48",
         "Psalm 89:51"
       ],
+      "display_gloss": "to make remembrance",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -284,6 +368,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "make.remembrance"
+      ],
       "lemma": "זָכַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -334,5 +422,30 @@
     }
   ],
   "unit_id": "ps038.v001.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 38:1",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA038.htm",
+      "text": "A Psalm of David, to bring to remembrance. O LORD, rebuke me not in thy wrath: neither chasten me in thy hot displeasure.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 38:1",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA038.htm",
+      "text": "A Psalm of David, to bring to remembrance. O Jehovah, rebuke me not in thy wrath; Neither chasten me in thy hot displeasure.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 38:1",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA038.htm",
+      "text": "A Psalm by David, for a memorial. LORD, don’t rebuke me in your wrath, neither chasten me in your hot displeasure.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

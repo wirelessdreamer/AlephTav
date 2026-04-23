@@ -35,11 +35,34 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "grow"
+        ],
+        "gloss_fragments": [
+          "he is causing to grow"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 85:12",
         "Psalm 132:17",
         "Psalm 147:8"
       ],
+      "display_gloss": "he is causing to grow",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -65,6 +88,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[he.is].causing.to.grow"
+      ],
       "lemma": "צָמַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -93,6 +119,28 @@
       "word_sense": "[he.is].causing.to.grow"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "grass"
+        ],
+        "gloss_fragments": [
+          "grass"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 37:2",
         "Psalm 90:5",
@@ -100,6 +148,7 @@
         "Psalm 129:6",
         "Psalm 147:8"
       ],
+      "display_gloss": "grass",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -126,6 +175,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "grass"
+      ],
       "lemma": "חָצִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -157,6 +209,36 @@
       "word_sense": "grass"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "the",
+          "cattle"
+        ],
+        "gloss_fragments": [
+          "for",
+          "the",
+          "cattle"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 8:8",
         "Psalm 36:7",
@@ -168,6 +250,7 @@
         "Psalm 147:9",
         "Psalm 148:10"
       ],
+      "display_gloss": "for cattle the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -194,6 +277,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "for",
+        "the",
+        "cattle"
+      ],
       "lemma": "בְּהֵמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -230,6 +318,32 @@
       "word_sense": "cattle"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "plants"
+        ],
+        "gloss_fragments": [
+          "and",
+          "vegetation"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 72:16",
         "Psalm 92:8",
@@ -238,6 +352,7 @@
         "Psalm 105:35",
         "Psalm 106:20"
       ],
+      "display_gloss": "and vegetation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -264,6 +379,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "vegetation"
+      ],
       "lemma": "עֵשֶׂב",
       "missing_enrichments": [
         "oshb:stem",
@@ -296,7 +415,34 @@
       "word_sense": "vegetation"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "cultivate"
+        ],
+        "gloss_fragments": [
+          "for",
+          "the labor"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "for the labor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -323,6 +469,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "for",
+        "the.labor"
+      ],
       "lemma": "עֲבֹדָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -349,6 +499,32 @@
       "word_sense": "the.labor"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "man"
+        ],
+        "gloss_fragments": [
+          "of (the)",
+          "humankind"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 8:5",
         "Psalm 11:4",
@@ -375,6 +551,7 @@
         "Psalm 58:2",
         "Psalm 58:12"
       ],
+      "display_gloss": "humankind of (the)",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -401,6 +578,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.(the)",
+        "humankind"
+      ],
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -454,6 +635,32 @@
       "word_sense": "humankind"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "bring forth"
+        ],
+        "gloss_fragments": [
+          "to",
+          "bring forth"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 17:2",
         "Psalm 19:5",
@@ -476,6 +683,7 @@
         "Psalm 143:11",
         "Psalm 146:4"
       ],
+      "display_gloss": "to bring forth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -501,6 +709,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "to",
+        "bring.forth"
+      ],
       "lemma": "יָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -548,6 +760,28 @@
       "word_sense": "bring.forth"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "food"
+        ],
+        "gloss_fragments": [
+          "food"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 14:4",
         "Psalm 37:25",
@@ -564,6 +798,7 @@
         "Psalm 136:25",
         "Psalm 146:7"
       ],
+      "display_gloss": "food",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -590,6 +825,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "food"
+      ],
       "lemma": "לֶחֶם",
       "missing_enrichments": [
         "oshb:stem",
@@ -632,6 +870,28 @@
       "word_sense": "food"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "from"
+        ],
+        "gloss_fragments": [
+          "from"
+        ],
+        "preposition_role": "from",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:18",
         "Psalm 12:8",
@@ -655,6 +915,7 @@
         "Psalm 148:1",
         "Psalm 148:7"
       ],
+      "display_gloss": "from",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -681,6 +942,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "from"
+      ],
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -732,6 +996,32 @@
       "word_sense": "from"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "earth"
+        ],
+        "gloss_fragments": [
+          "the",
+          "earth"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:2",
         "Psalm 2:8",
@@ -758,6 +1048,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
+      "display_gloss": "earth the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -784,6 +1075,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the",
+        "earth"
+      ],
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -843,5 +1138,30 @@
     }
   ],
   "unit_id": "ps104.v014.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 104:14",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "text": "He causeth the grass to grow for the cattle, and herb for the service of man: that he may bring forth food out of the earth;",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 104:14",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "text": "He causeth the grass to grow for the cattle, And herb for the service of man; That he may bring forth food out of the earth,",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 104:14",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "text": "He causes the grass to grow for the livestock, and plants for man to cultivate, that he may produce food out of the earth:",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

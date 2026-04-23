@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
-from app.services import alignment_service, audit_service, registry_service, review_service, search_service
+from app.services import alignment_service, audit_service, composer_suggestion_service, registry_service, review_service, search_service
 
 router = APIRouter(tags=["units"])
 
@@ -42,5 +42,19 @@ def patch_unit(unit_id: str, payload: dict) -> dict:
 def get_unit_witnesses(unit_id: str) -> list[dict]:
     try:
         return search_service.list_witnesses(unit_id)
+    except Exception as error:  # pragma: no cover
+        raise_as_http(error)
+
+
+@router.post("/units/{unit_id}/composer-suggestions")
+def post_composer_suggestions(unit_id: str, payload: dict) -> dict:
+    try:
+        return composer_suggestion_service.suggest_for_unit(
+            unit_id=unit_id,
+            stage=str(payload.get("stage") or ""),
+            chunks=list(payload.get("chunks") or []),
+            candidate_count=int(payload.get("candidate_count", 3)),
+            model_profile=payload.get("model_profile"),
+        )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

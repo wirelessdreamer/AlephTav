@@ -7,6 +7,7 @@ import { BottomDrawer } from '../components/BottomDrawer';
 import {
   useAlternateLifecycleAction,
   useCreateRendering,
+  useComposerSuggestions,
   useCurrentPsalm,
   useDemoteRendering,
   useGenerateJob,
@@ -31,6 +32,7 @@ import {
   resolveLayerState,
   sortRenderingsByStatus,
 } from '../lib/layers';
+import { buildDeterministicComposer } from '../lib/composerSynthesis';
 import type { Alignment, CloudNode, Layer, OpenConcerns, Psalm, Rendering, RenderingSpan, RetrievalHit, Token, TokenCard, Unit, VisualFlowUnit } from '../types';
 
 type ComposerChoiceLevel = 'word' | 'phrase' | 'idea' | 'lyric';
@@ -147,7 +149,7 @@ function sentenceCase(text: string): string {
 }
 
 function buildTokenMeaning(token: Token): string {
-  const normalizedSense = normalizeComposerText(token.word_sense ?? token.transliteration ?? token.surface);
+  const normalizedSense = normalizeComposerText(token.display_gloss ?? token.word_sense ?? token.transliteration ?? token.surface);
   const lowered = normalizedSense.toLowerCase();
 
   if (lowered === 'person') {
@@ -2344,6 +2346,26 @@ function VerseFlowCloudPanel({
   hasNextVerse: boolean;
   onSelectCloudNode: (nodeId: string) => void;
 }) {
+  const deterministicComposer = useMemo(() => (unit ? buildDeterministicComposer(unit) : null), [unit]);
+  const phraseSuggestionsQuery = useComposerSuggestions(
+    unit?.unit_id ?? null,
+    'phrase',
+    deterministicComposer?.phraseSuggestionChunks ?? [],
+    Boolean(deterministicComposer),
+  );
+  const conceptSuggestionsQuery = useComposerSuggestions(
+    unit?.unit_id ?? null,
+    'concept',
+    deterministicComposer?.ideaSuggestionChunks ?? [],
+    Boolean(deterministicComposer),
+  );
+  const lyricSuggestionsQuery = useComposerSuggestions(
+    unit?.unit_id ?? null,
+    'lyric',
+    deterministicComposer?.lyricSuggestionChunks ?? [],
+    Boolean(deterministicComposer),
+  );
+
   if (!unit) {
     return (
       <section className="visual-cloud-panel">
@@ -2351,6 +2373,10 @@ function VerseFlowCloudPanel({
         <p className="empty-state">Select a unit to view the color-coded word / phrase / idea / lyric flow cloud.</p>
       </section>
     );
+  }
+
+  if (!deterministicComposer) {
+    return null;
   }
 
   const tokenColumns = Math.max(unit.tokens.length, 1);
@@ -2544,83 +2570,50 @@ function VerseFlowCloudPanel({
     };
   };
 
-  const phraseRanges = tokenColumns >= 12
-    ? [
-        clampChoiceRange(0, 1),
-        clampChoiceRange(2, 4),
-        clampChoiceRange(5, 6),
-        clampChoiceRange(7, 10),
-        clampChoiceRange(11, tokenColumns - 1),
-      ]
-    : Array.from({ length: Math.ceil(tokenColumns / 3) }, (_, index) => clampChoiceRange(index * 3, Math.min(tokenColumns - 1, index * 3 + 2)));
+  const phraseRanges = deterministicComposer.phraseChoices.map((choice) =>
+    clampChoiceRange(choice.tokenStart ?? 0, choice.tokenEnd ?? choice.tokenStart ?? 0),
+  );
 
-  const conceptRanges = tokenColumns >= 12
-    ? [
-        clampChoiceRange(0, 1),
-        clampChoiceRange(2, 6),
-        clampChoiceRange(7, 10),
-        clampChoiceRange(11, tokenColumns - 1),
-      ]
-    : Array.from({ length: Math.ceil(tokenColumns / 4) }, (_, index) => clampChoiceRange(index * 4, Math.min(tokenColumns - 1, index * 4 + 3)));
+  const conceptRanges = deterministicComposer.ideaChoices.map((choice) =>
+    clampChoiceRange(choice.tokenStart ?? 0, choice.tokenEnd ?? choice.tokenStart ?? 0),
+  );
 
-  const rangeIncludes = (range: { start: number; end: number }, words: string[]) => {
-    const text = createChoiceText(unit.tokens.slice(range.start, range.end + 1)).toLowerCase();
-    return words.every((word) => text.includes(word));
-  };
 
-  const phraseLabel = (range: { start: number; end: number }) => {
-    if (rangeIncludes(range, ['blessed', 'man'])) return 'Blessed is the man';
-    if (rangeIncludes(range, ['who', 'not']) && unit.tokens.slice(range.start, range.end + 1).some((token) => buildTokenMeaning(token).toLowerCase().includes('walk'))) return 'that walketh not';
-    if (rangeIncludes(range, ['counsel'])) return 'in the counsel of the ungodly';
-    if (rangeIncludes(range, ['way']) || rangeIncludes(range, ['sinner'])) return 'nor standeth in the way of sinners';
-    if (rangeIncludes(range, ['seat']) || rangeIncludes(range, ['mocker'])) return 'nor sitteth in the seat of the scornful';
-    return sentenceCase(createChoiceText(unit.tokens.slice(range.start, range.end + 1)));
-  };
+  const wordChoices = deterministicComposer.wordChoices.map((choice, index) => {
+    const token = unit.tokens[choice.tokenStart] ?? unit.tokens[index];
+    return {
+      ...choice,
+      description: [token?.surface, token?.strong ? `Strong's ${token.strong}` : null, choice.description]
+        .filter(Boolean)
+        .join(' | '),
+    };
+  });
 
-  const conceptLabel = (range: { start: number; end: number }) => {
-    if (rangeIncludes(range, ['blessed', 'man'])) return 'Blessed is the one';
-    if (rangeIncludes(range, ['walk']) || rangeIncludes(range, ['counsel'])) return 'who does not walk in the counsel of the wicked';
-    if (rangeIncludes(range, ['way']) || rangeIncludes(range, ['sinner'])) return 'nor stand in the path of sinners';
-    if (rangeIncludes(range, ['seat']) || rangeIncludes(range, ['mocker'])) return 'nor sit among mockers';
-    return sentenceCase(createChoiceText(unit.tokens.slice(range.start, range.end + 1)));
-  };
-
-  const rhythmicLabel = (range: { start: number; end: number }) => {
-    if (rangeIncludes(range, ['blessed', 'man'])) return 'How blessed is the one';
-    if (rangeIncludes(range, ['walk']) || rangeIncludes(range, ['counsel'])) return 'Who does not walk with the wicked';
-    if (rangeIncludes(range, ['way']) || rangeIncludes(range, ['sinner'])) return 'who does not stand with sinners';
-    if (rangeIncludes(range, ['seat']) || rangeIncludes(range, ['mocker'])) return 'who does not sit among mockers';
-    return sentenceCase(createChoiceText(unit.tokens.slice(range.start, range.end + 1)));
-  };
-
-  const rhythmicAlternatives = (range: { start: number; end: number }) => {
-    if (rangeIncludes(range, ['blessed', 'man'])) {
-      return ['How blessed is the one', 'Blessed is the one', 'Fortunate is the one'];
+  const buildGeneratedChoices = (
+    level: ComposerChoiceLevel,
+    response: { chunks?: Array<{ chunk_id: string; candidates: Array<{ text: string; rationale: string }> }> } | undefined,
+    chunkSeeds: Array<{ chunk_id: string; start: number; end: number }>,
+    labelPrefix: string,
+  ): ComposerChoice[] => (response?.chunks ?? []).flatMap((chunk) => {
+    const seed = chunkSeeds.find((item) => item.chunk_id === chunk.chunk_id);
+    if (!seed) {
+      return [];
     }
-    if (rangeIncludes(range, ['walk']) || rangeIncludes(range, ['counsel'])) {
-      return ['Who does not walk with the wicked', 'who will not follow wicked counsel', 'who keeps clear of wicked counsel'];
-    }
-    if (rangeIncludes(range, ['way']) || rangeIncludes(range, ['sinner'])) {
-      return ['who does not stand with sinners', 'nor stand in sinners\' path', 'who will not take the sinners\' road'];
-    }
-    if (rangeIncludes(range, ['seat']) || rangeIncludes(range, ['mocker'])) {
-      return ['who does not sit among mockers', 'nor sit among the scornful', 'who keeps from mockers\' seats'];
-    }
-    return [rhythmicLabel(range)];
-  };
-
-  const wordChoices = unit.tokens.map((token, index) => ({
-    id: `flow-word-${token.token_id}`,
-    label: sentenceCase(buildTokenMeaning(token)),
-    text: buildTokenMeaning(token),
-    tokenStart: index,
-    tokenEnd: index,
-    tokenId: token.token_id,
-    description: [token.surface, token.strong ? `Strong's ${token.strong}` : null].filter(Boolean).join(' · '),
-  }));
+    return chunk.candidates.map((candidate, index) =>
+      createRangeChoice(
+        level,
+        `${level}-generated-${chunk.chunk_id}-${index + 1}`,
+        sentenceCase(normalizeComposerText(candidate.text)),
+        seed.start,
+        seed.end,
+        `${labelPrefix} | ${candidate.rationale || 'generated alternate'}`,
+      ),
+    );
+  });
 
   const phraseChoices = dedupeComposerChoices([
-    ...phraseRanges.map((range, index) => createRangeChoice('phrase', `flow-phrase-${unit.unit_id}-${index}`, phraseLabel(range), range.start, range.end, 'phrase decision')),
+    ...deterministicComposer.phraseChoices,
+    ...buildGeneratedChoices('phrase', phraseSuggestionsQuery.data, deterministicComposer.phraseSuggestionChunks, 'generated phrase'),
     ...phraseAidRenderings.slice(0, 3).map((rendering, index) => {
       const renderingRange = resolveRangeFromAlignmentIds(rendering.alignment_ids)
         ?? resolveRangeFromSpanIds(rendering.target_spans.map((span) => span.span_id));
@@ -2632,7 +2625,8 @@ function VerseFlowCloudPanel({
   ]);
 
   const ideaChoices = dedupeComposerChoices([
-    ...conceptRanges.map((range, index) => createRangeChoice('idea', `flow-concept-${unit.unit_id}-${index}`, conceptLabel(range), range.start, range.end, 'concept decision')),
+    ...deterministicComposer.ideaChoices,
+    ...buildGeneratedChoices('idea', conceptSuggestionsQuery.data, deterministicComposer.ideaSuggestionChunks, 'generated concept'),
     ...conceptAidRenderings.slice(0, 2).map((rendering, index) => {
       const renderingRange = resolveRangeFromAlignmentIds(rendering.alignment_ids)
         ?? resolveRangeFromSpanIds(rendering.target_spans.map((span) => span.span_id));
@@ -2648,32 +2642,22 @@ function VerseFlowCloudPanel({
   ]);
 
   const lyricChoices = dedupeComposerChoices([
-    ...conceptRanges.flatMap((range, rangeIndex) =>
-      rhythmicAlternatives(range).map((label, choiceIndex) =>
-        createRangeChoice(
-          'lyric',
-          `flow-rhythm-${unit.unit_id}-${rangeIndex}-${choiceIndex}`,
-          label,
-          range.start,
-          range.end,
-          choiceIndex === 0 ? 'rhythmic decision' : 'alternate rhythm',
-        ),
-      ),
-    ),
+    ...deterministicComposer.lyricChoices,
+    ...buildGeneratedChoices('lyric', lyricSuggestionsQuery.data, deterministicComposer.lyricSuggestionChunks, 'generated rhythm'),
     ...(generatedLyricText.trim()
-      ? [createRangeChoice('lyric', 'flow-generated-rhythm', sentenceCase(normalizeComposerText(generatedLyricText)), 0, tokenColumns - 1, 'generated rhythm')]
+      ? [createRangeChoice('lyric', 'flow-generated-rhythm', sentenceCase(normalizeComposerText(generatedLyricText)), 0, tokenColumns - 1, 'guided generated rhythm')]
       : []),
     ...currentEnglishRenderings
       .filter((rendering) => rendering.layer === 'lyric' || rendering.layer === 'metered_lyric' || rendering.layer === 'parallelism_lyric')
       .slice(0, 2)
       .map((rendering) => createRangeChoice(
-      'lyric',
-      `flow-rhythm-${rendering.rendering_id}`,
-      sentenceCase(normalizeComposerText(rendering.text)),
-      0,
-      tokenColumns - 1,
-      `${rendering.layer.replace(/_/g, ' ')} ${rendering.status}`,
-    )),
+        'lyric',
+        `flow-rhythm-${rendering.rendering_id}`,
+        sentenceCase(normalizeComposerText(rendering.text)),
+        0,
+        tokenColumns - 1,
+        `${rendering.layer.replace(/_/g, ' ')} ${rendering.status}`,
+      )),
     ...retrievalHits.slice(0, 2).map((hit, index) => createRangeChoice(
       'lyric',
       `flow-rhythm-hit-${hit.hit_id}-${index}`,
@@ -2853,7 +2837,14 @@ function VerseFlowCloudPanel({
           <div className="flow-stage-bar__meta">
             <span className="tag">cursor {currentCursorTokenIndex + 1} / {tokenColumns}</span>
             <span className="tag">layer: {activeLayer}</span>
-            <button type="button" className="tab" onClick={onGenerateLyric}>
+            <button
+              type="button"
+              className="tab"
+              onClick={() => {
+                void lyricSuggestionsQuery.refetch();
+                onGenerateLyric();
+              }}
+            >
               Generate rhythm
             </button>
           </div>

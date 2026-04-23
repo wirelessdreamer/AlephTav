@@ -31,6 +31,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "all"
+        ],
+        "gloss_fragments": [
+          "all"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 2:12",
@@ -57,6 +79,7 @@
         "Psalm 16:3",
         "Psalm 18:1"
       ],
+      "display_gloss": "all",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -83,6 +106,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "all"
+      ],
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -134,6 +160,32 @@
       "word_sense": "all"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "day"
+        ],
+        "gloss_fragments": [
+          "the",
+          "day"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": true
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 7:12",
@@ -160,6 +212,7 @@
         "Psalm 44:16",
         "Psalm 44:23"
       ],
+      "display_gloss": "day the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -186,6 +239,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "the",
+        "day"
+      ],
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +297,28 @@
       "word_sense": "day"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "gracious"
+        ],
+        "gloss_fragments": [
+          "he is showing favor"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 30:9",
         "Psalm 59:6",
@@ -248,6 +327,7 @@
         "Psalm 112:5",
         "Psalm 142:2"
       ],
+      "display_gloss": "he is showing favor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -273,6 +353,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[he.is].showing.favor"
+      ],
       "lemma": "חָנַן",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -307,10 +390,37 @@
       "word_sense": "[he.is].showing.favor"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "lending"
+        ],
+        "gloss_fragments": [
+          "and",
+          "he is lending"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 83:9",
         "Psalm 112:5"
       ],
+      "display_gloss": "and he is lending",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -336,6 +446,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "[he.is].lending"
+      ],
       "lemma": "לָוָה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -366,6 +480,41 @@
       "word_sense": "[he.is].lending"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "children",
+          "his"
+        ],
+        "gloss_fragments": [
+          "and",
+          "offspring",
+          "his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -392,6 +541,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and his offspring",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -418,6 +568,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "offspring",
+        "his"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -482,6 +637,32 @@
       "word_sense": "his"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "for",
+          "blessing"
+        ],
+        "gloss_fragments": [
+          "become (into)",
+          "a blessing"
+        ],
+        "preposition_role": "for",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 21:4",
         "Psalm 21:7",
@@ -491,6 +672,7 @@
         "Psalm 129:8",
         "Psalm 133:3"
       ],
+      "display_gloss": "become (into) a blessing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -517,6 +699,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "[become].(into)",
+        "a.blessing"
+      ],
       "lemma": "בְּרָכָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -552,5 +738,30 @@
     }
   ],
   "unit_id": "ps037.v026.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 37:26",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "text": "[He is] ever merciful, and lendeth; and his seed [is] blessed.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 37:26",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "text": "All the day long he dealeth graciously, and lendeth; And his seed is blessed.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 37:26",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "text": "All day long he deals graciously, and lends. His offspring is blessed.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

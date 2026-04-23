@@ -32,6 +32,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "give thanks"
+        ],
+        "gloss_fragments": [
+          "I will give thanks to"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 6:6",
         "Psalm 7:18",
@@ -58,6 +80,7 @@
         "Psalm 107:31",
         "Psalm 111:1"
       ],
+      "display_gloss": "I will give thanks to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -83,6 +106,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I.will.give.thanks.to"
+      ],
       "lemma": "יָדָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -132,6 +158,28 @@
       "word_sense": "I.will.give.thanks.to"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -158,6 +206,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -184,6 +233,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +292,28 @@
       "word_sense": "Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "great"
+        ],
+        "gloss_fragments": [
+          "exceedingly"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
@@ -266,6 +340,7 @@
         "Psalm 119:8",
         "Psalm 119:43"
       ],
+      "display_gloss": "exceedingly",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -292,6 +367,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "exceedingly"
+      ],
       "lemma": "מְאֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -342,6 +420,41 @@
       "word_sense": "exceedingly"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "with",
+          "mouth",
+          "my"
+        ],
+        "gloss_fragments": [
+          "with",
+          "mouth",
+          "my"
+        ],
+        "preposition_role": "with",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -368,6 +481,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "with my mouth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -394,6 +508,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "with",
+        "mouth",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -458,6 +577,35 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "in",
+          "midst"
+        ],
+        "gloss_fragments": [
+          "and",
+          "among"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 22:15",
         "Psalm 22:23",
@@ -466,6 +614,7 @@
         "Psalm 57:5",
         "Psalm 68:26"
       ],
+      "display_gloss": "and in among",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -492,6 +641,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "among"
+      ],
       "lemma": "תָּוֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -525,6 +678,28 @@
       "word_sense": "among"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "many"
+        ],
+        "gloss_fragments": [
+          "many people"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:2",
         "Psalm 3:3",
@@ -551,6 +726,7 @@
         "Psalm 40:10",
         "Psalm 40:11"
       ],
+      "display_gloss": "many people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -577,6 +753,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "many.[people]"
+      ],
       "lemma": "רַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -628,6 +807,37 @@
       "word_sense": "many.[people]"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "praise",
+          "him"
+        ],
+        "gloss_fragments": [
+          "I",
+          "will praise him"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "him"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -654,6 +864,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "will praise him I",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -679,6 +890,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I",
+        "will.praise.him"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -742,5 +957,30 @@
     }
   ],
   "unit_id": "ps109.v030.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 109:30",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA109.htm",
+      "text": "I will greatly praise the LORD with my mouth; yea, I will praise him among the multitude.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 109:30",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA109.htm",
+      "text": "I will give great thanks unto Jehovah with my mouth; Yea, I will praise him among the multitude.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 109:30",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA109.htm",
+      "text": "I will give great thanks to the LORD with my mouth. Yes, I will praise him among the multitude.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -33,6 +33,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "blessed"
+        ],
+        "gloss_fragments": [
+          "be blessed"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:13",
         "Psalm 10:3",
@@ -59,6 +81,7 @@
         "Psalm 95:6",
         "Psalm 96:2"
       ],
+      "display_gloss": "be blessed",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -84,6 +107,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[be].blessed"
+      ],
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -133,6 +159,28 @@
       "word_sense": "[be].blessed"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -159,6 +207,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -185,6 +234,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -244,6 +296,26 @@
       "word_sense": "Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": "disjunctive",
+        "construct_state": false,
+        "discourse_marker": "parenthetical_only_gloss",
+        "divine_name": false,
+        "english_parts": [
+          "for"
+        ],
+        "gloss_fragments": [],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj"
+        ],
+        "raw_pos": [
+          "conjunction"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:4",
@@ -270,6 +342,7 @@
         "Psalm 10:3",
         "Psalm 10:14"
       ],
+      "display_gloss": "for",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -296,6 +369,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(dm)"
+      ],
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -354,6 +430,28 @@
       "word_sense": "(dm)"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "wondrously shown"
+        ],
+        "gloss_fragments": [
+          "he has made wonderful"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 72:18",
         "Psalm 86:10",
@@ -365,6 +463,7 @@
         "Psalm 136:4",
         "Psalm 139:14"
       ],
+      "display_gloss": "he has made wonderful",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -390,6 +489,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "he.has.made.wonderful"
+      ],
       "lemma": "פָּלָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -424,6 +526,37 @@
       "word_sense": "he.has.made.wonderful"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "steadfast love",
+          "his"
+        ],
+        "gloss_fragments": [
+          "loyalty",
+          "his covenant"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -450,6 +583,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "his covenant loyalty",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -476,6 +610,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "loyalty",
+        "his.covenant"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -540,6 +678,37 @@
       "word_sense": "his.covenant"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "me"
+        ],
+        "gloss_fragments": [
+          "to",
+          "me"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "me"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -566,6 +735,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -592,6 +762,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "me"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -657,6 +831,32 @@
       "word_sense": "me"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "city"
+        ],
+        "gloss_fragments": [
+          "in",
+          "a city"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 9:7",
         "Psalm 46:5",
@@ -677,6 +877,7 @@
         "Psalm 122:3",
         "Psalm 127:1"
       ],
+      "display_gloss": "in a city",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -703,6 +904,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "a.city"
+      ],
       "lemma": "עִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -748,9 +953,32 @@
       "word_sense": "a.city"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "besieged"
+        ],
+        "gloss_fragments": [
+          "of siege"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 60:11"
       ],
+      "display_gloss": "of siege",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -777,6 +1005,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.siege"
+      ],
       "lemma": "מָצוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -806,5 +1037,30 @@
     }
   ],
   "unit_id": "ps031.v022.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 31:22",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA031.htm",
+      "text": "For I said in my haste, I am cut off from before thine eyes: nevertheless thou heardest the voice of my supplications when I cried unto thee.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 31:22",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA031.htm",
+      "text": "As for me, I said in my haste, I am cut off from before thine eyes: Nevertheless thou heardest the voice of my supplications, When I cried unto thee.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 31:22",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA031.htm",
+      "text": "As for me, I said in my haste, “I am cut off from before your eyes.” Nevertheless you heard the voice of my petitions when I cried to you.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

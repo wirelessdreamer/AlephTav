@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import type {
   ConcordanceResult,
+  ComposerSuggestionResponse,
   GenerationJob,
   OpenConcerns,
   PinnedLexicalCardState,
@@ -124,6 +125,25 @@ export function useUnit(unitId: string | null) {
     queryKey: ['unit', unitId],
     queryFn: () => getJson<Unit>(`/units/${unitId}`),
     enabled: Boolean(unitId),
+  });
+}
+
+export function useComposerSuggestions(
+  unitId: string | null,
+  stage: 'phrase' | 'concept' | 'lyric',
+  chunks: Array<{ chunk_id: string; start: number; end: number; text: string; source_text: string; confidence: number; confidence_reasons: string[] }>,
+  enabled = true,
+) {
+  return useQuery({
+    queryKey: ['composer-suggestions', unitId, stage, chunks],
+    queryFn: () =>
+      postJson<ComposerSuggestionResponse>(`/units/${unitId}/composer-suggestions`, {
+        stage,
+        candidate_count: 3,
+        chunks,
+      }),
+    enabled: Boolean(unitId) && enabled && chunks.length > 0,
+    retry: false,
   });
 }
 

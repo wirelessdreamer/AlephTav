@@ -24,6 +24,9 @@ export interface Token {
   semantic_role: string | null;
   referent: string | null;
   word_sense: string | null;
+  gloss_parts: string[];
+  display_gloss: string | null;
+  compiler_features: Record<string, unknown>;
   ref: string;
   same_psalm_occurrence_refs?: string[];
   corpus_occurrence_refs?: string[];
@@ -244,6 +247,9 @@ export interface ConcordanceResult {
   semantic_role: string | null;
   referent: string | null;
   word_sense: string | null;
+  gloss_parts: string[];
+  display_gloss: string | null;
+  compiler_features: Record<string, unknown>;
   occurrence_index: number;
   gloss_list: string[];
   query_field: string;
@@ -253,6 +259,24 @@ export interface PinnedLexicalCardState {
   token_id: string | null;
   updated_at: string | null;
   token: TokenCard | null;
+}
+
+export interface ComposerSuggestionChunk {
+  chunk_id: string;
+  candidates: Array<{
+    text: string;
+    rationale: string;
+    alignment_hints: string[];
+    drift_flags: string[];
+    metrics: Record<string, unknown>;
+  }>;
+}
+
+export interface ComposerSuggestionResponse {
+  unit_id: string;
+  stage: 'phrase' | 'concept' | 'lyric';
+  available: boolean;
+  chunks: ComposerSuggestionChunk[];
 }
 
 export interface OpenConcerns {

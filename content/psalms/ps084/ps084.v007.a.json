@@ -34,6 +34,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "pass"
+        ],
+        "gloss_fragments": [
+          "those who pass"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 8:9",
         "Psalm 17:3",
@@ -60,6 +82,7 @@
         "Psalm 119:39",
         "Psalm 124:4"
       ],
+      "display_gloss": "those who pass",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -85,6 +108,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[those.who].pass"
+      ],
       "lemma": "עָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -134,11 +160,38 @@
       "word_sense": "[those.who].pass"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "through",
+          "valley"
+        ],
+        "gloss_fragments": [
+          "in",
+          "the valley"
+        ],
+        "preposition_role": "through",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 60:8",
         "Psalm 65:14",
         "Psalm 108:8"
       ],
+      "display_gloss": "in the valley",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -165,6 +218,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "the.valley"
+      ],
       "lemma": "עֵמֶק",
       "missing_enrichments": [
         "oshb:stem",
@@ -195,7 +252,34 @@
       "word_sense": "the.valley"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "the",
+          "baca"
+        ],
+        "gloss_fragments": [
+          "of (the)",
+          "Baca"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "Baca of (the)",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -222,6 +306,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.(the)",
+        "Baca"
+      ],
       "lemma": "בָּכָא",
       "missing_enrichments": [
         "oshb:stem",
@@ -248,10 +336,33 @@
       "word_sense": "Baca"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "springs"
+        ],
+        "gloss_fragments": [
+          "a spring"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 74:15",
         "Psalm 104:10"
       ],
+      "display_gloss": "a spring",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -278,6 +389,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "a.spring"
+      ],
       "lemma": "מַעְיָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -306,6 +420,37 @@
       "word_sense": "a.spring"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "make",
+          "it"
+        ],
+        "gloss_fragments": [
+          "they",
+          "make it"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "it"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -332,6 +477,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "make it they",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -357,6 +503,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "they",
+        "make.it"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -416,6 +566,28 @@
       "word_sense": "make.it"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "also"
+        ],
+        "gloss_fragments": [
+          "also"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj"
+        ],
+        "raw_pos": [
+          "particle"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 8:8",
         "Psalm 14:3",
@@ -442,6 +614,7 @@
         "Psalm 119:23",
         "Psalm 119:24"
       ],
+      "display_gloss": "also",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -468,6 +641,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "also"
+      ],
       "lemma": "גַּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -522,6 +698,28 @@
       "word_sense": "also"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "blessings"
+        ],
+        "gloss_fragments": [
+          "blessings"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 21:4",
         "Psalm 21:7",
@@ -531,6 +729,7 @@
         "Psalm 129:8",
         "Psalm 133:3"
       ],
+      "display_gloss": "blessings",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -557,6 +756,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "blessings"
+      ],
       "lemma": "בְּרָכָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -591,6 +793,28 @@
       "word_sense": "blessings"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "covers"
+        ],
+        "gloss_fragments": [
+          "it covers it"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 71:13",
         "Psalm 89:46",
@@ -598,6 +822,7 @@
         "Psalm 109:19",
         "Psalm 109:29"
       ],
+      "display_gloss": "it covers it",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -623,6 +848,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "it.covers.[it]"
+      ],
       "lemma": "עָטָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -653,7 +881,30 @@
       "word_sense": "it.covers.[it]"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "early rain"
+        ],
+        "gloss_fragments": [
+          "early rain"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "early rain",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -680,6 +931,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "early.rain"
+      ],
       "lemma": "מוֹרֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -706,5 +960,30 @@
     }
   ],
   "unit_id": "ps084.v007.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 84:7",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA084.htm",
+      "text": "They go from strength to strength, [every one of them] in Zion appeareth before God.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 84:7",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA084.htm",
+      "text": "They go from strength to strength; Every one of them appeareth before God in Zion.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 84:7",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA084.htm",
+      "text": "They go from strength to strength. Every one of them appears before God in Zion.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

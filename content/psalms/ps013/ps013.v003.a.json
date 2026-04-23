@@ -38,6 +38,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "until"
+        ],
+        "gloss_fragments": [
+          "until"
+        ],
+        "preposition_role": "until",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
@@ -64,6 +86,7 @@
         "Psalm 48:15",
         "Psalm 49:20"
       ],
+      "display_gloss": "until",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -90,6 +113,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "until"
+      ],
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -143,10 +169,33 @@
       "word_sense": "until"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "when?"
+        ],
+        "gloss_fragments": [
+          "when?"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "pron"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 62:4",
         "Psalm 139:7"
       ],
+      "display_gloss": "when?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -173,6 +222,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "when?"
+      ],
       "lemma": "אָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -204,6 +256,28 @@
       "word_sense": "when?"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "take"
+        ],
+        "gloss_fragments": [
+          "will I set"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:7",
         "Psalm 8:7",
@@ -225,6 +299,7 @@
         "Psalm 139:5",
         "Psalm 140:6"
       ],
+      "display_gloss": "will I set",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -250,6 +325,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "will.I.set"
+      ],
       "lemma": "שִׁית",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -294,6 +372,28 @@
       "word_sense": "will.I.set"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "counsel"
+        ],
+        "gloss_fragments": [
+          "counsel(s)"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:1",
         "Psalm 14:6",
@@ -301,6 +401,7 @@
         "Psalm 33:11",
         "Psalm 107:11"
       ],
+      "display_gloss": "counsel(s)",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -327,6 +428,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "counsel(s)"
+      ],
       "lemma": "עֵצָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -358,6 +462,41 @@
       "word_sense": "counsel(s)"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "soul",
+          "my"
+        ],
+        "gloss_fragments": [
+          "in",
+          "soul",
+          "my"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -384,6 +523,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "in my soul",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -410,6 +550,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "soul",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -466,11 +611,34 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "sorrow"
+        ],
+        "gloss_fragments": [
+          "sorrow"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 31:11",
         "Psalm 107:39",
         "Psalm 116:3"
       ],
+      "display_gloss": "sorrow",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -497,6 +665,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "sorrow"
+      ],
       "lemma": "יָגוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -526,6 +697,41 @@
       "word_sense": "sorrow"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "in",
+          "heart",
+          "my"
+        ],
+        "gloss_fragments": [
+          "in",
+          "heart",
+          "my"
+        ],
+        "preposition_role": "in",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -552,6 +758,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "in my heart",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -578,6 +785,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "in",
+        "heart",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -634,6 +846,28 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "every day"
+        ],
+        "gloss_fragments": [
+          "by day"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": true
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 22:3",
@@ -645,6 +879,7 @@
         "Psalm 91:5",
         "Psalm 121:6"
       ],
+      "display_gloss": "by day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -671,6 +906,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "by.day"
+      ],
       "lemma": "יוֹמָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -706,6 +944,28 @@
       "word_sense": "by.day"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "until"
+        ],
+        "gloss_fragments": [
+          "until"
+        ],
+        "preposition_role": "until",
+        "raw_classes": [
+          "prep"
+        ],
+        "raw_pos": [
+          "preposition"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
@@ -732,6 +992,7 @@
         "Psalm 48:15",
         "Psalm 49:20"
       ],
+      "display_gloss": "until",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -758,6 +1019,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "until"
+      ],
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -811,10 +1075,33 @@
       "word_sense": "until"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "when?"
+        ],
+        "gloss_fragments": [
+          "when?"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "pron"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 62:4",
         "Psalm 139:7"
       ],
+      "display_gloss": "when?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -841,6 +1128,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "when?"
+      ],
       "lemma": "אָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -872,6 +1162,28 @@
       "word_sense": "when?"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "exalted"
+        ],
+        "gloss_fragments": [
+          "will he be exalted"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 3:4",
         "Psalm 12:9",
@@ -898,6 +1210,7 @@
         "Psalm 99:5",
         "Psalm 99:9"
       ],
+      "display_gloss": "will he be exalted",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -923,6 +1236,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "will.he.be.exalted"
+      ],
       "lemma": "רוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -972,6 +1288,37 @@
       "word_sense": "will.he.be.exalted"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "enemy",
+          "my"
+        ],
+        "gloss_fragments": [
+          "enemy",
+          "my"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -998,6 +1345,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "my enemy",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1023,6 +1371,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "enemy",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1078,6 +1430,37 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "over",
+          "me"
+        ],
+        "gloss_fragments": [
+          "over",
+          "me"
+        ],
+        "preposition_role": "over",
+        "raw_classes": [
+          "prep",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "me"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1104,6 +1487,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "over",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1130,6 +1514,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "over",
+        "me"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1187,5 +1575,30 @@
     }
   ],
   "unit_id": "ps013.v003.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 13:3",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA013.htm",
+      "text": "Consider [and] hear me, O LORD my God: lighten mine eyes, lest I sleep the [sleep of] death;",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 13:3",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA013.htm",
+      "text": "Consider [and] answer me, O Jehovah my God: Lighten mine eyes, lest I sleep the [sleep of] death;",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 13:3",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA013.htm",
+      "text": "Behold, and answer me, LORD, my God. Give light to my eyes, lest I sleep in death;",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

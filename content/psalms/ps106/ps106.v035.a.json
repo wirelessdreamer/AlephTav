@@ -29,10 +29,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "contrastive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "but",
+          "mingled"
+        ],
+        "gloss_fragments": [
+          "and",
+          "they mixed themselves"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 104:34",
         "Psalm 119:122"
       ],
+      "display_gloss": "and they mixed themselves",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -58,6 +85,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "they.mixed.themselves"
+      ],
       "lemma": "עָרַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -85,6 +116,36 @@
       "word_sense": "they.mixed.themselves"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "with",
+          "the",
+          "nations"
+        ],
+        "gloss_fragments": [
+          "with",
+          "the",
+          "nations"
+        ],
+        "preposition_role": "with",
+        "raw_classes": [
+          "prep",
+          "art",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "particle",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:1",
         "Psalm 2:8",
@@ -111,6 +172,7 @@
         "Psalm 59:9",
         "Psalm 66:7"
       ],
+      "display_gloss": "with nations the",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -137,6 +199,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "with",
+        "the",
+        "nations"
+      ],
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -192,6 +259,32 @@
       "word_sense": "nations"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "learned"
+        ],
+        "gloss_fragments": [
+          "and",
+          "they learned"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "verb"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 18:35",
         "Psalm 25:9",
@@ -202,6 +295,7 @@
         "Psalm 119:73",
         "Psalm 144:1"
       ],
+      "display_gloss": "and they learned",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -227,6 +321,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "and",
+        "they.learned"
+      ],
       "lemma": "לָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -260,6 +358,37 @@
       "word_sense": "they.learned"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "did",
+          "their"
+        ],
+        "gloss_fragments": [
+          "deeds",
+          "their"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -286,6 +415,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "their deeds",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -312,6 +442,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "deeds",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -377,5 +511,30 @@
     }
   ],
   "unit_id": "ps106.v035.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 106:35",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA106.htm",
+      "text": "But were mingled among the heathen, and learned their works.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 106:35",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA106.htm",
+      "text": "But mingled themselves with the nations, And learned their works,",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 106:35",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA106.htm",
+      "text": "but mixed themselves with the nations, and learned their works.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

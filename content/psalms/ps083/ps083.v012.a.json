@@ -33,6 +33,37 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "make",
+          "them!"
+        ],
+        "gloss_fragments": [
+          "make",
+          "them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them!"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -59,6 +90,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "them make",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -84,6 +116,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "make",
+        "them"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -146,6 +182,37 @@
       "word_sense": "them"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "nobles",
+          "their"
+        ],
+        "gloss_fragments": [
+          "their noble",
+          "people"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj",
+          "pron"
+        ],
+        "raw_pos": [
+          "adjective",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -172,6 +239,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "people their noble",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -198,6 +266,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "their.noble",
+        "[people]"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -262,9 +334,36 @@
       "word_sense": "[people]"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "like",
+          "Oreb"
+        ],
+        "gloss_fragments": [
+          "like",
+          "Oreb"
+        ],
+        "preposition_role": "like",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 147:9"
       ],
+      "display_gloss": "like Oreb",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -291,6 +390,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "like",
+        "Oreb"
+      ],
       "lemma": "עֹרֵב",
       "missing_enrichments": [
         "oshb:stem",
@@ -319,7 +422,38 @@
       "word_sense": "Oreb"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "like",
+          "Zeeb"
+        ],
+        "gloss_fragments": [
+          "and",
+          "like",
+          "Zeeb"
+        ],
+        "preposition_role": "like",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "and like Zeeb",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -346,6 +480,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "like",
+        "Zeeb"
+      ],
       "lemma": "זְאֵב",
       "missing_enrichments": [
         "oshb:stem",
@@ -372,6 +511,36 @@
       "word_sense": "Zeeb"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "like",
+          "Zebah"
+        ],
+        "gloss_fragments": [
+          "and",
+          "like",
+          "Zebah"
+        ],
+        "preposition_role": "like",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:6",
         "Psalm 27:6",
@@ -384,6 +553,7 @@
         "Psalm 107:22",
         "Psalm 116:17"
       ],
+      "display_gloss": "and like Zebah",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -410,6 +580,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "like",
+        "Zebah"
+      ],
       "lemma": "זֶבַח",
       "missing_enrichments": [
         "oshb:stem",
@@ -447,7 +622,38 @@
       "word_sense": "Zebah"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "like",
+          "Zalmunna"
+        ],
+        "gloss_fragments": [
+          "and",
+          "like",
+          "Zalmunna"
+        ],
+        "preposition_role": "like",
+        "raw_classes": [
+          "cj",
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "and like Zalmunna",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -474,6 +680,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "like",
+        "Zalmunna"
+      ],
       "lemma": "צַלְמֻנָּע",
       "missing_enrichments": [
         "oshb:stem",
@@ -500,6 +711,28 @@
       "word_sense": "Zalmunna"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "all"
+        ],
+        "gloss_fragments": [
+          "all"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 2:12",
@@ -526,6 +759,7 @@
         "Psalm 16:3",
         "Psalm 18:1"
       ],
+      "display_gloss": "all",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -552,6 +786,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "all"
+      ],
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -605,6 +842,37 @@
       "word_sense": "all"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "princes",
+          "their"
+        ],
+        "gloss_fragments": [
+          "princes",
+          "their"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -631,6 +899,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "their princes",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -657,6 +926,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "princes",
+        "their"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -722,5 +995,30 @@
     }
   ],
   "unit_id": "ps083.v012.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 83:12",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA083.htm",
+      "text": "Who said, Let us take to ourselves the houses of God in possession.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 83:12",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA083.htm",
+      "text": "Who said, Let us take to ourselves in possession The habitations of God.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 83:12",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA083.htm",
+      "text": "who said, “Let’s take possession of God’s pasture lands.”",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

@@ -31,9 +31,32 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "stranger"
+        ],
+        "gloss_fragments": [
+          "estranged"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 78:30"
       ],
+      "display_gloss": "estranged",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -59,6 +82,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "estranged"
+      ],
       "lemma": "זוּר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -85,6 +111,28 @@
       "word_sense": "estranged"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "become"
+        ],
+        "gloss_fragments": [
+          "I have become"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 9:10",
@@ -111,6 +159,7 @@
         "Psalm 45:17",
         "Psalm 50:21"
       ],
+      "display_gloss": "I have become",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -136,6 +185,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "I.have.become"
+      ],
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -190,6 +242,41 @@
       "word_sense": "I.have.become"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "brothers",
+          "my"
+        ],
+        "gloss_fragments": [
+          "to",
+          "brothers",
+          "my"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -216,6 +303,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "to my brothers",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -242,6 +330,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "brothers",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -306,7 +399,34 @@
       "word_sense": "my"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "alien"
+        ],
+        "gloss_fragments": [
+          "and",
+          "a foreigner"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "adj"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [],
+      "display_gloss": "and a foreigner",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -333,6 +453,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "a.foreigner"
+      ],
       "lemma": "נׇכְרִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -358,6 +482,32 @@
       "word_sense": "a.foreigner"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "sons"
+        ],
+        "gloss_fragments": [
+          "to",
+          "the children"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 7:1",
@@ -384,6 +534,7 @@
         "Psalm 47:1",
         "Psalm 48:1"
       ],
+      "display_gloss": "to the children",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -410,6 +561,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "to",
+        "the.children"
+      ],
       "lemma": "בֵּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -461,6 +616,37 @@
       "word_sense": "the.children"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "mother’s",
+          "my"
+        ],
+        "gloss_fragments": [
+          "my mother",
+          "my"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "common",
+          "number": "singular",
+          "person": "first",
+          "text": "my"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -487,6 +673,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "my my mother",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -513,6 +700,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "my.mother",
+        "my"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -578,5 +769,30 @@
     }
   ],
   "unit_id": "ps069.v009.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 69:9",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA069.htm",
+      "text": "For the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 69:9",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA069.htm",
+      "text": "For the zeal of thy house hath eaten me up; And the reproaches of them that reproach thee are fallen upon me.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 69:9",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA069.htm",
+      "text": "For the zeal of your house consumes me. The reproaches of those who reproach you have fallen on me.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

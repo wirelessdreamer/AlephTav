@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import re
 import shutil
 import zipfile
@@ -17,6 +18,8 @@ HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
 OSIS_NS = {"osis": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
 MACULA_REF_RE = re.compile(r"^PSA\s+(?P<psalm>\d+):(?P<verse>\d+)!(?P<word>\d+)$")
 STRONG_DIGITS_RE = re.compile(r"(\d+)")
+PARENTHETICAL_GLOSS_RE = re.compile(r"^\(.*\)$")
+WITNESS_LINE_RE = re.compile(r"^(?P<book>[1-3A-Z]{3})\s+(?P<chapter>\d+):(?P<verse>\d+)\s+(?P<text>.+)$")
 OSHB_FIELDS = ("lemma", "strong", "morph_code", "morph_readable", "part_of_speech", "stem")
 MACULA_FIELDS = ("syntax_role", "semantic_role", "referent", "word_sense")
 POS_MAP = {
@@ -43,6 +46,46 @@ STEM_MAP = {
 SOURCE_IMPORTED_AT = "2026-04-17T00:00:00Z"
 MAX_SAME_PSALM_OCCURRENCES = 12
 MAX_CROSS_PSALM_OCCURRENCES = 24
+POSSESSIVE_WORDS = {"my", "mine", "your", "yours", "his", "her", "hers", "its", "our", "ours", "their", "theirs"}
+TEMPORAL_WORDS = {"day", "night", "morning", "evening"}
+WITNESS_SOURCES = {
+    "kjv": {
+        "source_id": "kjv",
+        "name": "King James (Authorized) Version",
+        "version": "eng-kjv2006",
+        "license": "Public Domain",
+        "upstream_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+        "archive_name": "eng-kjv2006_vpl.zip",
+        "entry_name": "eng-kjv2006_vpl.txt",
+        "versionTitle": "King James Version",
+        "source_url_template": "https://ebible.org/eng-kjv2006/PSA{psalm:03d}.htm",
+        "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+    },
+    "asv": {
+        "source_id": "asv",
+        "name": "American Standard Version (1901)",
+        "version": "eng-asv",
+        "license": "Public Domain",
+        "upstream_url": "https://ebible.org/find/details.php?id=eng-asv",
+        "archive_name": "eng-asv_vpl.zip",
+        "entry_name": "eng-asv_vpl.txt",
+        "versionTitle": "American Standard Version",
+        "source_url_template": "https://ebible.org/eng-asv/PSA{psalm:03d}.htm",
+        "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+    },
+    "web": {
+        "source_id": "web",
+        "name": "World English Bible",
+        "version": "engwebp",
+        "license": "Public Domain",
+        "upstream_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+        "archive_name": "engwebp_vpl.zip",
+        "entry_name": "engwebp_vpl.txt",
+        "versionTitle": "World English Bible",
+        "source_url_template": "https://ebible.org/engwebp/PSA{psalm:03d}.htm",
+        "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
+    },
+}
 
 
 def _normalized_hebrew(text: str) -> str:
@@ -82,6 +125,118 @@ def _clean_transliteration(parts: list[str]) -> str | None:
     value = "".join(part for part in parts if part)
     value = _collapse_whitespace(value)
     return value or None
+
+
+def _clean_gloss_part(value: str | None) -> str | None:
+    normalized = _collapse_whitespace(value)
+    return normalized or None
+
+
+def _clean_display_fragment(value: str | None) -> str | None:
+    normalized = _collapse_whitespace(value)
+    if not normalized:
+        return None
+    if PARENTHETICAL_GLOSS_RE.match(normalized):
+        return None
+    normalized = normalized.replace("[is].", "").replace("[was].", "")
+    normalized = normalized.replace("[", "").replace("]", "")
+    normalized = normalized.replace(".", " ")
+    normalized = _collapse_whitespace(normalized)
+    return normalized or None
+
+
+def _clean_witness_text(value: str) -> str:
+    cleaned = value.replace("¶", " ")
+    cleaned = re.sub(r"[\*\u2020\u2021]+", "", cleaned)
+    return _collapse_whitespace(cleaned)
+
+
+def _component_display_fragment(component: dict[str, Any]) -> str | None:
+    gloss = _clean_display_fragment(component.get("gloss"))
+    if gloss:
+        return gloss
+    return _clean_display_fragment(component.get("english"))
+
+
+def _derive_display_gloss(components: list[dict[str, Any]]) -> str | None:
+    conjunctions: list[str] = []
+    prepositions: list[str] = []
+    bases: list[str] = []
+    suffixes: list[str] = []
+    postfixes: list[str] = []
+    for component in components:
+        fragment = _component_display_fragment(component)
+        if not fragment:
+            continue
+        pos = (component.get("pos") or "").casefold()
+        if pos == "conjunction":
+            conjunctions.append(fragment)
+        elif pos == "preposition":
+            prepositions.append(fragment)
+        elif pos == "suffix":
+            suffixes.append(fragment)
+        elif pos == "particle":
+            postfixes.append(fragment)
+        else:
+            bases.append(fragment)
+    if suffixes and bases:
+        anchor_index = len(bases) - 1 if prepositions else 0
+        bases[anchor_index] = f"{suffixes[0]} {bases[anchor_index]}"
+    ordered = [*conjunctions[:1], *prepositions[:1], *bases, *postfixes]
+    if not ordered:
+        ordered = [_clean_display_fragment(component.get("english")) for component in components]
+    display = _collapse_whitespace(" ".join(part for part in ordered if part))
+    return display or None
+
+
+def _derive_compiler_features(components: list[dict[str, Any]], word_sense: str | None, display_gloss: str | None) -> dict[str, Any]:
+    english_parts = [_clean_display_fragment(component.get("english")) for component in components]
+    gloss_parts = [_clean_display_fragment(component.get("gloss")) for component in components]
+    conjunction_text = " ".join(part for part in english_parts if part).casefold()
+    conjunction_role = None
+    if any((component.get("pos") or "").casefold() == "conjunction" for component in components):
+        if any(word in conjunction_text for word in ("but", "rather")):
+            conjunction_role = "contrastive"
+        elif "and" in conjunction_text:
+            conjunction_role = "additive"
+        elif "or" in conjunction_text:
+            conjunction_role = "disjunctive"
+        else:
+            conjunction_role = "conjunctive"
+    preposition_role = next(
+        (
+            fragment.casefold()
+            for component in components
+            if (component.get("pos") or "").casefold() == "preposition"
+            for fragment in [_clean_display_fragment(component.get("english"))]
+            if fragment
+        ),
+        None,
+    )
+    suffix_component = next((component for component in components if (component.get("pos") or "").casefold() == "suffix"), None)
+    suffix_pronoun = None
+    if suffix_component is not None:
+        suffix_pronoun = {
+            "text": _clean_display_fragment(suffix_component.get("english")) or _clean_display_fragment(suffix_component.get("gloss")),
+            "person": suffix_component.get("person"),
+            "number": suffix_component.get("number"),
+            "gender": suffix_component.get("gender"),
+        }
+    feature_text = " ".join(part for part in [display_gloss, word_sense, *english_parts, *gloss_parts] if part).casefold()
+    return {
+        "component_count": len(components),
+        "english_parts": [part for part in english_parts if part],
+        "gloss_fragments": [part for part in gloss_parts if part],
+        "raw_pos": [component.get("pos") for component in components if component.get("pos")],
+        "raw_classes": [component.get("class") for component in components if component.get("class")],
+        "discourse_marker": "parenthetical_only_gloss" if word_sense and PARENTHETICAL_GLOSS_RE.match(word_sense) else None,
+        "conjunction_role": conjunction_role,
+        "preposition_role": preposition_role,
+        "construct_state": any(component.get("state") == "construct" for component in components),
+        "suffix_pronoun": suffix_pronoun,
+        "divine_name": any(component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068" for component in components),
+        "temporal_pair_candidate": any(word in feature_text for word in TEMPORAL_WORDS),
+    }
 
 
 def _parse_strong_number(raw: str | None) -> str | None:
@@ -193,6 +348,7 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
                     "lemmas": [],
                     "roles": [],
                     "glosses": [],
+                    "components": [],
                     "pos": [],
                     "stems": [],
                 },
@@ -215,19 +371,59 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
             stem = _collapse_whitespace(word.attrib.get("stem"))
             if stem:
                 bucket["stems"].append(stem)
+            bucket["components"].append(
+                {
+                    "english": _collapse_whitespace(word.attrib.get("english")),
+                    "gloss": gloss,
+                    "pos": pos,
+                    "class": _collapse_whitespace(word.attrib.get("class")),
+                    "state": _collapse_whitespace(word.attrib.get("state")),
+                    "person": _collapse_whitespace(word.attrib.get("person")),
+                    "number": _collapse_whitespace(word.attrib.get("number")),
+                    "gender": _collapse_whitespace(word.attrib.get("gender")),
+                    "lemma": lemma,
+                    "strongnumberx": _collapse_whitespace(word.attrib.get("strongnumberx")),
+                }
+            )
     normalized: dict[tuple[int, int, int], dict[str, Any]] = {}
     for key, payload in grouped.items():
+        gloss_parts = [part for part in (_clean_gloss_part(item) for item in payload["glosses"]) if part]
+        word_sense = payload["glosses"][-1] if payload["glosses"] else None
+        display_gloss = _derive_display_gloss(payload["components"])
         normalized[key] = {
             "transliteration": _clean_transliteration(payload["transliterations"]),
             "lemma": payload["lemmas"][-1] if payload["lemmas"] else None,
             "syntax_role": payload["roles"][0] if payload["roles"] else None,
             "semantic_role": None,
             "referent": None,
-            "word_sense": payload["glosses"][-1] if payload["glosses"] else None,
+            "word_sense": word_sense,
+            "gloss_parts": gloss_parts,
+            "display_gloss": display_gloss,
+            "compiler_features": _derive_compiler_features(payload["components"], word_sense, display_gloss),
             "part_of_speech": payload["pos"][-1] if payload["pos"] else None,
             "stem": payload["stems"][-1] if payload["stems"] else None,
         }
     return normalized
+
+
+def _load_witness_verses(source_id: str) -> dict[tuple[int, int], str]:
+    config = WITNESS_SOURCES[source_id]
+    archive_path = get_settings().raw_dir / source_id / config["archive_name"]
+    verses: dict[tuple[int, int], str] = {}
+    with zipfile.ZipFile(archive_path) as archive:
+        with archive.open(config["entry_name"]) as handle:
+            stream = io.TextIOWrapper(handle, encoding="utf-8")
+            for raw_line in stream:
+                line = _collapse_whitespace(raw_line)
+                if not line:
+                    continue
+                match = WITNESS_LINE_RE.match(line)
+                if not match or match.group("book") != "PSA":
+                    continue
+                psalm_number = int(match.group("chapter"))
+                verse_number = int(match.group("verse"))
+                verses[(psalm_number, verse_number)] = _clean_witness_text(match.group("text"))
+    return verses
 
 
 def _build_enrichment_sources(token: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
@@ -259,6 +455,7 @@ def _build_unit(
     source_hebrew: str,
     oshb_tokens: list[dict[str, Any]],
     macula_groups: dict[tuple[int, int, int], dict[str, Any]],
+    witness_verses: dict[str, dict[tuple[int, int], str]],
 ) -> dict[str, Any]:
     unit_id = _unit_id(psalm_number, verse_number)
     ref = _ref(psalm_number, verse_number)
@@ -296,6 +493,9 @@ def _build_unit(
             "semantic_role": macula.get("semantic_role"),
             "referent": macula.get("referent"),
             "word_sense": macula.get("word_sense"),
+            "gloss_parts": macula.get("gloss_parts", []),
+            "display_gloss": macula.get("display_gloss"),
+            "compiler_features": macula.get("compiler_features", {}),
             "occurrence_index": 1,
             "same_psalm_occurrence_refs": [],
             "corpus_occurrence_refs": [],
@@ -306,6 +506,21 @@ def _build_unit(
         token["missing_enrichments"] = missing_enrichments
         tokens.append(token)
     transliteration = " ".join(token["transliteration"] for token in tokens if token.get("transliteration")).strip()
+    witnesses = []
+    for source_id, config in WITNESS_SOURCES.items():
+        text = witness_verses.get(source_id, {}).get((psalm_number, verse_number))
+        if not text:
+            continue
+        witnesses.append(
+            {
+                "source_id": source_id,
+                "versionTitle": config["versionTitle"],
+                "language": "en",
+                "ref": ref,
+                "source_url": config["source_url_template"].format(psalm=psalm_number),
+                "text": text,
+            }
+        )
     return {
         "psalm_id": _psalm_id(psalm_number),
         "unit_id": unit_id,
@@ -327,7 +542,7 @@ def _build_unit(
         "renderings": [],
         "audit_records": [],
         "review_decisions": [],
-        "witnesses": [],
+        "witnesses": witnesses,
     }
 
 
@@ -422,20 +637,23 @@ def _sync_source_manifests() -> None:
             "allowed_for_export": True,
             "notes": "Syntax-role and lexical gloss enrichment for Psalms",
         },
-        {
-            "source_id": "sefaria",
-            "name": "Sefaria Witness Snapshot",
-            "version": "fixture-2026.04",
-            "license": "Custom-Restricted-Witness",
-            "upstream_url": "https://developers.sefaria.org/",
-            "imported_at": "2026-04-09T00:00:00Z",
-            "import_hash": "fixture-sefaria",
-            "allowed_for_generation": False,
-            "allowed_for_display": True,
-            "allowed_for_export": False,
-            "notes": "Witness-only and version-pinned",
-        },
     ]
+    for source_id, config in WITNESS_SOURCES.items():
+        manifests.append(
+            {
+                "source_id": source_id,
+                "name": config["name"],
+                "version": config["version"],
+                "license": config["license"],
+                "upstream_url": config["upstream_url"],
+                "imported_at": SOURCE_IMPORTED_AT,
+                "import_hash": _hash_paths([settings.raw_dir / source_id / config["archive_name"]]),
+                "allowed_for_generation": False,
+                "allowed_for_display": True,
+                "allowed_for_export": True,
+                "notes": config["notes"],
+            }
+        )
     project["allowed_sources"] = [item["source_id"] for item in manifests]
     project["source_manifests"] = manifests
     registry_service.save_project(project)
@@ -451,6 +669,7 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
     uxlc_verses = _load_uxlc_verses()
     oshb_tokens = _load_oshb_tokens()
     macula_groups = _load_macula_groups()
+    witness_verses = {source_id: _load_witness_verses(source_id) for source_id in WITNESS_SOURCES}
 
     units: list[dict[str, Any]] = []
     by_psalm: dict[int, list[dict[str, Any]]] = defaultdict(list)
@@ -463,6 +682,7 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
                 source_hebrew=uxlc_verses[(psalm_number, verse_number)],
                 oshb_tokens=oshb_tokens.get((psalm_number, verse_number), []),
                 macula_groups=macula_groups,
+                witness_verses=witness_verses,
             )
             units.append(unit)
             by_psalm[psalm_number].append(unit)

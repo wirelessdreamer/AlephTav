@@ -39,7 +39,19 @@ def _occurrence_groups(token: dict[str, Any]) -> dict[str, Any]:
 
 
 def _gloss_list(token: dict[str, Any]) -> list[str]:
-    return [item for item in [token.get("word_sense"), token.get("referent")] if item]
+    items = []
+    if token.get("display_gloss"):
+        items.append(token["display_gloss"])
+    items.extend(token.get("gloss_parts", []))
+    items.extend(item for item in [token.get("word_sense"), token.get("referent")] if item)
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for item in items:
+        if item in seen:
+            continue
+        seen.add(item)
+        deduped.append(item)
+    return deduped
 
 
 def _token_summary(token: dict[str, Any]) -> dict[str, Any]:
@@ -61,7 +73,18 @@ def _token_summary(token: dict[str, Any]) -> dict[str, Any]:
         "semantic_role": token.get("semantic_role"),
         "referent": token.get("referent"),
         "word_sense": token.get("word_sense"),
+        "gloss_parts": token.get("gloss_parts", []),
+        "display_gloss": token.get("display_gloss"),
+        "compiler_features": token.get("compiler_features", {}),
         "occurrence_index": token.get("occurrence_index"),
+    }
+
+
+def _inflate_token_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        **row,
+        "gloss_parts": json.loads(row.get("gloss_parts") or "[]"),
+        "compiler_features": json.loads(row.get("compiler_features") or "{}"),
     }
 
 
@@ -71,7 +94,7 @@ def _lexicon_entry(value: str, field: str, label: str) -> dict[str, Any]:
             """
             SELECT token_id, unit_id, psalm_id, ref, surface, normalized, transliteration, lemma, strong,
                    morph_code, morph_readable, part_of_speech, stem, syntax_role, semantic_role, referent,
-                   word_sense, occurrence_index
+                   word_sense, gloss_parts, display_gloss, compiler_features, occurrence_index
             FROM token_index
             WHERE COALESCE(%s, '') = ?
             ORDER BY ref, occurrence_index, token_id
@@ -79,7 +102,7 @@ def _lexicon_entry(value: str, field: str, label: str) -> dict[str, Any]:
             % field,
             (value,),
         ).fetchall()
-    matches = [dict(row) for row in rows]
+    matches = [_inflate_token_row(dict(row)) for row in rows]
     return {
         label: value,
         "match_count": len(matches),
@@ -98,7 +121,7 @@ def _load_token_row(token_id: str) -> dict[str, Any]:
         row = connection.execute("SELECT * FROM token_index WHERE token_id = ?", (token_id,)).fetchone()
         if row is None:
             raise NotFoundError(f"Token not found: {token_id}")
-        token = dict(row)
+        token = _inflate_token_row(dict(row))
         enrichment_rows = connection.execute(
             """
             SELECT source_id, status, available_fields, missing_fields
@@ -194,7 +217,7 @@ def search_concordance(query: str, field: str = "lemma") -> list[dict[str, Any]]
             f"""
             SELECT token_id, unit_id, psalm_id, ref, surface, normalized, transliteration, lemma, strong,
                    morph_code, morph_readable, part_of_speech, stem, syntax_role, semantic_role, referent,
-                   word_sense, occurrence_index
+                   word_sense, gloss_parts, display_gloss, compiler_features, occurrence_index
             FROM token_index
             WHERE COALESCE({sql_field}, '') LIKE ?
             ORDER BY ref, occurrence_index, token_id
@@ -203,8 +226,8 @@ def search_concordance(query: str, field: str = "lemma") -> list[dict[str, Any]]
         ).fetchall()
     return [
         {
-            **_token_summary(dict(row)),
-            "gloss_list": _gloss_list(dict(row)),
+            **_token_summary(_inflate_token_row(dict(row))),
+            "gloss_list": _gloss_list(_inflate_token_row(dict(row))),
             "query_field": field,
         }
         for row in rows

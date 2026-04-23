@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS token_index (
     semantic_role TEXT,
     referent TEXT,
     word_sense TEXT,
+    gloss_parts TEXT NOT NULL,
+    display_gloss TEXT,
+    compiler_features TEXT NOT NULL,
     occurrence_index INTEGER NOT NULL
 );
 

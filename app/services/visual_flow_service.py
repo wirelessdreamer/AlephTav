@@ -91,7 +91,7 @@ def _pick_default_rendering(unit: dict[str, Any]) -> dict[str, Any] | None:
 def _concept_entries(unit: dict[str, Any]) -> list[dict[str, Any]]:
     labels: list[str] = []
     for token in unit.get("tokens", []):
-        for field_name in ("word_sense", "semantic_role", "referent"):
+        for field_name in ("display_gloss", "word_sense", "semantic_role", "referent"):
             value = _normalize_text(token.get(field_name))
             if value and value not in labels:
                 labels.append(value)

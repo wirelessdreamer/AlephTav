@@ -3,6 +3,7 @@ import unicodedata
 from fastapi.testclient import TestClient
 
 from app.api.main import app
+from app.core.errors import GenerationError
 from app.llm.base import GenerationResponse
 from app.services import registry_service, settings_service
 
@@ -84,6 +85,56 @@ class FakeAssistantAdapter:
                 ],
             }
         return GenerationResponse(payload=payload, raw_text="{}", runtime_metadata={})
+
+
+class FakeComposerAdapter:
+    name = "fake-composer"
+
+    def __init__(self, profile: dict) -> None:
+        self.profile = profile
+
+    def generate_json(self, generation_request) -> GenerationResponse:
+        stage = generation_request.metadata["stage"]
+        unit_id = generation_request.metadata["unit_id"]
+        return GenerationResponse(
+            payload={
+                "unit_id": unit_id,
+                "stage": stage,
+                "chunks": [
+                    {
+                        "chunk_id": "chunk-1",
+                        "candidates": [
+                            {
+                                "text": f"{stage} option 1",
+                                "rationale": f"{stage} rationale 1",
+                                "alignment_hints": ["seed-1"],
+                                "drift_flags": [],
+                                "metrics": {"confidence": 0.81},
+                            },
+                            {
+                                "text": f"{stage} option 2",
+                                "rationale": f"{stage} rationale 2",
+                                "alignment_hints": ["seed-2"],
+                                "drift_flags": ["low-confidence"],
+                                "metrics": {"confidence": 0.66},
+                            },
+                        ],
+                    }
+                ],
+            },
+            raw_text="{}",
+            runtime_metadata={"provider": "fake"},
+        )
+
+
+class FailingComposerAdapter:
+    name = "failing-composer"
+
+    def __init__(self, profile: dict) -> None:
+        self.profile = profile
+
+    def generate_json(self, generation_request) -> GenerationResponse:
+        raise GenerationError("offline")
 
 
 def test_health_and_project_endpoints() -> None:
@@ -217,6 +268,9 @@ def test_unit_and_token_endpoints_return_fixture_data() -> None:
     assert token.json()["same_psalm_occurrence_refs"] == ["Psalm 1:1b"]
     assert token.json()["same_psalms"] == ["Psalm 32:1"]
     assert token.json()["wider_corpus"] == ["Psalm 32:1"]
+    assert token.json()["gloss_parts"] == ["fortunate/blessed"]
+    assert token.json()["display_gloss"] == "fortunate/blessed"
+    assert token.json()["compiler_features"] == {}
     assert token.json()["concordance_entry"]["lemma"]["match_count"] >= 1
     expected_copy_reference = unicodedata.normalize("NFC", "Psalm 1:1a • אַשְׁרֵי • ps001.v001.t001")
     assert unicodedata.normalize("NFC", token.json()["copy_reference"]) == expected_copy_reference
@@ -284,7 +338,68 @@ def test_unit_witness_endpoint_returns_isolated_metadata() -> None:
     witness = response.json()[0]
     assert witness["namespace"] == "witness"
     assert witness["canonical_ref"] == "Psalm 1:1a"
-    assert witness["versionTitle"] == "Fixture Witness"
+
+
+def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch) -> None:
+    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FakeComposerAdapter(profile))
+
+    response = client.post(
+        "/units/ps001.v001.a/composer-suggestions",
+        json={
+            "stage": "phrase",
+            "candidate_count": 2,
+            "chunks": [
+                {
+                    "chunk_id": "chunk-1",
+                    "start": 0,
+                    "end": 1,
+                    "text": "Blessed the man",
+                    "source_text": "אַשְׁרֵי הָאִישׁ",
+                    "confidence": 0.82,
+                    "confidence_reasons": ["fixture seed"],
+                }
+            ],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["unit_id"] == "ps001.v001.a"
+    assert payload["stage"] == "phrase"
+    assert payload["available"] is True
+    assert payload["chunks"][0]["chunk_id"] == "chunk-1"
+    assert payload["chunks"][0]["candidates"][0]["text"] == "phrase option 1"
+    assert payload["chunks"][0]["candidates"][1]["drift_flags"] == ["low-confidence"]
+
+
+def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatch) -> None:
+    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FailingComposerAdapter(profile))
+
+    response = client.post(
+        "/units/ps001.v001.a/composer-suggestions",
+        json={
+            "stage": "lyric",
+            "chunks": [
+                {
+                    "chunk_id": "chunk-1",
+                    "start": 0,
+                    "end": 1,
+                    "text": "Blessed the man",
+                    "source_text": "אַשְׁרֵי הָאִישׁ",
+                    "confidence": 0.82,
+                    "confidence_reasons": ["fixture seed"],
+                }
+            ],
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "unit_id": "ps001.v001.a",
+        "stage": "lyric",
+        "available": False,
+        "chunks": [],
+    }
 
 
 def test_alternates_endpoints_support_filters_and_lifecycle_actions() -> None:

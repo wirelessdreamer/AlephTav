@@ -32,6 +32,32 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "contrastive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "but",
+          "you"
+        ],
+        "gloss_fragments": [
+          "and",
+          "you"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "pronoun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 2:7",
         "Psalm 3:4",
@@ -58,6 +84,7 @@
         "Psalm 32:5",
         "Psalm 32:7"
       ],
+      "display_gloss": "and you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -84,6 +111,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "you"
+      ],
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -138,6 +169,28 @@
       "word_sense": "you"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "O Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -164,6 +217,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "O Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -190,6 +244,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "O.Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -249,6 +306,32 @@
       "word_sense": "O.Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "forever"
+        ],
+        "gloss_fragments": [
+          "forever",
+          "of perpetuity"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:12",
         "Psalm 9:6",
@@ -275,6 +358,7 @@
         "Psalm 45:3",
         "Psalm 45:7"
       ],
+      "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -301,6 +385,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "forever",
+        "of.perpetuity"
+      ],
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -352,6 +440,28 @@
       "word_sense": "of.perpetuity"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "abide"
+        ],
+        "gloss_fragments": [
+          "you sit"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:1",
         "Psalm 2:4",
@@ -378,6 +488,7 @@
         "Psalm 69:13",
         "Psalm 69:26"
       ],
+      "display_gloss": "you sit",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -403,6 +514,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "you.sit"
+      ],
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -452,6 +566,41 @@
       "word_sense": "you.sit"
     },
     {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": "additive",
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "name",
+          "your"
+        ],
+        "gloss_fragments": [
+          "and",
+          "remembrance",
+          "your"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "second",
+          "text": "your"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -478,6 +627,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "and your remembrance",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -504,6 +654,11 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "remembrance",
+        "your"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -568,6 +723,32 @@
       "word_sense": "your"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "generation"
+        ],
+        "gloss_fragments": [
+          "to",
+          "a generation"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:6",
         "Psalm 12:8",
@@ -594,6 +775,7 @@
         "Psalm 90:1",
         "Psalm 95:10"
       ],
+      "display_gloss": "to a generation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -620,6 +802,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "[is].to",
+        "a.generation"
+      ],
       "lemma": "דּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -674,6 +860,32 @@
       "word_sense": "a.generation"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": "additive",
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "and",
+          "generation"
+        ],
+        "gloss_fragments": [
+          "and",
+          "a generation"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "cj",
+          "noun"
+        ],
+        "raw_pos": [
+          "conjunction",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 10:6",
         "Psalm 12:8",
@@ -700,6 +912,7 @@
         "Psalm 90:1",
         "Psalm 95:10"
       ],
+      "display_gloss": "and a generation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -726,6 +939,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "and",
+        "a.generation"
+      ],
       "lemma": "דּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -781,5 +998,30 @@
     }
   ],
   "unit_id": "ps102.v013.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 102:13",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA102.htm",
+      "text": "Thou shalt arise, [and] have mercy upon Zion: for the time to favour her, yea, the set time, is come.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 102:13",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA102.htm",
+      "text": "Thou wilt arise, and have mercy upon Zion; For it is time to have pity upon her, Yea, the set time is come.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 102:13",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA102.htm",
+      "text": "You will arise and have mercy on Zion, for it is time to have pity on her. Yes, the set time has come.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }

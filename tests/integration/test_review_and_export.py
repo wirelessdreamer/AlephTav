@@ -49,7 +49,7 @@ def test_release_export_blocks_unsigned_canonical_renderings() -> None:
     created = rendering_service.create_rendering(
         unit_id="ps023.v001.a",
         layer="lyric",
-        text="The shepherd-LORD remains near",
+        text="The shepherd-LORD remains with me",
         status="proposed",
         rationale="candidate canonical line",
         created_by="test",

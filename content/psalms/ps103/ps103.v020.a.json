@@ -35,6 +35,28 @@
   ],
   "tokens": [
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "bless"
+        ],
+        "gloss_fragments": [
+          "bless"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:13",
         "Psalm 10:3",
@@ -61,6 +83,7 @@
         "Psalm 89:53",
         "Psalm 95:6"
       ],
+      "display_gloss": "bless",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -86,6 +109,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "bless"
+      ],
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -140,6 +166,28 @@
       "word_sense": "bless"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": true,
+        "english_parts": [
+          "LORD"
+        ],
+        "gloss_fragments": [
+          "Yahweh"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:6",
@@ -166,6 +214,7 @@
         "Psalm 6:4",
         "Psalm 6:5"
       ],
+      "display_gloss": "Yahweh",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -192,6 +241,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "Yahweh"
+      ],
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -252,6 +304,37 @@
       "word_sense": "Yahweh"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "angels",
+          "his"
+        ],
+        "gloss_fragments": [
+          "his angels",
+          "O"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -278,6 +361,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "O his angels",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -304,6 +388,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "his.angels",
+        "O"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -368,6 +456,28 @@
       "word_sense": "O"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "mighty"
+        ],
+        "gloss_fragments": [
+          "O mighty ones"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 19:6",
         "Psalm 24:8",
@@ -380,6 +490,7 @@
         "Psalm 120:4",
         "Psalm 127:4"
       ],
+      "display_gloss": "O mighty ones",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -406,6 +517,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "O.mighty.[ones]"
+      ],
       "lemma": "גִּבּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -443,12 +557,35 @@
       "word_sense": "O.mighty.[ones]"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "strength"
+        ],
+        "gloss_fragments": [
+          "of strength"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 29:4",
         "Psalm 33:16",
         "Psalm 111:6",
         "Psalm 147:5"
       ],
+      "display_gloss": "of strength",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -475,6 +612,9 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "of.strength"
+      ],
       "lemma": "כֹּחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -506,6 +646,28 @@
       "word_sense": "of.strength"
     },
     {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "do"
+        ],
+        "gloss_fragments": [
+          "who do"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:3",
         "Psalm 7:4",
@@ -532,6 +694,7 @@
         "Psalm 40:9",
         "Psalm 50:21"
       ],
+      "display_gloss": "who do",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -557,6 +720,9 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "[who].do"
+      ],
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -610,6 +776,37 @@
       "word_sense": "[who].do"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "word",
+          "his"
+        ],
+        "gloss_fragments": [
+          "word",
+          "(of) his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -636,6 +833,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "(of) his word",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -662,6 +860,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "word",
+        "(of).his"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -726,6 +928,32 @@
       "word_sense": "(of).his"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "by",
+          "obeying"
+        ],
+        "gloss_fragments": [
+          "by",
+          "obeying"
+        ],
+        "preposition_role": "by",
+        "raw_classes": [
+          "prep",
+          "verb"
+        ],
+        "raw_pos": [
+          "preposition",
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 4:2",
         "Psalm 4:4",
@@ -752,6 +980,7 @@
         "Psalm 38:14",
         "Psalm 38:15"
       ],
+      "display_gloss": "by obeying",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -777,6 +1006,10 @@
           "status": "complete"
         }
       },
+      "gloss_parts": [
+        "by",
+        "obeying"
+      ],
       "lemma": "שָׁמַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -826,6 +1059,32 @@
       "word_sense": "obeying"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "voice"
+        ],
+        "gloss_fragments": [
+          "(in) the",
+          "sound"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 5:3",
         "Psalm 6:9",
@@ -852,6 +1111,7 @@
         "Psalm 74:23",
         "Psalm 77:18"
       ],
+      "display_gloss": "(in) the sound",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -878,6 +1138,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "(in).the",
+        "sound"
+      ],
       "lemma": "קוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -929,6 +1193,37 @@
       "word_sense": "sound"
     },
     {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "word",
+          "his"
+        ],
+        "gloss_fragments": [
+          "his word",
+          "his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -955,6 +1250,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
+      "display_gloss": "his his word",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -981,6 +1277,10 @@
           "status": "partial"
         }
       },
+      "gloss_parts": [
+        "his.word",
+        "his"
+      ],
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1046,5 +1346,30 @@
     }
   ],
   "unit_id": "ps103.v020.a",
-  "witnesses": []
+  "witnesses": [
+    {
+      "language": "en",
+      "ref": "Psalm 103:20",
+      "source_id": "kjv",
+      "source_url": "https://ebible.org/eng-kjv2006/PSA103.htm",
+      "text": "Bless the LORD, ye his angels, that excel in strength, that do his commandments, hearkening unto the voice of his word.",
+      "versionTitle": "King James Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 103:20",
+      "source_id": "asv",
+      "source_url": "https://ebible.org/eng-asv/PSA103.htm",
+      "text": "Bless Jehovah, ye his angels, That are mighty in strength, that fulfil his word, Hearkening unto the voice of his word.",
+      "versionTitle": "American Standard Version"
+    },
+    {
+      "language": "en",
+      "ref": "Psalm 103:20",
+      "source_id": "web",
+      "source_url": "https://ebible.org/engwebp/PSA103.htm",
+      "text": "Praise the LORD, you angels of his, who are mighty in strength, who fulfill his word, obeying the voice of his word.",
+      "versionTitle": "World English Bible"
+    }
+  ]
 }
