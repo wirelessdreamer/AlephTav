@@ -61,6 +61,48 @@
     },
     "metrics": { "type": "object" },
     "rationale": { "type": "string" },
+    "variation_basis": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "preserved_source_images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "source_id": { "type": "string" },
+          "token_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "differentiator": { "type": ["string", "null"] },
+    "grounding_confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "translation_basis": {
+      "type": ["object", "null"],
+      "required": ["basis_type", "source_ids", "source_language", "source_version", "basis_note"],
+      "additionalProperties": false,
+      "properties": {
+        "basis_type": {
+          "type": "string",
+          "enum": ["hebrew_to_english", "septuagint_greek_to_english"]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "source_language": { "type": "string" },
+        "source_version": { "type": "string" },
+        "basis_note": { "type": "string" }
+      }
+    },
     "style_goal": { "type": ["string", "null"] },
     "metric_profile": { "type": ["string", "null"] },
     "issue_links": { "type": "array", "items": { "type": "string" } },
@@ -72,7 +114,26 @@
       "additionalProperties": true,
       "properties": {
         "source_ids": { "type": "array", "items": { "type": "string" } },
-        "generator": { "type": "string" }
+        "generator": { "type": "string" },
+        "translation_basis": {
+          "type": "object",
+          "required": ["basis_type", "source_ids", "source_language", "source_version", "basis_note"],
+          "additionalProperties": false,
+          "properties": {
+            "basis_type": {
+              "type": "string",
+              "enum": ["hebrew_to_english", "septuagint_greek_to_english"]
+            },
+            "source_ids": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "source_language": { "type": "string" },
+            "source_version": { "type": "string" },
+            "basis_note": { "type": "string" }
+          }
+        }
       }
     }
   }

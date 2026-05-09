@@ -9,7 +9,13 @@
     "target_syllables",
     "rhyme_mode",
     "register",
-    "parallelism_priority"
+    "parallelism_priority",
+    "source_anchor_mode",
+    "metaphor_mode",
+    "imagery_preservation",
+    "idiom_modernity",
+    "emotional_directness",
+    "faith_posture"
   ],
   "additionalProperties": false,
   "properties": {
@@ -19,6 +25,25 @@
     "target_syllables": { "type": "integer", "minimum": 0 },
     "rhyme_mode": { "type": "string" },
     "register": { "type": "string" },
-    "parallelism_priority": { "type": "string" }
+    "parallelism_priority": { "type": "string" },
+    "source_anchor_mode": {
+      "type": "string",
+      "enum": ["token_literal", "hebrew_imagery", "scene_preserving"]
+    },
+    "metaphor_mode": {
+      "type": "string",
+      "enum": ["minimal", "source_metaphor_first", "symbolic_equivalent"]
+    },
+    "imagery_preservation": { "type": "number", "minimum": 0, "maximum": 1 },
+    "idiom_modernity": { "type": "number", "minimum": 0, "maximum": 1 },
+    "emotional_directness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "divine_name_rendering": {
+      "type": "string",
+      "enum": ["preserve_distinction", "contemporary_title", "flexible_address"]
+    },
+    "faith_posture": {
+      "type": "string",
+      "enum": ["confessional", "contested", "observational"]
+    }
   }
 }
