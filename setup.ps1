@@ -5,8 +5,8 @@ param(
     [switch]$SkipInstall,
     [switch]$SkipRebuild,
     [switch]$SkipStart,
-    [int]$ApiPort = 8765,
-    [int]$UiPort = 5173,
+    [int]$ApiPort = 43174,
+    [int]$UiPort = 43173,
     [switch]$Yes
 )
 
@@ -48,6 +48,25 @@ function Write-ManagedServicesState {
     $payload | ConvertTo-Json -Depth 4 | Set-Content -Path $ManagedServicesFile -Encoding UTF8
 }
 
+function Stop-ProcessTree {
+    param(
+        [int]$Pid,
+        [string]$Label,
+        [switch]$Force
+    )
+
+    if (-not $Pid) {
+        return
+    }
+
+    $children = Get-CimInstance Win32_Process -Filter "ParentProcessId = $Pid" -ErrorAction SilentlyContinue
+    foreach ($child in $children) {
+        Stop-ProcessTree -Pid $child.ProcessId -Label "$Label child" -Force:$Force
+    }
+
+    Stop-Process -Id $Pid -Force:$Force -ErrorAction SilentlyContinue
+}
+
 function Stop-ManagedProcess {
     param(
         [int]$Pid,
@@ -63,7 +82,7 @@ function Stop-ManagedProcess {
         return
     }
 
-    Stop-Process -Id $Pid -ErrorAction SilentlyContinue
+    Stop-ProcessTree -Pid $Pid -Label $Label
     for ($i = 0; $i -lt 5; $i++) {
         Start-Sleep -Seconds 1
         $process = Get-Process -Id $Pid -ErrorAction SilentlyContinue
@@ -73,7 +92,7 @@ function Stop-ManagedProcess {
     }
 
     Write-Warning "[setup] $Label process $Pid did not exit cleanly; forcing shutdown."
-    Stop-Process -Id $Pid -Force -ErrorAction SilentlyContinue
+    Stop-ProcessTree -Pid $Pid -Label $Label -Force
 }
 
 function Get-ListenerProcessId {
@@ -297,7 +316,7 @@ function Ensure-SystemRuntimes {
 
     $commands = Get-InstallCommands -PackageManager $manager -NeedPython:$needPython -NeedNode:$needNode
     Write-Setup "Missing required system runtimes."
-    Write-Setup "Suggested install commands for $manager:"
+    Write-Setup "Suggested install commands for ${manager}:"
     foreach ($command in $commands) {
         Write-Host $command
     }
@@ -439,6 +458,7 @@ function Test-PortFree {
     $listener = $null
     try {
         $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Parse('127.0.0.1'), $Port)
+        $listener.Server.SetSocketOption([System.Net.Sockets.SocketOptionLevel]::Socket, [System.Net.Sockets.SocketOptionName]::ReuseAddress, $true)
         $listener.Start()
         return $true
     }
@@ -455,21 +475,19 @@ function Test-PortFree {
 function Get-AvailablePort {
     param(
         [int]$StartingPort,
-        [string]$Label
+        [string]$Label,
+        [int[]]$ReservedPorts = @()
     )
+
+    if ($ReservedPorts -contains $StartingPort) {
+        Fail-Setup "$Label port $StartingPort is reserved by another AlephTav service. Pass an override flag."
+    }
 
     if (Test-PortFree -Port $StartingPort) {
         return $StartingPort
     }
 
-    for ($candidate = $StartingPort + 1; $candidate -le $StartingPort + 25; $candidate++) {
-        if (Test-PortFree -Port $candidate) {
-            Write-Warning "[setup] $Label port $StartingPort is already in use by another process. Falling back to $candidate."
-            return $candidate
-        }
-    }
-
-    Fail-Setup "$Label port $StartingPort is already in use and no fallback port was available in the next 25 ports. Pass an override flag."
+    Fail-Setup "$Label port $StartingPort is already in use. Stop the conflicting process or pass an override flag."
 }
 
 function Wait-ForUrl {
@@ -501,7 +519,7 @@ function Start-Services {
     Reclaim-RepoOwnedPort -Port $UiPort -Kind ui
 
     $script:ApiPort = Get-AvailablePort -StartingPort $ApiPort -Label 'API'
-    $script:UiPort = Get-AvailablePort -StartingPort $UiPort -Label 'UI'
+    $script:UiPort = Get-AvailablePort -StartingPort $UiPort -Label 'UI' -ReservedPorts @($ApiPort)
 
     if (-not (Test-PortFree -Port $ApiPort)) {
         Fail-Setup "API port $ApiPort is already in use. Stop the conflicting process or pass -ApiPort."
@@ -513,14 +531,23 @@ function Start-Services {
     $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
     $script:ApiLog = Join-Path $RunDir "setup-api-$timestamp.log"
     $script:UiLog = Join-Path $RunDir "setup-ui-$timestamp.log"
+    $apiBaseUrl = "http://127.0.0.1:$ApiPort"
 
-    Write-Setup "Starting API on http://127.0.0.1:$ApiPort"
-    $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $ApiLog -PassThru
+    Write-Setup "Starting API on $apiBaseUrl"
+    $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $ApiLog -WindowStyle Hidden -PassThru
     Write-ManagedServicesState
-    Wait-ForUrl -Url "http://127.0.0.1:$ApiPort/health" -Label 'API'
+    Wait-ForUrl -Url "$apiBaseUrl/health" -Label 'API'
 
     Write-Setup "Starting UI on http://127.0.0.1:$UiPort"
-    $script:UiProcess = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run', 'dev', '--', '--host', '127.0.0.1', '--port', "$UiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $UiLog -RedirectStandardError $UiLog -PassThru
+    $previousApiBaseUrl = $env:VITE_API_BASE_URL
+    $env:VITE_API_BASE_URL = $apiBaseUrl
+    $script:UiProcess = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run', 'dev', '--', '--host', '127.0.0.1', '--port', "$UiPort", '--strictPort') -WorkingDirectory $RootDir -RedirectStandardOutput $UiLog -RedirectStandardError $UiLog -WindowStyle Hidden -PassThru
+    if ($null -eq $previousApiBaseUrl) {
+        Remove-Item Env:VITE_API_BASE_URL -ErrorAction SilentlyContinue
+    }
+    else {
+        $env:VITE_API_BASE_URL = $previousApiBaseUrl
+    }
     Write-ManagedServicesState
     Wait-ForUrl -Url "http://127.0.0.1:$UiPort" -Label 'UI'
 

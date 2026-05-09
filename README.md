@@ -36,13 +36,13 @@ By default the scripts:
 - install `pip install -e .[dev]`
 - run `npm install`
 - run the full content rebuild pipeline
-- start the API on `http://127.0.0.1:8765`
-- start the UI on `http://127.0.0.1:5173`
+- start the API on `http://127.0.0.1:43174`
+- start the UI on `http://127.0.0.1:43173`
 
 Open:
 
-- `http://127.0.0.1:5173/` for the welcome page
-- `http://127.0.0.1:5173/workbench` or `http://127.0.0.1:5173/#/workbench` for the live workbench
+- `http://127.0.0.1:43173/` for the welcome page
+- `http://127.0.0.1:43173/workbench` or `http://127.0.0.1:43173/#/workbench` for the live workbench
 
 ### Useful options
 
@@ -68,7 +68,7 @@ python scripts/seed_project.py
 python scripts/import_psalms.py
 python scripts/build_indexes.py
 python scripts/validate_content.py
-python -m uvicorn app.api.main:app --host 127.0.0.1 --port 8765 --reload
+python -m uvicorn app.api.main:app --host 127.0.0.1 --port 43174 --reload
 ```
 
 ## Common commands

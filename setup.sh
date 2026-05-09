@@ -14,8 +14,8 @@ SKIP_INSTALL=0
 SKIP_REBUILD=0
 SKIP_START=0
 NONINTERACTIVE=0
-API_PORT=8765
-UI_PORT=5173
+API_PORT=43174
+UI_PORT=43173
 
 API_PID=""
 UI_PID=""
@@ -32,8 +32,8 @@ Options:
   --skip-install     Skip Python and Node dependency installation
   --skip-rebuild     Skip data bootstrap/rebuild
   --skip-start       Verify and install only; do not start the app
-  --api-port PORT    Override the API port (default: 8765)
-  --ui-port PORT     Override the UI port (default: 5173)
+  --api-port PORT    Override the API port (default: 43174)
+  --ui-port PORT     Override the UI port (default: 43173)
   --yes              Non-interactive mode; auto-approve derived system package manager commands
   --help             Show this help message
 EOF
@@ -73,6 +73,14 @@ stop_pid_if_running() {
   [[ -n "${pid}" ]] || return 0
   if ! kill -0 "${pid}" 2>/dev/null; then
     return 0
+  fi
+
+  if command -v pgrep >/dev/null 2>&1; then
+    local child_pid
+    while IFS= read -r child_pid; do
+      [[ -n "${child_pid}" ]] || continue
+      stop_pid_if_running "${child_pid}" "${label} child" "${signal}"
+    done < <(pgrep -P "${pid}" 2>/dev/null || true)
   fi
 
   kill "-${signal}" "${pid}" 2>/dev/null || kill "${pid}" 2>/dev/null || true
@@ -445,6 +453,7 @@ import sys
 
 port = int(sys.argv[1])
 sock = socket.socket()
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 try:
     sock.bind(("127.0.0.1", port))
 except OSError:
@@ -454,26 +463,33 @@ finally:
 PY
 }
 
+is_reserved_port() {
+  local candidate="$1"
+  shift || true
+  local reserved
+  for reserved in "$@"; do
+    [[ -n "${reserved}" && "${candidate}" == "${reserved}" ]] && return 0
+  done
+  return 1
+}
+
 resolve_port_conflict() {
   local python_bin="$1"
   local requested_port="$2"
   local label="$3"
-  local candidate
+  shift 3 || true
+  local reserved_ports=("$@")
+
+  if is_reserved_port "${requested_port}" "${reserved_ports[@]}"; then
+    die "${label} port ${requested_port} is reserved by another AlephTav service. Pass an override flag."
+  fi
 
   if is_port_free "${python_bin}" "${requested_port}"; then
     printf '%s\n' "${requested_port}"
     return 0
   fi
 
-  for ((candidate=requested_port + 1; candidate<=requested_port + 25; candidate++)); do
-    if is_port_free "${python_bin}" "${candidate}"; then
-      warn "${label} port ${requested_port} is already in use by another process. Falling back to ${candidate}."
-      printf '%s\n' "${candidate}"
-      return 0
-    fi
-  done
-
-  die "${label} port ${requested_port} is already in use and no fallback port was available in the next 25 ports. Pass an override flag."
+  die "${label} port ${requested_port} is already in use. Stop the conflicting process or pass an override flag."
 }
 
 require_free_port() {
@@ -562,6 +578,7 @@ start_services() {
   local timestamp
   local requested_api_port="${API_PORT}"
   local requested_ui_port="${UI_PORT}"
+  local api_base_url
   timestamp="$(date +%Y%m%d-%H%M%S)"
   API_LOG="${RUN_DIR}/${LOG_PREFIX}-api-${timestamp}.log"
   UI_LOG="${RUN_DIR}/${LOG_PREFIX}-ui-${timestamp}.log"
@@ -570,23 +587,24 @@ start_services() {
   reclaim_repo_owned_port "${UI_PORT}" ui
 
   API_PORT="$(resolve_port_conflict "${VENV_PYTHON}" "${requested_api_port}" "API")"
-  UI_PORT="$(resolve_port_conflict "${VENV_PYTHON}" "${requested_ui_port}" "UI")"
+  UI_PORT="$(resolve_port_conflict "${VENV_PYTHON}" "${requested_ui_port}" "UI" "${API_PORT}")"
 
   require_free_port "${VENV_PYTHON}" "${API_PORT}" "API"
   require_free_port "${VENV_PYTHON}" "${UI_PORT}" "UI"
+  api_base_url="http://127.0.0.1:${API_PORT}"
 
-  log "Starting API on http://127.0.0.1:${API_PORT}"
+  log "Starting API on ${api_base_url}"
   "${VENV_PYTHON}" -m uvicorn app.api.main:app --host 127.0.0.1 --port "${API_PORT}" >"${API_LOG}" 2>&1 &
   API_PID=$!
   write_managed_services_state
 
-  if ! wait_for_url "${VENV_PYTHON}" "http://127.0.0.1:${API_PORT}/health" "API" 60; then
+  if ! wait_for_url "${VENV_PYTHON}" "${api_base_url}/health" "API" 60; then
     warn "API failed to report healthy startup. See ${API_LOG}"
     return 1
   fi
 
   log "Starting UI on http://127.0.0.1:${UI_PORT}"
-  npm run dev -- --host 127.0.0.1 --port "${UI_PORT}" >"${UI_LOG}" 2>&1 &
+  VITE_API_BASE_URL="${api_base_url}" npm run dev -- --host 127.0.0.1 --port "${UI_PORT}" --strictPort >"${UI_LOG}" 2>&1 &
   UI_PID=$!
   write_managed_services_state
 

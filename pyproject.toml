@@ -46,6 +46,10 @@ app = ["llm/prompts/*.md", "llm/contracts/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+  "no_seeded_repo: disable the default tiny fixture bootstrap for tests that seed their own corpus",
+  "corpus_audit: full-corpus audit pass that writes reports instead of hard-failing on every detected issue"
+]
 
 [tool.ruff]
 line-length = 100
