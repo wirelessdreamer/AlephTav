@@ -111,6 +111,8 @@
       "gloss_parts": [
         "O.shepherd"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "רָעָה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "of.Israel"
       ],
+      "greek": "ισραηλ",
+      "greek_strong": "2474",
       "lemma": "יִשְׂרָאֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -376,6 +380,8 @@
         "give",
         "ear"
       ],
+      "greek": "πρόσξες",
+      "greek_strong": "4337",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -482,6 +488,8 @@
       "gloss_parts": [
         "O.[you.who].lead"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "נָהַג",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -553,7 +561,7 @@
         "Psalm 114:4",
         "Psalm 114:6"
       ],
-      "display_gloss": "like flock a",
+      "display_gloss": "a like flock",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -585,6 +593,8 @@
         "(the)",
         "flock"
       ],
+      "greek": "ὡσεὶ πρόβατα",
+      "greek_strong": "4263",
       "lemma": "צֹאן",
       "missing_enrichments": [
         "oshb:stem",
@@ -683,6 +693,8 @@
       "gloss_parts": [
         "Joseph"
       ],
+      "greek": "ιωσηφ",
+      "greek_strong": "2501",
       "lemma": "יוֹסֵף",
       "missing_enrichments": [
         "oshb:stem",
@@ -789,6 +801,8 @@
       "gloss_parts": [
         "O.[you.who].sit"
       ],
+      "greek": "καθήμενος",
+      "greek_strong": "2521",
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -868,7 +882,7 @@
         "Psalm 18:11",
         "Psalm 99:1"
       ],
-      "display_gloss": "cherubim the",
+      "display_gloss": "the cherubim",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -899,6 +913,8 @@
         "the",
         "cherubim"
       ],
+      "greek": "τῶν ξερουβιν",
+      "greek_strong": "5502",
       "lemma": "כְּרוּב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1014,6 +1030,8 @@
         "shine",
         "forth"
       ],
+      "greek": "ἐμφάνηθι",
+      "greek_strong": null,
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1073,24 +1091,40 @@
       "ref": "Psalm 80:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA080.htm",
+      "source_version": "eng-kjv2006",
       "text": "Before Ephraim and Benjamin and Manasseh stir up thy strength, and come [and] save us.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 80:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA080.htm",
+      "source_version": "eng-asv",
       "text": "Before Ephraim and Benjamin and Manasseh, stir up thy might, And come to save us.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 80:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA080.htm",
+      "source_version": "engwebp",
       "text": "Before Ephraim, Benjamin, and Manasseh, stir up your might! Come to save us!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 80:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ισραηλ πρόσξες ὡσεὶ πρόβατα ιωσηφ καθήμενος τῶν ξερουβιν ἐμφάνηθι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

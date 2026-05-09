@@ -111,6 +111,8 @@
       "gloss_parts": [
         "how.blessed!"
       ],
+      "greek": "μακάριον",
+      "greek_strong": "3107",
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -171,7 +173,7 @@
           "nation"
         ],
         "gloss_fragments": [
-          "the",
+          "is the",
           "nation"
         ],
         "preposition_role": null,
@@ -212,7 +214,7 @@
         "Psalm 67:3",
         "Psalm 72:11"
       ],
-      "display_gloss": "nation the",
+      "display_gloss": "is the nation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -243,6 +245,8 @@
         "[is].the",
         "nation"
       ],
+      "greek": "τὸ ἔθνος",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -374,6 +378,8 @@
       "gloss_parts": [
         "which"
       ],
+      "greek": "οὗ",
+      "greek_strong": "3739",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -505,6 +511,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -580,7 +588,7 @@
         ],
         "gloss_fragments": [
           "God",
-          "its"
+          "is its"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -625,7 +633,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "its God",
+      "display_gloss": "is its God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -656,6 +664,8 @@
         "God",
         "[is].its"
       ],
+      "greek": "θεὸς αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -772,7 +782,7 @@
         "Psalm 67:6",
         "Psalm 68:31"
       ],
-      "display_gloss": "people the",
+      "display_gloss": "the people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -803,6 +813,8 @@
         "the",
         "people"
       ],
+      "greek": "λαός",
+      "greek_strong": "2992",
       "lemma": "עַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -921,6 +933,8 @@
       "gloss_parts": [
         "[which].he.has.chosen"
       ],
+      "greek": "ἐχελέχατο",
+      "greek_strong": "1586",
       "lemma": "בָּחַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1024,6 +1038,8 @@
         "to",
         "an.inheritance"
       ],
+      "greek": "εἰς κληρονομίαν",
+      "greek_strong": "2817",
       "lemma": "נַחֲלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1115,7 +1131,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for himself",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1146,6 +1162,8 @@
         "for",
         "himself"
       ],
+      "greek": "ἑαυτῷ",
+      "greek_strong": "1438",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1218,24 +1236,40 @@
       "ref": "Psalm 33:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA033.htm",
+      "source_version": "eng-kjv2006",
       "text": "Blessed [is] the nation whose God [is] the LORD; [and] the people [whom] he hath chosen for his own inheritance.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA033.htm",
+      "source_version": "eng-asv",
       "text": "Blessed is the nation whose God is Jehovah, The people whom he hath chosen for his own inheritance.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA033.htm",
+      "source_version": "engwebp",
       "text": "Blessed is the nation whose God is the LORD, the people whom he has chosen for his own inheritance.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 33:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μακάριον τὸ ἔθνος οὗ κύριος θεὸς αὐτοῦ λαός ἐχελέχατο εἰς κληρονομίαν ἑαυτῷ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

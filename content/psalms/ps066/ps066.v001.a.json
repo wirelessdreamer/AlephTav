@@ -88,7 +88,7 @@
         "Psalm 46:1",
         "Psalm 47:1"
       ],
-      "display_gloss": "to choirmaster the",
+      "display_gloss": "for the director",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "the",
         "choirmaster"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "נָצַח",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -247,6 +249,8 @@
       "gloss_parts": [
         "a.song"
       ],
+      "greek": "ᾠδὴ",
+      "greek_strong": null,
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -375,6 +379,8 @@
       "gloss_parts": [
         "a.psalm"
       ],
+      "greek": "ψαλμοῦ",
+      "greek_strong": null,
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -489,6 +495,8 @@
       "gloss_parts": [
         "shout.for.joy"
       ],
+      "greek": "ἀλαλάχατε",
+      "greek_strong": "214",
       "lemma": "רוּעַ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -608,6 +616,8 @@
         "to",
         "God"
       ],
+      "greek": "τῷ θεῷ",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -744,6 +754,8 @@
       "gloss_parts": [
         "O.all"
       ],
+      "greek": "πᾶσα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -850,7 +862,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "earth the",
+      "display_gloss": "the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -881,6 +893,8 @@
         "the",
         "earth"
       ],
+      "greek": "ἡ γῆ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -941,24 +955,40 @@
       "ref": "Psalm 66:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA066.htm",
+      "source_version": "eng-kjv2006",
       "text": "To the chief Musician, A Song [or] Psalm. Make a joyful noise unto God, all ye lands:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 66:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA066.htm",
+      "source_version": "eng-asv",
       "text": "For the Chief Musician. A Song, a Psalm. Make a joyful noise unto God, all the earth:",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 66:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA066.htm",
+      "source_version": "engwebp",
       "text": "For the Chief Musician. A song. A Psalm. Make a joyful shout to God, all the earth!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 66:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἰς ᾠδὴ ψαλμοῦ ἀλαλάχατε τῷ θεῷ πᾶσα ἡ γῆ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -42,7 +42,7 @@
           "upholds"
         ],
         "gloss_fragments": [
-          "sustaining"
+          "is sustaining"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -63,7 +63,7 @@
         "Psalm 111:8",
         "Psalm 112:8"
       ],
-      "display_gloss": "sustaining",
+      "display_gloss": "is sustaining",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -92,6 +92,8 @@
       "gloss_parts": [
         "[is].sustaining"
       ],
+      "greek": "ὑποστηρίζει",
+      "greek_strong": null,
       "lemma": "סָמַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -202,6 +204,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -343,6 +347,8 @@
         "(to)",
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -416,8 +422,8 @@
           "fall"
         ],
         "gloss_fragments": [
-          "those",
-          "who fall"
+          "[those",
+          "who] fall"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -457,7 +463,7 @@
         "Psalm 106:27",
         "Psalm 118:13"
       ],
-      "display_gloss": "who fall those",
+      "display_gloss": "who] fall [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -487,6 +493,8 @@
         "[those",
         "who].fall"
       ],
+      "greek": "τοὺς καταπίπτοντας",
+      "greek_strong": "3588",
       "lemma": "נָפַל",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -596,6 +604,8 @@
         "and",
         "[he.is].raising.up"
       ],
+      "greek": "καὶ ἀνορθοῖ",
+      "greek_strong": "461",
       "lemma": "זָקַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -704,6 +714,8 @@
         "(to)",
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -777,8 +789,8 @@
           "bowed down"
         ],
         "gloss_fragments": [
-          "those",
-          "who are bowed down"
+          "[those",
+          "who are] bowed down"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -796,7 +808,7 @@
         "Psalm 57:7",
         "Psalm 146:8"
       ],
-      "display_gloss": "who are bowed down those",
+      "display_gloss": "who are] bowed down [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -826,6 +838,8 @@
         "[those",
         "who.are].bowed.down"
       ],
+      "greek": "τοὺς κατερραγμένους",
+      "greek_strong": "3588",
       "lemma": "כָּפַף",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -861,24 +875,40 @@
       "ref": "Psalm 145:14",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA145.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD upholdeth all that fall, and raiseth up all [those that be] bowed down.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:14",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA145.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah upholdeth all that fall, And raiseth up all those that are bowed down.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:14",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA145.htm",
+      "source_version": "engwebp",
       "text": "The LORD upholds all who fall, and raises up all those who are bowed down.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 145:14",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὑποστηρίζει κύριος πάντας τοὺς καταπίπτοντας καὶ ἀνορθοῖ πάντας τοὺς κατερραγμένους",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

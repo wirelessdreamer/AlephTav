@@ -100,6 +100,8 @@
       "gloss_parts": [
         "he.has.sworn.an.oath"
       ],
+      "greek": "ὤμοσεν",
+      "greek_strong": "3660",
       "lemma": "שָׁבַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -214,6 +216,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -350,6 +354,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -459,6 +465,8 @@
       "gloss_parts": [
         "he.will.repent"
       ],
+      "greek": "μεταμεληθήσεται",
+      "greek_strong": "3338",
       "lemma": "נָחַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -568,6 +576,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σὺ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -671,6 +681,8 @@
       "gloss_parts": [
         "[are].a.priest"
       ],
+      "greek": "ἱερεὺς",
+      "greek_strong": "2409",
       "lemma": "כֹּהֵן",
       "missing_enrichments": [
         "oshb:stem",
@@ -779,6 +791,8 @@
         "forever",
         "of.perpetuity"
       ],
+      "greek": "εἰς αἰῶνα",
+      "greek_strong": "165",
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -878,7 +892,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "according to",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -908,6 +922,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "κατὰ",
+      "greek_strong": "2596",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1016,6 +1032,8 @@
       "gloss_parts": [
         "the.manner"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "דִּבְרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1093,6 +1111,8 @@
       "gloss_parts": [
         "of"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מַלְכִּי צֶדֶק",
       "missing_enrichments": [
         "oshb:stem",
@@ -1170,6 +1190,8 @@
       "gloss_parts": [
         "Melchizedek"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מַלְכִּיצֶדֶק",
       "missing_enrichments": [
         "oshb:stem",
@@ -1203,24 +1225,40 @@
       "ref": "Psalm 110:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA110.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD hath sworn, and will not repent, Thou [art] a priest for ever after the order of Melchizedek.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 110:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA110.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah hath sworn, and will not repent: Thou art a priest for ever After the order of Melchizedek.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 110:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA110.htm",
+      "source_version": "engwebp",
       "text": "The LORD has sworn, and will not change his mind: “You are a priest forever in the order of Melchizedek.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 110:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὤμοσεν κύριος καὶ οὐ μεταμεληθήσεται σὺ ἱερεὺς εἰς αἰῶνα κατὰ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

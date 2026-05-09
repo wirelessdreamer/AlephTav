@@ -109,6 +109,8 @@
       "gloss_parts": [
         "you.give"
       ],
+      "greek": "δόντος",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -218,7 +220,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -249,6 +251,8 @@
         "to",
         "them"
       ],
+      "greek": "αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -370,7 +374,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "gather they",
+      "display_gloss": "gather ~ up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -400,6 +404,8 @@
         "they",
         "gather"
       ],
+      "greek": "συλλέχουσιν",
+      "greek_strong": "4816",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -528,6 +534,8 @@
       "gloss_parts": [
         "you.open"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "פָּתַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -657,6 +665,8 @@
         "hand",
         "your"
       ],
+      "greek": "ξεῖρα σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -777,7 +787,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "are satisfied they",
+      "display_gloss": "they are satisfied",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -807,6 +817,8 @@
         "they",
         "are.satisfied"
       ],
+      "greek": "πλησθήσονται",
+      "greek_strong": "4130",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -944,6 +956,8 @@
       "gloss_parts": [
         "good.thing[s]"
       ],
+      "greek": "ξρηστότητος",
+      "greek_strong": "5544",
       "lemma": "טוֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1001,24 +1015,40 @@
       "ref": "Psalm 104:28",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "[That] thou givest them they gather: thou openest thine hand, they are filled with good.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:28",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "Thou givest unto them, they gather; Thou openest thy hand, they are satisfied with good.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:28",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "You give to them; they gather. You open your hand; they are satisfied with good.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:28",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "δόντος αὐτοῖς συλλέχουσιν ξεῖρα σου πλησθήσονται ξρηστότητος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

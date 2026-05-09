@@ -110,6 +110,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -244,6 +246,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -392,6 +396,8 @@
         "death",
         "his"
       ],
+      "greek": "ἐν ἀποθνῄσκειν",
+      "greek_strong": "599",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -517,6 +523,8 @@
       "gloss_parts": [
         "he.will.take"
       ],
+      "greek": "λήμψεται",
+      "greek_strong": "2983",
       "lemma": "לָקַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -601,7 +609,7 @@
         "Psalm 16:3",
         "Psalm 18:1"
       ],
-      "display_gloss": "anything the",
+      "display_gloss": "the anything",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -632,6 +640,8 @@
         "(the)",
         "anything"
       ],
+      "greek": "τὰ πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -763,6 +773,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐδὲ",
+      "greek_strong": "3761",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -889,6 +901,8 @@
       "gloss_parts": [
         "it.will.go.down"
       ],
+      "greek": "συγκαταβήσεται",
+      "greek_strong": null,
       "lemma": "יָרַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -989,7 +1003,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "after",
+      "display_gloss": "after him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1020,6 +1034,8 @@
         "after",
         "him"
       ],
+      "greek": "αὐτῷ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1172,6 +1188,8 @@
         "honor",
         "his"
       ],
+      "greek": "δόχα αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1243,24 +1261,40 @@
       "ref": "Psalm 49:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA049.htm",
+      "source_version": "eng-kjv2006",
       "text": "Though while he lived he blessed his soul: and [men] will praise thee, when thou doest well to thyself.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 49:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA049.htm",
+      "source_version": "eng-asv",
       "text": "Though while he lived he blessed his soul (And men praise thee, when thou doest well to thyself),",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 49:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA049.htm",
+      "source_version": "engwebp",
       "text": "Though while he lived he blessed his soul— and men praise you when you do well for yourself—",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 49:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι οὐκ ἐν ἀποθνῄσκειν λήμψεται τὰ πάντα οὐδὲ συγκαταβήσεται αὐτῷ δόχα αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

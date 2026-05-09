@@ -113,6 +113,8 @@
         "and",
         "I.said"
       ],
+      "greek": "καὶ εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -173,7 +175,7 @@
           "I"
         ],
         "gloss_fragments": [
-          "my",
+          "is my",
           "wounding"
         ],
         "preposition_role": null,
@@ -219,7 +221,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "wounding my",
+      "display_gloss": "is my wounding",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -249,6 +251,8 @@
         "[is].my",
         "wounding"
       ],
+      "greek": "ἠρχάμην",
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -370,6 +374,8 @@
       "gloss_parts": [
         "it"
       ],
+      "greek": "αὕτη",
+      "greek_strong": "3778",
       "lemma": "הִיא",
       "missing_enrichments": [
         "oshb:stem",
@@ -460,6 +466,8 @@
       "gloss_parts": [
         "the.changing"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "שָׁנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -555,6 +563,8 @@
       "gloss_parts": [
         "of.the.right.hand"
       ],
+      "greek": "δεχιᾶς",
+      "greek_strong": "1188",
       "lemma": "יָמִין",
       "missing_enrichments": [
         "oshb:stem",
@@ -665,6 +675,8 @@
       "gloss_parts": [
         "of.the.Most.High"
       ],
+      "greek": "ὑψίστου",
+      "greek_strong": "5310",
       "lemma": "עֶלְיוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -720,24 +732,40 @@
       "ref": "Psalm 77:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA077.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will remember the works of the LORD: surely I will remember thy wonders of old.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 77:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA077.htm",
+      "source_version": "eng-asv",
       "text": "I will make mention of the deeds of Jehovah; For I will remember thy wonders of old.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 77:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA077.htm",
+      "source_version": "engwebp",
       "text": "I will remember the LORD’s deeds; for I will remember your wonders of old.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 77:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ εἶπα ἠρχάμην αὕτη δεχιᾶς ὑψίστου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

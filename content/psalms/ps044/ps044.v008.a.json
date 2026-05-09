@@ -106,6 +106,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -221,7 +223,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have saved us you",
+      "display_gloss": "you have saved us",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -251,6 +253,8 @@
         "you",
         "have.saved.us"
       ],
+      "greek": "ἔσωσας",
+      "greek_strong": "4982",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -406,6 +410,8 @@
         "foes",
         "our"
       ],
+      "greek": "ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -483,8 +489,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who hate us"
+          "[those",
+          "who] hate us"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -531,7 +537,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and who hate us those",
+      "display_gloss": "and who] hate us [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -562,6 +568,8 @@
         "[those",
         "who].hate.us"
       ],
+      "greek": "καὶ ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -702,6 +710,8 @@
       "gloss_parts": [
         "you.have.put.to.shame"
       ],
+      "greek": "κατῄσξυνας",
+      "greek_strong": null,
       "lemma": "בּוֹשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -758,24 +768,40 @@
       "ref": "Psalm 44:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "In God we boast all the day long, and praise thy name for ever. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "In God have we made our boast all the day long, And we will give thanks unto thy name for ever. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "In God we have made our boast all day long. We will give thanks to your name forever. Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἔσωσας ἡμᾶς καὶ ἡμᾶς κατῄσξυνας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

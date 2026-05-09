@@ -45,8 +45,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "he",
-          "is delivering me"
+          "[he",
+          "is] delivering me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -91,7 +91,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "is delivering me he",
+      "display_gloss": "[he is] delivering me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -121,6 +121,8 @@
         "[he",
         "is].delivering.me"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -275,6 +277,8 @@
         "enemies",
         "my"
       ],
+      "greek": "ἐχ ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -416,6 +420,8 @@
       "gloss_parts": [
         "also"
       ],
+      "greek": "ὀργίλων",
+      "greek_strong": "3711",
       "lemma": "אַף",
       "missing_enrichments": [
         "oshb:stem",
@@ -543,6 +549,8 @@
       "gloss_parts": [
         "more.than"
       ],
+      "greek": "ἀπὸ",
+      "greek_strong": "575",
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -605,8 +613,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "those",
-          "who rise against me"
+          "[those",
+          "who] rise against me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -651,7 +659,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who rise against me those",
+      "display_gloss": "who] rise against me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -681,6 +689,8 @@
         "[those",
         "who].rise.against.me"
       ],
+      "greek": "ἐμὲ",
+      "greek_strong": "1691",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -801,7 +811,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "exalt me you",
+      "display_gloss": "you exalt me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -831,6 +841,8 @@
         "you",
         "exalt.me"
       ],
+      "greek": "ὑψώσεις με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -976,6 +988,8 @@
         "from",
         "a.man"
       ],
+      "greek": "ἀπὸ ἀνδρὸς",
+      "greek_strong": "435",
       "lemma": "אִישׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1093,6 +1107,8 @@
       "gloss_parts": [
         "of.violence"
       ],
+      "greek": "ἀδίκου",
+      "greek_strong": "94",
       "lemma": "חָמָס",
       "missing_enrichments": [
         "oshb:stem",
@@ -1189,7 +1205,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "rescue me you",
+      "display_gloss": "you rescue me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1219,6 +1235,8 @@
         "you",
         "rescue.me"
       ],
+      "greek": "ῥύσῃ με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1288,24 +1306,40 @@
       "ref": "Psalm 18:49",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "Therefore will I give thanks unto thee, O LORD, among the heathen, and sing praises unto thy name.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:49",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "Therefore I will give thanks unto thee, O Jehovah, among the nations, And will sing praises unto thy name.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:49",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "Therefore I will give thanks to you, LORD, among the nations, and will sing praises to your name.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:49",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου ἐχ ἐξθρῶν μου ὀργίλων ἀπὸ ἐμὲ ὑψώσεις με ἀπὸ ἀνδρὸς ἀδίκου ῥύσῃ με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

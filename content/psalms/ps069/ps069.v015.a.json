@@ -120,6 +120,8 @@
         "deliver",
         "me"
       ],
+      "greek": "σῶσόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -243,6 +245,8 @@
         "from.[the]",
         "mud"
       ],
+      "greek": "ἀπὸ πηλοῦ",
+      "greek_strong": "4081",
       "lemma": "טִיט",
       "missing_enrichments": [
         "oshb:stem",
@@ -355,6 +359,8 @@
         "and",
         "not"
       ],
+      "greek": "ἵνα μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -466,6 +472,8 @@
       "gloss_parts": [
         "let.me.sink"
       ],
+      "greek": "ἐμπαγῶ",
+      "greek_strong": null,
       "lemma": "טָבַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -559,6 +567,8 @@
       "gloss_parts": [
         "may.I.be.delivered"
       ],
+      "greek": "ῥυσθείην",
+      "greek_strong": null,
       "lemma": "נָצַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -609,8 +619,8 @@
         ],
         "gloss_fragments": [
           "from",
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -657,7 +667,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from who hate me those",
+      "display_gloss": "from who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -688,6 +698,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "μισούντων με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -816,6 +828,8 @@
         "from",
         "depths"
       ],
+      "greek": "καὶ βάθους",
+      "greek_strong": "899",
       "lemma": "מַעֲמַקִּים",
       "missing_enrichments": [
         "oshb:stem",
@@ -924,6 +938,8 @@
       "gloss_parts": [
         "of.water"
       ],
+      "greek": "ὑδάτων",
+      "greek_strong": "5204",
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -986,24 +1002,40 @@
       "ref": "Psalm 69:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA069.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let not the waterflood overflow me, neither let the deep swallow me up, and let not the pit shut her mouth upon me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 69:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA069.htm",
+      "source_version": "eng-asv",
       "text": "Let not the waterflood overwhelm me, Neither let the deep swallow me up; And let not the pit shut its mouth upon me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 69:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA069.htm",
+      "source_version": "engwebp",
       "text": "Don’t let the flood waters overwhelm me, neither let the deep swallow me up. Don’t let the pit shut its mouth on me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 69:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "σῶσόν με ἀπὸ πηλοῦ ἵνα μὴ ἐμπαγῶ ῥυσθείην μισούντων με καὶ βάθους ὑδάτων",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

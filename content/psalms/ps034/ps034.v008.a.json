@@ -41,7 +41,7 @@
           "encamps"
         ],
         "gloss_fragments": [
-          "encamping"
+          "is encamping"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -56,7 +56,7 @@
       "corpus_occurrence_refs": [
         "Psalm 27:3"
       ],
-      "display_gloss": "encamping",
+      "display_gloss": "is encamping",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -85,6 +85,8 @@
       "gloss_parts": [
         "[is].encamping"
       ],
+      "greek": "παρεμβαλεῖ",
+      "greek_strong": null,
       "lemma": "חָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -168,6 +170,8 @@
       "gloss_parts": [
         "the.angel"
       ],
+      "greek": "ἄγγελος",
+      "greek_strong": "32",
       "lemma": "מַלְאָךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -276,6 +280,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -402,6 +408,8 @@
       "gloss_parts": [
         "around"
       ],
+      "greek": "κύκλῳ",
+      "greek_strong": "2945",
       "lemma": "סָבִיב",
       "missing_enrichments": [
         "oshb:stem",
@@ -530,6 +538,8 @@
         "fearing",
         "him"
       ],
+      "greek": "τῶν φοβουμένων αὐτὸν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -655,7 +665,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and rescued them he",
+      "display_gloss": "and he rescued them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -686,6 +696,8 @@
         "he",
         "rescued.them"
       ],
+      "greek": "καὶ ῥύσεται αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -755,24 +767,40 @@
       "ref": "Psalm 34:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA034.htm",
+      "source_version": "eng-kjv2006",
       "text": "O taste and see that the LORD [is] good: blessed [is] the man [that] trusteth in him.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA034.htm",
+      "source_version": "eng-asv",
       "text": "Oh taste and see that Jehovah is good: Blessed is the man that taketh refuge in him.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA034.htm",
+      "source_version": "engwebp",
       "text": "Oh taste and see that the LORD is good. Blessed is the man who takes refuge in him.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 34:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "παρεμβαλεῖ ἄγγελος κυρίου κύκλῳ τῶν φοβουμένων αὐτὸν καὶ ῥύσεται αὐτούς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

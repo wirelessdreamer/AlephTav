@@ -62,6 +62,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -166,6 +168,8 @@
       "gloss_parts": [
         "may.they.be.dropped"
       ],
+      "greek": "πεσοῦνται",
+      "greek_strong": "4098",
       "lemma": "מוֹט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -272,7 +276,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "on them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -303,6 +307,8 @@
         "on",
         "them"
       ],
+      "greek": "ἐπ’ αὐτοὺς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -420,6 +426,8 @@
       "gloss_parts": [
         "burning.coals"
       ],
+      "greek": "ἄνθρακες",
+      "greek_strong": "440",
       "lemma": "גֶּחָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -503,7 +511,7 @@
         "Psalm 105:39",
         "Psalm 106:18"
       ],
-      "display_gloss": "in fire the",
+      "display_gloss": "into the fire",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -535,6 +543,8 @@
         "the",
         "fire"
       ],
+      "greek": "ἐν πυρὶ",
+      "greek_strong": "4442",
       "lemma": "אֵשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -673,6 +683,8 @@
         "let",
         "someone.make.them.fall"
       ],
+      "greek": "καταβαλεῖς αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -760,7 +772,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "in pits",
+      "display_gloss": "into miry pits",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -791,6 +803,8 @@
         "in",
         "pits"
       ],
+      "greek": "ἐν ταλαιπωρίαις",
+      "greek_strong": "5004",
       "lemma": "מַהֲמֹרֹות",
       "missing_enrichments": [
         "oshb:stem",
@@ -894,6 +908,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "בַּל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -952,24 +968,40 @@
       "ref": "Psalm 140:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA140.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let not an evil speaker be established in the earth: evil shall hunt the violent man to overthrow [him].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 140:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA140.htm",
+      "source_version": "eng-asv",
       "text": "An evil speaker shall not be established in the earth: Evil shall hunt the violent man to overthrow him.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 140:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA140.htm",
+      "source_version": "engwebp",
       "text": "An evil speaker won’t be established in the earth. Evil will hunt the violent man to overthrow him.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 140:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πεσοῦνται ἐπ’ αὐτοὺς ἄνθρακες ἐν πυρὶ καταβαλεῖς αὐτούς ἐν ταλαιπωρίαις οὐ ὑποστῶσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

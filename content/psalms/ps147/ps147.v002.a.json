@@ -41,7 +41,7 @@
           "builds up"
         ],
         "gloss_fragments": [
-          "building"
+          "is building"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -64,7 +64,7 @@
         "Psalm 122:3",
         "Psalm 127:1"
       ],
-      "display_gloss": "building",
+      "display_gloss": "is building",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -93,6 +93,8 @@
       "gloss_parts": [
         "[is].building"
       ],
+      "greek": "οἰκοδομῶν",
+      "greek_strong": "3618",
       "lemma": "בָּנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -196,6 +198,8 @@
       "gloss_parts": [
         "(of).Jerusalem"
       ],
+      "greek": "ιερουσαλημ",
+      "greek_strong": "2414",
       "lemma": "יְרוּשָׁלִַ͏ם",
       "missing_enrichments": [
         "oshb:stem",
@@ -317,6 +321,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -424,6 +430,8 @@
       "gloss_parts": [
         "the.banished.[ones]"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "נדח",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -527,6 +535,8 @@
       "gloss_parts": [
         "of.Israel"
       ],
+      "greek": "ισραηλ",
+      "greek_strong": "2474",
       "lemma": "יִשְׂרָאֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -632,6 +642,8 @@
       "gloss_parts": [
         "he.gathers"
       ],
+      "greek": "ἐπισυνάχει",
+      "greek_strong": "1996",
       "lemma": "כָּנַס",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -665,24 +677,40 @@
       "ref": "Psalm 147:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA147.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD doth build up Jerusalem: he gathereth together the outcasts of Israel.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA147.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah doth build up Jerusalem; He gathereth together the outcasts of Israel.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA147.htm",
+      "source_version": "engwebp",
       "text": "The LORD builds up Jerusalem. He gathers together the outcasts of Israel.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 147:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οἰκοδομῶν ιερουσαλημ ισραηλ ἐπισυνάχει",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

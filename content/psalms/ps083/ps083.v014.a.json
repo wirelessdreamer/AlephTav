@@ -88,7 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my God",
+      "display_gloss": "my God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "my.God",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -270,6 +272,8 @@
         "make",
         "them"
       ],
+      "greek": "θοῦ αὐτοὺς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -365,7 +369,7 @@
       "corpus_occurrence_refs": [
         "Psalm 77:19"
       ],
-      "display_gloss": "like (the) dust whirling",
+      "display_gloss": "like the tumbleweed",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -397,6 +401,8 @@
         "whirling",
         "dust"
       ],
+      "greek": "ὡς τροξόν",
+      "greek_strong": "5613",
       "lemma": "גַּלְגַּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -483,6 +489,8 @@
         "like",
         "chaff"
       ],
+      "greek": "ὡς καλάμην",
+      "greek_strong": "2562",
       "lemma": "קַשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -589,6 +597,8 @@
       "gloss_parts": [
         "before"
       ],
+      "greek": "κατὰ πρόσωπον",
+      "greek_strong": "4383",
       "lemma": "פָּנֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -717,6 +727,8 @@
       "gloss_parts": [
         "a.wind"
       ],
+      "greek": "ἀνέμου",
+      "greek_strong": "417",
       "lemma": "רוּחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -774,24 +786,40 @@
       "ref": "Psalm 83:14",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA083.htm",
+      "source_version": "eng-kjv2006",
       "text": "As the fire burneth a wood, and as the flame setteth the mountains on fire;",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 83:14",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA083.htm",
+      "source_version": "eng-asv",
       "text": "As the fire that burneth the forest, And as the flame that setteth the mountains on fire,",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 83:14",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA083.htm",
+      "source_version": "engwebp",
       "text": "As the fire that burns the forest, as the flame that sets the mountains on fire,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 83:14",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου θοῦ αὐτοὺς ὡς τροξόν ὡς καλάμην κατὰ πρόσωπον ἀνέμου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -91,7 +91,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my God",
+      "display_gloss": "my God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -122,6 +122,8 @@
         "my.God",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -263,6 +265,8 @@
       "gloss_parts": [
         "I.call.out"
       ],
+      "greek": "κεκράχομαι",
+      "greek_strong": "2896",
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -375,6 +379,8 @@
       "gloss_parts": [
         "by.day"
       ],
+      "greek": "ἡμέρας",
+      "greek_strong": "2250",
       "lemma": "יוֹמָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -493,6 +499,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -616,6 +624,8 @@
       "gloss_parts": [
         "you.answer"
       ],
+      "greek": "εἰσακούσῃ",
+      "greek_strong": "1522",
       "lemma": "עָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -739,6 +749,8 @@
         "and",
         "night"
       ],
+      "greek": "καὶ νυκτός",
+      "greek_strong": "3571",
       "lemma": "לַיְלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -872,6 +884,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -984,6 +998,8 @@
       "gloss_parts": [
         "silence"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "דּוּמִיָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1070,7 +1086,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1101,6 +1117,8 @@
         "[belongs].to",
         "me"
       ],
+      "greek": "ἐμοί",
+      "greek_strong": "1698",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1173,24 +1191,40 @@
       "ref": "Psalm 22:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "But thou [art] holy, [O thou] that inhabitest the praises of Israel.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "But thou art holy, O thou that inhabitest the praises of Israel.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "But you are holy, you who inhabit the praises of Israel.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου κεκράχομαι ἡμέρας καὶ οὐκ εἰσακούσῃ καὶ νυκτός καὶ οὐκ ἐμοί",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

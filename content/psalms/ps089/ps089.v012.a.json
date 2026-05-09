@@ -91,7 +91,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -122,6 +122,8 @@
         "[belongs].to",
         "you"
       ],
+      "greek": "σοί εἰσιν",
+      "greek_strong": "1526",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -265,6 +267,8 @@
       "gloss_parts": [
         "heaven"
       ],
+      "greek": "οὐρανοί",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -397,6 +401,8 @@
       "gloss_parts": [
         "also"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "אַף",
       "missing_enrichments": [
         "oshb:stem",
@@ -510,7 +516,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -541,6 +547,8 @@
         "[belongs].to",
         "you"
       ],
+      "greek": "σή ἐστιν",
+      "greek_strong": "2076",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -684,6 +692,8 @@
       "gloss_parts": [
         "[the].earth"
       ],
+      "greek": "γῆ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -806,6 +816,8 @@
       "gloss_parts": [
         "[the].world"
       ],
+      "greek": "οἰκουμένην",
+      "greek_strong": "3625",
       "lemma": "תֵּבֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -940,6 +952,8 @@
         "what",
         "fills.it"
       ],
+      "greek": "καὶ τὸ",
+      "greek_strong": "3588",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1082,6 +1096,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σὺ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1196,7 +1212,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "founded them you",
+      "display_gloss": "you founded them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1226,6 +1242,8 @@
         "you",
         "founded.them"
       ],
+      "greek": "ἐθεμελίωσας",
+      "greek_strong": "2311",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1295,24 +1313,40 @@
       "ref": "Psalm 89:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA089.htm",
+      "source_version": "eng-kjv2006",
       "text": "The north and the south thou hast created them: Tabor and Hermon shall rejoice in thy name.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA089.htm",
+      "source_version": "eng-asv",
       "text": "The north and the south, thou hast created them: Tabor and Hermon rejoice in thy name.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA089.htm",
+      "source_version": "engwebp",
       "text": "You have created the north and the south. Tabor and Hermon rejoice in your name.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 89:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "σοί εἰσιν οὐρανοί καὶ σή ἐστιν γῆ οἰκουμένην καὶ τὸ σὺ ἐθεμελίωσας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

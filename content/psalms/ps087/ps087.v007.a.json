@@ -112,6 +112,8 @@
         "and",
         "singers"
       ],
+      "greek": "^^^",
+      "greek_strong": null,
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -190,7 +192,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "like dancers",
+      "display_gloss": "and ~ alike dancers",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -220,6 +222,8 @@
         "like",
         "dancers"
       ],
+      "greek": "ὡς εὐφραινομένων",
+      "greek_strong": "5613",
       "lemma": "חול",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -322,6 +326,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντων",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -463,6 +469,8 @@
         "springs",
         "my"
       ],
+      "greek": "ἡ κατοικία",
+      "greek_strong": "3588",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -576,7 +584,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "are in",
+      "display_gloss": "in you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -607,6 +615,8 @@
         "[are].in",
         "you"
       ],
+      "greek": "ἐν σοί",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -671,24 +681,40 @@
       "ref": "Psalm 87:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA087.htm",
+      "source_version": "eng-kjv2006",
       "text": "As well the singers as the players on instruments [shall be there:] all my springs [are] in thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA087.htm",
+      "source_version": "eng-asv",
       "text": "They that sing as well as they that dance [shall say], All my fountains are in thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA087.htm",
+      "source_version": "engwebp",
       "text": "Those who sing as well as those who dance say, “All my springs are in you.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 87:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "^^^ ὡς εὐφραινομένων πάντων ἡ κατοικία ἐν σοί",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -122,6 +122,8 @@
         "pay",
         "attention"
       ],
+      "greek": "πρόσξες",
+      "greek_strong": "4337",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -252,6 +254,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "πρὸς",
+      "greek_strong": "4314",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -393,6 +397,8 @@
         "of.entreaty",
         "my.cry"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -528,6 +534,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -636,6 +644,8 @@
       "gloss_parts": [
         "I.have.become.low"
       ],
+      "greek": "ἐταπεινώθην",
+      "greek_strong": null,
       "lemma": "דָּלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -741,6 +751,8 @@
       "gloss_parts": [
         "exceedingly"
       ],
+      "greek": "σφόδρα",
+      "greek_strong": "4970",
       "lemma": "מְאֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -878,6 +890,8 @@
         "deliver",
         "me"
       ],
+      "greek": "ῥῦσαί με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -948,8 +962,8 @@
         ],
         "gloss_fragments": [
           "from",
-          "those",
-          "who harass me"
+          "[those",
+          "who] harass me"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -996,7 +1010,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from who harass me those",
+      "display_gloss": "from who] harass me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1027,6 +1041,8 @@
         "[those",
         "who].harass.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1161,6 +1177,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1272,6 +1290,8 @@
       "gloss_parts": [
         "they.are.[too].strong"
       ],
+      "greek": "ἐκραταιώθησαν",
+      "greek_strong": "2901",
       "lemma": "אָמֵץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1359,7 +1379,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "too ~ for me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1390,6 +1410,8 @@
         "for",
         "me"
       ],
+      "greek": "ὑπὲρ ἐμέ",
+      "greek_strong": "1691",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1456,24 +1478,40 @@
       "ref": "Psalm 142:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA142.htm",
+      "source_version": "eng-kjv2006",
       "text": "Bring my soul out of prison, that I may praise thy name: the righteous shall compass me about; for thou shalt deal bountifully with me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 142:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA142.htm",
+      "source_version": "eng-asv",
       "text": "Bring my soul out of prison, That I may give thanks unto thy name: The righteous shall compass me about; For thou wilt deal bountifully with me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 142:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA142.htm",
+      "source_version": "engwebp",
       "text": "Bring my soul out of prison, that I may give thanks to your name. The righteous will surround me, for you will be good to me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 142:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πρόσξες πρὸς μου ὅτι ἐταπεινώθην σφόδρα ῥῦσαί με με ὅτι ἐκραταιώθησαν ὑπὲρ ἐμέ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -125,6 +125,8 @@
         "show",
         "favor.to.me"
       ],
+      "greek": "ἐλέησόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -264,6 +266,8 @@
       "gloss_parts": [
         "O.God"
       ],
+      "greek": "θεός",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -408,6 +412,8 @@
         "show",
         "favor.to.me"
       ],
+      "greek": "ἐλέησόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -545,6 +551,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -655,7 +663,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "in",
+      "display_gloss": "in you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -686,6 +694,8 @@
         "in",
         "you"
       ],
+      "greek": "ἐπὶ σοὶ",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -825,6 +835,8 @@
       "gloss_parts": [
         "it.takes.refuge"
       ],
+      "greek": "πέποιθεν",
+      "greek_strong": "3982",
       "lemma": "חָסָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -960,6 +972,8 @@
         "self",
         "my"
       ],
+      "greek": "ψυξή μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1094,6 +1108,8 @@
         "in",
         "the.shadow"
       ],
+      "greek": "καὶ ἐν σκιᾷ",
+      "greek_strong": "4639",
       "lemma": "צֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1185,7 +1201,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your wings",
+      "display_gloss": "your wings",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1216,6 +1232,8 @@
         "your.wings",
         "your"
       ],
+      "greek": "πτερύγων σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1354,6 +1372,8 @@
       "gloss_parts": [
         "I.take.refuge"
       ],
+      "greek": "ἐλπιῶ",
+      "greek_strong": null,
       "lemma": "חָסָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1479,6 +1499,8 @@
       "gloss_parts": [
         "until"
       ],
+      "greek": "ἕως",
+      "greek_strong": "2193",
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1609,6 +1631,8 @@
       "gloss_parts": [
         "it.will.pass.by"
       ],
+      "greek": "παρέλθῃ",
+      "greek_strong": "3928",
       "lemma": "עָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1718,6 +1742,8 @@
       "gloss_parts": [
         "destruction(s)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הַוָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1757,24 +1783,40 @@
       "ref": "Psalm 57:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA057.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will cry unto God most high; unto God that performeth [all things] for me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 57:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA057.htm",
+      "source_version": "eng-asv",
       "text": "I will cry unto God Most High, Unto God that performeth [all things] for me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 57:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA057.htm",
+      "source_version": "engwebp",
       "text": "I cry out to God Most High, to God who accomplishes my requests for me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 57:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐλέησόν με θεός ἐλέησόν με ὅτι ἐπὶ σοὶ πέποιθεν ψυξή μου καὶ ἐν σκιᾷ πτερύγων σου ἐλπιῶ ἕως παρέλθῃ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

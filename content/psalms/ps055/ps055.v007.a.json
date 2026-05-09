@@ -115,6 +115,8 @@
         "and",
         "I.said"
       ],
+      "greek": "καὶ εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -242,6 +244,8 @@
       "gloss_parts": [
         "who?"
       ],
+      "greek": "τίς",
+      "greek_strong": "5101",
       "lemma": "מִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -369,6 +373,8 @@
       "gloss_parts": [
         "will.he.give"
       ],
+      "greek": "δώσει",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -431,8 +437,8 @@
           "I"
         ],
         "gloss_fragments": [
-          "will",
-          "belong to me"
+          "[will",
+          "belong] to me"
         ],
         "preposition_role": "had",
         "raw_classes": [
@@ -477,7 +483,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will",
+      "display_gloss": "[will belong] to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -508,6 +514,8 @@
         "[will",
         "belong].to.me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -626,6 +634,8 @@
       "gloss_parts": [
         "wing[s]"
       ],
+      "greek": "πτέρυγας",
+      "greek_strong": "4420",
       "lemma": "אֵבֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -684,7 +694,7 @@
         "Psalm 56:1",
         "Psalm 68:14"
       ],
-      "display_gloss": "like dove a",
+      "display_gloss": "a like dove",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -716,6 +726,8 @@
         "(the)",
         "dove"
       ],
+      "greek": "ὡσεὶ περιστερᾶς",
+      "greek_strong": "5616",
       "lemma": "יוֹנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -800,6 +812,8 @@
       "gloss_parts": [
         "I.want.to.fly.away"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עוּף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -907,6 +921,8 @@
         "and",
         "I.want.to.settle.down"
       ],
+      "greek": "καὶ καταπαύσω",
+      "greek_strong": "2532",
       "lemma": "שָׁכַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -961,24 +977,40 @@
       "ref": "Psalm 55:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA055.htm",
+      "source_version": "eng-kjv2006",
       "text": "Lo, [then] would I wander far off, [and] remain in the wilderness. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 55:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA055.htm",
+      "source_version": "eng-asv",
       "text": "Lo, then would I wander far off, I would lodge in the wilderness. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 55:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA055.htm",
+      "source_version": "engwebp",
       "text": "Behold, then I would wander far off. I would lodge in the wilderness.” Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 55:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ εἶπα τίς δώσει μοι πτέρυγας ὡσεὶ περιστερᾶς καὶ καταπαύσω",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

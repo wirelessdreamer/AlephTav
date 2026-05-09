@@ -123,6 +123,8 @@
         "eyes",
         "my"
       ],
+      "greek": "ὀφθαλμοί μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -192,8 +194,8 @@
           "faithful"
         ],
         "gloss_fragments": [
-          "will",
-          "be on the faithful people"
+          "[will",
+          "be] on the faithful people"
         ],
         "preposition_role": "on",
         "raw_classes": [
@@ -223,7 +225,7 @@
         "Psalm 116:10",
         "Psalm 119:66"
       ],
-      "display_gloss": "will be on the faithful people",
+      "display_gloss": "[will be] on the faithful people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -253,6 +255,8 @@
         "[will",
         "be].on.[the].faithful.[people]"
       ],
+      "greek": "πιστοὺς",
+      "greek_strong": "4103",
       "lemma": "אָמַן",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -371,6 +375,8 @@
       "gloss_parts": [
         "of.[the].earth"
       ],
+      "greek": "γῆς",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -506,6 +512,8 @@
         "to",
         "dwell"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -614,7 +622,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "with",
+      "display_gloss": "with me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -645,6 +653,8 @@
         "with",
         "me"
       ],
+      "greek": "μετ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -780,6 +790,8 @@
       "gloss_parts": [
         "[one.who].walks"
       ],
+      "greek": "πορευόμενος",
+      "greek_strong": "4198",
       "lemma": "הָלַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -914,6 +926,8 @@
         "in",
         "a.way"
       ],
+      "greek": "ἐν ὁδῷ",
+      "greek_strong": "3598",
       "lemma": "דֶּרֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1031,6 +1045,8 @@
       "gloss_parts": [
         "blameless"
       ],
+      "greek": "ἀμώμῳ",
+      "greek_strong": "299",
       "lemma": "תָּמִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -1148,6 +1164,8 @@
       "gloss_parts": [
         "he"
       ],
+      "greek": "οὗτός",
+      "greek_strong": "3778",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1262,7 +1280,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will serve me he",
+      "display_gloss": "he will serve me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1292,6 +1310,8 @@
         "he",
         "will.serve.me"
       ],
+      "greek": "ἐλειτούργει μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1355,24 +1375,40 @@
       "ref": "Psalm 101:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA101.htm",
+      "source_version": "eng-kjv2006",
       "text": "Mine eyes [shall be] upon the faithful of the land, that they may dwell with me: he that walketh in a perfect way, he shall serve me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA101.htm",
+      "source_version": "eng-asv",
       "text": "Mine eyes shall be upon the faithful of the land, that they may dwell with me: He that walketh in a perfect way, he shall minister unto me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA101.htm",
+      "source_version": "engwebp",
       "text": "My eyes will be on the faithful of the land, that they may dwell with me. He who walks in a perfect way, he will serve me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 101:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὀφθαλμοί μου πιστοὺς γῆς μετ’ ἐμοῦ πορευόμενος ἐν ὁδῷ ἀμώμῳ οὗτός ἐλειτούργει μοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

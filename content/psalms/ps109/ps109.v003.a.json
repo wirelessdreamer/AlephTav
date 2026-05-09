@@ -113,6 +113,8 @@
         "and",
         "words"
       ],
+      "greek": "καὶ λόγοις",
+      "greek_strong": "3056",
       "lemma": "דָּבָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -220,6 +222,8 @@
       "gloss_parts": [
         "of.hatred"
       ],
+      "greek": "μίσους",
+      "greek_strong": null,
       "lemma": "שִׂנְאָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -308,7 +312,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have surrounded me they",
+      "display_gloss": "they have surrounded me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -338,6 +342,8 @@
         "they",
         "have.surrounded.me"
       ],
+      "greek": "ἐκύκλωσάν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -461,7 +467,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and have fought against me they",
+      "display_gloss": "and they have fought against me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -492,6 +498,8 @@
         "they",
         "have.fought.against.me"
       ],
+      "greek": "καὶ ἐπολέμησάν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -612,6 +620,8 @@
       "gloss_parts": [
         "without.cause"
       ],
+      "greek": "δωρεάν",
+      "greek_strong": "1432",
       "lemma": "חִנָּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -649,24 +659,40 @@
       "ref": "Psalm 109:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA109.htm",
+      "source_version": "eng-kjv2006",
       "text": "They compassed me about also with words of hatred; and fought against me without a cause.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA109.htm",
+      "source_version": "eng-asv",
       "text": "They have compassed me about also with words of hatred, And fought against me without a cause.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA109.htm",
+      "source_version": "engwebp",
       "text": "They have also surrounded me with words of hatred, and fought against me without a cause.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 109:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ λόγοις μίσους ἐκύκλωσάν με καὶ ἐπολέμησάν με δωρεάν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

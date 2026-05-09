@@ -105,6 +105,8 @@
       "gloss_parts": [
         "they.went.up"
       ],
+      "greek": "ἀναβαίνουσιν",
+      "greek_strong": "305",
       "lemma": "עָלָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -226,6 +228,8 @@
       "gloss_parts": [
         "mountains"
       ],
+      "greek": "ὄρη",
+      "greek_strong": "3735",
       "lemma": "הַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -353,6 +357,8 @@
       "gloss_parts": [
         "they.went.down"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָרַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -449,6 +455,8 @@
       "gloss_parts": [
         "valleys"
       ],
+      "greek": "πεδία",
+      "greek_strong": null,
       "lemma": "בִּקְעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -552,6 +560,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -665,6 +675,8 @@
       "gloss_parts": [
         "the.place"
       ],
+      "greek": "τόπον",
+      "greek_strong": "5117",
       "lemma": "מָקוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -768,6 +780,8 @@
       "gloss_parts": [
         "(of).which"
       ],
+      "greek": "ὃν",
+      "greek_strong": "3739",
       "lemma": "זֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -870,6 +884,8 @@
       "gloss_parts": [
         "you.had.established"
       ],
+      "greek": "ἐθεμελίωσας",
+      "greek_strong": "2311",
       "lemma": "יָסַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -957,7 +973,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -988,6 +1004,8 @@
         "for",
         "them"
       ],
+      "greek": "αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1060,24 +1078,40 @@
       "ref": "Psalm 104:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "They go up by the mountains; they go down by the valleys unto the place which thou hast founded for them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "(The mountains rose, the valleys sank down) Unto the place which thou hadst founded for them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "The mountains rose, the valleys sank down, to the place which you had assigned to them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀναβαίνουσιν ὄρη πεδία εἰς τόπον ὃν ἐθεμελίωσας αὐτοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -107,6 +107,8 @@
       "gloss_parts": [
         "they.will.eat"
       ],
+      "greek": "φάγονται",
+      "greek_strong": "5315",
       "lemma": "אָכַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -216,6 +218,8 @@
       "gloss_parts": [
         "humble.[people]"
       ],
+      "greek": "πένητες",
+      "greek_strong": "3993",
       "lemma": "עָנָו",
       "missing_enrichments": [
         "oshb:stem",
@@ -324,6 +328,8 @@
         "and",
         "they.will.be.satisfied"
       ],
+      "greek": "καὶ ἐμπλησθήσονται",
+      "greek_strong": "2532",
       "lemma": "שָׂבֵעַ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -442,6 +448,8 @@
       "gloss_parts": [
         "they.will.praise"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -569,6 +577,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριον",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -636,8 +646,8 @@
           "him"
         ],
         "gloss_fragments": [
-          "those",
-          "who seek him"
+          "[those",
+          "who] seek him"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -682,7 +692,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who seek him those",
+      "display_gloss": "who] seek him [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -712,6 +722,8 @@
         "[those",
         "who].seek.him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -838,6 +850,8 @@
       "gloss_parts": [
         "may.it.live"
       ],
+      "greek": "ζήσονται",
+      "greek_strong": null,
       "lemma": "חָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -963,6 +977,8 @@
         "heart",
         "your"
       ],
+      "greek": "καρδίαι αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1108,6 +1124,8 @@
       "gloss_parts": [
         "forever"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1166,24 +1184,40 @@
       "ref": "Psalm 22:27",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "All the ends of the world shall remember and turn unto the LORD: and all the kindreds of the nations shall worship before thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:27",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "All the ends of the earth shall remember and turn unto Jehovah; And all the kindreds of the nations shall worship before thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:27",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "All the ends of the earth shall remember and turn to the LORD. All the relatives of the nations shall worship before you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:27",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φάγονται πένητες καὶ ἐμπλησθήσονται κύριον ζήσονται καρδίαι αὐτῶν εἰς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -119,6 +119,8 @@
         "help",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -188,7 +190,7 @@
           "with"
         ],
         "gloss_fragments": [
-          "from",
+          "is from",
           "with"
         ],
         "preposition_role": "from",
@@ -229,7 +231,7 @@
         "Psalm 106:6",
         "Psalm 113:8"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from with",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -260,6 +262,8 @@
         "[is].from",
         "with"
       ],
+      "greek": "παρὰ",
+      "greek_strong": "3844",
       "lemma": "עִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -389,6 +393,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -521,6 +527,8 @@
       "gloss_parts": [
         "[who].made"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -649,6 +657,8 @@
       "gloss_parts": [
         "(of).heaven"
       ],
+      "greek": "οὐρανὸν",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -783,6 +793,8 @@
         "and",
         "earth"
       ],
+      "greek": "καὶ γῆν",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -841,24 +853,40 @@
       "ref": "Psalm 121:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA121.htm",
+      "source_version": "eng-kjv2006",
       "text": "My help [cometh] from the LORD, which made heaven and earth.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 121:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA121.htm",
+      "source_version": "eng-asv",
       "text": "My help [cometh] from Jehovah, Who made heaven and earth.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 121:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA121.htm",
+      "source_version": "engwebp",
       "text": "My help comes from the LORD, who made heaven and earth.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 121:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου παρὰ κυρίου οὐρανὸν καὶ γῆν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

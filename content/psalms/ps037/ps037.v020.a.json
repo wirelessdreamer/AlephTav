@@ -111,6 +111,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -250,6 +252,8 @@
       "gloss_parts": [
         "wicked.[people]"
       ],
+      "greek": "ἁμαρτωλοὶ",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -390,6 +394,8 @@
       "gloss_parts": [
         "they.will.perish"
       ],
+      "greek": "ἀπολοῦνται",
+      "greek_strong": "622",
       "lemma": "אָבַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -518,6 +524,8 @@
         "and",
         "the.enemies"
       ],
+      "greek": "δὲ ἐξθροὶ",
+      "greek_strong": "2190",
       "lemma": "אָיַב",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -643,6 +651,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -718,8 +728,8 @@
           "glory"
         ],
         "gloss_fragments": [
-          "will",
-          "be like a splendid thing"
+          "[will",
+          "be] like a splendid thing"
         ],
         "preposition_role": "like",
         "raw_classes": [
@@ -737,7 +747,7 @@
         "Psalm 36:8",
         "Psalm 116:15"
       ],
-      "display_gloss": "will be like a splendid thing",
+      "display_gloss": "[will be] like a splendid thing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -768,6 +778,8 @@
         "[will",
         "be].like.a.splendid.[thing]"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָקָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -852,6 +864,8 @@
       "gloss_parts": [
         "of.pastures"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "כַּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -949,6 +963,8 @@
       "gloss_parts": [
         "they.will.come.to.an.end"
       ],
+      "greek": "ἐκλιπόντες",
+      "greek_strong": null,
       "lemma": "כָּלָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1024,7 +1040,7 @@
         "Psalm 68:3",
         "Psalm 102:4"
       ],
-      "display_gloss": "in smoke the",
+      "display_gloss": "like the smoke",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1056,6 +1072,8 @@
         "(the)",
         "smoke"
       ],
+      "greek": "ὡσεὶ καπνὸς",
+      "greek_strong": "2586",
       "lemma": "עָשָׁן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1155,6 +1173,8 @@
       "gloss_parts": [
         "they.will.come.to.an.end"
       ],
+      "greek": "ἐχέλιπον",
+      "greek_strong": "1587",
       "lemma": "כָּלָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1203,24 +1223,40 @@
       "ref": "Psalm 37:20",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "source_version": "eng-kjv2006",
       "text": "But the wicked shall perish, and the enemies of the LORD [shall be] as the fat of lambs: they shall consume; into smoke shall they consume away.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:20",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "source_version": "eng-asv",
       "text": "But the wicked shall perish, And the enemies of Jehovah shall be as the fat of lambs: They shall consume; in smoke shall they consume away.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:20",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "source_version": "engwebp",
       "text": "But the wicked shall perish. The enemies of the LORD shall be like the beauty of the fields. They will vanish— vanish like smoke.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 37:20",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι ἁμαρτωλοὶ ἀπολοῦνται δὲ ἐξθροὶ ἐκλιπόντες ὡσεὶ καπνὸς ἐχέλιπον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

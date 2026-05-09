@@ -124,6 +124,8 @@
         "set",
         "me.free"
       ],
+      "greek": "ῥῦσαί με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -278,6 +280,8 @@
         "deliver",
         "me"
       ],
+      "greek": "καὶ ἐχελοῦ με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -423,6 +427,8 @@
         "from.[the]",
         "hand"
       ],
+      "greek": "ἐκ ξειρὸς",
+      "greek_strong": "5495",
       "lemma": "יָד",
       "missing_enrichments": [
         "oshb:stem",
@@ -554,6 +560,8 @@
       "gloss_parts": [
         "of.sons"
       ],
+      "greek": "υἱῶν",
+      "greek_strong": "5207",
       "lemma": "בֵּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -666,6 +674,8 @@
       "gloss_parts": [
         "of.foreignness"
       ],
+      "greek": "ἀλλοτρίων",
+      "greek_strong": "245",
       "lemma": "נֵכָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -777,6 +787,8 @@
       "gloss_parts": [
         "who"
       ],
+      "greek": "ὧν",
+      "greek_strong": "3739",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -919,6 +931,8 @@
         "mouth",
         "their"
       ],
+      "greek": "τὸ στόμα",
+      "greek_strong": "4750",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1060,6 +1074,8 @@
       "gloss_parts": [
         "it.speaks"
       ],
+      "greek": "ἐλάλησεν",
+      "greek_strong": "2980",
       "lemma": "דָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1177,6 +1193,8 @@
       "gloss_parts": [
         "falsehood"
       ],
+      "greek": "ματαιότητα",
+      "greek_strong": null,
       "lemma": "שָׁוְא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1310,6 +1328,8 @@
         "their.right",
         "hand"
       ],
+      "greek": "καὶ δεχιὰ",
+      "greek_strong": "1188",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1384,7 +1404,7 @@
           "right hand"
         ],
         "gloss_fragments": [
-          "a right hand"
+          "is a right hand"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -1405,7 +1425,7 @@
         "Psalm 118:16",
         "Psalm 142:5"
       ],
-      "display_gloss": "a right hand",
+      "display_gloss": "is a right hand",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1435,6 +1455,8 @@
       "gloss_parts": [
         "[is].a.right.hand"
       ],
+      "greek": "δεχιὰ",
+      "greek_strong": "1188",
       "lemma": "יָמִין",
       "missing_enrichments": [
         "oshb:stem",
@@ -1545,6 +1567,8 @@
       "gloss_parts": [
         "of.deception"
       ],
+      "greek": "ἀδικίας",
+      "greek_strong": "93",
       "lemma": "שֶׁקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1601,24 +1625,40 @@
       "ref": "Psalm 144:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA144.htm",
+      "source_version": "eng-kjv2006",
       "text": "Rid me, and deliver me from the hand of strange children, whose mouth speaketh vanity, and their right hand [is] a right hand of falsehood:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA144.htm",
+      "source_version": "eng-asv",
       "text": "Rescue me, and deliver me out of the hand of aliens, Whose mouth speaketh deceit, And whose right hand is a right hand of falsehood.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA144.htm",
+      "source_version": "engwebp",
       "text": "Rescue me, and deliver me out of the hands of foreigners, whose mouths speak deceit, whose right hand is a right hand of falsehood.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 144:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ῥῦσαί με καὶ ἐχελοῦ με ἐκ ξειρὸς υἱῶν ἀλλοτρίων ὧν τὸ στόμα ἐλάλησεν ματαιότητα καὶ δεχιὰ δεχιὰ ἀδικίας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

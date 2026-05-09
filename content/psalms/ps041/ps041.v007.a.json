@@ -89,7 +89,7 @@
         "Psalm 90:10",
         "Psalm 94:9"
       ],
-      "display_gloss": "and",
+      "display_gloss": "when when",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -120,6 +120,8 @@
         "and",
         "if"
       ],
+      "greek": "καὶ εἰ",
+      "greek_strong": "1487",
       "lemma": "אִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -248,6 +250,8 @@
       "gloss_parts": [
         "someone.came"
       ],
+      "greek": "εἰσεπορεύετο",
+      "greek_strong": "1531",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -379,6 +383,8 @@
         "to",
         "see"
       ],
+      "greek": "τοῦ ἰδεῖν",
+      "greek_strong": "1492",
       "lemma": "רָאָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -495,6 +501,8 @@
       "gloss_parts": [
         "falsehood"
       ],
+      "greek": "μάτην",
+      "greek_strong": "3155",
       "lemma": "שָׁוְא",
       "missing_enrichments": [
         "oshb:stem",
@@ -611,6 +619,8 @@
       "gloss_parts": [
         "it.speaks"
       ],
+      "greek": "ἐλάλει",
+      "greek_strong": "2980",
       "lemma": "דָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -748,6 +758,8 @@
         "heart",
         "his"
       ],
+      "greek": "καρδία αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -865,6 +877,8 @@
       "gloss_parts": [
         "it.gathers"
       ],
+      "greek": "συνήγαγεν",
+      "greek_strong": "4863",
       "lemma": "קָבַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -969,6 +983,8 @@
       "gloss_parts": [
         "wickedness"
       ],
+      "greek": "ἀνομίαν",
+      "greek_strong": "458",
       "lemma": "אָוֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1076,7 +1092,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for itself",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1107,6 +1123,8 @@
         "for",
         "itself"
       ],
+      "greek": "ἑαυτῷ",
+      "greek_strong": "1438",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1245,6 +1263,8 @@
       "gloss_parts": [
         "he.goes.out"
       ],
+      "greek": "ἐχεπορεύετο",
+      "greek_strong": "1607",
       "lemma": "יָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1325,7 +1345,7 @@
         "Psalm 18:43",
         "Psalm 31:12"
       ],
-      "display_gloss": "to outside the",
+      "display_gloss": "to the out",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1357,6 +1377,8 @@
         "the",
         "outside"
       ],
+      "greek": "ἔχω",
+      "greek_strong": "1854",
       "lemma": "חוּץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1463,6 +1485,8 @@
       "gloss_parts": [
         "he.speaks"
       ],
+      "greek": "ἐλάλει",
+      "greek_strong": "2980",
       "lemma": "דָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1519,24 +1543,40 @@
       "ref": "Psalm 41:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA041.htm",
+      "source_version": "eng-kjv2006",
       "text": "All that hate me whisper together against me: against me do they devise my hurt.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA041.htm",
+      "source_version": "eng-asv",
       "text": "All that hate me whisper together against me; Against me do they devise my hurt.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA041.htm",
+      "source_version": "engwebp",
       "text": "All who hate me whisper together against me. They imagine the worst for me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 41:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ εἰ εἰσεπορεύετο τοῦ ἰδεῖν μάτην ἐλάλει καρδία αὐτοῦ συνήγαγεν ἀνομίαν ἑαυτῷ ἐχεπορεύετο ἔχω ἐλάλει",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -111,6 +111,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -179,8 +181,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "those",
-          "who see me"
+          "[those",
+          "who] see me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -225,7 +227,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who see me those",
+      "display_gloss": "who] see me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -255,6 +257,8 @@
         "[those",
         "who].see.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -374,6 +378,8 @@
       "gloss_parts": [
         "they.mock"
       ],
+      "greek": "ἐχεμυκτήρισάν",
+      "greek_strong": null,
       "lemma": "לָעַג",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -458,7 +464,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "at",
+      "display_gloss": "at me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -489,6 +495,8 @@
         "(to)",
         "me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -606,6 +614,8 @@
       "gloss_parts": [
         "they.make.a.separation"
       ],
+      "greek": "ἐλάλησαν",
+      "greek_strong": "2980",
       "lemma": "פָּטַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -696,6 +706,8 @@
         "with",
         "a.lip"
       ],
+      "greek": "ἐν ξείλεσιν",
+      "greek_strong": "5491",
       "lemma": "שָׂפָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -785,6 +797,8 @@
       "gloss_parts": [
         "they.shake"
       ],
+      "greek": "ἐκίνησαν",
+      "greek_strong": null,
       "lemma": "נוּעַ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -882,6 +896,8 @@
       "gloss_parts": [
         "a.head"
       ],
+      "greek": "κεφαλήν",
+      "greek_strong": "2776",
       "lemma": "רֹאשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -931,24 +947,40 @@
       "ref": "Psalm 22:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "He trusted on the LORD [that] he would deliver him: let him deliver him, seeing he delighted in him.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "Commit [thyself] unto Jehovah; let him deliver him: Let him rescue him, seeing he delighteth in him.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "“He trusts in the LORD. Let him deliver him. Let him rescue him, since he delights in him.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πάντες με ἐχεμυκτήρισάν με ἐλάλησαν ἐν ξείλεσιν ἐκίνησαν κεφαλήν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

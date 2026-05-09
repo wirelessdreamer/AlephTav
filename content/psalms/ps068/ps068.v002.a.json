@@ -109,6 +109,8 @@
       "gloss_parts": [
         "may.he.arise"
       ],
+      "greek": "ἀναστήτω",
+      "greek_strong": "450",
       "lemma": "קוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -236,6 +238,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεός",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -351,6 +355,8 @@
       "gloss_parts": [
         "may.they.be.scattered"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "פּוּץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -462,6 +468,8 @@
         "enemies",
         "his"
       ],
+      "greek": "ἐξθροὶ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -585,6 +593,8 @@
         "and",
         "may.they.flee"
       ],
+      "greek": "καὶ φυγέτωσαν",
+      "greek_strong": "2532",
       "lemma": "נוּס",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -623,8 +633,8 @@
           "him"
         ],
         "gloss_fragments": [
-          "those",
-          "who hate him"
+          "[those",
+          "who] hate him"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -669,7 +679,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hate him those",
+      "display_gloss": "who] hate him [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -699,6 +709,8 @@
         "[those",
         "who].hate.him"
       ],
+      "greek": "μισοῦντες",
+      "greek_strong": "3404",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -855,6 +867,8 @@
         "before",
         "him"
       ],
+      "greek": "ἀπὸ προσώπου αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -926,24 +940,40 @@
       "ref": "Psalm 68:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "As smoke is driven away, [so] drive [them] away: as wax melteth before the fire, [so] let the wicked perish at the presence of God.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "As smoke is driven away, so drive them away: As wax melteth before the fire, So let the wicked perish at the presence of God.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "As smoke is driven away, so drive them away. As wax melts before the fire, so let the wicked perish at the presence of God.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀναστήτω θεός ἐξθροὶ αὐτοῦ καὶ φυγέτωσαν μισοῦντες ἀπὸ προσώπου αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

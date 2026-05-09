@@ -110,6 +110,8 @@
       "gloss_parts": [
         "I.will.bless"
       ],
+      "greek": "εὐλογήσω",
+      "greek_strong": "2127",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -233,6 +235,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -367,6 +371,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,6 +520,8 @@
         "at",
         "every"
       ],
+      "greek": "ἐν παντὶ",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -642,6 +650,8 @@
       "gloss_parts": [
         "time"
       ],
+      "greek": "καιρῷ",
+      "greek_strong": "2540",
       "lemma": "עֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -761,6 +771,8 @@
       "gloss_parts": [
         "continually"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "תָּמִיד",
       "missing_enrichments": [
         "oshb:stem",
@@ -897,6 +909,8 @@
         "praise",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -973,8 +987,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "will",
-          "be",
+          "[will",
+          "be]",
           "in my mouth"
         ],
         "preposition_role": "in",
@@ -1022,7 +1036,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will in my mouth be",
+      "display_gloss": "[will in my mouth be]",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1054,6 +1068,8 @@
         "be]",
         "in.my.mouth"
       ],
+      "greek": "ἐν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1125,24 +1141,40 @@
       "ref": "Psalm 34:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA034.htm",
+      "source_version": "eng-kjv2006",
       "text": "My soul shall make her boast in the LORD: the humble shall hear [thereof], and be glad.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA034.htm",
+      "source_version": "eng-asv",
       "text": "My soul shall make her boast in Jehovah: The meek shall hear thereof, and be glad.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA034.htm",
+      "source_version": "engwebp",
       "text": "My soul shall boast in the LORD. The humble shall hear of it and be glad.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 34:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εὐλογήσω ἐν παντὶ καιρῷ αὐτοῦ ἐν μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

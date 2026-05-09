@@ -85,6 +85,8 @@
       "gloss_parts": [
         "the.toil"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יְגִיעַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -168,7 +170,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your hands",
+      "display_gloss": "your hands",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -199,6 +201,8 @@
         "your.hands",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -331,6 +335,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -457,6 +463,8 @@
       "gloss_parts": [
         "you.will.eat"
       ],
+      "greek": "φάγεσαι",
+      "greek_strong": "5315",
       "lemma": "אָכַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -591,6 +599,8 @@
         "how",
         "blessed.[are].you!"
       ],
+      "greek": "μακάριος εἶ",
+      "greek_strong": "1488",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -728,6 +738,8 @@
         "and",
         "good"
       ],
+      "greek": "καὶ καλῶς",
+      "greek_strong": "2573",
       "lemma": "טוֹב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -788,8 +800,8 @@
           "you"
         ],
         "gloss_fragments": [
-          "will",
-          "belong to you"
+          "[will",
+          "belong] to you"
         ],
         "preposition_role": "with",
         "raw_classes": [
@@ -834,7 +846,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will",
+      "display_gloss": "[will belong] to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -865,6 +877,8 @@
         "[will",
         "belong].to.you"
       ],
+      "greek": "σοι ἔσται",
+      "greek_strong": "2071",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -929,24 +943,40 @@
       "ref": "Psalm 128:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA128.htm",
+      "source_version": "eng-kjv2006",
       "text": "For thou shalt eat the labour of thine hands: happy [shalt] thou [be], and [it shall be] well with thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 128:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA128.htm",
+      "source_version": "eng-asv",
       "text": "For thou shalt eat the labor of thy hands: Happy shalt thou be, and it shall be well with thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 128:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA128.htm",
+      "source_version": "engwebp",
       "text": "For you will eat the labor of your hands. You will be happy, and it will be well with you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 128:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "σου φάγεσαι μακάριος εἶ καὶ καλῶς σοι ἔσται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

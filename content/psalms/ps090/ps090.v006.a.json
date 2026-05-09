@@ -76,7 +76,7 @@
         "Psalm 130:6",
         "Psalm 143:8"
       ],
-      "display_gloss": "in morning the",
+      "display_gloss": "in the morning",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -108,6 +108,8 @@
         "the",
         "morning"
       ],
+      "greek": "τὸ πρωὶ",
+      "greek_strong": "5459",
       "lemma": "בֹּקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -208,6 +210,8 @@
       "gloss_parts": [
         "it.flourishes"
       ],
+      "greek": "ἀνθήσαι",
+      "greek_strong": null,
       "lemma": "צוּץ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -297,6 +301,8 @@
         "and",
         "it.sprouts.up"
       ],
+      "greek": "καὶ παρέλθοι",
+      "greek_strong": "2532",
       "lemma": "חָלַף",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -365,7 +371,7 @@
         "Psalm 104:23",
         "Psalm 141:2"
       ],
-      "display_gloss": "to evening the",
+      "display_gloss": "by the evening",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -397,6 +403,8 @@
         "the",
         "evening"
       ],
+      "greek": "τὸ ἑσπέρας",
+      "greek_strong": "2073",
       "lemma": "עֶרֶב",
       "missing_enrichments": [
         "oshb:stem",
@@ -483,6 +491,8 @@
       "gloss_parts": [
         "it.withers"
       ],
+      "greek": "σκληρυνθείη",
+      "greek_strong": null,
       "lemma": "מלל",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -571,6 +581,8 @@
         "and",
         "it.dries.up"
       ],
+      "greek": "καὶ χηρανθείη",
+      "greek_strong": "2532",
       "lemma": "יָבֵשׁ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -609,24 +621,40 @@
       "ref": "Psalm 90:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA090.htm",
+      "source_version": "eng-kjv2006",
       "text": "In the morning it flourisheth, and groweth up; in the evening it is cut down, and withereth.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA090.htm",
+      "source_version": "eng-asv",
       "text": "In the morning it flourisheth, and groweth up; In the evening it is cut down, and withereth.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA090.htm",
+      "source_version": "engwebp",
       "text": "In the morning it sprouts and springs up. By evening, it is withered and dry.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 90:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τὸ πρωὶ ἀνθήσαι καὶ παρέλθοι τὸ ἑσπέρας σκληρυνθείη καὶ χηρανθείη",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

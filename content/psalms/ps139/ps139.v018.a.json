@@ -88,7 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will count them I",
+      "display_gloss": "I will count them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -118,6 +118,8 @@
         "I",
         "will.count.them"
       ],
+      "greek": "ἐχαριθμήσομαι αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -240,6 +242,8 @@
         "more",
         "than.sand"
       ],
+      "greek": "ἄμμον",
+      "greek_strong": "285",
       "lemma": "חוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -324,7 +328,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "will be numerous they",
+      "display_gloss": "they will be numerous",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -354,6 +358,8 @@
         "they",
         "will.be.numerous"
       ],
+      "greek": "πληθυνθήσονται",
+      "greek_strong": "4129",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -460,6 +466,8 @@
       "gloss_parts": [
         "I.awoke"
       ],
+      "greek": "ἐχηγέρθην",
+      "greek_strong": null,
       "lemma": "קִיץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -581,6 +589,8 @@
         "still",
         "I"
       ],
+      "greek": "καὶ ἔτι εἰμὶ",
+      "greek_strong": "1510",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -701,7 +711,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "am with",
+      "display_gloss": "with you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -732,6 +742,8 @@
         "[am].with",
         "you"
       ],
+      "greek": "μετὰ σοῦ",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -803,24 +815,40 @@
       "ref": "Psalm 139:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA139.htm",
+      "source_version": "eng-kjv2006",
       "text": "[If] I should count them, they are more in number than the sand: when I awake, I am still with thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA139.htm",
+      "source_version": "eng-asv",
       "text": "If I should count them, they are more in number than the sand: When I awake, I am still with thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA139.htm",
+      "source_version": "engwebp",
       "text": "If I would count them, they are more in number than the sand. When I wake up, I am still with you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 139:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐχαριθμήσομαι αὐτούς ἄμμον πληθυνθήσονται ἐχηγέρθην καὶ ἔτι εἰμὶ μετὰ σοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

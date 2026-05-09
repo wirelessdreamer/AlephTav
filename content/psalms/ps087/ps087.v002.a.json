@@ -42,7 +42,7 @@
           "loves"
         ],
         "gloss_fragments": [
-          "loving"
+          "is loving"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -80,7 +80,7 @@
         "Psalm 119:48",
         "Psalm 119:97"
       ],
-      "display_gloss": "loving",
+      "display_gloss": "is loving",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -109,6 +109,8 @@
       "gloss_parts": [
         "[is].loving"
       ],
+      "greek": "ἀγαπᾷ",
+      "greek_strong": "25",
       "lemma": "אָהֵב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -236,6 +238,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -351,6 +355,8 @@
       "gloss_parts": [
         "the.gates"
       ],
+      "greek": "πύλας",
+      "greek_strong": "4439",
       "lemma": "שַׁעַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -465,6 +471,8 @@
       "gloss_parts": [
         "of.Zion"
       ],
+      "greek": "σιων",
+      "greek_strong": "4622",
       "lemma": "צִיּוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -601,6 +609,8 @@
         "more",
         "than.all"
       ],
+      "greek": "ὑπὲρ πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -713,6 +723,8 @@
       "gloss_parts": [
         "the.dwelling.places"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מִשְׁכָּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -823,6 +835,8 @@
       "gloss_parts": [
         "of.Jacob"
       ],
+      "greek": "ιακωβ",
+      "greek_strong": "2384",
       "lemma": "יַעֲקֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -881,24 +895,40 @@
       "ref": "Psalm 87:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA087.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD loveth the gates of Zion more than all the dwellings of Jacob.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA087.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah loveth the gates of Zion More than all the dwellings of Jacob.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA087.htm",
+      "source_version": "engwebp",
       "text": "The LORD loves the gates of Zion more than all the dwellings of Jacob.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 87:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀγαπᾷ κύριος πύλας σιων ὑπὲρ πάντα ιακωβ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

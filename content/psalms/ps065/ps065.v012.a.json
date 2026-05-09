@@ -83,6 +83,8 @@
       "gloss_parts": [
         "you.crown"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָטַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -168,6 +170,8 @@
       "gloss_parts": [
         "the.year"
       ],
+      "greek": "ἐνιαυτοῦ",
+      "greek_strong": "1763",
       "lemma": "שָׁנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -259,7 +263,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your goodness",
+      "display_gloss": "your goodness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -290,6 +294,8 @@
         "your.goodness",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -445,6 +451,8 @@
         "tracks",
         "your"
       ],
+      "greek": "καὶ σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -564,7 +572,7 @@
         "Psalm 82:7",
         "Psalm 83:3"
       ],
-      "display_gloss": "drip they",
+      "display_gloss": "they drip",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -594,6 +602,8 @@
         "they",
         "drip"
       ],
+      "greek": "πλησθήσονται",
+      "greek_strong": "4130",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -700,6 +710,8 @@
       "gloss_parts": [
         "fatness"
       ],
+      "greek": "πιότητος",
+      "greek_strong": "4096",
       "lemma": "דֶּשֶׁן",
       "missing_enrichments": [
         "oshb:stem",
@@ -735,24 +747,40 @@
       "ref": "Psalm 65:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA065.htm",
+      "source_version": "eng-kjv2006",
       "text": "They drop [upon] the pastures of the wilderness: and the little hills rejoice on every side.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 65:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA065.htm",
+      "source_version": "eng-asv",
       "text": "They drop upon the pastures of the wilderness; And the hills are girded with joy.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 65:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA065.htm",
+      "source_version": "engwebp",
       "text": "The wilderness grasslands overflow. The hills are clothed with gladness.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 65:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐνιαυτοῦ σου καὶ σου πλησθήσονται πιότητος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

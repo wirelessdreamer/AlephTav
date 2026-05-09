@@ -110,6 +110,8 @@
       "gloss_parts": [
         "here!"
       ],
+      "greek": "ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "הִנֵּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -303,7 +307,7 @@
           "helper"
         ],
         "gloss_fragments": [
-          "a helper"
+          "is a helper"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -323,7 +327,7 @@
         "Psalm 72:12",
         "Psalm 107:12"
       ],
-      "display_gloss": "a helper",
+      "display_gloss": "is a helper",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -352,6 +356,8 @@
       "gloss_parts": [
         "[is].a.helper"
       ],
+      "greek": "βοηθεῖ",
+      "greek_strong": "997",
       "lemma": "עָזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -439,7 +445,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "my",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -469,6 +475,8 @@
       "gloss_parts": [
         "my"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -616,6 +624,8 @@
         "Lord",
         "[the]"
       ],
+      "greek": "ὁ",
+      "greek_strong": "3588",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -686,7 +696,7 @@
           "sustainer"
         ],
         "gloss_fragments": [
-          "(in)",
+          "is (in)",
           "those who sustain"
         ],
         "preposition_role": "with",
@@ -710,7 +720,7 @@
         "Psalm 112:8",
         "Psalm 145:14"
       ],
-      "display_gloss": "(in) those who sustain",
+      "display_gloss": "is (in) those who sustain",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -740,6 +750,8 @@
         "[is].(in)",
         "[those.who].sustain"
       ],
+      "greek": "ἀντιλήμπτωρ",
+      "greek_strong": null,
       "lemma": "סָמַךְ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -861,6 +873,8 @@
         "life",
         "(of).my"
       ],
+      "greek": "ψυξῆς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -927,24 +941,40 @@
       "ref": "Psalm 54:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA054.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will freely sacrifice unto thee: I will praise thy name, O LORD; for [it is] good.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA054.htm",
+      "source_version": "eng-asv",
       "text": "With a freewill-offering will I sacrifice unto thee: I will give thanks unto thy name, O Jehovah, for it is good.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA054.htm",
+      "source_version": "engwebp",
       "text": "With a free will offering, I will sacrifice to you. I will give thanks to your name, LORD, for it is good.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 54:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἰδοὺ θεὸς βοηθεῖ μοι ὁ ἀντιλήμπτωρ ψυξῆς μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

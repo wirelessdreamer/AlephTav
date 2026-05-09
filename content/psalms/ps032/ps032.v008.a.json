@@ -120,6 +120,8 @@
         "I",
         "will.instruct.you"
       ],
+      "greek": "συνετιῶ σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -270,6 +272,8 @@
         "I",
         "will.teach.you"
       ],
+      "greek": "καὶ συμβιβῶ σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -411,6 +415,8 @@
         "(in).[the]",
         "way"
       ],
+      "greek": "ἐν ὁδῷ",
+      "greek_strong": "3598",
       "lemma": "דֶּרֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -525,6 +531,8 @@
       "gloss_parts": [
         "which"
       ],
+      "greek": "ταύτῃ",
+      "greek_strong": "5026",
       "lemma": "זוּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -635,6 +643,8 @@
       "gloss_parts": [
         "you.will.go"
       ],
+      "greek": "πορεύσῃ",
+      "greek_strong": "4198",
       "lemma": "הלך",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -738,6 +748,8 @@
       "gloss_parts": [
         "I.will.give.counsel"
       ],
+      "greek": "ἐπιστηριῶ",
+      "greek_strong": null,
       "lemma": "יָעַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -778,8 +790,8 @@
           "you"
         ],
         "gloss_fragments": [
-          "will",
-          "be on you"
+          "[will",
+          "be] on you"
         ],
         "preposition_role": "upon",
         "raw_classes": [
@@ -824,7 +836,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will",
+      "display_gloss": "[will be] on you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -855,6 +867,8 @@
         "[will",
         "be].on.you"
       ],
+      "greek": "ἐπὶ σὲ",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1003,6 +1017,8 @@
         "eye",
         "my"
       ],
+      "greek": "ὀφθαλμούς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1070,24 +1086,40 @@
       "ref": "Psalm 32:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA032.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will instruct thee and teach thee in the way which thou shalt go: I will guide thee with mine eye.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA032.htm",
+      "source_version": "eng-asv",
       "text": "I will instruct thee and teach thee in the way which thou shalt go: I will counsel thee with mine eye upon thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA032.htm",
+      "source_version": "engwebp",
       "text": "I will instruct you and teach you in the way which you shall go. I will counsel you with my eye on you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 32:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "συνετιῶ σε καὶ συμβιβῶ σε ἐν ὁδῷ ταύτῃ πορεύσῃ ἐπιστηριῶ ἐπὶ σὲ ὀφθαλμούς μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

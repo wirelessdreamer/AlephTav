@@ -40,8 +40,8 @@
           "sow"
         ],
         "gloss_fragments": [
-          "those",
-          "who sow"
+          "[those",
+          "who] sow"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -59,7 +59,7 @@
         "Psalm 97:11",
         "Psalm 107:37"
       ],
-      "display_gloss": "who sow those",
+      "display_gloss": "who] sow [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -89,6 +89,8 @@
         "[those",
         "who].sow"
       ],
+      "greek": "οἱ σπείροντες",
+      "greek_strong": "3588",
       "lemma": "זָרַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -177,6 +179,8 @@
         "with",
         "tear[s]"
       ],
+      "greek": "ἐν δάκρυσιν",
+      "greek_strong": "1144",
       "lemma": "דִּמְעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -271,6 +275,8 @@
         "with",
         "a.shout.of.joy"
       ],
+      "greek": "ἐν ἀγαλλιάσει",
+      "greek_strong": "20",
       "lemma": "רִנָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -361,6 +367,8 @@
       "gloss_parts": [
         "they.will.reap"
       ],
+      "greek": "θεριοῦσιν",
+      "greek_strong": null,
       "lemma": "קָצַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -394,24 +402,40 @@
       "ref": "Psalm 126:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA126.htm",
+      "source_version": "eng-kjv2006",
       "text": "They that sow in tears shall reap in joy.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 126:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA126.htm",
+      "source_version": "eng-asv",
       "text": "They that sow in tears shall reap in joy.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 126:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA126.htm",
+      "source_version": "engwebp",
       "text": "Those who sow in tears will reap in joy.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 126:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οἱ σπείροντες ἐν δάκρυσιν ἐν ἀγαλλιάσει θεριοῦσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

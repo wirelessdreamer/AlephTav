@@ -114,6 +114,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -223,7 +225,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "me give",
+      "display_gloss": "give ~ over me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -253,6 +255,8 @@
         "give",
         "me"
       ],
+      "greek": "παραδῷς με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -385,6 +389,8 @@
         "in",
         "the.desire"
       ],
+      "greek": "εἰς ψυξὰς",
+      "greek_strong": "5590",
       "lemma": "נֶפֶשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -480,7 +486,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my foes",
+      "display_gloss": "my foes",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -511,6 +517,8 @@
         "my.foes",
         "my"
       ],
+      "greek": "θλιβόντων με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -651,6 +659,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -782,6 +792,8 @@
       "gloss_parts": [
         "they.have.arisen"
       ],
+      "greek": "ἐπανέστησάν",
+      "greek_strong": null,
       "lemma": "קוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -890,7 +902,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "against me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -921,6 +933,8 @@
         "on",
         "me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1042,6 +1056,8 @@
       "gloss_parts": [
         "witnesses"
       ],
+      "greek": "μάρτυρες",
+      "greek_strong": "3144",
       "lemma": "עֵד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1146,6 +1162,8 @@
       "gloss_parts": [
         "of.falsehood"
       ],
+      "greek": "ἄδικοι",
+      "greek_strong": "94",
       "lemma": "שֶׁקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1252,6 +1270,8 @@
         "and",
         "a.witness"
       ],
+      "greek": "καὶ ἐψεύσατο",
+      "greek_strong": "2532",
       "lemma": "יָפֵחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1344,6 +1364,8 @@
       "gloss_parts": [
         "of.violence"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חָמָס",
       "missing_enrichments": [
         "oshb:stem",
@@ -1390,24 +1412,40 @@
       "ref": "Psalm 27:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA027.htm",
+      "source_version": "eng-kjv2006",
       "text": "Deliver me not over unto the will of mine enemies: for false witnesses are risen up against me, and such as breathe out cruelty.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 27:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA027.htm",
+      "source_version": "eng-asv",
       "text": "Deliver me not over unto the will of mine adversaries: For false witnesses are risen up against me, And such as breathe out cruelty.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 27:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA027.htm",
+      "source_version": "engwebp",
       "text": "Don’t deliver me over to the desire of my adversaries, for false witnesses have risen up against me, such as breathe out cruelty.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 27:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μὴ παραδῷς με εἰς ψυξὰς θλιβόντων με ὅτι ἐπανέστησάν μοι μάρτυρες ἄδικοι καὶ ἐψεύσατο",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

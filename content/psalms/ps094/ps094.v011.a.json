@@ -110,6 +110,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -179,7 +181,7 @@
           "knows"
         ],
         "gloss_fragments": [
-          "knowing"
+          "is knowing"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -217,7 +219,7 @@
         "Psalm 53:5",
         "Psalm 56:10"
       ],
-      "display_gloss": "knowing",
+      "display_gloss": "is knowing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -246,6 +248,8 @@
       "gloss_parts": [
         "[is].knowing"
       ],
+      "greek": "γινώσκει",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -351,6 +355,8 @@
       "gloss_parts": [
         "[the].thoughts"
       ],
+      "greek": "διαλογισμοὺς",
+      "greek_strong": "1261",
       "lemma": "מַחֲשָׁבָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -458,6 +464,8 @@
       "gloss_parts": [
         "of.a.person"
       ],
+      "greek": "ἀνθρώπων",
+      "greek_strong": "444",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -589,6 +597,8 @@
       "gloss_parts": [
         "(dm).that"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -721,6 +731,8 @@
       "gloss_parts": [
         "they"
       ],
+      "greek": "εἰσὶν",
+      "greek_strong": "1526",
       "lemma": "הֵמָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -832,6 +844,8 @@
       "gloss_parts": [
         "[are].a.breath"
       ],
+      "greek": "μάταιοι",
+      "greek_strong": "3152",
       "lemma": "הֶבֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -872,24 +886,40 @@
       "ref": "Psalm 94:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA094.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD knoweth the thoughts of man, that they [are] vanity.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA094.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah knoweth the thoughts of man, That they are vanity.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA094.htm",
+      "source_version": "engwebp",
       "text": "The LORD knows the thoughts of man, that they are futile.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 94:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κύριος γινώσκει διαλογισμοὺς ἀνθρώπων ὅτι εἰσὶν μάταιοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

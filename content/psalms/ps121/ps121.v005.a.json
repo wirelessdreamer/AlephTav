@@ -110,6 +110,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -175,7 +177,7 @@
           "your"
         ],
         "gloss_fragments": [
-          "your",
+          "is your",
           "protector"
         ],
         "preposition_role": null,
@@ -221,7 +223,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "protector your",
+      "display_gloss": "is your protector",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -251,6 +253,8 @@
         "[is].your",
         "protector"
       ],
+      "greek": "φυλάχει σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -386,6 +390,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -452,7 +458,7 @@
         ],
         "gloss_fragments": [
           "shade",
-          "your"
+          "is your"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -497,7 +503,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your shade",
+      "display_gloss": "is your shade",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -528,6 +534,8 @@
         "shade",
         "[is].your"
       ],
+      "greek": "σκέπη σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -664,6 +672,8 @@
       "gloss_parts": [
         "at"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -793,6 +803,8 @@
       "gloss_parts": [
         "the.hand"
       ],
+      "greek": "ξεῖρα",
+      "greek_strong": "5495",
       "lemma": "יָד",
       "missing_enrichments": [
         "oshb:stem",
@@ -901,7 +913,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your right side",
+      "display_gloss": "your right side",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -932,6 +944,8 @@
         "your.right.side",
         "your"
       ],
+      "greek": "δεχιάν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -997,24 +1011,40 @@
       "ref": "Psalm 121:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA121.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD [is] thy keeper: the LORD [is] thy shade upon thy right hand.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 121:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA121.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah is thy keeper: Jehovah is thy shade upon thy right hand.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 121:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA121.htm",
+      "source_version": "engwebp",
       "text": "The LORD is your keeper. The LORD is your shade on your right hand.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 121:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κύριος φυλάχει σε κύριος σκέπη σου ἐπὶ ξεῖρα δεχιάν σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

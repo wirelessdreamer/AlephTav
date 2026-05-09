@@ -119,6 +119,8 @@
         "of.them",
         "all"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,7 +242,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -271,6 +273,8 @@
         "to",
         "you"
       ],
+      "greek": "πρὸς σὲ",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -391,7 +395,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "hope they",
+      "display_gloss": "they hope",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -421,6 +425,8 @@
         "they",
         "hope"
       ],
+      "greek": "προσδοκῶσιν",
+      "greek_strong": null,
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -562,6 +568,8 @@
         "to",
         "give"
       ],
+      "greek": "δοῦναι",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -702,6 +710,8 @@
         "food",
         "their"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -859,6 +869,8 @@
         "its.appropriate",
         "time"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -930,24 +942,40 @@
       "ref": "Psalm 104:27",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "These wait all upon thee; that thou mayest give [them] their meat in due season.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:27",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "These wait all for thee, That thou mayest give them their food in due season.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:27",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "These all wait for you, that you may give them their food in due season.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:27",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πάντα πρὸς σὲ προσδοκῶσιν δοῦναι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

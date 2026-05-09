@@ -93,6 +93,8 @@
       "gloss_parts": [
         "venom"
       ],
+      "greek": "θυμὸς",
+      "greek_strong": "2372",
       "lemma": "חֵמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -181,7 +183,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "of",
+      "display_gloss": "of them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -212,6 +214,8 @@
         "of",
         "them"
       ],
+      "greek": "αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -281,7 +285,7 @@
           "likeness of"
         ],
         "gloss_fragments": [
-          "like the",
+          "is like the",
           "likeness"
         ],
         "preposition_role": "like",
@@ -297,7 +301,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "like the likeness",
+      "display_gloss": "is like the likeness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -328,6 +332,8 @@
         "[is].like.[the]",
         "likeness"
       ],
+      "greek": "κατὰ",
+      "greek_strong": "2596",
       "lemma": "דְּמוּת",
       "missing_enrichments": [
         "oshb:stem",
@@ -412,6 +418,8 @@
       "gloss_parts": [
         "of.[the].venom"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חֵמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -498,6 +506,8 @@
       "gloss_parts": [
         "of.a.snake"
       ],
+      "greek": "ὄφεως",
+      "greek_strong": "3789",
       "lemma": "נָחָשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -594,6 +604,8 @@
       "gloss_parts": [
         "like"
       ],
+      "greek": "ὡσεὶ",
+      "greek_strong": "5616",
       "lemma": "כְּמוֹ",
       "missing_enrichments": [
         "oshb:stem",
@@ -694,6 +706,8 @@
       "gloss_parts": [
         "a.cobra"
       ],
+      "greek": "ἀσπίδος",
+      "greek_strong": null,
       "lemma": "פֶּתֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -777,6 +791,8 @@
       "gloss_parts": [
         "deaf"
       ],
+      "greek": "κωφῆς",
+      "greek_strong": null,
       "lemma": "חֵרֵשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -857,6 +873,8 @@
       "gloss_parts": [
         "[which].it.shuts"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אָטַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -969,6 +987,8 @@
         "ear",
         "its"
       ],
+      "greek": "ὦτα",
+      "greek_strong": "3775",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1033,24 +1053,40 @@
       "ref": "Psalm 58:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA058.htm",
+      "source_version": "eng-kjv2006",
       "text": "Which will not hearken to the voice of charmers, charming never so wisely.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 58:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA058.htm",
+      "source_version": "eng-asv",
       "text": "Which hearkeneth not to the voice of charmers, Charming never so wisely.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 58:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA058.htm",
+      "source_version": "engwebp",
       "text": "which doesn’t listen to the voice of charmers, no matter how skillful the charmer may be.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 58:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "θυμὸς αὐτοῖς κατὰ ὄφεως ὡσεὶ ἀσπίδος κωφῆς ὦτα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

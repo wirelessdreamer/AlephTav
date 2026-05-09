@@ -41,7 +41,7 @@
           "there is none"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -79,7 +79,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -109,6 +109,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -216,7 +218,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "like",
+      "display_gloss": "like you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -247,6 +249,8 @@
         "like",
         "you"
       ],
+      "greek": "ὅμοιός σοι",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -367,7 +371,7 @@
         "Psalm 42:2",
         "Psalm 42:3"
       ],
-      "display_gloss": "among gods the",
+      "display_gloss": "among the gods",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -399,6 +403,8 @@
         "the",
         "gods"
       ],
+      "greek": "ἐν θεοῖς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -540,6 +546,8 @@
         "Lord",
         "my"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -687,6 +695,8 @@
         "and",
         "there.[are].not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -830,6 +840,8 @@
         "works",
         "your"
       ],
+      "greek": "κατὰ ἔργα σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -901,24 +913,40 @@
       "ref": "Psalm 86:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA086.htm",
+      "source_version": "eng-kjv2006",
       "text": "Among the gods [there is] none like unto thee, O Lord; neither [are there any works] like unto thy works.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 86:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA086.htm",
+      "source_version": "eng-asv",
       "text": "There is none like unto thee among the gods, O Lord; Neither [are there any works] like unto thy works.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 86:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA086.htm",
+      "source_version": "engwebp",
       "text": "There is no one like you among the gods, Lord, nor any deeds like your deeds.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 86:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐκ ὅμοιός σοι ἐν θεοῖς κύριε καὶ οὐκ κατὰ ἔργα σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

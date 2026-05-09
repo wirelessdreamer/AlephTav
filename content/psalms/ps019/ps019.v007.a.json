@@ -45,7 +45,7 @@
           "end"
         ],
         "gloss_fragments": [
-          "from",
+          "is from",
           "the end"
         ],
         "preposition_role": "from",
@@ -96,6 +96,8 @@
         "[is].from",
         "the.end"
       ],
+      "greek": "ἀπ’ ἄκρου",
+      "greek_strong": "206",
       "lemma": "קָצֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -180,7 +182,7 @@
         "Psalm 73:25",
         "Psalm 76:9"
       ],
-      "display_gloss": "the heavens of",
+      "display_gloss": "of the heavens",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -211,6 +213,8 @@
         "of",
         "the.heavens"
       ],
+      "greek": "τοῦ οὐρανοῦ",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -352,6 +356,8 @@
         "forth",
         "its.going"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -505,6 +511,8 @@
         "circuit",
         "its"
       ],
+      "greek": "καὶ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -575,7 +583,7 @@
           "to"
         ],
         "gloss_fragments": [
-          "to"
+          "is to"
         ],
         "preposition_role": "to",
         "raw_classes": [
@@ -643,6 +651,8 @@
       "gloss_parts": [
         "[is].to"
       ],
+      "greek": "ἕως",
+      "greek_strong": "2193",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -782,6 +792,8 @@
         "ends",
         "their"
       ],
+      "greek": "ἄκρου",
+      "greek_strong": "206",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -854,7 +866,7 @@
         ],
         "gloss_fragments": [
           "and",
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -894,7 +906,7 @@
         "Psalm 50:22",
         "Psalm 53:2"
       ],
-      "display_gloss": "and there not",
+      "display_gloss": "and there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -925,6 +937,8 @@
         "and",
         "there.[is].not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1047,6 +1061,8 @@
       "gloss_parts": [
         "[a.thing].hidden"
       ],
+      "greek": "ἀποκρυβήσεται",
+      "greek_strong": "613",
       "lemma": "סָתַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1184,6 +1200,8 @@
         "heat",
         "its"
       ],
+      "greek": "τὴν θέρμην αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1251,24 +1269,40 @@
       "ref": "Psalm 19:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA019.htm",
+      "source_version": "eng-kjv2006",
       "text": "The law of the LORD [is] perfect, converting the soul: the testimony of the LORD [is] sure, making wise the simple.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA019.htm",
+      "source_version": "eng-asv",
       "text": "The law of Jehovah is perfect, restoring the soul: The testimony of Jehovah is sure, making wise the simple.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA019.htm",
+      "source_version": "engwebp",
       "text": "The LORD’s law is perfect, restoring the soul. The LORD’s covenant is sure, making wise the simple.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 19:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀπ’ ἄκρου τοῦ οὐρανοῦ αὐτοῦ καὶ αὐτοῦ ἕως ἄκρου καὶ οὐκ ἀποκρυβήσεται τὴν θέρμην αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

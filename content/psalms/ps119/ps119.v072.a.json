@@ -42,7 +42,7 @@
           "better"
         ],
         "gloss_fragments": [
-          "good"
+          "is good"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -80,7 +80,7 @@
         "Psalm 63:4",
         "Psalm 69:17"
       ],
-      "display_gloss": "good",
+      "display_gloss": "is good",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -110,6 +110,8 @@
       "gloss_parts": [
         "[is].good"
       ],
+      "greek": "ἀγαθόν",
+      "greek_strong": "18",
       "lemma": "טוֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -223,7 +225,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -254,6 +256,8 @@
         "to",
         "me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -377,6 +381,8 @@
       "gloss_parts": [
         "the.law"
       ],
+      "greek": "νόμος",
+      "greek_strong": "3551",
       "lemma": "תּוֹרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -467,7 +473,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your mouth",
+      "display_gloss": "your mouth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -498,6 +504,8 @@
         "your.mouth",
         "your"
       ],
+      "greek": "στόματός σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -629,6 +637,8 @@
         "more",
         "than.thousands"
       ],
+      "greek": "ὑπὲρ ξιλιάδας",
+      "greek_strong": "5507",
       "lemma": "אֶלֶף",
       "missing_enrichments": [
         "oshb:stem",
@@ -724,6 +734,8 @@
       "gloss_parts": [
         "of.gold"
       ],
+      "greek": "ξρυσίου",
+      "greek_strong": "5553",
       "lemma": "זָהָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -794,7 +806,7 @@
         "Psalm 115:4",
         "Psalm 135:15"
       ],
-      "display_gloss": "and silver",
+      "display_gloss": "and silver pieces",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -825,6 +837,8 @@
         "and",
         "silver"
       ],
+      "greek": "καὶ ἀργυρίου",
+      "greek_strong": "694",
       "lemma": "כֶּסֶף",
       "missing_enrichments": [
         "oshb:stem",
@@ -866,24 +880,40 @@
       "ref": "Psalm 119:72",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "The law of thy mouth [is] better unto me than thousands of gold and silver.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:72",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "The law of thy mouth is better unto me Than thousands of gold and silver.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:72",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "The law of your mouth is better to me than thousands of pieces of gold and silver. YODH",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:72",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀγαθόν μοι νόμος στόματός σου ὑπὲρ ξιλιάδας ξρυσίου καὶ ἀργυρίου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -41,7 +41,7 @@
           "known"
         ],
         "gloss_fragments": [
-          "known"
+          "is known"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -79,7 +79,7 @@
         "Psalm 53:5",
         "Psalm 56:10"
       ],
-      "display_gloss": "known",
+      "display_gloss": "is known",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -108,6 +108,8 @@
       "gloss_parts": [
         "[is].known"
       ],
+      "greek": "γνωστὸς",
+      "greek_strong": "1110",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -225,6 +227,8 @@
         "in",
         "Judah"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "יְהוּדָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -339,6 +343,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεός",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -475,6 +481,8 @@
         "in",
         "Israel"
       ],
+      "greek": "ἐν ισραηλ",
+      "greek_strong": "2474",
       "lemma": "יִשְׂרָאֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -536,7 +544,7 @@
           "great"
         ],
         "gloss_fragments": [
-          "great"
+          "is great"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -574,7 +582,7 @@
         "Psalm 136:17",
         "Psalm 138:5"
       ],
-      "display_gloss": "great",
+      "display_gloss": "is great",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -604,6 +612,8 @@
       "gloss_parts": [
         "[is].great"
       ],
+      "greek": "μέγα",
+      "greek_strong": "3173",
       "lemma": "גָּדוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -742,6 +752,8 @@
         "name",
         "his"
       ],
+      "greek": "ὄνομα αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -807,24 +819,40 @@
       "ref": "Psalm 76:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA076.htm",
+      "source_version": "eng-kjv2006",
       "text": "In Salem also is his tabernacle, and his dwelling place in Zion.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 76:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA076.htm",
+      "source_version": "eng-asv",
       "text": "In Salem also is his tabernacle, And his dwelling-place in Zion.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 76:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA076.htm",
+      "source_version": "engwebp",
       "text": "His tabernacle is also in Salem. His dwelling place in Zion.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 76:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "γνωστὸς ἐν θεός ἐν ισραηλ μέγα ὄνομα αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

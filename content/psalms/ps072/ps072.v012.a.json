@@ -109,6 +109,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -225,6 +227,8 @@
       "gloss_parts": [
         "he.will.deliver"
       ],
+      "greek": "ἐρρύσατο",
+      "greek_strong": "4506",
       "lemma": "נָצַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -333,6 +337,8 @@
       "gloss_parts": [
         "[the].needy"
       ],
+      "greek": "πτωξὸν",
+      "greek_strong": "4434",
       "lemma": "אֶבְיוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -437,6 +443,8 @@
       "gloss_parts": [
         "[who].cries.for.help"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "שָׁוַע",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -549,6 +557,8 @@
         "and.[the]",
         "poor"
       ],
+      "greek": "καὶ πένητα",
+      "greek_strong": "3993",
       "lemma": "עָנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -613,7 +623,7 @@
         ],
         "gloss_fragments": [
           "and",
-          "one who there not"
+          "one who there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -653,7 +663,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "and one who there not",
+      "display_gloss": "and one who there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -684,6 +694,8 @@
         "and",
         "[one.who].there.[is].not"
       ],
+      "greek": "οὐξ ὑπῆρξεν",
+      "greek_strong": "5225",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -793,6 +805,8 @@
       "gloss_parts": [
         "a.helper"
       ],
+      "greek": "βοηθός",
+      "greek_strong": "998",
       "lemma": "עָזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -881,7 +895,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -912,6 +926,8 @@
         "for",
         "him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -984,24 +1000,40 @@
       "ref": "Psalm 72:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA072.htm",
+      "source_version": "eng-kjv2006",
       "text": "For he shall deliver the needy when he crieth; the poor also, and [him] that hath no helper.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 72:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA072.htm",
+      "source_version": "eng-asv",
       "text": "For he will deliver the needy when he crieth, And the poor, that hath no helper.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 72:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA072.htm",
+      "source_version": "engwebp",
       "text": "For he will deliver the needy when he cries; the poor, who has no helper.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 72:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι ἐρρύσατο πτωξὸν καὶ πένητα οὐξ ὑπῆρξεν βοηθός",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

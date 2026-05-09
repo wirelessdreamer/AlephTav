@@ -111,6 +111,8 @@
       "gloss_parts": [
         "so.that"
       ],
+      "greek": "ὅπως",
+      "greek_strong": "3704",
       "lemma": "לְמַעַן",
       "missing_enrichments": [
         "oshb:stem",
@@ -217,6 +219,8 @@
       "gloss_parts": [
         "it.may.smash"
       ],
+      "greek": "βαφῇ",
+      "greek_strong": null,
       "lemma": "מָחַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -334,6 +338,8 @@
         "foot",
         "your"
       ],
+      "greek": "πούς σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -472,6 +478,8 @@
         "in",
         "blood"
       ],
+      "greek": "ἐν αἵματι",
+      "greek_strong": "129",
       "lemma": "דָּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -575,6 +583,8 @@
       "gloss_parts": [
         "the.tongue"
       ],
+      "greek": "γλῶσσα",
+      "greek_strong": "1100",
       "lemma": "לָשׁוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -666,7 +676,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your dogs",
+      "display_gloss": "your dogs",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -697,6 +707,8 @@
         "your.dogs",
         "your"
       ],
+      "greek": "κυνῶν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -772,8 +784,8 @@
           "enemies"
         ],
         "gloss_fragments": [
-          "will",
-          "be from the enemies"
+          "[will",
+          "be] from the enemies"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -810,7 +822,7 @@
         "Psalm 139:22",
         "Psalm 143:3"
       ],
-      "display_gloss": "will be from the enemies",
+      "display_gloss": "[will be] from the enemies",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -840,6 +852,8 @@
         "[will",
         "be].from.[the].enemies"
       ],
+      "greek": "ἐχ ἐξθρῶν",
+      "greek_strong": "2190",
       "lemma": "אָיַב",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -975,6 +989,8 @@
         "portion",
         "its"
       ],
+      "greek": "παρ’ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1046,24 +1062,40 @@
       "ref": "Psalm 68:24",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "They have seen thy goings, O God; [even] the goings of my God, my King, in the sanctuary.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:24",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "They have seen thy goings, O God, Even the goings of my God, my King, into the sanctuary.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:24",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "They have seen your processions, God, even the processions of my God, my King, into the sanctuary.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:24",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅπως βαφῇ πούς σου ἐν αἵματι γλῶσσα κυνῶν σου ἐχ ἐξθρῶν παρ’ αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

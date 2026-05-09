@@ -108,6 +108,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σὺ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -348,6 +352,8 @@
       "gloss_parts": [
         "you.created"
       ],
+      "greek": "ἐκτήσω",
+      "greek_strong": null,
       "lemma": "קָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -432,7 +438,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my kidneys",
+      "display_gloss": "my inward parts",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -463,6 +469,8 @@
         "kidneys",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -584,7 +592,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "wove me together you",
+      "display_gloss": "you wove me together",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -614,6 +622,8 @@
         "you",
         "wove.me.together"
       ],
+      "greek": "ἀντελάβου μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -740,6 +750,8 @@
         "in",
         "the.womb"
       ],
+      "greek": "ἐκ γαστρὸς",
+      "greek_strong": "1064",
       "lemma": "בֶּטֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -829,7 +841,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my mother",
+      "display_gloss": "my mother",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -860,6 +872,8 @@
         "my.mother",
         "my"
       ],
+      "greek": "μητρός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -931,24 +945,40 @@
       "ref": "Psalm 139:13",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA139.htm",
+      "source_version": "eng-kjv2006",
       "text": "For thou hast possessed my reins: thou hast covered me in my mother’s womb.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:13",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA139.htm",
+      "source_version": "eng-asv",
       "text": "For thou didst form my inward parts: Thou didst cover me in my mother’s womb.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:13",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA139.htm",
+      "source_version": "engwebp",
       "text": "For you formed my inmost being. You knit me together in my mother’s womb.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 139:13",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι σὺ ἐκτήσω μου ἀντελάβου μου ἐκ γαστρὸς μητρός μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

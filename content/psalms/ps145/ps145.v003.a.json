@@ -42,7 +42,7 @@
           "great"
         ],
         "gloss_fragments": [
-          "great"
+          "is great"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -80,7 +80,7 @@
         "Psalm 136:7",
         "Psalm 136:17"
       ],
-      "display_gloss": "great",
+      "display_gloss": "is great",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -110,6 +110,8 @@
       "gloss_parts": [
         "[is].great"
       ],
+      "greek": "μέγας",
+      "greek_strong": "3173",
       "lemma": "גָּדוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -381,6 +385,8 @@
         "and.[is]",
         "to.be.praised"
       ],
+      "greek": "καὶ αἰνετὸς",
+      "greek_strong": "2532",
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -510,6 +516,8 @@
       "gloss_parts": [
         "exceedingly"
       ],
+      "greek": "σφόδρα",
+      "greek_strong": "4970",
       "lemma": "מְאֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -658,6 +666,8 @@
         "greatness",
         "his"
       ],
+      "greek": "καὶ τῆς μεγαλωσύνης αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -732,7 +742,7 @@
           "no"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -770,7 +780,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -800,6 +810,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -903,6 +915,8 @@
       "gloss_parts": [
         "searching"
       ],
+      "greek": "πέρας",
+      "greek_strong": "4009",
       "lemma": "חֵקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -935,24 +949,40 @@
       "ref": "Psalm 145:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA145.htm",
+      "source_version": "eng-kjv2006",
       "text": "Great [is] the LORD, and greatly to be praised; and his greatness [is] unsearchable.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA145.htm",
+      "source_version": "eng-asv",
       "text": "Great is Jehovah, and greatly to be praised; And his greatness is unsearchable.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA145.htm",
+      "source_version": "engwebp",
       "text": "Great is the LORD, and greatly to be praised! His greatness is unsearchable.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 145:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μέγας κύριος καὶ αἰνετὸς σφόδρα καὶ τῆς μεγαλωσύνης αὐτοῦ οὐκ πέρας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

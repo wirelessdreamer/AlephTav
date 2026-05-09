@@ -91,7 +91,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -122,6 +122,8 @@
         "[belongs].to",
         "me"
       ],
+      "greek": "ἐμός ἐστιν",
+      "greek_strong": "2076",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -241,6 +243,8 @@
       "gloss_parts": [
         "Gilead"
       ],
+      "greek": "γαλααδ",
+      "greek_strong": null,
       "lemma": "גִּלְעָד",
       "missing_enrichments": [
         "oshb:stem",
@@ -325,7 +329,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -356,6 +360,8 @@
         "[belongs].to",
         "me"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -476,6 +482,8 @@
       "gloss_parts": [
         "Manasseh"
       ],
+      "greek": "μανασση",
+      "greek_strong": "3128",
       "lemma": "מְנַשֶּׁה",
       "missing_enrichments": [
         "oshb:stem",
@@ -567,6 +575,8 @@
         "and",
         "Ephraim"
       ],
+      "greek": "καὶ εφραιμ",
+      "greek_strong": "2187",
       "lemma": "אֶפְרַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -607,7 +617,7 @@
           "helmet"
         ],
         "gloss_fragments": [
-          "the protection"
+          "is the protection"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -625,7 +635,7 @@
         "Psalm 31:3",
         "Psalm 60:9"
       ],
-      "display_gloss": "the protection",
+      "display_gloss": "is the protection",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -655,6 +665,8 @@
       "gloss_parts": [
         "[is].the.protection"
       ],
+      "greek": "ἀντίλημψις",
+      "greek_strong": "484",
       "lemma": "מָעוֹז",
       "missing_enrichments": [
         "oshb:stem",
@@ -743,7 +755,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my head",
+      "display_gloss": "my head",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -774,6 +786,8 @@
         "my.head",
         "my"
       ],
+      "greek": "κεφαλῆς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -900,6 +914,8 @@
       "gloss_parts": [
         "Judah"
       ],
+      "greek": "ιουδας",
+      "greek_strong": "2448",
       "lemma": "יְהוּדָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -946,7 +962,7 @@
           "my"
         ],
         "gloss_fragments": [
-          "my",
+          "is my",
           "commander's staff"
         ],
         "preposition_role": null,
@@ -992,7 +1008,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "commander's staff my",
+      "display_gloss": "is my commander's staff",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1022,6 +1038,8 @@
         "[is].my",
         "commander's.staff"
       ],
+      "greek": "βασιλεύς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1091,24 +1109,40 @@
       "ref": "Psalm 108:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA108.htm",
+      "source_version": "eng-kjv2006",
       "text": "Moab [is] my washpot; over Edom will I cast out my shoe; over Philistia will I triumph.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 108:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA108.htm",
+      "source_version": "eng-asv",
       "text": "Moab is my washpot; Upon Edom will I cast my shoe; Over Philistia will I shout.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 108:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA108.htm",
+      "source_version": "engwebp",
       "text": "Moab is my wash pot. I will toss my sandal on Edom. I will shout over Philistia.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 108:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐμός ἐστιν γαλααδ μανασση καὶ εφραιμ ἀντίλημψις κεφαλῆς μου ιουδας βασιλεύς μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

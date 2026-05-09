@@ -112,6 +112,8 @@
       "gloss_parts": [
         "he.will.send"
       ],
+      "greek": "ἐχαπέστειλεν",
+      "greek_strong": "1821",
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -244,6 +246,8 @@
         "from",
         "heaven"
       ],
+      "greek": "ἐχ οὐρανοῦ",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -360,7 +364,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and will save me he",
+      "display_gloss": "and he will save me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -391,6 +395,8 @@
         "he",
         "will.save.me"
       ],
+      "greek": "καὶ ἔσωσέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -509,6 +515,8 @@
       "gloss_parts": [
         "he.will.reproach"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חָרַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -549,8 +557,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "the",
-          "one who tramples on me"
+          "[the",
+          "one who] tramples on me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -595,7 +603,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "one who tramples on me the",
+      "display_gloss": "[the one who] tramples on me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -625,6 +633,8 @@
         "[the",
         "one.who].tramples.on.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -765,6 +775,8 @@
       "gloss_parts": [
         "Selah"
       ],
+      "greek": "διάψαλμα",
+      "greek_strong": null,
       "lemma": "סֶלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -895,6 +907,8 @@
       "gloss_parts": [
         "he.will.send"
       ],
+      "greek": "ἐχαπέστειλεν",
+      "greek_strong": "1821",
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1022,6 +1036,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -1166,6 +1182,8 @@
         "loyalty",
         "his.covenant"
       ],
+      "greek": "ἔλεος αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1322,6 +1340,8 @@
         "faithfulness",
         "his"
       ],
+      "greek": "καὶ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1392,24 +1412,40 @@
       "ref": "Psalm 57:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA057.htm",
+      "source_version": "eng-kjv2006",
       "text": "My soul [is] among lions: [and] I lie [even among] them that are set on fire, [even] the sons of men, whose teeth [are] spears and arrows, and their tongue a sharp sword.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 57:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA057.htm",
+      "source_version": "eng-asv",
       "text": "My soul is among lions; I lie among them that are set on fire, Even the sons of men, whose teeth are spears and arrows, And their tongue a sharp sword.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 57:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA057.htm",
+      "source_version": "engwebp",
       "text": "My soul is among lions. I lie among those who are set on fire, even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 57:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐχαπέστειλεν ἐχ οὐρανοῦ καὶ ἔσωσέν με με διάψαλμα ἐχαπέστειλεν θεὸς ἔλεος αὐτοῦ καὶ αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

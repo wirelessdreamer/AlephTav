@@ -57,7 +57,7 @@
       "corpus_occurrence_refs": [
         "Psalm 78:15"
       ],
-      "display_gloss": "they give drink to",
+      "display_gloss": "give drink",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -86,6 +86,8 @@
       "gloss_parts": [
         "they.give.drink.to"
       ],
+      "greek": "ποτιοῦσιν",
+      "greek_strong": null,
       "lemma": "שָׁקָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -192,6 +194,8 @@
       "gloss_parts": [
         "every"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -332,6 +336,8 @@
         "animal",
         "his"
       ],
+      "greek": "τὰ θηρία",
+      "greek_strong": "2342",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -454,6 +460,8 @@
       "gloss_parts": [
         "of.[the].field"
       ],
+      "greek": "ἀγροῦ",
+      "greek_strong": "68",
       "lemma": "שָׂדַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -556,6 +564,8 @@
       "gloss_parts": [
         "they.break"
       ],
+      "greek": "προσδέχονται",
+      "greek_strong": null,
       "lemma": "שָׁבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -652,6 +662,8 @@
       "gloss_parts": [
         "wild.donkeys"
       ],
+      "greek": "ὄναγροι",
+      "greek_strong": null,
       "lemma": "פֶּרֶא",
       "missing_enrichments": [
         "oshb:stem",
@@ -765,6 +777,8 @@
         "thirst",
         "their"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -836,24 +850,40 @@
       "ref": "Psalm 104:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "They give drink to every beast of the field: the wild asses quench their thirst.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "They give drink to every beast of the field; The wild asses quench their thirst.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "They give drink to every animal of the field. The wild donkeys quench their thirst.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ποτιοῦσιν πάντα τὰ θηρία ἀγροῦ προσδέχονται ὄναγροι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

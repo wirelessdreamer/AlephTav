@@ -92,7 +92,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "are in your hand",
+      "display_gloss": "in your hand",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -124,6 +124,8 @@
         "hand",
         "your"
       ],
+      "greek": "ἐν ξερσίν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -276,6 +278,8 @@
         "times",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -427,6 +431,8 @@
         "deliver",
         "me"
       ],
+      "greek": "ῥῦσαί με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -572,6 +578,8 @@
         "from",
         "the.hand"
       ],
+      "greek": "ἐκ ξειρὸς",
+      "greek_strong": "5495",
       "lemma": "יָד",
       "missing_enrichments": [
         "oshb:stem",
@@ -682,7 +690,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my enemies",
+      "display_gloss": "my enemies",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -712,6 +720,8 @@
         "my.enemies",
         "my"
       ],
+      "greek": "ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -790,8 +800,8 @@
         "gloss_fragments": [
           "and",
           "from",
-          "those",
-          "who pursue me"
+          "[those",
+          "who] pursue me"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -840,7 +850,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and from who pursue me those",
+      "display_gloss": "and from who] pursue me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -872,6 +882,8 @@
         "[those",
         "who].pursue.me"
       ],
+      "greek": "καὶ με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -942,24 +954,40 @@
       "ref": "Psalm 31:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA031.htm",
+      "source_version": "eng-kjv2006",
       "text": "Make thy face to shine upon thy servant: save me for thy mercies’ sake.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 31:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA031.htm",
+      "source_version": "eng-asv",
       "text": "Make thy face to shine upon thy servant: Save me in thy lovingkindness.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 31:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA031.htm",
+      "source_version": "engwebp",
       "text": "Make your face to shine on your servant. Save me in your loving kindness.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 31:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν ξερσίν σου μου ῥῦσαί με ἐκ ξειρὸς ἐξθρῶν μου καὶ με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

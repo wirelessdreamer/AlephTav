@@ -119,6 +119,8 @@
         "keep",
         "me"
       ],
+      "greek": "φύλαχόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -239,6 +241,8 @@
         "like.[the]",
         "pupil"
       ],
+      "greek": "ὡς κόραν",
+      "greek_strong": "5613",
       "lemma": "אִישׁוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -327,6 +331,8 @@
       "gloss_parts": [
         "of.[the].daughter"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "בַּת",
       "missing_enrichments": [
         "oshb:stem",
@@ -429,6 +435,8 @@
       "gloss_parts": [
         "of.an.eye"
       ],
+      "greek": "ὀφθαλμοῦ",
+      "greek_strong": "3788",
       "lemma": "עַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -535,6 +543,8 @@
         "in",
         "the.shadow"
       ],
+      "greek": "ἐν σκέπῃ",
+      "greek_strong": "1722",
       "lemma": "צֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -626,7 +636,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your wings",
+      "display_gloss": "your wings",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -657,6 +667,8 @@
         "your.wings",
         "your"
       ],
+      "greek": "πτερύγων σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -778,7 +790,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will hide me you",
+      "display_gloss": "you will hide me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -808,6 +820,8 @@
         "you",
         "will.hide.me"
       ],
+      "greek": "σκεπάσεις με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -877,24 +891,40 @@
       "ref": "Psalm 17:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA017.htm",
+      "source_version": "eng-kjv2006",
       "text": "Keep me as the apple of the eye, hide me under the shadow of thy wings,",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 17:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA017.htm",
+      "source_version": "eng-asv",
       "text": "Keep me as the apple of the eye; Hide me under the shadow of thy wings,",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 17:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA017.htm",
+      "source_version": "engwebp",
       "text": "Keep me as the apple of your eye. Hide me under the shadow of your wings,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 17:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φύλαχόν με ὡς κόραν ὀφθαλμοῦ ἐν σκέπῃ πτερύγων σου σκεπάσεις με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

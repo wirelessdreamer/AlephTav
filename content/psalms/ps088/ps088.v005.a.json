@@ -100,6 +100,8 @@
       "gloss_parts": [
         "I.am.reckoned"
       ],
+      "greek": "προσελογίσθην",
+      "greek_strong": null,
       "lemma": "חָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -187,7 +189,7 @@
         "Psalm 113:8",
         "Psalm 115:13"
       ],
-      "display_gloss": "with",
+      "display_gloss": "among",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -217,6 +219,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": "μετὰ",
+      "greek_strong": "3326",
       "lemma": "עִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -339,6 +343,8 @@
       "gloss_parts": [
         "[those.who].go.down"
       ],
+      "greek": "καταβαινόντων",
+      "greek_strong": "2597",
       "lemma": "יָרַד",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -441,6 +447,8 @@
       "gloss_parts": [
         "of.[the].pit"
       ],
+      "greek": "λάκκον",
+      "greek_strong": null,
       "lemma": "בּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -551,6 +559,8 @@
       "gloss_parts": [
         "I.am"
       ],
+      "greek": "ἐγενήθην",
+      "greek_strong": "1096",
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -668,6 +678,8 @@
         "like",
         "a.man"
       ],
+      "greek": "ὡς ἄνθρωπος",
+      "greek_strong": "444",
       "lemma": "גֶּבֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -714,7 +726,7 @@
           "without"
         ],
         "gloss_fragments": [
-          "who there not"
+          "who there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -752,7 +764,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "who there not",
+      "display_gloss": "who there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -782,6 +794,8 @@
       "gloss_parts": [
         "[who].there.[is].not"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -885,6 +899,8 @@
       "gloss_parts": [
         "strength"
       ],
+      "greek": "ἀβοήθητος",
+      "greek_strong": null,
       "lemma": "אֱיָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -917,24 +933,40 @@
       "ref": "Psalm 88:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA088.htm",
+      "source_version": "eng-kjv2006",
       "text": "Free among the dead, like the slain that lie in the grave, whom thou rememberest no more: and they are cut off from thy hand.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 88:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA088.htm",
+      "source_version": "eng-asv",
       "text": "Cast off among the dead, Like the slain that lie in the grave, Whom thou rememberest no more, And they are cut off from thy hand.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 88:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA088.htm",
+      "source_version": "engwebp",
       "text": "set apart among the dead, like the slain who lie in the grave, whom you remember no more. They are cut off from your hand.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 88:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "προσελογίσθην μετὰ καταβαινόντων λάκκον ἐγενήθην ὡς ἄνθρωπος ἀβοήθητος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

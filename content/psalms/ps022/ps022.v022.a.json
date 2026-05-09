@@ -118,6 +118,8 @@
         "save",
         "me"
       ],
+      "greek": "σῶσόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -247,6 +249,8 @@
         "from.[the]",
         "mouth"
       ],
+      "greek": "ἐκ στόματος",
+      "greek_strong": "4750",
       "lemma": "פֶּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -339,6 +343,8 @@
       "gloss_parts": [
         "of.a.lion"
       ],
+      "greek": "λέοντος",
+      "greek_strong": "3023",
       "lemma": "אַרְיֵה",
       "missing_enrichments": [
         "oshb:stem",
@@ -441,6 +447,8 @@
         "from.[the]",
         "horns"
       ],
+      "greek": "καὶ ἀπὸ κεράτων",
+      "greek_strong": "2768",
       "lemma": "קֶרֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -530,6 +538,8 @@
       "gloss_parts": [
         "of.wild.oxen"
       ],
+      "greek": "μονοκερώτων",
+      "greek_strong": null,
       "lemma": "רְאֵם",
       "missing_enrichments": [
         "oshb:stem",
@@ -616,7 +626,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have answered me you",
+      "display_gloss": "you have answered me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -646,6 +656,8 @@
         "you",
         "have.answered.me"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -715,24 +727,40 @@
       "ref": "Psalm 22:22",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will declare thy name unto my brethren: in the midst of the congregation will I praise thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:22",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "I will declare thy name unto my brethren: In the midst of the assembly will I praise thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:22",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "I will declare your name to my brothers. Among the assembly, I will praise you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:22",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "σῶσόν με ἐκ στόματος λέοντος καὶ ἀπὸ κεράτων μονοκερώτων μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

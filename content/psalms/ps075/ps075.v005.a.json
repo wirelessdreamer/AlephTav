@@ -110,6 +110,8 @@
       "gloss_parts": [
         "I.say"
       ],
+      "greek": "εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -172,8 +174,8 @@
         ],
         "gloss_fragments": [
           "to",
-          "those",
-          "who boast"
+          "[those",
+          "who] boast"
         ],
         "preposition_role": "to",
         "raw_classes": [
@@ -215,7 +217,7 @@
         "Psalm 105:3",
         "Psalm 105:45"
       ],
-      "display_gloss": "to who boast those",
+      "display_gloss": "to the boastful",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -246,6 +248,8 @@
         "[those",
         "who].boast"
       ],
+      "greek": "τοῖς παρανομοῦσιν",
+      "greek_strong": "3588",
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -374,6 +378,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -504,6 +510,8 @@
       "gloss_parts": [
         "boast"
       ],
+      "greek": "παρανομεῖτε",
+      "greek_strong": null,
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -646,6 +654,8 @@
         "the.wicked",
         "[people]"
       ],
+      "greek": "καὶ τοῖς ἁμαρτάνουσιν",
+      "greek_strong": "264",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -778,6 +788,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -908,6 +920,8 @@
       "gloss_parts": [
         "lift.up"
       ],
+      "greek": "ὑψοῦτε",
+      "greek_strong": null,
       "lemma": "רוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1020,6 +1034,8 @@
       "gloss_parts": [
         "a.horn"
       ],
+      "greek": "κέρας",
+      "greek_strong": "2768",
       "lemma": "קֶרֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1060,24 +1076,40 @@
       "ref": "Psalm 75:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA075.htm",
+      "source_version": "eng-kjv2006",
       "text": "Lift not up your horn on high: speak [not with] a stiff neck.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 75:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA075.htm",
+      "source_version": "eng-asv",
       "text": "Lift not up your horn on high; Speak not with a stiff neck.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 75:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA075.htm",
+      "source_version": "engwebp",
       "text": "Don’t lift up your horn on high. Don’t speak with a stiff neck.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 75:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἶπα τοῖς παρανομοῦσιν μὴ παρανομεῖτε καὶ τοῖς ἁμαρτάνουσιν μὴ ὑψοῦτε κέρας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

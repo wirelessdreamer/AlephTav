@@ -114,6 +114,8 @@
       "gloss_parts": [
         "[who].made"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -243,6 +245,8 @@
       "gloss_parts": [
         "heaven"
       ],
+      "greek": "οὐρανὸν",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -377,6 +381,8 @@
         "and",
         "earth"
       ],
+      "greek": "καὶ γῆν",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -502,6 +508,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -608,7 +616,7 @@
         "Psalm 104:25",
         "Psalm 106:7"
       ],
-      "display_gloss": "sea the",
+      "display_gloss": "the sea",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -639,6 +647,8 @@
         "the",
         "sea"
       ],
+      "greek": "τὴν θάλασσαν",
+      "greek_strong": "2281",
       "lemma": "יָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -771,6 +781,8 @@
         "and",
         "(et)"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -903,6 +915,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1032,6 +1046,8 @@
       "gloss_parts": [
         "that"
       ],
+      "greek": "τὰ",
+      "greek_strong": "3588",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1094,7 +1110,7 @@
           "them"
         ],
         "gloss_fragments": [
-          "in",
+          "is in",
           "them"
         ],
         "preposition_role": "in",
@@ -1140,7 +1156,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "in",
+      "display_gloss": "in them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1171,6 +1187,8 @@
         "[is].in",
         "them"
       ],
+      "greek": "ἐν αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1241,8 +1259,8 @@
           "keeps"
         ],
         "gloss_fragments": [
-          "the one",
-          "who keeps"
+          "the [one",
+          "who] keeps"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -1282,7 +1300,7 @@
         "Psalm 107:43",
         "Psalm 116:6"
       ],
-      "display_gloss": "who keeps the one",
+      "display_gloss": "who] keeps the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1312,6 +1330,8 @@
         "the.[one",
         "who].keeps"
       ],
+      "greek": "τὸν φυλάσσοντα",
+      "greek_strong": "5442",
       "lemma": "שָׁמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1438,6 +1458,8 @@
       "gloss_parts": [
         "faithfulness"
       ],
+      "greek": "ἀλήθειαν",
+      "greek_strong": "225",
       "lemma": "אֱמֶת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1568,6 +1590,8 @@
         "forever",
         "of.perpetuity"
       ],
+      "greek": "εἰς αἰῶνα",
+      "greek_strong": "165",
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1628,24 +1652,40 @@
       "ref": "Psalm 146:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA146.htm",
+      "source_version": "eng-kjv2006",
       "text": "Which made heaven, and earth, the sea, and all that therein [is:] which keepeth truth for ever:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA146.htm",
+      "source_version": "eng-asv",
       "text": "Who made heaven and earth, The sea, and all that in them is; Who keepeth truth for ever;",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA146.htm",
+      "source_version": "engwebp",
       "text": "who made heaven and earth, the sea, and all that is in them; who keeps truth forever;",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 146:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐρανὸν καὶ γῆν τὴν θάλασσαν καὶ πάντα τὰ ἐν αὐτοῖς τὸν φυλάσσοντα ἀλήθειαν εἰς αἰῶνα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

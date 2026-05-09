@@ -123,6 +123,8 @@
         "make",
         "known.to.me"
       ],
+      "greek": "γνώρισόν μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -263,6 +265,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -404,6 +408,8 @@
         "end",
         "my"
       ],
+      "greek": "πέρας μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -526,6 +532,8 @@
         "and",
         "the.measure"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "מִדָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -609,7 +617,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my days",
+      "display_gloss": "my days",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -640,6 +648,8 @@
         "my.days",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -782,6 +792,8 @@
       "gloss_parts": [
         "what?"
       ],
+      "greek": "τίς",
+      "greek_strong": "5101",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -844,7 +856,7 @@
           "she"
         ],
         "gloss_fragments": [
-          "it"
+          "is it"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -862,7 +874,7 @@
         "Psalm 119:97",
         "Psalm 119:98"
       ],
-      "display_gloss": "it",
+      "display_gloss": "is it",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -892,6 +904,8 @@
       "gloss_parts": [
         "[is].it"
       ],
+      "greek": "ἐστιν",
+      "greek_strong": "2076",
       "lemma": "הִיא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1001,6 +1015,8 @@
       "gloss_parts": [
         "let.me.know"
       ],
+      "greek": "γνῶ",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1130,6 +1146,8 @@
       "gloss_parts": [
         "how!"
       ],
+      "greek": "τί",
+      "greek_strong": "5101",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1236,6 +1254,8 @@
       "gloss_parts": [
         "transient"
       ],
+      "greek": "ὑστερῶ",
+      "greek_strong": "5302",
       "lemma": "חָדֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1340,6 +1360,8 @@
       "gloss_parts": [
         "[am].I"
       ],
+      "greek": "ἐγώ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1399,24 +1421,40 @@
       "ref": "Psalm 39:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA039.htm",
+      "source_version": "eng-kjv2006",
       "text": "Behold, thou hast made my days [as] an handbreadth; and mine age [is] as nothing before thee: verily every man at his best state [is] altogether vanity. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 39:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA039.htm",
+      "source_version": "eng-asv",
       "text": "Behold, thou hast made my days [as] handbreadths; And my life-time is as nothing before thee: Surely every man at his best estate is altogether vanity. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 39:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA039.htm",
+      "source_version": "engwebp",
       "text": "Behold, you have made my days hand widths. My lifetime is as nothing before you. Surely every man stands as a breath.” Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 39:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "γνώρισόν μοι κύριε πέρας μου καὶ μου τίς ἐστιν γνῶ τί ὑστερῶ ἐγώ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

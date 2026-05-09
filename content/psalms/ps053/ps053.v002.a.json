@@ -113,6 +113,8 @@
       "gloss_parts": [
         "he.says"
       ],
+      "greek": "εἶπεν",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -220,6 +222,8 @@
       "gloss_parts": [
         "a.fool"
       ],
+      "greek": "ἄφρων",
+      "greek_strong": "878",
       "lemma": "נָבָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -343,6 +347,8 @@
         "heart",
         "his"
       ],
+      "greek": "ἐν καρδίᾳ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -409,7 +415,7 @@
           "there is no"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -447,7 +453,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -477,6 +483,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -607,6 +615,8 @@
       "gloss_parts": [
         "a.god"
       ],
+      "greek": "θεός",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -718,6 +728,8 @@
       "gloss_parts": [
         "they.behave.corruptly"
       ],
+      "greek": "διεφθάρησαν",
+      "greek_strong": "1311",
       "lemma": "שָׁחַת",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -809,6 +821,8 @@
         "and",
         "they.do.abominably"
       ],
+      "greek": "καὶ ἐβδελύξθησαν",
+      "greek_strong": "2532",
       "lemma": "תַּעָב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -895,6 +909,8 @@
       "gloss_parts": [
         "unrighteousness"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָוֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -933,7 +949,7 @@
           "there is no one"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -971,7 +987,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is no one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1001,6 +1017,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1130,6 +1148,8 @@
       "gloss_parts": [
         "[one.who].does"
       ],
+      "greek": "ποιῶν",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1260,6 +1280,8 @@
       "gloss_parts": [
         "(of).good"
       ],
+      "greek": "ἀγαθόν",
+      "greek_strong": "18",
       "lemma": "טוֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1320,24 +1342,40 @@
       "ref": "Psalm 53:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA053.htm",
+      "source_version": "eng-kjv2006",
       "text": "God looked down from heaven upon the children of men, to see if there were [any] that did understand, that did seek God.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 53:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA053.htm",
+      "source_version": "eng-asv",
       "text": "God looked down from heaven upon the children of men, To see if there were any that did understand, That did seek after God.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 53:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA053.htm",
+      "source_version": "engwebp",
       "text": "God looks down from heaven on the children of men, to see if there are any who understood, who seek after God.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 53:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἶπεν ἄφρων ἐν καρδίᾳ αὐτοῦ οὐκ θεός διεφθάρησαν καὶ ἐβδελύξθησαν οὐκ ποιῶν ἀγαθόν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

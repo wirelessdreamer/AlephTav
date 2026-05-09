@@ -118,6 +118,8 @@
         "of",
         "David"
       ],
+      "greek": "τῷ δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -246,6 +248,8 @@
       "gloss_parts": [
         "bless"
       ],
+      "greek": "εὐλόγει",
+      "greek_strong": "2127",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -357,7 +361,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my soul",
+      "display_gloss": "my soul",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -388,6 +392,8 @@
         "my.soul",
         "my"
       ],
+      "greek": "ψυξή μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -526,6 +532,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -659,6 +667,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -803,6 +813,8 @@
         "and",
         "O.all"
       ],
+      "greek": "καί πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -949,6 +961,8 @@
         "parts",
         "my.inward"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1087,6 +1101,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1220,6 +1236,8 @@
       "gloss_parts": [
         "the.name"
       ],
+      "greek": "ὄνομα",
+      "greek_strong": "3686",
       "lemma": "שֵׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1328,7 +1346,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "his his holiness",
+      "display_gloss": "his holiness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1359,6 +1377,8 @@
         "his.holiness",
         "his"
       ],
+      "greek": "ἅγιον αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1430,24 +1450,40 @@
       "ref": "Psalm 103:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA103.htm",
+      "source_version": "eng-kjv2006",
       "text": "[A Psalm] of David. Bless the LORD, O my soul: and all that is within me, [bless] his holy name.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 103:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA103.htm",
+      "source_version": "eng-asv",
       "text": "[A Psalm] of David. Bless Jehovah, O my soul; And all that is within me, [bless] his holy name.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 103:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA103.htm",
+      "source_version": "engwebp",
       "text": "By David. Praise the LORD, my soul! All that is within me, praise his holy name!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 103:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τῷ δαυιδ εὐλόγει ψυξή μου καί πάντα μου ὄνομα ἅγιον αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

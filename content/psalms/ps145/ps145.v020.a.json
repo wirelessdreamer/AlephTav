@@ -44,7 +44,7 @@
           "watches over"
         ],
         "gloss_fragments": [
-          "protecting"
+          "is protecting"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -82,7 +82,7 @@
         "Psalm 107:43",
         "Psalm 116:6"
       ],
-      "display_gloss": "protecting",
+      "display_gloss": "is protecting",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -111,6 +111,8 @@
       "gloss_parts": [
         "[is].protecting"
       ],
+      "greek": "φυλάσσει",
+      "greek_strong": null,
       "lemma": "שָׁמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -238,6 +240,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -371,6 +375,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -504,6 +510,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -577,8 +585,8 @@
           "him"
         ],
         "gloss_fragments": [
-          "those",
-          "who love him"
+          "[those",
+          "who] love him"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -623,7 +631,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who love him those",
+      "display_gloss": "who] love him [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -653,6 +661,8 @@
         "[those",
         "who].love.him"
       ],
+      "greek": "ἀγαπῶντας",
+      "greek_strong": "25",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -797,6 +807,8 @@
         "and",
         "(et)"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -930,6 +942,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1075,6 +1089,8 @@
         "the.wicked",
         "[people]"
       ],
+      "greek": "τοὺς ἁμαρτωλοὺς",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -1182,6 +1198,8 @@
       "gloss_parts": [
         "he.will.destroy"
       ],
+      "greek": "ἐχολεθρεύσει",
+      "greek_strong": "1842",
       "lemma": "שָׁמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1217,24 +1235,40 @@
       "ref": "Psalm 145:20",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA145.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD preserveth all them that love him: but all the wicked will he destroy.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:20",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA145.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah preserveth all them that love him; But all the wicked will he destroy.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:20",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA145.htm",
+      "source_version": "engwebp",
       "text": "The LORD preserves all those who love him, but he will destroy all the wicked.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 145:20",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φυλάσσει κύριος πάντας ἀγαπῶντας καὶ πάντας τοὺς ἁμαρτωλοὺς ἐχολεθρεύσει",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

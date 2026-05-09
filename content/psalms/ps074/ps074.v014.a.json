@@ -111,6 +111,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σὺ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -218,6 +220,8 @@
       "gloss_parts": [
         "you.crushed"
       ],
+      "greek": "συνέθλασας",
+      "greek_strong": null,
       "lemma": "רָצַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -311,6 +315,8 @@
       "gloss_parts": [
         "the.heads"
       ],
+      "greek": "κεφαλὰς",
+      "greek_strong": "2776",
       "lemma": "רֹאשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -410,6 +416,8 @@
       "gloss_parts": [
         "of.Leviathan"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "לִוְיָתָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -495,7 +503,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "gave it you",
+      "display_gloss": "gave him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -525,6 +533,8 @@
         "you",
         "gave.it"
       ],
+      "greek": "ἔδωκας αὐτὸν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -643,6 +653,8 @@
       "gloss_parts": [
         "food"
       ],
+      "greek": "βρῶμα",
+      "greek_strong": "1033",
       "lemma": "מַאֲכָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -754,6 +766,8 @@
         "to",
         "a.people"
       ],
+      "greek": "λαοῖς",
+      "greek_strong": "2992",
       "lemma": "עַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -836,7 +850,7 @@
       "corpus_occurrence_refs": [
         "Psalm 72:9"
       ],
-      "display_gloss": "to desert-dwellers",
+      "display_gloss": "to creatures of the wilderness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -867,6 +881,8 @@
         "to",
         "desert-dwellers"
       ],
+      "greek": "τοῖς αἰθίοψιν",
+      "greek_strong": "3588",
       "lemma": "צִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -902,24 +918,40 @@
       "ref": "Psalm 74:14",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA074.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou brakest the heads of leviathan in pieces, [and] gavest him [to be] meat to the people inhabiting the wilderness.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 74:14",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA074.htm",
+      "source_version": "eng-asv",
       "text": "Thou brakest the heads of leviathan in pieces; Thou gavest him to be food to the people inhabiting the wilderness.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 74:14",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA074.htm",
+      "source_version": "engwebp",
       "text": "You broke the heads of Leviathan in pieces. You gave him as food to people and desert creatures.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 74:14",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "σὺ συνέθλασας κεφαλὰς ἔδωκας αὐτὸν βρῶμα λαοῖς τοῖς αἰθίοψιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

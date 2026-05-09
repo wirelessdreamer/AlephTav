@@ -92,7 +92,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and gave them he",
+      "display_gloss": "and he gave them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -123,6 +123,8 @@
         "he",
         "gave.them"
       ],
+      "greek": "καὶ παρέδωκεν αὐτοὺς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -268,6 +270,8 @@
         "in.[the]",
         "hand"
       ],
+      "greek": "εἰς ξεῖρας",
+      "greek_strong": "5495",
       "lemma": "יָד",
       "missing_enrichments": [
         "oshb:stem",
@@ -399,6 +403,8 @@
       "gloss_parts": [
         "of.nations"
       ],
+      "greek": "ἐθνῶν",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -524,6 +530,8 @@
         "and",
         "they.ruled"
       ],
+      "greek": "καὶ ἐκυρίευσαν",
+      "greek_strong": "2532",
       "lemma": "מָשַׁל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -618,7 +626,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "over",
+      "display_gloss": "over them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -649,6 +657,8 @@
         "over",
         "them"
       ],
+      "greek": "αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -725,8 +735,8 @@
           "them"
         ],
         "gloss_fragments": [
-          "those",
-          "who hated them"
+          "[those",
+          "who] hated them"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -771,7 +781,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hated them those",
+      "display_gloss": "who] hated them [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -801,6 +811,8 @@
         "[those",
         "who].hated.them"
       ],
+      "greek": "μισοῦντες",
+      "greek_strong": "3404",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -871,24 +883,40 @@
       "ref": "Psalm 106:41",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA106.htm",
+      "source_version": "eng-kjv2006",
       "text": "And he gave them into the hand of the heathen; and they that hated them ruled over them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 106:41",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA106.htm",
+      "source_version": "eng-asv",
       "text": "And he gave them into the hand of the nations; And they that hated them ruled over them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 106:41",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA106.htm",
+      "source_version": "engwebp",
       "text": "He gave them into the hand of the nations. Those who hated them ruled over them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 106:41",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ παρέδωκεν αὐτοὺς εἰς ξεῖρας ἐθνῶν καὶ ἐκυρίευσαν αὐτῶν μισοῦντες",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

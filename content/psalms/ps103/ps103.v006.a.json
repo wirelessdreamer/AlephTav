@@ -41,7 +41,7 @@
           "works"
         ],
         "gloss_fragments": [
-          "doing"
+          "is doing"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -79,7 +79,7 @@
         "Psalm 40:9",
         "Psalm 50:21"
       ],
-      "display_gloss": "doing",
+      "display_gloss": "is doing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -108,6 +108,8 @@
       "gloss_parts": [
         "[is].doing"
       ],
+      "greek": "ποιῶν",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -220,6 +222,8 @@
       "gloss_parts": [
         "(of).righteousness(es)"
       ],
+      "greek": "ἐλεημοσύνας",
+      "greek_strong": "1654",
       "lemma": "צְדָקָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -331,6 +335,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -474,6 +480,8 @@
         "and",
         "judgments"
       ],
+      "greek": "καὶ κρίμα",
+      "greek_strong": "2917",
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -607,6 +615,8 @@
         "for",
         "all"
       ],
+      "greek": "πᾶσι",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -720,6 +730,8 @@
       "gloss_parts": [
         "[those.who.are].oppressed"
       ],
+      "greek": "ἀδικουμένοις",
+      "greek_strong": "91",
       "lemma": "עָשַׁק",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -755,24 +767,40 @@
       "ref": "Psalm 103:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA103.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD executeth righteousness and judgment for all that are oppressed.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 103:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA103.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah executeth righteous acts, And judgments for all that are oppressed.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 103:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA103.htm",
+      "source_version": "engwebp",
       "text": "The LORD executes righteous acts, and justice for all who are oppressed.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 103:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ποιῶν ἐλεημοσύνας καὶ κρίμα πᾶσι ἀδικουμένοις",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

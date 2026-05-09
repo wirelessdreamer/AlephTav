@@ -61,7 +61,7 @@
       "corpus_occurrence_refs": [
         "Psalm 105:45"
       ],
-      "display_gloss": "because of",
+      "display_gloss": "for sake",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -92,6 +92,8 @@
         "because",
         "of"
       ],
+      "greek": "ἕνεκεν",
+      "greek_strong": "1752",
       "lemma": "עָבוּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -198,6 +200,8 @@
       "gloss_parts": [
         "David"
       ],
+      "greek": "δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -341,6 +345,8 @@
         "servant",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -483,6 +489,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -610,6 +618,8 @@
       "gloss_parts": [
         "turn.away"
       ],
+      "greek": "ἀποστρέψῃς",
+      "greek_strong": "654",
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -739,6 +749,8 @@
       "gloss_parts": [
         "the.face"
       ],
+      "greek": "πρόσωπον",
+      "greek_strong": "4383",
       "lemma": "פָּנֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -847,7 +859,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your anointed one of",
+      "display_gloss": "of your anointed one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -878,6 +890,8 @@
         "of",
         "your.anointed.[one]"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -949,24 +963,40 @@
       "ref": "Psalm 132:10",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA132.htm",
+      "source_version": "eng-kjv2006",
       "text": "For thy servant David’s sake turn not away the face of thine anointed.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 132:10",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA132.htm",
+      "source_version": "eng-asv",
       "text": "For thy servant David’s sake Turn not away the face of thine anointed.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 132:10",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA132.htm",
+      "source_version": "engwebp",
       "text": "For your servant David’s sake, don’t turn away the face of your anointed one.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 132:10",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἕνεκεν δαυιδ σου μὴ ἀποστρέψῃς πρόσωπον σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

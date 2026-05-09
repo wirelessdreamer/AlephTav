@@ -119,6 +119,8 @@
         "and",
         "I"
       ],
+      "greek": "δὲ ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -233,7 +235,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "when were sick they",
+      "display_gloss": "when they were sick",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -264,6 +266,8 @@
         "they",
         "were.sick"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -414,6 +418,8 @@
         "clothing",
         "my"
       ],
+      "greek": "ἐνεδυόμην μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -488,7 +494,7 @@
           "sackcloth"
         ],
         "gloss_fragments": [
-          "sackcloth"
+          "was sackcloth"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -503,7 +509,7 @@
       "corpus_occurrence_refs": [
         "Psalm 69:12"
       ],
-      "display_gloss": "sackcloth",
+      "display_gloss": "was sackcloth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -533,6 +539,8 @@
       "gloss_parts": [
         "[was].sackcloth"
       ],
+      "greek": "σάκκον",
+      "greek_strong": "4526",
       "lemma": "שַׂק",
       "missing_enrichments": [
         "oshb:stem",
@@ -628,6 +636,8 @@
       "gloss_parts": [
         "I.humbled"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -701,7 +711,7 @@
         "Psalm 69:11",
         "Psalm 109:24"
       ],
-      "display_gloss": "with fasting the",
+      "display_gloss": "with the fasting",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -733,6 +743,8 @@
         "(the)",
         "fasting"
       ],
+      "greek": "ἐν νηστείᾳ",
+      "greek_strong": "1722",
       "lemma": "צוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -850,6 +862,8 @@
         "self",
         "my"
       ],
+      "greek": "ψυξήν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1007,6 +1021,8 @@
         "prayer",
         "my"
       ],
+      "greek": "καὶ μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1149,6 +1165,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1290,6 +1308,8 @@
         "bosom",
         "my"
       ],
+      "greek": "κόλπον μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1431,6 +1451,8 @@
       "gloss_parts": [
         "it.returned"
       ],
+      "greek": "ἀποστραφήσεται",
+      "greek_strong": "654",
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1487,24 +1509,40 @@
       "ref": "Psalm 35:13",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA035.htm",
+      "source_version": "eng-kjv2006",
       "text": "But as for me, when they were sick, my clothing [was] sackcloth: I humbled my soul with fasting; and my prayer returned into mine own bosom.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:13",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA035.htm",
+      "source_version": "eng-asv",
       "text": "But as for me, when they were sick, my clothing was sackcloth: I afflicted my soul with fasting; And my prayer returned into mine own bosom.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:13",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA035.htm",
+      "source_version": "engwebp",
       "text": "But as for me, when they were sick, my clothing was sackcloth. I afflicted my soul with fasting. My prayer returned into my own bosom.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 35:13",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "δὲ ἐγὼ ἐν ἐνεδυόμην μοι σάκκον ἐν νηστείᾳ ψυξήν μου καὶ μου εἰς κόλπον μου ἀποστραφήσεται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will call out to me he",
+      "display_gloss": "he will call out to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "he",
         "will.call.out.to.me"
       ],
+      "greek": "ἐπικαλέσεταί με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -241,7 +243,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and will answer him I",
+      "display_gloss": "and I will answer him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -272,6 +274,8 @@
         "I",
         "will.answer.him"
       ],
+      "greek": "καὶ εἰσακούσομαι αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -344,8 +348,8 @@
           "him"
         ],
         "gloss_fragments": [
-          "will",
-          "be with him"
+          "[will",
+          "be] with him"
         ],
         "preposition_role": "with",
         "raw_classes": [
@@ -390,7 +394,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will",
+      "display_gloss": "[will be] with him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -421,6 +425,8 @@
         "[will",
         "be].with.him"
       ],
+      "greek": "μετ’ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -550,6 +556,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "εἰμι",
+      "greek_strong": "1510",
       "lemma": "אָנֹכִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -661,6 +669,8 @@
         "in",
         "trouble"
       ],
+      "greek": "ἐν θλίψει",
+      "greek_strong": "2347",
       "lemma": "צָרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -759,7 +769,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will rescue him I",
+      "display_gloss": "I will rescue him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -789,6 +799,8 @@
         "I",
         "will.rescue.him"
       ],
+      "greek": "καὶ ἐχελοῦμαι",
+      "greek_strong": "1807",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -911,7 +923,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and will honor him I",
+      "display_gloss": "and I will honor him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -942,6 +954,8 @@
         "I",
         "will.honor.him"
       ],
+      "greek": "καὶ δοχάσω αὐτόν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1010,24 +1024,40 @@
       "ref": "Psalm 91:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA091.htm",
+      "source_version": "eng-kjv2006",
       "text": "He shall call upon me, and I will answer him: I [will be] with him in trouble; I will deliver him, and honour him.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 91:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA091.htm",
+      "source_version": "eng-asv",
       "text": "He shall call upon me, and I will answer him; I will be with him in trouble: I will deliver him, and honor him.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 91:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA091.htm",
+      "source_version": "engwebp",
       "text": "He will call on me, and I will answer him. I will be with him in trouble. I will deliver him, and honor him.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 91:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐπικαλέσεταί με καὶ εἰσακούσομαι αὐτοῦ μετ’ αὐτοῦ εἰμι ἐν θλίψει καὶ ἐχελοῦμαι καὶ δοχάσω αὐτόν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -113,6 +113,8 @@
       "gloss_parts": [
         "the.song"
       ],
+      "greek": "ὠιδὴ",
+      "greek_strong": "5603",
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -206,7 +208,7 @@
         "Psalm 133:1",
         "Psalm 134:1"
       ],
-      "display_gloss": "the ascents of",
+      "display_gloss": "of the ascents",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -237,6 +239,8 @@
         "of",
         "the.ascents"
       ],
+      "greek": "τῶν ἀναβαθμῶν",
+      "greek_strong": "304",
       "lemma": "מַעֲלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -289,8 +293,8 @@
           "trust"
         ],
         "gloss_fragments": [
-          "those",
-          "who trust"
+          "[those",
+          "who] trust"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -330,7 +334,7 @@
         "Psalm 55:24",
         "Psalm 56:4"
       ],
-      "display_gloss": "who trust those",
+      "display_gloss": "who] trust [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -360,6 +364,8 @@
         "[those",
         "who].trust"
       ],
+      "greek": "οἱ πεποιθότες",
+      "greek_strong": "3982",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -492,6 +498,8 @@
         "in",
         "Yahweh"
       ],
+      "greek": "ἐπὶ κύριον",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -630,6 +638,8 @@
         "[are].like",
         "the.mountain"
       ],
+      "greek": "ὡς ὄρος",
+      "greek_strong": "3735",
       "lemma": "הַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -761,6 +771,8 @@
       "gloss_parts": [
         "of.Zion"
       ],
+      "greek": "σιων",
+      "greek_strong": "4622",
       "lemma": "צִיּוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -890,6 +902,8 @@
       "gloss_parts": [
         "[which].not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1019,6 +1033,8 @@
       "gloss_parts": [
         "it.will.be.shaken"
       ],
+      "greek": "σαλευθήσεται",
+      "greek_strong": null,
       "lemma": "מוֹט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1151,6 +1167,8 @@
         "forever",
         "of.perpetuity"
       ],
+      "greek": "εἰς αἰῶνα",
+      "greek_strong": "165",
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1281,6 +1299,8 @@
       "gloss_parts": [
         "it.will.remain"
       ],
+      "greek": "κατοικῶν",
+      "greek_strong": "2730",
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1337,24 +1357,40 @@
       "ref": "Psalm 125:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA125.htm",
+      "source_version": "eng-kjv2006",
       "text": "A Song of degrees. They that trust in the LORD [shall be] as mount Zion, [which] cannot be removed, [but] abideth for ever.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 125:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA125.htm",
+      "source_version": "eng-asv",
       "text": "A Song of Ascents. They that trust in Jehovah Are as mount Zion, which cannot be moved, but abideth for ever.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 125:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA125.htm",
+      "source_version": "engwebp",
       "text": "A Song of Ascents. Those who trust in the LORD are as Mount Zion, which can’t be moved, but remains forever.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 125:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὠιδὴ τῶν ἀναβαθμῶν οἱ πεποιθότες ἐπὶ κύριον ὡς ὄρος σιων οὐ σαλευθήσεται εἰς αἰῶνα κατοικῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

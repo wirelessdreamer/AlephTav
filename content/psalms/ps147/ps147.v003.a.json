@@ -41,8 +41,8 @@
           "heals"
         ],
         "gloss_fragments": [
-          "the one",
-          "who heals"
+          "the [one",
+          "who] heals"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -59,7 +59,7 @@
       "corpus_occurrence_refs": [
         "Psalm 103:3"
       ],
-      "display_gloss": "who heals the one",
+      "display_gloss": "who] heals the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -89,6 +89,8 @@
         "the.[one",
         "who].heals"
       ],
+      "greek": "ὁ ἰώμενος",
+      "greek_strong": "2390",
       "lemma": "רָפָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -126,8 +128,8 @@
           "ones being broken of"
         ],
         "gloss_fragments": [
-          "(to) the",
-          "people broken"
+          "(to) [the",
+          "people] broken"
         ],
         "preposition_role": "to",
         "raw_classes": [
@@ -161,7 +163,7 @@
         "Psalm 107:16",
         "Psalm 124:7"
       ],
-      "display_gloss": "(to) the people broken",
+      "display_gloss": "(to) [the people] broken",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -191,6 +193,8 @@
         "(to).[the",
         "people].broken"
       ],
+      "greek": "τοὺς συντετριμμένους",
+      "greek_strong": "3588",
       "lemma": "שָׁבַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -313,6 +317,8 @@
       "gloss_parts": [
         "of.heart"
       ],
+      "greek": "καρδίαν",
+      "greek_strong": "2588",
       "lemma": "לֵב",
       "missing_enrichments": [
         "oshb:stem",
@@ -421,6 +427,8 @@
         "and",
         "[he.is].binding.up"
       ],
+      "greek": "καὶ δεσμεύων",
+      "greek_strong": "1195",
       "lemma": "חָבַשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -537,6 +545,8 @@
         "wounds",
         "their"
       ],
+      "greek": "τὰ συντρίμματα αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -608,24 +618,40 @@
       "ref": "Psalm 147:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA147.htm",
+      "source_version": "eng-kjv2006",
       "text": "He healeth the broken in heart, and bindeth up their wounds.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA147.htm",
+      "source_version": "eng-asv",
       "text": "He healeth the broken in heart, And bindeth up their wounds.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA147.htm",
+      "source_version": "engwebp",
       "text": "He heals the broken in heart, and binds up their wounds.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 147:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ ἰώμενος τοὺς συντετριμμένους καρδίαν καὶ δεσμεύων τὰ συντρίμματα αὐτῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

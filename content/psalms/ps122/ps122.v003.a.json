@@ -99,6 +99,8 @@
       "gloss_parts": [
         "Jerusalem"
       ],
+      "greek": "ιερουσαλημ",
+      "greek_strong": "2414",
       "lemma": "יְרוּשָׁלִַ͏ם",
       "missing_enrichments": [
         "oshb:stem",
@@ -154,8 +156,8 @@
           "built"
         ],
         "gloss_fragments": [
-          "which",
-          "is built"
+          "[which",
+          "is] built"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -180,7 +182,7 @@
         "Psalm 127:1",
         "Psalm 147:2"
       ],
-      "display_gloss": "is built which",
+      "display_gloss": "is] built [which",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -210,6 +212,8 @@
         "[which",
         "is].built"
       ],
+      "greek": "οἰκοδομουμένη",
+      "greek_strong": "3618",
       "lemma": "בָּנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -321,6 +325,8 @@
         "like",
         "a.city"
       ],
+      "greek": "ὡς πόλις",
+      "greek_strong": "4172",
       "lemma": "עִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -425,6 +431,8 @@
         "which",
         "it.was.joined.together"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -508,7 +516,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to itself",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -539,6 +547,8 @@
         "to",
         "itself"
       ],
+      "greek": "αὐτῆς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -664,6 +674,8 @@
       "gloss_parts": [
         "together"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָחְדָּו",
       "missing_enrichments": [
         "oshb:stem",
@@ -709,24 +721,40 @@
       "ref": "Psalm 122:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA122.htm",
+      "source_version": "eng-kjv2006",
       "text": "Jerusalem is builded as a city that is compact together:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 122:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA122.htm",
+      "source_version": "eng-asv",
       "text": "Jerusalem, that art builded As a city that is compact together;",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 122:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA122.htm",
+      "source_version": "engwebp",
       "text": "Jerusalem is built as a city that is compact together,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 122:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ιερουσαλημ οἰκοδομουμένη ὡς πόλις αὐτῆς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

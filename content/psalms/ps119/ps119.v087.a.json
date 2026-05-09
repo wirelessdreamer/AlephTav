@@ -100,6 +100,8 @@
         "like",
         "a.little"
       ],
+      "greek": "παρὰ βραξὺ",
+      "greek_strong": "1024",
       "lemma": "מְעַט",
       "missing_enrichments": [
         "oshb:stem",
@@ -193,7 +195,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have made an end of me they",
+      "display_gloss": "they have made an end of me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -223,6 +225,8 @@
         "they",
         "have.made.an.end.of.me"
       ],
+      "greek": "συνετέλεσάν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -341,7 +345,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "on earth the",
+      "display_gloss": "on the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -373,6 +377,8 @@
         "the",
         "earth"
       ],
+      "greek": "ἐν γῇ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -512,6 +518,8 @@
         "and",
         "I"
       ],
+      "greek": "δὲ ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -648,6 +656,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -773,6 +783,8 @@
       "gloss_parts": [
         "I.have.forsaken"
       ],
+      "greek": "ἐγκατέλιπον",
+      "greek_strong": "1459",
       "lemma": "עָזַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -897,6 +909,8 @@
         "precepts",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -968,24 +982,40 @@
       "ref": "Psalm 119:87",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "They had almost consumed me upon earth; but I forsook not thy precepts.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:87",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "They had almost consumed me upon earth; But I forsook not thy precepts.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:87",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "They had almost wiped me from the earth, but I didn’t forsake your precepts.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:87",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "παρὰ βραξὺ συνετέλεσάν με ἐν γῇ δὲ ἐγὼ οὐκ ἐγκατέλιπον σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

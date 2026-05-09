@@ -93,7 +93,7 @@
         "Psalm 26:2",
         "Psalm 28:9"
       ],
-      "display_gloss": "arise",
+      "display_gloss": "rise up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -122,6 +122,8 @@
       "gloss_parts": [
         "arise"
       ],
+      "greek": "ἀνάστα",
+      "greek_strong": "450",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -253,6 +255,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -397,6 +401,8 @@
         "save",
         "me"
       ],
+      "greek": "σῶσόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -512,7 +518,7 @@
         "Psalm 5:5",
         "Psalm 5:6"
       ],
-      "display_gloss": "my my God",
+      "display_gloss": "my God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -543,6 +549,8 @@
         "my.God",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -679,6 +687,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -797,6 +807,8 @@
       "gloss_parts": [
         "you.have.struck"
       ],
+      "greek": "ἐπάταχας",
+      "greek_strong": null,
       "lemma": "נָכָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -908,6 +920,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1037,6 +1051,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1175,6 +1191,8 @@
         "enemies",
         "my"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1287,6 +1305,8 @@
       "gloss_parts": [
         "jaw"
       ],
+      "greek": "ματαίως",
+      "greek_strong": null,
       "lemma": "לְחִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1367,6 +1387,8 @@
       "gloss_parts": [
         "[the].teeth"
       ],
+      "greek": "ὀδόντας",
+      "greek_strong": "3599",
       "lemma": "שֵׁן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1473,6 +1495,8 @@
       "gloss_parts": [
         "of.wicked.[people]"
       ],
+      "greek": "ἁμαρτωλῶν",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -1595,6 +1619,8 @@
       "gloss_parts": [
         "you.have.broken"
       ],
+      "greek": "συνέτριψας",
+      "greek_strong": null,
       "lemma": "שָׁבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1645,24 +1671,40 @@
       "ref": "Psalm 3:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA003.htm",
+      "source_version": "eng-kjv2006",
       "text": "Salvation [belongeth] unto the LORD: thy blessing [is] upon thy people. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 3:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA003.htm",
+      "source_version": "eng-asv",
       "text": "Salvation belongeth unto Jehovah: Thy blessing be upon thy people. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 3:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA003.htm",
+      "source_version": "engwebp",
       "text": "Salvation belongs to the LORD. May your blessing be on your people. Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 3:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀνάστα κύριε σῶσόν με μου ὅτι ἐπάταχας πάντας μοι ματαίως ὀδόντας ἁμαρτωλῶν συνέτριψας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

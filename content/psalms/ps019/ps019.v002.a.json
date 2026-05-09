@@ -85,7 +85,7 @@
         "Psalm 73:25",
         "Psalm 76:9"
       ],
-      "display_gloss": "heavens the",
+      "display_gloss": "the heavens",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -116,6 +116,8 @@
         "the",
         "heavens"
       ],
+      "greek": "οἱ οὐρανοὶ",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -246,6 +248,8 @@
       "gloss_parts": [
         "[are].recounting"
       ],
+      "greek": "διηγοῦνται",
+      "greek_strong": null,
       "lemma": "סָפַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -373,6 +377,8 @@
       "gloss_parts": [
         "the.glory"
       ],
+      "greek": "δόχαν",
+      "greek_strong": "1391",
       "lemma": "כָּבוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -502,6 +508,8 @@
       "gloss_parts": [
         "of.God"
       ],
+      "greek": "θεοῦ",
+      "greek_strong": "2316",
       "lemma": "אֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -627,6 +635,8 @@
         "and",
         "the.work"
       ],
+      "greek": "δὲ ποίησιν",
+      "greek_strong": "4162",
       "lemma": "מַעֲשֶׂה",
       "missing_enrichments": [
         "oshb:stem",
@@ -726,7 +736,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "his his hands",
+      "display_gloss": "his hands",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -757,6 +767,8 @@
         "his.hands",
         "his"
       ],
+      "greek": "ξειρῶν αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -827,7 +839,7 @@
           "proclaims"
         ],
         "gloss_fragments": [
-          "telling"
+          "is telling"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -860,7 +872,7 @@
         "Psalm 145:4",
         "Psalm 147:19"
       ],
-      "display_gloss": "telling",
+      "display_gloss": "is telling",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -889,6 +901,8 @@
       "gloss_parts": [
         "[is].telling"
       ],
+      "greek": "ἀναγγέλλει",
+      "greek_strong": "312",
       "lemma": "נָגַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -962,7 +976,7 @@
       "corpus_occurrence_refs": [
         "Psalm 150:1"
       ],
-      "display_gloss": "firmament the",
+      "display_gloss": "the firmament",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -993,6 +1007,8 @@
         "the",
         "firmament"
       ],
+      "greek": "τὸ στερέωμα",
+      "greek_strong": "4733",
       "lemma": "רָקִיעַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1028,24 +1044,40 @@
       "ref": "Psalm 19:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA019.htm",
+      "source_version": "eng-kjv2006",
       "text": "Day unto day uttereth speech, and night unto night sheweth knowledge.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA019.htm",
+      "source_version": "eng-asv",
       "text": "Day unto day uttereth speech, And night unto night showeth knowledge.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA019.htm",
+      "source_version": "engwebp",
       "text": "Day after day they pour out speech, and night after night they display knowledge.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 19:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οἱ οὐρανοὶ διηγοῦνται δόχαν θεοῦ δὲ ποίησιν ξειρῶν αὐτοῦ ἀναγγέλλει τὸ στερέωμα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

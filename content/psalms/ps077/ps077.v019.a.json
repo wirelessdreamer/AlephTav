@@ -112,6 +112,8 @@
       "gloss_parts": [
         "the.sound"
       ],
+      "greek": "φωνὴ",
+      "greek_strong": "5456",
       "lemma": "קוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -222,7 +224,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your thunder",
+      "display_gloss": "your thunder",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -253,6 +255,8 @@
         "your.thunder",
         "your"
       ],
+      "greek": "βροντῆς σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -329,7 +333,7 @@
           "whirlwind"
         ],
         "gloss_fragments": [
-          "in",
+          "was in",
           "the",
           "whirlwind"
         ],
@@ -350,7 +354,7 @@
       "corpus_occurrence_refs": [
         "Psalm 83:14"
       ],
-      "display_gloss": "in whirlwind the",
+      "display_gloss": "in the whirlwind",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -382,6 +386,8 @@
         "the",
         "whirlwind"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "גַּלְגַּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -487,6 +493,8 @@
       "gloss_parts": [
         "they.lit.up"
       ],
+      "greek": "ἔφαναν",
+      "greek_strong": null,
       "lemma": "אוֹר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -592,6 +600,8 @@
       "gloss_parts": [
         "lightning.flashes"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "בָּרָק",
       "missing_enrichments": [
         "oshb:stem",
@@ -688,6 +698,8 @@
       "gloss_parts": [
         "[the].world"
       ],
+      "greek": "οἰκουμένῃ",
+      "greek_strong": "3625",
       "lemma": "תֵּבֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -784,6 +796,8 @@
       "gloss_parts": [
         "it.trembled"
       ],
+      "greek": "ἐσαλεύθη",
+      "greek_strong": "4531",
       "lemma": "רָגַז",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -878,6 +892,8 @@
         "and",
         "it.shook"
       ],
+      "greek": "καὶ ἔντρομος",
+      "greek_strong": "1790",
       "lemma": "רָעַשׁ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -961,7 +977,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "earth the",
+      "display_gloss": "the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -992,6 +1008,8 @@
         "the",
         "earth"
       ],
+      "greek": "ἡ γῆ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1050,24 +1068,40 @@
       "ref": "Psalm 77:19",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA077.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thy way [is] in the sea, and thy path in the great waters, and thy footsteps are not known.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 77:19",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA077.htm",
+      "source_version": "eng-asv",
       "text": "Thy way was in the sea, And thy paths in the great waters, And thy footsteps were not known.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 77:19",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA077.htm",
+      "source_version": "engwebp",
       "text": "Your way was through the sea, your paths through the great waters. Your footsteps were not known.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 77:19",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φωνὴ βροντῆς σου ἐν ἔφαναν οἰκουμένῃ ἐσαλεύθη καὶ ἔντρομος ἡ γῆ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

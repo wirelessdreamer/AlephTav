@@ -91,7 +91,7 @@
         "Psalm 78:13",
         "Psalm 78:16"
       ],
-      "display_gloss": "like water the",
+      "display_gloss": "like the water",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -123,6 +123,8 @@
         "(the)",
         "water"
       ],
+      "greek": "ὡσεὶ ὕδωρ",
+      "greek_strong": "5204",
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -236,6 +238,8 @@
       "gloss_parts": [
         "I.have.been.poured.out"
       ],
+      "greek": "ἐχεξύθην",
+      "greek_strong": null,
       "lemma": "שָׁפַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -329,6 +333,8 @@
         "and",
         "they.have.become.dislocated"
       ],
+      "greek": "καὶ διεσκορπίσθη",
+      "greek_strong": "2532",
       "lemma": "פָּרַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -433,6 +439,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -578,6 +586,8 @@
         "bones",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -719,6 +729,8 @@
       "gloss_parts": [
         "it.has.become"
       ],
+      "greek": "ἐγενήθη",
+      "greek_strong": "1096",
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -856,6 +868,8 @@
         "heart",
         "my"
       ],
+      "greek": "καρδία μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -953,7 +967,7 @@
         "Psalm 68:3",
         "Psalm 97:5"
       ],
-      "display_gloss": "like wax the",
+      "display_gloss": "like the wax",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -985,6 +999,8 @@
         "(the)",
         "wax"
       ],
+      "greek": "ὡσεὶ κηρὸς",
+      "greek_strong": "5616",
       "lemma": "דּוֹנַג",
       "missing_enrichments": [
         "oshb:stem",
@@ -1070,6 +1086,8 @@
       "gloss_parts": [
         "it.has.melted"
       ],
+      "greek": "τηκόμενος",
+      "greek_strong": null,
       "lemma": "מָסַס",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1161,6 +1179,8 @@
         "in",
         "the.midst"
       ],
+      "greek": "ἐν μέσῳ",
+      "greek_strong": "3319",
       "lemma": "תָּוֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1252,7 +1272,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my inward parts",
+      "display_gloss": "my inward parts",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1283,6 +1303,8 @@
         "my.inward.parts",
         "my"
       ],
+      "greek": "κοιλίας μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1354,24 +1376,40 @@
       "ref": "Psalm 22:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "My strength is dried up like a potsherd; and my tongue cleaveth to my jaws; and thou hast brought me into the dust of death.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "My strength is dried up like a potsherd; And my tongue cleaveth to my jaws; And thou hast brought me into the dust of death.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "My strength is dried up like a potsherd. My tongue sticks to the roof of my mouth. You have brought me into the dust of death.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὡσεὶ ὕδωρ ἐχεξύθην καὶ διεσκορπίσθη πάντα μου ἐγενήθη καρδία μου ὡσεὶ κηρὸς τηκόμενος ἐν μέσῳ κοιλίας μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

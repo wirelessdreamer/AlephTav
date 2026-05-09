@@ -113,6 +113,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -180,7 +182,7 @@
           "protects"
         ],
         "gloss_fragments": [
-          "watching over"
+          "is watching over"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -218,7 +220,7 @@
         "Psalm 107:43",
         "Psalm 116:6"
       ],
-      "display_gloss": "watching over",
+      "display_gloss": "is watching over",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -247,6 +249,8 @@
       "gloss_parts": [
         "[is].watching.over"
       ],
+      "greek": "φυλάσσει",
+      "greek_strong": null,
       "lemma": "שָׁמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -372,6 +376,8 @@
       "gloss_parts": [
         "(et)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -483,6 +489,8 @@
       "gloss_parts": [
         "sojourners"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "גֵּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -573,6 +581,8 @@
       "gloss_parts": [
         "[the].fatherless"
       ],
+      "greek": "ὀρφανὸν",
+      "greek_strong": null,
       "lemma": "יָתוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -668,6 +678,8 @@
         "and",
         "widow[s]"
       ],
+      "greek": "καὶ ξήραν",
+      "greek_strong": "5503",
       "lemma": "אַלְמָנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -755,6 +767,8 @@
       "gloss_parts": [
         "he.helps.up"
       ],
+      "greek": "ἀναλήμψεται",
+      "greek_strong": "353",
       "lemma": "עוּד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -867,6 +881,8 @@
         "and.[the]",
         "way"
       ],
+      "greek": "καὶ ὁδὸν",
+      "greek_strong": "3598",
       "lemma": "דֶּרֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -996,6 +1012,8 @@
       "gloss_parts": [
         "of.wicked.[people]"
       ],
+      "greek": "ἁμαρτωλῶν",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -1099,6 +1117,8 @@
       "gloss_parts": [
         "he.makes.crooked"
       ],
+      "greek": "ἀφανιεῖ",
+      "greek_strong": "853",
       "lemma": "עָוַת",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1130,24 +1150,40 @@
       "ref": "Psalm 146:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA146.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD preserveth the strangers; he relieveth the fatherless and widow: but the way of the wicked he turneth upside down.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA146.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah preserveth the sojourners; He upholdeth the fatherless and widow; But the way of the wicked he turneth upside down.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA146.htm",
+      "source_version": "engwebp",
       "text": "The LORD preserves the foreigners. He upholds the fatherless and widow, but he turns the way of the wicked upside down.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 146:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κύριος φυλάσσει ὀρφανὸν καὶ ξήραν ἀναλήμψεται καὶ ὁδὸν ἁμαρτωλῶν ἀφανιεῖ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

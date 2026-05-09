@@ -109,6 +109,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -245,6 +247,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σὺ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -386,6 +390,8 @@
         "[were].drawing",
         "me.forth"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -511,6 +517,8 @@
         "from.[the]",
         "belly"
       ],
+      "greek": "ἐκ γαστρός",
+      "greek_strong": "1064",
       "lemma": "בֶּטֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -555,8 +563,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "you",
-          "were making me trust"
+          "[you",
+          "were] making me trust"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -601,7 +609,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "were making me trust you",
+      "display_gloss": "[you were] making me trust",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -631,6 +639,8 @@
         "[you",
         "were].making.me.trust"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -741,7 +751,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "at",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -771,6 +781,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "ἀπὸ",
+      "greek_strong": "575",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -878,6 +890,8 @@
       "gloss_parts": [
         "the.breasts"
       ],
+      "greek": "μαστῶν",
+      "greek_strong": null,
       "lemma": "שַׁד",
       "missing_enrichments": [
         "oshb:stem",
@@ -961,7 +975,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my mother",
+      "display_gloss": "my mother",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -992,6 +1006,8 @@
         "my.mother",
         "my"
       ],
+      "greek": "μητρός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1063,24 +1079,40 @@
       "ref": "Psalm 22:10",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "I was cast upon thee from the womb: thou [art] my God from my mother’s belly.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:10",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "I was cast upon thee from the womb; Thou art my God since my mother bare me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:10",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "I was thrown on you from my mother’s womb. You are my God since my mother bore me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:10",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι σὺ με ἐκ γαστρός μου ἀπὸ μαστῶν μητρός μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

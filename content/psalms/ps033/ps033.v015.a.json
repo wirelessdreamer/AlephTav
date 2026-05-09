@@ -43,8 +43,8 @@
           "fashions"
         ],
         "gloss_fragments": [
-          "the one",
-          "who forms"
+          "the [one",
+          "who] forms"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -65,7 +65,7 @@
         "Psalm 104:26",
         "Psalm 139:16"
       ],
-      "display_gloss": "who forms the one",
+      "display_gloss": "who] forms the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -95,6 +95,8 @@
         "the.[one",
         "who].forms"
       ],
+      "greek": "ὁ πλάσας",
+      "greek_strong": "3588",
       "lemma": "יָצַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -192,6 +194,8 @@
       "gloss_parts": [
         "together"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יַחַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -319,6 +323,8 @@
         "heart",
         "their"
       ],
+      "greek": "καρδίας",
+      "greek_strong": "2588",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -394,8 +400,8 @@
           "considers"
         ],
         "gloss_fragments": [
-          "the one",
-          "who attends"
+          "the [one",
+          "who] attends"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -429,7 +435,7 @@
         "Psalm 119:130",
         "Psalm 139:2"
       ],
-      "display_gloss": "who attends the one",
+      "display_gloss": "who] attends the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -459,6 +465,8 @@
         "the.[one",
         "who].attends"
       ],
+      "greek": "ὁ συνιεὶς",
+      "greek_strong": "3588",
       "lemma": "בִּין",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -580,6 +588,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -712,6 +722,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -857,6 +869,8 @@
         "deeds",
         "their"
       ],
+      "greek": "ἔργα",
+      "greek_strong": "2041",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -928,24 +942,40 @@
       "ref": "Psalm 33:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA033.htm",
+      "source_version": "eng-kjv2006",
       "text": "He fashioneth their hearts alike; he considereth all their works.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA033.htm",
+      "source_version": "eng-asv",
       "text": "He that fashioneth the hearts of them all, That considereth all their works.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA033.htm",
+      "source_version": "engwebp",
       "text": "he who fashions all of their hearts; and he considers all of their works.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 33:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ πλάσας καρδίας ὁ συνιεὶς εἰς πάντα ἔργα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

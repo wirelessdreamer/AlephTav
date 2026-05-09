@@ -98,6 +98,8 @@
       "gloss_parts": [
         "I.will.give.attention"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "שָׂכַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -215,6 +217,8 @@
         "to",
         "a.way"
       ],
+      "greek": "ἐν ὁδῷ",
+      "greek_strong": "3598",
       "lemma": "דֶּרֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -332,6 +336,8 @@
       "gloss_parts": [
         "blameless"
       ],
+      "greek": "ἀμώμῳ",
+      "greek_strong": "299",
       "lemma": "תָּמִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -435,6 +441,8 @@
       "gloss_parts": [
         "when?"
       ],
+      "greek": "πότε",
+      "greek_strong": "4219",
       "lemma": "מָתַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -548,6 +556,8 @@
       "gloss_parts": [
         "will.you.come"
       ],
+      "greek": "ἥχεις",
+      "greek_strong": "2240",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -654,7 +664,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -685,6 +695,8 @@
         "to",
         "me"
       ],
+      "greek": "πρός με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -820,6 +832,8 @@
       "gloss_parts": [
         "I.will.walk.about"
       ],
+      "greek": "διεπορευόμην",
+      "greek_strong": "1279",
       "lemma": "הָלַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -932,6 +946,8 @@
         "in",
         "the.integrity"
       ],
+      "greek": "ἐν ἀκακίᾳ",
+      "greek_strong": "1722",
       "lemma": "תֹּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1018,7 +1034,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my heart",
+      "display_gloss": "my heart",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1049,6 +1065,8 @@
         "my.heart",
         "my"
       ],
+      "greek": "καρδίας μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1176,6 +1194,8 @@
         "in",
         "the.midst"
       ],
+      "greek": "ἐν μέσῳ",
+      "greek_strong": "3319",
       "lemma": "קֶרֶב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1272,7 +1292,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my house",
+      "display_gloss": "my house",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1303,6 +1323,8 @@
         "my.house",
         "my"
       ],
+      "greek": "οἴκου μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1368,24 +1390,40 @@
       "ref": "Psalm 101:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA101.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will behave myself wisely in a perfect way. O when wilt thou come unto me? I will walk within my house with a perfect heart.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA101.htm",
+      "source_version": "eng-asv",
       "text": "I will behave myself wisely in a perfect way: Oh when wilt thou come unto me? I will walk within my house with a perfect heart.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA101.htm",
+      "source_version": "engwebp",
       "text": "I will be careful to live a blameless life. When will you come to me? I will walk within my house with a blameless heart.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 101:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν ὁδῷ ἀμώμῳ πότε ἥχεις πρός με διεπορευόμην ἐν ἀκακίᾳ καρδίας μου ἐν μέσῳ οἴκου μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

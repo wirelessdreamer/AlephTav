@@ -110,6 +110,8 @@
       "gloss_parts": [
         "[he.is].causing.to.dwell"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -215,6 +217,8 @@
       "gloss_parts": [
         "the.barren.[woman]"
       ],
+      "greek": "στεῖραν",
+      "greek_strong": null,
       "lemma": "עָקָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -293,7 +297,7 @@
         "Psalm 122:1",
         "Psalm 122:5"
       ],
-      "display_gloss": "the house of",
+      "display_gloss": "of the house",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -324,6 +328,8 @@
         "of",
         "the.house"
       ],
+      "greek": "ἐν οἴκῳ",
+      "greek_strong": "3624",
       "lemma": "בַּיִת",
       "missing_enrichments": [
         "oshb:stem",
@@ -430,6 +436,8 @@
       "gloss_parts": [
         "the.mother"
       ],
+      "greek": "μητέρα",
+      "greek_strong": "3384",
       "lemma": "אֵם",
       "missing_enrichments": [
         "oshb:stem",
@@ -510,7 +518,7 @@
         "Psalm 47:1",
         "Psalm 48:1"
       ],
-      "display_gloss": "the children of",
+      "display_gloss": "of the children",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -541,6 +549,8 @@
         "of",
         "the.children"
       ],
+      "greek": "τέκνων",
+      "greek_strong": "5043",
       "lemma": "בֵּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -648,6 +658,8 @@
       "gloss_parts": [
         "joyful"
       ],
+      "greek": "εὐφραινομένην",
+      "greek_strong": "2165",
       "lemma": "שָׂמֵחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -754,6 +766,8 @@
       "gloss_parts": [
         "praise"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -884,6 +898,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "αλληλουια",
+      "greek_strong": "239",
       "lemma": "יָהּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -943,24 +959,40 @@
       "ref": "Psalm 113:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA113.htm",
+      "source_version": "eng-kjv2006",
       "text": "He maketh the barren woman to keep house, [and to be] a joyful mother of children. Praise ye the LORD.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 113:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA113.htm",
+      "source_version": "eng-asv",
       "text": "He maketh the barren woman to keep house, [And to be] a joyful mother of children. Praise ye Jehovah.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 113:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA113.htm",
+      "source_version": "engwebp",
       "text": "He settles the barren woman in her home as a joyful mother of children. Praise the LORD!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 113:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "στεῖραν ἐν οἴκῳ μητέρα τέκνων εὐφραινομένην αλληλουια",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

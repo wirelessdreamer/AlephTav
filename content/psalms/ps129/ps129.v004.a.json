@@ -108,6 +108,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -170,7 +172,7 @@
           "righteous"
         ],
         "gloss_fragments": [
-          "righteous"
+          "is righteous"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -208,7 +210,7 @@
         "Psalm 37:32",
         "Psalm 37:39"
       ],
-      "display_gloss": "righteous",
+      "display_gloss": "is righteous",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -238,6 +240,8 @@
       "gloss_parts": [
         "[is].righteous"
       ],
+      "greek": "δίκαιος",
+      "greek_strong": "1342",
       "lemma": "צַדִּיק",
       "missing_enrichments": [
         "oshb:stem",
@@ -342,6 +346,8 @@
       "gloss_parts": [
         "he.has.cut.off"
       ],
+      "greek": "συνέκοψεν",
+      "greek_strong": null,
       "lemma": "קָצַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -421,6 +427,8 @@
       "gloss_parts": [
         "[the].rope"
       ],
+      "greek": "αὐξένας",
+      "greek_strong": null,
       "lemma": "עֲבֹת",
       "missing_enrichments": [
         "oshb:stem",
@@ -525,6 +533,8 @@
       "gloss_parts": [
         "of.wicked.[people]"
       ],
+      "greek": "ἁμαρτωλῶν",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -583,24 +593,40 @@
       "ref": "Psalm 129:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA129.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD [is] righteous: he hath cut asunder the cords of the wicked.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 129:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA129.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah is righteous: He hath cut asunder the cords of the wicked.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 129:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA129.htm",
+      "source_version": "engwebp",
       "text": "The LORD is righteous. He has cut apart the cords of the wicked.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 129:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κύριος δίκαιος συνέκοψεν αὐξένας ἁμαρτωλῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

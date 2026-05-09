@@ -43,8 +43,8 @@
           "disciplines"
         ],
         "gloss_fragments": [
-          "the",
-          "one who disciplines?"
+          "[the",
+          "one who] disciplines?"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -63,7 +63,7 @@
         "Psalm 39:12",
         "Psalm 118:18"
       ],
-      "display_gloss": "one who disciplines? the",
+      "display_gloss": "[the one who] disciplines?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -93,6 +93,8 @@
         "[the",
         "one.who].disciplines?"
       ],
+      "greek": "ὁ παιδεύων",
+      "greek_strong": "3588",
       "lemma": "יָסַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -200,6 +202,8 @@
       "gloss_parts": [
         "nations"
       ],
+      "greek": "ἔθνη",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -334,6 +338,8 @@
         "?",
         "not"
       ],
+      "greek": "οὐξὶ",
+      "greek_strong": "3780",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -442,6 +448,8 @@
       "gloss_parts": [
         "does.he.rebuke"
       ],
+      "greek": "ἐλέγχει",
+      "greek_strong": "1651",
       "lemma": "יָכַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -479,8 +487,8 @@
           "teaches"
         ],
         "gloss_fragments": [
-          "the one",
-          "who teaches"
+          "the [one",
+          "who] teaches"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -504,7 +512,7 @@
         "Psalm 119:73",
         "Psalm 144:1"
       ],
-      "display_gloss": "who teaches the one",
+      "display_gloss": "who] teaches the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -534,6 +542,8 @@
         "the.[one",
         "who].teaches"
       ],
+      "greek": "ὁ διδάσκων",
+      "greek_strong": "1321",
       "lemma": "לָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -645,6 +655,8 @@
       "gloss_parts": [
         "humankind"
       ],
+      "greek": "ἄνθρωπον",
+      "greek_strong": "444",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -754,6 +766,8 @@
       "gloss_parts": [
         "knowledge"
       ],
+      "greek": "γνῶσιν",
+      "greek_strong": "1108",
       "lemma": "דַּעַת",
       "missing_enrichments": [
         "oshb:stem",
@@ -790,24 +804,40 @@
       "ref": "Psalm 94:10",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA094.htm",
+      "source_version": "eng-kjv2006",
       "text": "He that chastiseth the heathen, shall not he correct? he that teacheth man knowledge, [shall not he know]?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:10",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA094.htm",
+      "source_version": "eng-asv",
       "text": "He that chastiseth the nations, shall not he correct, [Even] he that teacheth man knowledge?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:10",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA094.htm",
+      "source_version": "engwebp",
       "text": "He who disciplines the nations, won’t he punish? He who teaches man knows.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 94:10",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ παιδεύων ἔθνη οὐξὶ ἐλέγχει ὁ διδάσκων ἄνθρωπον γνῶσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

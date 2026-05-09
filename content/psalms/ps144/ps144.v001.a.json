@@ -117,6 +117,8 @@
         "of",
         "David"
       ],
+      "greek": "τῷ δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -247,6 +249,8 @@
       "gloss_parts": [
         "[be].blessed"
       ],
+      "greek": "εὐλογητὸς",
+      "greek_strong": "2128",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -374,6 +378,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -517,6 +523,8 @@
         "rock",
         "my"
       ],
+      "greek": "θεός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -592,8 +600,8 @@
           "trains"
         ],
         "gloss_fragments": [
-          "the one",
-          "who trains"
+          "the [one",
+          "who] trains"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -617,7 +625,7 @@
         "Psalm 119:71",
         "Psalm 119:73"
       ],
-      "display_gloss": "who trains the one",
+      "display_gloss": "who] trains the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -647,6 +655,8 @@
         "the.[one",
         "who].trains"
       ],
+      "greek": "ὁ διδάσκων",
+      "greek_strong": "1321",
       "lemma": "לָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -768,6 +778,8 @@
         "hands",
         "my"
       ],
+      "greek": "ξεῖράς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -898,6 +910,8 @@
         "(the)",
         "battle"
       ],
+      "greek": "εἰς παράταχιν",
+      "greek_strong": "1519",
       "lemma": "קְרָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1017,6 +1031,8 @@
         "fingers",
         "my"
       ],
+      "greek": "δακτύλους μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1121,7 +1137,7 @@
         "Psalm 120:7",
         "Psalm 140:3"
       ],
-      "display_gloss": "for warfare the",
+      "display_gloss": "for the battle",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1153,6 +1169,8 @@
         "(the)",
         "warfare"
       ],
+      "greek": "εἰς πόλεμον",
+      "greek_strong": "4171",
       "lemma": "מִלְחָמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1196,24 +1214,40 @@
       "ref": "Psalm 144:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA144.htm",
+      "source_version": "eng-kjv2006",
       "text": "[A Psalm] of David. Blessed [be] the LORD my strength, which teacheth my hands to war, [and] my fingers to fight:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA144.htm",
+      "source_version": "eng-asv",
       "text": "[A Psalm] of David. Blessed be Jehovah my rock, Who teacheth my hands to war, [And] my fingers to fight:",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA144.htm",
+      "source_version": "engwebp",
       "text": "By David. Blessed be the LORD, my rock, who trains my hands to war, and my fingers to battle—",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 144:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τῷ δαυιδ εὐλογητὸς κύριος θεός μου ὁ διδάσκων ξεῖράς μου εἰς παράταχιν δακτύλους μου εἰς πόλεμον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -86,6 +86,8 @@
       "gloss_parts": [
         "[he.is].counting"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -171,6 +173,8 @@
       "gloss_parts": [
         "[the].number"
       ],
+      "greek": "πλήθη",
+      "greek_strong": "4128",
       "lemma": "מִסְפָּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -239,7 +243,7 @@
         "Psalm 136:9",
         "Psalm 148:3"
       ],
-      "display_gloss": "of stars the",
+      "display_gloss": "of the stars",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -271,6 +275,8 @@
         "the",
         "stars"
       ],
+      "greek": "ἄστρων",
+      "greek_strong": "798",
       "lemma": "כּוֹכָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -394,6 +400,8 @@
         "all",
         "of.them"
       ],
+      "greek": "καὶ πᾶσιν αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -536,6 +544,8 @@
       "gloss_parts": [
         "names"
       ],
+      "greek": "ὀνόματα",
+      "greek_strong": "3686",
       "lemma": "שֵׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -663,6 +673,8 @@
       "gloss_parts": [
         "he.calls"
       ],
+      "greek": "καλῶν",
+      "greek_strong": "2564",
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -721,24 +733,40 @@
       "ref": "Psalm 147:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA147.htm",
+      "source_version": "eng-kjv2006",
       "text": "He telleth the number of the stars; he calleth them all by [their] names.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA147.htm",
+      "source_version": "eng-asv",
       "text": "He counteth the number of the stars; He calleth them all by [their] names.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA147.htm",
+      "source_version": "engwebp",
       "text": "He counts the number of the stars. He calls them all by their names.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 147:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πλήθη ἄστρων καὶ πᾶσιν αὐτοῖς ὀνόματα καλῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

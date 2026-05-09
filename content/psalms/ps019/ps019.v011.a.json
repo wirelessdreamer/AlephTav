@@ -61,7 +61,7 @@
       "corpus_occurrence_refs": [
         "Psalm 68:17"
       ],
-      "display_gloss": "desirable they",
+      "display_gloss": "they desirable",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -91,6 +91,8 @@
         "(the)",
         "desirable"
       ],
+      "greek": "ἐπιθυμητὰ",
+      "greek_strong": null,
       "lemma": "חָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -152,7 +154,7 @@
         "Psalm 119:127",
         "Psalm 135:15"
       ],
-      "display_gloss": "more than gold",
+      "display_gloss": "more ~ than gold",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -183,6 +185,8 @@
         "more",
         "than.gold"
       ],
+      "greek": "ὑπὲρ ξρυσίον",
+      "greek_strong": "5553",
       "lemma": "זָהָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -283,6 +287,8 @@
         "more",
         "than.pure.gold"
       ],
+      "greek": "καὶ λίθον τίμιον",
+      "greek_strong": "5093",
       "lemma": "פַּז",
       "missing_enrichments": [
         "oshb:stem",
@@ -390,6 +396,8 @@
       "gloss_parts": [
         "much"
       ],
+      "greek": "πολὺν",
+      "greek_strong": "4183",
       "lemma": "רַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -502,6 +510,8 @@
         "and",
         "sweet"
       ],
+      "greek": "καὶ γλυκύτερα",
+      "greek_strong": "2532",
       "lemma": "מָתוֹק",
       "missing_enrichments": [
         "oshb:stem",
@@ -588,6 +598,8 @@
         "more",
         "than.honey"
       ],
+      "greek": "ὑπὲρ μέλι",
+      "greek_strong": "3192",
       "lemma": "דְּבַשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -675,6 +687,8 @@
         "and.[the]",
         "honey"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "נֹפֶת",
       "missing_enrichments": [
         "oshb:stem",
@@ -754,6 +768,8 @@
       "gloss_parts": [
         "of.honeycombs"
       ],
+      "greek": "κηρίον",
+      "greek_strong": null,
       "lemma": "צוּף",
       "missing_enrichments": [
         "oshb:stem",
@@ -787,24 +803,40 @@
       "ref": "Psalm 19:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA019.htm",
+      "source_version": "eng-kjv2006",
       "text": "Moreover by them is thy servant warned: [and] in keeping of them [there is] great reward.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA019.htm",
+      "source_version": "eng-asv",
       "text": "Moreover by them is thy servant warned: In keeping them there is great reward.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA019.htm",
+      "source_version": "engwebp",
       "text": "Moreover your servant is warned by them. In keeping them there is great reward.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 19:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐπιθυμητὰ ὑπὲρ ξρυσίον καὶ λίθον τίμιον πολὺν καὶ γλυκύτερα ὑπὲρ μέλι καὶ κηρίον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

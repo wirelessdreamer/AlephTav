@@ -114,6 +114,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -187,7 +189,7 @@
           "settles"
         ],
         "gloss_fragments": [
-          "causing to dwell"
+          "is causing to dwell"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -225,7 +227,7 @@
         "Psalm 69:36",
         "Psalm 80:2"
       ],
-      "display_gloss": "causing to dwell",
+      "display_gloss": "is causing to dwell",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -254,6 +256,8 @@
       "gloss_parts": [
         "[is].causing.to.dwell"
       ],
+      "greek": "κατοικίζει",
+      "greek_strong": null,
       "lemma": "יָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -360,6 +364,8 @@
       "gloss_parts": [
         "solitary.[people]"
       ],
+      "greek": "μονοτρόπους",
+      "greek_strong": null,
       "lemma": "יָחִיד",
       "missing_enrichments": [
         "oshb:stem",
@@ -475,6 +481,8 @@
         "household",
         "(to).a"
       ],
+      "greek": "ἐν οἴκῳ",
+      "greek_strong": "3624",
       "lemma": "ה",
       "missing_enrichments": [
         "oshb:stem",
@@ -602,6 +610,8 @@
       "gloss_parts": [
         "[he.is].bringing.out"
       ],
+      "greek": "ἐχάγων",
+      "greek_strong": null,
       "lemma": "יָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -704,6 +714,8 @@
       "gloss_parts": [
         "prisoners"
       ],
+      "greek": "πεπεδημένους",
+      "greek_strong": null,
       "lemma": "אָסִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -762,7 +774,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "in prosperiti(es) the",
+      "display_gloss": "to the prosperity",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -794,6 +806,8 @@
         "(the)",
         "prosperiti(es)"
       ],
+      "greek": "ἐν ἀνδρείᾳ",
+      "greek_strong": "1722",
       "lemma": "כּוֹשָׁרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -894,6 +908,8 @@
       "gloss_parts": [
         "only"
       ],
+      "greek": "ὁμοίως",
+      "greek_strong": "3668",
       "lemma": "אַךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -998,6 +1014,8 @@
       "gloss_parts": [
         "[those.who.are].rebellious"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "סָרַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1101,6 +1119,8 @@
       "gloss_parts": [
         "they.dwell"
       ],
+      "greek": "κατοικοῦντας",
+      "greek_strong": "2730",
       "lemma": "שָׁכַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1202,6 +1222,8 @@
       "gloss_parts": [
         "a.parched.land"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "צְחִיחָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1234,24 +1256,40 @@
       "ref": "Psalm 68:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "O God, when thou wentest forth before thy people, when thou didst march through the wilderness; Selah:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "O God, when thou wentest forth before thy people, When thou didst march through the wilderness; [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "God, when you went out before your people, when you marched through the wilderness... Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "θεὸς κατοικίζει μονοτρόπους ἐν οἴκῳ ἐχάγων πεπεδημένους ἐν ἀνδρείᾳ ὁμοίως κατοικοῦντας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

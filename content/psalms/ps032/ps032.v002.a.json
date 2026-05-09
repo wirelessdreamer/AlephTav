@@ -111,6 +111,8 @@
       "gloss_parts": [
         "how.blessed!"
       ],
+      "greek": "μακάριος",
+      "greek_strong": "3107",
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -171,7 +173,7 @@
           "man"
         ],
         "gloss_fragments": [
-          "a person"
+          "is a person"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -209,7 +211,7 @@
         "Psalm 58:12",
         "Psalm 60:13"
       ],
-      "display_gloss": "a person",
+      "display_gloss": "is a person",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "[is].a.person"
       ],
+      "greek": "ἀνήρ",
+      "greek_strong": "435",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -368,6 +372,8 @@
       "gloss_parts": [
         "[whom].not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -488,6 +494,8 @@
       "gloss_parts": [
         "he.reckons"
       ],
+      "greek": "λογίσηται",
+      "greek_strong": "3049",
       "lemma": "חָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -605,6 +613,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -716,7 +726,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -747,6 +757,8 @@
         "to",
         "him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -873,6 +885,8 @@
       "gloss_parts": [
         "iniquity"
       ],
+      "greek": "ἁμαρτίαν",
+      "greek_strong": "266",
       "lemma": "עָוֺן",
       "missing_enrichments": [
         "oshb:stem",
@@ -924,7 +938,7 @@
         ],
         "gloss_fragments": [
           "and",
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -964,7 +978,7 @@
         "Psalm 50:22",
         "Psalm 53:2"
       ],
-      "display_gloss": "and there not",
+      "display_gloss": "and there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -995,6 +1009,8 @@
         "and",
         "there.[is].not"
       ],
+      "greek": "οὐδὲ ἔστιν",
+      "greek_strong": "2076",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1140,6 +1156,8 @@
         "spirit",
         "his"
       ],
+      "greek": "ἐν αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1259,6 +1277,8 @@
       "gloss_parts": [
         "deceit"
       ],
+      "greek": "δόλος",
+      "greek_strong": "1388",
       "lemma": "רְמִיָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1297,24 +1317,40 @@
       "ref": "Psalm 32:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA032.htm",
+      "source_version": "eng-kjv2006",
       "text": "Blessed [is] the man unto whom the LORD imputeth not iniquity, and in whose spirit [there is] no guile.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA032.htm",
+      "source_version": "eng-asv",
       "text": "Blessed is the man unto whom Jehovah imputeth not iniquity, And in whose spirit there is no guile.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA032.htm",
+      "source_version": "engwebp",
       "text": "Blessed is the man to whom the LORD doesn’t impute iniquity, in whose spirit there is no deceit.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 32:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μακάριος ἀνήρ οὐ λογίσηται κύριος ἁμαρτίαν οὐδὲ ἔστιν ἐν αὐτοῦ δόλος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

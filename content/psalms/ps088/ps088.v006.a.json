@@ -111,6 +111,8 @@
         "the.dead",
         "[people]"
       ],
+      "greek": "ἐν νεκροῖς",
+      "greek_strong": "3498",
       "lemma": "מוּת",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -202,6 +204,8 @@
       "gloss_parts": [
         "set.free"
       ],
+      "greek": "ἐλεύθερος",
+      "greek_strong": "1658",
       "lemma": "חׇפְשִׁי",
       "missing_enrichments": [
         "oshb:stem",
@@ -298,6 +302,8 @@
       "gloss_parts": [
         "like"
       ],
+      "greek": "ὡσεὶ",
+      "greek_strong": "5616",
       "lemma": "כְּמוֹ",
       "missing_enrichments": [
         "oshb:stem",
@@ -397,6 +403,8 @@
       "gloss_parts": [
         "[those].slain"
       ],
+      "greek": "τραυματίαι",
+      "greek_strong": null,
       "lemma": "חָלָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -482,6 +490,8 @@
       "gloss_parts": [
         "[who].lie"
       ],
+      "greek": "καθεύδοντες",
+      "greek_strong": "2518",
       "lemma": "שָׁכַב",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -567,6 +577,8 @@
       "gloss_parts": [
         "of.[the].grave"
       ],
+      "greek": "τάφῳ",
+      "greek_strong": null,
       "lemma": "קֶבֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -675,6 +687,8 @@
       "gloss_parts": [
         "whom"
       ],
+      "greek": "ὧν",
+      "greek_strong": "3739",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -804,6 +818,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -913,7 +929,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "remember them you",
+      "display_gloss": "you remember them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -943,6 +959,8 @@
         "you",
         "remember.them"
       ],
+      "greek": "ἐμνήσθης",
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1076,6 +1094,8 @@
       "gloss_parts": [
         "again"
       ],
+      "greek": "ἔτι",
+      "greek_strong": "2089",
       "lemma": "עוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1202,6 +1222,8 @@
         "and",
         "they"
       ],
+      "greek": "καὶ αὐτοὶ",
+      "greek_strong": "846",
       "lemma": "הֵמָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1345,6 +1367,8 @@
         "hand",
         "your"
       ],
+      "greek": "ξειρός σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1463,6 +1487,8 @@
       "gloss_parts": [
         "they.are.cut.off"
       ],
+      "greek": "ἀπώσθησαν",
+      "greek_strong": "683",
       "lemma": "גָּזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1496,24 +1522,40 @@
       "ref": "Psalm 88:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA088.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast laid me in the lowest pit, in darkness, in the deeps.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 88:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA088.htm",
+      "source_version": "eng-asv",
       "text": "Thou hast laid me in the lowest pit, In dark places, in the deeps.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 88:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA088.htm",
+      "source_version": "engwebp",
       "text": "You have laid me in the lowest pit, in the darkest depths.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 88:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν νεκροῖς ἐλεύθερος ὡσεὶ τραυματίαι καθεύδοντες τάφῳ ὧν οὐκ ἐμνήσθης ἔτι καὶ αὐτοὶ ξειρός σου ἀπώσθησαν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

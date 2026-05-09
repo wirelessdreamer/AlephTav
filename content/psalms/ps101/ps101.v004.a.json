@@ -95,6 +95,8 @@
       "gloss_parts": [
         "a.heart"
       ],
+      "greek": "καρδία",
+      "greek_strong": "2588",
       "lemma": "לֵבָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -188,6 +190,8 @@
       "gloss_parts": [
         "perverse"
       ],
+      "greek": "σκαμβή",
+      "greek_strong": null,
       "lemma": "עִקֵּשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -281,6 +285,8 @@
       "gloss_parts": [
         "it.will.depart"
       ],
+      "greek": "ἐκκλίνοντος",
+      "greek_strong": null,
       "lemma": "סוּר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -375,7 +381,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -406,6 +412,8 @@
         "from",
         "me"
       ],
+      "greek": "ἀπ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -542,6 +550,8 @@
       "gloss_parts": [
         "evil"
       ],
+      "greek": "πονηροῦ",
+      "greek_strong": "4190",
       "lemma": "רַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -670,6 +680,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -801,6 +813,8 @@
       "gloss_parts": [
         "I.will.know"
       ],
+      "greek": "ἐγίνωσκον",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -857,24 +871,40 @@
       "ref": "Psalm 101:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA101.htm",
+      "source_version": "eng-kjv2006",
       "text": "A froward heart shall depart from me: I will not know a wicked [person].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA101.htm",
+      "source_version": "eng-asv",
       "text": "A perverse heart shall depart from me: I will know no evil thing.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA101.htm",
+      "source_version": "engwebp",
       "text": "A perverse heart will be far from me. I will have nothing to do with evil.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 101:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καρδία σκαμβή ἐκκλίνοντος ἀπ’ ἐμοῦ πονηροῦ οὐκ ἐγίνωσκον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

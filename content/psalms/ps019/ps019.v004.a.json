@@ -42,7 +42,7 @@
           "there is no"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -80,7 +80,7 @@
         "Psalm 50:22",
         "Psalm 53:2"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -110,6 +110,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -218,6 +220,8 @@
       "gloss_parts": [
         "speech"
       ],
+      "greek": "λαλιαὶ",
+      "greek_strong": "2981",
       "lemma": "אֹמֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -331,6 +335,8 @@
         "and",
         "there.[are].not"
       ],
+      "greek": "οὐδὲ",
+      "greek_strong": "3761",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -461,6 +467,8 @@
       "gloss_parts": [
         "words"
       ],
+      "greek": "λόγοι",
+      "greek_strong": "3056",
       "lemma": "דָּבָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -568,6 +576,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐξὶ",
+      "greek_strong": "3780",
       "lemma": "בְּלִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -607,7 +617,7 @@
           "heard"
         ],
         "gloss_fragments": [
-          "heard"
+          "is heard"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -645,7 +655,7 @@
         "Psalm 38:15",
         "Psalm 40:2"
       ],
-      "display_gloss": "heard",
+      "display_gloss": "is heard",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -674,6 +684,8 @@
       "gloss_parts": [
         "[is].heard"
       ],
+      "greek": "ἀκούονται",
+      "greek_strong": "191",
       "lemma": "שָׁמַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -811,6 +823,8 @@
         "voice",
         "their"
       ],
+      "greek": "φωναὶ",
+      "greek_strong": "5456",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -878,24 +892,40 @@
       "ref": "Psalm 19:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA019.htm",
+      "source_version": "eng-kjv2006",
       "text": "Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA019.htm",
+      "source_version": "eng-asv",
       "text": "Their line is gone out through all the earth, And their words to the end of the world. In them hath he set a tabernacle for the sun,",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 19:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA019.htm",
+      "source_version": "engwebp",
       "text": "Their voice has gone out through all the earth, their words to the end of the world. In them he has set a tent for the sun,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 19:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐκ λαλιαὶ οὐδὲ λόγοι οὐξὶ ἀκούονται φωναὶ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

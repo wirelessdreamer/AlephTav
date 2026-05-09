@@ -110,6 +110,8 @@
       "gloss_parts": [
         "many"
       ],
+      "greek": "πολλαὶ",
+      "greek_strong": "4183",
       "lemma": "רַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -218,6 +220,8 @@
       "gloss_parts": [
         "pains"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מַכְאוֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -302,7 +306,7 @@
         "Psalm 31:18",
         "Psalm 34:22"
       ],
-      "display_gloss": "belong to (the) person wicked",
+      "display_gloss": "of the wicked",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -334,6 +338,8 @@
         "wicked",
         "[person]"
       ],
+      "greek": "τοῦ ἁμαρτωλοῦ",
+      "greek_strong": "268",
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -398,8 +404,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "the one",
-          "who trusts"
+          "the [one",
+          "who] trusts"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -441,7 +447,7 @@
         "Psalm 56:4",
         "Psalm 56:5"
       ],
-      "display_gloss": "and who trusts the one",
+      "display_gloss": "and who] trusts the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -472,6 +478,8 @@
         "the.[one",
         "who].trusts"
       ],
+      "greek": "δὲ τὸν",
+      "greek_strong": "3588",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -604,6 +612,8 @@
         "in",
         "Yahweh"
       ],
+      "greek": "ἐπὶ κύριον",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -737,6 +747,8 @@
       "gloss_parts": [
         "covenant.loyalty"
       ],
+      "greek": "ἔλεος",
+      "greek_strong": "1656",
       "lemma": "חֶסֶד",
       "missing_enrichments": [
         "oshb:stem",
@@ -844,7 +856,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will surround him it",
+      "display_gloss": "it will surround him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -874,6 +886,8 @@
         "it",
         "will.surround.him"
       ],
+      "greek": "κυκλώσει",
+      "greek_strong": "2944",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -939,24 +953,40 @@
       "ref": "Psalm 32:10",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA032.htm",
+      "source_version": "eng-kjv2006",
       "text": "Many sorrows [shall be] to the wicked: but he that trusteth in the LORD, mercy shall compass him about.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:10",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA032.htm",
+      "source_version": "eng-asv",
       "text": "Many sorrows shall be to the wicked; But he that trusteth in Jehovah, lovingkindness shall compass him about.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 32:10",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA032.htm",
+      "source_version": "engwebp",
       "text": "Many sorrows come to the wicked, but loving kindness shall surround him who trusts in the LORD.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 32:10",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πολλαὶ τοῦ ἁμαρτωλοῦ δὲ τὸν ἐπὶ κύριον ἔλεος κυκλώσει",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

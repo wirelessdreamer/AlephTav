@@ -42,7 +42,7 @@
           "lives"
         ],
         "gloss_fragments": [
-          "living"
+          "is living"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -69,7 +69,7 @@
         "Psalm 143:2",
         "Psalm 145:16"
       ],
-      "display_gloss": "living",
+      "display_gloss": "is living",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -99,6 +99,8 @@
       "gloss_parts": [
         "[is].living"
       ],
+      "greek": "ζῇ",
+      "greek_strong": "2198",
       "lemma": "חַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -216,6 +218,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -361,6 +365,8 @@
         "and.[be]",
         "blessed"
       ],
+      "greek": "καὶ εὐλογητὸς",
+      "greek_strong": "2128",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -498,6 +504,8 @@
         "rock",
         "my"
       ],
+      "greek": "θεός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -644,6 +652,8 @@
         "and",
         "may.he.be.exalted"
       ],
+      "greek": "καὶ ὑψωθήτω",
+      "greek_strong": "2532",
       "lemma": "רוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -773,6 +783,8 @@
       "gloss_parts": [
         "the.God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -881,7 +893,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my salvation",
+      "display_gloss": "my salvation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -912,6 +924,8 @@
         "my.salvation",
         "my"
       ],
+      "greek": "σωτηρίας μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -983,24 +997,40 @@
       "ref": "Psalm 18:47",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "[It is] God that avengeth me, and subdueth the people under me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:47",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "Even the God that executeth vengeance for me, And subdueth peoples under me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:47",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "even the God who executes vengeance for me, and subdues peoples under me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:47",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ζῇ κύριος καὶ εὐλογητὸς θεός μου καὶ ὑψωθήτω θεὸς σωτηρίας μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

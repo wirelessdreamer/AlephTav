@@ -58,7 +58,7 @@
         "Psalm 62:4",
         "Psalm 140:5"
       ],
-      "display_gloss": "violently (push)",
+      "display_gloss": "to push back",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -87,6 +87,8 @@
       "gloss_parts": [
         "violently.(push)"
       ],
+      "greek": "ὠσθεὶς",
+      "greek_strong": null,
       "lemma": "דָּחָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -173,7 +175,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "pushed me you",
+      "display_gloss": "you pushed me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -203,6 +205,8 @@
         "you",
         "pushed.me"
       ],
+      "greek": "ἀνετράπην",
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -347,6 +351,8 @@
         "to",
         "fall"
       ],
+      "greek": "τοῦ πεσεῖν",
+      "greek_strong": "4098",
       "lemma": "נָפַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -479,6 +485,8 @@
         "and",
         "Yahweh"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -599,7 +607,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "helped me he",
+      "display_gloss": "he helped me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -629,6 +637,8 @@
         "he",
         "helped.me"
       ],
+      "greek": "ἀντελάβετό μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -698,24 +708,40 @@
       "ref": "Psalm 118:13",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA118.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast thrust sore at me that I might fall: but the LORD helped me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 118:13",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA118.htm",
+      "source_version": "eng-asv",
       "text": "Thou didst thrust sore at me that I might fall; But Jehovah helped me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 118:13",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA118.htm",
+      "source_version": "engwebp",
       "text": "You pushed me back hard, to make me fall, but the LORD helped me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 118:13",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὠσθεὶς ἀνετράπην τοῦ πεσεῖν καὶ ἀντελάβετό μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

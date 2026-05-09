@@ -121,6 +121,8 @@
         "wandering",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -233,7 +235,7 @@
         "Psalm 78:4",
         "Psalm 78:6"
       ],
-      "display_gloss": "you have taken account of",
+      "display_gloss": "kept count",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -262,6 +264,8 @@
       "gloss_parts": [
         "you.have.taken.account.of"
       ],
+      "greek": "ἐχήγγειλά",
+      "greek_strong": null,
       "lemma": "סָפַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -389,6 +393,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σοι",
+      "greek_strong": "4671",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -523,6 +529,8 @@
       "gloss_parts": [
         "put"
       ],
+      "greek": "ἔθου",
+      "greek_strong": "5087",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -661,6 +669,8 @@
         "tear[s]",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -818,6 +828,8 @@
         "skin-bottle",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -965,6 +977,8 @@
         "?",
         "not"
       ],
+      "greek": "ὡς καὶ",
+      "greek_strong": "2532",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1031,8 +1045,8 @@
           "your"
         ],
         "gloss_fragments": [
-          "is",
-          "it",
+          "[is",
+          "it]",
           "in your scroll"
         ],
         "preposition_role": "in",
@@ -1080,7 +1094,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "is in your scroll it",
+      "display_gloss": "[is in your scroll it]",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1112,6 +1126,8 @@
         "it]",
         "in.your.scroll"
       ],
+      "greek": "ἐν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1183,24 +1199,40 @@
       "ref": "Psalm 56:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA056.htm",
+      "source_version": "eng-kjv2006",
       "text": "When I cry [unto thee], then shall mine enemies turn back: this I know; for God [is] for me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA056.htm",
+      "source_version": "eng-asv",
       "text": "Then shall mine enemies turn back in the day that I call: This I know, that God is for me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA056.htm",
+      "source_version": "engwebp",
       "text": "Then my enemies shall turn back in the day that I call. I know this: that God is for me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 56:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου ἐχήγγειλά σοι ἔθου μου σου ὡς καὶ ἐν σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

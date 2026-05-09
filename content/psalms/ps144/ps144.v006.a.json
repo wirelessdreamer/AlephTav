@@ -56,7 +56,7 @@
       "corpus_occurrence_refs": [
         "Psalm 18:15"
       ],
-      "display_gloss": "flash",
+      "display_gloss": "flash forth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -85,6 +85,8 @@
       "gloss_parts": [
         "flash"
       ],
+      "greek": "ἄστραψον",
+      "greek_strong": null,
       "lemma": "בָּרַק",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -167,6 +169,8 @@
       "gloss_parts": [
         "lightning"
       ],
+      "greek": "ἀστραπὴν",
+      "greek_strong": "796",
       "lemma": "בָּרָק",
       "missing_enrichments": [
         "oshb:stem",
@@ -256,7 +260,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and will scatter them you",
+      "display_gloss": "and you will scatter them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -287,6 +291,8 @@
         "you",
         "will.scatter.them"
       ],
+      "greek": "καὶ σκορπιεῖς αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -397,7 +403,7 @@
         "Psalm 111:9",
         "Psalm 125:3"
       ],
-      "display_gloss": "send",
+      "display_gloss": "send out",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -426,6 +432,8 @@
       "gloss_parts": [
         "send"
       ],
+      "greek": "ἐχαπόστειλον",
+      "greek_strong": "1821",
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -565,6 +573,8 @@
         "arrows",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -690,7 +700,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and will confuse them you",
+      "display_gloss": "and you will confuse them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -721,6 +731,8 @@
         "you",
         "will.confuse.them"
       ],
+      "greek": "καὶ συνταράχεις αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -790,24 +802,40 @@
       "ref": "Psalm 144:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA144.htm",
+      "source_version": "eng-kjv2006",
       "text": "Cast forth lightning, and scatter them: shoot out thine arrows, and destroy them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA144.htm",
+      "source_version": "eng-asv",
       "text": "Cast forth lightning, and scatter them; Send out thine arrows, and discomfit them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 144:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA144.htm",
+      "source_version": "engwebp",
       "text": "Throw out lightning, and scatter them. Send out your arrows, and rout them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 144:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἄστραψον ἀστραπὴν καὶ σκορπιεῖς αὐτούς ἐχαπόστειλον σου καὶ συνταράχεις αὐτούς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

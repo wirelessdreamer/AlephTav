@@ -93,6 +93,8 @@
       "gloss_parts": [
         "the.majesty"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הָדָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -208,6 +210,8 @@
       "gloss_parts": [
         "of.the.glory"
       ],
+      "greek": "δόχης",
+      "greek_strong": "1391",
       "lemma": "כָּבוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -319,7 +323,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your splendor",
+      "display_gloss": "your splendor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -350,6 +354,8 @@
         "your.splendor",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -497,6 +503,8 @@
         "and",
         "the.matters"
       ],
+      "greek": "λαλήσουσιν",
+      "greek_strong": "2980",
       "lemma": "דָּבָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -605,7 +613,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your wonders of",
+      "display_gloss": "of your wonders",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -635,6 +643,8 @@
         "of",
         "your.wonders"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -735,7 +745,7 @@
         "Psalm 119:148",
         "Psalm 143:5"
       ],
-      "display_gloss": "I will meditate on",
+      "display_gloss": "meditate",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -764,6 +774,8 @@
       "gloss_parts": [
         "I.will.meditate.on"
       ],
+      "greek": "διηγήσονται",
+      "greek_strong": null,
       "lemma": "שִׂיחַ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -809,24 +821,40 @@
       "ref": "Psalm 145:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA145.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will speak of the glorious honour of thy majesty, and of thy wondrous works.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA145.htm",
+      "source_version": "eng-asv",
       "text": "Of the glorious majesty of thine honor, And of thy wondrous works, will I meditate.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA145.htm",
+      "source_version": "engwebp",
       "text": "I will meditate on the glorious majesty of your honor, on your wondrous works.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 145:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "δόχης σου λαλήσουσιν σου διηγήσονται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

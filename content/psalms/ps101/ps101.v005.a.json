@@ -66,6 +66,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -146,6 +148,8 @@
       "gloss_parts": [
         "[one.who].slanders"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "לָשַׁן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -208,7 +212,7 @@
         "Psalm 91:1",
         "Psalm 139:15"
       ],
-      "display_gloss": "in secrecy the",
+      "display_gloss": "in the secret",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -240,6 +244,8 @@
         "(the)",
         "secrecy"
       ],
+      "greek": "λάθρᾳ",
+      "greek_strong": "2977",
       "lemma": "סֵתֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -362,6 +368,8 @@
         "neighbor",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -504,6 +512,8 @@
       "gloss_parts": [
         "him"
       ],
+      "greek": "τοῦτον",
+      "greek_strong": "5126",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -616,6 +626,8 @@
       "gloss_parts": [
         "I.will.destroy"
       ],
+      "greek": "ἐχεδίωκον",
+      "greek_strong": null,
       "lemma": "צָמַת",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -701,6 +713,8 @@
       "gloss_parts": [
         "[a.person].haughty"
       ],
+      "greek": "ὑπερηφάνῳ",
+      "greek_strong": null,
       "lemma": "גָּבֹהַּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -797,6 +811,8 @@
       "gloss_parts": [
         "of.eyes"
       ],
+      "greek": "ὀφθαλμῷ",
+      "greek_strong": "3788",
       "lemma": "עַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -899,6 +915,8 @@
         "and",
         "[a.person].wide"
       ],
+      "greek": "καὶ ἀπλήστῳ",
+      "greek_strong": "2532",
       "lemma": "רָחָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -992,6 +1010,8 @@
       "gloss_parts": [
         "of.heart"
       ],
+      "greek": "καρδίᾳ",
+      "greek_strong": "2588",
       "lemma": "לֵבָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1115,6 +1135,8 @@
       "gloss_parts": [
         "him"
       ],
+      "greek": "τούτῳ",
+      "greek_strong": "5129",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1250,6 +1272,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1310,24 +1334,40 @@
       "ref": "Psalm 101:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA101.htm",
+      "source_version": "eng-kjv2006",
       "text": "Whoso privily slandereth his neighbour, him will I cut off: him that hath an high look and a proud heart will not I suffer.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA101.htm",
+      "source_version": "eng-asv",
       "text": "Whoso privily slandereth his neighbor, him will I destroy: Him that hath a high look and a proud heart will I not suffer.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 101:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA101.htm",
+      "source_version": "engwebp",
       "text": "I will silence whoever secretly slanders his neighbor. I won’t tolerate one who is arrogant and conceited.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 101:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "λάθρᾳ αὐτοῦ τοῦτον ἐχεδίωκον ὑπερηφάνῳ ὀφθαλμῷ καὶ ἀπλήστῳ καρδίᾳ τούτῳ οὐ συνήσθιον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

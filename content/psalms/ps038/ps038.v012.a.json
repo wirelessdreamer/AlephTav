@@ -120,6 +120,8 @@
         "friends",
         "my"
       ],
+      "greek": "φίλοι μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -276,6 +278,8 @@
         "companions",
         "my"
       ],
+      "greek": "καὶ μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -383,7 +387,7 @@
         "Psalm 119:46",
         "Psalm 138:1"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from before",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -414,6 +418,8 @@
         "from",
         "before"
       ],
+      "greek": "ἐναντίας",
+      "greek_strong": "1727",
       "lemma": "נֶגֶד",
       "missing_enrichments": [
         "oshb:stem",
@@ -544,6 +550,8 @@
         "plague",
         "my"
       ],
+      "greek": "ἤγγισαν",
+      "greek_strong": "1448",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -685,6 +693,8 @@
       "gloss_parts": [
         "they.stand"
       ],
+      "greek": "ἔστησαν",
+      "greek_strong": "2476",
       "lemma": "עָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -795,7 +805,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and kinsmen my",
+      "display_gloss": "and my kinsmen",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -827,6 +837,8 @@
         "my",
         "kinsmen"
       ],
+      "greek": "καὶ μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -956,6 +968,8 @@
         "from",
         "a.distance"
       ],
+      "greek": "ἀπὸ μακρόθεν",
+      "greek_strong": "3113",
       "lemma": "רָחֹוק",
       "missing_enrichments": [
         "oshb:stem",
@@ -1066,6 +1080,8 @@
       "gloss_parts": [
         "they.have.stood"
       ],
+      "greek": "ἔστησαν",
+      "greek_strong": "2476",
       "lemma": "עָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1122,24 +1138,40 @@
       "ref": "Psalm 38:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA038.htm",
+      "source_version": "eng-kjv2006",
       "text": "They also that seek after my life lay snares [for me:] and they that seek my hurt speak mischievous things, and imagine deceits all the day long.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA038.htm",
+      "source_version": "eng-asv",
       "text": "They also that seek after my life lay snares [for me]; And they that seek my hurt speak mischievous things, And meditate deceits all the day long.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA038.htm",
+      "source_version": "engwebp",
       "text": "They also who seek after my life lay snares. Those who seek my hurt speak mischievous things, and meditate deceits all day long.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 38:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φίλοι μου καὶ μου ἐναντίας ἤγγισαν ἔστησαν καὶ μου ἀπὸ μακρόθεν ἔστησαν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "rescued me he",
+      "display_gloss": "he rescued me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "he",
         "rescued.me"
       ],
+      "greek": "ῥύσεταί με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -273,6 +275,8 @@
         "enemy",
         "my"
       ],
+      "greek": "ἐχ ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -391,6 +395,8 @@
       "gloss_parts": [
         "mighty"
       ],
+      "greek": "δυνατῶν",
+      "greek_strong": "1415",
       "lemma": "עַז",
       "missing_enrichments": [
         "oshb:stem",
@@ -434,8 +440,8 @@
         "gloss_fragments": [
           "and",
           "from",
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -484,7 +490,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and from who hate me those",
+      "display_gloss": "and from who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -516,6 +522,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "καὶ μισούντων με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -655,6 +663,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -773,6 +783,8 @@
       "gloss_parts": [
         "they.were.[too].strong"
       ],
+      "greek": "ἐστερεώθησαν",
+      "greek_strong": "4732",
       "lemma": "אָמֵץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -860,7 +872,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "too ~ for me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -891,6 +903,8 @@
         "for",
         "me"
       ],
+      "greek": "ὑπὲρ ἐμέ",
+      "greek_strong": "1691",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -962,24 +976,40 @@
       "ref": "Psalm 18:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "They prevented me in the day of my calamity: but the LORD was my stay.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "They came upon me in the day of my calamity; But Jehovah was my stay.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "They came on me in the day of my calamity, but the LORD was my support.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ῥύσεταί με ἐχ ἐξθρῶν μου δυνατῶν καὶ μισούντων με ὅτι ἐστερεώθησαν ὑπὲρ ἐμέ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

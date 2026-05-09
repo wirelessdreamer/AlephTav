@@ -109,6 +109,8 @@
       "gloss_parts": [
         "may.they.turn.back"
       ],
+      "greek": "ἀποστραφείησαν",
+      "greek_strong": "654",
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -206,7 +208,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "at",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -236,6 +238,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -345,6 +349,8 @@
       "gloss_parts": [
         "the.consequence"
       ],
+      "greek": "παραυτίκα",
+      "greek_strong": "3910",
       "lemma": "עֵקֶב",
       "missing_enrichments": [
         "oshb:stem",
@@ -433,7 +439,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "their their shame",
+      "display_gloss": "their shame",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -464,6 +470,8 @@
         "their.shame",
         "their"
       ],
+      "greek": "αἰσξυνόμενοι",
+      "greek_strong": "153",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -531,8 +539,8 @@
           "say"
         ],
         "gloss_fragments": [
-          "those",
-          "who say"
+          "[those",
+          "who] say"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -572,7 +580,7 @@
         "Psalm 35:10",
         "Psalm 35:21"
       ],
-      "display_gloss": "who say those",
+      "display_gloss": "who] say [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -602,6 +610,8 @@
         "[those",
         "who].say"
       ],
+      "greek": "οἱ λέγοντές",
+      "greek_strong": "3004",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -710,6 +720,8 @@
       "gloss_parts": [
         "aha!"
       ],
+      "greek": "εὖγε",
+      "greek_strong": "2095",
       "lemma": "הֶאָח",
       "missing_enrichments": [
         "oshb:stem",
@@ -797,6 +809,8 @@
       "gloss_parts": [
         "aha!"
       ],
+      "greek": "εὖγε",
+      "greek_strong": "2095",
       "lemma": "הֶאָח",
       "missing_enrichments": [
         "oshb:stem",
@@ -834,24 +848,40 @@
       "ref": "Psalm 70:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA070.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say continually, Let God be magnified.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 70:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA070.htm",
+      "source_version": "eng-asv",
       "text": "Let all those that seek thee rejoice and be glad in thee; And let such as love thy salvation say continually, Let God be magnified.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 70:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA070.htm",
+      "source_version": "engwebp",
       "text": "Let all those who seek you rejoice and be glad in you. Let those who love your salvation continually say, “Let God be exalted!”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 70:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀποστραφείησαν παραυτίκα αἰσξυνόμενοι οἱ λέγοντές εὖγε εὖγε",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

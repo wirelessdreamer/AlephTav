@@ -88,7 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "flood them you",
+      "display_gloss": "you flood them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -118,6 +118,8 @@
         "you",
         "flood.them"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -235,6 +237,8 @@
       "gloss_parts": [
         "sleep"
       ],
+      "greek": "ἔτη",
+      "greek_strong": "2094",
       "lemma": "שֵׁנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -339,6 +343,8 @@
       "gloss_parts": [
         "they.are"
       ],
+      "greek": "ἔσονται",
+      "greek_strong": "2071",
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -436,7 +442,7 @@
         "Psalm 130:6",
         "Psalm 143:8"
       ],
-      "display_gloss": "in morning the",
+      "display_gloss": "in the morning",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -468,6 +474,8 @@
         "the",
         "morning"
       ],
+      "greek": "τὸ πρωὶ",
+      "greek_strong": "5459",
       "lemma": "בֹּקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -547,7 +555,7 @@
         "Psalm 129:6",
         "Psalm 147:8"
       ],
-      "display_gloss": "like grass the",
+      "display_gloss": "like the grass",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -579,6 +587,8 @@
         "(the)",
         "grass"
       ],
+      "greek": "ὡσεὶ ξλόη",
+      "greek_strong": "5616",
       "lemma": "חָצִיר",
       "missing_enrichments": [
         "oshb:stem",
@@ -665,6 +675,8 @@
       "gloss_parts": [
         "[which].it.sprouts.up"
       ],
+      "greek": "παρέλθοι",
+      "greek_strong": null,
       "lemma": "חָלַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -700,24 +712,40 @@
       "ref": "Psalm 90:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA090.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou carriest them away as with a flood; they are [as] a sleep: in the morning [they are] like grass [which] groweth up.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA090.htm",
+      "source_version": "eng-asv",
       "text": "Thou carriest them away as with a flood; they are as a sleep: In the morning they are like grass which groweth up.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA090.htm",
+      "source_version": "engwebp",
       "text": "You sweep them away as they sleep. In the morning they sprout like new grass.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 90:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἔτη ἔσονται τὸ πρωὶ ὡσεὶ ξλόη παρέλθοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

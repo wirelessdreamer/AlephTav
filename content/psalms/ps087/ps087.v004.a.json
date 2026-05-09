@@ -114,6 +114,8 @@
       "gloss_parts": [
         "I.will.bring.to.remembrance"
       ],
+      "greek": "μνησθήσομαι",
+      "greek_strong": "3415",
       "lemma": "זָכַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -218,6 +220,8 @@
       "gloss_parts": [
         "Rahab"
       ],
+      "greek": "ρααβ",
+      "greek_strong": null,
       "lemma": "רַהַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -307,6 +311,8 @@
         "and",
         "Babylon"
       ],
+      "greek": "καὶ βαβυλῶνος",
+      "greek_strong": "897",
       "lemma": "בָּבֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -349,8 +355,8 @@
         ],
         "gloss_fragments": [
           "to",
-          "those",
-          "who know me"
+          "[those",
+          "who] know me"
         ],
         "preposition_role": "among",
         "raw_classes": [
@@ -397,7 +403,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to who know me those",
+      "display_gloss": "to who] know me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -428,6 +434,8 @@
         "[those",
         "who].know.me"
       ],
+      "greek": "τοῖς γινώσκουσίν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -561,6 +569,8 @@
       "gloss_parts": [
         "there!"
       ],
+      "greek": "ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "הִנֵּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -669,6 +679,8 @@
       "gloss_parts": [
         "Philistia"
       ],
+      "greek": "ἀλλόφυλοι",
+      "greek_strong": "246",
       "lemma": "פְּלֶשֶׁת",
       "missing_enrichments": [
         "oshb:stem",
@@ -760,6 +772,8 @@
         "and",
         "Tyre"
       ],
+      "greek": "καὶ τύρος",
+      "greek_strong": "2532",
       "lemma": "צֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -867,6 +881,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": "λαὸς",
+      "greek_strong": "2992",
       "lemma": "עִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -974,6 +990,8 @@
       "gloss_parts": [
         "Cush"
       ],
+      "greek": "αἰθιόπων",
+      "greek_strong": "128",
       "lemma": "כּוּשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1075,6 +1093,8 @@
       "gloss_parts": [
         "this.one"
       ],
+      "greek": "οὗτοι",
+      "greek_strong": "3778",
       "lemma": "זֶה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1179,6 +1199,8 @@
       "gloss_parts": [
         "it.was.born"
       ],
+      "greek": "ἐγενήθησαν",
+      "greek_strong": "1096",
       "lemma": "יָלַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1284,6 +1306,8 @@
       "gloss_parts": [
         "there"
       ],
+      "greek": "ἐκεῖ",
+      "greek_strong": "1563",
       "lemma": "שָׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1337,24 +1361,40 @@
       "ref": "Psalm 87:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA087.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will make mention of Rahab and Babylon to them that know me: behold Philistia, and Tyre, with Ethiopia; this [man] was born there.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA087.htm",
+      "source_version": "eng-asv",
       "text": "I will make mention of Rahab and Babylon as among them that know me: Behold, Philistia, and Tyre, with Ethiopia: This one was born there.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 87:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA087.htm",
+      "source_version": "engwebp",
       "text": "I will record Rahab and Babylon among those who acknowledge me. Behold, Philistia, Tyre, and also Ethiopia: “This one was born there.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 87:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μνησθήσομαι ρααβ καὶ βαβυλῶνος τοῖς γινώσκουσίν με ἰδοὺ ἀλλόφυλοι καὶ τύρος λαὸς αἰθιόπων οὗτοι ἐγενήθησαν ἐκεῖ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

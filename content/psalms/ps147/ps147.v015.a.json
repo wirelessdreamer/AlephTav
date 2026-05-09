@@ -43,8 +43,8 @@
           "sends out"
         ],
         "gloss_fragments": [
-          "the one",
-          "who sends"
+          "the [one",
+          "who] sends"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -84,7 +84,7 @@
         "Psalm 111:9",
         "Psalm 125:3"
       ],
-      "display_gloss": "who sends the one",
+      "display_gloss": "who] sends the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -114,6 +114,8 @@
         "the.[one",
         "who].sends"
       ],
+      "greek": "ὁ ἀποστέλλων",
+      "greek_strong": "649",
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -253,6 +255,8 @@
         "word",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -395,6 +399,8 @@
       "gloss_parts": [
         "[the].earth"
       ],
+      "greek": "γῇ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -526,6 +532,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "ἕως",
+      "greek_strong": "2193",
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -635,6 +643,8 @@
       "gloss_parts": [
         "quickly"
       ],
+      "greek": "τάξους",
+      "greek_strong": null,
       "lemma": "מְהֵרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -721,6 +731,8 @@
       "gloss_parts": [
         "it.runs"
       ],
+      "greek": "δραμεῖται",
+      "greek_strong": null,
       "lemma": "רוּץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -838,6 +850,8 @@
         "word",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -909,24 +923,40 @@
       "ref": "Psalm 147:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA147.htm",
+      "source_version": "eng-kjv2006",
       "text": "He sendeth forth his commandment [upon] earth: his word runneth very swiftly.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA147.htm",
+      "source_version": "eng-asv",
       "text": "He sendeth out his commandment upon earth; His word runneth very swiftly.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA147.htm",
+      "source_version": "engwebp",
       "text": "He sends out his commandment to the earth. His word runs very swiftly.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 147:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ ἀποστέλλων αὐτοῦ γῇ ἕως τάξους δραμεῖται αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

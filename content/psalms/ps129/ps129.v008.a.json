@@ -118,6 +118,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -248,6 +250,8 @@
       "gloss_parts": [
         "they.say"
       ],
+      "greek": "εἶπαν",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -310,8 +314,8 @@
           "pass by"
         ],
         "gloss_fragments": [
-          "those",
-          "who pass by"
+          "[those",
+          "who] pass by"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -351,7 +355,7 @@
         "Psalm 119:37",
         "Psalm 119:39"
       ],
-      "display_gloss": "who pass by those",
+      "display_gloss": "who] pass by [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -381,6 +385,8 @@
         "[those",
         "who].pass.by"
       ],
+      "greek": "οἱ παράγοντες",
+      "greek_strong": "3588",
       "lemma": "עָבַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -492,6 +498,8 @@
       "gloss_parts": [
         "the.blessing"
       ],
+      "greek": "εὐλογία",
+      "greek_strong": "2129",
       "lemma": "בְּרָכָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -604,6 +612,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -714,7 +724,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "be to",
+      "display_gloss": "be to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -745,6 +755,8 @@
         "[be].to",
         "you"
       ],
+      "greek": "ἐφ’ ὑμᾶς",
+      "greek_strong": "5209",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -878,6 +890,8 @@
       "gloss_parts": [
         "we.bless"
       ],
+      "greek": "εὐλογήκαμεν",
+      "greek_strong": "2127",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1012,6 +1026,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "ὑμᾶς",
+      "greek_strong": "5209",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1151,6 +1167,8 @@
         "in",
         "the.name"
       ],
+      "greek": "ἐν ὀνόματι",
+      "greek_strong": "3686",
       "lemma": "שֵׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1280,6 +1298,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1340,24 +1360,40 @@
       "ref": "Psalm 129:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA129.htm",
+      "source_version": "eng-kjv2006",
       "text": "Neither do they which go by say, The blessing of the LORD [be] upon you: we bless you in the name of the LORD.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 129:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA129.htm",
+      "source_version": "eng-asv",
       "text": "Neither do they that go by say, The blessing of Jehovah be upon you; We bless you in the name of Jehovah.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 129:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA129.htm",
+      "source_version": "engwebp",
       "text": "Neither do those who go by say, “The blessing of the LORD be on you. We bless you in the LORD’s name.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 129:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ οὐκ εἶπαν οἱ παράγοντες εὐλογία κυρίου ἐφ’ ὑμᾶς εὐλογήκαμεν ὑμᾶς ἐν ὀνόματι κυρίου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

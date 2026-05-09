@@ -109,6 +109,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "I.said"
       ],
+      "greek": "εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -349,7 +353,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "when was making haste I",
+      "display_gloss": "when I was making haste",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -380,6 +384,8 @@
         "I",
         "was.making.haste"
       ],
+      "greek": "ἐν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -520,6 +526,8 @@
       "gloss_parts": [
         "every"
       ],
+      "greek": "πᾶς",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -626,7 +634,7 @@
         "Psalm 58:2",
         "Psalm 58:12"
       ],
-      "display_gloss": "person the",
+      "display_gloss": "the person",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -657,6 +665,8 @@
         "(the)",
         "person"
       ],
+      "greek": "ἄνθρωπος",
+      "greek_strong": "444",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -718,7 +728,7 @@
           "liar"
         ],
         "gloss_fragments": [
-          "a liar"
+          "is a liar"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -734,7 +744,7 @@
         "Psalm 78:36",
         "Psalm 89:36"
       ],
-      "display_gloss": "a liar",
+      "display_gloss": "is a liar",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -763,6 +773,8 @@
       "gloss_parts": [
         "[is].a.liar"
       ],
+      "greek": "ψεύστης",
+      "greek_strong": "5583",
       "lemma": "כָּזַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -797,24 +809,40 @@
       "ref": "Psalm 116:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA116.htm",
+      "source_version": "eng-kjv2006",
       "text": "I said in my haste, All men [are] liars.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 116:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA116.htm",
+      "source_version": "eng-asv",
       "text": "I said in my haste, All men are liars.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 116:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA116.htm",
+      "source_version": "engwebp",
       "text": "I said in my haste, “All people are liars.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 116:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐγὼ εἶπα ἐν μου πᾶς ἄνθρωπος ψεύστης",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

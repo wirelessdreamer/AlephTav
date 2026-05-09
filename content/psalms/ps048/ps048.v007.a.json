@@ -85,6 +85,8 @@
       "gloss_parts": [
         "trembling"
       ],
+      "greek": "τρόμος",
+      "greek_strong": "5156",
       "lemma": "רְעַדָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -169,7 +171,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "seized them it",
+      "display_gloss": "it seized them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -199,6 +201,8 @@
         "it",
         "seized.them"
       ],
+      "greek": "ἐπελάβετο αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -331,6 +335,8 @@
       "gloss_parts": [
         "there"
       ],
+      "greek": "ἐκεῖ",
+      "greek_strong": "1563",
       "lemma": "שָׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -431,6 +437,8 @@
       "gloss_parts": [
         "anguish"
       ],
+      "greek": "ὠδῖνες",
+      "greek_strong": null,
       "lemma": "חִיל",
       "missing_enrichments": [
         "oshb:stem",
@@ -472,8 +480,8 @@
         ],
         "gloss_fragments": [
           "like (the)",
-          "woman",
-          "who gives birth"
+          "[woman",
+          "who] gives birth"
         ],
         "preposition_role": "as",
         "raw_classes": [
@@ -498,7 +506,7 @@
         "Psalm 87:6",
         "Psalm 90:2"
       ],
-      "display_gloss": "like (the) who gives birth woman",
+      "display_gloss": "as the woman in labor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -529,6 +537,8 @@
         "[woman",
         "who].gives.birth"
       ],
+      "greek": "ὡς τικτούσης",
+      "greek_strong": "5613",
       "lemma": "יָלַד",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -569,24 +579,40 @@
       "ref": "Psalm 48:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA048.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou breakest the ships of Tarshish with an east wind.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 48:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA048.htm",
+      "source_version": "eng-asv",
       "text": "With the east wind Thou breakest the ships of Tarshish.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 48:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA048.htm",
+      "source_version": "engwebp",
       "text": "With the east wind, you break the ships of Tarshish.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 48:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τρόμος ἐπελάβετο αὐτῶν ἐκεῖ ὠδῖνες ὡς τικτούσης",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

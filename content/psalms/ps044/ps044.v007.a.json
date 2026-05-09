@@ -108,6 +108,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -244,6 +246,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -394,6 +398,8 @@
         "bow",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -535,6 +541,8 @@
       "gloss_parts": [
         "I.trust"
       ],
+      "greek": "ἐλπιῶ",
+      "greek_strong": null,
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -677,6 +685,8 @@
         "sword",
         "my"
       ],
+      "greek": "καὶ ῥομφαία μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -819,6 +829,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -933,7 +945,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "saves me it",
+      "display_gloss": "it saves me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -963,6 +975,8 @@
         "it",
         "saves.me"
       ],
+      "greek": "σώσει με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1032,24 +1046,40 @@
       "ref": "Psalm 44:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "But thou hast saved us from our enemies, and hast put them to shame that hated us.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "But thou hast saved us from our adversaries, And hast put them to shame that hate us.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "But you have saved us from our adversaries, and have shamed those who hate us.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐ μου ἐλπιῶ καὶ ῥομφαία μου οὐ σώσει με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

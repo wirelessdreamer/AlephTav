@@ -115,6 +115,8 @@
         "when",
         "came"
       ],
+      "greek": "ἐν ἐλθεῖν",
+      "greek_strong": "2064",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -191,7 +193,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "Ziphites the",
+      "display_gloss": "the Ziphites",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -222,6 +224,8 @@
         "the",
         "Ziphites"
       ],
+      "greek": "τοὺς ζιφαίους",
+      "greek_strong": "3588",
       "lemma": "זִיפִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -330,6 +334,8 @@
         "and",
         "they.said"
       ],
+      "greek": "καὶ εἰπεῖν",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -442,6 +448,8 @@
         "to",
         "Saul"
       ],
+      "greek": "τῷ σαουλ",
+      "greek_strong": "4549",
       "lemma": "שָׁאוּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -556,6 +564,8 @@
         "?",
         "not"
       ],
+      "greek": "οὐκ ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -618,7 +628,7 @@
           "David"
         ],
         "gloss_fragments": [
-          "David"
+          "is David"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -656,7 +666,7 @@
         "Psalm 25:1",
         "Psalm 26:1"
       ],
-      "display_gloss": "David",
+      "display_gloss": "is David",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -686,6 +696,8 @@
       "gloss_parts": [
         "[is].David"
       ],
+      "greek": "δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -809,6 +821,8 @@
       "gloss_parts": [
         "hiding.himself"
       ],
+      "greek": "κέκρυπται",
+      "greek_strong": "2928",
       "lemma": "סָתַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -909,7 +923,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "with",
+      "display_gloss": "among us",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -940,6 +954,8 @@
         "with",
         "us"
       ],
+      "greek": "παρ’ ἡμῖν",
+      "greek_strong": "2254",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1006,24 +1022,40 @@
       "ref": "Psalm 54:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA054.htm",
+      "source_version": "eng-kjv2006",
       "text": "Hear my prayer, O God; give ear to the words of my mouth.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA054.htm",
+      "source_version": "eng-asv",
       "text": "Hear my prayer, O God; Give ear to the words of my mouth.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA054.htm",
+      "source_version": "engwebp",
       "text": "Hear my prayer, God. Listen to the words of my mouth.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 54:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν ἐλθεῖν τοὺς ζιφαίους καὶ εἰπεῖν τῷ σαουλ οὐκ ἰδοὺ δαυιδ κέκρυπται παρ’ ἡμῖν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

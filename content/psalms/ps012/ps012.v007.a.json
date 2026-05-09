@@ -92,6 +92,8 @@
       "gloss_parts": [
         "the.words"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אִמְרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -200,6 +202,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -313,6 +317,8 @@
       "gloss_parts": [
         "[are].words"
       ],
+      "greek": "λόγια",
+      "greek_strong": "3051",
       "lemma": "אִמְרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -399,6 +405,8 @@
       "gloss_parts": [
         "pure"
       ],
+      "greek": "ἁγνά",
+      "greek_strong": "53",
       "lemma": "טָהֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -489,6 +497,8 @@
       "gloss_parts": [
         "silver"
       ],
+      "greek": "ἀργύριον",
+      "greek_strong": "694",
       "lemma": "כֶּסֶף",
       "missing_enrichments": [
         "oshb:stem",
@@ -579,6 +589,8 @@
       "gloss_parts": [
         "refined"
       ],
+      "greek": "πεπυρωμένον",
+      "greek_strong": "4448",
       "lemma": "צָרַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -665,6 +677,8 @@
         "in",
         "a.crucible"
       ],
+      "greek": "δοκίμιον",
+      "greek_strong": "1383",
       "lemma": "עֲלִיל",
       "missing_enrichments": [
         "oshb:stem",
@@ -747,7 +761,7 @@
         "Psalm 37:9",
         "Psalm 37:11"
       ],
-      "display_gloss": "of earth the",
+      "display_gloss": "on the ground",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -779,6 +793,8 @@
         "the",
         "earth"
       ],
+      "greek": "τῇ γῇ",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -882,6 +898,8 @@
       "gloss_parts": [
         "refined"
       ],
+      "greek": "κεκαθαρισμένον",
+      "greek_strong": null,
       "lemma": "זָקַק",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -933,7 +951,7 @@
         "Psalm 90:10",
         "Psalm 119:164"
       ],
-      "display_gloss": "sevenfold",
+      "display_gloss": "seven times",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -963,6 +981,8 @@
       "gloss_parts": [
         "sevenfold"
       ],
+      "greek": "ἑπταπλασίως",
+      "greek_strong": null,
       "lemma": "שֶׁבַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -999,24 +1019,40 @@
       "ref": "Psalm 12:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA012.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou shalt keep them, O LORD, thou shalt preserve them from this generation for ever.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 12:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA012.htm",
+      "source_version": "eng-asv",
       "text": "Thou wilt keep them, O Jehovah, Thou wilt preserve them from this generation for ever.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 12:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA012.htm",
+      "source_version": "engwebp",
       "text": "You will keep them, LORD. You will preserve them from this generation forever.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 12:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κυρίου λόγια ἁγνά ἀργύριον πεπυρωμένον δοκίμιον τῇ γῇ κεκαθαρισμένον ἑπταπλασίως",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

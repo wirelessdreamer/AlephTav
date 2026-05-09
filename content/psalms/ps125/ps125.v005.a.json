@@ -48,8 +48,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who turn aside"
+          "[those",
+          "who] turn aside"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -91,7 +91,7 @@
         "Psalm 119:112",
         "Psalm 119:157"
       ],
-      "display_gloss": "and who turn aside those",
+      "display_gloss": "and who] turn aside [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -122,6 +122,8 @@
         "[those",
         "who].turn.aside"
       ],
+      "greek": "δὲ τοὺς ἐκκλίνοντας",
+      "greek_strong": "3588",
       "lemma": "נָטָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -259,6 +261,8 @@
         "their.twisting",
         "[ways]"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -371,7 +375,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will lead them away he",
+      "display_gloss": "he will lead them away",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -401,6 +405,8 @@
         "he",
         "will.lead.them.away"
       ],
+      "greek": "ἀπάχει",
+      "greek_strong": "520",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -532,6 +538,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -664,6 +672,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -792,6 +802,8 @@
       "gloss_parts": [
         "[those.who].do"
       ],
+      "greek": "ἐργαζομένων",
+      "greek_strong": null,
       "lemma": "פָּעַל",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -894,7 +906,7 @@
         "Psalm 94:16",
         "Psalm 101:8"
       ],
-      "display_gloss": "the wickedness (of",
+      "display_gloss": "(of the wickedness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -925,6 +937,8 @@
         "(of",
         "[the].wickedness"
       ],
+      "greek": "τὴν ἀνομίαν",
+      "greek_strong": "458",
       "lemma": "אָוֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1054,6 +1068,8 @@
       "gloss_parts": [
         "peace"
       ],
+      "greek": "εἰρήνη",
+      "greek_strong": "1515",
       "lemma": "שָׁלוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1152,7 +1168,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "be on",
+      "display_gloss": "upon",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1182,6 +1198,8 @@
       "gloss_parts": [
         "[be].on"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1313,6 +1331,8 @@
       "gloss_parts": [
         "Israel"
       ],
+      "greek": "ισραηλ",
+      "greek_strong": "2474",
       "lemma": "יִשְׂרָאֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1371,24 +1391,40 @@
       "ref": "Psalm 125:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA125.htm",
+      "source_version": "eng-kjv2006",
       "text": "As for such as turn aside unto their crooked ways, the LORD shall lead them forth with the workers of iniquity: [but] peace [shall be] upon Israel.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 125:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA125.htm",
+      "source_version": "eng-asv",
       "text": "But as for such as turn aside unto their crooked ways, Jehovah will lead them forth with the workers of iniquity. Peace be upon Israel.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 125:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA125.htm",
+      "source_version": "engwebp",
       "text": "But as for those who turn away to their crooked ways, the LORD will lead them away with the workers of iniquity. Peace be on Israel.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 125:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "δὲ τοὺς ἐκκλίνοντας ἀπάχει κύριος ἐργαζομένων τὴν ἀνομίαν εἰρήνη ἐπὶ ισραηλ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

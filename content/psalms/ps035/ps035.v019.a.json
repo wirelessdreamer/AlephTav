@@ -112,6 +112,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -243,6 +245,8 @@
       "gloss_parts": [
         "may.they.rejoice"
       ],
+      "greek": "ἐπιξαρείησάν",
+      "greek_strong": null,
       "lemma": "שָׂמַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -353,7 +357,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "over me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -384,6 +388,8 @@
         "to",
         "me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -536,6 +542,8 @@
         "enemies",
         "my"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -643,7 +651,7 @@
         "Psalm 144:8",
         "Psalm 144:11"
       ],
-      "display_gloss": "falsehood",
+      "display_gloss": "who are wrongfully",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -673,6 +681,8 @@
       "gloss_parts": [
         "falsehood"
       ],
+      "greek": "ἀδίκως",
+      "greek_strong": "95",
       "lemma": "שֶׁקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -731,8 +741,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -777,7 +787,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hate me those",
+      "display_gloss": "who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -807,6 +817,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -926,6 +938,8 @@
       "gloss_parts": [
         "without.cause"
       ],
+      "greek": "δωρεὰν",
+      "greek_strong": "1432",
       "lemma": "חִנָּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1009,6 +1023,8 @@
       "gloss_parts": [
         "let.them.wink"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "קָרַץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1100,6 +1116,8 @@
       "gloss_parts": [
         "an.eye"
       ],
+      "greek": "ὀφθαλμοῖς",
+      "greek_strong": "3788",
       "lemma": "עַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1146,24 +1164,40 @@
       "ref": "Psalm 35:19",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA035.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let not them that are mine enemies wrongfully rejoice over me: [neither] let them wink with the eye that hate me without a cause.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:19",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA035.htm",
+      "source_version": "eng-asv",
       "text": "Let not them that are mine enemies wrongfully rejoice over me; Neither let them wink with the eye that hate me without a cause.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:19",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA035.htm",
+      "source_version": "engwebp",
       "text": "Don’t let those who are my enemies wrongfully rejoice over me; neither let those who hate me without a cause wink their eyes.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 35:19",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μὴ ἐπιξαρείησάν μοι μοι ἀδίκως με δωρεὰν ὀφθαλμοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -110,6 +110,8 @@
       "gloss_parts": [
         "O.God"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -223,7 +225,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have taught me you",
+      "display_gloss": "you have taught me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -253,6 +255,8 @@
         "you",
         "have.taught.me"
       ],
+      "greek": "ὁ θεός",
+      "greek_strong": "2316",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -408,6 +412,8 @@
         "youth(s)",
         "my"
       ],
+      "greek": "ἐκ νεότητός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -555,6 +561,8 @@
         "and",
         "until"
       ],
+      "greek": "καὶ μέξρι",
+      "greek_strong": "3360",
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -664,6 +672,8 @@
       "gloss_parts": [
         "now"
       ],
+      "greek": "νῦν",
+      "greek_strong": "3568",
       "lemma": "הֵנָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -763,6 +773,8 @@
       "gloss_parts": [
         "I.declare"
       ],
+      "greek": "ἀπαγγελῶ",
+      "greek_strong": "518",
       "lemma": "נָגַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -865,7 +877,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your wonders",
+      "display_gloss": "your wondrous deeds",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -895,6 +907,8 @@
         "wonders",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -965,24 +979,40 @@
       "ref": "Psalm 71:17",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA071.htm",
+      "source_version": "eng-kjv2006",
       "text": "O God, thou hast taught me from my youth: and hitherto have I declared thy wondrous works.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 71:17",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA071.htm",
+      "source_version": "eng-asv",
       "text": "O God, thou hast taught me from my youth; And hitherto have I declared thy wondrous works.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 71:17",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA071.htm",
+      "source_version": "engwebp",
       "text": "God, you have taught me from my youth. Until now, I have declared your wondrous works.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 71:17",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ θεός ἐκ νεότητός μου καὶ μέξρι νῦν ἀπαγγελῶ σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

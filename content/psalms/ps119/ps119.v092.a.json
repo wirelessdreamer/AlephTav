@@ -60,7 +60,7 @@
         "Psalm 124:1",
         "Psalm 124:2"
       ],
-      "display_gloss": "if not",
+      "display_gloss": "if ~ not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -90,6 +90,8 @@
       "gloss_parts": [
         "if.not"
       ],
+      "greek": "εἰ",
+      "greek_strong": "1487",
       "lemma": "לוּלֵא",
       "missing_enrichments": [
         "oshb:stem",
@@ -210,6 +212,8 @@
         "law",
         "your"
       ],
+      "greek": "νόμος σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -285,8 +289,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "been my delight(s)",
-          "had"
+          "been] my delight(s)",
+          "[had"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -331,7 +335,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "had been my delight(s)",
+      "display_gloss": "[had been] my delight(s)",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -362,6 +366,8 @@
         "been].my.delight(s)",
         "[had"
       ],
+      "greek": "μού",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -491,6 +497,8 @@
       "gloss_parts": [
         "then"
       ],
+      "greek": "τότε",
+      "greek_strong": "5119",
       "lemma": "אָז",
       "missing_enrichments": [
         "oshb:stem",
@@ -606,6 +614,8 @@
       "gloss_parts": [
         "I.perished"
       ],
+      "greek": "ἀπωλόμην",
+      "greek_strong": "622",
       "lemma": "אָבַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -749,6 +759,8 @@
         "affliction",
         "my"
       ],
+      "greek": "ἐν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -820,24 +832,40 @@
       "ref": "Psalm 119:92",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "Unless thy law [had been] my delights, I should then have perished in mine affliction.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:92",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "Unless thy law had been my delight, I should then have perished in mine affliction.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:92",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "Unless your law had been my delight, I would have perished in my affliction.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:92",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἰ νόμος σου μού τότε ἀπωλόμην ἐν μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

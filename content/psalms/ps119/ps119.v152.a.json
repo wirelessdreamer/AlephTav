@@ -65,7 +65,7 @@
         "Psalm 139:5",
         "Psalm 143:5"
       ],
-      "display_gloss": "antiquity",
+      "display_gloss": "long ago",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -95,6 +95,8 @@
       "gloss_parts": [
         "antiquity"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "קֶדֶם",
       "missing_enrichments": [
         "oshb:stem",
@@ -208,6 +210,8 @@
       "gloss_parts": [
         "I.have.known"
       ],
+      "greek": "ἔγνων",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -354,6 +358,8 @@
         "testimonies",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -496,6 +502,8 @@
       "gloss_parts": [
         "(dm).that"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -643,6 +651,8 @@
         "forever",
         "of.perpetuity"
       ],
+      "greek": "εἰς αἰῶνα",
+      "greek_strong": "165",
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -762,7 +772,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have established them you",
+      "display_gloss": "you have established them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -792,6 +802,8 @@
         "you",
         "have.established.them"
       ],
+      "greek": "ἐθεμελίωσας αὐτά",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -861,24 +873,40 @@
       "ref": "Psalm 119:152",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "Concerning thy testimonies, I have known of old that thou hast founded them for ever.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:152",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "Of old have I known from thy testimonies, That thou hast founded them for ever.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:152",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "Of old I have known from your testimonies, that you have founded them forever. RESH",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:152",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἔγνων σου ὅτι εἰς αἰῶνα ἐθεμελίωσας αὐτά",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -46,8 +46,8 @@
           "lays the beams"
         ],
         "gloss_fragments": [
-          "the one",
-          "who makes beams for"
+          "the [one",
+          "who] makes beams for"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -62,7 +62,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "who makes beams for the one",
+      "display_gloss": "who] makes beams for the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -92,6 +92,8 @@
         "the.[one",
         "who].makes.beams.for"
       ],
+      "greek": "ὁ στεγάζων",
+      "greek_strong": "3588",
       "lemma": "קָרָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -172,7 +174,7 @@
         "Psalm 77:20",
         "Psalm 78:13"
       ],
-      "display_gloss": "on waters the",
+      "display_gloss": "on the waters",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -204,6 +206,8 @@
         "the",
         "waters"
       ],
+      "greek": "ἐν ὕδασιν",
+      "greek_strong": "5204",
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -345,6 +349,8 @@
         "rooms",
         "his.upper"
       ],
+      "greek": "ὑπερῷα αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -420,8 +426,8 @@
           "makes"
         ],
         "gloss_fragments": [
-          "the one",
-          "who makes"
+          "the [one",
+          "who] makes"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -461,7 +467,7 @@
         "Psalm 107:41",
         "Psalm 109:5"
       ],
-      "display_gloss": "who makes the one",
+      "display_gloss": "who] makes the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -491,6 +497,8 @@
         "the.[one",
         "who].makes"
       ],
+      "greek": "ὁ τιθεὶς",
+      "greek_strong": "5087",
       "lemma": "שׂים",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -599,6 +607,8 @@
       "gloss_parts": [
         "clouds"
       ],
+      "greek": "νέφη",
+      "greek_strong": null,
       "lemma": "עָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -716,6 +726,8 @@
         "chariot",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -791,8 +803,8 @@
           "rides"
         ],
         "gloss_fragments": [
-          "the one",
-          "who walks"
+          "the [one",
+          "who] walks"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -832,7 +844,7 @@
         "Psalm 91:6",
         "Psalm 101:2"
       ],
-      "display_gloss": "who walks the one",
+      "display_gloss": "who] walks the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -862,6 +874,8 @@
         "the.[one",
         "who].walks"
       ],
+      "greek": "ὁ περιπατῶν",
+      "greek_strong": "4043",
       "lemma": "הָלַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -989,6 +1003,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1102,6 +1118,8 @@
       "gloss_parts": [
         "[the].wings"
       ],
+      "greek": "πτερύγων",
+      "greek_strong": "4420",
       "lemma": "כָּנָף",
       "missing_enrichments": [
         "oshb:stem",
@@ -1210,6 +1228,8 @@
       "gloss_parts": [
         "of.[the].wind"
       ],
+      "greek": "ἀνέμων",
+      "greek_strong": "417",
       "lemma": "רוּחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1268,24 +1288,40 @@
       "ref": "Psalm 104:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "Who layeth the beams of his chambers in the waters; Who maketh the clouds his chariot; Who walketh upon the wings of the wind;",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "He lays the beams of his rooms in the waters. He makes the clouds his chariot. He walks on the wings of the wind.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ στεγάζων ἐν ὕδασιν ὑπερῷα αὐτοῦ ὁ τιθεὶς νέφη αὐτοῦ ὁ περιπατῶν ἐπὶ πτερύγων ἀνέμων",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

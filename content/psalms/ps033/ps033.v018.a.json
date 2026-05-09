@@ -110,6 +110,8 @@
       "gloss_parts": [
         "here!"
       ],
+      "greek": "ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "הִנֵּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -228,6 +230,8 @@
       "gloss_parts": [
         "the.eye"
       ],
+      "greek": "ὀφθαλμοὶ",
+      "greek_strong": "3788",
       "lemma": "עַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -346,6 +350,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -420,7 +426,7 @@
           "on"
         ],
         "gloss_fragments": [
-          "to"
+          "is to"
         ],
         "preposition_role": "on",
         "raw_classes": [
@@ -488,6 +494,8 @@
       "gloss_parts": [
         "[is].to"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -630,6 +638,8 @@
         "[those].fearing",
         "him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -707,8 +717,8 @@
         ],
         "gloss_fragments": [
           "to",
-          "those",
-          "who wait"
+          "[those",
+          "who] wait"
         ],
         "preposition_role": "on",
         "raw_classes": [
@@ -741,7 +751,7 @@
         "Psalm 131:3",
         "Psalm 147:11"
       ],
-      "display_gloss": "to who wait those",
+      "display_gloss": "to who] wait [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -772,6 +782,8 @@
         "[those",
         "who].wait"
       ],
+      "greek": "τοὺς ἐλπίζοντας",
+      "greek_strong": "3588",
       "lemma": "יָחַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -907,6 +919,8 @@
         "his.covenant",
         "loyalty"
       ],
+      "greek": "ἔλεος αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -978,24 +992,40 @@
       "ref": "Psalm 33:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA033.htm",
+      "source_version": "eng-kjv2006",
       "text": "Behold, the eye of the LORD [is] upon them that fear him, upon them that hope in his mercy;",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA033.htm",
+      "source_version": "eng-asv",
       "text": "Behold, the eye of Jehovah is upon them that fear him, Upon them that hope in his lovingkindness;",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA033.htm",
+      "source_version": "engwebp",
       "text": "Behold, the LORD’s eye is on those who fear him, on those who hope in his loving kindness,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 33:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἰδοὺ ὀφθαλμοὶ κυρίου ἐπὶ τοὺς ἐλπίζοντας ἔλεος αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -112,6 +112,8 @@
       "gloss_parts": [
         "let.them.be.ashamed"
       ],
+      "greek": "αἰσξυνθήτωσαν",
+      "greek_strong": "153",
       "lemma": "בּוֹשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -351,6 +355,8 @@
       "gloss_parts": [
         "[those.who].serve"
       ],
+      "greek": "προσκυνοῦντες",
+      "greek_strong": "4352",
       "lemma": "עָבַד",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -434,6 +440,8 @@
       "gloss_parts": [
         "(of).an.image"
       ],
+      "greek": "γλυπτοῖς",
+      "greek_strong": null,
       "lemma": "פֶּסֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -471,8 +479,8 @@
           "boast"
         ],
         "gloss_fragments": [
-          "those",
-          "who boast"
+          "[those",
+          "who] boast"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -512,7 +520,7 @@
         "Psalm 105:3",
         "Psalm 105:45"
       ],
-      "display_gloss": "who boast those",
+      "display_gloss": "who] boast [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -542,6 +550,8 @@
         "[those",
         "who].boast"
       ],
+      "greek": "οἱ ἐγκαυξώμενοι",
+      "greek_strong": "3588",
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -624,7 +634,7 @@
       "corpus_occurrence_refs": [
         "Psalm 96:5"
       ],
-      "display_gloss": "in (the) idols worthless",
+      "display_gloss": "in the idols",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -656,6 +666,8 @@
         "worthless",
         "idols"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "אֱלִיל",
       "missing_enrichments": [
         "oshb:stem",
@@ -753,6 +765,8 @@
       "gloss_parts": [
         "bow.down"
       ],
+      "greek": "προσκυνήσατε",
+      "greek_strong": "4352",
       "lemma": "חוה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -851,7 +865,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "before him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -882,6 +896,8 @@
         "to",
         "him"
       ],
+      "greek": "αὐτῷ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1020,6 +1036,8 @@
       "gloss_parts": [
         "O.all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1153,6 +1171,8 @@
       "gloss_parts": [
         "gods"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -1213,24 +1233,40 @@
       "ref": "Psalm 97:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA097.htm",
+      "source_version": "eng-kjv2006",
       "text": "Confounded be all they that serve graven images, that boast themselves of idols: worship him, all [ye] gods.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 97:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA097.htm",
+      "source_version": "eng-asv",
       "text": "Let all them be put to shame that serve graven images, That boast themselves of idols: Worship him, all ye gods.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 97:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA097.htm",
+      "source_version": "engwebp",
       "text": "Let all them be shamed who serve engraved images, who boast in their idols. Worship him, all you gods!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 97:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "αἰσξυνθήτωσαν πάντες προσκυνοῦντες γλυπτοῖς οἱ ἐγκαυξώμενοι ἐν προσκυνήσατε αὐτῷ πάντες",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

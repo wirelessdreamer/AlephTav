@@ -88,7 +88,7 @@
         "Psalm 83:3",
         "Psalm 89:16"
       ],
-      "display_gloss": "rise up they",
+      "display_gloss": "they rise up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -118,6 +118,8 @@
         "they",
         "rise.up"
       ],
+      "greek": "ἀναστάντες",
+      "greek_strong": "450",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -226,6 +228,8 @@
       "gloss_parts": [
         "witnesses"
       ],
+      "greek": "μάρτυρες",
+      "greek_strong": "3144",
       "lemma": "עֵד",
       "missing_enrichments": [
         "oshb:stem",
@@ -321,6 +325,8 @@
       "gloss_parts": [
         "of.violence"
       ],
+      "greek": "ἄδικοι",
+      "greek_strong": "94",
       "lemma": "חָמָס",
       "missing_enrichments": [
         "oshb:stem",
@@ -438,6 +444,8 @@
       "gloss_parts": [
         "[that].which"
       ],
+      "greek": "ἃ",
+      "greek_strong": "3739",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -569,6 +577,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -700,6 +710,8 @@
       "gloss_parts": [
         "I.know"
       ],
+      "greek": "ἐγίνωσκον",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -809,7 +821,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "ask me they",
+      "display_gloss": "they ask me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -839,6 +851,8 @@
         "they",
         "ask.me"
       ],
+      "greek": "ἠρώτων με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -908,24 +922,40 @@
       "ref": "Psalm 35:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA035.htm",
+      "source_version": "eng-kjv2006",
       "text": "False witnesses did rise up; they laid to my charge [things] that I knew not.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA035.htm",
+      "source_version": "eng-asv",
       "text": "Unrighteous witnesses rise up; They ask me of things that I know not.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA035.htm",
+      "source_version": "engwebp",
       "text": "Unrighteous witnesses rise up. They ask me about things that I don’t know about.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 35:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀναστάντες μάρτυρες ἄδικοι ἃ οὐκ ἐγίνωσκον ἠρώτων με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

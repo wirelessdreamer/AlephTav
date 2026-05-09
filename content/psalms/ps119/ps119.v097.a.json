@@ -110,6 +110,8 @@
       "gloss_parts": [
         "how!"
       ],
+      "greek": "ὡς",
+      "greek_strong": "5613",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "I.love"
       ],
+      "greek": "ἠγάπησα",
+      "greek_strong": "25",
       "lemma": "אָהֵב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -386,6 +390,8 @@
         "law",
         "your"
       ],
+      "greek": "νόμον σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -528,6 +534,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "ὅλην",
+      "greek_strong": "3650",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -644,7 +652,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "day the",
+      "display_gloss": "the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -675,6 +683,8 @@
         "the",
         "day"
       ],
+      "greek": "τὴν ἡμέραν",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -788,6 +798,8 @@
       "gloss_parts": [
         "it"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הִיא",
       "missing_enrichments": [
         "oshb:stem",
@@ -832,7 +844,7 @@
         ],
         "gloss_fragments": [
           "meditation",
-          "my"
+          "is my"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -877,7 +889,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my meditation",
+      "display_gloss": "is my meditation",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -908,6 +920,8 @@
         "meditation",
         "[is].my"
       ],
+      "greek": "ἐστιν",
+      "greek_strong": "2076",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -979,24 +993,40 @@
       "ref": "Psalm 119:97",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "O how love I thy law! it [is] my meditation all the day.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:97",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "Oh how love I thy law! It is my meditation all the day.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:97",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "How I love your law! It is my meditation all day.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:97",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὡς ἠγάπησα νόμον σου ὅλην τὴν ἡμέραν ἐστιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

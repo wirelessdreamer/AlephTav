@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have made us you",
+      "display_gloss": "you have made us",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "you",
         "have.made.us"
       ],
+      "greek": "ἔθου ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -238,6 +240,8 @@
       "gloss_parts": [
         "a.byword"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מָשָׁל",
       "missing_enrichments": [
         "oshb:stem",
@@ -323,7 +327,7 @@
         "Psalm 72:11",
         "Psalm 72:17"
       ],
-      "display_gloss": "among nations the",
+      "display_gloss": "among the nations",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -355,6 +359,8 @@
         "the",
         "nations"
       ],
+      "greek": "ἐν ἔθνεσιν",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -462,6 +468,8 @@
       "gloss_parts": [
         "a.shaking"
       ],
+      "greek": "κίνησιν",
+      "greek_strong": null,
       "lemma": "מָנוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -558,6 +566,8 @@
       "gloss_parts": [
         "of.head"
       ],
+      "greek": "κεφαλῆς",
+      "greek_strong": "2776",
       "lemma": "רֹאשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -679,6 +689,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "בַּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -788,6 +800,8 @@
       "gloss_parts": [
         "peoples"
       ],
+      "greek": "λαοῖς",
+      "greek_strong": "2992",
       "lemma": "אֻמָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -826,24 +840,40 @@
       "ref": "Psalm 44:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "My confusion [is] continually before me, and the shame of my face hath covered me,",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "All the day long is my dishonor before me, And the shame of my face hath covered me,",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "All day long my dishonor is before me, and shame covers my face,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἔθου ἡμᾶς ἐν ἔθνεσιν κίνησιν κεφαλῆς ἐν λαοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

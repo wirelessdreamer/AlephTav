@@ -101,6 +101,8 @@
       "gloss_parts": [
         "together"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יַחַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -197,7 +199,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "against me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -228,6 +230,8 @@
         "on",
         "me"
       ],
+      "greek": "κατ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -345,6 +349,8 @@
       "gloss_parts": [
         "they.whisper.to.one.another"
       ],
+      "greek": "ἐψιθύριζον",
+      "greek_strong": null,
       "lemma": "לָחַשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -449,6 +455,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -513,8 +521,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -559,7 +567,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hate me those",
+      "display_gloss": "who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -589,6 +597,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "ἐξθροί μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -708,7 +718,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "against me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -739,6 +749,8 @@
         "on",
         "me"
       ],
+      "greek": "κατ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -869,6 +881,8 @@
       "gloss_parts": [
         "they.plot"
       ],
+      "greek": "ἐλογίζοντο",
+      "greek_strong": null,
       "lemma": "חָשַׁב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -986,6 +1000,8 @@
       "gloss_parts": [
         "trouble"
       ],
+      "greek": "κακά",
+      "greek_strong": "2556",
       "lemma": "רָעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1095,7 +1111,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1126,6 +1142,8 @@
         "for",
         "me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1197,24 +1215,40 @@
       "ref": "Psalm 41:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA041.htm",
+      "source_version": "eng-kjv2006",
       "text": "An evil disease, [say they], cleaveth fast unto him: and [now] that he lieth he shall rise up no more.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA041.htm",
+      "source_version": "eng-asv",
       "text": "An evil disease, [say they], cleaveth fast unto him; And now that he lieth he shall rise up no more.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA041.htm",
+      "source_version": "engwebp",
       "text": "“An evil disease”, they say, “has afflicted him. Now that he lies he shall rise up no more.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 41:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κατ’ ἐμοῦ ἐψιθύριζον πάντες ἐξθροί μου κατ’ ἐμοῦ ἐλογίζοντο κακά μοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

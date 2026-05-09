@@ -105,6 +105,8 @@
         "and",
         "may.he.live"
       ],
+      "greek": "καὶ ζήσεται",
+      "greek_strong": "2198",
       "lemma": "חָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -223,6 +225,8 @@
         "and",
         "may.someone.give"
       ],
+      "greek": "καὶ δοθήσεται",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -331,7 +335,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -362,6 +366,8 @@
         "to",
         "him"
       ],
+      "greek": "αὐτῷ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -493,6 +499,8 @@
         "some",
         "of.the.gold"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "זָהָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -580,6 +588,8 @@
       "gloss_parts": [
         "of.Sheba"
       ],
+      "greek": "ἀραβίας",
+      "greek_strong": null,
       "lemma": "שְׁבָא",
       "missing_enrichments": [
         "oshb:stem",
@@ -669,6 +679,8 @@
         "and",
         "may.someone.pray"
       ],
+      "greek": "καὶ προσεύχονται",
+      "greek_strong": "2532",
       "lemma": "פָּלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -754,7 +766,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -785,6 +797,8 @@
         "for",
         "him"
       ],
+      "greek": "περὶ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -925,6 +939,8 @@
       "gloss_parts": [
         "continually"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "תָּמִיד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1051,6 +1067,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "ὅλην",
+      "greek_strong": "3650",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1158,7 +1176,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "day the",
+      "display_gloss": "the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1189,6 +1207,8 @@
         "the",
         "day"
       ],
+      "greek": "τὴν ἡμέραν",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1327,6 +1347,8 @@
         "may",
         "someone.bless.him"
       ],
+      "greek": "εὐλογήσουσιν αὐτόν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1396,24 +1418,40 @@
       "ref": "Psalm 72:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA072.htm",
+      "source_version": "eng-kjv2006",
       "text": "And he shall live, and to him shall be given of the gold of Sheba: prayer also shall be made for him continually; [and] daily shall he be praised.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 72:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA072.htm",
+      "source_version": "eng-asv",
       "text": "And they shall live; and to him shall be given of the gold of Sheba: And men shall pray for him continually; They shall bless him all the day long.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 72:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA072.htm",
+      "source_version": "engwebp",
       "text": "He will live; and Sheba’s gold will be given to him. Men will pray for him continually. They will bless him all day long.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 72:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ ζήσεται καὶ δοθήσεται αὐτῷ ἀραβίας καὶ προσεύχονται περὶ αὐτοῦ ὅλην τὴν ἡμέραν εὐλογήσουσιν αὐτόν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

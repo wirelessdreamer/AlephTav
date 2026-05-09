@@ -110,6 +110,8 @@
       "gloss_parts": [
         "he.summons"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -237,6 +239,8 @@
       "gloss_parts": [
         "(to)"
       ],
+      "greek": "προσκαλέσεται",
+      "greek_strong": null,
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -340,7 +344,7 @@
         "Psalm 73:25",
         "Psalm 76:9"
       ],
-      "display_gloss": "heavens the",
+      "display_gloss": "the heavens",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -371,6 +375,8 @@
         "the",
         "heavens"
       ],
+      "greek": "τὸν οὐρανὸν",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -506,6 +512,8 @@
         "(from)",
         "above"
       ],
+      "greek": "ἄνω",
+      "greek_strong": "507",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -643,6 +651,8 @@
         "and",
         "(to)"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -746,7 +756,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "earth the",
+      "display_gloss": "the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -777,6 +787,8 @@
         "the",
         "earth"
       ],
+      "greek": "τὴν γῆν",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -896,6 +908,8 @@
         "to",
         "judge"
       ],
+      "greek": "διακρῖναι",
+      "greek_strong": "1252",
       "lemma": "דִּין",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1017,6 +1031,8 @@
         "people",
         "his"
       ],
+      "greek": "λαὸν αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1088,24 +1104,40 @@
       "ref": "Psalm 50:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA050.htm",
+      "source_version": "eng-kjv2006",
       "text": "He shall call to the heavens from above, and to the earth, that he may judge his people.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 50:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA050.htm",
+      "source_version": "eng-asv",
       "text": "He calleth to the heavens above, And to the earth, that he may judge his people:",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 50:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA050.htm",
+      "source_version": "engwebp",
       "text": "He calls to the heavens above, to the earth, that he may judge his people:",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 50:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "προσκαλέσεται τὸν οὐρανὸν ἄνω καὶ τὴν γῆν διακρῖναι λαὸν αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

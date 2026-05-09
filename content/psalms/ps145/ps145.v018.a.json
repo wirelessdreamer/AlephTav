@@ -43,7 +43,7 @@
           "near"
         ],
         "gloss_fragments": [
-          "near"
+          "is near"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -62,7 +62,7 @@
         "Psalm 85:10",
         "Psalm 119:151"
       ],
-      "display_gloss": "near",
+      "display_gloss": "is near",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -92,6 +92,8 @@
       "gloss_parts": [
         "[is].near"
       ],
+      "greek": "ἐγγὺς",
+      "greek_strong": "1451",
       "lemma": "קָרֹוב",
       "missing_enrichments": [
         "oshb:stem",
@@ -201,6 +203,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -343,6 +347,8 @@
         "to",
         "all"
       ],
+      "greek": "πᾶσιν",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -416,8 +422,8 @@
           "him"
         ],
         "gloss_fragments": [
-          "those",
-          "who call out to him"
+          "[those",
+          "who] call out to him"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -462,7 +468,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who call out to him those",
+      "display_gloss": "who] call out to him [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -492,6 +498,8 @@
         "[those",
         "who].call.out.to.him"
       ],
+      "greek": "ἐπικαλουμένοις",
+      "greek_strong": "1941",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -638,6 +646,8 @@
         "to",
         "all"
       ],
+      "greek": "πᾶσι",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -778,6 +788,8 @@
       "gloss_parts": [
         "[those].who"
       ],
+      "greek": "τοῖς",
+      "greek_strong": "3588",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -886,7 +898,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "call out to him they",
+      "display_gloss": "they call out to him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -916,6 +928,8 @@
         "they",
         "call.out.to.him"
       ],
+      "greek": "ἐπικαλουμένοις αὐτὸν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1058,6 +1072,8 @@
         "in",
         "truth"
       ],
+      "greek": "ἐν ἀληθείᾳ",
+      "greek_strong": "225",
       "lemma": "אֱמֶת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1113,24 +1129,40 @@
       "ref": "Psalm 145:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA145.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD [is] nigh unto all them that call upon him, to all that call upon him in truth.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA145.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah is nigh unto all them that call upon him, To all that call upon him in truth.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 145:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA145.htm",
+      "source_version": "engwebp",
       "text": "The LORD is near to all those who call on him, to all who call on him in truth.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 145:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐγγὺς κύριος πᾶσιν ἐπικαλουμένοις πᾶσι τοῖς ἐπικαλουμένοις αὐτὸν ἐν ἀληθείᾳ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

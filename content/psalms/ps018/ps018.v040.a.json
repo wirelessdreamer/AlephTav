@@ -92,7 +92,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and girded me you",
+      "display_gloss": "and you girded me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -123,6 +123,8 @@
         "you",
         "girded.me"
       ],
+      "greek": "καὶ περιέζωσάς με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -248,6 +250,8 @@
       "gloss_parts": [
         "strength"
       ],
+      "greek": "δύναμιν",
+      "greek_strong": "1411",
       "lemma": "חַיִל",
       "missing_enrichments": [
         "oshb:stem",
@@ -325,7 +329,7 @@
         "Psalm 140:3",
         "Psalm 144:1"
       ],
-      "display_gloss": "for battle the",
+      "display_gloss": "for the battle",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -357,6 +361,8 @@
         "the",
         "battle"
       ],
+      "greek": "εἰς πόλεμον",
+      "greek_strong": "4171",
       "lemma": "מִלְחָמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -452,6 +458,8 @@
       "gloss_parts": [
         "you.made.bow.down"
       ],
+      "greek": "συνεπόδισας",
+      "greek_strong": null,
       "lemma": "כָּרַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -493,8 +501,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "those",
-          "who rose against me"
+          "[those",
+          "who] rose against me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -539,7 +547,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who rose against me those",
+      "display_gloss": "who] rose against me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -569,6 +577,8 @@
         "[those",
         "who].rose.against.me"
       ],
+      "greek": "ἐμὲ",
+      "greek_strong": "1691",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -689,7 +699,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "under",
+      "display_gloss": "under me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -720,6 +730,8 @@
         "under",
         "me"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -791,24 +803,40 @@
       "ref": "Psalm 18:40",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast also given me the necks of mine enemies; that I might destroy them that hate me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:40",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "Thou hast also made mine enemies turn their backs unto me, That I might cut off them that hate me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:40",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "You have also made my enemies turn their backs to me, that I might cut off those who hate me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:40",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ περιέζωσάς με δύναμιν εἰς πόλεμον συνεπόδισας ἐμὲ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

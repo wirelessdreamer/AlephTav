@@ -91,6 +91,8 @@
       "gloss_parts": [
         "he.scatters"
       ],
+      "greek": "ἐσκόρπισεν",
+      "greek_strong": "4650",
       "lemma": "פָּזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -197,6 +199,8 @@
       "gloss_parts": [
         "he.gives"
       ],
+      "greek": "ἔδωκεν",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -297,7 +301,7 @@
         "Psalm 109:31",
         "Psalm 113:7"
       ],
-      "display_gloss": "to (the) people needy",
+      "display_gloss": "to the poor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -329,6 +333,8 @@
         "needy",
         "[people]"
       ],
+      "greek": "τοῖς πένησιν",
+      "greek_strong": "3993",
       "lemma": "אֶבְיוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -463,6 +469,8 @@
         "righteousness",
         "his"
       ],
+      "greek": "δικαιοσύνη αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -532,7 +540,7 @@
           "endures"
         ],
         "gloss_fragments": [
-          "enduring"
+          "is enduring"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -570,7 +578,7 @@
         "Psalm 130:3",
         "Psalm 134:1"
       ],
-      "display_gloss": "enduring",
+      "display_gloss": "is enduring",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -599,6 +607,8 @@
       "gloss_parts": [
         "[is].enduring"
       ],
+      "greek": "μένει",
+      "greek_strong": "3306",
       "lemma": "עָמַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -731,6 +741,8 @@
       "gloss_parts": [
         "forever"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "עַד",
       "missing_enrichments": [
         "oshb:stem",
@@ -873,6 +885,8 @@
         "horn",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1009,6 +1023,8 @@
       "gloss_parts": [
         "it.will.be.exalted"
       ],
+      "greek": "ὑψωθήσεται",
+      "greek_strong": "5312",
       "lemma": "רוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1141,6 +1157,8 @@
         "in",
         "honor"
       ],
+      "greek": "ἐν δόχῃ",
+      "greek_strong": "1391",
       "lemma": "כָּבוֹד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1199,24 +1217,40 @@
       "ref": "Psalm 112:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA112.htm",
+      "source_version": "eng-kjv2006",
       "text": "He hath dispersed, he hath given to the poor; his righteousness endureth for ever; his horn shall be exalted with honour.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 112:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA112.htm",
+      "source_version": "eng-asv",
       "text": "He hath dispersed, he hath given to the needy; His righteousness endureth for ever: His horn shall be exalted with honor.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 112:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA112.htm",
+      "source_version": "engwebp",
       "text": "He has dispersed, he has given to the poor. His righteousness endures forever. His horn will be exalted with honor.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 112:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐσκόρπισεν ἔδωκεν τοῖς πένησιν δικαιοσύνη αὐτοῦ μένει εἰς αὐτοῦ ὑψωθήσεται ἐν δόχῃ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

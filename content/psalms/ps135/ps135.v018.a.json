@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "like",
+      "display_gloss": "like them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -120,6 +120,8 @@
         "like",
         "them"
       ],
+      "greek": "ὅμοιοι αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -260,6 +262,8 @@
       "gloss_parts": [
         "they.will.be"
       ],
+      "greek": "γένοιντο",
+      "greek_strong": "1096",
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -320,8 +324,8 @@
           "them"
         ],
         "gloss_fragments": [
-          "those",
-          "who make them"
+          "[those",
+          "who] make them"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -366,7 +370,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who make them those",
+      "display_gloss": "who] make them [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -396,6 +400,8 @@
         "[those",
         "who].make.them"
       ],
+      "greek": "ποιοῦντες",
+      "greek_strong": "4160",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -536,6 +542,8 @@
       "gloss_parts": [
         "every"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -670,6 +678,8 @@
       "gloss_parts": [
         "[one].who"
       ],
+      "greek": "οἱ",
+      "greek_strong": "3588",
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -733,7 +743,7 @@
           "trust"
         ],
         "gloss_fragments": [
-          "trusting"
+          "is trusting"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -771,7 +781,7 @@
         "Psalm 55:24",
         "Psalm 56:4"
       ],
-      "display_gloss": "trusting",
+      "display_gloss": "is trusting",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -800,6 +810,8 @@
       "gloss_parts": [
         "[is].trusting"
       ],
+      "greek": "πεποιθότες",
+      "greek_strong": "3982",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -906,7 +918,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "in",
+      "display_gloss": "in them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -937,6 +949,8 @@
         "in",
         "them"
       ],
+      "greek": "ἐπ’ αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1008,24 +1022,40 @@
       "ref": "Psalm 135:18",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA135.htm",
+      "source_version": "eng-kjv2006",
       "text": "They that make them are like unto them: [so is] every one that trusteth in them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 135:18",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA135.htm",
+      "source_version": "eng-asv",
       "text": "They that make them shall be like unto them; Yea, every one that trusteth in them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 135:18",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA135.htm",
+      "source_version": "engwebp",
       "text": "Those who make them will be like them, yes, everyone who trusts in them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 135:18",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅμοιοι αὐτοῖς γένοιντο ποιοῦντες πάντες οἱ πεποιθότες ἐπ’ αὐτοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -103,6 +103,8 @@
         "[who]",
         "looks"
       ],
+      "greek": "ὁ ἐπιβλέπων",
+      "greek_strong": "3588",
       "lemma": "נָבַט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -198,7 +200,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "to earth the",
+      "display_gloss": "at the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -230,6 +232,8 @@
         "the",
         "earth"
       ],
+      "greek": "γῆν",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -345,6 +349,8 @@
         "and",
         "it.trembled"
       ],
+      "greek": "καὶ ποιῶν",
+      "greek_strong": "4160",
       "lemma": "רָעַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -429,6 +435,8 @@
       "gloss_parts": [
         "he.touches"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "נָגַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -516,7 +524,7 @@
         "Psalm 76:5",
         "Psalm 78:54"
       ],
-      "display_gloss": "on mountains the",
+      "display_gloss": "on the mountains",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -548,6 +556,8 @@
         "the",
         "mountains"
       ],
+      "greek": "τῶν ὀρέων",
+      "greek_strong": "3735",
       "lemma": "הַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -666,6 +676,8 @@
         "and",
         "they.smoke"
       ],
+      "greek": "καὶ καπνίζονται",
+      "greek_strong": "2532",
       "lemma": "עָשַׁן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -701,24 +713,40 @@
       "ref": "Psalm 104:32",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "He looketh on the earth, and it trembleth: he toucheth the hills, and they smoke.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:32",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "Who looketh on the earth, and it trembleth; He toucheth the mountains, and they smoke.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:32",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "He looks at the earth, and it trembles. He touches the mountains, and they smoke.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:32",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ ἐπιβλέπων γῆν καὶ ποιῶν τῶν ὀρέων καὶ καπνίζονται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

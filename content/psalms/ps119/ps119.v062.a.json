@@ -86,6 +86,8 @@
       "gloss_parts": [
         "[the].middle"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חָצוֹת",
       "missing_enrichments": [
         "oshb:stem",
@@ -190,6 +192,8 @@
       "gloss_parts": [
         "of.[the].night"
       ],
+      "greek": "μεσονύκτιον",
+      "greek_strong": "3317",
       "lemma": "לַיְלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -320,6 +324,8 @@
       "gloss_parts": [
         "I.arise"
       ],
+      "greek": "ἐχηγειρόμην",
+      "greek_strong": null,
       "lemma": "קוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -423,7 +429,7 @@
         "Psalm 107:31",
         "Psalm 109:30"
       ],
-      "display_gloss": "to give thanks",
+      "display_gloss": "to give ~ thanks",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -453,6 +459,8 @@
         "to",
         "give.thanks"
       ],
+      "greek": "τοῦ ἐχομολογεῖσθαί",
+      "greek_strong": "1843",
       "lemma": "יָדָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -559,7 +567,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -590,6 +598,8 @@
         "to",
         "you"
       ],
+      "greek": "σοι",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -703,7 +713,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "because of",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -733,6 +743,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -873,6 +885,8 @@
       "gloss_parts": [
         "the.judgments"
       ],
+      "greek": "κρίματα",
+      "greek_strong": "2917",
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -990,7 +1004,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your righteousness",
+      "display_gloss": "your righteousness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1021,6 +1035,8 @@
         "your.righteousness",
         "your"
       ],
+      "greek": "δικαιοσύνης σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1092,24 +1108,40 @@
       "ref": "Psalm 119:62",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "At midnight I will rise to give thanks unto thee because of thy righteous judgments.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:62",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "At midnight I will rise to give thanks unto thee Because of thy righteous ordinances.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:62",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "At midnight I will rise to give thanks to you, because of your righteous ordinances.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:62",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μεσονύκτιον ἐχηγειρόμην τοῦ ἐχομολογεῖσθαί σοι ἐπὶ κρίματα δικαιοσύνης σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -108,6 +108,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "here!"
       ],
+      "greek": "ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "הִנֵּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -378,6 +382,8 @@
         "enemies",
         "your"
       ],
+      "greek": "ἐξθροί σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -497,7 +503,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "are in an uproar they",
+      "display_gloss": "they are in an uproar",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -527,6 +533,8 @@
         "they",
         "are.in.an.uproar"
       ],
+      "greek": "ἤξησαν",
+      "greek_strong": null,
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -590,8 +598,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who hate you"
+          "[those",
+          "who] hate you"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -638,7 +646,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and who hate you those",
+      "display_gloss": "and who] hate you [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -669,6 +677,8 @@
         "[those",
         "who].hate.you"
       ],
+      "greek": "καὶ σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -809,6 +819,8 @@
       "gloss_parts": [
         "they.have.lifted"
       ],
+      "greek": "ἦραν",
+      "greek_strong": "142",
       "lemma": "נָשָׂא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -928,6 +940,8 @@
       "gloss_parts": [
         "a.head"
       ],
+      "greek": "κεφαλήν",
+      "greek_strong": "2776",
       "lemma": "רֹאשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -977,24 +991,40 @@
       "ref": "Psalm 83:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA083.htm",
+      "source_version": "eng-kjv2006",
       "text": "They have taken crafty counsel against thy people, and consulted against thy hidden ones.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 83:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA083.htm",
+      "source_version": "eng-asv",
       "text": "They take crafty counsel against thy people, And consult together against thy hidden ones.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 83:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA083.htm",
+      "source_version": "engwebp",
       "text": "They conspire with cunning against your people. They plot against your cherished ones.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 83:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι ἰδοὺ ἐξθροί σου ἤξησαν καὶ σε ἦραν κεφαλήν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

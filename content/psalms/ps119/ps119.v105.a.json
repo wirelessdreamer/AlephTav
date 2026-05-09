@@ -40,7 +40,7 @@
           "lamp"
         ],
         "gloss_fragments": [
-          "a lamp"
+          "is a lamp"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -55,7 +55,7 @@
       "corpus_occurrence_refs": [
         "Psalm 132:17"
       ],
-      "display_gloss": "a lamp",
+      "display_gloss": "is a lamp",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -85,6 +85,8 @@
       "gloss_parts": [
         "[is].a.lamp"
       ],
+      "greek": "λύξνος",
+      "greek_strong": "3088",
       "lemma": "נֵר",
       "missing_enrichments": [
         "oshb:stem",
@@ -205,6 +207,8 @@
         "foot",
         "my"
       ],
+      "greek": "τοῖς ποσίν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -357,6 +361,8 @@
         "word",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -504,6 +510,8 @@
         "and",
         "a.light"
       ],
+      "greek": "καὶ φῶς",
+      "greek_strong": "5457",
       "lemma": "אוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -650,6 +658,8 @@
         "pathway",
         "my"
       ],
+      "greek": "ταῖς τρίβοις μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -721,24 +731,40 @@
       "ref": "Psalm 119:105",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thy word [is] a lamp unto my feet, and a light unto my path.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:105",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "Thy word is a lamp unto my feet, And light unto my path.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:105",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "Your word is a lamp to my feet, and a light for my path.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:105",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "λύξνος τοῖς ποσίν μου σου καὶ φῶς ταῖς τρίβοις μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

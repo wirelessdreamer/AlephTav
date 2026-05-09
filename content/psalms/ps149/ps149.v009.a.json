@@ -117,6 +117,8 @@
         "to",
         "execute"
       ],
+      "greek": "τοῦ ποιῆσαι",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -225,7 +227,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "on them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -256,6 +258,8 @@
         "on",
         "them"
       ],
+      "greek": "ἐν αὐτοῖς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -394,6 +398,8 @@
       "gloss_parts": [
         "judgment"
       ],
+      "greek": "κρίμα",
+      "greek_strong": "2917",
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -503,6 +509,8 @@
       "gloss_parts": [
         "written"
       ],
+      "greek": "ἔγγραπτον",
+      "greek_strong": null,
       "lemma": "כָּתַב",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -544,7 +552,7 @@
           "honor"
         ],
         "gloss_fragments": [
-          "honor"
+          "is honor"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -567,7 +575,7 @@
         "Psalm 145:5",
         "Psalm 145:12"
       ],
-      "display_gloss": "honor",
+      "display_gloss": "is honor",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -597,6 +605,8 @@
       "gloss_parts": [
         "[is].honor"
       ],
+      "greek": "δόχα",
+      "greek_strong": "1391",
       "lemma": "הָדָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -710,6 +720,8 @@
       "gloss_parts": [
         "it"
       ],
+      "greek": "αὕτη",
+      "greek_strong": "3778",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -851,6 +863,8 @@
         "for",
         "all"
       ],
+      "greek": "πᾶσι",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -990,6 +1004,8 @@
         "his.faithful",
         "[people]"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1126,6 +1142,8 @@
       "gloss_parts": [
         "praise"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1256,6 +1274,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָהּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1315,24 +1335,40 @@
       "ref": "Psalm 149:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA149.htm",
+      "source_version": "eng-kjv2006",
       "text": "To execute upon them the judgment written: this honour have all his saints. Praise ye the LORD.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 149:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA149.htm",
+      "source_version": "eng-asv",
       "text": "To execute upon them the judgment written: This honor have all his saints. Praise ye Jehovah.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 149:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA149.htm",
+      "source_version": "engwebp",
       "text": "to execute on them the written judgment. All his saints have this honor. Praise the LORD!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 149:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τοῦ ποιῆσαι ἐν αὐτοῖς κρίμα ἔγγραπτον δόχα αὕτη πᾶσι αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -110,6 +110,8 @@
       "gloss_parts": [
         "if"
       ],
+      "greek": "εἰ",
+      "greek_strong": "1487",
       "lemma": "אִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -224,6 +226,8 @@
       "gloss_parts": [
         "I.have.repaid"
       ],
+      "greek": "ἀνταπέδωκα",
+      "greek_strong": "467",
       "lemma": "גָּמַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -267,8 +271,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "one",
-          "who is at peace with me"
+          "[one",
+          "who is] at peace with me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -313,7 +317,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who is at peace with me one",
+      "display_gloss": "who is] at peace with me [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -343,6 +347,8 @@
         "[one",
         "who.is].at.peace.with.me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -484,6 +490,8 @@
       "gloss_parts": [
         "evil"
       ],
+      "greek": "κακά",
+      "greek_strong": "2556",
       "lemma": "רַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -596,7 +604,7 @@
         "Psalm 26:2",
         "Psalm 28:9"
       ],
-      "display_gloss": "and have rescued I",
+      "display_gloss": "and I have rescued",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -627,6 +635,8 @@
         "I",
         "have.rescued"
       ],
+      "greek": "ἄρα ἀποπέσοιν",
+      "greek_strong": "634",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -767,6 +777,8 @@
         "foe",
         "my"
       ],
+      "greek": "ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -885,6 +897,8 @@
       "gloss_parts": [
         "without.cause"
       ],
+      "greek": "κενός",
+      "greek_strong": null,
       "lemma": "רֵיקָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -919,24 +933,40 @@
       "ref": "Psalm 7:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA007.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let the enemy persecute my soul, and take [it;] yea, let him tread down my life upon the earth, and lay mine honour in the dust. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 7:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA007.htm",
+      "source_version": "eng-asv",
       "text": "Let the enemy pursue my soul, and overtake it; Yea, let him tread my life down to the earth, And lay my glory in the dust. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 7:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA007.htm",
+      "source_version": "engwebp",
       "text": "let the enemy pursue my soul, and overtake it; yes, let him tread my life down to the earth, and lay my glory in the dust. Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 7:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἰ ἀνταπέδωκα μοι κακά ἄρα ἀποπέσοιν ἐξθρῶν μου κενός",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

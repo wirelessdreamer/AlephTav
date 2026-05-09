@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "smashed them I",
+      "display_gloss": "I smashed them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "I",
         "smashed.them"
       ],
+      "greek": "ἐκθλίψω αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -264,6 +266,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -381,6 +385,8 @@
       "gloss_parts": [
         "they.were.able"
       ],
+      "greek": "δύνωνται",
+      "greek_strong": "1410",
       "lemma": "יָכֹל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -490,6 +496,8 @@
       "gloss_parts": [
         "to.rise"
       ],
+      "greek": "στῆναι",
+      "greek_strong": "2476",
       "lemma": "קוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -616,6 +624,8 @@
       "gloss_parts": [
         "they.fell"
       ],
+      "greek": "πεσοῦνται",
+      "greek_strong": "4098",
       "lemma": "נָפַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -731,6 +741,8 @@
       "gloss_parts": [
         "under"
       ],
+      "greek": "ὑπὸ",
+      "greek_strong": "5259",
       "lemma": "תַּחַת",
       "missing_enrichments": [
         "oshb:stem",
@@ -860,6 +872,8 @@
         "feet",
         "my"
       ],
+      "greek": "πόδας μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -931,24 +945,40 @@
       "ref": "Psalm 18:39",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "For thou hast girded me with strength unto the battle: thou hast subdued under me those that rose up against me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:39",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "For thou hast girded me with strength unto the battle: Thou hast subdued under me those that rose up against me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:39",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "For you have armed me with strength to the battle. You have subdued under me those who rose up against me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:39",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐκθλίψω αὐτούς καὶ οὐ δύνωνται στῆναι πεσοῦνται ὑπὸ πόδας μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

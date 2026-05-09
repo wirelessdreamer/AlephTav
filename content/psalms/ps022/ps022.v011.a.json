@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "on you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -120,6 +120,8 @@
         "on",
         "you"
       ],
+      "greek": "ἐπὶ σὲ",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -243,6 +245,8 @@
       "gloss_parts": [
         "I.was.cast"
       ],
+      "greek": "ἐπερρίφην",
+      "greek_strong": null,
       "lemma": "שָׁלַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -335,6 +339,8 @@
         "from.[the]",
         "womb"
       ],
+      "greek": "ἐκ μήτρας",
+      "greek_strong": "3388",
       "lemma": "רֶחֶם",
       "missing_enrichments": [
         "oshb:stem",
@@ -427,6 +433,8 @@
         "from",
         "the.belly"
       ],
+      "greek": "ἐκ κοιλίας",
+      "greek_strong": "2836",
       "lemma": "בֶּטֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -517,7 +525,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my my mother",
+      "display_gloss": "my mother",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -548,6 +556,8 @@
         "my.mother",
         "my"
       ],
+      "greek": "μητρός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -623,8 +633,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "been my God",
-          "have"
+          "been] my God",
+          "[have"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -669,7 +679,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have been my God",
+      "display_gloss": "[have been] my God",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -700,6 +710,8 @@
         "been].my.God",
         "[have"
       ],
+      "greek": "θεός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -842,6 +854,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σύ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -903,24 +917,40 @@
       "ref": "Psalm 22:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "Be not far from me; for trouble [is] near; for [there is] none to help.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "Be not far from me; for trouble is near; For there is none to help.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "Don’t be far from me, for trouble is near. For there is no one to help.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐπὶ σὲ ἐπερρίφην ἐκ μήτρας ἐκ κοιλίας μητρός μου θεός μου σύ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -117,6 +117,8 @@
         "?",
         "not"
       ],
+      "greek": "οὐξὶ",
+      "greek_strong": "3780",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -252,6 +254,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -358,6 +362,8 @@
       "gloss_parts": [
         "will.he.search.out"
       ],
+      "greek": "ἐκζητήσει",
+      "greek_strong": null,
       "lemma": "חָקַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -455,6 +461,8 @@
       "gloss_parts": [
         "this"
       ],
+      "greek": "ταῦτα",
+      "greek_strong": "5023",
       "lemma": "זֹאת",
       "missing_enrichments": [
         "oshb:stem",
@@ -578,6 +586,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -714,6 +724,8 @@
       "gloss_parts": [
         "he"
       ],
+      "greek": "αὐτὸς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -787,7 +799,7 @@
           "knows"
         ],
         "gloss_fragments": [
-          "knowing"
+          "is knowing"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -825,7 +837,7 @@
         "Psalm 56:10",
         "Psalm 59:14"
       ],
-      "display_gloss": "knowing",
+      "display_gloss": "is knowing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -854,6 +866,8 @@
       "gloss_parts": [
         "[is].knowing"
       ],
+      "greek": "γινώσκει",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -956,6 +970,8 @@
       "gloss_parts": [
         "[the].secrets"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "תַּעֲלֻמָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1060,6 +1076,8 @@
       "gloss_parts": [
         "of.[the].heart"
       ],
+      "greek": "καρδίας",
+      "greek_strong": "2588",
       "lemma": "לֵב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1118,24 +1136,40 @@
       "ref": "Psalm 44:22",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:22",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "Yea, for thy sake are we killed all the day long; We are accounted as sheep for the slaughter.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:22",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "Yes, for your sake we are killed all day long. We are regarded as sheep for the slaughter.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:22",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐξὶ θεὸς ἐκζητήσει ταῦτα αὐτὸς γινώσκει καρδίας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

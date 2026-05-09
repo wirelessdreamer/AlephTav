@@ -84,7 +84,7 @@
         "Psalm 44:24",
         "Psalm 44:25"
       ],
-      "display_gloss": "how many?",
+      "display_gloss": "as the what?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -115,6 +115,8 @@
         "how",
         "many?"
       ],
+      "greek": "πόσαι",
+      "greek_strong": "4214",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -248,6 +250,8 @@
       "gloss_parts": [
         "[are].the.days"
       ],
+      "greek": "ἡμέραι",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -360,7 +364,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your servant",
+      "display_gloss": "your servant",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -391,6 +395,8 @@
         "your.servant",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -518,6 +524,8 @@
       "gloss_parts": [
         "when?"
       ],
+      "greek": "πότε",
+      "greek_strong": "4219",
       "lemma": "מָתַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -633,6 +641,8 @@
       "gloss_parts": [
         "will.you.do"
       ],
+      "greek": "ποιήσεις",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -702,8 +712,8 @@
         ],
         "gloss_fragments": [
           "in",
-          "those",
-          "who harass me"
+          "[those",
+          "who] harass me"
         ],
         "preposition_role": "on",
         "raw_classes": [
@@ -750,7 +760,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "in who harass me those",
+      "display_gloss": "in who] harass me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -781,6 +791,8 @@
         "[those",
         "who].harass.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -922,6 +934,8 @@
       "gloss_parts": [
         "judgment"
       ],
+      "greek": "κρίσιν",
+      "greek_strong": "2920",
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -988,24 +1002,40 @@
       "ref": "Psalm 119:84",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "How many [are] the days of thy servant? when wilt thou execute judgment on them that persecute me?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:84",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "How many are the days of thy servant? When wilt thou execute judgment on them that persecute me?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:84",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "How many are the days of your servant? When will you execute judgment on those who persecute me?",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:84",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πόσαι ἡμέραι σου πότε ποιήσεις με κρίσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -116,6 +116,8 @@
         "of",
         "David"
       ],
+      "greek": "τῷ δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -251,6 +253,8 @@
       "gloss_parts": [
         "contend"
       ],
+      "greek": "δίκασον",
+      "greek_strong": "2613",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -383,6 +387,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -520,6 +526,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -659,6 +667,8 @@
         "opponents",
         "my"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -779,6 +789,8 @@
       "gloss_parts": [
         "fight"
       ],
+      "greek": "πολέμησον",
+      "greek_strong": null,
       "lemma": "לָחַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -855,7 +867,7 @@
         "Psalm 31:24",
         "Psalm 33:13"
       ],
-      "display_gloss": "with",
+      "display_gloss": "against",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -885,6 +897,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -947,8 +961,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "those",
-          "who fight with me"
+          "[those",
+          "who] fight with me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -993,7 +1007,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who fight with me those",
+      "display_gloss": "who] fight with me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1023,6 +1037,8 @@
         "[those",
         "who].fight.with.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1093,24 +1109,40 @@
       "ref": "Psalm 35:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA035.htm",
+      "source_version": "eng-kjv2006",
       "text": "[A Psalm] of David. Plead [my cause], O LORD, with them that strive with me: fight against them that fight against me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA035.htm",
+      "source_version": "eng-asv",
       "text": "[A Psalm] of David. Strive thou, O Jehovah, with them that strive with me: Fight thou against them that fight against me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 35:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA035.htm",
+      "source_version": "engwebp",
       "text": "By David. Contend, LORD, with those who contend with me. Fight against those who fight against me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 35:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τῷ δαυιδ δίκασον κύριε με πολέμησον με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

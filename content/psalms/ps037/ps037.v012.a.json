@@ -41,7 +41,7 @@
           "plot"
         ],
         "gloss_fragments": [
-          "planning"
+          "is planning"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -57,7 +57,7 @@
         "Psalm 17:3",
         "Psalm 31:14"
       ],
-      "display_gloss": "planning",
+      "display_gloss": "is planning",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -86,6 +86,8 @@
       "gloss_parts": [
         "[is].planning"
       ],
+      "greek": "παρατηρήσεται",
+      "greek_strong": null,
       "lemma": "זָמַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -191,6 +193,8 @@
       "gloss_parts": [
         "[the].wicked"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -310,7 +314,7 @@
         "Psalm 72:7",
         "Psalm 75:11"
       ],
-      "display_gloss": "to righteous the",
+      "display_gloss": "against the righteous",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -342,6 +346,8 @@
         "the",
         "righteous"
       ],
+      "greek": "τὸν δίκαιον",
+      "greek_strong": "1342",
       "lemma": "צַדִּיק",
       "missing_enrichments": [
         "oshb:stem",
@@ -462,6 +468,8 @@
         "and",
         "[he.is].gnashing"
       ],
+      "greek": "καὶ βρύχει",
+      "greek_strong": "1031",
       "lemma": "חָרַק",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -546,7 +554,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "towards",
+      "display_gloss": "at him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -577,6 +585,8 @@
         "towards",
         "him"
       ],
+      "greek": "ἐπ’ αὐτὸν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -729,6 +739,8 @@
         "teeth",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -800,24 +812,40 @@
       "ref": "Psalm 37:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "source_version": "eng-kjv2006",
       "text": "The wicked plotteth against the just, and gnasheth upon him with his teeth.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "source_version": "eng-asv",
       "text": "The wicked plotteth against the just, And gnasheth upon him with his teeth.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "source_version": "engwebp",
       "text": "The wicked plots against the just, and gnashes at him with his teeth.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 37:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "παρατηρήσεται τὸν δίκαιον καὶ βρύχει ἐπ’ αὐτὸν αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

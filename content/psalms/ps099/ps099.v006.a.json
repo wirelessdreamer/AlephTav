@@ -97,6 +97,8 @@
       "gloss_parts": [
         "Moses"
       ],
+      "greek": "μωυσῆς",
+      "greek_strong": "3475",
       "lemma": "מֹשֶׁה",
       "missing_enrichments": [
         "oshb:stem",
@@ -198,6 +200,8 @@
         "and",
         "Aaron"
       ],
+      "greek": "καὶ ααρων",
+      "greek_strong": "2",
       "lemma": "אַהֲרֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -326,6 +330,8 @@
         "priests",
         "his"
       ],
+      "greek": "ἐν ἱερεῦσιν αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -442,6 +448,8 @@
         "and",
         "Samuel"
       ],
+      "greek": "καὶ σαμουηλ",
+      "greek_strong": "4545",
       "lemma": "שְׁמוּאֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -478,7 +486,7 @@
           "called"
         ],
         "gloss_fragments": [
-          "among",
+          "was among",
           "those who called on"
         ],
         "preposition_role": "among",
@@ -519,7 +527,7 @@
         "Psalm 86:3",
         "Psalm 102:3"
       ],
-      "display_gloss": "among those who called on",
+      "display_gloss": "among called",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -549,6 +557,8 @@
         "[was].among",
         "[those.who].called.on"
       ],
+      "greek": "ἐν ἐπικαλουμένοις",
+      "greek_strong": "1941",
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -687,6 +697,8 @@
         "name",
         "(of).his"
       ],
+      "greek": "ὄνομα αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -822,6 +834,8 @@
       "gloss_parts": [
         "[they.were].calling"
       ],
+      "greek": "ἐπεκαλοῦντο",
+      "greek_strong": null,
       "lemma": "קָרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -949,6 +963,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "τὸν",
+      "greek_strong": "3588",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1078,6 +1094,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριον",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1218,6 +1236,8 @@
         "and",
         "he"
       ],
+      "greek": "καὶ αὐτὸς",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1332,7 +1352,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "answered them he",
+      "display_gloss": "he answered them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1362,6 +1382,8 @@
         "he",
         "answered.them"
       ],
+      "greek": "ἐπήκουσεν αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1425,24 +1447,40 @@
       "ref": "Psalm 99:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA099.htm",
+      "source_version": "eng-kjv2006",
       "text": "Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon the LORD, and he answered them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 99:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA099.htm",
+      "source_version": "eng-asv",
       "text": "Moses and Aaron among his priests, And Samuel among them that call upon his name; They called upon Jehovah, and he answered them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 99:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA099.htm",
+      "source_version": "engwebp",
       "text": "Moses and Aaron were among his priests, Samuel was among those who call on his name. They called on the LORD, and he answered them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 99:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μωυσῆς καὶ ααρων ἐν ἱερεῦσιν αὐτοῦ καὶ σαμουηλ ἐν ἐπικαλουμένοις ὄνομα αὐτοῦ ἐπεκαλοῦντο τὸν κύριον καὶ αὐτὸς ἐπήκουσεν αὐτῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

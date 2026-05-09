@@ -109,6 +109,8 @@
       "gloss_parts": [
         "[be].blessed"
       ],
+      "greek": "εὐλογημένος",
+      "greek_strong": "2127",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -169,8 +171,8 @@
           "comes"
         ],
         "gloss_fragments": [
-          "the one",
-          "who comes"
+          "the [one",
+          "who] comes"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -210,7 +212,7 @@
         "Psalm 66:12",
         "Psalm 66:13"
       ],
-      "display_gloss": "who comes the one",
+      "display_gloss": "who] comes the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -240,6 +242,8 @@
         "the.[one",
         "who].comes"
       ],
+      "greek": "ὁ ἐρξόμενος",
+      "greek_strong": "2064",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -375,6 +379,8 @@
         "in",
         "the.name"
       ],
+      "greek": "ἐν ὀνόματι",
+      "greek_strong": "3686",
       "lemma": "שֵׁם",
       "missing_enrichments": [
         "oshb:stem",
@@ -508,6 +514,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -659,6 +667,8 @@
         "we",
         "bless.you"
       ],
+      "greek": "εὐλογήκαμεν ὑμᾶς",
+      "greek_strong": "5209",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -804,6 +814,8 @@
         "from",
         "the.house"
       ],
+      "greek": "ἐχ οἴκου",
+      "greek_strong": "3624",
       "lemma": "בַּיִת",
       "missing_enrichments": [
         "oshb:stem",
@@ -935,6 +947,8 @@
       "gloss_parts": [
         "of.Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1006,24 +1020,40 @@
       "ref": "Psalm 118:26",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA118.htm",
+      "source_version": "eng-kjv2006",
       "text": "Blessed [be] he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 118:26",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA118.htm",
+      "source_version": "eng-asv",
       "text": "Blessed be he that cometh in the name of Jehovah: We have blessed you out of the house of Jehovah.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 118:26",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA118.htm",
+      "source_version": "engwebp",
       "text": "Blessed is he who comes in the LORD’s name! We have blessed you out of the LORD’s house.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 118:26",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εὐλογημένος ὁ ἐρξόμενος ἐν ὀνόματι κυρίου εὐλογήκαμεν ὑμᾶς ἐχ οἴκου κυρίου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

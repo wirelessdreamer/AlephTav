@@ -113,6 +113,8 @@
       "gloss_parts": [
         "remember"
       ],
+      "greek": "μνήσθητι",
+      "greek_strong": "3415",
       "lemma": "זָכַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -242,6 +244,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "τίς",
+      "greek_strong": "5101",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -373,6 +377,8 @@
       "gloss_parts": [
         "what?"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -435,7 +441,7 @@
           "short ~ time"
         ],
         "gloss_fragments": [
-          "lifespan"
+          "is lifespan"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -451,7 +457,7 @@
         "Psalm 17:14",
         "Psalm 49:2"
       ],
-      "display_gloss": "lifespan",
+      "display_gloss": "short ~ time",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -481,6 +487,8 @@
       "gloss_parts": [
         "[is].lifespan"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חֶלֶד",
       "missing_enrichments": [
         "oshb:stem",
@@ -587,6 +595,8 @@
       "gloss_parts": [
         "concerning"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -719,6 +729,8 @@
       "gloss_parts": [
         "what?"
       ],
+      "greek": "γὰρ",
+      "greek_strong": "1063",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -839,6 +851,8 @@
       "gloss_parts": [
         "emptiness"
       ],
+      "greek": "ματαίως",
+      "greek_strong": null,
       "lemma": "שָׁוְא",
       "missing_enrichments": [
         "oshb:stem",
@@ -934,6 +948,8 @@
       "gloss_parts": [
         "have.you.created"
       ],
+      "greek": "ἔκτισας",
+      "greek_strong": "2936",
       "lemma": "בָּרָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1040,6 +1056,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1176,6 +1194,8 @@
       "gloss_parts": [
         "[the].children"
       ],
+      "greek": "υἱοὺς",
+      "greek_strong": "5207",
       "lemma": "בֵּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1308,6 +1328,8 @@
       "gloss_parts": [
         "of.humankind"
       ],
+      "greek": "ἀνθρώπων",
+      "greek_strong": "444",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1366,24 +1388,40 @@
       "ref": "Psalm 89:48",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA089.htm",
+      "source_version": "eng-kjv2006",
       "text": "What man [is he that] liveth, and shall not see death? shall he deliver his soul from the hand of the grave? Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:48",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA089.htm",
+      "source_version": "eng-asv",
       "text": "What man is he that shall live and not see death, That shall deliver his soul from the power of Sheol? [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:48",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA089.htm",
+      "source_version": "engwebp",
       "text": "What man is he who shall live and not see death, who shall deliver his soul from the power of Sheol? Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 89:48",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μνήσθητι τίς μου μὴ γὰρ ματαίως ἔκτισας πάντας υἱοὺς ἀνθρώπων",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

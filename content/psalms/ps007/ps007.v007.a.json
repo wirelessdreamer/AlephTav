@@ -90,7 +90,7 @@
         "Psalm 26:2",
         "Psalm 28:9"
       ],
-      "display_gloss": "arise",
+      "display_gloss": "rise up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
       "gloss_parts": [
         "arise"
       ],
+      "greek": "ἀνάστηθι",
+      "greek_strong": "450",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -250,6 +252,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -400,6 +404,8 @@
         "anger",
         "your"
       ],
+      "greek": "ἐν ὀργῇ σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -512,7 +518,7 @@
         "Psalm 93:3",
         "Psalm 94:2"
       ],
-      "display_gloss": "raise yourself",
+      "display_gloss": "lift ~ up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -541,6 +547,8 @@
       "gloss_parts": [
         "raise.yourself"
       ],
+      "greek": "ὑψώθητι",
+      "greek_strong": null,
       "lemma": "נָשָׂא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -650,6 +658,8 @@
         "on",
         "the.furi(es)"
       ],
+      "greek": "ἐν πέρασι",
+      "greek_strong": "1722",
       "lemma": "עֶבְרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -735,7 +745,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "my foes of",
+      "display_gloss": "of my foes",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -765,6 +775,8 @@
         "of",
         "my.foes"
       ],
+      "greek": "ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -917,6 +929,8 @@
         "and",
         "awake"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1027,7 +1041,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "for me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1058,6 +1072,8 @@
         "to",
         "me"
       ],
+      "greek": "θεός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1200,6 +1216,8 @@
       "gloss_parts": [
         "justice"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -1317,6 +1335,8 @@
       "gloss_parts": [
         "you.have.commanded"
       ],
+      "greek": "ἐνετείλω",
+      "greek_strong": "1781",
       "lemma": "צָוָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1363,24 +1383,40 @@
       "ref": "Psalm 7:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA007.htm",
+      "source_version": "eng-kjv2006",
       "text": "So shall the congregation of the people compass thee about: for their sakes therefore return thou on high.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 7:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA007.htm",
+      "source_version": "eng-asv",
       "text": "And let the congregation of the peoples compass thee about; And over them return thou on high.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 7:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA007.htm",
+      "source_version": "engwebp",
       "text": "Let the congregation of the peoples surround you. Rule over them on high.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 7:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀνάστηθι κύριε ἐν ὀργῇ σου ὑψώθητι ἐν πέρασι ἐξθρῶν μου θεός μου ἐνετείλω",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

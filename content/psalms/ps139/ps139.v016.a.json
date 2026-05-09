@@ -125,6 +125,8 @@
         "form",
         "my.shapeless"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -266,6 +268,8 @@
       "gloss_parts": [
         "they.saw"
       ],
+      "greek": "εἴδοσαν",
+      "greek_strong": "3708",
       "lemma": "רָאָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -405,6 +409,8 @@
         "eyes",
         "your"
       ],
+      "greek": "ὀφθαλμοί σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -552,6 +558,8 @@
         "and",
         "on"
       ],
+      "greek": "καὶ ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -693,6 +701,8 @@
         "scroll",
         "your"
       ],
+      "greek": "βιβλίον σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -845,6 +855,8 @@
         "of.them",
         "all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -967,6 +979,8 @@
       "gloss_parts": [
         "they.were.written"
       ],
+      "greek": "γραφήσονται",
+      "greek_strong": null,
       "lemma": "כָּתַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1075,6 +1089,8 @@
       "gloss_parts": [
         "days"
       ],
+      "greek": "ἡμέρας",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1185,6 +1201,8 @@
       "gloss_parts": [
         "[which].they.were.ordained"
       ],
+      "greek": "πλασθήσονται",
+      "greek_strong": null,
       "lemma": "יָצַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1246,6 +1264,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -1336,7 +1356,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and to",
+      "display_gloss": "and to it",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1368,6 +1388,8 @@
         "to",
         "it"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1494,6 +1516,8 @@
       "gloss_parts": [
         "one"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֶחָד",
       "missing_enrichments": [
         "oshb:strong",
@@ -1537,24 +1561,40 @@
       "ref": "Psalm 139:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA139.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thine eyes did see my substance, yet being unperfect; and in thy book all [my members] were written, [which] in continuance were fashioned, when [as yet there was] none of them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA139.htm",
+      "source_version": "eng-asv",
       "text": "Thine eyes did see mine unformed substance; And in thy book they were all written, [Even] the days that were ordained [for me], When as yet there was none of them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA139.htm",
+      "source_version": "engwebp",
       "text": "Your eyes saw my body. In your book they were all written, the days that were ordained for me, when as yet there were none of them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 139:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου εἴδοσαν ὀφθαλμοί σου καὶ ἐπὶ βιβλίον σου πάντες γραφήσονται ἡμέρας πλασθήσονται καὶ ἐν αὐτοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

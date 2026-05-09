@@ -116,6 +116,8 @@
         "of",
         "David"
       ],
+      "greek": "τοῦ δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -245,6 +247,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -354,6 +358,8 @@
       "gloss_parts": [
         "fret.yourself"
       ],
+      "greek": "παραζήλου",
+      "greek_strong": null,
       "lemma": "חָרָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -429,7 +435,7 @@
         "Psalm 106:32",
         "Psalm 119:115"
       ],
-      "display_gloss": "in evil-doers the",
+      "display_gloss": "because of the evildoers",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -460,6 +466,8 @@
         "the",
         "evil-doers"
       ],
+      "greek": "ἐν πονηρευομένοις",
+      "greek_strong": "1722",
       "lemma": "רָעַע",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -579,6 +587,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μηδὲ",
+      "greek_strong": "3366",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -687,6 +697,8 @@
       "gloss_parts": [
         "be.jealous"
       ],
+      "greek": "ζήλου",
+      "greek_strong": "2205",
       "lemma": "קָנָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -796,6 +808,8 @@
         "of",
         "[those.who].do"
       ],
+      "greek": "τοὺς ποιοῦντας",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -911,6 +925,8 @@
       "gloss_parts": [
         "(of).unrighteousness"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עַוְלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -951,24 +967,40 @@
       "ref": "Psalm 37:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "source_version": "eng-kjv2006",
       "text": "[A Psalm] of David. Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "source_version": "eng-asv",
       "text": "[A Psalm] of David. Fret not thyself because of evil-doers, Neither be thou envious against them that work unrighteousness.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "source_version": "engwebp",
       "text": "By David. Don’t fret because of evildoers, neither be envious against those who work unrighteousness.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 37:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τοῦ δαυιδ μὴ παραζήλου ἐν πονηρευομένοις μηδὲ ζήλου τοὺς ποιοῦντας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

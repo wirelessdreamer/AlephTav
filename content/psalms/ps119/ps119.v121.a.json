@@ -108,6 +108,8 @@
       "gloss_parts": [
         "I.have.done"
       ],
+      "greek": "ἐποίησα",
+      "greek_strong": "4160",
       "lemma": "עָשָׂה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -242,6 +244,8 @@
       "gloss_parts": [
         "justice"
       ],
+      "greek": "κρίμα",
+      "greek_strong": "2917",
       "lemma": "מִשְׁפָּט",
       "missing_enrichments": [
         "oshb:stem",
@@ -385,6 +389,8 @@
         "and",
         "righteousness"
       ],
+      "greek": "καὶ δικαιοσύνην",
+      "greek_strong": "1343",
       "lemma": "צֶדֶק",
       "missing_enrichments": [
         "oshb:stem",
@@ -520,6 +526,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "בַּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -627,7 +635,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will abandon me you",
+      "display_gloss": "you will abandon me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -657,6 +665,8 @@
         "you",
         "will.abandon.me"
       ],
+      "greek": "παραδῷς με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -732,8 +742,8 @@
         ],
         "gloss_fragments": [
           "to",
-          "those",
-          "who oppress me"
+          "[those",
+          "who] oppress me"
         ],
         "preposition_role": "to",
         "raw_classes": [
@@ -780,7 +790,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to who oppress me those",
+      "display_gloss": "to who] oppress me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -811,6 +821,8 @@
         "[those",
         "who].oppress.me"
       ],
+      "greek": "τοῖς ἀδικοῦσίν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -881,24 +893,40 @@
       "ref": "Psalm 119:121",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "I have done judgment and justice: leave me not to mine oppressors.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:121",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "I have done justice and righteousness: Leave me not to mine oppressors.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:121",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "I have done what is just and righteous. Don’t leave me to my oppressors.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:121",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐποίησα κρίμα καὶ δικαιοσύνην μὴ παραδῷς με τοῖς ἀδικοῦσίν με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

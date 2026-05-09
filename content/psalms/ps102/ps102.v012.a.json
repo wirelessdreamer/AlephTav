@@ -119,6 +119,8 @@
         "days",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -249,6 +251,8 @@
         "[are].like",
         "a.shadow"
       ],
+      "greek": "ὡσεὶ σκιὰ",
+      "greek_strong": "4639",
       "lemma": "צֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -360,6 +364,8 @@
       "gloss_parts": [
         "extended"
       ],
+      "greek": "ἐκλίθησαν",
+      "greek_strong": null,
       "lemma": "נָטָה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -495,6 +501,8 @@
         "and",
         "I"
       ],
+      "greek": "καὶ ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -581,7 +589,7 @@
         "Psalm 105:35",
         "Psalm 106:20"
       ],
-      "display_gloss": "like vegetation the",
+      "display_gloss": "like the grass",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -613,6 +621,8 @@
         "(the)",
         "vegetation"
       ],
+      "greek": "ὡσεὶ ξόρτος",
+      "greek_strong": "5528",
       "lemma": "עֵשֶׂב",
       "missing_enrichments": [
         "oshb:stem",
@@ -704,6 +714,8 @@
       "gloss_parts": [
         "I.am.withering"
       ],
+      "greek": "ἐχηράνθην",
+      "greek_strong": null,
       "lemma": "יָבֵשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -742,24 +754,40 @@
       "ref": "Psalm 102:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA102.htm",
+      "source_version": "eng-kjv2006",
       "text": "But thou, O LORD, shalt endure for ever; and thy remembrance unto all generations.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 102:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA102.htm",
+      "source_version": "eng-asv",
       "text": "But thou, O Jehovah, wilt abide for ever; And thy memorial [name] unto all generations.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 102:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA102.htm",
+      "source_version": "engwebp",
       "text": "But you, LORD, will remain forever; your renown endures to all generations.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 102:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου ὡσεὶ σκιὰ ἐκλίθησαν καὶ ἐγὼ ὡσεὶ ξόρτος ἐχηράνθην",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

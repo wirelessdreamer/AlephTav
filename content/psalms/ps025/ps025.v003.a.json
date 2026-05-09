@@ -111,6 +111,8 @@
       "gloss_parts": [
         "also"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "גַּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντες",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -307,8 +311,8 @@
           "you"
         ],
         "gloss_fragments": [
-          "those",
-          "who wait for you"
+          "[those",
+          "who] wait for you"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -353,7 +357,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who wait for you those",
+      "display_gloss": "who] wait for you [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -383,6 +387,8 @@
         "[those",
         "who].wait.for.you"
       ],
+      "greek": "σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -524,6 +530,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -651,6 +659,8 @@
       "gloss_parts": [
         "they.will.be.ashamed"
       ],
+      "greek": "καταισξυνθῶσιν",
+      "greek_strong": "2617",
       "lemma": "בּוֹשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -780,6 +790,8 @@
       "gloss_parts": [
         "they.will.be.ashamed"
       ],
+      "greek": "αἰσξυνθήτωσαν",
+      "greek_strong": "153",
       "lemma": "בּוֹשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -843,8 +855,8 @@
           "treacherous"
         ],
         "gloss_fragments": [
-          "those",
-          "who act treacherously"
+          "[those",
+          "who] act treacherously"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -864,7 +876,7 @@
         "Psalm 78:57",
         "Psalm 119:158"
       ],
-      "display_gloss": "who act treacherously those",
+      "display_gloss": "who] act treacherously [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -894,6 +906,8 @@
         "[those",
         "who].act.treacherously"
       ],
+      "greek": "οἱ ἀνομοῦντες",
+      "greek_strong": "3588",
       "lemma": "בָּגַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -978,6 +992,8 @@
       "gloss_parts": [
         "without.cause"
       ],
+      "greek": "κενῆς",
+      "greek_strong": "2756",
       "lemma": "רֵיקָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1012,24 +1028,40 @@
       "ref": "Psalm 25:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA025.htm",
+      "source_version": "eng-kjv2006",
       "text": "Yea, let none that wait on thee be ashamed: let them be ashamed which transgress without cause.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 25:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA025.htm",
+      "source_version": "eng-asv",
       "text": "Yea, none that wait for thee shall be put to shame: They shall be put to shame that deal treacherously without cause.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 25:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA025.htm",
+      "source_version": "engwebp",
       "text": "Yes, no one who waits for you will be shamed. They will be shamed who deal treacherously without cause.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 25:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ πάντες σε οὐ καταισξυνθῶσιν αἰσξυνθήτωσαν οἱ ἀνομοῦντες κενῆς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

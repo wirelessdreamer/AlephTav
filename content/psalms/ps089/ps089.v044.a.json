@@ -110,6 +110,8 @@
       "gloss_parts": [
         "also"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אַף",
       "missing_enrichments": [
         "oshb:stem",
@@ -243,6 +245,8 @@
       "gloss_parts": [
         "you.turn.back"
       ],
+      "greek": "ἀπέστρεψας",
+      "greek_strong": "654",
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -360,6 +364,8 @@
       "gloss_parts": [
         "the.flint"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "צוּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -460,7 +466,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "his his sword",
+      "display_gloss": "his sword",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -491,6 +497,8 @@
         "his.sword",
         "his"
       ],
+      "greek": "αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -638,6 +646,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -752,7 +762,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have raised him up you",
+      "display_gloss": "you have raised him up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -782,6 +792,8 @@
         "you",
         "have.raised.him.up"
       ],
+      "greek": "ἀντελάβου αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -884,7 +896,7 @@
         "Psalm 140:3",
         "Psalm 144:1"
       ],
-      "display_gloss": "in battle the",
+      "display_gloss": "in the battle",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -916,6 +928,8 @@
         "(the)",
         "battle"
       ],
+      "greek": "ἐν πολέμῳ",
+      "greek_strong": "4171",
       "lemma": "מִלְחָמָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -959,24 +973,40 @@
       "ref": "Psalm 89:44",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA089.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast made his glory to cease, and cast his throne down to the ground.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:44",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA089.htm",
+      "source_version": "eng-asv",
       "text": "Thou hast made his brightness to cease, And cast his throne down to the ground.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:44",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA089.htm",
+      "source_version": "engwebp",
       "text": "You have ended his splendor, and thrown his throne down to the ground.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 89:44",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀπέστρεψας αὐτοῦ καὶ οὐκ ἀντελάβου αὐτοῦ ἐν πολέμῳ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

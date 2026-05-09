@@ -77,7 +77,7 @@
         "Psalm 148:1",
         "Psalm 148:7"
       ],
-      "display_gloss": "from",
+      "display_gloss": "at",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -107,6 +107,8 @@
       "gloss_parts": [
         "from"
       ],
+      "greek": "ἀπὸ",
+      "greek_strong": "575",
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -246,6 +248,8 @@
         "rebuke",
         "your"
       ],
+      "greek": "ἐπιτιμήσεώς σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -366,7 +370,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "fled they",
+      "display_gloss": "they fled",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -396,6 +400,8 @@
         "they",
         "fled"
       ],
+      "greek": "φεύχονται",
+      "greek_strong": "5343",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -500,7 +506,7 @@
         "Psalm 148:1",
         "Psalm 148:7"
       ],
-      "display_gloss": "from",
+      "display_gloss": "at",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -530,6 +536,8 @@
       "gloss_parts": [
         "from"
       ],
+      "greek": "ἀπὸ",
+      "greek_strong": "575",
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -659,6 +667,8 @@
       "gloss_parts": [
         "the.sound"
       ],
+      "greek": "φωνῆς",
+      "greek_strong": "5456",
       "lemma": "קוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -769,7 +779,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your thunder",
+      "display_gloss": "your thunder",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -800,6 +810,8 @@
         "your.thunder",
         "your"
       ],
+      "greek": "βροντῆς σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -920,7 +932,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "hurried away they",
+      "display_gloss": "they hurried away",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -950,6 +962,8 @@
         "they",
         "hurried.away"
       ],
+      "greek": "δειλιάσουσιν",
+      "greek_strong": null,
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1016,24 +1030,40 @@
       "ref": "Psalm 104:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "At thy rebuke they fled; at the voice of thy thunder they hasted away.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "At thy rebuke they fled; At the voice of thy thunder they hasted away",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "At your rebuke they fled. At the voice of your thunder they hurried away.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀπὸ ἐπιτιμήσεώς σου φεύχονται ἀπὸ φωνῆς βροντῆς σου δειλιάσουσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

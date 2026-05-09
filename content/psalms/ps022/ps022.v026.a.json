@@ -45,7 +45,7 @@
           "you"
         ],
         "gloss_fragments": [
-          "from",
+          "is from",
           "with",
           "you"
         ],
@@ -94,7 +94,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from with you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -126,6 +126,8 @@
         "with",
         "you"
       ],
+      "greek": "παρὰ σοῦ",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -278,6 +280,8 @@
         "praise",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -408,6 +412,8 @@
         "in.[the]",
         "assembly"
       ],
+      "greek": "ἐν ἐκκλησίᾳ",
+      "greek_strong": "1577",
       "lemma": "קָהָל",
       "missing_enrichments": [
         "oshb:stem",
@@ -522,6 +528,8 @@
       "gloss_parts": [
         "great"
       ],
+      "greek": "μεγάλῃ",
+      "greek_strong": "3173",
       "lemma": "רַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -663,6 +671,8 @@
         "vows",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -794,6 +804,8 @@
       "gloss_parts": [
         "I.will.pay"
       ],
+      "greek": "ἀποδώσω",
+      "greek_strong": "591",
       "lemma": "שָׁלֵם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -902,6 +914,8 @@
       "gloss_parts": [
         "before"
       ],
+      "greek": "ἐνώπιον",
+      "greek_strong": "1799",
       "lemma": "נֶגֶד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1032,6 +1046,8 @@
         "[those].fearing",
         "him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1103,24 +1119,40 @@
       "ref": "Psalm 22:26",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "The meek shall eat and be satisfied: they shall praise the LORD that seek him: your heart shall live for ever.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:26",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "The meek shall eat and be satisfied; They shall praise Jehovah that seek after him: Let your heart live for ever.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:26",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "The humble shall eat and be satisfied. They shall praise the LORD who seek after him. Let your hearts live forever.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:26",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "παρὰ σοῦ μου ἐν ἐκκλησίᾳ μεγάλῃ μου ἀποδώσω ἐνώπιον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

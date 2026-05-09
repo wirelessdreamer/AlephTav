@@ -91,6 +91,8 @@
       "gloss_parts": [
         "O.kingdoms"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מַמְלָכָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -175,7 +177,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "the earth of",
+      "display_gloss": "of the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -206,6 +208,8 @@
         "of",
         "the.earth"
       ],
+      "greek": "τῆς γῆς",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -336,6 +340,8 @@
       "gloss_parts": [
         "sing"
       ],
+      "greek": "ᾄσατε",
+      "greek_strong": "103",
       "lemma": "שִׁיר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -472,6 +478,8 @@
         "to",
         "God"
       ],
+      "greek": "τῷ θεῷ",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -584,7 +592,7 @@
         "Psalm 104:33",
         "Psalm 105:2"
       ],
-      "display_gloss": "sing praises to",
+      "display_gloss": "sing praise",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -613,6 +621,8 @@
       "gloss_parts": [
         "sing.praises.to"
       ],
+      "greek": "ψάλατε",
+      "greek_strong": null,
       "lemma": "זָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -751,6 +761,8 @@
         "Lord",
         "[the]"
       ],
+      "greek": "τῷ κυρίῳ",
+      "greek_strong": "2962",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -893,6 +905,8 @@
       "gloss_parts": [
         "Selah"
       ],
+      "greek": "διάψαλμα",
+      "greek_strong": null,
       "lemma": "סֶלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -954,24 +968,40 @@
       "ref": "Psalm 68:33",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "To him that rideth upon the heavens of heavens, [which were] of old; lo, he doth send out his voice, [and that] a mighty voice.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:33",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "To him that rideth upon the heaven of heavens, which are of old; Lo, he uttereth his voice, a mighty voice.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:33",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "to him who rides on the heaven of heavens, which are of old; behold, he utters his voice, a mighty voice.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:33",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τῆς γῆς ᾄσατε τῷ θεῷ ψάλατε τῷ κυρίῳ διάψαλμα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

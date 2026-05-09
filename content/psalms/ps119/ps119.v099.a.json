@@ -84,7 +84,7 @@
         "Psalm 16:3",
         "Psalm 18:1"
       ],
-      "display_gloss": "more than all",
+      "display_gloss": "more ~ than all",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -115,6 +115,8 @@
         "more",
         "than.all"
       ],
+      "greek": "ὑπὲρ πάντας",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -266,6 +268,8 @@
         "teachers",
         "my"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -391,6 +395,8 @@
       "gloss_parts": [
         "I.have.insight"
       ],
+      "greek": "συνῆκα",
+      "greek_strong": "4920",
       "lemma": "שָׂכַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -501,6 +507,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -653,6 +661,8 @@
         "testimonies",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -770,6 +780,8 @@
       "gloss_parts": [
         "[are].a.meditation"
       ],
+      "greek": "μελέτη",
+      "greek_strong": null,
       "lemma": "שִׂיחָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -851,7 +863,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "of",
+      "display_gloss": "my",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -881,6 +893,8 @@
       "gloss_parts": [
         "my"
       ],
+      "greek": "μού ἐστιν",
+      "greek_strong": "2076",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -953,24 +967,40 @@
       "ref": "Psalm 119:99",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "I have more understanding than all my teachers: for thy testimonies [are] my meditation.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:99",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "I have more understanding than all my teachers; For thy testimonies are my meditation.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:99",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "I have more understanding than all my teachers, for your testimonies are my meditation.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:99",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὑπὲρ πάντας με συνῆκα ὅτι σου μελέτη μού ἐστιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

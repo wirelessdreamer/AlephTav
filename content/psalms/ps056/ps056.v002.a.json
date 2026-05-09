@@ -121,6 +121,8 @@
         "show",
         "favor.to.me"
       ],
+      "greek": "ἐλέησόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -261,6 +263,8 @@
       "gloss_parts": [
         "O.God"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -396,6 +400,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -508,7 +514,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "has trampled on me he",
+      "display_gloss": "he has trampled on me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -538,6 +544,8 @@
         "he",
         "has.trampled.on.me"
       ],
+      "greek": "κατεπάτησέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -665,6 +673,8 @@
       "gloss_parts": [
         "man"
       ],
+      "greek": "ἄνθρωπος",
+      "greek_strong": "444",
       "lemma": "אֱנוֹשׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -780,6 +790,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "ὅλην",
+      "greek_strong": "3650",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -886,7 +898,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "day the",
+      "display_gloss": "the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -917,6 +929,8 @@
         "the",
         "day"
       ],
+      "greek": "τὴν ἡμέραν",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1028,6 +1042,8 @@
       "gloss_parts": [
         "[one.who].fights"
       ],
+      "greek": "πολεμῶν",
+      "greek_strong": null,
       "lemma": "לָחַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1114,7 +1130,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "oppresses me he",
+      "display_gloss": "he oppresses me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1144,6 +1160,8 @@
         "he",
         "oppresses.me"
       ],
+      "greek": "ἔθλιψέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1213,24 +1231,40 @@
       "ref": "Psalm 56:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA056.htm",
+      "source_version": "eng-kjv2006",
       "text": "Mine enemies would daily swallow [me] up: for [they be] many that fight against me, O thou most High.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA056.htm",
+      "source_version": "eng-asv",
       "text": "Mine enemies would swallow me up all the day long; For they are many that fight proudly against me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA056.htm",
+      "source_version": "engwebp",
       "text": "My enemies want to swallow me up all day long, for they are many who fight proudly against me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 56:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐλέησόν με κύριε ὅτι κατεπάτησέν με ἄνθρωπος ὅλην τὴν ἡμέραν πολεμῶν ἔθλιψέν με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

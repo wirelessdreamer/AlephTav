@@ -111,6 +111,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -209,7 +211,7 @@
         "Psalm 55:24",
         "Psalm 56:4"
       ],
-      "display_gloss": "trust",
+      "display_gloss": "put ~ trust",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -238,6 +240,8 @@
       "gloss_parts": [
         "trust"
       ],
+      "greek": "πεποίθατε",
+      "greek_strong": "3982",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -351,6 +355,8 @@
         "in",
         "noble.[people]"
       ],
+      "greek": "ἐπ’ ἄρξοντας",
+      "greek_strong": "758",
       "lemma": "נָדִיב",
       "missing_enrichments": [
         "oshb:stem",
@@ -466,6 +472,8 @@
         "in",
         "a.child"
       ],
+      "greek": "υἱοὺς",
+      "greek_strong": "5207",
       "lemma": "בֵּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -595,6 +603,8 @@
       "gloss_parts": [
         "of.humankind"
       ],
+      "greek": "ἀνθρώπων",
+      "greek_strong": "444",
       "lemma": "אָדָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -658,7 +668,7 @@
         ],
         "gloss_fragments": [
           "whom",
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -698,7 +708,7 @@
         "Psalm 40:6",
         "Psalm 40:13"
       ],
-      "display_gloss": "whom there not",
+      "display_gloss": "whom there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -729,6 +739,8 @@
         "whom",
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -836,7 +848,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "in him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -867,6 +879,8 @@
         "for",
         "him"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -985,6 +999,8 @@
       "gloss_parts": [
         "deliverance"
       ],
+      "greek": "σωτηρία",
+      "greek_strong": "4991",
       "lemma": "תְּשׁוּעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1023,24 +1039,40 @@
       "ref": "Psalm 146:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA146.htm",
+      "source_version": "eng-kjv2006",
       "text": "Put not your trust in princes, [nor] in the son of man, in whom [there is] no help.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA146.htm",
+      "source_version": "eng-asv",
       "text": "Put not your trust in princes, Nor in the son of man, in whom there is no help.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 146:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA146.htm",
+      "source_version": "engwebp",
       "text": "Don’t put your trust in princes, in a son of man in whom there is no help.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 146:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μὴ πεποίθατε ἐπ’ ἄρξοντας υἱοὺς ἀνθρώπων οὐκ σωτηρία",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

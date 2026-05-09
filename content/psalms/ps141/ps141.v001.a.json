@@ -113,6 +113,8 @@
       "gloss_parts": [
         "a.psalm"
       ],
+      "greek": "ψαλμὸς",
+      "greek_strong": "5568",
       "lemma": "מִזְמוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -246,6 +248,8 @@
         "of",
         "David"
       ],
+      "greek": "τῷ δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -375,6 +379,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -515,6 +521,8 @@
         "I",
         "call.out.to.you"
       ],
+      "greek": "σέ",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -660,6 +668,8 @@
         "make",
         "haste"
       ],
+      "greek": "εἰσάκουσόν",
+      "greek_strong": "1522",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -769,7 +779,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -800,6 +810,8 @@
         "to",
         "me"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -948,6 +960,8 @@
         "give",
         "ear.to"
       ],
+      "greek": "πρόσξες",
+      "greek_strong": "4337",
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1088,6 +1102,8 @@
         "voice",
         "my"
       ],
+      "greek": "τῇ φωνῇ",
+      "greek_strong": "5456",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1241,6 +1257,8 @@
         "call",
         "I"
       ],
+      "greek": "ἐν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1357,7 +1375,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1388,6 +1406,8 @@
         "to",
         "you"
       ],
+      "greek": "πρὸς σέ",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1457,24 +1477,40 @@
       "ref": "Psalm 141:1",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA141.htm",
+      "source_version": "eng-kjv2006",
       "text": "A Psalm of David. LORD, I cry unto thee: make haste unto me; give ear unto my voice, when I cry unto thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 141:1",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA141.htm",
+      "source_version": "eng-asv",
       "text": "A Psalm of David. Jehovah, I have called upon thee; make haste unto me: Give ear unto my voice, when I call unto thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 141:1",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA141.htm",
+      "source_version": "engwebp",
       "text": "A Psalm by David. LORD, I have called on you. Come to me quickly! Listen to my voice when I call to you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 141:1",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ψαλμὸς τῷ δαυιδ κύριε σέ εἰσάκουσόν μου πρόσξες τῇ φωνῇ ἐν με πρὸς σέ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

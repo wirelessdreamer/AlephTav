@@ -123,6 +123,8 @@
         "enemies",
         "my"
       ],
+      "greek": "δὲ ἐξθροί μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -253,6 +255,8 @@
       "gloss_parts": [
         "life"
       ],
+      "greek": "ζῶσιν",
+      "greek_strong": "2198",
       "lemma": "חַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -349,6 +353,8 @@
       "gloss_parts": [
         "they.are.numerous"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָצֹם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -442,6 +448,8 @@
         "and",
         "they.are.many"
       ],
+      "greek": "καὶ ἐπληθύνθησαν",
+      "greek_strong": "4129",
       "lemma": "רָבַב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -484,8 +492,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -530,7 +538,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hate me those",
+      "display_gloss": "who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -560,6 +568,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -697,6 +707,8 @@
       "gloss_parts": [
         "falsehood"
       ],
+      "greek": "ἀδίκως",
+      "greek_strong": "95",
       "lemma": "שֶׁקֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -751,24 +763,40 @@
       "ref": "Psalm 38:20",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA038.htm",
+      "source_version": "eng-kjv2006",
       "text": "They also that render evil for good are mine adversaries; because I follow [the thing that] good [is].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:20",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA038.htm",
+      "source_version": "eng-asv",
       "text": "They also that render evil for good Are adversaries unto me, because I follow the thing that is good.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:20",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA038.htm",
+      "source_version": "engwebp",
       "text": "They who give evil for good are also adversaries to me, because I follow what is good.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 38:20",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "δὲ ἐξθροί μου ζῶσιν καὶ ἐπληθύνθησαν με ἀδίκως",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

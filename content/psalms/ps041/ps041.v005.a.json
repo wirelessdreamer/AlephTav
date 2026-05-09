@@ -112,6 +112,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -241,6 +243,8 @@
       "gloss_parts": [
         "I.said"
       ],
+      "greek": "εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -370,6 +374,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,6 +520,8 @@
         "show",
         "favor.to.me"
       ],
+      "greek": "ἐλέησόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -659,6 +667,8 @@
       "gloss_parts": [
         "heal"
       ],
+      "greek": "ἴασαι",
+      "greek_strong": null,
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -797,6 +807,8 @@
         "self",
         "my"
       ],
+      "greek": "ψυξήν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -936,6 +948,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1049,6 +1063,8 @@
       "gloss_parts": [
         "I.have.sinned"
       ],
+      "greek": "ἥμαρτόν",
+      "greek_strong": null,
       "lemma": "חָטָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1138,7 +1154,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "against you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1169,6 +1185,8 @@
         "to",
         "you"
       ],
+      "greek": "σοι",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1240,24 +1258,40 @@
       "ref": "Psalm 41:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA041.htm",
+      "source_version": "eng-kjv2006",
       "text": "Mine enemies speak evil of me, When shall he die, and his name perish?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA041.htm",
+      "source_version": "eng-asv",
       "text": "Mine enemies speak evil against me, [saying], When will he die, and his name perish?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 41:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA041.htm",
+      "source_version": "engwebp",
       "text": "My enemies speak evil against me: “When will he die, and his name perish?”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 41:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐγὼ εἶπα κύριε ἐλέησόν με ἴασαι ψυξήν μου ὅτι ἥμαρτόν σοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

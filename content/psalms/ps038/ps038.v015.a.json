@@ -115,6 +115,8 @@
         "and",
         "I.have.become"
       ],
+      "greek": "καὶ ἐγενόμην",
+      "greek_strong": "1096",
       "lemma": "הָיָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -247,6 +249,8 @@
         "like",
         "a.man"
       ],
+      "greek": "ὡσεὶ ἄνθρωπος",
+      "greek_strong": "444",
       "lemma": "אִישׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -376,6 +380,8 @@
       "gloss_parts": [
         "who"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֲשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -505,6 +511,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -568,7 +576,7 @@
           "hear"
         ],
         "gloss_fragments": [
-          "hearing"
+          "is hearing"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -606,7 +614,7 @@
         "Psalm 40:2",
         "Psalm 44:2"
       ],
-      "display_gloss": "hearing",
+      "display_gloss": "is hearing",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -635,6 +643,8 @@
       "gloss_parts": [
         "[is].hearing"
       ],
+      "greek": "ἀκούων",
+      "greek_strong": "191",
       "lemma": "שָׁמַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -769,6 +779,8 @@
         "and",
         "there.[are].not"
       ],
+      "greek": "καὶ οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -916,6 +928,8 @@
         "mouth",
         "his"
       ],
+      "greek": "ἐν στόματι αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1035,6 +1049,8 @@
       "gloss_parts": [
         "arguments"
       ],
+      "greek": "ἐλεγμούς",
+      "greek_strong": null,
       "lemma": "תּוֹכַחַת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1069,24 +1085,40 @@
       "ref": "Psalm 38:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA038.htm",
+      "source_version": "eng-kjv2006",
       "text": "For in thee, O LORD, do I hope: thou wilt hear, O Lord my God.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA038.htm",
+      "source_version": "eng-asv",
       "text": "For in thee, O Jehovah, do I hope: Thou wilt answer, O Lord my God.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 38:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA038.htm",
+      "source_version": "engwebp",
       "text": "For I hope in you, LORD. You will answer, Lord my God.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 38:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ ἐγενόμην ὡσεὶ ἄνθρωπος οὐκ ἀκούων καὶ οὐκ ἐν στόματι αὐτοῦ ἐλεγμούς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

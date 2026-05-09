@@ -60,6 +60,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -159,6 +161,8 @@
       "gloss_parts": [
         "you.set"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "שִׁית",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -291,6 +295,8 @@
         "iniquities",
         "our"
       ],
+      "greek": "ἡμῶν",
+      "greek_strong": "2257",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -416,7 +422,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "at before you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -448,6 +454,8 @@
         "before",
         "you"
       ],
+      "greek": "εἰς φωτισμὸν",
+      "greek_strong": "5462",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -599,6 +607,8 @@
         "our.concealed",
         "[sins]"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -722,6 +732,8 @@
         "to",
         "the.light"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מָאוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -757,24 +769,40 @@
       "ref": "Psalm 90:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA090.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast set our iniquities before thee, our secret [sins] in the light of thy countenance.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA090.htm",
+      "source_version": "eng-asv",
       "text": "Thou hast set our iniquities before thee, Our secret sins in the light of thy countenance.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 90:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA090.htm",
+      "source_version": "engwebp",
       "text": "You have set our iniquities before you, our secret sins in the light of your presence.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 90:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἡμῶν εἰς φωτισμὸν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

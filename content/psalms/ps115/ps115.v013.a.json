@@ -108,6 +108,8 @@
       "gloss_parts": [
         "he.will.bless"
       ],
+      "greek": "εὐλόγησεν",
+      "greek_strong": "2127",
       "lemma": "בָּרַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "[those].fearing"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָרֵא",
       "missing_enrichments": [
         "oshb:stem",
@@ -370,6 +374,8 @@
       "gloss_parts": [
         "(of).Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -458,7 +464,7 @@
       "corpus_occurrence_refs": [
         "Psalm 104:25"
       ],
-      "display_gloss": "small the",
+      "display_gloss": "the small",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -489,6 +495,8 @@
         "(the)",
         "small"
       ],
+      "greek": "τοὺς μικροὺς",
+      "greek_strong": "3398",
       "lemma": "קָטָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -565,7 +573,7 @@
         "Psalm 106:6",
         "Psalm 113:8"
       ],
-      "display_gloss": "with",
+      "display_gloss": "both ~ and",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -595,6 +603,8 @@
       "gloss_parts": [
         "with"
       ],
+      "greek": "μετὰ",
+      "greek_strong": "3326",
       "lemma": "עִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -697,7 +707,7 @@
         "Psalm 136:17",
         "Psalm 138:5"
       ],
-      "display_gloss": "great the",
+      "display_gloss": "the great",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -728,6 +738,8 @@
         "(the)",
         "great"
       ],
+      "greek": "τῶν μεγάλων",
+      "greek_strong": "3173",
       "lemma": "גָּדוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -786,24 +798,40 @@
       "ref": "Psalm 115:13",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA115.htm",
+      "source_version": "eng-kjv2006",
       "text": "He will bless them that fear the LORD, [both] small and great.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 115:13",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA115.htm",
+      "source_version": "eng-asv",
       "text": "He will bless them that fear Jehovah, Both small and great.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 115:13",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA115.htm",
+      "source_version": "engwebp",
       "text": "He will bless those who fear the LORD, both small and great.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 115:13",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εὐλόγησεν τοὺς μικροὺς μετὰ τῶν μεγάλων",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

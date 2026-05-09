@@ -113,6 +113,8 @@
         "and",
         "he.passed.away"
       ],
+      "greek": "καὶ παρῆλθον",
+      "greek_strong": "3928",
       "lemma": "עָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -245,6 +247,8 @@
         "and",
         "there!"
       ],
+      "greek": "καὶ ἰδοὺ",
+      "greek_strong": "2400",
       "lemma": "הִנֵּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -353,7 +357,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "he was",
+      "display_gloss": "he was not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -384,6 +388,8 @@
         "he.[was]",
         "not"
       ],
+      "greek": "οὐκ ἦν",
+      "greek_strong": "2258",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -508,7 +514,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and sought him I",
+      "display_gloss": "and I sought him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -539,6 +545,8 @@
         "I",
         "sought.him"
       ],
+      "greek": "καὶ ἐζήτησα αὐτόν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -684,6 +692,8 @@
         "and",
         "not"
       ],
+      "greek": "καὶ οὐξ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -809,6 +819,8 @@
       "gloss_parts": [
         "he.was.found"
       ],
+      "greek": "εὑρέθη",
+      "greek_strong": "2147",
       "lemma": "מָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -855,24 +867,40 @@
       "ref": "Psalm 37:36",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA037.htm",
+      "source_version": "eng-kjv2006",
       "text": "Yet he passed away, and, lo, he [was] not: yea, I sought him, but he could not be found.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:36",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA037.htm",
+      "source_version": "eng-asv",
       "text": "But one passed by, and, lo, he was not: Yea, I sought him, but he could not be found.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 37:36",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA037.htm",
+      "source_version": "engwebp",
       "text": "But he passed away, and behold, he was not. Yes, I sought him, but he could not be found.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 37:36",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ παρῆλθον καὶ ἰδοὺ οὐκ ἦν καὶ ἐζήτησα αὐτόν καὶ οὐξ εὑρέθη",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -59,6 +59,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -163,6 +165,8 @@
       "gloss_parts": [
         "may.he.bring.back"
       ],
+      "greek": "ἀποστρέψει",
+      "greek_strong": "654",
       "lemma": "שׁוּב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -264,7 +268,7 @@
         "Psalm 109:20",
         "Psalm 112:7"
       ],
-      "display_gloss": "evil the",
+      "display_gloss": "the evil",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -295,6 +299,8 @@
         "the",
         "evil"
       ],
+      "greek": "τὰ κακὰ",
+      "greek_strong": "2556",
       "lemma": "רַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -439,6 +445,8 @@
         "enemies",
         "my"
       ],
+      "greek": "τοῖς ἐξθροῖς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -591,6 +599,8 @@
         "faithfulness",
         "your"
       ],
+      "greek": "ἐν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -657,24 +667,40 @@
       "ref": "Psalm 54:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA054.htm",
+      "source_version": "eng-kjv2006",
       "text": "For he hath delivered me out of all trouble: and mine eye hath seen [his desire] upon mine enemies.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA054.htm",
+      "source_version": "eng-asv",
       "text": "For he hath delivered me out of all trouble; And mine eye hath seen [my desire] upon mine enemies.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 54:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA054.htm",
+      "source_version": "engwebp",
       "text": "For he has delivered me out of all trouble. My eye has seen triumph over my enemies.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 54:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀποστρέψει τὰ κακὰ τοῖς ἐξθροῖς μου ἐν σου ἐχολέθρευσον αὐτούς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

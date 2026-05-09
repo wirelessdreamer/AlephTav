@@ -123,6 +123,8 @@
         "mouth",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -264,6 +266,8 @@
       "gloss_parts": [
         "it.will.recount"
       ],
+      "greek": "ἐχαγγελεῖ",
+      "greek_strong": null,
       "lemma": "סָפַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -401,6 +405,8 @@
         "righteousness",
         "your"
       ],
+      "greek": "δικαιοσύνην σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -543,6 +549,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "ὅλην",
+      "greek_strong": "3650",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -651,7 +659,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "day the",
+      "display_gloss": "the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -682,6 +690,8 @@
         "the",
         "day"
       ],
+      "greek": "τὴν ἡμέραν",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -824,6 +834,8 @@
         "salvation",
         "your"
       ],
+      "greek": "σωτηρίαν σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -964,6 +976,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1100,6 +1114,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1227,6 +1243,8 @@
       "gloss_parts": [
         "I.know"
       ],
+      "greek": "ἔγνων",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1329,6 +1347,8 @@
       "gloss_parts": [
         "numbers"
       ],
+      "greek": "γραμματείας",
+      "greek_strong": null,
       "lemma": "סְפֹרֹות",
       "missing_enrichments": [
         "oshb:stem",
@@ -1361,24 +1381,40 @@
       "ref": "Psalm 71:15",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA071.htm",
+      "source_version": "eng-kjv2006",
       "text": "My mouth shall shew forth thy righteousness [and] thy salvation all the day; for I know not the numbers [thereof].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 71:15",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA071.htm",
+      "source_version": "eng-asv",
       "text": "My mouth shall tell of thy righteousness, [And] of thy salvation all the day; For I know not the numbers [thereof].",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 71:15",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA071.htm",
+      "source_version": "engwebp",
       "text": "My mouth will tell about your righteousness, and of your salvation all day, though I don’t know its full measure.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 71:15",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μου ἐχαγγελεῖ δικαιοσύνην σου ὅλην τὴν ἡμέραν σωτηρίαν σου ὅτι οὐκ ἔγνων γραμματείας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

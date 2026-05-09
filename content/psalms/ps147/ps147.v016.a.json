@@ -42,8 +42,8 @@
           "gives"
         ],
         "gloss_fragments": [
-          "the one",
-          "who gives"
+          "the [one",
+          "who] gives"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -83,7 +83,7 @@
         "Psalm 46:7",
         "Psalm 49:8"
       ],
-      "display_gloss": "who gives the one",
+      "display_gloss": "who] gives the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -113,6 +113,8 @@
         "the.[one",
         "who].gives"
       ],
+      "greek": "τοῦ διδόντος",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -220,6 +222,8 @@
       "gloss_parts": [
         "snow"
       ],
+      "greek": "ξιόνα",
+      "greek_strong": "5510",
       "lemma": "שֶׁלֶג",
       "missing_enrichments": [
         "oshb:stem",
@@ -278,7 +282,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "like wool the",
+      "display_gloss": "like the wool",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -310,6 +314,8 @@
         "(the)",
         "wool"
       ],
+      "greek": "ὡσεὶ ἔριον",
+      "greek_strong": "2053",
       "lemma": "צֶמֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -389,6 +395,8 @@
       "gloss_parts": [
         "hoar-frost"
       ],
+      "greek": "ὁμίξλην",
+      "greek_strong": null,
       "lemma": "כְּפוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -446,7 +454,7 @@
       "corpus_occurrence_refs": [
         "Psalm 102:10"
       ],
-      "display_gloss": "like ashes the",
+      "display_gloss": "like the ashes",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -478,6 +486,8 @@
         "(the)",
         "ash[es]"
       ],
+      "greek": "ὡσεὶ σποδὸν",
+      "greek_strong": "5616",
       "lemma": "אֵפֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -563,6 +573,8 @@
       "gloss_parts": [
         "he.scatters"
       ],
+      "greek": "πάσσοντος",
+      "greek_strong": null,
       "lemma": "פָּזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -599,24 +611,40 @@
       "ref": "Psalm 147:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA147.htm",
+      "source_version": "eng-kjv2006",
       "text": "He giveth snow like wool: he scattereth the hoarfrost like ashes.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA147.htm",
+      "source_version": "eng-asv",
       "text": "He giveth snow like wool; He scattereth the hoar-frost like ashes.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 147:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA147.htm",
+      "source_version": "engwebp",
       "text": "He gives snow like wool, and scatters frost like ashes.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 147:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τοῦ διδόντος ξιόνα ὡσεὶ ἔριον ὁμίξλην ὡσεὶ σποδὸν πάσσοντος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

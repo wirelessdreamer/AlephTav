@@ -112,6 +112,8 @@
       "gloss_parts": [
         "do.not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -226,6 +228,8 @@
       "gloss_parts": [
         "be.far"
       ],
+      "greek": "ἀποστῇς",
+      "greek_strong": "868",
       "lemma": "רָחַק",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -319,7 +323,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -350,6 +354,8 @@
         "from",
         "me"
       ],
+      "greek": "ἀπ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -490,6 +496,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -616,6 +624,8 @@
       "gloss_parts": [
         "trouble"
       ],
+      "greek": "θλῖψις",
+      "greek_strong": "2347",
       "lemma": "צָרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -666,7 +676,7 @@
           "near"
         ],
         "gloss_fragments": [
-          "near"
+          "is near"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -685,7 +695,7 @@
         "Psalm 119:151",
         "Psalm 145:18"
       ],
-      "display_gloss": "near",
+      "display_gloss": "is near",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -715,6 +725,8 @@
       "gloss_parts": [
         "[is].near"
       ],
+      "greek": "ἐγγύς",
+      "greek_strong": "1451",
       "lemma": "קָרֹוב",
       "missing_enrichments": [
         "oshb:stem",
@@ -822,6 +834,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -890,7 +904,7 @@
           "there is none"
         ],
         "gloss_fragments": [
-          "there not"
+          "there is not"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -928,7 +942,7 @@
         "Psalm 40:13",
         "Psalm 50:22"
       ],
-      "display_gloss": "there not",
+      "display_gloss": "there is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -958,6 +972,8 @@
       "gloss_parts": [
         "there.[is].not"
       ],
+      "greek": "οὐκ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1067,6 +1083,8 @@
       "gloss_parts": [
         "a.helper"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָזַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1105,24 +1123,40 @@
       "ref": "Psalm 22:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA022.htm",
+      "source_version": "eng-kjv2006",
       "text": "Many bulls have compassed me: strong [bulls] of Bashan have beset me round.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA022.htm",
+      "source_version": "eng-asv",
       "text": "Many bulls have compassed me; Strong bulls of Bashan have beset me round.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 22:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA022.htm",
+      "source_version": "engwebp",
       "text": "Many bulls have surrounded me. Strong bulls of Bashan have encircled me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 22:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μὴ ἀποστῇς ἀπ’ ἐμοῦ ὅτι θλῖψις ἐγγύς ὅτι οὐκ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

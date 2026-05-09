@@ -41,7 +41,7 @@
           "protects"
         ],
         "gloss_fragments": [
-          "protecting"
+          "is protecting"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -79,7 +79,7 @@
         "Psalm 107:43",
         "Psalm 119:4"
       ],
-      "display_gloss": "protecting",
+      "display_gloss": "is protecting",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -108,6 +108,8 @@
       "gloss_parts": [
         "[is].protecting"
       ],
+      "greek": "φυλάσσων",
+      "greek_strong": "5442",
       "lemma": "שָׁמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -213,6 +215,8 @@
       "gloss_parts": [
         "simple.people"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "פֶּתִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -319,6 +323,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -437,6 +443,8 @@
       "gloss_parts": [
         "I.had.become.low"
       ],
+      "greek": "ἐταπεινώθην",
+      "greek_strong": null,
       "lemma": "דָּלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -524,7 +532,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and to",
+      "display_gloss": "and to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -556,6 +564,8 @@
         "(to)",
         "me"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -695,6 +705,8 @@
       "gloss_parts": [
         "he.saved"
       ],
+      "greek": "ἔσωσέν",
+      "greek_strong": "4982",
       "lemma": "יָשַׁע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -748,24 +760,40 @@
       "ref": "Psalm 116:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA116.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD preserveth the simple: I was brought low, and he helped me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 116:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA116.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah preserveth the simple: I was brought low, and he saved me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 116:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA116.htm",
+      "source_version": "engwebp",
       "text": "The LORD preserves the simple. I was brought low, and he saved me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 116:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "φυλάσσων ἐταπεινώθην καὶ ἔσωσέν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

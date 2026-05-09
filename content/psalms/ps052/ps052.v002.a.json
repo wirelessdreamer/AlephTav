@@ -119,6 +119,8 @@
         "when",
         "came"
       ],
+      "greek": "ἐν ἐλθεῖν",
+      "greek_strong": "2064",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -221,6 +223,8 @@
       "gloss_parts": [
         "Doeg"
       ],
+      "greek": "δωηκ",
+      "greek_strong": null,
       "lemma": "דֹּאֵג",
       "missing_enrichments": [
         "oshb:stem",
@@ -274,7 +278,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "Edomite the",
+      "display_gloss": "the Edomite",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -305,6 +309,8 @@
         "the",
         "Edomite"
       ],
+      "greek": "τὸν ιδουμαῖον",
+      "greek_strong": "3588",
       "lemma": "אֲדֹמִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -408,6 +414,8 @@
         "and",
         "he.told"
       ],
+      "greek": "καὶ ἀναγγεῖλαι",
+      "greek_strong": "312",
       "lemma": "נָגַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -515,6 +523,8 @@
         "to",
         "Saul"
       ],
+      "greek": "τῷ σαουλ",
+      "greek_strong": "4549",
       "lemma": "שָׁאוּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -628,6 +638,8 @@
         "and",
         "he.said"
       ],
+      "greek": "καὶ εἰπεῖν",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -734,7 +746,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -765,6 +777,8 @@
         "to",
         "him"
       ],
+      "greek": "αὐτῷ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -900,6 +914,8 @@
       "gloss_parts": [
         "he.has.gone"
       ],
+      "greek": "ἦλθεν",
+      "greek_strong": "2064",
       "lemma": "בּוֹא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1027,6 +1043,8 @@
       "gloss_parts": [
         "David"
       ],
+      "greek": "δαυιδ",
+      "greek_strong": "1138",
       "lemma": "דָּוִד",
       "missing_enrichments": [
         "oshb:stem",
@@ -1157,6 +1175,8 @@
       "gloss_parts": [
         "to"
       ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1286,6 +1306,8 @@
       "gloss_parts": [
         "the.house"
       ],
+      "greek": "οἶκον",
+      "greek_strong": "3624",
       "lemma": "בַּיִת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1392,6 +1414,8 @@
       "gloss_parts": [
         "of.Ahimelech"
       ],
+      "greek": "αβιμελεξ",
+      "greek_strong": null,
       "lemma": "אֲחִימֶלֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1425,24 +1449,40 @@
       "ref": "Psalm 52:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA052.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thy tongue deviseth mischiefs; like a sharp razor, working deceitfully.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 52:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA052.htm",
+      "source_version": "eng-asv",
       "text": "Thy tongue deviseth very wickedness, Like a sharp razor, working deceitfully.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 52:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA052.htm",
+      "source_version": "engwebp",
       "text": "Your tongue plots destruction, like a sharp razor, working deceitfully.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 52:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν ἐλθεῖν δωηκ τὸν ιδουμαῖον καὶ ἀναγγεῖλαι τῷ σαουλ καὶ εἰπεῖν αὐτῷ ἦλθεν δαυιδ εἰς οἶκον αβιμελεξ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

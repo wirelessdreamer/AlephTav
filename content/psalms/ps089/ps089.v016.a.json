@@ -110,6 +110,8 @@
       "gloss_parts": [
         "how.blessed!"
       ],
+      "greek": "μακάριος",
+      "greek_strong": "3107",
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -170,7 +172,7 @@
           "people"
         ],
         "gloss_fragments": [
-          "the",
+          "is the",
           "people"
         ],
         "preposition_role": null,
@@ -211,7 +213,7 @@
         "Psalm 67:4",
         "Psalm 67:5"
       ],
-      "display_gloss": "people the",
+      "display_gloss": "is the people",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -242,6 +244,8 @@
         "[is].the",
         "people"
       ],
+      "greek": "ὁ λαὸς",
+      "greek_strong": "2992",
       "lemma": "עַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -373,6 +377,8 @@
       "gloss_parts": [
         "[which].know"
       ],
+      "greek": "γινώσκων",
+      "greek_strong": "1097",
       "lemma": "יָדַע",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -483,6 +489,8 @@
       "gloss_parts": [
         "(of).a.shout.of.joy"
       ],
+      "greek": "ἀλαλαγμόν",
+      "greek_strong": null,
       "lemma": "תְּרוּעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -592,6 +600,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -735,6 +745,8 @@
         "in",
         "the.light"
       ],
+      "greek": "ἐν φωτὶ",
+      "greek_strong": "5457",
       "lemma": "אוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -843,7 +855,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your face",
+      "display_gloss": "your face",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -874,6 +886,8 @@
         "your.face",
         "your"
       ],
+      "greek": "προσώπου σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -994,7 +1008,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "walk they",
+      "display_gloss": "they walk",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1024,6 +1038,8 @@
         "they",
         "walk"
       ],
+      "greek": "πορεύσονται",
+      "greek_strong": "4198",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1084,24 +1100,40 @@
       "ref": "Psalm 89:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA089.htm",
+      "source_version": "eng-kjv2006",
       "text": "In thy name shall they rejoice all the day: and in thy righteousness shall they be exalted.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA089.htm",
+      "source_version": "eng-asv",
       "text": "In thy name do they rejoice all the day; And in thy righteousness are they exalted.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 89:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA089.htm",
+      "source_version": "engwebp",
       "text": "In your name they rejoice all day. In your righteousness, they are exalted.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 89:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μακάριος ὁ λαὸς γινώσκων ἀλαλαγμόν κύριε ἐν φωτὶ προσώπου σου πορεύσονται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

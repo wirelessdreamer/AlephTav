@@ -120,6 +120,8 @@
         "pay",
         "attention"
       ],
+      "greek": "ἐπίβλεψον",
+      "greek_strong": null,
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -257,6 +259,8 @@
         "answer",
         "me"
       ],
+      "greek": "εἰσάκουσόν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -389,6 +393,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -531,6 +537,8 @@
         "God",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -673,6 +681,8 @@
         "give",
         "light.to"
       ],
+      "greek": "φώτισον",
+      "greek_strong": null,
       "lemma": "ה",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -811,6 +821,8 @@
         "eyes",
         "my"
       ],
+      "greek": "ὀφθαλμούς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -928,6 +940,8 @@
       "gloss_parts": [
         "lest"
       ],
+      "greek": "μήποτε",
+      "greek_strong": "3379",
       "lemma": "פֶּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -1021,6 +1035,8 @@
       "gloss_parts": [
         "I.should.sleep"
       ],
+      "greek": "ὑπνώσω",
+      "greek_strong": null,
       "lemma": "יָשֵׁן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1096,7 +1112,7 @@
         "Psalm 116:8",
         "Psalm 118:18"
       ],
-      "display_gloss": "death the",
+      "display_gloss": "the death",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1127,6 +1143,8 @@
         "the",
         "death"
       ],
+      "greek": "θάνατον",
+      "greek_strong": "2288",
       "lemma": "מָוֶת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1179,24 +1197,40 @@
       "ref": "Psalm 13:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA013.htm",
+      "source_version": "eng-kjv2006",
       "text": "Lest mine enemy say, I have prevailed against him; [and] those that trouble me rejoice when I am moved.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 13:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA013.htm",
+      "source_version": "eng-asv",
       "text": "Lest mine enemy say, I have prevailed against him; [Lest] mine adversaries rejoice when I am moved.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 13:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA013.htm",
+      "source_version": "engwebp",
       "text": "lest my enemy say, “I have prevailed against him;” lest my adversaries rejoice when I fall.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 13:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐπίβλεψον εἰσάκουσόν μου κύριε μου φώτισον ὀφθαλμούς μου μήποτε ὑπνώσω θάνατον",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

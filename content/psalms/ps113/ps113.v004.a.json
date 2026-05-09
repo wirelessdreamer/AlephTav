@@ -43,7 +43,7 @@
           "high"
         ],
         "gloss_fragments": [
-          "exalted"
+          "is exalted"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -81,7 +81,7 @@
         "Psalm 99:2",
         "Psalm 99:5"
       ],
-      "display_gloss": "exalted",
+      "display_gloss": "is exalted",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -110,6 +110,8 @@
       "gloss_parts": [
         "[is].exalted"
       ],
+      "greek": "ὑψηλὸς",
+      "greek_strong": "5308",
       "lemma": "רוּם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -239,6 +241,8 @@
       "gloss_parts": [
         "over"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -368,6 +372,8 @@
       "gloss_parts": [
         "all"
       ],
+      "greek": "πάντα",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -497,6 +503,8 @@
       "gloss_parts": [
         "nations"
       ],
+      "greek": "ἔθνη",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -626,6 +634,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -691,7 +701,7 @@
           "above"
         ],
         "gloss_fragments": [
-          "above"
+          "is above"
         ],
         "preposition_role": "above",
         "raw_classes": [
@@ -729,7 +739,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "above",
+      "display_gloss": "is above",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -759,6 +769,8 @@
       "gloss_parts": [
         "[is].above"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -862,7 +874,7 @@
         "Psalm 69:35",
         "Psalm 73:9"
       ],
-      "display_gloss": "heavens the",
+      "display_gloss": "the heavens",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -893,6 +905,8 @@
         "the",
         "heavens"
       ],
+      "greek": "τοὺς οὐρανοὺς",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1034,6 +1048,8 @@
         "glory",
         "his"
       ],
+      "greek": "δόχα αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1096,24 +1112,40 @@
       "ref": "Psalm 113:4",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA113.htm",
+      "source_version": "eng-kjv2006",
       "text": "The LORD [is] high above all nations, [and] his glory above the heavens.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 113:4",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA113.htm",
+      "source_version": "eng-asv",
       "text": "Jehovah is high above all nations, And his glory above the heavens.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 113:4",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA113.htm",
+      "source_version": "engwebp",
       "text": "The LORD is high above all nations, his glory above the heavens.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 113:4",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὑψηλὸς ἐπὶ πάντα ἔθνη ἐπὶ τοὺς οὐρανοὺς δόχα αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

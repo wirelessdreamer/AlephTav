@@ -99,6 +99,8 @@
         "[who]",
         "turned"
       ],
+      "greek": "τοῦ στρέψαντος",
+      "greek_strong": "3588",
       "lemma": "הָפַךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -176,7 +178,7 @@
         "Psalm 95:1",
         "Psalm 105:41"
       ],
-      "display_gloss": "rock the",
+      "display_gloss": "the rock",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -207,6 +209,8 @@
         "the",
         "rock"
       ],
+      "greek": "τὴν πέτραν",
+      "greek_strong": "4073",
       "lemma": "צוּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -304,6 +308,8 @@
       "gloss_parts": [
         "a.pool"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֲגַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -410,6 +416,8 @@
       "gloss_parts": [
         "of.water"
       ],
+      "greek": "ὑδάτων",
+      "greek_strong": "5204",
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,6 +522,8 @@
       "gloss_parts": [
         "flint"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "חַלָּמִישׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -599,7 +609,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "into spring a",
+      "display_gloss": "a into spring",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -631,6 +641,8 @@
         "a",
         "spring"
       ],
+      "greek": "εἰς πηγὰς",
+      "greek_strong": "4077",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -763,6 +775,8 @@
       "gloss_parts": [
         "of.water"
       ],
+      "greek": "ὑδάτων",
+      "greek_strong": "5204",
       "lemma": "מַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -821,24 +835,40 @@
       "ref": "Psalm 114:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA114.htm",
+      "source_version": "eng-kjv2006",
       "text": "Which turned the rock [into] a standing water, the flint into a fountain of waters.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 114:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA114.htm",
+      "source_version": "eng-asv",
       "text": "Who turned the rock into a pool of water, The flint into a fountain of waters.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 114:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA114.htm",
+      "source_version": "engwebp",
       "text": "who turned the rock into a pool of water, the flint into a spring of waters.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 114:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τοῦ στρέψαντος τὴν πέτραν ὑδάτων εἰς πηγὰς ὑδάτων",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

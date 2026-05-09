@@ -88,7 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "by",
+      "display_gloss": "through you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "by",
         "you"
       ],
+      "greek": "ἐν σοὶ",
+      "greek_strong": "4671",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -272,6 +274,8 @@
         "foes",
         "our"
       ],
+      "greek": "ἐξθροὺς ἡμῶν",
+      "greek_strong": "2257",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -388,6 +392,8 @@
       "gloss_parts": [
         "we.gore"
       ],
+      "greek": "κερατιοῦμεν",
+      "greek_strong": null,
       "lemma": "נָגַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -505,6 +511,8 @@
         "name",
         "your"
       ],
+      "greek": "ἐν ὀνόματί σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -624,6 +632,8 @@
       "gloss_parts": [
         "we.tread.down"
       ],
+      "greek": "ἐχουθενώσομεν",
+      "greek_strong": null,
       "lemma": "בּוּס",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -662,8 +672,8 @@
           "our"
         ],
         "gloss_fragments": [
-          "those",
-          "who rise against us"
+          "[those",
+          "who] rise against us"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -708,7 +718,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who rise against us those",
+      "display_gloss": "who] rise against us [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -738,6 +748,8 @@
         "[those",
         "who].rise.against.us"
       ],
+      "greek": "ἡμῖν",
+      "greek_strong": "2254",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -808,24 +820,40 @@
       "ref": "Psalm 44:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "For I will not trust in my bow, neither shall my sword save me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "For I will not trust in my bow, Neither shall my sword save me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "For I will not trust in my bow, neither will my sword save me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν σοὶ ἐξθροὺς ἡμῶν κερατιοῦμεν ἐν ὀνόματί σου ἐχουθενώσομεν ἡμῖν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

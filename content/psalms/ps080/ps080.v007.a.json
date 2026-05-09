@@ -88,7 +88,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "make us you",
+      "display_gloss": "you make us",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -118,6 +118,8 @@
         "you",
         "make.us"
       ],
+      "greek": "ἔθου ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -203,7 +205,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "a contention",
+      "display_gloss": "object of contention",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -233,6 +235,8 @@
       "gloss_parts": [
         "a.contention"
       ],
+      "greek": "ἀντιλογίαν",
+      "greek_strong": "485",
       "lemma": "מָדוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -351,6 +355,8 @@
         "neighbors",
         "our"
       ],
+      "greek": "τοῖς γείτοσιν ἡμῶν",
+      "greek_strong": "2257",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -507,6 +513,8 @@
         "enemies",
         "our"
       ],
+      "greek": "καὶ ἐξθροὶ ἡμῶν",
+      "greek_strong": "2257",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -626,6 +634,8 @@
       "gloss_parts": [
         "they.mock"
       ],
+      "greek": "ἐμυκτήρισαν",
+      "greek_strong": null,
       "lemma": "לָעַג",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -711,7 +721,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "(to",
+      "display_gloss": "among themselves",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -742,6 +752,8 @@
         "(to",
         "themselves"
       ],
+      "greek": "ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -814,24 +826,40 @@
       "ref": "Psalm 80:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA080.htm",
+      "source_version": "eng-kjv2006",
       "text": "Turn us again, O God of hosts, and cause thy face to shine; and we shall be saved.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 80:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA080.htm",
+      "source_version": "eng-asv",
       "text": "Turn us again, O God of hosts; And cause thy face to shine, and we shall be saved.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 80:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA080.htm",
+      "source_version": "engwebp",
       "text": "Turn us again, God of Armies. Cause your face to shine, and we will be saved.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 80:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἔθου ἡμᾶς ἀντιλογίαν τοῖς γείτοσιν ἡμῶν καὶ ἐξθροὶ ἡμῶν ἐμυκτήρισαν ἡμᾶς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

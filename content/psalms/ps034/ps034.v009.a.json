@@ -86,6 +86,8 @@
       "gloss_parts": [
         "taste"
       ],
+      "greek": "γεύσασθε",
+      "greek_strong": "1089",
       "lemma": "טָעַם",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -192,6 +194,8 @@
         "and",
         "see"
       ],
+      "greek": "καὶ ἴδετε",
+      "greek_strong": "1492",
       "lemma": "רָאָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -321,6 +325,8 @@
       "gloss_parts": [
         "(dm).that"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -384,7 +390,7 @@
           "good"
         ],
         "gloss_fragments": [
-          "good"
+          "is good"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -422,7 +428,7 @@
         "Psalm 84:11",
         "Psalm 84:12"
       ],
-      "display_gloss": "good",
+      "display_gloss": "is good",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -452,6 +458,8 @@
       "gloss_parts": [
         "[is].good"
       ],
+      "greek": "ξρηστὸς",
+      "greek_strong": "5543",
       "lemma": "טוֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -584,6 +592,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -724,6 +734,8 @@
       "gloss_parts": [
         "how.blessed!"
       ],
+      "greek": "μακάριος",
+      "greek_strong": "3107",
       "lemma": "אֶשֶׁר",
       "missing_enrichments": [
         "oshb:stem",
@@ -784,7 +796,7 @@
           "man"
         ],
         "gloss_fragments": [
-          "the",
+          "is the",
           "man"
         ],
         "preposition_role": null,
@@ -810,7 +822,7 @@
         "Psalm 127:5",
         "Psalm 128:4"
       ],
-      "display_gloss": "man the",
+      "display_gloss": "is the man",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -841,6 +853,8 @@
         "[is].the",
         "man"
       ],
+      "greek": "ἀνήρ",
+      "greek_strong": "435",
       "lemma": "גֶּבֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -951,6 +965,8 @@
       "gloss_parts": [
         "[who].he.takes.refuge"
       ],
+      "greek": "ἐλπίζει",
+      "greek_strong": "1679",
       "lemma": "חָסָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1056,7 +1072,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "in",
+      "display_gloss": "in him",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1087,6 +1103,8 @@
         "in",
         "him"
       ],
+      "greek": "ἐπ’ αὐτόν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1159,24 +1177,40 @@
       "ref": "Psalm 34:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA034.htm",
+      "source_version": "eng-kjv2006",
       "text": "O fear the LORD, ye his saints: for [there is] no want to them that fear him.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA034.htm",
+      "source_version": "eng-asv",
       "text": "Oh fear Jehovah, ye his saints; For there is no want to them that fear him.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 34:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA034.htm",
+      "source_version": "engwebp",
       "text": "Oh fear the LORD, you his saints, for there is no lack with those who fear him.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 34:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "γεύσασθε καὶ ἴδετε ὅτι ξρηστὸς μακάριος ἀνήρ ἐλπίζει ἐπ’ αὐτόν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

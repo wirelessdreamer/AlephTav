@@ -91,6 +91,8 @@
       "gloss_parts": [
         "may.they.be.clothed"
       ],
+      "greek": "ἐνδυσάσθωσαν",
+      "greek_strong": null,
       "lemma": "לָבֵשׁ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -136,8 +138,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "those",
-          "who accuse me"
+          "[those",
+          "who] accuse me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -182,7 +184,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who accuse me those",
+      "display_gloss": "who] accuse me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -212,6 +214,8 @@
         "[those",
         "who].accuse.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -333,6 +337,8 @@
       "gloss_parts": [
         "ignominy"
       ],
+      "greek": "ἐντροπὴν",
+      "greek_strong": "1791",
       "lemma": "כְּלִמָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -425,6 +431,8 @@
         "and",
         "may.they.be.covered"
       ],
+      "greek": "καὶ περιβαλέσθωσαν",
+      "greek_strong": "2532",
       "lemma": "עָטָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -486,7 +494,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "like robe a",
+      "display_gloss": "a like robe",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -518,6 +526,8 @@
         "(the)",
         "robe"
       ],
+      "greek": "ὡσεὶ διπλοΐδα",
+      "greek_strong": "5616",
       "lemma": "מְעִיל",
       "missing_enrichments": [
         "oshb:stem",
@@ -601,7 +611,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "their shame",
+      "display_gloss": "shame their own",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -632,6 +642,8 @@
         "shame",
         "their"
       ],
+      "greek": "αἰσξύνην αὐτῶν",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -703,24 +715,40 @@
       "ref": "Psalm 109:29",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA109.htm",
+      "source_version": "eng-kjv2006",
       "text": "Let mine adversaries be clothed with shame, and let them cover themselves with their own confusion, as with a mantle.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:29",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA109.htm",
+      "source_version": "eng-asv",
       "text": "Let mine adversaries be clothed with dishonor, And let them cover themselves with their own shame as with a robe.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:29",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA109.htm",
+      "source_version": "engwebp",
       "text": "Let my adversaries be clothed with dishonor. Let them cover themselves with their own shame as with a robe.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 109:29",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐνδυσάσθωσαν με ἐντροπὴν καὶ περιβαλέσθωσαν ὡσεὶ διπλοΐδα αἰσξύνην αὐτῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

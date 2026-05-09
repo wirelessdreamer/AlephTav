@@ -61,7 +61,7 @@
         "Psalm 105:40",
         "Psalm 109:10"
       ],
-      "display_gloss": "ask for",
+      "display_gloss": "pray",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -90,6 +90,8 @@
       "gloss_parts": [
         "ask.for"
       ],
+      "greek": "ἐρωτήσατε",
+      "greek_strong": "2065",
       "lemma": "שָׁאַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -198,6 +200,8 @@
       "gloss_parts": [
         "the.peace"
       ],
+      "greek": "εἰρήνην",
+      "greek_strong": "1515",
       "lemma": "שָׁלוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -318,6 +322,8 @@
       "gloss_parts": [
         "of.Jerusalem"
       ],
+      "greek": "ιερουσαλημ",
+      "greek_strong": "2414",
       "lemma": "יְרוּשָׁלִַ͏ם",
       "missing_enrichments": [
         "oshb:stem",
@@ -414,6 +420,8 @@
       "gloss_parts": [
         "may.they.be.at.ease"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "שָׁלָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -449,8 +457,8 @@
           "you"
         ],
         "gloss_fragments": [
-          "those",
-          "who love you"
+          "[those",
+          "who] love you"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -495,7 +503,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who love you those",
+      "display_gloss": "who] love you [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -525,6 +533,8 @@
         "[those",
         "who].love.you"
       ],
+      "greek": "σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -589,24 +599,40 @@
       "ref": "Psalm 122:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA122.htm",
+      "source_version": "eng-kjv2006",
       "text": "Pray for the peace of Jerusalem: they shall prosper that love thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 122:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA122.htm",
+      "source_version": "eng-asv",
       "text": "Pray for the peace of Jerusalem: They shall prosper that love thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 122:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA122.htm",
+      "source_version": "engwebp",
       "text": "Pray for the peace of Jerusalem. Those who love you will prosper.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 122:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐρωτήσατε εἰρήνην ιερουσαλημ σε",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

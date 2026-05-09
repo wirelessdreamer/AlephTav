@@ -100,6 +100,8 @@
         "so",
         "that.I.may.answer"
       ],
+      "greek": "καὶ ἀποκριθήσομαι",
+      "greek_strong": "611",
       "lemma": "עָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -152,8 +154,8 @@
           "me"
         ],
         "gloss_fragments": [
-          "the one",
-          "who taunts me"
+          "the [one",
+          "who] taunts me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -198,7 +200,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who taunts me the one",
+      "display_gloss": "who] taunts me the [one",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -228,6 +230,8 @@
         "the.[one",
         "who].taunts.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -369,6 +373,8 @@
       "gloss_parts": [
         "a.word"
       ],
+      "greek": "λόγον",
+      "greek_strong": "3056",
       "lemma": "דָּבָר",
       "missing_enrichments": [
         "oshb:stem",
@@ -498,6 +504,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -639,6 +647,8 @@
       "gloss_parts": [
         "I.trust"
       ],
+      "greek": "ἤλπισα",
+      "greek_strong": "1679",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -781,6 +791,8 @@
         "word",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -852,24 +864,40 @@
       "ref": "Psalm 119:42",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "So shall I have wherewith to answer him that reproacheth me: for I trust in thy word.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:42",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "So shall I have an answer for him that reproacheth me; For I trust in thy word.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:42",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "So I will have an answer for him who reproaches me, for I trust in your word.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:42",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ ἀποκριθήσομαι με λόγον ὅτι ἤλπισα σου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -42,8 +42,8 @@
           "gush forth"
         ],
         "gloss_fragments": [
-          "you",
-          "are the one who sends forth"
+          "[you",
+          "are] the one who sends forth"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -83,7 +83,7 @@
         "Psalm 135:9",
         "Psalm 138:7"
       ],
-      "display_gloss": "are the one who sends forth you",
+      "display_gloss": "[you are] the one who sends forth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -113,6 +113,8 @@
         "[you",
         "are].the.[one.who].sends.forth"
       ],
+      "greek": "ὁ ἐχαποστέλλων",
+      "greek_strong": "3588",
       "lemma": "שָׁלַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -220,6 +222,8 @@
       "gloss_parts": [
         "springs"
       ],
+      "greek": "πηγὰς",
+      "greek_strong": "4077",
       "lemma": "מַעְיָן",
       "missing_enrichments": [
         "oshb:stem",
@@ -286,7 +290,7 @@
         "Psalm 83:10",
         "Psalm 110:7"
       ],
-      "display_gloss": "in wadis the",
+      "display_gloss": "into the valleys",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -318,6 +322,8 @@
         "the",
         "wadis"
       ],
+      "greek": "ἐν φάραγχιν",
+      "greek_strong": "1722",
       "lemma": "נַחַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -406,6 +412,8 @@
       "gloss_parts": [
         "between"
       ],
+      "greek": "μέσον",
+      "greek_strong": "3319",
       "lemma": "בֵּין",
       "missing_enrichments": [
         "oshb:stem",
@@ -514,6 +522,8 @@
       "gloss_parts": [
         "[the].mountains"
       ],
+      "greek": "ὀρέων",
+      "greek_strong": "3735",
       "lemma": "הַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -627,7 +637,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "go they",
+      "display_gloss": "they go",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -657,6 +667,8 @@
         "they",
         "go"
       ],
+      "greek": "διελεύσονται",
+      "greek_strong": "1330",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -723,24 +735,40 @@
       "ref": "Psalm 104:10",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "He sendeth the springs into the valleys, [which] run among the hills.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:10",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "He sendeth forth springs into the valleys; They run among the mountains;",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:10",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "He sends springs into the valleys. They run among the mountains.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:10",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ ἐχαποστέλλων πηγὰς ἐν φάραγχιν μέσον ὀρέων διελεύσονται",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

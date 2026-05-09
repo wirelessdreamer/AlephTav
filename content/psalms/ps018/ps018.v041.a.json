@@ -123,6 +123,8 @@
         "enemies",
         "my"
       ],
+      "greek": "καὶ ἐξθρούς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -234,7 +236,7 @@
         "Psalm 55:7",
         "Psalm 55:23"
       ],
-      "display_gloss": "you gave",
+      "display_gloss": "made ~ turn",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -263,6 +265,8 @@
       "gloss_parts": [
         "you.gave"
       ],
+      "greek": "ἔδωκάς",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -374,7 +378,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -405,6 +409,8 @@
         "to",
         "me"
       ],
+      "greek": "μοι",
+      "greek_strong": "3427",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -523,6 +529,8 @@
       "gloss_parts": [
         "neck"
       ],
+      "greek": "νῶτον",
+      "greek_strong": "3577",
       "lemma": "עֹרֶף",
       "missing_enrichments": [
         "oshb:stem",
@@ -561,8 +569,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who hated me"
+          "[those",
+          "who] hated me"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -609,7 +617,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and who hated me those",
+      "display_gloss": "and who] hated me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -640,6 +648,8 @@
         "[those",
         "who].hated.me"
       ],
+      "greek": "καὶ με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -760,7 +770,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "destroyed them I",
+      "display_gloss": "I destroyed them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -790,6 +800,8 @@
         "I",
         "destroyed.them"
       ],
+      "greek": "ἐχωλέθρευσας",
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -859,24 +871,40 @@
       "ref": "Psalm 18:41",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA018.htm",
+      "source_version": "eng-kjv2006",
       "text": "They cried, but [there was] none to save [them: even] unto the LORD, but he answered them not.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:41",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA018.htm",
+      "source_version": "eng-asv",
       "text": "They cried, but there was none to save; Even unto Jehovah, but he answered them not.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 18:41",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA018.htm",
+      "source_version": "engwebp",
       "text": "They cried, but there was no one to save; even to the LORD, but he didn’t answer them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 18:41",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "καὶ ἐξθρούς μου ἔδωκάς μοι νῶτον καὶ με ἐχωλέθρευσας",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

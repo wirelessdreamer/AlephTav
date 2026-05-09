@@ -97,6 +97,8 @@
       "gloss_parts": [
         "by.day"
       ],
+      "greek": "ἡμέρας",
+      "greek_strong": "2250",
       "lemma": "יוֹמָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -200,6 +202,8 @@
       "gloss_parts": [
         "he.commands"
       ],
+      "greek": "ἐντελεῖται",
+      "greek_strong": "1781",
       "lemma": "צָוָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -317,6 +321,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -455,6 +461,8 @@
         "loyalty",
         "his.covenant"
       ],
+      "greek": "ἔλεος αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -577,7 +585,7 @@
         "Psalm 136:9",
         "Psalm 139:11"
       ],
-      "display_gloss": "and in night the",
+      "display_gloss": "and in the night",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -610,6 +618,8 @@
         "the",
         "night"
       ],
+      "greek": "καὶ νυκτὸς",
+      "greek_strong": "3571",
       "lemma": "לַיְלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -692,6 +702,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -808,6 +820,8 @@
         "song",
         "his"
       ],
+      "greek": "ᾠδὴ",
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -881,7 +895,7 @@
           "me"
         ],
         "gloss_fragments": [
-          "with",
+          "is with",
           "me"
         ],
         "preposition_role": "with",
@@ -927,7 +941,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "with",
+      "display_gloss": "with me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -958,6 +972,8 @@
         "[is].with",
         "me"
       ],
+      "greek": "παρ’ ἐμοί",
+      "greek_strong": "1698",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1084,6 +1100,8 @@
       "gloss_parts": [
         "a.prayer"
       ],
+      "greek": "προσευξὴ",
+      "greek_strong": "4335",
       "lemma": "תְּפִלָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1203,6 +1221,8 @@
         "to",
         "the.God"
       ],
+      "greek": "τῷ θεῷ",
+      "greek_strong": "2316",
       "lemma": "אֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1264,24 +1284,40 @@
       "ref": "Psalm 42:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA042.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will say unto God my rock, Why hast thou forgotten me? why go I mourning because of the oppression of the enemy?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 42:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA042.htm",
+      "source_version": "eng-asv",
       "text": "I will say unto God my rock, Why hast thou forgotten me? Why go I mourning because of the oppression of the enemy?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 42:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA042.htm",
+      "source_version": "engwebp",
       "text": "I will ask God, my rock, “Why have you forgotten me? Why do I go mourning because of the oppression of the enemy?”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 42:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἡμέρας ἐντελεῖται κύριος ἔλεος αὐτοῦ καὶ νυκτὸς ᾠδὴ παρ’ ἐμοί προσευξὴ τῷ θεῷ ζωῆς μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

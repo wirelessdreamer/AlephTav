@@ -113,6 +113,8 @@
       "gloss_parts": [
         "also"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "גַּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -228,6 +230,8 @@
       "gloss_parts": [
         "darkness"
       ],
+      "greek": "σκότος",
+      "greek_strong": "4655",
       "lemma": "חֹשֶׁךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -343,6 +347,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -452,6 +458,8 @@
       "gloss_parts": [
         "it.is.[too].dark"
       ],
+      "greek": "σκοτισθήσεται",
+      "greek_strong": "4654",
       "lemma": "חָשַׁךְ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -536,7 +544,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -567,6 +575,8 @@
         "for",
         "you"
       ],
+      "greek": "ἀπὸ σοῦ",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -714,6 +724,8 @@
         "and",
         "night"
       ],
+      "greek": "καὶ νὺχ",
+      "greek_strong": "3571",
       "lemma": "לַיְלָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -822,7 +834,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "like day the",
+      "display_gloss": "as the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -854,6 +866,8 @@
         "the",
         "day"
       ],
+      "greek": "ὡς ἡμέρα",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -984,6 +998,8 @@
       "gloss_parts": [
         "it.shines"
       ],
+      "greek": "φωτισθήσεται",
+      "greek_strong": null,
       "lemma": "אוֹר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1067,7 +1083,7 @@
       "corpus_occurrence_refs": [
         "Psalm 82:5"
       ],
-      "display_gloss": "as darkness the",
+      "display_gloss": "as the darkness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1099,6 +1115,8 @@
         "the",
         "darkness"
       ],
+      "greek": "ὡς",
+      "greek_strong": "5613",
       "lemma": "חֲשֵׁכָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1158,7 +1176,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "as light the",
+      "display_gloss": "as the light",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1190,6 +1208,8 @@
         "the",
         "light"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אוֹרָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1223,24 +1243,40 @@
       "ref": "Psalm 139:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA139.htm",
+      "source_version": "eng-kjv2006",
       "text": "Yea, the darkness hideth not from thee; but the night shineth as the day: the darkness and the light [are] both alike [to thee].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA139.htm",
+      "source_version": "eng-asv",
       "text": "Even the darkness hideth not from thee, But the night shineth as the day: The darkness and the light are both alike [to thee].",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA139.htm",
+      "source_version": "engwebp",
       "text": "even the darkness doesn’t hide from you, but the night shines as the day. The darkness is like light to you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 139:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι σκότος οὐ σκοτισθήσεται ἀπὸ σοῦ καὶ νὺχ ὡς ἡμέρα φωτισθήσεται ὡς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

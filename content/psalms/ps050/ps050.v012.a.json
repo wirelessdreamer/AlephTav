@@ -112,6 +112,8 @@
       "gloss_parts": [
         "if"
       ],
+      "greek": "ἐὰν",
+      "greek_strong": "1437",
       "lemma": "אִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -223,6 +225,8 @@
       "gloss_parts": [
         "I.will.be.hungry"
       ],
+      "greek": "πεινάσω",
+      "greek_strong": null,
       "lemma": "רָעֵב",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -331,6 +335,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -461,6 +467,8 @@
       "gloss_parts": [
         "I.will.tell"
       ],
+      "greek": "σοι",
+      "greek_strong": "4671",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -569,7 +577,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -600,6 +608,8 @@
         "to",
         "you"
       ],
+      "greek": "εἴπω",
+      "greek_strong": "2036",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -741,6 +751,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "\"{..^ἐστιν}\"",
+      "greek_strong": "2076",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -852,7 +864,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belong to",
+      "display_gloss": "belong to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -883,6 +895,8 @@
         "[belong].to",
         "me"
       ],
+      "greek": "ἐμὴ",
+      "greek_strong": "1699",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -1016,6 +1030,8 @@
       "gloss_parts": [
         "[the].world"
       ],
+      "greek": "οἰκουμένη",
+      "greek_strong": "3625",
       "lemma": "תֵּבֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1150,6 +1166,8 @@
         "what",
         "fills.it"
       ],
+      "greek": "καὶ τὸ",
+      "greek_strong": "3588",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1221,24 +1239,40 @@
       "ref": "Psalm 50:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA050.htm",
+      "source_version": "eng-kjv2006",
       "text": "If I were hungry, I would not tell thee: for the world [is] mine, and the fulness thereof.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 50:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA050.htm",
+      "source_version": "eng-asv",
       "text": "If I were hungry, I would not tell thee; For the world is mine, and the fulness thereof.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 50:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA050.htm",
+      "source_version": "engwebp",
       "text": "If I were hungry, I would not tell you, for the world is mine, and all that is in it.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 50:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐὰν πεινάσω οὐ σοι εἴπω \"{..^ἐστιν}\" ἐμὴ οἰκουμένη καὶ τὸ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

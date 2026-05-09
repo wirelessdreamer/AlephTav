@@ -81,7 +81,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "because of",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -111,6 +111,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "ὑπὲρ",
+      "greek_strong": "5228",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -242,6 +244,8 @@
       "gloss_parts": [
         "wickedness"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אָוֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -347,6 +351,8 @@
       "gloss_parts": [
         "deliver"
       ],
+      "greek": "σώσεις",
+      "greek_strong": "4982",
       "lemma": "פַּלֵּט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -429,7 +435,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "they",
+      "display_gloss": "they them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -460,6 +466,8 @@
         "(to)",
         "them"
       ],
+      "greek": "αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -608,6 +616,8 @@
         "in",
         "anger"
       ],
+      "greek": "ἐν ὀργῇ",
+      "greek_strong": "3709",
       "lemma": "אַף",
       "missing_enrichments": [
         "oshb:stem",
@@ -737,6 +747,8 @@
       "gloss_parts": [
         "peoples"
       ],
+      "greek": "λαοὺς",
+      "greek_strong": "2992",
       "lemma": "עַם",
       "missing_enrichments": [
         "oshb:stem",
@@ -858,6 +870,8 @@
       "gloss_parts": [
         "bring.down"
       ],
+      "greek": "κατάχεις",
+      "greek_strong": null,
       "lemma": "יָרַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -979,6 +993,8 @@
       "gloss_parts": [
         "O.God"
       ],
+      "greek": "θεός",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -1045,24 +1061,40 @@
       "ref": "Psalm 56:8",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA056.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou tellest my wanderings: put thou my tears into thy bottle: [are they] not in thy book?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:8",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA056.htm",
+      "source_version": "eng-asv",
       "text": "Thou numberest my wanderings: Put thou my tears into thy bottle; Are they not in thy book?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 56:8",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA056.htm",
+      "source_version": "engwebp",
       "text": "You count my wanderings. You put my tears into your container. Aren’t they in your book?",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 56:8",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὑπὲρ σώσεις αὐτούς ἐν ὀργῇ λαοὺς κατάχεις θεός",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

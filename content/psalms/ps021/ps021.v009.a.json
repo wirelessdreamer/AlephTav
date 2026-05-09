@@ -99,6 +99,8 @@
       "gloss_parts": [
         "it.will.find"
       ],
+      "greek": "εὑρεθείη",
+      "greek_strong": null,
       "lemma": "מָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -226,6 +228,8 @@
         "hand",
         "your"
       ],
+      "greek": "ξείρ σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -371,6 +375,8 @@
         "(to)",
         "all"
       ],
+      "greek": "πᾶσιν",
+      "greek_strong": "3956",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -509,6 +515,8 @@
         "enemies",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -659,6 +667,8 @@
         "hand",
         "your.right"
       ],
+      "greek": "δεχιά σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -789,6 +799,8 @@
       "gloss_parts": [
         "it.will.find"
       ],
+      "greek": "εὕροι",
+      "greek_strong": null,
       "lemma": "מָצָא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -839,8 +851,8 @@
           "you"
         ],
         "gloss_fragments": [
-          "those",
-          "who hate you"
+          "[those",
+          "who] hate you"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -885,7 +897,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "who hate you those",
+      "display_gloss": "who] hate you [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -915,6 +927,8 @@
         "[those",
         "who].hate.you"
       ],
+      "greek": "σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -984,24 +998,40 @@
       "ref": "Psalm 21:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA021.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou shalt make them as a fiery oven in the time of thine anger: the LORD shall swallow them up in his wrath, and the fire shall devour them.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 21:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA021.htm",
+      "source_version": "eng-asv",
       "text": "Thou wilt make them as a fiery furnace in the time of thine anger: Jehovah will swallow them up in his wrath, And the fire shall devour them.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 21:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA021.htm",
+      "source_version": "engwebp",
       "text": "You will make them as a fiery furnace in the time of your anger. The LORD will swallow them up in his wrath. The fire shall devour them.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 21:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εὑρεθείη ξείρ σου πᾶσιν σου δεχιά σου εὕροι σε",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

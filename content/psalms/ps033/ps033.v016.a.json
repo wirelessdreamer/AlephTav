@@ -83,7 +83,7 @@
         "Psalm 40:13",
         "Psalm 50:22"
       ],
-      "display_gloss": "not",
+      "display_gloss": "is not",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -113,6 +113,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "אַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -214,7 +216,7 @@
         "Psalm 61:7",
         "Psalm 63:12"
       ],
-      "display_gloss": "king the",
+      "display_gloss": "the king",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -245,6 +247,8 @@
         "(the)",
         "king"
       ],
+      "greek": "σῴζεται",
+      "greek_strong": "4982",
       "lemma": "מֶלֶךְ",
       "missing_enrichments": [
         "oshb:stem",
@@ -306,7 +310,7 @@
           "saved"
         ],
         "gloss_fragments": [
-          "saved"
+          "is saved"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -341,7 +345,7 @@
         "Psalm 116:6",
         "Psalm 119:117"
       ],
-      "display_gloss": "saved",
+      "display_gloss": "is saved",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -370,6 +374,8 @@
       "gloss_parts": [
         "[is].saved"
       ],
+      "greek": "βασιλεὺς",
+      "greek_strong": "935",
       "lemma": "יָשַׁע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -489,6 +495,8 @@
         "by",
         "greatness"
       ],
+      "greek": "διὰ πολλὴν",
+      "greek_strong": "4183",
       "lemma": "רֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -596,6 +604,8 @@
       "gloss_parts": [
         "of.army"
       ],
+      "greek": "δύναμιν",
+      "greek_strong": "1411",
       "lemma": "חַיִל",
       "missing_enrichments": [
         "oshb:stem",
@@ -697,6 +707,8 @@
       "gloss_parts": [
         "a.warrior"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "גִּבּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -811,6 +823,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -927,6 +941,8 @@
       "gloss_parts": [
         "he.is.delivered"
       ],
+      "greek": "σωθήσεται",
+      "greek_strong": "4982",
       "lemma": "נָצַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1038,6 +1054,8 @@
         "by",
         "greatness"
       ],
+      "greek": "ἐν πλήθει",
+      "greek_strong": "4128",
       "lemma": "רֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -1139,6 +1157,8 @@
       "gloss_parts": [
         "of.strength"
       ],
+      "greek": "ἰσξύος",
+      "greek_strong": "2479",
       "lemma": "כֹּחַ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1177,24 +1197,40 @@
       "ref": "Psalm 33:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA033.htm",
+      "source_version": "eng-kjv2006",
       "text": "There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA033.htm",
+      "source_version": "eng-asv",
       "text": "There is no king saved by the multitude of a host: A mighty man is not delivered by great strength.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 33:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA033.htm",
+      "source_version": "engwebp",
       "text": "There is no king saved by the multitude of an army. A mighty man is not delivered by great strength.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 33:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οὐ σῴζεται βασιλεὺς διὰ πολλὴν δύναμιν οὐ σωθήσεται ἐν πλήθει ἰσξύος",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

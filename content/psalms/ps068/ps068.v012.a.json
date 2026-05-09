@@ -118,6 +118,8 @@
         "Lord",
         "[the]"
       ],
+      "greek": "κύριος",
+      "greek_strong": "2962",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -259,6 +261,8 @@
       "gloss_parts": [
         "he.gives"
       ],
+      "greek": "δώσει",
+      "greek_strong": "1325",
       "lemma": "נָתַן",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -369,6 +373,8 @@
       "gloss_parts": [
         "a.word"
       ],
+      "greek": "ῥῆμα",
+      "greek_strong": "4487",
       "lemma": "אֹמֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -409,8 +415,8 @@
           "bore the tidings"
         ],
         "gloss_fragments": [
-          "the women",
-          "who bear the news"
+          "the [women",
+          "who] bear the news"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -428,7 +434,7 @@
         "Psalm 40:10",
         "Psalm 96:2"
       ],
-      "display_gloss": "who bear the news the women",
+      "display_gloss": "who] bear the news the [women",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -458,6 +464,8 @@
         "the.[women",
         "who].bear.the.news"
       ],
+      "greek": "τοῖς εὐαγγελιζομένοις",
+      "greek_strong": "3588",
       "lemma": "בָּשַׂר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -555,6 +563,8 @@
       "gloss_parts": [
         "[are].a.host"
       ],
+      "greek": "δυνάμει",
+      "greek_strong": "1411",
       "lemma": "צָבָא",
       "missing_enrichments": [
         "oshb:stem",
@@ -677,6 +687,8 @@
       "gloss_parts": [
         "great"
       ],
+      "greek": "πολλῇ",
+      "greek_strong": "4183",
       "lemma": "רַב",
       "missing_enrichments": [
         "oshb:stem",
@@ -735,24 +747,40 @@
       "ref": "Psalm 68:12",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "Kings of armies did flee apace: and she that tarried at home divided the spoil.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:12",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "Kings of armies flee, they flee; And she that tarrieth at home divideth the spoil.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:12",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "“Kings of armies flee! They flee!” She who waits at home divides the plunder,",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:12",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "κύριος δώσει ῥῆμα τοῖς εὐαγγελιζομένοις δυνάμει πολλῇ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

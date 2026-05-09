@@ -105,6 +105,8 @@
       "gloss_parts": [
         "you.hide"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "סָתַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -236,6 +238,8 @@
         "face",
         "your"
       ],
+      "greek": "πρόσωπον σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -356,7 +360,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "are terrified they",
+      "display_gloss": "they are terrified",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -386,6 +390,8 @@
         "they",
         "are.terrified"
       ],
+      "greek": "ταραξθήσονται",
+      "greek_strong": null,
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -503,6 +509,8 @@
       "gloss_parts": [
         "you.withdraw"
       ],
+      "greek": "ἀντανελεῖς",
+      "greek_strong": null,
       "lemma": "אָסַף",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -621,6 +629,8 @@
         "breath",
         "their"
       ],
+      "greek": "πνεῦμα",
+      "greek_strong": "4151",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -741,7 +751,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "die they",
+      "display_gloss": "they die",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -771,6 +781,8 @@
         "they",
         "die"
       ],
+      "greek": "καὶ ἐκλείψουσιν",
+      "greek_strong": "1587",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -913,6 +925,8 @@
         "and",
         "to"
       ],
+      "greek": "καὶ εἰς",
+      "greek_strong": "1519",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1055,6 +1069,8 @@
         "dust",
         "their"
       ],
+      "greek": "ξοῦν",
+      "greek_strong": "5522",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1175,7 +1191,7 @@
         "Psalm 78:44",
         "Psalm 82:7"
       ],
-      "display_gloss": "return they",
+      "display_gloss": "they return",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1205,6 +1221,8 @@
         "they",
         "return"
       ],
+      "greek": "ἐπιστρέψουσιν",
+      "greek_strong": null,
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -1271,24 +1289,40 @@
       "ref": "Psalm 104:29",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA104.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hidest thy face, they are troubled: thou takest away their breath, they die, and return to their dust.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:29",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA104.htm",
+      "source_version": "eng-asv",
       "text": "Thou hidest thy face, they are troubled; Thou takest away their breath, they die, And return to their dust.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 104:29",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA104.htm",
+      "source_version": "engwebp",
       "text": "You hide your face; they are troubled. You take away their breath; they die and return to the dust.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 104:29",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πρόσωπον σου ταραξθήσονται ἀντανελεῖς πνεῦμα καὶ ἐκλείψουσιν καὶ εἰς ξοῦν ἐπιστρέψουσιν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

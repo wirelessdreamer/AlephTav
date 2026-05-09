@@ -42,7 +42,7 @@
           "father"
         ],
         "gloss_fragments": [
-          "a father"
+          "is a father"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -57,7 +57,7 @@
       "corpus_occurrence_refs": [
         "Psalm 103:13"
       ],
-      "display_gloss": "a father",
+      "display_gloss": "is a father",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -87,6 +87,8 @@
       "gloss_parts": [
         "[is].a.father"
       ],
+      "greek": "πατρὸς",
+      "greek_strong": "3962",
       "lemma": "אָב",
       "missing_enrichments": [
         "oshb:stem",
@@ -175,6 +177,8 @@
       "gloss_parts": [
         "of.fatherless.ones"
       ],
+      "greek": "ὀρφανῶν",
+      "greek_strong": null,
       "lemma": "יָתוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -266,6 +270,8 @@
         "and",
         "a.judge"
       ],
+      "greek": "καὶ κριτοῦ",
+      "greek_strong": "2923",
       "lemma": "דַּיָּן",
       "missing_enrichments": [
         "oshb:stem",
@@ -349,6 +355,8 @@
       "gloss_parts": [
         "of.widows"
       ],
+      "greek": "ξηρῶν",
+      "greek_strong": "5503",
       "lemma": "אַלְמָנָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -457,6 +465,8 @@
       "gloss_parts": [
         "God"
       ],
+      "greek": "θεὸς",
+      "greek_strong": "2316",
       "lemma": "אֱלֹהִים",
       "missing_enrichments": [
         "oshb:stem",
@@ -582,6 +592,8 @@
         "in",
         "the.dwelling.place"
       ],
+      "greek": "ἐν τόπῳ",
+      "greek_strong": "5117",
       "lemma": "מָעוֹן",
       "missing_enrichments": [
         "oshb:stem",
@@ -669,7 +681,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "his his holiness",
+      "display_gloss": "his holiness",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -700,6 +712,8 @@
         "his.holiness",
         "his"
       ],
+      "greek": "ἁγίῳ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -771,24 +785,40 @@
       "ref": "Psalm 68:6",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA068.htm",
+      "source_version": "eng-kjv2006",
       "text": "God setteth the solitary in families: he bringeth out those which are bound with chains: but the rebellious dwell in a dry [land].",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:6",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA068.htm",
+      "source_version": "eng-asv",
       "text": "God setteth the solitary in families: He bringeth out the prisoners into prosperity; But the rebellious dwell in a parched land.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 68:6",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA068.htm",
+      "source_version": "engwebp",
       "text": "God sets the lonely in families. He brings out the prisoners with singing, but the rebellious dwell in a sun-scorched land.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 68:6",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πατρὸς ὀρφανῶν καὶ κριτοῦ ξηρῶν θεὸς ἐν τόπῳ ἁγίῳ αὐτοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -101,6 +101,8 @@
       "gloss_parts": [
         "[he.is].ruling"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מָשַׁל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -231,6 +233,8 @@
         "might",
         "his"
       ],
+      "greek": "ἐν αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -373,6 +377,8 @@
       "gloss_parts": [
         "forever"
       ],
+      "greek": "αἰῶνος",
+      "greek_strong": "165",
       "lemma": "עוֹלָם",
       "missing_enrichments": [
         "oshb:stem",
@@ -511,6 +517,8 @@
         "eyes",
         "his"
       ],
+      "greek": "ὀφθαλμοὶ αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -631,7 +639,7 @@
         "Psalm 59:9",
         "Psalm 67:3"
       ],
-      "display_gloss": "on nations the",
+      "display_gloss": "on the nations",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -663,6 +671,8 @@
         "the",
         "nations"
       ],
+      "greek": "ἔθνη",
+      "greek_strong": "1484",
       "lemma": "גּוֹי",
       "missing_enrichments": [
         "oshb:stem",
@@ -769,6 +779,8 @@
       "gloss_parts": [
         "they.keep.watch"
       ],
+      "greek": "ἐπιβλέπουσιν",
+      "greek_strong": null,
       "lemma": "צָפָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -807,8 +819,8 @@
           "rebellious"
         ],
         "gloss_fragments": [
-          "those",
-          "who are rebellious"
+          "[those",
+          "who are] rebellious"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -827,7 +839,7 @@
         "Psalm 68:19",
         "Psalm 78:8"
       ],
-      "display_gloss": "who are rebellious those",
+      "display_gloss": "who are] rebellious [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -857,6 +869,8 @@
         "[those",
         "who.are].rebellious"
       ],
+      "greek": "οἱ παραπικραίνοντες",
+      "greek_strong": "3588",
       "lemma": "סָרַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -964,6 +978,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "μὴ",
+      "greek_strong": "3361",
       "lemma": "אַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1043,6 +1059,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -1148,6 +1166,8 @@
       "gloss_parts": [
         "let.them.be.exalted"
       ],
+      "greek": "ὑψούσθωσαν",
+      "greek_strong": null,
       "lemma": "רוּם",
       "missing_enrichments": [
         "oshb:strong",
@@ -1254,7 +1274,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "against him",
+      "display_gloss": "against him themselves",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1285,6 +1305,8 @@
         "(to)",
         "themselves"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1356,24 +1378,40 @@
       "ref": "Psalm 66:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA066.htm",
+      "source_version": "eng-kjv2006",
       "text": "He ruleth by his power for ever; his eyes behold the nations: let not the rebellious exalt themselves. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 66:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA066.htm",
+      "source_version": "eng-asv",
       "text": "He ruleth by his might for ever; His eyes observe the nations: Let not the rebellious exalt themselves. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 66:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA066.htm",
+      "source_version": "engwebp",
       "text": "He rules by his might forever. His eyes watch the nations. Don’t let the rebellious rise up against him. Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 66:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐν αὐτοῦ αἰῶνος ὀφθαλμοὶ αὐτοῦ ἔθνη ἐπιβλέπουσιν οἱ παραπικραίνοντες μὴ ὑψούσθωσαν διάψαλμα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

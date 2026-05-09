@@ -111,6 +111,8 @@
       "gloss_parts": [
         "why?"
       ],
+      "greek": "τί",
+      "greek_strong": "5101",
       "lemma": "מָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -238,6 +240,8 @@
       "gloss_parts": [
         "do.you.boast"
       ],
+      "greek": "ἐγκαυξᾷ",
+      "greek_strong": null,
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -370,6 +374,8 @@
         "in",
         "evil"
       ],
+      "greek": "ἐν κακίᾳ",
+      "greek_strong": "2549",
       "lemma": "רָעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -490,6 +496,8 @@
         "O",
         "mighty.[man]"
       ],
+      "greek": "ὁ δυνατός",
+      "greek_strong": "1415",
       "lemma": "גִּבּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -605,6 +613,8 @@
       "gloss_parts": [
         "the.covenant.loyalty"
       ],
+      "greek": "ἀνομίαν",
+      "greek_strong": "458",
       "lemma": "חֶסֶד",
       "missing_enrichments": [
         "oshb:stem",
@@ -736,6 +746,8 @@
       "gloss_parts": [
         "of.God"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "אֵל",
       "missing_enrichments": [
         "oshb:stem",
@@ -799,7 +811,7 @@
           "all"
         ],
         "gloss_fragments": [
-          "all"
+          "is all"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -837,7 +849,7 @@
         "Psalm 16:3",
         "Psalm 18:1"
       ],
-      "display_gloss": "all",
+      "display_gloss": "is all",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -867,6 +879,8 @@
       "gloss_parts": [
         "[is].all"
       ],
+      "greek": "ὅλην",
+      "greek_strong": "3650",
       "lemma": "כֹּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -972,7 +986,7 @@
         "Psalm 42:11",
         "Psalm 44:2"
       ],
-      "display_gloss": "day the",
+      "display_gloss": "the day",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1003,6 +1017,8 @@
         "the",
         "day"
       ],
+      "greek": "τὴν ἡμέραν",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1061,24 +1077,40 @@
       "ref": "Psalm 52:3",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA052.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou lovest evil more than good; [and] lying rather than to speak righteousness. Selah.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 52:3",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA052.htm",
+      "source_version": "eng-asv",
       "text": "Thou lovest evil more than good, And lying rather than to speak righteousness. [Selah",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 52:3",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA052.htm",
+      "source_version": "engwebp",
       "text": "You love evil more than good, lying rather than speaking the truth. Selah.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 52:3",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τί ἐγκαυξᾷ ἐν κακίᾳ ὁ δυνατός ἀνομίαν ὅλην τὴν ἡμέραν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

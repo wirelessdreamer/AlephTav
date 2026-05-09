@@ -81,7 +81,7 @@
         "Psalm 89:36",
         "Psalm 90:10"
       ],
-      "display_gloss": "if",
+      "display_gloss": "if only",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -111,6 +111,8 @@
       "gloss_parts": [
         "if"
       ],
+      "greek": "ἐὰν",
+      "greek_strong": "1437",
       "lemma": "אִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -217,6 +219,8 @@
       "gloss_parts": [
         "you.will.kill"
       ],
+      "greek": "ἀποκτείνῃς",
+      "greek_strong": "615",
       "lemma": "קָטַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -298,6 +302,8 @@
       "gloss_parts": [
         "O.God"
       ],
+      "greek": "ἁμαρτωλούς",
+      "greek_strong": "268",
       "lemma": "אֱלֹוהַּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -406,6 +412,8 @@
       "gloss_parts": [
         "[the].wicked"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "רָשָׁע",
       "missing_enrichments": [
         "oshb:stem",
@@ -539,6 +547,8 @@
         "and",
         "O.men"
       ],
+      "greek": "ἄνδρες",
+      "greek_strong": "435",
       "lemma": "אִישׁ",
       "missing_enrichments": [
         "oshb:stem",
@@ -659,6 +669,8 @@
       "gloss_parts": [
         "of.blood(s)"
       ],
+      "greek": "αἱμάτων",
+      "greek_strong": "129",
       "lemma": "דָּם",
       "missing_enrichments": [
         "oshb:stem",
@@ -766,6 +778,8 @@
       "gloss_parts": [
         "depart"
       ],
+      "greek": "ἐκκλίνατε",
+      "greek_strong": null,
       "lemma": "סוּר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -859,7 +873,7 @@
         "Psalm 148:1",
         "Psalm 148:7"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -890,6 +904,8 @@
         "from",
         "me"
       ],
+      "greek": "ἀπ’ ἐμοῦ",
+      "greek_strong": "1700",
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -947,24 +963,40 @@
       "ref": "Psalm 139:19",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA139.htm",
+      "source_version": "eng-kjv2006",
       "text": "Surely thou wilt slay the wicked, O God: depart from me therefore, ye bloody men.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:19",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA139.htm",
+      "source_version": "eng-asv",
       "text": "Surely thou wilt slay the wicked, O God: Depart from me therefore, ye bloodthirsty men.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 139:19",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA139.htm",
+      "source_version": "engwebp",
       "text": "If only you, God, would kill the wicked. Get away from me, you bloodthirsty men!",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 139:19",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐὰν ἀποκτείνῃς ἁμαρτωλούς ἄνδρες αἱμάτων ἐκκλίνατε ἀπ’ ἐμοῦ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

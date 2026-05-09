@@ -122,6 +122,8 @@
         "self",
         "our"
       ],
+      "greek": "ψυξὴ ἡμῶν",
+      "greek_strong": "2257",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -245,6 +247,8 @@
         "like",
         "a.bird"
       ],
+      "greek": "ὡς στρουθίον",
+      "greek_strong": "5613",
       "lemma": "צִפּוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -334,6 +338,8 @@
       "gloss_parts": [
         "it.has.escaped"
       ],
+      "greek": "ἐρρύσθη",
+      "greek_strong": "4506",
       "lemma": "מָלַט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -429,6 +435,8 @@
         "from",
         "a.snare"
       ],
+      "greek": "ἐκ παγίδος",
+      "greek_strong": "3803",
       "lemma": "פַּח",
       "missing_enrichments": [
         "oshb:stem",
@@ -517,6 +525,8 @@
       "gloss_parts": [
         "of.fowlers"
       ],
+      "greek": "θηρευόντων",
+      "greek_strong": null,
       "lemma": "יָקֹשׁ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -579,7 +589,7 @@
         "Psalm 141:9",
         "Psalm 142:4"
       ],
-      "display_gloss": "snare the",
+      "display_gloss": "the snare",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -610,6 +620,8 @@
         "the",
         "snare"
       ],
+      "greek": "ἡ παγὶς",
+      "greek_strong": "3803",
       "lemma": "פַּח",
       "missing_enrichments": [
         "oshb:stem",
@@ -654,7 +666,7 @@
           "broken"
         ],
         "gloss_fragments": [
-          "broken"
+          "is broken"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -686,7 +698,7 @@
         "Psalm 107:16",
         "Psalm 147:3"
       ],
-      "display_gloss": "broken",
+      "display_gloss": "is broken",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -715,6 +727,8 @@
       "gloss_parts": [
         "[is].broken"
       ],
+      "greek": "συνετρίβη",
+      "greek_strong": "4937",
       "lemma": "שָׁבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -824,6 +838,8 @@
         "and",
         "we"
       ],
+      "greek": "καὶ ἡμεῖς",
+      "greek_strong": "2249",
       "lemma": "אֲנַחְנוּ",
       "missing_enrichments": [
         "oshb:stem",
@@ -914,6 +930,8 @@
       "gloss_parts": [
         "we.have.escaped"
       ],
+      "greek": "ἐρρύσθημεν",
+      "greek_strong": "4506",
       "lemma": "מָלַט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -950,24 +968,40 @@
       "ref": "Psalm 124:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA124.htm",
+      "source_version": "eng-kjv2006",
       "text": "Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 124:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA124.htm",
+      "source_version": "eng-asv",
       "text": "Our soul is escaped as a bird out of the snare of the fowlers: The snare is broken, and we are escaped.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 124:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA124.htm",
+      "source_version": "engwebp",
       "text": "Our soul has escaped like a bird out of the fowler’s snare. The snare is broken, and we have escaped.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 124:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ψυξὴ ἡμῶν ὡς στρουθίον ἐρρύσθη ἐκ παγίδος θηρευόντων ἡ παγὶς συνετρίβη καὶ ἡμεῖς ἐρρύσθημεν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

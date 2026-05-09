@@ -109,6 +109,8 @@
       "gloss_parts": [
         "you.[fem].said"
       ],
+      "greek": "εἶπα",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -241,6 +243,8 @@
         "to",
         "Yahweh"
       ],
+      "greek": "τῷ κυρίῳ",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -307,8 +311,8 @@
           "my"
         ],
         "gloss_fragments": [
-          "the Lord",
-          "are"
+          "the] Lord",
+          "[are"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -353,7 +357,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "are the Lord",
+      "display_gloss": "[are the] Lord",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -384,6 +388,8 @@
         "the].Lord",
         "[are"
       ],
+      "greek": "κύριός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -524,6 +530,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σύ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -664,6 +672,8 @@
         "good",
         "my"
       ],
+      "greek": "ἀγαθῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -804,6 +814,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "בַּל",
       "missing_enrichments": [
         "oshb:stem",
@@ -868,7 +880,7 @@
           "you"
         ],
         "gloss_fragments": [
-          "on",
+          "is on",
           "you"
         ],
         "preposition_role": "apart from",
@@ -914,7 +926,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "apart from you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -945,6 +957,8 @@
         "[is].on",
         "you"
       ],
+      "greek": "ξρείαν ἔξεις",
+      "greek_strong": "2192",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1014,24 +1028,40 @@
       "ref": "Psalm 16:2",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA016.htm",
+      "source_version": "eng-kjv2006",
       "text": "[O my soul], thou hast said unto the LORD, Thou [art] my Lord: my goodness [extendeth] not to thee;",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 16:2",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA016.htm",
+      "source_version": "eng-asv",
       "text": "[O my soul], thou hast said unto Jehovah, Thou art my Lord: I have no good beyond thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 16:2",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA016.htm",
+      "source_version": "engwebp",
       "text": "My soul, you have said to the LORD, “You are my Lord. Apart from you I have no good thing.”",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 16:2",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "εἶπα τῷ κυρίῳ κύριός μου σύ ἀγαθῶν μου οὐ ξρείαν ἔξεις",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

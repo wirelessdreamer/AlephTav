@@ -87,7 +87,7 @@
         "Psalm 83:3",
         "Psalm 89:16"
       ],
-      "display_gloss": "take their fill they",
+      "display_gloss": "they take their fill",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -117,6 +117,8 @@
         "they",
         "take.their.fill"
       ],
+      "greek": "μεθυσθήσονται",
+      "greek_strong": "3182",
       "lemma": "נ",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -230,6 +232,8 @@
         "from",
         "the.fatness"
       ],
+      "greek": "ἀπὸ πιότητος",
+      "greek_strong": "4096",
       "lemma": "דֶּשֶׁן",
       "missing_enrichments": [
         "oshb:stem",
@@ -316,7 +320,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your house",
+      "display_gloss": "your house",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -347,6 +351,8 @@
         "your.house",
         "your"
       ],
+      "greek": "οἴκου σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -474,6 +480,8 @@
         "and",
         "the.river"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "נַחַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -564,7 +572,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "your your delights",
+      "display_gloss": "your delights",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -595,6 +603,8 @@
         "your.delights",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -714,7 +724,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "give them to drink you",
+      "display_gloss": "you give them to drink",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -744,6 +754,8 @@
         "you",
         "give.them.to.drink"
       ],
+      "greek": "ποτιεῖς αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -811,24 +823,40 @@
       "ref": "Psalm 36:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA036.htm",
+      "source_version": "eng-kjv2006",
       "text": "For with thee [is] the fountain of life: in thy light shall we see light.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 36:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA036.htm",
+      "source_version": "eng-asv",
       "text": "For with thee is the fountain of life: In thy light shall we see light.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 36:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA036.htm",
+      "source_version": "engwebp",
       "text": "For with you is the spring of life. In your light we will see light.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 36:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μεθυσθήσονται ἀπὸ πιότητος οἴκου σου καὶ σου ποτιεῖς αὐτούς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

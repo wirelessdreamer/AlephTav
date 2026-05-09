@@ -63,6 +63,8 @@
         }
       },
       "gloss_parts": [],
+      "greek": null,
+      "greek_strong": null,
       "lemma": null,
       "missing_enrichments": [
         "oshb:lemma",
@@ -145,6 +147,8 @@
       "gloss_parts": [
         "may.it.deceive"
       ],
+      "greek": "ἐλθέτω",
+      "greek_strong": "2064",
       "lemma": "נָשָׁא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -241,6 +245,8 @@
       "gloss_parts": [
         "death"
       ],
+      "greek": "θάνατος",
+      "greek_strong": "2288",
       "lemma": "מָוֶת",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -342,7 +348,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "on",
+      "display_gloss": "upon them",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -373,6 +379,8 @@
         "on",
         "them"
       ],
+      "greek": "ἐπ’ αὐτούς",
+      "greek_strong": "848",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -508,6 +516,8 @@
       "gloss_parts": [
         "may.they.go.down"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָרַד",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -618,6 +628,8 @@
       "gloss_parts": [
         "Sheol"
       ],
+      "greek": "ᾅδου",
+      "greek_strong": "86",
       "lemma": "שְׁאוֹל",
       "missing_enrichments": [
         "oshb:stem",
@@ -724,6 +736,8 @@
       "gloss_parts": [
         "alive"
       ],
+      "greek": "ζῶντες",
+      "greek_strong": "2198",
       "lemma": "חַי",
       "missing_enrichments": [
         "oshb:stem",
@@ -839,6 +853,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -973,6 +989,8 @@
       "gloss_parts": [
         "evil.deeds"
       ],
+      "greek": "πονηρίαι",
+      "greek_strong": "4189",
       "lemma": "רָעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1030,24 +1048,40 @@
       "ref": "Psalm 55:16",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA055.htm",
+      "source_version": "eng-kjv2006",
       "text": "As for me, I will call upon God; and the LORD shall save me.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 55:16",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA055.htm",
+      "source_version": "eng-asv",
       "text": "As for me, I will call upon God; And Jehovah will save me.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 55:16",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA055.htm",
+      "source_version": "engwebp",
       "text": "As for me, I will call on God. The LORD will save me.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 55:16",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐλθέτω θάνατος ἐπ’ αὐτούς ᾅδου ζῶντες ὅτι πονηρίαι ἐν ἐν μέσῳ αὐτῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

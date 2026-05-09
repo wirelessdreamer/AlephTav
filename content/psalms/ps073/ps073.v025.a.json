@@ -110,6 +110,8 @@
       "gloss_parts": [
         "who?"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -217,7 +219,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "belongs to",
+      "display_gloss": "belongs to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -248,6 +250,8 @@
         "[belongs].to",
         "me"
       ],
+      "greek": "μοι ὑπάρξει",
+      "greek_strong": "5225",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -369,7 +373,7 @@
         "Psalm 69:35",
         "Psalm 76:9"
       ],
-      "display_gloss": "in heavens the",
+      "display_gloss": "in the heaven",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -401,6 +405,8 @@
         "the",
         "heavens"
       ],
+      "greek": "ἐν οὐρανῷ",
+      "greek_strong": "3772",
       "lemma": "שָׁמַיִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -515,7 +521,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and with",
+      "display_gloss": "and besides you",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -547,6 +553,8 @@
         "with",
         "you"
       ],
+      "greek": "καὶ παρὰ σοῦ",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -689,6 +697,8 @@
       "gloss_parts": [
         "not"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -816,6 +826,8 @@
       "gloss_parts": [
         "I.take.pleasure"
       ],
+      "greek": "ἠθέλησα",
+      "greek_strong": "2309",
       "lemma": "חָפֵץ",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -918,7 +930,7 @@
         "Psalm 37:3",
         "Psalm 37:9"
       ],
-      "display_gloss": "on earth the",
+      "display_gloss": "on the earth",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -950,6 +962,8 @@
         "the",
         "earth"
       ],
+      "greek": "ἐπὶ γῆς",
+      "greek_strong": "1093",
       "lemma": "אֶרֶץ",
       "missing_enrichments": [
         "oshb:stem",
@@ -1010,24 +1024,40 @@
       "ref": "Psalm 73:25",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA073.htm",
+      "source_version": "eng-kjv2006",
       "text": "Whom have I in heaven [but thee]? and [there is] none upon earth [that] I desire beside thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 73:25",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA073.htm",
+      "source_version": "eng-asv",
       "text": "Whom have I in heaven [but thee]? And there is none upon earth that I desire besides thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 73:25",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA073.htm",
+      "source_version": "engwebp",
       "text": "Whom do I have in heaven? There is no one on earth whom I desire besides you.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 73:25",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "μοι ὑπάρξει ἐν οὐρανῷ καὶ παρὰ σοῦ ἠθέλησα ἐπὶ γῆς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

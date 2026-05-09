@@ -113,6 +113,8 @@
       "gloss_parts": [
         "I.will.recount"
       ],
+      "greek": "διαγγέλλων",
+      "greek_strong": "1229",
       "lemma": "סָפַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "concerning"
       ],
+      "greek": "τὸ",
+      "greek_strong": "3588",
       "lemma": "אֶל",
       "missing_enrichments": [
         "oshb:stem",
@@ -350,6 +354,8 @@
       "gloss_parts": [
         "[the].decree"
       ],
+      "greek": "πρόσταγμα",
+      "greek_strong": null,
       "lemma": "חֹק",
       "missing_enrichments": [
         "oshb:stem",
@@ -460,6 +466,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -590,6 +598,8 @@
       "gloss_parts": [
         "he.said"
       ],
+      "greek": "εἶπεν",
+      "greek_strong": "2036",
       "lemma": "אָמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -696,7 +706,7 @@
         "Psalm 5:5",
         "Psalm 5:6"
       ],
-      "display_gloss": "to",
+      "display_gloss": "to me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -727,6 +737,8 @@
         "to",
         "me"
       ],
+      "greek": "πρός με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -875,6 +887,8 @@
         "son",
         "[are].my"
       ],
+      "greek": "υἱός μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1013,6 +1027,8 @@
       "gloss_parts": [
         "you"
       ],
+      "greek": "σύ",
+      "greek_strong": "4771",
       "lemma": "אַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -1141,6 +1157,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -1276,6 +1294,8 @@
         "this",
         "day"
       ],
+      "greek": "σήμερον",
+      "greek_strong": "4594",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -1414,6 +1434,8 @@
         "I",
         "have.begotten.you"
       ],
+      "greek": "γεγέννηκά σε",
+      "greek_strong": "4571",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1479,24 +1501,40 @@
       "ref": "Psalm 2:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA002.htm",
+      "source_version": "eng-kjv2006",
       "text": "I will declare the decree: the LORD hath said unto me, Thou [art] my Son; this day have I begotten thee.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 2:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA002.htm",
+      "source_version": "eng-asv",
       "text": "I will tell of the decree: Jehovah said unto me, Thou art my son; This day have I begotten thee.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 2:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA002.htm",
+      "source_version": "engwebp",
       "text": "I will tell of the decree: The LORD said to me, “You are my son. Today I have become your father.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 2:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "διαγγέλλων τὸ πρόσταγμα εἶπεν πρός με υἱός μου σύ ἐγὼ σήμερον γεγέννηκά σε",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

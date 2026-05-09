@@ -42,8 +42,8 @@
           "trust"
         ],
         "gloss_fragments": [
-          "those",
-          "who rely"
+          "[those",
+          "who] rely"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -83,7 +83,7 @@
         "Psalm 56:4",
         "Psalm 56:5"
       ],
-      "display_gloss": "who rely those",
+      "display_gloss": "who] rely [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -113,6 +113,8 @@
         "[those",
         "who].rely"
       ],
+      "greek": "οἱ πεποιθότες",
+      "greek_strong": "3982",
       "lemma": "בָּטַח",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -240,6 +242,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "ἐπὶ",
+      "greek_strong": "1909",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -381,6 +385,8 @@
         "wealth",
         "their"
       ],
+      "greek": "δυνάμει",
+      "greek_strong": "1411",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -524,6 +530,8 @@
         "in",
         "the.greatness"
       ],
+      "greek": "καὶ",
+      "greek_strong": "2532",
       "lemma": "רֹב",
       "missing_enrichments": [
         "oshb:stem",
@@ -623,7 +631,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "their their riches",
+      "display_gloss": "their riches",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -654,6 +662,8 @@
         "their.rich[es]",
         "their"
       ],
+      "greek": "πλούτου",
+      "greek_strong": "4149",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -795,6 +805,8 @@
       "gloss_parts": [
         "they.boast"
       ],
+      "greek": "καυξώμενοι",
+      "greek_strong": "2744",
       "lemma": "הָלַל",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -851,24 +863,40 @@
       "ref": "Psalm 49:7",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA049.htm",
+      "source_version": "eng-kjv2006",
       "text": "None [of them] can by any means redeem his brother, nor give to God a ransom for him:",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 49:7",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA049.htm",
+      "source_version": "eng-asv",
       "text": "None [of them] can by any means redeem his brother, Nor give to God a ransom for him",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 49:7",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA049.htm",
+      "source_version": "engwebp",
       "text": "none of them can by any means redeem his brother, nor give God a ransom for him.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 49:7",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "οἱ πεποιθότες ἐπὶ δυνάμει καὶ πλούτου καυξώμενοι",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

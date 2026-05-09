@@ -111,6 +111,8 @@
       "gloss_parts": [
         "(dm)"
       ],
+      "greek": "ὅτι",
+      "greek_strong": "3754",
       "lemma": "כִּי",
       "missing_enrichments": [
         "oshb:stem",
@@ -222,7 +224,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will conceal me he",
+      "display_gloss": "he will conceal me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -252,6 +254,8 @@
         "he",
         "will.conceal.me"
       ],
+      "greek": "ἔκρυψέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -407,6 +411,8 @@
         "refuge",
         "his"
       ],
+      "greek": "ἐν",
+      "greek_strong": "1722",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -554,6 +560,8 @@
         "in",
         "a.day"
       ],
+      "greek": "ἐν ἡμέρᾳ",
+      "greek_strong": "2250",
       "lemma": "יוֹם",
       "missing_enrichments": [
         "oshb:stem",
@@ -685,6 +693,8 @@
       "gloss_parts": [
         "of.trouble"
       ],
+      "greek": "κακῶν",
+      "greek_strong": "2556",
       "lemma": "רָעָה",
       "missing_enrichments": [
         "oshb:stem",
@@ -793,7 +803,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will hide me he",
+      "display_gloss": "he will hide me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -823,6 +833,8 @@
         "he",
         "will.hide.me"
       ],
+      "greek": "ἐσκέπασέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -951,6 +963,8 @@
         "in",
         "the.hiding.place"
       ],
+      "greek": "ἐν ἀποκρύφῳ",
+      "greek_strong": "614",
       "lemma": "סֵתֶר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1042,7 +1056,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "his his tent",
+      "display_gloss": "his tent",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1073,6 +1087,8 @@
         "his.tent",
         "his"
       ],
+      "greek": "σκηνῆς αὐτοῦ",
+      "greek_strong": "846",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1211,6 +1227,8 @@
         "on",
         "a.rock"
       ],
+      "greek": "ἐν πέτρᾳ",
+      "greek_strong": "4073",
       "lemma": "צוּר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1310,7 +1328,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "will raise me up he",
+      "display_gloss": "he will raise me up",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1340,6 +1358,8 @@
         "he",
         "will.raise.me.up"
       ],
+      "greek": "ὕψωσέν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1409,24 +1429,40 @@
       "ref": "Psalm 27:5",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA027.htm",
+      "source_version": "eng-kjv2006",
       "text": "For in the time of trouble he shall hide me in his pavilion: in the secret of his tabernacle shall he hide me; he shall set me up upon a rock.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 27:5",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA027.htm",
+      "source_version": "eng-asv",
       "text": "For in the day of trouble he will keep me secretly in his pavilion: In the covert of his tabernacle will he hide me; He will lift me up upon a rock.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 27:5",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA027.htm",
+      "source_version": "engwebp",
       "text": "For in the day of trouble, he will keep me secretly in his pavilion. In the secret place of his tabernacle, he will hide me. He will lift me up on a rock.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 27:5",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὅτι ἔκρυψέν με ἐν ἐν ἡμέρᾳ κακῶν ἐσκέπασέν με ἐν ἀποκρύφῳ σκηνῆς αὐτοῦ ἐν πέτρᾳ ὕψωσέν με",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

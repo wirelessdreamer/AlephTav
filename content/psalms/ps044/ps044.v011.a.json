@@ -89,7 +89,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "have made us turn back you",
+      "display_gloss": "you have made us turn back",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -119,6 +119,8 @@
         "you",
         "have.made.us.turn.back"
       ],
+      "greek": "ἀπέστρεψας ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -245,6 +247,8 @@
       "gloss_parts": [
         "backwards"
       ],
+      "greek": "ὀπίσω",
+      "greek_strong": "3694",
       "lemma": "אָחוֹר",
       "missing_enrichments": [
         "oshb:stem",
@@ -359,6 +363,8 @@
       "gloss_parts": [
         "from"
       ],
+      "greek": "παρὰ",
+      "greek_strong": "3844",
       "lemma": "מִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -480,6 +486,8 @@
       "gloss_parts": [
         "[the].foe"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "צַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -536,8 +544,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who hate us"
+          "[those",
+          "who] hate us"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -584,7 +592,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "and who hate us those",
+      "display_gloss": "and who] hate us [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -615,6 +623,8 @@
         "[those",
         "who].hate.us"
       ],
+      "greek": "καὶ μισοῦντες ἡμᾶς",
+      "greek_strong": "2248",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -730,6 +740,8 @@
       "gloss_parts": [
         "they.have.plundered"
       ],
+      "greek": "διήρπαζον",
+      "greek_strong": null,
       "lemma": "שָׁסָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -811,7 +823,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "for",
+      "display_gloss": "for themselves",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -842,6 +854,8 @@
         "for",
         "themselves"
       ],
+      "greek": "ἑαυτοῖς",
+      "greek_strong": "1438",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:strong",
@@ -914,24 +928,40 @@
       "ref": "Psalm 44:11",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA044.htm",
+      "source_version": "eng-kjv2006",
       "text": "Thou hast given us like sheep [appointed] for meat; and hast scattered us among the heathen.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:11",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA044.htm",
+      "source_version": "eng-asv",
       "text": "Thou hast made us like sheep [appointed] for food, And hast scattered us among the nations.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 44:11",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA044.htm",
+      "source_version": "engwebp",
       "text": "You have made us like sheep for food, and have scattered us among the nations.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 44:11",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἀπέστρεψας ἡμᾶς ὀπίσω παρὰ καὶ μισοῦντες ἡμᾶς διήρπαζον ἑαυτοῖς",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

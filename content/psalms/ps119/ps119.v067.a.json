@@ -89,6 +89,8 @@
       "gloss_parts": [
         "before"
       ],
+      "greek": "πρὸ",
+      "greek_strong": "4253",
       "lemma": "טֶרֶם",
       "missing_enrichments": [
         "oshb:stem",
@@ -182,6 +184,8 @@
       "gloss_parts": [
         "I.was.afflicted"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "עָנָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -301,6 +305,8 @@
       "gloss_parts": [
         "I"
       ],
+      "greek": "ἐγὼ",
+      "greek_strong": "1473",
       "lemma": "אֲנִי",
       "missing_enrichments": [
         "oshb:stem",
@@ -369,7 +375,7 @@
           "went astray"
         ],
         "gloss_fragments": [
-          "going astray"
+          "was going astray"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -382,7 +388,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [],
-      "display_gloss": "going astray",
+      "display_gloss": "was going astray",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -411,6 +417,8 @@
       "gloss_parts": [
         "[was].going.astray"
       ],
+      "greek": "ἐπλημμέλησα",
+      "greek_strong": null,
       "lemma": "שָׁגַג",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -506,6 +514,8 @@
         "and",
         "now"
       ],
+      "greek": "διὰ τοῦτο",
+      "greek_strong": "5124",
       "lemma": "עַתָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -632,6 +642,8 @@
         "word",
         "your"
       ],
+      "greek": "σου",
+      "greek_strong": "4675",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -773,6 +785,8 @@
       "gloss_parts": [
         "I.keep"
       ],
+      "greek": "ἐφύλαχα",
+      "greek_strong": "5442",
       "lemma": "שָׁמַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -842,24 +856,40 @@
       "ref": "Psalm 119:67",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA119.htm",
+      "source_version": "eng-kjv2006",
       "text": "Before I was afflicted I went astray: but now have I kept thy word.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:67",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA119.htm",
+      "source_version": "eng-asv",
       "text": "Before I was afflicted I went astray; But now I observe thy word.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 119:67",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA119.htm",
+      "source_version": "engwebp",
       "text": "Before I was afflicted, I went astray; but now I observe your word.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 119:67",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "πρὸ ἐγὼ ἐπλημμέλησα διὰ τοῦτο σου ἐφύλαχα",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

@@ -120,6 +120,8 @@
         "show",
         "favor.to.me"
       ],
+      "greek": "ἐλέησόν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -260,6 +262,8 @@
       "gloss_parts": [
         "O.Yahweh"
       ],
+      "greek": "κύριε",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -397,6 +401,8 @@
       "gloss_parts": [
         "see"
       ],
+      "greek": "ἰδὲ",
+      "greek_strong": "2396",
       "lemma": "רָאָה",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -534,6 +540,8 @@
         "affliction",
         "my"
       ],
+      "greek": "μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -611,8 +619,8 @@
         ],
         "gloss_fragments": [
           "from",
-          "those",
-          "who hate me"
+          "[those",
+          "who] hate me"
         ],
         "preposition_role": "from",
         "raw_classes": [
@@ -659,7 +667,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "from who hate me those",
+      "display_gloss": "from who] hate me [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -690,6 +698,8 @@
         "[those",
         "who].hate.me"
       ],
+      "greek": "ἐξθρῶν μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -840,6 +850,8 @@
         "O",
         "[you.who].raise.me"
       ],
+      "greek": "ὑψῶν με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -969,6 +981,8 @@
         "from.[the]",
         "gates"
       ],
+      "greek": "ἐκ πυλῶν",
+      "greek_strong": "4439",
       "lemma": "שַׁעַר",
       "missing_enrichments": [
         "oshb:stem",
@@ -1078,6 +1092,8 @@
       "gloss_parts": [
         "of.death"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "מָוֶת",
       "missing_enrichments": [
         "oshb:stem",
@@ -1130,24 +1146,40 @@
       "ref": "Psalm 9:14",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA009.htm",
+      "source_version": "eng-kjv2006",
       "text": "That I may shew forth all thy praise in the gates of the daughter of Zion: I will rejoice in thy salvation.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 9:14",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA009.htm",
+      "source_version": "eng-asv",
       "text": "That I may show forth all thy praise. In the gates of the daughter of Zion I will rejoice in thy salvation.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 9:14",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA009.htm",
+      "source_version": "engwebp",
       "text": "that I may show all of your praise. I will rejoice in your salvation in the gates of the daughter of Zion.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 9:14",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ἐλέησόν με κύριε ἰδὲ μου ἐξθρῶν μου ὑψῶν με ἐκ πυλῶν",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

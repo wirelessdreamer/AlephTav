@@ -65,7 +65,7 @@
         "Psalm 104:16",
         "Psalm 107:37"
       ],
-      "display_gloss": "planter? the",
+      "display_gloss": "the planter?",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -95,6 +95,8 @@
         "[the]",
         "planter?"
       ],
+      "greek": "ὁ φυτεύσας",
+      "greek_strong": "3588",
       "lemma": "נָטַע",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -182,6 +184,8 @@
       "gloss_parts": [
         "of.[the].ear"
       ],
+      "greek": "οὖς",
+      "greek_strong": "3775",
       "lemma": "אֹזֶן",
       "missing_enrichments": [
         "oshb:stem",
@@ -296,6 +300,8 @@
         "?",
         "not"
       ],
+      "greek": "οὐξὶ",
+      "greek_strong": "3780",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -427,6 +433,8 @@
       "gloss_parts": [
         "does.he.hear"
       ],
+      "greek": "ἀκούει",
+      "greek_strong": "191",
       "lemma": "שָׁמַע",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -554,6 +562,8 @@
       "gloss_parts": [
         "or?"
       ],
+      "greek": "ἢ",
+      "greek_strong": "2228",
       "lemma": "אִם",
       "missing_enrichments": [
         "oshb:stem",
@@ -664,6 +674,8 @@
       "gloss_parts": [
         "[the.one.who].formed"
       ],
+      "greek": null,
+      "greek_strong": null,
       "lemma": "יָצַר",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -763,6 +775,8 @@
       "gloss_parts": [
         "[the].eye"
       ],
+      "greek": "ὀφθαλμὸν",
+      "greek_strong": "3788",
       "lemma": "עַיִן",
       "missing_enrichments": [
         "oshb:stem",
@@ -886,6 +900,8 @@
         "?",
         "not"
       ],
+      "greek": "οὐ",
+      "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1007,6 +1023,8 @@
       "gloss_parts": [
         "does.he.see"
       ],
+      "greek": "κατανοεῖ",
+      "greek_strong": null,
       "lemma": "נָבַט",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -1053,24 +1071,40 @@
       "ref": "Psalm 94:9",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA094.htm",
+      "source_version": "eng-kjv2006",
       "text": "He that planted the ear, shall he not hear? he that formed the eye, shall he not see?",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:9",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA094.htm",
+      "source_version": "eng-asv",
       "text": "He that planted the ear, shall he not hear? He that formed the eye, shall he not see?",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 94:9",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA094.htm",
+      "source_version": "engwebp",
       "text": "He who implanted the ear, won’t he hear? He who formed the eye, won’t he see?",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 94:9",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "ὁ φυτεύσας οὖς οὐξὶ ἀκούει ἢ ὀφθαλμὸν οὐ κατανοεῖ",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }

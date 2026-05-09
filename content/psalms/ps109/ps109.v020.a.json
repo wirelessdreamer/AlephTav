@@ -107,6 +107,8 @@
       "gloss_parts": [
         "this"
       ],
+      "greek": "τοῦτο",
+      "greek_strong": "5124",
       "lemma": "זֹאת",
       "missing_enrichments": [
         "oshb:stem",
@@ -210,6 +212,8 @@
       "gloss_parts": [
         "[be].the.wage[s]"
       ],
+      "greek": "ἔργον",
+      "greek_strong": "2041",
       "lemma": "פְּעֻלָּה",
       "missing_enrichments": [
         "oshb:stem",
@@ -296,7 +300,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "display_gloss": "those who accuse me of",
+      "display_gloss": "of those who accuse me",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -326,6 +330,8 @@
         "of",
         "[those.who].accuse.me"
       ],
+      "greek": "με",
+      "greek_strong": "3165",
       "lemma": "הוּא",
       "missing_enrichments": [
         "macula:syntax_role",
@@ -441,7 +447,7 @@
         "Psalm 31:24",
         "Psalm 33:13"
       ],
-      "display_gloss": "from",
+      "display_gloss": "from with",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -472,6 +478,8 @@
         "from",
         "with"
       ],
+      "greek": "παρὰ",
+      "greek_strong": "3844",
       "lemma": "אֵת",
       "missing_enrichments": [
         "oshb:stem",
@@ -601,6 +609,8 @@
       "gloss_parts": [
         "Yahweh"
       ],
+      "greek": "κυρίου",
+      "greek_strong": "2962",
       "lemma": "יהוה",
       "missing_enrichments": [
         "oshb:stem",
@@ -671,8 +681,8 @@
         ],
         "gloss_fragments": [
           "and",
-          "those",
-          "who speak"
+          "[those",
+          "who] speak"
         ],
         "preposition_role": null,
         "raw_classes": [
@@ -714,7 +724,7 @@
         "Psalm 52:5",
         "Psalm 58:4"
       ],
-      "display_gloss": "and who speak those",
+      "display_gloss": "and who] speak [those",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -745,6 +755,8 @@
         "[those",
         "who].speak"
       ],
+      "greek": "καὶ τῶν λαλούντων",
+      "greek_strong": "2980",
       "lemma": "דָבַר",
       "missing_enrichments": [
         "macula:semantic_role",
@@ -874,6 +886,8 @@
       "gloss_parts": [
         "evil"
       ],
+      "greek": "πονηρὰ",
+      "greek_strong": "4190",
       "lemma": "רַע",
       "missing_enrichments": [
         "oshb:stem",
@@ -972,7 +986,7 @@
         "Psalm 18:11",
         "Psalm 18:34"
       ],
-      "display_gloss": "on",
+      "display_gloss": "against",
       "enrichment_sources": {
         "macula": {
           "available_fields": [
@@ -1002,6 +1016,8 @@
       "gloss_parts": [
         "on"
       ],
+      "greek": "κατὰ",
+      "greek_strong": "2596",
       "lemma": "עַל",
       "missing_enrichments": [
         "oshb:stem",
@@ -1143,6 +1159,8 @@
         "self",
         "my"
       ],
+      "greek": "ψυξῆς μου",
+      "greek_strong": "3450",
       "lemma": "הוּא",
       "missing_enrichments": [
         "oshb:stem",
@@ -1214,24 +1232,40 @@
       "ref": "Psalm 109:20",
       "source_id": "kjv",
       "source_url": "https://ebible.org/eng-kjv2006/PSA109.htm",
+      "source_version": "eng-kjv2006",
       "text": "[Let] this [be] the reward of mine adversaries from the LORD, and of them that speak evil against my soul.",
-      "versionTitle": "King James Version"
+      "versionTitle": "King James Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:20",
       "source_id": "asv",
       "source_url": "https://ebible.org/eng-asv/PSA109.htm",
+      "source_version": "eng-asv",
       "text": "This is the reward of mine adversaries from Jehovah, And of them that speak evil against my soul.",
-      "versionTitle": "American Standard Version"
+      "versionTitle": "American Standard Version",
+      "witness_role": "english_witness"
     },
     {
       "language": "en",
       "ref": "Psalm 109:20",
       "source_id": "web",
       "source_url": "https://ebible.org/engwebp/PSA109.htm",
+      "source_version": "engwebp",
       "text": "This is the reward of my adversaries from the LORD, of those who speak evil against my soul.",
-      "versionTitle": "World English Bible"
+      "versionTitle": "World English Bible",
+      "witness_role": "english_witness"
+    },
+    {
+      "language": "grc",
+      "ref": "Psalm 109:20",
+      "source_id": "lxx",
+      "source_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+      "source_version": "macula-lxx-2026.04",
+      "text": "τοῦτο ἔργον με παρὰ κυρίου καὶ τῶν λαλούντων πονηρὰ κατὰ ψυξῆς μου",
+      "versionTitle": "Septuagint Greek",
+      "witness_role": "septuagint_greek"
     }
   ]
 }
