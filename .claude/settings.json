@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest:*)",
+      "Bash(python -m uvicorn:*)",
+      "Bash(python scripts/validate_content.py)",
+      "Bash(python scripts/build_indexes.py)",
+      "Bash(python scripts/seed_project.py)",
+      "Bash(python scripts/import_psalms.py)",
+      "Bash(python scripts/generate_reports.py:*)",
+      "Bash(python scripts/refresh_goldens.py)",
+      "Bash(python scripts/audit_composer_quality.py:*)",
+      "Bash(psalms-workbench:*)",
+      "Bash(ruff:*)",
+      "Bash(mypy:*)",
+      "Bash(pytest:*)",
+      "Bash(npm install)",
+      "Bash(npm run *)",
+      "Bash(npm test)",
+      "Bash(npm test --:*)",
+      "Bash(./setup.sh:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git switch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Read(./data/raw/**)",
+      "Edit(./data/raw/**)",
+      "Write(./data/raw/**)",
+      "Edit(./.venv/**)",
+      "Write(./.venv/**)",
+      "Edit(./node_modules/**)",
+      "Write(./node_modules/**)",
+      "Edit(./data/derived/**)",
+      "Write(./data/derived/**)"
+    ],
+    "ask": [
+      "Edit(./.github/CODEOWNERS)",
+      "Edit(./.github/settings.yml)",
+      "Edit(./LICENSE-code)",
+      "Edit(./LICENSE-text-template)",
+      "Edit(./NOTICE-template)",
+      "Edit(./pyproject.toml)",
+      "Edit(./.pre-commit-config.yaml)",
+      "Edit(./schemas/**)",
+      "Write(./.github/workflows/**)"
+    ]
+  },
+  "enableAllProjectMcpServers": false,
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "additionalDirectories": [
+    "./app/llm/prompts",
+    "./schemas",
+    "./docs"
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "python .claude/hooks/deny_dangerous_bash.py" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "python .claude/hooks/ruff_after_edit.py" },
+          { "type": "command", "command": "python .claude/hooks/validate_after_content_edit.py" },
+          { "type": "command", "command": "python .claude/hooks/prompt_change_warning.py" }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python .claude/hooks/canonical_reminder.py" }
+        ]
+      }
+    ]
+  }
+}
