@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AlephTav: start daemon",
+      "detail": "Runs setup.sh / setup.ps1 to start the API (8765) and UI (5173) and keep them attached.",
+      "type": "shell",
+      "command": "./setup.sh",
+      "windows": {
+        "command": ".\\setup.ps1"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "alephtav-daemon",
+        "showReuseMessage": false,
+        "clear": false,
+        "focus": false,
+        "echo": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "AlephTav: start daemon (fixture data)",
+      "detail": "Same as the auto-run task but uses the small fixture corpus instead of the full rebuild.",
+      "type": "shell",
+      "command": "./setup.sh --fixture",
+      "windows": {
+        "command": ".\\setup.ps1 -DataMode fixture"
+      },
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "alephtav-daemon",
+        "showReuseMessage": false,
+        "clear": false,
+        "focus": false,
+        "echo": true
+      }
+    }
+  ]
+}

@@ -15,7 +15,7 @@ from app.llm.adapters import build_adapter
 from app.llm.base import GenerationRequest
 from app.services import poetic_analysis_service, registry_service, rendering_service
 
-PASS_ORDER = ["gloss", "literal", "phrase", "concept", "lyric", "metered_lyric"]
+PASS_ORDER = ["gloss", "literal", "phrase", "concept", "lyric", "metered_lyric", "parallelism_lyric"]
 PASS_DEPENDENCIES = {
     "gloss": [],
     "literal": ["gloss"],
@@ -23,6 +23,7 @@ PASS_DEPENDENCIES = {
     "concept": ["literal", "phrase"],
     "lyric": ["gloss", "literal", "phrase", "concept"],
     "metered_lyric": ["literal", "phrase", "concept", "lyric"],
+    "parallelism_lyric": ["metered_lyric"],
 }
 PROMPT_FILES = {
     "gloss": "pass_01_gloss.md",
@@ -31,6 +32,7 @@ PROMPT_FILES = {
     "concept": "pass_04_concept.md",
     "lyric": "pass_05_lyric.md",
     "metered_lyric": "pass_06_metered_lyric.md",
+    "parallelism_lyric": "pass_07_parallelism_lyric.md",
 }
 INPUT_VALIDATOR = Draft202012Validator(
     json.loads(resources.files("app.llm.contracts").joinpath("generation_input.schema.json").read_text(encoding="utf-8"))
