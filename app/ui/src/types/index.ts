@@ -14,6 +14,8 @@ export interface Token {
   surface: string;
   normalized: string;
   transliteration: string | null;
+  greek?: string | null;
+  greek_strong?: string | null;
   lemma: string | null;
   strong: string | null;
   morph_code?: string | null;
@@ -55,6 +57,29 @@ export interface RenderingSpan {
   token_end: number;
 }
 
+export interface PreservedSourceImage {
+  label: string;
+  source_id?: string;
+  token_ids?: string[];
+  note?: string;
+}
+
+export interface TranslationBasis {
+  basis_type: 'hebrew_to_english' | 'septuagint_greek_to_english';
+  source_ids: string[];
+  source_language: string;
+  source_version: string;
+  basis_note: string;
+}
+
+export interface SourceAnchor {
+  anchor_text: string;
+  source_language: string;
+  source_text: string;
+  token_ids?: string[];
+  basis_note: string;
+}
+
 export interface Rendering {
   rendering_id: string;
   unit_id: string;
@@ -67,7 +92,12 @@ export interface Rendering {
   drift_flags: DriftFlag[];
   metrics: Record<string, number>;
   rationale: string;
-  provenance: { source_ids: string[]; generator: string };
+  variation_basis?: string[];
+  preserved_source_images?: PreservedSourceImage[];
+  differentiator?: string | null;
+  grounding_confidence?: number | null;
+  translation_basis?: TranslationBasis | null;
+  provenance: { source_ids: string[]; generator: string; translation_basis?: TranslationBasis | null };
   style_goal?: string | null;
   metric_profile?: string | null;
   issue_links?: string[];
@@ -120,7 +150,16 @@ export interface Unit {
     latest_layer?: Layer | null;
     locked_layers?: Layer[];
   };
-  witnesses: Array<{ source_id: string; versionTitle: string; language: string; ref: string; source_url: string; text: string }>;
+  witnesses: Array<{
+    source_id: string;
+    versionTitle: string;
+    source_version?: string;
+    language: string;
+    witness_role?: string;
+    ref: string;
+    source_url: string;
+    text: string;
+  }>;
   coverage?: {
     uncovered_tokens: string[];
     unaligned_spans: string[];
@@ -132,7 +171,9 @@ export interface Unit {
 export interface Witness {
   source_id: string;
   versionTitle: string;
+  source_version?: string;
   language: string;
+  witness_role?: string;
   ref: string;
   source_url: string;
   text: string;
@@ -168,6 +209,11 @@ export interface GenerationJob {
       alignment_hints: string[];
       drift_flags: DriftFlag[];
       metrics: Record<string, number>;
+      variation_basis: string[];
+      preserved_source_images: PreservedSourceImage[];
+      differentiator: string;
+      grounding_confidence: number;
+      translation_basis: TranslationBasis;
     }>;
   } | null;
 }
@@ -187,6 +233,9 @@ export interface Project {
     source_id: string;
     name: string;
     version: string;
+    source_language?: string;
+    basis_role?: string;
+    version_pinned?: boolean;
     license: string;
     upstream_url?: string;
     allowed_for_generation: boolean;
@@ -202,6 +251,13 @@ export interface Project {
     rhyme_mode: string;
     register: string;
     parallelism_priority: string;
+    source_anchor_mode: string;
+    metaphor_mode: string;
+    imagery_preservation: number;
+    idiom_modernity: number;
+    emotional_directness: number;
+    faith_posture: string;
+    divine_name_rendering?: string;
   }>;
   review_policy: {
     canonical_required_approvals: number;
@@ -269,6 +325,13 @@ export interface ComposerSuggestionChunk {
     alignment_hints: string[];
     drift_flags: string[];
     metrics: Record<string, unknown>;
+    variation_basis: string[];
+    preserved_source_images: PreservedSourceImage[];
+    differentiator: string;
+    grounding_confidence: number;
+    translation_basis: TranslationBasis;
+    delivery_profile: string;
+    source_anchor: SourceAnchor;
   }>;
 }
 

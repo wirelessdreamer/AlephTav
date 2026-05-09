@@ -36,6 +36,7 @@ import { buildDeterministicComposer } from '../lib/composerSynthesis';
 import type { Alignment, CloudNode, Layer, OpenConcerns, Psalm, Rendering, RenderingSpan, RetrievalHit, Token, TokenCard, Unit, VisualFlowUnit } from '../types';
 
 type ComposerChoiceLevel = 'word' | 'phrase' | 'idea' | 'lyric';
+type FlowLaneKey = ComposerChoiceLevel | 'generatedIdea' | 'generatedLyric' | 'output';
 
 type ComposerChoice = {
   id: string;
@@ -44,6 +45,8 @@ type ComposerChoice = {
   tokenEnd?: number;
   tokenId?: string;
   description?: string;
+  levelHint?: ComposerChoiceLevel | 'output';
+  flowLane?: FlowLaneKey;
   text: string;
 };
 type WorkingVerseSegment = {
@@ -99,6 +102,93 @@ const PUBLIC_DOMAIN_WITNESS_CONFIGS = [
 type PublicDomainWitnessConfig = (typeof PUBLIC_DOMAIN_WITNESS_CONFIGS)[number];
 type PublicDomainWitnessKey = PublicDomainWitnessConfig['key'];
 type UnitWitness = Unit['witnesses'][number];
+type ComposerSuggestionQueryData = {
+  chunks?: Array<{
+    chunk_id: string;
+    candidates: Array<{
+      text: string;
+      rationale: string;
+      differentiator?: string;
+      drift_flags?: string[];
+      variation_basis?: string[];
+      delivery_profile?: string | null;
+      source_anchor?: {
+        anchor_text?: string | null;
+        source_language?: string | null;
+        source_text?: string | null;
+        basis_note?: string | null;
+      } | null;
+      translation_basis?: { basis_type?: string | null; source_language?: string | null; source_version?: string | null };
+    }>;
+  }>;
+};
+type GenerativeLaneProfile = {
+  key: string;
+  styleProfile: string;
+  candidateCount: number;
+  labelPrefix: string;
+};
+
+const GENERATIVE_CONCEPT_LANE_PROFILES: [GenerativeLaneProfile, GenerativeLaneProfile] = [
+  {
+    key: 'imagist',
+    styleProfile: 'source_imagist',
+    candidateCount: 2,
+    labelPrefix: 'model concept | source imagist',
+  },
+  {
+    key: 'reader',
+    styleProfile: 'doubter_lament',
+    candidateCount: 2,
+    labelPrefix: 'model concept | reader-facing lament',
+  },
+];
+
+const GENERATIVE_LYRIC_LANE_PROFILES: [GenerativeLaneProfile, GenerativeLaneProfile] = [
+  {
+    key: 'performative',
+    styleProfile: 'performative_free',
+    candidateCount: 2,
+    labelPrefix: 'model rhythm | performative',
+  },
+  {
+    key: 'reader',
+    styleProfile: 'doubter_lament',
+    candidateCount: 2,
+    labelPrefix: 'model rhythm | intimate lament',
+  },
+];
+
+function translationBasisLabel(basisType?: string | null): string {
+  if (basisType === 'septuagint_greek_to_english') {
+    return 'From Septuagint Greek';
+  }
+  return 'From Hebrew';
+}
+
+function formatDeliveryProfile(profile?: string | null): string | null {
+  if (!profile) {
+    return null;
+  }
+  const labels: Record<string, string> = {
+    source_grounded_phrase: 'source-grounded phrase',
+    source_clear_concept: 'source-clear concept',
+    emotional_concept: 'emotional concept',
+    raw_modern: 'raw modern',
+    '4_4_direct': '4/4 direct',
+    '6_8_lament': '6/8 lament',
+    hook_refrain: 'hook/refrain',
+  };
+  return labels[profile] ?? profile.replace(/_/g, ' ');
+}
+
+function compactMetaParts(parts: Array<string | null | undefined | false>): string {
+  return parts.filter((part): part is string => Boolean(part && part.trim())).join(' | ');
+}
+
+function normalizedPsalmVerseRef(ref: string): string {
+  return String(ref).replace(/^(Psalm\s+\d+:\d+)[a-z]$/i, '$1').trim();
+}
 
 const PSALM_ONE_PUBLIC_DOMAIN_WITNESSES: Record<string, Record<PublicDomainWitnessKey, string>> = {
   'Psalm 1:1': {
@@ -141,11 +231,304 @@ function normalizeComposerText(text: string): string {
     .trim();
 }
 
+function normalizePoeticText(text: string): string {
+  return String(text)
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((line) => normalizeComposerText(line))
+    .filter(Boolean)
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function sentenceCase(text: string): string {
   if (!text) {
     return '';
   }
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function sentenceCasePoeticText(text: string): string {
+  const normalized = normalizePoeticText(text);
+  if (!normalized) {
+    return '';
+  }
+  return normalized.charAt(0).toUpperCase() + normalized.slice(1);
+}
+
+function rewriteDivineAddress(text: string, mode: 'title' | 'reader'): string {
+  const replacement = mode === 'reader' ? 'God' : 'Lord';
+  return normalizeComposerText(text)
+    .replace(/^O Yahweh\b[:,]?/i, replacement)
+    .replace(/^Yahweh\b[:,]?/i, replacement)
+    .replace(/^O LORD\b[:,]?/i, replacement)
+    .replace(/^LORD\b[:,]?/i, replacement)
+    .replace(/^O Lord\b[:,]?/i, replacement)
+    .replace(/^Lord\b[:,]?/i, replacement)
+    .replace(/\bYahweh\b/gi, replacement)
+    .replace(/\bLORD\b/g, replacement);
+}
+
+function contractModernNegatives(text: string): string {
+  return normalizeComposerText(text)
+    .replace(/\bdoes not\b/gi, "doesn't")
+    .replace(/\bdo not\b/gi, "don't")
+    .replace(/\bwill not\b/gi, "won't")
+    .replace(/\bcannot\b/gi, "can't");
+}
+
+function resolveSlashGloss(text: string, pick: 'first' | 'second'): string {
+  return normalizeComposerText(text).replace(/\b([A-Za-z][A-Za-z'’-]*)\/([A-Za-z][A-Za-z'’-]*)\b/g, (_match, first, second) =>
+    pick === 'first' ? first : second,
+  );
+}
+
+function inferSubjectLanguage(tokens: Token[]): { bare: string; definite: string } {
+  const joined = tokens
+    .map((token) => [token.display_gloss, token.word_sense, token.referent, token.transliteration].filter(Boolean).join(' '))
+    .join(' ')
+    .toLowerCase();
+
+  if (joined.includes('man')) {
+    return { bare: 'man', definite: 'the man' };
+  }
+  if (joined.includes('person')) {
+    return { bare: 'person', definite: 'the person' };
+  }
+  return { bare: 'one', definite: 'the one' };
+}
+
+function looksLikeBlessingSeed(tokens: Token[], text: string): boolean {
+  const lexicalJoined = tokens
+    .map((token) => [token.display_gloss, token.word_sense, token.semantic_role, token.referent].filter(Boolean).join(' '))
+    .join(' ')
+    .toLowerCase();
+  const normalized = normalizeComposerText(text).toLowerCase();
+  return lexicalJoined.includes('blessing')
+    || lexicalJoined.includes('blessed')
+    || lexicalJoined.includes('fortunate')
+    || normalized.includes('blessed')
+    || normalized.includes('fortunate')
+    || normalized.includes('happy');
+}
+
+function shortBlessingConceptVariants(tokens: Token[]): string[] {
+  const subject = inferSubjectLanguage(tokens);
+  return [
+    `Blessed is ${subject.definite}`,
+    `Happy is ${subject.definite}`,
+    `The blessed ${subject.bare}`,
+    `The fortunate ${subject.bare}`,
+  ];
+}
+
+function shortBlessingLyricVariants(tokens: Token[]): string[] {
+  const subject = inferSubjectLanguage(tokens);
+  return [
+    `Blessed is ${subject.definite}`,
+    `Happy is ${subject.definite}`,
+    `The blessed ${subject.bare}`,
+  ];
+}
+
+type OfflineComposerVariant = string | {
+  text: string;
+  differentiator?: string;
+  deliveryProfile?: string;
+  sourceAnchor?: string;
+  variationBasis?: string[];
+  driftFlags?: string[];
+};
+
+function superscriptionLexicalText(tokens: Token[], seedText: string): string {
+  return normalizeComposerText([
+    seedText,
+    ...tokens.map((token) => [
+      token.display_gloss,
+      token.word_sense,
+      token.referent,
+      token.semantic_role,
+      token.transliteration,
+    ].filter(Boolean).join(' ')),
+  ].join(' ')).toLowerCase();
+}
+
+function superscriptionConceptVariants(tokens: Token[], seedText: string): OfflineComposerVariant[] {
+  const joined = superscriptionLexicalText(tokens, seedText);
+  const hasDirector = /\b(choirmaster|choir director|director|chief musician)\b/.test(joined);
+  const hasFlutes = /\bflutes?\b/.test(joined);
+  const hasPsalm = /\bpsalm\b/.test(joined);
+  const hasDavid = /\bdavid\b/.test(joined);
+  const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
+
+  if (hasDirector && hasFlutes) {
+    return [
+      {
+        text: 'For the choir director, with flutes',
+        differentiator: 'clear source heading',
+        deliveryProfile: 'source-clear concept',
+        sourceAnchor,
+        variationBasis: ['source_grounded_rendering'],
+      },
+      {
+        text: 'A flute setting for the choir director',
+        differentiator: 'smooths stacked music cues',
+        deliveryProfile: 'emotional concept',
+        sourceAnchor,
+        variationBasis: ['idiom_fit', 'construct_merged'],
+        driftFlags: ['musical_form_inferred'],
+      },
+      {
+        text: 'For choir leadership, carried by flutes',
+        differentiator: 'director plus accompaniment',
+        deliveryProfile: 'source-clear concept',
+        sourceAnchor,
+        variationBasis: ['source_image_preserved', 'english_order_shift'],
+      },
+    ];
+  }
+  if (hasDirector) {
+    return [
+      { text: 'For the choir director', differentiator: 'clear source heading', deliveryProfile: 'source-clear concept', sourceAnchor },
+      { text: 'A cue for the choir leader', differentiator: 'reader-facing heading', deliveryProfile: 'emotional concept', sourceAnchor },
+      { text: 'Given to the music director', differentiator: 'natural English handoff', deliveryProfile: 'source-clear concept', sourceAnchor },
+    ];
+  }
+  if (hasFlutes) {
+    return [
+      { text: 'With flutes', differentiator: 'clear source cue', deliveryProfile: 'source-clear concept', sourceAnchor },
+      { text: 'For flute accompaniment', differentiator: 'musical function', deliveryProfile: 'source-clear concept', sourceAnchor },
+      { text: 'Carried by flutes', differentiator: 'image-forward cue', deliveryProfile: 'emotional concept', sourceAnchor },
+    ];
+  }
+  if (hasPsalm && hasDavid) {
+    return [
+      { text: 'A psalm of David', differentiator: 'formal source heading', deliveryProfile: 'source-clear concept', sourceAnchor },
+      { text: "David's psalm", differentiator: 'compact modern heading', deliveryProfile: 'emotional concept', sourceAnchor },
+      { text: 'A David psalm', differentiator: 'compressed heading', deliveryProfile: 'source-clear concept', sourceAnchor },
+    ];
+  }
+  return [];
+}
+
+function superscriptionLyricVariants(tokens: Token[], seedText: string): OfflineComposerVariant[] {
+  const joined = superscriptionLexicalText(tokens, seedText);
+  const hasDirector = /\b(choirmaster|choir director|director|chief musician)\b/.test(joined);
+  const hasFlutes = /\bflutes?\b/.test(joined);
+  const hasPsalm = /\bpsalm\b/.test(joined);
+  const hasDavid = /\bdavid\b/.test(joined);
+
+  if (hasDirector && hasFlutes) {
+    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
+    return [
+      { text: 'For the choir director\nwith flutes', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
+      { text: 'Flutes carry the cue\nfor the choir', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
+      {
+        text: 'For flute-led singing\nunder the choir director',
+        differentiator: 'compressed rhythmic cue',
+        deliveryProfile: 'hook/refrain',
+        sourceAnchor,
+        driftFlags: ['musical_form_inferred'],
+      },
+    ];
+  }
+  if (hasDirector) {
+    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
+    return [
+      { text: 'For the choir director', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
+      { text: 'For the one leading the choir', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
+    ];
+  }
+  if (hasFlutes) {
+    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
+    return [
+      { text: 'With flutes', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
+      { text: 'Let the flutes carry it', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
+    ];
+  }
+  if (hasPsalm && hasDavid) {
+    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
+    return [
+      { text: 'A psalm of David', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
+      { text: "David's psalm", differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
+      { text: 'A David psalm', differentiator: 'compressed rhythmic cue', deliveryProfile: 'hook/refrain', sourceAnchor },
+    ];
+  }
+  return [];
+}
+
+function addBreathLineBreaks(text: string): string {
+  return normalizeComposerText(text)
+    .replace(/,\s+/g, '\n')
+    .replace(/\s+(?=(in your|with the|among|before you|all day|day and night|for the|from the|into the)\b)/gi, '\n');
+}
+
+function groundedFallbackConceptText(text: string): string {
+  return sentenceCase(
+    normalizeComposerText(rewriteDivineAddress(text, 'title'))
+      .replace(/^How blessed is the one\b/i, 'Blessed is the one')
+      .replace(/^How blessed is the man\b/i, 'Blessed is the man'),
+  );
+}
+
+function readerFallbackConceptText(text: string): string {
+  return sentenceCase(
+    contractModernNegatives(rewriteDivineAddress(text, 'reader'))
+      .replace(/^How blessed is the one\b/i, 'The blessed one')
+      .replace(/^Blessed is the one\b/i, 'The blessed one')
+      .replace(/^How blessed is the man\b/i, 'The blessed man')
+      .replace(/^Blessed is the man\b/i, 'The blessed man')
+      .replace(/\brebuke me\b/gi, 'come down on me')
+      .replace(/\bdiscipline me\b/gi, 'press me'),
+  );
+}
+
+function compressedFallbackConceptText(text: string): string {
+  return sentenceCase(
+    contractModernNegatives(rewriteDivineAddress(text, 'title'))
+      .replace(/^Who does not\b/i, "One who doesn't")
+      .replace(/^Who doesn't\b/i, "One who doesn't")
+      .replace(/^How blessed is the one\b/i, 'Blessed is the one'),
+  );
+}
+
+function groundedFallbackLyricText(text: string): string {
+  return sentenceCasePoeticText(addBreathLineBreaks(rewriteDivineAddress(text, 'title')));
+}
+
+function readerFallbackLyricText(text: string): string {
+  return sentenceCasePoeticText(
+    addBreathLineBreaks(
+      readerFallbackConceptText(text)
+        .replace(/\bThe blessed one\b/i, 'Blessed is the one')
+        .replace(/\bThe blessed man\b/i, 'Blessed is the man'),
+    ),
+  );
+}
+
+function isLyricLikeLayer(layer: Layer): boolean {
+  return layer === 'lyric' || layer === 'metered_lyric' || layer === 'parallelism_lyric';
+}
+
+function phraseSuggestionStyleProfile(): string {
+  return 'dynamic_equivalent';
+}
+
+function generationStyleProfileForLayer(layer: Layer): string {
+  if (layer === 'gloss' || layer === 'literal') {
+    return 'study_literal';
+  }
+  if (layer === 'phrase') {
+    return 'dynamic_equivalent';
+  }
+  if (layer === 'concept') {
+    return 'source_imagist';
+  }
+  if (isLyricLikeLayer(layer)) {
+    return 'performative_free';
+  }
+  return 'dynamic_equivalent';
 }
 
 function buildTokenMeaning(token: Token): string {
@@ -163,9 +546,372 @@ function buildTokenMeaning(token: Token): string {
   return normalizedSense || token.surface;
 }
 
-function assembleComposerText(sequence: WorkingVerseSegment[]): string {
+type ChoiceExplication = {
+  levelLabel: string;
+  sourceLabel: string;
+  englishText: string;
+  hebrewText: string;
+  transliterationText: string;
+  glossText: string;
+  relationshipSummary: string;
+  notes: string[];
+  tokens: Array<{
+    tokenId: string;
+    surface: string;
+    transliteration: string | null;
+    gloss: string;
+  }>;
+};
+
+function relationshipSummaryForLevel(level: ComposerChoice['levelHint']): string {
+  switch (level) {
+    case 'word':
+      return 'This is a word-level rendering. It stays nearest to the lexical value of the Hebrew token, with minimal smoothing into English.';
+    case 'phrase':
+      return 'This is a phrase-level rendering. It keeps the Hebrew clause structure and image set, but smooths the word order into readable English.';
+    case 'idea':
+      return 'This is a concept-level rendering. It compresses the Hebrew into a clearer English thought while trying to preserve the same actors, direction, and force.';
+    case 'lyric':
+      return 'This is a rhythmic rendering. It reshapes the Hebrew chunk for spoken delivery and cadence while aiming to stay faithful to the original sense.';
+    case 'output':
+      return 'This is the currently assembled output line. It reflects the choices made across the Hebrew span rather than a single direct rendering step.';
+    default:
+      return 'This rendering is aligned to the same Hebrew span and should be read against that source chunk.';
+  }
+}
+
+function buildRelationshipNotes(tokens: Token[], choice: ComposerChoice): string[] {
+  const notes: string[] = [];
+  const features = tokens.map((token) => (token.compiler_features ?? {}) as Record<string, unknown>);
+  const hasConstruct = features.some((feature) => feature.construct_state === true);
+  const hasSuffixPronoun = features.some((feature) => Boolean((feature.suffix_pronoun as { text?: string } | null | undefined)?.text));
+  const conjunctionRoles = new Set(
+    features
+      .map((feature) => String(feature.conjunction_role ?? '').trim())
+      .filter(Boolean),
+  );
+  const prepositionRoles = new Set(
+    features
+      .map((feature) => String(feature.preposition_role ?? '').trim())
+      .filter(Boolean),
+  );
+  const hasDivineName = features.some((feature) => feature.divine_name === true);
+  const hasTemporalPair = features.some((feature) => feature.temporal_pair_candidate === true);
+
+  if (hasConstruct) {
+    notes.push("The Hebrew span uses a construct relationship, so English has to decide how to express the linked nouns with an 'of' phrase or possessive wording.");
+  }
+  if (hasSuffixPronoun) {
+    notes.push('A pronominal suffix is embedded in the Hebrew form here, so the English has to surface ownership or reference that is packed into the source word.');
+  }
+  if (conjunctionRoles.has('contrastive')) {
+    notes.push("This chunk carries a contrastive turn in Hebrew, so English may need a 'but', 'instead', or other pivot even if the wording shifts.");
+  } else if (conjunctionRoles.has('disjunctive')) {
+    notes.push("The Hebrew marks a disjunctive relationship here, so English may repeat the negation, use 'or', or choose another separating link.");
+  } else if (conjunctionRoles.has('additive')) {
+    notes.push("The Hebrew links this span additively, so English typically preserves a sense of continuation with 'and' or an equivalent join.");
+  }
+  if (prepositionRoles.size > 0) {
+    notes.push('Part of the relationship in this line is carried by Hebrew prepositions, so the English rendering has to decide how explicitly to surface location, direction, or association.');
+  }
+  if (hasDivineName) {
+    notes.push('This span includes the divine name signal, so the English should preserve that distinction rather than flatten it into a generic title.');
+  }
+  if (hasTemporalPair) {
+    notes.push("The Hebrew likely forms a paired time expression here, so English should preserve the sense of recurring or total time rather than a single moment.");
+  }
+  if ((choice.levelHint === 'idea' || choice.levelHint === 'lyric') && notes.length === 0) {
+    notes.push('The English here is taking a degree of compression or rhythmic smoothing, but it remains anchored to the same Hebrew span.');
+  }
+  return notes;
+}
+
+function buildChoiceExplication(unit: Unit | undefined, choice: ComposerChoice | null): ChoiceExplication | null {
+  if (!unit || !choice || typeof choice.tokenStart !== 'number') {
+    return null;
+  }
+  const start = Math.max(0, choice.tokenStart);
+  const end = Math.min(unit.tokens.length - 1, choice.tokenEnd ?? choice.tokenStart);
+  const tokens = unit.tokens.slice(start, end + 1);
+  if (tokens.length === 0) {
+    return null;
+  }
+
+  const descriptionParts = String(choice.description ?? '')
+    .split('|')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const fallbackSourceLabel = choice.levelHint === 'output'
+    ? 'working output'
+    : choice.levelHint === 'lyric'
+      ? 'rhythmic choice'
+      : choice.levelHint === 'idea'
+        ? 'concept choice'
+        : choice.levelHint === 'phrase'
+          ? 'phrase choice'
+          : 'lexical choice';
+  const descriptionLead = descriptionParts[0] ?? '';
+  const sourceLabel = descriptionLead
+    && !/^confidence\s/i.test(descriptionLead)
+    && !/^Strong'?s\s/i.test(descriptionLead)
+    && !/[\u0590-\u05FF]/.test(descriptionLead)
+    ? descriptionLead
+    : fallbackSourceLabel;
+  const proseNotes = descriptionParts.filter(
+    (part) => part !== sourceLabel && !/^confidence\s/i.test(part) && !/^Strong'?s\s/i.test(part) && !/[\u0590-\u05FF]/.test(part),
+  );
+
+  return {
+    levelLabel: choice.levelHint === 'idea' ? 'concept' : choice.levelHint ?? 'choice',
+    sourceLabel,
+    englishText: choice.label || choice.text,
+    hebrewText: tokens.map((token) => token.surface).join(' '),
+    transliterationText: tokens.map((token) => token.transliteration).filter(Boolean).join(' '),
+    glossText: tokens.map((token) => buildTokenMeaning(token)).filter(Boolean).join(' · '),
+    relationshipSummary: relationshipSummaryForLevel(choice.levelHint),
+    notes: [...proseNotes, ...buildRelationshipNotes(tokens, choice)],
+    tokens: tokens.map((token) => ({
+      tokenId: token.token_id,
+      surface: token.surface,
+      transliteration: token.transliteration,
+      gloss: buildTokenMeaning(token),
+    })),
+  };
+}
+
+const SUPERSCRIPTION_UNIT_KEYWORD_RE = /\b(choirmaster|chief musician|director|psalm|song|prayer|maskil|miktam|shiggaion|david|asaph|jeduthun|korah|solomon|moses|nathan|prophet|bathsheba|doe|morning|lilies|gittith|sheminith|alamoth|ascents|degrees)\b/i;
+const SPOKEN_UNIT_CUE_RE = /^(yahweh|o\b|my god|why|how blessed|blessed|the heavens|have mercy|save|hear|give ear|judge)\b/i;
+const HEADER_BODY_BOUNDARY_RE = /^(.*?[.;:])\s+(.+)$/;
+
+function getVerseNumber(unit: Unit): number {
+  const match = unit.unit_id.match(/\.v(\d+)\./);
+  return match ? Number(match[1]) : 0;
+}
+
+function resolveDirectWitness(unit: Unit | undefined, config: PublicDomainWitnessConfig): UnitWitness | null {
+  if (!unit) {
+    return null;
+  }
+  const existingWitness = unit.witnesses.find((witness) => {
+    const haystack = [witness.source_id, witness.versionTitle]
+      .join(' ')
+      .toLowerCase();
+    return config.aliases.some((alias) => haystack.includes(alias));
+  });
+  if (existingWitness) {
+    return existingWitness;
+  }
+
+  const fallbackText = PSALM_ONE_PUBLIC_DOMAIN_WITNESSES[unit.ref]?.[config.key]
+    ?? PSALM_ONE_PUBLIC_DOMAIN_WITNESSES[normalizedPsalmVerseRef(unit.ref)]?.[config.key];
+  if (!fallbackText) {
+    return null;
+  }
+  return {
+    source_id: config.sourceId,
+    versionTitle: config.versionTitle,
+    language: 'en',
+    ref: unit.ref,
+    source_url: '',
+    text: fallbackText,
+  };
+}
+
+function isSuperscriptionLikeUnit(unit: Unit): boolean {
+  if (getVerseNumber(unit) > 3) {
+    return false;
+  }
+  const glossText = normalizeComposerText(unit.tokens.map((token) => buildTokenMeaning(token)).join(' ')).toLowerCase();
+  return Boolean(glossText)
+    && SUPERSCRIPTION_UNIT_KEYWORD_RE.test(glossText)
+    && !SPOKEN_UNIT_CUE_RE.test(glossText);
+}
+
+function splitTextProportionally(text: string, count: number): string[] {
+  const cleaned = normalizeComposerText(text);
+  if (!cleaned || count <= 0) {
+    return [];
+  }
+  if (count === 1) {
+    return [cleaned];
+  }
+  const words = cleaned.split(/\s+/).filter(Boolean);
+  if (words.length <= count) {
+    return words;
+  }
+  const chunkSize = Math.ceil(words.length / count);
+  const segments: string[] = [];
+  for (let index = 0; index < words.length; index += chunkSize) {
+    segments.push(normalizeComposerText(words.slice(index, index + chunkSize).join(' ')));
+  }
+  if (segments.length > count) {
+    return [...segments.slice(0, count - 1), normalizeComposerText(segments.slice(count - 1).join(' '))];
+  }
+  while (segments.length < count) {
+    const last = segments.pop() ?? '';
+    const lastWords = last.split(/\s+/).filter(Boolean);
+    if (lastWords.length <= 1) {
+      segments.push(last);
+      break;
+    }
+    const pivot = Math.ceil(lastWords.length / 2);
+    segments.push(normalizeComposerText(lastWords.slice(0, pivot).join(' ')));
+    segments.push(normalizeComposerText(lastWords.slice(pivot).join(' ')));
+  }
+  return segments.filter(Boolean);
+}
+
+function splitSuperscriptionHeader(text: string, segmentCount: number): string[] {
+  const cleaned = normalizeComposerText(text).replace(/[.;:]+$/g, '');
+  if (!cleaned || segmentCount <= 0) {
+    return [];
+  }
+  if (segmentCount === 1) {
+    return [cleaned];
+  }
+
+  const staged = cleaned
+    .replace(/\b(To (?:the )?(?:chief musician|choirmaster|director))\s+(?=(?:upon|on|set to|according to)\b)/gi, '$1|')
+    .replace(/,\s+(?=(?:A (?:Psalm|Song|Prayer)|when|after|concerning|according to|set to)\b)/gi, '|')
+    .replace(/\s+(?=(?:when|after|concerning|according to|set to)\b)/gi, '|');
+  const segments = staged
+    .split('|')
+    .map((part) => normalizeComposerText(part))
+    .filter(Boolean);
+
+  if (segments.length === segmentCount) {
+    return segments;
+  }
+  if (segments.length > segmentCount) {
+    return [...segments.slice(0, segmentCount - 1), normalizeComposerText(segments.slice(segmentCount - 1).join(' '))];
+  }
+  return splitTextProportionally(cleaned, segmentCount);
+}
+
+function splitLeadingWitnessText(text: string, superscriptionCount: number): string[] {
+  const cleaned = normalizeComposerText(text);
+  if (!cleaned) {
+    return [];
+  }
+  if (superscriptionCount <= 0) {
+    return [cleaned];
+  }
+
+  let headerText = cleaned;
+  let bodyText = '';
+  const punctuationBoundary = cleaned.match(HEADER_BODY_BOUNDARY_RE);
+  if (punctuationBoundary) {
+    headerText = normalizeComposerText(punctuationBoundary[1].replace(/[.;:]+$/g, ''));
+    bodyText = normalizeComposerText(punctuationBoundary[2]);
+  } else {
+    const spokenCue = cleaned.match(/\b(My God|O\b|Why\b|How blessed\b|Blessed\b|The heavens\b|Have mercy\b|Save\b|Hear\b|Give ear\b|Judge\b)\b/i);
+    if (spokenCue && typeof spokenCue.index === 'number' && spokenCue.index > 16) {
+      headerText = normalizeComposerText(cleaned.slice(0, spokenCue.index).replace(/[,:;]+$/g, ''));
+      bodyText = normalizeComposerText(cleaned.slice(spokenCue.index));
+    }
+  }
+
+  const headerSegments = splitSuperscriptionHeader(headerText, superscriptionCount);
+  return [...headerSegments.slice(0, superscriptionCount), ...(bodyText ? [bodyText] : [])];
+}
+
+function countTrailingMissingWitnesses(units: Unit[], config: PublicDomainWitnessConfig): number {
+  let count = 0;
+  for (let index = units.length - 1; index >= 0; index -= 1) {
+    const witness = resolveDirectWitness(units[index], config);
+    if (witness?.text?.trim()) {
+      break;
+    }
+    count += 1;
+  }
+  return count;
+}
+
+function buildAlignedPsalmWitnessMap(units: Unit[], config: PublicDomainWitnessConfig): Map<string, UnitWitness> {
+  const witnessByUnitId = new Map<string, UnitWitness>();
+  units.forEach((candidate) => {
+    const directWitness = resolveDirectWitness(candidate, config);
+    if (directWitness?.text?.trim()) {
+      witnessByUnitId.set(candidate.unit_id, directWitness);
+    }
+  });
+
+  if (units.length <= 1) {
+    return witnessByUnitId;
+  }
+
+  const trailingGap = countTrailingMissingWitnesses(units, config);
+  const hasSuperscriptionSignal = trailingGap > 0 && units.slice(0, trailingGap).some((candidate) => isSuperscriptionLikeUnit(candidate));
+  if (!hasSuperscriptionSignal) {
+    return witnessByUnitId;
+  }
+
+  const firstWitness = resolveDirectWitness(units[0], config);
+  if (!firstWitness?.text?.trim()) {
+    return witnessByUnitId;
+  }
+
+  const remapped = new Map<string, UnitWitness>();
+  const splitLeadingWitnesses = splitLeadingWitnessText(firstWitness.text, trailingGap);
+  for (let index = 0; index < trailingGap; index += 1) {
+    const titleText = splitLeadingWitnesses[index];
+    if (!titleText) {
+      continue;
+    }
+    remapped.set(units[index].unit_id, {
+      ...firstWitness,
+      ref: units[index].ref,
+      text: titleText,
+    });
+  }
+
+  const firstBodyUnit = units[trailingGap];
+  const firstBodyText = splitLeadingWitnesses[trailingGap];
+  if (firstBodyUnit && firstBodyText) {
+    remapped.set(firstBodyUnit.unit_id, {
+      ...firstWitness,
+      ref: firstBodyUnit.ref,
+      text: firstBodyText,
+    });
+  }
+
+  for (let index = trailingGap + 1; index < units.length; index += 1) {
+    const shiftedWitness = resolveDirectWitness(units[index - trailingGap], config);
+    if (!shiftedWitness?.text?.trim()) {
+      continue;
+    }
+    remapped.set(units[index].unit_id, {
+      ...shiftedWitness,
+      ref: units[index].ref,
+    });
+  }
+
+  return remapped;
+}
+
+function assembleComposerText(sequence: WorkingVerseSegment[], layer: Layer): string {
+  if (isLyricLikeLayer(layer)) {
+    return sentenceCasePoeticText(
+      sequence
+        .map((segment) => normalizePoeticText(segment.choice.text))
+        .filter(Boolean)
+        .join('\n'),
+    );
+  }
+
+  const lowerJoinLead = (text: string) => {
+    const normalized = normalizeComposerText(text);
+    if (/^(Who|And|But|Or|Nor|Does|Do|Did|In|On|At|For|With|Without|From|To|Of|Not)\b/.test(normalized)) {
+      return normalized.charAt(0).toLowerCase() + normalized.slice(1);
+    }
+    return normalized;
+  };
+
   const text = sequence
-    .map((segment) => normalizeComposerText(segment.choice.text))
+    .map((segment, index) => {
+      const normalized = normalizeComposerText(segment.choice.text);
+      return index === 0 ? normalized : lowerJoinLead(normalized);
+    })
     .filter(Boolean)
     .join(' ')
     .replace(/\s+/g, ' ')
@@ -183,6 +929,22 @@ function dedupeComposerChoices<T extends ComposerChoice>(choices: T[]): T[] {
       return false;
     }
     seen.add(key);
+    return true;
+  });
+}
+
+function limitComposerChoicesPerSpan<T extends ComposerChoice>(choices: T[], limit: number): T[] {
+  if (limit < 1) {
+    return [];
+  }
+  const seenCounts = new Map<string, number>();
+  return choices.filter((choice) => {
+    const key = `${choice.tokenStart ?? -1}:${choice.tokenEnd ?? -1}`;
+    const count = seenCounts.get(key) ?? 0;
+    if (count >= limit) {
+      return false;
+    }
+    seenCounts.set(key, count + 1);
     return true;
   });
 }
@@ -275,6 +1037,7 @@ export function WorkbenchPage() {
   const compareRightId = workbenchUi.compareRightId;
   const [selectedCloudNodeId, setSelectedCloudNodeId] = useState<string | null>(null);
   const [previewTokenIds, setPreviewTokenIds] = useState<string[]>([]);
+  const [previewChoice, setPreviewChoice] = useState<ComposerChoice | null>(null);
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
@@ -576,6 +1339,7 @@ export function WorkbenchPage() {
 
   useEffect(() => {
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
     updateWorkbenchUi({
       hoveredTokenId: null,
       hoveredSpanId: null,
@@ -791,7 +1555,7 @@ export function WorkbenchPage() {
     }
     setGuidedMessage(null);
     generateJob.mutate(
-      { layer: activeLayer, candidate_count: 1 },
+      { layer: activeLayer, style_profile: generationStyleProfileForLayer(activeLayer), candidate_count: 1 },
       {
         onError: (error) => {
           setGuidedMessage(error instanceof Error ? error.message : 'Unable to generate starter.');
@@ -837,6 +1601,7 @@ export function WorkbenchPage() {
     }
     setGuidedMessage(null);
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
     if (unit && typeof choice.tokenStart === 'number') {
       const start = Math.max(0, choice.tokenStart);
       const end = Math.min(unit.tokens.length - 1, choice.tokenEnd ?? choice.tokenStart);
@@ -858,7 +1623,7 @@ export function WorkbenchPage() {
         return leftRange.start - rightRange.start || leftRange.end - rightRange.end;
       });
       const nextSelectedByLevel = latestChoicesByLevel(nextSequence);
-      const nextWorkingText = assembleComposerText(nextSequence) || currentReferenceRendering?.text || '';
+      const nextWorkingText = assembleComposerText(nextSequence, activeLayer) || currentReferenceRendering?.text || '';
       const nextCursorTokenIndex = typeof choice.tokenStart === 'number'
         ? (choice.tokenEnd ?? choice.tokenStart) + 1
         : existing.cursorTokenIndex ?? 0;
@@ -879,15 +1644,18 @@ export function WorkbenchPage() {
   const handlePreviewWorkingChoice = (choice: ComposerChoice | null) => {
     if (!unit || !choice || typeof choice.tokenStart !== 'number') {
       setPreviewTokenIds([]);
+      setPreviewChoice(choice);
       return;
     }
     const start = Math.max(0, choice.tokenStart);
     const end = Math.min(unit.tokens.length - 1, choice.tokenEnd ?? choice.tokenStart);
     setPreviewTokenIds(unit.tokens.slice(start, end + 1).map((token) => token.token_id));
+    setPreviewChoice(choice);
   };
 
   const handleClearWorkingChoicePreview = () => {
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
   };
 
   const handleSetWorkingCursor = (tokenIndex: number) => {
@@ -916,7 +1684,7 @@ export function WorkbenchPage() {
           ...existing,
           sequence: trimmedSequence,
           selectedByLevel: latestChoicesByLevel(trimmedSequence),
-          workingText: assembleComposerText(trimmedSequence) || currentReferenceRendering?.text || '',
+          workingText: assembleComposerText(trimmedSequence, activeLayer) || currentReferenceRendering?.text || '',
           completed: false,
           cursorTokenIndex: clampedIndex,
         },
@@ -1024,6 +1792,7 @@ export function WorkbenchPage() {
     }
     updateWorkbenchSelection({ unitId: unitIdToLoad });
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
     setGuidedMessage(`Loaded ${unitMap.get(unitIdToLoad)?.ref ?? unitIdToLoad}.`);
   };
 
@@ -1034,6 +1803,7 @@ export function WorkbenchPage() {
     setReturnToUnitId((existing) => existing ?? selectedUnitId);
     updateWorkbenchSelection({ unitId: unitIdToLoad });
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
     setGuidedMessage(`Reviewing ${unitMap.get(unitIdToLoad)?.ref ?? unitIdToLoad}. Use catch up to return to ${unitMap.get(selectedUnitId)?.ref ?? selectedUnitId}.`);
   };
 
@@ -1045,6 +1815,7 @@ export function WorkbenchPage() {
     setReturnToUnitId(null);
     updateWorkbenchSelection({ unitId: unitIdToLoad });
     setPreviewTokenIds([]);
+    setPreviewChoice(null);
     setGuidedMessage(`Returned to ${unitMap.get(unitIdToLoad)?.ref ?? unitIdToLoad}.`);
   };
 
@@ -1055,7 +1826,7 @@ export function WorkbenchPage() {
           <p className="eyebrow">Workbench Unavailable</p>
           <h1>Start the local API before opening the workbench.</h1>
           <p className="subtle">
-            The workbench expects the FastAPI backend on <code>127.0.0.1:8765</code>. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
+            The workbench expects the FastAPI backend on the configured local API port. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
           </p>
           <pre>
             <code>{['./setup.sh', '.\\setup.ps1'].join('\n')}</code>
@@ -1119,12 +1890,14 @@ export function WorkbenchPage() {
         <section className="translation-pane translation-pane--flow compose-panel">
           <VerseFlowCloudPanel
             unit={unit}
+            currentPsalmUnits={(currentPsalm?.unit_ids ?? [])
+              .map((unitIdOption) => unitMap.get(unitIdOption))
+              .filter((candidate): candidate is Unit => Boolean(candidate))}
             activeLayer={activeLayer}
             literalAidRenderings={literalAidRenderings}
             currentEnglishRenderings={currentEnglishRenderings}
             phraseAidRenderings={phraseAidRenderings}
             conceptAidRenderings={conceptAidRenderings}
-            supportNodes={selectedVisualUnit?.supporting_nodes ?? []}
             allAlignments={unit?.alignments ?? []}
             activeCloudNode={activeCloudNode}
             retrievalHits={selectedUnitRetrievalHits}
@@ -1132,6 +1905,7 @@ export function WorkbenchPage() {
             selectedSpanIds={selectedSpanIds}
             compareRightId={compareRightId}
             lexicalTokenCard={displayedTokenCard}
+            previewChoice={previewChoice}
             currentWorkingChoices={currentWorkingChoices}
             currentWorkingPath={currentWorkingPath}
             currentCursorTokenIndex={currentCursorTokenIndex}
@@ -1810,6 +2584,10 @@ function GuidedDecisionPanel({
                           Compare
                         </button>
                       </div>
+                      <div className="tag-row">
+                        <span className="tag">{translationBasisLabel(rendering.translation_basis?.basis_type)}</span>
+                        {rendering.differentiator ? <span className="tag">{rendering.differentiator}</span> : null}
+                      </div>
                       <p>{rendering.text}</p>
                     </article>
                   ))}
@@ -1881,6 +2659,10 @@ function GuidedDecisionPanel({
                           Compare
                         </button>
                       </div>
+                      <div className="tag-row">
+                        <span className="tag">{translationBasisLabel(rendering.translation_basis?.basis_type)}</span>
+                        {rendering.differentiator ? <span className="tag">{rendering.differentiator}</span> : null}
+                      </div>
                       <p>{rendering.text}</p>
                     </article>
                   ))}
@@ -1906,7 +2688,11 @@ function GuidedDecisionPanel({
                 <div className="candidate-stack">
                   {conceptAidRenderings.slice(0, 2).map((rendering) => (
                     <article key={rendering.rendering_id} className="candidate-card">
-                      <span className="tag">{rendering.status}</span>
+                      <div className="tag-row">
+                        <span className="tag">{rendering.status}</span>
+                        <span className="tag">{translationBasisLabel(rendering.translation_basis?.basis_type)}</span>
+                        {rendering.differentiator ? <span className="tag">{rendering.differentiator}</span> : null}
+                      </div>
                       <p>{rendering.text}</p>
                     </article>
                   ))}
@@ -2276,12 +3062,12 @@ function ClickApprovalFallback({
 
 function VerseFlowCloudPanel({
   unit,
+  currentPsalmUnits,
   activeLayer,
   literalAidRenderings,
   currentEnglishRenderings,
   phraseAidRenderings,
   conceptAidRenderings,
-  supportNodes,
   allAlignments,
   activeCloudNode,
   retrievalHits,
@@ -2289,6 +3075,7 @@ function VerseFlowCloudPanel({
   selectedSpanIds,
   compareRightId,
   lexicalTokenCard,
+  previewChoice,
   currentWorkingChoices,
   currentWorkingPath,
   currentCursorTokenIndex,
@@ -2309,12 +3096,12 @@ function VerseFlowCloudPanel({
   onSelectCloudNode,
 }: {
   unit?: Unit;
+  currentPsalmUnits: Unit[];
   activeLayer: Layer;
   literalAidRenderings: Rendering[];
   currentEnglishRenderings: Rendering[];
   phraseAidRenderings: Rendering[];
   conceptAidRenderings: Rendering[];
-  supportNodes: CloudNode[];
   allAlignments: Alignment[];
   activeCloudNode: CloudNode | null;
   retrievalHits: RetrievalHit[];
@@ -2322,6 +3109,7 @@ function VerseFlowCloudPanel({
   selectedSpanIds: string[];
   compareRightId: string | null;
   lexicalTokenCard?: TokenCard;
+  previewChoice: ComposerChoice | null;
   currentWorkingChoices: Partial<Record<ComposerChoiceLevel, ComposerChoice>>;
   currentWorkingPath: Array<{ level: ComposerChoiceLevel; choice: ComposerChoice }>;
   currentCursorTokenIndex: number;
@@ -2351,19 +3139,58 @@ function VerseFlowCloudPanel({
     unit?.unit_id ?? null,
     'phrase',
     deterministicComposer?.phraseSuggestionChunks ?? [],
-    Boolean(deterministicComposer),
+    {
+      enabled: Boolean(deterministicComposer),
+      candidateCount: 3,
+      styleProfile: phraseSuggestionStyleProfile(),
+    },
   );
-  const conceptSuggestionsQuery = useComposerSuggestions(
+  const groundedConceptSuggestionsQuery = useComposerSuggestions(
     unit?.unit_id ?? null,
     'concept',
     deterministicComposer?.ideaSuggestionChunks ?? [],
-    Boolean(deterministicComposer),
+    {
+      enabled: Boolean(deterministicComposer),
+      candidateCount: GENERATIVE_CONCEPT_LANE_PROFILES[0].candidateCount,
+      styleProfile: GENERATIVE_CONCEPT_LANE_PROFILES[0].styleProfile,
+    },
   );
-  const lyricSuggestionsQuery = useComposerSuggestions(
+  const readerConceptSuggestionsQuery = useComposerSuggestions(
+    unit?.unit_id ?? null,
+    'concept',
+    deterministicComposer?.ideaSuggestionChunks ?? [],
+    {
+      enabled: Boolean(deterministicComposer),
+      candidateCount: GENERATIVE_CONCEPT_LANE_PROFILES[1].candidateCount,
+      styleProfile: GENERATIVE_CONCEPT_LANE_PROFILES[1].styleProfile,
+    },
+  );
+  const groundedLyricSuggestionsQuery = useComposerSuggestions(
     unit?.unit_id ?? null,
     'lyric',
     deterministicComposer?.lyricSuggestionChunks ?? [],
-    Boolean(deterministicComposer),
+    {
+      enabled: Boolean(deterministicComposer),
+      candidateCount: GENERATIVE_LYRIC_LANE_PROFILES[0].candidateCount,
+      styleProfile: GENERATIVE_LYRIC_LANE_PROFILES[0].styleProfile,
+    },
+  );
+  const readerLyricSuggestionsQuery = useComposerSuggestions(
+    unit?.unit_id ?? null,
+    'lyric',
+    deterministicComposer?.lyricSuggestionChunks ?? [],
+    {
+      enabled: Boolean(deterministicComposer),
+      candidateCount: GENERATIVE_LYRIC_LANE_PROFILES[1].candidateCount,
+      styleProfile: GENERATIVE_LYRIC_LANE_PROFILES[1].styleProfile,
+    },
+  );
+  const alignedPsalmWitnesses = useMemo(() => new Map(
+    PUBLIC_DOMAIN_WITNESS_CONFIGS.map((config) => [config.key, buildAlignedPsalmWitnessMap(currentPsalmUnits, config)]),
+  ), [currentPsalmUnits]);
+  const previewExplication = useMemo(
+    () => buildChoiceExplication(unit, previewChoice),
+    [previewChoice, unit],
   );
 
   if (!unit) {
@@ -2382,7 +3209,6 @@ function VerseFlowCloudPanel({
   const tokenColumns = Math.max(unit.tokens.length, 1);
   const tokenIndexMap = new Map(unit.tokens.map((token, index) => [token.token_id, index + 1]));
   const alignmentMap = new Map(allAlignments.map((alignment) => [alignment.alignment_id, alignment]));
-  const ideaNodes = supportNodes.filter((node) => node.kind === 'concept');
   const lastCoveredTokenIndex = currentWorkingPath.reduce((maximum, segment) => {
     const segmentEnd = segment.choice.tokenEnd ?? segment.choice.tokenStart ?? -1;
     return Math.max(maximum, segmentEnd);
@@ -2419,30 +3245,9 @@ function VerseFlowCloudPanel({
     return normalizeComposerText(parts.join(' '));
   };
 
-  const resolvePublicDomainWitness = (config: PublicDomainWitnessConfig): UnitWitness | null => {
-    const existingWitness = unit.witnesses.find((witness) => {
-      const haystack = [witness.source_id, witness.versionTitle]
-        .join(' ')
-        .toLowerCase();
-      return config.aliases.some((alias) => haystack.includes(alias));
-    });
-    if (existingWitness) {
-      return existingWitness;
-    }
-
-    const fallbackText = PSALM_ONE_PUBLIC_DOMAIN_WITNESSES[unit.ref]?.[config.key];
-    if (!fallbackText) {
-      return null;
-    }
-    return {
-      source_id: config.sourceId,
-      versionTitle: config.versionTitle,
-      language: 'en',
-      ref: unit.ref,
-      source_url: '',
-      text: fallbackText,
-    };
-  };
+  const resolvePublicDomainWitness = (config: PublicDomainWitnessConfig): UnitWitness | null =>
+    alignedPsalmWitnesses.get(config.key)?.get(unit.unit_id)
+    ?? resolveDirectWitness(unit, config);
 
   const splitWitnessText = (text: string, ranges: Array<{ start: number; end: number }>) => {
     const desiredCount = ranges.length;
@@ -2452,6 +3257,8 @@ function VerseFlowCloudPanel({
     }
 
     const cueSplitText = cleaned
+      .replace(/\b(To (?:the )?(?:chief Musician|choirmaster|director))\s+(?=(?:upon|on|set to|according to)\b)/i, '$1|')
+      .replace(/,\s+(?=(?:A (?:Psalm|Song|Prayer)|when|after|concerning|according to|set to)\b)/gi, '|')
       .replace(/\b(Blessed is the man)\s+(that|who)\b/i, '$1|$2')
       .replace(/\b(walketh not|does not walk|doesn['’]t walk)\s+(in the counsel)\b/i, '$1|$2')
       .replace(/[,;:]\s+(nor|Nor)\b/g, '|$1')
@@ -2500,12 +3307,40 @@ function VerseFlowCloudPanel({
     onClick: () => void;
   };
 
+  const flowRowHeights = [
+    88,
+    ...PUBLIC_DOMAIN_WITNESS_CONFIGS.map(() => 86),
+    96,
+    116,
+    164,
+    140,
+    176,
+    92,
+  ];
+  const flowRowGap = 16;
+  const flowTotalHeight = flowRowHeights.reduce((total, height) => total + height, 0) + Math.max(0, flowRowHeights.length - 1) * flowRowGap;
+  const laneYForIndex = (index: number) => {
+    const priorHeight = flowRowHeights.slice(0, index).reduce((total, height) => total + height, 0) + index * flowRowGap;
+    return ((priorHeight + (flowRowHeights[index] ?? flowRowHeights[flowRowHeights.length - 1] ?? 0) / 2) / flowTotalHeight) * 100;
+  };
+  const laneIndexByFlowLane: Record<FlowLaneKey, number> = {
+    word: 0,
+    phrase: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 1,
+    idea: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 2,
+    generatedIdea: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 3,
+    lyric: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 4,
+    generatedLyric: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 5,
+    output: PUBLIC_DOMAIN_WITNESS_CONFIGS.length + 6,
+  };
+  const laneYByFlowLane = Object.fromEntries(
+    Object.entries(laneIndexByFlowLane).map(([lane, index]) => [lane, laneYForIndex(index)]),
+  ) as Record<FlowLaneKey, number>;
   const laneYByType: Record<ComposerChoiceLevel | 'output', number> = {
-    word: 5,
-    phrase: 47,
-    idea: 60,
-    lyric: 79,
-    output: 93,
+    word: laneYByFlowLane.word,
+    phrase: laneYByFlowLane.phrase,
+    idea: laneYByFlowLane.idea,
+    lyric: laneYByFlowLane.lyric,
+    output: laneYByFlowLane.output,
   };
 
   const clampChoiceRange = (start: number, end: number) => ({
@@ -2527,7 +3362,10 @@ function VerseFlowCloudPanel({
     choice: ComposerChoice,
     meta: string,
     accuracy: 'exact' | 'close' | 'interpretive' | 'lyric',
-  ): FlowBubble => ({
+    flowLane: FlowLaneKey = level,
+  ): FlowBubble => {
+    const bubbleChoice = { ...choice, flowLane };
+    return {
     id: choice.id,
     label: choice.label,
     meta,
@@ -2535,10 +3373,11 @@ function VerseFlowCloudPanel({
     end: Math.min(tokenColumns, (choice.tokenEnd ?? choice.tokenStart ?? nextTokenIndex) + 1),
     type: level,
     accuracy,
-    choice,
-    active: isActiveChoice(level, choice),
-    onClick: () => onApplyChoice(level, choice),
-  });
+    choice: bubbleChoice,
+    active: isActiveChoice(level, bubbleChoice),
+    onClick: () => onApplyChoice(level, bubbleChoice),
+  };
+  };
 
   const literalChoiceMap = literalAidRenderings.map((rendering, index) => {
     const range = resolveRangeFromAlignmentIds(rendering.alignment_ids)
@@ -2567,6 +3406,7 @@ function VerseFlowCloudPanel({
       tokenStart: range.start,
       tokenEnd: range.end,
       description,
+      levelHint: level,
     };
   };
 
@@ -2583,17 +3423,101 @@ function VerseFlowCloudPanel({
     const token = unit.tokens[choice.tokenStart] ?? unit.tokens[index];
     return {
       ...choice,
+      levelHint: 'word' as const,
       description: [token?.surface, token?.strong ? `Strong's ${token.strong}` : null, choice.description]
         .filter(Boolean)
         .join(' | '),
     };
   });
 
+  const deterministicPhraseChoices = deterministicComposer.phraseChoices.map((choice) => ({
+    ...choice,
+    levelHint: 'phrase' as const,
+  }));
+
+  const deterministicIdeaChoices = deterministicComposer.ideaChoices.map((choice) => ({
+    ...choice,
+    levelHint: 'idea' as const,
+  }));
+
+  const deterministicLyricChoices = deterministicComposer.lyricChoices.map((choice) => ({
+    ...choice,
+    levelHint: 'lyric' as const,
+  }));
+
+  const spanKeyForChoice = (choice: ComposerChoice) => `${choice.tokenStart ?? -1}:${choice.tokenEnd ?? choice.tokenStart ?? -1}`;
+  const deterministicPhraseBySpan = new Map(deterministicPhraseChoices.map((choice) => [spanKeyForChoice(choice), choice]));
+  const deterministicIdeaBySpan = new Map(deterministicIdeaChoices.map((choice) => [spanKeyForChoice(choice), choice]));
+  const deterministicLyricBySpan = new Map(deterministicLyricChoices.map((choice) => [spanKeyForChoice(choice), choice]));
+
+  const buildOfflineGeneratedChoices = (
+    level: ComposerChoiceLevel,
+    seeds: ComposerChoice[],
+    variantBuilder: (
+      seed: ComposerChoice,
+      related: { phrase?: ComposerChoice; idea?: ComposerChoice; lyric?: ComposerChoice },
+      spanTokens: Token[],
+    ) => OfflineComposerVariant[],
+    labelPrefix: string,
+    idPrefix: string,
+  ): ComposerChoice[] => seeds.flatMap((seed) => {
+    const spanKey = spanKeyForChoice(seed);
+    const related = {
+      phrase: deterministicPhraseBySpan.get(spanKey),
+      idea: deterministicIdeaBySpan.get(spanKey),
+      lyric: deterministicLyricBySpan.get(spanKey),
+    };
+    const spanStart = seed.tokenStart ?? 0;
+    const spanEnd = seed.tokenEnd ?? seed.tokenStart ?? 0;
+    const spanTokens = unit.tokens.slice(spanStart, spanEnd + 1);
+    const seen = new Set<string>();
+    return variantBuilder(seed, related, spanTokens)
+      .map((variant) => {
+        const variantText = typeof variant === 'string' ? variant : variant.text;
+        return {
+          text: level === 'lyric' ? sentenceCasePoeticText(variantText) : sentenceCase(normalizeComposerText(variantText)),
+          differentiator: typeof variant === 'string' ? undefined : variant.differentiator,
+          deliveryProfile: typeof variant === 'string' ? undefined : variant.deliveryProfile,
+          sourceAnchor: typeof variant === 'string' ? undefined : variant.sourceAnchor,
+          variationBasis: typeof variant === 'string' ? undefined : variant.variationBasis,
+          driftFlags: typeof variant === 'string' ? undefined : variant.driftFlags,
+        };
+      })
+      .filter((variant) => {
+        const key = normalizeComposerText(variant.text).toLowerCase();
+        if (!key || seen.has(key)) {
+          return false;
+        }
+        seen.add(key);
+        return true;
+      })
+      .map((variant, index) =>
+        createRangeChoice(
+          level,
+          `${level}-offline-${idPrefix}-${seed.id}-${index + 1}`,
+          variant.text,
+          seed.tokenStart ?? 0,
+          seed.tokenEnd ?? seed.tokenStart ?? 0,
+          compactMetaParts([
+            labelPrefix,
+            variant.deliveryProfile,
+            variant.sourceAnchor ? `anchor: ${variant.sourceAnchor}` : null,
+            variant.variationBasis?.length ? `basis: ${variant.variationBasis.join(', ')}` : null,
+            variant.differentiator,
+            variant.driftFlags?.length ? `flags: ${variant.driftFlags.join(', ')}` : null,
+            'local fallback',
+            'composer offline',
+          ]),
+        ),
+      );
+  });
+
   const buildGeneratedChoices = (
     level: ComposerChoiceLevel,
-    response: { chunks?: Array<{ chunk_id: string; candidates: Array<{ text: string; rationale: string }> }> } | undefined,
+    response: ComposerSuggestionQueryData | undefined,
     chunkSeeds: Array<{ chunk_id: string; start: number; end: number }>,
     labelPrefix: string,
+    idPrefix: string,
   ): ComposerChoice[] => (response?.chunks ?? []).flatMap((chunk) => {
     const seed = chunkSeeds.find((item) => item.chunk_id === chunk.chunk_id);
     if (!seed) {
@@ -2602,18 +3526,28 @@ function VerseFlowCloudPanel({
     return chunk.candidates.map((candidate, index) =>
       createRangeChoice(
         level,
-        `${level}-generated-${chunk.chunk_id}-${index + 1}`,
-        sentenceCase(normalizeComposerText(candidate.text)),
+        `${level}-generated-${idPrefix}-${chunk.chunk_id}-${index + 1}`,
+        level === 'lyric'
+          ? sentenceCasePoeticText(candidate.text)
+          : sentenceCase(normalizeComposerText(candidate.text)),
         seed.start,
         seed.end,
-        `${labelPrefix} | ${candidate.rationale || 'generated alternate'}`,
+        compactMetaParts([
+          labelPrefix,
+          translationBasisLabel(candidate.translation_basis?.basis_type),
+          formatDeliveryProfile(candidate.delivery_profile),
+          candidate.source_anchor?.anchor_text ? `anchor: ${candidate.source_anchor.anchor_text}` : null,
+          candidate.variation_basis?.length ? `basis: ${candidate.variation_basis.join(', ')}` : null,
+          candidate.differentiator,
+          candidate.drift_flags?.length ? `flags: ${candidate.drift_flags.join(', ')}` : null,
+        ]),
       ),
     );
   });
 
   const phraseChoices = dedupeComposerChoices([
-    ...deterministicComposer.phraseChoices,
-    ...buildGeneratedChoices('phrase', phraseSuggestionsQuery.data, deterministicComposer.phraseSuggestionChunks, 'generated phrase'),
+    ...deterministicPhraseChoices,
+    ...buildGeneratedChoices('phrase', phraseSuggestionsQuery.data, deterministicComposer.phraseSuggestionChunks, 'dynamic phrase', 'phrase'),
     ...phraseAidRenderings.slice(0, 3).map((rendering, index) => {
       const renderingRange = resolveRangeFromAlignmentIds(rendering.alignment_ids)
         ?? resolveRangeFromSpanIds(rendering.target_spans.map((span) => span.span_id));
@@ -2625,8 +3559,7 @@ function VerseFlowCloudPanel({
   ]);
 
   const ideaChoices = dedupeComposerChoices([
-    ...deterministicComposer.ideaChoices,
-    ...buildGeneratedChoices('idea', conceptSuggestionsQuery.data, deterministicComposer.ideaSuggestionChunks, 'generated concept'),
+    ...deterministicIdeaChoices,
     ...conceptAidRenderings.slice(0, 2).map((rendering, index) => {
       const renderingRange = resolveRangeFromAlignmentIds(rendering.alignment_ids)
         ?? resolveRangeFromSpanIds(rendering.target_spans.map((span) => span.span_id));
@@ -2635,25 +3568,62 @@ function VerseFlowCloudPanel({
         : conceptRanges[index % Math.max(conceptRanges.length, 1)];
       return createRangeChoice('idea', `flow-concept-${rendering.rendering_id}`, sentenceCase(normalizeComposerText(rendering.text)), range.start, range.end, `${rendering.status} concept aid`);
     }),
-    ...ideaNodes.slice(0, 2).map((node, index) => {
-      const range = conceptRanges[index % Math.max(conceptRanges.length, 1)];
-      return createRangeChoice('idea', `flow-concept-node-${node.node_id}`, sentenceCase(node.label), range.start, range.end, `${node.support_count} context links`);
-    }),
   ]);
+  const conceptGenerationUnavailable = groundedConceptSuggestionsQuery.data?.available === false && readerConceptSuggestionsQuery.data?.available === false;
+  const offlineGeneratedConceptChoices = conceptGenerationUnavailable
+    ? buildOfflineGeneratedChoices(
+      'idea',
+      deterministicIdeaChoices,
+      (seed, related, spanTokens) => {
+        const superscriptionVariants = superscriptionConceptVariants(spanTokens, seed.text);
+        if (superscriptionVariants.length > 0) {
+          return superscriptionVariants;
+        }
+        if (spanTokens.length <= 3 && looksLikeBlessingSeed(spanTokens, seed.text)) {
+          return shortBlessingConceptVariants(spanTokens);
+        }
+        const directSeed = resolveSlashGloss(seed.text, 'second');
+        const alternateSeed = resolveSlashGloss(seed.text, 'first');
+        const phraseSeed = resolveSlashGloss(related.phrase?.text ?? seed.text, 'second');
+        const lyricSeed = resolveSlashGloss(related.lyric?.text ?? related.phrase?.text ?? seed.text, 'first');
+        return [
+          groundedFallbackConceptText(directSeed),
+          readerFallbackConceptText(lyricSeed),
+          compressedFallbackConceptText(phraseSeed),
+        ];
+      },
+      'concept fallback',
+      'concept',
+    )
+    : [];
+
+  const generatedConceptChoices = limitComposerChoicesPerSpan(dedupeComposerChoices([
+    ...buildGeneratedChoices(
+      'idea',
+      groundedConceptSuggestionsQuery.data,
+      deterministicComposer.ideaSuggestionChunks,
+      GENERATIVE_CONCEPT_LANE_PROFILES[0].labelPrefix,
+      GENERATIVE_CONCEPT_LANE_PROFILES[0].key,
+    ),
+    ...buildGeneratedChoices(
+      'idea',
+      readerConceptSuggestionsQuery.data,
+      deterministicComposer.ideaSuggestionChunks,
+      GENERATIVE_CONCEPT_LANE_PROFILES[1].labelPrefix,
+      GENERATIVE_CONCEPT_LANE_PROFILES[1].key,
+    ),
+    ...offlineGeneratedConceptChoices,
+  ]), 4);
 
   const lyricChoices = dedupeComposerChoices([
-    ...deterministicComposer.lyricChoices,
-    ...buildGeneratedChoices('lyric', lyricSuggestionsQuery.data, deterministicComposer.lyricSuggestionChunks, 'generated rhythm'),
-    ...(generatedLyricText.trim()
-      ? [createRangeChoice('lyric', 'flow-generated-rhythm', sentenceCase(normalizeComposerText(generatedLyricText)), 0, tokenColumns - 1, 'guided generated rhythm')]
-      : []),
+    ...deterministicLyricChoices,
     ...currentEnglishRenderings
       .filter((rendering) => rendering.layer === 'lyric' || rendering.layer === 'metered_lyric' || rendering.layer === 'parallelism_lyric')
       .slice(0, 2)
       .map((rendering) => createRangeChoice(
         'lyric',
         `flow-rhythm-${rendering.rendering_id}`,
-        sentenceCase(normalizeComposerText(rendering.text)),
+        sentenceCasePoeticText(rendering.text),
         0,
         tokenColumns - 1,
         `${rendering.layer.replace(/_/g, ' ')} ${rendering.status}`,
@@ -2661,26 +3631,82 @@ function VerseFlowCloudPanel({
     ...retrievalHits.slice(0, 2).map((hit, index) => createRangeChoice(
       'lyric',
       `flow-rhythm-hit-${hit.hit_id}-${index}`,
-      sentenceCase(normalizeComposerText(hit.label)),
+      sentenceCasePoeticText(hit.label),
       0,
       tokenColumns - 1,
       hit.scope === 'same_psalm' ? 'same-psalm witness' : 'cross-psalm witness',
     )),
   ]);
+  const lyricGenerationUnavailable = groundedLyricSuggestionsQuery.data?.available === false && readerLyricSuggestionsQuery.data?.available === false;
+  const offlineGeneratedLyricChoices = lyricGenerationUnavailable
+    ? buildOfflineGeneratedChoices(
+      'lyric',
+      deterministicLyricChoices,
+      (seed, related, spanTokens) => {
+        const superscriptionVariants = superscriptionLyricVariants(spanTokens, seed.text);
+        if (superscriptionVariants.length > 0) {
+          return superscriptionVariants;
+        }
+        if (spanTokens.length <= 3 && looksLikeBlessingSeed(spanTokens, seed.text)) {
+          return shortBlessingLyricVariants(spanTokens);
+        }
+        const directSeed = resolveSlashGloss(seed.text, 'second');
+        const ideaSeed = resolveSlashGloss(related.idea?.text ?? seed.text, 'first');
+        const alternateIdeaSeed = resolveSlashGloss(related.idea?.text ?? related.phrase?.text ?? seed.text, 'second');
+        return [
+          groundedFallbackLyricText(directSeed),
+          readerFallbackLyricText(ideaSeed),
+          groundedFallbackLyricText(alternateIdeaSeed),
+        ];
+      },
+      'rhythm fallback',
+      'lyric',
+    )
+    : [];
 
-  const outputChoices = currentWorkingPath.length > 0
-    ? currentWorkingPath.map((segment, index) => ({
-        id: `flow-output-${segment.choice.id}-${index}`,
-        label: sentenceCase(normalizeComposerText(segment.choice.text)),
-        text: segment.choice.text,
-        tokenStart: segment.choice.tokenStart ?? 0,
-        tokenEnd: segment.choice.tokenEnd ?? segment.choice.tokenStart ?? tokenColumns - 1,
-        description: `${segment.level === 'idea' ? 'concept' : segment.level} selected`,
-      }))
-    : lyricChoices.slice(0, Math.min(4, lyricChoices.length)).map((choice, index) => ({
+  const generatedLyricChoices = limitComposerChoicesPerSpan(dedupeComposerChoices([
+    ...buildGeneratedChoices(
+      'lyric',
+      groundedLyricSuggestionsQuery.data,
+      deterministicComposer.lyricSuggestionChunks,
+      GENERATIVE_LYRIC_LANE_PROFILES[0].labelPrefix,
+      GENERATIVE_LYRIC_LANE_PROFILES[0].key,
+    ),
+    ...buildGeneratedChoices(
+      'lyric',
+      readerLyricSuggestionsQuery.data,
+      deterministicComposer.lyricSuggestionChunks,
+      GENERATIVE_LYRIC_LANE_PROFILES[1].labelPrefix,
+      GENERATIVE_LYRIC_LANE_PROFILES[1].key,
+    ),
+    ...(generatedLyricText.trim()
+      ? [createRangeChoice('lyric', 'flow-generated-rhythm', sentenceCasePoeticText(generatedLyricText), 0, tokenColumns - 1, 'guided generated rhythm')]
+      : []),
+    ...offlineGeneratedLyricChoices,
+  ]), 4);
+  const defaultOutputPreviewChoices = generatedLyricChoices.length > 0 ? generatedLyricChoices : lyricChoices;
+
+  const selectedOutputText = currentWorkingPath.length > 0
+    ? assembleComposerText(currentWorkingPath, activeLayer)
+    : '';
+  const outputChoices = selectedOutputText
+    ? [{
+        id: 'flow-output-assembled',
+        label: sentenceCasePoeticText(selectedOutputText),
+        text: selectedOutputText,
+        tokenStart: 0,
+        tokenEnd: tokenColumns - 1,
+        description: 'assembled output preview',
+        levelHint: 'output' as const,
+      }]
+    : defaultOutputPreviewChoices.slice(0, 1).map((choice) => ({
         ...choice,
-        id: `flow-output-preview-${choice.id}-${index}`,
+        id: `flow-output-preview-${choice.id}`,
+        label: sentenceCasePoeticText(choice.text),
+        tokenStart: 0,
+        tokenEnd: tokenColumns - 1,
         description: 'output preview',
+        levelHint: 'output' as const,
       }));
 
   const wordBubbles = wordChoices.map((choice) => toBubble('word', choice, choice.description ?? 'word', 'exact'));
@@ -2714,7 +3740,9 @@ function VerseFlowCloudPanel({
   });
   const phraseBubbles = phraseChoices.map((choice) => toBubble('phrase', choice, choice.description ?? 'phrase', 'close'));
   const ideaBubbles = ideaChoices.map((choice) => toBubble('idea', choice, choice.description ?? 'concept', 'interpretive'));
+  const generatedConceptBubbles = generatedConceptChoices.map((choice) => toBubble('idea', choice, choice.description ?? 'generated concept', 'interpretive', 'generatedIdea'));
   const lyricBubbles = lyricChoices.map((choice) => toBubble('lyric', choice, choice.description ?? 'rhythmic', 'lyric'));
+  const generatedLyricBubbles = generatedLyricChoices.map((choice) => toBubble('lyric', choice, choice.description ?? 'generated rhythm', 'lyric', 'generatedLyric'));
   const outputBubbles: FlowBubble[] = outputChoices.map((choice) => ({
     id: choice.id,
     label: choice.label,
@@ -2733,11 +3761,12 @@ function VerseFlowCloudPanel({
     const choiceEnd = segment.choice.tokenEnd ?? choiceStart;
     const start = Math.max(1, choiceStart + 1);
     const end = Math.min(tokenColumns, choiceEnd + 1);
+    const flowLane = segment.choice.flowLane ?? segment.level;
     return {
       id: `${segment.level}-${segment.choice.id}`,
       type: segment.level,
       x: (((start - 1) + end) / 2 / tokenColumns) * 100,
-      y: laneYByType[segment.level],
+      y: laneYByFlowLane[flowLane],
     };
   });
   const finalOutputConnectionNode = selectedConnectionNodes.length > 0
@@ -2793,6 +3822,7 @@ function VerseFlowCloudPanel({
               type="button"
               className={`flow-stage-bubble flow-stage-bubble--${bubble.type} flow-stage-bubble--accuracy-${bubble.accuracy} ${bubble.active ? 'active' : ''}`}
               onClick={bubble.onClick}
+              title={bubble.meta}
               onMouseEnter={() => {
                 onPreviewChoice(bubble.choice);
                 if (bubble.choice.tokenId) {
@@ -2841,7 +3871,8 @@ function VerseFlowCloudPanel({
               type="button"
               className="tab"
               onClick={() => {
-                void lyricSuggestionsQuery.refetch();
+                void groundedLyricSuggestionsQuery.refetch();
+                void readerLyricSuggestionsQuery.refetch();
                 onGenerateLyric();
               }}
             >
@@ -2884,7 +3915,9 @@ function VerseFlowCloudPanel({
             ))}
             <div className="flow-lane-label">Phrase</div>
             <div className="flow-lane-label">Concept</div>
+            <div className="flow-lane-label" title="Model-generated concept alternates">Gen Concept</div>
             <div className="flow-lane-label">Rhythmic</div>
+            <div className="flow-lane-label" title="Model-generated rhythmic alternates">Gen Rhythm</div>
             <div className="flow-lane-label">Output</div>
           </div>
           <div className="flow-lane-canvas">
@@ -2916,11 +3949,59 @@ function VerseFlowCloudPanel({
             ))}
             {renderFlowLane(phraseBubbles)}
             {renderFlowLane(ideaBubbles)}
+            {renderFlowLane(generatedConceptBubbles)}
             {renderFlowLane(lyricBubbles)}
+            {renderFlowLane(generatedLyricBubbles)}
             {renderFlowLane(outputBubbles)}
           </div>
         </div>
       </div>
+
+      {previewExplication ? (
+        <article className="hover-explication-card">
+          <div className="horizontal-between">
+            <div>
+              <p className="eyebrow">Hover Explication</p>
+              <h4>{previewExplication.englishText}</h4>
+            </div>
+            <div className="tag-row">
+              <span className="tag">{previewExplication.levelLabel}</span>
+              <span className="tag">{previewExplication.sourceLabel}</span>
+            </div>
+          </div>
+          <p className="hover-explication-card__summary">{previewExplication.relationshipSummary}</p>
+          <div className="hover-explication-grid">
+            <div className="hover-explication-meta">
+              <span>Hebrew span</span>
+              <strong dir="rtl">{previewExplication.hebrewText}</strong>
+            </div>
+            <div className="hover-explication-meta">
+              <span>Transliteration</span>
+              <strong>{previewExplication.transliterationText || '—'}</strong>
+            </div>
+            <div className="hover-explication-meta">
+              <span>Gloss chain</span>
+              <strong>{previewExplication.glossText}</strong>
+            </div>
+          </div>
+          <div className="hover-explication-token-list" aria-label="Hovered Hebrew to English relationship">
+            {previewExplication.tokens.map((token) => (
+              <article key={token.tokenId} className="hover-explication-token">
+                <strong dir="rtl">{token.surface}</strong>
+                <small>{token.transliteration ?? '—'}</small>
+                <span>{token.gloss}</span>
+              </article>
+            ))}
+          </div>
+          {previewExplication.notes.length > 0 ? (
+            <ul className="hover-explication-notes">
+              {previewExplication.notes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          ) : null}
+        </article>
+      ) : null}
 
       {lexicalTokenCard ? (
         <article className="bdb-context-card">

@@ -64,6 +64,19 @@ const alternateFilters = [
   ['contemporary', 'Contemporary'],
 ] as const;
 
+const alternateBasisFilters = [
+  ['', 'All bases'],
+  ['hebrew-derived', 'Hebrew-derived'],
+  ['septuagint-derived', 'Septuagint-derived'],
+] as const;
+
+function basisLabel(basisType?: string | null): string {
+  if (basisType === 'septuagint_greek_to_english') {
+    return 'From Septuagint Greek';
+  }
+  return 'From Hebrew';
+}
+
 export function BottomDrawer({
   unit,
   concerns,
@@ -101,6 +114,7 @@ export function BottomDrawer({
   const [selectedAlternateId, setSelectedAlternateId] = useState('');
   const [workflowMessage, setWorkflowMessage] = useState('');
   const [alternateFilter, setAlternateFilter] = useState<string>('');
+  const [alternateBasisFilter, setAlternateBasisFilter] = useState<string>('');
   const [releaseApprovedOnly, setReleaseApprovedOnly] = useState(false);
   const [alternateProposalText, setAlternateProposalText] = useState('');
   const [alternateRationale, setAlternateRationale] = useState('');
@@ -124,7 +138,13 @@ export function BottomDrawer({
   const promoteRendering = usePromoteRendering(unit?.unit_id ?? null);
   const exportRelease = useExportRelease();
   const alternatesLayer = resolvedLayer ?? activeLayer;
-  const alternates = useAlternates(unit?.unit_id ?? null, alternatesLayer, alternateFilter || undefined, releaseApprovedOnly);
+  const alternates = useAlternates(
+    unit?.unit_id ?? null,
+    alternatesLayer,
+    alternateFilter || undefined,
+    releaseApprovedOnly,
+    (alternateBasisFilter || undefined) as 'hebrew-derived' | 'septuagint-derived' | undefined,
+  );
   const addAlternate = useAddAlternate(unit?.unit_id ?? null);
   const comparison = useRenderingComparison(unit?.unit_id ?? null, compareLeftId, compareRightId);
   const resolvedSelectableLayers = useMemo(() => getSelectableLayers(selectableLayers), [selectableLayers]);
@@ -864,6 +884,16 @@ export function BottomDrawer({
                 ))}
               </select>
             </label>
+            <label className="compact-field">
+              <span>Basis</span>
+              <select value={alternateBasisFilter} onChange={(event) => setAlternateBasisFilter(event.target.value)}>
+                {alternateBasisFilters.map(([value, label]) => (
+                  <option key={label} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            </label>
             <label className="checkbox-field">
               <input type="checkbox" checked={releaseApprovedOnly} onChange={(event) => setReleaseApprovedOnly(event.target.checked)} />
               <span>Release-approved only</span>
@@ -876,7 +906,13 @@ export function BottomDrawer({
                     <strong>{item.status}</strong>
                     <span className="subtle">{item.rendering_id}</span>
                   </div>
+                  <div className="tag-row">
+                    <span className="tag">{basisLabel(item.translation_basis?.basis_type)}</span>
+                    {item.differentiator ? <span className="tag">{item.differentiator}</span> : null}
+                    {item.translation_basis?.source_version ? <span className="tag">{item.translation_basis.source_version}</span> : null}
+                  </div>
                   <p className="result-snippet">{item.text}</p>
+                  {item.variation_basis?.length ? <p className="subtle">Variation: {item.variation_basis.join(', ')}</p> : null}
                   <div className="result-meta">
                     <span>{item.layer}</span>
                     <button type="button" className="link-button" onClick={() => onCompareRightChange(item.rendering_id)}>

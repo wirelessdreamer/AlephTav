@@ -132,14 +132,28 @@ export function useComposerSuggestions(
   unitId: string | null,
   stage: 'phrase' | 'concept' | 'lyric',
   chunks: Array<{ chunk_id: string; start: number; end: number; text: string; source_text: string; confidence: number; confidence_reasons: string[] }>,
-  enabled = true,
+  options?: {
+    enabled?: boolean;
+    candidateCount?: number;
+    styleProfile?: string;
+    modelProfile?: string;
+    basisFilter?: 'hebrew-derived' | 'septuagint-derived';
+  },
 ) {
+  const enabled = options?.enabled ?? true;
+  const candidateCount = options?.candidateCount ?? 3;
+  const styleProfile = options?.styleProfile;
+  const modelProfile = options?.modelProfile;
+  const basisFilter = options?.basisFilter;
   return useQuery({
-    queryKey: ['composer-suggestions', unitId, stage, chunks],
+    queryKey: ['composer-suggestions', unitId, stage, candidateCount, styleProfile, modelProfile, basisFilter, chunks],
     queryFn: () =>
       postJson<ComposerSuggestionResponse>(`/units/${unitId}/composer-suggestions`, {
         stage,
-        candidate_count: 3,
+        candidate_count: candidateCount,
+        ...(styleProfile ? { style_profile: styleProfile } : {}),
+        ...(modelProfile ? { model_profile: modelProfile } : {}),
+        ...(basisFilter ? { basis_filter: basisFilter } : {}),
         chunks,
       }),
     enabled: Boolean(unitId) && enabled && chunks.length > 0,
@@ -332,14 +346,21 @@ export function useUnitWitnesses(unitId: string | null) {
   });
 }
 
-export function useAlternates(unitId: string | null, layer?: string, styleFilter?: string, releaseApprovedOnly = false) {
+export function useAlternates(
+  unitId: string | null,
+  layer?: string,
+  styleFilter?: string,
+  releaseApprovedOnly = false,
+  basisFilter?: 'hebrew-derived' | 'septuagint-derived',
+) {
   return useQuery({
-    queryKey: ['alternates', unitId, layer, styleFilter, releaseApprovedOnly],
+    queryKey: ['alternates', unitId, layer, styleFilter, releaseApprovedOnly, basisFilter],
     queryFn: () =>
       getJson<Rendering[]>(
         `/units/${unitId}/alternates?${new URLSearchParams({
           ...(layer ? { layer } : {}),
           ...(styleFilter ? { style_filter: styleFilter } : {}),
+          ...(basisFilter ? { basis_filter: basisFilter } : {}),
           release_approved_only: String(releaseApprovedOnly),
         }).toString()}`,
       ),
