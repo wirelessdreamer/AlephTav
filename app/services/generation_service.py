@@ -13,7 +13,7 @@ from app.db.models import JOB_TABLE_SQL
 from app.db.session import get_connection
 from app.llm.adapters import build_adapter
 from app.llm.base import GenerationRequest
-from app.services import registry_service, rendering_service
+from app.services import poetic_analysis_service, registry_service, rendering_service
 
 PASS_ORDER = ["gloss", "literal", "phrase", "concept", "lyric", "metered_lyric"]
 PASS_DEPENDENCIES = {
@@ -21,8 +21,8 @@ PASS_DEPENDENCIES = {
     "literal": ["gloss"],
     "phrase": ["literal"],
     "concept": ["literal", "phrase"],
-    "lyric": ["gloss", "literal", "concept"],
-    "metered_lyric": ["lyric"],
+    "lyric": ["gloss", "literal", "phrase", "concept"],
+    "metered_lyric": ["literal", "phrase", "concept", "lyric"],
 }
 PROMPT_FILES = {
     "gloss": "pass_01_gloss.md",
@@ -86,10 +86,31 @@ def _locked_inputs(unit: dict[str, Any], layer: str) -> dict[str, Any]:
                 "strong": token.get("strong"),
                 "morph_code": token.get("morph_code"),
                 "transliteration": token.get("transliteration"),
+                "greek": token.get("greek"),
+                "greek_strong": token.get("greek_strong"),
             }
             for token in unit.get("tokens", [])
         ]
     }
+    lxx_witness = next((item for item in unit.get("witnesses", []) if item.get("source_id") == "lxx"), None)
+    if lxx_witness:
+        locked_inputs["septuagint_greek_witness"] = {
+            "source_id": lxx_witness["source_id"],
+            "version_title": lxx_witness["versionTitle"],
+            "source_version": lxx_witness.get("source_version"),
+            "language": lxx_witness["language"],
+            "ref": lxx_witness["ref"],
+            "text": lxx_witness["text"],
+        }
+        locked_inputs["septuagint_greek_tokens"] = [
+            {
+                "token_id": token["token_id"],
+                "greek": token.get("greek"),
+                "greek_strong": token.get("greek_strong"),
+            }
+            for token in unit.get("tokens", [])
+            if token.get("greek")
+        ]
     for dependency in PASS_DEPENDENCIES[layer]:
         rendering = _canonical_rendering(unit, dependency)
         if rendering is None:
@@ -186,6 +207,185 @@ def _alignment_hints(unit: dict[str, Any], layer: str) -> list[str]:
     return [item["alignment_id"] for item in unit.get("alignments", []) if item["layer"] in {layer, "gloss", "literal"}]
 
 
+def _source_manifest(source_id: str) -> dict[str, Any] | None:
+    project = registry_service.load_project()
+    return next((item for item in project.get("source_manifests", []) if item["source_id"] == source_id), None)
+
+
+def _default_translation_basis() -> dict[str, Any]:
+    manifest = _source_manifest("uxlc")
+    return {
+        "basis_type": "hebrew_to_english",
+        "source_ids": ["uxlc", "oshb", "macula"],
+        "source_language": "he",
+        "source_version": manifest["version"] if manifest else "unknown",
+        "basis_note": "Canonical Hebrew-first translation basis.",
+    }
+
+
+def _normalize_translation_basis(payload: dict[str, Any] | None) -> dict[str, Any]:
+    basis = dict(payload or {})
+    default = _default_translation_basis()
+    basis_type = str(basis.get("basis_type") or default["basis_type"]).strip()
+    if basis_type == "septuagint_greek_to_english":
+        raw_source_ids = basis.get("source_ids") or ["lxx", "macula"]
+    else:
+        raw_source_ids = basis.get("source_ids") or default["source_ids"]
+    source_ids = [str(source_id).strip() for source_id in list(raw_source_ids) if str(source_id).strip()]
+    source_language = str(basis.get("source_language") or "").strip()
+    source_version = str(basis.get("source_version") or "").strip()
+    basis_note = str(basis.get("basis_note") or "").strip()
+    if basis_type == "septuagint_greek_to_english":
+        manifest = _source_manifest("lxx")
+        source_ids = source_ids or ["lxx", "macula"]
+        source_language = source_language or "grc"
+        source_version = source_version or (manifest["version"] if manifest else "unknown")
+        basis_note = basis_note or "Translate directly from the Septuagint Greek witness."
+    else:
+        source_language = source_language or default["source_language"]
+        source_version = source_version or default["source_version"]
+        basis_note = basis_note or default["basis_note"]
+    return {
+        "basis_type": basis_type,
+        "source_ids": source_ids,
+        "source_language": source_language,
+        "source_version": source_version,
+        "basis_note": basis_note,
+    }
+
+
+def _normalize_variation_basis(layer: str, values: list[str] | None) -> list[str]:
+    items = [str(item).strip() for item in (values or []) if str(item).strip()]
+    if items:
+        return items
+    if layer in {"literal", "phrase"}:
+        return ["source_grounded_rendering"]
+    if layer in {"concept", "lyric", "metered_lyric"}:
+        return ["cadence_or_emphasis_shift"]
+    return ["deterministic_rendering"]
+
+
+def _normalize_preserved_source_images(images: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    for image in images or []:
+        label = str(image.get("label") or "").strip()
+        if not label:
+            continue
+        item = {"label": label}
+        source_id = str(image.get("source_id") or "").strip()
+        if source_id:
+            item["source_id"] = source_id
+        token_ids = [str(token_id).strip() for token_id in list(image.get("token_ids") or []) if str(token_id).strip()]
+        if token_ids:
+            item["token_ids"] = token_ids
+        note = str(image.get("note") or "").strip()
+        if note:
+            item["note"] = note
+        normalized.append(item)
+    return normalized
+
+
+def _candidate_key(text: str) -> str:
+    return " ".join("".join(character.lower() if character.isalnum() else " " for character in text).split())
+
+
+def _candidate_word_set(text: str) -> set[str]:
+    return {word for word in _candidate_key(text).split() if word}
+
+
+def _normalize_candidate_text(text: str, preserve_line_breaks: bool = False) -> str:
+    raw = str(text).strip()
+    if not preserve_line_breaks:
+        return " ".join(raw.split()).strip()
+    lines = [" ".join(line.split()).strip() for line in raw.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
+    return "\n".join(line for line in lines if line).strip()
+
+
+def _too_similar(left: str, right: str) -> bool:
+    left_words = _candidate_word_set(left)
+    right_words = _candidate_word_set(right)
+    if not left_words or not right_words:
+        return False
+    overlap = len(left_words & right_words) / max(len(left_words | right_words), 1)
+    return overlap >= 0.88 and abs(len(left_words) - len(right_words)) <= 1
+
+
+def _distinctness_score(text: str, prior_texts: list[str]) -> float:
+    if not prior_texts:
+        return 1.0
+    overlaps = []
+    current = _candidate_word_set(text)
+    for prior in prior_texts:
+        prior_words = _candidate_word_set(prior)
+        if not current or not prior_words:
+            continue
+        overlaps.append(len(current & prior_words) / max(len(current | prior_words), 1))
+    if not overlaps:
+        return 1.0
+    return round(max(0.0, 1.0 - max(overlaps)), 2)
+
+
+def _normalized_drift_flags(flags: list[dict[str, Any] | str] | None) -> list[dict[str, Any]]:
+    return [poetic_analysis_service.normalize_flag(flag) for flag in (flags or [])]
+
+
+def _candidate_sort_key(candidate: dict[str, Any]) -> tuple[Any, ...]:
+    flags = candidate.get("drift_flags", [])
+    has_high = any(flag.get("severity") == "high" for flag in flags)
+    has_medium = any(flag.get("severity") == "medium" for flag in flags)
+    basis_type = candidate["translation_basis"]["basis_type"]
+    basis_rank = 0 if basis_type == "hebrew_to_english" else 1
+    grounding = float(candidate.get("grounding_confidence", 0.0))
+    distinctness = float(candidate.get("metrics", {}).get("distinctness_score", 0.0))
+    return (has_high, has_medium, -grounding, basis_rank, -distinctness, candidate["text"].casefold())
+
+
+def _normalize_candidates(layer: str, unit: dict[str, Any], candidates: list[dict[str, Any]], candidate_count: int) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    preserve_line_breaks = layer in {"lyric", "metered_lyric"}
+    for candidate in candidates:
+        text = _normalize_candidate_text(candidate.get("text") or "", preserve_line_breaks=preserve_line_breaks)
+        if not text:
+            continue
+        key = _candidate_key(text)
+        if not key or key in seen:
+            continue
+        item = {
+            "text": text,
+            "rationale": _normalize_candidate_text(candidate.get("rationale") or "Generated from grounded source inputs."),
+            "alignment_hints": [str(value).strip() for value in list(candidate.get("alignment_hints") or []) if str(value).strip()],
+            "drift_flags": _normalized_drift_flags(candidate.get("drift_flags")),
+            "metrics": dict(candidate.get("metrics") or {}),
+            "variation_basis": _normalize_variation_basis(layer, candidate.get("variation_basis")),
+            "preserved_source_images": _normalize_preserved_source_images(candidate.get("preserved_source_images")),
+            "differentiator": _normalize_candidate_text(candidate.get("differentiator") or "") or "grounded alternate",
+            "grounding_confidence": round(float(candidate.get("grounding_confidence", candidate.get("metrics", {}).get("grounding_score", 0.72))), 2),
+            "translation_basis": _normalize_translation_basis(candidate.get("translation_basis")),
+        }
+        if not item["preserved_source_images"]:
+            source_image = next((token.get("display_gloss") for token in unit.get("tokens", []) if token.get("display_gloss")), None)
+            if source_image:
+                item["preserved_source_images"] = [{"label": str(source_image), "source_id": item["translation_basis"]["source_ids"][0]}]
+        seen.add(key)
+        normalized.append(item)
+    ranked = sorted(normalized, key=_candidate_sort_key)
+    kept: list[dict[str, Any]] = []
+    prior_texts: list[str] = []
+    for candidate in ranked:
+        if any(_too_similar(candidate["text"], prior) for prior in prior_texts):
+            continue
+        metrics = dict(candidate.get("metrics") or {})
+        metrics.setdefault("grounding_score", candidate["grounding_confidence"])
+        metrics["distinctness_score"] = _distinctness_score(candidate["text"], prior_texts)
+        candidate["metrics"] = metrics
+        kept.append(candidate)
+        prior_texts.append(candidate["text"])
+        if len(kept) >= candidate_count:
+            break
+    return kept
+
+
 def _candidate_to_rendering(
     unit: dict[str, Any],
     layer: str,
@@ -206,12 +406,18 @@ def _candidate_to_rendering(
         alignment_ids=candidate.get("alignment_hints") or _alignment_hints(unit, layer),
         drift_flags=candidate.get("drift_flags", []),
         metrics=candidate.get("metrics", {}),
+        translation_basis=candidate.get("translation_basis"),
+        variation_basis=candidate.get("variation_basis"),
+        preserved_source_images=candidate.get("preserved_source_images"),
+        differentiator=candidate.get("differentiator"),
+        grounding_confidence=candidate.get("grounding_confidence"),
         provenance={
-            "source_ids": ["uxlc", "oshb", "macula"],
+            "source_ids": candidate.get("translation_basis", {}).get("source_ids", ["uxlc", "oshb", "macula"]),
             "generator": "generation-service",
             "model_profile_id": model_profile["model_profile_id"],
             "job_id": job_id,
             "prompt_version": prompt_version,
+            "translation_basis": candidate.get("translation_basis"),
         },
     )
 
@@ -236,6 +442,8 @@ def generate_for_unit(
     force: bool = False,
 ) -> dict[str, Any]:
     _ensure_job_table()
+    if candidate_count < 1 or candidate_count > 5:
+        raise ValidationError("candidate_count must be between 1 and 5")
     unit = registry_service.load_unit(unit_id)
     _assert_layer_rules(unit, layer)
     prompt_version, prompt_template = _load_prompt(layer)
@@ -283,9 +491,10 @@ def generate_for_unit(
     if response.payload["unit_id"] != unit_id or response.payload["layer"] != layer:
         raise ValidationError("Generation output returned the wrong unit or layer")
 
+    normalized_candidates = _normalize_candidates(layer, unit, response.payload["candidates"], candidate_count)
     created_renderings = [
         _candidate_to_rendering(unit, layer, style_profile, model_profile_payload, prompt_version, candidate, job_id)
-        for candidate in response.payload["candidates"]
+        for candidate in normalized_candidates
     ]
     _mark_latest_layer(unit_id, layer)
     job = {
@@ -315,6 +524,11 @@ def generate_for_unit(
                     "alignment_hints": item.get("alignment_ids", []),
                     "drift_flags": item.get("drift_flags", []),
                     "metrics": item.get("metrics", {}),
+                    "variation_basis": item.get("variation_basis", []),
+                    "preserved_source_images": item.get("preserved_source_images", []),
+                    "differentiator": item.get("differentiator"),
+                    "grounding_confidence": item.get("grounding_confidence"),
+                    "translation_basis": item.get("translation_basis"),
                 }
                 for item in created_renderings
             ],

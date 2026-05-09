@@ -11,7 +11,18 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["text", "rationale", "alignment_hints", "drift_flags", "metrics"],
+        "required": [
+          "text",
+          "rationale",
+          "alignment_hints",
+          "drift_flags",
+          "metrics",
+          "variation_basis",
+          "preserved_source_images",
+          "differentiator",
+          "grounding_confidence",
+          "translation_basis"
+        ],
         "additionalProperties": false,
         "properties": {
           "text": { "type": "string" },
@@ -36,7 +47,50 @@
               ]
             }
           },
-          "metrics": { "type": "object" }
+          "metrics": { "type": "object" },
+          "variation_basis": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+          "preserved_source_images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label"],
+              "additionalProperties": false,
+              "properties": {
+                "label": { "type": "string" },
+                "source_id": { "type": "string" },
+                "token_ids": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "differentiator": { "type": "string" },
+          "grounding_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "translation_basis": {
+            "type": "object",
+            "required": ["basis_type", "source_ids", "source_language", "source_version", "basis_note"],
+            "additionalProperties": false,
+            "properties": {
+              "basis_type": {
+                "type": "string",
+                "enum": ["hebrew_to_english", "septuagint_greek_to_english"]
+              },
+              "source_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 1
+              },
+              "source_language": { "type": "string" },
+              "source_version": { "type": "string" },
+              "basis_note": { "type": "string" }
+            }
+          }
         }
       }
     }
