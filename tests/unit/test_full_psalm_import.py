@@ -30,6 +30,8 @@ def test_vendored_import_seeds_full_psalms_corpus() -> None:
         assert manifests["uxlc"]["import_hash"] != "fixture-uxlc"
         assert manifests["oshb"]["import_hash"] != "fixture-oshb"
         assert manifests["macula"]["import_hash"] != "fixture-macula"
+        assert manifests["lxx"]["allowed_for_generation"] is True
+        assert manifests["lxx"]["source_language"] == "grc"
         assert manifests["kjv"]["license"] == "Public Domain"
         assert manifests["kjv"]["allowed_for_generation"] is False
         assert manifests["asv"]["allowed_for_export"] is True
@@ -37,15 +39,21 @@ def test_vendored_import_seeds_full_psalms_corpus() -> None:
 
         verse_two = registry_service.load_unit("ps001.v002.a")
         witnesses = {item["source_id"]: item for item in verse_two["witnesses"]}
-        assert set(witnesses) == {"kjv", "asv", "web"}
+        assert set(witnesses) == {"kjv", "asv", "web", "lxx"}
         assert witnesses["kjv"]["text"].startswith("But his delight")
         assert "law of the LORD" in witnesses["kjv"]["text"]
         assert witnesses["asv"]["text"].startswith("But his delight is in the law")
         assert witnesses["web"]["text"].startswith("but his delight is in")
         assert "On his law he meditates day and night" in witnesses["web"]["text"]
+        assert witnesses["lxx"]["language"] == "grc"
+        assert witnesses["lxx"]["witness_role"] == "septuagint_greek"
+        assert witnesses["lxx"]["source_version"] == "macula-lxx-2026.04"
+        assert witnesses["lxx"]["text"]
 
         first_token = verse_two["tokens"][0]
         second_token = verse_two["tokens"][1]
+        assert first_token["greek"] is not None
+        assert second_token["greek"] is not None
         assert first_token["gloss_parts"] == ["(dm)"]
         assert first_token["display_gloss"] == "but"
         assert first_token["compiler_features"]["conjunction_role"] == "contrastive"

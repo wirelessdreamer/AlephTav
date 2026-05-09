@@ -176,6 +176,18 @@ test('layered english flow renders populated content and falls back when the sel
   await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare right' }) }).getByText('rnd.ps051.v001.a.phrase.alt.0001')).toBeVisible();
 });
 
+test('alternate review surfaces basis filters and source badges', async ({ page }) => {
+  await page.goto('/#/workbench');
+
+  const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
+  const layerSelect = page.locator('label').filter({ hasText: 'Workflow layer' }).locator('select');
+  await psalmSelect.selectOption('ps023');
+  await layerSelect.selectOption('lyric');
+  await page.getByRole('button', { name: 'compare' }).click();
+  await expect(page.locator('label').filter({ hasText: 'Basis' }).locator('select')).toBeVisible();
+  await expect(page.getByText('From Hebrew')).toBeVisible();
+});
+
 test('selected untranslated unit opens guided translation controls in the right pane', async ({ page }) => {
   await page.goto('/#/workbench');
 

@@ -31,7 +31,18 @@ class FakeAdapter:
                         "rationale": f"{layer} rationale {index + 1}",
                         "alignment_hints": [f"aln.{unit_id}.{layer}.{index + 1:04d}"],
                         "drift_flags": [],
-                        "metrics": {"syllables": 4 + index},
+                        "metrics": {"syllables": 4 + index, "grounding_score": 0.9 - (index * 0.05)},
+                        "variation_basis": ["source_grounded_rendering" if index == 0 else "cadence_or_emphasis_shift"],
+                        "preserved_source_images": [{"label": "heavens" if index == 0 else "glory", "source_id": "uxlc"}],
+                        "differentiator": "best grounded English" if index == 0 else "alternate emphasis",
+                        "grounding_confidence": 0.9 - (index * 0.05),
+                        "translation_basis": {
+                            "basis_type": "hebrew_to_english" if index == 0 else "septuagint_greek_to_english",
+                            "source_ids": ["uxlc", "oshb", "macula"] if index == 0 else ["lxx", "macula"],
+                            "source_language": "he" if index == 0 else "grc",
+                            "source_version": "fixture-2026.04",
+                            "basis_note": "Fixture Hebrew basis" if index == 0 else "Fixture Septuagint basis",
+                        },
                     }
                     for index in range(candidate_count)
                 ],
@@ -109,14 +120,36 @@ class FakeComposerAdapter:
                                 "rationale": f"{stage} rationale 1",
                                 "alignment_hints": ["seed-1"],
                                 "drift_flags": [],
-                                "metrics": {"confidence": 0.81},
+                                "metrics": {"confidence": 0.81, "grounding_score": 0.84},
+                                "variation_basis": ["source_grounded_rendering"],
+                                "preserved_source_images": [{"label": "pit", "source_id": "uxlc"}],
+                                "differentiator": "best grounded English",
+                                "grounding_confidence": 0.84,
+                                "translation_basis": {
+                                    "basis_type": "hebrew_to_english",
+                                    "source_ids": ["uxlc", "oshb", "macula"],
+                                    "source_language": "he",
+                                    "source_version": "fixture-2026.04",
+                                    "basis_note": "Fixture Hebrew basis",
+                                },
                             },
                             {
                                 "text": f"{stage} option 2",
                                 "rationale": f"{stage} rationale 2",
                                 "alignment_hints": ["seed-2"],
                                 "drift_flags": ["low-confidence"],
-                                "metrics": {"confidence": 0.66},
+                                "metrics": {"confidence": 0.66, "grounding_score": 0.72},
+                                "variation_basis": ["symbolic_recast"],
+                                "preserved_source_images": [{"label": "darkness", "source_id": "lxx"}],
+                                "differentiator": "Septuagint pressure",
+                                "grounding_confidence": 0.72,
+                                "translation_basis": {
+                                    "basis_type": "septuagint_greek_to_english",
+                                    "source_ids": ["lxx", "macula"],
+                                    "source_language": "grc",
+                                    "source_version": "fixture-2026.04",
+                                    "basis_note": "Fixture Septuagint basis",
+                                },
                             },
                         ],
                     }
@@ -370,6 +403,57 @@ def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch)
     assert payload["chunks"][0]["chunk_id"] == "chunk-1"
     assert payload["chunks"][0]["candidates"][0]["text"] == "phrase option 1"
     assert payload["chunks"][0]["candidates"][1]["drift_flags"] == ["low-confidence"]
+    assert payload["chunks"][0]["candidates"][0]["translation_basis"]["basis_type"] == "hebrew_to_english"
+    assert payload["chunks"][0]["candidates"][1]["translation_basis"]["basis_type"] == "septuagint_greek_to_english"
+    assert payload["chunks"][0]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
+    assert payload["chunks"][0]["candidates"][0]["source_anchor"]["anchor_text"] == "Blessed the man"
+
+
+def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
+    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FakeComposerAdapter(profile))
+
+    response = client.post(
+        "/units/ps001.v001.a/composer-suggestions",
+        json={
+            "stage": "phrase",
+            "candidate_count": 3,
+            "basis_filter": "septuagint-derived",
+            "chunks": [
+                {
+                    "chunk_id": "chunk-1",
+                    "start": 0,
+                    "end": 1,
+                    "text": "Blessed the man",
+                    "source_text": "×Ö·×©×Ö°×¨Öµ×™ ×”Ö¸×Ö´×™×©×",
+                    "confidence": 0.82,
+                    "confidence_reasons": ["fixture seed"],
+                }
+            ],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    candidate = payload["chunks"][0]["candidates"][0]
+    assert candidate["text"] == "phrase option 2"
+    assert candidate["rationale"] == "phrase rationale 2"
+    assert candidate["alignment_hints"] == ["seed-2"]
+    assert candidate["drift_flags"] == ["low-confidence"]
+    assert candidate["metrics"] == {"confidence": 0.66, "distinctness_score": 1.0, "grounding_score": 0.72}
+    assert candidate["variation_basis"] == ["symbolic_recast"]
+    assert candidate["preserved_source_images"] == [{"label": "darkness", "source_id": "lxx"}]
+    assert candidate["differentiator"] == "Septuagint pressure"
+    assert candidate["grounding_confidence"] == 0.72
+    assert candidate["translation_basis"] == {
+        "basis_type": "septuagint_greek_to_english",
+        "source_ids": ["lxx", "macula"],
+        "source_language": "grc",
+        "source_version": "fixture-2026.04",
+        "basis_note": "Fixture Septuagint basis",
+    }
+    assert candidate["delivery_profile"] == "source_grounded_phrase"
+    assert candidate["source_anchor"]["anchor_text"] == "Blessed the man"
+    assert candidate["source_anchor"]["source_language"] == "grc"
 
 
 def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatch) -> None:
@@ -482,10 +566,56 @@ def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None
     assert first.json()["input_hash"] == second.json()["input_hash"]
     assert first.json()["runtime_metadata"]["candidate_count"] == 2
     assert len(first.json()["output"]["candidates"]) == 2
+    assert first.json()["output"]["candidates"][0]["translation_basis"]["basis_type"] == "hebrew_to_english"
+    assert first.json()["output"]["candidates"][1]["translation_basis"]["basis_type"] == "septuagint_greek_to_english"
 
     unit = registry_service.load_unit("ps019.v001.a")
     phrase_renderings = [item for item in unit["renderings"] if item["layer"] == "phrase" and item["status"] == "proposed"]
     assert len(phrase_renderings) == 2
+
+
+def test_alternates_endpoint_can_filter_by_basis() -> None:
+    first = client.post(
+        "/units/ps019.v001.a/alternates",
+        json={
+            "layer": "lyric",
+            "text": "Hebrew-grounded alternate",
+            "rationale": "Fixture Hebrew alternate",
+            "translation_basis": {
+                "basis_type": "hebrew_to_english",
+                "source_ids": ["uxlc", "oshb", "macula"],
+                "source_language": "he",
+                "source_version": "fixture-2026.04",
+                "basis_note": "Fixture Hebrew basis",
+            },
+        },
+    )
+    second = client.post(
+        "/units/ps019.v001.a/alternates",
+        json={
+            "layer": "lyric",
+            "text": "Septuagint-grounded alternate",
+            "rationale": "Fixture Greek alternate",
+            "translation_basis": {
+                "basis_type": "septuagint_greek_to_english",
+                "source_ids": ["lxx", "macula"],
+                "source_language": "grc",
+                "source_version": "fixture-2026.04",
+                "basis_note": "Fixture Septuagint basis",
+            },
+            "differentiator": "Septuagint pressure",
+        },
+    )
+
+    assert first.status_code == 200
+    assert second.status_code == 200
+
+    filtered = client.get(
+        "/units/ps019.v001.a/alternates",
+        params={"layer": "lyric", "basis_filter": "septuagint-derived"},
+    )
+    assert filtered.status_code == 200
+    assert [item["text"] for item in filtered.json()] == ["Septuagint-grounded alternate"]
 
 
 def test_rerun_invalidates_downstream_without_touching_locked_upstream(monkeypatch) -> None:
