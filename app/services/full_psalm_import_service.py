@@ -47,6 +47,7 @@ SOURCE_IMPORTED_AT = "2026-04-17T00:00:00Z"
 MAX_SAME_PSALM_OCCURRENCES = 12
 MAX_CROSS_PSALM_OCCURRENCES = 24
 POSSESSIVE_WORDS = {"my", "mine", "your", "yours", "his", "her", "hers", "its", "our", "ours", "their", "theirs"}
+ARTICLES = {"the", "a", "an"}
 TEMPORAL_WORDS = {"day", "night", "morning", "evening"}
 WITNESS_SOURCES = {
     "kjv": {
@@ -85,6 +86,16 @@ WITNESS_SOURCES = {
         "source_url_template": "https://ebible.org/engwebp/PSA{psalm:03d}.htm",
         "notes": "Public-domain English witness imported from eBible.org VPL chapter files",
     },
+}
+LXX_SOURCE = {
+    "source_id": "lxx",
+    "name": "Septuagint Greek (MACULA-aligned witness)",
+    "version": "macula-lxx-2026.04",
+    "license": "CC BY 4.0",
+    "upstream_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+    "versionTitle": "Septuagint Greek",
+    "source_url_template": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
+    "notes": "Greek witness material aligned per token in MACULA lowfat data; generation-enabled for Greek-to-English ideation.",
 }
 
 
@@ -138,10 +149,43 @@ def _clean_display_fragment(value: str | None) -> str | None:
         return None
     if PARENTHETICAL_GLOSS_RE.match(normalized):
         return None
-    normalized = normalized.replace("[is].", "").replace("[was].", "")
-    normalized = normalized.replace("[", "").replace("]", "")
+    normalized = re.sub(r"\[(.*?)\]", r"\1", normalized)
     normalized = normalized.replace(".", " ")
     normalized = _collapse_whitespace(normalized)
+    return normalized or None
+
+
+def _dedupe_adjacent_words(value: str) -> str:
+    return re.sub(
+        r"\b(i|you|he|she|it|we|they|me|him|her|us|them|my|your|his|its|our|their)\s+\1\b",
+        r"\1",
+        value,
+        flags=re.IGNORECASE,
+    )
+
+
+def _normalize_display_phrase(value: str | None) -> str | None:
+    normalized = _collapse_whitespace(value)
+    if not normalized:
+        return None
+    normalized = normalized.replace(".", " ")
+    normalized = re.sub(
+        r"^(am|are|is|was)\s+(?=(in|on|to|from|with|for|of|upon|under|over|out of|according to)\b)",
+        "",
+        normalized,
+        flags=re.IGNORECASE,
+    )
+    words = normalized.split()
+    if len(words) >= 2 and words[-1].casefold() in ARTICLES:
+        words = [words[-1], *words[:-1]]
+    if len(words) >= 2 and words[-1].casefold() in POSSESSIVE_WORDS:
+        if not any(word.casefold() == words[-1].casefold() for word in words[:-1]):
+            if words[0].casefold() in {"and", "or", "but"} and len(words) >= 3:
+                words = [words[0], words[-1], *words[1:-1]]
+            else:
+                words = [words[-1], *words[:-1]]
+    normalized = _collapse_whitespace(" ".join(words))
+    normalized = _dedupe_adjacent_words(normalized)
     return normalized or None
 
 
@@ -158,13 +202,54 @@ def _component_display_fragment(component: dict[str, Any]) -> str | None:
     return _clean_display_fragment(component.get("english"))
 
 
+def _score_display_candidate(candidate: str | None, *, suffix_text: str | None, part_of_speech: str | None, divine_name: bool) -> int:
+    if not candidate:
+        return -10_000
+    lowered = candidate.casefold()
+    score = 0
+    if re.search(r"[\u0590-\u05FF]", candidate):
+        score -= 100
+    if re.search(r"\b(i|you|he|she|it|we|they|me|him|her|us|them|my|your|his|its|our|their)\s+\1\b", lowered):
+        score -= 60
+    if re.search(r"\b(am|are|is|was)$", lowered):
+        score -= 24
+    if re.search(r"\b(the|a|an|and|or|but|of|to|in|on|with|from|for)\b$", lowered):
+        score -= 20
+    if re.search(r"\b[a-z][a-z'/-]*\s+(the|a|an)\b$", lowered) and not lowered.startswith("to the "):
+        score -= 14
+    if " the " in lowered:
+        score += 3
+    if part_of_speech == "verb" and re.search(r"\b(i|you|he|she|it|we|they)\b$", lowered):
+        score -= 14
+    if part_of_speech in {"noun", "adjective"} and re.search(r"\b(my|your|his|her|its|our|their)\b$", lowered):
+        score -= 12
+    if suffix_text:
+        occurrences = len(re.findall(rf"\b{re.escape(suffix_text.casefold())}\b", lowered))
+        if occurrences == 1:
+            score += 8
+        elif occurrences > 1:
+            score -= 20
+    if divine_name and re.search(r"\b(yahweh|lord)\b", lowered):
+        score += 8
+    score += min(len(candidate.split()), 4)
+    return score
+
+
 def _derive_display_gloss(components: list[dict[str, Any]]) -> str | None:
     conjunctions: list[str] = []
     prepositions: list[str] = []
     bases: list[str] = []
     suffixes: list[str] = []
     postfixes: list[str] = []
+    gloss_parts: list[str] = []
+    english_parts: list[str] = []
     for component in components:
+        cleaned_gloss = _clean_display_fragment(component.get("gloss"))
+        cleaned_english = _clean_display_fragment(component.get("english"))
+        if cleaned_gloss:
+            gloss_parts.append(cleaned_gloss)
+        if cleaned_english:
+            english_parts.append(cleaned_english)
         fragment = _component_display_fragment(component)
         if not fragment:
             continue
@@ -181,12 +266,27 @@ def _derive_display_gloss(components: list[dict[str, Any]]) -> str | None:
             bases.append(fragment)
     if suffixes and bases:
         anchor_index = len(bases) - 1 if prepositions else 0
-        bases[anchor_index] = f"{suffixes[0]} {bases[anchor_index]}"
+        if re.search(rf"\b{re.escape(suffixes[0].casefold())}\b", bases[anchor_index].casefold()):
+            bases[anchor_index] = bases[anchor_index]
+        else:
+            bases[anchor_index] = f"{suffixes[0]} {bases[anchor_index]}"
     ordered = [*conjunctions[:1], *prepositions[:1], *bases, *postfixes]
     if not ordered:
         ordered = [_clean_display_fragment(component.get("english")) for component in components]
-    display = _collapse_whitespace(" ".join(part for part in ordered if part))
-    return display or None
+    candidates = [
+        _normalize_display_phrase(" ".join(part for part in ordered if part)),
+        _normalize_display_phrase(" ".join(part for part in english_parts if part)),
+        _normalize_display_phrase(" ".join(part for part in gloss_parts if part)),
+    ]
+    suffix_text = suffixes[0] if suffixes else None
+    part_of_speech = next((component.get("pos") for component in components if component.get("pos") not in {"conjunction", "particle", "preposition"}), None)
+    divine_name = any(component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068" for component in components)
+    best = max(
+        (candidate for candidate in candidates if candidate),
+        key=lambda candidate: _score_display_candidate(candidate, suffix_text=suffix_text, part_of_speech=part_of_speech, divine_name=divine_name),
+        default=None,
+    )
+    return best or None
 
 
 def _derive_compiler_features(components: list[dict[str, Any]], word_sense: str | None, display_gloss: str | None) -> dict[str, Any]:
@@ -348,6 +448,8 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
                     "lemmas": [],
                     "roles": [],
                     "glosses": [],
+                    "greek": [],
+                    "greekstrong": [],
                     "components": [],
                     "pos": [],
                     "stems": [],
@@ -365,6 +467,12 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
             gloss = _collapse_whitespace(word.attrib.get("gloss"))
             if gloss:
                 bucket["glosses"].append(gloss)
+            greek = _collapse_whitespace(word.attrib.get("greek"))
+            if greek:
+                bucket["greek"].append(greek)
+            greekstrong = _collapse_whitespace(word.attrib.get("greekstrong"))
+            if greekstrong:
+                bucket["greekstrong"].append(greekstrong)
             pos = _collapse_whitespace(word.attrib.get("pos"))
             if pos:
                 bucket["pos"].append(pos)
@@ -402,8 +510,26 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
             "compiler_features": _derive_compiler_features(payload["components"], word_sense, display_gloss),
             "part_of_speech": payload["pos"][-1] if payload["pos"] else None,
             "stem": payload["stems"][-1] if payload["stems"] else None,
+            "greek": _collapse_whitespace(" ".join(payload["greek"])) or None,
+            "greek_strong": payload["greekstrong"][-1] if payload["greekstrong"] else None,
         }
     return normalized
+
+
+def _load_lxx_verses(macula_groups: dict[tuple[int, int, int], dict[str, Any]]) -> dict[tuple[int, int], str]:
+    verse_words: dict[tuple[int, int], list[tuple[int, str]]] = defaultdict(list)
+    for (psalm_number, verse_number, word_number), payload in macula_groups.items():
+        greek = _collapse_whitespace(payload.get("greek"))
+        if not greek:
+            continue
+        verse_words[(psalm_number, verse_number)].append((word_number, greek))
+    verses: dict[tuple[int, int], str] = {}
+    for key, items in verse_words.items():
+        ordered = [word for _, word in sorted(items, key=lambda item: item[0])]
+        text = _collapse_whitespace(" ".join(ordered))
+        if text:
+            verses[key] = text
+    return verses
 
 
 def _load_witness_verses(source_id: str) -> dict[tuple[int, int], str]:
@@ -483,6 +609,8 @@ def _build_unit(
             "surface": oshb_token["surface"],
             "normalized": _normalized_hebrew(oshb_token["surface"]),
             "transliteration": macula.get("transliteration"),
+            "greek": macula.get("greek"),
+            "greek_strong": macula.get("greek_strong"),
             "lemma": macula.get("lemma"),
             "strong": oshb_token.get("strong"),
             "morph_code": oshb_token.get("morph_code"),
@@ -515,10 +643,26 @@ def _build_unit(
             {
                 "source_id": source_id,
                 "versionTitle": config["versionTitle"],
+                "source_version": config["version"],
                 "language": "en",
+                "witness_role": "english_witness",
                 "ref": ref,
                 "source_url": config["source_url_template"].format(psalm=psalm_number),
                 "text": text,
+            }
+        )
+    lxx_text = witness_verses.get("lxx", {}).get((psalm_number, verse_number))
+    if lxx_text:
+        witnesses.append(
+            {
+                "source_id": "lxx",
+                "versionTitle": LXX_SOURCE["versionTitle"],
+                "source_version": LXX_SOURCE["version"],
+                "language": "grc",
+                "witness_role": "septuagint_greek",
+                "ref": ref,
+                "source_url": LXX_SOURCE["source_url_template"],
+                "text": lxx_text,
             }
         )
     return {
@@ -628,6 +772,9 @@ def _sync_source_manifests() -> None:
             "source_id": "macula",
             "name": "MACULA Hebrew",
             "version": "vendored-2026.04",
+            "source_language": "he",
+            "basis_role": "lexical_enrichment",
+            "version_pinned": True,
             "license": "CC BY 4.0",
             "upstream_url": "https://github.com/Clear-Bible/macula-hebrew/tree/main/WLC/lowfat",
             "imported_at": SOURCE_IMPORTED_AT,
@@ -637,6 +784,22 @@ def _sync_source_manifests() -> None:
             "allowed_for_export": True,
             "notes": "Syntax-role and lexical gloss enrichment for Psalms",
         },
+        {
+            "source_id": "lxx",
+            "name": LXX_SOURCE["name"],
+            "version": LXX_SOURCE["version"],
+            "source_language": "grc",
+            "basis_role": "alternate_ideation_source",
+            "version_pinned": True,
+            "license": LXX_SOURCE["license"],
+            "upstream_url": LXX_SOURCE["upstream_url"],
+            "imported_at": SOURCE_IMPORTED_AT,
+            "import_hash": _hash_paths(macula_files),
+            "allowed_for_generation": True,
+            "allowed_for_display": True,
+            "allowed_for_export": True,
+            "notes": LXX_SOURCE["notes"],
+        },
     ]
     for source_id, config in WITNESS_SOURCES.items():
         manifests.append(
@@ -644,6 +807,9 @@ def _sync_source_manifests() -> None:
                 "source_id": source_id,
                 "name": config["name"],
                 "version": config["version"],
+                "source_language": "en",
+                "basis_role": "english_witness",
+                "version_pinned": True,
                 "license": config["license"],
                 "upstream_url": config["upstream_url"],
                 "imported_at": SOURCE_IMPORTED_AT,
@@ -670,6 +836,7 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
     oshb_tokens = _load_oshb_tokens()
     macula_groups = _load_macula_groups()
     witness_verses = {source_id: _load_witness_verses(source_id) for source_id in WITNESS_SOURCES}
+    witness_verses["lxx"] = _load_lxx_verses(macula_groups)
 
     units: list[dict[str, Any]] = []
     by_psalm: dict[int, list[dict[str, Any]]] = defaultdict(list)

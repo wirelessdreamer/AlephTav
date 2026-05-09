@@ -55,6 +55,8 @@ def post_composer_suggestions(unit_id: str, payload: dict) -> dict:
             chunks=list(payload.get("chunks") or []),
             candidate_count=int(payload.get("candidate_count", 3)),
             model_profile=payload.get("model_profile"),
+            style_profile=payload.get("style_profile"),
+            basis_filter=payload.get("basis_filter"),
         )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

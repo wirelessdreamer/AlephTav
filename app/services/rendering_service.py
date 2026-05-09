@@ -9,6 +9,7 @@ from app.services import alignment_service, audit_service, poetic_analysis_servi
 
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
+BASIS_FILTERS = {"hebrew-derived", "septuagint-derived"}
 
 
 def _rendering_unit_id(rendering_id_value: str) -> str:
@@ -67,11 +68,99 @@ def _matches_style_filter(rendering: dict[str, Any], style_filter: str | None) -
     return bool(accepted & tags) or style_goal in accepted or metric_profile in accepted
 
 
+def _default_translation_basis() -> dict[str, Any]:
+    project = registry_service.load_project()
+    manifest = next((item for item in project.get("source_manifests", []) if item["source_id"] == "uxlc"), None)
+    return {
+        "basis_type": "hebrew_to_english",
+        "source_ids": ["uxlc", "oshb", "macula"],
+        "source_language": "he",
+        "source_version": manifest["version"] if manifest else "unknown",
+        "basis_note": "Canonical Hebrew-first translation basis.",
+    }
+
+
+def _normalize_translation_basis(
+    translation_basis: dict[str, Any] | None,
+    provenance: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    payload = dict(translation_basis or provenance.get("translation_basis", {}) if provenance else translation_basis or {})
+    default = _default_translation_basis()
+    if not payload:
+        payload = default
+    basis_type = str(payload.get("basis_type") or default["basis_type"])
+    if basis_type == "septuagint_greek_to_english":
+        manifest = next((item for item in registry_service.load_project().get("source_manifests", []) if item["source_id"] == "lxx"), None)
+        source_ids = payload.get("source_ids") or ["lxx", "macula"]
+        source_language = str(payload.get("source_language") or "grc")
+        source_version = str(payload.get("source_version") or (manifest["version"] if manifest else "unknown"))
+        basis_note = str(payload.get("basis_note") or "Translate directly from the Septuagint Greek witness.")
+    else:
+        source_ids = payload.get("source_ids") or default["source_ids"]
+        source_language = str(payload.get("source_language") or default["source_language"])
+        source_version = str(payload.get("source_version") or default["source_version"])
+        basis_note = str(payload.get("basis_note") or default["basis_note"])
+    return {
+        "basis_type": basis_type,
+        "source_ids": [str(source_id) for source_id in source_ids],
+        "source_language": source_language,
+        "source_version": source_version,
+        "basis_note": basis_note,
+    }
+
+
+def _normalize_variation_basis(variation_basis: list[str] | None, layer: str) -> list[str]:
+    values = [str(item).strip() for item in (variation_basis or []) if str(item).strip()]
+    if values:
+        return values
+    if layer in {"literal", "phrase"}:
+        return ["source_grounded_rendering"]
+    if layer in {"concept", "lyric", "metered_lyric", "parallelism_lyric"}:
+        return ["cadence_or_emphasis_shift"]
+    return ["deterministic_rendering"]
+
+
+def _normalize_preserved_source_images(images: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    for image in images or []:
+        label = str(image.get("label") or "").strip()
+        if not label:
+            continue
+        item = {"label": label}
+        source_id = str(image.get("source_id") or "").strip()
+        if source_id:
+            item["source_id"] = source_id
+        token_ids = [str(token_id).strip() for token_id in list(image.get("token_ids") or []) if str(token_id).strip()]
+        if token_ids:
+            item["token_ids"] = token_ids
+        note = str(image.get("note") or "").strip()
+        if note:
+            item["note"] = note
+        normalized.append(item)
+    return normalized
+
+
+def _matches_basis_filter(rendering: dict[str, Any], basis_filter: str | None) -> bool:
+    if not basis_filter:
+        return True
+    if basis_filter not in BASIS_FILTERS:
+        raise ValidationError(f"Unsupported basis_filter: {basis_filter}")
+    basis_type = str((rendering.get("translation_basis") or {}).get("basis_type") or "").strip()
+    if not basis_type:
+        basis_type = str(((rendering.get("provenance") or {}).get("translation_basis") or {}).get("basis_type") or "").strip()
+    if not basis_type:
+        basis_type = "hebrew_to_english"
+    if basis_filter == "hebrew-derived":
+        return basis_type == "hebrew_to_english"
+    return basis_type == "septuagint_greek_to_english"
+
+
 def list_renderings(
     unit_id: str,
     alternates_only: bool = False,
     layer: str | None = None,
     style_filter: str | None = None,
+    basis_filter: str | None = None,
     release_approved_only: bool = False,
 ) -> list[dict[str, Any]]:
     unit = registry_service.load_unit(unit_id)
@@ -86,6 +175,8 @@ def list_renderings(
         renderings = [item for item in renderings if item["layer"] == layer]
     if style_filter:
         renderings = [item for item in renderings if _matches_style_filter(item, style_filter)]
+    if basis_filter:
+        renderings = [item for item in renderings if _matches_basis_filter(item, basis_filter)]
     if release_approved_only:
         renderings = [item for item in renderings if _has_release_approval(item)]
     return _sort_renderings(renderings)
@@ -104,6 +195,11 @@ def create_rendering(
     drift_flags: list[dict[str, Any] | str] | None = None,
     metrics: dict[str, Any] | None = None,
     provenance: dict[str, Any] | None = None,
+    translation_basis: dict[str, Any] | None = None,
+    variation_basis: list[str] | None = None,
+    preserved_source_images: list[dict[str, Any]] | None = None,
+    differentiator: str | None = None,
+    grounding_confidence: float | None = None,
     style_goal: str | None = None,
     metric_profile: str | None = None,
     issue_links: list[str] | None = None,
@@ -124,6 +220,7 @@ def create_rendering(
         existing_metrics=metrics,
     )
     existing_ids = [item["rendering_id"] for item in unit.get("renderings", [])]
+    normalized_basis = _normalize_translation_basis(translation_basis, provenance)
     item = {
         "rendering_id": rendering_id(unit_id, layer, "alt", existing_ids),
         "unit_id": unit_id,
@@ -136,7 +233,15 @@ def create_rendering(
         "drift_flags": analyzed_flags,
         "metrics": analyzed_metrics,
         "rationale": rationale,
-        "provenance": provenance or {"source_ids": ["uxlc", "oshb", "macula"], "generator": created_by},
+        "variation_basis": _normalize_variation_basis(variation_basis, layer),
+        "preserved_source_images": _normalize_preserved_source_images(preserved_source_images),
+        "differentiator": differentiator,
+        "grounding_confidence": round(float(grounding_confidence), 2) if grounding_confidence is not None else None,
+        "translation_basis": normalized_basis,
+        "provenance": {
+            **(provenance or {"source_ids": normalized_basis["source_ids"], "generator": created_by}),
+            "translation_basis": normalized_basis,
+        },
         "style_goal": style_goal,
         "metric_profile": metric_profile,
         "issue_links": issue_links or [],

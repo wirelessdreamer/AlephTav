@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+import os
 from pathlib import Path
 
 
@@ -28,7 +29,7 @@ class Settings:
 
 
 def get_settings() -> Settings:
-    root = Path(__file__).resolve().parents[2]
+    root = Path(os.environ.get("ALEPHTAV_ROOT_DIR", Path(__file__).resolve().parents[2])).resolve()
     settings = Settings(
         root_dir=root,
         content_dir=root / "content",

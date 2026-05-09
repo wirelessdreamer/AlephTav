@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -19,8 +21,18 @@ from app.api.routes import (
     tokens,
     units,
 )
+from app.services import llama_runtime_service
 
-app = FastAPI(title="Psalms Copyleft Workbench API", version="0.1.0")
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    try:
+        yield
+    finally:
+        llama_runtime_service.shutdown_all()
+
+
+app = FastAPI(title="Psalms Copyleft Workbench API", version="0.1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

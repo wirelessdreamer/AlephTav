@@ -13,6 +13,7 @@ def get_renderings(
     unit_id: str,
     layer: str | None = Query(default=None),
     style_filter: str | None = Query(default=None),
+    basis_filter: str | None = Query(default=None),
     release_approved_only: bool = Query(default=False),
 ) -> list[dict]:
     try:
@@ -20,6 +21,7 @@ def get_renderings(
             unit_id,
             layer=layer,
             style_filter=style_filter,
+            basis_filter=basis_filter,
             release_approved_only=release_approved_only,
         )
     except Exception as error:  # pragma: no cover
@@ -42,6 +44,11 @@ def create_rendering(unit_id: str, payload: dict) -> dict:
             drift_flags=payload.get("drift_flags"),
             metrics=payload.get("metrics"),
             provenance=payload.get("provenance"),
+            translation_basis=payload.get("translation_basis"),
+            variation_basis=payload.get("variation_basis"),
+            preserved_source_images=payload.get("preserved_source_images"),
+            differentiator=payload.get("differentiator"),
+            grounding_confidence=payload.get("grounding_confidence"),
             style_goal=payload.get("style_goal"),
             metric_profile=payload.get("metric_profile"),
             issue_links=payload.get("issue_links"),
