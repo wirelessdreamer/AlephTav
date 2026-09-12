@@ -263,7 +263,11 @@ def test_no_source_basis_is_accepted_when_the_material_is_declared() -> None:
         english_rendering_id=english_id,
         accuracy_rating="no_source_basis",
         non_source_material=[
-            {"text": "[6/8]", "kind": "meter", "note": "Arrangement decision; Psalm 1 gives no meter."}
+            {
+                "text": "[6/8]",
+                "kind": "meter",
+                "note": "Arrangement decision; Psalm 1 gives no meter.",
+            }
         ],
     )
 
@@ -343,7 +347,9 @@ def test_units_carrying_the_new_evidence_fields_still_validate() -> None:
                 "note": "Bound phrase rendered as a unit.",
             }
         ],
-        non_source_material=[{"text": "[Verse 1]", "kind": "section_label", "note": "Arrangement."}],
+        non_source_material=[
+            {"text": "[Verse 1]", "kind": "section_label", "note": "Arrangement."}
+        ],
         analyzed_text_hash="deadbeef",
     )
 
