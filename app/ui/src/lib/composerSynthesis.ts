@@ -317,12 +317,18 @@ function scoreTokenCandidate(token: Token, text: string): number {
   }
 
   score += Math.min(words(text).length, 4);
-  if (token.part_of_speech === 'verb') {
+  if (isVerbToken(token)) {
     if (/^(i|you|he|she|it|we|they)\b/.test(lowered)) {
       score += 12;
     }
     if (/\b(i|you|he|she|it|we|they)\b$/.test(lowered)) {
       score -= 12;
+    }
+    if (/^(me|him|her|us|them)\s+/.test(lowered)) {
+      score -= 14;
+    }
+    if (/\b(me|him|her|us|them)\b$/.test(lowered)) {
+      score += 8;
     }
   }
   if ((token.part_of_speech === 'noun' || token.part_of_speech === 'adjective') && /^(my|your|his|her|its|our|their)\b/.test(lowered)) {
@@ -486,7 +492,25 @@ function isRelativeToken(token: Token): boolean {
 
 function isNegationToken(token: Token): boolean {
   const lowered = tokenGlossText(token, { preserveLeadingConjunction: true }).toLowerCase();
-  return lowered === 'not' || lowered === 'nor' || lowered === 'no';
+  if (lowered === 'not' || lowered === 'nor' || lowered === 'no') {
+    return true;
+  }
+  if (/^(do not|and do not|or not|and not|nor)$/.test(lowered)) {
+    return true;
+  }
+  const parts = featureParts(token).map((part) => part.toLowerCase());
+  return parts.includes('not') || parts.includes('nor');
+}
+
+function negationConjunctionLead(token: Token): string {
+  const lowered = tokenGlossText(token, { preserveLeadingConjunction: true }).toLowerCase();
+  if (/\band\b/.test(lowered) || /^(or|nor)\b/.test(lowered)) {
+    return 'and ';
+  }
+  if (inflateFeatures(token).conjunction_role === 'additive' || inflateFeatures(token).conjunction_role === 'disjunctive') {
+    return 'and ';
+  }
+  return '';
 }
 
 function negationWord(token: Token): string {
@@ -788,6 +812,39 @@ function renderVocativeChunk(tokens: Token[]): string | null {
   return normalizeComposerText(`${tokenMeaning(tokens[0])}, ${tail}`);
 }
 
+function renderVocativeNegImperativeChunk(tokens: Token[]): string | null {
+  let idx = 0;
+  let vocative: Token | null = null;
+  if (tokens[idx] && isVocativeLikeToken(tokens[idx])) {
+    vocative = tokens[idx];
+    idx += 1;
+  }
+  if (!tokens[idx] || !isNegationToken(tokens[idx])) {
+    return null;
+  }
+  const negToken = tokens[idx];
+  idx += 1;
+  if (!tokens[idx] || !isPrepositionalLead(tokens[idx])) {
+    return null;
+  }
+  const prepGroup: Token[] = [tokens[idx]];
+  idx += 1;
+  while (tokens[idx] && isComplementToken(tokens[idx])) {
+    prepGroup.push(tokens[idx]);
+    idx += 1;
+  }
+  if (!tokens[idx] || !isVerbToken(tokens[idx])) {
+    return null;
+  }
+  const verbToken = tokens[idx];
+  const tail = renderTail(tokens.slice(idx + 1));
+  const conjLead = negationConjunctionLead(negToken);
+  const verbText = tokenGlossText(verbToken);
+  const prepText = renderPpGroup(prepGroup);
+  const vocLead = vocative ? `${tokenMeaning(vocative)}, ` : '';
+  return normalizeComposerText(`${vocLead}${conjLead}do not ${verbText} ${prepText}${tail ? ` ${tail}` : ''}`);
+}
+
 function renderExclamatoryChunk(tokens: Token[]): string | null {
   if (!tokens[0] || !isExclamationToken(tokens[0]) || tokens.length < 2) {
     return null;
@@ -860,21 +917,9 @@ function isSuperscriptionLikeUnit(unit: Unit): boolean {
   return hasMetadataCue && !hasSpokenCue;
 }
 
-function buildSuperscriptionRanges(unit: Unit, level: ComposerLevel = 'phrase'): Array<{ start: number; end: number }> | null {
+function buildSuperscriptionRanges(unit: Unit, _level: ComposerLevel = 'phrase'): Array<{ start: number; end: number }> | null {
   if (!isSuperscriptionLikeUnit(unit) || unit.tokens.length < 2) {
     return null;
-  }
-
-  if (level !== 'phrase') {
-    const titleStart = unit.tokens.findIndex((token) =>
-      /^(a )?(psalm|song|prayer|maskil|miktam|shiggaion)\b/i.test(tokenMeaning(token)),
-    );
-    if (titleStart > 0) {
-      return [
-        { start: 0, end: titleStart - 1 },
-        { start: titleStart, end: unit.tokens.length - 1 },
-      ];
-    }
   }
 
   const ranges: Array<{ start: number; end: number }> = [];
@@ -1003,6 +1048,7 @@ function toPhraseText(chunk: CompilerChunk): string {
     renderBelongsToChunk(chunk.tokens) ??
     renderForSakeChunk(chunk.tokens) ??
     renderDisjunctiveOfferingChunk(chunk.tokens) ??
+    renderVocativeNegImperativeChunk(chunk.tokens) ??
     renderVocativeChunk(chunk.tokens) ??
     renderExclamatoryChunk(chunk.tokens) ??
     renderNegatedPrepositionalChunk(chunk.tokens) ??
@@ -1053,7 +1099,9 @@ function toLyricText(chunk: CompilerChunk): string {
     .replace(/\bInstead, he delights in Yahweh's law\b/gi, "His delight is in Yahweh's law")
     .replace(/\bHe meditates on his law day and night\b/gi, 'He dwells on his law day and night')
     .replace(/\bMajestic is\b/gi, 'How majestic is')
-    .replace(/\bholds deliverance\b/gi, 'is salvation');
+    .replace(/\bholds deliverance\b/gi, 'is salvation')
+    .replace(/^And don't\b/i, "Don't")
+    .replace(/^And do not\b/i, "Don't");
   return sentenceCase(normalizeComposerText(concept));
 }
 
@@ -1108,6 +1156,13 @@ function shouldBreakBefore(tokens: Token[], index: number, currentStart: number)
   }
   if (currentChunk.length > 0 && currentChunk.every((candidate) => inflateFeatures(candidate).temporal_pair_candidate) && isVerbToken(token)) {
     return false;
+  }
+  if (
+    isNegationToken(token)
+    && (currentFeatures.conjunction_role === 'additive' || currentFeatures.conjunction_role === 'disjunctive')
+    && currentLength >= 1
+  ) {
+    return true;
   }
   if (isSelahToken(token)) {
     return currentLength >= 1;

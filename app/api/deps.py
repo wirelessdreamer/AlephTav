@@ -1,11 +1,19 @@
 from __future__ import annotations
 
+from typing import NoReturn
+
 from fastapi import HTTPException
 
-from app.core.errors import ContentError, LicensePolicyError, NotFoundError, ReviewRequiredError, ValidationError
+from app.core.errors import (
+    ContentError,
+    LicensePolicyError,
+    NotFoundError,
+    ReviewRequiredError,
+    ValidationError,
+)
 
 
-def raise_as_http(error: Exception) -> None:
+def raise_as_http(error: Exception) -> NoReturn:
     if isinstance(error, NotFoundError):
         raise HTTPException(status_code=404, detail=str(error)) from error
     if isinstance(error, ReviewRequiredError):

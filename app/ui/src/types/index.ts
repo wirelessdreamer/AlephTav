@@ -7,7 +7,7 @@ export type Layer =
   | 'metered_lyric'
   | 'parallelism_lyric';
 
-export type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
+export type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'source_map' | 'audit' | 'compare';
 
 export interface Token {
   token_id: string;
@@ -223,6 +223,115 @@ export interface Psalm {
   title: string;
   unit_ids: string[];
   units: Unit[];
+}
+
+export interface SourceTranslationMapToken {
+  token_id: string;
+  surface: string;
+  transliteration: string | null;
+  lemma: string | null;
+  gloss: string | null;
+  source_role: string | null;
+  semantic_role: string | null;
+  anchors: string[];
+  visible_anchors: string[];
+  alignments: Array<{
+    alignment_id: string;
+    type: string;
+    confidence: number;
+    target_text: string | null;
+    notes: string;
+  }>;
+  status: 'explicit' | 'lexical_estimate' | 'unmapped';
+  fidelity_weight: number;
+}
+
+export interface SourceTranslationMapUnit {
+  unit_id: string;
+  ref: string;
+  source_hebrew: string;
+  source_transliteration: string | null;
+  rendering: {
+    rendering_id: string;
+    status: string;
+    layer: Layer;
+    text: string;
+    source_kind: 'saved' | 'witness';
+    source_label: string;
+    witness: Unit['witnesses'][number] | null;
+    translation_basis: TranslationBasis | null;
+    rationale: string;
+  } | null;
+  summary: {
+    state: 'mapped' | 'untranslated';
+    selection_message?: string;
+    source_token_count: number;
+    explicitly_mapped_tokens: number;
+    lexically_visible_tokens: number;
+    unmapped_tokens: number;
+    structural_coverage: number;
+    visible_anchor_coverage: number;
+    fidelity_estimate: number | null;
+  };
+  tokens: SourceTranslationMapToken[];
+  creative_liberties: Array<{
+    kind: string;
+    severity: string;
+    token_id: string | null;
+    label: string;
+    detail: string;
+  }>;
+}
+
+export interface SourceTranslationMapRepetition {
+  lemma: string;
+  label: string;
+  glosses: string[];
+  count: number;
+  occurrences: Array<{
+    unit_id: string;
+    ref: string;
+    token_id: string;
+    surface: string;
+    gloss: string | null;
+    anchors: string[];
+  }>;
+  explicitly_mapped_count: number;
+  visible_anchor_count: number;
+  preservation: 'structurally_preserved' | 'lexically_visible' | 'partially_visible' | 'not_visible';
+}
+
+export interface PsalmSourceTranslationMap {
+  psalm_id: string;
+  title: string;
+  layer: Layer;
+  translation_target: {
+    kind: 'saved' | 'witness';
+    label: string;
+    rendering_status: string | null;
+    witness_source_id: string | null;
+    version_title: string | null;
+    read_only: boolean;
+  };
+  score_basis: string;
+  summary: {
+    total_units: number;
+    translated_units: number;
+    total_source_tokens: number;
+    explicitly_mapped_tokens: number;
+    lexically_visible_tokens: number;
+    structural_coverage: number;
+    visible_anchor_coverage: number;
+    fidelity_estimate: number | null;
+  };
+  units: SourceTranslationMapUnit[];
+  repetitions: SourceTranslationMapRepetition[];
+  possible_added_repetitions: Array<{
+    word: string;
+    count: number;
+    label: string;
+    detail: string;
+  }>;
 }
 
 export interface Project {

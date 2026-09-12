@@ -15,11 +15,13 @@ import {
   useReviewAction,
   useRenderingComparison,
   useSearchPreset,
+  usePsalmSourceTranslationMap,
   useUpdateAlignment,
   useUnitWitnesses,
 } from '../hooks/useWorkbench';
+import { SourceTranslationMap } from './SourceTranslationMap';
 import { getPreferredSelectableLayer, getSelectableLayers } from '../lib/layers';
-import type { Alignment, DrawerTab, Layer, OpenConcerns, TokenCard, Unit } from '../types';
+import type { Alignment, DrawerTab, Layer, OpenConcerns, Psalm, TokenCard, Unit } from '../types';
 type SearchScope =
   | 'all'
   | 'hebrew_surface'
@@ -31,9 +33,27 @@ type SearchScope =
   | 'audit_notes'
   | 'issue_links';
 type PresetName = 'alternates_meter_fit' | 'units_with_unresolved_drift' | 'units_changed_since_release' | null;
+type SourceMapTarget = 'saved' | 'witness';
+type SourceMapRenderingStatus =
+  | 'preferred'
+  | 'canonical'
+  | 'accepted_as_alternate'
+  | 'under_review'
+  | 'proposed'
+  | 'draft';
+
+const sourceMapRenderingStatuses: Array<{ value: SourceMapRenderingStatus; label: string }> = [
+  { value: 'preferred', label: 'Best available status' },
+  { value: 'canonical', label: 'Canonical only' },
+  { value: 'accepted_as_alternate', label: 'Accepted alternate only' },
+  { value: 'under_review', label: 'Under review only' },
+  { value: 'proposed', label: 'Proposed only' },
+  { value: 'draft', label: 'Draft only' },
+];
 
 interface BottomDrawerProps {
   unit?: Unit;
+  psalm?: Psalm;
   concerns?: OpenConcerns;
   tokenCard?: TokenCard;
   concordanceSeed?: string;
@@ -43,6 +63,7 @@ interface BottomDrawerProps {
   resolvedLayer: Layer | null;
   layerNotice: string | null;
   selectableLayers: Layer[];
+  onLayerChange: (layer: Layer) => void;
   selectedTokenIds: string[];
   selectedSpanIds: string[];
   selectedAlignmentId: string | null;
@@ -79,6 +100,7 @@ function basisLabel(basisType?: string | null): string {
 
 export function BottomDrawer({
   unit,
+  psalm,
   concerns,
   tokenCard,
   concordanceSeed,
@@ -89,6 +111,7 @@ export function BottomDrawer({
   resolvedLayer,
   layerNotice,
   selectableLayers,
+  onLayerChange,
   selectedTokenIds,
   selectedSpanIds,
   selectedAlignmentId,
@@ -124,6 +147,9 @@ export function BottomDrawer({
   const [reviewerName, setReviewerName] = useState('ui-reviewer');
   const [reviewerRole, setReviewerRole] = useState('alignment reviewer');
   const [reviewNotes, setReviewNotes] = useState('');
+  const [sourceMapTarget, setSourceMapTarget] = useState<SourceMapTarget>('saved');
+  const [sourceMapRenderingStatus, setSourceMapRenderingStatus] = useState<SourceMapRenderingStatus>('preferred');
+  const [sourceMapWitnessId, setSourceMapWitnessId] = useState('');
 
   const { data: project } = useProject();
   const concordance = useConcordance(concordanceQuery, concordanceField);
@@ -148,6 +174,24 @@ export function BottomDrawer({
   const addAlternate = useAddAlternate(unit?.unit_id ?? null);
   const comparison = useRenderingComparison(unit?.unit_id ?? null, compareLeftId, compareRightId);
   const resolvedSelectableLayers = useMemo(() => getSelectableLayers(selectableLayers), [selectableLayers]);
+  const sourceMapWitnessOptions = useMemo(() => {
+    const sourceIds = new Map<string, Psalm['units'][number]['witnesses'][number]>();
+    for (const psalmUnit of psalm?.units ?? []) {
+      for (const witness of psalmUnit.witnesses) {
+        if (!sourceIds.has(witness.source_id)) {
+          sourceIds.set(witness.source_id, witness);
+        }
+      }
+    }
+    return [...sourceIds.values()];
+  }, [psalm]);
+  const sourceTranslationMap = usePsalmSourceTranslationMap(
+    psalm?.psalm_id ?? null,
+    activeLayer,
+    sourceMapTarget,
+    sourceMapRenderingStatus,
+    sourceMapTarget === 'witness' ? sourceMapWitnessId : undefined,
+  );
   const selectedAlternateLayer = useMemo(
     () => getPreferredSelectableLayer(alternateLayer, resolvedSelectableLayers),
     [alternateLayer, resolvedSelectableLayers],
@@ -165,6 +209,13 @@ export function BottomDrawer({
       setAlternateLayer(selectedAlternateLayer);
     }
   }, [alternateLayer, selectedAlternateLayer]);
+
+  useEffect(() => {
+    if (sourceMapWitnessOptions.some((witness) => witness.source_id === sourceMapWitnessId)) {
+      return;
+    }
+    setSourceMapWitnessId(sourceMapWitnessOptions[0]?.source_id ?? '');
+  }, [sourceMapWitnessId, sourceMapWitnessOptions]);
 
   const unresolvedDriftCount = concerns?.open_drift_flags.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
   const uncoveredCount = concerns?.uncovered_tokens.filter((item) => item.unit_id === unit?.unit_id).length ?? 0;
@@ -396,9 +447,9 @@ export function BottomDrawer({
     <section className="bottom-drawer">
       <header className="drawer-header">
         <div className="tab-row">
-          {(['concordance', 'workflow', 'search', 'witnesses', 'audit', 'compare'] as DrawerTab[]).map((item) => (
+          {(['concordance', 'workflow', 'search', 'witnesses', 'source_map', 'audit', 'compare'] as DrawerTab[]).map((item) => (
             <button key={item} type="button" className={tab === item ? 'tab active' : 'tab'} onClick={() => onTabChange(item)}>
-              {item}
+              {item.replace('_', ' ')}
             </button>
           ))}
         </div>
@@ -782,6 +833,72 @@ export function BottomDrawer({
             ))}
             {!witnesses.data?.length ? <li className="empty-state">No witness material attached to this unit.</li> : null}
           </ul>
+        </div>
+      ) : null}
+      {tab === 'source_map' ? (
+        <div className="drawer-panel">
+          <section className="source-map-target-controls" aria-label="Source map comparison target">
+            <label className="compact-field">
+              <span>Compare</span>
+              <select
+                value={sourceMapTarget}
+                onChange={(event) => setSourceMapTarget(event.target.value as SourceMapTarget)}
+              >
+                <option value="saved">Saved workbench translation</option>
+                <option value="witness">Attached English witness</option>
+              </select>
+            </label>
+            {sourceMapTarget === 'saved' ? (
+              <>
+                <label className="compact-field">
+                  <span>Layer</span>
+                  <select value={activeLayer} onChange={(event) => onLayerChange(event.target.value as Layer)}>
+                    {resolvedSelectableLayers.map((layer) => <option key={layer} value={layer}>{layer.replace(/_/g, ' ')}</option>)}
+                  </select>
+                </label>
+                <label className="compact-field">
+                  <span>Version policy</span>
+                  <select
+                    value={sourceMapRenderingStatus}
+                    onChange={(event) => setSourceMapRenderingStatus(event.target.value as SourceMapRenderingStatus)}
+                  >
+                    {sourceMapRenderingStatuses.map((status) => <option key={status.value} value={status.value}>{status.label}</option>)}
+                  </select>
+                </label>
+              </>
+            ) : (
+              <label className="compact-field">
+                <span>Witness translation</span>
+                <select
+                  value={sourceMapWitnessId}
+                  disabled={!sourceMapWitnessOptions.length}
+                  onChange={(event) => setSourceMapWitnessId(event.target.value)}
+                >
+                  {sourceMapWitnessOptions.map((witness) => (
+                    <option key={witness.source_id} value={witness.source_id}>
+                      {witness.source_id.toUpperCase()} · {witness.versionTitle}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+          </section>
+          {sourceMapTarget === 'witness' ? (
+            <div className="warning-box">
+              <div>Witness comparisons are read-only reference material.</div>
+              <div>They never become canonical source material or enter exports.</div>
+            </div>
+          ) : null}
+          {!sourceMapWitnessOptions.length && sourceMapTarget === 'witness' ? (
+            <p className="empty-state">This Psalm has no attached English witness translation to compare.</p>
+          ) : (
+            <SourceTranslationMap
+              data={sourceTranslationMap.data}
+              isLoading={sourceTranslationMap.isPending || sourceTranslationMap.isFetching}
+              error={sourceTranslationMap.error}
+              onNavigateToUnit={handleNavigate}
+            />
+          )}
         </div>
       ) : null}
       {tab === 'audit' ? (

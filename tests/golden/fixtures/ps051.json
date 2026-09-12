@@ -33,7 +33,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "e2cf4705af16d742b2e184fefbe2338d941c1d4cf4c3830923ef96416da715df",
+          "after_hash": "6b02945dbf729051225668f3092bdef82d16610d763221de5a94539d77b2a69c",
           "audit_id": "aud.ps051.v001.a.0001",
           "before_hash": "618d26d7ae028e4f73ba3926156fdc9032ff87e65888ded529584a98313c6b1d",
           "change_type": "create",
@@ -86,14 +86,14 @@
           "rationale": "Literal petition line for golden coverage.",
           "rendering_id": "rnd.ps051.v001.a.literal.can.0001",
           "review_signoff": {
-            "alternate_approval_count": 1,
+            "alternate_approval_count": 3,
             "alternate_approvers": [
               {
                 "reviewer": "seed-reviewer-1",
                 "reviewer_role": "Hebrew reviewer"
               }
             ],
-            "approval_count": 2,
+            "approval_count": 3,
             "approvers": [
               {
                 "reviewer": "seed-reviewer-1",
@@ -107,7 +107,7 @@
             "eligible_for_alternate": true,
             "eligible_for_canonical": true,
             "has_release_signoff": true,
-            "latest_decision": null,
+            "latest_decision": "approve",
             "publication_ready": true,
             "release_required_role": "release reviewer",
             "release_signoff": {
@@ -128,7 +128,7 @@
               "release reviewer"
             ],
             "status": "canonical_signed_off",
-            "updated_at": "2026-04-09T00:00:03Z"
+            "updated_at": "2026-04-09T00:12:00Z"
           },
           "status": "canonical",
           "style_tags": [
@@ -209,7 +209,35 @@
           "unit_id": "ps051.v001.a"
         }
       ],
-      "review_decisions": [],
+      "review_decisions": [
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps051.v001.a.0001",
+          "notes": "Literal petition line is lexically sound.",
+          "reviewer": "seed-reviewer-1",
+          "reviewer_role": "Hebrew reviewer",
+          "target_id": "rnd.ps051.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:10:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps051.v001.a.0002",
+          "notes": "Alignment coverage is complete for the canonical literal line.",
+          "reviewer": "seed-reviewer-2",
+          "reviewer_role": "alignment reviewer",
+          "target_id": "rnd.ps051.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:11:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps051.v001.a.0003",
+          "notes": "Fixture release signoff for export validation coverage.",
+          "reviewer": "seed-release-reviewer",
+          "reviewer_role": "release reviewer",
+          "target_id": "rnd.ps051.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:12:00Z"
+        }
+      ],
       "segmentation_type": "colon",
       "source_hebrew": "חָנֵּנִי אֱלֹהִים",
       "source_transliteration": "chaneni elohim",
@@ -220,9 +248,11 @@
       ],
       "tokens": [
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Psalm 86:3"
           ],
+          "display_gloss": "show favor/be gracious",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -247,6 +277,9 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "show favor/be gracious"
+          ],
           "lemma": "חנן",
           "missing_enrichments": [],
           "morph_code": "Vqami+Sp1cs",
@@ -270,9 +303,11 @@
           "word_sense": "show favor/be gracious"
         },
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Genesis 1:1"
           ],
+          "display_gloss": "God",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -296,6 +331,9 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "God"
+          ],
           "lemma": "אלהים",
           "missing_enrichments": [],
           "morph_code": "Ncmpa",
@@ -320,7 +358,38 @@
         }
       ],
       "unit_id": "ps051.v001.a",
-      "witnesses": []
+      "witnesses": [
+        {
+          "language": "en",
+          "ref": "Psalms 51:1",
+          "source_id": "kjv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+          "source_version": "eng-kjv2006",
+          "text": "To the chief Musician, A Psalm of David, when Nathan the prophet came unto him, after he had gone in to Bath-sheba. Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions.",
+          "versionTitle": "King James Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 51:1",
+          "source_id": "asv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-asv",
+          "source_version": "eng-asv",
+          "text": "For the Chief Musician. A Psalm of David; when Nathan the prophet came unto him, after he had gone in to Bath-sheba. Have mercy upon me, O God, according to thy lovingkindness: According to the multitude of thy tender mercies blot out my transgressions.",
+          "versionTitle": "American Standard Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 51:1",
+          "source_id": "web",
+          "source_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+          "source_version": "engwebp",
+          "text": "For the Chief Musician. A Psalm by David, when Nathan the prophet came to him, after he had gone in to Bathsheba. Have mercy on me, God, according to your loving kindness. According to the multitude of your tender mercies, blot out my transgressions.",
+          "versionTitle": "World English Bible",
+          "witness_role": "english_witness"
+        }
+      ]
     }
   ]
 }

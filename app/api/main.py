@@ -17,6 +17,7 @@ from app.api.routes import (
     renderings,
     review,
     search,
+    source_map,
     speech,
     tokens,
     units,
@@ -48,6 +49,7 @@ app.include_router(units.router)
 app.include_router(tokens.router)
 app.include_router(assistant.router)
 app.include_router(search.router)
+app.include_router(source_map.router)
 app.include_router(alignments.router)
 app.include_router(renderings.router)
 app.include_router(alternates.router)

@@ -1,8 +1,29 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v002.a.literal.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e85c1d7c0bd3b45541e08fcf78ddf8aff1989665a32b839f4a44c28ae66841b7",
+      "audit_id": "aud.ps006.v002.a.0001",
+      "before_hash": "ed8d9e7278df0125ac2d10e2747ae59d2f7b3203a2ab951527af923ccf3a2345",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-05-12T12:56:37.473899+00:00",
+      "created_by": "ui-guided-composer",
+      "entity_id": "rnd.ps006.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "guided verse composer completion",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps006.v002.a.0001"
@@ -15,7 +36,92 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "ui-guided-composer",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "guided verse composer completion",
+      "rendering_id": "rnd.ps006.v002.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal",
+        "guided-composer",
+        "verse-complete"
+      ],
+      "target_spans": [],
+      "text": "Lord don't rebuke me in your anger and don't discipline me in your wrath",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "unit_id": "ps006.v002.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְֽהוָ֗ה אַל־בְּאַפְּךָ֥ תוֹכִיחֵ֑נִי וְֽאַל־בַּחֲמָתְךָ֥ תְיַסְּרֵֽנִי׃",

@@ -9,6 +9,7 @@ Current bundled profiles:
 - `performative_free`
 - `source_imagist`
 - `doubter_lament`
+- `antiphonal_performative`
 
 Profiles define literalness, lyric freedom, target syllables, rhyme mode, register, and parallelism priority.
 They also define how creative layers stay anchored to Hebrew while still sounding alive in English.
@@ -31,3 +32,4 @@ Recommended use:
 - `metered_common_meter`: singable lines with tighter syllable goals.
 - `performative_free`: contemporary spoken cadence with more compression.
 - `doubter_lament`: intimate, emotionally direct, contested-faith wording that still stays anchored to Hebrew imagery.
+- `antiphonal_performative`: contemporary performative voice with antiphonal echoes (short repeated half-lines), anaphora, coined epithets for Hebrew agent-of-X formulas, conversational vocatives, em-dash breath breaks, and highly variable line length. Singable, not metered. Imagery-preserving — coined epithets are *more* faithful to Hebrew compound nouns than abstractions, never less.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -73,7 +74,8 @@ def bootstrap_vendored_repo() -> None:
 
 def compile_composer_module(temp_dir: Path) -> Path:
     out_dir = temp_dir / "composer-build"
-    tsc_path = ROOT / "node_modules" / ".bin" / "tsc"
+    bin_dir = ROOT / "node_modules" / ".bin"
+    tsc_path = bin_dir / ("tsc.cmd" if os.name == "nt" else "tsc")
     subprocess.run(
         [
             str(tsc_path),
@@ -90,6 +92,8 @@ def compile_composer_module(temp_dir: Path) -> Path:
         check=True,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        shell=os.name == "nt",
     )
     return out_dir / "lib" / "composerSynthesis.js"
 
@@ -160,6 +164,7 @@ process.stdout.write(JSON.stringify(payload));
             check=True,
             capture_output=True,
             text=True,
+            encoding="utf-8",
         )
         payload = json.loads(completed.stdout)
         outputs.update({

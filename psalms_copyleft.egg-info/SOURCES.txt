@@ -21,6 +21,7 @@ app/api/routes/psalms.py
 app/api/routes/renderings.py
 app/api/routes/review.py
 app/api/routes/search.py
+app/api/routes/source_map.py
 app/api/routes/speech.py
 app/api/routes/tokens.py
 app/api/routes/units.py
@@ -50,6 +51,7 @@ app/llm/prompts/pass_03_phrase.md
 app/llm/prompts/pass_04_concept.md
 app/llm/prompts/pass_05_lyric.md
 app/llm/prompts/pass_06_metered_lyric.md
+app/llm/prompts/pass_07_parallelism_lyric.md
 app/services/__init__.py
 app/services/alignment_service.py
 app/services/assistant_service.py
@@ -70,6 +72,7 @@ app/services/report_service.py
 app/services/review_service.py
 app/services/search_service.py
 app/services/settings_service.py
+app/services/source_translation_map_service.py
 app/services/speech_service.py
 app/services/visual_flow_service.py
 psalms_copyleft.egg-info/PKG-INFO

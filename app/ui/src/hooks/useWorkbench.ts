@@ -10,6 +10,7 @@ import type {
   Project,
   Psalm,
   PsalmCloudResponse,
+  PsalmSourceTranslationMap,
   PsalmVisualFlow,
   Rendering,
   RenderingComparison,
@@ -85,6 +86,26 @@ export function usePsalm(psalmId: string | null) {
     queryKey: ['psalm', psalmId],
     queryFn: () => getJson<Psalm>(`/psalms/${psalmId}`),
     enabled: Boolean(psalmId),
+  });
+}
+
+export function usePsalmSourceTranslationMap(
+  psalmId: string | null,
+  layer: string,
+  translationSource: 'saved' | 'witness' = 'saved',
+  renderingStatus = 'preferred',
+  witnessSourceId?: string,
+) {
+  const query = new URLSearchParams({
+    layer,
+    translation_source: translationSource,
+    rendering_status: renderingStatus,
+    ...(witnessSourceId ? { witness_source_id: witnessSourceId } : {}),
+  });
+  return useQuery({
+    queryKey: ['psalm-source-map', psalmId, layer, translationSource, renderingStatus, witnessSourceId],
+    queryFn: () => getJson<PsalmSourceTranslationMap>(`/psalms/${psalmId}/source-map?${query.toString()}`),
+    enabled: Boolean(psalmId) && (translationSource === 'saved' || Boolean(witnessSourceId)),
   });
 }
 
