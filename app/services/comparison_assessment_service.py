@@ -101,6 +101,43 @@ def select_rendering(unit: dict[str, Any], layer: str) -> dict[str, Any] | None:
     return candidates[-1]
 
 
+#: Token fields worth showing in the hover study card, in display order.
+_STUDY_FIELDS = (
+    "token_id",
+    "surface",
+    "transliteration",
+    "lemma",
+    "strong",
+    "morph_readable",
+    "part_of_speech",
+    "stem",
+    "display_gloss",
+    "gloss_parts",
+    "word_sense",
+    "semantic_role",
+    "syntax_role",
+    "referent",
+    "greek",
+    "greek_strong",
+    "ref",
+)
+
+
+def study_token(token: dict[str, Any]) -> dict[str, Any]:
+    """Trim a corpus token to the fields the study card renders.
+
+    Empty fields are dropped so the card shows only what the corpus actually
+    knows, rather than a wall of nulls.
+    """
+    card = {key: token[key] for key in _STUDY_FIELDS if token.get(key)}
+    card["token_id"] = token["token_id"]
+    card["surface"] = token["surface"]
+    occurrences = token.get("corpus_occurrence_refs") or []
+    card["occurrence_count"] = len(occurrences)
+    card["occurrence_refs"] = occurrences[:12]
+    return card
+
+
 def create_assessment(
     unit_id: str,
     literal_rendering_id: str | None,
@@ -305,9 +342,11 @@ def build_comparison_table(
         assessments: list[dict[str, Any]] = []
         literal_ids: list[str] = []
         english_ids: list[str] = []
+        tokens: list[dict[str, Any]] = []
 
         for unit in units:
             hebrew_parts.append(unit["source_hebrew"])
+            tokens.extend(study_token(token) for token in unit.get("tokens", []))
             literal = select_rendering(unit, literal_layer)
             english = select_rendering(unit, english_layer)
             if literal:
@@ -332,6 +371,9 @@ def build_comparison_table(
                 "display_reference": (assessment or {}).get("display_reference") or first["ref"],
                 "unit_ids": [unit["unit_id"] for unit in units],
                 "hebrew_text": " ".join(hebrew_parts),
+                # Per-word study payload so the Hebrew column can be hovered
+                # word by word rather than rendered as one opaque string.
+                "tokens": tokens,
                 "literal_text": "\n".join(literal_parts) if literal_parts else None,
                 "literal_rendering_ids": literal_ids,
                 "english_text": "\n".join(english_parts) if english_parts else None,

@@ -797,11 +797,38 @@ export interface ComparisonAssessment {
   audit_ids: string[];
 }
 
+/**
+ * One Hebrew word with everything the corpus knows about it. Empty fields are
+ * omitted server-side, so absence means "not recorded" rather than "null".
+ */
+export interface StudyToken {
+  token_id: string;
+  surface: string;
+  transliteration?: string;
+  lemma?: string;
+  strong?: string;
+  morph_readable?: string;
+  part_of_speech?: string;
+  stem?: string;
+  display_gloss?: string;
+  gloss_parts?: string[];
+  word_sense?: string;
+  semantic_role?: string;
+  syntax_role?: string;
+  referent?: string;
+  greek?: string;
+  greek_strong?: string;
+  ref?: string;
+  occurrence_count: number;
+  occurrence_refs: string[];
+}
+
 export interface ComparisonTableRow {
   mt_reference: string;
   display_reference: string;
   unit_ids: string[];
   hebrew_text: string;
+  tokens: StudyToken[];
   literal_text: string | null;
   literal_rendering_ids: string[];
   english_text: string | null;
@@ -886,6 +913,20 @@ export interface CodexRunEvents {
   events: unknown[];
   denied_events: Array<{ method: string; params?: unknown }>;
   validation: Array<{ path: string; message: string }> | null;
+  error: string | null;
+}
+
+export interface TranslationGuidance {
+  psalm_id: string;
+  translation_guidance: string;
+}
+
+export interface RowFillResult {
+  unit_id: string;
+  status: CodexRun['status'];
+  run_ids: string[];
+  rendering_ids: string[];
+  assessment: ComparisonAssessment | null;
   error: string | null;
 }
 

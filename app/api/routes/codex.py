@@ -103,6 +103,41 @@ def start_codex_turn(session_id: str, payload: dict) -> dict:
         raise_as_http(error)
 
 
+@router.get("/psalms/{psalm_id}/translation-guidance")
+def get_translation_guidance(psalm_id: str) -> dict:
+    try:
+        return {"psalm_id": psalm_id, "translation_guidance": translation.get_guidance(psalm_id)}
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.put("/psalms/{psalm_id}/translation-guidance")
+def put_translation_guidance(psalm_id: str, payload: dict) -> dict:
+    """Store the translator's standing direction for this psalm."""
+    try:
+        return translation.set_guidance(psalm_id, payload.get("translation_guidance", ""))
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/rows/{unit_id}/fill")
+def fill_comparison_row(unit_id: str, payload: dict) -> dict:
+    """Generate literal + English + accuracy notes for one comparison row."""
+    try:
+        return translation.fill_comparison_row(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            unit_id=unit_id,
+            english_layer=payload.get("english_layer", "lyric"),
+            created_by=payload.get("created_by", "codex"),
+            style_profile=payload.get("style_profile"),
+            meter_target=payload.get("meter_target"),
+            constraints=payload.get("constraints"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
 @router.post("/codex/runs/{run_id}/cancel")
 def cancel_codex_run(run_id: str) -> dict:
     try:

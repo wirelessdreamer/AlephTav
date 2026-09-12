@@ -1,6 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import type { CodexModel, CodexRun, CodexRunEvents, CodexSession, CodexStatus } from '../types';
+import type {
+  CodexModel,
+  CodexRun,
+  CodexRunEvents,
+  CodexSession,
+  CodexStatus,
+  RowFillResult,
+  TranslationGuidance,
+} from '../types';
 
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url);
@@ -110,6 +118,58 @@ export function useCodexRunEvents(runId: string | null) {
     queryKey: ['codex-run-events', runId],
     queryFn: () => getJson<CodexRunEvents>(`/codex/runs/${runId}/events`),
     enabled: Boolean(runId),
+  });
+}
+
+/** The translator's standing direction for a psalm, stored with its content. */
+export function useTranslationGuidance(psalmId: string | null) {
+  return useQuery({
+    queryKey: ['translation-guidance', psalmId],
+    queryFn: () => getJson<TranslationGuidance>(`/psalms/${psalmId}/translation-guidance`),
+    enabled: Boolean(psalmId),
+  });
+}
+
+export function useSaveTranslationGuidance(psalmId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (guidance: string) => {
+      const body = JSON.stringify({ translation_guidance: guidance });
+      return fetch(`/psalms/${psalmId}/translation-guidance`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      }).then(async (response) => {
+        if (!response.ok) throw new Error(await response.text());
+        return response.json() as Promise<TranslationGuidance>;
+      });
+    },
+    onSuccess: (data) => queryClient.setQueryData(['translation-guidance', psalmId], data),
+  });
+}
+
+/**
+ * Fill one comparison row end to end: literal baseline when missing, the
+ * English layer, and the accuracy / creative-liberty notes.
+ */
+export function useFillComparisonRow() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      unitId,
+      ...payload
+    }: {
+      unitId: string;
+      session_id: string;
+      english_layer?: string;
+      style_profile?: string;
+      meter_target?: string;
+      constraints?: string[];
+    }) => postJson<RowFillResult>(`/codex/rows/${unitId}/fill`, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
+      queryClient.invalidateQueries({ queryKey: ['comparison-assessments'] });
+    },
   });
 }
 

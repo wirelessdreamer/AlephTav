@@ -1,7 +1,7 @@
 import { AppRuntimeProvider, useAppRuntime } from './AppContext';
 import { AssistantPanel } from '../components/AssistantPanel';
+import { ComparisonPage } from '../pages/ComparisonPage';
 import { WelcomePage } from '../pages/WelcomePage';
-import { WorkbenchPage } from '../pages/WorkbenchPage';
 
 function AppContent() {
   const { route, assistantUi } = useAppRuntime();
@@ -15,7 +15,7 @@ function AppContent() {
           : 'app-shell--workbench'
       }`}
     >
-      <div className="app-shell__page">{route === 'workbench' ? <WorkbenchPage /> : <WelcomePage />}</div>
+      <div className="app-shell__page">{route === 'workbench' ? <ComparisonPage /> : <WelcomePage />}</div>
       {showShellAssistant ? <AssistantPanel /> : null}
     </div>
   );

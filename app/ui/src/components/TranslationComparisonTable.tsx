@@ -1,10 +1,18 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import {
+  useCodexStatus,
+  useCreateCodexSession,
+  useFillComparisonRow,
+  useSaveTranslationGuidance,
+  useTranslationGuidance,
+} from '../hooks/useCodex';
 import {
   useComparisonTable,
   useCreateComparisonAssessment,
   useReviseComparisonAssessment,
 } from '../hooks/useComparisonAssessments';
+import { HebrewStudyText } from './HebrewStudyText';
 import type {
   AccuracyRating,
   ComparisonStatus,
@@ -106,11 +114,10 @@ function toCsv(rows: ComparisonTableRow[]): string {
 
 interface Props {
   psalmId: string | null;
-  onOpenEvidence?: (unitId: string) => void;
   onOpenRendering?: (renderingId: string) => void;
 }
 
-export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRendering }: Props) {
+export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) {
   const [englishLayer, setEnglishLayer] = useState('lyric');
   const [gutterWidth, setGutterWidth] = useState<GutterWidth>(32);
   const [statusFilter, setStatusFilter] = useState<ComparisonStatus | ''>('');
@@ -120,9 +127,60 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
   const [draftLiberties, setDraftLiberties] = useState('');
   const [draftRating, setDraftRating] = useState<AccuracyRating | ''>('');
 
+  const [guidanceDraft, setGuidanceDraft] = useState('');
+  const [guidanceOpen, setGuidanceOpen] = useState(false);
+  const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
+  const stopRequested = useRef(false);
+
   const { data, isLoading, error } = useComparisonTable(psalmId, 'literal', englishLayer);
   const createAssessment = useCreateComparisonAssessment(psalmId);
   const reviseAssessment = useReviseComparisonAssessment(psalmId);
+
+  const { data: codexStatus } = useCodexStatus();
+  const { data: guidance } = useTranslationGuidance(psalmId);
+  const saveGuidance = useSaveTranslationGuidance(psalmId);
+  const createSession = useCreateCodexSession();
+  const fillRow = useFillComparisonRow();
+  const codexReady = codexStatus?.status === 'ready';
+
+  useEffect(() => {
+    setGuidanceDraft(guidance?.translation_guidance ?? '');
+  }, [guidance?.translation_guidance, psalmId]);
+
+  /** Reuse one Codex thread per psalm so context carries across rows. */
+  const sessionRef = useRef<string | null>(null);
+  useEffect(() => {
+    sessionRef.current = null;
+  }, [psalmId]);
+
+  async function ensureSession(): Promise<string> {
+    if (sessionRef.current) return sessionRef.current;
+    const session = await createSession.mutateAsync({
+      psalm_id: psalmId as string,
+      layer: englishLayer,
+    });
+    sessionRef.current = session.session_id;
+    return session.session_id;
+  }
+
+  async function generateRow(unitId: string) {
+    const sessionId = await ensureSession();
+    await fillRow.mutateAsync({ unitId, session_id: sessionId, english_layer: englishLayer });
+  }
+
+  async function generatePsalm(targets: ComparisonTableRow[]) {
+    stopRequested.current = false;
+    setBatch({ done: 0, total: targets.length });
+    try {
+      for (const [index, row] of targets.entries()) {
+        if (stopRequested.current) break;
+        await generateRow(row.unit_ids[0]);
+        setBatch({ done: index + 1, total: targets.length });
+      }
+    } finally {
+      setBatch(null);
+    }
+  }
 
   const rows = useMemo(() => {
     const all = data?.rows ?? [];
@@ -232,6 +290,34 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
               ))}
             </select>
           </label>
+          <div className="comparison-generate">
+            <button
+              type="button"
+              aria-expanded={guidanceOpen}
+              onClick={() => setGuidanceOpen((open) => !open)}
+            >
+              {guidance?.translation_guidance ? 'Guidance ✓' : 'Guidance'}
+            </button>
+            {batch ? (
+              <>
+                <span className="batch-progress" role="status">
+                  Translating {batch.done}/{batch.total}
+                </span>
+                <button type="button" onClick={() => (stopRequested.current = true)}>
+                  Stop
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                disabled={!codexReady || fillRow.isPending}
+                title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
+                onClick={() => void generatePsalm(rows.filter((row) => row.incomplete))}
+              >
+                Translate psalm with Codex
+              </button>
+            )}
+          </div>
           <div className="comparison-exports">
             <button
               type="button"
@@ -251,6 +337,44 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
           </div>
         </div>
       </header>
+
+      {guidanceOpen ? (
+        <section className="guidance-panel" aria-label="Translation guidance">
+          <label htmlFor="translation-guidance">
+            How this psalm should be translated. Codex reads this before the source, and it
+            outranks the generic layer prompts. Saved with the psalm, so it is versioned.
+          </label>
+          <textarea
+            id="translation-guidance"
+            value={guidanceDraft}
+            rows={6}
+            placeholder={
+              'e.g. Keep the lament raw — do not resolve doubt into confident devotion.\n' +
+              'Render YHWH as "the LORD". Keep bones, throat and grave visible.\n' +
+              'Short breath-based lines; no "behold" or archaic verb forms.'
+            }
+            onChange={(event) => setGuidanceDraft(event.target.value)}
+          />
+          <div className="guidance-actions">
+            <button
+              type="button"
+              disabled={saveGuidance.isPending}
+              onClick={() => saveGuidance.mutate(guidanceDraft)}
+            >
+              {saveGuidance.isPending ? 'Saving…' : 'Save guidance'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setGuidanceDraft(guidance?.translation_guidance ?? '')}
+            >
+              Revert
+            </button>
+            {saveGuidance.isError ? (
+              <span className="comparison-error">{String(saveGuidance.error)}</span>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <div className="comparison-scroll">
         <table
@@ -299,9 +423,11 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
                     <button
                       type="button"
                       className="link-button"
-                      onClick={() => onOpenEvidence?.(row.unit_ids[0])}
+                      disabled={!codexReady || fillRow.isPending || Boolean(batch)}
+                      title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
+                      onClick={() => void generateRow(row.unit_ids[0])}
                     >
-                      Token evidence
+                      {row.incomplete ? 'Translate verse' : 'Regenerate'}
                     </button>
                     {row.assessment_status && (
                       <span className={`status-badge status-${row.assessment_status}`}>
@@ -315,21 +441,25 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
                     )}
                   </th>
 
-                  <td className="col-hebrew" dir="rtl" lang="he" data-label="Hebrew (MT)">
-                    {row.hebrew_text}
+                  <td className="col-hebrew" data-label="Hebrew (MT)">
+                    <HebrewStudyText tokens={row.tokens ?? []} text={row.hebrew_text} />
                   </td>
 
                   <td aria-hidden="true" className="col-gutter" />
 
                   <td className="col-literal" data-label="Literal translation">
                     {row.literal_text ? (
-                      <button
-                        type="button"
-                        className="cell-text link-button"
-                        onClick={() => onOpenRendering?.(row.literal_rendering_ids[0])}
-                      >
-                        {row.literal_text}
-                      </button>
+                      onOpenRendering ? (
+                        <button
+                          type="button"
+                          className="cell-text link-button"
+                          onClick={() => onOpenRendering(row.literal_rendering_ids[0])}
+                        >
+                          {row.literal_text}
+                        </button>
+                      ) : (
+                        <span className="cell-text">{row.literal_text}</span>
+                      )
                     ) : (
                       <span className="cell-missing">No literal rendering selected</span>
                     )}
@@ -337,13 +467,17 @@ export function TranslationComparisonTable({ psalmId, onOpenEvidence, onOpenRend
 
                   <td className="col-english" data-label="English used">
                     {row.english_text ? (
-                      <button
-                        type="button"
-                        className="cell-text link-button"
-                        onClick={() => onOpenRendering?.(row.english_rendering_ids[0])}
-                      >
-                        {row.english_text}
-                      </button>
+                      onOpenRendering ? (
+                        <button
+                          type="button"
+                          className="cell-text link-button"
+                          onClick={() => onOpenRendering(row.english_rendering_ids[0])}
+                        >
+                          {row.english_text}
+                        </button>
+                      ) : (
+                        <span className="cell-text">{row.english_text}</span>
+                      )
                     ) : (
                       <span className="cell-missing">No {englishLayer} rendering selected</span>
                     )}

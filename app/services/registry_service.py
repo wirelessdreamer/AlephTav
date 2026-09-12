@@ -586,11 +586,23 @@ def list_units() -> list[dict[str, Any]]:
     return units
 
 
-def load_psalm(psalm_id: str) -> dict[str, Any]:
-    meta = psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+def psalm_meta_path(psalm_id: str) -> Path:
+    return psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+
+
+def load_psalm_meta(psalm_id: str) -> dict[str, Any]:
+    meta = psalm_meta_path(psalm_id)
     if not meta.exists():
         raise NotFoundError(f"Psalm not found: {psalm_id}")
-    payload = read_json(meta)
+    return read_json(meta)
+
+
+def save_psalm_meta(psalm_id: str, meta: dict[str, Any]) -> None:
+    write_json(psalm_meta_path(psalm_id), meta)
+
+
+def load_psalm(psalm_id: str) -> dict[str, Any]:
+    payload = load_psalm_meta(psalm_id)
     payload["units"] = [load_unit(unit_id) for unit_id in payload.get("unit_ids", [])]
     return payload
 

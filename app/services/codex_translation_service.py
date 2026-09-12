@@ -131,6 +131,31 @@ def resume_session(client: codex.CodexAppServerClient, session_id: str) -> dict[
     return session
 
 
+# -- Per-psalm translation guidance ---------------------------------------
+
+GUIDANCE_KEY = "translation_guidance"
+
+
+def get_guidance(psalm_id: str) -> str:
+    """The translator's standing direction for this psalm.
+
+    Stored on the psalm meta file so it is committed content, versioned and
+    reviewable alongside the text it governs.
+    """
+    return str(registry_service.load_psalm_meta(psalm_id).get(GUIDANCE_KEY, ""))
+
+
+def set_guidance(psalm_id: str, guidance: str) -> dict[str, Any]:
+    meta = registry_service.load_psalm_meta(psalm_id)
+    cleaned = guidance.strip()
+    if cleaned:
+        meta[GUIDANCE_KEY] = cleaned
+    else:
+        meta.pop(GUIDANCE_KEY, None)
+    registry_service.save_psalm_meta(psalm_id, meta)
+    return {"psalm_id": psalm_id, GUIDANCE_KEY: cleaned}
+
+
 # -- Generation inputs (FR-4) ---------------------------------------------
 
 
@@ -165,6 +190,8 @@ def build_translation_prompt(
         if r.get("status") == "canonical" and r.get("layer") != layer
     ]
 
+    guidance = get_guidance(unit["psalm_id"])
+
     sections = [
         "# Translation task",
         f"Unit: {unit_id}",
@@ -174,6 +201,15 @@ def build_translation_prompt(
         f"Display reference: {unit['ref']}",
         f"Required output layer: {layer}",
         f"Candidate count: {candidate_count}",
+    ]
+    if guidance:
+        # The translator's own direction outranks the generic layer prompt.
+        sections += [
+            "",
+            "## Translator guidance for this psalm (follow this above general style rules)",
+            guidance,
+        ]
+    sections += [
         "",
         "## Hebrew source meaning",
         unit["source_hebrew"],
@@ -302,6 +338,80 @@ def run_translation_turn(
     run["status"] = RUN_COMPLETED
     run["payload"] = payload
     return _save_run(run)
+
+
+def fill_comparison_row(
+    client: codex.CodexAppServerClient,
+    session_id: str,
+    unit_id: str,
+    english_layer: str = "lyric",
+    created_by: str = "codex",
+    style_profile: str | None = None,
+    meter_target: str | None = None,
+    constraints: list[str] | None = None,
+) -> dict[str, Any]:
+    """Fill one comparison row end to end.
+
+    Generates a literal baseline when the unit lacks one, then the chosen
+    English layer, then records the accuracy and creative-liberty notes the
+    model returned as a ComparisonAssessment. Everything still lands as
+    ``proposed``; nothing here can promote itself.
+    """
+    from app.services import comparison_assessment_service
+
+    unit = registry_service.load_unit(unit_id)
+    result: dict[str, Any] = {
+        "unit_id": unit_id,
+        "status": RUN_COMPLETED,
+        "run_ids": [],
+        "rendering_ids": [],
+        "assessment": None,
+        "error": None,
+    }
+
+    layers: list[str] = []
+    if not any(r.get("layer") == "literal" for r in unit.get("renderings", [])):
+        layers.append("literal")
+    layers.append(english_layer)
+
+    for layer in layers:
+        run = run_translation_turn(
+            client,
+            session_id=session_id,
+            unit_id=unit_id,
+            layer=layer,
+            candidate_count=1,
+            style_profile=style_profile,
+            meter_target=meter_target,
+            constraints=constraints,
+        )
+        result["run_ids"].append(run["run_id"])
+        if run["status"] != RUN_COMPLETED:
+            result["status"] = run["status"]
+            result["error"] = run.get("error")
+            return result
+        created = save_run_candidates(run["run_id"], created_by=created_by)
+        result["rendering_ids"].extend(item["rendering_id"] for item in created)
+
+        if layer == english_layer and created:
+            candidate = (run["payload"] or {}).get("candidates", [{}])[0]
+            refreshed = registry_service.load_unit(unit_id)
+            literal = comparison_assessment_service.select_rendering(refreshed, "literal")
+            result["assessment"] = comparison_assessment_service.create_assessment(
+                unit_id=unit_id,
+                literal_rendering_id=literal["rendering_id"] if literal else None,
+                english_rendering_id=created[0]["rendering_id"],
+                accuracy_rating=candidate.get("literalness"),
+                accuracy_note=candidate.get("accuracy_note", ""),
+                creative_liberties_note=candidate.get("creative_liberties_note", ""),
+                created_by=created_by,
+                created_via="codex",
+                generator_provider=codex.PROVIDER_NAME,
+                generation_run_id=run["run_id"],
+                status="proposed",
+                rationale="codex comparison row fill",
+            )
+    return result
 
 
 def cancel_run(client: codex.CodexAppServerClient, run_id: str) -> dict[str, Any]:
