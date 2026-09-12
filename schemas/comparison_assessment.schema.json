@@ -22,7 +22,11 @@
     "reviewer_id",
     "reviewed_at",
     "revision_of",
-    "audit_ids"
+    "audit_ids",
+    "literal_backbone",
+    "word_notes",
+    "non_source_material",
+    "analyzed_text_hash"
   ],
   "additionalProperties": false,
   "properties": {
@@ -59,6 +63,7 @@
     },
     "accuracy_rating": {
       "type": ["string", "null"],
+      "description": "Relationship of the English used to the Hebrew. The first six describe a relationship to the source; no_source_basis asserts the absence of one.",
       "enum": [
         "literal",
         "very_close",
@@ -66,6 +71,7 @@
         "adapted",
         "interpretive",
         "omission",
+        "no_source_basis",
         null
       ]
     },
@@ -120,6 +126,84 @@
       "items": {
         "type": "string"
       }
+    },
+    "literal_backbone": {
+      "description": "Compact literal rendering of this unit, one entry per clause. Evidence for the accuracy verdict; never promoted to a literal-layer rendering.",
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "word_notes": {
+      "description": "Per-word translation notes. Anchored to existing token ids; an array because bound phrases such as kevod shemo span several tokens.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "token_ids",
+          "transliteration",
+          "lexical_gloss",
+          "rendered_as",
+          "verdict",
+          "note"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "token_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^ps\\d{3}\\.v\\d{3}\\.t\\d{3}$"
+            }
+          },
+          "transliteration": { "type": "string" },
+          "lexical_gloss": { "type": "string" },
+          "rendered_as": { "type": "string" },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "defensible",
+              "expansion",
+              "narrowing",
+              "nonstandard",
+              "unsupported",
+              "omitted"
+            ]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "non_source_material": {
+      "description": "Material in the English with no counterpart in the Hebrew: performance and arrangement apparatus. Required to be non-empty before accuracy_rating may be no_source_basis.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "kind", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "meter",
+              "instrumentation",
+              "vocal_assignment",
+              "section_label",
+              "dynamics",
+              "other"
+            ]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "analyzed_text_hash": {
+      "description": "Fingerprint of the rendering text this assessment audited, plus the Hebrew source. Null on human-authored assessments. Recomputed at read time to detect a rendering edited in place under the same id.",
+      "type": ["string", "null"]
     }
   }
 }

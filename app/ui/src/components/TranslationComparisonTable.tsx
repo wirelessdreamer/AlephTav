@@ -27,6 +27,7 @@ const ACCURACY_RATINGS: AccuracyRating[] = [
   'adapted',
   'interpretive',
   'omission',
+  'no_source_basis',
 ];
 
 const STATUS_LABELS: Record<ComparisonStatus, string> = {

@@ -350,15 +350,14 @@ def fill_comparison_row(
     meter_target: str | None = None,
     constraints: list[str] | None = None,
 ) -> dict[str, Any]:
-    """Fill one comparison row end to end.
+    """Generate the renderings for one comparison row.
 
-    Generates a literal baseline when the unit lacks one, then the chosen
-    English layer, then records the accuracy and creative-liberty notes the
-    model returned as a ComparisonAssessment. Everything still lands as
-    ``proposed``; nothing here can promote itself.
+    Produces a literal baseline when the unit lacks one, then the chosen English
+    layer. It deliberately does NOT write a ComparisonAssessment: the accuracy
+    verdict is the analysis pass's job, and letting a translating model stamp its
+    own ``literalness`` onto the Accuracy column is the model grading its own
+    work. Everything lands as ``proposed``.
     """
-    from app.services import comparison_assessment_service
-
     unit = registry_service.load_unit(unit_id)
     result: dict[str, Any] = {
         "unit_id": unit_id,
@@ -393,24 +392,6 @@ def fill_comparison_row(
         created = save_run_candidates(run["run_id"], created_by=created_by)
         result["rendering_ids"].extend(item["rendering_id"] for item in created)
 
-        if layer == english_layer and created:
-            candidate = (run["payload"] or {}).get("candidates", [{}])[0]
-            refreshed = registry_service.load_unit(unit_id)
-            literal = comparison_assessment_service.select_rendering(refreshed, "literal")
-            result["assessment"] = comparison_assessment_service.create_assessment(
-                unit_id=unit_id,
-                literal_rendering_id=literal["rendering_id"] if literal else None,
-                english_rendering_id=created[0]["rendering_id"],
-                accuracy_rating=candidate.get("literalness"),
-                accuracy_note=candidate.get("accuracy_note", ""),
-                creative_liberties_note=candidate.get("creative_liberties_note", ""),
-                created_by=created_by,
-                created_via="codex",
-                generator_provider=codex.PROVIDER_NAME,
-                generation_run_id=run["run_id"],
-                status="proposed",
-                rationale="codex comparison row fill",
-            )
     return result
 
 

@@ -192,7 +192,7 @@ def test_study_token_drops_empty_fields_instead_of_emitting_nulls() -> None:
 # -- Row fill --------------------------------------------------------------
 
 
-def test_fill_row_generates_literal_then_english_and_records_the_assessment() -> None:
+def test_fill_row_creates_renderings_but_never_the_verdict() -> None:
     client = _client()
     session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
 
@@ -204,14 +204,11 @@ def test_fill_row_generates_literal_then_english_and_records_the_assessment() ->
     assert len(result["run_ids"]) == 1
     assert len(result["rendering_ids"]) == 1
 
-    assessment = result["assessment"]
-    assert assessment is not None
-    assert assessment["created_via"] == "codex"
-    assert assessment["accuracy_rating"] == "very_close"
-    assert assessment["accuracy_note"] == "Tracks the Hebrew clause order."
-    assert assessment["creative_liberties_note"] == "Contracted for singability."
-    assert assessment["literal_rendering_id"], "assessment must link the literal baseline"
-    assert assessment["english_rendering_id"]
+    # The two passes are separate: translating must not stamp the Accuracy
+    # column, even though the candidate carried a literalness rating.
+    assert result["assessment"] is None
+    unit = registry_service.load_unit(UNIT_ID)
+    assert unit.get("comparison_assessments", []) == []
 
     unit = registry_service.load_unit(UNIT_ID)
     generated = [r for r in unit["renderings"] if r["rendering_id"] in result["rendering_ids"]]
@@ -235,10 +232,10 @@ def test_fill_row_generates_a_literal_baseline_when_the_unit_lacks_one() -> None
     # Literal first, then the English layer.
     assert len(result["run_ids"]) == 2
     assert len(result["rendering_ids"]) == 2
-    assert result["assessment"]["literal_rendering_id"] in result["rendering_ids"]
+    assert result["assessment"] is None
 
 
-def test_filled_row_shows_up_in_the_comparison_table() -> None:
+def test_translated_row_has_text_but_no_accuracy_until_analysis_runs() -> None:
     client = _client()
     session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
     translation.fill_comparison_row(client, session["session_id"], UNIT_ID)
@@ -248,10 +245,12 @@ def test_filled_row_shows_up_in_the_comparison_table() -> None:
 
     assert row["literal_text"]
     assert row["english_text"]
-    assert row["accuracy_rating"] == "very_close"
-    assert row["creative_liberties_note"] == "Contracted for singability."
+    # Both columns of text are filled, but the verdict columns stay empty: the
+    # analysis pass owns them.
+    assert row["accuracy_rating"] is None
+    assert row["accuracy_note"] == ""
+    assert row["creative_liberties_note"] == ""
     assert row["incomplete"] is False
-    assert row["created_via"] == "codex"
 
 
 def test_row_fill_uses_the_psalm_guidance() -> None:

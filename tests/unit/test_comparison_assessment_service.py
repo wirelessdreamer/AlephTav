@@ -237,3 +237,114 @@ def test_units_carrying_assessments_still_validate_against_the_schema() -> None:
 
     result = validate_all_content()
     assert result["errors"] == []
+
+
+# -- The seventh rating and its evidence -----------------------------------
+
+
+def test_no_source_basis_is_refused_without_the_material_it_names() -> None:
+    literal_id, english_id = _rendering_ids()
+
+    with pytest.raises(ValidationError, match="non_source_material"):
+        comparison_assessment_service.create_assessment(
+            unit_id=UNIT_ID,
+            literal_rendering_id=literal_id,
+            english_rendering_id=english_id,
+            accuracy_rating="no_source_basis",
+        )
+
+
+def test_no_source_basis_is_accepted_when_the_material_is_declared() -> None:
+    literal_id, english_id = _rendering_ids()
+
+    item = comparison_assessment_service.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal_id,
+        english_rendering_id=english_id,
+        accuracy_rating="no_source_basis",
+        non_source_material=[
+            {"text": "[6/8]", "kind": "meter", "note": "Arrangement decision; Psalm 1 gives no meter."}
+        ],
+    )
+
+    assert item["accuracy_rating"] == "no_source_basis"
+    assert item["non_source_material"][0]["kind"] == "meter"
+
+
+def test_human_assessments_default_to_empty_evidence_and_a_null_fingerprint() -> None:
+    literal_id, english_id = _rendering_ids()
+
+    item = comparison_assessment_service.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal_id,
+        english_rendering_id=english_id,
+        accuracy_rating="close",
+    )
+
+    assert item["literal_backbone"] == []
+    assert item["word_notes"] == []
+    assert item["non_source_material"] == []
+    # Null is also what marks a row as not written by the analysis pass.
+    assert item["analyzed_text_hash"] is None
+
+
+def test_review_revises_the_verdict_without_discarding_the_evidence() -> None:
+    literal_id, english_id = _rendering_ids()
+    original = comparison_assessment_service.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal_id,
+        english_rendering_id=english_id,
+        accuracy_rating="interpretive",
+        created_via="codex",
+        literal_backbone=["Blessed is the one who does not walk"],
+        word_notes=[
+            {
+                "token_ids": ["ps001.v001.t001"],
+                "transliteration": "ashre",
+                "lexical_gloss": "blessedness of",
+                "rendered_as": "How blessed",
+                "verdict": "expansion",
+                "note": "Plural construct heightened to an exclamation.",
+            }
+        ],
+        analyzed_text_hash="abc123",
+    )
+
+    successor = comparison_assessment_service.revise_assessment(
+        unit_id=UNIT_ID,
+        comparison_id_value=original["comparison_id"],
+        accuracy_rating="close",
+    )
+
+    assert successor["accuracy_rating"] == "close"
+    # A reviewer revises the verdict, not the findings behind it.
+    assert successor["literal_backbone"] == original["literal_backbone"]
+    assert successor["word_notes"] == original["word_notes"]
+    assert successor["analyzed_text_hash"] == "abc123"
+
+
+def test_units_carrying_the_new_evidence_fields_still_validate() -> None:
+    from scripts.validate_content import validate_all_content
+
+    literal_id, english_id = _rendering_ids()
+    comparison_assessment_service.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal_id,
+        english_rendering_id=english_id,
+        accuracy_rating="no_source_basis",
+        literal_backbone=["Blessed is the one"],
+        word_notes=[
+            {
+                "token_ids": ["ps001.v001.t001", "ps001.v001.t002"],
+                "transliteration": "ashre ha-ish",
+                "lexical_gloss": "blessedness of the man",
+                "rendered_as": "How blessed is the one",
+                "verdict": "defensible",
+                "note": "Bound phrase rendered as a unit.",
+            }
+        ],
+        non_source_material=[{"text": "[Verse 1]", "kind": "section_label", "note": "Arrangement."}],
+        analyzed_text_hash="deadbeef",
+    )
+
+    assert validate_all_content()["errors"] == []

@@ -26,7 +26,14 @@ ACCURACY_RATINGS = (
     "adapted",
     "interpretive",
     "omission",
+    # The only value asserting the ABSENCE of a source relationship: performance
+    # or arrangement apparatus with no counterpart in the Hebrew. Guarded below,
+    # and deliberately absent from the translation contract's "literalness" enum
+    # so a translating model can never label its own invented material.
+    "no_source_basis",
 )
+
+NO_SOURCE_BASIS = "no_source_basis"
 
 CREATED_VIA = ("human", "codex", "local_model", "deterministic")
 
@@ -66,9 +73,20 @@ def _find(unit: dict[str, Any], comparison_id_value: str) -> dict[str, Any]:
     raise NotFoundError(f"Comparison assessment not found: {comparison_id_value}")
 
 
-def _validate(accuracy_rating: str | None, created_via: str, status: str) -> None:
+def _validate(
+    accuracy_rating: str | None,
+    created_via: str,
+    status: str,
+    non_source_material: list[dict[str, Any]] | None = None,
+) -> None:
     if accuracy_rating is not None and accuracy_rating not in ACCURACY_RATINGS:
         raise ValidationError(f"Unknown accuracy_rating: {accuracy_rating}")
+    if accuracy_rating == NO_SOURCE_BASIS and not non_source_material:
+        # The rating must be backed by the material it names, or it decays into
+        # meaning "very loose paraphrase".
+        raise ValidationError(
+            f"accuracy_rating '{NO_SOURCE_BASIS}' requires a non-empty non_source_material"
+        )
     if created_via not in CREATED_VIA:
         raise ValidationError(f"Unknown created_via: {created_via}")
     if status not in STATUSES:
@@ -153,8 +171,12 @@ def create_assessment(
     display_reference: str | None = None,
     revision_of: str | None = None,
     rationale: str = "Create comparison assessment",
+    literal_backbone: list[str] | None = None,
+    word_notes: list[dict[str, Any]] | None = None,
+    non_source_material: list[dict[str, Any]] | None = None,
+    analyzed_text_hash: str | None = None,
 ) -> dict[str, Any]:
-    _validate(accuracy_rating, created_via, status)
+    _validate(accuracy_rating, created_via, status, non_source_material)
     unit = registry_service.load_unit(unit_id)
     before = deepcopy(unit)
 
@@ -190,6 +212,10 @@ def create_assessment(
         "reviewed_at": None,
         "revision_of": revision_of,
         "audit_ids": [],
+        "literal_backbone": list(literal_backbone or []),
+        "word_notes": list(word_notes or []),
+        "non_source_material": list(non_source_material or []),
+        "analyzed_text_hash": analyzed_text_hash,
     }
     _assessments(unit).append(item)
     record = audit_service.create_audit_record(
@@ -260,6 +286,12 @@ def revise_assessment(
         created_via=original["created_via"],
         generator_provider=original["generator_provider"],
         generation_run_id=original["generation_run_id"],
+        # Evidence describes the same audited rendering, so it survives review.
+        # A reviewer revises the verdict, not the findings behind it.
+        literal_backbone=original.get("literal_backbone"),
+        word_notes=original.get("word_notes"),
+        non_source_material=original.get("non_source_material"),
+        analyzed_text_hash=original.get("analyzed_text_hash"),
         status=successor_fields["status"],
         display_reference=successor_fields.get("display_reference"),
         revision_of=comparison_id_value,

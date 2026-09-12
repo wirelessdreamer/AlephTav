@@ -760,7 +760,33 @@ export type AccuracyRating =
   | 'close'
   | 'adapted'
   | 'interpretive'
-  | 'omission';
+  | 'omission'
+  /** The only value asserting the absence of a source relationship. */
+  | 'no_source_basis';
+
+export type WordNoteVerdict =
+  | 'standard'
+  | 'defensible'
+  | 'expansion'
+  | 'narrowing'
+  | 'nonstandard'
+  | 'unsupported'
+  | 'omitted';
+
+export interface WordNote {
+  token_ids: string[];
+  transliteration: string;
+  lexical_gloss: string;
+  rendered_as: string;
+  verdict: WordNoteVerdict;
+  note: string;
+}
+
+export interface NonSourceMaterial {
+  text: string;
+  kind: 'meter' | 'instrumentation' | 'vocal_assignment' | 'section_label' | 'dynamics' | 'other';
+  note: string;
+}
 
 export type ComparisonStatus =
   | 'draft'
@@ -821,6 +847,8 @@ export interface StudyToken {
   ref?: string;
   occurrence_count: number;
   occurrence_refs: string[];
+  /** Present only on words the analysis pass commented on. */
+  note?: WordNote;
 }
 
 export interface ComparisonTableRow {
@@ -841,6 +869,10 @@ export interface ComparisonTableRow {
   generator_provider: string | null;
   comparison_id: string | null;
   incomplete: boolean;
+  literal_backbone: string[];
+  non_source_material: NonSourceMaterial[];
+  /** True when the audited rendering text has changed since this analysis ran. */
+  stale: boolean;
 }
 
 export interface ComparisonTable {
