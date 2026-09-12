@@ -13,7 +13,7 @@ def export_book(payload: dict | None = None) -> dict:
     try:
         request = payload or {}
         path = export_service.export_book(psalm_id=request.get("psalm_id"))
-        return {"path": str(path)}
+        return {"path": path.as_posix()}
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 
@@ -22,6 +22,6 @@ def export_book(payload: dict | None = None) -> dict:
 def export_release(payload: dict) -> dict:
     try:
         path = export_service.export_release(payload["release_id"])
-        return {"path": str(path)}
+        return {"path": path.as_posix()}
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
