@@ -33,7 +33,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "c8a1629341b5523b394b36e2b492bd14c5989350e6f0467366cae6b591faf8a6",
+          "after_hash": "62404ea5d04395905fa7797b159350f63e2c8ccbf8abf998cb8870c904145154",
           "audit_id": "aud.ps023.v001.a.0001",
           "before_hash": "e71b4881425b9d95dc2c461150a38092d77c23ffe2fd5f25eea5d14842e0401f",
           "change_type": "create",
@@ -87,14 +87,14 @@
           "rationale": "Literal canonical line.",
           "rendering_id": "rnd.ps023.v001.a.literal.can.0001",
           "review_signoff": {
-            "alternate_approval_count": 1,
+            "alternate_approval_count": 3,
             "alternate_approvers": [
               {
                 "reviewer": "seed-reviewer-1",
                 "reviewer_role": "Hebrew reviewer"
               }
             ],
-            "approval_count": 2,
+            "approval_count": 3,
             "approvers": [
               {
                 "reviewer": "seed-reviewer-1",
@@ -108,7 +108,7 @@
             "eligible_for_alternate": true,
             "eligible_for_canonical": true,
             "has_release_signoff": true,
-            "latest_decision": null,
+            "latest_decision": "approve",
             "publication_ready": true,
             "release_required_role": "release reviewer",
             "release_signoff": {
@@ -129,7 +129,7 @@
               "release reviewer"
             ],
             "status": "canonical_signed_off",
-            "updated_at": "2026-04-09T00:00:02Z"
+            "updated_at": "2026-04-09T00:22:00Z"
           },
           "status": "canonical",
           "style_tags": [
@@ -152,12 +152,22 @@
             "aln.ps023.v001.a.literal.0001"
           ],
           "drift_flags": [
-            "editorial_expansion:medium"
+            {
+              "code": "editorial_expansion",
+              "confidence": 0.5,
+              "message": "editorial expansion",
+              "severity": "medium"
+            }
           ],
           "layer": "lyric",
           "metrics": {
+            "line_length": 6,
+            "parallelism_preservation_score": 0.81,
+            "repetition_score": 0.0,
             "singability_score": 0.74,
-            "syllables": 8
+            "stress_approximation": 0.58,
+            "syllable_count": 7,
+            "syllables": 7
           },
           "provenance": {
             "generator": "human-seed",
@@ -213,7 +223,35 @@
           "unit_id": "ps023.v001.a"
         }
       ],
-      "review_decisions": [],
+      "review_decisions": [
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps023.v001.a.0001",
+          "notes": "Canonical line is faithful to the source naming policy.",
+          "reviewer": "seed-reviewer-1",
+          "reviewer_role": "Hebrew reviewer",
+          "target_id": "rnd.ps023.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:20:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps023.v001.a.0002",
+          "notes": "Predicate sentence alignment is complete.",
+          "reviewer": "seed-reviewer-2",
+          "reviewer_role": "alignment reviewer",
+          "target_id": "rnd.ps023.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:21:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps023.v001.a.0003",
+          "notes": "Unit cleared for release bundle.",
+          "reviewer": "release-seed",
+          "reviewer_role": "release reviewer",
+          "target_id": "rnd.ps023.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:22:00Z"
+        }
+      ],
       "segmentation_type": "colon",
       "source_hebrew": "יְהוָה רֹעִי",
       "source_transliteration": "yhwh ro'i",
@@ -224,9 +262,11 @@
       ],
       "tokens": [
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Genesis 2:4"
           ],
+          "display_gloss": "divine name",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -250,6 +290,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "divine name"
+          ],
+          "greek": null,
+          "greek_strong": null,
           "lemma": "יהוה",
           "missing_enrichments": [],
           "morph_code": "Np",
@@ -273,9 +318,11 @@
           "word_sense": "divine name"
         },
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Genesis 48:15"
           ],
+          "display_gloss": "shepherd",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -299,6 +346,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "shepherd"
+          ],
+          "greek": null,
+          "greek_strong": null,
           "lemma": "רעה",
           "missing_enrichments": [],
           "morph_code": "Ncmsg+Sp1cs",
@@ -323,7 +375,38 @@
         }
       ],
       "unit_id": "ps023.v001.a",
-      "witnesses": []
+      "witnesses": [
+        {
+          "language": "en",
+          "ref": "Psalms 23:1",
+          "source_id": "kjv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+          "source_version": "eng-kjv2006",
+          "text": "A Psalm of David. The LORD [is] my shepherd; I shall not want.",
+          "versionTitle": "King James Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 23:1",
+          "source_id": "asv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-asv",
+          "source_version": "eng-asv",
+          "text": "A Psalm of David. Jehovah is my shepherd; I shall not want.",
+          "versionTitle": "American Standard Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 23:1",
+          "source_id": "web",
+          "source_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+          "source_version": "engwebp",
+          "text": "A Psalm by David. The LORD is my shepherd; I shall lack nothing.",
+          "versionTitle": "World English Bible",
+          "witness_role": "english_witness"
+        }
+      ]
     }
   ]
 }

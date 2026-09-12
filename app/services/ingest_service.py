@@ -5,8 +5,7 @@ from copy import deepcopy
 from typing import Any
 
 from app.services import audit_service, registry_service, review_service
-from app.services.full_psalm_import_service import import_vendored_psalms
-
+from app.services.full_psalm_import_service import import_vendored_psalms as import_vendored_psalms
 
 HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
 
@@ -89,7 +88,10 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
         "concept_ids": ["cpt.ps001.v001.a.0001"],
         "status": "under_review",
         "current_layer_state": {"locked_layers": ["gloss"], "latest_layer": "literal"},
-        "canonical_rendering_ids": ["rnd.ps001.v001.a.gloss.can.0001", "rnd.ps001.v001.a.literal.can.0001"],
+        "canonical_rendering_ids": [
+            "rnd.ps001.v001.a.gloss.can.0001",
+            "rnd.ps001.v001.a.literal.can.0001",
+        ],
         "alternate_rendering_ids": ["rnd.ps001.v001.a.lyric.alt.0001"],
         "audit_ids": [],
         "issue_links": [],
@@ -100,6 +102,8 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "transliteration": "ashrei",
                 "lemma": "אשר",
                 "strong": "H835",
+                "greek": "μακάριος",
+                "greek_strong": "G3107",
                 "morph_code": "Tm",
                 "morph_readable": "interjection of blessing",
                 "part_of_speech": "particle",
@@ -116,6 +120,8 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "transliteration": "ha-ish",
                 "lemma": "איש",
                 "strong": "H376",
+                "greek": "ἀνήρ",
+                "greek_strong": "G435",
                 "morph_code": "Td/Ncmsa",
                 "morph_readable": "article + noun masculine singular absolute",
                 "part_of_speech": "noun",
@@ -163,8 +169,18 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "Blessed - the man",
                 "style_tags": ["gloss", "study_literal"],
                 "target_spans": [
-                    {"span_id": "spn.ps001.v001.a.gloss.0001", "text": "Blessed", "token_start": 0, "token_end": 0},
-                    {"span_id": "spn.ps001.v001.a.gloss.0002", "text": "the man", "token_start": 2, "token_end": 3},
+                    {
+                        "span_id": "spn.ps001.v001.a.gloss.0001",
+                        "text": "Blessed",
+                        "token_start": 0,
+                        "token_end": 0,
+                    },
+                    {
+                        "span_id": "spn.ps001.v001.a.gloss.0002",
+                        "text": "the man",
+                        "token_start": 2,
+                        "token_end": 3,
+                    },
                 ],
                 "alignment_ids": ["aln.ps001.v001.a.gloss.0001", "aln.ps001.v001.a.gloss.0002"],
                 "drift_flags": [],
@@ -180,8 +196,18 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "Happy is the man",
                 "style_tags": ["literal", "study_literal"],
                 "target_spans": [
-                    {"span_id": "spn.ps001.v001.a.literal.0001", "text": "Happy", "token_start": 0, "token_end": 0},
-                    {"span_id": "spn.ps001.v001.a.literal.0002", "text": "the man", "token_start": 2, "token_end": 3},
+                    {
+                        "span_id": "spn.ps001.v001.a.literal.0001",
+                        "text": "Happy",
+                        "token_start": 0,
+                        "token_end": 0,
+                    },
+                    {
+                        "span_id": "spn.ps001.v001.a.literal.0002",
+                        "text": "the man",
+                        "token_start": 2,
+                        "token_end": 3,
+                    },
                 ],
                 "alignment_ids": ["aln.ps001.v001.a.gloss.0001", "aln.ps001.v001.a.gloss.0002"],
                 "drift_flags": [],
@@ -197,7 +223,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "Blessed is the one",
                 "style_tags": ["lyric", "formal_liturgical"],
                 "target_spans": [
-                    {"span_id": "spn.ps001.v001.a.lyric.0001", "text": "Blessed is the one", "token_start": 0, "token_end": 3}
+                    {
+                        "span_id": "spn.ps001.v001.a.lyric.0001",
+                        "text": "Blessed is the one",
+                        "token_start": 0,
+                        "token_end": 3,
+                    }
                 ],
                 "alignment_ids": ["aln.ps001.v001.a.gloss.0001", "aln.ps001.v001.a.gloss.0002"],
                 "drift_flags": [
@@ -293,7 +324,17 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "ref": "Psalms 1:1",
                 "source_url": "https://www.sefaria.org/Psalms.1.1",
                 "text": "Optional witness text stored separately.",
-            }
+            },
+            {
+                "source_id": "lxx",
+                "versionTitle": "Fixture Septuagint Greek",
+                "source_version": "fixture-lxx-2026.04",
+                "language": "grc",
+                "witness_role": "septuagint_greek",
+                "ref": "Psalm 1:1",
+                "source_url": "fixture://lxx/ps001.1",
+                "text": "μακάριος ἀνήρ",
+            },
         ],
     },
     {
@@ -368,7 +409,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "The heavens are declaring",
                 "style_tags": ["literal", "study_literal"],
                 "target_spans": [
-                    {"span_id": "spn.ps019.v001.a.literal.0001", "text": "The heavens are declaring", "token_start": 0, "token_end": 3}
+                    {
+                        "span_id": "spn.ps019.v001.a.literal.0001",
+                        "text": "The heavens are declaring",
+                        "token_start": 0,
+                        "token_end": 3,
+                    }
                 ],
                 "alignment_ids": ["aln.ps019.v001.a.literal.0001"],
                 "drift_flags": [],
@@ -447,7 +493,9 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "lemma": "רעה",
                 "strong": "H7462",
                 "morph_code": "Ncmsg+Sp1cs",
-                "morph_readable": "noun masculine singular construct + suffix first common singular",
+                "morph_readable": (
+                    "noun masculine singular construct + suffix first common singular"
+                ),
                 "part_of_speech": "noun",
                 "syntax_role": "predicate",
                 "semantic_role": "caregiver",
@@ -481,7 +529,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "The LORD is my shepherd",
                 "style_tags": ["literal", "study_literal"],
                 "target_spans": [
-                    {"span_id": "spn.ps023.v001.a.literal.0001", "text": "The LORD is my shepherd", "token_start": 0, "token_end": 4}
+                    {
+                        "span_id": "spn.ps023.v001.a.literal.0001",
+                        "text": "The LORD is my shepherd",
+                        "token_start": 0,
+                        "token_end": 4,
+                    }
                 ],
                 "alignment_ids": ["aln.ps023.v001.a.literal.0001"],
                 "drift_flags": [],
@@ -497,7 +550,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "The LORD, my shepherd, stays near",
                 "style_tags": ["lyric", "metered_common_meter"],
                 "target_spans": [
-                    {"span_id": "spn.ps023.v001.a.lyric.0001", "text": "The LORD, my shepherd, stays near", "token_start": 0, "token_end": 5}
+                    {
+                        "span_id": "spn.ps023.v001.a.lyric.0001",
+                        "text": "The LORD, my shepherd, stays near",
+                        "token_start": 0,
+                        "token_end": 5,
+                    }
                 ],
                 "alignment_ids": ["aln.ps023.v001.a.literal.0001"],
                 "drift_flags": [
@@ -575,7 +633,9 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "lemma": "חנן",
                 "strong": "H2603",
                 "morph_code": "Vqami+Sp1cs",
-                "morph_readable": "verb qal imperative masculine singular + suffix first common singular",
+                "morph_readable": (
+                    "verb qal imperative masculine singular + suffix first common singular"
+                ),
                 "part_of_speech": "verb",
                 "syntax_role": "predicate",
                 "semantic_role": "petition",
@@ -625,7 +685,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "Be gracious to me, O God",
                 "style_tags": ["literal", "study_literal"],
                 "target_spans": [
-                    {"span_id": "spn.ps051.v001.a.literal.0001", "text": "Be gracious to me, O God", "token_start": 0, "token_end": 5}
+                    {
+                        "span_id": "spn.ps051.v001.a.literal.0001",
+                        "text": "Be gracious to me, O God",
+                        "token_start": 0,
+                        "token_end": 5,
+                    }
                 ],
                 "alignment_ids": ["aln.ps051.v001.a.literal.0001"],
                 "drift_flags": [],
@@ -641,7 +706,12 @@ FIXTURE_UNITS: list[dict[str, Any]] = [
                 "text": "God, show me mercy",
                 "style_tags": ["phrase", "formal_liturgical"],
                 "target_spans": [
-                    {"span_id": "spn.ps051.v001.a.phrase.0001", "text": "God, show me mercy", "token_start": 0, "token_end": 3}
+                    {
+                        "span_id": "spn.ps051.v001.a.phrase.0001",
+                        "text": "God, show me mercy",
+                        "token_start": 0,
+                        "token_end": 3,
+                    }
                 ],
                 "alignment_ids": ["aln.ps051.v001.a.literal.0001"],
                 "drift_flags": [],
@@ -704,7 +774,12 @@ def _token_id(unit_id: str, index: int) -> str:
 
 
 def _derive_stem(morph_code: str | None, part_of_speech: str | None) -> str | None:
-    if not morph_code or part_of_speech != "verb" or not morph_code.startswith("V") or len(morph_code) < 2:
+    if (
+        not morph_code
+        or part_of_speech != "verb"
+        or not morph_code.startswith("V")
+        or len(morph_code) < 2
+    ):
         return None
     return STEM_MAP.get(morph_code[1])
 
@@ -739,7 +814,9 @@ def _source_status(available_fields: list[str], applicable_fields: tuple[str, ..
     return "partial"
 
 
-def _build_enriched_token(unit: dict[str, Any], seed_token: dict[str, Any], position: int) -> dict[str, Any]:
+def _build_enriched_token(
+    unit: dict[str, Any], seed_token: dict[str, Any], position: int
+) -> dict[str, Any]:
     token_id = _token_id(unit["unit_id"], position)
     oshb_payload = _source_payload(token_id, "oshb", seed_token)
     macula_payload = _source_payload(token_id, "macula", seed_token)
@@ -751,6 +828,8 @@ def _build_enriched_token(unit: dict[str, Any], seed_token: dict[str, Any], posi
         "transliteration": seed_token.get("transliteration"),
         "lemma": oshb_payload.get("lemma"),
         "strong": oshb_payload.get("strong"),
+        "greek": seed_token.get("greek"),
+        "greek_strong": seed_token.get("greek_strong"),
         "morph_code": oshb_payload.get("morph_code"),
         "morph_readable": oshb_payload.get("morph_readable"),
         "part_of_speech": oshb_payload.get("part_of_speech"),
@@ -759,7 +838,10 @@ def _build_enriched_token(unit: dict[str, Any], seed_token: dict[str, Any], posi
         "semantic_role": macula_payload.get("semantic_role"),
         "referent": macula_payload.get("referent"),
         "word_sense": macula_payload.get("word_sense"),
-        "gloss_parts": seed_token.get("gloss_parts", [macula_payload.get("word_sense")] if macula_payload.get("word_sense") else []),
+        "gloss_parts": seed_token.get(
+            "gloss_parts",
+            [macula_payload.get("word_sense")] if macula_payload.get("word_sense") else [],
+        ),
         "display_gloss": seed_token.get("display_gloss", macula_payload.get("word_sense")),
         "compiler_features": seed_token.get("compiler_features", {}),
         "occurrence_index": 1,
@@ -788,9 +870,14 @@ def _tokenize_and_enrich(unit: dict[str, Any]) -> dict[str, Any]:
     token_surfaces = unit["source_hebrew"].split()
     seed_tokens = unit.pop("seed_tokens")
     if len(token_surfaces) != len(seed_tokens):
-        raise ValueError(f"Tokenization mismatch for {unit['unit_id']}: {len(token_surfaces)} surfaces vs {len(seed_tokens)} seed tokens")
+        raise ValueError(
+            f"Tokenization mismatch for {unit['unit_id']}: {len(token_surfaces)} "
+            f"surfaces vs {len(seed_tokens)} seed tokens"
+        )
     enriched_tokens = []
-    for index, (surface, seed_token) in enumerate(zip(token_surfaces, seed_tokens, strict=True), start=1):
+    for index, (surface, seed_token) in enumerate(
+        zip(token_surfaces, seed_tokens, strict=True), start=1
+    ):
         seed_payload = {**seed_token, "surface": surface}
         enriched_tokens.append(_build_enriched_token(unit, seed_payload, index))
     unit["token_ids"] = [token["token_id"] for token in enriched_tokens]
@@ -807,7 +894,9 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
         initial_hash = registry_service.file_hash({"unit_id": seeded["unit_id"], "seed": True})
         fixture_timestamp = f"2026-04-09T00:00:{len(imported):02d}Z"
         for rendering in seeded.get("renderings", []):
-            rendering["review_signoff"] = _seed_review_signoff(rendering["status"], fixture_timestamp)
+            rendering["review_signoff"] = _seed_review_signoff(
+                rendering["status"], fixture_timestamp
+            )
         review_service.hydrate_unit_review_state(seeded)
         final_hash = registry_service.file_hash(seeded)
         audit_service.create_audit_record(
@@ -824,7 +913,9 @@ def import_fixture_psalms() -> list[dict[str, Any]]:
         psalm_groups.setdefault(seeded["psalm_id"], []).append(seeded)
         imported.append(seeded)
     for psalm_id, units in psalm_groups.items():
-        registry_service.write_json(registry_service.psalm_dir(psalm_id) / f"{psalm_id}.meta.json", _psalm_meta(units))
+        registry_service.write_json(
+            registry_service.psalm_dir(psalm_id) / f"{psalm_id}.meta.json", _psalm_meta(units)
+        )
     return imported
 
 
@@ -837,17 +928,25 @@ def attach_fixture_annotations() -> int:
                 continue
             token["morph_readable"] = token.get("morph_code", "unknown")
             if "oshb:morph_readable" in token.get("missing_enrichments", []):
-                token["missing_enrichments"] = [item for item in token["missing_enrichments"] if item != "oshb:morph_readable"]
+                token["missing_enrichments"] = [
+                    item for item in token["missing_enrichments"] if item != "oshb:morph_readable"
+                ]
                 source = token.setdefault("enrichment_sources", {}).setdefault(
                     "oshb",
                     {"status": "partial", "available_fields": [], "missing_fields": []},
                 )
                 if "morph_readable" not in source["available_fields"]:
                     source["available_fields"].append("morph_readable")
-                source["missing_fields"] = [field for field in source["missing_fields"] if field != "morph_readable"]
+                source["missing_fields"] = [
+                    field for field in source["missing_fields"] if field != "morph_readable"
+                ]
                 source["status"] = _source_status(
                     source["available_fields"],
-                    tuple(field for field in _applicable_fields("oshb", token) if field != "morph_readable" or token.get("morph_readable") is not None),
+                    tuple(
+                        field
+                        for field in _applicable_fields("oshb", token)
+                        if field != "morph_readable" or token.get("morph_readable") is not None
+                    ),
                 )
             updated = True
         if updated:

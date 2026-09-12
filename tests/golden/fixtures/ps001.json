@@ -48,7 +48,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "9552f052d20dd97edfc31f8bb013d8d315eb18326e53bae8a519750657f9f19b",
+          "after_hash": "f8a5ceea0eeb3f9e6ddc02c63a1debacfaeef77f5ac427b044c2cef7d5fb2d4f",
           "audit_id": "aud.ps001.v001.a.0001",
           "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
           "change_type": "create",
@@ -103,7 +103,7 @@
           "rationale": "Gloss-level lexical rendering.",
           "rendering_id": "rnd.ps001.v001.a.gloss.can.0001",
           "review_signoff": {
-            "alternate_approval_count": 1,
+            "alternate_approval_count": 2,
             "alternate_approvers": [
               {
                 "reviewer": "seed-reviewer-1",
@@ -124,7 +124,7 @@
             "eligible_for_alternate": true,
             "eligible_for_canonical": true,
             "has_release_signoff": true,
-            "latest_decision": null,
+            "latest_decision": "approve",
             "publication_ready": true,
             "release_required_role": "release reviewer",
             "release_signoff": {
@@ -145,7 +145,7 @@
               "release reviewer"
             ],
             "status": "canonical_signed_off",
-            "updated_at": "2026-04-09T00:00:00Z"
+            "updated_at": "2026-04-09T00:05:00Z"
           },
           "status": "canonical",
           "style_tags": [
@@ -190,14 +190,14 @@
           "rationale": "Literal English line for review.",
           "rendering_id": "rnd.ps001.v001.a.literal.can.0001",
           "review_signoff": {
-            "alternate_approval_count": 2,
+            "alternate_approval_count": 3,
             "alternate_approvers": [
               {
                 "reviewer": "seed-reviewer-1",
                 "reviewer_role": "Hebrew reviewer"
               }
             ],
-            "approval_count": 2,
+            "approval_count": 3,
             "approvers": [
               {
                 "reviewer": "seed-reviewer-1",
@@ -232,7 +232,7 @@
               "release reviewer"
             ],
             "status": "canonical_signed_off",
-            "updated_at": "2026-04-09T00:01:00Z"
+            "updated_at": "2026-04-09T00:04:00Z"
           },
           "status": "canonical",
           "style_tags": [
@@ -262,12 +262,29 @@
             "aln.ps001.v001.a.gloss.0002"
           ],
           "drift_flags": [
-            "semantic_overcompression:low"
+            {
+              "code": "semantic_overcompression",
+              "confidence": 0.5,
+              "message": "semantic overcompression",
+              "severity": "low"
+            },
+            {
+              "code": "parallelism_break",
+              "confidence": 0.72,
+              "message": "Lyric line compresses a multi-span source into a single span.",
+              "severity": "medium"
+            }
           ],
           "layer": "lyric",
           "metrics": {
+            "line_length": 4,
             "parallelism_preservation": 0.84,
-            "syllables": 5
+            "parallelism_preservation_score": 0.59,
+            "repetition_score": 0.0,
+            "singability_score": 0.56,
+            "stress_approximation": 0.75,
+            "syllable_count": 6,
+            "syllables": 6
           },
           "provenance": {
             "generator": "human-seed",
@@ -301,7 +318,7 @@
             "eligible_for_alternate": true,
             "eligible_for_canonical": true,
             "has_release_signoff": false,
-            "latest_decision": null,
+            "latest_decision": "approve",
             "publication_ready": false,
             "release_required_role": "release reviewer",
             "release_signoff": {},
@@ -318,7 +335,7 @@
               "release reviewer"
             ],
             "status": "approved_for_canonical",
-            "updated_at": "2026-04-09T00:00:00Z"
+            "updated_at": "2026-04-09T00:03:00Z"
           },
           "status": "accepted_as_alternate",
           "style_tags": [
@@ -341,20 +358,56 @@
         {
           "decision": "approve",
           "decision_id": "rev.ps001.v001.a.0001",
-          "notes": "Literal line acceptable.",
+          "notes": "Gloss line matches lexical payload.",
           "reviewer": "seed-reviewer-1",
           "reviewer_role": "Hebrew reviewer",
-          "target_id": "rnd.ps001.v001.a.literal.can.0001",
+          "target_id": "rnd.ps001.v001.a.gloss.can.0001",
           "timestamp": "2026-04-09T00:00:00Z"
         },
         {
           "decision": "approve",
           "decision_id": "rev.ps001.v001.a.0002",
+          "notes": "Literal line acceptable.",
+          "reviewer": "seed-reviewer-1",
+          "reviewer_role": "Hebrew reviewer",
+          "target_id": "rnd.ps001.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:01:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps001.v001.a.0003",
           "notes": "Alignment coverage complete.",
           "reviewer": "seed-reviewer-2",
           "reviewer_role": "alignment reviewer",
           "target_id": "rnd.ps001.v001.a.literal.can.0001",
-          "timestamp": "2026-04-09T00:01:00Z"
+          "timestamp": "2026-04-09T00:02:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps001.v001.a.0004",
+          "notes": "Alternate remains singable and traceable.",
+          "reviewer": "seed-reviewer-3",
+          "reviewer_role": "lyric reviewer",
+          "target_id": "rnd.ps001.v001.a.lyric.alt.0001",
+          "timestamp": "2026-04-09T00:03:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps001.v001.a.0005",
+          "notes": "Unit cleared for release bundle.",
+          "reviewer": "release-seed",
+          "reviewer_role": "release reviewer",
+          "target_id": "rnd.ps001.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:04:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps001.v001.a.0006",
+          "notes": "Gloss alignment coverage is complete.",
+          "reviewer": "seed-reviewer-2",
+          "reviewer_role": "alignment reviewer",
+          "target_id": "rnd.ps001.v001.a.gloss.can.0001",
+          "timestamp": "2026-04-09T00:05:00Z"
         }
       ],
       "segmentation_type": "colon",
@@ -367,9 +420,11 @@
       ],
       "tokens": [
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Psalm 32:1"
           ],
+          "display_gloss": "fortunate/blessed",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -393,6 +448,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "fortunate/blessed"
+          ],
+          "greek": "μακάριος",
+          "greek_strong": "G3107",
           "lemma": "אשר",
           "missing_enrichments": [],
           "morph_code": "Tm",
@@ -418,9 +478,11 @@
           "word_sense": "fortunate/blessed"
         },
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Psalm 37:23"
           ],
+          "display_gloss": "man/person",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -444,6 +506,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "man/person"
+          ],
+          "greek": "ἀνήρ",
+          "greek_strong": "G435",
           "lemma": "איש",
           "missing_enrichments": [],
           "morph_code": "Td/Ncmsa",
@@ -478,6 +545,46 @@
           "source_url": "https://www.sefaria.org/Psalms.1.1",
           "text": "Optional witness text stored separately.",
           "versionTitle": "Fixture Witness"
+        },
+        {
+          "language": "grc",
+          "ref": "Psalm 1:1",
+          "source_id": "lxx",
+          "source_url": "fixture://lxx/ps001.1",
+          "source_version": "fixture-lxx-2026.04",
+          "text": "μακάριος ἀνήρ",
+          "versionTitle": "Fixture Septuagint Greek",
+          "witness_role": "septuagint_greek"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 1:1",
+          "source_id": "kjv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+          "source_version": "eng-kjv2006",
+          "text": "Blessed [is] the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.",
+          "versionTitle": "King James Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 1:1",
+          "source_id": "asv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-asv",
+          "source_version": "eng-asv",
+          "text": "Blessed is the man that walketh not in the counsel of the wicked, Nor standeth in the way of sinners, Nor sitteth in the seat of scoffers:",
+          "versionTitle": "American Standard Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 1:1",
+          "source_id": "web",
+          "source_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+          "source_version": "engwebp",
+          "text": "Blessed is the man who doesn’t walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers;",
+          "versionTitle": "World English Bible",
+          "witness_role": "english_witness"
         }
       ]
     }

@@ -31,7 +31,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "907dbb3e17eabd81783db080f8b501e377b8d983ae05bca6c204b0d30893f82e",
+          "after_hash": "6162d62017a8f92e9770ebb7a9b2c50b9bec4bd4bdcaf5f171568330d1a463ce",
           "audit_id": "aud.ps019.v001.a.0001",
           "before_hash": "74cd8ec48688f08215a551a30723156fbdbd36b327aea2f24482e70e777d8fff",
           "change_type": "create",
@@ -82,14 +82,14 @@
           "rationale": "Initial literal line.",
           "rendering_id": "rnd.ps019.v001.a.literal.can.0001",
           "review_signoff": {
-            "alternate_approval_count": 1,
+            "alternate_approval_count": 3,
             "alternate_approvers": [
               {
                 "reviewer": "seed-reviewer-1",
                 "reviewer_role": "Hebrew reviewer"
               }
             ],
-            "approval_count": 2,
+            "approval_count": 3,
             "approvers": [
               {
                 "reviewer": "seed-reviewer-1",
@@ -103,7 +103,7 @@
             "eligible_for_alternate": true,
             "eligible_for_canonical": true,
             "has_release_signoff": true,
-            "latest_decision": null,
+            "latest_decision": "approve",
             "publication_ready": true,
             "release_required_role": "release reviewer",
             "release_signoff": {
@@ -124,7 +124,7 @@
               "release reviewer"
             ],
             "status": "canonical_signed_off",
-            "updated_at": "2026-04-09T00:00:01Z"
+            "updated_at": "2026-04-09T00:12:00Z"
           },
           "status": "canonical",
           "style_tags": [
@@ -143,7 +143,35 @@
           "unit_id": "ps019.v001.a"
         }
       ],
-      "review_decisions": [],
+      "review_decisions": [
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps019.v001.a.0001",
+          "notes": "Literal line preserves the clause faithfully.",
+          "reviewer": "seed-reviewer-1",
+          "reviewer_role": "Hebrew reviewer",
+          "target_id": "rnd.ps019.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:10:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps019.v001.a.0002",
+          "notes": "Grouped span coverage is complete.",
+          "reviewer": "seed-reviewer-2",
+          "reviewer_role": "alignment reviewer",
+          "target_id": "rnd.ps019.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:11:00Z"
+        },
+        {
+          "decision": "approve",
+          "decision_id": "rev.ps019.v001.a.0003",
+          "notes": "Unit cleared for release bundle.",
+          "reviewer": "release-seed",
+          "reviewer_role": "release reviewer",
+          "target_id": "rnd.ps019.v001.a.literal.can.0001",
+          "timestamp": "2026-04-09T00:12:00Z"
+        }
+      ],
       "segmentation_type": "colon",
       "source_hebrew": "הַשָּׁמַיִם מְסַפְּרִים",
       "source_transliteration": "ha-shamayim mesapperim",
@@ -154,9 +182,11 @@
       ],
       "tokens": [
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Genesis 1:1"
           ],
+          "display_gloss": "sky/heavens",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -180,6 +210,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "sky/heavens"
+          ],
+          "greek": null,
+          "greek_strong": null,
           "lemma": "שמים",
           "missing_enrichments": [],
           "morph_code": "Td/Ncmpa",
@@ -203,9 +238,11 @@
           "word_sense": "sky/heavens"
         },
         {
+          "compiler_features": {},
           "corpus_occurrence_refs": [
             "Psalm 71:15"
           ],
+          "display_gloss": "declare/tell",
           "enrichment_sources": {
             "macula": {
               "available_fields": [
@@ -231,6 +268,11 @@
               "status": "complete"
             }
           },
+          "gloss_parts": [
+            "declare/tell"
+          ],
+          "greek": null,
+          "greek_strong": null,
           "lemma": "ספר",
           "missing_enrichments": [
             "macula:referent"
@@ -257,7 +299,38 @@
         }
       ],
       "unit_id": "ps019.v001.a",
-      "witnesses": []
+      "witnesses": [
+        {
+          "language": "en",
+          "ref": "Psalms 19:1",
+          "source_id": "kjv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-kjv2006",
+          "source_version": "eng-kjv2006",
+          "text": "To the chief Musician, A Psalm of David. The heavens declare the glory of God; and the firmament sheweth his handywork.",
+          "versionTitle": "King James Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 19:1",
+          "source_id": "asv",
+          "source_url": "https://ebible.org/find/details.php?id=eng-asv",
+          "source_version": "eng-asv",
+          "text": "For the Chief Musician. A Psalm of David. The heavens declare the glory of God; And the firmament showeth his handiwork.",
+          "versionTitle": "American Standard Version",
+          "witness_role": "english_witness"
+        },
+        {
+          "language": "en",
+          "ref": "Psalms 19:1",
+          "source_id": "web",
+          "source_url": "https://ebible.org/bible/details.php?all=1&id=engwebp",
+          "source_version": "engwebp",
+          "text": "For the Chief Musician. A Psalm by David. The heavens declare the glory of God. The expanse shows his handiwork.",
+          "versionTitle": "World English Bible",
+          "witness_role": "english_witness"
+        }
+      ]
     }
   ]
 }

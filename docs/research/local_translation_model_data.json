@@ -1,0 +1,307 @@
+{
+  "generated_on": "2026-06-15",
+  "status": "research_baseline_not_benchmark_result",
+  "hardware_target": {
+    "gpu_class": "RTX 3090 or less",
+    "vram_gb": 24,
+    "notes": [
+      "Scores are priors from public model data and project requirements.",
+      "Actual acceptance requires local benchmark output with model hash, runtime, quantization, seed, and reviewer scoring."
+    ]
+  },
+  "current_corpus_scan": {
+    "source": "content/psalms",
+    "psalm_count": 150,
+    "unit_count": 2527,
+    "total_token_records": 19587,
+    "units_with_renderings": 0,
+    "status_counts": {
+      "draft": 2527
+    }
+  },
+  "scoring_scale": {
+    "minimum": 1,
+    "maximum": 5,
+    "meaning": {
+      "1": "weak fit",
+      "3": "usable with caveats",
+      "5": "strong fit"
+    }
+  },
+  "score_dimensions": [
+    "local_fit",
+    "hebrew_evidence",
+    "context_fit",
+    "structured_output",
+    "fine_tune_tractability",
+    "license_governance_fit"
+  ],
+  "candidate_scores": [
+    {
+      "model": "google/gemma-4-12B-it",
+      "family": "Gemma 4",
+      "role": "primary_trainable_base_candidate",
+      "local_fit": 5,
+      "hebrew_evidence": 3,
+      "context_fit": 5,
+      "structured_output": 5,
+      "fine_tune_tractability": 4,
+      "license_governance_fit": 5,
+      "mean": 4.5
+    },
+    {
+      "model": "google/translategemma-12b-it",
+      "family": "TranslateGemma",
+      "role": "translation_specialized_local_comparator",
+      "local_fit": 5,
+      "hebrew_evidence": 4,
+      "context_fit": 3,
+      "structured_output": 4,
+      "fine_tune_tractability": 4,
+      "license_governance_fit": 5,
+      "mean": 4.17
+    },
+    {
+      "model": "dicta-il/DictaLM-3.0-Nemotron-12B-Instruct",
+      "family": "DictaLM 3.0",
+      "role": "hebrew_specialist_challenger",
+      "local_fit": 4,
+      "hebrew_evidence": 5,
+      "context_fit": 4,
+      "structured_output": 4,
+      "fine_tune_tractability": 3,
+      "license_governance_fit": 5,
+      "mean": 4.17
+    },
+    {
+      "model": "google/gemma-4-26B-A4B-it",
+      "family": "Gemma 4",
+      "role": "strong_local_inference_candidate",
+      "local_fit": 4,
+      "hebrew_evidence": 3,
+      "context_fit": 5,
+      "structured_output": 5,
+      "fine_tune_tractability": 3,
+      "license_governance_fit": 5,
+      "mean": 4.17
+    },
+    {
+      "model": "dicta-il/DictaLM-3.0-24B-Thinking",
+      "family": "DictaLM 3.0",
+      "role": "hebrew_specialist_high_quality_comparator",
+      "local_fit": 3,
+      "hebrew_evidence": 5,
+      "context_fit": 4,
+      "structured_output": 4,
+      "fine_tune_tractability": 2,
+      "license_governance_fit": 5,
+      "mean": 3.83
+    },
+    {
+      "model": "Qwen/Qwen3-14B",
+      "family": "Qwen3",
+      "role": "multilingual_reasoning_challenger",
+      "local_fit": 4,
+      "hebrew_evidence": 3,
+      "context_fit": 4,
+      "structured_output": 4,
+      "fine_tune_tractability": 4,
+      "license_governance_fit": 4,
+      "mean": 3.83
+    },
+    {
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "family": "Mistral Small",
+      "role": "legacy_local_structured_output_comparator",
+      "local_fit": 3,
+      "hebrew_evidence": 2,
+      "context_fit": 4,
+      "structured_output": 4,
+      "fine_tune_tractability": 3,
+      "license_governance_fit": 5,
+      "mean": 3.5
+    },
+    {
+      "model": "Qwen/Qwen3.6-35B-A3B",
+      "family": "Qwen3.6",
+      "role": "stretch_comparator",
+      "local_fit": 2,
+      "hebrew_evidence": 3,
+      "context_fit": 5,
+      "structured_output": 4,
+      "fine_tune_tractability": 2,
+      "license_governance_fit": 4,
+      "mean": 3.33
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "family": "Llama 3.1",
+      "role": "local_baseline_only",
+      "local_fit": 5,
+      "hebrew_evidence": 1,
+      "context_fit": 4,
+      "structured_output": 3,
+      "fine_tune_tractability": 5,
+      "license_governance_fit": 3,
+      "mean": 3.5
+    }
+  ],
+  "source_hierarchy": [
+    {
+      "source": "UXLC/WLC-derived Hebrew",
+      "role": "canonical_source",
+      "policy": "allowed for canonical source, display, and export"
+    },
+    {
+      "source": "OSHB",
+      "role": "morphology_and_lemma_enrichment",
+      "policy": "allowed for lexical enrichment and display with attribution"
+    },
+    {
+      "source": "MACULA Hebrew",
+      "role": "syntax_semantic_role_referent_gloss_enrichment",
+      "policy": "allowed for enrichment with attribution"
+    },
+    {
+      "source": "version_pinned_witnesses",
+      "role": "textual_and_reception_witnesses",
+      "policy": "license-check each witness; do not use English witnesses as canonical source"
+    }
+  ],
+  "benchmark_suites": [
+    "morphology_and_lexeme_control",
+    "syntax_and_discourse",
+    "poetic_structure",
+    "whole_tanakh_context",
+    "textual_witnesses",
+    "jewish_christian_reception",
+    "structured_output",
+    "local_operations",
+    "human_review_agreement"
+  ],
+  "recommended_bakeoff_models": [
+    "google/gemma-4-12B-it",
+    "google/translategemma-12b-it",
+    "google/gemma-4-26B-A4B-it",
+    "dicta-il/DictaLM-3.0-Nemotron-12B-Instruct",
+    "dicta-il/DictaLM-3.0-24B-Thinking",
+    "Qwen/Qwen3-14B",
+    "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+  ],
+  "model_refresh_notes": [
+    {
+      "model": "google/translategemma-12b-it",
+      "note": "Added as a 2026 translation-specialized local comparator. Keep Gemma 4 12B as the first scholarly fine-tuning base because TranslateGemma optimizes translation fidelity, not biblical source-context reasoning."
+    },
+    {
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "note": "Mistral lists Small 3.2 as replaced by Mistral Small 4. Keep 3.2 only as a local 24B comparator because Small 4 is a 119B MoE class model and is not the default RTX 3090 target."
+    }
+  ],
+  "citations": [
+    {
+      "id": "benchmark_seed",
+      "url": "docs/research/local_translation_benchmark_seed.json"
+    },
+    {
+      "id": "gemma4_model_card",
+      "url": "https://ai.google.dev/gemma/docs/core/model_card_4"
+    },
+    {
+      "id": "gemma4_overview",
+      "url": "https://ai.google.dev/gemma/docs/core"
+    },
+    {
+      "id": "gemma4_vllm",
+      "url": "https://docs.vllm.ai/projects/recipes/en/latest/Google/Gemma4.html"
+    },
+    {
+      "id": "translategemma_blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/translategemma/"
+    },
+    {
+      "id": "translategemma_12b",
+      "url": "https://huggingface.co/google/translategemma-12b-it"
+    },
+    {
+      "id": "translategemma_report",
+      "url": "https://arxiv.org/abs/2601.09012"
+    },
+    {
+      "id": "dictalm3_24b_thinking",
+      "url": "https://huggingface.co/dicta-il/DictaLM-3.0-24B-Thinking"
+    },
+    {
+      "id": "dictalm3_collection",
+      "url": "https://huggingface.co/collections/dicta-il/dictalm-30-collection"
+    },
+    {
+      "id": "dictalm3_report",
+      "url": "https://arxiv.org/abs/2602.02104"
+    },
+    {
+      "id": "qwen36_35b",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+    },
+    {
+      "id": "qwen3_report",
+      "url": "https://arxiv.org/html/2505.09388v1"
+    },
+    {
+      "id": "qwen3_14b",
+      "url": "https://huggingface.co/Qwen/Qwen3-14B"
+    },
+    {
+      "id": "mistral_small_32",
+      "url": "https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06"
+    },
+    {
+      "id": "mistral_small_4",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+    },
+    {
+      "id": "llama31_8b",
+      "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "id": "tanach_us_license",
+      "url": "https://tanach.us/License.html"
+    },
+    {
+      "id": "oshb",
+      "url": "https://hb.openscriptures.org/"
+    },
+    {
+      "id": "macula_hebrew",
+      "url": "https://github.com/Clear-Bible/macula-hebrew"
+    },
+    {
+      "id": "sefaria_data_use",
+      "url": "https://developers.sefaria.org/docs/usage-of-our-name-and-logo"
+    },
+    {
+      "id": "bible_odyssey_hebrew_poetry",
+      "url": "https://www.bibleodyssey.org/articles/hebrew-poetry-forms/"
+    },
+    {
+      "id": "bible_odyssey_psalms_worship",
+      "url": "https://www.bibleodyssey.org/articles/psalms-in-israels-worship/"
+    },
+    {
+      "id": "bible_odyssey_psalm151",
+      "url": "https://www.bibleodyssey.org/articles/psalm-151-and-the-dead-sea-scrolls/"
+    },
+    {
+      "id": "thetorah_psalm2",
+      "url": "https://www.thetorah.com/article/psalm-2-is-the-messiah-the-son-of-god"
+    },
+    {
+      "id": "comet",
+      "url": "https://arxiv.org/abs/2009.09025"
+    },
+    {
+      "id": "sacrebleu",
+      "url": "https://github.com/mjpost/sacrebleu"
+    }
+  ]
+}

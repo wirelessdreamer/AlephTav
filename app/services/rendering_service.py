@@ -1,12 +1,16 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
-from app.core.errors import NotFoundError, PublicationConstraintError, ReviewRequiredError, ValidationError
+from app.core.errors import (
+    NotFoundError,
+    PublicationConstraintError,
+    ReviewRequiredError,
+    ValidationError,
+)
 from app.core.ids import rendering_id
 from app.services import alignment_service, audit_service, poetic_analysis_service, registry_service
-
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
 BASIS_FILTERS = {"hebrew-derived", "septuagint-derived"}
@@ -24,7 +28,10 @@ def _rendering_lookup(unit: dict[str, Any], rendering_id_value: str) -> dict[str
 
 
 def _sort_renderings(renderings: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    return sorted(renderings, key=lambda item: (item["layer"], item["status"] != "canonical", item["rendering_id"]))
+    return sorted(
+        renderings,
+        key=lambda item: (item["layer"], item["status"] != "canonical", item["rendering_id"]),
+    )
 
 
 def _sync_rendering_membership(unit: dict[str, Any]) -> None:
@@ -35,7 +42,9 @@ def _sync_rendering_membership(unit: dict[str, Any]) -> None:
         if rendering["status"] == "canonical":
             previous = canonical_by_layer.get(rendering["layer"])
             if previous is not None:
-                raise ValidationError(f"multiple canonical renderings for layer {rendering['layer']}")
+                raise ValidationError(
+                    f"multiple canonical renderings for layer {rendering['layer']}"
+                )
             canonical_by_layer[rendering["layer"]] = rendering["rendering_id"]
             canonical_ids.append(rendering["rendering_id"])
             continue
@@ -59,8 +68,19 @@ def _matches_style_filter(rendering: dict[str, Any], style_filter: str | None) -
     synonyms = {
         "most_literal": {"literal", "most-literal", "study_literal"},
         "best_lyric_flow": {"lyric-flow", "flow", "best-lyric-flow"},
-        "best_meter_fit": {"meter-fit", "meter", "common-meter", "common_meter", "metered_common_meter", "best-meter-fit"},
-        "best_imagery_preservation": {"imagery", "imagery-preservation", "best-imagery-preservation"},
+        "best_meter_fit": {
+            "meter-fit",
+            "meter",
+            "common-meter",
+            "common_meter",
+            "metered_common_meter",
+            "best-meter-fit",
+        },
+        "best_imagery_preservation": {
+            "imagery",
+            "imagery-preservation",
+            "best-imagery-preservation",
+        },
         "formal": {"formal", "liturgical"},
         "contemporary": {"contemporary", "modern"},
     }
@@ -70,7 +90,9 @@ def _matches_style_filter(rendering: dict[str, Any], style_filter: str | None) -
 
 def _default_translation_basis() -> dict[str, Any]:
     project = registry_service.load_project()
-    manifest = next((item for item in project.get("source_manifests", []) if item["source_id"] == "uxlc"), None)
+    manifest = next(
+        (item for item in project.get("source_manifests", []) if item["source_id"] == "uxlc"), None
+    )
     return {
         "basis_type": "hebrew_to_english",
         "source_ids": ["uxlc", "oshb", "macula"],
@@ -84,17 +106,32 @@ def _normalize_translation_basis(
     translation_basis: dict[str, Any] | None,
     provenance: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    payload = dict(translation_basis or provenance.get("translation_basis", {}) if provenance else translation_basis or {})
+    payload = dict(
+        translation_basis or provenance.get("translation_basis", {})
+        if provenance
+        else translation_basis or {}
+    )
     default = _default_translation_basis()
     if not payload:
         payload = default
     basis_type = str(payload.get("basis_type") or default["basis_type"])
     if basis_type == "septuagint_greek_to_english":
-        manifest = next((item for item in registry_service.load_project().get("source_manifests", []) if item["source_id"] == "lxx"), None)
+        manifest = next(
+            (
+                item
+                for item in registry_service.load_project().get("source_manifests", [])
+                if item["source_id"] == "lxx"
+            ),
+            None,
+        )
         source_ids = payload.get("source_ids") or ["lxx", "macula"]
         source_language = str(payload.get("source_language") or "grc")
-        source_version = str(payload.get("source_version") or (manifest["version"] if manifest else "unknown"))
-        basis_note = str(payload.get("basis_note") or "Translate directly from the Septuagint Greek witness.")
+        source_version = str(
+            payload.get("source_version") or (manifest["version"] if manifest else "unknown")
+        )
+        basis_note = str(
+            payload.get("basis_note") or "Translate directly from the Septuagint Greek witness."
+        )
     else:
         source_ids = payload.get("source_ids") or default["source_ids"]
         source_language = str(payload.get("source_language") or default["source_language"])
@@ -130,7 +167,11 @@ def _normalize_preserved_source_images(images: list[dict[str, Any]] | None) -> l
         source_id = str(image.get("source_id") or "").strip()
         if source_id:
             item["source_id"] = source_id
-        token_ids = [str(token_id).strip() for token_id in list(image.get("token_ids") or []) if str(token_id).strip()]
+        token_ids = [
+            str(token_id).strip()
+            for token_id in list(image.get("token_ids") or [])
+            if str(token_id).strip()
+        ]
         if token_ids:
             item["token_ids"] = token_ids
         note = str(image.get("note") or "").strip()
@@ -147,7 +188,10 @@ def _matches_basis_filter(rendering: dict[str, Any], basis_filter: str | None) -
         raise ValidationError(f"Unsupported basis_filter: {basis_filter}")
     basis_type = str((rendering.get("translation_basis") or {}).get("basis_type") or "").strip()
     if not basis_type:
-        basis_type = str(((rendering.get("provenance") or {}).get("translation_basis") or {}).get("basis_type") or "").strip()
+        basis_type = str(
+            ((rendering.get("provenance") or {}).get("translation_basis") or {}).get("basis_type")
+            or ""
+        ).strip()
     if not basis_type:
         basis_type = "hebrew_to_english"
     if basis_filter == "hebrew-derived":
@@ -200,15 +244,21 @@ def create_rendering(
     preserved_source_images: list[dict[str, Any]] | None = None,
     differentiator: str | None = None,
     grounding_confidence: float | None = None,
+    delivery_profile: str | None = None,
+    source_anchor: dict[str, Any] | None = None,
     style_goal: str | None = None,
     metric_profile: str | None = None,
     issue_links: list[str] | None = None,
     pr_links: list[str] | None = None,
 ) -> dict[str, Any]:
     if status == "canonical":
-        raise ReviewRequiredError("Create proposed or alternate renderings first, then promote after review")
+        raise ReviewRequiredError(
+            "Create proposed or alternate renderings first, then promote after review"
+        )
     if status == "accepted_as_alternate":
-        raise ReviewRequiredError("Create proposed or under-review renderings first, then accept after review")
+        raise ReviewRequiredError(
+            "Create proposed or under-review renderings first, then accept after review"
+        )
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
@@ -236,10 +286,17 @@ def create_rendering(
         "variation_basis": _normalize_variation_basis(variation_basis, layer),
         "preserved_source_images": _normalize_preserved_source_images(preserved_source_images),
         "differentiator": differentiator,
-        "grounding_confidence": round(float(grounding_confidence), 2) if grounding_confidence is not None else None,
+        "grounding_confidence": round(float(grounding_confidence), 2)
+        if grounding_confidence is not None
+        else None,
+        "delivery_profile": delivery_profile,
+        "source_anchor": source_anchor,
         "translation_basis": normalized_basis,
         "provenance": {
-            **(provenance or {"source_ids": normalized_basis["source_ids"], "generator": created_by}),
+            **(
+                provenance
+                or {"source_ids": normalized_basis["source_ids"], "generator": created_by}
+            ),
             "translation_basis": normalized_basis,
         },
         "style_goal": style_goal,
@@ -286,7 +343,9 @@ def create_rendering(
     return item
 
 
-def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_by: str = "api") -> dict[str, Any]:
+def update_rendering(
+    rendering_id_value: str, payload: dict[str, Any], created_by: str = "api"
+) -> dict[str, Any]:
     unit_id = _rendering_unit_id(rendering_id_value)
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     rendering = _rendering_lookup(unit, rendering_id_value)
@@ -309,14 +368,20 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
     alignment_service._sync_rendering_alignment_ids(unit)
     if rendering["status"] == "canonical":
         for candidate in unit.get("renderings", []):
-            if candidate["rendering_id"] != rendering_id_value and candidate["layer"] == rendering["layer"] and candidate["status"] == "canonical":
+            if (
+                candidate["rendering_id"] != rendering_id_value
+                and candidate["layer"] == rendering["layer"]
+                and candidate["status"] == "canonical"
+            ):
                 candidate["status"] = "accepted_as_alternate"
     elif previous_status == "canonical":
         replacement = next(
             (
                 item
                 for item in _sort_renderings(unit.get("renderings", []))
-                if item["rendering_id"] != rendering_id_value and item["layer"] == rendering["layer"] and item["status"] == "canonical"
+                if item["rendering_id"] != rendering_id_value
+                and item["layer"] == rendering["layer"]
+                and item["status"] == "canonical"
             ),
             None,
         )
@@ -341,7 +406,11 @@ def update_rendering(rendering_id_value: str, payload: dict[str, Any], created_b
 
 
 def _approvals_for(unit: dict[str, Any], target_id: str) -> int:
-    return sum(1 for item in unit.get("review_decisions", []) if item["target_id"] == target_id and item["decision"] == "approve")
+    return sum(
+        1
+        for item in unit.get("review_decisions", [])
+        if item["target_id"] == target_id and item["decision"] == "approve"
+    )
 
 
 def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str) -> dict[str, Any]:
@@ -352,7 +421,9 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
     reviewer, reviewer_role = review_service.validate_reviewer_identity(reviewer, reviewer_role)
     policy = review_service.review_policy()
     if reviewer_role != policy["release_required_role"]:
-        raise ReviewRequiredError(f"Canonical promotion requires {policy['release_required_role']} signoff")
+        raise ReviewRequiredError(
+            f"Canonical promotion requires {policy['release_required_role']} signoff"
+        )
     target = _rendering_lookup(unit, rendering_id_value)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
@@ -369,7 +440,11 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
     if not summary["eligible_for_canonical"]:
         raise ReviewRequiredError("Human review is required before promotion to canonical")
     for rendering in unit.get("renderings", []):
-        if rendering["rendering_id"] != target["rendering_id"] and rendering["layer"] == target["layer"] and rendering["status"] == "canonical":
+        if (
+            rendering["rendering_id"] != target["rendering_id"]
+            and rendering["layer"] == target["layer"]
+            and rendering["status"] == "canonical"
+        ):
             rendering["status"] = "accepted_as_alternate"
     target["status"] = "canonical"
     _ensure_publication_constraints(target)
@@ -378,7 +453,7 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
             "release_signoff": {
                 "reviewer": reviewer,
                 "role": reviewer_role,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "timestamp": datetime.now(UTC).isoformat(),
             }
         }
     )
@@ -434,13 +509,17 @@ def set_alternate_status(
     unit = registry_service.load_unit(_rendering_unit_id(rendering_id_value))
     rendering = _rendering_lookup(unit, rendering_id_value)
     if rendering["status"] == "canonical":
-        raise ValidationError("canonical rendering must be demoted instead of using alternate actions")
+        raise ValidationError(
+            "canonical rendering must be demoted instead of using alternate actions"
+        )
     if status == "accepted_as_alternate":
         from app.services import review_service
 
         summary = review_service.summarize_rendering_review(unit, rendering_id_value, rendering)
         if not summary["eligible_for_alternate"]:
-            raise ReviewRequiredError("A qualified reviewer signoff is required before accepting an alternate")
+            raise ReviewRequiredError(
+                "A qualified reviewer signoff is required before accepting an alternate"
+            )
     return update_rendering(
         rendering_id_value,
         {"status": status, "rationale": rationale or f"set alternate status to {status}"},
@@ -469,8 +548,12 @@ def _ensure_publication_constraints(rendering: dict[str, Any]) -> None:
         return
     missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
     if missing_metrics:
+        missing_metric_names = ", ".join(missing_metrics)
         raise PublicationConstraintError(
-            f"Canonical {rendering['layer']} rendering is missing lyric metrics: {', '.join(missing_metrics)}"
+            f"Canonical {rendering['layer']} rendering is missing lyric metrics: "
+            f"{missing_metric_names}"
         )
     if poetic_analysis_service.has_blocking_drift(rendering):
-        raise PublicationConstraintError("Canonical rendering has unresolved high-severity drift flags")
+        raise PublicationConstraintError(
+            "Canonical rendering has unresolved high-severity drift flags"
+        )

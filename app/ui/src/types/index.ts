@@ -80,6 +80,17 @@ export interface SourceAnchor {
   basis_note: string;
 }
 
+export interface ComposerQualityFilter {
+  threshold: number;
+  candidate_count_before_filter: number;
+  surfaceable_candidate_count: number;
+  suppressed_candidate_count: number;
+  production_ready?: boolean;
+  rejection_reason?: string | null;
+  fallback_used: boolean;
+  seed_match_used?: boolean;
+}
+
 export interface Rendering {
   rendering_id: string;
   unit_id: string;
@@ -96,6 +107,8 @@ export interface Rendering {
   preserved_source_images?: PreservedSourceImage[];
   differentiator?: string | null;
   grounding_confidence?: number | null;
+  delivery_profile?: string | null;
+  source_anchor?: SourceAnchor | null;
   translation_basis?: TranslationBasis | null;
   provenance: { source_ids: string[]; generator: string; translation_basis?: TranslationBasis | null };
   style_goal?: string | null;
@@ -196,6 +209,8 @@ export interface GenerationJob {
     adapter: string;
     completed_at?: string;
     candidate_count: number;
+    production_ready?: boolean;
+    quality_filter?: ComposerQualityFilter;
     created_rendering_ids: string[];
     downstream_layers: Layer[];
     [key: string]: unknown;
@@ -214,6 +229,8 @@ export interface GenerationJob {
       differentiator: string;
       grounding_confidence: number;
       translation_basis: TranslationBasis;
+      delivery_profile?: string | null;
+      source_anchor?: SourceAnchor | null;
     }>;
   } | null;
 }
@@ -319,6 +336,7 @@ export interface PinnedLexicalCardState {
 
 export interface ComposerSuggestionChunk {
   chunk_id: string;
+  quality_filter?: ComposerQualityFilter;
   candidates: Array<{
     text: string;
     rationale: string;
@@ -339,6 +357,7 @@ export interface ComposerSuggestionResponse {
   unit_id: string;
   stage: 'phrase' | 'concept' | 'lyric';
   available: boolean;
+  status?: 'production_ready' | 'rejected' | 'unavailable' | string;
   chunks: ComposerSuggestionChunk[];
 }
 
@@ -437,6 +456,33 @@ export interface VisualFlowUnit {
   supporting_nodes: CloudNode[];
 }
 
+export type LyricCorrelationKind =
+  | 'close_anchor'
+  | 'interpretive_shift'
+  | 'added_reframed'
+  | 'added_repetition'
+  | 'omitted_detail';
+
+export interface PsalmLyricCorrelationRow {
+  row_id: string;
+  ref: string;
+  section_label: string;
+  source_unit_ids: string[];
+  source_refs: string[];
+  source_hebrew: string;
+  source_close_english: string;
+  source_english_label: string;
+  source_scaffold_text: string;
+  arrangement_label: string;
+  lyric_text: string;
+  lyric_status: string;
+  lyric_layer: Layer | string | null;
+  relationship_kind: LyricCorrelationKind;
+  relationship_label: string;
+  relationship_note: string;
+  overlap_score: number;
+}
+
 export interface PsalmVisualFlow {
   psalm_id: string;
   title: string;
@@ -445,6 +491,13 @@ export interface PsalmVisualFlow {
   embedding_version: string;
   units: VisualFlowUnit[];
   cloud_nodes: CloudNode[];
+  correlation_rows: PsalmLyricCorrelationRow[];
+  correlation_summary: {
+    row_count: number;
+    mapped_row_count: number;
+    source_only_row_count: number;
+    relationship_counts: Record<LyricCorrelationKind | string, number>;
+  };
 }
 
 export interface PsalmCloudResponse {

@@ -21,7 +21,9 @@
           "preserved_source_images",
           "differentiator",
           "grounding_confidence",
-          "translation_basis"
+          "translation_basis",
+          "delivery_profile",
+          "source_anchor"
         ],
         "additionalProperties": false,
         "properties": {
@@ -72,6 +74,22 @@
           },
           "differentiator": { "type": "string" },
           "grounding_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "delivery_profile": { "type": "string" },
+          "source_anchor": {
+            "type": "object",
+            "required": ["anchor_text", "source_language", "source_text", "basis_note"],
+            "additionalProperties": false,
+            "properties": {
+              "anchor_text": { "type": "string" },
+              "source_language": { "type": "string" },
+              "source_text": { "type": "string" },
+              "token_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "basis_note": { "type": "string" }
+            }
+          },
           "translation_basis": {
             "type": "object",
             "required": ["basis_type", "source_ids", "source_language", "source_version", "basis_note"],

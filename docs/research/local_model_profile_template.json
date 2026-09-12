@@ -1,0 +1,15 @@
+{
+  "model_profile_id": "local-gemma-4-12b-it-example",
+  "adapter": "openai-compatible",
+  "model": "google/gemma-4-12B-it",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "api_key": "",
+  "response_format_mode": "json_object",
+  "notes": [
+    "Copy this file outside committed research artifacts before adding secrets.",
+    "Use adapter values supported by app/llm/adapters: openai-compatible, vllm, ollama, llama.cpp.",
+    "For vLLM OpenAI-compatible serving, set adapter to vllm and base_url to the local /v1 endpoint.",
+    "For Ollama, set adapter to ollama and base_url to the Ollama server root.",
+    "Never commit large model files, downloaded weights, or API secrets."
+  ]
+}
