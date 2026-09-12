@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from app.core.errors import GenerationError
+from app.llm.adapters.codex_app_server import CodexAppServerAdapter
 from app.llm.adapters.llamacpp import LlamaCppAdapter
 from app.llm.adapters.ollama import OllamaAdapter
 from app.llm.adapters.openai_compatible import OpenAICompatibleAdapter
 from app.llm.adapters.vllm import VllmAdapter
 
 ADAPTERS = {
+    "codex-app-server": CodexAppServerAdapter,
     "llama.cpp": LlamaCppAdapter,
     "ollama": OllamaAdapter,
     "openai-compatible": OpenAICompatibleAdapter,

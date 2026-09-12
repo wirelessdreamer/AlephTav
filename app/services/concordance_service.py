@@ -15,6 +15,7 @@ def rebuild_indexes() -> dict[str, int]:
     occurrence_count = 0
     enrichment_count = 0
     missing_count = 0
+    comparison_count = 0
     with get_connection() as connection:
         for unit in units:
             connection.execute(
@@ -100,6 +101,32 @@ def rebuild_indexes() -> dict[str, int]:
                     (alignment["alignment_id"], unit["unit_id"], alignment["layer"], alignment["alignment_type"], alignment["confidence"]),
                 )
                 alignment_count += 1
+            # Assessments are committed content; this index is only a query
+            # mirror, rebuilt from the unit JSON like everything else here.
+            for assessment in unit.get("comparison_assessments", []):
+                connection.execute(
+                    """
+                    INSERT INTO comparison_assessment_index(
+                        comparison_id, unit_id, psalm_id, mt_reference, literal_rendering_id,
+                        english_rendering_id, accuracy_rating, status, created_via,
+                        generator_provider, reviewer_id
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        assessment["comparison_id"],
+                        unit["unit_id"],
+                        assessment["psalm_id"],
+                        assessment["mt_reference"],
+                        assessment["literal_rendering_id"],
+                        assessment["english_rendering_id"],
+                        assessment["accuracy_rating"],
+                        assessment["status"],
+                        assessment["created_via"],
+                        assessment["generator_provider"],
+                        assessment["reviewer_id"],
+                    ),
+                )
+                comparison_count += 1
     # Refresh the slim psalm-summary + corpus-layer caches now that the
     # SQLite indexes (specifically ``rendering_index``) are up to date.
     # This makes the post-build summary cache match the indexed corpus state.
@@ -112,4 +139,5 @@ def rebuild_indexes() -> dict[str, int]:
         "occurrences": occurrence_count,
         "enrichment_rows": enrichment_count,
         "missing_enrichments": missing_count,
+        "comparison_assessments": comparison_count,
     }

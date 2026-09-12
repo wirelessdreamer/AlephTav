@@ -77,6 +77,8 @@ def bootstrap_vendored_repo() -> None:
 
 def compile_composer_module(temp_dir: Path) -> Path:
     out_dir = temp_dir / "composer-build"
+    # The bare "tsc" is a shell script; Windows needs the .cmd shim or the
+    # subprocess call raises WinError 193.
     bin_dir = REPO_ROOT / "node_modules" / ".bin"
     tsc_path = bin_dir / ("tsc.cmd" if os.name == "nt" else "tsc")
     subprocess.run(
@@ -96,7 +98,6 @@ def compile_composer_module(temp_dir: Path) -> Path:
         capture_output=True,
         text=True,
         encoding="utf-8",
-        shell=os.name == "nt",
     )
     return out_dir / "lib" / "composerSynthesis.js"
 
@@ -171,6 +172,8 @@ process.stdout.write(JSON.stringify(payload));
             check=True,
             capture_output=True,
             text=True,
+            # The composer emits Hebrew; without this the default Windows
+            # codepage decodes it as cp1252 and raises UnicodeDecodeError.
             encoding="utf-8",
         )
         payload = json.loads(completed.stdout)

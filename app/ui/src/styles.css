@@ -2950,3 +2950,401 @@ button.composer-path-chip {
   padding: 0.75rem;
   background: rgba(30, 41, 59, 0.45);
 }
+
+/* ---------------------------------------------------------------- *
+ * Translation comparison table                                      *
+ * ---------------------------------------------------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.workbench-view-toggle {
+  align-self: end;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  background: rgba(8, 47, 73, 0.5);
+  color: #e0f2fe;
+  cursor: pointer;
+}
+
+.workbench-view-toggle[aria-pressed='true'] {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.comparison-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.comparison-toolbar h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.comparison-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.comparison-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.comparison-exports {
+  display: flex;
+  gap: 0.35rem;
+  margin-inline-start: auto;
+}
+
+/* The table scrolls inside its own box so the page never scrolls sideways. */
+.comparison-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.comparison-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 60rem;
+  table-layout: fixed;
+}
+
+.comparison-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.9);
+  padding: 0.5rem;
+  text-align: start;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.comparison-table td,
+.comparison-table tbody th {
+  vertical-align: top;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+  /* Song line breaks come from the text itself, not from <br> tags. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-align: start;
+}
+
+.comparison-table .col-reference {
+  width: 11rem;
+  display: table-cell;
+}
+
+.comparison-table .col-hebrew {
+  width: 20rem;
+  /* Hebrew reads right-to-left and sits hard against the gutter. */
+  text-align: right;
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+/* Layout-only spacer. Empty, aria-hidden, never persisted. */
+.comparison-table .col-gutter {
+  width: var(--gutter-width, 32px);
+  min-width: var(--gutter-width, 32px);
+  padding: 0;
+  border-bottom-color: transparent;
+  background: none;
+}
+
+.comparison-table .col-literal,
+.comparison-table .col-english {
+  width: 18rem;
+}
+
+.comparison-table .col-accuracy,
+.comparison-table .col-liberties {
+  width: 15rem;
+}
+
+.comparison-row.incomplete {
+  background: rgba(120, 53, 15, 0.18);
+}
+
+.cell-missing {
+  color: #f59e0b;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.cell-text {
+  white-space: pre-wrap;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #7dd3fc;
+  text-align: start;
+  font: inherit;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  text-decoration: underline;
+}
+
+.comparison-table :focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.reference-display {
+  display: block;
+  font-weight: 600;
+}
+
+.reference-mt {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.status-badge,
+.provenance-badge,
+.rating {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-badge {
+  background: rgba(30, 64, 175, 0.35);
+  color: #bfdbfe;
+}
+
+.status-canonical {
+  background: rgba(22, 101, 52, 0.4);
+  color: #bbf7d0;
+}
+
+.status-superseded {
+  background: rgba(51, 65, 85, 0.5);
+  color: #cbd5e1;
+}
+
+.provenance-badge {
+  background: rgba(76, 29, 149, 0.4);
+  color: #ddd6fe;
+}
+
+.via-human {
+  background: rgba(15, 118, 110, 0.35);
+  color: #99f6e4;
+}
+
+.rating {
+  background: rgba(30, 41, 59, 0.8);
+  color: #e2e8f0;
+}
+
+.comparison-empty {
+  color: #94a3b8;
+  padding: 1rem;
+}
+
+.comparison-error {
+  color: #fca5a5;
+}
+
+.comparison-table textarea {
+  width: 100%;
+  min-height: 3.5rem;
+  resize: vertical;
+}
+
+/* Narrow screens: each row becomes a labelled stacked card. */
+@media (max-width: 720px) {
+  .comparison-table,
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td,
+  .comparison-table tbody th {
+    display: block;
+    width: auto;
+  }
+
+  .comparison-table {
+    min-width: 0;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tr {
+    border: 1px solid rgba(51, 65, 85, 0.7);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .comparison-table .col-gutter {
+    display: none;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+}
+
+@media print {
+  .comparison-controls,
+  .comparison-exports,
+  .link-button {
+    display: none !important;
+  }
+
+  .comparison-scroll {
+    overflow: visible;
+  }
+
+  .comparison-table {
+    min-width: 0;
+    color: #000;
+  }
+
+  .comparison-table thead th {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* ---------------------------------------------------------------- *
+ * Codex connection panel                                            *
+ * ---------------------------------------------------------------- */
+
+.codex-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 14px;
+  padding: 0.75rem;
+  background: rgba(30, 41, 59, 0.45);
+}
+
+.codex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.codex-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.codex-status {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  background: rgba(51, 65, 85, 0.6);
+  color: #cbd5e1;
+}
+
+.codex-status-ready {
+  background: rgba(22, 101, 52, 0.45);
+  color: #bbf7d0;
+}
+
+.codex-status-error,
+.codex-status-not_installed {
+  background: rgba(127, 29, 29, 0.45);
+  color: #fecaca;
+}
+
+.codex-status-not_signed_in {
+  background: rgba(120, 53, 15, 0.45);
+  color: #fed7aa;
+}
+
+.codex-detail,
+.codex-unavailable {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.codex-unavailable {
+  color: #fed7aa;
+}
+
+.codex-account {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.codex-account dt {
+  color: #94a3b8;
+}
+
+.codex-account dd {
+  margin: 0;
+}
+
+.codex-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.codex-run {
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.codex-denied {
+  color: #fca5a5;
+}
+
+.codex-validation {
+  color: #fed7aa;
+}
+
+.codex-validation ul {
+  margin: 0.25rem 0;
+  padding-inline-start: 1rem;
+}

@@ -753,3 +753,145 @@ export interface SpeechTranscriptionResponse {
   model: string;
   filename: string;
 }
+
+export type AccuracyRating =
+  | 'literal'
+  | 'very_close'
+  | 'close'
+  | 'adapted'
+  | 'interpretive'
+  | 'omission';
+
+export type ComparisonStatus =
+  | 'draft'
+  | 'proposed'
+  | 'reviewed'
+  | 'accepted_as_alternate'
+  | 'canonical'
+  | 'rejected'
+  | 'superseded';
+
+/** How a piece of work was produced. Surfaced as a provenance badge. */
+export type CreatedVia = 'human' | 'codex' | 'local_model' | 'deterministic';
+
+export interface ComparisonAssessment {
+  comparison_id: string;
+  psalm_id: string;
+  unit_id: string;
+  mt_reference: string;
+  display_reference: string;
+  hebrew_text: string;
+  literal_rendering_id: string | null;
+  english_rendering_id: string | null;
+  accuracy_rating: AccuracyRating | null;
+  accuracy_note: string;
+  creative_liberties_note: string;
+  status: ComparisonStatus;
+  created_by: string;
+  created_via: CreatedVia;
+  generator_provider: string | null;
+  generation_run_id: string | null;
+  reviewer_id: string | null;
+  reviewed_at: string | null;
+  revision_of: string | null;
+  audit_ids: string[];
+}
+
+export interface ComparisonTableRow {
+  mt_reference: string;
+  display_reference: string;
+  unit_ids: string[];
+  hebrew_text: string;
+  literal_text: string | null;
+  literal_rendering_ids: string[];
+  english_text: string | null;
+  english_rendering_ids: string[];
+  accuracy_rating: AccuracyRating | null;
+  accuracy_note: string;
+  creative_liberties_note: string;
+  assessment_status: ComparisonStatus | null;
+  created_via: CreatedVia | null;
+  generator_provider: string | null;
+  comparison_id: string | null;
+  incomplete: boolean;
+}
+
+export interface ComparisonTable {
+  psalm_id: string;
+  title: string;
+  literal_layer: string;
+  english_layer: string;
+  rows: ComparisonTableRow[];
+}
+
+export type CodexStatusValue =
+  | 'not_installed'
+  | 'available'
+  | 'connecting'
+  | 'ready'
+  | 'not_signed_in'
+  | 'busy'
+  | 'error';
+
+/** Local Codex provider status. Never carries credentials. */
+export interface CodexStatus {
+  provider: string;
+  status: CodexStatusValue;
+  detail: string;
+  local_only: boolean;
+  auth_mode?: string | null;
+  plan_type?: string | null;
+}
+
+export interface CodexSession {
+  session_id: string;
+  thread_id: string;
+  current_turn_id: string | null;
+  model: string;
+  provider: string;
+  provider_version: string;
+  purpose: string;
+  psalm_id: string;
+  unit_id: string | null;
+  layer: string;
+  prompt_template_version: string;
+  started_at: string;
+  completed_at: string | null;
+  status: string;
+}
+
+export interface CodexRun {
+  run_id: string;
+  session_id: string;
+  thread_id: string;
+  turn_id: string | null;
+  unit_id: string;
+  layer: string;
+  provider: string;
+  model: string;
+  prompt_template_version: string;
+  started_at: string;
+  completed_at: string | null;
+  status: 'running' | 'completed' | 'failed' | 'cancelled' | 'invalid_output';
+  events: unknown[];
+  denied_events: Array<{ method: string; params?: unknown }>;
+  validation: Array<{ path: string; message: string }> | null;
+  payload: unknown;
+  error: string | null;
+}
+
+export interface CodexRunEvents {
+  run_id: string;
+  status: CodexRun['status'];
+  events: unknown[];
+  denied_events: Array<{ method: string; params?: unknown }>;
+  validation: Array<{ path: string; message: string }> | null;
+  error: string | null;
+}
+
+export interface CodexModel {
+  id?: string;
+  model?: string;
+  displayName?: string;
+  [key: string]: unknown;
+}

@@ -29,6 +29,9 @@ def bootstrap_fixture_repo() -> Path:
         shutil.rmtree(path, ignore_errors=True)
     settings.db_path.unlink(missing_ok=True)
     settings.assistant_settings_file.unlink(missing_ok=True)
+    # validate_content.py resolves schemas from settings.schemas_dir, which points
+    # at the temp workspace during tests; mirror the real ones in so validation runs.
+    shutil.copytree(REAL_ROOT / "schemas", settings.schemas_dir, dirs_exist_ok=True)
     registry_service.bootstrap_project()
     ingest_service.import_fixture_psalms()
     concordance_service.rebuild_indexes()

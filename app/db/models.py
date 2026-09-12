@@ -52,6 +52,22 @@ CREATE TABLE IF NOT EXISTS rendering_index (
 );
 """
 
+COMPARISON_TABLE_SQL = """
+CREATE TABLE IF NOT EXISTS comparison_assessment_index (
+    comparison_id TEXT PRIMARY KEY,
+    unit_id TEXT NOT NULL,
+    psalm_id TEXT NOT NULL,
+    mt_reference TEXT NOT NULL,
+    literal_rendering_id TEXT,
+    english_rendering_id TEXT,
+    accuracy_rating TEXT,
+    status TEXT NOT NULL,
+    created_via TEXT NOT NULL,
+    generator_provider TEXT,
+    reviewer_id TEXT
+);
+"""
+
 ALIGNMENT_TABLE_SQL = """
 CREATE TABLE IF NOT EXISTS alignment_index (
     alignment_id TEXT PRIMARY KEY,

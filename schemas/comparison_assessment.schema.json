@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ComparisonAssessment",
+  "type": "object",
+  "required": [
+    "comparison_id",
+    "psalm_id",
+    "unit_id",
+    "mt_reference",
+    "display_reference",
+    "hebrew_text",
+    "literal_rendering_id",
+    "english_rendering_id",
+    "accuracy_rating",
+    "accuracy_note",
+    "creative_liberties_note",
+    "status",
+    "created_by",
+    "created_via",
+    "generator_provider",
+    "generation_run_id",
+    "reviewer_id",
+    "reviewed_at",
+    "revision_of",
+    "audit_ids"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "comparison_id": {
+      "type": "string",
+      "pattern": "^cmp\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$"
+    },
+    "psalm_id": {
+      "type": "string",
+      "pattern": "^ps\\d{3}$"
+    },
+    "unit_id": {
+      "type": "string",
+      "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$"
+    },
+    "mt_reference": {
+      "type": "string",
+      "description": "Masoretic reference. Kept separate from display_reference so a superscription is never silently renumbered as verse one."
+    },
+    "display_reference": {
+      "type": "string",
+      "description": "User-facing English reference, which may differ from the MT numbering."
+    },
+    "hebrew_text": {
+      "type": "string"
+    },
+    "literal_rendering_id": {
+      "type": ["string", "null"],
+      "description": "Null when no literal rendering is selected; the row renders incomplete rather than inventing text."
+    },
+    "english_rendering_id": {
+      "type": ["string", "null"],
+      "description": "Null when no English rendering is selected; the row renders incomplete rather than inventing text."
+    },
+    "accuracy_rating": {
+      "type": ["string", "null"],
+      "enum": [
+        "literal",
+        "very_close",
+        "close",
+        "adapted",
+        "interpretive",
+        "omission",
+        null
+      ]
+    },
+    "accuracy_note": {
+      "type": "string"
+    },
+    "creative_liberties_note": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "proposed",
+        "reviewed",
+        "accepted_as_alternate",
+        "canonical",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "created_via": {
+      "type": "string",
+      "enum": [
+        "human",
+        "codex",
+        "local_model",
+        "deterministic"
+      ]
+    },
+    "generator_provider": {
+      "type": ["string", "null"]
+    },
+    "generation_run_id": {
+      "type": ["string", "null"]
+    },
+    "reviewer_id": {
+      "type": ["string", "null"]
+    },
+    "reviewed_at": {
+      "type": ["string", "null"]
+    },
+    "revision_of": {
+      "type": ["string", "null"],
+      "description": "Set when this assessment supersedes an earlier one. A review never overwrites the original."
+    },
+    "audit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
