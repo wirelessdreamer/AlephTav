@@ -3567,3 +3567,149 @@ button.composer-path-chip {
     align-items: stretch;
   }
 }
+
+/* ---------------------------------------------------------------- *
+ * Analysis: verdict stripes, staleness, bands, evidence, panel      *
+ * ---------------------------------------------------------------- */
+
+/* Severity stripe so fidelity reads before the prose does. */
+.comparison-row.r-close th:first-child { box-shadow: inset 3px 0 0 #4ade80; }
+.comparison-row.r-interpret th:first-child { box-shadow: inset 3px 0 0 #fbbf24; }
+.comparison-row.r-caution th:first-child { box-shadow: inset 3px 0 0 #fb923c; }
+
+.comparison-row.is-stale {
+  background: rgba(251, 146, 60, 0.07);
+}
+
+.stale-badge {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px dashed #fb923c;
+  border-radius: 999px;
+  color: #fed7aa;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.band__theme {
+  color: #94a3b8;
+  font-size: 0.76rem;
+}
+
+.seam-row td {
+  padding: 0.2rem 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+  text-align: center;
+}
+
+/* Words the analysis remarked on, discoverable without hovering each one. */
+.study-word--noted {
+  text-decoration: underline dotted rgba(251, 191, 36, 0.8);
+  text-underline-offset: 4px;
+}
+
+.study-card__rendered {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+}
+
+.study-card__lexical {
+  color: #94a3b8;
+}
+
+.verdict-chip {
+  margin-inline-start: 0.4rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+}
+
+.study-card__note.verdict-standard h5,
+.study-card__note.verdict-defensible h5 { color: #4ade80; }
+.study-card__note.verdict-expansion h5,
+.study-card__note.verdict-narrowing h5 { color: #fbbf24; }
+.study-card__note.verdict-nonstandard h5,
+.study-card__note.verdict-unsupported h5,
+.study-card__note.verdict-omitted h5 { color: #fb923c; }
+
+/* ---- psalm analysis panel ---- */
+
+.analysis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: rgba(8, 47, 73, 0.28);
+}
+
+.analysis-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.analysis-panel__head > button {
+  background: none;
+  border: none;
+  color: #e0f2fe;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.numbering {
+  margin-inline-start: auto;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.analysis-prose {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  max-width: 72ch;
+}
+
+.subtle-note { color: #64748b; font-style: italic; }
+
+.analysis-defs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.analysis-defs dt { color: #94a3b8; }
+.analysis-defs dd { margin: 0; color: #e2e8f0; }
+
+.epistemic ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.epistemic li { margin-bottom: 0.3rem; }
+
+/* The grounds for a claim, so a reviewer can check rather than trust it. */
+.basis {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.74rem;
+}
+
+.citations {
+  margin: 0.4rem 0 0;
+  padding-inline-start: 1rem;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}

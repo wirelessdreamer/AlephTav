@@ -6,8 +6,11 @@ import type {
   CodexRunEvents,
   CodexSession,
   CodexStatus,
+  PsalmAnalysis,
+  PsalmAnalysisResult,
   RowFillResult,
   TranslationGuidance,
+  VerseAnalysisResult,
 } from '../types';
 
 async function getJson<T>(url: string): Promise<T> {
@@ -170,6 +173,50 @@ export function useFillComparisonRow() {
       queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
       queryClient.invalidateQueries({ queryKey: ['comparison-assessments'] });
     },
+  });
+}
+
+/** The psalm's active analysis, or null until the pass has been run. */
+export function usePsalmAnalysis(psalmId: string | null) {
+  return useQuery({
+    queryKey: ['psalm-analysis', psalmId],
+    queryFn: () =>
+      getJson<{ psalm_id: string; analysis: PsalmAnalysis | null }>(`/psalms/${psalmId}/analysis`),
+    enabled: Boolean(psalmId),
+  });
+}
+
+function useInvalidateAnalysis(psalmId: string | null) {
+  const queryClient = useQueryClient();
+  return () => {
+    queryClient.invalidateQueries({ queryKey: ['comparison-table', psalmId] });
+    queryClient.invalidateQueries({ queryKey: ['psalm-analysis', psalmId] });
+  };
+}
+
+/** Audit one verse's existing renderings. Writes a verdict, never a rendering. */
+export function useAnalyzeVerse(psalmId: string | null) {
+  const invalidate = useInvalidateAnalysis(psalmId);
+  return useMutation({
+    mutationFn: ({
+      unitId,
+      ...payload
+    }: {
+      unitId: string;
+      session_id: string;
+      english_layer?: string;
+      force?: boolean;
+    }) => postJson<VerseAnalysisResult>(`/codex/analysis/verses/${unitId}`, payload),
+    onSuccess: invalidate,
+  });
+}
+
+export function useAnalyzePsalm(psalmId: string | null) {
+  const invalidate = useInvalidateAnalysis(psalmId);
+  return useMutation({
+    mutationFn: (payload: { session_id: string; english_layer?: string; force?: boolean }) =>
+      postJson<PsalmAnalysisResult>(`/codex/analysis/psalms/${psalmId}`, payload),
+    onSuccess: invalidate,
   });
 }
 

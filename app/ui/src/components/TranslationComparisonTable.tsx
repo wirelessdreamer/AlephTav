@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
+  useAnalyzePsalm,
+  useAnalyzeVerse,
   useCodexStatus,
   useCreateCodexSession,
   useFillComparisonRow,
@@ -18,6 +20,8 @@ import type {
   ComparisonStatus,
   ComparisonTableRow,
   CreatedVia,
+  PsalmAnalysis,
+  PsalmAnalysisSection,
 } from '../types';
 
 const ACCURACY_RATINGS: AccuracyRating[] = [
@@ -45,6 +49,17 @@ const VIA_LABELS: Record<CreatedVia, string> = {
   codex: 'Codex suggested',
   local_model: 'Other local model suggested',
   deterministic: 'Deterministically composed',
+};
+
+/** Severity grouping for the row stripe, so fidelity reads before the prose. */
+const RATING_TONE: Record<AccuracyRating, 'close' | 'interpret' | 'caution'> = {
+  literal: 'close',
+  very_close: 'close',
+  close: 'close',
+  adapted: 'interpret',
+  interpretive: 'interpret',
+  omission: 'caution',
+  no_source_basis: 'caution',
 };
 
 const GUTTER_WIDTHS = [24, 32, 48] as const;
@@ -137,12 +152,21 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const createAssessment = useCreateComparisonAssessment(psalmId);
   const reviseAssessment = useReviseComparisonAssessment(psalmId);
 
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [analysisOpen, setAnalysisOpen] = useState(false);
+  const [analysisTab, setAnalysisTab] = useState<
+    'summary' | 'architecture' | 'guardrails' | 'epistemics' | 'sources'
+  >('summary');
+
   const { data: codexStatus } = useCodexStatus();
   const { data: guidance } = useTranslationGuidance(psalmId);
   const saveGuidance = useSaveTranslationGuidance(psalmId);
   const createSession = useCreateCodexSession();
   const fillRow = useFillComparisonRow();
+  const analyzeVerse = useAnalyzeVerse(psalmId);
+  const analyzePsalm = useAnalyzePsalm(psalmId);
   const codexReady = codexStatus?.status === 'ready';
+  const analysis = data?.analysis ?? null;
 
   useEffect(() => {
     setGuidanceDraft(guidance?.translation_guidance ?? '');
@@ -162,6 +186,31 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
     });
     sessionRef.current = session.session_id;
     return session.session_id;
+  }
+
+  async function auditRow(unitId: string) {
+    const sessionId = await ensureSession();
+    await analyzeVerse.mutateAsync({ unitId, session_id: sessionId, english_layer: englishLayer });
+  }
+
+  async function auditPsalm(targets: ComparisonTableRow[]) {
+    stopRequested.current = false;
+    setBatch({ done: 0, total: targets.length + 1 });
+    try {
+      const sessionId = await ensureSession();
+      for (const [index, row] of targets.entries()) {
+        if (stopRequested.current) break;
+        await auditRow(row.unit_ids[0]);
+        setBatch({ done: index + 1, total: targets.length + 1 });
+      }
+      if (!stopRequested.current) {
+        // The psalm-scope turn last, so sections describe the audited verses.
+        await analyzePsalm.mutateAsync({ session_id: sessionId, english_layer: englishLayer });
+        setBatch({ done: targets.length + 1, total: targets.length + 1 });
+      }
+    } finally {
+      setBatch(null);
+    }
   }
 
   async function generateRow(unitId: string) {
@@ -191,6 +240,19 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
       return true;
     });
   }, [data, statusFilter, ratingFilter]);
+
+  /** The section a row starts, so a band can be rendered above it. */
+  function sectionOpening(row: ComparisonTableRow): PsalmAnalysisSection | null {
+    if (!analysis) return null;
+    const verse = Number(row.unit_ids[0]?.split('.')[1]?.replace('v', ''));
+    return analysis.sections.find((s) => s.first_verse === verse) ?? null;
+  }
+
+  function seamAfter(row: ComparisonTableRow) {
+    if (!analysis) return null;
+    const verse = Number(row.unit_ids[0]?.split('.')[1]?.replace('v', ''));
+    return analysis.structural_seams.find((s) => s.after_verse === verse) ?? null;
+  }
 
   function beginEdit(row: ComparisonTableRow) {
     setEditing(row.unit_ids[0]);
@@ -309,14 +371,28 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                 </button>
               </>
             ) : (
-              <button
-                type="button"
-                disabled={!codexReady || fillRow.isPending}
-                title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
-                onClick={() => void generatePsalm(rows.filter((row) => row.incomplete))}
-              >
-                Translate psalm with Codex
-              </button>
+              <>
+                <button
+                  type="button"
+                  disabled={!codexReady || fillRow.isPending}
+                  title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
+                  onClick={() => void generatePsalm(rows.filter((row) => row.incomplete))}
+                >
+                  Translate psalm
+                </button>
+                <button
+                  type="button"
+                  disabled={!codexReady || analyzeVerse.isPending}
+                  title={
+                    codexReady
+                      ? 'Audit the existing renderings against the Hebrew'
+                      : 'Connect Codex in the assistant panel first'
+                  }
+                  onClick={() => void auditPsalm(rows.filter((row) => !row.incomplete))}
+                >
+                  Analyse psalm
+                </button>
+              </>
             )}
           </div>
           <div className="comparison-exports">
@@ -377,6 +453,137 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
         </section>
       ) : null}
 
+
+      {analysis ? (
+        <section className="analysis-panel" aria-label="Psalm analysis">
+          <header className="analysis-panel__head">
+            <button
+              type="button"
+              aria-expanded={analysisOpen}
+              onClick={() => setAnalysisOpen((open) => !open)}
+            >
+              {analysisOpen ? '▾' : '▸'} Analysis
+            </button>
+            <span className={`status-badge status-${analysis.status}`}>{analysis.status}</span>
+            <span className="provenance-badge via-codex">
+              {VIA_LABELS[analysis.created_via] ?? analysis.created_via}
+            </span>
+            {data?.canonical_numbering ? (
+              <span className="numbering">
+                MT {data.canonical_numbering.mt} · LXX/Vulg{' '}
+                {data.canonical_numbering.septuagint.join(', ')}
+              </span>
+            ) : null}
+          </header>
+
+          {analysisOpen ? (
+            <>
+              <div className="tabs" role="tablist">
+                {(
+                  [
+                    ['summary', 'What this setting does'],
+                    ['architecture', 'Architecture'],
+                    ['guardrails', 'Historical guardrails'],
+                    ['epistemics', 'Known / not known'],
+                    ['sources', 'Method and sources'],
+                  ] as const
+                ).map(([key, label]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    className="tab"
+                    aria-selected={analysisTab === key}
+                    onClick={() => setAnalysisTab(key)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {analysisTab === 'summary' ? <p className="analysis-prose">{analysis.summary}</p> : null}
+
+              {analysisTab === 'architecture' ? (
+                <div className="arch">
+                  {analysis.sections.map((section) => (
+                    <div key={`${section.first_verse}-${section.last_verse}`} className="arch__row">
+                      <span className="arch__vv">
+                        vv. {section.first_verse}–{section.last_verse}
+                      </span>
+                      <span>{section.theme}</span>
+                      <span className="arch__sec">{section.title}</span>
+                    </div>
+                  ))}
+                  {analysis.structural_seams.length > 0 ? (
+                    <p className="analysis-prose">
+                      Seams:{' '}
+                      {analysis.structural_seams
+                        .map(
+                          (seam) =>
+                            `${seam.marker} after v.${seam.after_verse}` +
+                            (seam.aligns_with_section ? ' (section ends here)' : ''),
+                        )
+                        .join(' · ')}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {analysisTab === 'guardrails' ? (
+                <dl className="analysis-defs">
+                  <dt>Heading</dt>
+                  <dd>{analysis.guardrails.heading_attribution}</dd>
+                  <dt>Setting</dt>
+                  <dd>{analysis.guardrails.cultic_setting}</dd>
+                </dl>
+              ) : null}
+
+              {analysisTab === 'epistemics' ? (
+                <div className="epistemic">
+                  <div className="known">
+                    <h4>Known from the text</h4>
+                    <ul>
+                      {analysis.epistemics.known_from_text.map((item) => (
+                        <li key={item.claim}>
+                          {item.claim} <span className="basis">{item.basis}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="unknown">
+                    <h4>Not known from the text</h4>
+                    <ul>
+                      {analysis.epistemics.not_known_from_text.map((item) => (
+                        <li key={item.claim}>
+                          {item.claim} <span className="basis">{item.why_not}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : null}
+
+              {analysisTab === 'sources' ? (
+                <>
+                  <p className="analysis-prose">{analysis.method}</p>
+                  {analysis.citations.length > 0 ? (
+                    <ul className="citations">
+                      {analysis.citations.map((c) => (
+                        <li key={c}>{c}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="analysis-prose subtle-note">
+                      No sources beyond the supplied evidence were cited.
+                    </p>
+                  )}
+                </>
+              ) : null}
+            </>
+          ) : null}
+        </section>
+      ) : null}
+
       <div className="comparison-scroll">
         <table
           className="comparison-table"
@@ -414,8 +621,36 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
             {rows.map((row) => {
               const key = row.unit_ids.join('+');
               const isEditing = editing === row.unit_ids[0];
+              const band = sectionOpening(row);
+              const seam = seamAfter(row);
+              const tone = row.accuracy_rating ? RATING_TONE[row.accuracy_rating] : null;
+              const isOpen = expanded === key;
               return (
-                <tr key={key} className={row.incomplete ? 'comparison-row incomplete' : 'comparison-row'}>
+                <Fragment key={key}>
+                {band ? (
+                  <tr className="band">
+                    <td colSpan={7}>
+                      <div className="band__head">
+                        <span className="band__title">{band.title}</span>
+                        <span className="band__range">
+                          vv. {band.first_verse}–{band.last_verse}
+                        </span>
+                        <span className="band__theme">{band.theme}</span>
+                      </div>
+                      {band.arc_note ? <p className="band__note">{band.arc_note}</p> : null}
+                    </td>
+                  </tr>
+                ) : null}
+                <tr
+                  className={[
+                    'comparison-row',
+                    row.incomplete ? 'incomplete' : '',
+                    row.stale ? 'is-stale' : '',
+                    tone ? `r-${tone}` : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                >
                   <th scope="row" className="col-reference">
                     <span className="reference-display">{row.display_reference}</span>
                     {row.mt_reference !== row.display_reference && (
@@ -430,9 +665,38 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                     >
                       {row.incomplete ? 'Translate verse' : 'Regenerate'}
                     </button>
+                    {!row.incomplete && (
+                      <button
+                        type="button"
+                        className="link-button"
+                        disabled={!codexReady || analyzeVerse.isPending || Boolean(batch)}
+                        onClick={() => void auditRow(row.unit_ids[0])}
+                      >
+                        {row.stale ? 'Re-analyse' : 'Analyse'}
+                      </button>
+                    )}
+                    {((row.literal_backbone?.length ?? 0) > 0 ||
+                      (row.non_source_material?.length ?? 0) > 0) && (
+                      <button
+                        type="button"
+                        className="link-button"
+                        aria-expanded={isOpen}
+                        onClick={() => setExpanded(isOpen ? null : key)}
+                      >
+                        {isOpen ? 'Hide evidence' : 'Evidence'}
+                      </button>
+                    )}
                     {row.assessment_status && (
                       <span className={`status-badge status-${row.assessment_status}`}>
                         {STATUS_LABELS[row.assessment_status]}
+                      </span>
+                    )}
+                    {row.stale && (
+                      <span
+                        className="stale-badge"
+                        title="The rendering has changed since this analysis ran"
+                      >
+                        Stale
                       </span>
                     )}
                     {row.created_via && (
@@ -542,6 +806,51 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                     )}
                   </td>
                 </tr>
+                {isOpen ? (
+                  <tr className="detail">
+                    <td colSpan={7}>
+                      <div className="detail__grid">
+                        {(row.literal_backbone?.length ?? 0) > 0 ? (
+                          <div className="detail__col">
+                            <h4>Literal backbone</h4>
+                            <ul className="backbone">
+                              {(row.literal_backbone ?? []).map((line) => (
+                                <li key={line}>{line}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                        {(row.non_source_material?.length ?? 0) > 0 ? (
+                          <div className="detail__col">
+                            <h4>Not in the psalm</h4>
+                            <ul className="backbone">
+                              {(row.non_source_material ?? []).map((item) => (
+                                <li key={item.text}>
+                                  <strong>{item.text}</strong>{' '}
+                                  <span className="pill addition">
+                                    {item.kind.replace(/_/g, ' ')}
+                                  </span>
+                                  {item.note ? <> — {item.note}</> : null}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                      </div>
+                    </td>
+                  </tr>
+                ) : null}
+                {seam ? (
+                  <tr className="seam-row">
+                    <td colSpan={7}>
+                      <span className="selah">
+                        {seam.marker}
+                        {seam.aligns_with_section ? ' · section ends here' : ''}
+                      </span>
+                    </td>
+                  </tr>
+                ) : null}
+                </Fragment>
               );
             })}
           </tbody>

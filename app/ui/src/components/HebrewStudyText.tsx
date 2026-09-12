@@ -63,6 +63,21 @@ function StudyCard({ anchor, onClose }: { anchor: Anchor; onClose: () => void })
         </dl>
       ) : null}
 
+      {token.note ? (
+        <div className={`study-card__note verdict-${token.note.verdict}`}>
+          <h5>
+            Translation note
+            <span className="verdict-chip">{token.note.verdict.replace(/_/g, ' ')}</span>
+          </h5>
+          <p className="study-card__rendered">
+            <span className="study-card__lexical">{token.note.lexical_gloss}</span>
+            {' → '}
+            <strong>{token.note.rendered_as}</strong>
+          </p>
+          <p>{token.note.note}</p>
+        </div>
+      ) : null}
+
       {token.occurrence_count > 0 ? (
         <p className="study-card__occurrences">
           <strong>{token.occurrence_count}</strong> occurrence(s)
@@ -131,11 +146,17 @@ export function HebrewStudyText({ tokens, text }: Props) {
           <button
             key={token.token_id}
             type="button"
-            className={
+            className={[
+              'study-word',
+              // A quiet underline marks the words the analysis remarked on, so
+              // the language lab is discoverable without hovering every word.
+              token.note ? 'study-word--noted' : '',
               anchor?.token.token_id === token.token_id && anchor.pinned
-                ? 'study-word study-word--pinned'
-                : 'study-word'
-            }
+                ? 'study-word--pinned'
+                : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
             onMouseEnter={(event) => show(token, event.currentTarget, false)}
             onMouseLeave={clearIfUnpinned}
             onFocus={(event) => show(token, event.currentTarget, false)}

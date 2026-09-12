@@ -875,12 +875,80 @@ export interface ComparisonTableRow {
   stale: boolean;
 }
 
+export interface PsalmAnalysisSection {
+  title: string;
+  first_verse: number;
+  last_verse: number;
+  theme: string;
+  arc_note: string;
+}
+
+export interface StructuralSeam {
+  after_verse: number;
+  marker: string;
+  /** Whether an arrangement section ends here: a structural-fidelity signal. */
+  aligns_with_section: boolean;
+}
+
+export interface PsalmAnalysis {
+  psalm_analysis_id: string;
+  psalm_id: string;
+  summary: string;
+  sections: PsalmAnalysisSection[];
+  structural_seams: StructuralSeam[];
+  guardrails: { heading_attribution: string; cultic_setting: string };
+  epistemics: {
+    known_from_text: Array<{ claim: string; basis: string }>;
+    not_known_from_text: Array<{ claim: string; why_not: string }>;
+  };
+  non_source_material: NonSourceMaterial[];
+  method: string;
+  citations: string[];
+  source_fingerprint: string | null;
+  status: string;
+  created_by: string;
+  created_via: CreatedVia;
+  generator_provider: string | null;
+  generation_run_id: string | null;
+  prompt_template_version: string;
+  created_at: string;
+  revision_of: string | null;
+  audit_ids: string[];
+}
+
+/** Masoretic, Septuagint and Vulgate numbers, from the committed table. */
+export interface CanonicalNumbering {
+  mt: number;
+  septuagint: number[];
+  vulgate: number[];
+}
+
 export interface ComparisonTable {
   psalm_id: string;
   title: string;
   literal_layer: string;
   english_layer: string;
+  canonical_numbering: CanonicalNumbering | null;
+  analysis: PsalmAnalysis | null;
   rows: ComparisonTableRow[];
+}
+
+export interface VerseAnalysisResult {
+  unit_id: string;
+  status: CodexRun['status'];
+  run_id: string | null;
+  assessment: ComparisonAssessment | null;
+  skipped: boolean;
+  error: string | null;
+}
+
+export interface PsalmAnalysisResult {
+  psalm_id: string;
+  status: CodexRun['status'];
+  run_id: string | null;
+  analysis: PsalmAnalysis | null;
+  skipped: boolean;
+  error: string | null;
 }
 
 export type CodexStatusValue =

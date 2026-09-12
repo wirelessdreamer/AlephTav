@@ -106,3 +106,42 @@ def test_numbers_outside_the_psalter_are_rejected() -> None:
     for bad in (0, 151, -1):
         with pytest.raises(ValueError):
             greek_numbers(bad)
+
+
+# -- Display numbering -----------------------------------------------------
+
+
+def test_a_psalm_without_a_superscription_displays_its_masoretic_reference() -> None:
+    from app.core import versification
+
+    assert versification.display_reference("ps001", "Psalm 1:1", 1) == "Psalm 1:1"
+    assert versification.display_reference("ps001", "Psalm 1:6", 6) == "Psalm 1:6"
+
+
+def test_superscription_verses_are_labelled_rather_than_misnumbered() -> None:
+    from app.core import versification
+
+    # Psalm 51's first two Masoretic verses are the heading, which English
+    # editions print unnumbered. Giving them a number would be a lie.
+    assert versification.display_reference("ps051", "Psalm 51:1", 1) == "Psalm 51 (heading)"
+    assert versification.display_reference("ps051", "Psalm 51:2", 2) == "Psalm 51 (heading)"
+
+
+def test_verses_after_a_superscription_shift_to_english_numbering() -> None:
+    from app.core import versification
+
+    # MT 51:3 is English 51:1 -- the verse the workbench previously displayed
+    # beside the wrong English witness.
+    assert versification.display_reference("ps051", "Psalm 51:3", 3) == "Psalm 51:1"
+    assert versification.display_reference("ps051", "Psalm 51:21", 21) == "Psalm 51:19"
+
+    # A one-verse heading shifts by one.
+    assert versification.display_reference("ps003", "Psalm 3:2", 2) == "Psalm 3:1"
+
+
+def test_canonical_numbering_reports_the_greek_divergence() -> None:
+    from app.core import versification
+
+    assert versification.canonical_numbering("ps051")["septuagint"] == [50]
+    assert versification.canonical_numbering("ps116")["vulgate"] == [114, 115]
+    assert versification.canonical_numbering("ps001")["mt"] == 1
