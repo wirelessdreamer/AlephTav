@@ -10,6 +10,7 @@ from app.api.routes import (
     alternates,
     assistant,
     audit,
+    comparisons,
     corpus,
     export,
     jobs,
@@ -72,6 +73,7 @@ app.include_router(search.router)
 app.include_router(alignments.router)
 app.include_router(renderings.router)
 app.include_router(alternates.router)
+app.include_router(comparisons.router)
 app.include_router(review.router)
 app.include_router(audit.router)
 app.include_router(export.router)
