@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VerseAnalysisOutput",
+  "description": "One verse audited against its Hebrew. Produced by the analysis pass, which never writes renderings.",
+  "type": "object",
+  "required": [
+    "unit_id",
+    "accuracy_rating",
+    "accuracy_note",
+    "creative_liberties_note",
+    "literal_backbone",
+    "word_notes",
+    "non_source_material"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$"
+    },
+    "accuracy_rating": {
+      "description": "A mixed cell -- arrangement apparatus alongside genuinely rendered text, which is the common case -- takes one of the first six and declares the extra material in non_source_material. Reserve no_source_basis for a cell that is apparatus and nothing else.",
+      "type": "string",
+      "enum": [
+        "literal",
+        "very_close",
+        "close",
+        "adapted",
+        "interpretive",
+        "omission",
+        "no_source_basis"
+      ]
+    },
+    "accuracy_note": {
+      "description": "What the English preserves of the Hebrew, in the psalm's own order.",
+      "type": "string",
+      "minLength": 1
+    },
+    "creative_liberties_note": {
+      "description": "Where the English interprets, compresses or amplifies. Empty string when there is nothing of consequence.",
+      "type": "string"
+    },
+    "literal_backbone": {
+      "description": "Compact literal rendering, one entry per clause. Evidence for the verdict, never a proposed rendering.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "word_notes": {
+      "description": "Only words whose rendering is worth remarking on. An empty array is a valid and common answer.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "token_ids",
+          "transliteration",
+          "lexical_gloss",
+          "rendered_as",
+          "verdict",
+          "note"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "token_ids": {
+            "description": "Token ids from the supplied evidence. Several ids when the note is about a bound phrase.",
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.t\\d{3}$" }
+          },
+          "transliteration": { "type": "string" },
+          "lexical_gloss": {
+            "description": "The word's range in the lexica, not this translation's choice.",
+            "type": "string"
+          },
+          "rendered_as": { "type": "string" },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "defensible",
+              "expansion",
+              "narrowing",
+              "nonstandard",
+              "unsupported",
+              "omitted"
+            ]
+          },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "non_source_material": {
+      "description": "Text in the English with no counterpart in the Hebrew: performance and arrangement apparatus.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "kind", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "meter",
+              "instrumentation",
+              "vocal_assignment",
+              "section_label",
+              "dynamics",
+              "other"
+            ]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

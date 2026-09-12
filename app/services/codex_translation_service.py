@@ -34,6 +34,10 @@ RUN_FAILED = "failed"
 RUN_CANCELLED = "cancelled"
 RUN_INVALID_OUTPUT = "invalid_output"
 
+#: Run kinds. A run is produced by exactly one pass.
+KIND_TRANSLATION = "translation"
+KIND_ANALYSIS = "analysis"
+
 #: Fields never written to the session store, even if Codex returns them.
 _CREDENTIAL_KEYS = frozenset(
     {"accessToken", "refreshToken", "access_token", "refresh_token", "authUrl", "loginUrl", "token"}
@@ -253,35 +257,37 @@ def get_run(run_id: str) -> dict[str, Any]:
     return run
 
 
-def run_translation_turn(
+def run_contract_turn(
     client: codex.CodexAppServerClient,
     session_id: str,
-    unit_id: str,
-    layer: str,
-    candidate_count: int = 2,
-    style_profile: str | None = None,
-    meter_target: str | None = None,
-    constraints: list[str] | None = None,
+    prompt: str,
+    validator: Any,
+    kind: str,
+    unit_id: str | None = None,
+    layer: str | None = None,
+    psalm_id: str | None = None,
+    prompt_template_version: str = PROMPT_TEMPLATE_VERSION,
 ) -> dict[str, Any]:
+    """Run one Codex turn against an arbitrary output contract.
+
+    Shared by the translation and analysis passes: both need the same run
+    record, the same failure preservation, and the same "validate before
+    anything is written" discipline. ``kind`` tags the run so a caller cannot
+    feed an analysis run to the translation saver, or the reverse.
+    """
     session = get_session(session_id)
-    prompt = build_translation_prompt(
-        unit_id,
-        layer,
-        candidate_count=candidate_count,
-        style_profile=style_profile,
-        meter_target=meter_target,
-        constraints=constraints,
-    )
     run: dict[str, Any] = {
         "run_id": f"cxr.{uuid.uuid4().hex[:12]}",
+        "kind": kind,
         "session_id": session_id,
         "thread_id": session["thread_id"],
         "turn_id": None,
         "unit_id": unit_id,
+        "psalm_id": psalm_id or session.get("psalm_id"),
         "layer": layer,
         "provider": codex.PROVIDER_NAME,
         "model": session.get("model", ""),
-        "prompt_template_version": PROMPT_TEMPLATE_VERSION,
+        "prompt_template_version": prompt_template_version,
         "started_at": _now(),
         "completed_at": None,
         "status": RUN_RUNNING,
@@ -298,7 +304,7 @@ def run_translation_turn(
         result = client.run_turn(
             thread_id=session["thread_id"],
             text=prompt,
-            output_schema=generation_service.OUTPUT_VALIDATOR.schema,
+            output_schema=validator.schema,
             model=session.get("model") or None,
         )
     except GenerationError as error:
@@ -321,23 +327,49 @@ def run_translation_turn(
         run["error"] = "Codex returned output that was not valid JSON."
         return _save_run(run)
 
-    errors = sorted(
-        generation_service.OUTPUT_VALIDATOR.iter_errors(payload),
-        key=lambda e: list(e.path),
-    )
+    errors = sorted(validator.iter_errors(payload), key=lambda e: list(e.path))
     if errors:
-        # FR-5: preserve the failed run as an auditable error; create nothing.
+        # Preserve the failed run as an auditable error; create nothing.
         run["status"] = RUN_INVALID_OUTPUT
         run["validation"] = [
             {"path": "/".join(str(p) for p in error.path), "message": error.message}
             for error in errors
         ]
-        run["error"] = "Codex output failed the generation contract."
+        run["error"] = "Codex output failed the contract."
         return _save_run(run)
 
     run["status"] = RUN_COMPLETED
     run["payload"] = payload
     return _save_run(run)
+
+
+def run_translation_turn(
+    client: codex.CodexAppServerClient,
+    session_id: str,
+    unit_id: str,
+    layer: str,
+    candidate_count: int = 2,
+    style_profile: str | None = None,
+    meter_target: str | None = None,
+    constraints: list[str] | None = None,
+) -> dict[str, Any]:
+    prompt = build_translation_prompt(
+        unit_id,
+        layer,
+        candidate_count=candidate_count,
+        style_profile=style_profile,
+        meter_target=meter_target,
+        constraints=constraints,
+    )
+    return run_contract_turn(
+        client,
+        session_id=session_id,
+        prompt=prompt,
+        validator=generation_service.OUTPUT_VALIDATOR,
+        kind=KIND_TRANSLATION,
+        unit_id=unit_id,
+        layer=layer,
+    )
 
 
 def fill_comparison_row(
@@ -412,6 +444,10 @@ def save_run_candidates(run_id: str, created_by: str = "codex") -> list[dict[str
     through rendering_service so an audit record is written.
     """
     run = get_run(run_id)
+    if run.get("kind", KIND_TRANSLATION) != KIND_TRANSLATION:
+        raise ValidationError(
+            f"Run {run_id} is a {run.get('kind')} run; it produces no renderings"
+        )
     if run["status"] != RUN_COMPLETED or not run.get("payload"):
         raise ValidationError(f"Run {run_id} has no validated payload to save")
 

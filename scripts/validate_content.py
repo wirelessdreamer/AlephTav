@@ -44,6 +44,7 @@ def validate_all_content() -> dict[str, Any]:
     errors: list[str] = []
     validated_files: list[str] = []
     unit_validator = _validator("unit.schema.json")
+    meta_validator = _validator("psalm_meta.schema.json")
     project_validator = _validator("project.schema.json")
 
     if settings.project_file.exists():
@@ -61,6 +62,13 @@ def validate_all_content() -> dict[str, Any]:
 
     for path in sorted(settings.psalms_dir.glob("ps*/ps*.json")):
         if path.name.endswith(".meta.json"):
+            meta = registry_service.read_json(path)
+            for error in meta_validator.iter_errors(meta):
+                errors.append(f"{path.relative_to(settings.root_dir)}: {error.message}")
+            if path.read_text(encoding="utf-8") != _deterministic_text(meta):
+                errors.append(
+                    f"{path.relative_to(settings.root_dir)}: non-deterministic serialization"
+                )
             validated_files.append(path.relative_to(settings.root_dir).as_posix())
             continue
         unit = registry_service.read_json(path)

@@ -14,6 +14,8 @@ ID_PATTERNS = {
     "concept_id": re.compile(r"^cpt\.ps\d{3}\.v\d{3}\.[a-z]\.\d{4}$"),
     "audit_id": re.compile(r"^aud\.ps\d{3}\.v\d{3}\.[a-z]\.\d{4}$"),
     "comparison_id": re.compile(r"^cmp\.ps\d{3}\.v\d{3}\.[a-z]\.\d{4}$"),
+    # Psalm-scoped rather than unit-scoped: an analysis describes a whole psalm.
+    "psalm_analysis_id": re.compile(r"^anl\.ps\d{3}\.\d{4}$"),
     "issue_link_id": re.compile(r"^iss\.\d{6}$"),
     "pr_link_id": re.compile(r"^pr\.\d{6}$"),
     "decision_id": re.compile(r"^rev\.ps\d{3}\.v\d{3}\.[a-z]\.\d{4}$"),
@@ -57,6 +59,10 @@ def decision_id(unit_id: str, existing_ids: list[str]) -> str:
 
 def comparison_id(unit_id: str, existing_ids: list[str]) -> str:
     return f"cmp.{unit_id}.{next_suffix(existing_ids, f'cmp.{unit_id}.')}"
+
+
+def psalm_analysis_id(psalm_id: str, existing_ids: list[str]) -> str:
+    return f"anl.{psalm_id}.{next_suffix(existing_ids, f'anl.{psalm_id}.')}"
 
 
 def alignment_id(unit_id: str, layer: str, existing_ids: list[str]) -> str:
