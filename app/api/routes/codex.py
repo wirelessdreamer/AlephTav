@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
+from app.services import codex_analysis_service as analysis
 from app.services import codex_app_server_service as codex
 from app.services import codex_translation_service as translation
 
@@ -134,6 +135,48 @@ def fill_comparison_row(unit_id: str, payload: dict) -> dict:
             meter_target=payload.get("meter_target"),
             constraints=payload.get("constraints"),
         )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/analysis/verses/{unit_id}")
+def analyze_verse(unit_id: str, payload: dict) -> dict:
+    """Audit one verse's existing renderings against the Hebrew."""
+    try:
+        return analysis.analyze_verse(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            unit_id=unit_id,
+            english_layer=payload.get("english_layer", "lyric"),
+            created_by=payload.get("created_by", "codex-analysis"),
+            force=bool(payload.get("force", False)),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/analysis/psalms/{psalm_id}")
+def analyze_psalm(psalm_id: str, payload: dict) -> dict:
+    """Audit the psalm as a whole: sections, seams, guardrails, epistemics."""
+    try:
+        return analysis.analyze_psalm_scope(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            psalm_id=psalm_id,
+            english_layer=payload.get("english_layer", "lyric"),
+            created_by=payload.get("created_by", "codex-analysis"),
+            force=bool(payload.get("force", False)),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.get("/psalms/{psalm_id}/analysis")
+def get_psalm_analysis(psalm_id: str) -> dict:
+    """The psalm's active analysis, or nulls when none has been run."""
+    try:
+        record = analysis.active_analysis(psalm_id)
+        return {"psalm_id": psalm_id, "analysis": record}
     except Exception as error:
         raise_as_http(error)
 

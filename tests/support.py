@@ -4,6 +4,7 @@ import shutil
 import os
 from pathlib import Path
 
+from app.core import versification
 from app.core.config import get_settings
 from app.services import concordance_service, ingest_service, registry_service, report_service, visual_flow_service
 
@@ -33,6 +34,13 @@ def bootstrap_fixture_repo() -> Path:
     # at the temp workspace during tests; mirror the real ones in so validation runs.
     shutil.copytree(REAL_ROOT / "schemas", settings.schemas_dir, dirs_exist_ok=True)
     registry_service.bootstrap_project()
+    # Versification is fixed reference data about the Psalter, committed rather
+    # than seeded, so the fixture workspace needs its own copy.
+    versification_table = REAL_ROOT / "content" / "versification.json"
+    if versification_table.exists():
+        settings.content_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(versification_table, settings.content_dir / "versification.json")
+    versification.invalidate()
     ingest_service.import_fixture_psalms()
     concordance_service.rebuild_indexes()
     visual_flow_service.rebuild_vector_index()

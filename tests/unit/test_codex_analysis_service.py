@@ -384,3 +384,70 @@ def test_an_analysis_run_cannot_be_fed_to_the_rendering_saver() -> None:
     # this would silently return [] and read as a successful no-op.
     with pytest.raises(ValidationError, match="produces no renderings"):
         translation.save_run_candidates(result["run_id"])
+
+
+# -- Surfacing in the table ------------------------------------------------
+
+
+def test_the_table_row_carries_the_evidence_and_reports_freshness() -> None:
+    client, session_id = _session([_verse_payload()])
+    analysis.analyze_verse(client, session_id, UNIT_ID)
+
+    table = comparisons.build_comparison_table(PSALM_ID)
+    row = next(r for r in table["rows"] if UNIT_ID in r["unit_ids"])
+
+    assert row["accuracy_rating"] == "close"
+    assert row["literal_backbone"]
+    assert row["stale"] is False
+
+    # The word note rides the study card for the token it is about.
+    card = next(c for c in row["tokens"] if c["token_id"] == "ps001.v001.t001")
+    assert card["note"]["verdict"] == "expansion"
+    assert all("note" not in c for c in row["tokens"] if c["token_id"] != "ps001.v001.t001")
+
+
+def test_editing_the_audited_rendering_marks_the_row_stale() -> None:
+    client, session_id = _session([_verse_payload()])
+    analysis.analyze_verse(client, session_id, UNIT_ID)
+
+    unit = registry_service.load_unit(UNIT_ID)
+    english = comparisons.select_rendering(unit, "lyric")
+    rendering_service.update_rendering(
+        english["rendering_id"], {"text": "Rewritten after the audit"}, created_by="editor"
+    )
+
+    table = comparisons.build_comparison_table(PSALM_ID)
+    row = next(r for r in table["rows"] if UNIT_ID in r["unit_ids"])
+
+    # The rendering id is unchanged; only the content moved.
+    assert row["english_text"] == "Rewritten after the audit"
+    assert row["stale"] is True
+
+
+def test_a_human_written_assessment_is_never_reported_stale() -> None:
+    literal = comparisons.select_rendering(registry_service.load_unit(UNIT_ID), "literal")
+    english = comparisons.select_rendering(registry_service.load_unit(UNIT_ID), "lyric")
+    comparisons.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal["rendering_id"],
+        english_rendering_id=english["rendering_id"],
+        accuracy_rating="close",
+    )
+
+    table = comparisons.build_comparison_table(PSALM_ID)
+    row = next(r for r in table["rows"] if UNIT_ID in r["unit_ids"])
+
+    assert row["stale"] is False
+
+
+def test_the_table_envelope_carries_the_psalm_analysis_and_numbering() -> None:
+    client, session_id = _session([_psalm_payload()])
+    analysis.analyze_psalm_scope(client, session_id, PSALM_ID)
+
+    table = comparisons.build_comparison_table(PSALM_ID)
+
+    assert table["analysis"]["summary"] == "Two ways, contrasted and then judged."
+    assert table["analysis"]["sections"][0]["title"] == "Verse 1"
+    # Numbering comes from the committed table, not the model.
+    assert table["canonical_numbering"]["mt"] == 1
+    assert table["canonical_numbering"]["septuagint"] == [1]

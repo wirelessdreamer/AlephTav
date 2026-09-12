@@ -15,6 +15,7 @@ from copy import deepcopy
 from datetime import UTC, datetime
 from typing import Any
 
+from app.core import versification
 from app.core.errors import NotFoundError, ValidationError
 from app.core.ids import comparison_id as build_comparison_id
 from app.services import audit_service, registry_service
@@ -378,7 +379,14 @@ def build_comparison_table(
 
         for unit in units:
             hebrew_parts.append(unit["source_hebrew"])
-            tokens.extend(study_token(token) for token in unit.get("tokens", []))
+            active_note = _active_assessment(unit)
+            notes_by_token = _notes_by_token(active_note)
+            for token in unit.get("tokens", []):
+                card = study_token(token)
+                note = notes_by_token.get(card["token_id"])
+                if note is not None:
+                    card["note"] = note
+                tokens.append(card)
             literal = select_rendering(unit, literal_layer)
             english = select_rendering(unit, english_layer)
             if literal:
@@ -397,10 +405,15 @@ def build_comparison_table(
 
         assessment = assessments[-1] if assessments else None
         first = units[0]
+        mt_verse, _segment = _unit_sort_key(first["unit_id"])
         rows.append(
             {
                 "mt_reference": first["ref"],
-                "display_reference": (assessment or {}).get("display_reference") or first["ref"],
+                # English numbering comes from the committed versification table,
+                # not from the model and not from MT by default.
+                "display_reference": versification.display_reference(
+                    psalm_id, first["ref"], mt_verse
+                ),
                 "unit_ids": [unit["unit_id"] for unit in units],
                 "hebrew_text": " ".join(hebrew_parts),
                 # Per-word study payload so the Hebrew column can be hovered
@@ -418,6 +431,11 @@ def build_comparison_table(
                 "generator_provider": (assessment or {}).get("generator_provider"),
                 "comparison_id": (assessment or {}).get("comparison_id"),
                 "incomplete": not literal_parts or not english_parts,
+                "literal_backbone": (assessment or {}).get("literal_backbone", []),
+                "non_source_material": (assessment or {}).get("non_source_material", []),
+                # An assessment written against text that has since been edited
+                # in place is stale, even though its rendering ids still match.
+                "stale": _is_stale(assessment, units, literal_layer, english_layer),
             }
         )
 
@@ -426,5 +444,62 @@ def build_comparison_table(
         "title": psalm.get("title", ""),
         "literal_layer": literal_layer,
         "english_layer": english_layer,
+        "canonical_numbering": versification.canonical_numbering(psalm_id),
+        "analysis": _active_psalm_analysis(psalm),
         "rows": rows,
     }
+
+
+def _active_assessment(unit: dict[str, Any]) -> dict[str, Any] | None:
+    active = [
+        item for item in unit.get("comparison_assessments", []) if item["status"] != "superseded"
+    ]
+    return active[-1] if active else None
+
+
+def _notes_by_token(assessment: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    """Index word notes by token so each study card can find its own."""
+    if not assessment:
+        return {}
+    index: dict[str, dict[str, Any]] = {}
+    for note in assessment.get("word_notes", []):
+        for token_id in note.get("token_ids", []):
+            index.setdefault(token_id, note)
+    return index
+
+
+def _is_stale(
+    assessment: dict[str, Any] | None,
+    units: list[dict[str, Any]],
+    literal_layer: str,
+    english_layer: str,
+) -> bool:
+    """True when the audited text has changed since the analysis ran.
+
+    An assessment belongs to one unit, so it is that unit's current text the
+    fingerprint is compared against.
+    """
+    if not assessment:
+        return False
+    recorded = assessment.get("analyzed_text_hash")
+    if not recorded:
+        # Human-authored assessments carry no fingerprint and are never stale.
+        return False
+    owner = next((u for u in units if u["unit_id"] == assessment["unit_id"]), None)
+    if owner is None:
+        return False
+
+    from app.services import codex_analysis_service
+
+    current = codex_analysis_service.verse_fingerprint(
+        owner,
+        [select_rendering(owner, literal_layer), select_rendering(owner, english_layer)],
+    )
+    return current != recorded
+
+
+def _active_psalm_analysis(psalm: dict[str, Any]) -> dict[str, Any] | None:
+    for record in reversed(psalm.get("analyses", [])):
+        if record.get("status") != "superseded":
+            return record
+    return None
