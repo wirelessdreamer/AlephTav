@@ -257,6 +257,11 @@ pre {
   border-radius: 22px;
   box-shadow: 0 18px 60px rgba(2, 6, 23, 0.48);
   backdrop-filter: blur(18px);
+  /* The panel is often docked into a narrow column inside a wide viewport, so
+     its two-column body has to respond to its own width, not the window's.
+     Viewport media queries cannot see that and let the columns collide. */
+  container-type: inline-size;
+  container-name: assistant;
 }
 
 .assistant-panel--side {
@@ -358,7 +363,9 @@ pre {
 
 .assistant-panel__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  /* Both tracks must be able to shrink; a fixed 320px sidebar overflows a
+     narrow panel instead of giving way. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   gap: 1rem;
   padding: 0 1.1rem 1.1rem;
 }
@@ -3431,6 +3438,23 @@ button.composer-path-chip {
   border-radius: 14px;
   padding: 0.75rem;
   background: rgba(30, 41, 59, 0.45);
+  min-width: 0;
+}
+
+/* Inside the assistant sidebar the surrounding section already provides the
+   frame; nesting a second bordered card reads as a stacked panel. */
+.assistant-settings .codex-panel {
+  border: none;
+  border-top: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 0;
+  padding: 0.6rem 0 0;
+  background: none;
+}
+
+.codex-panel button,
+.codex-actions button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .codex-header {
@@ -3519,4 +3543,27 @@ button.composer-path-chip {
 .codex-validation ul {
   margin: 0.25rem 0;
   padding-inline-start: 1rem;
+}
+
+/* ---------------------------------------------------------------- *
+ * Assistant panel: respond to the panel's own width                 *
+ *                                                                   *
+ * The panel is frequently docked into a narrow column inside a wide *
+ * viewport, where no viewport media query can see that it is short  *
+ * of room, so its two columns collide. This must stay last: it has  *
+ * the same specificity as the base rule and only wins by order.     *
+ * ---------------------------------------------------------------- */
+
+@container assistant (max-width: 700px) {
+  .assistant-panel__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .assistant-panel__bar,
+  .assistant-panel__actions,
+  .assistant-composer__actions {
+    grid-template-columns: minmax(0, 1fr);
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
