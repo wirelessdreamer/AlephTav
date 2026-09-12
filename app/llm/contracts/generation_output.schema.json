@@ -74,6 +74,19 @@
           },
           "differentiator": { "type": "string" },
           "grounding_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "literalness": {
+            "description": "How closely the candidate tracks the Hebrew, for the comparison table's accuracy column.",
+            "type": "string",
+            "enum": ["literal", "very_close", "close", "adapted", "interpretive", "omission"]
+          },
+          "accuracy_note": {
+            "description": "Verse-level explanation of translation accuracy.",
+            "type": "string"
+          },
+          "creative_liberties_note": {
+            "description": "Verse-level explanation of creative liberties taken.",
+            "type": "string"
+          },
           "delivery_profile": { "type": "string" },
           "source_anchor": {
             "type": "object",

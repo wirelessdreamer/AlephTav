@@ -50,49 +50,49 @@ function Write-ManagedServicesState {
 
 function Stop-ProcessTree {
     param(
-        [int]$Pid,
+        [int]$ProcessId,
         [string]$Label,
         [switch]$Force
     )
 
-    if (-not $Pid) {
+    if (-not $ProcessId) {
         return
     }
 
-    $children = Get-CimInstance Win32_Process -Filter "ParentProcessId = $Pid" -ErrorAction SilentlyContinue
+    $children = Get-CimInstance Win32_Process -Filter "ParentProcessId = $ProcessId" -ErrorAction SilentlyContinue
     foreach ($child in $children) {
-        Stop-ProcessTree -Pid $child.ProcessId -Label "$Label child" -Force:$Force
+        Stop-ProcessTree -ProcessId $child.ProcessId -Label "$Label child" -Force:$Force
     }
 
-    Stop-Process -Id $Pid -Force:$Force -ErrorAction SilentlyContinue
+    Stop-Process -Id $ProcessId -Force:$Force -ErrorAction SilentlyContinue
 }
 
 function Stop-ManagedProcess {
     param(
-        [int]$Pid,
+        [int]$ProcessId,
         [string]$Label
     )
 
-    if (-not $Pid) {
+    if (-not $ProcessId) {
         return
     }
 
-    $process = Get-Process -Id $Pid -ErrorAction SilentlyContinue
+    $process = Get-Process -Id $ProcessId -ErrorAction SilentlyContinue
     if ($null -eq $process) {
         return
     }
 
-    Stop-ProcessTree -Pid $Pid -Label $Label
+    Stop-ProcessTree -ProcessId $ProcessId -Label $Label
     for ($i = 0; $i -lt 5; $i++) {
         Start-Sleep -Seconds 1
-        $process = Get-Process -Id $Pid -ErrorAction SilentlyContinue
+        $process = Get-Process -Id $ProcessId -ErrorAction SilentlyContinue
         if ($null -eq $process) {
             return
         }
     }
 
-    Write-Warning "[setup] $Label process $Pid did not exit cleanly; forcing shutdown."
-    Stop-ProcessTree -Pid $Pid -Label $Label -Force
+    Write-Warning "[setup] $Label process $ProcessId did not exit cleanly; forcing shutdown."
+    Stop-ProcessTree -ProcessId $ProcessId -Label $Label -Force
 }
 
 function Get-ListenerProcessId {
@@ -111,12 +111,12 @@ function Get-ListenerProcessId {
 
 function Test-RepoOwnedListener {
     param(
-        [int]$Pid,
+        [int]$ProcessId,
         [ValidateSet('api', 'ui')]
         [string]$Kind
     )
 
-    $process = Get-CimInstance Win32_Process -Filter "ProcessId = $Pid" -ErrorAction SilentlyContinue
+    $process = Get-CimInstance Win32_Process -Filter "ProcessId = $ProcessId" -ErrorAction SilentlyContinue
     if ($null -eq $process) {
         return $false
     }
@@ -145,14 +145,14 @@ function Reclaim-RepoOwnedPort {
         [string]$Kind
     )
 
-    $pid = Get-ListenerProcessId -Port $Port
-    if ($null -eq $pid) {
+    $listenerPid = Get-ListenerProcessId -Port $Port
+    if ($null -eq $listenerPid) {
         return
     }
 
-    if (Test-RepoOwnedListener -Pid $pid -Kind $Kind) {
-        Write-Setup "Stopping existing repo-owned $($Kind.ToUpperInvariant()) process $pid on port $Port."
-        Stop-ManagedProcess -Pid $pid -Label $Kind.ToUpperInvariant()
+    if (Test-RepoOwnedListener -ProcessId $listenerPid -Kind $Kind) {
+        Write-Setup "Stopping existing repo-owned $($Kind.ToUpperInvariant()) process $listenerPid on port $Port."
+        Stop-ManagedProcess -ProcessId $listenerPid -Label $Kind.ToUpperInvariant()
     }
 }
 
@@ -176,7 +176,7 @@ function Cleanup-StaleManagedServices {
             $process = Get-Process -Id ([int]$entry.pid) -ErrorAction SilentlyContinue
             if ($null -ne $process) {
                 Write-Setup "Stopping stale setup-managed $($label.ToUpperInvariant()) process $($entry.pid) on port $($entry.port)."
-                Stop-ManagedProcess -Pid ([int]$entry.pid) -Label $label.ToUpperInvariant()
+                Stop-ManagedProcess -ProcessId ([int]$entry.pid) -Label $label.ToUpperInvariant()
             }
         }
     }
@@ -189,7 +189,7 @@ function Cleanup-Children {
         if ($null -ne $process) {
             try {
                 if (-not $process.HasExited) {
-                    Stop-ManagedProcess -Pid $process.Id -Label 'setup child'
+                    Stop-ManagedProcess -ProcessId $process.Id -Label 'setup child'
                 }
             }
             catch {
@@ -531,17 +531,19 @@ function Start-Services {
     $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
     $script:ApiLog = Join-Path $RunDir "setup-api-$timestamp.log"
     $script:UiLog = Join-Path $RunDir "setup-ui-$timestamp.log"
+    $apiErrLog = Join-Path $RunDir "setup-api-$timestamp.err.log"
+    $uiErrLog = Join-Path $RunDir "setup-ui-$timestamp.err.log"
     $apiBaseUrl = "http://127.0.0.1:$ApiPort"
 
     Write-Setup "Starting API on $apiBaseUrl"
-    $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $ApiLog -WindowStyle Hidden -PassThru
+    $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $apiErrLog -WindowStyle Hidden -PassThru
     Write-ManagedServicesState
     Wait-ForUrl -Url "$apiBaseUrl/health" -Label 'API'
 
     Write-Setup "Starting UI on http://127.0.0.1:$UiPort"
     $previousApiBaseUrl = $env:VITE_API_BASE_URL
     $env:VITE_API_BASE_URL = $apiBaseUrl
-    $script:UiProcess = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run', 'dev', '--', '--host', '127.0.0.1', '--port', "$UiPort", '--strictPort') -WorkingDirectory $RootDir -RedirectStandardOutput $UiLog -RedirectStandardError $UiLog -WindowStyle Hidden -PassThru
+    $script:UiProcess = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run', 'dev', '--', '--host', '127.0.0.1', '--port', "$UiPort", '--strictPort') -WorkingDirectory $RootDir -RedirectStandardOutput $UiLog -RedirectStandardError $uiErrLog -WindowStyle Hidden -PassThru
     if ($null -eq $previousApiBaseUrl) {
         Remove-Item Env:VITE_API_BASE_URL -ErrorAction SilentlyContinue
     }
@@ -556,17 +558,17 @@ function Start-Services {
     Write-Setup "API: http://127.0.0.1:$ApiPort"
     Write-Setup "UI:  http://127.0.0.1:$UiPort"
     Write-Setup "Logs:"
-    Write-Setup "  API: $ApiLog"
-    Write-Setup "  UI:  $UiLog"
+    Write-Setup "  API: $ApiLog (stderr: $apiErrLog)"
+    Write-Setup "  UI:  $UiLog (stderr: $uiErrLog)"
     Write-Setup 'Press Ctrl+C to stop both services.'
 
     try {
         while ($true) {
             if ($ApiProcess.HasExited) {
-                Fail-Setup "API exited unexpectedly. See $ApiLog"
+                Fail-Setup "API exited unexpectedly. See $ApiLog and $apiErrLog"
             }
             if ($UiProcess.HasExited) {
-                Fail-Setup "UI exited unexpectedly. See $UiLog"
+                Fail-Setup "UI exited unexpectedly. See $UiLog and $uiErrLog"
             }
             Start-Sleep -Seconds 1
         }

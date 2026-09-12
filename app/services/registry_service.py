@@ -195,6 +195,22 @@ def project_template() -> dict[str, Any]:
                 "faith_posture": "contested",
                 "divine_name_rendering": "flexible_address",
             },
+            {
+                "style_profile_id": "antiphonal_performative",
+                "literalness": 0.58,
+                "lyric_freedom": 0.92,
+                "target_syllables": 0,
+                "rhyme_mode": "off",
+                "register": "antiphonal performative",
+                "parallelism_priority": "high",
+                "source_anchor_mode": "hebrew_imagery",
+                "metaphor_mode": "symbolic_equivalent",
+                "imagery_preservation": 0.88,
+                "idiom_modernity": 0.9,
+                "emotional_directness": 0.96,
+                "faith_posture": "confessional",
+                "divine_name_rendering": "flexible_address",
+            },
         ],
         "divine_name_policy": "preserve source distinctions",
         "review_policy": {
@@ -570,11 +586,23 @@ def list_units() -> list[dict[str, Any]]:
     return units
 
 
-def load_psalm(psalm_id: str) -> dict[str, Any]:
-    meta = psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+def psalm_meta_path(psalm_id: str) -> Path:
+    return psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+
+
+def load_psalm_meta(psalm_id: str) -> dict[str, Any]:
+    meta = psalm_meta_path(psalm_id)
     if not meta.exists():
         raise NotFoundError(f"Psalm not found: {psalm_id}")
-    payload = read_json(meta)
+    return read_json(meta)
+
+
+def save_psalm_meta(psalm_id: str, meta: dict[str, Any]) -> None:
+    write_json(psalm_meta_path(psalm_id), meta)
+
+
+def load_psalm(psalm_id: str) -> dict[str, Any]:
+    payload = load_psalm_meta(psalm_id)
     payload["units"] = [load_unit(unit_id) for unit_id in payload.get("unit_ids", [])]
     return payload
 

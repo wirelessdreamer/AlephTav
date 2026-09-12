@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ui",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--config", "app/ui/vite.config.ts", "--port", "43183"],
+      "port": 43183
+    },
+    {
+      "name": "api",
+      "runtimeExecutable": "D:/Code/AlephTav/.venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app.api.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "43174"
+      ],
+      "port": 43174
+    }
+  ]
+}

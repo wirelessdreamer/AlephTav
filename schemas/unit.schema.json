@@ -56,6 +56,7 @@
     "tokens": { "type": "array", "items": { "$ref": "token.schema.json" } },
     "alignments": { "type": "array", "items": { "$ref": "alignment.schema.json" } },
     "renderings": { "type": "array", "items": { "$ref": "rendering.schema.json" } },
+    "comparison_assessments": { "type": "array", "items": { "$ref": "comparison_assessment.schema.json" } },
     "audit_records": { "type": "array", "items": { "$ref": "audit_record.schema.json" } },
     "review_decisions": {
       "type": "array",

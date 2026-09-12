@@ -8,6 +8,23 @@
 
 Never bypass audit record creation, source manifest updates, or license checks.
 
+## One-Time Setup: Pre-Push Hook
+
+Install the version-controlled git hooks so golden snapshot drift is caught locally before it fails the `test` workflow in CI:
+
+```
+git config core.hooksPath scripts/git-hooks
+```
+
+After this, every `git push` first runs `pytest tests/golden`. If a test fails because content or composer logic changed deliberately, refresh the fixtures:
+
+```
+python scripts/refresh_goldens.py                      # ps### snapshots
+python scripts/refresh_goldens.py --composer-quality   # composer_quality.json exact_units
+```
+
+Then commit the updated fixtures and re-push. To skip the hook for a single push (use sparingly): `git push --no-verify`.
+
 ## Main Worktree Hygiene For Task Handoffs
 
 Detached-head task worktrees may cherry-pick commits back onto the base `main` worktree. Before handing off or receiving task commits:

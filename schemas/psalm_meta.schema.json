@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PsalmMeta",
+  "description": "A psalm's meta record. The three original keys are seeded by ingest; translation_guidance and analyses are written at runtime and are absent until first used.",
+  "type": "object",
+  "required": ["psalm_id", "title", "unit_ids"],
+  "additionalProperties": false,
+  "properties": {
+    "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+    "title": { "type": "string" },
+    "unit_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" }
+    },
+    "translation_guidance": {
+      "description": "The translator's standing direction for this psalm, injected into translation prompts. Never shown to the analysis pass, which must judge the text independently of the intent behind it.",
+      "type": "string"
+    },
+    "analyses": {
+      "description": "Psalm-scope analyses, newest last. At most one entry is not superseded.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/psalmAnalysis" }
+    }
+  },
+  "$defs": {
+    "nonSourceMaterial": {
+      "type": "object",
+      "required": ["text", "kind", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string" },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "meter",
+            "instrumentation",
+            "vocal_assignment",
+            "section_label",
+            "dynamics",
+            "other"
+          ]
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "psalmAnalysis": {
+      "type": "object",
+      "required": [
+        "psalm_analysis_id",
+        "psalm_id",
+        "summary",
+        "sections",
+        "structural_seams",
+        "guardrails",
+        "epistemics",
+        "non_source_material",
+        "method",
+        "citations",
+        "source_fingerprint",
+        "status",
+        "created_by",
+        "created_via",
+        "generator_provider",
+        "generation_run_id",
+        "prompt_template_version",
+        "created_at",
+        "revision_of",
+        "audit_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "psalm_analysis_id": { "type": "string", "pattern": "^anl\\.ps\\d{3}\\.\\d{4}$" },
+        "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+        "summary": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "first_verse", "last_verse", "theme", "arc_note"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string" },
+              "first_verse": { "type": "integer", "minimum": 1 },
+              "last_verse": { "type": "integer", "minimum": 1 },
+              "theme": { "type": "string" },
+              "arc_note": { "type": "string" }
+            }
+          }
+        },
+        "structural_seams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["after_verse", "marker", "aligns_with_section"],
+            "additionalProperties": false,
+            "properties": {
+              "after_verse": { "type": "integer", "minimum": 1 },
+              "marker": { "type": "string" },
+              "aligns_with_section": { "type": "boolean" }
+            }
+          }
+        },
+        "guardrails": {
+          "type": "object",
+          "required": ["heading_attribution", "cultic_setting"],
+          "additionalProperties": false,
+          "properties": {
+            "heading_attribution": { "type": "string" },
+            "cultic_setting": { "type": "string" }
+          }
+        },
+        "epistemics": {
+          "type": "object",
+          "required": ["known_from_text", "not_known_from_text"],
+          "additionalProperties": false,
+          "properties": {
+            "known_from_text": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["claim", "basis"],
+                "additionalProperties": false,
+                "properties": {
+                  "claim": { "type": "string" },
+                  "basis": { "type": "string" }
+                }
+              }
+            },
+            "not_known_from_text": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["claim", "why_not"],
+                "additionalProperties": false,
+                "properties": {
+                  "claim": { "type": "string" },
+                  "why_not": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "non_source_material": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonSourceMaterial" }
+        },
+        "method": { "type": "string" },
+        "citations": { "type": "array", "items": { "type": "string" } },
+        "source_fingerprint": {
+          "description": "Fingerprint of the psalm state this analysis audited, used to detect staleness and to skip a no-op re-run.",
+          "type": ["string", "null"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["proposed", "reviewed", "accepted", "rejected", "superseded"]
+        },
+        "created_by": { "type": "string" },
+        "created_via": {
+          "type": "string",
+          "enum": ["human", "codex", "local_model", "deterministic"]
+        },
+        "generator_provider": { "type": ["string", "null"] },
+        "generation_run_id": { "type": ["string", "null"] },
+        "prompt_template_version": { "type": "string" },
+        "created_at": { "type": "string" },
+        "revision_of": { "type": ["string", "null"] },
+        "audit_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ import type {
   Psalm,
   PsalmCloudResponse,
   PsalmSummary,
+  PsalmSourceTranslationMap,
   PsalmVisualFlow,
   Rendering,
   RenderingComparison,
@@ -91,6 +92,26 @@ export function usePsalm(psalmId: string | null) {
 
 export function useCorpusLayers() {
   return useQuery({ queryKey: ['corpus-layers'], queryFn: () => getJson<string[]>('/corpus/layers') });
+}
+
+export function usePsalmSourceTranslationMap(
+  psalmId: string | null,
+  layer: string,
+  translationSource: 'saved' | 'witness' = 'saved',
+  renderingStatus = 'preferred',
+  witnessSourceId?: string,
+) {
+  const query = new URLSearchParams({
+    layer,
+    translation_source: translationSource,
+    rendering_status: renderingStatus,
+    ...(witnessSourceId ? { witness_source_id: witnessSourceId } : {}),
+  });
+  return useQuery({
+    queryKey: ['psalm-source-map', psalmId, layer, translationSource, renderingStatus, witnessSourceId],
+    queryFn: () => getJson<PsalmSourceTranslationMap>(`/psalms/${psalmId}/source-map?${query.toString()}`),
+    enabled: Boolean(psalmId) && (translationSource === 'saved' || Boolean(witnessSourceId)),
+  });
 }
 
 export function usePsalmVisualFlow(psalmId: string | null) {

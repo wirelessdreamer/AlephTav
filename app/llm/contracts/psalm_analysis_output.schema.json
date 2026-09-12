@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PsalmAnalysisOutput",
+  "description": "Psalm-wide and section-wide analysis. Sections and seams come from one turn because sections must tile the psalm and agree with the seams.",
+  "type": "object",
+  "required": [
+    "psalm_id",
+    "summary",
+    "sections",
+    "structural_seams",
+    "guardrails",
+    "epistemics",
+    "non_source_material",
+    "method",
+    "citations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+    "summary": {
+      "description": "What the English setting does with the psalm as a whole, including its movement.",
+      "type": "string",
+      "minLength": 1
+    },
+    "sections": {
+      "description": "The psalm's own architecture, tiled across its verses in order. first_verse/last_verse are Masoretic verse numbers.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "first_verse", "last_verse", "theme", "arc_note"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "description": "The arrangement's name for this stretch, e.g. 'Verse 1' or 'Pre + Chorus'.",
+            "type": "string",
+            "minLength": 1
+          },
+          "first_verse": { "type": "integer", "minimum": 1 },
+          "last_verse": { "type": "integer", "minimum": 1 },
+          "theme": { "type": "string", "minLength": 1 },
+          "arc_note": { "type": "string" }
+        }
+      }
+    },
+    "structural_seams": {
+      "description": "Structural articulations in the received text, such as Selah. An empty array when the psalm has none.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["after_verse", "marker", "aligns_with_section"],
+        "additionalProperties": false,
+        "properties": {
+          "after_verse": { "type": "integer", "minimum": 1 },
+          "marker": { "type": "string", "minLength": 1 },
+          "aligns_with_section": {
+            "description": "Whether an arrangement section ends here. A structural-fidelity signal, not a value judgement.",
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "description": "Both answers are required every time, so neither can be quietly skipped.",
+      "type": "object",
+      "required": ["heading_attribution", "cultic_setting"],
+      "additionalProperties": false,
+      "properties": {
+        "heading_attribution": { "type": "string", "minLength": 1 },
+        "cultic_setting": { "type": "string", "minLength": 1 }
+      }
+    },
+    "epistemics": {
+      "description": "The boundary of what the text supports. Each claim carries its grounds so a reviewer can check it rather than take it on trust.",
+      "type": "object",
+      "required": ["known_from_text", "not_known_from_text"],
+      "additionalProperties": false,
+      "properties": {
+        "known_from_text": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "basis"],
+            "additionalProperties": false,
+            "properties": {
+              "claim": { "type": "string", "minLength": 1 },
+              "basis": {
+                "description": "The words or feature of the text this rests on.",
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "not_known_from_text": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "why_not"],
+            "additionalProperties": false,
+            "properties": {
+              "claim": { "type": "string", "minLength": 1 },
+              "why_not": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "non_source_material": {
+      "description": "Arrangement apparatus that applies to the whole setting rather than one verse.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "kind", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "meter",
+              "instrumentation",
+              "vocal_assignment",
+              "section_label",
+              "dynamics",
+              "other"
+            ]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "method": {
+      "description": "How the literal renderings were arrived at and against what they were checked.",
+      "type": "string",
+      "minLength": 1
+    },
+    "citations": {
+      "description": "Lexica, editions and discussions relied on. Free-form strings; an empty array is honest when nothing beyond the supplied evidence was used.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

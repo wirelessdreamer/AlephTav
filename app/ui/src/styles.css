@@ -257,6 +257,11 @@ pre {
   border-radius: 22px;
   box-shadow: 0 18px 60px rgba(2, 6, 23, 0.48);
   backdrop-filter: blur(18px);
+  /* The panel is often docked into a narrow column inside a wide viewport, so
+     its two-column body has to respond to its own width, not the window's.
+     Viewport media queries cannot see that and let the columns collide. */
+  container-type: inline-size;
+  container-name: assistant;
 }
 
 .assistant-panel--side {
@@ -358,7 +363,9 @@ pre {
 
 .assistant-panel__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  /* Both tracks must be able to shrink; a fixed 320px sidebar overflows a
+     narrow panel instead of giving way. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   gap: 1rem;
   padding: 0 1.1rem 1.1rem;
 }
@@ -1378,6 +1385,267 @@ pre {
   gap: 0.75rem;
 }
 
+.source-map {
+  display: grid;
+  gap: 1rem;
+}
+
+.source-map-target-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(14, 116, 144, 0.55);
+  border-radius: 14px;
+  background: rgba(8, 47, 73, 0.3);
+}
+
+.source-map-target-controls .compact-field {
+  min-width: min(100%, 180px);
+}
+
+.source-map-target-controls .compact-field:first-child {
+  min-width: min(100%, 250px);
+}
+
+.source-map__header,
+.source-map-summary,
+.source-map-repetitions,
+.source-map-unit {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.source-map__header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.source-map__header h3,
+.source-map-repetitions h4 {
+  margin: 0;
+}
+
+.source-map-score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(92px, 1fr));
+  gap: 0.5rem;
+}
+
+.source-map-score-grid div {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.55rem;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.82);
+  text-align: center;
+}
+
+.source-map-score-grid strong {
+  color: #e0f2fe;
+  font-size: 1.05rem;
+}
+
+.source-map-score-grid span {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.source-map-summary {
+  padding: 0.8rem 1rem;
+}
+
+.source-map-summary p {
+  margin: 0.35rem 0 0;
+  color: #cbd5e1;
+}
+
+.source-map-summary--witness {
+  border-color: rgba(14, 116, 144, 0.68);
+  background: rgba(8, 47, 73, 0.38);
+}
+
+.source-map-repetitions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.source-map-repetitions > div {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.source-map-units {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.source-map-unit {
+  overflow: clip;
+}
+
+.source-map-unit summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.source-map-unit summary::-webkit-details-marker {
+  display: none;
+}
+
+.source-map-unit__state {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.source-map-unit__state--mapped {
+  color: #bae6fd;
+}
+
+.source-map-unit__body {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0 1rem 1rem;
+}
+
+.source-map-unit__texts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.source-map-hebrew,
+.source-map-translation {
+  min-height: 3rem;
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.72);
+}
+
+.source-map-hebrew {
+  color: #fde68a;
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.source-map-translation {
+  color: #e2e8f0;
+}
+
+.source-map-unit__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.source-map-token-list {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.source-map-token {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.7fr) minmax(0, 1.3fr);
+  gap: 0.8rem;
+  padding: 0.7rem 0.8rem;
+  border-left: 3px solid #64748b;
+  border-radius: 8px;
+  background: rgba(30, 41, 59, 0.54);
+}
+
+.source-map-token--explicit {
+  border-left-color: #22c55e;
+}
+
+.source-map-token--lexical_estimate {
+  border-left-color: #38bdf8;
+}
+
+.source-map-token__source,
+.source-map-token__mapping {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.source-map-token__source strong {
+  color: #fde68a;
+  font-size: 1.1rem;
+}
+
+.source-map-token__source span,
+.source-map-token__mapping,
+.source-map-token__mapping small {
+  color: #cbd5e1;
+}
+
+.source-map-token__mapping small {
+  color: #94a3b8;
+}
+
+.source-map-liberties {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(120, 53, 15, 0.18);
+}
+
+.source-map-severity {
+  display: inline-block;
+  min-width: 3.8rem;
+  margin-right: 0.3rem;
+  color: #fde68a;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.source-map-severity--high {
+  color: #fca5a5;
+}
+
+@media (max-width: 900px) {
+  .source-map__header,
+  .source-map-unit__texts,
+  .source-map-repetitions {
+    grid-template-columns: 1fr;
+  }
+
+  .source-map__header {
+    display: grid;
+  }
+
+  .source-map-score-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .source-map-target-controls .compact-field,
+  .source-map-target-controls .compact-field:first-child {
+    width: 100%;
+  }
+
+  .source-map-token {
+    grid-template-columns: 1fr;
+  }
+}
+
 .compare-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -2014,10 +2282,12 @@ textarea {
   gap: 0.35rem;
   min-width: 0;
   min-height: 0;
+  overflow: hidden;
 }
 
 .flow-choice-stack--multi {
   align-content: stretch;
+  grid-auto-rows: 1fr;
 }
 
 .flow-stage-bubble {
@@ -2028,6 +2298,7 @@ textarea {
   gap: 0.25rem;
   min-width: 0;
   min-height: 0;
+  overflow: hidden;
   border: 1px solid rgba(71, 85, 105, 0.92);
   border-radius: 6px;
   padding: 0.7rem 0.85rem;
@@ -2685,4 +2956,760 @@ button.composer-path-chip {
   border-radius: 14px;
   padding: 0.75rem;
   background: rgba(30, 41, 59, 0.45);
+}
+
+/* ---------------------------------------------------------------- *
+ * Translation comparison table                                      *
+ * ---------------------------------------------------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------- *
+ * Comparison shell (primary surface)                                *
+ * ---------------------------------------------------------------- */
+
+.comparison-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  min-height: 100%;
+}
+
+.comparison-shell__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.comparison-shell__header h1 {
+  margin: 0.15rem 0 0;
+  font-size: 1.35rem;
+}
+
+/* ---------------------------------------------------------------- *
+ * Hebrew study words + hover card                                   *
+ * ---------------------------------------------------------------- */
+
+.hebrew-study {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.4rem;
+  justify-content: flex-start;
+}
+
+.study-word {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0 0.15rem;
+  font: inherit;
+  color: inherit;
+  cursor: help;
+  line-height: 1.9;
+}
+
+.study-word:hover,
+.study-word:focus-visible {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.5);
+  outline: none;
+}
+
+.study-word--pinned {
+  background: rgba(56, 189, 248, 0.28);
+  border-color: rgba(56, 189, 248, 0.8);
+}
+
+.study-card {
+  position: fixed;
+  z-index: 60;
+  width: 20rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 12px;
+  background: #0b1220;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.study-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.study-card__surface {
+  font-size: 1.35rem;
+  line-height: 1.8;
+}
+
+.study-card__close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.study-card__translit {
+  margin: 0;
+  color: #7dd3fc;
+  font-style: italic;
+}
+
+.study-card__gloss {
+  margin: 0.3rem 0 0.5rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.study-card__details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.6rem;
+  margin: 0;
+  border-top: 1px solid rgba(51, 65, 85, 0.7);
+  padding-top: 0.45rem;
+}
+
+.study-card__details > div {
+  display: contents;
+}
+
+.study-card__details dt {
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.study-card__details dd {
+  margin: 0;
+  color: #e2e8f0;
+  overflow-wrap: anywhere;
+}
+
+.study-card__occurrences {
+  margin: 0.5rem 0 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.7);
+  color: #94a3b8;
+}
+
+.study-card__hint {
+  margin: 0.4rem 0 0;
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+/* ---------------------------------------------------------------- *
+ * Guidance + generation controls                                    *
+ * ---------------------------------------------------------------- */
+
+.guidance-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: rgba(8, 47, 73, 0.35);
+}
+
+.guidance-panel label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.guidance-panel textarea {
+  width: 100%;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.5;
+}
+
+.guidance-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.comparison-generate {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.batch-progress {
+  font-size: 0.75rem;
+  color: #7dd3fc;
+}
+
+.comparison-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.comparison-toolbar h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.comparison-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.comparison-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.comparison-exports {
+  display: flex;
+  gap: 0.35rem;
+  margin-inline-start: auto;
+}
+
+/* The table scrolls inside its own box so the page never scrolls sideways. */
+.comparison-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.comparison-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 60rem;
+  table-layout: fixed;
+}
+
+.comparison-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.9);
+  padding: 0.5rem;
+  text-align: start;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.comparison-table td,
+.comparison-table tbody th {
+  vertical-align: top;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+  /* Song line breaks come from the text itself, not from <br> tags. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-align: start;
+}
+
+.comparison-table .col-reference {
+  width: 11rem;
+  display: table-cell;
+}
+
+.comparison-table .col-hebrew {
+  width: 20rem;
+  /* Hebrew reads right-to-left and sits hard against the gutter. */
+  text-align: right;
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+/* Layout-only spacer. Empty, aria-hidden, never persisted. */
+.comparison-table .col-gutter {
+  width: var(--gutter-width, 32px);
+  min-width: var(--gutter-width, 32px);
+  padding: 0;
+  border-bottom-color: transparent;
+  background: none;
+}
+
+.comparison-table .col-literal,
+.comparison-table .col-english {
+  width: 18rem;
+}
+
+.comparison-table .col-accuracy,
+.comparison-table .col-liberties {
+  width: 15rem;
+}
+
+.comparison-row.incomplete {
+  background: rgba(120, 53, 15, 0.18);
+}
+
+.cell-missing {
+  color: #f59e0b;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.cell-text {
+  white-space: pre-wrap;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #7dd3fc;
+  text-align: start;
+  font: inherit;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  text-decoration: underline;
+}
+
+.comparison-table :focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.reference-display {
+  display: block;
+  font-weight: 600;
+}
+
+.reference-mt {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.status-badge,
+.provenance-badge,
+.rating {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-badge {
+  background: rgba(30, 64, 175, 0.35);
+  color: #bfdbfe;
+}
+
+.status-canonical {
+  background: rgba(22, 101, 52, 0.4);
+  color: #bbf7d0;
+}
+
+.status-superseded {
+  background: rgba(51, 65, 85, 0.5);
+  color: #cbd5e1;
+}
+
+.provenance-badge {
+  background: rgba(76, 29, 149, 0.4);
+  color: #ddd6fe;
+}
+
+.via-human {
+  background: rgba(15, 118, 110, 0.35);
+  color: #99f6e4;
+}
+
+.rating {
+  background: rgba(30, 41, 59, 0.8);
+  color: #e2e8f0;
+}
+
+.comparison-empty {
+  color: #94a3b8;
+  padding: 1rem;
+}
+
+.comparison-error {
+  color: #fca5a5;
+}
+
+.comparison-table textarea {
+  width: 100%;
+  min-height: 3.5rem;
+  resize: vertical;
+}
+
+/* Narrow screens: each row becomes a labelled stacked card. */
+@media (max-width: 720px) {
+  .comparison-table,
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td,
+  .comparison-table tbody th {
+    display: block;
+    width: auto;
+  }
+
+  .comparison-table {
+    min-width: 0;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tr {
+    border: 1px solid rgba(51, 65, 85, 0.7);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .comparison-table .col-gutter {
+    display: none;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+}
+
+@media print {
+  .comparison-controls,
+  .comparison-exports,
+  .link-button {
+    display: none !important;
+  }
+
+  .comparison-scroll {
+    overflow: visible;
+  }
+
+  .comparison-table {
+    min-width: 0;
+    color: #000;
+  }
+
+  .comparison-table thead th {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* ---------------------------------------------------------------- *
+ * Codex connection panel                                            *
+ * ---------------------------------------------------------------- */
+
+.codex-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 14px;
+  padding: 0.75rem;
+  background: rgba(30, 41, 59, 0.45);
+  min-width: 0;
+}
+
+/* Inside the assistant sidebar the surrounding section already provides the
+   frame; nesting a second bordered card reads as a stacked panel. */
+.assistant-settings .codex-panel {
+  border: none;
+  border-top: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 0;
+  padding: 0.6rem 0 0;
+  background: none;
+}
+
+.codex-panel button,
+.codex-actions button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.codex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.codex-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.codex-status {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  background: rgba(51, 65, 85, 0.6);
+  color: #cbd5e1;
+}
+
+.codex-status-ready {
+  background: rgba(22, 101, 52, 0.45);
+  color: #bbf7d0;
+}
+
+.codex-status-error,
+.codex-status-not_installed {
+  background: rgba(127, 29, 29, 0.45);
+  color: #fecaca;
+}
+
+.codex-status-not_signed_in {
+  background: rgba(120, 53, 15, 0.45);
+  color: #fed7aa;
+}
+
+.codex-detail,
+.codex-unavailable {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.codex-unavailable {
+  color: #fed7aa;
+}
+
+.codex-account {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.codex-account dt {
+  color: #94a3b8;
+}
+
+.codex-account dd {
+  margin: 0;
+}
+
+.codex-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.codex-run {
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.codex-denied {
+  color: #fca5a5;
+}
+
+.codex-validation {
+  color: #fed7aa;
+}
+
+.codex-validation ul {
+  margin: 0.25rem 0;
+  padding-inline-start: 1rem;
+}
+
+/* ---------------------------------------------------------------- *
+ * Assistant panel: respond to the panel's own width                 *
+ *                                                                   *
+ * The panel is frequently docked into a narrow column inside a wide *
+ * viewport, where no viewport media query can see that it is short  *
+ * of room, so its two columns collide. This must stay last: it has  *
+ * the same specificity as the base rule and only wins by order.     *
+ * ---------------------------------------------------------------- */
+
+@container assistant (max-width: 700px) {
+  .assistant-panel__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .assistant-panel__bar,
+  .assistant-panel__actions,
+  .assistant-composer__actions {
+    grid-template-columns: minmax(0, 1fr);
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ---------------------------------------------------------------- *
+ * Analysis: verdict stripes, staleness, bands, evidence, panel      *
+ * ---------------------------------------------------------------- */
+
+/* Severity stripe so fidelity reads before the prose does. */
+.comparison-row.r-close th:first-child { box-shadow: inset 3px 0 0 #4ade80; }
+.comparison-row.r-interpret th:first-child { box-shadow: inset 3px 0 0 #fbbf24; }
+.comparison-row.r-caution th:first-child { box-shadow: inset 3px 0 0 #fb923c; }
+
+.comparison-row.is-stale {
+  background: rgba(251, 146, 60, 0.07);
+}
+
+.stale-badge {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px dashed #fb923c;
+  border-radius: 999px;
+  color: #fed7aa;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.band__theme {
+  color: #94a3b8;
+  font-size: 0.76rem;
+}
+
+.seam-row td {
+  padding: 0.2rem 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+  text-align: center;
+}
+
+/* Words the analysis remarked on, discoverable without hovering each one. */
+.study-word--noted {
+  text-decoration: underline dotted rgba(251, 191, 36, 0.8);
+  text-underline-offset: 4px;
+}
+
+.study-card__rendered {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+}
+
+.study-card__lexical {
+  color: #94a3b8;
+}
+
+.verdict-chip {
+  margin-inline-start: 0.4rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+}
+
+.study-card__note.verdict-standard h5,
+.study-card__note.verdict-defensible h5 { color: #4ade80; }
+.study-card__note.verdict-expansion h5,
+.study-card__note.verdict-narrowing h5 { color: #fbbf24; }
+.study-card__note.verdict-nonstandard h5,
+.study-card__note.verdict-unsupported h5,
+.study-card__note.verdict-omitted h5 { color: #fb923c; }
+
+/* ---- psalm analysis panel ---- */
+
+.analysis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: rgba(8, 47, 73, 0.28);
+}
+
+.analysis-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.analysis-panel__head > button {
+  background: none;
+  border: none;
+  color: #e0f2fe;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.numbering {
+  margin-inline-start: auto;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.analysis-prose {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  max-width: 72ch;
+}
+
+.subtle-note { color: #64748b; font-style: italic; }
+
+.analysis-defs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.analysis-defs dt { color: #94a3b8; }
+.analysis-defs dd { margin: 0; color: #e2e8f0; }
+
+.epistemic ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.epistemic li { margin-bottom: 0.3rem; }
+
+/* The grounds for a claim, so a reviewer can check rather than trust it. */
+.basis {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.74rem;
+}
+
+.citations {
+  margin: 0.4rem 0 0;
+  padding-inline-start: 1rem;
+  font-size: 0.78rem;
+  color: #94a3b8;
 }

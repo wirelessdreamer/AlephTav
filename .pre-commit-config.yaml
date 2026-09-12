@@ -11,3 +11,9 @@ repos:
         entry: python scripts/validate_content.py
         language: system
         pass_filenames: false
+      - id: golden-snapshots
+        name: golden-snapshots
+        entry: python -m pytest tests/golden -q --tb=line
+        language: system
+        pass_filenames: false
+        stages: [pre-push]

@@ -371,7 +371,7 @@ function generationStyleProfileForLayer(layer: Layer): string {
     return 'source_imagist';
   }
   if (isLyricLikeLayer(layer)) {
-    return 'performative_free';
+    return 'antiphonal_performative';
   }
   return 'dynamic_equivalent';
 }
@@ -1859,6 +1859,7 @@ export function WorkbenchPage() {
       </section>
       <BottomDrawer
         unit={unit}
+        psalm={currentPsalm}
         concerns={concerns}
         tokenCard={displayedTokenCard}
         concordanceSeed={displayedTokenCard?.lemma ?? undefined}
@@ -1869,6 +1870,7 @@ export function WorkbenchPage() {
         resolvedLayer={selectedUnitLayerState.renderLayer}
         layerNotice={selectedUnitLayerState.notice}
         selectableLayers={selectableLayers}
+        onLayerChange={(layer) => updateWorkbenchSelection({ layer })}
         selectedTokenIds={selectedTokenIds}
         selectedSpanIds={selectedSpanIds}
         selectedAlignmentId={selectedAlignmentId}
@@ -3184,6 +3186,7 @@ function VerseFlowCloudPanel({
     id: string;
     label: string;
     meta: string;
+    hideMeta?: boolean;
     start: number;
     end: number;
     type: ComposerChoiceLevel | 'witness' | 'output';
@@ -3528,9 +3531,15 @@ function VerseFlowCloudPanel({
   });
   const phraseBubbles = phraseChoices.map((choice) => toBubble('phrase', choice, choice.description ?? 'phrase', 'close'));
   const ideaBubbles = ideaChoices.map((choice) => toBubble('idea', choice, choice.description ?? 'concept', 'interpretive'));
-  const generatedConceptBubbles = generatedConceptChoices.map((choice) => toBubble('idea', choice, choice.description ?? 'generated concept', 'interpretive', 'generatedIdea'));
+  const generatedConceptBubbles = generatedConceptChoices.map((choice) => ({
+    ...toBubble('idea', choice, choice.description ?? 'generated concept', 'interpretive', 'generatedIdea'),
+    hideMeta: true,
+  }));
   const lyricBubbles = lyricChoices.map((choice) => toBubble('lyric', choice, choice.description ?? 'rhythmic', 'lyric'));
-  const generatedLyricBubbles = generatedLyricChoices.map((choice) => toBubble('lyric', choice, choice.description ?? 'generated rhythm', 'lyric', 'generatedLyric'));
+  const generatedLyricBubbles = generatedLyricChoices.map((choice) => ({
+    ...toBubble('lyric', choice, choice.description ?? 'generated rhythm', 'lyric', 'generatedLyric'),
+    hideMeta: true,
+  }));
   const outputBubbles: FlowBubble[] = outputChoices.map((choice) => ({
     id: choice.id,
     label: choice.label,
@@ -3625,7 +3634,7 @@ function VerseFlowCloudPanel({
               }}
             >
               <span className="flow-stage-bubble__label">{bubble.label}</span>
-              <small className="flow-stage-bubble__meta">{bubble.meta}</small>
+              {bubble.hideMeta ? null : <small className="flow-stage-bubble__meta">{bubble.meta}</small>}
             </button>
           ))}
         </div>

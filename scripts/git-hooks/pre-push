@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Runs the golden snapshot tests before any push so that drift is caught
+# locally instead of failing the GitHub `test` workflow on every commit.
+#
+# Install once per clone:
+#   git config core.hooksPath scripts/git-hooks
+#
+# Skip a single push (use sparingly):
+#   git push --no-verify
+
+set -euo pipefail
+
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+# Prefer the project's virtual environment when one is present.
+if [ -x ".venv/Scripts/python.exe" ]; then
+  PY=".venv/Scripts/python.exe"
+elif [ -x ".venv/bin/python" ]; then
+  PY=".venv/bin/python"
+else
+  PY="python"
+fi
+
+echo "[pre-push] Running golden snapshot tests..."
+"$PY" -m pytest tests/golden -q --tb=line

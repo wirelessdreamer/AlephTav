@@ -44,6 +44,7 @@ def validate_all_content() -> dict[str, Any]:
     errors: list[str] = []
     validated_files: list[str] = []
     unit_validator = _validator("unit.schema.json")
+    meta_validator = _validator("psalm_meta.schema.json")
     project_validator = _validator("project.schema.json")
 
     if settings.project_file.exists():
@@ -52,7 +53,7 @@ def validate_all_content() -> dict[str, Any]:
             errors.append(f"project.json: {error.message}")
         if settings.project_file.read_text(encoding="utf-8") != _deterministic_text(project):
             errors.append("project.json: non-deterministic serialization")
-        validated_files.append(str(settings.project_file.relative_to(settings.root_dir)))
+        validated_files.append(settings.project_file.relative_to(settings.root_dir).as_posix())
     else:
         errors.append("content/project.json missing")
 
@@ -61,7 +62,14 @@ def validate_all_content() -> dict[str, Any]:
 
     for path in sorted(settings.psalms_dir.glob("ps*/ps*.json")):
         if path.name.endswith(".meta.json"):
-            validated_files.append(str(path.relative_to(settings.root_dir)))
+            meta = registry_service.read_json(path)
+            for error in meta_validator.iter_errors(meta):
+                errors.append(f"{path.relative_to(settings.root_dir)}: {error.message}")
+            if path.read_text(encoding="utf-8") != _deterministic_text(meta):
+                errors.append(
+                    f"{path.relative_to(settings.root_dir)}: non-deterministic serialization"
+                )
+            validated_files.append(path.relative_to(settings.root_dir).as_posix())
             continue
         unit = registry_service.read_json(path)
         for error in unit_validator.iter_errors(unit):
@@ -111,7 +119,7 @@ def validate_all_content() -> dict[str, Any]:
             errors.append(
                 f"{path.relative_to(settings.root_dir)}: audit_ids do not mirror audit_records"
             )
-        validated_files.append(str(path.relative_to(settings.root_dir)))
+        validated_files.append(path.relative_to(settings.root_dir).as_posix())
 
     return {"validated_files": validated_files, "errors": errors}
 

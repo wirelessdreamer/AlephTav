@@ -1,8 +1,47 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v001.a.literal.alt.0001",
+    "rnd.ps006.v001.a.literal.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps006.v001.a.0001",
+    "aud.ps006.v001.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4bc563de8ea7475bd300a0e79f5164918063c51e6edf6e4221d4745d6b22fafb",
+      "audit_id": "aud.ps006.v001.a.0001",
+      "before_hash": "a0fb11ffd3d66576de5796a7c0d338bbfbeb99ceb5f5fa83a8b76ad55cad736c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-05-11T18:51:18.147187+00:00",
+      "created_by": "ui-guided-composer",
+      "entity_id": "rnd.ps006.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "guided verse composer completion",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b6e10a545b48b61d7a69781c93f15a9fa8914618d76315dfe50f1c0c83ea2818",
+      "audit_id": "aud.ps006.v001.a.0002",
+      "before_hash": "eded130907817775897e94e6c8de918761cdf265e71f8399700781d81d7c8190",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-05-12T12:55:14.906218+00:00",
+      "created_by": "ui-guided-composer",
+      "entity_id": "rnd.ps006.v001.a.literal.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "guided verse composer completion",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps006.v001.a.0001"
@@ -15,7 +54,176 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "ui-guided-composer",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "guided verse composer completion",
+      "rendering_id": "rnd.ps006.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal",
+        "guided-composer",
+        "verse-complete"
+      ],
+      "target_spans": [],
+      "text": "To the choirmaster with stringed instruments According to the sheminith A psalm of David",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "unit_id": "ps006.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "ui-guided-composer",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "guided verse composer completion",
+      "rendering_id": "rnd.ps006.v001.a.literal.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal",
+        "guided-composer",
+        "verse-complete"
+      ],
+      "target_spans": [],
+      "text": "For the choir director with stringed instruments According to the sheminith A psalm of David",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "unit_id": "ps006.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לַמְנַצֵּ֣חַ בִּ֭נְגִינוֹת עַֽל־הַשְּׁמִינִ֗ית מִזְמ֥וֹר לְדָוִֽד׃",

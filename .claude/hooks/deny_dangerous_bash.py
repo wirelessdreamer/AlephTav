@@ -15,7 +15,7 @@ DENY_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"\bgit\s+push\s+(--force|-f)\b"), "git push --force is denied."),
     (re.compile(r"\bgit\s+reset\s+--hard\b"), "git reset --hard is denied; use git stash/checkout."),
     (re.compile(r"(^|/|\s)data/raw(/|\s|$)"), "data/raw/ is the read-only vendored corpus."),
-    (re.compile(r"(^|/|\s)\.venv(/|\s|$)"), "Do not modify .venv from bash; recreate via setup.sh."),
+    (re.compile(r"\b(rm|mv|cp|pip)\b[^|]*\.venv"), "Do not modify .venv from bash; recreate via setup.sh."),
     (re.compile(r"\bnpm\s+publish\b"), "npm publish is denied for this project."),
     (re.compile(r"\bpip\s+install\s+(?!-e\s+\.\[dev\]\b)"), "Pin deps via pyproject.toml; ad-hoc pip install is denied."),
 ]

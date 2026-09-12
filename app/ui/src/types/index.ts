@@ -7,7 +7,7 @@ export type Layer =
   | 'metered_lyric'
   | 'parallelism_lyric';
 
-export type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'audit' | 'compare';
+export type DrawerTab = 'concordance' | 'workflow' | 'search' | 'witnesses' | 'source_map' | 'audit' | 'compare';
 
 export interface Token {
   token_id: string;
@@ -251,6 +251,115 @@ export interface PsalmSummary {
   psalm_id: string;
   title: string;
   unit_ids: string[];
+}
+
+export interface SourceTranslationMapToken {
+  token_id: string;
+  surface: string;
+  transliteration: string | null;
+  lemma: string | null;
+  gloss: string | null;
+  source_role: string | null;
+  semantic_role: string | null;
+  anchors: string[];
+  visible_anchors: string[];
+  alignments: Array<{
+    alignment_id: string;
+    type: string;
+    confidence: number;
+    target_text: string | null;
+    notes: string;
+  }>;
+  status: 'explicit' | 'lexical_estimate' | 'unmapped';
+  fidelity_weight: number;
+}
+
+export interface SourceTranslationMapUnit {
+  unit_id: string;
+  ref: string;
+  source_hebrew: string;
+  source_transliteration: string | null;
+  rendering: {
+    rendering_id: string;
+    status: string;
+    layer: Layer;
+    text: string;
+    source_kind: 'saved' | 'witness';
+    source_label: string;
+    witness: Unit['witnesses'][number] | null;
+    translation_basis: TranslationBasis | null;
+    rationale: string;
+  } | null;
+  summary: {
+    state: 'mapped' | 'untranslated';
+    selection_message?: string;
+    source_token_count: number;
+    explicitly_mapped_tokens: number;
+    lexically_visible_tokens: number;
+    unmapped_tokens: number;
+    structural_coverage: number;
+    visible_anchor_coverage: number;
+    fidelity_estimate: number | null;
+  };
+  tokens: SourceTranslationMapToken[];
+  creative_liberties: Array<{
+    kind: string;
+    severity: string;
+    token_id: string | null;
+    label: string;
+    detail: string;
+  }>;
+}
+
+export interface SourceTranslationMapRepetition {
+  lemma: string;
+  label: string;
+  glosses: string[];
+  count: number;
+  occurrences: Array<{
+    unit_id: string;
+    ref: string;
+    token_id: string;
+    surface: string;
+    gloss: string | null;
+    anchors: string[];
+  }>;
+  explicitly_mapped_count: number;
+  visible_anchor_count: number;
+  preservation: 'structurally_preserved' | 'lexically_visible' | 'partially_visible' | 'not_visible';
+}
+
+export interface PsalmSourceTranslationMap {
+  psalm_id: string;
+  title: string;
+  layer: Layer;
+  translation_target: {
+    kind: 'saved' | 'witness';
+    label: string;
+    rendering_status: string | null;
+    witness_source_id: string | null;
+    version_title: string | null;
+    read_only: boolean;
+  };
+  score_basis: string;
+  summary: {
+    total_units: number;
+    translated_units: number;
+    total_source_tokens: number;
+    explicitly_mapped_tokens: number;
+    lexically_visible_tokens: number;
+    structural_coverage: number;
+    visible_anchor_coverage: number;
+    fidelity_estimate: number | null;
+  };
+  units: SourceTranslationMapUnit[];
+  repetitions: SourceTranslationMapRepetition[];
+  possible_added_repetitions: Array<{
+    word: string;
+    count: number;
+    label: string;
+    detail: string;
+  }>;
 }
 
 export interface Project {
@@ -643,4 +752,287 @@ export interface SpeechTranscriptionResponse {
   provider: string;
   model: string;
   filename: string;
+}
+
+export type AccuracyRating =
+  | 'literal'
+  | 'very_close'
+  | 'close'
+  | 'adapted'
+  | 'interpretive'
+  | 'omission'
+  /** The only value asserting the absence of a source relationship. */
+  | 'no_source_basis';
+
+export type WordNoteVerdict =
+  | 'standard'
+  | 'defensible'
+  | 'expansion'
+  | 'narrowing'
+  | 'nonstandard'
+  | 'unsupported'
+  | 'omitted';
+
+export interface WordNote {
+  token_ids: string[];
+  transliteration: string;
+  lexical_gloss: string;
+  rendered_as: string;
+  verdict: WordNoteVerdict;
+  note: string;
+}
+
+export interface NonSourceMaterial {
+  text: string;
+  kind: 'meter' | 'instrumentation' | 'vocal_assignment' | 'section_label' | 'dynamics' | 'other';
+  note: string;
+}
+
+export type ComparisonStatus =
+  | 'draft'
+  | 'proposed'
+  | 'reviewed'
+  | 'accepted_as_alternate'
+  | 'canonical'
+  | 'rejected'
+  | 'superseded';
+
+/** How a piece of work was produced. Surfaced as a provenance badge. */
+export type CreatedVia = 'human' | 'codex' | 'local_model' | 'deterministic';
+
+export interface ComparisonAssessment {
+  comparison_id: string;
+  psalm_id: string;
+  unit_id: string;
+  mt_reference: string;
+  display_reference: string;
+  hebrew_text: string;
+  literal_rendering_id: string | null;
+  english_rendering_id: string | null;
+  accuracy_rating: AccuracyRating | null;
+  accuracy_note: string;
+  creative_liberties_note: string;
+  status: ComparisonStatus;
+  created_by: string;
+  created_via: CreatedVia;
+  generator_provider: string | null;
+  generation_run_id: string | null;
+  reviewer_id: string | null;
+  reviewed_at: string | null;
+  revision_of: string | null;
+  audit_ids: string[];
+}
+
+/**
+ * One Hebrew word with everything the corpus knows about it. Empty fields are
+ * omitted server-side, so absence means "not recorded" rather than "null".
+ */
+export interface StudyToken {
+  token_id: string;
+  surface: string;
+  transliteration?: string;
+  lemma?: string;
+  strong?: string;
+  morph_readable?: string;
+  part_of_speech?: string;
+  stem?: string;
+  display_gloss?: string;
+  gloss_parts?: string[];
+  word_sense?: string;
+  semantic_role?: string;
+  syntax_role?: string;
+  referent?: string;
+  greek?: string;
+  greek_strong?: string;
+  ref?: string;
+  occurrence_count: number;
+  occurrence_refs: string[];
+  /** Present only on words the analysis pass commented on. */
+  note?: WordNote;
+}
+
+export interface ComparisonTableRow {
+  mt_reference: string;
+  display_reference: string;
+  unit_ids: string[];
+  hebrew_text: string;
+  tokens: StudyToken[];
+  literal_text: string | null;
+  literal_rendering_ids: string[];
+  english_text: string | null;
+  english_rendering_ids: string[];
+  accuracy_rating: AccuracyRating | null;
+  accuracy_note: string;
+  creative_liberties_note: string;
+  assessment_status: ComparisonStatus | null;
+  created_via: CreatedVia | null;
+  generator_provider: string | null;
+  comparison_id: string | null;
+  incomplete: boolean;
+  literal_backbone: string[];
+  non_source_material: NonSourceMaterial[];
+  /** True when the audited rendering text has changed since this analysis ran. */
+  stale: boolean;
+}
+
+export interface PsalmAnalysisSection {
+  title: string;
+  first_verse: number;
+  last_verse: number;
+  theme: string;
+  arc_note: string;
+}
+
+export interface StructuralSeam {
+  after_verse: number;
+  marker: string;
+  /** Whether an arrangement section ends here: a structural-fidelity signal. */
+  aligns_with_section: boolean;
+}
+
+export interface PsalmAnalysis {
+  psalm_analysis_id: string;
+  psalm_id: string;
+  summary: string;
+  sections: PsalmAnalysisSection[];
+  structural_seams: StructuralSeam[];
+  guardrails: { heading_attribution: string; cultic_setting: string };
+  epistemics: {
+    known_from_text: Array<{ claim: string; basis: string }>;
+    not_known_from_text: Array<{ claim: string; why_not: string }>;
+  };
+  non_source_material: NonSourceMaterial[];
+  method: string;
+  citations: string[];
+  source_fingerprint: string | null;
+  status: string;
+  created_by: string;
+  created_via: CreatedVia;
+  generator_provider: string | null;
+  generation_run_id: string | null;
+  prompt_template_version: string;
+  created_at: string;
+  revision_of: string | null;
+  audit_ids: string[];
+}
+
+/** Masoretic, Septuagint and Vulgate numbers, from the committed table. */
+export interface CanonicalNumbering {
+  mt: number;
+  septuagint: number[];
+  vulgate: number[];
+}
+
+export interface ComparisonTable {
+  psalm_id: string;
+  title: string;
+  literal_layer: string;
+  english_layer: string;
+  canonical_numbering: CanonicalNumbering | null;
+  analysis: PsalmAnalysis | null;
+  rows: ComparisonTableRow[];
+}
+
+export interface VerseAnalysisResult {
+  unit_id: string;
+  status: CodexRun['status'];
+  run_id: string | null;
+  assessment: ComparisonAssessment | null;
+  skipped: boolean;
+  error: string | null;
+}
+
+export interface PsalmAnalysisResult {
+  psalm_id: string;
+  status: CodexRun['status'];
+  run_id: string | null;
+  analysis: PsalmAnalysis | null;
+  skipped: boolean;
+  error: string | null;
+}
+
+export type CodexStatusValue =
+  | 'not_installed'
+  | 'available'
+  | 'connecting'
+  | 'ready'
+  | 'not_signed_in'
+  | 'busy'
+  | 'error';
+
+/** Local Codex provider status. Never carries credentials. */
+export interface CodexStatus {
+  provider: string;
+  status: CodexStatusValue;
+  detail: string;
+  local_only: boolean;
+  auth_mode?: string | null;
+  plan_type?: string | null;
+}
+
+export interface CodexSession {
+  session_id: string;
+  thread_id: string;
+  current_turn_id: string | null;
+  model: string;
+  provider: string;
+  provider_version: string;
+  purpose: string;
+  psalm_id: string;
+  unit_id: string | null;
+  layer: string;
+  prompt_template_version: string;
+  started_at: string;
+  completed_at: string | null;
+  status: string;
+}
+
+export interface CodexRun {
+  run_id: string;
+  session_id: string;
+  thread_id: string;
+  turn_id: string | null;
+  unit_id: string;
+  layer: string;
+  provider: string;
+  model: string;
+  prompt_template_version: string;
+  started_at: string;
+  completed_at: string | null;
+  status: 'running' | 'completed' | 'failed' | 'cancelled' | 'invalid_output';
+  events: unknown[];
+  denied_events: Array<{ method: string; params?: unknown }>;
+  validation: Array<{ path: string; message: string }> | null;
+  payload: unknown;
+  error: string | null;
+}
+
+export interface CodexRunEvents {
+  run_id: string;
+  status: CodexRun['status'];
+  events: unknown[];
+  denied_events: Array<{ method: string; params?: unknown }>;
+  validation: Array<{ path: string; message: string }> | null;
+  error: string | null;
+}
+
+export interface TranslationGuidance {
+  psalm_id: string;
+  translation_guidance: string;
+}
+
+export interface RowFillResult {
+  unit_id: string;
+  status: CodexRun['status'];
+  run_ids: string[];
+  rendering_ids: string[];
+  assessment: ComparisonAssessment | null;
+  error: string | null;
+}
+
+export interface CodexModel {
+  id?: string;
+  model?: string;
+  displayName?: string;
+  [key: string]: unknown;
 }

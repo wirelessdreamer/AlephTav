@@ -13,6 +13,9 @@ export default defineConfig({
     proxy: {
       '/project': apiTarget,
       '/assistant': apiTarget,
+      '/codex': apiTarget,
+      '/comparison-assessments': apiTarget,
+      '/corpus': apiTarget,
       '/psalms': apiTarget,
       '/speech': apiTarget,
       '/units': apiTarget,
