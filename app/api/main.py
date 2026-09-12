@@ -10,6 +10,7 @@ from app.api.routes import (
     alternates,
     assistant,
     audit,
+    codex,
     comparisons,
     corpus,
     export,
@@ -23,7 +24,7 @@ from app.api.routes import (
     tokens,
     units,
 )
-from app.services import llama_runtime_service, registry_service
+from app.services import codex_app_server_service, llama_runtime_service, registry_service
 
 
 @asynccontextmanager
@@ -51,6 +52,7 @@ async def lifespan(_: FastAPI):
         yield
     finally:
         llama_runtime_service.shutdown_all()
+        codex_app_server_service.shutdown()
 
 
 app = FastAPI(title="Psalms Copyleft Workbench API", version="0.1.0", lifespan=lifespan)
@@ -73,6 +75,7 @@ app.include_router(search.router)
 app.include_router(alignments.router)
 app.include_router(renderings.router)
 app.include_router(alternates.router)
+app.include_router(codex.router)
 app.include_router(comparisons.router)
 app.include_router(review.router)
 app.include_router(audit.router)
