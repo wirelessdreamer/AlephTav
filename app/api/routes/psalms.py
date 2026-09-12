@@ -10,8 +10,13 @@ router = APIRouter(tags=["psalms"])
 
 @router.get("/psalms")
 def list_psalms() -> list[dict]:
+    """Return a slim summary list for the psalm picker.
+
+    Each entry contains only ``psalm_id``, ``title``, and ``unit_count``.
+    For the full payload (including ``units``), use ``GET /psalms/{psalm_id}``.
+    """
     try:
-        return [registry_service.load_psalm(psalm_id) for psalm_id in registry_service.list_psalm_ids()]
+        return registry_service.list_psalm_summaries()
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 

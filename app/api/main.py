@@ -10,6 +10,7 @@ from app.api.routes import (
     alternates,
     assistant,
     audit,
+    corpus,
     export,
     jobs,
     project,
@@ -21,11 +22,30 @@ from app.api.routes import (
     tokens,
     units,
 )
-from app.services import llama_runtime_service
+from app.services import llama_runtime_service, registry_service
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    # Warm the build-once summary caches so the first /psalms and
+    # /corpus/layers requests hit RAM instead of touching disk. If the
+    # caches haven't been built yet (fresh repo), this performs the build
+    # and persists it. See registry_service.build_summary_cache.
+    try:
+        registry_service.list_psalm_summaries()
+        registry_service.get_corpus_layers()
+    except Exception:  # pragma: no cover - never block startup over cache warmup
+        pass
+    # Pre-load the public-domain witness maps (KJV/ASV/WEB). Each one parses
+    # a multi-megabyte VPL text file out of a ZIP and is then `lru_cache`d
+    # for the process lifetime; doing it here moves that one-time cost off
+    # the first `/psalms/{id}` request, which is what the workbench
+    # immediately fires for the default psalm.
+    try:
+        for source in registry_service.PUBLIC_DOMAIN_WITNESS_SOURCES:
+            registry_service._load_public_domain_witness_map(source["source_id"])
+    except Exception:  # pragma: no cover - witness cache is best-effort
+        pass
     try:
         yield
     finally:
@@ -44,6 +64,7 @@ app.add_middleware(
 
 app.include_router(project.router)
 app.include_router(psalms.router)
+app.include_router(corpus.router)
 app.include_router(units.router)
 app.include_router(tokens.router)
 app.include_router(assistant.router)

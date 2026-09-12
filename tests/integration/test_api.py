@@ -856,3 +856,34 @@ def test_retrieval_prefers_same_psalm_hits_before_cross_psalm_support() -> None:
     assert hits
     assert hits[0]["scope"] == "same_psalm"
     assert any(hit["scope"] == "cross_psalm" for hit in hits)
+
+
+def test_list_psalms_returns_slim_summary_without_units() -> None:
+    """`GET /psalms` must stay cheap: no nested `units`, just picker metadata."""
+    response = client.get("/psalms")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload, "fixture corpus should produce at least one psalm summary"
+    for summary in payload:
+        assert set(summary) == {"psalm_id", "title", "unit_ids"}
+        assert "units" not in summary
+        assert isinstance(summary["unit_ids"], list)
+
+
+def test_get_single_psalm_still_returns_full_payload_with_units() -> None:
+    """The slim list response must not regress the per-psalm detail route."""
+    response = client.get("/psalms/ps001")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["psalm_id"] == "ps001"
+    assert "units" in payload
+    assert payload["units"]  # non-empty
+
+
+def test_corpus_layers_endpoint_returns_distinct_layer_names() -> None:
+    response = client.get("/corpus/layers")
+    assert response.status_code == 200
+    layers = response.json()
+    assert isinstance(layers, list)
+    assert all(isinstance(item, str) for item in layers)
+    assert len(layers) == len(set(layers))

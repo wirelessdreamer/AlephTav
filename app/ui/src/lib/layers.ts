@@ -1,4 +1,4 @@
-import type { Layer, Psalm, Rendering, Unit } from '../types';
+import type { Layer, Psalm, PsalmSummary, Rendering, Unit } from '../types';
 
 export const SUPPORTED_LAYERS: Layer[] = ['gloss', 'literal', 'phrase', 'concept', 'lyric', 'metered_lyric', 'parallelism_lyric'];
 
@@ -28,10 +28,14 @@ export function getAvailablePsalmLayers(psalm?: Pick<Psalm, 'units'> | null): La
   );
 }
 
-export function getAvailableCorpusLayers(psalms?: Psalm[] | null): Layer[] {
-  return orderAvailableLayers(
-    (psalms ?? []).flatMap((psalm) => psalm.units.flatMap((unit) => unit.renderings.map((rendering) => rendering.layer))),
-  );
+/**
+ * Order and filter a corpus-wide set of layer names produced by
+ * `GET /corpus/layers`. The endpoint returns the distinct layers from the
+ * derived SQLite index, so this helper just orders them through
+ * `SUPPORTED_LAYERS`.
+ */
+export function getAvailableCorpusLayers(layers?: string[] | null): Layer[] {
+  return orderAvailableLayers(layers ?? []);
 }
 
 export function getSelectableLayers(preferredLayers: Layer[], fallbackLayers: Layer[] = SUPPORTED_LAYERS): Layer[] {
@@ -45,11 +49,14 @@ export function getPreferredSelectableLayer(activeLayer: Layer, availableLayers:
   return availableLayers[0] ?? activeLayer;
 }
 
-export function getSelectablePsalmOptions(psalms?: Psalm[] | null): Psalm[] {
+export function getSelectablePsalmOptions(psalms?: PsalmSummary[] | null): PsalmSummary[] {
   return psalms ?? [];
 }
 
-export function getDefaultPsalmSelection(psalms?: Psalm[] | null, selectedPsalmId?: string | null): Psalm | null {
+export function getDefaultPsalmSelection(
+  psalms?: PsalmSummary[] | null,
+  selectedPsalmId?: string | null,
+): PsalmSummary | null {
   const selectablePsalms = getSelectablePsalmOptions(psalms);
   if (!selectablePsalms.length) {
     return null;

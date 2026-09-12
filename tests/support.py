@@ -22,6 +22,9 @@ def _assert_not_real_workspace() -> None:
 def bootstrap_fixture_repo() -> Path:
     _assert_not_real_workspace()
     settings = get_settings()
+    # Drop any in-memory + on-disk summary cache from a previous fixture cycle
+    # so the rebuild below produces fresh content rather than serving stale data.
+    registry_service.invalidate_summary_cache()
     for path in (settings.content_dir, settings.reports_dir):
         shutil.rmtree(path, ignore_errors=True)
     settings.db_path.unlink(missing_ok=True)

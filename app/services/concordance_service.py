@@ -100,6 +100,10 @@ def rebuild_indexes() -> dict[str, int]:
                     (alignment["alignment_id"], unit["unit_id"], alignment["layer"], alignment["alignment_type"], alignment["confidence"]),
                 )
                 alignment_count += 1
+    # Refresh the slim psalm-summary + corpus-layer caches now that the
+    # SQLite indexes (specifically ``rendering_index``) are up to date.
+    # This makes the post-build summary cache match the indexed corpus state.
+    registry_service.build_summary_cache()
     return {
         "units": len(units),
         "tokens": token_count,

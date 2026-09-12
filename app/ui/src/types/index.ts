@@ -242,6 +242,17 @@ export interface Psalm {
   units: Unit[];
 }
 
+/**
+ * Slim per-psalm record returned by `GET /psalms`. Used to populate the picker
+ * without fetching every unit. For the full payload (including `units`), call
+ * `GET /psalms/{psalm_id}` via `usePsalm`.
+ */
+export interface PsalmSummary {
+  psalm_id: string;
+  title: string;
+  unit_ids: string[];
+}
+
 export interface Project {
   project_id: string;
   title: string;

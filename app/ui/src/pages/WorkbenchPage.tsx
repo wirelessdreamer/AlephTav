@@ -6,6 +6,7 @@ import { AssistantPanel } from '../components/AssistantPanel';
 import { BottomDrawer } from '../components/BottomDrawer';
 import {
   useAlternateLifecycleAction,
+  useCorpusLayers,
   useCreateRendering,
   useComposerSuggestions,
   useCurrentPsalm,
@@ -40,6 +41,7 @@ import type {
   OpenConcerns,
   Psalm,
   PsalmLyricCorrelationRow,
+  PsalmSummary,
   Rendering,
   RenderingSpan,
   RetrievalHit,
@@ -884,6 +886,7 @@ export function WorkbenchPage() {
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
+  const corpusLayersQuery = useCorpusLayers();
   const { data: psalms } = psalmsQuery;
   const selectablePsalms = useMemo(() => getSelectablePsalmOptions(psalms), [psalms]);
   const selectedPsalm = useCurrentPsalm(selectablePsalms, selectedPsalmId);
@@ -933,7 +936,17 @@ export function WorkbenchPage() {
     effectivePsalmId !== null &&
     !currentPsalm &&
     (currentPsalmQuery.isPending || currentPsalmQuery.isFetching);
-  const showStartupDropdownNotice = !bootstrapError && (isPsalmListLoading || isUnitListLoading);
+  // The Psalm picker only needs the slim summary (`/psalms`); never block it
+  // on `/psalms/{id}`, which can take seconds to load full units + witness data.
+  const showPsalmDropdownNotice = !bootstrapError && isPsalmListLoading;
+  // The Verse picker can use `selectedPsalm.unit_ids` (from the summary) for
+  // its options right away. We only show "Loading verses..." when we truly
+  // have no unit ids yet — i.e. before the summary has arrived.
+  const verseUnitIds = (selectedPsalm?.unit_ids ?? currentPsalm?.unit_ids ?? []) as string[];
+  const showVerseDropdownNotice =
+    !bootstrapError && verseUnitIds.length === 0 && (isPsalmListLoading || isUnitListLoading);
+  // Kept for any remaining call sites that still want a unified flag.
+  const showStartupDropdownNotice = showPsalmDropdownNotice || showVerseDropdownNotice;
   const unitMap = useMemo(
     () => new Map((currentPsalm?.units ?? []).map((item) => [item.unit_id, item])),
     [currentPsalm?.units],
@@ -942,8 +955,8 @@ export function WorkbenchPage() {
   const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
   const selectedUnitLayerState = useMemo(() => resolveLayerState(unit, activeLayer), [unit, activeLayer]);
   const selectableLayers = useMemo(
-    () => getSelectableLayers(getAvailableCorpusLayers(selectablePsalms)),
-    [selectablePsalms],
+    () => getSelectableLayers(getAvailableCorpusLayers(corpusLayersQuery.data)),
+    [corpusLayersQuery.data],
   );
   const selectedWorkflowLayer = useMemo(
     () => getPreferredSelectableLayer(activeLayer, selectableLayers),
@@ -1303,7 +1316,7 @@ export function WorkbenchPage() {
 
   const handlePsalmChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const nextPsalmId = event.target.value;
-    const nextPsalm = selectablePsalms.find((psalm: Psalm) => psalm.psalm_id === nextPsalmId);
+    const nextPsalm = selectablePsalms.find((psalm: PsalmSummary) => psalm.psalm_id === nextPsalmId);
     updateWorkbenchSelection({
       psalmId: nextPsalmId,
       unitId: nextPsalm?.unit_ids[0] ?? null,
@@ -1709,11 +1722,11 @@ export function WorkbenchPage() {
           <div className="active-verse-selectors">
             <label className="compact-field">
               <span>Psalm</span>
-              <select value={effectivePsalmId ?? ''} onChange={handlePsalmChange} disabled={showStartupDropdownNotice}>
-                {showStartupDropdownNotice ? <option value="">Loading Psalms...</option> : null}
-                {!showStartupDropdownNotice && selectablePsalms.length === 0 ? <option value="">No Psalms available</option> : null}
-                {!showStartupDropdownNotice
-                  ? selectablePsalms.map((psalm: Psalm) => (
+              <select value={effectivePsalmId ?? ''} onChange={handlePsalmChange} disabled={showPsalmDropdownNotice}>
+                {showPsalmDropdownNotice ? <option value="">Loading Psalms...</option> : null}
+                {!showPsalmDropdownNotice && selectablePsalms.length === 0 ? <option value="">No Psalms available</option> : null}
+                {!showPsalmDropdownNotice
+                  ? selectablePsalms.map((psalm: PsalmSummary) => (
                       <option key={psalm.psalm_id} value={psalm.psalm_id}>
                         {psalm.title}
                       </option>
@@ -1723,11 +1736,11 @@ export function WorkbenchPage() {
             </label>
             <label className="compact-field">
               <span>Verse</span>
-              <select value={selectedUnitId ?? ''} onChange={handleUnitChange} disabled={showStartupDropdownNotice || !currentPsalm?.unit_ids.length}>
-                {showStartupDropdownNotice ? <option value="">Loading verses...</option> : null}
-                {!showStartupDropdownNotice && !(currentPsalm?.unit_ids.length ?? 0) ? <option value="">No verses available</option> : null}
-                {!showStartupDropdownNotice
-                  ? currentPsalm?.unit_ids.map((unitIdOption) => (
+              <select value={selectedUnitId ?? ''} onChange={handleUnitChange} disabled={showVerseDropdownNotice || verseUnitIds.length === 0}>
+                {showVerseDropdownNotice ? <option value="">Loading verses...</option> : null}
+                {!showVerseDropdownNotice && verseUnitIds.length === 0 ? <option value="">No verses available</option> : null}
+                {!showVerseDropdownNotice
+                  ? verseUnitIds.map((unitIdOption) => (
                       <option key={unitIdOption} value={unitIdOption}>
                         {unitMap.get(unitIdOption)?.ref ?? unitIdOption}
                       </option>
