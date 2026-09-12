@@ -34,9 +34,13 @@ class ScriptedTransport:
         self.sent.append(message)
         method = message.get("method")
         if method == "thread/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"threadId": "th-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"thread": {"id": "th-1"}}}
+            )
         elif method == "turn/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turnId": "turn-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"turn": {"id": "turn-1"}}}
+            )
             self._push(
                 {
                     "jsonrpc": "2.0",
@@ -45,7 +49,7 @@ class ScriptedTransport:
                 }
             )
             self._push(
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": "turn-1"}}
+                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}}
             )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
@@ -192,9 +196,7 @@ def test_saved_candidates_are_always_proposed_and_carry_codex_provenance() -> No
     assert stored["status"] == "proposed"
     assert stored["rendering_id"] not in unit["canonical_rendering_ids"]
     # The mutation went through the rendering service, so it is audited.
-    assert any(
-        record["entity_id"] == rendering["rendering_id"] for record in unit["audit_records"]
-    )
+    assert any(record["entity_id"] == rendering["rendering_id"] for record in unit["audit_records"])
 
 
 def test_codex_cannot_promote_its_own_candidate_to_canonical() -> None:

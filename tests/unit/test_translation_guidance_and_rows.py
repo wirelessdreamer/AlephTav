@@ -34,11 +34,13 @@ class ScriptedTransport:
         self.sent.append(message)
         method = message.get("method")
         if method == "thread/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"threadId": "th-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"thread": {"id": "th-1"}}}
+            )
         elif method == "turn/start":
             self.turn += 1
             turn_id = f"turn-{self.turn}"
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turnId": turn_id}})
+            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turn": {"id": turn_id}}})
             self._push(
                 {
                     "jsonrpc": "2.0",
@@ -49,7 +51,7 @@ class ScriptedTransport:
                 }
             )
             self._push(
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": turn_id}}
+                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": turn_id}}}
             )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
@@ -65,9 +67,7 @@ class ScriptedTransport:
 
     def prompts(self) -> list[str]:
         return [
-            m["params"]["input"][0]["data"]["text"]
-            for m in self.sent
-            if m.get("method") == "turn/start"
+            m["params"]["input"][0]["text"] for m in self.sent if m.get("method") == "turn/start"
         ]
 
 

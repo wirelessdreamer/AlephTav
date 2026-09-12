@@ -72,12 +72,14 @@ class ScriptedTransport:
         self.sent.append(message)
         method = message.get("method")
         if method == "thread/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"threadId": "th-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"thread": {"id": "th-1"}}}
+            )
         elif method == "turn/start":
             self.turn += 1
             turn_id = f"turn-{self.turn}"
             body = self.payloads.pop(0) if self.payloads else {}
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turnId": turn_id}})
+            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turn": {"id": turn_id}}})
             self._push(
                 {
                     "jsonrpc": "2.0",
@@ -86,7 +88,7 @@ class ScriptedTransport:
                 }
             )
             self._push(
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": turn_id}}
+                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": turn_id}}}
             )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
@@ -119,9 +121,7 @@ def _connect(payloads: list[dict[str, Any]]) -> str:
 
 
 def test_analysis_requires_a_connected_client() -> None:
-    response = client.post(
-        f"/codex/analysis/verses/{UNIT_ID}", json={"session_id": "cxs.nope"}
-    )
+    response = client.post(f"/codex/analysis/verses/{UNIT_ID}", json={"session_id": "cxs.nope"})
     assert response.status_code == 400
     assert "not connected" in response.json()["detail"].lower()
 
@@ -129,9 +129,7 @@ def test_analysis_requires_a_connected_client() -> None:
 def test_verse_analysis_writes_a_proposed_assessment_and_shows_in_the_table() -> None:
     session_id = _connect([_verse_payload()])
 
-    response = client.post(
-        f"/codex/analysis/verses/{UNIT_ID}", json={"session_id": session_id}
-    )
+    response = client.post(f"/codex/analysis/verses/{UNIT_ID}", json={"session_id": session_id})
     assert response.status_code == 200, response.text
     item = response.json()["assessment"]
     assert item["accuracy_rating"] == "adapted"
@@ -148,9 +146,7 @@ def test_verse_analysis_writes_a_proposed_assessment_and_shows_in_the_table() ->
 def test_psalm_analysis_endpoint_round_trips() -> None:
     session_id = _connect([_psalm_payload()])
 
-    posted = client.post(
-        f"/codex/analysis/psalms/{PSALM_ID}", json={"session_id": session_id}
-    )
+    posted = client.post(f"/codex/analysis/psalms/{PSALM_ID}", json={"session_id": session_id})
     assert posted.status_code == 200, posted.text
     assert posted.json()["analysis"]["summary"] == "The two ways."
 
@@ -171,9 +167,7 @@ def test_analysis_is_absent_until_it_has_been_run() -> None:
 def test_invalid_analysis_output_is_rejected_without_writing() -> None:
     session_id = _connect([{"psalm_id": PSALM_ID, "summary": "incomplete"}])
 
-    response = client.post(
-        f"/codex/analysis/psalms/{PSALM_ID}", json={"session_id": session_id}
-    )
+    response = client.post(f"/codex/analysis/psalms/{PSALM_ID}", json={"session_id": session_id})
 
     assert response.status_code == 200
     body = response.json()

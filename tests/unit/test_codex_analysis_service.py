@@ -96,12 +96,14 @@ class ScriptedTransport:
         self.sent.append(message)
         method = message.get("method")
         if method == "thread/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"threadId": "th-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"thread": {"id": "th-1"}}}
+            )
         elif method == "turn/start":
             self.turn += 1
             turn_id = f"turn-{self.turn}"
             body = self.payloads.pop(0) if self.payloads else {}
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turnId": turn_id}})
+            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turn": {"id": turn_id}}})
             self._push(
                 {
                     "jsonrpc": "2.0",
@@ -110,7 +112,7 @@ class ScriptedTransport:
                 }
             )
             self._push(
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": turn_id}}
+                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": turn_id}}}
             )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
@@ -307,9 +309,7 @@ def _section(title: str, first: int, last: int) -> dict[str, Any]:
 
 
 def test_sections_covering_every_verse_in_order_are_accepted() -> None:
-    analysis._assert_sections_tile(
-        _six_verse_psalm(), [_section("A", 1, 3), _section("B", 4, 6)]
-    )
+    analysis._assert_sections_tile(_six_verse_psalm(), [_section("A", 1, 3), _section("B", 4, 6)])
 
 
 def test_sections_that_leave_a_gap_are_rejected() -> None:

@@ -46,6 +46,16 @@ APPROVAL_METHODS = frozenset(
     }
 )
 
+#: The refusal each approval method expects. v2 requests take "decline", the
+#: legacy ones take "denied", and a dynamic tool call reports an unsuccessful run.
+DENIAL_RESPONSES: dict[str, dict[str, Any]] = {
+    "item/commandExecution/requestApproval": {"decision": "decline"},
+    "item/fileChange/requestApproval": {"decision": "decline"},
+    "item/tool/call": {"contentItems": [], "success": False},
+    "applyPatchApproval": {"decision": "denied"},
+    "execCommandApproval": {"decision": "denied"},
+}
+
 #: Server-initiated requests that ask a human something. Translation turns run
 #: unattended, so these are declined rather than denied.
 INPUT_METHODS = frozenset({"item/tool/requestUserInput"})
@@ -121,9 +131,7 @@ class CodexAppServerClient:
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
             if shutil.which(self.executable) is None:
-                raise GenerationError(
-                    f"Codex executable not found on PATH: {self.executable}"
-                )
+                raise GenerationError(f"Codex executable not found on PATH: {self.executable}")
             self.transport = StdioTransport(self.executable)
         return self.transport
 
@@ -137,10 +145,10 @@ class CodexAppServerClient:
         method = message.get("method", "")
         if method in APPROVAL_METHODS:
             self.denied_events.append({"method": method, "params": message.get("params")})
-            self._respond(message.get("id"), {"decision": "denied"})
+            self._respond(message.get("id"), DENIAL_RESPONSES[method])
         elif method in INPUT_METHODS:
             self.denied_events.append({"method": method, "params": message.get("params")})
-            self._respond(message.get("id"), {"response": None})
+            self._respond(message.get("id"), {"answers": {}})
         else:
             # Unknown server request: decline rather than guess at its contract.
             self._respond(message.get("id"), {})
@@ -196,7 +204,7 @@ class CodexAppServerClient:
 
     def list_models(self) -> list[dict[str, Any]]:
         result = self.request("model/list", {})
-        items = result.get("items") or result.get("models") or []
+        items = result.get("data") or []
         return [item for item in items if isinstance(item, dict)]
 
     def login(self) -> dict[str, Any]:
@@ -215,13 +223,13 @@ class CodexAppServerClient:
         which denies them, so a translation turn cannot change the machine.
         """
         params: dict[str, Any] = {
-            "sandbox": {"type": "readOnly"},
+            "sandbox": "read-only",
             "approvalPolicy": "on-request",
         }
         if base_instructions:
             params["baseInstructions"] = base_instructions
         result = self.request("thread/start", params)
-        thread_id = result.get("threadId") or result.get("thread_id")
+        thread_id = (result.get("thread") or {}).get("id")
         if not thread_id:
             raise GenerationError("Codex thread/start did not return a threadId")
         return str(thread_id)
@@ -250,17 +258,21 @@ class CodexAppServerClient:
             method = message["method"]
             params = message.get("params") or {}
             if method == "error":
-                raise GenerationError(str(params.get("message") or "Codex reported an error"))
+                if params.get("willRetry"):
+                    continue
+                error = params.get("error") or {}
+                raise GenerationError(str(error.get("message") or "Codex reported an error"))
             if method == "item/completed":
                 item = params.get("item") or {}
-                if item.get("type") in {"agentMessage", "agent_message", "assistantMessage"}:
-                    text = item.get("text") or (item.get("data") or {}).get("text")
-                    if text:
-                        text_parts.append(str(text))
+                if item.get("type") == "agentMessage" and item.get("text"):
+                    text_parts.append(str(item["text"]))
             if method == "turn/completed":
-                if turn_id and str(params.get("turnId") or params.get("turn_id")) != turn_id:
-                    continue
                 turn = params.get("turn") or {}
+                if turn_id and str(turn.get("id")) != turn_id:
+                    continue
+                if turn.get("status") == "failed":
+                    error = turn.get("error") or {}
+                    raise GenerationError(str(error.get("message") or "Codex turn failed"))
                 usage = params.get("usage") or turn.get("usage") or {}
                 return {"text": "".join(text_parts), "usage": usage, "turn": turn}
 
@@ -273,7 +285,7 @@ class CodexAppServerClient:
     ) -> dict[str, Any]:
         params: dict[str, Any] = {
             "threadId": thread_id,
-            "input": [{"type": "text", "data": {"text": text}}],
+            "input": [{"type": "text", "text": text}],
             "sandboxPolicy": {"type": "readOnly"},
             "approvalPolicy": "on-request",
         }
@@ -282,7 +294,7 @@ class CodexAppServerClient:
         if model:
             params["model"] = model
         started = self.request("turn/start", params)
-        turn_id = started.get("turnId") or started.get("turn_id")
+        turn_id = (started.get("turn") or {}).get("id")
         result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
         result["turn_id"] = turn_id
         return result

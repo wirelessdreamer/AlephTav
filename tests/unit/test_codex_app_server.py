@@ -73,14 +73,14 @@ def test_connect_performs_the_initialize_handshake() -> None:
 
 def test_start_thread_locks_the_turn_to_read_only_with_routed_approvals() -> None:
     def handler(message, _transport):
-        return [_ok(message, {"threadId": "th-1"})]
+        return [_ok(message, {"thread": {"id": "th-1"}})]
 
     client = _client(handler)
     thread_id = client.start_thread(base_instructions="translation policy")
 
     assert thread_id == "th-1"
     params = client.transport.params_for("thread/start")
-    assert params["sandbox"] == {"type": "readOnly"}
+    assert params["sandbox"] == "read-only"
     assert params["approvalPolicy"] == "on-request"
     assert params["baseInstructions"] == "translation policy"
 
@@ -92,7 +92,7 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
         if message.get("method") != "turn/start":
             return [_ok(message, {})]
         return [
-            _ok(message, {"turnId": "turn-1"}),
+            _ok(message, {"turn": {"id": "turn-1"}}),
             {
                 "jsonrpc": "2.0",
                 "method": "item/completed",
@@ -101,7 +101,11 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
             {
                 "jsonrpc": "2.0",
                 "method": "turn/completed",
-                "params": {"turnId": "turn-1", "usage": {"input_tokens": 11}},
+                "params": {
+                    "threadId": "th-1",
+                    "turn": {"id": "turn-1", "status": "completed"},
+                    "usage": {"input_tokens": 11},
+                },
             },
         ]
 
@@ -116,7 +120,7 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
     assert params["outputSchema"] == contract
     assert params["model"] == "gpt-5-codex"
     assert params["sandboxPolicy"] == {"type": "readOnly"}
-    assert params["input"] == [{"type": "text", "data": {"text": "translate"}}]
+    assert params["input"] == [{"type": "text", "text": "translate"}]
 
 
 @pytest.mark.parametrize(
@@ -134,7 +138,7 @@ def test_translation_turn_denies_every_system_change_request(approval_method: st
     def handler(message, _transport):
         if message.get("method") == "turn/start":
             return [
-                _ok(message, {"turnId": "turn-1"}),
+                _ok(message, {"turn": {"id": "turn-1"}}),
                 {
                     "jsonrpc": "2.0",
                     "id": 9001,
@@ -148,7 +152,7 @@ def test_translation_turn_denies_every_system_change_request(approval_method: st
                 {
                     "jsonrpc": "2.0",
                     "method": "turn/completed",
-                    "params": {"turnId": "turn-1"},
+                    "params": {"threadId": "th-1", "turn": {"id": "turn-1", "status": "completed"}},
                 }
             ]
         return [_ok(message, {})]
@@ -157,7 +161,7 @@ def test_translation_turn_denies_every_system_change_request(approval_method: st
     result = client.run_turn("th-1", "translate")
 
     denial = next(m for m in client.transport.sent if m.get("id") == 9001)
-    assert denial["result"] == {"decision": "denied"}
+    assert denial["result"] == codex.DENIAL_RESPONSES[approval_method]
     assert [event["method"] for event in client.denied_events] == [approval_method]
     assert result["text"] == ""
 
@@ -167,8 +171,12 @@ def test_turn_surfaces_a_server_error_instead_of_returning_partial_text() -> Non
         if message.get("method") != "turn/start":
             return [_ok(message, {})]
         return [
-            _ok(message, {"turnId": "turn-1"}),
-            {"jsonrpc": "2.0", "method": "error", "params": {"message": "rate limit reached"}},
+            _ok(message, {"turn": {"id": "turn-1"}}),
+            {
+                "jsonrpc": "2.0",
+                "method": "error",
+                "params": {"error": {"message": "rate limit reached"}, "willRetry": False},
+            },
         ]
 
     client = _client(handler)
@@ -178,7 +186,11 @@ def test_turn_surfaces_a_server_error_instead_of_returning_partial_text() -> Non
 
 def test_disconnect_mid_turn_is_reported_as_a_generation_error() -> None:
     def handler(message, _transport):
-        return [_ok(message, {"turnId": "turn-1"})] if message.get("method") == "turn/start" else []
+        return (
+            [_ok(message, {"turn": {"id": "turn-1"}})]
+            if message.get("method") == "turn/start"
+            else []
+        )
 
     client = _client(handler)
     with pytest.raises(GenerationError, match="disconnected"):
@@ -292,10 +304,10 @@ def test_adapter_is_registered_and_normalises_a_turn_into_a_generation_response(
 
     def handler(message, _transport):
         if message.get("method") == "thread/start":
-            return [_ok(message, {"threadId": "th-9"})]
+            return [_ok(message, {"thread": {"id": "th-9"}})]
         if message.get("method") == "turn/start":
             return [
-                _ok(message, {"turnId": "turn-9"}),
+                _ok(message, {"turn": {"id": "turn-9"}}),
                 {
                     "jsonrpc": "2.0",
                     "method": "item/completed",
@@ -303,12 +315,17 @@ def test_adapter_is_registered_and_normalises_a_turn_into_a_generation_response(
                         "item": {"type": "agentMessage", "text": '{"candidates": [{"text": "x"}]}'}
                     },
                 },
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": "turn-9"}},
+                {
+                    "jsonrpc": "2.0",
+                    "method": "turn/completed",
+                    "params": {"threadId": "th-9", "turn": {"id": "turn-9", "status": "completed"}},
+                },
             ]
         return [_ok(message, {})]
 
-    adapter = CodexAppServerAdapter({"adapter": "codex-app-server", "model": "gpt-5-codex"},
-                                    client=_client(handler))
+    adapter = CodexAppServerAdapter(
+        {"adapter": "codex-app-server", "model": "gpt-5-codex"}, client=_client(handler)
+    )
     response = adapter.generate_json(
         GenerationRequest(
             prompt="translate ps001.v001.a",

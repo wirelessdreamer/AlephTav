@@ -39,9 +39,13 @@ class ScriptedTransport:
                 }
             )
         elif method == "thread/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"threadId": "th-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"thread": {"id": "th-1"}}}
+            )
         elif method == "turn/start":
-            self._push({"jsonrpc": "2.0", "id": message["id"], "result": {"turnId": "turn-1"}})
+            self._push(
+                {"jsonrpc": "2.0", "id": message["id"], "result": {"turn": {"id": "turn-1"}}}
+            )
             if self.approval_method:
                 self._push(
                     {
@@ -59,7 +63,7 @@ class ScriptedTransport:
                 }
             )
             self._push(
-                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turnId": "turn-1"}}
+                {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}}
             )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
@@ -213,7 +217,7 @@ def test_a_turn_requesting_command_execution_is_denied_and_logged() -> None:
     ]
 
     denial = next(m for m in codex.active_client().transport.sent if m.get("id") == 555)
-    assert denial["result"] == {"decision": "denied"}
+    assert denial["result"] == {"decision": "decline"}
 
 
 def test_cancel_marks_the_run_cancelled() -> None:
