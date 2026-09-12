@@ -67,8 +67,12 @@ class StdioTransport:
     """Real transport: a ``codex app-server`` child process over stdio."""
 
     def __init__(self, executable: str = "codex") -> None:
+        # Resolve through PATH/PATHEXT before spawning. On Windows the real
+        # entry point is codex.CMD; handing Popen the bare name raises
+        # WinError 2, "The system cannot find the file specified".
+        resolved = shutil.which(executable) or executable
         self._process = subprocess.Popen(  # noqa: S603
-            [executable, "app-server", "--listen", "stdio://"],
+            [resolved, "app-server", "--listen", "stdio://"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL,
@@ -116,8 +120,10 @@ class CodexAppServerClient:
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
-            if codex_executable() is None:
-                raise GenerationError("Codex executable not found on PATH")
+            if shutil.which(self.executable) is None:
+                raise GenerationError(
+                    f"Codex executable not found on PATH: {self.executable}"
+                )
             self.transport = StdioTransport(self.executable)
         return self.transport
 
@@ -331,12 +337,31 @@ def shutdown() -> None:
         _ACTIVE_CLIENT = None
 
 
+def _account_details(account: dict[str, Any]) -> dict[str, Any]:
+    """Auth mode and plan from an ``account/read`` result.
+
+    The live app server nests these under ``account``
+    (``{"account": {"type": "chatgpt", "planType": "pro"}}``); flat keys are
+    tolerated so a differently shaped build still reports something.
+    """
+    nested = account.get("account")
+    nested = nested if isinstance(nested, dict) else {}
+    return {
+        "auth_mode": nested.get("type") or account.get("authMode") or account.get("auth_mode"),
+        "plan_type": nested.get("planType")
+        or nested.get("plan_type")
+        or account.get("planType")
+        or account.get("plan_type"),
+    }
+
+
 def _is_signed_in(account: dict[str, Any]) -> bool:
     if not account:
         return False
     for key in ("authenticated", "signedIn", "isSignedIn"):
         if key in account:
             return bool(account[key])
+    # Signed out returns a null/absent account object.
     return bool(account.get("account") or account.get("authMode") or account.get("planType"))
 
 
@@ -380,6 +405,7 @@ def describe_status(client: CodexAppServerClient | None = None) -> dict[str, Any
         "status": STATUS_READY,
         "detail": "Connected to the local Codex app server.",
         "local_only": True,
-        "auth_mode": account.get("authMode") or account.get("auth_mode"),
-        "plan_type": account.get("planType") or account.get("plan_type"),
+        # Only mode and plan; the account record also carries an email, which
+        # the panel has no need for.
+        **_account_details(account),
     }

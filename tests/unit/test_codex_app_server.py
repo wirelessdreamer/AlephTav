@@ -211,13 +211,18 @@ def test_ready_status_exposes_plan_but_never_credentials(monkeypatch) -> None:
     monkeypatch.setattr(codex, "codex_executable", lambda: "/usr/bin/codex")
 
     def handler(message, _transport):
+        # The shape the live app server actually returns: mode and plan are
+        # nested under "account", alongside the signed-in email.
         return [
             _ok(
                 message,
                 {
-                    "authenticated": True,
-                    "authMode": "chatgpt",
-                    "planType": "pro",
+                    "account": {
+                        "type": "chatgpt",
+                        "email": "someone@example.com",
+                        "planType": "pro",
+                    },
+                    "requiresOpenaiAuth": True,
                     "accessToken": "secret-token-value",
                     "refreshToken": "secret-refresh-value",
                 },
@@ -235,6 +240,51 @@ def test_ready_status_exposes_plan_but_never_credentials(monkeypatch) -> None:
     assert "secret-token-value" not in serialised
     assert "secret-refresh-value" not in serialised
     assert "accessToken" not in serialised
+    # The email is in the account record but has no business in the panel.
+    assert "someone@example.com" not in serialised
+
+
+def test_signed_out_account_is_not_reported_as_ready(monkeypatch) -> None:
+    monkeypatch.setattr(codex, "codex_executable", lambda: "/usr/bin/codex")
+
+    def handler(message, _transport):
+        return [_ok(message, {"account": None, "requiresOpenaiAuth": True})]
+
+    client = _client(handler)
+    client.initialized = True
+
+    assert codex.describe_status(client)["status"] == codex.STATUS_NOT_SIGNED_IN
+
+
+def test_transport_resolves_the_executable_through_path(monkeypatch) -> None:
+    """Regression: Popen("codex") raises WinError 2 on Windows, where the real
+    entry point is codex.CMD. The spawn must use the resolved path."""
+    spawned: dict[str, object] = {}
+
+    class FakePopen:
+        def __init__(self, argv, **kwargs):
+            spawned["argv"] = argv
+            self.stdin = None
+            self.stdout = None
+
+        def poll(self):
+            return 0
+
+    monkeypatch.setattr(codex.shutil, "which", lambda name: r"C:\npm\codex.CMD")
+    monkeypatch.setattr(codex.subprocess, "Popen", FakePopen)
+
+    codex.StdioTransport("codex")
+
+    assert spawned["argv"][0] == r"C:\npm\codex.CMD"
+    assert spawned["argv"][1:] == ["app-server", "--listen", "stdio://"]
+
+
+def test_client_reports_a_clear_error_when_codex_is_not_on_path(monkeypatch) -> None:
+    monkeypatch.setattr(codex.shutil, "which", lambda name: None)
+    client = codex.CodexAppServerClient()
+
+    with pytest.raises(GenerationError, match="not found on PATH"):
+        client.connect()
 
 
 def test_adapter_is_registered_and_normalises_a_turn_into_a_generation_response() -> None:
