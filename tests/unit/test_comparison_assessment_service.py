@@ -195,6 +195,35 @@ def test_comparison_table_marks_rows_without_an_english_rendering_incomplete() -
     assert row["accuracy_rating"] is None
 
 
+def test_rebuild_mirrors_assessments_into_the_query_index() -> None:
+    from app.db.session import get_connection
+    from app.services import concordance_service
+
+    literal_id, english_id = _rendering_ids()
+    item = comparison_assessment_service.create_assessment(
+        unit_id=UNIT_ID,
+        literal_rendering_id=literal_id,
+        english_rendering_id=english_id,
+        accuracy_rating="close",
+        created_via="codex",
+        generator_provider="codex-app-server",
+    )
+
+    counts = concordance_service.rebuild_indexes()
+    assert counts["comparison_assessments"] >= 1
+
+    with get_connection() as connection:
+        row = connection.execute(
+            "SELECT * FROM comparison_assessment_index WHERE comparison_id = ?",
+            (item["comparison_id"],),
+        ).fetchone()
+
+    assert row is not None
+    assert row["unit_id"] == UNIT_ID
+    assert row["accuracy_rating"] == "close"
+    assert row["created_via"] == "codex"
+
+
 def test_units_carrying_assessments_still_validate_against_the_schema() -> None:
     from scripts.validate_content import validate_all_content
 
