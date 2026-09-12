@@ -4,7 +4,6 @@ import type { ChangeEvent, ReactNode } from 'react';
 import { useAppRuntime } from '../app/AppContext';
 import { AssistantPanel } from '../components/AssistantPanel';
 import { BottomDrawer } from '../components/BottomDrawer';
-import { CodexConnectionPanel } from '../components/CodexConnectionPanel';
 import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useAlternateLifecycleAction,
@@ -1772,7 +1771,7 @@ export function WorkbenchPage() {
               updateWorkbenchUi({ drawerTab: 'compare', compareLeftId: renderingId })
             }
           />
-          <CodexConnectionPanel psalmId={effectivePsalmId ?? null} unitId={selectedUnitId ?? null} />
+          {assistantUi.placement === 'side' ? <AssistantPanel embedded /> : null}
         </section>
       ) : (
       <section className="translation-console" aria-label="Translation workbench">

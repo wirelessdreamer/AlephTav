@@ -13,6 +13,10 @@ import {
 } from '../hooks/useAssistant';
 import { useSetPinnedLexicalCard } from '../hooks/useWorkbench';
 import type { AssistantActionPreview, AssistantMessage, AssistantSettings } from '../types';
+import { CodexConnectionPanel } from './CodexConnectionPanel';
+
+/** Generation provider the assistant panel is pointed at (section 5). */
+type AssistantProvider = 'local' | 'codex';
 
 function formatToolResult(result: unknown) {
   const json = JSON.stringify(result ?? null, null, 2);
@@ -34,6 +38,7 @@ interface AssistantPanelProps {
 
 export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
   const { assistantContext, applyClientAction, assistantUi, updateAssistantUi } = useAppRuntime();
+  const [provider, setProvider] = useState<AssistantProvider>('local');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
@@ -394,6 +399,22 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
                 {speechSettings?.provider ?? 'speech'}: {speechSettings?.auth_status ?? 'unknown'}
               </span>
             </div>
+            <label>
+              <span>Generation provider</span>
+              <select
+                value={provider}
+                onChange={(event) => setProvider(event.target.value as AssistantProvider)}
+              >
+                <option value="local">Local models</option>
+                <option value="codex">Codex</option>
+              </select>
+            </label>
+            {provider === 'codex' ? (
+              <CodexConnectionPanel
+                psalmId={assistantContext.workbench.psalmId ?? null}
+                unitId={assistantContext.workbench.unitId ?? null}
+              />
+            ) : null}
             <p className="subtle">
               OpenAI account linking is reserved for a future provider-supported flow. Whisper transcription currently uses configured API credentials.
             </p>
