@@ -4,6 +4,8 @@ import type { ChangeEvent, ReactNode } from 'react';
 import { useAppRuntime } from '../app/AppContext';
 import { AssistantPanel } from '../components/AssistantPanel';
 import { BottomDrawer } from '../components/BottomDrawer';
+import { CodexConnectionPanel } from '../components/CodexConnectionPanel';
+import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useAlternateLifecycleAction,
   useCorpusLayers,
@@ -869,6 +871,8 @@ export function WorkbenchPage() {
     toggleWorkbenchSpanSelection,
     clearWorkbenchSelections,
   } = useAppRuntime();
+  // Psalm-wide editorial surface, distinct from the two-rendering compare drawer.
+  const [showComparison, setShowComparison] = useState(false);
   const selectedPsalmId = workbenchSelection.psalmId;
   const selectedUnitId = workbenchSelection.unitId;
   const activeLayer = workbenchSelection.layer;
@@ -1748,9 +1752,29 @@ export function WorkbenchPage() {
                   : null}
               </select>
             </label>
+            <button
+              type="button"
+              className="workbench-view-toggle"
+              aria-pressed={showComparison}
+              onClick={() => setShowComparison((current) => !current)}
+            >
+              {showComparison ? 'Back to workbench' : 'Translation comparison'}
+            </button>
           </div>
         )}
       />
+      {showComparison ? (
+        <section className="translation-console" aria-label="Translation comparison">
+          <TranslationComparisonTable
+            psalmId={effectivePsalmId ?? null}
+            onOpenEvidence={(unitIdToLoad) => updateWorkbenchSelection({ unitId: unitIdToLoad })}
+            onOpenRendering={(renderingId) =>
+              updateWorkbenchUi({ drawerTab: 'compare', compareLeftId: renderingId })
+            }
+          />
+          <CodexConnectionPanel psalmId={effectivePsalmId ?? null} unitId={selectedUnitId ?? null} />
+        </section>
+      ) : (
       <section className="translation-console" aria-label="Translation workbench">
         <section className="translation-pane translation-pane--flow compose-panel">
           <VerseFlowCloudPanel
@@ -1857,6 +1881,7 @@ export function WorkbenchPage() {
           {assistantUi.placement === 'side' ? <AssistantPanel embedded /> : null}
         </ReviewWorkflowPanel>
       </section>
+      )}
       <BottomDrawer
         unit={unit}
         concerns={concerns}

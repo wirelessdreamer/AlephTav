@@ -72,7 +72,7 @@
       {
         "matcher": "Bash",
         "hooks": [
-          { "type": "command", "command": "python .claude/hooks/deny_dangerous_bash.py" }
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/deny_dangerous_bash.py\"" }
         ]
       }
     ],
@@ -80,16 +80,16 @@
       {
         "matcher": "Edit|Write|MultiEdit",
         "hooks": [
-          { "type": "command", "command": "python .claude/hooks/ruff_after_edit.py" },
-          { "type": "command", "command": "python .claude/hooks/validate_after_content_edit.py" },
-          { "type": "command", "command": "python .claude/hooks/prompt_change_warning.py" }
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/ruff_after_edit.py\"" },
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/validate_after_content_edit.py\"" },
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/prompt_change_warning.py\"" }
         ]
       }
     ],
     "UserPromptSubmit": [
       {
         "hooks": [
-          { "type": "command", "command": "python .claude/hooks/canonical_reminder.py" }
+          { "type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/canonical_reminder.py\"" }
         ]
       }
     ]
