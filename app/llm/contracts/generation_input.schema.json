@@ -1,16 +1,46 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "GenerationInput",
-  "type": "object",
-  "required": ["unit_id", "layer", "locked_inputs", "style_profile", "candidate_count", "seed", "model_profile_id"],
-  "additionalProperties": false,
-  "properties": {
-    "unit_id": { "type": "string" },
-    "layer": { "type": "string" },
-    "locked_inputs": { "type": "object" },
-    "style_profile": { "type": "object" },
-    "candidate_count": { "type": "integer", "minimum": 1, "maximum": 5 },
-    "seed": { "type": "integer" },
-    "model_profile_id": { "type": "string" }
-  }
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "GenerationInput",
+    "type": "object",
+    "required": [
+        "unit_id",
+        "layer",
+        "locked_inputs",
+        "style_profile",
+        "lyric_reference",
+        "candidate_count",
+        "seed",
+        "model_profile_id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "unit_id": {"type": "string"},
+        "layer": {"type": "string"},
+        "locked_inputs": {"type": "object"},
+        "style_profile": {"type": "object"},
+        "lyric_reference": {
+            "type": "object",
+            "required": [
+                "available",
+                "reference_root",
+                "file_count",
+                "style_traits",
+                "delivery_patterns",
+                "usage_policy"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "available": {"type": "boolean"},
+                "reference_root": {"type": "string"},
+                "file_count": {"type": "integer", "minimum": 0},
+                "observed_metrics": {"type": "object"},
+                "style_traits": {"type": "array", "items": {"type": "string"}},
+                "delivery_patterns": {"type": "array", "items": {"type": "string"}},
+                "usage_policy": {"type": "array", "items": {"type": "string"}}
+            }
+        },
+        "candidate_count": {"type": "integer", "minimum": 1, "maximum": 5},
+        "seed": {"type": "integer"},
+        "model_profile_id": {"type": "string"}
+    }
 }

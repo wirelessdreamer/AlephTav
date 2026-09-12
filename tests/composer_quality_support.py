@@ -12,26 +12,29 @@ from pathlib import Path
 from typing import Any
 
 from app.core.config import get_settings
-from app.services import registry_service
+from app.services import lyric_reference_service, registry_service
 from app.services.full_psalm_import_service import import_vendored_psalms
 
-
-ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
 KNOWN_BAD_PATTERNS = (
     r"\(dm\)",
     r"\(if\)",
     r"\bperson the\b",
     r"\bthe person\b",
     r"\bhis his\b",
+    r"\bAnd doesn['’]?t\b",
     r"\b(i|he|she|they|we|you|my|your|his|her|our|their)\s+\1\b",
     r"[\u0590-\u05FF]",
 )
 SUPERSCRIPTION_KEYWORD_RE = re.compile(
-    r"\b(choirmaster|chief musician|director|psalm|song|prayer|maskil|miktam|shiggaion|david|asaph|jeduthun|korah|solomon|moses|nathan|prophet|bathsheba|doe|morning|lilies|gittith|sheminith|alamoth|ascents|degrees)\b",
+    r"\b(choirmaster|chief musician|director|psalm|song|prayer|maskil|miktam|"
+    r"shiggaion|david|asaph|jeduthun|korah|solomon|moses|nathan|prophet|"
+    r"bathsheba|doe|morning|lilies|gittith|sheminith|alamoth|ascents|degrees)\b",
     flags=re.IGNORECASE,
 )
 SPOKEN_CUE_RE = re.compile(
-    r"^(yahweh|o\b|my god|why|how blessed|blessed|the heavens|have mercy|save|hear|give ear|judge)\b",
+    r"^(yahweh|o\b|my god|why|how blessed|blessed|the heavens|have mercy|"
+    r"save|hear|give ear|judge)\b",
     flags=re.IGNORECASE,
 )
 
@@ -74,7 +77,7 @@ def bootstrap_vendored_repo() -> None:
 
 def compile_composer_module(temp_dir: Path) -> Path:
     out_dir = temp_dir / "composer-build"
-    bin_dir = ROOT / "node_modules" / ".bin"
+    bin_dir = REPO_ROOT / "node_modules" / ".bin"
     tsc_path = bin_dir / ("tsc.cmd" if os.name == "nt" else "tsc")
     subprocess.run(
         [
@@ -88,7 +91,7 @@ def compile_composer_module(temp_dir: Path) -> Path:
             "--outDir",
             str(out_dir),
         ],
-        cwd=ROOT,
+        cwd=REPO_ROOT,
         check=True,
         capture_output=True,
         text=True,
@@ -99,15 +102,19 @@ def compile_composer_module(temp_dir: Path) -> Path:
 
 
 def collect_all_unit_ids() -> list[str]:
+    settings = get_settings()
     return sorted(
         unit_path.stem
-        for unit_path in (ROOT / "content" / "psalms").glob("ps*/ps*.json")
+        for unit_path in settings.psalms_dir.glob("ps*/ps*.json")
         if ".v" in unit_path.stem
     )
 
 
-def build_composer_outputs(unit_ids: list[str], temp_dir: Path, batch_size: int = 400) -> dict[str, ComposerUnitOutput]:
+def build_composer_outputs(
+    unit_ids: list[str], temp_dir: Path, batch_size: int = 400
+) -> dict[str, ComposerUnitOutput]:
     module_path = compile_composer_module(temp_dir)
+    settings = get_settings()
     runner_path = temp_dir / "composer-runner.js"
     runner_path.write_text(
         """
@@ -151,34 +158,36 @@ process.stdout.write(JSON.stringify(payload));
 
     outputs: dict[str, ComposerUnitOutput] = {}
     for start in range(0, len(unit_ids), batch_size):
-        batch_ids = unit_ids[start:start + batch_size]
+        batch_ids = unit_ids[start : start + batch_size]
         completed = subprocess.run(
             [
                 "node",
                 str(runner_path),
                 str(module_path),
                 json.dumps(batch_ids),
-                str(ROOT),
+                str(settings.root_dir),
             ],
-            cwd=ROOT,
+            cwd=REPO_ROOT,
             check=True,
             capture_output=True,
             text=True,
             encoding="utf-8",
         )
         payload = json.loads(completed.stdout)
-        outputs.update({
-            unit_id: ComposerUnitOutput(
-                unit_id=data["unit_id"],
-                ref=data["ref"],
-                source_text=data["source_text"],
-                token_count=data["token_count"],
-                phrase=[ComposerChoiceRow(**choice) for choice in data["phrase"]],
-                concept=[ComposerChoiceRow(**choice) for choice in data["concept"]],
-                lyric=[ComposerChoiceRow(**choice) for choice in data["lyric"]],
-            )
-            for unit_id, data in payload.items()
-        })
+        outputs.update(
+            {
+                unit_id: ComposerUnitOutput(
+                    unit_id=data["unit_id"],
+                    ref=data["ref"],
+                    source_text=data["source_text"],
+                    token_count=data["token_count"],
+                    phrase=[ComposerChoiceRow(**choice) for choice in data["phrase"]],
+                    concept=[ComposerChoiceRow(**choice) for choice in data["concept"]],
+                    lyric=[ComposerChoiceRow(**choice) for choice in data["lyric"]],
+                )
+                for unit_id, data in payload.items()
+            }
+        )
     return outputs
 
 
@@ -188,7 +197,11 @@ def _is_superscription_like(output: ComposerUnitOutput) -> bool:
     if verse_number > 4:
         return False
     lowered = " ".join(choice.label for choice in output.phrase).lower()
-    return bool(lowered) and bool(SUPERSCRIPTION_KEYWORD_RE.search(lowered)) and not bool(SPOKEN_CUE_RE.search(lowered))
+    return (
+        bool(lowered)
+        and bool(SUPERSCRIPTION_KEYWORD_RE.search(lowered))
+        and not bool(SPOKEN_CUE_RE.search(lowered))
+    )
 
 
 def _identical_rows(left: list[ComposerChoiceRow], right: list[ComposerChoiceRow]) -> bool:
@@ -213,7 +226,9 @@ def audit_composer_outputs(outputs: dict[str, ComposerUnitOutput]) -> dict[str, 
 
         for stage, rows in stage_rows.items():
             if not rows:
-                issues.append(AuditIssue("empty_stage", "high", stage, f"{stage} emitted no choices", {}))
+                issues.append(
+                    AuditIssue("empty_stage", "high", stage, f"{stage} emitted no choices", {})
+                )
                 continue
 
             joined = " || ".join(choice.label for choice in rows)
@@ -226,6 +241,37 @@ def audit_composer_outputs(outputs: dict[str, ComposerUnitOutput]) -> dict[str, 
                             stage,
                             f"{stage} matched known bad pattern {pattern!r}",
                             {"pattern": pattern},
+                        )
+                    )
+
+            for choice in rows:
+                quality = lyric_reference_service.evaluate_candidate_quality(choice.label, stage)
+                if quality["score"] < lyric_reference_service.MIN_SURFACED_PRODUCTION_QUALITY:
+                    issues.append(
+                        AuditIssue(
+                            "lyric_reference_quality_floor",
+                            "high",
+                            stage,
+                            f"{stage} fell below the lyric-reference production floor",
+                            {
+                                "label": choice.label,
+                                "score": quality["score"],
+                                "issues": quality["issues"],
+                            },
+                        )
+                    )
+                elif quality["issues"]:
+                    issues.append(
+                        AuditIssue(
+                            "lyric_reference_quality_warning",
+                            "medium",
+                            stage,
+                            f"{stage} triggered lyric-reference quality warnings",
+                            {
+                                "label": choice.label,
+                                "score": quality["score"],
+                                "issues": quality["issues"],
+                            },
                         )
                     )
             if len(rows) == 1 and output.token_count >= 6:
@@ -246,7 +292,10 @@ def audit_composer_outputs(outputs: dict[str, ComposerUnitOutput]) -> dict[str, 
                         "dominant_wide_chunk",
                         "medium",
                         stage,
-                        f"{stage} contains an oversized chunk covering {widest_span}/{output.token_count} tokens",
+                        (
+                            f"{stage} contains an oversized chunk covering "
+                            f"{widest_span}/{output.token_count} tokens"
+                        ),
                         {"widest_span": widest_span, "token_count": output.token_count},
                     )
                 )
@@ -273,8 +322,12 @@ def audit_composer_outputs(outputs: dict[str, ComposerUnitOutput]) -> dict[str, 
                 )
             )
 
-        if _identical_rows(output.phrase, output.concept) and _identical_rows(output.concept, output.lyric):
-            severity = "high" if stage_counts["phrase"] == 1 and output.token_count >= 5 else "medium"
+        if _identical_rows(output.phrase, output.concept) and _identical_rows(
+            output.concept, output.lyric
+        ):
+            severity = (
+                "high" if stage_counts["phrase"] == 1 and output.token_count >= 5 else "medium"
+            )
             issues.append(
                 AuditIssue(
                     "stage_identity_all",
@@ -306,7 +359,10 @@ def audit_composer_outputs(outputs: dict[str, ComposerUnitOutput]) -> dict[str, 
                     )
                 )
 
-        if stage_counts["phrase"] == stage_counts["concept"] == stage_counts["lyric"] == 1 and output.token_count >= 5:
+        if (
+            stage_counts["phrase"] == stage_counts["concept"] == stage_counts["lyric"] == 1
+            and output.token_count >= 5
+        ):
             issues.append(
                 AuditIssue(
                     "single_path_unit",
@@ -363,15 +419,15 @@ def write_audit_reports(report: dict[str, Any], json_path: Path, md_path: Path) 
     json_path.parent.mkdir(parents=True, exist_ok=True)
     json_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    top_issue_lines = "\n".join(
-        f"| `{code}` | {count} |"
-        for code, count in report["issue_unit_counts"].items()
-    ) or "| none | 0 |"
+    top_issue_lines = (
+        "\n".join(f"| `{code}` | {count} |" for code, count in report["issue_unit_counts"].items())
+        or "| none | 0 |"
+    )
 
-    instance_issue_lines = "\n".join(
-        f"| `{code}` | {count} |"
-        for code, count in report["issue_counts"].items()
-    ) or "| none | 0 |"
+    instance_issue_lines = (
+        "\n".join(f"| `{code}` | {count} |" for code, count in report["issue_counts"].items())
+        or "| none | 0 |"
+    )
 
     sample_units = report["flagged_units"][:25]
     sample_lines = []
@@ -410,7 +466,10 @@ def write_audit_reports(report: dict[str, Any], json_path: Path, md_path: Path) 
                 "",
                 "| Severity | Count |",
                 "| --- | ---: |",
-                *[f"| {severity} | {count} |" for severity, count in report["severity_counts"].items()],
+                *[
+                    f"| {severity} | {count} |"
+                    for severity, count in report["severity_counts"].items()
+                ],
                 "",
                 "## Top Flagged Units",
                 "",

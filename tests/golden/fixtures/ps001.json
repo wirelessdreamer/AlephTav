@@ -48,7 +48,7 @@
       ],
       "audit_records": [
         {
-          "after_hash": "aa566d12299d1646b3c17bdb4d9f8f3880a38571b5f982edb6a84255424a5230",
+          "after_hash": "f8a5ceea0eeb3f9e6ddc02c63a1debacfaeef77f5ac427b044c2cef7d5fb2d4f",
           "audit_id": "aud.ps001.v001.a.0001",
           "before_hash": "b73214e8c4852f3f3504498539c30fee6c9831a31116a537b967b3ef7476b06b",
           "change_type": "create",
@@ -451,6 +451,8 @@
           "gloss_parts": [
             "fortunate/blessed"
           ],
+          "greek": "μακάριος",
+          "greek_strong": "G3107",
           "lemma": "אשר",
           "missing_enrichments": [],
           "morph_code": "Tm",
@@ -507,6 +509,8 @@
           "gloss_parts": [
             "man/person"
           ],
+          "greek": "ἀνήρ",
+          "greek_strong": "G435",
           "lemma": "איש",
           "missing_enrichments": [],
           "morph_code": "Td/Ncmsa",
@@ -541,6 +545,16 @@
           "source_url": "https://www.sefaria.org/Psalms.1.1",
           "text": "Optional witness text stored separately.",
           "versionTitle": "Fixture Witness"
+        },
+        {
+          "language": "grc",
+          "ref": "Psalm 1:1",
+          "source_id": "lxx",
+          "source_url": "fixture://lxx/ps001.1",
+          "source_version": "fixture-lxx-2026.04",
+          "text": "μακάριος ἀνήρ",
+          "versionTitle": "Fixture Septuagint Greek",
+          "witness_role": "septuagint_greek"
         },
         {
           "language": "en",

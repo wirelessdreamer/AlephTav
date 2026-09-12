@@ -1,0 +1,580 @@
+{
+  "generated_on": "2026-06-15",
+  "status": "research rubric baseline; not a benchmark result",
+  "purpose": "Define the contextual evidence layers required to assess local Hebrew-to-English Psalms translation at a scholarly level.",
+  "readiness_scale": {
+    "0": "No current evidence or process.",
+    "1": "Concept acknowledged, but evidence is manual, missing, or not integrated.",
+    "2": "Some source data exists, but retrieval or scoring is incomplete.",
+    "3": "Usable evidence exists for limited benchmark use, with known gaps.",
+    "4": "Strong current evidence and repeatable checks exist.",
+    "5": "Release-grade evidence, scoring, and review workflow exist."
+  },
+  "context_layers": [
+    {
+      "id": "source_hebrew_control",
+      "label": "Canonical Hebrew control",
+      "readiness": 4,
+      "weight": 1.3,
+      "current_evidence": [
+        "Psalm source units exist in content/psalms.",
+        "Each unit has token IDs, source Hebrew, transliteration, and draft status."
+      ],
+      "required_next_evidence": [
+        "Schema gate requiring every generated claim to cite unit_id and token_id.",
+        "Per-layer alignment coverage scoring."
+      ],
+      "evaluation_questions": [
+        "Does the model preserve the source token inventory before paraphrase?",
+        "Does the output distinguish grammar from interpretation?"
+      ],
+      "failure_modes": [
+        "Fluent paraphrase without token evidence.",
+        "Theological conclusion presented as lexical fact."
+      ]
+    },
+    {
+      "id": "morphology_lexeme_control",
+      "label": "Morphology and lexeme control",
+      "readiness": 3,
+      "weight": 1.2,
+      "current_evidence": [
+        "OSHB-derived lemma, Strong number, morphology, readable morphology, and part-of-speech fields are present for most tokens.",
+        "The current corpus profile quantifies missing stem, lemma, and Strong coverage."
+      ],
+      "required_next_evidence": [
+        "Stem normalization audit.",
+        "Reviewer rubric for unsupported morphology claims."
+      ],
+      "evaluation_questions": [
+        "Does the model render person, number, gender, stem, suffixes, and construct chains correctly?",
+        "Does it flag weak or missing morphology evidence?"
+      ],
+      "failure_modes": [
+        "Inferring stem or semantic role where the source packet is missing it.",
+        "Flattening pronominal suffixes or construct chains into generic English."
+      ]
+    },
+    {
+      "id": "psalms_internal_concordance",
+      "label": "Psalms-internal lexical context",
+      "readiness": 4,
+      "weight": 1.0,
+      "current_evidence": [
+        "Token packets include psalms_occurrence_refs.",
+        "Current corpus_occurrence_refs are Psalm-only in the scanned content."
+      ],
+      "required_next_evidence": [
+        "Lemma-sense clustering inside Psalms.",
+        "Prompt-visible concordance packet with ranked Psalm parallels."
+      ],
+      "evaluation_questions": [
+        "Does the model use Psalm-local recurrence without forcing the same gloss everywhere?",
+        "Does it distinguish repetition, refrain, and formula from accidental lexical recurrence?"
+      ],
+      "failure_modes": [
+        "Treating a Psalm-local occurrence list as whole-Tanakh evidence.",
+        "Over-normalizing repeated words into one English gloss."
+      ]
+    },
+    {
+      "id": "whole_tanakh_context",
+      "label": "Whole-Tanakh lexical and motif context",
+      "readiness": 2,
+      "weight": 1.4,
+      "current_evidence": [
+        "The raw UXLC zip contains canonical Tanakh book XML files.",
+        "The generated content packets are currently Psalms-only."
+      ],
+      "required_next_evidence": [
+        "Build a derived whole-Tanakh lexical index from UXLC without mutating data/raw.",
+        "Add cross-book lemma and phrase retrieval to evidence packets.",
+        "Track whether a cited context comes from Torah, Prophets, or Writings."
+      ],
+      "evaluation_questions": [
+        "Does the rendering account for usage outside Psalms when a lemma or motif demands it?",
+        "Does it cite cross-book context without inventing references?"
+      ],
+      "failure_modes": [
+        "Using Psalms-only evidence while claiming whole-Bible support.",
+        "Hallucinating cross-references or anachronistic motifs."
+      ]
+    },
+    {
+      "id": "poetic_form_genre",
+      "label": "Poetic form and genre",
+      "readiness": 2,
+      "weight": 1.2,
+      "current_evidence": [
+        "Seed units are tagged for lament, doxology, wisdom, royal psalm, repetition, and parallelism risks.",
+        "No full-corpus cola, strophe, acrostic, or genre annotation exists yet."
+      ],
+      "required_next_evidence": [
+        "Add genre and poetic-form annotations for benchmark units.",
+        "Add scoring for lineation, parallelism, terseness, repetition, and source-image preservation."
+      ],
+      "evaluation_questions": [
+        "Does the English preserve the pressure between poetic cola?",
+        "Does it respect genre movement, such as lament-to-trust?"
+      ],
+      "failure_modes": [
+        "Flattening parallelism into a prose summary.",
+        "Padding terse Hebrew into explanatory commentary."
+      ]
+    },
+    {
+      "id": "ancient_cultural_setting",
+      "label": "Ancient Israelite cultural setting",
+      "readiness": 1,
+      "weight": 1.1,
+      "current_evidence": [
+        "The research report identifies temple, royal, cultic, justice, enemy, land, and covenant context as required.",
+        "No structured local cultural-context source pack exists yet."
+      ],
+      "required_next_evidence": [
+        "Create source-governed notes for royal, temple, wisdom, lament, war, exile, and pilgrimage contexts.",
+        "Require cultural claims to be tagged as source-context, comparative ANE context, or later reception."
+      ],
+      "evaluation_questions": [
+        "Does the model preserve ancient social and cultic imagery before modernizing it?",
+        "Does it avoid turning cultural explanation into translation text?"
+      ],
+      "failure_modes": [
+        "Modern devotional paraphrase replacing ancient imagery.",
+        "Cultural claims without source or period tagging."
+      ]
+    },
+    {
+      "id": "textual_witnesses",
+      "label": "Textual witnesses and version boundaries",
+      "readiness": 3,
+      "weight": 1.2,
+      "current_evidence": [
+        "Every current unit has witness records.",
+        "The corpus includes English witnesses and a Septuagint Greek witness role."
+      ],
+      "required_next_evidence": [
+        "Separate witness evidence from canonical Hebrew basis in every prompt.",
+        "Add DSS, Targum, Syriac, and Vulgate only when license and version pinning are solved.",
+        "Score witness-boundary errors explicitly."
+      ],
+      "evaluation_questions": [
+        "Does the model cite a witness as a witness rather than replacing the Hebrew source?",
+        "Does it flag variant-sensitive passages instead of silently choosing a tradition?"
+      ],
+      "failure_modes": [
+        "English witness style leakage into generated translation.",
+        "LXX or later witness treated as canonical Hebrew without disclosure."
+      ]
+    },
+    {
+      "id": "jewish_christian_reception",
+      "label": "Jewish and Christian reception history",
+      "readiness": 1,
+      "weight": 1.3,
+      "current_evidence": [
+        "Seed units tag known reception-history cases.",
+        "No local, versioned reception corpus or source-note layer exists yet."
+      ],
+      "required_next_evidence": [
+        "Create perspective-tagged notes for Jewish, Christian, academic-critical, and liturgical reception.",
+        "Require model outputs to separate translation, interpretation, and reception."
+      ],
+      "evaluation_questions": [
+        "Does the model identify divergent reception without collapsing it into the translation?",
+        "Does it avoid privileging one tradition while pretending neutrality?"
+      ],
+      "failure_modes": [
+        "Christological or anti-Christological overreach in the translation layer.",
+        "Treating later reception as the original grammatical meaning."
+      ]
+    },
+    {
+      "id": "review_signoff_governance",
+      "label": "Review signoff and governance",
+      "readiness": 3,
+      "weight": 1.0,
+      "current_evidence": [
+        "Review policy and audit policy define reviewer roles and promotion gates.",
+        "No completed canonical English rendering corpus exists for Psalms yet."
+      ],
+      "required_next_evidence": [
+        "Create blind-review benchmark workflows for lexical, Hebrew, alignment, lyric, theology, and release reviewers.",
+        "Publish model-card style release records for every local adapter."
+      ],
+      "evaluation_questions": [
+        "Can the model proposal be accepted, rejected, or revised through audited human review?",
+        "Can a later reviewer reconstruct exactly what evidence the model saw?"
+      ],
+      "failure_modes": [
+        "Model output entering canonical content without review.",
+        "Benchmark results without prompt, model, quantization, source, and reviewer provenance."
+      ]
+    }
+  ],
+  "case_studies": [
+    {
+      "unit_id": "ps002.v007.a",
+      "ref": "Psalm 2:7",
+      "layers": [
+        "source_hebrew_control",
+        "whole_tanakh_context",
+        "ancient_cultural_setting",
+        "jewish_christian_reception"
+      ],
+      "why": "Royal sonship language requires separating grammar, royal ideology, later Jewish reception, and Christian reception.",
+      "minimum_model_behavior": [
+        "Identify the unit as royal/enthronement language before later reception.",
+        "Tag reception-history claims separately from translation claims."
+      ],
+      "rubric_flags": [
+        "sonship",
+        "royal_psalm",
+        "reception_history",
+        "intertextuality"
+      ]
+    },
+    {
+      "unit_id": "ps002.v012.a",
+      "ref": "Psalm 2:12",
+      "layers": [
+        "source_hebrew_control",
+        "morphology_lexeme_control",
+        "textual_witnesses",
+        "jewish_christian_reception"
+      ],
+      "why": "A disputed phrase must be handled as lexical and textual ambiguity rather than as a settled theological proof.",
+      "minimum_model_behavior": [
+        "Surface ambiguity and preserve the source-token basis.",
+        "Do not hide the disputed status in a smooth rendering."
+      ],
+      "rubric_flags": [
+        "lexical_ambiguity",
+        "textual_sensitivity",
+        "reception_history"
+      ]
+    },
+    {
+      "unit_id": "ps008.v005.a",
+      "ref": "Psalm 8:5",
+      "layers": [
+        "source_hebrew_control",
+        "whole_tanakh_context",
+        "textual_witnesses",
+        "jewish_christian_reception"
+      ],
+      "why": "Human status language is canonically reused and may interact with divine-being terminology and later theological interpretation.",
+      "minimum_model_behavior": [
+        "Keep anthropology and divine-being terminology distinct.",
+        "Cite canonical reuse as reception/context rather than immediate grammar."
+      ],
+      "rubric_flags": [
+        "anthropology",
+        "divine_beings",
+        "canonical_intertext"
+      ]
+    },
+    {
+      "unit_id": "ps022.v001.a",
+      "ref": "Psalm 22:1",
+      "layers": [
+        "source_hebrew_control",
+        "poetic_form_genre",
+        "jewish_christian_reception"
+      ],
+      "why": "A lament line with major liturgical and Christian afterlife must be translated source-first.",
+      "minimum_model_behavior": [
+        "Render the lament and divine address before reception claims.",
+        "Keep later liturgical use outside the translation string."
+      ],
+      "rubric_flags": [
+        "lament",
+        "divine_abandonment",
+        "liturgical_afterlife"
+      ]
+    },
+    {
+      "unit_id": "ps022.v017.a",
+      "ref": "Psalm 22:17",
+      "layers": [
+        "source_hebrew_control",
+        "morphology_lexeme_control",
+        "textual_witnesses",
+        "jewish_christian_reception"
+      ],
+      "why": "A contested suffering-lament passage tests textual-witness boundaries and reception-history discipline.",
+      "minimum_model_behavior": [
+        "Mark the passage as variant-sensitive.",
+        "Do not convert witness disagreement into a silent canonical choice."
+      ],
+      "rubric_flags": [
+        "textual_witness",
+        "suffering_lament",
+        "lexical_dispute",
+        "reception_history"
+      ]
+    },
+    {
+      "unit_id": "ps023.v001.a",
+      "ref": "Psalm 23:1",
+      "layers": [
+        "source_hebrew_control",
+        "poetic_form_genre",
+        "ancient_cultural_setting",
+        "textual_witnesses"
+      ],
+      "why": "A familiar line tests whether the model resists inherited English phrasing and preserves pastoral source imagery.",
+      "minimum_model_behavior": [
+        "Avoid unlicensed witness phrasing.",
+        "Explain divine-name and shepherd imagery policy separately."
+      ],
+      "rubric_flags": [
+        "metaphor",
+        "pastoral_image",
+        "divine_name_policy"
+      ]
+    },
+    {
+      "unit_id": "ps051.v012.a",
+      "ref": "Psalm 51:12",
+      "layers": [
+        "source_hebrew_control",
+        "morphology_lexeme_control",
+        "whole_tanakh_context",
+        "jewish_christian_reception"
+      ],
+      "why": "Heart and spirit language requires Hebrew anthropology before later doctrinal categories.",
+      "minimum_model_behavior": [
+        "Preserve source anthropology terms before abstraction.",
+        "Flag theological interpretation as interpretation."
+      ],
+      "rubric_flags": [
+        "heart",
+        "spirit",
+        "anthropology",
+        "theology"
+      ]
+    },
+    {
+      "unit_id": "ps110.v001.a",
+      "ref": "Psalm 110:1",
+      "layers": [
+        "source_hebrew_control",
+        "whole_tanakh_context",
+        "ancient_cultural_setting",
+        "textual_witnesses",
+        "jewish_christian_reception"
+      ],
+      "why": "A core divergent-reception royal psalm requires grammar, royal setting, and later theological use to remain separate.",
+      "minimum_model_behavior": [
+        "Distinguish speaker, addressee, divine name, and royal title.",
+        "Separate Jewish, Christian, and academic-critical reception claims."
+      ],
+      "rubric_flags": [
+        "royal_psalm",
+        "divine_speech",
+        "messianic_interpretation",
+        "jewish_christian_reception"
+      ]
+    },
+    {
+      "unit_id": "ps110.v004.a",
+      "ref": "Psalm 110:4",
+      "layers": [
+        "source_hebrew_control",
+        "whole_tanakh_context",
+        "ancient_cultural_setting",
+        "jewish_christian_reception"
+      ],
+      "why": "Melchizedek and priesthood language needs Genesis, royal ideology, and reception-history controls.",
+      "minimum_model_behavior": [
+        "Cite priesthood and kingship as context before theological use.",
+        "Preserve uncertainty where interpretive traditions diverge."
+      ],
+      "rubric_flags": [
+        "priesthood",
+        "melchizedek",
+        "oath",
+        "reception_history"
+      ]
+    },
+    {
+      "unit_id": "ps117.v001.a",
+      "ref": "Psalm 117:1",
+      "layers": [
+        "source_hebrew_control",
+        "whole_tanakh_context",
+        "poetic_form_genre",
+        "ancient_cultural_setting"
+      ],
+      "why": "A short universal-praise unit tests whether compact Hebrew can receive broader exilic and nations-context without padding.",
+      "minimum_model_behavior": [
+        "Preserve imperative praise language.",
+        "Keep broad nations-context in rationale rather than over-expanding the line."
+      ],
+      "rubric_flags": [
+        "universal_praise",
+        "nations",
+        "imperative",
+        "short_psalm"
+      ]
+    },
+    {
+      "unit_id": "ps137.v009.a",
+      "ref": "Psalm 137:9",
+      "layers": [
+        "source_hebrew_control",
+        "poetic_form_genre",
+        "ancient_cultural_setting",
+        "jewish_christian_reception"
+      ],
+      "why": "Violent imprecation demands translation, trauma context, ethics, and reception to remain distinguishable.",
+      "minimum_model_behavior": [
+        "Do not sanitize or intensify the violent rhetoric.",
+        "Tag ethical reception separately from the source translation."
+      ],
+      "rubric_flags": [
+        "imprecation",
+        "violence",
+        "trauma_context",
+        "ethical_reception"
+      ]
+    }
+  ],
+  "context_packet_contract": [
+    {
+      "field": "source_basis",
+      "required": true,
+      "description": "Canonical Hebrew unit ID, source text, token IDs, morphology, and missing-evidence flags."
+    },
+    {
+      "field": "psalms_concordance",
+      "required": true,
+      "description": "Psalm-local lemma and phrase parallels, marked explicitly as Psalm-local."
+    },
+    {
+      "field": "tanakh_context",
+      "required": true,
+      "description": "Whole-Tanakh lexical and motif context, with book/division labels and retrieval provenance."
+    },
+    {
+      "field": "poetic_form",
+      "required": true,
+      "description": "Genre, cola, parallelism, acrostic, repetition, terseness, and lineation notes where known."
+    },
+    {
+      "field": "cultural_setting",
+      "required": true,
+      "description": "Royal, temple, cultic, wisdom, lament, exile, war, pilgrimage, and covenant context as source-tagged notes."
+    },
+    {
+      "field": "textual_witnesses",
+      "required": true,
+      "description": "Version-pinned witness data separated from the canonical Hebrew basis."
+    },
+    {
+      "field": "reception_history",
+      "required": true,
+      "description": "Perspective-tagged Jewish, Christian, academic-critical, and liturgical reception notes."
+    },
+    {
+      "field": "review_requirements",
+      "required": true,
+      "description": "Reviewer roles, required approvals, known risks, and model-output gates."
+    }
+  ],
+  "citations": [
+    {
+      "id": "bible_odyssey_hebrew_poetry_forms",
+      "label": "Bible Odyssey: Hebrew Poetry Forms",
+      "url": "https://www.bibleodyssey.org/articles/hebrew-poetry-forms/",
+      "supports": [
+        "poetic_form_genre"
+      ]
+    },
+    {
+      "id": "bible_odyssey_psalms_worship",
+      "label": "Bible Odyssey: Psalms in Israel's Worship",
+      "url": "https://www.bibleodyssey.org/articles/psalms-in-israels-worship/",
+      "supports": [
+        "ancient_cultural_setting"
+      ]
+    },
+    {
+      "id": "bible_odyssey_lament",
+      "label": "Bible Odyssey: Psalms of Lament",
+      "url": "https://www.bibleodyssey.org/articles/psalms-of-lament/",
+      "supports": [
+        "poetic_form_genre",
+        "ancient_cultural_setting"
+      ]
+    },
+    {
+      "id": "bible_odyssey_psalm_151",
+      "label": "Bible Odyssey: Psalm 151 and the Dead Sea Scrolls",
+      "url": "https://www.bibleodyssey.org/articles/psalm-151-and-the-dead-sea-scrolls/",
+      "supports": [
+        "textual_witnesses"
+      ]
+    },
+    {
+      "id": "bible_odyssey_ane_world",
+      "label": "Bible Odyssey: Hebrew Bible and the Ancient Near Eastern World",
+      "url": "https://www.bibleodyssey.org/articles/how-does-the-hebrew-bible-relate-to-the-ancient-near-eastern-world/",
+      "supports": [
+        "ancient_cultural_setting"
+      ]
+    },
+    {
+      "id": "thetorah_psalm_2",
+      "label": "TheTorah.com: Psalm 2 - Is the Messiah the Son of God?",
+      "url": "https://www.thetorah.com/article/psalm-2-is-the-messiah-the-son-of-god",
+      "supports": [
+        "jewish_christian_reception"
+      ]
+    },
+    {
+      "id": "thetorah_psalm_110_melchizedek",
+      "label": "TheTorah.com: Who Assumed Melchizedek's Priesthood?",
+      "url": "https://www.thetorah.com/article/who-assumed-melchizedeks-priesthood",
+      "supports": [
+        "jewish_christian_reception",
+        "ancient_cultural_setting"
+      ]
+    },
+    {
+      "id": "thetorah_psalm_117",
+      "label": "TheTorah.com: Praise YHWH All You Nations - Psalm 117",
+      "url": "https://www.thetorah.com/article/praise-yhwh-all-you-nations-psalm-117",
+      "supports": [
+        "whole_tanakh_context",
+        "ancient_cultural_setting"
+      ]
+    },
+    {
+      "id": "thetorah_psalm_137_symposium",
+      "label": "TheTorah.com: Psalms category and Psalm 137 symposium index",
+      "url": "https://www.thetorah.com/categories/psalms",
+      "supports": [
+        "jewish_christian_reception"
+      ]
+    },
+    {
+      "id": "local_data_sources",
+      "label": "AlephTav data source policy",
+      "url": "docs/DATA_SOURCES.md",
+      "supports": [
+        "source_hebrew_control",
+        "textual_witnesses"
+      ]
+    },
+    {
+      "id": "local_review_policy",
+      "label": "AlephTav review policy",
+      "url": "docs/REVIEW_POLICY.md",
+      "supports": [
+        "review_signoff_governance"
+      ]
+    }
+  ]
+}

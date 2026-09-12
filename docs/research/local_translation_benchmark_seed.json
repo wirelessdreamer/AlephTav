@@ -1,0 +1,189 @@
+{
+  "generated_on": "2026-06-15",
+  "status": "seed_manifest_for_future_bakeoff_not_reviewed_translation_content",
+  "current_corpus_scan": {
+    "source": "content/psalms",
+    "psalm_count": 150,
+    "unit_count": 2527,
+    "total_token_records": 19587,
+    "units_with_renderings": 0,
+    "status_counts": {
+      "draft": 2527
+    },
+    "scan_command_context": "WSL path /home/dreamer/src/AlephTav, JSON read-only scan"
+  },
+  "seed_units": [
+    {
+      "unit_id": "ps001.v001.a",
+      "ref": "Psalm 1:1",
+      "token_count": 15,
+      "benchmark_tags": ["wisdom", "lexeme_blessed", "negative_parallelism", "source_image_pressure"],
+      "why_in_seed": "Tests wisdom-prologue diction, repeated negation, and whether the model preserves poetic escalation across walk, stand, sit imagery."
+    },
+    {
+      "unit_id": "ps002.v001.a",
+      "ref": "Psalm 2:1",
+      "token_count": 6,
+      "benchmark_tags": ["royal_psalm", "nations", "rhetorical_question", "reception_history"],
+      "why_in_seed": "Tests royal/cosmic political framing before later messianic interpretation is introduced."
+    },
+    {
+      "unit_id": "ps002.v007.a",
+      "ref": "Psalm 2:7",
+      "token_count": 11,
+      "benchmark_tags": ["royal_psalm", "sonship", "jewish_christian_reception", "intertextuality"],
+      "why_in_seed": "High-value case for tagging royal enthronement language separately from Jewish and Christian reception history."
+    },
+    {
+      "unit_id": "ps002.v012.a",
+      "ref": "Psalm 2:12",
+      "token_count": 14,
+      "benchmark_tags": ["lexical_ambiguity", "textual_sensitivity", "reception_history"],
+      "why_in_seed": "Tests whether the model surfaces ambiguity and avoids presenting a disputed rendering as settled."
+    },
+    {
+      "unit_id": "ps008.v005.a",
+      "ref": "Psalm 8:5",
+      "token_count": 8,
+      "benchmark_tags": ["anthropology", "divine_beings", "canonical_intertext", "semantic_domain"],
+      "why_in_seed": "Tests translation of human status language and later canonical reuse without collapsing source semantics."
+    },
+    {
+      "unit_id": "ps013.v001.a",
+      "ref": "Psalm 13:1",
+      "token_count": 3,
+      "benchmark_tags": ["lament", "repetition", "ellipsis", "divine_address"],
+      "why_in_seed": "Short lament unit that tests whether repetition and address are preserved without padding."
+    },
+    {
+      "unit_id": "ps013.v005.a",
+      "ref": "Psalm 13:5",
+      "token_count": 8,
+      "benchmark_tags": ["lament_to_trust", "discourse_shift", "hesed"],
+      "why_in_seed": "Tests genre movement from complaint toward trust and covenantal vocabulary handling."
+    },
+    {
+      "unit_id": "ps019.v001.a",
+      "ref": "Psalm 19:1",
+      "token_count": 3,
+      "benchmark_tags": ["creation_hymn", "terse_poetry", "source_image_pressure"],
+      "why_in_seed": "Tests compact creation praise and whether the model avoids over-expansion."
+    },
+    {
+      "unit_id": "ps019.v008.a",
+      "ref": "Psalm 19:8",
+      "token_count": 10,
+      "benchmark_tags": ["torah_psalm", "parallelism", "divine_instruction_terms"],
+      "why_in_seed": "Tests differentiated rendering of instruction/testimony/precepts style vocabulary."
+    },
+    {
+      "unit_id": "ps022.v001.a",
+      "ref": "Psalm 22:1",
+      "token_count": 6,
+      "benchmark_tags": ["lament", "divine_abandonment", "jewish_christian_reception", "liturgical_afterlife"],
+      "why_in_seed": "Tests source-first translation where later reception history is prominent."
+    },
+    {
+      "unit_id": "ps022.v017.a",
+      "ref": "Psalm 22:17",
+      "token_count": 9,
+      "benchmark_tags": ["textual_witness", "suffering_lament", "reception_history", "lexical_dispute"],
+      "why_in_seed": "Tests textual and reception sensitivity around a famously contested suffering-lament passage."
+    },
+    {
+      "unit_id": "ps023.v001.a",
+      "ref": "Psalm 23:1",
+      "token_count": 6,
+      "benchmark_tags": ["metaphor", "pastoral_image", "divine_name_policy"],
+      "why_in_seed": "Tests familiar-text bias and whether the model can avoid unlicensed witness phrasing."
+    },
+    {
+      "unit_id": "ps023.v004.a",
+      "ref": "Psalm 23:4",
+      "token_count": 15,
+      "benchmark_tags": ["metaphor", "fear", "death_shadow", "comfort_imagery"],
+      "why_in_seed": "Tests iconic imagery, ambiguity, and pastoral metaphor preservation."
+    },
+    {
+      "unit_id": "ps051.v003.a",
+      "ref": "Psalm 51:3",
+      "token_count": 7,
+      "benchmark_tags": ["penitential_psalm", "sin_terms", "mercy", "theology"],
+      "why_in_seed": "Tests penitential vocabulary without importing a confessional system into the lexical layer."
+    },
+    {
+      "unit_id": "ps051.v012.a",
+      "ref": "Psalm 51:12",
+      "token_count": 9,
+      "benchmark_tags": ["heart", "spirit", "anthropology", "theology"],
+      "why_in_seed": "Tests Hebrew anthropology terms and theological sensitivity."
+    },
+    {
+      "unit_id": "ps094.v001.a",
+      "ref": "Psalm 94:1",
+      "token_count": 6,
+      "benchmark_tags": ["justice", "vengeance", "divine_title", "imprecation"],
+      "why_in_seed": "Tests whether justice/imprecation language is preserved without sanitizing or exaggerating."
+    },
+    {
+      "unit_id": "ps094.v009.a",
+      "ref": "Psalm 94:9",
+      "token_count": 9,
+      "benchmark_tags": ["rhetorical_question", "body_imagery", "creator_argument"],
+      "why_in_seed": "Tests embodied imagery and argument structure."
+    },
+    {
+      "unit_id": "ps110.v001.a",
+      "ref": "Psalm 110:1",
+      "token_count": 12,
+      "benchmark_tags": ["royal_psalm", "divine_speech", "jewish_christian_reception", "messianic_interpretation"],
+      "why_in_seed": "Core divergent-reception case; translation must distinguish grammar, royal setting, and later theological use."
+    },
+    {
+      "unit_id": "ps110.v004.a",
+      "ref": "Psalm 110:4",
+      "token_count": 11,
+      "benchmark_tags": ["priesthood", "melchizedek", "oath", "reception_history"],
+      "why_in_seed": "Tests rare priestly/kingship language and reception-history tagging."
+    },
+    {
+      "unit_id": "ps117.v001.a",
+      "ref": "Psalm 117:1",
+      "token_count": 8,
+      "benchmark_tags": ["universal_praise", "nations", "imperative", "short_psalm"],
+      "why_in_seed": "Tests imperative praise language and cross-cultural scope."
+    },
+    {
+      "unit_id": "ps128.v001.a",
+      "ref": "Psalm 128:1",
+      "token_count": 8,
+      "benchmark_tags": ["wisdom", "fear_of_yhwh", "blessing_formula", "torah_walk"],
+      "why_in_seed": "Tests wisdom formula and fear-of-YHWH language."
+    },
+    {
+      "unit_id": "ps137.v009.a",
+      "ref": "Psalm 137:9",
+      "token_count": 7,
+      "benchmark_tags": ["imprecation", "violence", "trauma_context", "ethical_reception"],
+      "why_in_seed": "Tests violent lament language where translation, ethics, and reception must remain distinguishable."
+    },
+    {
+      "unit_id": "ps150.v006.a",
+      "ref": "Psalm 150:6",
+      "token_count": 6,
+      "benchmark_tags": ["doxology", "liturgical_closure", "breath_life", "universal_praise"],
+      "why_in_seed": "Tests closing doxology, life/breath imagery, and liturgical register."
+    }
+  ],
+  "minimum_next_seed_expansion": {
+    "target_units": 100,
+    "strata": {
+      "routine_lines": 40,
+      "morphology_syntax_traps": 20,
+      "poetic_parallelism_traps": 15,
+      "textual_witness_cases": 10,
+      "jewish_christian_reception_cases": 10,
+      "license_provenance_adversarial_cases": 5
+    }
+  }
+}

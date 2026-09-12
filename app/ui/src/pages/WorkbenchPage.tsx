@@ -6,6 +6,7 @@ import { AssistantPanel } from '../components/AssistantPanel';
 import { BottomDrawer } from '../components/BottomDrawer';
 import {
   useAlternateLifecycleAction,
+  useCorpusLayers,
   useCreateRendering,
   useComposerSuggestions,
   useCurrentPsalm,
@@ -33,10 +34,26 @@ import {
   sortRenderingsByStatus,
 } from '../lib/layers';
 import { buildDeterministicComposer } from '../lib/composerSynthesis';
-import type { Alignment, CloudNode, Layer, OpenConcerns, Psalm, Rendering, RenderingSpan, RetrievalHit, Token, TokenCard, Unit, VisualFlowUnit } from '../types';
+import type {
+  Alignment,
+  CloudNode,
+  Layer,
+  OpenConcerns,
+  Psalm,
+  PsalmLyricCorrelationRow,
+  PsalmSummary,
+  Rendering,
+  RenderingSpan,
+  RetrievalHit,
+  Token,
+  TokenCard,
+  Unit,
+  VisualFlowUnit,
+} from '../types';
 
 type ComposerChoiceLevel = 'word' | 'phrase' | 'idea' | 'lyric';
 type FlowLaneKey = ComposerChoiceLevel | 'generatedIdea' | 'generatedLyric' | 'output';
+type FlowAnalysisMode = 'correlation' | 'builder';
 
 type ComposerChoice = {
   id: string;
@@ -63,6 +80,11 @@ type WorkingVerseState = {
   cursorTokenIndex?: number;
 };
 
+type GuidedDraftMetadata = {
+  layer: Layer;
+  productionReady: boolean;
+};
+
 type ChapterDraftItem = {
   unitId: string;
   refLabel: string;
@@ -74,6 +96,14 @@ type ChapterDraftItem = {
 };
 
 const COMPOSER_LEVEL_ORDER: ComposerChoiceLevel[] = ['word', 'phrase', 'idea', 'lyric'];
+
+const CORRELATION_LEGEND: Array<{ kind: PsalmLyricCorrelationRow['relationship_kind']; label: string }> = [
+  { kind: 'close_anchor', label: 'Close anchor' },
+  { kind: 'interpretive_shift', label: 'Interpretive shift' },
+  { kind: 'added_reframed', label: 'Added / reframed' },
+  { kind: 'added_repetition', label: 'Added repetition' },
+  { kind: 'omitted_detail', label: 'Omitted detail' },
+];
 
 const PUBLIC_DOMAIN_WITNESS_CONFIGS = [
   {
@@ -102,15 +132,31 @@ const PUBLIC_DOMAIN_WITNESS_CONFIGS = [
 type PublicDomainWitnessConfig = (typeof PUBLIC_DOMAIN_WITNESS_CONFIGS)[number];
 type PublicDomainWitnessKey = PublicDomainWitnessConfig['key'];
 type UnitWitness = Unit['witnesses'][number];
+type ComposerQualityFilter = {
+  threshold?: number | null;
+  candidate_count_before_filter?: number | null;
+  surfaceable_candidate_count?: number | null;
+  suppressed_candidate_count?: number | null;
+  production_ready?: boolean | null;
+  rejection_reason?: string | null;
+  fallback_used?: boolean | null;
+  seed_match_used?: boolean | null;
+};
 type ComposerSuggestionQueryData = {
+  status?: 'production_ready' | 'rejected' | 'unavailable' | string;
+  available?: boolean;
   chunks?: Array<{
     chunk_id: string;
+    quality_filter?: ComposerQualityFilter | null;
     candidates: Array<{
       text: string;
       rationale: string;
       differentiator?: string;
       drift_flags?: string[];
       variation_basis?: string[];
+      metrics?: {
+        production_quality_score?: number | null;
+      } | null;
       delivery_profile?: string | null;
       source_anchor?: {
         anchor_text?: string | null;
@@ -180,6 +226,55 @@ function formatDeliveryProfile(profile?: string | null): string | null {
     hook_refrain: 'hook/refrain',
   };
   return labels[profile] ?? profile.replace(/_/g, ' ');
+}
+
+function formatProductionQualityScore(score?: number | null): string | null {
+  return typeof score === 'number' ? `quality ${score.toFixed(2)}` : null;
+}
+
+function formatQualityFilter(filter?: ComposerQualityFilter | null): string | null {
+  if (!filter) {
+    return null;
+  }
+  const suppressedCount = Number(filter.suppressed_candidate_count ?? 0);
+  const parts: string[] = [];
+  if (suppressedCount > 0) {
+    parts.push(`filtered ${suppressedCount}`);
+  }
+  if (filter.production_ready === false && filter.rejection_reason) {
+    parts.push(`not ready: ${filter.rejection_reason.replace(/_/g, ' ')}`);
+  }
+  if (filter.fallback_used) {
+    parts.push('quality fallback');
+  }
+  if (filter.seed_match_used) {
+    parts.push('seed fallback');
+  }
+  return parts.length > 0 ? parts.join(', ') : null;
+}
+
+function isComposerSuggestionUnavailable(response?: ComposerSuggestionQueryData): boolean {
+  if (!response || response.available !== false) {
+    return false;
+  }
+  if (response.status) {
+    return response.status === 'unavailable';
+  }
+  return (response.chunks?.length ?? 0) === 0;
+}
+
+function isComposerSuggestionRejected(response?: ComposerSuggestionQueryData): boolean {
+  if (!response || response.available !== false) {
+    return false;
+  }
+  if (response.status) {
+    return response.status === 'rejected';
+  }
+  return (response.chunks?.length ?? 0) > 0;
+}
+
+function isLyricFamilyLayer(layer: Layer | null | undefined): boolean {
+  return layer === 'lyric' || layer === 'metered_lyric' || layer === 'parallelism_lyric';
 }
 
 function compactMetaParts(parts: Array<string | null | undefined | false>): string {
@@ -255,256 +350,6 @@ function sentenceCasePoeticText(text: string): string {
     return '';
   }
   return normalized.charAt(0).toUpperCase() + normalized.slice(1);
-}
-
-function rewriteDivineAddress(text: string, mode: 'title' | 'reader'): string {
-  const replacement = mode === 'reader' ? 'God' : 'Lord';
-  return normalizeComposerText(text)
-    .replace(/^O Yahweh\b[:,]?/i, replacement)
-    .replace(/^Yahweh\b[:,]?/i, replacement)
-    .replace(/^O LORD\b[:,]?/i, replacement)
-    .replace(/^LORD\b[:,]?/i, replacement)
-    .replace(/^O Lord\b[:,]?/i, replacement)
-    .replace(/^Lord\b[:,]?/i, replacement)
-    .replace(/\bYahweh\b/gi, replacement)
-    .replace(/\bLORD\b/g, replacement);
-}
-
-function contractModernNegatives(text: string): string {
-  return normalizeComposerText(text)
-    .replace(/\bdoes not\b/gi, "doesn't")
-    .replace(/\bdo not\b/gi, "don't")
-    .replace(/\bwill not\b/gi, "won't")
-    .replace(/\bcannot\b/gi, "can't");
-}
-
-function resolveSlashGloss(text: string, pick: 'first' | 'second'): string {
-  return normalizeComposerText(text).replace(/\b([A-Za-z][A-Za-z'’-]*)\/([A-Za-z][A-Za-z'’-]*)\b/g, (_match, first, second) =>
-    pick === 'first' ? first : second,
-  );
-}
-
-function inferSubjectLanguage(tokens: Token[]): { bare: string; definite: string } {
-  const joined = tokens
-    .map((token) => [token.display_gloss, token.word_sense, token.referent, token.transliteration].filter(Boolean).join(' '))
-    .join(' ')
-    .toLowerCase();
-
-  if (joined.includes('man')) {
-    return { bare: 'man', definite: 'the man' };
-  }
-  if (joined.includes('person')) {
-    return { bare: 'person', definite: 'the person' };
-  }
-  return { bare: 'one', definite: 'the one' };
-}
-
-function looksLikeBlessingSeed(tokens: Token[], text: string): boolean {
-  const lexicalJoined = tokens
-    .map((token) => [token.display_gloss, token.word_sense, token.semantic_role, token.referent].filter(Boolean).join(' '))
-    .join(' ')
-    .toLowerCase();
-  const normalized = normalizeComposerText(text).toLowerCase();
-  return lexicalJoined.includes('blessing')
-    || lexicalJoined.includes('blessed')
-    || lexicalJoined.includes('fortunate')
-    || normalized.includes('blessed')
-    || normalized.includes('fortunate')
-    || normalized.includes('happy');
-}
-
-function shortBlessingConceptVariants(tokens: Token[]): string[] {
-  const subject = inferSubjectLanguage(tokens);
-  return [
-    `Blessed is ${subject.definite}`,
-    `Happy is ${subject.definite}`,
-    `The blessed ${subject.bare}`,
-    `The fortunate ${subject.bare}`,
-  ];
-}
-
-function shortBlessingLyricVariants(tokens: Token[]): string[] {
-  const subject = inferSubjectLanguage(tokens);
-  return [
-    `Blessed is ${subject.definite}`,
-    `Happy is ${subject.definite}`,
-    `The blessed ${subject.bare}`,
-  ];
-}
-
-type OfflineComposerVariant = string | {
-  text: string;
-  differentiator?: string;
-  deliveryProfile?: string;
-  sourceAnchor?: string;
-  variationBasis?: string[];
-  driftFlags?: string[];
-};
-
-function superscriptionLexicalText(tokens: Token[], seedText: string): string {
-  return normalizeComposerText([
-    seedText,
-    ...tokens.map((token) => [
-      token.display_gloss,
-      token.word_sense,
-      token.referent,
-      token.semantic_role,
-      token.transliteration,
-    ].filter(Boolean).join(' ')),
-  ].join(' ')).toLowerCase();
-}
-
-function superscriptionConceptVariants(tokens: Token[], seedText: string): OfflineComposerVariant[] {
-  const joined = superscriptionLexicalText(tokens, seedText);
-  const hasDirector = /\b(choirmaster|choir director|director|chief musician)\b/.test(joined);
-  const hasFlutes = /\bflutes?\b/.test(joined);
-  const hasPsalm = /\bpsalm\b/.test(joined);
-  const hasDavid = /\bdavid\b/.test(joined);
-  const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
-
-  if (hasDirector && hasFlutes) {
-    return [
-      {
-        text: 'For the choir director, with flutes',
-        differentiator: 'clear source heading',
-        deliveryProfile: 'source-clear concept',
-        sourceAnchor,
-        variationBasis: ['source_grounded_rendering'],
-      },
-      {
-        text: 'A flute setting for the choir director',
-        differentiator: 'smooths stacked music cues',
-        deliveryProfile: 'emotional concept',
-        sourceAnchor,
-        variationBasis: ['idiom_fit', 'construct_merged'],
-        driftFlags: ['musical_form_inferred'],
-      },
-      {
-        text: 'For choir leadership, carried by flutes',
-        differentiator: 'director plus accompaniment',
-        deliveryProfile: 'source-clear concept',
-        sourceAnchor,
-        variationBasis: ['source_image_preserved', 'english_order_shift'],
-      },
-    ];
-  }
-  if (hasDirector) {
-    return [
-      { text: 'For the choir director', differentiator: 'clear source heading', deliveryProfile: 'source-clear concept', sourceAnchor },
-      { text: 'A cue for the choir leader', differentiator: 'reader-facing heading', deliveryProfile: 'emotional concept', sourceAnchor },
-      { text: 'Given to the music director', differentiator: 'natural English handoff', deliveryProfile: 'source-clear concept', sourceAnchor },
-    ];
-  }
-  if (hasFlutes) {
-    return [
-      { text: 'With flutes', differentiator: 'clear source cue', deliveryProfile: 'source-clear concept', sourceAnchor },
-      { text: 'For flute accompaniment', differentiator: 'musical function', deliveryProfile: 'source-clear concept', sourceAnchor },
-      { text: 'Carried by flutes', differentiator: 'image-forward cue', deliveryProfile: 'emotional concept', sourceAnchor },
-    ];
-  }
-  if (hasPsalm && hasDavid) {
-    return [
-      { text: 'A psalm of David', differentiator: 'formal source heading', deliveryProfile: 'source-clear concept', sourceAnchor },
-      { text: "David's psalm", differentiator: 'compact modern heading', deliveryProfile: 'emotional concept', sourceAnchor },
-      { text: 'A David psalm', differentiator: 'compressed heading', deliveryProfile: 'source-clear concept', sourceAnchor },
-    ];
-  }
-  return [];
-}
-
-function superscriptionLyricVariants(tokens: Token[], seedText: string): OfflineComposerVariant[] {
-  const joined = superscriptionLexicalText(tokens, seedText);
-  const hasDirector = /\b(choirmaster|choir director|director|chief musician)\b/.test(joined);
-  const hasFlutes = /\bflutes?\b/.test(joined);
-  const hasPsalm = /\bpsalm\b/.test(joined);
-  const hasDavid = /\bdavid\b/.test(joined);
-
-  if (hasDirector && hasFlutes) {
-    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
-    return [
-      { text: 'For the choir director\nwith flutes', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
-      { text: 'Flutes carry the cue\nfor the choir', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
-      {
-        text: 'For flute-led singing\nunder the choir director',
-        differentiator: 'compressed rhythmic cue',
-        deliveryProfile: 'hook/refrain',
-        sourceAnchor,
-        driftFlags: ['musical_form_inferred'],
-      },
-    ];
-  }
-  if (hasDirector) {
-    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
-    return [
-      { text: 'For the choir director', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
-      { text: 'For the one leading the choir', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
-    ];
-  }
-  if (hasFlutes) {
-    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
-    return [
-      { text: 'With flutes', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
-      { text: 'Let the flutes carry it', differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
-    ];
-  }
-  if (hasPsalm && hasDavid) {
-    const sourceAnchor = tokens.map((token) => token.display_gloss || token.transliteration || token.surface).filter(Boolean).join(' + ');
-    return [
-      { text: 'A psalm of David', differentiator: '4/4 direct delivery', deliveryProfile: '4/4 direct', sourceAnchor },
-      { text: "David's psalm", differentiator: '6/8 lilt delivery', deliveryProfile: '6/8 lament', sourceAnchor },
-      { text: 'A David psalm', differentiator: 'compressed rhythmic cue', deliveryProfile: 'hook/refrain', sourceAnchor },
-    ];
-  }
-  return [];
-}
-
-function addBreathLineBreaks(text: string): string {
-  return normalizeComposerText(text)
-    .replace(/,\s+/g, '\n')
-    .replace(/\s+(?=(in your|with the|among|before you|all day|day and night|for the|from the|into the)\b)/gi, '\n');
-}
-
-function groundedFallbackConceptText(text: string): string {
-  return sentenceCase(
-    normalizeComposerText(rewriteDivineAddress(text, 'title'))
-      .replace(/^How blessed is the one\b/i, 'Blessed is the one')
-      .replace(/^How blessed is the man\b/i, 'Blessed is the man'),
-  );
-}
-
-function readerFallbackConceptText(text: string): string {
-  return sentenceCase(
-    contractModernNegatives(rewriteDivineAddress(text, 'reader'))
-      .replace(/^How blessed is the one\b/i, 'The blessed one')
-      .replace(/^Blessed is the one\b/i, 'The blessed one')
-      .replace(/^How blessed is the man\b/i, 'The blessed man')
-      .replace(/^Blessed is the man\b/i, 'The blessed man')
-      .replace(/\brebuke me\b/gi, 'come down on me')
-      .replace(/\bdiscipline me\b/gi, 'press me'),
-  );
-}
-
-function compressedFallbackConceptText(text: string): string {
-  return sentenceCase(
-    contractModernNegatives(rewriteDivineAddress(text, 'title'))
-      .replace(/^Who does not\b/i, "One who doesn't")
-      .replace(/^Who doesn't\b/i, "One who doesn't")
-      .replace(/^How blessed is the one\b/i, 'Blessed is the one'),
-  );
-}
-
-function groundedFallbackLyricText(text: string): string {
-  return sentenceCasePoeticText(addBreathLineBreaks(rewriteDivineAddress(text, 'title')));
-}
-
-function readerFallbackLyricText(text: string): string {
-  return sentenceCasePoeticText(
-    addBreathLineBreaks(
-      readerFallbackConceptText(text)
-        .replace(/\bThe blessed one\b/i, 'Blessed is the one')
-        .replace(/\bThe blessed man\b/i, 'Blessed is the man'),
-    ),
-  );
 }
 
 function isLyricLikeLayer(layer: Layer): boolean {
@@ -1041,6 +886,7 @@ export function WorkbenchPage() {
 
   const projectQuery = useProject();
   const psalmsQuery = usePsalms();
+  const corpusLayersQuery = useCorpusLayers();
   const { data: psalms } = psalmsQuery;
   const selectablePsalms = useMemo(() => getSelectablePsalmOptions(psalms), [psalms]);
   const selectedPsalm = useCurrentPsalm(selectablePsalms, selectedPsalmId);
@@ -1068,6 +914,7 @@ export function WorkbenchPage() {
   const createRendering = useCreateRendering(selectedUnitId);
   const generateJob = useGenerateJob(selectedUnitId);
   const [guidedDraftText, setGuidedDraftText] = useState('');
+  const [guidedDraftMetadata, setGuidedDraftMetadata] = useState<GuidedDraftMetadata | null>(null);
   const [guidedMessage, setGuidedMessage] = useState<string | null>(null);
   const [workingVerseByUnit, setWorkingVerseByUnit] = useState<Record<string, WorkingVerseState>>({});
   const [returnToUnitId, setReturnToUnitId] = useState<string | null>(null);
@@ -1089,7 +936,17 @@ export function WorkbenchPage() {
     effectivePsalmId !== null &&
     !currentPsalm &&
     (currentPsalmQuery.isPending || currentPsalmQuery.isFetching);
-  const showStartupDropdownNotice = !bootstrapError && (isPsalmListLoading || isUnitListLoading);
+  // The Psalm picker only needs the slim summary (`/psalms`); never block it
+  // on `/psalms/{id}`, which can take seconds to load full units + witness data.
+  const showPsalmDropdownNotice = !bootstrapError && isPsalmListLoading;
+  // The Verse picker can use `selectedPsalm.unit_ids` (from the summary) for
+  // its options right away. We only show "Loading verses..." when we truly
+  // have no unit ids yet — i.e. before the summary has arrived.
+  const verseUnitIds = (selectedPsalm?.unit_ids ?? currentPsalm?.unit_ids ?? []) as string[];
+  const showVerseDropdownNotice =
+    !bootstrapError && verseUnitIds.length === 0 && (isPsalmListLoading || isUnitListLoading);
+  // Kept for any remaining call sites that still want a unified flag.
+  const showStartupDropdownNotice = showPsalmDropdownNotice || showVerseDropdownNotice;
   const unitMap = useMemo(
     () => new Map((currentPsalm?.units ?? []).map((item) => [item.unit_id, item])),
     [currentPsalm?.units],
@@ -1098,8 +955,8 @@ export function WorkbenchPage() {
   const activeAlignments = useMemo(() => unit?.alignments.filter((alignment: Alignment) => alignment.layer === activeLayer) ?? [], [unit, activeLayer]);
   const selectedUnitLayerState = useMemo(() => resolveLayerState(unit, activeLayer), [unit, activeLayer]);
   const selectableLayers = useMemo(
-    () => getSelectableLayers(getAvailableCorpusLayers(selectablePsalms)),
-    [selectablePsalms],
+    () => getSelectableLayers(getAvailableCorpusLayers(corpusLayersQuery.data)),
+    [corpusLayersQuery.data],
   );
   const selectedWorkflowLayer = useMemo(
     () => getPreferredSelectableLayer(activeLayer, selectableLayers),
@@ -1433,6 +1290,7 @@ export function WorkbenchPage() {
 
   useEffect(() => {
     setGuidedDraftText('');
+    setGuidedDraftMetadata(null);
     setGuidedMessage(null);
   }, [activeLayer, selectedUnitId]);
 
@@ -1458,7 +1316,7 @@ export function WorkbenchPage() {
 
   const handlePsalmChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const nextPsalmId = event.target.value;
-    const nextPsalm = selectablePsalms.find((psalm: Psalm) => psalm.psalm_id === nextPsalmId);
+    const nextPsalm = selectablePsalms.find((psalm: PsalmSummary) => psalm.psalm_id === nextPsalmId);
     updateWorkbenchSelection({
       psalmId: nextPsalmId,
       unitId: nextPsalm?.unit_ids[0] ?? null,
@@ -1543,6 +1401,7 @@ export function WorkbenchPage() {
         },
         onSuccess: () => {
           setGuidedDraftText('');
+          setGuidedDraftMetadata(null);
           setGuidedMessage(`Saved proposed ${activeLayer} draft.`);
         },
       },
@@ -1561,9 +1420,15 @@ export function WorkbenchPage() {
           setGuidedMessage(error instanceof Error ? error.message : 'Unable to generate starter.');
         },
         onSuccess: (job) => {
-          const candidateText = job.output?.candidates[0]?.text?.trim() ?? '';
+          const productionReady = job.runtime_metadata.production_ready === true;
+          const candidateText = productionReady ? job.output?.candidates[0]?.text?.trim() ?? '' : '';
           setGuidedDraftText(candidateText);
-          setGuidedMessage(candidateText ? `Generated starter for ${activeLayer}.` : `Generation completed for ${activeLayer}.`);
+          setGuidedDraftMetadata(candidateText ? { layer: job.layer, productionReady } : null);
+          setGuidedMessage(
+            candidateText
+              ? `Generated production-ready starter for ${job.layer}.`
+              : `Generation completed for ${job.layer}, but no production-ready candidate passed the quality filter.`,
+          );
         },
       },
     );
@@ -1857,11 +1722,11 @@ export function WorkbenchPage() {
           <div className="active-verse-selectors">
             <label className="compact-field">
               <span>Psalm</span>
-              <select value={effectivePsalmId ?? ''} onChange={handlePsalmChange} disabled={showStartupDropdownNotice}>
-                {showStartupDropdownNotice ? <option value="">Loading Psalms...</option> : null}
-                {!showStartupDropdownNotice && selectablePsalms.length === 0 ? <option value="">No Psalms available</option> : null}
-                {!showStartupDropdownNotice
-                  ? selectablePsalms.map((psalm: Psalm) => (
+              <select value={effectivePsalmId ?? ''} onChange={handlePsalmChange} disabled={showPsalmDropdownNotice}>
+                {showPsalmDropdownNotice ? <option value="">Loading Psalms...</option> : null}
+                {!showPsalmDropdownNotice && selectablePsalms.length === 0 ? <option value="">No Psalms available</option> : null}
+                {!showPsalmDropdownNotice
+                  ? selectablePsalms.map((psalm: PsalmSummary) => (
                       <option key={psalm.psalm_id} value={psalm.psalm_id}>
                         {psalm.title}
                       </option>
@@ -1871,11 +1736,11 @@ export function WorkbenchPage() {
             </label>
             <label className="compact-field">
               <span>Verse</span>
-              <select value={selectedUnitId ?? ''} onChange={handleUnitChange} disabled={showStartupDropdownNotice || !currentPsalm?.unit_ids.length}>
-                {showStartupDropdownNotice ? <option value="">Loading verses...</option> : null}
-                {!showStartupDropdownNotice && !(currentPsalm?.unit_ids.length ?? 0) ? <option value="">No verses available</option> : null}
-                {!showStartupDropdownNotice
-                  ? currentPsalm?.unit_ids.map((unitIdOption) => (
+              <select value={selectedUnitId ?? ''} onChange={handleUnitChange} disabled={showVerseDropdownNotice || verseUnitIds.length === 0}>
+                {showVerseDropdownNotice ? <option value="">Loading verses...</option> : null}
+                {!showVerseDropdownNotice && verseUnitIds.length === 0 ? <option value="">No verses available</option> : null}
+                {!showVerseDropdownNotice
+                  ? verseUnitIds.map((unitIdOption) => (
                       <option key={unitIdOption} value={unitIdOption}>
                         {unitMap.get(unitIdOption)?.ref ?? unitIdOption}
                       </option>
@@ -1890,9 +1755,13 @@ export function WorkbenchPage() {
         <section className="translation-pane translation-pane--flow compose-panel">
           <VerseFlowCloudPanel
             unit={unit}
+            psalmTitle={visualFlow?.title ?? currentPsalm?.title ?? 'Selected Psalm'}
             currentPsalmUnits={(currentPsalm?.unit_ids ?? [])
               .map((unitIdOption) => unitMap.get(unitIdOption))
               .filter((candidate): candidate is Unit => Boolean(candidate))}
+            correlationRows={visualFlow?.correlation_rows ?? []}
+            correlationSummary={visualFlow?.correlation_summary}
+            workingVerseByUnit={workingVerseByUnit}
             activeLayer={activeLayer}
             literalAidRenderings={literalAidRenderings}
             currentEnglishRenderings={currentEnglishRenderings}
@@ -1921,7 +1790,7 @@ export function WorkbenchPage() {
                 state: workingState?.completed ? 'approved' : hasWork ? 'in-progress' : 'not-started',
               };
             })}
-            generatedLyricText={guidedDraftText}
+            generatedLyricText={guidedDraftMetadata?.productionReady && isLyricFamilyLayer(guidedDraftMetadata.layer) ? guidedDraftText : ''}
             onApplyChoice={handleApplyWorkingChoice}
             onPreviewChoice={handlePreviewWorkingChoice}
             onClearPreview={handleClearWorkingChoicePreview}
@@ -1932,6 +1801,7 @@ export function WorkbenchPage() {
             onNextVerse={() => handleCompleteVerse(true)}
             hasPreviousVerse={Boolean(previousUnitId)}
             hasNextVerse={canAdvanceToNextVerse}
+            onSelectUnit={(unitIdToLoad) => updateWorkbenchSelection({ unitId: unitIdToLoad })}
             onSelectCloudNode={(nodeId) => setSelectedCloudNodeId((existing) => (existing === nodeId ? null : nodeId))}
           />
         </section>
@@ -3064,7 +2934,11 @@ function ClickApprovalFallback({
 
 function VerseFlowCloudPanel({
   unit,
+  psalmTitle,
   currentPsalmUnits,
+  correlationRows,
+  correlationSummary,
+  workingVerseByUnit,
   activeLayer,
   literalAidRenderings,
   currentEnglishRenderings,
@@ -3095,10 +2969,20 @@ function VerseFlowCloudPanel({
   onNextVerse,
   hasPreviousVerse,
   hasNextVerse,
+  onSelectUnit,
   onSelectCloudNode,
 }: {
   unit?: Unit;
+  psalmTitle: string;
   currentPsalmUnits: Unit[];
+  correlationRows: PsalmLyricCorrelationRow[];
+  correlationSummary?: {
+    row_count: number;
+    mapped_row_count: number;
+    source_only_row_count: number;
+    relationship_counts: Record<string, number>;
+  };
+  workingVerseByUnit: Record<string, WorkingVerseState>;
   activeLayer: Layer;
   literalAidRenderings: Rendering[];
   currentEnglishRenderings: Rendering[];
@@ -3134,8 +3018,10 @@ function VerseFlowCloudPanel({
   onNextVerse: () => void;
   hasPreviousVerse: boolean;
   hasNextVerse: boolean;
+  onSelectUnit: (unitId: string) => void;
   onSelectCloudNode: (nodeId: string) => void;
 }) {
+  const [flowMode, setFlowMode] = useState<FlowAnalysisMode>('correlation');
   const deterministicComposer = useMemo(() => (unit ? buildDeterministicComposer(unit) : null), [unit]);
   const phraseSuggestionsQuery = useComposerSuggestions(
     unit?.unit_id ?? null,
@@ -3448,73 +3334,6 @@ function VerseFlowCloudPanel({
     levelHint: 'lyric' as const,
   }));
 
-  const spanKeyForChoice = (choice: ComposerChoice) => `${choice.tokenStart ?? -1}:${choice.tokenEnd ?? choice.tokenStart ?? -1}`;
-  const deterministicPhraseBySpan = new Map(deterministicPhraseChoices.map((choice) => [spanKeyForChoice(choice), choice]));
-  const deterministicIdeaBySpan = new Map(deterministicIdeaChoices.map((choice) => [spanKeyForChoice(choice), choice]));
-  const deterministicLyricBySpan = new Map(deterministicLyricChoices.map((choice) => [spanKeyForChoice(choice), choice]));
-
-  const buildOfflineGeneratedChoices = (
-    level: ComposerChoiceLevel,
-    seeds: ComposerChoice[],
-    variantBuilder: (
-      seed: ComposerChoice,
-      related: { phrase?: ComposerChoice; idea?: ComposerChoice; lyric?: ComposerChoice },
-      spanTokens: Token[],
-    ) => OfflineComposerVariant[],
-    labelPrefix: string,
-    idPrefix: string,
-  ): ComposerChoice[] => seeds.flatMap((seed) => {
-    const spanKey = spanKeyForChoice(seed);
-    const related = {
-      phrase: deterministicPhraseBySpan.get(spanKey),
-      idea: deterministicIdeaBySpan.get(spanKey),
-      lyric: deterministicLyricBySpan.get(spanKey),
-    };
-    const spanStart = seed.tokenStart ?? 0;
-    const spanEnd = seed.tokenEnd ?? seed.tokenStart ?? 0;
-    const spanTokens = unit.tokens.slice(spanStart, spanEnd + 1);
-    const seen = new Set<string>();
-    return variantBuilder(seed, related, spanTokens)
-      .map((variant) => {
-        const variantText = typeof variant === 'string' ? variant : variant.text;
-        return {
-          text: level === 'lyric' ? sentenceCasePoeticText(variantText) : sentenceCase(normalizeComposerText(variantText)),
-          differentiator: typeof variant === 'string' ? undefined : variant.differentiator,
-          deliveryProfile: typeof variant === 'string' ? undefined : variant.deliveryProfile,
-          sourceAnchor: typeof variant === 'string' ? undefined : variant.sourceAnchor,
-          variationBasis: typeof variant === 'string' ? undefined : variant.variationBasis,
-          driftFlags: typeof variant === 'string' ? undefined : variant.driftFlags,
-        };
-      })
-      .filter((variant) => {
-        const key = normalizeComposerText(variant.text).toLowerCase();
-        if (!key || seen.has(key)) {
-          return false;
-        }
-        seen.add(key);
-        return true;
-      })
-      .map((variant, index) =>
-        createRangeChoice(
-          level,
-          `${level}-offline-${idPrefix}-${seed.id}-${index + 1}`,
-          variant.text,
-          seed.tokenStart ?? 0,
-          seed.tokenEnd ?? seed.tokenStart ?? 0,
-          compactMetaParts([
-            labelPrefix,
-            variant.deliveryProfile,
-            variant.sourceAnchor ? `anchor: ${variant.sourceAnchor}` : null,
-            variant.variationBasis?.length ? `basis: ${variant.variationBasis.join(', ')}` : null,
-            variant.differentiator,
-            variant.driftFlags?.length ? `flags: ${variant.driftFlags.join(', ')}` : null,
-            'local fallback',
-            'composer offline',
-          ]),
-        ),
-      );
-  });
-
   const buildGeneratedChoices = (
     level: ComposerChoiceLevel,
     response: ComposerSuggestionQueryData | undefined,
@@ -3539,6 +3358,8 @@ function VerseFlowCloudPanel({
           labelPrefix,
           translationBasisLabel(candidate.translation_basis?.basis_type),
           formatDeliveryProfile(candidate.delivery_profile),
+          formatProductionQualityScore(candidate.metrics?.production_quality_score),
+          formatQualityFilter(chunk.quality_filter),
           candidate.source_anchor?.anchor_text ? `anchor: ${candidate.source_anchor.anchor_text}` : null,
           candidate.variation_basis?.length ? `basis: ${candidate.variation_basis.join(', ')}` : null,
           candidate.differentiator,
@@ -3572,33 +3393,10 @@ function VerseFlowCloudPanel({
       return createRangeChoice('idea', `flow-concept-${rendering.rendering_id}`, sentenceCase(normalizeComposerText(rendering.text)), range.start, range.end, `${rendering.status} concept aid`);
     }),
   ]);
-  const conceptGenerationUnavailable = groundedConceptSuggestionsQuery.data?.available === false && readerConceptSuggestionsQuery.data?.available === false;
-  const offlineGeneratedConceptChoices = conceptGenerationUnavailable
-    ? buildOfflineGeneratedChoices(
-      'idea',
-      deterministicIdeaChoices,
-      (seed, related, spanTokens) => {
-        const superscriptionVariants = superscriptionConceptVariants(spanTokens, seed.text);
-        if (superscriptionVariants.length > 0) {
-          return superscriptionVariants;
-        }
-        if (spanTokens.length <= 3 && looksLikeBlessingSeed(spanTokens, seed.text)) {
-          return shortBlessingConceptVariants(spanTokens);
-        }
-        const directSeed = resolveSlashGloss(seed.text, 'second');
-        const alternateSeed = resolveSlashGloss(seed.text, 'first');
-        const phraseSeed = resolveSlashGloss(related.phrase?.text ?? seed.text, 'second');
-        const lyricSeed = resolveSlashGloss(related.lyric?.text ?? related.phrase?.text ?? seed.text, 'first');
-        return [
-          groundedFallbackConceptText(directSeed),
-          readerFallbackConceptText(lyricSeed),
-          compressedFallbackConceptText(phraseSeed),
-        ];
-      },
-      'concept fallback',
-      'concept',
-    )
-    : [];
+  const conceptGenerationUnavailable = isComposerSuggestionUnavailable(groundedConceptSuggestionsQuery.data)
+    && isComposerSuggestionUnavailable(readerConceptSuggestionsQuery.data);
+  const conceptGenerationRejected = isComposerSuggestionRejected(groundedConceptSuggestionsQuery.data)
+    && isComposerSuggestionRejected(readerConceptSuggestionsQuery.data);
 
   const generatedConceptChoices = limitComposerChoicesPerSpan(dedupeComposerChoices([
     ...buildGeneratedChoices(
@@ -3615,7 +3413,6 @@ function VerseFlowCloudPanel({
       GENERATIVE_CONCEPT_LANE_PROFILES[1].labelPrefix,
       GENERATIVE_CONCEPT_LANE_PROFILES[1].key,
     ),
-    ...offlineGeneratedConceptChoices,
   ]), 4);
 
   const lyricChoices = dedupeComposerChoices([
@@ -3640,32 +3437,10 @@ function VerseFlowCloudPanel({
       hit.scope === 'same_psalm' ? 'same-psalm witness' : 'cross-psalm witness',
     )),
   ]);
-  const lyricGenerationUnavailable = groundedLyricSuggestionsQuery.data?.available === false && readerLyricSuggestionsQuery.data?.available === false;
-  const offlineGeneratedLyricChoices = lyricGenerationUnavailable
-    ? buildOfflineGeneratedChoices(
-      'lyric',
-      deterministicLyricChoices,
-      (seed, related, spanTokens) => {
-        const superscriptionVariants = superscriptionLyricVariants(spanTokens, seed.text);
-        if (superscriptionVariants.length > 0) {
-          return superscriptionVariants;
-        }
-        if (spanTokens.length <= 3 && looksLikeBlessingSeed(spanTokens, seed.text)) {
-          return shortBlessingLyricVariants(spanTokens);
-        }
-        const directSeed = resolveSlashGloss(seed.text, 'second');
-        const ideaSeed = resolveSlashGloss(related.idea?.text ?? seed.text, 'first');
-        const alternateIdeaSeed = resolveSlashGloss(related.idea?.text ?? related.phrase?.text ?? seed.text, 'second');
-        return [
-          groundedFallbackLyricText(directSeed),
-          readerFallbackLyricText(ideaSeed),
-          groundedFallbackLyricText(alternateIdeaSeed),
-        ];
-      },
-      'rhythm fallback',
-      'lyric',
-    )
-    : [];
+  const lyricGenerationUnavailable = isComposerSuggestionUnavailable(groundedLyricSuggestionsQuery.data)
+    && isComposerSuggestionUnavailable(readerLyricSuggestionsQuery.data);
+  const lyricGenerationRejected = isComposerSuggestionRejected(groundedLyricSuggestionsQuery.data)
+    && isComposerSuggestionRejected(readerLyricSuggestionsQuery.data);
 
   const generatedLyricChoices = limitComposerChoicesPerSpan(dedupeComposerChoices([
     ...buildGeneratedChoices(
@@ -3685,9 +3460,22 @@ function VerseFlowCloudPanel({
     ...(generatedLyricText.trim()
       ? [createRangeChoice('lyric', 'flow-generated-rhythm', sentenceCasePoeticText(generatedLyricText), 0, tokenColumns - 1, 'guided generated rhythm')]
       : []),
-    ...offlineGeneratedLyricChoices,
   ]), 4);
   const defaultOutputPreviewChoices = generatedLyricChoices.length > 0 ? generatedLyricChoices : lyricChoices;
+  const generatedConceptLaneTitle = generatedConceptChoices.length > 0
+    ? 'Model-generated concept alternates'
+    : conceptGenerationUnavailable
+      ? 'Model-generated concept alternates unavailable; local fallbacks are not shown in this lane'
+      : conceptGenerationRejected
+        ? 'Model returned no production-ready concept candidates'
+        : 'Model-generated concept alternates';
+  const generatedLyricLaneTitle = generatedLyricChoices.length > 0
+    ? 'Model-generated rhythmic alternates'
+    : lyricGenerationUnavailable
+      ? 'Model-generated rhythmic alternates unavailable; local fallbacks are not shown in this lane'
+      : lyricGenerationRejected
+        ? 'Model returned no production-ready rhythmic candidates'
+        : 'Model-generated rhythmic alternates';
 
   const selectedOutputText = currentWorkingPath.length > 0
     ? assembleComposerText(currentWorkingPath, activeLayer)
@@ -3869,12 +3657,31 @@ function VerseFlowCloudPanel({
         </button>
         <div className="flow-stage-bar__center">
           <div className="flow-stage-bar__title">
-            <p className="eyebrow">Bubble Flow</p>
-            <h3>{unit.ref}</h3>
+            <p className="eyebrow">{flowMode === 'correlation' ? 'Lyric Correlation' : 'Bubble Flow'}</p>
+            <h3>{flowMode === 'correlation' ? psalmTitle : unit.ref}</h3>
             <span className="tag">verse {currentVerseIndex >= 0 ? currentVerseIndex + 1 : 1} / {Math.max(totalVerses, 1)}</span>
           </div>
           <div className="flow-stage-bar__meta">
-            <span className="tag">cursor {currentCursorTokenIndex + 1} / {tokenColumns}</span>
+            <div className="flow-mode-toggle" aria-label="Flow analysis mode">
+              <button
+                type="button"
+                className={`tab ${flowMode === 'correlation' ? 'active' : ''}`}
+                onClick={() => setFlowMode('correlation')}
+              >
+                Correlation
+              </button>
+              <button
+                type="button"
+                className={`tab ${flowMode === 'builder' ? 'active' : ''}`}
+                onClick={() => setFlowMode('builder')}
+              >
+                Builder
+              </button>
+            </div>
+            {flowMode === 'builder' ? <span className="tag">cursor {currentCursorTokenIndex + 1} / {tokenColumns}</span> : null}
+            {flowMode === 'correlation' && correlationSummary ? (
+              <span className="tag">{correlationSummary.mapped_row_count} / {correlationSummary.row_count} mapped</span>
+            ) : null}
             <span className="tag">layer: {activeLayer}</span>
             <button
               type="button"
@@ -3913,7 +3720,15 @@ function VerseFlowCloudPanel({
         </button>
       </div>
 
-      <div className="flow-diagram-scroll">
+      {flowMode === 'correlation' ? (
+        <PsalmLyricCorrelationPanel
+          rows={correlationRows}
+          selectedUnitId={unit.unit_id}
+          workingVerseByUnit={workingVerseByUnit}
+          onSelectUnit={onSelectUnit}
+        />
+      ) : (
+        <div className="flow-diagram-scroll">
         <div className="flow-diagram" style={{ minWidth: `${Math.max(980, tokenColumns * 118 + 128)}px` }}>
           <div className="flow-lane-labels" aria-hidden="true">
             <div className="flow-lane-label">Word</div>
@@ -3924,9 +3739,9 @@ function VerseFlowCloudPanel({
             ))}
             <div className="flow-lane-label">Phrase</div>
             <div className="flow-lane-label">Concept</div>
-            <div className="flow-lane-label" title="Model-generated concept alternates">Gen Concept</div>
+            <div className="flow-lane-label" title={generatedConceptLaneTitle}>Gen Concept</div>
             <div className="flow-lane-label">Rhythmic</div>
-            <div className="flow-lane-label" title="Model-generated rhythmic alternates">Gen Rhythm</div>
+            <div className="flow-lane-label" title={generatedLyricLaneTitle}>Gen Rhythm</div>
             <div className="flow-lane-label">Output</div>
           </div>
           <div className="flow-lane-canvas">
@@ -3964,7 +3779,8 @@ function VerseFlowCloudPanel({
             {renderFlowLane(outputBubbles)}
           </div>
         </div>
-      </div>
+        </div>
+      )}
 
       {previewExplication ? (
         <article className="hover-explication-card">
@@ -4056,6 +3872,114 @@ function VerseFlowCloudPanel({
           ) : null}
         </article>
       ) : null}
+    </section>
+  );
+}
+
+function formatCorrelationPercent(score: number): string {
+  return `${Math.round(score * 100)}% overlap`;
+}
+
+function PsalmLyricCorrelationPanel({
+  rows,
+  selectedUnitId,
+  workingVerseByUnit,
+  onSelectUnit,
+}: {
+  rows: PsalmLyricCorrelationRow[];
+  selectedUnitId: string | null;
+  workingVerseByUnit: Record<string, WorkingVerseState>;
+  onSelectUnit: (unitId: string) => void;
+}) {
+  if (rows.length === 0) {
+    return (
+      <section className="correlation-panel">
+        <p className="empty-state">No Psalm-level correlation rows are available for this selection.</p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="correlation-panel" aria-label="Hebrew to lyric correlation">
+      <div className="correlation-panel__header">
+        <div>
+          <h3>Hebrew (MT) -&gt; lyric correlation</h3>
+          <p>MT source, close public-domain witness text, relationship classification, and local lyric or working-draft arrangement.</p>
+        </div>
+        <div className="correlation-panel__count">
+          <strong>{rows.length}</strong>
+          <span>passage ranges</span>
+        </div>
+      </div>
+
+      <div className="correlation-legend" aria-label="Correlation relationship legend">
+        {CORRELATION_LEGEND.map((item) => (
+          <span key={item.kind} className={`correlation-legend__item correlation-legend__item--${item.kind}`}>
+            <i aria-hidden="true" />
+            {item.label}
+          </span>
+        ))}
+      </div>
+
+      <div className="correlation-table" role="table" aria-label="Psalm translation correlation">
+        <div className="correlation-table__head" role="row">
+          <span role="columnheader">Masoretic Hebrew</span>
+          <span role="columnheader">Relationship</span>
+          <span role="columnheader">Song text / arrangement</span>
+        </div>
+        {rows.map((row) => {
+          const draftTexts = row.source_unit_ids
+            .map((unitId) => workingVerseByUnit[unitId]?.workingText?.trim())
+            .filter((text): text is string => Boolean(text));
+          const arrangementText = draftTexts.length > 0
+            ? draftTexts.join('\n')
+            : row.lyric_text || row.source_scaffold_text;
+          const arrangementSource = draftTexts.length > 0
+            ? 'working draft'
+            : row.lyric_text
+              ? compactMetaParts([row.lyric_layer, row.lyric_status])
+              : 'source scaffold';
+          const active = Boolean(selectedUnitId && row.source_unit_ids.includes(selectedUnitId));
+          const firstUnitId = row.source_unit_ids[0];
+
+          return (
+            <div
+              key={row.row_id}
+              className={`correlation-row correlation-row--${row.relationship_kind} ${active ? 'active' : ''}`}
+              role="row"
+            >
+              <button
+                type="button"
+                className="correlation-source-cell"
+                onClick={() => firstUnitId ? onSelectUnit(firstUnitId) : undefined}
+              >
+                <strong>{row.ref} · {row.section_label}</strong>
+                <span className="correlation-source-cell__refs">{row.source_refs.join(' · ')}</span>
+                <span className="correlation-hebrew" dir="rtl" lang="he">{row.source_hebrew}</span>
+                <span className="correlation-close-english">
+                  <em>{row.source_english_label}</em>
+                  {row.source_close_english}
+                </span>
+              </button>
+
+              <div className="correlation-relationship-cell">
+                <div className="correlation-relationship-line" aria-hidden="true" />
+                <strong>{row.relationship_label}</strong>
+                <span>{row.relationship_note}</span>
+                {row.lyric_text ? <small>{formatCorrelationPercent(row.overlap_score)}</small> : null}
+              </div>
+
+              <div className="correlation-song-cell">
+                <div className="horizontal-between">
+                  <h4>{row.arrangement_label}</h4>
+                  <span className="tag">{arrangementSource || 'draft'}</span>
+                </div>
+                <p>{arrangementText || 'No local lyric text recorded.'}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

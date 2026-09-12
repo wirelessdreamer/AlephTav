@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import sqlite3
+import zipfile
 from copy import deepcopy
 from functools import lru_cache
 from pathlib import Path
-import re
 from typing import Any
-import zipfile
 
 from app.core.config import get_settings
 from app.core.errors import NotFoundError
@@ -395,6 +396,108 @@ def list_psalm_ids() -> list[str]:
     return sorted(path.name for path in get_settings().psalms_dir.iterdir() if path.is_dir())
 
 
+SUMMARY_CACHE_FILENAME = "psalm_summaries.json"
+LAYERS_CACHE_FILENAME = "corpus_layers.json"
+
+# In-memory mirrors of the on-disk summary caches. ``None`` means "not yet
+# loaded this process"; an empty list is a legitimate cache value (e.g. on a
+# fresh repo before ``build_indexes.py`` has run).
+_summary_cache: list[dict[str, Any]] | None = None
+_layers_cache: list[str] | None = None
+
+
+def _summary_cache_path() -> Path:
+    return get_settings().caches_dir / SUMMARY_CACHE_FILENAME
+
+
+def _layers_cache_path() -> Path:
+    return get_settings().caches_dir / LAYERS_CACHE_FILENAME
+
+
+def _compute_psalm_summaries() -> list[dict[str, Any]]:
+    """Walk the filesystem to produce slim summaries. Slow — cache the output."""
+    summaries: list[dict[str, Any]] = []
+    for psalm_id in list_psalm_ids():
+        meta_path = psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+        if not meta_path.exists():
+            continue
+        meta = read_json(meta_path)
+        summaries.append(
+            {
+                "psalm_id": meta.get("psalm_id", psalm_id),
+                "title": meta.get("title", ""),
+                "unit_ids": list(meta.get("unit_ids", []) or []),
+            }
+        )
+    return summaries
+
+
+def _compute_corpus_layers() -> list[str]:
+    """Query SQLite for distinct rendering layer names. Slow — cache the output."""
+    from app.db.session import get_connection  # local import to avoid cycle
+
+    settings = get_settings()
+    if not settings.db_path.exists():
+        return []
+    connection = get_connection()
+    try:
+        rows = connection.execute("SELECT DISTINCT layer FROM rendering_index").fetchall()
+    except sqlite3.OperationalError:
+        return []
+    finally:
+        connection.close()
+    return [row["layer"] for row in rows if row["layer"]]
+
+
+def build_summary_cache() -> dict[str, int]:
+    """Compute and persist the slim psalm summary + corpus layer caches.
+
+    Writes ``data/derived/caches/psalm_summaries.json`` and ``corpus_layers.json``
+    and refreshes the in-memory mirrors. Invoked from
+    ``concordance_service.rebuild_indexes`` so any run of ``scripts/build_indexes.py``
+    refreshes the cache for free.
+    """
+    global _summary_cache, _layers_cache
+    summaries = _compute_psalm_summaries()
+    layers = _compute_corpus_layers()
+    write_json(_summary_cache_path(), summaries)
+    write_json(_layers_cache_path(), layers)
+    _summary_cache = summaries
+    _layers_cache = layers
+    return {"psalms": len(summaries), "layers": len(layers)}
+
+
+def invalidate_summary_cache() -> None:
+    """Drop the in-memory + on-disk summary caches. Call after content wipes."""
+    global _summary_cache, _layers_cache
+    _summary_cache = None
+    _layers_cache = None
+    _summary_cache_path().unlink(missing_ok=True)
+    _layers_cache_path().unlink(missing_ok=True)
+
+
+def list_psalm_summaries() -> list[dict[str, Any]]:
+    """Return the slim psalm summary list, served from the build-once cache.
+
+    Resolution order (fastest → slowest):
+      1. In-memory module cache (set by startup hook or a prior request).
+      2. On-disk cache file (``data/derived/caches/psalm_summaries.json``)
+         populated by ``build_summary_cache`` during index build.
+      3. Compute on demand and persist for next time (cold-start fallback).
+    """
+    global _summary_cache
+    if _summary_cache is not None:
+        return _summary_cache
+    cache_path = _summary_cache_path()
+    if cache_path.exists():
+        loaded = read_json(cache_path)
+        if isinstance(loaded, list):
+            _summary_cache = loaded
+            return _summary_cache
+    build_summary_cache()
+    return _summary_cache or []
+
+
 def list_unit_paths() -> list[Path]:
     return sorted(get_settings().psalms_dir.glob("ps*/ps*.json"))
 
@@ -525,3 +628,24 @@ def audit_licenses() -> dict[str, Any]:
     evaluations = [evaluate_manifest(entry) for entry in manifests]
     status = "ok" if all(item["allowed"] for item in evaluations) else "error"
     return {"status": status, "evaluations": evaluations}
+
+
+def get_corpus_layers() -> list[str]:
+    """Return distinct rendering layer names, served from the build-once cache.
+
+    Same resolution order as :func:`list_psalm_summaries`: in-memory →
+    on-disk JSON cache → compute (which runs ``SELECT DISTINCT layer FROM
+    rendering_index``). The cache is rebuilt by :func:`build_summary_cache`,
+    which fires at the end of ``concordance_service.rebuild_indexes``.
+    """
+    global _layers_cache
+    if _layers_cache is not None:
+        return _layers_cache
+    cache_path = _layers_cache_path()
+    if cache_path.exists():
+        loaded = read_json(cache_path)
+        if isinstance(loaded, list):
+            _layers_cache = [str(item) for item in loaded]
+            return _layers_cache
+    build_summary_cache()
+    return _layers_cache or []

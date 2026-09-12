@@ -9,7 +9,8 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-TEST_ROOT = Path(os.environ.get("ALEPHTAV_TEST_ROOT", Path(tempfile.gettempdir()) / "alephtav-pytest-workspace")).resolve()
+TEST_WORKSPACE = Path(tempfile.gettempdir()) / "alephtav-pytest-workspace"
+TEST_ROOT = Path(os.environ.get("ALEPHTAV_TEST_ROOT", TEST_WORKSPACE)).resolve()
 
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -30,11 +31,20 @@ def _link_or_copy(source: Path, target: Path) -> None:
             shutil.copy2(source, target)
 
 
+def _copy_tree(source: Path, target: Path) -> None:
+    if target.is_symlink() or target.is_file():
+        target.unlink()
+    elif target.exists():
+        shutil.rmtree(target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(source, target)
+
+
 TEST_ROOT.mkdir(parents=True, exist_ok=True)
 _link_or_copy(ROOT / "schemas", TEST_ROOT / "schemas")
-_link_or_copy(ROOT / "data" / "raw", TEST_ROOT / "data" / "raw")
+_copy_tree(ROOT / "data" / "raw", TEST_ROOT / "data" / "raw")
 
-from tests.support import bootstrap_fixture_repo
+from tests.support import bootstrap_fixture_repo  # noqa: E402
 
 
 @pytest.fixture(autouse=True)

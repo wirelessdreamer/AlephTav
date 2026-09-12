@@ -7,8 +7,20 @@ from app.core.errors import GenerationError
 from app.llm.base import GenerationResponse
 from app.services import registry_service, settings_service
 
-
 client = TestClient(app)
+
+
+def _source_anchor(
+    source_language: str = "he",
+    anchor_text: str = "fixture",
+    source_text: str = "fixture source",
+) -> dict:
+    return {
+        "anchor_text": anchor_text,
+        "source_language": source_language,
+        "source_text": source_text,
+        "basis_note": "Fixture source anchor",
+    }
 
 
 class FakeAdapter:
@@ -31,17 +43,40 @@ class FakeAdapter:
                         "rationale": f"{layer} rationale {index + 1}",
                         "alignment_hints": [f"aln.{unit_id}.{layer}.{index + 1:04d}"],
                         "drift_flags": [],
-                        "metrics": {"syllables": 4 + index, "grounding_score": 0.9 - (index * 0.05)},
-                        "variation_basis": ["source_grounded_rendering" if index == 0 else "cadence_or_emphasis_shift"],
-                        "preserved_source_images": [{"label": "heavens" if index == 0 else "glory", "source_id": "uxlc"}],
-                        "differentiator": "best grounded English" if index == 0 else "alternate emphasis",
+                        "metrics": {
+                            "syllables": 4 + index,
+                            "grounding_score": 0.9 - (index * 0.05),
+                        },
+                        "variation_basis": [
+                            "source_grounded_rendering"
+                            if index == 0
+                            else "cadence_or_emphasis_shift"
+                        ],
+                        "preserved_source_images": [
+                            {"label": "heavens" if index == 0 else "glory", "source_id": "uxlc"}
+                        ],
+                        "differentiator": "best grounded English"
+                        if index == 0
+                        else "alternate emphasis",
                         "grounding_confidence": 0.9 - (index * 0.05),
+                        "delivery_profile": "source_grounded_phrase",
+                        "source_anchor": _source_anchor(
+                            "he" if index == 0 else "grc",
+                            anchor_text="heavens" if index == 0 else "glory",
+                            source_text="הַשָּׁמַיִם" if index == 0 else "Οἱ οὐρανοὶ",
+                        ),
                         "translation_basis": {
-                            "basis_type": "hebrew_to_english" if index == 0 else "septuagint_greek_to_english",
-                            "source_ids": ["uxlc", "oshb", "macula"] if index == 0 else ["lxx", "macula"],
+                            "basis_type": "hebrew_to_english"
+                            if index == 0
+                            else "septuagint_greek_to_english",
+                            "source_ids": ["uxlc", "oshb", "macula"]
+                            if index == 0
+                            else ["lxx", "macula"],
                             "source_language": "he" if index == 0 else "grc",
                             "source_version": "fixture-2026.04",
-                            "basis_note": "Fixture Hebrew basis" if index == 0 else "Fixture Septuagint basis",
+                            "basis_note": "Fixture Hebrew basis"
+                            if index == 0
+                            else "Fixture Septuagint basis",
                         },
                     }
                     for index in range(candidate_count)
@@ -76,7 +111,9 @@ class FakeAssistantAdapter:
             payload = {
                 "reply": "Opening compare mode.",
                 "speakable_text": "Opening compare mode.",
-                "tool_calls": [{"action_id": "workbench.set_drawer_tab", "input": {"tab": "compare"}}],
+                "tool_calls": [
+                    {"action_id": "workbench.set_drawer_tab", "input": {"tab": "compare"}}
+                ],
             }
         else:
             payload = {
@@ -140,7 +177,9 @@ class FakeComposerAdapter:
                                 "drift_flags": ["low-confidence"],
                                 "metrics": {"confidence": 0.66, "grounding_score": 0.72},
                                 "variation_basis": ["symbolic_recast"],
-                                "preserved_source_images": [{"label": "darkness", "source_id": "lxx"}],
+                                "preserved_source_images": [
+                                    {"label": "darkness", "source_id": "lxx"}
+                                ],
                                 "differentiator": "Septuagint pressure",
                                 "grounding_confidence": 0.72,
                                 "translation_basis": {
@@ -177,8 +216,13 @@ def test_health_and_project_endpoints() -> None:
     assert project.json()["project_id"] == "proj.main"
 
 
-def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.assistant_service.build_adapter", lambda profile: FakeAssistantAdapter(profile))
+def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(
+    monkeypatch,
+) -> None:
+    monkeypatch.setattr(
+        "app.services.assistant_service.build_adapter",
+        lambda profile: FakeAssistantAdapter(profile),
+    )
     settings_service.update_settings({"assistant": {"model_profile_id": "demo-local"}})
 
     tools = client.get("/assistant/tools")
@@ -201,10 +245,16 @@ def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(
 
     compare_tab = client.post(
         f"/assistant/sessions/{session_id}/messages",
-        json={"message": "Open the compare tab", "context": {"route": "workbench", "ui": {"drawerTab": "workflow"}}},
+        json={
+            "message": "Open the compare tab",
+            "context": {"route": "workbench", "ui": {"drawerTab": "workflow"}},
+        },
     )
     assert compare_tab.status_code == 200
-    assert compare_tab.json()["message"]["client_actions"][0]["action_id"] == "workbench.set_drawer_tab"
+    assert (
+        compare_tab.json()["message"]["client_actions"][0]["action_id"]
+        == "workbench.set_drawer_tab"
+    )
 
     read_result = client.post(
         f"/assistant/sessions/{session_id}/messages",
@@ -349,7 +399,9 @@ def test_advanced_search_can_include_witness_namespace_without_mixing_it() -> No
 
 
 def test_advanced_search_and_preset_views_return_navigation_targets() -> None:
-    search_response = client.get("/search/advanced", params={"query": "declaring", "scope": "english_renderings"})
+    search_response = client.get(
+        "/search/advanced", params={"query": "declaring", "scope": "english_renderings"}
+    )
     assert search_response.status_code == 200
     assert search_response.json()[0]["unit_id"] == "ps019.v001.a"
     assert search_response.json()[0]["kind"] == "rendering"
@@ -374,7 +426,10 @@ def test_unit_witness_endpoint_returns_isolated_metadata() -> None:
 
 
 def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FakeComposerAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.composer_suggestion_service.build_adapter",
+        lambda profile: FakeComposerAdapter(profile),
+    )
 
     response = client.post(
         "/units/ps001.v001.a/composer-suggestions",
@@ -401,16 +456,37 @@ def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch)
     assert payload["stage"] == "phrase"
     assert payload["available"] is True
     assert payload["chunks"][0]["chunk_id"] == "chunk-1"
+    assert payload["chunks"][0]["quality_filter"] == {
+        "threshold": 0.85,
+        "candidate_count_before_filter": 2,
+        "surfaceable_candidate_count": 2,
+        "suppressed_candidate_count": 0,
+        "production_ready": True,
+        "rejection_reason": None,
+        "fallback_used": False,
+        "seed_match_used": False,
+    }
     assert payload["chunks"][0]["candidates"][0]["text"] == "phrase option 1"
     assert payload["chunks"][0]["candidates"][1]["drift_flags"] == ["low-confidence"]
-    assert payload["chunks"][0]["candidates"][0]["translation_basis"]["basis_type"] == "hebrew_to_english"
-    assert payload["chunks"][0]["candidates"][1]["translation_basis"]["basis_type"] == "septuagint_greek_to_english"
+    assert (
+        payload["chunks"][0]["candidates"][0]["translation_basis"]["basis_type"]
+        == "hebrew_to_english"
+    )
+    assert (
+        payload["chunks"][0]["candidates"][1]["translation_basis"]["basis_type"]
+        == "septuagint_greek_to_english"
+    )
     assert payload["chunks"][0]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
-    assert payload["chunks"][0]["candidates"][0]["source_anchor"]["anchor_text"] == "Blessed the man"
+    assert (
+        payload["chunks"][0]["candidates"][0]["source_anchor"]["anchor_text"] == "Blessed the man"
+    )
 
 
 def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FakeComposerAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.composer_suggestion_service.build_adapter",
+        lambda profile: FakeComposerAdapter(profile),
+    )
 
     response = client.post(
         "/units/ps001.v001.a/composer-suggestions",
@@ -434,12 +510,27 @@ def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
 
     assert response.status_code == 200
     payload = response.json()
+    assert payload["chunks"][0]["quality_filter"] == {
+        "threshold": 0.85,
+        "candidate_count_before_filter": 1,
+        "surfaceable_candidate_count": 1,
+        "suppressed_candidate_count": 0,
+        "production_ready": True,
+        "rejection_reason": None,
+        "fallback_used": False,
+        "seed_match_used": False,
+    }
     candidate = payload["chunks"][0]["candidates"][0]
     assert candidate["text"] == "phrase option 2"
     assert candidate["rationale"] == "phrase rationale 2"
     assert candidate["alignment_hints"] == ["seed-2"]
     assert candidate["drift_flags"] == ["low-confidence"]
-    assert candidate["metrics"] == {"confidence": 0.66, "distinctness_score": 1.0, "grounding_score": 0.72}
+    assert candidate["metrics"] == {
+        "confidence": 0.66,
+        "distinctness_score": 1.0,
+        "grounding_score": 0.72,
+        "production_quality_score": 1.0,
+    }
     assert candidate["variation_basis"] == ["symbolic_recast"]
     assert candidate["preserved_source_images"] == [{"label": "darkness", "source_id": "lxx"}]
     assert candidate["differentiator"] == "Septuagint pressure"
@@ -457,7 +548,10 @@ def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
 
 
 def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.composer_suggestion_service.build_adapter", lambda profile: FailingComposerAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.composer_suggestion_service.build_adapter",
+        lambda profile: FailingComposerAdapter(profile),
+    )
 
     response = client.post(
         "/units/ps001.v001.a/composer-suggestions",
@@ -482,6 +576,7 @@ def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatc
         "unit_id": "ps001.v001.a",
         "stage": "lyric",
         "available": False,
+        "status": "unavailable",
         "chunks": [],
     }
 
@@ -489,14 +584,24 @@ def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatc
 def test_alternates_endpoints_support_filters_and_lifecycle_actions() -> None:
     list_response = client.get(
         "/units/ps023.v001.a/alternates",
-        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "false"},
+        params={
+            "layer": "lyric",
+            "style_filter": "best_meter_fit",
+            "release_approved_only": "false",
+        },
     )
     assert list_response.status_code == 200
-    assert [item["rendering_id"] for item in list_response.json()] == ["rnd.ps023.v001.a.lyric.alt.0001"]
+    assert [item["rendering_id"] for item in list_response.json()] == [
+        "rnd.ps023.v001.a.lyric.alt.0001"
+    ]
 
     approved_only = client.get(
         "/units/ps023.v001.a/alternates",
-        params={"layer": "lyric", "style_filter": "best_meter_fit", "release_approved_only": "true"},
+        params={
+            "layer": "lyric",
+            "style_filter": "best_meter_fit",
+            "release_approved_only": "true",
+        },
     )
     assert approved_only.status_code == 200
     assert approved_only.json() == []
@@ -548,7 +653,9 @@ def test_compare_endpoint_supports_cross_layer_selection() -> None:
 
 
 def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile)
+    )
 
     payload = {
         "unit_id": "ps019.v001.a",
@@ -565,13 +672,30 @@ def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None
     assert first.json()["job_id"] == second.json()["job_id"]
     assert first.json()["input_hash"] == second.json()["input_hash"]
     assert first.json()["runtime_metadata"]["candidate_count"] == 2
+    assert first.json()["runtime_metadata"]["production_ready"] is True
     assert len(first.json()["output"]["candidates"]) == 2
-    assert first.json()["output"]["candidates"][0]["translation_basis"]["basis_type"] == "hebrew_to_english"
-    assert first.json()["output"]["candidates"][1]["translation_basis"]["basis_type"] == "septuagint_greek_to_english"
+    assert (
+        first.json()["output"]["candidates"][0]["translation_basis"]["basis_type"]
+        == "hebrew_to_english"
+    )
+    assert (
+        first.json()["output"]["candidates"][1]["translation_basis"]["basis_type"]
+        == "septuagint_greek_to_english"
+    )
+    assert first.json()["output"]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
+    assert first.json()["output"]["candidates"][0]["source_anchor"]["source_language"] == "he"
+    assert first.json()["output"]["candidates"][0]["source_anchor"]["source_text"]
+    assert first.json()["output"]["candidates"][1]["source_anchor"]["source_language"] == "grc"
 
     unit = registry_service.load_unit("ps019.v001.a")
-    phrase_renderings = [item for item in unit["renderings"] if item["layer"] == "phrase" and item["status"] == "proposed"]
+    phrase_renderings = [
+        item
+        for item in unit["renderings"]
+        if item["layer"] == "phrase" and item["status"] == "proposed"
+    ]
     assert len(phrase_renderings) == 2
+    assert phrase_renderings[0]["delivery_profile"] == "source_grounded_phrase"
+    assert phrase_renderings[0]["source_anchor"]["source_language"] == "he"
 
 
 def test_alternates_endpoint_can_filter_by_basis() -> None:
@@ -619,7 +743,9 @@ def test_alternates_endpoint_can_filter_by_basis() -> None:
 
 
 def test_rerun_invalidates_downstream_without_touching_locked_upstream(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile)
+    )
 
     response = client.post(
         "/jobs/job.placeholder/retry",
@@ -636,13 +762,21 @@ def test_rerun_invalidates_downstream_without_touching_locked_upstream(monkeypat
     assert "rnd.ps001.v001.a.lyric.alt.0001" in body["runtime_metadata"]["downstream_invalidated"]
 
     unit = registry_service.load_unit("ps001.v001.a")
-    assert any(item["rendering_id"] == "rnd.ps001.v001.a.gloss.can.0001" for item in unit["renderings"])
-    assert not any(item["rendering_id"] == "rnd.ps001.v001.a.lyric.alt.0001" for item in unit["renderings"])
-    assert any(item["layer"] == "literal" and item["status"] == "proposed" for item in unit["renderings"])
+    assert any(
+        item["rendering_id"] == "rnd.ps001.v001.a.gloss.can.0001" for item in unit["renderings"]
+    )
+    assert not any(
+        item["rendering_id"] == "rnd.ps001.v001.a.lyric.alt.0001" for item in unit["renderings"]
+    )
+    assert any(
+        item["layer"] == "literal" and item["status"] == "proposed" for item in unit["renderings"]
+    )
 
 
 def test_locked_layer_rejects_generation(monkeypatch) -> None:
-    monkeypatch.setattr("app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile))
+    monkeypatch.setattr(
+        "app.services.generation_service.build_adapter", lambda profile: FakeAdapter(profile)
+    )
 
     response = client.post(
         "/jobs/generate",
@@ -684,29 +818,72 @@ def test_pinned_lexical_card_state_round_trip() -> None:
 
 
 def test_visual_flow_endpoints_return_full_psalm_canvas_and_cloud() -> None:
-    visual_flow = client.get('/psalms/ps001/visual-flow')
+    visual_flow = client.get("/psalms/ps001/visual-flow")
     assert visual_flow.status_code == 200
     payload = visual_flow.json()
-    assert payload['psalm_id'] == 'ps001'
-    assert len(payload['units']) >= 1
-    assert payload['units'][0]['default_rendering']['layer'] == 'literal'
-    assert payload['cloud_nodes']
+    assert payload["psalm_id"] == "ps001"
+    assert len(payload["units"]) >= 1
+    assert payload["units"][0]["default_rendering"]["layer"] == "literal"
+    assert payload["cloud_nodes"]
+    assert payload["correlation_rows"]
+    assert payload["correlation_summary"]["row_count"] == len(payload["correlation_rows"])
+    assert payload["correlation_rows"][0]["source_hebrew"]
+    assert payload["correlation_rows"][0]["source_close_english"]
+    assert payload["correlation_rows"][0]["relationship_kind"] in {
+        "close_anchor",
+        "interpretive_shift",
+        "added_reframed",
+        "added_repetition",
+        "omitted_detail",
+    }
 
-    cloud = client.get('/psalms/ps001/cloud')
+    cloud = client.get("/psalms/ps001/cloud")
     assert cloud.status_code == 200
-    assert any(item['kind'] == 'concept' for item in cloud.json()['nodes'])
-    assert any(item['kind'] == 'phrase' for item in cloud.json()['nodes'])
-
+    assert any(item["kind"] == "concept" for item in cloud.json()["nodes"])
+    assert any(item["kind"] == "phrase" for item in cloud.json()["nodes"])
 
 
 def test_retrieval_prefers_same_psalm_hits_before_cross_psalm_support() -> None:
-    cloud = client.get('/psalms/ps001/cloud')
+    cloud = client.get("/psalms/ps001/cloud")
     assert cloud.status_code == 200
-    node_id = cloud.json()['nodes'][0]['node_id']
+    node_id = cloud.json()["nodes"][0]["node_id"]
 
-    retrieval = client.get('/psalms/ps001/retrieval', params={'node_id': node_id, 'include_cross_psalm': 'true'})
+    retrieval = client.get(
+        "/psalms/ps001/retrieval", params={"node_id": node_id, "include_cross_psalm": "true"}
+    )
     assert retrieval.status_code == 200
-    hits = retrieval.json()['hits']
+    hits = retrieval.json()["hits"]
     assert hits
-    assert hits[0]['scope'] == 'same_psalm'
-    assert any(hit['scope'] == 'cross_psalm' for hit in hits)
+    assert hits[0]["scope"] == "same_psalm"
+    assert any(hit["scope"] == "cross_psalm" for hit in hits)
+
+
+def test_list_psalms_returns_slim_summary_without_units() -> None:
+    """`GET /psalms` must stay cheap: no nested `units`, just picker metadata."""
+    response = client.get("/psalms")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload, "fixture corpus should produce at least one psalm summary"
+    for summary in payload:
+        assert set(summary) == {"psalm_id", "title", "unit_ids"}
+        assert "units" not in summary
+        assert isinstance(summary["unit_ids"], list)
+
+
+def test_get_single_psalm_still_returns_full_payload_with_units() -> None:
+    """The slim list response must not regress the per-psalm detail route."""
+    response = client.get("/psalms/ps001")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["psalm_id"] == "ps001"
+    assert "units" in payload
+    assert payload["units"]  # non-empty
+
+
+def test_corpus_layers_endpoint_returns_distinct_layer_names() -> None:
+    response = client.get("/corpus/layers")
+    assert response.status_code == 200
+    layers = response.json()
+    assert isinstance(layers, list)
+    assert all(isinstance(item, str) for item in layers)
+    assert len(layers) == len(set(layers))

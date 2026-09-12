@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app.core.config import get_settings
-from app.services import poetic_analysis_service, registry_service
+from app.core.config import get_settings  # noqa: E402
+from app.services import poetic_analysis_service, registry_service  # noqa: E402
 
 
 def _load_schema(path: Path) -> dict[str, Any]:
@@ -29,6 +29,14 @@ def _validator(schema_name: str) -> Draft202012Validator:
 
 def _deterministic_text(payload: Any) -> str:
     return registry_service.deterministic_json(payload)
+
+
+def _display_path(path: Path) -> str:
+    settings = get_settings()
+    try:
+        return str(path.relative_to(settings.root_dir))
+    except ValueError:
+        return str(path)
 
 
 def validate_all_content() -> dict[str, Any]:
@@ -48,7 +56,8 @@ def validate_all_content() -> dict[str, Any]:
     else:
         errors.append("content/project.json missing")
 
-    seen_ids: dict[str, set[str]] = {key: set() for key in ["unit", "token", "alignment", "rendering", "audit", "concept"]}
+    id_kinds = ["unit", "token", "alignment", "rendering", "audit", "concept"]
+    seen_ids: dict[str, set[str]] = {key: set() for key in id_kinds}
 
     for path in sorted(settings.psalms_dir.glob("ps*/ps*.json")):
         if path.name.endswith(".meta.json"):
@@ -61,22 +70,47 @@ def validate_all_content() -> dict[str, Any]:
             errors.append(f"{path.relative_to(settings.root_dir)}: non-deterministic serialization")
         if path.stem != unit.get("unit_id"):
             errors.append(f"{path.relative_to(settings.root_dir)}: filename does not match unit_id")
-        _register_unique(seen_ids["unit"], unit.get("unit_id"), errors, f"duplicate unit_id in {path}")
+        _register_unique(
+            seen_ids["unit"], unit.get("unit_id"), errors, f"duplicate unit_id in {path}"
+        )
         for value in unit.get("concept_ids", []):
             _register_unique(seen_ids["concept"], value, errors, f"duplicate concept_id {value}")
         for token in unit.get("tokens", []):
-            _register_unique(seen_ids["token"], token["token_id"], errors, f"duplicate token_id {token['token_id']}")
+            _register_unique(
+                seen_ids["token"],
+                token["token_id"],
+                errors,
+                f"duplicate token_id {token['token_id']}",
+            )
         for alignment in unit.get("alignments", []):
-            _register_unique(seen_ids["alignment"], alignment["alignment_id"], errors, f"duplicate alignment_id {alignment['alignment_id']}")
+            _register_unique(
+                seen_ids["alignment"],
+                alignment["alignment_id"],
+                errors,
+                f"duplicate alignment_id {alignment['alignment_id']}",
+            )
         for rendering in unit.get("renderings", []):
-            _register_unique(seen_ids["rendering"], rendering["rendering_id"], errors, f"duplicate rendering_id {rendering['rendering_id']}")
+            _register_unique(
+                seen_ids["rendering"],
+                rendering["rendering_id"],
+                errors,
+                f"duplicate rendering_id {rendering['rendering_id']}",
+            )
             _validate_rendering_analysis(path, unit, rendering, errors)
         for audit in unit.get("audit_records", []):
-            _register_unique(seen_ids["audit"], audit["audit_id"], errors, f"duplicate audit_id {audit['audit_id']}")
+            _register_unique(
+                seen_ids["audit"],
+                audit["audit_id"],
+                errors,
+                f"duplicate audit_id {audit['audit_id']}",
+            )
         if len(unit.get("token_ids", [])) != len(unit.get("tokens", [])):
             errors.append(f"{path.relative_to(settings.root_dir)}: token_ids length mismatch")
-        if sorted(unit.get("audit_ids", [])) != sorted(audit["audit_id"] for audit in unit.get("audit_records", [])):
-            errors.append(f"{path.relative_to(settings.root_dir)}: audit_ids do not mirror audit_records")
+        recorded_audit_ids = sorted(audit["audit_id"] for audit in unit.get("audit_records", []))
+        if sorted(unit.get("audit_ids", [])) != recorded_audit_ids:
+            errors.append(
+                f"{path.relative_to(settings.root_dir)}: audit_ids do not mirror audit_records"
+            )
         validated_files.append(str(path.relative_to(settings.root_dir)))
 
     return {"validated_files": validated_files, "errors": errors}
@@ -90,7 +124,9 @@ def _register_unique(bucket: set[str], value: str | None, errors: list[str], mes
     bucket.add(value)
 
 
-def _validate_rendering_analysis(path: Path, unit: dict[str, Any], rendering: dict[str, Any], errors: list[str]) -> None:
+def _validate_rendering_analysis(
+    path: Path, unit: dict[str, Any], rendering: dict[str, Any], errors: list[str]
+) -> None:
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
         layer=rendering["layer"],
@@ -100,21 +136,28 @@ def _validate_rendering_analysis(path: Path, unit: dict[str, Any], rendering: di
         existing_flags=rendering.get("drift_flags"),
         existing_metrics=rendering.get("metrics"),
     )
-    current_flags = [poetic_analysis_service.normalize_flag(flag) for flag in rendering.get("drift_flags", [])]
+    current_flags = [
+        poetic_analysis_service.normalize_flag(flag) for flag in rendering.get("drift_flags", [])
+    ]
     if current_flags != analyzed_flags:
-        errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} drift_flags are stale")
+        errors.append(f"{_display_path(path)}: {rendering['rendering_id']} drift_flags are stale")
     for key, value in analyzed_metrics.items():
         if rendering.get("metrics", {}).get(key) != value:
-            errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} metric {key} is stale")
+            errors.append(
+                f"{_display_path(path)}: {rendering['rendering_id']} metric {key} is stale"
+            )
     if rendering.get("status") != "canonical":
         return
     missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
     if missing_metrics:
         errors.append(
-            f"{path.relative_to(ROOT)}: {rendering['rendering_id']} missing canonical lyric metrics {', '.join(missing_metrics)}"
+            f"{_display_path(path)}: {rendering['rendering_id']} missing canonical lyric metrics "
+            f"{', '.join(missing_metrics)}"
         )
     if poetic_analysis_service.has_blocking_drift(rendering):
-        errors.append(f"{path.relative_to(ROOT)}: {rendering['rendering_id']} has unresolved high-severity drift")
+        errors.append(
+            f"{_display_path(path)}: {rendering['rendering_id']} has unresolved high-severity drift"
+        )
 
 
 def main() -> None:

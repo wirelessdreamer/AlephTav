@@ -10,6 +10,7 @@ import type {
   Project,
   Psalm,
   PsalmCloudResponse,
+  PsalmSummary,
   PsalmSourceTranslationMap,
   PsalmVisualFlow,
   Rendering,
@@ -78,7 +79,7 @@ export function useProject() {
 }
 
 export function usePsalms() {
-  return useQuery({ queryKey: ['psalms'], queryFn: () => getJson<Psalm[]>('/psalms') });
+  return useQuery({ queryKey: ['psalms'], queryFn: () => getJson<PsalmSummary[]>('/psalms') });
 }
 
 export function usePsalm(psalmId: string | null) {
@@ -87,6 +88,10 @@ export function usePsalm(psalmId: string | null) {
     queryFn: () => getJson<Psalm>(`/psalms/${psalmId}`),
     enabled: Boolean(psalmId),
   });
+}
+
+export function useCorpusLayers() {
+  return useQuery({ queryKey: ['corpus-layers'], queryFn: () => getJson<string[]>('/corpus/layers') });
 }
 
 export function usePsalmSourceTranslationMap(
@@ -443,6 +448,9 @@ export function useUpdateRendering(unitId: string | null) {
   });
 }
 
-export function useCurrentPsalm(psalms: Psalm[] | undefined, psalmId: string | null): Psalm | undefined {
+export function useCurrentPsalm(
+  psalms: PsalmSummary[] | undefined,
+  psalmId: string | null,
+): PsalmSummary | undefined {
   return useMemo(() => psalms?.find((psalm) => psalm.psalm_id === psalmId), [psalms, psalmId]);
 }

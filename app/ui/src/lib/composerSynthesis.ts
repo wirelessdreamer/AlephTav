@@ -70,6 +70,9 @@ const SUPERSCRIPTION_KEYWORD_RE = /\b(choirmaster|chief musician|director|psalm|
 const SPOKEN_CUE_RE = /^(yahweh|o god|my god|why|how blessed|blessed|not)\b/i;
 const NEGATIVE_CHAIN_RE = /^(?:nor|not|and not|or not)\s+(.+)$/i;
 const INHERITED_NEGATION_RE = /\b(?:who\s+)?(does not|doesn't|do not|don't|will not|won't|shall not|cannot|can't)\b/i;
+const HEBREW_LEXICAL_FALLBACKS: Record<string, string> = {
+  כן: 'therefore',
+};
 
 export function normalizeComposerText(text: string): string {
   return text
@@ -120,7 +123,7 @@ function rewriteContinuingNegative(text: string, previousText: string, level: Co
     return normalized;
   }
   const auxiliary = inheritedNegativeAuxiliary(previousText, level);
-  const connector = previousText ? 'and' : '';
+  const connector = previousText && level === 'phrase' ? 'and' : '';
   return normalizeComposerText([connector, auxiliary, remainder].filter(Boolean).join(' '));
 }
 
@@ -407,7 +410,9 @@ function tokenGlossText(token: Token, { preserveLeadingConjunction = true }: { p
     candidate = cleanTokenCandidate(glossFragments(token).find((fragment) => /\byahweh\b/i.test(fragment)) ?? candidate);
   }
   if (HEBREW_RE.test(candidate)) {
-    candidate = cleanTokenCandidate(token.transliteration ?? token.normalized);
+    candidate = HEBREW_LEXICAL_FALLBACKS[token.lemma ?? '']
+      ?? HEBREW_LEXICAL_FALLBACKS[token.normalized]
+      ?? cleanTokenCandidate(token.transliteration ?? token.display_gloss ?? token.word_sense ?? '');
   }
   if (!preserveLeadingConjunction && startsWithConjunction(candidate)) {
     candidate = cleanTokenCandidate(candidate.replace(/^(and|or|but)\s+/i, ''));
@@ -495,7 +500,7 @@ function isNegationToken(token: Token): boolean {
   if (lowered === 'not' || lowered === 'nor' || lowered === 'no') {
     return true;
   }
-  if (/^(do not|and do not|or not|and not|nor)$/.test(lowered)) {
+  if (/^((and|or)\s+)?(do not|not|nor)$/.test(lowered)) {
     return true;
   }
   const parts = featureParts(token).map((part) => part.toLowerCase());
@@ -504,7 +509,7 @@ function isNegationToken(token: Token): boolean {
 
 function negationConjunctionLead(token: Token): string {
   const lowered = tokenGlossText(token, { preserveLeadingConjunction: true }).toLowerCase();
-  if (/\band\b/.test(lowered) || /^(or|nor)\b/.test(lowered)) {
+  if (/and/.test(lowered) || /^(or|nor)/.test(lowered)) {
     return 'and ';
   }
   if (inflateFeatures(token).conjunction_role === 'additive' || inflateFeatures(token).conjunction_role === 'disjunctive') {
@@ -534,6 +539,15 @@ function baseVerbText(token: Token): string {
   const preferred = parts.find((item) => !/^(he|she|it|they)$/i.test(item));
   const candidate = normalizeComposerText(preferred ?? tokenMeaning(token)).replace(/^(he|she|it|they)\s+/i, '');
   return candidate || normalizeComposerText(token.surface);
+}
+
+function verbObjectText(token: Token): string {
+  const verb = baseVerbText(token);
+  const object = inflateFeatures(token).suffix_pronoun?.text?.toLowerCase();
+  if (!object || new RegExp(`\\b${escapeRegExp(object)}\\b`, 'i').test(verb)) {
+    return verb;
+  }
+  return normalizeComposerText(`${verb} ${object}`);
 }
 
 function finiteVerbText(token: Token): string {
@@ -683,6 +697,43 @@ function renderImperativeVocativeChunk(tokens: Token[]): string | null {
   }
   const address = complementText(vocative);
   return normalizeComposerText(`${baseVerbText(tokens[0])} ${object}, ${address}`);
+}
+
+function renderNegatedPreposedVerbClause(tokens: Token[]): string | null {
+  if (tokens.length < 3) {
+    return null;
+  }
+
+  let index = 0;
+  const lead: string[] = [];
+  if (tokens[index] && isVocativeLikeToken(tokens[index])) {
+    lead.push(tokenMeaning(tokens[index]));
+    index += 1;
+  }
+
+  const negation = tokens[index];
+  if (!negation || !isNegationToken(negation)) {
+    return null;
+  }
+
+  const phraseStart = index + 1;
+  if (!tokens[phraseStart] || !isPrepositionalLead(tokens[phraseStart])) {
+    return null;
+  }
+
+  let verbIndex = phraseStart + 1;
+  while (tokens[verbIndex] && isComplementToken(tokens[verbIndex])) {
+    verbIndex += 1;
+  }
+  const verb = tokens[verbIndex];
+  if (!verb || !isVerbToken(verb) || verbIndex !== tokens.length - 1) {
+    return null;
+  }
+
+  const negationText = inflateFeatures(negation).conjunction_role ? 'and do not' : 'do not';
+  const preposedPhrase = renderPpGroup(tokens.slice(phraseStart, verbIndex));
+  const clause = normalizeComposerText(`${negationText} ${verbObjectText(verb)} ${preposedPhrase}`);
+  return normalizeComposerText([...lead, clause].join(lead.length ? ', ' : ''));
 }
 
 function renderBeatitudeChunk(tokens: Token[]): string | null {
@@ -1044,6 +1095,7 @@ function toPhraseText(chunk: CompilerChunk): string {
     renderBeatitudeChunk(chunk.tokens) ??
     renderRelativeChunk(chunk.tokens) ??
     renderContrastiveChunk(chunk.tokens) ??
+    renderNegatedPreposedVerbClause(chunk.tokens) ??
     renderNegatedSubjectVerbChunk(chunk.tokens) ??
     renderBelongsToChunk(chunk.tokens) ??
     renderForSakeChunk(chunk.tokens) ??
@@ -1058,6 +1110,67 @@ function toPhraseText(chunk: CompilerChunk): string {
   return sentenceCase(normalizeComposerText(text));
 }
 
+function stageRewrite(text: string, replacements: Array<[RegExp, string]>): string {
+  return replacements.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
+}
+
+function applyConceptDelivery(text: string): string {
+  return stageRewrite(text, [
+    [/\bhow blessed is the man\b/gi, 'Blessed is the one'],
+    [/\bhow blessed is the one\b/gi, 'Blessed is the one'],
+    [/\bwho does not walk in the counsel of the wicked\b/gi, 'who does not follow the counsel of the wicked'],
+    [/\bwalk in the counsel\b/gi, 'follow the counsel'],
+    [/\bnor stand in the way of sinners\b/gi, 'does not stand in the path of sinners'],
+    [/\bnor sit in the seat of mockers\b/gi, 'does not sit among mockers'],
+    [/\bway of sinners\b/gi, 'path of sinners'],
+    [/\bseat of mockers\b/gi, 'place among mockers'],
+    [/\binstead, his delight is in the law of Yahweh\b/gi, "Instead, he delights in Yahweh's law"],
+    [/\band in his law he meditates day and night\b/gi, 'He meditates on his law day and night'],
+    [/\blaw of Yahweh\b/g, "Yahweh's law"],
+    [/\bthe man\b/gi, 'the one'],
+    [/\bto ([A-Z][a-z]+) belongs\b/g, '$1 holds'],
+    [/\bhow majestic is\b/gi, 'Majestic is'],
+    [/\bcovenant love\b/gi, 'loyal love'],
+    [/\bsteadfast love\b/gi, 'loyal love'],
+    [/\biniquit(?:y|ies)\b/gi, 'wrong'],
+    [/\bthe wicked\b/gi, 'wrongdoers'],
+    [/\bfoes\b/gi, 'enemies'],
+    [/\benemy\b/gi, 'hostile one'],
+    [/\benemies\b/gi, 'hostile ones'],
+    [/\bwill not\b/gi, 'will not'],
+    [/\bdoes not\b/gi, "doesn't"],
+  ]);
+}
+
+function applyLyricDelivery(text: string): string {
+  return stageRewrite(text, [
+    [/\bBlessed is the one\b/gi, 'Blessed is the one'],
+    [/\bwho doesn't follow the counsel of wrongdoers\b/gi, "who doesn't walk with the wicked"],
+    [/\bwho doesn't follow the counsel of the wicked\b/gi, "who doesn't walk with the wicked"],
+    [/\bwho does not follow the counsel of the wicked\b/gi, "who doesn't walk with the wicked"],
+    [/\b(?:and\s+)?doesn't stand in the path of sinners\b/gi, "doesn't stand with sinners"],
+    [/\b(?:and\s+)?does not stand in the path of sinners\b/gi, "doesn't stand with sinners"],
+    [/\b(?:and\s+)?doesn't sit among mockers\b/gi, "doesn't sit among mockers"],
+    [/\b(?:and\s+)?does not sit among mockers\b/gi, "doesn't sit among mockers"],
+    [/\brebuke me in your anger\b/gi, 'rebuke me in anger'],
+    [/\bdiscipline me in your wrath\b/gi, 'discipline me in wrath'],
+    [/\bdoes not\b/gi, "doesn't"],
+    [/\bdo not\b/gi, "don't"],
+    [/\bwill not\b/gi, "won't"],
+    [/\bcannot\b/gi, "can't"],
+    [/\bInstead, he delights in Yahweh's law\b/gi, "His delight is in Yahweh's law"],
+    [/\bHe meditates on his law day and night\b/gi, 'He dwells on his law day and night'],
+    [/\bMajestic is\b/gi, 'How majestic is'],
+    [/\bwrongdoers\b/gi, 'the wicked'],
+    [/\bhostile ones\b/gi, 'enemies'],
+    [/\bhostile one\b/gi, 'enemy'],
+    [/\bloyal love\b/gi, 'faithful love'],
+    [/\bholds deliverance\b/gi, 'is salvation'],
+    [/\bmy whole self\b/gi, 'all of me'],
+    [/\bset my hope\b/gi, 'put my hope'],
+  ]);
+}
+
 function toConceptText(chunk: CompilerChunk): string {
   const superscription = renderSuperscriptionChunk(chunk.tokens, 'idea');
   if (superscription) {
@@ -1067,19 +1180,7 @@ function toConceptText(chunk: CompilerChunk): string {
       .replace(/\ba psalm of david\b/i, 'A psalm of David');
     return sentenceCase(normalizeComposerText(rewritten));
   }
-  const phrase = toPhraseText(chunk)
-    .replace(/\bhow blessed is the man\b/gi, 'Blessed is the one')
-    .replace(/\bhow blessed is the one\b/gi, 'Blessed is the one')
-    .replace(/\bwho does not walk in the counsel of the wicked\b/gi, 'who does not follow the counsel of the wicked')
-    .replace(/\bnor stand in the way of sinners\b/gi, 'nor stand in the path of sinners')
-    .replace(/\bnor sit in the seat of mockers\b/gi, 'nor sit among mockers')
-    .replace(/\binstead, his delight is in the law of Yahweh\b/gi, "Instead, he delights in Yahweh's law")
-    .replace(/\band in his law he meditates day and night\b/gi, 'He meditates on his law day and night')
-    .replace(/\bto ([A-Z][a-z]+) belongs\b/g, '$1 holds')
-    .replace(/\bhow majestic is\b/gi, 'Majestic is')
-    .replace(/\blaw of Yahweh\b/g, "Yahweh's law")
-    .replace(/\bthe man\b/gi, 'the one');
-  return sentenceCase(normalizeComposerText(phrase));
+  return sentenceCase(normalizeComposerText(applyConceptDelivery(toPhraseText(chunk))));
 }
 
 function toLyricText(chunk: CompilerChunk): string {
@@ -1091,17 +1192,17 @@ function toLyricText(chunk: CompilerChunk): string {
       .replace(/\ba psalm of david\b/i, 'A psalm of David');
     return sentenceCase(normalizeComposerText(rewritten));
   }
-  const concept = toConceptText(chunk)
-    .replace(/\bBlessed is the one\b/gi, 'How blessed is the one')
-    .replace(/\bwho does not follow the counsel of the wicked\b/gi, 'who does not walk with the wicked')
-    .replace(/\bnor stand in the path of sinners\b/gi, 'nor stand with sinners')
-    .replace(/\bnor sit among mockers\b/gi, 'nor sit among mockers')
-    .replace(/\bInstead, he delights in Yahweh's law\b/gi, "His delight is in Yahweh's law")
-    .replace(/\bHe meditates on his law day and night\b/gi, 'He dwells on his law day and night')
-    .replace(/\bMajestic is\b/gi, 'How majestic is')
-    .replace(/\bholds deliverance\b/gi, 'is salvation')
-    .replace(/^And don't\b/i, "Don't")
-    .replace(/^And do not\b/i, "Don't");
+  const concept = applyLyricDelivery(toConceptText(chunk))
+    .replace(/Blessed is the one/gi, 'How blessed is the one')
+    .replace(/who does not follow the counsel of the wicked/gi, 'who does not walk with the wicked')
+    .replace(/nor stand in the path of sinners/gi, 'nor stand with sinners')
+    .replace(/nor sit among mockers/gi, 'nor sit among mockers')
+    .replace(/Instead, he delights in Yahweh's law/gi, "His delight is in Yahweh's law")
+    .replace(/He meditates on his law day and night/gi, 'He dwells on his law day and night')
+    .replace(/Majestic is/gi, 'How majestic is')
+    .replace(/holds deliverance/gi, 'is salvation')
+    .replace(/^And don't/i, "Don't")
+    .replace(/^And do not/i, "Don't");
   return sentenceCase(normalizeComposerText(concept));
 }
 
@@ -1169,6 +1270,22 @@ function shouldBreakBefore(tokens: Token[], index: number, currentStart: number)
   }
   if (currentText.startsWith('of ')) {
     return false;
+  }
+  if (
+    currentFeatures.preposition_role
+    && isNegationToken(previous)
+    && tokens[index + 1]
+    && isVerbToken(tokens[index + 1])
+  ) {
+    return false;
+  }
+  if (
+    currentFeatures.conjunction_role === 'disjunctive'
+    && isNegationToken(token)
+    && currentHasVerb
+    && currentLength >= 2
+  ) {
+    return true;
   }
   if (isRelativeToken(token) && currentLength >= 1) {
     return true;

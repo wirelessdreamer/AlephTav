@@ -1,0 +1,178 @@
+{
+  "generated_on": "2026-06-15",
+  "status": "review signoff rubric baseline; not completed review data",
+  "score_scale": {
+    "0": "Not assessable or materially wrong.",
+    "1": "Major problems; reject.",
+    "2": "Substantial concerns; revise before reuse.",
+    "3": "Usable with caveats; needs targeted correction.",
+    "4": "Strong; minor notes only.",
+    "5": "Publication-quality for the requested layer."
+  },
+  "approval_thresholds": {
+    "candidate_review_min_mean": 4.0,
+    "no_gate_failures": true,
+    "canonical_promotion_min_human_approvals": 2,
+    "alternate_addition_min_human_approvals": 1,
+    "release_requires_release_reviewer": true
+  },
+  "human_reviewer_roles": [
+    {
+      "role": "lexical",
+      "required_for_layers": ["gloss", "literal"],
+      "dimensions": [
+        "lexeme_choice",
+        "morphology",
+        "construct_and_suffix_handling",
+        "unsupported_lexical_claims"
+      ],
+      "gate_failures": [
+        "wrong_lemma_or_primary_sense",
+        "unsupported_stem_or_syntax_claim",
+        "unmarked_missing_evidence"
+      ]
+    },
+    {
+      "role": "Hebrew",
+      "required_for_layers": ["gloss", "literal"],
+      "dimensions": [
+        "source_grammar",
+        "clause_logic",
+        "speaker_addressee_tracking",
+        "divine_name_and_titles"
+      ],
+      "gate_failures": [
+        "misidentified_subject_or_object",
+        "collapsed_speaker_or_addressee",
+        "theological_conclusion_presented_as_grammar"
+      ]
+    },
+    {
+      "role": "alignment",
+      "required_for_layers": ["gloss", "literal"],
+      "dimensions": [
+        "token_id_coverage",
+        "alignment_hint_validity",
+        "preserved_source_images",
+        "drift_flag_completeness"
+      ],
+      "gate_failures": [
+        "invalid_token_id",
+        "missing_required_alignment",
+        "unflagged_major_drift"
+      ]
+    },
+    {
+      "role": "lyric",
+      "required_for_tags": [
+        "parallelism",
+        "negative_parallelism",
+        "source_image_pressure",
+        "terse_poetry",
+        "metaphor",
+        "doxology",
+        "lament",
+        "imprecation"
+      ],
+      "dimensions": [
+        "poetic_pressure",
+        "parallelism",
+        "terseness",
+        "source_image_integrity"
+      ],
+      "gate_failures": [
+        "flattened_parallelism",
+        "unmarked_expansion",
+        "source_image_erased"
+      ]
+    },
+    {
+      "role": "theology",
+      "required_for_tags": [
+        "theology",
+        "reception_history",
+        "jewish_christian_reception",
+        "messianic_interpretation",
+        "anthropology",
+        "divine_beings",
+        "imprecation",
+        "violence",
+        "ethical_reception"
+      ],
+      "dimensions": [
+        "translation_interpretation_boundary",
+        "jewish_christian_reception_separation",
+        "anthropology_and_divine_language",
+        "ethical_reception_notes"
+      ],
+      "gate_failures": [
+        "reception_history_inside_translation_text",
+        "tradition_specific_claim_without_tag",
+        "sanitized_or_intensified_sensitive_text"
+      ]
+    },
+    {
+      "role": "release",
+      "required_for_release": true,
+      "dimensions": [
+        "review_completeness",
+        "audit_traceability",
+        "license_provenance",
+        "known_gap_disclosure"
+      ],
+      "gate_failures": [
+        "missing_required_role_review",
+        "unresolved_high_severity_concern",
+        "unversioned_source_or_model"
+      ]
+    }
+  ],
+  "model_cross_examination": [
+    {
+      "judge_id": "codex_secondary",
+      "judge_type": "model_critic",
+      "authority": "advisory_only",
+      "focus": [
+        "schema and token traceability",
+        "unsupported context claims",
+        "benchmark task consistency",
+        "regression detection"
+      ]
+    },
+    {
+      "judge_id": "claude_secondary",
+      "judge_type": "model_critic",
+      "authority": "advisory_only",
+      "focus": [
+        "translation rationale critique",
+        "Jewish and Christian reception separation",
+        "poetic and theological overreach",
+        "reviewer concern triage"
+      ]
+    },
+    {
+      "judge_id": "hebrew_specialist_model",
+      "judge_type": "model_critic",
+      "authority": "advisory_only",
+      "focus": [
+        "Biblical Hebrew morphology",
+        "modern-Hebrew interference",
+        "lexical ambiguity",
+        "source-language plausibility"
+      ]
+    }
+  ],
+  "required_review_record_fields": [
+    "task_id",
+    "model_profile_id",
+    "candidate_index",
+    "reviewer_role",
+    "reviewer_id",
+    "score_0_5",
+    "gate_failures",
+    "required_corrections",
+    "confidence_0_1",
+    "evidence_notes",
+    "created_at"
+  ]
+}
