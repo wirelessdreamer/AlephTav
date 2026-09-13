@@ -7,9 +7,10 @@ from typing import Any
 import pytest
 
 from app.core.errors import ValidationError
+from app.llm.strict_schema import strict_output_schema
 from app.services import codex_app_server_service as codex
 from app.services import codex_translation_service as translation
-from app.services import registry_service
+from app.services import generation_service, registry_service
 
 UNIT_ID = "ps001.v001.a"
 
@@ -147,8 +148,10 @@ def test_valid_run_completes_and_records_provenance() -> None:
     assert run["status"] == translation.RUN_COMPLETED
     assert run["turn_id"] == "turn-1"
     assert run["payload"]["candidates"][0]["accuracy_note"]
-    # The contract is handed to Codex as the turn's output schema.
-    assert client.transport.params_for("turn/start")["outputSchema"]["type"] == "object"
+    # The contract is handed to Codex in its strict structured-output form.
+    assert client.transport.params_for("turn/start")["outputSchema"] == strict_output_schema(
+        generation_service.OUTPUT_VALIDATOR.schema
+    )
 
 
 def test_output_failing_the_contract_is_preserved_as_an_auditable_error() -> None:

@@ -17,6 +17,7 @@ from typing import Any
 
 from app.core.config import get_settings
 from app.core.errors import GenerationError, NotFoundError, ValidationError
+from app.llm.strict_schema import strict_output_schema
 from app.services import (
     codex_app_server_service as codex,
 )
@@ -304,7 +305,7 @@ def run_contract_turn(
         result = client.run_turn(
             thread_id=session["thread_id"],
             text=prompt,
-            output_schema=validator.schema,
+            output_schema=strict_output_schema(validator.schema),
             model=session.get("model") or None,
         )
     except GenerationError as error:
