@@ -7,6 +7,9 @@ transport, which is what keeps this suite runnable in CI.
 from __future__ import annotations
 
 import json
+import queue
+import threading
+import time
 from collections import deque
 from collections.abc import Callable
 from typing import Any
@@ -195,6 +198,70 @@ def test_disconnect_mid_turn_is_reported_as_a_generation_error() -> None:
     client = _client(handler)
     with pytest.raises(GenerationError, match="disconnected"):
         client.run_turn("th-1", "translate")
+
+
+class BlockingTransport:
+    """A live-like server: reads block, and the turn ends only when the test says so."""
+
+    def __init__(self) -> None:
+        self.sent: list[dict[str, Any]] = []
+        self.inbox: queue.Queue[str] = queue.Queue()
+
+    def push(self, message: dict[str, Any]) -> None:
+        self.inbox.put(json.dumps(message) + "\n")
+
+    def send(self, message: dict[str, Any]) -> None:
+        self.sent.append(message)
+        if message.get("method") == "turn/start":
+            self.push(_ok(message, {"turn": {"id": "turn-1"}}))
+        elif message.get("method") == "account/read":
+            self.push(_ok(message, {"account": {"type": "chatgpt", "planType": "pro"}}))
+
+    def readline(self) -> str:
+        return self.inbox.get(timeout=5)
+
+    def close(self) -> None:
+        pass
+
+    def sent_methods(self) -> list[str]:
+        return [m["method"] for m in self.sent if "method" in m]
+
+
+def test_a_status_check_during_a_turn_waits_instead_of_stealing_its_messages() -> None:
+    # The workbench polls /codex/status while a fill request pumps a turn. Both
+    # used to read the same stdout, so one swallowed the other's reply or the
+    # turn's completion and both requests hung.
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport)
+    outcome: dict[str, Any] = {}
+
+    turn = threading.Thread(target=lambda: outcome.update(turn=client.run_turn("th-1", "go")))
+    turn.start()
+    deadline = time.monotonic() + 5
+    while "turn/start" not in transport.sent_methods():
+        assert time.monotonic() < deadline
+        time.sleep(0.01)
+
+    status = threading.Thread(target=lambda: outcome.update(account=client.account()))
+    status.start()
+    time.sleep(0.2)
+    assert "account/read" not in transport.sent_methods()
+
+    transport.push(
+        {
+            "jsonrpc": "2.0",
+            "method": "item/completed",
+            "params": {"item": {"type": "agentMessage", "text": '{"candidates": []}'}},
+        }
+    )
+    transport.push(
+        {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}}
+    )
+    turn.join(timeout=5)
+    status.join(timeout=5)
+
+    assert outcome["turn"]["text"] == '{"candidates": []}'
+    assert outcome["account"]["account"]["planType"] == "pro"
 
 
 def test_status_reports_not_installed_when_codex_is_missing(monkeypatch) -> None:

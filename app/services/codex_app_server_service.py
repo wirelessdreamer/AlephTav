@@ -9,6 +9,11 @@ request and then reads until the matching response arrives, dispatching
 notifications and server-initiated requests along the way. That keeps the client
 free of threads and makes it testable against a fake transport, which is what the
 tests use so no live ChatGPT account is needed.
+
+API requests reach the one client from concurrent threads, so each exchange -- a
+request, or a turn from start to completion -- holds a lock. Two readers on the same
+stdout would swallow each other's responses and turn notifications, leaving both
+waiting forever.
 """
 
 from __future__ import annotations
@@ -16,6 +21,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import threading
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any, Protocol
@@ -127,6 +133,7 @@ class CodexAppServerClient:
     denied_events: list[dict[str, Any]] = field(default_factory=list)
     notifications: list[dict[str, Any]] = field(default_factory=list)
     on_notification: Callable[[dict[str, Any]], None] | None = None
+    _lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
@@ -159,6 +166,11 @@ class CodexAppServerClient:
             self.on_notification(message)
 
     def request(self, method: str, params: Any = None) -> dict[str, Any]:
+        with self._lock:
+            return self._exchange(method, params)
+
+    def _exchange(self, method: str, params: Any = None) -> dict[str, Any]:
+        """Send one request and read until its response. Callers hold ``_lock``."""
         transport = self._ensure_transport()
         request_id = self._next_id
         self._next_id += 1
@@ -293,9 +305,11 @@ class CodexAppServerClient:
             params["outputSchema"] = output_schema
         if model:
             params["model"] = model
-        started = self.request("turn/start", params)
-        turn_id = (started.get("turn") or {}).get("id")
-        result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
+        # Hold the transport for the whole turn so no other request reads its notifications.
+        with self._lock:
+            started = self._exchange("turn/start", params)
+            turn_id = (started.get("turn") or {}).get("id")
+            result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
         result["turn_id"] = turn_id
         return result
 
