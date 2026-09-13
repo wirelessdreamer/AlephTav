@@ -3160,6 +3160,66 @@ button.composer-path-chip {
   color: #7dd3fc;
 }
 
+.batch-progress::before {
+  content: '';
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+  animation: batch-pulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes batch-pulse {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .batch-progress::before {
+    animation: none;
+  }
+}
+
+.batch-report {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  background: rgba(8, 47, 73, 0.35);
+  font-size: 0.85rem;
+}
+
+.batch-report.has-failures {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(69, 10, 10, 0.35);
+}
+
+.batch-report p {
+  margin: 0;
+}
+
+.row-progress {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px dashed #7dd3fc;
+  border-radius: 999px;
+  color: #7dd3fc;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .comparison-view {
   display: flex;
   flex-direction: column;

@@ -128,6 +128,76 @@ function toCsv(rows: ComparisonTableRow[]): string {
   return [header.join(','), ...body].join('\n');
 }
 
+type BatchKind = 'translate' | 'analyse';
+
+const BATCH_WORDS: Record<BatchKind, { active: string; noun: string }> = {
+  translate: { active: 'Translating', noun: 'Translation' },
+  analyse: { active: 'Analysing', noun: 'Analysis' },
+};
+
+/** One Codex call in a batch. `run` resolves to an error message, or null on success. */
+interface BatchStep {
+  label: string;
+  unitId: string | null;
+  run: () => Promise<string | null>;
+}
+
+interface BatchProgress {
+  kind: BatchKind;
+  done: number;
+  total: number;
+  label: string;
+  unitId: string | null;
+  stopping: boolean;
+}
+
+interface BatchReport {
+  kind: BatchKind;
+  succeeded: number;
+  total: number;
+  stopped: boolean;
+  failures: { label: string; error: string }[];
+}
+
+/** API errors arrive as FastAPI `{"detail": ...}` bodies, sometimes inside a run's error. */
+function readableError(message: string): string {
+  try {
+    const parsed: unknown = JSON.parse(message);
+    if (parsed && typeof parsed === 'object' && 'detail' in parsed) {
+      const { detail } = parsed as { detail: unknown };
+      return typeof detail === 'string' ? detail : JSON.stringify(detail);
+    }
+  } catch {
+    // Not JSON: the message is already readable.
+  }
+  return message;
+}
+
+/**
+ * Codex endpoints answer 200 even when the run failed, reporting it in
+ * `status` / `error`. Resolve to that failure (or a thrown one), or null.
+ */
+async function failureOf(
+  call: () => Promise<{ status: string; error: string | null }>,
+): Promise<string | null> {
+  try {
+    const result = await call();
+    if (result.status === 'completed') return null;
+    return readableError(result.error ?? `Codex run ended as ${result.status.replace(/_/g, ' ')}`);
+  } catch (error) {
+    return readableError(error instanceof Error ? error.message : String(error));
+  }
+}
+
+/** Group identical errors so a systemic failure reads once, not once per verse. */
+function groupFailures(failures: BatchReport['failures']) {
+  const groups = new Map<string, string[]>();
+  for (const { label, error } of failures) {
+    groups.set(error, [...(groups.get(error) ?? []), label]);
+  }
+  return [...groups].map(([error, labels]) => ({ error, labels }));
+}
+
 interface Props {
   psalmId: string | null;
   onOpenRendering?: (renderingId: string) => void;
@@ -145,7 +215,8 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
 
   const [guidanceDraft, setGuidanceDraft] = useState('');
   const [guidanceOpen, setGuidanceOpen] = useState(false);
-  const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
+  const [batch, setBatch] = useState<BatchProgress | null>(null);
+  const [report, setReport] = useState<BatchReport | null>(null);
   const stopRequested = useRef(false);
 
   const { data, isLoading, error } = useComparisonTable(psalmId, 'literal', englishLayer);
@@ -176,6 +247,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const sessionRef = useRef<string | null>(null);
   useEffect(() => {
     sessionRef.current = null;
+    setReport(null);
   }, [psalmId]);
 
   async function ensureSession(): Promise<string> {
@@ -188,48 +260,87 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
     return session.session_id;
   }
 
-  async function auditRow(unitId: string) {
-    const sessionId = await ensureSession();
-    await analyzeVerse.mutateAsync({ unitId, session_id: sessionId, english_layer: englishLayer });
-  }
-
-  async function auditPsalm(targets: ComparisonTableRow[]) {
+  /** Run Codex steps one at a time, showing the step in flight and reporting the outcome. */
+  async function runBatch(kind: BatchKind, steps: BatchStep[]) {
     stopRequested.current = false;
-    setBatch({ done: 0, total: targets.length + 1 });
+    setReport(null);
+    const failures: BatchReport['failures'] = [];
+    let done = 0;
     try {
-      const sessionId = await ensureSession();
-      for (const [index, row] of targets.entries()) {
+      for (const step of steps) {
         if (stopRequested.current) break;
-        await auditRow(row.unit_ids[0]);
-        setBatch({ done: index + 1, total: targets.length + 1 });
-      }
-      if (!stopRequested.current) {
-        // The psalm-scope turn last, so sections describe the audited verses.
-        await analyzePsalm.mutateAsync({ session_id: sessionId, english_layer: englishLayer });
-        setBatch({ done: targets.length + 1, total: targets.length + 1 });
+        setBatch({
+          kind,
+          done,
+          total: steps.length,
+          label: step.label,
+          unitId: step.unitId,
+          stopping: false,
+        });
+        const error = await step.run();
+        if (error) failures.push({ label: step.label, error });
+        done += 1;
       }
     } finally {
       setBatch(null);
+      setReport({
+        kind,
+        succeeded: done - failures.length,
+        total: steps.length,
+        stopped: done < steps.length,
+        failures,
+      });
     }
   }
 
-  async function generateRow(unitId: string) {
-    const sessionId = await ensureSession();
-    await fillRow.mutateAsync({ unitId, session_id: sessionId, english_layer: englishLayer });
+  function translateStep(row: ComparisonTableRow): BatchStep {
+    const unitId = row.unit_ids[0];
+    return {
+      label: row.display_reference,
+      unitId,
+      run: () =>
+        failureOf(async () =>
+          fillRow.mutateAsync({
+            unitId,
+            session_id: await ensureSession(),
+            english_layer: englishLayer,
+          }),
+        ),
+    };
   }
 
-  async function generatePsalm(targets: ComparisonTableRow[]) {
-    stopRequested.current = false;
-    setBatch({ done: 0, total: targets.length });
-    try {
-      for (const [index, row] of targets.entries()) {
-        if (stopRequested.current) break;
-        await generateRow(row.unit_ids[0]);
-        setBatch({ done: index + 1, total: targets.length });
-      }
-    } finally {
-      setBatch(null);
-    }
+  function analyseStep(row: ComparisonTableRow): BatchStep {
+    const unitId = row.unit_ids[0];
+    return {
+      label: row.display_reference,
+      unitId,
+      run: () =>
+        failureOf(async () =>
+          analyzeVerse.mutateAsync({
+            unitId,
+            session_id: await ensureSession(),
+            english_layer: englishLayer,
+          }),
+        ),
+    };
+  }
+
+  function analysePsalm(targets: ComparisonTableRow[]) {
+    return runBatch('analyse', [
+      ...targets.map(analyseStep),
+      // The psalm-scope turn last, so sections describe the audited verses.
+      {
+        label: `${data?.title ?? 'The psalm'} as a whole`,
+        unitId: null,
+        run: () =>
+          failureOf(async () =>
+            analyzePsalm.mutateAsync({
+              session_id: await ensureSession(),
+              english_layer: englishLayer,
+            }),
+          ),
+      },
+    ]);
   }
 
   const rows = useMemo(() => {
@@ -364,10 +475,20 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
             {batch ? (
               <>
                 <span className="batch-progress" role="status">
-                  Translating {batch.done}/{batch.total}
+                  {batch.stopping
+                    ? `Stopping after ${batch.label}…`
+                    : `${BATCH_WORDS[batch.kind].active} ${batch.label} ` +
+                      `(${batch.done + 1} of ${batch.total})…`}
                 </span>
-                <button type="button" onClick={() => (stopRequested.current = true)}>
-                  Stop
+                <button
+                  type="button"
+                  disabled={batch.stopping}
+                  onClick={() => {
+                    stopRequested.current = true;
+                    setBatch((current) => current && { ...current, stopping: true });
+                  }}
+                >
+                  {batch.stopping ? 'Stopping…' : 'Stop'}
                 </button>
               </>
             ) : (
@@ -376,7 +497,9 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                   type="button"
                   disabled={!codexReady || fillRow.isPending}
                   title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
-                  onClick={() => void generatePsalm(rows.filter((row) => row.incomplete))}
+                  onClick={() =>
+                    void runBatch('translate', rows.filter((row) => row.incomplete).map(translateStep))
+                  }
                 >
                   Translate psalm
                 </button>
@@ -388,7 +511,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                       ? 'Audit the existing renderings against the Hebrew'
                       : 'Connect Codex in the assistant panel first'
                   }
-                  onClick={() => void auditPsalm(rows.filter((row) => !row.incomplete))}
+                  onClick={() => void analysePsalm(rows.filter((row) => !row.incomplete))}
                 >
                   Analyse psalm
                 </button>
@@ -414,6 +537,32 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
           </div>
         </div>
       </header>
+
+      {report ? (
+        <div
+          className={`batch-report${report.failures.length > 0 ? ' has-failures' : ''}`}
+          role="status"
+        >
+          <p>
+            {report.total === 0
+              ? 'Nothing to translate: every verse shown already has literal and English renderings.'
+              : `${BATCH_WORDS[report.kind].noun} ${report.stopped ? 'stopped' : 'finished'}: ` +
+                `${report.succeeded} of ${report.total} succeeded` +
+                (report.failures.length > 0 ? `, ${report.failures.length} failed.` : '.')}
+          </p>
+          {groupFailures(report.failures).map(({ error, labels }) => (
+            <p key={error} className="comparison-error">
+              {labels.length > 3
+                ? `${labels.slice(0, 3).join(', ')} and ${labels.length - 3} more`
+                : labels.join(', ')}
+              : {error}
+            </p>
+          ))}
+          <button type="button" onClick={() => setReport(null)}>
+            Dismiss
+          </button>
+        </div>
+      ) : null}
 
       {guidanceOpen ? (
         <section className="guidance-panel" aria-label="Translation guidance">
@@ -656,12 +805,15 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                     {row.mt_reference !== row.display_reference && (
                       <span className="reference-mt">MT {row.mt_reference}</span>
                     )}
+                    {batch?.unitId === row.unit_ids[0] && (
+                      <span className="row-progress">{BATCH_WORDS[batch.kind].active}…</span>
+                    )}
                     <button
                       type="button"
                       className="link-button"
                       disabled={!codexReady || fillRow.isPending || Boolean(batch)}
                       title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
-                      onClick={() => void generateRow(row.unit_ids[0])}
+                      onClick={() => void runBatch('translate', [translateStep(row)])}
                     >
                       {row.incomplete ? 'Translate verse' : 'Regenerate'}
                     </button>
@@ -670,7 +822,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                         type="button"
                         className="link-button"
                         disabled={!codexReady || analyzeVerse.isPending || Boolean(batch)}
-                        onClick={() => void auditRow(row.unit_ids[0])}
+                        onClick={() => void runBatch('analyse', [analyseStep(row)])}
                       >
                         {row.stale ? 'Re-analyse' : 'Analyse'}
                       </button>
