@@ -4,6 +4,7 @@ import {
   useAnalyzePsalm,
   useAnalyzeVerse,
   useCodexStatus,
+  useConnectCodex,
   useCreateCodexSession,
   useFillComparisonRow,
   useSaveTranslationGuidance,
@@ -230,6 +231,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   >('summary');
 
   const { data: codexStatus } = useCodexStatus();
+  const connectCodex = useConnectCodex();
   const { data: guidance } = useTranslationGuidance(psalmId);
   const saveGuidance = useSaveTranslationGuidance(psalmId);
   const createSession = useCreateCodexSession();
@@ -237,6 +239,8 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const analyzeVerse = useAnalyzeVerse(psalmId);
   const analyzePsalm = useAnalyzePsalm(psalmId);
   const codexReady = codexStatus?.status === 'ready';
+  /** Why Codex actions are disabled, in the server's words. */
+  const codexHint = codexReady ? undefined : (codexStatus?.detail ?? 'Codex is not connected');
   const analysis = data?.analysis ?? null;
 
   useEffect(() => {
@@ -493,10 +497,24 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
               </>
             ) : (
               <>
+                {codexStatus?.status === 'available' ? (
+                  <button
+                    type="button"
+                    disabled={connectCodex.isPending}
+                    onClick={() => connectCodex.mutate()}
+                  >
+                    {connectCodex.isPending ? 'Connecting…' : 'Connect Codex'}
+                  </button>
+                ) : null}
+                {connectCodex.isError ? (
+                  <span className="comparison-error">
+                    {readableError(connectCodex.error.message)}
+                  </span>
+                ) : null}
                 <button
                   type="button"
                   disabled={!codexReady || fillRow.isPending}
-                  title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
+                  title={codexHint}
                   onClick={() =>
                     void runBatch('translate', rows.filter((row) => row.incomplete).map(translateStep))
                   }
@@ -506,11 +524,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                 <button
                   type="button"
                   disabled={!codexReady || analyzeVerse.isPending}
-                  title={
-                    codexReady
-                      ? 'Audit the existing renderings against the Hebrew'
-                      : 'Connect Codex in the assistant panel first'
-                  }
+                  title={codexHint ?? 'Audit the existing renderings against the Hebrew'}
                   onClick={() => void analysePsalm(rows.filter((row) => !row.incomplete))}
                 >
                   Analyse psalm
@@ -812,7 +826,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                       type="button"
                       className="link-button"
                       disabled={!codexReady || fillRow.isPending || Boolean(batch)}
-                      title={codexReady ? undefined : 'Connect Codex in the assistant panel first'}
+                      title={codexHint}
                       onClick={() => void runBatch('translate', [translateStep(row)])}
                     >
                       {row.incomplete ? 'Translate verse' : 'Regenerate'}
