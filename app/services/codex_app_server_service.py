@@ -21,6 +21,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import tempfile
 import threading
 from collections.abc import Callable
 from dataclasses import dataclass, field
@@ -87,8 +88,13 @@ class StdioTransport:
         # entry point is codex.CMD; handing Popen the bare name raises
         # WinError 2, "The system cannot find the file specified".
         resolved = shutil.which(executable) or executable
+        # Run Codex in an empty directory rather than the repository. From the repo it
+        # reads AGENTS.md and explores the codebase before every answer, which slows each
+        # turn and adds commentary; the prompt already carries all the evidence.
+        self._workdir = tempfile.mkdtemp(prefix="alephtav-codex-")
         self._process = subprocess.Popen(  # noqa: S603
             [resolved, "app-server", "--listen", "stdio://"],
+            cwd=self._workdir,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL,
@@ -115,6 +121,7 @@ class StdioTransport:
                 self._process.wait(timeout=5)
             except Exception:  # pragma: no cover - best effort shutdown
                 self._process.kill()
+        shutil.rmtree(self._workdir, ignore_errors=True)
 
 
 def codex_executable() -> str | None:
@@ -134,6 +141,9 @@ class CodexAppServerClient:
     notifications: list[dict[str, Any]] = field(default_factory=list)
     on_notification: Callable[[dict[str, Any]], None] | None = None
     _lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
+    #: Threads open in this app-server process. A thread belongs to the process that
+    #: started or resumed it, so one saved before a restart must be resumed first.
+    _threads: set[str] = field(default_factory=set, repr=False, compare=False)
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
@@ -161,7 +171,10 @@ class CodexAppServerClient:
             self._respond(message.get("id"), {})
 
     def _handle_notification(self, message: dict[str, Any]) -> None:
-        self.notifications.append(message)
+        # Streaming fragments repeat what item/completed carries whole. Keeping them made
+        # every saved run record roughly ten times larger.
+        if not str(message.get("method", "")).endswith(("/delta", "Delta")):
+            self.notifications.append(message)
         if self.on_notification is not None:
             self.on_notification(message)
 
@@ -244,10 +257,13 @@ class CodexAppServerClient:
         thread_id = (result.get("thread") or {}).get("id")
         if not thread_id:
             raise GenerationError("Codex thread/start did not return a threadId")
+        self._threads.add(str(thread_id))
         return str(thread_id)
 
     def resume_thread(self, thread_id: str) -> dict[str, Any]:
-        return self.request("thread/resume", {"threadId": thread_id})
+        result = self.request("thread/resume", {"threadId": thread_id})
+        self._threads.add(thread_id)
+        return result
 
     def _pump_until_turn_complete(self, turn_id: str | None) -> dict[str, Any]:
         """Read notifications until the turn finishes, collecting its output."""
@@ -276,7 +292,13 @@ class CodexAppServerClient:
                 raise GenerationError(str(error.get("message") or "Codex reported an error"))
             if method == "item/completed":
                 item = params.get("item") or {}
-                if item.get("type") == "agentMessage" and item.get("text"):
+                # Commentary posted between tool calls is not the answer; only the final
+                # message follows the output contract.
+                if (
+                    item.get("type") == "agentMessage"
+                    and item.get("text")
+                    and item.get("phase") != "commentary"
+                ):
                     text_parts.append(str(item["text"]))
             if method == "turn/completed":
                 turn = params.get("turn") or {}
@@ -307,6 +329,10 @@ class CodexAppServerClient:
             params["model"] = model
         # Hold the transport for the whole turn so no other request reads its notifications.
         with self._lock:
+            if thread_id not in self._threads:
+                # Saved before AlephTav restarted: this app server has never loaded it.
+                self._exchange("thread/resume", {"threadId": thread_id})
+                self._threads.add(thread_id)
             started = self._exchange("turn/start", params)
             turn_id = (started.get("turn") or {}).get("id")
             result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
@@ -321,6 +347,7 @@ class CodexAppServerClient:
             self.transport.close()
             self.transport = None
         self.initialized = False
+        self._threads.clear()
 
 
 _ACTIVE_CLIENT: CodexAppServerClient | None = None

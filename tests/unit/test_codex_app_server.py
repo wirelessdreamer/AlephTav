@@ -12,6 +12,7 @@ import threading
 import time
 from collections import deque
 from collections.abc import Callable
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -192,12 +193,65 @@ def test_disconnect_mid_turn_is_reported_as_a_generation_error() -> None:
         return (
             [_ok(message, {"turn": {"id": "turn-1"}})]
             if message.get("method") == "turn/start"
-            else []
+            else [_ok(message, {})]
         )
 
     client = _client(handler)
-    with pytest.raises(GenerationError, match="disconnected"):
+    with pytest.raises(GenerationError, match="disconnected during turn"):
         client.run_turn("th-1", "translate")
+
+
+def _completed_turn(message: dict[str, Any], *items: dict[str, Any]) -> list[dict[str, Any]]:
+    return [
+        _ok(message, {"turn": {"id": "turn-1"}}),
+        *({"jsonrpc": "2.0", "method": "item/completed", "params": {"item": i}} for i in items),
+        {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}},
+    ]
+
+
+def test_commentary_between_tool_calls_is_left_out_of_the_answer() -> None:
+    def handler(message, _transport):
+        if message.get("method") != "turn/start":
+            return [_ok(message, {})]
+        delta = {"jsonrpc": "2.0", "method": "item/agentMessage/delta", "params": {"delta": "{"}}
+        return [
+            delta,
+            *_completed_turn(
+                message,
+                {"type": "agentMessage", "phase": "commentary", "text": "I'll read the guidance."},
+                {"type": "agentMessage", "phase": "final_answer", "text": '{"candidates": []}'},
+            ),
+        ]
+
+    client = _client(handler)
+    result = client.run_turn("th-1", "translate")
+
+    assert result["text"] == '{"candidates": []}'
+    # Streaming fragments are dropped: item/completed already carries the whole text.
+    assert "item/agentMessage/delta" not in [n["method"] for n in client.notifications]
+
+
+def test_a_thread_saved_before_a_restart_is_resumed_before_its_first_turn() -> None:
+    def handler(message, _transport):
+        if message.get("method") == "thread/start":
+            return [_ok(message, {"thread": {"id": "th-new"}})]
+        if message.get("method") == "turn/start":
+            return _completed_turn(message)
+        return [_ok(message, {})]
+
+    client = _client(handler)
+    client.run_turn(client.start_thread(), "translate")
+    client.run_turn("th-saved", "translate")
+    client.run_turn("th-saved", "translate")
+
+    assert client.transport.sent_methods() == [
+        "thread/start",
+        "turn/start",
+        "thread/resume",
+        "turn/start",
+        "turn/start",
+    ]
+    assert client.transport.params_for("thread/resume") == {"threadId": "th-saved"}
 
 
 class BlockingTransport:
@@ -212,7 +266,9 @@ class BlockingTransport:
 
     def send(self, message: dict[str, Any]) -> None:
         self.sent.append(message)
-        if message.get("method") == "turn/start":
+        if message.get("method") == "thread/resume":
+            self.push(_ok(message, {}))
+        elif message.get("method") == "turn/start":
             self.push(_ok(message, {"turn": {"id": "turn-1"}}))
         elif message.get("method") == "account/read":
             self.push(_ok(message, {"account": {"type": "chatgpt", "planType": "pro"}}))
@@ -352,10 +408,35 @@ def test_transport_resolves_the_executable_through_path(monkeypatch) -> None:
     monkeypatch.setattr(codex.shutil, "which", lambda name: r"C:\npm\codex.CMD")
     monkeypatch.setattr(codex.subprocess, "Popen", FakePopen)
 
-    codex.StdioTransport("codex")
+    codex.StdioTransport("codex").close()
 
     assert spawned["argv"][0] == r"C:\npm\codex.CMD"
     assert spawned["argv"][1:] == ["app-server", "--listen", "stdio://"]
+
+
+def test_transport_runs_codex_in_an_empty_directory_outside_the_repository(monkeypatch) -> None:
+    # From the repository Codex read AGENTS.md and explored the codebase before every
+    # answer, adding tool calls and commentary to each translation turn.
+    spawned: dict[str, Any] = {}
+
+    class FakePopen:
+        def __init__(self, argv, **kwargs):
+            spawned.update(kwargs)
+            self.stdin = None
+            self.stdout = None
+
+        def poll(self):
+            return 0
+
+    monkeypatch.setattr(codex.subprocess, "Popen", FakePopen)
+
+    transport = codex.StdioTransport("codex")
+    workdir = Path(spawned["cwd"])
+
+    assert workdir.is_dir() and not any(workdir.iterdir())
+    assert workdir.resolve() != Path.cwd().resolve()
+    transport.close()
+    assert not workdir.exists()
 
 
 def test_client_reports_a_clear_error_when_codex_is_not_on_path(monkeypatch) -> None:
