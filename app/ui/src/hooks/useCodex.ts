@@ -6,9 +6,9 @@ import type {
   CodexRunEvents,
   CodexSession,
   CodexStatus,
+  PassageFillResult,
   PsalmAnalysis,
   PsalmAnalysisResult,
-  RowFillResult,
   TranslationGuidance,
   VerseAnalysisResult,
 } from '../types';
@@ -152,23 +152,21 @@ export function useSaveTranslationGuidance(psalmId: string | null) {
 }
 
 /**
- * Fill one comparison row end to end: literal baseline when missing, the
- * English layer, and the accuracy / creative-liberty notes.
+ * Fill several comparison rows of a psalm together: literal baselines where
+ * missing, then the English layer, one Codex turn per layer with the whole
+ * psalm as context.
  */
-export function useFillComparisonRow() {
+export function useFillPsalmPassage(psalmId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({
-      unitId,
-      ...payload
-    }: {
-      unitId: string;
+    mutationFn: (payload: {
       session_id: string;
+      unit_ids: string[];
       english_layer?: string;
       style_profile?: string;
       meter_target?: string;
       constraints?: string[];
-    }) => postJson<RowFillResult>(`/codex/rows/${unitId}/fill`, payload),
+    }) => postJson<PassageFillResult>(`/codex/psalms/${psalmId}/fill`, payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
       queryClient.invalidateQueries({ queryKey: ['comparison-assessments'] });

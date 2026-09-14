@@ -6,7 +6,7 @@ import {
   useCodexStatus,
   useConnectCodex,
   useCreateCodexSession,
-  useFillComparisonRow,
+  useFillPsalmPassage,
   useSaveTranslationGuidance,
   useTranslationGuidance,
 } from '../hooks/useCodex';
@@ -136,11 +136,17 @@ const BATCH_WORDS: Record<BatchKind, { active: string; noun: string }> = {
   analyse: { active: 'Analysing', noun: 'Analysis' },
 };
 
-/** One Codex call in a batch. `run` resolves to an error message, or null on success. */
+interface BatchFailure {
+  label: string;
+  error: string;
+}
+
+/** One Codex call in a batch, covering `rows` table rows. `run` resolves to the rows that failed. */
 interface BatchStep {
   label: string;
-  unitId: string | null;
-  run: () => Promise<string | null>;
+  unitIds: string[];
+  rows: number;
+  run: () => Promise<BatchFailure[]>;
 }
 
 interface BatchProgress {
@@ -148,7 +154,7 @@ interface BatchProgress {
   done: number;
   total: number;
   label: string;
-  unitId: string | null;
+  unitIds: string[];
   stopping: boolean;
 }
 
@@ -157,7 +163,38 @@ interface BatchReport {
   succeeded: number;
   total: number;
   stopped: boolean;
-  failures: { label: string; error: string }[];
+  failures: BatchFailure[];
+}
+
+/** Most rows sent to Codex in one turn; longer psalms are split into passages. */
+const PASSAGE_LIMIT = 12;
+
+function verseNumber(row: ComparisonTableRow): number {
+  return Number(row.unit_ids[0]?.split('.')[1]?.replace('v', ''));
+}
+
+/**
+ * Split rows into the passages Codex translates one turn at a time: the psalm's
+ * analysed sections when it has them, and never more than PASSAGE_LIMIT rows.
+ */
+function passages(
+  rows: ComparisonTableRow[],
+  sections: PsalmAnalysisSection[] = [],
+): ComparisonTableRow[][] {
+  const groups: ComparisonTableRow[][] = [];
+  let section: PsalmAnalysisSection | undefined;
+  for (const row of rows) {
+    const verse = verseNumber(row);
+    const rowSection = sections.find((s) => verse >= s.first_verse && verse <= s.last_verse);
+    const current = groups[groups.length - 1];
+    if (!current || current.length >= PASSAGE_LIMIT || rowSection !== section) {
+      groups.push([row]);
+    } else {
+      current.push(row);
+    }
+    section = rowSection;
+  }
+  return groups;
 }
 
 /** API errors arrive as FastAPI `{"detail": ...}` bodies, sometimes inside a run's error. */
@@ -174,19 +211,24 @@ function readableError(message: string): string {
   return message;
 }
 
-/**
- * Codex endpoints answer 200 even when the run failed, reporting it in
- * `status` / `error`. Resolve to that failure (or a thrown one), or null.
- */
+/** Codex endpoints answer 200 even when the run failed, reporting it in `status` / `error`. */
+function runFailure(result: { status: string; error: string | null }): string | null {
+  if (result.status === 'completed') return null;
+  return readableError(result.error ?? `Codex run ended as ${result.status.replace(/_/g, ' ')}`);
+}
+
+function thrownFailure(error: unknown): string {
+  return readableError(error instanceof Error ? error.message : String(error));
+}
+
+/** The failure a Codex call reported or threw, or null when it completed. */
 async function failureOf(
   call: () => Promise<{ status: string; error: string | null }>,
 ): Promise<string | null> {
   try {
-    const result = await call();
-    if (result.status === 'completed') return null;
-    return readableError(result.error ?? `Codex run ended as ${result.status.replace(/_/g, ' ')}`);
+    return runFailure(await call());
   } catch (error) {
-    return readableError(error instanceof Error ? error.message : String(error));
+    return thrownFailure(error);
   }
 }
 
@@ -235,7 +277,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const { data: guidance } = useTranslationGuidance(psalmId);
   const saveGuidance = useSaveTranslationGuidance(psalmId);
   const createSession = useCreateCodexSession();
-  const fillRow = useFillComparisonRow();
+  const fillPassage = useFillPsalmPassage(psalmId);
   const analyzeVerse = useAnalyzeVerse(psalmId);
   const analyzePsalm = useAnalyzePsalm(psalmId);
   const codexReady = codexStatus?.status === 'ready';
@@ -268,8 +310,9 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   async function runBatch(kind: BatchKind, steps: BatchStep[]) {
     stopRequested.current = false;
     setReport(null);
-    const failures: BatchReport['failures'] = [];
+    const failures: BatchFailure[] = [];
     let done = 0;
+    let rowsDone = 0;
     try {
       for (const step of steps) {
         if (stopRequested.current) break;
@@ -278,38 +321,60 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
           done,
           total: steps.length,
           label: step.label,
-          unitId: step.unitId,
+          unitIds: step.unitIds,
           stopping: false,
         });
-        const error = await step.run();
-        if (error) failures.push({ label: step.label, error });
+        failures.push(...(await step.run()));
         done += 1;
+        rowsDone += step.rows;
       }
     } finally {
       setBatch(null);
       setReport({
         kind,
-        succeeded: done - failures.length,
-        total: steps.length,
+        succeeded: rowsDone - failures.length,
+        total: steps.reduce((sum, step) => sum + step.rows, 0),
         stopped: done < steps.length,
         failures,
       });
     }
   }
 
-  function translateStep(row: ComparisonTableRow): BatchStep {
-    const unitId = row.unit_ids[0];
+  /** Translate rows together, one Codex turn per layer, with the whole psalm as context. */
+  function passageStep(passage: ComparisonTableRow[]): BatchStep {
+    const unitIds = passage.flatMap((row) => row.unit_ids);
+    const first = passage[0].display_reference;
+    const last = passage[passage.length - 1].display_reference;
+    const chapter = first.slice(0, first.lastIndexOf(':') + 1);
+    const everyRow = (error: string) =>
+      passage.map((row) => ({ label: row.display_reference, error }));
     return {
-      label: row.display_reference,
-      unitId,
-      run: () =>
-        failureOf(async () =>
-          fillRow.mutateAsync({
-            unitId,
+      label:
+        passage.length === 1
+          ? first
+          : `${first}–${last.startsWith(chapter) ? last.slice(chapter.length) : last}`,
+      unitIds,
+      rows: passage.length,
+      run: async () => {
+        try {
+          const result = await fillPassage.mutateAsync({
             session_id: await ensureSession(),
+            unit_ids: unitIds,
             english_layer: englishLayer,
-          }),
-        ),
+          });
+          const failure = runFailure(result);
+          if (failure) return everyRow(failure);
+          // Units Codex left out; one entry per row even when a row has several units.
+          const failed = new Map<string, string>();
+          for (const { unit_id, error } of result.failed_units) {
+            const row = passage.find((candidate) => candidate.unit_ids.includes(unit_id));
+            failed.set(row?.display_reference ?? unit_id, readableError(error));
+          }
+          return [...failed].map(([label, error]) => ({ label, error }));
+        } catch (error) {
+          return everyRow(thrownFailure(error));
+        }
+      },
     };
   }
 
@@ -317,32 +382,39 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
     const unitId = row.unit_ids[0];
     return {
       label: row.display_reference,
-      unitId,
-      run: () =>
-        failureOf(async () =>
+      unitIds: [unitId],
+      rows: 1,
+      run: async () => {
+        const error = await failureOf(async () =>
           analyzeVerse.mutateAsync({
             unitId,
             session_id: await ensureSession(),
             english_layer: englishLayer,
           }),
-        ),
+        );
+        return error ? [{ label: row.display_reference, error }] : [];
+      },
     };
   }
 
   function analysePsalm(targets: ComparisonTableRow[]) {
+    const wholeLabel = `${data?.title ?? 'The psalm'} as a whole`;
     return runBatch('analyse', [
       ...targets.map(analyseStep),
       // The psalm-scope turn last, so sections describe the audited verses.
       {
-        label: `${data?.title ?? 'The psalm'} as a whole`,
-        unitId: null,
-        run: () =>
-          failureOf(async () =>
+        label: wholeLabel,
+        unitIds: [],
+        rows: 1,
+        run: async () => {
+          const error = await failureOf(async () =>
             analyzePsalm.mutateAsync({
               session_id: await ensureSession(),
               english_layer: englishLayer,
             }),
-          ),
+          );
+          return error ? [{ label: wholeLabel, error }] : [];
+        },
       },
     ]);
   }
@@ -513,10 +585,16 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                 ) : null}
                 <button
                   type="button"
-                  disabled={!codexReady || fillRow.isPending}
+                  disabled={!codexReady || fillPassage.isPending}
                   title={codexHint}
                   onClick={() =>
-                    void runBatch('translate', rows.filter((row) => row.incomplete).map(translateStep))
+                    void runBatch(
+                      'translate',
+                      passages(
+                        rows.filter((row) => row.incomplete),
+                        analysis?.sections,
+                      ).map(passageStep),
+                    )
                   }
                 >
                   Translate psalm
@@ -819,15 +897,15 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                     {row.mt_reference !== row.display_reference && (
                       <span className="reference-mt">MT {row.mt_reference}</span>
                     )}
-                    {batch?.unitId === row.unit_ids[0] && (
+                    {batch?.unitIds.includes(row.unit_ids[0]) && (
                       <span className="row-progress">{BATCH_WORDS[batch.kind].active}…</span>
                     )}
                     <button
                       type="button"
                       className="link-button"
-                      disabled={!codexReady || fillRow.isPending || Boolean(batch)}
+                      disabled={!codexReady || fillPassage.isPending || Boolean(batch)}
                       title={codexHint}
-                      onClick={() => void runBatch('translate', [translateStep(row)])}
+                      onClick={() => void runBatch('translate', [passageStep([row])])}
                     >
                       {row.incomplete ? 'Translate verse' : 'Regenerate'}
                     </button>

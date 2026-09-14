@@ -138,6 +138,9 @@ def test_prompt_carries_the_required_evidence_and_separates_mt_numbering() -> No
     assert "Do not alter the Hebrew source." in prompt
     # Token evidence is included so alignment can be anchored.
     assert unit["tokens"][0]["token_id"] in prompt
+    # Codex runs outside the repository, so the layer's own rules travel in the prompt.
+    assert "## Layer instructions (lyric)" in prompt
+    assert "# Pass 05 Lyric" in prompt
 
 
 def test_valid_run_completes_and_records_provenance() -> None:

@@ -139,6 +139,25 @@ def fill_comparison_row(unit_id: str, payload: dict) -> dict:
         raise_as_http(error)
 
 
+@router.post("/codex/psalms/{psalm_id}/fill")
+def fill_psalm_passage(psalm_id: str, payload: dict) -> dict:
+    """Generate literal + English for several rows of a psalm, one turn per layer."""
+    try:
+        return translation.fill_psalm_passage(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            psalm_id=psalm_id,
+            unit_ids=list(payload.get("unit_ids") or []),
+            english_layer=payload.get("english_layer", "lyric"),
+            created_by=payload.get("created_by", "codex"),
+            style_profile=payload.get("style_profile"),
+            meter_target=payload.get("meter_target"),
+            constraints=payload.get("constraints"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
 @router.post("/codex/analysis/verses/{unit_id}")
 def analyze_verse(unit_id: str, payload: dict) -> dict:
     """Audit one verse's existing renderings against the Hebrew."""

@@ -1021,12 +1021,13 @@ export interface TranslationGuidance {
   translation_guidance: string;
 }
 
-export interface RowFillResult {
-  unit_id: string;
+export interface PassageFillResult {
+  psalm_id: string;
   status: CodexRun['status'];
   run_ids: string[];
   rendering_ids: string[];
-  assessment: ComparisonAssessment | null;
+  /** Units the reply left out; the rest of the passage was still saved. */
+  failed_units: Array<{ unit_id: string; error: string }>;
   error: string | null;
 }
 

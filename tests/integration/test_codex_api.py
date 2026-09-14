@@ -235,3 +235,32 @@ def test_cancel_marks_the_run_cancelled() -> None:
 def test_unknown_run_is_not_found() -> None:
     _connect("{}")
     assert client.get("/codex/runs/cxr.doesnotexist/events").status_code == 404
+
+
+def test_psalm_fill_translates_the_requested_units_in_one_turn() -> None:
+    _connect(json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": [_payload()]}))
+    session_id = client.post("/codex/sessions", json={"psalm_id": "ps001"}).json()["session_id"]
+
+    response = client.post(
+        "/codex/psalms/ps001/fill", json={"session_id": session_id, "unit_ids": [UNIT_ID]}
+    )
+
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert body["status"] == translation.RUN_COMPLETED
+    assert body["failed_units"] == []
+    # The fixture verse already has a literal, so only the English layer is generated.
+    assert len(body["run_ids"]) == 1
+    assert len(body["rendering_ids"]) == 1
+
+
+def test_psalm_fill_rejects_units_outside_the_psalm() -> None:
+    _connect("{}")
+    session_id = client.post("/codex/sessions", json={"psalm_id": "ps001"}).json()["session_id"]
+
+    response = client.post(
+        "/codex/psalms/ps001/fill", json={"session_id": session_id, "unit_ids": ["ps019.v001.a"]}
+    )
+
+    assert response.status_code == 400
+    assert "ps019.v001.a" in response.json()["detail"]

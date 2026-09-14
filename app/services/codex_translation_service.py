@@ -15,6 +15,8 @@ import uuid
 from datetime import UTC, datetime
 from typing import Any
 
+from jsonschema import Draft202012Validator
+
 from app.core.config import get_settings
 from app.core.errors import GenerationError, NotFoundError, ValidationError
 from app.llm.strict_schema import strict_output_schema
@@ -22,12 +24,16 @@ from app.services import (
     codex_app_server_service as codex,
 )
 from app.services import (
+    comparison_assessment_service as comparisons,
+)
+from app.services import (
     generation_service,
     registry_service,
     rendering_service,
 )
 
-PROMPT_TEMPLATE_VERSION = "codex-translation-v1"
+PROMPT_TEMPLATE_VERSION = "codex-translation-v2"
+PASSAGE_TEMPLATE_VERSION = "codex-passage-v1"
 
 RUN_RUNNING = "running"
 RUN_COMPLETED = "completed"
@@ -174,16 +180,6 @@ def build_translation_prompt(
 ) -> str:
     """Assemble only the evidence the task needs, as required by FR-4."""
     unit = registry_service.load_unit(unit_id)
-    tokens = unit.get("tokens", [])
-
-    token_lines = []
-    for token in tokens:
-        bits = [f"{token.get('token_id')}: {token.get('surface', '')}"]
-        for key in ("lemma", "morphology", "gloss", "notes"):
-            value = token.get(key)
-            if value:
-                bits.append(f"{key}={value}")
-        token_lines.append("  " + " | ".join(str(b) for b in bits))
 
     literal = next(
         (r for r in unit.get("renderings", []) if r.get("layer") == "literal"),
@@ -216,16 +212,118 @@ def build_translation_prompt(
         ]
     sections += [
         "",
+        f"## Layer instructions ({layer})",
+        _layer_rules(layer),
+        "",
         "## Hebrew source meaning",
         unit["source_hebrew"],
         "",
         "## Hebrew tokens (ordered)",
-        "\n".join(token_lines) if token_lines else "  (none recorded)",
+        _token_lines(unit),
     ]
     if literal is not None and layer != "literal":
         sections += ["", "## Literal baseline", f"  {literal['text']}"]
     if locked:
         sections += ["", "## Locked upstream layers", "\n".join(locked)]
+    if style_profile:
+        sections += ["", "## Style profile", f"  {style_profile}"]
+    if meter_target:
+        sections += ["", "## Singability / metrical adaptation target", f"  {meter_target}"]
+
+    all_constraints = list(constraints or [])
+    all_constraints.append("Return accuracy commentary in accuracy_note.")
+    all_constraints.append("Return creative liberties in creative_liberties_note.")
+    all_constraints.append("Do not alter the Hebrew source.")
+    sections += ["", "## Constraints", "\n".join(f"  - {c}" for c in all_constraints)]
+    return "\n".join(sections)
+
+
+def _token_lines(unit: dict[str, Any]) -> str:
+    lines = []
+    for token in unit.get("tokens", []):
+        bits = [f"{token.get('token_id')}: {token.get('surface', '')}"]
+        for key in ("lemma", "morphology", "gloss", "notes"):
+            value = token.get(key)
+            if value:
+                bits.append(f"{key}={value}")
+        lines.append("  " + " | ".join(str(b) for b in bits))
+    return "\n".join(lines) if lines else "  (none recorded)"
+
+
+def _layer_rules(layer: str) -> str:
+    """The project's own rules for a layer, the same ones the local-model passes use.
+
+    Codex runs outside the repository, so it cannot read these unless they are sent.
+    """
+    _, text = generation_service._load_prompt(layer)
+    return text
+
+
+def build_passage_prompt(
+    psalm_id: str,
+    unit_ids: list[str],
+    layer: str,
+    style_profile: str | None = None,
+    meter_target: str | None = None,
+    constraints: list[str] | None = None,
+) -> str:
+    """One prompt for several units of a psalm, with the whole psalm as context.
+
+    Translated a verse per turn, the model cannot see what follows or keep meter,
+    recurring terms and parallelism consistent across verse boundaries.
+    """
+    psalm = registry_service.load_psalm(psalm_id)
+    units = {unit["unit_id"]: unit for unit in psalm["units"]}
+    guidance = get_guidance(psalm_id)
+
+    sections = [
+        "# Translation task -- psalm passage",
+        f"Psalm: {psalm_id} ({psalm.get('title', '')})",
+        f"Required output layer: {layer}",
+        f"Units to translate, in order: {', '.join(unit_ids)}",
+        "",
+        "Translate these units as one continuous passage rather than as separate verses:",
+        "keep word choices, meter and imagery consistent from verse to verse, and let",
+        "parallel lines answer each other. Return exactly one entry per unit, in the order",
+        "listed, each with one candidate.",
+    ]
+    if guidance:
+        sections += [
+            "",
+            "## Translator guidance for this psalm (follow this above general style rules)",
+            guidance,
+        ]
+    sections += ["", f"## Layer instructions ({layer})", _layer_rules(layer)]
+
+    sections += ["", "## The whole psalm (units to translate are marked)"]
+    for unit in psalm["units"]:
+        target = unit["unit_id"] in unit_ids
+        sections.append(f"  {unit['ref']} [{unit['unit_id']}]{' <- translate' if target else ''}")
+        sections.append(f"    Hebrew: {unit['source_hebrew']}")
+        current = comparisons.select_rendering(unit, layer)
+        if current is not None and not target:
+            # Keeps a passage continuous with the verses already translated around it.
+            sections.append(f"    Current {layer}: {current['text']}")
+
+    for unit_id in unit_ids:
+        unit = units[unit_id]
+        sections += [
+            "",
+            f"## Evidence for {unit_id} ({unit['ref']})",
+            "Hebrew tokens (ordered):",
+            _token_lines(unit),
+        ]
+        literal = comparisons.select_rendering(unit, "literal")
+        if literal is not None and layer != "literal":
+            sections += ["Literal baseline:", f"  {literal['text']}"]
+        locked = [
+            f"  {r['layer']}: {r['text']}"
+            for r in unit.get("renderings", [])
+            if r.get("status") == "canonical" and r.get("layer") != layer
+        ]
+        if locked:
+            sections += ["Locked upstream layers:", *locked]
+
     if style_profile:
         sections += ["", "## Style profile", f"  {style_profile}"]
     if meter_target:
@@ -428,6 +526,110 @@ def fill_comparison_row(
     return result
 
 
+#: A passage turn returns the generation contract once per unit.
+PASSAGE_VALIDATOR = Draft202012Validator(
+    {
+        "type": "object",
+        "required": ["psalm_id", "layer", "units"],
+        "additionalProperties": False,
+        "properties": {
+            "psalm_id": {"type": "string"},
+            "layer": {"type": "string"},
+            "units": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                    key: value
+                    for key, value in generation_service.OUTPUT_VALIDATOR.schema.items()
+                    if key != "$schema"
+                },
+            },
+        },
+    }
+)
+
+
+def fill_psalm_passage(
+    client: codex.CodexAppServerClient,
+    session_id: str,
+    psalm_id: str,
+    unit_ids: list[str],
+    english_layer: str = "lyric",
+    created_by: str = "codex",
+    style_profile: str | None = None,
+    meter_target: str | None = None,
+    constraints: list[str] | None = None,
+) -> dict[str, Any]:
+    """Generate the renderings for several comparison rows in one turn per layer.
+
+    As in :func:`fill_comparison_row`, units without a literal baseline get one
+    first, nothing is assessed, and everything lands as ``proposed``. Units the
+    reply leaves out are listed in ``failed_units``; the others are still saved.
+    """
+    psalm_unit_ids = registry_service.load_psalm_meta(psalm_id).get("unit_ids", [])
+    outside = [unit_id for unit_id in unit_ids if unit_id not in psalm_unit_ids]
+    if not unit_ids or outside:
+        raise ValidationError(
+            f"A passage needs units from {psalm_id}; got {', '.join(outside) or 'none'}"
+        )
+
+    result: dict[str, Any] = {
+        "psalm_id": psalm_id,
+        "status": RUN_COMPLETED,
+        "run_ids": [],
+        "rendering_ids": [],
+        "failed_units": [],
+        "error": None,
+    }
+    lacking_literal = [
+        unit_id
+        for unit_id in unit_ids
+        if not any(
+            r.get("layer") == "literal"
+            for r in registry_service.load_unit(unit_id).get("renderings", [])
+        )
+    ]
+    failures: dict[str, str] = {}
+
+    for layer, targets in (("literal", lacking_literal), (english_layer, unit_ids)):
+        if not targets:
+            continue
+        run = run_contract_turn(
+            client,
+            session_id=session_id,
+            prompt=build_passage_prompt(
+                psalm_id, targets, layer, style_profile, meter_target, constraints
+            ),
+            validator=PASSAGE_VALIDATOR,
+            kind=KIND_TRANSLATION,
+            layer=layer,
+            psalm_id=psalm_id,
+            prompt_template_version=PASSAGE_TEMPLATE_VERSION,
+        )
+        result["run_ids"].append(run["run_id"])
+        if run["status"] != RUN_COMPLETED:
+            result["status"] = run["status"]
+            result["error"] = run.get("error")
+            return result
+
+        answered: dict[str, dict[str, Any]] = {}
+        for item in run["payload"]["units"]:
+            answered.setdefault(item["unit_id"], item)
+        for unit_id in targets:
+            item = answered.get(unit_id)
+            if item is None or not item["candidates"]:
+                failures.setdefault(unit_id, f"Codex returned no {layer} rendering for this unit")
+                continue
+            for candidate in item["candidates"]:
+                rendering = _create_rendering(run, unit_id, candidate, created_by)
+                result["rendering_ids"].append(rendering["rendering_id"])
+
+    result["failed_units"] = [
+        {"unit_id": unit_id, "error": error} for unit_id, error in failures.items()
+    ]
+    return result
+
+
 def cancel_run(client: codex.CodexAppServerClient, run_id: str) -> dict[str, Any]:
     run = get_run(run_id)
     if run["status"] == RUN_RUNNING and run.get("turn_id"):
@@ -446,40 +648,45 @@ def save_run_candidates(run_id: str, created_by: str = "codex") -> list[dict[str
     """
     run = get_run(run_id)
     if run.get("kind", KIND_TRANSLATION) != KIND_TRANSLATION:
-        raise ValidationError(
-            f"Run {run_id} is a {run.get('kind')} run; it produces no renderings"
-        )
+        raise ValidationError(f"Run {run_id} is a {run.get('kind')} run; it produces no renderings")
     if run["status"] != RUN_COMPLETED or not run.get("payload"):
         raise ValidationError(f"Run {run_id} has no validated payload to save")
+    if not run.get("unit_id"):
+        raise ValidationError(f"Run {run_id} is a passage; its renderings were saved when it ran")
 
-    created: list[dict[str, Any]] = []
-    for candidate in run["payload"].get("candidates", []):
-        rendering = rendering_service.create_rendering(
-            unit_id=run["unit_id"],
-            layer=run["layer"],
-            text=candidate["text"],
-            # Hard-coded, not taken from the payload: Codex cannot choose its
-            # own status.
-            status="proposed",
-            rationale=candidate.get("rationale", "codex suggestion"),
-            created_by=created_by,
-            alignment_ids=None,
-            drift_flags=candidate.get("drift_flags"),
-            metrics=candidate.get("metrics"),
-            grounding_confidence=candidate.get("grounding_confidence"),
-            translation_basis=candidate.get("translation_basis"),
-            preserved_source_images=candidate.get("preserved_source_images"),
-            differentiator=candidate.get("differentiator"),
-            provenance={
-                "provider": codex.PROVIDER_NAME,
-                "model": run.get("model", ""),
-                "thread_id": run["thread_id"],
-                "turn_id": run.get("turn_id"),
-                "run_id": run["run_id"],
-                "prompt_template_version": run["prompt_template_version"],
-                "generated_at": run.get("completed_at"),
-                "contract_validated": True,
-            },
-        )
-        created.append(rendering)
-    return created
+    return [
+        _create_rendering(run, run["unit_id"], candidate, created_by)
+        for candidate in run["payload"].get("candidates", [])
+    ]
+
+
+def _create_rendering(
+    run: dict[str, Any], unit_id: str, candidate: dict[str, Any], created_by: str
+) -> dict[str, Any]:
+    return rendering_service.create_rendering(
+        unit_id=unit_id,
+        layer=run["layer"],
+        text=candidate["text"],
+        # Hard-coded, not taken from the payload: Codex cannot choose its
+        # own status.
+        status="proposed",
+        rationale=candidate.get("rationale", "codex suggestion"),
+        created_by=created_by,
+        alignment_ids=None,
+        drift_flags=candidate.get("drift_flags"),
+        metrics=candidate.get("metrics"),
+        grounding_confidence=candidate.get("grounding_confidence"),
+        translation_basis=candidate.get("translation_basis"),
+        preserved_source_images=candidate.get("preserved_source_images"),
+        differentiator=candidate.get("differentiator"),
+        provenance={
+            "provider": codex.PROVIDER_NAME,
+            "model": run.get("model", ""),
+            "thread_id": run["thread_id"],
+            "turn_id": run.get("turn_id"),
+            "run_id": run["run_id"],
+            "prompt_template_version": run["prompt_template_version"],
+            "generated_at": run.get("completed_at"),
+            "contract_validated": True,
+        },
+    )
