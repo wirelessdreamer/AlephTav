@@ -17,7 +17,9 @@ DENY_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"(^|/|\s)data/raw(/|\s|$)"), "data/raw/ is the read-only vendored corpus."),
     (re.compile(r"\b(rm|mv|cp|pip)\b[^|]*\.venv"), "Do not modify .venv from bash; recreate via setup.sh."),
     (re.compile(r"\bnpm\s+publish\b"), "npm publish is denied for this project."),
-    (re.compile(r"\bpip\s+install\s+(?!-e\s+\.\[dev\]\b)"), "Pin deps via pyproject.toml; ad-hoc pip install is denied."),
+    # The exception must end on whitespace or end of input: a \b after "]" never matches,
+    # because "]" and the character after it are both non-word characters.
+    (re.compile(r"\bpip\s+install\s+(?!-e\s+(['\"]?)\.\[dev\]\1(?:\s|$))"), "Pin deps via pyproject.toml; ad-hoc pip install is denied."),
 ]
 
 
