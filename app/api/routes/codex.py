@@ -87,6 +87,15 @@ def resume_codex_session(session_id: str) -> dict:
         raise_as_http(error)
 
 
+@router.post("/codex/sessions/{session_id}/interrupt")
+def interrupt_codex_session(session_id: str) -> dict:
+    """Stop the turn this session is running, if any; the request waiting on it reports why."""
+    try:
+        return translation.interrupt_session(codex.require_client(), session_id)
+    except Exception as error:
+        raise_as_http(error)
+
+
 @router.post("/codex/sessions/{session_id}/turns")
 def start_codex_turn(session_id: str, payload: dict) -> dict:
     try:

@@ -33,6 +33,10 @@ from app.services import (
 )
 
 PROMPT_TEMPLATE_VERSION = "codex-translation-v2"
+#: Reasoning effort asked of Codex for AlephTav's turns, rather than whatever the user's
+#: Codex config uses for coding. A six-verse passage at the highest setting never came
+#: back; the same turn at "high" finished in about two minutes with every verse.
+TURN_EFFORT = "high"
 PASSAGE_TEMPLATE_VERSION = "codex-passage-v1"
 
 RUN_RUNNING = "running"
@@ -129,6 +133,16 @@ def list_sessions(psalm_id: str | None = None) -> list[dict[str, Any]]:
     if psalm_id:
         sessions = [s for s in sessions if s["psalm_id"] == psalm_id]
     return sorted(sessions, key=lambda s: s["started_at"])
+
+
+def interrupt_session(client: codex.CodexAppServerClient, session_id: str) -> dict[str, Any]:
+    """Stop the turn a session is running, if any. The request waiting on it then fails."""
+    session = get_session(session_id)
+    active = client.active_turn
+    if active is None or active[0] != session["thread_id"]:
+        return {"session_id": session_id, "interrupted": False}
+    client.interrupt(*active)
+    return {"session_id": session_id, "interrupted": True}
 
 
 def resume_session(client: codex.CodexAppServerClient, session_id: str) -> dict[str, Any]:
@@ -405,6 +419,7 @@ def run_contract_turn(
             text=prompt,
             output_schema=strict_output_schema(validator.schema),
             model=session.get("model") or None,
+            effort=TURN_EFFORT,
         )
     except GenerationError as error:
         run["status"] = RUN_FAILED

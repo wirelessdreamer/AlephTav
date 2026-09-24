@@ -114,7 +114,9 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
         ]
 
     client = _client(handler)
-    result = client.run_turn("th-1", "translate", output_schema=contract, model="gpt-5-codex")
+    result = client.run_turn(
+        "th-1", "translate", output_schema=contract, model="gpt-5-codex", effort="high"
+    )
 
     assert result["text"] == '{"candidates": []}'
     assert result["turn_id"] == "turn-1"
@@ -123,6 +125,7 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
     params = client.transport.params_for("turn/start")
     assert params["outputSchema"] == contract
     assert params["model"] == "gpt-5-codex"
+    assert params["effort"] == "high"
     assert params["sandboxPolicy"] == {"type": "readOnly"}
     assert params["input"] == [{"type": "text", "text": "translate"}]
 
@@ -318,6 +321,44 @@ def test_a_status_check_during_a_turn_waits_instead_of_stealing_its_messages() -
 
     assert outcome["turn"]["text"] == '{"candidates": []}'
     assert outcome["account"]["account"]["planType"] == "pro"
+
+
+def test_an_interrupt_reaches_codex_while_another_thread_pumps_the_turn() -> None:
+    # Stop used to queue behind the very turn it was meant to stop.
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport)
+    outcome: dict[str, Any] = {}
+
+    def turn() -> None:
+        try:
+            client.run_turn("th-1", "go")
+        except GenerationError as error:
+            outcome["error"] = str(error)
+
+    worker = threading.Thread(target=turn)
+    worker.start()
+    deadline = time.monotonic() + 5
+    while client.active_turn is None:
+        assert time.monotonic() < deadline
+        time.sleep(0.01)
+
+    client.interrupt(*client.active_turn)
+
+    interrupt = transport.sent[-1]
+    assert interrupt["method"] == "turn/interrupt"
+    assert interrupt["params"] == {"threadId": "th-1", "turnId": "turn-1"}
+    transport.push(_ok(interrupt, {}))
+    transport.push(
+        {
+            "jsonrpc": "2.0",
+            "method": "turn/completed",
+            "params": {"turn": {"id": "turn-1", "status": "interrupted"}},
+        }
+    )
+    worker.join(timeout=5)
+
+    assert outcome["error"] == "Stopped before Codex finished"
+    assert client.active_turn is None
 
 
 def test_status_reports_not_installed_when_codex_is_missing(monkeypatch) -> None:

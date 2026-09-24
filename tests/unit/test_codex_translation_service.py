@@ -151,6 +151,8 @@ def test_valid_run_completes_and_records_provenance() -> None:
     assert run["status"] == translation.RUN_COMPLETED
     assert run["turn_id"] == "turn-1"
     assert run["payload"]["candidates"][0]["accuracy_note"]
+    # Turns ask for the effort AlephTav needs, not the user's Codex default.
+    assert client.transport.params_for("turn/start")["effort"] == translation.TURN_EFFORT
     # The contract is handed to Codex in its strict structured-output form.
     assert client.transport.params_for("turn/start")["outputSchema"] == strict_output_schema(
         generation_service.OUTPUT_VALIDATOR.schema
@@ -229,6 +231,23 @@ def test_cancelling_a_running_turn_interrupts_it() -> None:
     assert client.transport.params_for("turn/interrupt") == {
         "threadId": "th-1",
         "turnId": "turn-1",
+    }
+
+
+def test_interrupting_a_session_stops_only_its_own_running_turn() -> None:
+    client = _client("{}")
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+
+    assert translation.interrupt_session(client, session["session_id"])["interrupted"] is False
+
+    client.active_turn = ("another-thread", "turn-9")
+    assert translation.interrupt_session(client, session["session_id"])["interrupted"] is False
+
+    client.active_turn = (session["thread_id"], "turn-9")
+    assert translation.interrupt_session(client, session["session_id"])["interrupted"] is True
+    assert client.transport.params_for("turn/interrupt") == {
+        "threadId": session["thread_id"],
+        "turnId": "turn-9",
     }
 
 

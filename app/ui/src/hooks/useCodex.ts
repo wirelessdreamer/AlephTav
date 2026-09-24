@@ -110,6 +110,17 @@ export function useStartCodexTurn() {
   });
 }
 
+/** Stop the turn a session is running; the request waiting on it then reports the stop. */
+export function useInterruptCodexSession() {
+  return useMutation({
+    mutationFn: (sessionId: string) =>
+      postJson<{ session_id: string; interrupted: boolean }>(
+        `/codex/sessions/${sessionId}/interrupt`,
+        {},
+      ),
+  });
+}
+
 export function useCancelCodexRun() {
   return useMutation({
     mutationFn: (runId: string) => postJson<CodexRun>(`/codex/runs/${runId}/cancel`, {}),

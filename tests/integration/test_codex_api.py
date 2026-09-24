@@ -237,6 +237,16 @@ def test_unknown_run_is_not_found() -> None:
     assert client.get("/codex/runs/cxr.doesnotexist/events").status_code == 404
 
 
+def test_interrupt_without_a_running_turn_reports_nothing_to_stop() -> None:
+    _connect("{}")
+    session_id = client.post("/codex/sessions", json={"psalm_id": "ps001"}).json()["session_id"]
+
+    response = client.post(f"/codex/sessions/{session_id}/interrupt")
+
+    assert response.status_code == 200
+    assert response.json() == {"session_id": session_id, "interrupted": False}
+
+
 def test_psalm_fill_translates_the_requested_units_in_one_turn() -> None:
     _connect(json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": [_payload()]}))
     session_id = client.post("/codex/sessions", json={"psalm_id": "ps001"}).json()["session_id"]

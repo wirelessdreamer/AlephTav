@@ -7,6 +7,7 @@ import {
   useConnectCodex,
   useCreateCodexSession,
   useFillPsalmPassage,
+  useInterruptCodexSession,
   useSaveTranslationGuidance,
   useTranslationGuidance,
 } from '../hooks/useCodex';
@@ -156,6 +157,13 @@ interface BatchProgress {
   label: string;
   unitIds: string[];
   stopping: boolean;
+  startedAt: number;
+}
+
+/** m:ss, so a slow or stalled Codex turn is visible rather than indistinguishable from progress. */
+function elapsed(ms: number): string {
+  const seconds = Math.max(0, Math.floor(ms / 1000));
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
 }
 
 interface BatchReport {
@@ -261,6 +269,12 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const [batch, setBatch] = useState<BatchProgress | null>(null);
   const [report, setReport] = useState<BatchReport | null>(null);
   const stopRequested = useRef(false);
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    if (!batch) return;
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [batch]);
 
   const { data, isLoading, error } = useComparisonTable(psalmId, 'literal', englishLayer);
   const createAssessment = useCreateComparisonAssessment(psalmId);
@@ -278,6 +292,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
   const saveGuidance = useSaveTranslationGuidance(psalmId);
   const createSession = useCreateCodexSession();
   const fillPassage = useFillPsalmPassage(psalmId);
+  const interruptSession = useInterruptCodexSession();
   const analyzeVerse = useAnalyzeVerse(psalmId);
   const analyzePsalm = useAnalyzePsalm(psalmId);
   const codexReady = codexStatus?.status === 'ready';
@@ -323,6 +338,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
           label: step.label,
           unitIds: step.unitIds,
           stopping: false,
+          startedAt: Date.now(),
         });
         failures.push(...(await step.run()));
         done += 1;
@@ -334,7 +350,8 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
         kind,
         succeeded: rowsDone - failures.length,
         total: steps.reduce((sum, step) => sum + step.rows, 0),
-        stopped: done < steps.length,
+        // Stop also interrupts the step in flight, so it can end without a step left over.
+        stopped: stopRequested.current,
         failures,
       });
     }
@@ -552,9 +569,9 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
               <>
                 <span className="batch-progress" role="status">
                   {batch.stopping
-                    ? `Stopping after ${batch.label}…`
+                    ? `Stopping ${batch.label}…`
                     : `${BATCH_WORDS[batch.kind].active} ${batch.label} ` +
-                      `(${batch.done + 1} of ${batch.total})…`}
+                      `(${batch.done + 1} of ${batch.total}) · ${elapsed(now - batch.startedAt)}`}
                 </span>
                 <button
                   type="button"
@@ -562,6 +579,8 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                   onClick={() => {
                     stopRequested.current = true;
                     setBatch((current) => current && { ...current, stopping: true });
+                    // Stop the turn in flight as well, rather than waiting for Codex to end it.
+                    if (sessionRef.current) interruptSession.mutate(sessionRef.current);
                   }}
                 >
                   {batch.stopping ? 'Stopping…' : 'Stop'}

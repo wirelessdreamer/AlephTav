@@ -141,9 +141,13 @@ class CodexAppServerClient:
     notifications: list[dict[str, Any]] = field(default_factory=list)
     on_notification: Callable[[dict[str, Any]], None] | None = None
     _lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
+    #: Guards writes and request ids. An interrupt writes while a turn holds ``_lock``.
+    _send_lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
     #: Threads open in this app-server process. A thread belongs to the process that
     #: started or resumed it, so one saved before a restart must be resumed first.
     _threads: set[str] = field(default_factory=set, repr=False, compare=False)
+    #: (thread_id, turn_id) of the turn being pumped, so another request can stop it.
+    active_turn: tuple[str, str] | None = field(default=None, repr=False, compare=False)
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
@@ -155,7 +159,17 @@ class CodexAppServerClient:
     # -- JSON-RPC plumbing -------------------------------------------------
 
     def _respond(self, request_id: Any, result: dict[str, Any]) -> None:
-        self._ensure_transport().send({"jsonrpc": "2.0", "id": request_id, "result": result})
+        with self._send_lock:
+            self._ensure_transport().send({"jsonrpc": "2.0", "id": request_id, "result": result})
+
+    def _send_request(self, method: str, params: Any) -> int:
+        with self._send_lock:
+            request_id = self._next_id
+            self._next_id += 1
+            self._ensure_transport().send(
+                {"jsonrpc": "2.0", "id": request_id, "method": method, "params": params}
+            )
+        return request_id
 
     def _handle_server_request(self, message: dict[str, Any]) -> None:
         """Deny anything that would let Codex change the system (FR-7)."""
@@ -185,9 +199,7 @@ class CodexAppServerClient:
     def _exchange(self, method: str, params: Any = None) -> dict[str, Any]:
         """Send one request and read until its response. Callers hold ``_lock``."""
         transport = self._ensure_transport()
-        request_id = self._next_id
-        self._next_id += 1
-        transport.send({"jsonrpc": "2.0", "id": request_id, "method": method, "params": params})
+        request_id = self._send_request(method, params)
 
         while True:
             line = transport.readline()
@@ -304,6 +316,8 @@ class CodexAppServerClient:
                 turn = params.get("turn") or {}
                 if turn_id and str(turn.get("id")) != turn_id:
                     continue
+                if turn.get("status") == "interrupted":
+                    raise GenerationError("Stopped before Codex finished")
                 if turn.get("status") == "failed":
                     error = turn.get("error") or {}
                     raise GenerationError(str(error.get("message") or "Codex turn failed"))
@@ -316,6 +330,7 @@ class CodexAppServerClient:
         text: str,
         output_schema: dict[str, Any] | None = None,
         model: str | None = None,
+        effort: str | None = None,
     ) -> dict[str, Any]:
         params: dict[str, Any] = {
             "threadId": thread_id,
@@ -327,6 +342,8 @@ class CodexAppServerClient:
             params["outputSchema"] = output_schema
         if model:
             params["model"] = model
+        if effort:
+            params["effort"] = effort
         # Hold the transport for the whole turn so no other request reads its notifications.
         with self._lock:
             if thread_id not in self._threads:
@@ -335,12 +352,21 @@ class CodexAppServerClient:
                 self._threads.add(thread_id)
             started = self._exchange("turn/start", params)
             turn_id = (started.get("turn") or {}).get("id")
-            result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
+            self.active_turn = (thread_id, str(turn_id)) if turn_id else None
+            try:
+                result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
+            finally:
+                self.active_turn = None
         result["turn_id"] = turn_id
         return result
 
-    def interrupt(self, thread_id: str, turn_id: str) -> dict[str, Any]:
-        return self.request("turn/interrupt", {"threadId": thread_id, "turnId": turn_id})
+    def interrupt(self, thread_id: str, turn_id: str) -> None:
+        """Ask Codex to stop a turn without waiting for the transport.
+
+        The thread pumping that turn holds ``_lock``, so this only writes the request;
+        that thread reads the reply and the turn's completion, marked interrupted.
+        """
+        self._send_request("turn/interrupt", {"threadId": thread_id, "turnId": turn_id})
 
     def close(self) -> None:
         if self.transport is not None:
