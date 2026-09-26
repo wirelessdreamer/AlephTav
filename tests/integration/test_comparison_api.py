@@ -125,3 +125,38 @@ def test_create_assessment_rejects_an_unknown_accuracy_rating() -> None:
 
 def test_comparison_table_for_unknown_psalm_is_not_found() -> None:
     assert client.get("/psalms/ps999/comparison-table").status_code == 404
+
+
+def _first_token() -> tuple[str, str, str]:
+    """A fixture token, its lemma, and its own verse ref.
+
+    The fixture's occurrence refs point outside the fixture, so the word's own
+    verse stands in for "a verse where this lemma occurs".
+    """
+    unit = registry_service.load_unit(UNIT_ID)
+    token = next(token for token in unit["tokens"] if token.get("lemma"))
+    return token["token_id"], token["lemma"], unit["ref"]
+
+
+def test_occurrence_context_marks_the_word_in_the_other_verse() -> None:
+    token_id, lemma, ref = _first_token()
+    response = client.get(f"/tokens/{token_id}/occurrence-context", params={"ref": ref})
+    assert response.status_code == 200
+
+    context = response.json()
+    assert context["ref"] == ref
+    assert context["display_reference"]
+    assert context["tokens"], "the verse's words give the match its context"
+    assert any(token["match"] for token in context["tokens"])
+    assert context["matches"] and all(match["lemma"] == lemma for match in context["matches"])
+    assert {"literal_text", "english_text", "english_layer"} <= context.keys()
+
+
+def test_occurrence_context_rejects_refs_it_cannot_resolve() -> None:
+    token_id, _, _ = _first_token()
+    outside = client.get(f"/tokens/{token_id}/occurrence-context", params={"ref": "Genesis 1:1"})
+    assert outside.status_code == 400
+    missing = client.get(f"/tokens/{token_id}/occurrence-context", params={"ref": "Psalm 1:99"})
+    assert missing.status_code == 404
+    unknown = client.get("/tokens/ps001.v999.t001/occurrence-context", params={"ref": "Psalm 1:1"})
+    assert unknown.status_code == 404

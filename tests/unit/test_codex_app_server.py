@@ -361,6 +361,149 @@ def test_an_interrupt_reaches_codex_while_another_thread_pumps_the_turn() -> Non
     assert client.active_turn is None
 
 
+def test_a_turn_that_goes_silent_is_stopped_and_says_why() -> None:
+    # A stalled model stream once held the client, and with it every Codex route,
+    # for the best part of an hour.
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport, stall_timeout=0.2)
+    outcome: dict[str, Any] = {}
+
+    def turn() -> None:
+        try:
+            client.run_turn("th-1", "go")
+        except GenerationError as error:
+            outcome["error"] = str(error)
+
+    worker = threading.Thread(target=turn)
+    worker.start()
+    deadline = time.monotonic() + 5
+    while "turn/interrupt" not in transport.sent_methods():
+        assert time.monotonic() < deadline, "the silent turn was never interrupted"
+        time.sleep(0.01)
+
+    interrupt = next(m for m in transport.sent if m.get("method") == "turn/interrupt")
+    assert interrupt["params"] == {"threadId": "th-1", "turnId": "turn-1"}
+    transport.push(_ok(interrupt, {}))
+    transport.push(
+        {
+            "jsonrpc": "2.0",
+            "method": "turn/completed",
+            "params": {"turn": {"id": "turn-1", "status": "interrupted"}},
+        }
+    )
+    worker.join(timeout=5)
+
+    assert "stopped responding" in outcome["error"]
+    assert client.active_turn is None
+
+
+def _run_until_interrupted(
+    client: codex.CodexAppServerClient, transport: BlockingTransport, event: Callable[[], dict]
+) -> str:
+    """Run a turn that keeps streaming ``event()`` until the watchdog interrupts it."""
+    outcome: dict[str, Any] = {}
+
+    def turn() -> None:
+        try:
+            client.run_turn("th-1", "go")
+        except GenerationError as error:
+            outcome["error"] = str(error)
+
+    worker = threading.Thread(target=turn)
+    worker.start()
+    deadline = time.monotonic() + 10
+    while "turn/interrupt" not in transport.sent_methods():
+        assert time.monotonic() < deadline, "the runaway turn was never interrupted"
+        transport.push(event())
+        time.sleep(0.02)
+    interrupt = next(m for m in transport.sent if m.get("method") == "turn/interrupt")
+    transport.push(_ok(interrupt, {}))
+    transport.push(
+        {
+            "jsonrpc": "2.0",
+            "method": "turn/completed",
+            "params": {"turn": {"id": "turn-1", "status": "interrupted"}},
+        }
+    )
+    worker.join(timeout=5)
+    return outcome["error"]
+
+
+def _delta(text: str) -> dict:
+    return {"jsonrpc": "2.0", "method": "item/agentMessage/delta", "params": {"delta": text}}
+
+
+def test_an_answer_that_turns_into_blank_space_is_stopped() -> None:
+    # A stuck translation streamed for twenty minutes without ever going quiet, so the
+    # silence check never fired.
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport, stall_timeout=1, blank_run_chars=200)
+    first = [True]
+
+    def event() -> dict:
+        if first[0]:
+            first[0] = False
+            return _delta('{"units": [')
+        return _delta("\n    " * 10)
+
+    assert "endless blank space" in _run_until_interrupted(client, transport, event)
+
+
+def test_an_answer_that_runs_past_the_size_limit_is_stopped() -> None:
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport, stall_timeout=1, max_answer_chars=500)
+
+    error = _run_until_interrupted(client, transport, lambda: _delta("the teaching, the teaching "))
+
+    assert "passed 500 characters" in error
+
+
+def test_a_turn_that_keeps_busy_past_the_time_limit_is_stopped() -> None:
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport, stall_timeout=1, turn_timeout=0.4)
+
+    error = _run_until_interrupted(
+        client, transport, lambda: {"jsonrpc": "2.0", "method": "item/started", "params": {}}
+    )
+
+    assert "still working after" in error
+
+
+def test_a_turn_that_keeps_talking_is_not_stopped() -> None:
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport, stall_timeout=0.3)
+    outcome: dict[str, Any] = {}
+
+    worker = threading.Thread(target=lambda: outcome.update(turn=client.run_turn("th-1", "go")))
+    worker.start()
+    # Events arrive more often than the stall timeout, for longer than it in total.
+    for _ in range(6):
+        time.sleep(0.1)
+        transport.push({"jsonrpc": "2.0", "method": "item/started", "params": {}})
+    transport.push(
+        {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}}
+    )
+    worker.join(timeout=5)
+
+    assert "turn/interrupt" not in transport.sent_methods()
+    assert "turn" in outcome
+
+
+def test_status_during_a_turn_reports_busy_without_waiting(monkeypatch) -> None:
+    monkeypatch.setattr(codex, "codex_executable", lambda: "/usr/bin/codex")
+    transport = BlockingTransport()
+    client = codex.CodexAppServerClient(transport=transport)
+    client.initialized = True
+    client.active_turn = ("th-1", "turn-1")
+
+    started = time.monotonic()
+    status = codex.describe_status(client)
+
+    assert status["status"] == codex.STATUS_BUSY
+    assert time.monotonic() - started < 1
+    assert "account/read" not in transport.sent_methods()
+
+
 def test_status_reports_not_installed_when_codex_is_missing(monkeypatch) -> None:
     monkeypatch.setattr(codex, "codex_executable", lambda: None)
     status = codex.describe_status(None)

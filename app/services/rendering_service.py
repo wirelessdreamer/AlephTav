@@ -10,7 +10,13 @@ from app.core.errors import (
     ValidationError,
 )
 from app.core.ids import rendering_id
-from app.services import alignment_service, audit_service, poetic_analysis_service, registry_service
+from app.services import (
+    alignment_service,
+    audit_service,
+    poetic_analysis_service,
+    psalm_translations_service,
+    registry_service,
+)
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
 BASIS_FILTERS = {"hebrew-derived", "septuagint-derived"}
@@ -250,6 +256,7 @@ def create_rendering(
     metric_profile: str | None = None,
     issue_links: list[str] | None = None,
     pr_links: list[str] | None = None,
+    translation_id: str | None = None,
 ) -> dict[str, Any]:
     if status == "canonical":
         raise ReviewRequiredError(
@@ -259,6 +266,7 @@ def create_rendering(
         raise ReviewRequiredError(
             "Create proposed or under-review renderings first, then accept after review"
         )
+    psalm_translations_service.require(unit_id.split(".")[0], translation_id)
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
@@ -293,10 +301,11 @@ def create_rendering(
         "source_anchor": source_anchor,
         "translation_basis": normalized_basis,
         "provenance": {
-            **(
-                provenance
-                or {"source_ids": normalized_basis["source_ids"], "generator": created_by}
-            ),
+            # The schema requires both; a caller's own provenance (Codex's run
+            # details) adds to them rather than replacing them.
+            "source_ids": normalized_basis["source_ids"],
+            "generator": created_by,
+            **(provenance or {}),
             "translation_basis": normalized_basis,
         },
         "style_goal": style_goal,
@@ -321,6 +330,9 @@ def create_rendering(
             "updated_at": None,
         },
     }
+    if layer not in psalm_translations_service.SHARED_LAYERS:
+        # The literal and gloss are every translation's reference; only English is owned.
+        psalm_translations_service.tag(item, translation_id)
     _ensure_publication_constraints(item)
     unit.setdefault("renderings", []).append(item)
     from app.services import review_service

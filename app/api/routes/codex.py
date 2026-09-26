@@ -1,13 +1,39 @@
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 
 from app.api.deps import raise_as_http
 from app.services import codex_analysis_service as analysis
 from app.services import codex_app_server_service as codex
+from app.services import codex_import_service as importing
 from app.services import codex_translation_service as translation
 
 router = APIRouter(tags=["codex"])
+
+
+@router.post("/codex/psalms/{psalm_id}/import")
+def import_translation(psalm_id: str, payload: dict) -> dict:
+    """Place a pasted translation: its guidance on the psalm, its verses on each verse."""
+    try:
+        return importing.import_translation(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            psalm_id=psalm_id,
+            text=str(payload.get("text", "")),
+            layer=payload.get("layer", "lyric"),
+            created_by=payload.get("created_by", "import"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/identify-psalm")
+def identify_psalm(payload: dict) -> dict:
+    """Ask Codex which psalm a pasted translation translates."""
+    try:
+        return importing.identify_psalm(codex.require_client(), str(payload.get("text", "")))
+    except Exception as error:
+        raise_as_http(error)
 
 
 @router.get("/codex/status")
@@ -74,6 +100,7 @@ def create_codex_session(payload: dict) -> dict:
             model=payload.get("model", ""),
             purpose=payload.get("purpose", "translation"),
             base_instructions=payload.get("base_instructions"),
+            translation_id=payload.get("translation_id") or None,
         )
     except Exception as error:
         raise_as_http(error)
@@ -114,18 +141,29 @@ def start_codex_turn(session_id: str, payload: dict) -> dict:
 
 
 @router.get("/psalms/{psalm_id}/translation-guidance")
-def get_translation_guidance(psalm_id: str) -> dict:
+def get_translation_guidance(
+    psalm_id: str, translation_id: str | None = Query(default=None)
+) -> dict:
     try:
-        return {"psalm_id": psalm_id, "translation_guidance": translation.get_guidance(psalm_id)}
+        translation_id = translation_id or None
+        return {
+            "psalm_id": psalm_id,
+            "translation_id": translation_id,
+            "translation_guidance": translation.get_guidance(psalm_id, translation_id),
+        }
     except Exception as error:
         raise_as_http(error)
 
 
 @router.put("/psalms/{psalm_id}/translation-guidance")
 def put_translation_guidance(psalm_id: str, payload: dict) -> dict:
-    """Store the translator's standing direction for this psalm."""
+    """Store the translator's standing direction for one translation of this psalm."""
     try:
-        return translation.set_guidance(psalm_id, payload.get("translation_guidance", ""))
+        return translation.set_guidance(
+            psalm_id,
+            payload.get("translation_guidance", ""),
+            payload.get("translation_id") or None,
+        )
     except Exception as error:
         raise_as_http(error)
 
@@ -183,6 +221,51 @@ def analyze_verse(unit_id: str, payload: dict) -> dict:
         raise_as_http(error)
 
 
+@router.post("/codex/verses/{unit_id}/rebuild")
+def rebuild_verse(unit_id: str, payload: dict) -> dict:
+    """Retranslate a verse with its open notes; held for the reviewer to accept."""
+    try:
+        return translation.rebuild_verse(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            unit_id=unit_id,
+            english_layer=payload.get("english_layer", "lyric"),
+            layers=payload.get("layers"),
+            created_by=payload.get("created_by", "codex"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/verses/{unit_id}/rebuild/analyse")
+def analyse_rebuild(unit_id: str, payload: dict) -> dict:
+    """Audit a pending rebuild's text, blind to the notes that produced it."""
+    try:
+        return analysis.analyze_rebuild(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            unit_id=unit_id,
+            created_by=payload.get("created_by", "codex-analysis"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/verses/{unit_id}/word-suggestions")
+def suggest_word_renderings(unit_id: str, payload: dict) -> dict:
+    """At least three ranked renderings for a word, from the translator."""
+    try:
+        return translation.suggest_word_renderings(
+            codex.require_client(),
+            session_id=payload["session_id"],
+            unit_id=unit_id,
+            token_ids=list(payload.get("token_ids") or []),
+            layer=payload.get("layer", "lyric"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
 @router.post("/codex/analysis/psalms/{psalm_id}")
 def analyze_psalm(psalm_id: str, payload: dict) -> dict:
     """Audit the psalm as a whole: sections, seams, guardrails, epistemics."""
@@ -200,10 +283,10 @@ def analyze_psalm(psalm_id: str, payload: dict) -> dict:
 
 
 @router.get("/psalms/{psalm_id}/analysis")
-def get_psalm_analysis(psalm_id: str) -> dict:
-    """The psalm's active analysis, or nulls when none has been run."""
+def get_psalm_analysis(psalm_id: str, translation_id: str | None = Query(default=None)) -> dict:
+    """The translation's active psalm analysis, or nulls when none has been run."""
     try:
-        record = analysis.active_analysis(psalm_id)
+        record = analysis.active_analysis(psalm_id, translation_id or None)
         return {"psalm_id": psalm_id, "analysis": record}
     except Exception as error:
         raise_as_http(error)

@@ -37,8 +37,13 @@ export function WelcomePage() {
     <main className="welcome-shell">
       <section className="welcome-hero">
         <div className="hero-copy">
-          <p className="eyebrow">AlephTav</p>
-          <h1>Psalms Copyleft Workbench</h1>
+          <div className="hero-brand">
+            <img src="./brand/alephtav-mark.svg" alt="" width="88" height="88" />
+            <div>
+              <p className="eyebrow">AlephTav</p>
+              <h1>Psalms Copyleft Workbench</h1>
+            </div>
+          </div>
           <p className="hero-summary">
             A local-first translation workbench for Hebrew-source Psalms with lexical inspection, alignment review, alternate renderings, audit trails, and release export.
           </p>

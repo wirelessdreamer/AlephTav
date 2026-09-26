@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "PsalmMeta",
-  "description": "A psalm's meta record. The three original keys are seeded by ingest; translation_guidance and analyses are written at runtime and are absent until first used.",
+  "description": "A psalm's meta record. The three original keys are seeded by ingest; translation_guidance, analyses, arrangements and translations are written at runtime and are absent until first used.",
   "type": "object",
   "required": ["psalm_id", "title", "unit_ids"],
   "additionalProperties": false,
@@ -13,16 +13,158 @@
       "items": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" }
     },
     "translation_guidance": {
-      "description": "The translator's standing direction for this psalm, injected into translation prompts. Never shown to the analysis pass, which must judge the text independently of the intent behind it.",
+      "description": "The translator's standing direction for the psalm's main translation, injected into translation prompts. Never shown to the analysis pass, which must judge the text independently of the intent behind it.",
       "type": "string"
     },
+    "translations": {
+      "description": "Translations added beside the main one, oldest first. Records of the main translation carry no translation_id; an added translation's English renderings, assessments, analyses, arrangements, verse notes and rebuilds carry its id. The literal and gloss are shared.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/translation" }
+    },
     "analyses": {
-      "description": "Psalm-scope analyses, newest last. At most one entry is not superseded.",
+      "description": "Psalm-scope analyses, newest last. At most one entry per translation is not superseded.",
       "type": "array",
       "items": { "$ref": "#/$defs/psalmAnalysis" }
+    },
+    "arrangements": {
+      "description": "Song settings of the psalm, newest last: sections of English lines anchored to Hebrew tokens, free to span verses, repeat sections, reorder or depart from the Hebrew, each departure declared and reviewed.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/arrangement" }
     }
   },
   "$defs": {
+    "translation": {
+      "type": "object",
+      "required": ["translation_id", "psalm_id", "title", "created_by", "created_via", "created_at", "audit_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" },
+        "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "guidance": {
+          "description": "This translation's standing direction, as translation_guidance is the main translation's.",
+          "type": "string"
+        },
+        "created_by": { "type": "string" },
+        "created_via": { "type": "string", "enum": ["human", "import"] },
+        "created_at": { "type": "string" },
+        "audit_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "anchor": {
+      "description": "The Hebrew tokens of one unit that a line renders.",
+      "type": "object",
+      "required": ["unit_id", "token_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+        "token_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": ["reviewer", "reviewer_role", "note", "created_at"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewer": { "type": "string" },
+        "reviewer_role": { "type": "string" },
+        "note": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "arrangementLine": {
+      "type": "object",
+      "required": ["line_id", "text", "anchors", "liberty", "rationale", "approvals"],
+      "additionalProperties": false,
+      "properties": {
+        "line_id": { "type": "string", "pattern": "^ln\\.\\d{4}$" },
+        "text": { "type": "string", "minLength": 1 },
+        "anchors": { "type": "array", "items": { "$ref": "#/$defs/anchor" } },
+        "liberty": {
+          "description": "How the line departs from the Hebrew it is anchored to. A line with no anchors is added.",
+          "type": "string",
+          "enum": ["tracks", "compressed", "expanded", "reordered", "added"]
+        },
+        "rationale": { "type": "string" },
+        "approvals": { "type": "array", "items": { "$ref": "#/$defs/approval" } }
+      }
+    },
+    "arrangementSection": {
+      "type": "object",
+      "required": ["section_id", "kind", "label", "repeat_of", "lines"],
+      "additionalProperties": false,
+      "properties": {
+        "section_id": { "type": "string", "pattern": "^sec\\.\\d{4}$" },
+        "kind": {
+          "type": "string",
+          "enum": ["verse", "chorus", "refrain", "bridge", "intro", "outro", "other"]
+        },
+        "label": { "type": "string" },
+        "repeat_of": {
+          "description": "A repeat sings that section's lines again, then its own lines, which vary this time only.",
+          "type": ["string", "null"]
+        },
+        "lines": { "type": "array", "items": { "$ref": "#/$defs/arrangementLine" } }
+      }
+    },
+    "omission": {
+      "description": "Hebrew tokens the setting does not carry, with the reason and its approvals.",
+      "type": "object",
+      "required": ["unit_id", "token_ids", "rationale", "approvals"],
+      "additionalProperties": false,
+      "properties": {
+        "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+        "token_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "rationale": { "type": "string" },
+        "approvals": { "type": "array", "items": { "$ref": "#/$defs/approval" } }
+      }
+    },
+    "arrangement": {
+      "type": "object",
+      "required": [
+        "arrangement_id",
+        "psalm_id",
+        "title",
+        "layer",
+        "status",
+        "guidance",
+        "sections",
+        "omissions",
+        "created_by",
+        "created_via",
+        "generation_run_id",
+        "prompt_template_version",
+        "created_at",
+        "updated_at",
+        "audit_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "arrangement_id": { "type": "string", "pattern": "^arr\\.ps\\d{3}\\.\\d{4}$" },
+        "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
+        "title": { "type": "string" },
+        "layer": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "proposed", "accepted", "superseded"] },
+        "guidance": {
+          "description": "The psalm guidance the setting was made under.",
+          "type": "string"
+        },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/arrangementSection" } },
+        "omissions": { "type": "array", "items": { "$ref": "#/$defs/omission" } },
+        "created_by": { "type": "string" },
+        "created_via": {
+          "description": "Who wrote the setting: a reviewer here, Codex, or an imported translation (its lines kept as pasted, anchored by Codex).",
+          "type": "string",
+          "enum": ["human", "codex", "import"]
+        },
+        "generation_run_id": { "type": ["string", "null"] },
+        "prompt_template_version": { "type": ["string", "null"] },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" },
+        "audit_ids": { "type": "array", "items": { "type": "string" } },
+        "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" }
+      }
+    },
     "nonSourceMaterial": {
       "type": "object",
       "required": ["text", "kind", "note"],
@@ -164,7 +306,8 @@
         "prompt_template_version": { "type": "string" },
         "created_at": { "type": "string" },
         "revision_of": { "type": ["string", "null"] },
-        "audit_ids": { "type": "array", "items": { "type": "string" } }
+        "audit_ids": { "type": "array", "items": { "type": "string" } },
+        "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" }
       }
     }
   }

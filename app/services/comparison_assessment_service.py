@@ -11,6 +11,7 @@ creates a successor linked through ``revision_of`` and marks the original
 
 from __future__ import annotations
 
+import re
 from copy import deepcopy
 from datetime import UTC, datetime
 from typing import Any
@@ -18,7 +19,8 @@ from typing import Any
 from app.core import versification
 from app.core.errors import NotFoundError, ValidationError
 from app.core.ids import comparison_id as build_comparison_id
-from app.services import audit_service, registry_service
+from app.services import audit_service, registry_service, verse_notes_service
+from app.services import psalm_translations_service as translations
 
 ACCURACY_RATINGS = (
     "literal",
@@ -103,14 +105,28 @@ def _rendering_by_id(unit: dict[str, Any], rendering_id_value: str | None) -> di
     return None
 
 
-def select_rendering(unit: dict[str, Any], layer: str) -> dict[str, Any] | None:
+def select_rendering(
+    unit: dict[str, Any], layer: str, translation_id: str | None = None
+) -> dict[str, Any] | None:
     """Pick the rendering a table row should display for ``layer``.
 
     Canonical wins; otherwise the most recently accepted alternate. Returns None
     when the unit has nothing at that layer, so the row renders incomplete rather
     than inventing text (see the failure table in the requirements).
+
+    Only the translation's own English is considered; the literal is shared by all.
+
+    Renderings held by a pending rebuild are skipped: the current text stays in
+    place until the reviewer accepts the rebuild.
     """
-    candidates = [r for r in unit.get("renderings", []) if r.get("layer") == layer]
+    held = verse_notes_service.pending_rendering_ids(unit)
+    candidates = [
+        r
+        for r in unit.get("renderings", [])
+        if r.get("layer") == layer
+        and r["rendering_id"] not in held
+        and translations.shows_in(r, translation_id)
+    ]
     if not candidates:
         return None
     for status in ("canonical", "accepted_as_alternate", "under_review", "proposed", "draft"):
@@ -153,8 +169,84 @@ def study_token(token: dict[str, Any]) -> dict[str, Any]:
     card["surface"] = token["surface"]
     occurrences = token.get("corpus_occurrence_refs") or []
     card["occurrence_count"] = len(occurrences)
-    card["occurrence_refs"] = occurrences[:12]
+    # Every ref the importer kept (it already caps the list), so each can be hovered.
+    card["occurrence_refs"] = list(occurrences)
     return card
+
+
+def _occurrence_key(token: dict[str, Any]) -> str | None:
+    """The grouping key the importer used when it recorded occurrence refs."""
+    return token.get("lemma") or token.get("normalized") or token.get("surface")
+
+
+def occurrence_context(token_id: str, ref: str, english_layer: str = "lyric") -> dict[str, Any]:
+    """Another verse where a word's lemma occurs, with the word marked in context.
+
+    ``ref`` is one of the token's occurrence refs ("Psalm 2:12"). The matching
+    words are found by the same key the importer grouped occurrences by, so the
+    highlight agrees with the list the ref came from.
+    """
+    source_psalm = registry_service.load_psalm(token_id.split(".")[0])
+    source = next(
+        (
+            token
+            for unit in source_psalm["units"]
+            for token in unit.get("tokens", [])
+            if token["token_id"] == token_id
+        ),
+        None,
+    )
+    if source is None:
+        raise NotFoundError(f"Token not found: {token_id}")
+    key = _occurrence_key(source)
+
+    # "Psalm 2:12", or "Psalm 1:1a" where a verse is split into segments.
+    parsed = re.fullmatch(r"Psalm (\d+):(\d+)[a-z]?", ref)
+    if parsed is None:
+        raise ValidationError(f"Not a Psalms reference: {ref}")
+    psalm_id = f"ps{int(parsed.group(1)):03d}"
+    verse = parsed.group(2)
+    psalm = registry_service.load_psalm(psalm_id)
+    units = sorted(
+        (unit for unit in psalm["units"] if unit["ref"] == ref),
+        key=lambda unit: _unit_sort_key(unit["unit_id"]),
+    )
+    if not units:
+        raise NotFoundError(f"Verse not found: {ref}")
+
+    tokens: list[dict[str, Any]] = []
+    matches: list[dict[str, Any]] = []
+    for unit in units:
+        for token in unit.get("tokens", []):
+            is_match = key is not None and _occurrence_key(token) == key
+            tokens.append(
+                {
+                    "token_id": token["token_id"],
+                    "surface": token["surface"],
+                    # Most verses have no rendering yet; the gloss still gives a reading.
+                    "gloss": token.get("display_gloss"),
+                    "match": is_match,
+                }
+            )
+            if is_match:
+                card = study_token(token)
+                card.pop("occurrence_count", None)
+                card.pop("occurrence_refs", None)
+                matches.append(card)
+
+    literal = [select_rendering(unit, LITERAL_LAYER) for unit in units]
+    english = [select_rendering(unit, english_layer) for unit in units]
+    return {
+        "ref": ref,
+        "display_reference": versification.display_reference(psalm_id, ref, int(verse)),
+        "psalm_title": psalm.get("title", ""),
+        "unit_ids": [unit["unit_id"] for unit in units],
+        "tokens": tokens,
+        "matches": matches,
+        "literal_text": "\n".join(r["text"] for r in literal if r) or None,
+        "english_layer": english_layer,
+        "english_text": "\n".join(r["text"] for r in english if r) or None,
+    }
 
 
 def create_assessment(
@@ -176,8 +268,10 @@ def create_assessment(
     word_notes: list[dict[str, Any]] | None = None,
     non_source_material: list[dict[str, Any]] | None = None,
     analyzed_text_hash: str | None = None,
+    translation_id: str | None = None,
 ) -> dict[str, Any]:
     _validate(accuracy_rating, created_via, status, non_source_material)
+    translations.require(unit_id.split(".")[0], translation_id)
     unit = registry_service.load_unit(unit_id)
     before = deepcopy(unit)
 
@@ -218,6 +312,7 @@ def create_assessment(
         "non_source_material": list(non_source_material or []),
         "analyzed_text_hash": analyzed_text_hash,
     }
+    translations.tag(item, translation_id)
     _assessments(unit).append(item)
     record = audit_service.create_audit_record(
         unit,
@@ -297,6 +392,7 @@ def revise_assessment(
         display_reference=successor_fields.get("display_reference"),
         revision_of=comparison_id_value,
         rationale=rationale,
+        translation_id=original.get("translation_id"),
     )
 
     if reviewer_id:
@@ -352,12 +448,14 @@ def build_comparison_table(
     literal_layer: str = LITERAL_LAYER,
     english_layer: str | None = None,
     layer: str | None = None,
+    translation_id: str | None = None,
 ) -> dict[str, Any]:
-    """Assemble the five-column table for a psalm.
+    """Assemble the five-column table for one translation of a psalm.
 
     Units belonging to the same verse are combined in canonical source order
     while keeping links to each contributing unit id.
     """
+    translations.require(psalm_id, translation_id)
     psalm = registry_service.load_psalm(psalm_id)
     english_layer = english_layer or layer or "lyric"
 
@@ -379,7 +477,7 @@ def build_comparison_table(
 
         for unit in units:
             hebrew_parts.append(unit["source_hebrew"])
-            active_note = _active_assessment(unit)
+            active_note = _active_assessment(unit, translation_id)
             notes_by_token = _notes_by_token(active_note)
             for token in unit.get("tokens", []):
                 card = study_token(token)
@@ -387,21 +485,17 @@ def build_comparison_table(
                 if note is not None:
                     card["note"] = note
                 tokens.append(card)
-            literal = select_rendering(unit, literal_layer)
-            english = select_rendering(unit, english_layer)
+            literal = select_rendering(unit, literal_layer, translation_id)
+            english = select_rendering(unit, english_layer, translation_id)
             if literal:
                 literal_parts.append(literal["text"])
                 literal_ids.append(literal["rendering_id"])
             if english:
                 english_parts.append(english["text"])
                 english_ids.append(english["rendering_id"])
-            active = [
-                item
-                for item in unit.get("comparison_assessments", [])
-                if item["status"] != "superseded"
-            ]
+            active = _active_assessment(unit, translation_id)
             if active:
-                assessments.append(active[-1])
+                assessments.append(active)
 
         assessment = assessments[-1] if assessments else None
         first = units[0]
@@ -435,24 +529,53 @@ def build_comparison_table(
                 "non_source_material": (assessment or {}).get("non_source_material", []),
                 # An assessment written against text that has since been edited
                 # in place is stale, even though its rendering ids still match.
-                "stale": _is_stale(assessment, units, literal_layer, english_layer),
+                "stale": _is_stale(assessment, units, literal_layer, english_layer, translation_id),
+                # Notes and rebuilds live on the verse's first unit, as edits to the
+                # assessment do.
+                "verse_notes": [
+                    note
+                    for note in first.get("verse_notes", [])
+                    if translations.in_translation(note, translation_id)
+                ],
+                # Choices offered for words in this verse, for the psalm-wide summary.
+                "word_choices": _word_choices(first["unit_id"], english_layer, translation_id),
+                "pending_rebuild": verse_notes_service.rebuild_view(
+                    first, verse_notes_service.pending_rebuild(first, translation_id)
+                ),
             }
         )
 
     return {
         "psalm_id": psalm_id,
+        "translation_id": translation_id,
         "title": psalm.get("title", ""),
         "literal_layer": literal_layer,
         "english_layer": english_layer,
         "canonical_numbering": versification.canonical_numbering(psalm_id),
-        "analysis": _active_psalm_analysis(psalm),
+        "analysis": _active_psalm_analysis(psalm, translation_id),
         "rows": rows,
     }
 
 
-def _active_assessment(unit: dict[str, Any]) -> dict[str, Any] | None:
+def _word_choices(
+    unit_id: str, english_layer: str, translation_id: str | None
+) -> list[dict[str, Any]]:
+    # Imported here: the translation service already imports this module.
+    from app.services import codex_translation_service
+
+    return codex_translation_service.cached_suggestions_for_unit(
+        unit_id, english_layer, translation_id
+    )
+
+
+def _active_assessment(
+    unit: dict[str, Any], translation_id: str | None = None
+) -> dict[str, Any] | None:
+    """The translation's current verdict on the unit, if it has one."""
     active = [
-        item for item in unit.get("comparison_assessments", []) if item["status"] != "superseded"
+        item
+        for item in unit.get("comparison_assessments", [])
+        if item["status"] != "superseded" and translations.in_translation(item, translation_id)
     ]
     return active[-1] if active else None
 
@@ -473,6 +596,7 @@ def _is_stale(
     units: list[dict[str, Any]],
     literal_layer: str,
     english_layer: str,
+    translation_id: str | None = None,
 ) -> bool:
     """True when the audited text has changed since the analysis ran.
 
@@ -493,13 +617,20 @@ def _is_stale(
 
     current = codex_analysis_service.verse_fingerprint(
         owner,
-        [select_rendering(owner, literal_layer), select_rendering(owner, english_layer)],
+        [
+            select_rendering(owner, literal_layer, translation_id),
+            select_rendering(owner, english_layer, translation_id),
+        ],
     )
     return current != recorded
 
 
-def _active_psalm_analysis(psalm: dict[str, Any]) -> dict[str, Any] | None:
+def _active_psalm_analysis(
+    psalm: dict[str, Any], translation_id: str | None = None
+) -> dict[str, Any] | None:
     for record in reversed(psalm.get("analyses", [])):
-        if record.get("status") != "superseded":
+        if record.get("status") != "superseded" and translations.in_translation(
+            record, translation_id
+        ):
             return record
     return None

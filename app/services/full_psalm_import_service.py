@@ -3,7 +3,6 @@ from __future__ import annotations
 import hashlib
 import io
 import re
-import shutil
 import zipfile
 from collections import defaultdict
 from pathlib import Path
@@ -13,13 +12,14 @@ from xml.etree import ElementTree as ET
 from app.core.config import get_settings
 from app.services import registry_service
 
-
 HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
 OSIS_NS = {"osis": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
 MACULA_REF_RE = re.compile(r"^PSA\s+(?P<psalm>\d+):(?P<verse>\d+)!(?P<word>\d+)$")
 STRONG_DIGITS_RE = re.compile(r"(\d+)")
 PARENTHETICAL_GLOSS_RE = re.compile(r"^\(.*\)$")
-WITNESS_LINE_RE = re.compile(r"^(?P<book>[1-3A-Z]{3})\s+(?P<chapter>\d+):(?P<verse>\d+)\s+(?P<text>.+)$")
+WITNESS_LINE_RE = re.compile(
+    r"^(?P<book>[1-3A-Z]{3})\s+(?P<chapter>\d+):(?P<verse>\d+)\s+(?P<text>.+)$"
+)
 OSHB_FIELDS = ("lemma", "strong", "morph_code", "morph_readable", "part_of_speech", "stem")
 MACULA_FIELDS = ("syntax_role", "semantic_role", "referent", "word_sense")
 POS_MAP = {
@@ -46,7 +46,20 @@ STEM_MAP = {
 SOURCE_IMPORTED_AT = "2026-04-17T00:00:00Z"
 MAX_SAME_PSALM_OCCURRENCES = 12
 MAX_CROSS_PSALM_OCCURRENCES = 24
-POSSESSIVE_WORDS = {"my", "mine", "your", "yours", "his", "her", "hers", "its", "our", "ours", "their", "theirs"}
+POSSESSIVE_WORDS = {
+    "my",
+    "mine",
+    "your",
+    "yours",
+    "his",
+    "her",
+    "hers",
+    "its",
+    "our",
+    "ours",
+    "their",
+    "theirs",
+}
 ARTICLES = {"the", "a", "an"}
 TEMPORAL_WORDS = {"day", "night", "morning", "evening"}
 WITNESS_SOURCES = {
@@ -202,26 +215,34 @@ def _component_display_fragment(component: dict[str, Any]) -> str | None:
     return _clean_display_fragment(component.get("english"))
 
 
-def _score_display_candidate(candidate: str | None, *, suffix_text: str | None, part_of_speech: str | None, divine_name: bool) -> int:
+def _score_display_candidate(
+    candidate: str | None, *, suffix_text: str | None, part_of_speech: str | None, divine_name: bool
+) -> int:
     if not candidate:
         return -10_000
     lowered = candidate.casefold()
     score = 0
     if re.search(r"[\u0590-\u05FF]", candidate):
         score -= 100
-    if re.search(r"\b(i|you|he|she|it|we|they|me|him|her|us|them|my|your|his|its|our|their)\s+\1\b", lowered):
+    if re.search(
+        r"\b(i|you|he|she|it|we|they|me|him|her|us|them|my|your|his|its|our|their)\s+\1\b", lowered
+    ):
         score -= 60
     if re.search(r"\b(am|are|is|was)$", lowered):
         score -= 24
     if re.search(r"\b(the|a|an|and|or|but|of|to|in|on|with|from|for)\b$", lowered):
         score -= 20
-    if re.search(r"\b[a-z][a-z'/-]*\s+(the|a|an)\b$", lowered) and not lowered.startswith("to the "):
+    if re.search(r"\b[a-z][a-z'/-]*\s+(the|a|an)\b$", lowered) and not lowered.startswith(
+        "to the "
+    ):
         score -= 14
     if " the " in lowered:
         score += 3
     if part_of_speech == "verb" and re.search(r"\b(i|you|he|she|it|we|they)\b$", lowered):
         score -= 14
-    if part_of_speech in {"noun", "adjective"} and re.search(r"\b(my|your|his|her|its|our|their)\b$", lowered):
+    if part_of_speech in {"noun", "adjective"} and re.search(
+        r"\b(my|your|his|her|its|our|their)\b$", lowered
+    ):
         score -= 12
     if suffix_text:
         occurrences = len(re.findall(rf"\b{re.escape(suffix_text.casefold())}\b", lowered))
@@ -279,17 +300,34 @@ def _derive_display_gloss(components: list[dict[str, Any]]) -> str | None:
         _normalize_display_phrase(" ".join(part for part in gloss_parts if part)),
     ]
     suffix_text = suffixes[0] if suffixes else None
-    part_of_speech = next((component.get("pos") for component in components if component.get("pos") not in {"conjunction", "particle", "preposition"}), None)
-    divine_name = any(component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068" for component in components)
+    part_of_speech = next(
+        (
+            component.get("pos")
+            for component in components
+            if component.get("pos") not in {"conjunction", "particle", "preposition"}
+        ),
+        None,
+    )
+    divine_name = any(
+        component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068"
+        for component in components
+    )
     best = max(
         (candidate for candidate in candidates if candidate),
-        key=lambda candidate: _score_display_candidate(candidate, suffix_text=suffix_text, part_of_speech=part_of_speech, divine_name=divine_name),
+        key=lambda candidate: _score_display_candidate(
+            candidate,
+            suffix_text=suffix_text,
+            part_of_speech=part_of_speech,
+            divine_name=divine_name,
+        ),
         default=None,
     )
     return best or None
 
 
-def _derive_compiler_features(components: list[dict[str, Any]], word_sense: str | None, display_gloss: str | None) -> dict[str, Any]:
+def _derive_compiler_features(
+    components: list[dict[str, Any]], word_sense: str | None, display_gloss: str | None
+) -> dict[str, Any]:
     english_parts = [_clean_display_fragment(component.get("english")) for component in components]
     gloss_parts = [_clean_display_fragment(component.get("gloss")) for component in components]
     conjunction_text = " ".join(part for part in english_parts if part).casefold()
@@ -313,28 +351,45 @@ def _derive_compiler_features(components: list[dict[str, Any]], word_sense: str 
         ),
         None,
     )
-    suffix_component = next((component for component in components if (component.get("pos") or "").casefold() == "suffix"), None)
+    suffix_component = next(
+        (
+            component
+            for component in components
+            if (component.get("pos") or "").casefold() == "suffix"
+        ),
+        None,
+    )
     suffix_pronoun = None
     if suffix_component is not None:
         suffix_pronoun = {
-            "text": _clean_display_fragment(suffix_component.get("english")) or _clean_display_fragment(suffix_component.get("gloss")),
+            "text": _clean_display_fragment(suffix_component.get("english"))
+            or _clean_display_fragment(suffix_component.get("gloss")),
             "person": suffix_component.get("person"),
             "number": suffix_component.get("number"),
             "gender": suffix_component.get("gender"),
         }
-    feature_text = " ".join(part for part in [display_gloss, word_sense, *english_parts, *gloss_parts] if part).casefold()
+    feature_text = " ".join(
+        part for part in [display_gloss, word_sense, *english_parts, *gloss_parts] if part
+    ).casefold()
     return {
         "component_count": len(components),
         "english_parts": [part for part in english_parts if part],
         "gloss_fragments": [part for part in gloss_parts if part],
         "raw_pos": [component.get("pos") for component in components if component.get("pos")],
-        "raw_classes": [component.get("class") for component in components if component.get("class")],
-        "discourse_marker": "parenthetical_only_gloss" if word_sense and PARENTHETICAL_GLOSS_RE.match(word_sense) else None,
+        "raw_classes": [
+            component.get("class") for component in components if component.get("class")
+        ],
+        "discourse_marker": "parenthetical_only_gloss"
+        if word_sense and PARENTHETICAL_GLOSS_RE.match(word_sense)
+        else None,
         "conjunction_role": conjunction_role,
         "preposition_role": preposition_role,
         "construct_state": any(component.get("state") == "construct" for component in components),
         "suffix_pronoun": suffix_pronoun,
-        "divine_name": any(component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068" for component in components),
+        "divine_name": any(
+            component.get("lemma") == "יהוה" or component.get("strongnumberx") == "3068"
+            for component in components
+        ),
         "temporal_pair_candidate": any(word in feature_text for word in TEMPORAL_WORDS),
     }
 
@@ -495,7 +550,9 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
             )
     normalized: dict[tuple[int, int, int], dict[str, Any]] = {}
     for key, payload in grouped.items():
-        gloss_parts = [part for part in (_clean_gloss_part(item) for item in payload["glosses"]) if part]
+        gloss_parts = [
+            part for part in (_clean_gloss_part(item) for item in payload["glosses"]) if part
+        ]
         word_sense = payload["glosses"][-1] if payload["glosses"] else None
         display_gloss = _derive_display_gloss(payload["components"])
         normalized[key] = {
@@ -507,7 +564,9 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
             "word_sense": word_sense,
             "gloss_parts": gloss_parts,
             "display_gloss": display_gloss,
-            "compiler_features": _derive_compiler_features(payload["components"], word_sense, display_gloss),
+            "compiler_features": _derive_compiler_features(
+                payload["components"], word_sense, display_gloss
+            ),
             "part_of_speech": payload["pos"][-1] if payload["pos"] else None,
             "stem": payload["stems"][-1] if payload["stems"] else None,
             "greek": _collapse_whitespace(" ".join(payload["greek"])) or None,
@@ -516,7 +575,9 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
     return normalized
 
 
-def _load_lxx_verses(macula_groups: dict[tuple[int, int, int], dict[str, Any]]) -> dict[tuple[int, int], str]:
+def _load_lxx_verses(
+    macula_groups: dict[tuple[int, int, int], dict[str, Any]],
+) -> dict[tuple[int, int], str]:
     verse_words: dict[tuple[int, int], list[tuple[int, str]]] = defaultdict(list)
     for (psalm_number, verse_number, word_number), payload in macula_groups.items():
         greek = _collapse_whitespace(payload.get("greek"))
@@ -557,12 +618,16 @@ def _build_enrichment_sources(token: dict[str, Any]) -> tuple[dict[str, Any], li
     macula_available = [field for field in MACULA_FIELDS if token.get(field) is not None]
     enrichment_sources = {
         "oshb": {
-            "status": "complete" if len(oshb_available) == len(OSHB_FIELDS) else ("partial" if oshb_available else "missing"),
+            "status": "complete"
+            if len(oshb_available) == len(OSHB_FIELDS)
+            else ("partial" if oshb_available else "missing"),
             "available_fields": oshb_available,
             "missing_fields": [field for field in OSHB_FIELDS if field not in oshb_available],
         },
         "macula": {
-            "status": "complete" if len(macula_available) == len(MACULA_FIELDS) else ("partial" if macula_available else "missing"),
+            "status": "complete"
+            if len(macula_available) == len(MACULA_FIELDS)
+            else ("partial" if macula_available else "missing"),
             "available_fields": macula_available,
             "missing_fields": [field for field in MACULA_FIELDS if field not in macula_available],
         },
@@ -633,7 +698,9 @@ def _build_unit(
         token["enrichment_sources"] = enrichment_sources
         token["missing_enrichments"] = missing_enrichments
         tokens.append(token)
-    transliteration = " ".join(token["transliteration"] for token in tokens if token.get("transliteration")).strip()
+    transliteration = " ".join(
+        token["transliteration"] for token in tokens if token.get("transliteration")
+    ).strip()
     witnesses = []
     for source_id, config in WITNESS_SOURCES.items():
         text = witness_verses.get(source_id, {}).get((psalm_number, verse_number))
@@ -697,7 +764,9 @@ def _apply_occurrence_refs(units: list[dict[str, Any]]) -> None:
             key = token.get("lemma") or token.get("normalized") or token.get("surface")
             if not key:
                 continue
-            occurrences[key].append({"psalm_id": unit["psalm_id"], "ref": unit["ref"], "token_id": token["token_id"]})
+            occurrences[key].append(
+                {"psalm_id": unit["psalm_id"], "ref": unit["ref"], "token_id": token["token_id"]}
+            )
     unique_refs_by_key: dict[str, dict[str, Any]] = {}
     for key, items in occurrences.items():
         by_psalm: dict[str, list[str]] = defaultdict(list)
@@ -717,11 +786,16 @@ def _apply_occurrence_refs(units: list[dict[str, Any]]) -> None:
             counters[key] += 1
             token["occurrence_index"] = counters[key]
             ref_groups = unique_refs_by_key[key]
-            same_psalm = [ref for ref in ref_groups["by_psalm"].get(unit["psalm_id"], []) if ref != unit["ref"]]
+            same_psalm = [
+                ref
+                for ref in ref_groups["by_psalm"].get(unit["psalm_id"], [])
+                if ref != unit["ref"]
+            ]
             cross_psalm = [
                 ref
                 for ref in ref_groups["all_refs"]
-                if ref != unit["ref"] and ref not in ref_groups["by_psalm"].get(unit["psalm_id"], [])
+                if ref != unit["ref"]
+                and ref not in ref_groups["by_psalm"].get(unit["psalm_id"], [])
             ]
             token["same_psalm_occurrence_refs"] = same_psalm[:MAX_SAME_PSALM_OCCURRENCES]
             token["psalms_occurrence_refs"] = cross_psalm[:MAX_CROSS_PSALM_OCCURRENCES]
@@ -825,11 +899,45 @@ def _sync_source_manifests() -> None:
     registry_service.save_project(project)
 
 
+#: What the importer derives from the vendored corpus. Everything else in a unit or
+#: psalm file -- renderings, alignments, assessments, notes, rebuilds, audit records,
+#: review decisions, guidance, analyses -- is work done in the workbench, and a
+#: re-import must never discard it.
+IMPORTED_UNIT_FIELDS = (
+    "psalm_id",
+    "unit_id",
+    "ref",
+    "segmentation_type",
+    "source_hebrew",
+    "source_transliteration",
+    "token_ids",
+    "tokens",
+    "witnesses",
+)
+IMPORTED_META_FIELDS = ("psalm_id", "title", "unit_ids")
+
+
+def _merge_with_existing(
+    fresh: dict[str, Any], path: Path, imported: tuple[str, ...]
+) -> dict[str, Any]:
+    """Refresh the imported fields of a file on disk and keep everything else in it."""
+    if not path.exists():
+        return fresh
+    merged = registry_service.read_json(path)
+    for key in imported:
+        if key in fresh:
+            merged[key] = fresh[key]
+    for key, value in fresh.items():
+        merged.setdefault(key, value)
+    return merged
+
+
 def import_vendored_psalms() -> list[dict[str, Any]]:
     settings = get_settings()
     registry_service.bootstrap_project()
     _sync_source_manifests()
-    shutil.rmtree(settings.psalms_dir, ignore_errors=True)
+    # Deliberately no wipe of content/psalms: re-importing refreshes the source text and
+    # tokens of files that exist and keeps the translation work in them.
     settings.psalms_dir.mkdir(parents=True, exist_ok=True)
 
     uxlc_verses = _load_uxlc_verses()
@@ -841,7 +949,9 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
     units: list[dict[str, Any]] = []
     by_psalm: dict[int, list[dict[str, Any]]] = defaultdict(list)
     for psalm_number in range(1, 151):
-        verse_numbers = sorted(verse for candidate_psalm, verse in uxlc_verses if candidate_psalm == psalm_number)
+        verse_numbers = sorted(
+            verse for candidate_psalm, verse in uxlc_verses if candidate_psalm == psalm_number
+        )
         for verse_number in verse_numbers:
             unit = _build_unit(
                 psalm_number=psalm_number,
@@ -857,8 +967,25 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
     _apply_occurrence_refs(units)
 
     for unit in units:
-        registry_service.save_unit(unit)
+        registry_service.save_unit(
+            _merge_with_existing(
+                unit, registry_service.unit_path(unit["unit_id"]), IMPORTED_UNIT_FIELDS
+            )
+        )
     for psalm_number, psalm_units in by_psalm.items():
         psalm_id = _psalm_id(psalm_number)
-        registry_service.write_json(registry_service.psalm_dir(psalm_id) / f"{psalm_id}.meta.json", _psalm_meta(psalm_number, psalm_units))
+        meta_path = registry_service.psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
+        previous_ids = (
+            registry_service.read_json(meta_path).get("unit_ids", []) if meta_path.exists() else []
+        )
+        meta = _merge_with_existing(
+            _psalm_meta(psalm_number, psalm_units), meta_path, IMPORTED_META_FIELDS
+        )
+        # Units split or added in the workbench are not in the corpus; keep them listed.
+        meta["unit_ids"] += [
+            unit_id
+            for unit_id in previous_ids
+            if unit_id not in meta["unit_ids"] and registry_service.unit_path(unit_id).exists()
+        ]
+        registry_service.write_json(meta_path, meta)
     return units

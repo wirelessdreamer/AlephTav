@@ -7,6 +7,8 @@ export type AppRoute = 'welcome' | 'workbench';
 
 export interface WorkbenchSelectionState {
   psalmId: string | null;
+  /** The translation of the psalm on show; null is its main translation. */
+  translationId: string | null;
   unitId: string | null;
   layer: Layer;
   granularity: 'colon' | 'verse';
@@ -62,6 +64,7 @@ function resolveRoute(): AppRoute {
 
 const DEFAULT_SELECTION: WorkbenchSelectionState = {
   psalmId: 'ps001',
+  translationId: null,
   unitId: 'ps001.v001.a',
   layer: 'literal',
   granularity: 'colon',

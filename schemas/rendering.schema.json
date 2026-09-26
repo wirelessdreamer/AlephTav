@@ -121,6 +121,11 @@
     },
     "style_goal": { "type": ["string", "null"] },
     "metric_profile": { "type": ["string", "null"] },
+    "translation_id": {
+      "description": "The added translation of the psalm this English rendering belongs to. Absent on the psalm's main translation, and on the literal and gloss, which every translation shares.",
+      "type": "string",
+      "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$"
+    },
     "issue_links": { "type": "array", "items": { "type": "string" } },
     "pr_links": { "type": "array", "items": { "type": "string" } },
     "review_signoff": { "type": "object" },

@@ -23,6 +23,7 @@ import shutil
 import subprocess
 import tempfile
 import threading
+import time
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any, Protocol
@@ -68,6 +69,19 @@ DENIAL_RESPONSES: dict[str, dict[str, Any]] = {
 INPUT_METHODS = frozenset({"item/tool/requestUserInput"})
 
 DENIED_MESSAGE = "Translation mode does not permit system changes."
+
+#: How long a turn may go without a single message from Codex before it is stopped.
+#: A healthy turn streams events throughout; silence this long means the upstream
+#: model stream has stalled, and waiting on it would hold the client indefinitely.
+STALL_TIMEOUT_SECONDS = 600.0
+
+#: A turn that keeps streaming can still be stuck: the model can run away, emitting
+#: blank space or repetition that never closes the answer. Healthy turns finish in a
+#: few minutes and a few thousand characters; these bound the bad ones.
+TURN_TIMEOUT_SECONDS = 1200.0
+MAX_ANSWER_CHARS = 200_000
+#: This much unbroken whitespace at the end of the answer means it has run away.
+BLANK_RUN_CHARS = 2_000
 
 
 class Transport(Protocol):
@@ -148,6 +162,16 @@ class CodexAppServerClient:
     _threads: set[str] = field(default_factory=set, repr=False, compare=False)
     #: (thread_id, turn_id) of the turn being pumped, so another request can stop it.
     active_turn: tuple[str, str] | None = field(default=None, repr=False, compare=False)
+    stall_timeout: float = STALL_TIMEOUT_SECONDS
+    turn_timeout: float = TURN_TIMEOUT_SECONDS
+    max_answer_chars: int = MAX_ANSWER_CHARS
+    blank_run_chars: int = BLANK_RUN_CHARS
+    _last_message_at: float = field(default=0.0, repr=False, compare=False)
+    _turn_started_at: float = field(default=0.0, repr=False, compare=False)
+    _streamed_chars: int = field(default=0, repr=False, compare=False)
+    _stream_tail: str = field(default="", repr=False, compare=False)
+    #: Why the watchdog stopped the turn, reported in place of a bare "stopped".
+    _stop_reason: str | None = field(default=None, repr=False, compare=False)
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
@@ -283,6 +307,7 @@ class CodexAppServerClient:
         text_parts: list[str] = []
         while True:
             line = transport.readline()
+            self._last_message_at = time.monotonic()
             if not line:
                 raise GenerationError("Codex app server disconnected during turn")
             line = line.strip()
@@ -297,6 +322,10 @@ class CodexAppServerClient:
             self._handle_notification(message)
             method = message["method"]
             params = message.get("params") or {}
+            if method == "item/agentMessage/delta" and isinstance(params.get("delta"), str):
+                # Measured so the watchdog can tell a long answer from a runaway one.
+                self._streamed_chars += len(params["delta"])
+                self._stream_tail = (self._stream_tail + params["delta"])[-self.blank_run_chars :]
             if method == "error":
                 if params.get("willRetry"):
                     continue
@@ -317,7 +346,7 @@ class CodexAppServerClient:
                 if turn_id and str(turn.get("id")) != turn_id:
                     continue
                 if turn.get("status") == "interrupted":
-                    raise GenerationError("Stopped before Codex finished")
+                    raise GenerationError(self._stop_reason or "Stopped before Codex finished")
                 if turn.get("status") == "failed":
                     error = turn.get("error") or {}
                     raise GenerationError(str(error.get("message") or "Codex turn failed"))
@@ -353,12 +382,61 @@ class CodexAppServerClient:
             started = self._exchange("turn/start", params)
             turn_id = (started.get("turn") or {}).get("id")
             self.active_turn = (thread_id, str(turn_id)) if turn_id else None
+            self._last_message_at = self._turn_started_at = time.monotonic()
+            self._streamed_chars = 0
+            self._stream_tail = ""
+            self._stop_reason = None
+            done = threading.Event()
+            if turn_id:
+                threading.Thread(
+                    target=self._watch_for_stall,
+                    args=(thread_id, str(turn_id), done),
+                    daemon=True,
+                ).start()
             try:
                 result = self._pump_until_turn_complete(str(turn_id) if turn_id else None)
             finally:
+                done.set()
                 self.active_turn = None
         result["turn_id"] = turn_id
         return result
+
+    def _runaway_reason(self) -> str | None:
+        """Why the turn in flight should be stopped, if it should."""
+        now = time.monotonic()
+        if now - self._last_message_at > self.stall_timeout:
+            minutes = round(self.stall_timeout / 60)
+            return (
+                f"Codex stopped responding for {minutes} minutes, so the turn was stopped. "
+                "This is usually a stalled connection to the model; try again."
+            )
+        if len(self._stream_tail) >= self.blank_run_chars and not self._stream_tail.strip():
+            return (
+                "Codex's answer turned into endless blank space, so the turn was stopped. "
+                "Models sometimes fail this way when held to a strict JSON format; try again."
+            )
+        if self._streamed_chars > self.max_answer_chars:
+            return (
+                f"Codex's answer passed {self.max_answer_chars:,} characters without "
+                "finishing, so the turn was stopped. The answer ran away; try again."
+            )
+        if now - self._turn_started_at > self.turn_timeout:
+            minutes = round(self.turn_timeout / 60)
+            return (
+                f"Codex was still working after {minutes} minutes, so the turn was stopped. "
+                "Healthy turns finish in a few minutes; try again, perhaps with fewer verses."
+            )
+        return None
+
+    def _watch_for_stall(self, thread_id: str, turn_id: str, done: threading.Event) -> None:
+        """Interrupt a silent or runaway turn; the pumping thread then reports why."""
+        interval = min(15.0, self.stall_timeout / 4, self.turn_timeout / 4)
+        while not done.wait(interval):
+            reason = self._runaway_reason()
+            if reason:
+                self._stop_reason = reason
+                self.interrupt(thread_id, turn_id)
+                return
 
     def interrupt(self, thread_id: str, turn_id: str) -> None:
         """Ask Codex to stop a turn without waiting for the transport.
@@ -461,6 +539,15 @@ def describe_status(client: CodexAppServerClient | None = None) -> dict[str, Any
             "provider": PROVIDER_NAME,
             "status": STATUS_AVAILABLE,
             "detail": "Codex is installed. Connect to start the local app server.",
+            "local_only": True,
+        }
+    if client.active_turn is not None:
+        # Asking for the account would queue behind the turn, so the status check
+        # itself would hang for as long as the turn runs.
+        return {
+            "provider": PROVIDER_NAME,
+            "status": STATUS_BUSY,
+            "detail": "Codex is running a turn.",
             "local_only": True,
         }
     try:

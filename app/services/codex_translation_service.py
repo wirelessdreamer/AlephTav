@@ -31,6 +31,9 @@ from app.services import (
     registry_service,
     rendering_service,
 )
+from app.services import (
+    psalm_translations_service as translations,
+)
 
 PROMPT_TEMPLATE_VERSION = "codex-translation-v2"
 #: Reasoning effort asked of Codex for AlephTav's turns, rather than whatever the user's
@@ -91,13 +94,21 @@ def _now() -> str:
 
 def create_session(
     client: codex.CodexAppServerClient,
-    psalm_id: str,
+    psalm_id: str | None,
     unit_id: str | None = None,
     layer: str = "literal",
     model: str = "",
     purpose: str = "translation",
     base_instructions: str | None = None,
+    translation_id: str | None = None,
 ) -> dict[str, Any]:
+    """Open a Codex thread for one translation of a psalm.
+
+    A thread carries its earlier turns as context, so it never works on two
+    translations: the English of one would leak into the other.
+    """
+    if psalm_id is not None:
+        translations.require(psalm_id, translation_id)
     thread_id = client.start_thread(base_instructions=base_instructions)
     session = {
         "session_id": f"cxs.{uuid.uuid4().hex[:12]}",
@@ -108,6 +119,7 @@ def create_session(
         "provider_version": codex.CLIENT_VERSION,
         "purpose": purpose,
         "psalm_id": psalm_id,
+        "translation_id": translation_id,
         "unit_id": unit_id,
         "layer": layer,
         "prompt_template_version": PROMPT_TEMPLATE_VERSION,
@@ -126,6 +138,11 @@ def get_session(session_id: str) -> dict[str, Any]:
     if session is None:
         raise NotFoundError(f"Codex session not found: {session_id}")
     return session
+
+
+def session_translation(session_id: str) -> str | None:
+    """The translation a session works on; None for the psalm's main translation."""
+    return get_session(session_id).get("translation_id")
 
 
 def list_sessions(psalm_id: str | None = None) -> list[dict[str, Any]]:
@@ -161,24 +178,19 @@ def resume_session(client: codex.CodexAppServerClient, session_id: str) -> dict[
 GUIDANCE_KEY = "translation_guidance"
 
 
-def get_guidance(psalm_id: str) -> str:
-    """The translator's standing direction for this psalm.
+def get_guidance(psalm_id: str, translation_id: str | None = None) -> str:
+    """The translator's standing direction for one translation of this psalm.
 
     Stored on the psalm meta file so it is committed content, versioned and
     reviewable alongside the text it governs.
     """
-    return str(registry_service.load_psalm_meta(psalm_id).get(GUIDANCE_KEY, ""))
+    return translations.get_guidance(psalm_id, translation_id)
 
 
-def set_guidance(psalm_id: str, guidance: str) -> dict[str, Any]:
-    meta = registry_service.load_psalm_meta(psalm_id)
+def set_guidance(psalm_id: str, guidance: str, translation_id: str | None = None) -> dict[str, Any]:
     cleaned = guidance.strip()
-    if cleaned:
-        meta[GUIDANCE_KEY] = cleaned
-    else:
-        meta.pop(GUIDANCE_KEY, None)
-    registry_service.save_psalm_meta(psalm_id, meta)
-    return {"psalm_id": psalm_id, GUIDANCE_KEY: cleaned}
+    translations.set_guidance(psalm_id, translation_id, cleaned)
+    return {"psalm_id": psalm_id, "translation_id": translation_id, GUIDANCE_KEY: cleaned}
 
 
 # -- Generation inputs (FR-4) ---------------------------------------------
@@ -191,6 +203,7 @@ def build_translation_prompt(
     style_profile: str | None = None,
     meter_target: str | None = None,
     constraints: list[str] | None = None,
+    translation_id: str | None = None,
 ) -> str:
     """Assemble only the evidence the task needs, as required by FR-4."""
     unit = registry_service.load_unit(unit_id)
@@ -202,10 +215,12 @@ def build_translation_prompt(
     locked = [
         f"  {r['layer']}: {r['text']}"
         for r in unit.get("renderings", [])
-        if r.get("status") == "canonical" and r.get("layer") != layer
+        if r.get("status") == "canonical"
+        and r.get("layer") != layer
+        and translations.shows_in(r, translation_id)
     ]
 
-    guidance = get_guidance(unit["psalm_id"])
+    guidance = get_guidance(unit["psalm_id"], translation_id)
 
     sections = [
         "# Translation task",
@@ -280,6 +295,7 @@ def build_passage_prompt(
     style_profile: str | None = None,
     meter_target: str | None = None,
     constraints: list[str] | None = None,
+    translation_id: str | None = None,
 ) -> str:
     """One prompt for several units of a psalm, with the whole psalm as context.
 
@@ -288,7 +304,7 @@ def build_passage_prompt(
     """
     psalm = registry_service.load_psalm(psalm_id)
     units = {unit["unit_id"]: unit for unit in psalm["units"]}
-    guidance = get_guidance(psalm_id)
+    guidance = get_guidance(psalm_id, translation_id)
 
     sections = [
         "# Translation task -- psalm passage",
@@ -314,7 +330,7 @@ def build_passage_prompt(
         target = unit["unit_id"] in unit_ids
         sections.append(f"  {unit['ref']} [{unit['unit_id']}]{' <- translate' if target else ''}")
         sections.append(f"    Hebrew: {unit['source_hebrew']}")
-        current = comparisons.select_rendering(unit, layer)
+        current = comparisons.select_rendering(unit, layer, translation_id)
         if current is not None and not target:
             # Keeps a passage continuous with the verses already translated around it.
             sections.append(f"    Current {layer}: {current['text']}")
@@ -327,13 +343,15 @@ def build_passage_prompt(
             "Hebrew tokens (ordered):",
             _token_lines(unit),
         ]
-        literal = comparisons.select_rendering(unit, "literal")
+        literal = comparisons.select_rendering(unit, "literal", translation_id)
         if literal is not None and layer != "literal":
             sections += ["Literal baseline:", f"  {literal['text']}"]
         locked = [
             f"  {r['layer']}: {r['text']}"
             for r in unit.get("renderings", [])
-            if r.get("status") == "canonical" and r.get("layer") != layer
+            if r.get("status") == "canonical"
+            and r.get("layer") != layer
+            and translations.shows_in(r, translation_id)
         ]
         if locked:
             sections += ["Locked upstream layers:", *locked]
@@ -397,6 +415,7 @@ def run_contract_turn(
         "turn_id": None,
         "unit_id": unit_id,
         "psalm_id": psalm_id or session.get("psalm_id"),
+        "translation_id": session.get("translation_id"),
         "layer": layer,
         "provider": codex.PROVIDER_NAME,
         "model": session.get("model", ""),
@@ -474,6 +493,7 @@ def run_translation_turn(
         style_profile=style_profile,
         meter_target=meter_target,
         constraints=constraints,
+        translation_id=session_translation(session_id),
     )
     return run_contract_turn(
         client,
@@ -613,7 +633,13 @@ def fill_psalm_passage(
             client,
             session_id=session_id,
             prompt=build_passage_prompt(
-                psalm_id, targets, layer, style_profile, meter_target, constraints
+                psalm_id,
+                targets,
+                layer,
+                style_profile,
+                meter_target,
+                constraints,
+                translation_id=session_translation(session_id),
             ),
             validator=PASSAGE_VALIDATOR,
             kind=KIND_TRANSLATION,
@@ -694,6 +720,7 @@ def _create_rendering(
         translation_basis=candidate.get("translation_basis"),
         preserved_source_images=candidate.get("preserved_source_images"),
         differentiator=candidate.get("differentiator"),
+        translation_id=run.get("translation_id"),
         provenance={
             "provider": codex.PROVIDER_NAME,
             "model": run.get("model", ""),
@@ -705,3 +732,439 @@ def _create_rendering(
             "contract_validated": True,
         },
     )
+
+
+# -- Rebuilding a verse with its notes -----------------------------------------
+
+REBUILD_TEMPLATE_VERSION = "codex-rebuild-v1"
+
+#: The passage contract for one unit, plus the translator's account of each note.
+REBUILD_VALIDATOR = Draft202012Validator(
+    {
+        "type": "object",
+        "required": ["psalm_id", "layer", "units", "note_responses"],
+        "additionalProperties": False,
+        "properties": {
+            **PASSAGE_VALIDATOR.schema["properties"],
+            "note_responses": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["note_id", "response"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "note_id": {"type": "string"},
+                        "response": {"type": "string", "minLength": 1},
+                    },
+                },
+            },
+        },
+    }
+)
+
+
+def build_rebuild_prompt(
+    unit_id: str,
+    layer: str,
+    notes: list[dict[str, Any]],
+    translation_id: str | None = None,
+) -> str:
+    """The passage prompt for one verse, plus its current text and the reviewer's notes."""
+    unit = registry_service.load_unit(unit_id)
+    current = comparisons.select_rendering(unit, layer, translation_id)
+    sections = [
+        build_passage_prompt(unit["psalm_id"], [unit_id], layer, translation_id=translation_id),
+        "",
+        f"## The current {layer} for {unit_id} (you are revising this)",
+        f"  {current['text']}" if current else "  (none yet: write it from the Hebrew)",
+    ]
+    if notes:
+        sections += [
+            "",
+            "## Reviewer notes on this verse (follow these; they outrank the general style",
+            "## rules, but never the Hebrew itself)",
+            "Keep to the translator guidance for this psalm above (its meter, for one) unless",
+            "a note explicitly asks otherwise.",
+        ]
+        for note in notes:
+            sections.append(f"  [{note['note_id']}] {note['text']}")
+            if note.get("quote"):
+                sections.append(f'    (the reviewer is quoting: "{note["quote"]}")')
+        sections += [
+            "",
+            "Revise the current rendering so it satisfies every note, and change as little",
+            "else as the notes allow. In note_responses, give one entry per note id above,",
+            "saying in one sentence what you changed for it, or why you could not.",
+        ]
+    else:
+        sections += ["", "There are no reviewer notes for this layer; return note_responses: []."]
+    return "\n".join(sections)
+
+
+def rebuild_verse(
+    client: codex.CodexAppServerClient,
+    session_id: str,
+    unit_id: str,
+    english_layer: str = "lyric",
+    layers: list[str] | None = None,
+    created_by: str = "codex",
+) -> dict[str, Any]:
+    """Retranslate one verse with its open instruction notes, held for the reviewer.
+
+    ``layers`` holds "literal" and/or "english". Every turn must succeed before
+    anything is saved, so a failed rebuild leaves the verse exactly as it was.
+    The new renderings are proposed and recorded as a *pending* rebuild, which
+    keeps them out of the table until the reviewer accepts them.
+    """
+    from app.services import verse_notes_service
+
+    unit = registry_service.load_unit(unit_id)
+    translation_id = session_translation(session_id)
+    if verse_notes_service.pending_rebuild(unit, translation_id) is not None:
+        raise ValidationError("This verse already has a rebuild waiting for a decision")
+    keys = [key for key in ("literal", "english") if key in (layers or ["english"])]
+    if not keys:
+        raise ValidationError('layers must include "literal" and/or "english"')
+
+    result: dict[str, Any] = {
+        "unit_id": unit_id,
+        "status": RUN_COMPLETED,
+        "run_ids": [],
+        "rebuild": None,
+        "error": None,
+    }
+    staged: list[tuple[dict[str, Any], dict[str, Any], str]] = []
+    previous: dict[str, str | None] = {}
+    note_ids: list[str] = []
+    responses: dict[str, str] = {}
+
+    for key in keys:
+        layer = "literal" if key == "literal" else english_layer
+        notes = verse_notes_service.open_instructions(unit, key, translation_id)
+        current = comparisons.select_rendering(unit, layer, translation_id)
+        previous[layer] = current["rendering_id"] if current else None
+        run = run_contract_turn(
+            client,
+            session_id=session_id,
+            prompt=build_rebuild_prompt(unit_id, layer, notes, translation_id),
+            validator=REBUILD_VALIDATOR,
+            kind=KIND_TRANSLATION,
+            layer=layer,
+            psalm_id=unit["psalm_id"],
+            prompt_template_version=REBUILD_TEMPLATE_VERSION,
+        )
+        result["run_ids"].append(run["run_id"])
+        if run["status"] != RUN_COMPLETED:
+            result["status"] = run["status"]
+            result["error"] = run.get("error")
+            return result
+        entry = next((item for item in run["payload"]["units"] if item["unit_id"] == unit_id), None)
+        if entry is None or not entry["candidates"]:
+            result["status"] = RUN_INVALID_OUTPUT
+            result["error"] = f"Codex returned no {layer} rendering for {unit_id}"
+            return result
+        staged.append((run, entry["candidates"][0], layer))
+        sent = {note["note_id"] for note in notes}
+        for note in notes:
+            if note["note_id"] not in note_ids:
+                note_ids.append(note["note_id"])
+        for item in run["payload"]["note_responses"]:
+            if item["note_id"] in sent:
+                responses.setdefault(item["note_id"], item["response"])
+
+    rendering_ids = {
+        layer: _create_rendering(run, unit_id, candidate, created_by)["rendering_id"]
+        for run, candidate, layer in staged
+    }
+    result["rebuild"] = verse_notes_service.record_rebuild(
+        unit_id,
+        english_layer=english_layer,
+        note_ids=note_ids,
+        rendering_ids=rendering_ids,
+        previous_rendering_ids=previous,
+        note_responses=[{"note_id": k, "response": v} for k, v in responses.items()],
+        run_ids=result["run_ids"],
+        created_by=created_by,
+        translation_id=translation_id,
+    )
+    return result
+
+
+# -- Suggested renderings for a word ---------------------------------------------
+
+SUGGEST_TEMPLATE_VERSION = "codex-word-suggestions-v4"
+KIND_SUGGESTION = "word_suggestion"
+MIN_SUGGESTIONS = 3
+#: Room for the whole range of a word, so a reviewer can choose without asking again.
+MAX_SUGGESTIONS = 20
+
+SUGGEST_VALIDATOR = Draft202012Validator(
+    {
+        "type": "object",
+        "required": ["suggestions"],
+        "additionalProperties": False,
+        "properties": {
+            "suggestions": {
+                "type": "array",
+                "minItems": MIN_SUGGESTIONS,
+                "maxItems": MAX_SUGGESTIONS,
+                "items": {
+                    "type": "object",
+                    "required": ["text", "sense", "rationale", "fit", "line"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "text": {"type": "string", "minLength": 1},
+                        "sense": {"type": "string"},
+                        "rationale": {"type": "string"},
+                        # How the choice sits under the psalm's guidance (its meter, say).
+                        "fit": {"type": "string"},
+                        # The verse line as it would read with the choice, for context.
+                        "line": {"type": "string", "minLength": 1},
+                    },
+                },
+            }
+        },
+    }
+)
+
+
+def _suggestions_path():
+    return get_settings().caches_dir / "word_suggestions.json"
+
+
+def _suggestion_key(
+    unit_id: str, token_ids: list[str], layer: str, translation_id: str | None = None
+) -> str:
+    key = f"{unit_id}|{','.join(token_ids)}|{layer}"
+    return f"{key}|{translation_id}" if translation_id else key
+
+
+def _read_suggestions() -> dict[str, Any]:
+    path = _suggestions_path()
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:  # pragma: no cover - a cache, rebuildable
+        return {}
+
+
+def _with_freshness(entry: dict[str, Any], guidance: str) -> dict[str, Any]:
+    """Choices made under different psalm guidance (another meter, say), or by an older
+    prompt that offered a narrower range, are outdated."""
+    reason = None
+    if entry.get("guidance", "") != guidance:
+        reason = "guidance"
+    elif entry.get("template_version") != SUGGEST_TEMPLATE_VERSION:
+        reason = "prompt"
+    return {**entry, "outdated": reason is not None, "outdated_reason": reason}
+
+
+def cached_suggestions(
+    unit_id: str, token_ids: list[str], layer: str, translation_id: str | None = None
+) -> dict[str, Any] | None:
+    entry = _read_suggestions().get(_suggestion_key(unit_id, token_ids, layer, translation_id))
+    if entry is None:
+        return None
+    return _with_freshness(entry, get_guidance(unit_id.split(".")[0], translation_id))
+
+
+def cached_suggestions_for_unit(
+    unit_id: str, layer: str, translation_id: str | None = None
+) -> list[dict[str, Any]]:
+    """Every word of a unit that has choices for ``layer``, for the psalm-wide summary."""
+    guidance = get_guidance(unit_id.split(".")[0], translation_id)
+    return [
+        _with_freshness(entry, guidance)
+        for entry in _read_suggestions().values()
+        if entry.get("unit_id") == unit_id
+        and entry.get("layer") == layer
+        and entry.get("translation_id") == translation_id
+    ]
+
+
+def _readings_elsewhere(unit: dict[str, Any], token_ids: list[str], layer: str) -> list[str]:
+    """How the corpus glosses each word in focus, here and wherever its lemma recurs in
+    the Psalms, with the LXX, and this translation's own rendering of those verses."""
+    tokens = {token["token_id"]: token for token in unit.get("tokens", [])}
+    lines: list[str] = []
+    seen: set[str] = set()
+    for token_id in token_ids:
+        token = tokens[token_id]
+        lemma = token.get("lemma") or token["surface"]
+        if lemma in seen:
+            continue
+        seen.add(lemma)
+        # (gloss, LXX) -> where the corpus reads the word that way
+        readings: dict[tuple[str, str], list[str]] = {
+            (token.get("display_gloss") or "?", token.get("greek") or ""): ["here"]
+        }
+        ours: list[str] = []
+        refs = [
+            *token.get("same_psalm_occurrence_refs", []),
+            *token.get("corpus_occurrence_refs", []),
+        ]
+        for ref in dict.fromkeys(refs):
+            try:
+                context = comparisons.occurrence_context(token_id, ref, layer)
+            except (NotFoundError, ValidationError):
+                continue  # outside the Psalms, or a psalm this workspace does not hold
+            for match in context["matches"]:
+                key = (match.get("display_gloss") or "?", match.get("greek") or "")
+                readings.setdefault(key, []).append(ref)
+            if context["english_text"]:
+                ours.append(f"    {ref}: {' / '.join(context['english_text'].splitlines())}")
+        strong = f" ({token['strong']})" if token.get("strong") else ""
+        lines.append(f"  {lemma}{strong}")
+        for (gloss, greek), where in readings.items():
+            lxx = f" (LXX {greek})" if greek else ""
+            lines.append(f'    "{gloss}"{lxx}: {", ".join(where)}')
+        if ours:
+            lines += [f"  Our {layer} where it recurs:", *ours]
+    return lines
+
+
+def build_suggestion_prompt(
+    unit_id: str, token_ids: list[str], layer: str, translation_id: str | None = None
+) -> str:
+    unit = registry_service.load_unit(unit_id)
+    tokens = {token["token_id"]: token for token in unit.get("tokens", [])}
+    unknown = [token_id for token_id in token_ids if token_id not in tokens]
+    if not token_ids or unknown:
+        raise ValidationError(f"Tokens not in {unit_id}: {unknown or 'none given'}")
+
+    focus = []
+    for token_id in token_ids:
+        token = tokens[token_id]
+        bits = [f"{token_id}: {token['surface']}"]
+        for key in ("transliteration", "lemma", "strong", "morph_readable", "display_gloss"):
+            if token.get(key):
+                bits.append(f"{key}={token[key]}")
+        focus.append("  " + " | ".join(bits))
+
+    guidance = get_guidance(unit["psalm_id"], translation_id)
+    sections = [
+        "# Word choice task",
+        f"Unit: {unit_id} ({unit['ref']})",
+        f"Layer the choice is for: {layer}",
+        "",
+        "## Translator guidance for this psalm (every choice must work within it)",
+        guidance or "(none set)",
+        "",
+        "## Hebrew",
+        unit["source_hebrew"],
+        "",
+        "## The word(s) in focus",
+        *focus,
+    ]
+    for shown in ("literal", layer):
+        rendering = comparisons.select_rendering(unit, shown, translation_id)
+        if rendering is not None:
+            sections += ["", f"## Current {shown}", f"  {rendering['text']}"]
+    word_notes = [
+        note
+        for assessment in unit.get("comparison_assessments", [])
+        if assessment["status"] != "superseded"
+        and translations.in_translation(assessment, translation_id)
+        for note in assessment.get("word_notes", [])
+        if set(note.get("token_ids", [])) & set(token_ids)
+    ]
+    if word_notes:
+        note = word_notes[-1]
+        sections += [
+            "",
+            "## What the latest analysis said about this word",
+            f"  Lexical range: {note['lexical_gloss']}",
+            f"  Rendered as: {note['rendered_as']} ({note['verdict']})",
+            f"  {note['note']}",
+        ]
+    sections += [
+        "",
+        "## How the corpus reads the word(s), here and where they recur in the Psalms",
+        *_readings_elsewhere(unit, token_ids, layer),
+    ]
+    earlier = cached_suggestions(unit_id, token_ids, layer, translation_id)
+    if earlier and earlier["suggestions"]:
+        sections += [
+            "",
+            "## Choices offered for this word before (each belongs in your list again)",
+            *(f"  - {item['text']}" for item in earlier["suggestions"]),
+        ]
+    sections += [
+        "",
+        "Give every English rendering of the word(s) in focus a reviewer should weigh, as",
+        f"they would stand in this verse's {layer}: between {MIN_SUGGESTIONS} and",
+        f"{MAX_SUGGESTIONS}, best first. Cover the whole range, so the reviewer can choose",
+        "without asking again:",
+        "  - every distinct sense in the corpus readings and the lexical range above gets at",
+        "    least one choice, even a sense that ranks low in this verse (say why in its",
+        "    rationale);",
+        "  - the current rendering and every earlier choice listed above appear again;",
+        "  - near-synonyms that differ in tone or sound (murmurs, mutters) each have a place;",
+        "    only exact repeats do not.",
+        "Every choice must still work within the psalm guidance above: find a phrasing of",
+        "each sense that keeps to it. Rank by fidelity to the Hebrew and by fit with the",
+        "guidance. For each give:",
+        "  text: the word or short phrase itself;",
+        "  sense: which part of the lexical range it selects;",
+        "  rationale: one sentence on what it gains or loses;",
+        "  fit: one sentence on how it sits in the line under the guidance. When the guidance",
+        "    sets a meter, count its syllables and say where the stress falls in the line.",
+        f"  line: the line of the current {layer} that holds the word, rewritten with this",
+        "    choice in place, changing nothing else but what grammar then requires.",
+    ]
+    return "\n".join(sections)
+
+
+def suggest_word_renderings(
+    client: codex.CodexAppServerClient,
+    session_id: str,
+    unit_id: str,
+    token_ids: list[str],
+    layer: str = "lyric",
+) -> dict[str, Any]:
+    """Ranked renderings for a word, cached as derived data (they are aids, not content)."""
+    translation_id = session_translation(session_id)
+    earlier = cached_suggestions(unit_id, token_ids, layer, translation_id)
+    prompt = build_suggestion_prompt(unit_id, token_ids, layer, translation_id)
+    run = run_contract_turn(
+        client,
+        session_id=session_id,
+        prompt=prompt,
+        validator=SUGGEST_VALIDATOR,
+        kind=KIND_SUGGESTION,
+        unit_id=unit_id,
+        layer=layer,
+        prompt_template_version=SUGGEST_TEMPLATE_VERSION,
+    )
+    result: dict[str, Any] = {
+        "unit_id": unit_id,
+        "token_ids": token_ids,
+        "layer": layer,
+        "translation_id": translation_id,
+        "status": run["status"],
+        "error": run.get("error"),
+        "run_id": run["run_id"],
+        "suggestions": [],
+        "created_at": run.get("completed_at"),
+        # Kept so choices from older guidance, or an older prompt, are flagged outdated.
+        "guidance": get_guidance(unit_id.split(".")[0], translation_id),
+        "template_version": SUGGEST_TEMPLATE_VERSION,
+    }
+    if run["status"] != RUN_COMPLETED:
+        return result
+    suggestions = run["payload"]["suggestions"]
+    # Asking again never loses a choice: any earlier one the new list leaves out follows it.
+    offered = {item["text"].casefold() for item in suggestions}
+    kept = [
+        {**item, "earlier": True}
+        for item in (earlier["suggestions"] if earlier else [])
+        if item["text"].casefold() not in offered
+    ]
+    result["suggestions"] = [*suggestions, *kept]
+    cache = _read_suggestions()
+    cache[_suggestion_key(unit_id, token_ids, layer, translation_id)] = result
+    path = _suggestions_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(cache, indent=2, ensure_ascii=False), encoding="utf-8")
+    return result

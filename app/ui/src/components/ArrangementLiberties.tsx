@@ -1,0 +1,259 @@
+import { useState } from 'react';
+
+import type { ArrangementEdit } from '../hooks/useArrangements';
+import type { ArrangementView, Liberty, LibertyKind } from '../types';
+import {
+  LIBERTY_HINTS,
+  LIBERTY_LABELS,
+  REVIEWER_ROLES,
+  type Reviewer,
+  loadReviewer,
+  saveReviewer,
+  verseOf,
+} from './arrangementShared';
+
+interface Props {
+  view: ArrangementView;
+  edit: (change: ArrangementEdit) => Promise<unknown>;
+  pending: boolean;
+}
+
+const RULE_ORDER: LibertyKind[] = [
+  'repeated',
+  'reordered',
+  'compressed',
+  'expanded',
+  'added',
+  'dropped',
+];
+
+function LibertyRow({
+  item,
+  reviewer,
+  pending,
+  edit,
+}: {
+  item: Liberty;
+  reviewer: Reviewer;
+  pending: boolean;
+  edit: Props['edit'];
+}) {
+  const [why, setWhy] = useState('');
+  const needsWhy = item.kind === 'dropped' && !item.rationale;
+  const alreadyMine = item.approvals.some((a) => a.reviewer === reviewer.name);
+  const canApprove =
+    item.required > 0 && !item.settled && Boolean(reviewer.name.trim()) && !alreadyMine;
+
+  function approve() {
+    if (item.kind === 'dropped') {
+      void edit({
+        method: 'POST',
+        path: 'omissions/approvals',
+        body: {
+          unit_id: item.unit_id,
+          token_ids: item.token_ids,
+          reviewer: reviewer.name,
+          reviewer_role: reviewer.role,
+          rationale: why,
+        },
+      });
+    } else {
+      void edit({
+        method: 'POST',
+        path: `lines/${item.line_id}/approvals`,
+        body: { reviewer: reviewer.name, reviewer_role: reviewer.role },
+      });
+    }
+    setWhy('');
+  }
+
+  return (
+    <tr className={item.settled ? 'is-settled' : undefined}>
+      <td>
+        <span className="verse-notes__hint">{item.kind === 'dropped' ? item.ref : item.label}</span>
+        <span className="arr-lib__text">{item.text || '—'}</span>
+      </td>
+      <td>
+        <span className={`arr-kind-chip arr-kind--${item.kind}`} title={LIBERTY_HINTS[item.kind]}>
+          {LIBERTY_LABELS[item.kind]}
+        </span>
+      </td>
+      <td lang="he" dir="rtl" className="hebrew arr-lib__he">
+        {item.hebrew}
+      </td>
+      <td className="arr-lib__why">
+        {item.rationale ||
+          (needsWhy ? (
+            <input
+              aria-label="Why this Hebrew is left out"
+              placeholder="Why is it left out?"
+              value={why}
+              onChange={(event) => setWhy(event.target.value)}
+            />
+          ) : (
+            <span className="verse-notes__hint">No reason given</span>
+          ))}
+      </td>
+      <td className="arr-lib__review">
+        <span className={`arr-review arr-review--${item.settled ? 'settled' : item.required > 1 ? 'two' : 'one'}`}>
+          {item.required === 0
+            ? 'Allowed'
+            : item.settled
+              ? 'Approved'
+              : `${item.approvals.length} of ${item.required} approval${item.required === 1 ? '' : 's'}`}
+        </span>
+        {item.approvals.length > 0 ? (
+          <span className="verse-notes__hint">
+            {item.approvals.map((a) => `${a.reviewer} (${a.reviewer_role})`).join(', ')}
+          </span>
+        ) : null}
+        {canApprove ? (
+          <button
+            type="button"
+            className="btn-sm btn-primary"
+            disabled={pending || (needsWhy && !why.trim())}
+            title={needsWhy && !why.trim() ? 'Say why it is left out first' : undefined}
+            onClick={approve}
+          >
+            Approve
+          </button>
+        ) : null}
+      </td>
+    </tr>
+  );
+}
+
+/** Every Hebrew word's coverage, and every departure with the approvals it needs. */
+export function ArrangementLiberties({ view, edit, pending }: Props) {
+  const [reviewer, setReviewer] = useState<Reviewer>(loadReviewer);
+  const { coverage, liberties, required_approvals: rules, summary, arrangement } = view;
+  const open = liberties.filter((item) => !item.settled);
+  const settled = liberties.filter((item) => item.settled);
+
+  function updateReviewer(next: Reviewer) {
+    setReviewer(next);
+    saveReviewer(next);
+  }
+
+  return (
+    <div className="arr-liberties">
+      <section className="arr-panel" aria-label="Hebrew coverage">
+        <header className="arr-panel__head">
+          <h3 className="verse-label">Every Hebrew word, and how often the song carries it</h3>
+          <span className="arr-chip">{coverage.totals.words} words</span>
+          <span className="arr-chip">{coverage.totals.once} once</span>
+          <span className="arr-chip arr-chip--gold">{coverage.totals.repeated} repeated</span>
+          <span className="arr-chip arr-chip--dropped">{coverage.totals.dropped} not carried</span>
+        </header>
+        {coverage.units.map((unit) => (
+          <div key={unit.unit_id} className="arr-cover-words" dir="rtl">
+            <span dir="ltr" className="arr-cover__v">
+              {verseOf(unit.unit_id)}
+            </span>
+            {unit.tokens.map((token) => (
+              <span
+                key={token.token_id}
+                lang="he"
+                title={token.gloss}
+                className={`arr-word${token.count === 0 ? ' is-dropped' : token.count > 1 ? ' is-repeated' : ''}`}
+              >
+                {token.surface}
+                {token.count > 1 ? <span dir="ltr">×{token.count}</span> : null}
+              </span>
+            ))}
+          </div>
+        ))}
+      </section>
+
+      <div className="arr-liberties__grid">
+        <section className="arr-panel" aria-label="Liberties">
+          <header className="arr-panel__head">
+            <h3 className="verse-label">Liberties</h3>
+            <span className="verse-notes__hint">
+              {open.length === 0 ? 'Every liberty is settled.' : `${open.length} open`}
+            </span>
+          </header>
+          {liberties.length === 0 ? (
+            <p className="verse-notes__hint">The setting tracks the Hebrew throughout.</p>
+          ) : (
+            <table className="arr-lib">
+              <thead>
+                <tr>
+                  <th>Line</th>
+                  <th>Kind</th>
+                  <th>Hebrew</th>
+                  <th>Why</th>
+                  <th>Review</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[...open, ...settled].map((item) => (
+                  <LibertyRow key={item.key} item={item} reviewer={reviewer} pending={pending} edit={edit} />
+                ))}
+              </tbody>
+            </table>
+          )}
+        </section>
+
+        <aside className="arr-liberties__aside">
+          <section className="arr-panel">
+            <h3 className="verse-label">Reviewing as</h3>
+            <input
+              aria-label="Your name"
+              placeholder="Your name"
+              value={reviewer.name}
+              onChange={(event) => updateReviewer({ ...reviewer, name: event.target.value })}
+            />
+            <select
+              aria-label="Your reviewer role"
+              value={reviewer.role}
+              onChange={(event) => updateReviewer({ ...reviewer, role: event.target.value })}
+            >
+              {REVIEWER_ROLES.map((role) => (
+                <option key={role} value={role}>
+                  {role}
+                </option>
+              ))}
+            </select>
+          </section>
+          <section className="arr-panel">
+            <h3 className="verse-label">Approvals each kind needs</h3>
+            {RULE_ORDER.map((kind) => (
+              <div key={kind} className="arr-rule">
+                <span>{LIBERTY_HINTS[kind]}</span>
+                <span className={`arr-review arr-review--${rules[kind] === 0 ? 'settled' : rules[kind] > 1 ? 'two' : 'one'}`}>
+                  {rules[kind] === 0 ? 'Allowed' : `${rules[kind]} approval${rules[kind] === 1 ? '' : 's'}`}
+                </span>
+              </div>
+            ))}
+            <p className="verse-notes__hint">
+              Set in docs/REVIEW_POLICY.md. Editing a line clears its approvals.
+            </p>
+          </section>
+          <section className="arr-panel">
+            <h3 className="verse-label">The setting</h3>
+            <p className="verse-notes__hint">
+              {arrangement.status === 'accepted'
+                ? 'Accepted.'
+                : summary.open === 0
+                  ? 'Every liberty is settled; the setting can be accepted.'
+                  : `${summary.open} liberties must be settled before the setting is accepted.`}
+            </p>
+            {arrangement.status !== 'accepted' ? (
+              <button
+                type="button"
+                className="btn-primary"
+                disabled={pending || summary.open > 0}
+                onClick={() => void edit({ method: 'PATCH', path: '', body: { status: 'accepted' } })}
+              >
+                Accept the setting
+              </button>
+            ) : null}
+          </section>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+export default ArrangementLiberties;

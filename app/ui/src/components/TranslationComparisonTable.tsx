@@ -2,13 +2,18 @@ import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
   useAnalyzePsalm,
+  useAnalyseRebuild,
   useAnalyzeVerse,
   useCodexStatus,
   useConnectCodex,
   useCreateCodexSession,
   useFillPsalmPassage,
+  useIdentifyPsalm,
+  useImportTranslation,
   useInterruptCodexSession,
+  useRebuildVerse,
   useSaveTranslationGuidance,
+  useSuggestWordRenderings,
   useTranslationGuidance,
 } from '../hooks/useCodex';
 import {
@@ -16,14 +21,26 @@ import {
   useCreateComparisonAssessment,
   useReviseComparisonAssessment,
 } from '../hooks/useComparisonAssessments';
-import { HebrewStudyText } from './HebrewStudyText';
+import { useArrangeImport, useDraftArrangement } from '../hooks/useArrangements';
+import { useCreateTranslation } from '../hooks/useTranslations';
+import { type ArrangementPane, ArrangementWorkspace } from './ArrangementWorkspace';
+import {
+  type ImportOptions,
+  type ImportRequest,
+  type ImportStep,
+  ImportTranslationDialog,
+} from './ImportTranslationDialog';
+import { VerseDetail } from './VerseDetail';
+import { WordSummary, type WordSummaryItem } from './WordSummary';
 import type {
   AccuracyRating,
   ComparisonStatus,
   ComparisonTableRow,
   CreatedVia,
+  ImportResult,
   PsalmAnalysis,
   PsalmAnalysisSection,
+  PsalmSummary,
 } from '../types';
 
 const ACCURACY_RATINGS: AccuracyRating[] = [
@@ -63,11 +80,6 @@ const RATING_TONE: Record<AccuracyRating, 'close' | 'interpret' | 'caution'> = {
   omission: 'caution',
   no_source_basis: 'caution',
 };
-
-const GUTTER_WIDTHS = [24, 32, 48] as const;
-type GutterWidth = (typeof GUTTER_WIDTHS)[number];
-
-const ENGLISH_LAYERS = ['lyric', 'metered_lyric', 'parallelism_lyric', 'concept', 'phrase'];
 
 function download(filename: string, body: string, mime: string) {
   const url = URL.createObjectURL(new Blob([body], { type: mime }));
@@ -130,11 +142,15 @@ function toCsv(rows: ComparisonTableRow[]): string {
   return [header.join(','), ...body].join('\n');
 }
 
-type BatchKind = 'translate' | 'analyse';
+type BatchKind = 'translate' | 'analyse' | 'rebuild' | 'suggest' | 'arrange' | 'import';
 
 const BATCH_WORDS: Record<BatchKind, { active: string; noun: string }> = {
   translate: { active: 'Translating', noun: 'Translation' },
   analyse: { active: 'Analysing', noun: 'Analysis' },
+  rebuild: { active: 'Rebuilding', noun: 'Rebuild' },
+  suggest: { active: 'Suggesting choices for', noun: 'Word choices' },
+  arrange: { active: 'Drafting a song setting of', noun: 'Song setting' },
+  import: { active: 'Import:', noun: 'Import' },
 };
 
 interface BatchFailure {
@@ -205,6 +221,13 @@ function passages(
   return groups;
 }
 
+/** Whether the verse has notes the next rebuild would follow. */
+function hasOpenInstructions(row: ComparisonTableRow): boolean {
+  return (row.verse_notes ?? []).some(
+    (note) => note.status === 'open' && note.kind === 'instruction',
+  );
+}
+
 /** API errors arrive as FastAPI `{"detail": ...}` bodies, sometimes inside a run's error. */
 function readableError(message: string): string {
   try {
@@ -249,14 +272,39 @@ function groupFailures(failures: BatchReport['failures']) {
   return [...groups].map(([error, labels]) => ({ error, labels }));
 }
 
-interface Props {
-  psalmId: string | null;
-  onOpenRendering?: (renderingId: string) => void;
+/** An import waiting for the page to show the psalm and translation it goes into. */
+interface QueuedImport {
+  psalmId: string;
+  translationId: string | null;
+  text: string;
+  options: ImportOptions;
 }
 
-export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) {
-  const [englishLayer, setEnglishLayer] = useState('lyric');
-  const [gutterWidth, setGutterWidth] = useState<GutterWidth>(32);
+interface Props {
+  psalmId: string | null;
+  /** The translation on show; null is the psalm's main translation. */
+  translationId: string | null;
+  /** Every psalm, for the import dialog to pick from. */
+  psalms: PsalmSummary[];
+  onOpenRendering?: (renderingId: string) => void;
+  /** The import dialog, opened from the page header. */
+  importOpen?: boolean;
+  onImportClose?: () => void;
+  /** Show a translation of a psalm, as an import does once it knows where the paste goes. */
+  onShowTranslation: (psalmId: string, translationId: string | null) => void;
+}
+
+export function TranslationComparisonTable({
+  psalmId,
+  translationId,
+  psalms,
+  onOpenRendering,
+  importOpen = false,
+  onImportClose,
+  onShowTranslation,
+}: Props) {
+  /** The one English layer the workbench makes and shows. */
+  const englishLayer = 'lyric';
   const [statusFilter, setStatusFilter] = useState<ComparisonStatus | ''>('');
   const [ratingFilter, setRatingFilter] = useState<AccuracyRating | ''>('');
   const [editing, setEditing] = useState<string | null>(null);
@@ -276,11 +324,19 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
     return () => window.clearInterval(timer);
   }, [batch]);
 
-  const { data, isLoading, error } = useComparisonTable(psalmId, 'literal', englishLayer);
+  const { data, isLoading, error } = useComparisonTable(
+    psalmId,
+    'literal',
+    englishLayer,
+    translationId,
+  );
   const createAssessment = useCreateComparisonAssessment(psalmId);
   const reviseAssessment = useReviseComparisonAssessment(psalmId);
 
-  const [expanded, setExpanded] = useState<string | null>(null);
+  /** The one verse open in the accordion, and the word studied within it. */
+  const [openKey, setOpenKey] = useState<string | null>(null);
+  const [selectedTokenId, setSelectedTokenId] = useState<string | null>(null);
+  const [evidenceFor, setEvidenceFor] = useState<string | null>(null);
   const [analysisOpen, setAnalysisOpen] = useState(false);
   const [analysisTab, setAnalysisTab] = useState<
     'summary' | 'architecture' | 'guardrails' | 'epistemics' | 'sources'
@@ -288,13 +344,27 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
 
   const { data: codexStatus } = useCodexStatus();
   const connectCodex = useConnectCodex();
-  const { data: guidance } = useTranslationGuidance(psalmId);
-  const saveGuidance = useSaveTranslationGuidance(psalmId);
+  const { data: guidance } = useTranslationGuidance(psalmId, translationId);
+  const saveGuidance = useSaveTranslationGuidance(psalmId, translationId);
   const createSession = useCreateCodexSession();
   const fillPassage = useFillPsalmPassage(psalmId);
   const interruptSession = useInterruptCodexSession();
   const analyzeVerse = useAnalyzeVerse(psalmId);
+  const rebuildVerse = useRebuildVerse(psalmId);
+  const analyseRebuild = useAnalyseRebuild(psalmId);
+  const suggestWords = useSuggestWordRenderings();
   const analyzePsalm = useAnalyzePsalm(psalmId);
+  const draftArrangement = useDraftArrangement(psalmId);
+  const importTranslation = useImportTranslation(psalmId);
+  const arrangeImport = useArrangeImport(psalmId);
+  const identifyPsalm = useIdentifyPsalm();
+  const createTranslation = useCreateTranslation();
+  const [importSteps, setImportSteps] = useState<ImportStep[]>([]);
+  const [importRunning, setImportRunning] = useState(false);
+  const [queuedImport, setQueuedImport] = useState<QueuedImport | null>(null);
+  /** Verse by verse, or the psalm as a song setting free of the verse boundaries. */
+  const [pane, setPane] = useState<'verses' | ArrangementPane>('verses');
+  const [arrangementId, setArrangementId] = useState<string | null>(null);
   const codexReady = codexStatus?.status === 'ready';
   /** Why Codex actions are disabled, in the server's words. */
   const codexHint = codexReady ? undefined : (codexStatus?.detail ?? 'Codex is not connected');
@@ -302,19 +372,24 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
 
   useEffect(() => {
     setGuidanceDraft(guidance?.translation_guidance ?? '');
-  }, [guidance?.translation_guidance, psalmId]);
+  }, [guidance?.translation_guidance, psalmId, translationId]);
 
-  /** Reuse one Codex thread per psalm so context carries across rows. */
+  /**
+   * Reuse one Codex thread per translation of a psalm so context carries across rows,
+   * and never across translations, whose English would leak into each other.
+   */
   const sessionRef = useRef<string | null>(null);
   useEffect(() => {
     sessionRef.current = null;
     setReport(null);
-  }, [psalmId]);
+    setArrangementId(null);
+  }, [psalmId, translationId]);
 
   async function ensureSession(): Promise<string> {
     if (sessionRef.current) return sessionRef.current;
     const session = await createSession.mutateAsync({
       psalm_id: psalmId as string,
+      translation_id: translationId,
       layer: englishLayer,
     });
     sessionRef.current = session.session_id;
@@ -357,6 +432,13 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
     }
   }
 
+  function stopBatch() {
+    stopRequested.current = true;
+    setBatch((current) => current && { ...current, stopping: true });
+    // Stop the turn in flight as well, rather than waiting for Codex to end it.
+    if (sessionRef.current) interruptSession.mutate(sessionRef.current);
+  }
+
   /** Translate rows together, one Codex turn per layer, with the whole psalm as context. */
   function passageStep(passage: ComparisonTableRow[]): BatchStep {
     const unitIds = passage.flatMap((row) => row.unit_ids);
@@ -390,6 +472,84 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
           return [...failed].map(([label, error]) => ({ label, error }));
         } catch (error) {
           return everyRow(thrownFailure(error));
+        }
+      },
+    };
+  }
+
+  /** Audit a held rebuild; skipped when the rebuild before it did not produce one. */
+  function analyseRebuildStep(row: ComparisonTableRow, when: () => boolean = () => true): BatchStep {
+    const unitId = row.unit_ids[0];
+    const label = `${row.display_reference}, rebuilt text`;
+    return {
+      label,
+      unitIds: [unitId],
+      rows: 1,
+      run: async () => {
+        if (!when()) return [];
+        const error = await failureOf(async () =>
+          analyseRebuild.mutateAsync({ unitId, session_id: await ensureSession() }),
+        );
+        return error ? [{ label, error }] : [];
+      },
+    };
+  }
+
+  function rebuildRow(
+    row: ComparisonTableRow,
+    layers: Array<'literal' | 'english'>,
+    reanalyse: boolean,
+  ) {
+    const unitId = row.unit_ids[0];
+    const label = `${row.display_reference} with your notes`;
+    let rebuilt = false;
+    const rebuild: BatchStep = {
+      label,
+      unitIds: [unitId],
+      rows: 1,
+      run: async () => {
+        const error = await failureOf(async () =>
+          rebuildVerse.mutateAsync({
+            unitId,
+            session_id: await ensureSession(),
+            english_layer: englishLayer,
+            layers,
+          }),
+        );
+        rebuilt = !error;
+        return error ? [{ label, error }] : [];
+      },
+    };
+    void runBatch(
+      'rebuild',
+      reanalyse ? [rebuild, analyseRebuildStep(row, () => rebuilt)] : [rebuild],
+    );
+  }
+
+  async function suggestFor(row: ComparisonTableRow, tokenIds: string[]) {
+    const result = await suggestWords.mutateAsync({
+      unitId: row.unit_ids[0],
+      session_id: await ensureSession(),
+      token_ids: tokenIds,
+      layer: englishLayer,
+    });
+    const failure = runFailure({ status: result.status ?? 'completed', error: result.error ?? null });
+    if (failure) throw new Error(failure);
+  }
+
+  /** One Codex turn: ranked choices for one word, under the psalm's guidance. */
+  function suggestStep(item: WordSummaryItem): BatchStep {
+    const label = `${item.verse} ${item.transliteration || item.surface}`;
+    return {
+      label,
+      unitIds: [item.row.unit_ids[0]],
+      rows: 1,
+      run: async () => {
+        try {
+          await suggestFor(item.row, item.tokenIds);
+          return [];
+        } catch (error) {
+          return [{ label, error: thrownFailure(error) }];
         }
       },
     };
@@ -435,6 +595,285 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
       },
     ]);
   }
+
+  /** One Codex turn writes a whole-psalm setting, stored as a proposal and then shown. */
+  function draftSetting() {
+    const label = `${data?.title ?? 'the psalm'}`;
+    return runBatch('arrange', [
+      {
+        label,
+        unitIds: [],
+        rows: 1,
+        run: async () => {
+          const error = await failureOf(async () => {
+            const result = await draftArrangement.mutateAsync({
+              session_id: await ensureSession(),
+              layer: englishLayer,
+            });
+            if (result.view) setArrangementId(result.view.arrangement.arrangement_id);
+            return result;
+          });
+          return error ? [{ label, error }] : [];
+        },
+      },
+    ]);
+  }
+
+  function markImport(key: string, patch: Partial<ImportStep>) {
+    setImportSteps((list) => list.map((step) => (step.key === key ? { ...step, ...patch } : step)));
+  }
+
+  /**
+   * Import a pasted translation: place it (one Codex turn), read it as a song setting
+   * (one turn), then analyse each placed verse and the psalm. Each turn is a batch step,
+   * so the toolbar progress and Stop work as for any other batch; the dialog shows the
+   * same run as a checklist.
+   */
+  async function runImport(text: string, options: ImportOptions) {
+    // After the step that made the translation, when the import made one.
+    setImportSteps((made) => [
+      ...made,
+      { key: 'read', label: 'Reading the translation and placing it verse by verse', status: 'pending' },
+      ...(options.arrange
+        ? [{ key: 'arrange', label: 'Analysing it as a song setting', status: 'pending' as const }]
+        : []),
+      ...(options.analyse
+        ? [
+            { key: 'verses', label: 'Analysing each placed verse', status: 'pending' as const },
+            { key: 'psalm', label: 'Analysing the psalm as a whole', status: 'pending' as const },
+          ]
+        : []),
+    ]);
+    setImportRunning(true);
+    const steps: BatchStep[] = [];
+
+    const arrangeStep: BatchStep = {
+      label: 'analysing the song setting',
+      unitIds: [],
+      rows: 1,
+      run: async () => {
+        markImport('arrange', { status: 'running' });
+        const error = await failureOf(async () => {
+          const result = await arrangeImport.mutateAsync({
+            session_id: await ensureSession(),
+            text,
+            layer: englishLayer,
+          });
+          if (result.view) {
+            setArrangementId(result.view.arrangement.arrangement_id);
+            const { summary, arrangement } = result.view;
+            markImport('arrange', {
+              status: 'done',
+              detail:
+                `${summary.sung_lines} lines sung in ${arrangement.sections.length} sections · ` +
+                (summary.open === 0 ? 'nothing to review' : `${summary.open} liberties to review`),
+            });
+          }
+          return result;
+        });
+        if (error) markImport('arrange', { status: 'failed', detail: error });
+        return error ? [{ label: 'Song setting', error }] : [];
+      },
+    };
+
+    function verseSteps(placed: ImportResult['renderings']): BatchStep[] {
+      let failures = 0;
+      return placed.map((verse, index) => ({
+        label: `analysing ${verse.ref}`,
+        unitIds: [verse.unit_id],
+        rows: 1,
+        run: async () => {
+          markImport('verses', {
+            status: 'running',
+            detail: `${index + 1} of ${placed.length} · ${verse.ref}`,
+          });
+          const error = await failureOf(async () =>
+            analyzeVerse.mutateAsync({
+              unitId: verse.unit_id,
+              session_id: await ensureSession(),
+              english_layer: englishLayer,
+            }),
+          );
+          if (error) failures += 1;
+          if (index === placed.length - 1) {
+            markImport('verses', {
+              status: failures > 0 ? 'failed' : 'done',
+              detail:
+                `${placed.length - failures} of ${placed.length} analysed` +
+                (failures > 0 ? `, ${failures} failed` : ''),
+            });
+          }
+          return error ? [{ label: verse.ref, error }] : [];
+        },
+      }));
+    }
+
+    const psalmStep: BatchStep = {
+      label: 'analysing the psalm as a whole',
+      unitIds: [],
+      rows: 1,
+      run: async () => {
+        markImport('psalm', { status: 'running' });
+        const error = await failureOf(async () =>
+          analyzePsalm.mutateAsync({
+            session_id: await ensureSession(),
+            english_layer: englishLayer,
+          }),
+        );
+        markImport('psalm', error ? { status: 'failed', detail: error } : { status: 'done' });
+        return error ? [{ label: 'The psalm as a whole', error }] : [];
+      },
+    };
+
+    steps.push({
+      label: 'reading the pasted translation',
+      unitIds: [],
+      rows: 1,
+      run: async () => {
+        markImport('read', { status: 'running' });
+        let result: ImportResult;
+        try {
+          result = await importTranslation.mutateAsync({
+            session_id: await ensureSession(),
+            text,
+            layer: englishLayer,
+          });
+        } catch (error) {
+          const message = thrownFailure(error);
+          markImport('read', { status: 'failed', detail: message });
+          return [{ label: 'Import', error: message }];
+        }
+        const failure = runFailure(result);
+        if (failure) {
+          markImport('read', { status: 'failed', detail: failure });
+          return [{ label: 'Import', error: failure }];
+        }
+        const held = result.renderings.filter((r) => !r.shown).length;
+        const unchanged = result.renderings.filter((r) => r.unchanged).length;
+        const count = result.renderings.length;
+        markImport('read', {
+          status: 'done',
+          detail:
+            `${count} verse${count === 1 ? '' : 's'} placed` +
+            (unchanged > 0 ? ` · ${unchanged} already there` : '') +
+            (held > 0 ? ` · ${held} kept behind reviewed text` : '') +
+            (result.guidance_added ? ' · guidance added' : ''),
+          notes: [
+            ...(result.guidance_added ? [`Guidance added: ${result.guidance_added}`] : []),
+            ...result.unplaced.map((item) => `Not placed: “${item.text}” (${item.reason})`),
+            ...(result.missing.length > 0 ? [`Not in the paste: ${result.missing.join(', ')}`] : []),
+          ],
+        });
+        // Later steps are added now, once it is known what was placed.
+        if (options.arrange) steps.push(arrangeStep);
+        if (options.analyse) {
+          const shown = result.renderings.filter((r) => r.shown);
+          if (shown.length === 0) {
+            markImport('verses', {
+              status: 'skipped',
+              detail: 'No placed verse is on show, so there is nothing new to analyse.',
+            });
+          }
+          steps.push(...verseSteps(shown), psalmStep);
+        }
+        return [];
+      },
+    });
+
+    await runBatch('import', steps);
+    const stopped = stopRequested.current;
+    setImportRunning(false);
+    setImportSteps((list) =>
+      list.map((step) => {
+        if (step.status === 'running') {
+          const where = step.detail ? ` at ${step.detail}` : '';
+          return { ...step, status: 'skipped', detail: stopped ? `Stopped${where}.` : 'Did not finish.' };
+        }
+        if (step.status === 'pending') {
+          return { ...step, status: 'skipped', detail: stopped ? 'Stopped before it ran.' : 'Not run.' };
+        }
+        return step;
+      }),
+    );
+  }
+
+  /**
+   * Start an import from the dialog: make the new translation it goes into, if it goes
+   * into one, show that translation of the psalm, and run the import once it is shown,
+   * so the import's Codex thread and every step belong to it.
+   */
+  async function startImport({ text, psalmId: target, target: into, options }: ImportRequest) {
+    setImportRunning(true);
+    let intoId: string | null;
+    if (into.kind === 'new') {
+      setImportSteps([
+        { key: 'create', label: `Making the translation “${into.title}”`, status: 'running' },
+      ]);
+      try {
+        intoId = (
+          await createTranslation.mutateAsync({
+            psalmId: target,
+            title: into.title,
+            created_via: 'import',
+          })
+        ).translation_id;
+      } catch (error) {
+        markImport('create', { status: 'failed', detail: thrownFailure(error) });
+        setImportRunning(false);
+        return;
+      }
+      markImport('create', { status: 'done' });
+    } else {
+      setImportSteps([]);
+      intoId = into.translationId;
+    }
+    onShowTranslation(target, intoId);
+    setQueuedImport({ psalmId: target, translationId: intoId, text, options });
+  }
+
+  // Declared after the session reset above, so a switch of translation resets it first.
+  useEffect(() => {
+    if (!queuedImport) return;
+    if (queuedImport.psalmId !== psalmId || queuedImport.translationId !== translationId) return;
+    setQueuedImport(null);
+    void runImport(queuedImport.text, queuedImport.options);
+  }, [queuedImport, psalmId, translationId]);
+
+  const identifyError = identifyPsalm.isError
+    ? thrownFailure(identifyPsalm.error)
+    : identifyPsalm.data
+      ? runFailure(identifyPsalm.data)
+      : null;
+
+  const importDialog = (
+    <ImportTranslationDialog
+      key="import"
+      open={importOpen}
+      psalms={psalms}
+      codex={{ ready: codexReady, hint: codexHint, busy: Boolean(batch) }}
+      identify={{
+        run: (text) => identifyPsalm.mutate(text),
+        pending: identifyPsalm.isPending,
+        result: identifyError ? null : (identifyPsalm.data ?? null),
+        error: identifyError,
+      }}
+      steps={importSteps}
+      running={importRunning}
+      stopping={Boolean(batch?.stopping)}
+      elapsed={batch && batch.kind === 'import' ? elapsed(now - batch.startedAt) : null}
+      onRun={(request) => void startImport(request)}
+      onStop={stopBatch}
+      onReset={() => {
+        setImportSteps([]);
+        identifyPsalm.reset();
+      }}
+      onClose={() => onImportClose?.()}
+      onOpen={(next) => {
+        setPane(next);
+        onImportClose?.();
+      }}
+    />
+  );
 
   const rows = useMemo(() => {
     const all = data?.rows ?? [];
@@ -483,39 +922,62 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
         literal_rendering_id: row.literal_rendering_ids[0] ?? null,
         english_rendering_id: row.english_rendering_ids[0] ?? null,
         status: 'draft',
+        translation_id: translationId,
         ...payload,
       });
     }
     setEditing(null);
   }
 
-  if (!psalmId) {
-    return <p className="comparison-empty">Select a psalm to compare.</p>;
+  // The dialog stays mounted, keyed, while an import switches psalm and the table loads.
+  if (!psalmId || isLoading || error) {
+    return (
+      <section aria-label="Translation comparison">
+        <p className={`comparison-empty${error ? ' comparison-error' : ''}`}>
+          {!psalmId ? 'Select a psalm to compare.' : isLoading ? 'Loading comparison…' : String(error)}
+        </p>
+        {importDialog}
+      </section>
+    );
   }
-  if (isLoading) {
-    return <p className="comparison-empty">Loading comparison…</p>;
-  }
-  if (error) {
-    return <p className="comparison-empty comparison-error">{String(error)}</p>;
-  }
+  /** Exports of two translations of a psalm do not overwrite each other. */
+  const exportName = translationId ?? psalmId;
 
   return (
     <section className="comparison-view" aria-label="Translation comparison">
       <header className="comparison-toolbar">
-        <h2>
-          {data?.title} — translation comparison
-        </h2>
+        <div className="segmented comparison-panes" role="group" aria-label="View">
+          {(
+            [
+              ['verses', 'Verses'],
+              ['arrangement', 'Arrangement'],
+              ['sources', 'Sources'],
+              ['liberties', 'Liberties'],
+            ] as const
+          ).map(([key, label]) => (
+            <button key={key} type="button" aria-pressed={pane === key} onClick={() => setPane(key)}>
+              {label}
+            </button>
+          ))}
+        </div>
+        {pane === 'verses' && analysis && analysis.sections.length > 0 ? (
+          <nav className="section-jumps" aria-label="Sections">
+            {analysis.sections.map((section) => (
+              <button
+                key={section.first_verse}
+                type="button"
+                onClick={() =>
+                  document
+                    .getElementById(`section-${section.first_verse}`)
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              >
+                {section.title}
+              </button>
+            ))}
+          </nav>
+        ) : null}
         <div className="comparison-controls">
-          <label>
-            English layer
-            <select value={englishLayer} onChange={(e) => setEnglishLayer(e.target.value)}>
-              {ENGLISH_LAYERS.map((layer) => (
-                <option key={layer} value={layer}>
-                  {layer}
-                </option>
-              ))}
-            </select>
-          </label>
           <label>
             Status
             <select
@@ -544,19 +1006,6 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
               ))}
             </select>
           </label>
-          <label>
-            Gutter
-            <select
-              value={gutterWidth}
-              onChange={(e) => setGutterWidth(Number(e.target.value) as GutterWidth)}
-            >
-              {GUTTER_WIDTHS.map((width) => (
-                <option key={width} value={width}>
-                  {width} px
-                </option>
-              ))}
-            </select>
-          </label>
           <div className="comparison-generate">
             <button
               type="button"
@@ -576,12 +1025,7 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
                 <button
                   type="button"
                   disabled={batch.stopping}
-                  onClick={() => {
-                    stopRequested.current = true;
-                    setBatch((current) => current && { ...current, stopping: true });
-                    // Stop the turn in flight as well, rather than waiting for Codex to end it.
-                    if (sessionRef.current) interruptSession.mutate(sessionRef.current);
-                  }}
+                  onClick={stopBatch}
                 >
                   {batch.stopping ? 'Stopping…' : 'Stop'}
                 </button>
@@ -632,13 +1076,15 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
           <div className="comparison-exports">
             <button
               type="button"
-              onClick={() => download(`${psalmId}-comparison.md`, toMarkdown(rows), 'text/markdown')}
+              onClick={() =>
+                download(`${exportName}-comparison.md`, toMarkdown(rows), 'text/markdown')
+              }
             >
               Export Markdown
             </button>
             <button
               type="button"
-              onClick={() => download(`${psalmId}-comparison.csv`, toCsv(rows), 'text/csv')}
+              onClick={() => download(`${exportName}-comparison.csv`, toCsv(rows), 'text/csv')}
             >
               Export CSV
             </button>
@@ -678,8 +1124,9 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
       {guidanceOpen ? (
         <section className="guidance-panel" aria-label="Translation guidance">
           <label htmlFor="translation-guidance">
-            How this psalm should be translated. Codex reads this before the source, and it
-            outranks the generic layer prompts. Saved with the psalm, so it is versioned.
+            How this translation of the psalm should be made. Codex reads this before the source,
+            and it outranks the generic layer prompts. Saved with the translation, so it is
+            versioned.
           </label>
           <textarea
             id="translation-guidance"
@@ -714,7 +1161,24 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
       ) : null}
 
 
-      {analysis ? (
+      {pane !== 'verses' ? (
+        <ArrangementWorkspace
+          psalmId={psalmId}
+          translationId={translationId}
+          pane={pane}
+          englishLayer={englishLayer}
+          selectedId={arrangementId}
+          onSelect={setArrangementId}
+          codex={{
+            ready: codexReady,
+            hint: codexHint,
+            busy: Boolean(batch),
+            draft: () => void draftSetting(),
+          }}
+        />
+      ) : null}
+
+      {pane === 'verses' && analysis ? (
         <section className="analysis-panel" aria-label="Psalm analysis">
           <header className="analysis-panel__head">
             <button
@@ -844,281 +1308,334 @@ export function TranslationComparisonTable({ psalmId, onOpenRendering }: Props) 
         </section>
       ) : null}
 
-      <div className="comparison-scroll">
-        <table
-          className="comparison-table"
-          style={{ ['--gutter-width' as string]: `${gutterWidth}px` }}
-        >
-          <caption className="visually-hidden">
-            Hebrew, literal translation, English used, translation accuracy and creative liberties
-            for each verse.
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col" className="col-reference">
-                Reference
-              </th>
-              <th scope="col" className="col-hebrew">
-                Hebrew (MT)
-              </th>
-              {/* Layout-only spacer: never persisted, never announced. */}
-              <th aria-hidden="true" className="col-gutter" />
-              <th scope="col" className="col-literal">
-                Literal translation
-              </th>
-              <th scope="col" className="col-english">
-                English used
-              </th>
-              <th scope="col" className="col-accuracy">
-                Translation accuracy
-              </th>
-              <th scope="col" className="col-liberties">
-                Creative liberties
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => {
-              const key = row.unit_ids.join('+');
-              const isEditing = editing === row.unit_ids[0];
-              const band = sectionOpening(row);
-              const seam = seamAfter(row);
-              const tone = row.accuracy_rating ? RATING_TONE[row.accuracy_rating] : null;
-              const isOpen = expanded === key;
-              return (
-                <Fragment key={key}>
-                {band ? (
-                  <tr className="band">
-                    <td colSpan={7}>
-                      <div className="band__head">
-                        <span className="band__title">{band.title}</span>
-                        <span className="band__range">
-                          vv. {band.first_verse}–{band.last_verse}
-                        </span>
-                        <span className="band__theme">{band.theme}</span>
-                      </div>
-                      {band.arc_note ? <p className="band__note">{band.arc_note}</p> : null}
-                    </td>
-                  </tr>
-                ) : null}
-                <tr
-                  className={[
-                    'comparison-row',
-                    row.incomplete ? 'incomplete' : '',
-                    row.stale ? 'is-stale' : '',
-                    tone ? `r-${tone}` : '',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
+      {pane === 'verses' ? (
+      <>
+      <WordSummary
+        psalmId={psalmId}
+        translationId={translationId}
+        rows={rows}
+        contextRows={data?.rows ?? []}
+        sections={analysis?.sections ?? []}
+        englishLayer={englishLayer}
+        codex={{ ready: codexReady, hint: codexHint, busy: Boolean(batch) }}
+        onSuggest={suggestFor}
+        onSuggestAll={(items) => void runBatch('suggest', items.map(suggestStep))}
+        progress={
+          batch && batch.kind === 'suggest'
+            ? {
+                label: batch.label,
+                done: batch.done,
+                total: batch.total,
+                elapsed: elapsed(now - batch.startedAt),
+                stopping: batch.stopping,
+                onStop: stopBatch,
+              }
+            : null
+        }
+        onOpenWord={(row, tokenId) => {
+          const key = row.unit_ids.join('+');
+          setOpenKey(key);
+          setSelectedTokenId(tokenId);
+          window.setTimeout(
+            () =>
+              document
+                .getElementById(`verse-row-${key}`)
+                ?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+            50,
+          );
+        }}
+      />
+
+      <section className="verse-list" aria-label="Verses">
+        <div className="verse-list__head" aria-hidden="true">
+          <span>Verse</span>
+          <span className="verse-list__he">Hebrew</span>
+          <span>{englishLayer.replace(/_/g, ' ')}</span>
+          <span>Fidelity</span>
+        </div>
+        {rows.map((row) => {
+          const key = row.unit_ids.join('+');
+          const isEditing = editing === row.unit_ids[0];
+          const band = sectionOpening(row);
+          const seam = seamAfter(row);
+          const tone = row.accuracy_rating ? RATING_TONE[row.accuracy_rating] : null;
+          const isOpen = openKey === key;
+          const [, verse] = row.display_reference.split(':');
+          const inFlight = batch?.unitIds.includes(row.unit_ids[0]) ? batch.kind : null;
+          const hasEvidence =
+            (row.literal_backbone?.length ?? 0) > 0 || (row.non_source_material?.length ?? 0) > 0;
+          const noteCount = new Set(
+            (row.tokens ?? []).flatMap((token) =>
+              token.note ? [token.note.token_ids.join(',')] : [],
+            ),
+          ).size;
+          return (
+            <Fragment key={key}>
+              {band ? (
+                <div className="verse-band" id={`section-${band.first_verse}`}>
+                  <div className="verse-band__head">
+                    <span className="verse-band__range">
+                      {band.first_verse === band.last_verse
+                        ? `v. ${band.first_verse}`
+                        : `vv. ${band.first_verse}–${band.last_verse}`}
+                    </span>
+                    <span className="verse-band__theme">{band.theme}</span>
+                  </div>
+                  {band.arc_note ? <p className="verse-band__note">{band.arc_note}</p> : null}
+                </div>
+              ) : null}
+              <div
+                id={`verse-row-${key}`}
+                className={[
+                  'verse',
+                  isOpen ? 'is-open' : '',
+                  row.incomplete ? 'incomplete' : '',
+                  row.stale ? 'is-stale' : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+              >
+                <button
+                  type="button"
+                  className="verse-row"
+                  aria-expanded={isOpen}
+                  aria-controls={`verse-${key}`}
+                  onClick={() => {
+                    setOpenKey(isOpen ? null : key);
+                    setSelectedTokenId(null);
+                  }}
                 >
-                  <th scope="row" className="col-reference">
-                    <span className="reference-display">{row.display_reference}</span>
-                    {row.mt_reference !== row.display_reference && (
-                      <span className="reference-mt">MT {row.mt_reference}</span>
-                    )}
-                    {batch?.unitIds.includes(row.unit_ids[0]) && (
-                      <span className="row-progress">{BATCH_WORDS[batch.kind].active}…</span>
-                    )}
-                    <button
-                      type="button"
-                      className="link-button"
-                      disabled={!codexReady || fillPassage.isPending || Boolean(batch)}
-                      title={codexHint}
-                      onClick={() => void runBatch('translate', [passageStep([row])])}
-                    >
-                      {row.incomplete ? 'Translate verse' : 'Regenerate'}
-                    </button>
-                    {!row.incomplete && (
-                      <button
-                        type="button"
-                        className="link-button"
-                        disabled={!codexReady || analyzeVerse.isPending || Boolean(batch)}
-                        onClick={() => void runBatch('analyse', [analyseStep(row)])}
-                      >
-                        {row.stale ? 'Re-analyse' : 'Analyse'}
-                      </button>
-                    )}
-                    {((row.literal_backbone?.length ?? 0) > 0 ||
-                      (row.non_source_material?.length ?? 0) > 0) && (
-                      <button
-                        type="button"
-                        className="link-button"
-                        aria-expanded={isOpen}
-                        onClick={() => setExpanded(isOpen ? null : key)}
-                      >
-                        {isOpen ? 'Hide evidence' : 'Evidence'}
-                      </button>
-                    )}
-                    {row.assessment_status && (
-                      <span className={`status-badge status-${row.assessment_status}`}>
-                        {STATUS_LABELS[row.assessment_status]}
+                  <span className="verse-row__n">{verse ?? 'Heading'}</span>
+                  {isOpen ? (
+                    <span className="verse-row__meta">
+                      {row.display_reference}
+                      {row.mt_reference !== row.display_reference
+                        ? ` · MT ${row.mt_reference}`
+                        : ''}
+                      {noteCount > 0 ? ` · ${noteCount} word note${noteCount === 1 ? '' : 's'}` : ''}
+                      {row.created_via ? ` · ${VIA_LABELS[row.created_via]}` : ''}
+                    </span>
+                  ) : (
+                    <>
+                      <span className="verse-row__he" dir="rtl" lang="he">
+                        {row.hebrew_text}
+                      </span>
+                      <span className="verse-row__en">
+                        {row.english_text ? (
+                          row.english_text.replace(/\n/g, ' ')
+                        ) : (
+                          <em className="cell-missing">Not translated</em>
+                        )}
+                      </span>
+                    </>
+                  )}
+                  <span className="verse-row__fidelity">
+                    {inFlight ? (
+                      <span className="row-progress">{BATCH_WORDS[inFlight].active}…</span>
+                    ) : (
+                      <span className={`fidelity${tone ? ` fidelity--${tone}` : ''}`}>
+                        {row.accuracy_rating
+                          ? row.accuracy_rating.replace(/_/g, ' ')
+                          : row.incomplete
+                            ? 'Not translated'
+                            : 'Not assessed'}
                       </span>
                     )}
-                    {row.stale && (
+                    {row.stale ? (
                       <span
                         className="stale-badge"
                         title="The rendering has changed since this analysis ran"
                       >
                         Stale
                       </span>
-                    )}
-                    {row.created_via && (
-                      <span className={`provenance-badge via-${row.created_via}`}>
-                        {VIA_LABELS[row.created_via]}
-                      </span>
-                    )}
-                  </th>
+                    ) : null}
+                  </span>
+                  <svg
+                    className="verse-row__chevron"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  >
+                    <path d={isOpen ? 'M3 7.5l3-3 3 3' : 'M3 4.5l3 3 3-3'} />
+                  </svg>
+                </button>
 
-                  <td className="col-hebrew" data-label="Hebrew (MT)">
-                    <HebrewStudyText tokens={row.tokens ?? []} text={row.hebrew_text} />
-                  </td>
-
-                  <td aria-hidden="true" className="col-gutter" />
-
-                  <td className="col-literal" data-label="Literal translation">
-                    {row.literal_text ? (
-                      onOpenRendering ? (
-                        <button
-                          type="button"
-                          className="cell-text link-button"
-                          onClick={() => onOpenRendering(row.literal_rendering_ids[0])}
-                        >
-                          {row.literal_text}
-                        </button>
-                      ) : (
-                        <span className="cell-text">{row.literal_text}</span>
-                      )
-                    ) : (
-                      <span className="cell-missing">No literal rendering selected</span>
-                    )}
-                  </td>
-
-                  <td className="col-english" data-label="English used">
-                    {row.english_text ? (
-                      onOpenRendering ? (
-                        <button
-                          type="button"
-                          className="cell-text link-button"
-                          onClick={() => onOpenRendering(row.english_rendering_ids[0])}
-                        >
-                          {row.english_text}
-                        </button>
-                      ) : (
-                        <span className="cell-text">{row.english_text}</span>
-                      )
-                    ) : (
-                      <span className="cell-missing">No {englishLayer} rendering selected</span>
-                    )}
-                  </td>
-
-                  <td className="col-accuracy" data-label="Translation accuracy">
-                    {isEditing ? (
-                      <>
-                        <select
-                          aria-label="Accuracy rating"
-                          value={draftRating}
-                          onChange={(e) => setDraftRating(e.target.value as AccuracyRating | '')}
-                        >
-                          <option value="">Unrated</option>
-                          {ACCURACY_RATINGS.map((rating) => (
-                            <option key={rating} value={rating}>
-                              {rating.replace(/_/g, ' ')}
-                            </option>
-                          ))}
-                        </select>
-                        <textarea
-                          aria-label="Accuracy note"
-                          value={draftAccuracy}
-                          onChange={(e) => setDraftAccuracy(e.target.value)}
-                        />
-                      </>
-                    ) : (
-                      <>
-                        {row.accuracy_rating && (
-                          <span className={`rating rating-${row.accuracy_rating}`}>
-                            {row.accuracy_rating.replace(/_/g, ' ')}
-                          </span>
-                        )}
-                        <span className="cell-text">{row.accuracy_note}</span>
-                      </>
-                    )}
-                  </td>
-
-                  <td className="col-liberties" data-label="Creative liberties">
-                    {isEditing ? (
-                      <>
-                        <textarea
-                          aria-label="Creative liberties note"
-                          value={draftLiberties}
-                          onChange={(e) => setDraftLiberties(e.target.value)}
-                        />
-                        <button type="button" onClick={() => saveEdit(row)}>
-                          Save
-                        </button>
-                        <button type="button" onClick={() => setEditing(null)}>
-                          Cancel
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <span className="cell-text">{row.creative_liberties_note}</span>
-                        <button type="button" className="link-button" onClick={() => beginEdit(row)}>
-                          Edit notes
-                        </button>
-                      </>
-                    )}
-                  </td>
-                </tr>
                 {isOpen ? (
-                  <tr className="detail">
-                    <td colSpan={7}>
-                      <div className="detail__grid">
-                        {(row.literal_backbone?.length ?? 0) > 0 ? (
-                          <div className="detail__col">
-                            <h4>Literal backbone</h4>
-                            <ul className="backbone">
-                              {(row.literal_backbone ?? []).map((line) => (
-                                <li key={line}>{line}</li>
-                              ))}
-                            </ul>
+                  <div id={`verse-${key}`}>
+                    <VerseDetail
+                      row={row}
+                      englishLayer={englishLayer}
+                      selectedTokenId={selectedTokenId}
+                      onSelectToken={setSelectedTokenId}
+                      onOpenRendering={onOpenRendering}
+                      psalmId={psalmId}
+                      translationId={translationId}
+                      codex={{
+                        ready: codexReady,
+                        hint: codexHint,
+                        busy: Boolean(batch),
+                        rebuild: ({ layers, reanalyse }) => rebuildRow(row, layers, reanalyse),
+                        analyseRebuild: () =>
+                          void runBatch('analyse', [analyseRebuildStep(row)]),
+                        suggest: (tokenIds) => suggestFor(row, tokenIds),
+                      }}
+                      rebuildProgress={
+                        batch && batch.kind === 'rebuild' && batch.unitIds.includes(row.unit_ids[0])
+                          ? {
+                              step: batch.done + 1,
+                              total: batch.total,
+                              label: batch.label,
+                              elapsed: elapsed(now - batch.startedAt),
+                              stopping: batch.stopping,
+                              onStop: stopBatch,
+                            }
+                          : null
+                      }
+                      notesEditor={
+                        isEditing ? (
+                          <>
+                            <div>
+                              <h4 className="verse-label">Accuracy</h4>
+                              <select
+                                aria-label="Accuracy rating"
+                                value={draftRating}
+                                onChange={(e) =>
+                                  setDraftRating(e.target.value as AccuracyRating | '')
+                                }
+                              >
+                                <option value="">Unrated</option>
+                                {ACCURACY_RATINGS.map((rating) => (
+                                  <option key={rating} value={rating}>
+                                    {rating.replace(/_/g, ' ')}
+                                  </option>
+                                ))}
+                              </select>
+                              <textarea
+                                aria-label="Accuracy note"
+                                value={draftAccuracy}
+                                onChange={(e) => setDraftAccuracy(e.target.value)}
+                              />
+                            </div>
+                            <div>
+                              <h4 className="verse-label">Creative liberties</h4>
+                              <textarea
+                                aria-label="Creative liberties note"
+                                value={draftLiberties}
+                                onChange={(e) => setDraftLiberties(e.target.value)}
+                              />
+                              <div className="verse-edit-actions">
+                                <button type="button" onClick={() => saveEdit(row)}>
+                                  Save
+                                </button>
+                                <button type="button" onClick={() => setEditing(null)}>
+                                  Cancel
+                                </button>
+                              </div>
+                            </div>
+                          </>
+                        ) : null
+                      }
+                      evidence={
+                        evidenceFor === key ? (
+                          <div className="detail__grid">
+                            {(row.literal_backbone?.length ?? 0) > 0 ? (
+                              <div className="detail__col">
+                                <h4>Literal backbone</h4>
+                                <ul className="backbone">
+                                  {(row.literal_backbone ?? []).map((line) => (
+                                    <li key={line}>{line}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ) : null}
+                            {(row.non_source_material?.length ?? 0) > 0 ? (
+                              <div className="detail__col">
+                                <h4>Not in the psalm</h4>
+                                <ul className="backbone">
+                                  {(row.non_source_material ?? []).map((item) => (
+                                    <li key={item.text}>
+                                      <strong>{item.text}</strong>{' '}
+                                      <span className="pill addition">
+                                        {item.kind.replace(/_/g, ' ')}
+                                      </span>
+                                      {item.note ? <> — {item.note}</> : null}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ) : null}
                           </div>
-                        ) : null}
-                        {(row.non_source_material?.length ?? 0) > 0 ? (
-                          <div className="detail__col">
-                            <h4>Not in the psalm</h4>
-                            <ul className="backbone">
-                              {(row.non_source_material ?? []).map((item) => (
-                                <li key={item.text}>
-                                  <strong>{item.text}</strong>{' '}
-                                  <span className="pill addition">
-                                    {item.kind.replace(/_/g, ' ')}
-                                  </span>
-                                  {item.note ? <> — {item.note}</> : null}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ) : null}
-                      </div>
-                    </td>
-                  </tr>
+                        ) : null
+                      }
+                      actions={
+                        <>
+                          {row.assessment_status ? (
+                            <span className={`status-badge status-${row.assessment_status}`}>
+                              {STATUS_LABELS[row.assessment_status]}
+                            </span>
+                          ) : null}
+                          <span className="verse-actions__spacer" />
+                          <button
+                            type="button"
+                            disabled={!codexReady || fillPassage.isPending || Boolean(batch)}
+                            title={codexHint}
+                            onClick={() => void runBatch('translate', [passageStep([row])])}
+                          >
+                            {row.incomplete
+                              ? 'Translate verse'
+                              : hasOpenInstructions(row)
+                                ? 'Regenerate without notes'
+                                : 'Regenerate'}
+                          </button>
+                          {!row.incomplete ? (
+                            <button
+                              type="button"
+                              disabled={!codexReady || analyzeVerse.isPending || Boolean(batch)}
+                              onClick={() => void runBatch('analyse', [analyseStep(row)])}
+                            >
+                              {row.stale ? 'Re-analyse' : 'Analyse'}
+                            </button>
+                          ) : null}
+                          {hasEvidence ? (
+                            <button
+                              type="button"
+                              aria-expanded={evidenceFor === key}
+                              onClick={() => setEvidenceFor(evidenceFor === key ? null : key)}
+                            >
+                              {evidenceFor === key ? 'Hide evidence' : 'Evidence'}
+                            </button>
+                          ) : null}
+                          {!isEditing ? (
+                            <button type="button" onClick={() => beginEdit(row)}>
+                              Edit assessment
+                            </button>
+                          ) : null}
+                        </>
+                      }
+                    />
+                  </div>
                 ) : null}
-                {seam ? (
-                  <tr className="seam-row">
-                    <td colSpan={7}>
-                      <span className="selah">
-                        {seam.marker}
-                        {seam.aligns_with_section ? ' · section ends here' : ''}
-                      </span>
-                    </td>
-                  </tr>
-                ) : null}
-                </Fragment>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+              </div>
+              {seam ? (
+                <p className="verse-seam">
+                  <span className="selah">
+                    {seam.marker}
+                    {seam.aligns_with_section ? ' · section ends here' : ''}
+                  </span>
+                </p>
+              ) : null}
+            </Fragment>
+          );
+        })}
+      </section>
+      </>
+      ) : null}
+      {importDialog}
     </section>
   );
 }

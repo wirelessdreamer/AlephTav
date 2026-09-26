@@ -6,11 +6,16 @@ import type {
   CodexRunEvents,
   CodexSession,
   CodexStatus,
+  ImportResult,
   PassageFillResult,
   PsalmAnalysis,
   PsalmAnalysisResult,
+  PsalmIdentification,
+  RebuildAnalysisResult,
+  RebuildResult,
   TranslationGuidance,
   VerseAnalysisResult,
+  WordSuggestions,
 } from '../types';
 
 async function getJson<T>(url: string): Promise<T> {
@@ -84,6 +89,8 @@ export function useCreateCodexSession() {
   return useMutation({
     mutationFn: (payload: {
       psalm_id: string;
+      /** The translation the session works on; null or absent for the main one. */
+      translation_id?: string | null;
       unit_id?: string | null;
       layer?: string;
       model?: string;
@@ -135,20 +142,25 @@ export function useCodexRunEvents(runId: string | null) {
   });
 }
 
-/** The translator's standing direction for a psalm, stored with its content. */
-export function useTranslationGuidance(psalmId: string | null) {
+/** The standing direction for one translation of a psalm, stored with its content. */
+export function useTranslationGuidance(psalmId: string | null, translationId: string | null) {
+  const query = translationId ? `?translation_id=${encodeURIComponent(translationId)}` : '';
   return useQuery({
-    queryKey: ['translation-guidance', psalmId],
-    queryFn: () => getJson<TranslationGuidance>(`/psalms/${psalmId}/translation-guidance`),
+    queryKey: ['translation-guidance', psalmId, translationId],
+    queryFn: () =>
+      getJson<TranslationGuidance>(`/psalms/${psalmId}/translation-guidance${query}`),
     enabled: Boolean(psalmId),
   });
 }
 
-export function useSaveTranslationGuidance(psalmId: string | null) {
+export function useSaveTranslationGuidance(psalmId: string | null, translationId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (guidance: string) => {
-      const body = JSON.stringify({ translation_guidance: guidance });
+      const body = JSON.stringify({
+        translation_guidance: guidance,
+        translation_id: translationId,
+      });
       return fetch(`/psalms/${psalmId}/translation-guidance`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -158,7 +170,8 @@ export function useSaveTranslationGuidance(psalmId: string | null) {
         return response.json() as Promise<TranslationGuidance>;
       });
     },
-    onSuccess: (data) => queryClient.setQueryData(['translation-guidance', psalmId], data),
+    onSuccess: (data) =>
+      queryClient.setQueryData(['translation-guidance', psalmId, translationId], data),
   });
 }
 
@@ -182,6 +195,30 @@ export function useFillPsalmPassage(psalmId: string | null) {
       queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
       queryClient.invalidateQueries({ queryKey: ['comparison-assessments'] });
     },
+  });
+}
+
+/**
+ * One Codex turn places a pasted translation: its guidance on the psalm, its verse text
+ * on each verse as a proposal. The pasted words are never rewritten.
+ */
+export function useImportTranslation(psalmId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: { session_id: string; text: string; layer: string }) =>
+      postJson<ImportResult>(`/codex/psalms/${psalmId}/import`, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
+      queryClient.invalidateQueries({ queryKey: ['translation-guidance', psalmId] });
+    },
+  });
+}
+
+/** One Codex turn, in a thread of its own: which psalm a pasted translation translates. */
+export function useIdentifyPsalm() {
+  return useMutation({
+    mutationFn: (text: string) =>
+      postJson<PsalmIdentification>('/codex/identify-psalm', { text }),
   });
 }
 
@@ -217,6 +254,62 @@ export function useAnalyzeVerse(psalmId: string | null) {
       force?: boolean;
     }) => postJson<VerseAnalysisResult>(`/codex/analysis/verses/${unitId}`, payload),
     onSuccess: invalidate,
+  });
+}
+
+/** Retranslate a verse with its open notes; the result is held for the reviewer. */
+export function useRebuildVerse(psalmId: string | null) {
+  const invalidate = useInvalidateAnalysis(psalmId);
+  return useMutation({
+    mutationFn: ({
+      unitId,
+      ...payload
+    }: {
+      unitId: string;
+      session_id: string;
+      english_layer: string;
+      layers: Array<'literal' | 'english'>;
+    }) => postJson<RebuildResult>(`/codex/verses/${unitId}/rebuild`, payload),
+    onSuccess: invalidate,
+  });
+}
+
+/** Audit a held rebuild's text, blind to the notes behind it. */
+export function useAnalyseRebuild(psalmId: string | null) {
+  const invalidate = useInvalidateAnalysis(psalmId);
+  return useMutation({
+    mutationFn: ({ unitId, session_id }: { unitId: string; session_id: string }) =>
+      postJson<RebuildAnalysisResult>(`/codex/verses/${unitId}/rebuild/analyse`, { session_id }),
+    onSuccess: invalidate,
+  });
+}
+
+export function useSuggestWordRenderings() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      unitId,
+      ...payload
+    }: {
+      unitId: string;
+      session_id: string;
+      token_ids: string[];
+      layer: string;
+    }) => postJson<WordSuggestions>(`/codex/verses/${unitId}/word-suggestions`, payload),
+    onSuccess: (result) => {
+      queryClient.setQueryData(
+        [
+          'word-suggestions',
+          result.unit_id,
+          result.token_ids.join(','),
+          result.layer,
+          result.translation_id ?? null,
+        ],
+        result,
+      );
+      // The psalm-wide word summary reads choices from the table rows.
+      queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
+    },
   });
 }
 

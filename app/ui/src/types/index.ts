@@ -253,6 +253,30 @@ export interface PsalmSummary {
   unit_ids: string[];
 }
 
+/** One translation of a psalm. The main translation has no id; added ones do. */
+export interface PsalmTranslation {
+  translation_id: string | null;
+  psalm_id: string;
+  title: string;
+  created_by?: string;
+  created_via?: 'human' | 'import';
+  created_at?: string;
+}
+
+/** Codex's answer to which psalm a pasted translation translates. */
+export interface PsalmIdentification {
+  status: CodexRun['status'];
+  error: string | null;
+  run_id: string;
+  /** Null when the paste translates none of this workspace's psalms. */
+  psalm_id: string | null;
+  confidence: 'high' | 'medium' | 'low' | null;
+  reason: string;
+  /** The paste's own title, when it gives one. */
+  title: string;
+  alternatives: string[];
+}
+
 export interface SourceTranslationMapToken {
   token_id: string;
   surface: string;
@@ -851,6 +875,19 @@ export interface StudyToken {
   note?: WordNote;
 }
 
+/** Another verse where a word's lemma occurs, with the word marked in its context. */
+export interface OccurrenceContext {
+  ref: string;
+  display_reference: string;
+  psalm_title: string;
+  unit_ids: string[];
+  tokens: Array<{ token_id: string; surface: string; gloss?: string | null; match: boolean }>;
+  matches: Array<Omit<StudyToken, 'occurrence_count' | 'occurrence_refs' | 'note'>>;
+  literal_text: string | null;
+  english_layer: string;
+  english_text: string | null;
+}
+
 export interface ComparisonTableRow {
   mt_reference: string;
   display_reference: string;
@@ -873,6 +910,11 @@ export interface ComparisonTableRow {
   non_source_material: NonSourceMaterial[];
   /** True when the audited rendering text has changed since this analysis ran. */
   stale: boolean;
+  verse_notes: VerseNote[];
+  /** Choices offered for words in this verse, for the psalm-wide word summary. */
+  word_choices: WordSuggestions[];
+  /** A rebuild waiting for the reviewer; its text is not shown in the row yet. */
+  pending_rebuild: Rebuild | null;
 }
 
 export interface PsalmAnalysisSection {
@@ -925,6 +967,7 @@ export interface CanonicalNumbering {
 
 export interface ComparisonTable {
   psalm_id: string;
+  translation_id: string | null;
   title: string;
   literal_layer: string;
   english_layer: string;
@@ -978,7 +1021,8 @@ export interface CodexSession {
   provider: string;
   provider_version: string;
   purpose: string;
-  psalm_id: string;
+  psalm_id: string | null;
+  translation_id: string | null;
   unit_id: string | null;
   layer: string;
   prompt_template_version: string;
@@ -1018,6 +1062,7 @@ export interface CodexRunEvents {
 
 export interface TranslationGuidance {
   psalm_id: string;
+  translation_id: string | null;
   translation_guidance: string;
 }
 
@@ -1031,9 +1076,267 @@ export interface PassageFillResult {
   error: string | null;
 }
 
+/** A reviewer's note on a verse; instructions steer the next rebuild. */
+export interface VerseNote {
+  note_id: string;
+  text: string;
+  applies_to: 'literal' | 'english' | 'both';
+  kind: 'instruction' | 'comment';
+  status: 'open' | 'addressed';
+  quote?: string;
+  token_ids?: string[];
+  addressed_in?: string;
+  created_at: string;
+  created_by: string;
+  updated_at?: string;
+}
+
+/** The held audit of a rebuild's text; same shape as a verse analysis. */
+export interface RebuildAnalysis {
+  accuracy_rating: AccuracyRating;
+  accuracy_note: string;
+  creative_liberties_note: string;
+  word_notes: WordNote[];
+  run_id: string;
+  created_at?: string;
+}
+
+/** A retranslation of a verse with its notes, with before and after text per layer. */
+export interface Rebuild {
+  rebuild_id: string;
+  status: 'pending' | 'accepted' | 'discarded';
+  english_layer: string;
+  note_ids: string[];
+  rendering_ids: Record<string, string>;
+  note_responses: Array<{ note_id: string; response: string }>;
+  analysis: RebuildAnalysis | null;
+  created_at: string;
+  decided_at?: string;
+  texts: Record<
+    string,
+    { previous: string | null; rebuilt: string | null; replaces_current: boolean }
+  >;
+}
+
+export interface RebuildResult {
+  unit_id: string;
+  status: CodexRun['status'];
+  run_ids: string[];
+  rebuild: Rebuild | null;
+  error: string | null;
+}
+
+export interface RebuildAnalysisResult {
+  unit_id: string;
+  rebuild_id: string;
+  status: CodexRun['status'];
+  run_id: string | null;
+  analysis: RebuildAnalysis | null;
+  error: string | null;
+}
+
+export interface WordSuggestion {
+  text: string;
+  sense: string;
+  rationale: string;
+  /** How the choice sits under the psalm guidance, e.g. syllables and stress for a meter. */
+  fit?: string;
+  /** The verse line as it would read with this choice. */
+  line?: string;
+  /** Kept from an earlier list the latest one left out; its fit may be stale. */
+  earlier?: boolean;
+}
+
+export interface WordSuggestions {
+  unit_id: string;
+  token_ids: string[];
+  layer: string;
+  translation_id?: string | null;
+  suggestions: WordSuggestion[];
+  status?: CodexRun['status'];
+  error?: string | null;
+  /** The psalm guidance the choices were made under. */
+  guidance?: string;
+  /** True when the psalm guidance has changed since, or an older prompt made the list. */
+  outdated?: boolean;
+  /** Why: 'guidance' changed, or an older 'prompt' offered a narrower range. */
+  outdated_reason?: 'guidance' | 'prompt' | null;
+}
+
+export interface VerseHistory {
+  unit_id: string;
+  events: Array<{
+    audit_id: string;
+    created_at: string;
+    created_by: string;
+    summary: string;
+    rationale: string;
+    entity_type: string;
+    entity_id: string;
+  }>;
+  rebuilds: Rebuild[];
+  notes: VerseNote[];
+}
+
 export interface CodexModel {
   id?: string;
   model?: string;
   displayName?: string;
   [key: string]: unknown;
+}
+
+/* ---- Song settings: sections free of verse boundaries ---- */
+
+export type LineLiberty = 'tracks' | 'compressed' | 'expanded' | 'reordered' | 'added';
+export type LibertyKind = LineLiberty | 'repeated' | 'dropped';
+export type SectionKind = 'verse' | 'chorus' | 'refrain' | 'bridge' | 'intro' | 'outro' | 'other';
+
+export interface LineAnchor {
+  unit_id: string;
+  token_ids: string[];
+}
+
+export interface Approval {
+  reviewer: string;
+  reviewer_role: string;
+  note: string;
+  created_at: string;
+}
+
+export interface ArrangementLine {
+  line_id: string;
+  text: string;
+  anchors: LineAnchor[];
+  liberty: LineLiberty;
+  rationale: string;
+  approvals: Approval[];
+}
+
+export interface ArrangementSection {
+  section_id: string;
+  kind: SectionKind;
+  label: string;
+  /** A repeat sings that section's lines again, then its own lines for that time only. */
+  repeat_of: string | null;
+  lines: ArrangementLine[];
+}
+
+export interface Arrangement {
+  arrangement_id: string;
+  psalm_id: string;
+  title: string;
+  layer: string;
+  status: 'draft' | 'proposed' | 'accepted' | 'superseded';
+  guidance: string;
+  sections: ArrangementSection[];
+  omissions: Array<{ unit_id: string; token_ids: string[]; rationale: string; approvals: Approval[] }>;
+  created_by: string;
+  created_via: 'human' | 'codex' | 'import';
+  generation_run_id: string | null;
+  prompt_template_version: string | null;
+  created_at: string;
+  updated_at: string;
+  audit_ids: string[];
+}
+
+export interface SungLine {
+  position: number;
+  section_id: string;
+  section_label: string;
+  kind: SectionKind;
+  written_in: string;
+  /** How often the written section has been sung so far: 2 on the chorus's second time. */
+  time: number;
+  repeat: boolean;
+  variation: boolean;
+  line: ArrangementLine;
+}
+
+export interface CoverageToken {
+  token_id: string;
+  surface: string;
+  gloss: string;
+  count: number;
+}
+
+export interface CoverageUnit {
+  unit_id: string;
+  ref: string;
+  tokens: CoverageToken[];
+}
+
+export interface Liberty {
+  key: string;
+  kind: LibertyKind;
+  line_id?: string;
+  section_id?: string;
+  unit_id?: string;
+  ref?: string;
+  token_ids?: string[];
+  label: string;
+  text: string;
+  hebrew: string;
+  rationale: string;
+  required: number;
+  approvals: Approval[];
+  settled: boolean;
+}
+
+export interface ArrangementView {
+  arrangement: Arrangement;
+  sung: SungLine[];
+  coverage: {
+    units: CoverageUnit[];
+    totals: { words: number; once: number; repeated: number; dropped: number };
+  };
+  liberties: Liberty[];
+  summary: { sung_lines: number; open: number; by_kind: Partial<Record<LibertyKind, number>> };
+  required_approvals: Record<LibertyKind, number>;
+}
+
+export interface Refrain {
+  length: number;
+  text: string;
+  variants: number;
+  instances: Array<{ unit_id: string; ref: string; token_ids: string[]; surface: string; text: string }>;
+}
+
+export interface ArrangementList {
+  psalm_id: string;
+  arrangements: Arrangement[];
+  refrains: Refrain[];
+  required_approvals: Record<LibertyKind, number>;
+}
+
+export interface ArrangementDraft {
+  psalm_id: string;
+  status: CodexRun['status'];
+  error: string | null;
+  run_id: string;
+  view: ArrangementView | null;
+}
+
+/** What importing a pasted translation placed, and where. */
+export interface ImportResult {
+  psalm_id: string;
+  translation_id: string | null;
+  layer: string;
+  status: CodexRun['status'];
+  error: string | null;
+  run_id: string;
+  title: string;
+  /** Guidance the paste carried, added below the translation's own. Empty when none was new. */
+  guidance_added: string;
+  renderings: Array<{
+    unit_id: string;
+    ref: string;
+    rendering_id: string;
+    /** The same text was already there, so nothing was added. */
+    unchanged: boolean;
+    /** False when reviewed text keeps showing and the import waits as a proposal. */
+    shown: boolean;
+  }>;
+  unplaced: Array<{ text: string; reason: string }>;
+  /** Verses the paste does not translate. */
+  missing: string[];
 }

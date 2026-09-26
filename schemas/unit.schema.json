@@ -57,6 +57,83 @@
     "alignments": { "type": "array", "items": { "$ref": "alignment.schema.json" } },
     "renderings": { "type": "array", "items": { "$ref": "rendering.schema.json" } },
     "comparison_assessments": { "type": "array", "items": { "$ref": "comparison_assessment.schema.json" } },
+    "verse_notes": {
+      "description": "A reviewer's notes on this verse, each in the translation it was written for (no translation_id: the psalm's main one). Instructions steer that translation's next rebuild; the accuracy audit never sees them.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["note_id", "text", "applies_to", "kind", "status", "created_at", "created_by"],
+        "additionalProperties": false,
+        "properties": {
+          "note_id": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 },
+          "applies_to": { "type": "string", "enum": ["literal", "english", "both"] },
+          "kind": { "type": "string", "enum": ["instruction", "comment"] },
+          "status": { "type": "string", "enum": ["open", "addressed"] },
+          "quote": { "type": "string" },
+          "token_ids": { "type": "array", "items": { "type": "string" } },
+          "addressed_in": { "type": "string" },
+          "created_at": { "type": "string" },
+          "created_by": { "type": "string" },
+          "updated_at": { "type": "string" },
+          "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" }
+        }
+      }
+    },
+    "rebuilds": {
+      "description": "Retranslations of this verse with its notes, at most one pending per translation. A pending rebuild's renderings stay out of the table until it is accepted.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rebuild_id",
+          "status",
+          "english_layer",
+          "note_ids",
+          "rendering_ids",
+          "previous_rendering_ids",
+          "note_responses",
+          "run_ids",
+          "analysis",
+          "created_at",
+          "created_by"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "rebuild_id": { "type": "string" },
+          "status": { "type": "string", "enum": ["pending", "accepted", "discarded"] },
+          "english_layer": { "type": "string" },
+          "note_ids": { "type": "array", "items": { "type": "string" } },
+          "rendering_ids": { "type": "object", "additionalProperties": { "type": "string" } },
+          "previous_rendering_ids": {
+            "type": "object",
+            "additionalProperties": { "type": ["string", "null"] }
+          },
+          "note_responses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["note_id", "response"],
+              "additionalProperties": false,
+              "properties": {
+                "note_id": { "type": "string" },
+                "response": { "type": "string" }
+              }
+            }
+          },
+          "run_ids": { "type": "array", "items": { "type": "string" } },
+          "analysis": {
+            "description": "The blind audit of the rebuilt text, held until the rebuild is accepted.",
+            "type": ["object", "null"]
+          },
+          "created_at": { "type": "string" },
+          "created_by": { "type": "string" },
+          "decided_at": { "type": "string" },
+          "decided_by": { "type": "string" },
+          "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" }
+        }
+      }
+    },
     "audit_records": { "type": "array", "items": { "$ref": "audit_record.schema.json" } },
     "review_decisions": {
       "type": "array",

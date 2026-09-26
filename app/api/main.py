@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import (
     alignments,
     alternates,
+    arrangements,
     assistant,
     audit,
     codex,
@@ -23,7 +24,9 @@ from app.api.routes import (
     source_map,
     speech,
     tokens,
+    translations,
     units,
+    verse_notes,
 )
 from app.services import codex_app_server_service, llama_runtime_service, registry_service
 
@@ -84,6 +87,9 @@ app.include_router(audit.router)
 app.include_router(export.router)
 app.include_router(jobs.router)
 app.include_router(speech.router)
+app.include_router(verse_notes.router)
+app.include_router(arrangements.router)
+app.include_router(translations.router)
 
 
 @app.get("/health")

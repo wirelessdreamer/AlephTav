@@ -4,6 +4,44 @@ from app.services import ingest_service, registry_service
 from tests.support import bootstrap_fixture_repo
 
 
+def test_reimporting_keeps_translation_work_and_refreshes_the_source() -> None:
+    # Restarting the daemon re-runs this import; it used to delete content/psalms first,
+    # taking every uncommitted translation, analysis and audit record with it.
+    try:
+        ingest_service.import_vendored_psalms()
+        unit = registry_service.load_unit("ps001.v002.a")
+        raw = registry_service.read_json(registry_service.unit_path("ps001.v002.a"))
+        rendering = {"rendering_id": "rnd.ps001.v002.a.lyric.alt.0001", "text": "his joy"}
+        raw["renderings"] = [rendering]
+        raw["verse_notes"] = [{"note_id": "vn.ps001.v002.a.0001", "text": "keep the and"}]
+        raw["audit_records"] = [{"audit_id": "aud.ps001.v002.a.0001"}]
+        raw["status"] = "reviewed"
+        raw["tokens"][0]["display_gloss"] = "stale gloss"
+        registry_service.write_json(registry_service.unit_path("ps001.v002.a"), raw)
+        meta_path = registry_service.psalm_dir("ps001") / "ps001.meta.json"
+        meta = registry_service.read_json(meta_path)
+        meta["translation_guidance"] = "target 6/8 meter"
+        meta["analyses"] = [{"psalm_analysis_id": "pan.ps001.0001"}]
+        registry_service.write_json(meta_path, meta)
+
+        ingest_service.import_vendored_psalms()
+
+        after = registry_service.read_json(registry_service.unit_path("ps001.v002.a"))
+        assert after["renderings"] == [rendering]
+        assert after["verse_notes"][0]["text"] == "keep the and"
+        assert after["audit_records"] == [{"audit_id": "aud.ps001.v002.a.0001"}]
+        assert after["status"] == "reviewed"
+        # What the corpus owns is refreshed.
+        assert after["tokens"][0]["display_gloss"] == unit["tokens"][0]["display_gloss"]
+        assert after["source_hebrew"] == unit["source_hebrew"]
+        meta_after = registry_service.read_json(meta_path)
+        assert meta_after["translation_guidance"] == "target 6/8 meter"
+        assert meta_after["analyses"] == [{"psalm_analysis_id": "pan.ps001.0001"}]
+        assert meta_after["unit_ids"] == meta["unit_ids"]
+    finally:
+        bootstrap_fixture_repo()
+
+
 def test_vendored_import_seeds_full_psalms_corpus() -> None:
     try:
         units = ingest_service.import_vendored_psalms()

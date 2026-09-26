@@ -13,12 +13,28 @@ def get_comparison_table(
     psalm_id: str,
     literal_layer: str = Query(default="literal"),
     english_layer: str | None = Query(default=None),
+    translation_id: str | None = Query(default=None),
 ) -> dict:
     try:
         return comparison_assessment_service.build_comparison_table(
             psalm_id,
             literal_layer=literal_layer,
             english_layer=english_layer,
+            translation_id=translation_id or None,
+        )
+    except Exception as error:  # pragma: no cover
+        raise_as_http(error)
+
+
+@router.get("/tokens/{token_id}/occurrence-context")
+def get_occurrence_context(
+    token_id: str,
+    ref: str = Query(...),
+    english_layer: str = Query(default="lyric"),
+) -> dict:
+    try:
+        return comparison_assessment_service.occurrence_context(
+            token_id, ref, english_layer=english_layer
         )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
@@ -61,6 +77,7 @@ def create_comparison_assessment(payload: dict) -> dict:
             status=payload.get("status", "draft"),
             display_reference=payload.get("display_reference"),
             rationale=payload.get("rationale", "api create comparison assessment"),
+            translation_id=payload.get("translation_id") or None,
         )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

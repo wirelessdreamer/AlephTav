@@ -204,6 +204,11 @@
     "analyzed_text_hash": {
       "description": "Fingerprint of the rendering text this assessment audited, plus the Hebrew source. Null on human-authored assessments. Recomputed at read time to detect a rendering edited in place under the same id.",
       "type": ["string", "null"]
+    },
+    "translation_id": {
+      "description": "The added translation whose English this assessment audits. Absent for the psalm's main translation.",
+      "type": "string",
+      "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$"
     }
   }
 }
