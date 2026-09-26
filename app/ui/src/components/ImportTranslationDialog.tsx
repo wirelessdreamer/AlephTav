@@ -1,7 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 
-import { useTranslations } from '../hooks/useTranslations';
-import type { PsalmIdentification, PsalmSummary } from '../types';
+import type { Collection, PsalmIdentification, PsalmSummary } from '../types';
 import type { ArrangementPane } from './ArrangementWorkspace';
 
 export interface ImportStep {
@@ -17,10 +16,13 @@ export interface ImportOptions {
   analyse: boolean;
 }
 
-/** Where a paste goes: a new translation with this name, or an existing one. */
+/**
+ * Where a paste goes: a project, as the psalm's translation there (made if it has none),
+ * or a new project with this name.
+ */
 export type ImportTarget =
-  | { kind: 'new'; title: string }
-  | { kind: 'existing'; translationId: string | null };
+  | { kind: 'project'; collectionId: string }
+  | { kind: 'new-project'; title: string };
 
 export interface ImportRequest {
   text: string;
@@ -32,6 +34,9 @@ export interface ImportRequest {
 interface Props {
   open: boolean;
   psalms: PsalmSummary[];
+  collections: Collection[];
+  /** The project on show, which the import goes into unless another is chosen. */
+  collectionId: string | null;
   codex: { ready: boolean; hint?: string; busy: boolean };
   /** Asking Codex which psalm the paste is; the table runs the turn. */
   identify: {
@@ -82,8 +87,8 @@ const STATUS_MARK: Record<ImportStep['status'], string> = {
   skipped: '–',
 };
 
-/** The target select's value for a new translation; an existing one is its id ('' for main). */
-const NEW_TRANSLATION = '__new__';
+/** The target select's value for a new project; an existing one is its id. */
+const NEW_PROJECT = '__new__';
 const FALLBACK_TITLE = 'Imported translation';
 
 /**
@@ -93,6 +98,8 @@ const FALLBACK_TITLE = 'Imported translation';
 export function ImportTranslationDialog({
   open,
   psalms,
+  collections,
+  collectionId,
   codex,
   identify,
   steps,
@@ -111,11 +118,10 @@ export function ImportTranslationDialog({
   const [analyse, setAnalyse] = useState(true);
   /** Never assumed from the psalm on screen: identified by Codex or picked. */
   const [psalmId, setPsalmId] = useState('');
-  const [target, setTarget] = useState(NEW_TRANSLATION);
+  const [target, setTarget] = useState(collectionId ?? NEW_PROJECT);
   const [title, setTitle] = useState('');
-  /** Once the reviewer names the translation, Codex's title no longer replaces it. */
+  /** Once the reviewer names the new project, Codex's title no longer replaces it. */
   const [titleTouched, setTitleTouched] = useState(false);
-  const translations = useTranslations(psalmId || null);
   const textId = useId();
   const psalmSelectId = useId();
   const targetId = useId();
@@ -131,11 +137,16 @@ export function ImportTranslationDialog({
     if (!open && element.open) element.close();
   }, [open]);
 
-  // Codex's answer fills in the psalm, and the paste's own title for a new translation.
+  // Opened, it offers the project on show.
+  useEffect(() => {
+    if (open) setTarget(collectionId ?? NEW_PROJECT);
+  }, [open]);
+
+  // Codex's answer fills in the psalm, and the paste's own title for a new project.
   useEffect(() => {
     const found = identify.result;
     if (!found) return;
-    if (found.psalm_id) choosePsalm(found.psalm_id);
+    if (found.psalm_id) setPsalmId(found.psalm_id);
     if (found.title && !titleTouched) setTitle(found.title);
     // Only a new answer does this, not a later edit of the title.
   }, [identify.result]);
@@ -143,17 +154,15 @@ export function ImportTranslationDialog({
   const blocked = !codex.ready ? codex.hint : codex.busy && !running ? 'Codex is busy with another task.' : undefined;
   const psalmTitle = (id: string) => psalms.find((psalm) => psalm.psalm_id === id)?.title ?? id;
   const found = identify.result;
-
-  /** The translations to import into belong to the psalm, so a new psalm starts a new one. */
-  function choosePsalm(id: string) {
-    setPsalmId(id);
-    setTarget(NEW_TRANSLATION);
-  }
+  /** The psalm's translation already in the chosen project, which the paste then goes into. */
+  const held = collections
+    .find((c) => c.collection_id === target)
+    ?.members.find((m) => m.psalm_id === psalmId);
 
   function reset() {
     setText('');
     setPsalmId('');
-    setTarget(NEW_TRANSLATION);
+    setTarget(collectionId ?? NEW_PROJECT);
     setTitle('');
     setTitleTouched(false);
     onReset();
@@ -188,9 +197,9 @@ export function ImportTranslationDialog({
               text,
               psalmId,
               target:
-                target === NEW_TRANSLATION
-                  ? { kind: 'new', title: title.trim() || FALLBACK_TITLE }
-                  : { kind: 'existing', translationId: target || null },
+                target === NEW_PROJECT
+                  ? { kind: 'new-project', title: title.trim() || FALLBACK_TITLE }
+                  : { kind: 'project', collectionId: target },
               options: { arrange, analyse },
             });
           }}
@@ -230,7 +239,7 @@ export function ImportTranslationDialog({
               <select
                 id={psalmSelectId}
                 value={psalmId}
-                onChange={(event) => choosePsalm(event.target.value)}
+                onChange={(event) => setPsalmId(event.target.value)}
               >
                 <option value="">Choose a psalm…</option>
                 {psalms.map((psalm) => (
@@ -255,7 +264,7 @@ export function ImportTranslationDialog({
                       {found.alternatives.map((id, index) => (
                         <span key={id}>
                           {index > 0 ? ', ' : ''}
-                          <button type="button" onClick={() => choosePsalm(id)}>
+                          <button type="button" onClick={() => setPsalmId(id)}>
                             {psalmTitle(id)}
                           </button>
                         </span>
@@ -270,21 +279,23 @@ export function ImportTranslationDialog({
           <div className="import-dialog__options">
             <label htmlFor={targetId}>
               Import it into
-              <select
-                id={targetId}
-                value={target}
-                disabled={!psalmId}
-                onChange={(event) => setTarget(event.target.value)}
-              >
-                <option value={NEW_TRANSLATION}>A new translation</option>
-                {(translations.data ?? []).map((translation) => (
-                  <option key={translation.translation_id ?? ''} value={translation.translation_id ?? ''}>
-                    {translation.title}
+              <select id={targetId} value={target} onChange={(event) => setTarget(event.target.value)}>
+                {collections.map((collection) => (
+                  <option key={collection.collection_id} value={collection.collection_id}>
+                    {collection.title}
                   </option>
                 ))}
+                <option value={NEW_PROJECT}>A new project</option>
               </select>
             </label>
-            {target === NEW_TRANSLATION ? (
+            {target !== NEW_PROJECT && psalmId ? (
+              <span className="verse-notes__hint">
+                {held
+                  ? `into its translation of ${psalmTitle(psalmId)}`
+                  : `as a new translation of ${psalmTitle(psalmId)}`}
+              </span>
+            ) : null}
+            {target === NEW_PROJECT ? (
               <label htmlFor={titleId}>
                 named
                 <input

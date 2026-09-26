@@ -1,9 +1,106 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v006.a.0001",
+    "aud.ps004.v006.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ea80069d3b5ffe66ca359b717cdee92015296eed6e63065a48f3d0783dcc9517",
+      "audit_id": "aud.ps004.v006.a.0001",
+      "before_hash": "2bc11e62a448e85f8a0d4cad737605ebea7877783f5200f077e7ca976d2a8736",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.676717+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e09f00cc70a6e19a45deb16a2e375da5683f18ffdf7705932672eb21465b06d0",
+      "audit_id": "aud.ps004.v006.a.0002",
+      "before_hash": "80c6e883323961ed842756b497b3f1220b054b57ffc0756327e5430122aec1d8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:25:57.847404+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English retains two linked commands and their orientation toward God. It replaces the command to offer righteous sacrifices with building a case, and the command to trust Yahweh with awaiting his verdict.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "c3d7e6b35ee87ca2cb481f2be05ad5ea0b03aeb6c33410c487075bcef8009b62",
+      "audit_ids": [
+        "aud.ps004.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The courtroom scene is supplied by the English. Righteousness can have judicial associations, but the Hebrew explicitly speaks of sacrifices; neither a case nor a verdict is stated. Waiting may express trust, but it does not preserve the explicit command to rely on God.",
+      "display_reference": "Psalm 4:6",
+      "english_rendering_id": "rnd.ps004.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ae10f305b1e5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זִבְח֥וּ זִבְחֵי־צֶ֑דֶק וּ֝בִטְח֗וּ אֶל־יְהוָֽה׃",
+      "literal_backbone": [
+        "Offer sacrifices of righteousness.",
+        "And trust in Yahweh."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:6",
+      "non_source_material": [],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "sacrifice, offer sacrifice; sacrifices; righteousness, rightness, justice",
+          "note": "Replaces sacrificial action with legal advocacy; the judicial associations of righteousness do not supply this meaning for the phrase.",
+          "rendered_as": "Build your case before God",
+          "token_ids": [
+            "ps004.v006.t001",
+            "ps004.v006.t002",
+            "ps004.v006.t003"
+          ],
+          "transliteration": "ziḇḥû ziḇḥê-ṣeḏeq",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "trust, rely on, feel secure; toward; Yahweh",
+          "note": "Recasts reliance on Yahweh as waiting for a judicial decision, adding a verdict and leaving trust implicit.",
+          "rendered_as": "wait for his verdict",
+          "token_ids": [
+            "ps004.v006.t004",
+            "ps004.v006.t005",
+            "ps004.v006.t006"
+          ],
+          "transliteration": "ûḇiṭḥû ʾel-YHWH",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v006.a.0001"
   ],
@@ -15,7 +112,106 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.43,
+        "stress_approximation": 0.65,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Build your case before God and wait for his verdict.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "זִבְח֥וּ זִבְחֵי־צֶ֑דֶק וּ֝בִטְח֗וּ אֶל־יְהוָֽה׃",

@@ -1,9 +1,132 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v001.a.literal.alt.0001",
+    "rnd.ps025.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v001.a.0001",
+    "aud.ps025.v001.a.0002",
+    "aud.ps025.v001.a.0003",
+    "aud.ps025.v001.a.0004",
+    "aud.ps025.v001.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "df7f8288523ffc4ae963d0c905aa99aa0e83ce6f00d6a7cf4ca911c7bf0d74e4",
+      "audit_id": "aud.ps025.v001.a.0001",
+      "before_hash": "bc5cba818581d681e67f8000bca583bf4607cb0e3df5741cd7ee5bb370ef15e6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.752254+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Establishes the direct address and preserves the upward movement of the soul.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ef9b8530e47c77e268bf22ac6fb6643dac9c5095ea8589d8b1286dea7610c4f9",
+      "audit_id": "aud.ps025.v001.a.0002",
+      "before_hash": "eb96d3219db2cbb46f599a99e091f0965de895100719b4b7b7db7aa513f40142",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.149029+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Opens with direct address and keeps the soul's upward movement.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fbe8ddf3d863544e881a53819c12ac3e300dade8d17643a1ae2154123a4de1ce",
+      "audit_id": "aud.ps025.v001.a.0003",
+      "before_hash": "a66571c124c89e040d10a0d07bb88f31bfeb299dc2ba8e6c997e9d75f2b3a4c1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:00.872040+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "244972cc9455743a195039f6768ffa9a98ab89201c6d7d8fe8f9665aa564b47b",
+      "audit_id": "aud.ps025.v001.a.0004",
+      "before_hash": "c64ad24b0c9048935b387931c8c11667361558d65609a2127b0746428197642d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:35:04.782829+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps025.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "baf1b63cce36a84a303800c69ca497e8aa9b803e4e276a36d2a3e3dececa0741",
+      "audit_id": "aud.ps025.v001.a.0005",
+      "before_hash": "19b1d483d59c0432957583278bccbb8e980eb7a97ef5668a62512e3a7cd02a92",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.466622+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the Davidic attribution, the address to Yahweh, and the speaker’s lifting of his soul to him. Moving “Yahweh” before “to you” and using “lift” without “up” do not change the meaning.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "f4398414bdb84083ff1ac4fe650052b4b705970bbc500c4aa2113f96f8517c4f",
+      "audit_ids": [
+        "aud.ps025.v001.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:1",
+      "english_rendering_id": "rnd.ps025.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2b4e4cc6dae2",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לְדָוִ֡ד אֵלֶ֥יךָ יְ֝הוָ֗ה נַפְשִׁ֥י אֶשָּֽׂא׃",
+      "literal_backbone": [
+        "Of David.",
+        "To you, Yahweh, I lift up my soul."
+      ],
+      "literal_rendering_id": "rnd.ps025.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:1",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v001.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v001.a.0001"
   ],
@@ -15,7 +138,213 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the superscription and the soul image.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lifting the soul",
+          "note": "Retains the physical lifting image.",
+          "source_id": "ps025.v001.a",
+          "token_ids": [
+            "ps025.v001.t004",
+            "ps025.v001.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v001.t001 → Of David.",
+          "ps025.v001.t002–t003 → To you, Yahweh",
+          "ps025.v001.t004–t005 → I lift up my soul."
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v001.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v001.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Establishes the direct address and preserves the upward movement of the soul.",
+      "rendering_id": "rnd.ps025.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Of David.\nTo you, Yahweh,\nI lift up my soul.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v001.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Brief opening address with the lifting image intact.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 9,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.66,
+        "stress_approximation": 0.61,
+        "syllable_count": 11,
+        "syllables": 11
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lifting the soul",
+          "note": "The soul remains visible as what the speaker lifts.",
+          "source_id": "ps025.v001.a",
+          "token_ids": [
+            "ps025.v001.t004",
+            "ps025.v001.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v001.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v001.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Opens with direct address and keeps the soul's upward movement.",
+      "rendering_id": "rnd.ps025.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Of David.\nYahweh, to you\nI lift my soul.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v001.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לְדָוִ֡ד אֵלֶ֥יךָ יְ֝הוָ֗ה נַפְשִׁ֥י אֶשָּֽׂא׃",

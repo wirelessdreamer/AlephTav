@@ -1,8 +1,29 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps066.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps066.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c631c354b10a0891bd7f064438937248560cbee0a1438639bd3e77d4e23aaae6",
+      "audit_id": "aud.ps066.v007.a.0001",
+      "before_hash": "68d54e749710a767f16276062d7db35a0b374c942b9c6ae0a70f61ef0b824b60",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:05:05.944581+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps066.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps066.v007.a.0001"
@@ -15,7 +36,99 @@
   "pr_links": [],
   "psalm_id": "ps066",
   "ref": "Psalm 66:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.05,
+        "singability_score": 0.09,
+        "stress_approximation": 0.72,
+        "syllable_count": 32,
+        "syllables": 32
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6995d046b85a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps066.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Ruling history\nBy His strength He reigns forever\nWatching every land\nLet the rebels not rise higher\nAgainst His hand",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מֹ֘שֵׁ֤ל בִּגְבוּרָת֨וֹ׀ עוֹלָ֗ם עֵ֭ינָיו בַּגּוֹיִ֣ם תִּצְפֶּ֑ינָה הַסוֹרְרִ֓ים׀ אַל־לָ֣מוֹ סֶֽלָה׃",

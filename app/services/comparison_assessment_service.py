@@ -472,6 +472,7 @@ def build_comparison_table(
         hebrew_parts: list[str] = []
         assessments: list[dict[str, Any]] = []
         literal_ids: list[str] = []
+        literal_links: list[dict[str, Any]] = []
         english_ids: list[str] = []
         tokens: list[dict[str, Any]] = []
 
@@ -490,6 +491,7 @@ def build_comparison_table(
             if literal:
                 literal_parts.append(literal["text"])
                 literal_ids.append(literal["rendering_id"])
+                literal_links.extend(alignment_links(unit, literal))
             if english:
                 english_parts.append(english["text"])
                 english_ids.append(english["rendering_id"])
@@ -515,6 +517,8 @@ def build_comparison_table(
                 "tokens": tokens,
                 "literal_text": "\n".join(literal_parts) if literal_parts else None,
                 "literal_rendering_ids": literal_ids,
+                # Which Hebrew tokens each part of the literal renders, where known.
+                "literal_links": literal_links,
                 "english_text": "\n".join(english_parts) if english_parts else None,
                 "english_rendering_ids": english_ids,
                 "accuracy_rating": (assessment or {}).get("accuracy_rating"),
@@ -555,6 +559,45 @@ def build_comparison_table(
         "analysis": _active_psalm_analysis(psalm, translation_id),
         "rows": rows,
     }
+
+
+_HINT = re.compile(r"^(?P<refs>.+?)\s*(?:→|->|=>)\s*(?P<text>.+?)\s*$")
+_TOKEN_REF = re.compile(r"(?:(?P<psalm>ps\d{3})\.(?P<verse>v\d{3})\.)?t(?P<number>\d{3})")
+_RANGE = re.compile(r"^\s*[-–—]\s*$")
+
+
+def alignment_links(unit: dict[str, Any], rendering: dict[str, Any]) -> list[dict[str, Any]]:
+    """The Hebrew tokens each part of a rendering renders, from the hints Codex gave.
+
+    A hint reads like "ps025.v001.t002–t003 → To you, Yahweh": a token, a range of
+    tokens or several, then the words that render them. Tokens not in the unit are
+    dropped, and a hint that names none is skipped.
+    """
+    known = [token["token_id"] for token in unit.get("tokens", [])]
+    verse = unit["unit_id"].rsplit(".", 1)[0]
+    links: list[dict[str, Any]] = []
+    for hint in (rendering.get("provenance") or {}).get("alignment_hints") or []:
+        match = _HINT.match(str(hint))
+        if match is None:
+            continue
+        refs = match["refs"]
+        token_ids: list[str] = []
+        previous_end: int | None = None
+        for ref in _TOKEN_REF.finditer(refs):
+            prefix = f"{ref['psalm']}.{ref['verse']}" if ref["psalm"] else verse
+            token_id = f"{prefix}.t{ref['number']}"
+            joined = previous_end is not None and _RANGE.match(refs[previous_end : ref.start()])
+            if joined and token_ids and token_ids[-1] in known and token_id in known:
+                # "t002–t004": every token from the one before to this one.
+                start, end = known.index(token_ids[-1]), known.index(token_id)
+                token_ids.extend(known[start + 1 : end + 1])
+            else:
+                token_ids.append(token_id)
+            previous_end = ref.end()
+        token_ids = [token_id for token_id in dict.fromkeys(token_ids) if token_id in known]
+        if token_ids:
+            links.append({"token_ids": token_ids, "text": match["text"]})
+    return links
 
 
 def _word_choices(

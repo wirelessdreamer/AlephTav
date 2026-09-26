@@ -1,9 +1,126 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v010.a.literal.alt.0001",
+    "rnd.ps025.v010.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v010.a.0001",
+    "aud.ps025.v010.a.0002",
+    "aud.ps025.v010.a.0003",
+    "aud.ps025.v010.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "09331274dc54a621c802f2dab3270d2d16dbd888335c65cfc68a25ce8c9c0394",
+      "audit_id": "aud.ps025.v010.a.0001",
+      "before_hash": "c5600efd613840ab8afcf3c4a5fc1076b243269047b1da95c52c3041bc7975cd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.829640+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v010.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Brings paths, loyal love, and truth together using the established vocabulary.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ac446fa1c3dea430c8d3ffc88834ee0e7d763a4e2a9526fd0f6e033707ef32cd",
+      "audit_id": "aud.ps025.v010.a.0002",
+      "before_hash": "847a05016ccc1824cfadd2014ccb24a82ee9b6b5a21363ea8037876c0755b967",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.234425+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Gathers the recurring paths, faithful love, and truth into one connected statement.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8e2310a1cc5fae0ab188a55ef726f6982746ba4a23f1e50fc535707325f3bae9",
+      "audit_id": "aud.ps025.v010.a.0003",
+      "before_hash": "889e91cda24423e2c2f894744fea9ddee78cfc0c53cee3f51ed03e6e025da8ee",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:19.789930+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3d47edd7c357bf985470a457ea11ac3d4950ebae013e921f71babb375422c7dc",
+      "audit_id": "aud.ps025.v010.a.0004",
+      "before_hash": "204f9a687dc323174868a0b50e7112bd64a393ed8eb213b99ac555c5476b546b",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.499843+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v010.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the declaration that all Yahweh’s paths are faithful love and truth for those who keep his covenant and his prescribed requirements.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "35651bc38a5184b991d5fdd55f2a4b0305528a143522daedb5e2da65f80304a4",
+      "audit_ids": [
+        "aud.ps025.v010.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Commands” conveys the practical force of “testimonies” but leaves their witness or attestation sense unexpressed.",
+      "display_reference": "Psalm 25:10",
+      "english_rendering_id": "rnd.ps025.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.8040e3251e5e",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כָּל־אָרְח֣וֹת יְ֭הוָה חֶ֣סֶד וֶאֱמֶ֑ת לְנֹצְרֵ֥י בְ֝רִית֗וֹ וְעֵדֹתָֽיו׃",
+      "literal_backbone": [
+        "All the paths of Yahweh are loyal love and truth",
+        "for those who keep his covenant and his testimonies."
+      ],
+      "literal_rendering_id": "rnd.ps025.v010.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:10",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and his testimonies, attestations, solemn injunctions",
+          "note": "Conveys the requirements to be observed, while making the term’s testimonial character less explicit. The preceding “his” naturally governs both English nouns.",
+          "rendered_as": "and commands",
+          "token_ids": [
+            "ps025.v010.t008"
+          ],
+          "transliteration": "wəʿēḏōṯāw",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v010.a.0001"
   ],
@@ -15,7 +132,222 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains 'testimonies' and the direct identification of paths with loyal love and truth.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Paths of Yahweh",
+          "note": "Preserves all paths as the subject of the statement.",
+          "source_id": "ps025.v010.a",
+          "token_ids": [
+            "ps025.v010.t001",
+            "ps025.v010.t002",
+            "ps025.v010.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v010.t001–t003 → All the paths of Yahweh",
+          "ps025.v010.t004–t005 → are loyal love and truth",
+          "ps025.v010.t006–t008 → for those who keep his covenant and his testimonies"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v010.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Brings paths, loyal love, and truth together using the established vocabulary.",
+      "rendering_id": "rnd.ps025.v010.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "All the paths of Yahweh\nare loyal love and truth\nfor those who keep his covenant\nand his testimonies.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v010.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the path metaphor while simplifying the final legal term.",
+      "drift_flags": [
+        {
+          "code": "TESTIMONIES_AS_COMMANDS",
+          "confidence": 0.99,
+          "message": "'Commands' communicates the binding requirements but loses the testimony nuance of עֵדֹתָיו.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.72,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "All Yahweh's paths",
+          "note": "Keeps the direct identification of paths with faithful love and truth.",
+          "source_id": "ps025.v010.a",
+          "token_ids": [
+            "ps025.v010.t001",
+            "ps025.v010.t002",
+            "ps025.v010.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v010.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Gathers the recurring paths, faithful love, and truth into one connected statement.",
+      "rendering_id": "rnd.ps025.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "All Yahweh's paths\nare faithful love and truth\nfor those who keep\nhis covenant and commands.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כָּל־אָרְח֣וֹת יְ֭הוָה חֶ֣סֶד וֶאֱמֶ֑ת לְנֹצְרֵ֥י בְ֝רִית֗וֹ וְעֵדֹתָֽיו׃",

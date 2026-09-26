@@ -1,8 +1,61 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps004.v001.a.0001",
+    "aud.ps004.v001.a.0002",
+    "aud.ps004.v001.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "055208a22b55759c98507030b920b7233ab12cb7ee96f6dcf3181c2845070d56",
+      "audit_id": "aud.ps004.v001.a.0001",
+      "before_hash": "c81548db2f96ebf86926e453d9d64a50d1ceb982f4df1f77c3c46d5c2da24db7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:21:25.520426+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps004.0001",
+      "entity_type": "translation",
+      "rationale": "import translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c3ef5cc82d3f6ba7b515dc05a76070ec09b004ca348d0f04b1d85709ad266932",
+      "audit_id": "aud.ps004.v001.a.0002",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:24:14.342261+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps004.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “Psalm 4”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1f3d75e69ec8e9e899ca6fc42a699d16ae0a3fef7a4e908ff3187a443e2c826b",
+      "audit_id": "aud.ps004.v001.a.0003",
+      "before_hash": "fefe554798fcf8e9cbe10aeaf25c74d92a21a235d9f30ed9568d59d62198f3f3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:27:58.408481+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps004.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps004.v001.a.0001"

@@ -1,9 +1,126 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v018.a.literal.alt.0001",
+    "rnd.ps025.v018.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v018.a.0001",
+    "aud.ps025.v018.a.0002",
+    "aud.ps025.v018.a.0003",
+    "aud.ps025.v018.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6c6e9236ef61f569419aac095fe858194805b9d9829726fea175c8b281b4754c",
+      "audit_id": "aud.ps025.v018.a.0001",
+      "before_hash": "fac68f5571163ca7bbf1c1f4032b662180edea1167c499dbaacea29d96f9520a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.767493+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v018.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Pairs a request to see suffering with the lifting-away image of forgiveness.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "540997abc0b6ea713277dd564099e486e3294e01263b4c22bdeb324c278906cb",
+      "audit_id": "aud.ps025.v018.a.0002",
+      "before_hash": "8c2181a52a5dac4da24680f3dfa4659475d52313d8abaa58104de733f36fedba",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.865694+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v018.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Pairs visible suffering with the lifting-away action of forgiveness, recalling the opening lifting of the soul.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c53c92e104e075fd895f78cae4e945ee67d2f1ba49c251f0d33c52fce60475fb",
+      "audit_id": "aud.ps025.v018.a.0003",
+      "before_hash": "f9acb36f6f762ca721e1e93eed4b27afe843f488bcf09d8631d95a2ccb3a9ac8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:32.873884+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v018.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "635c3a7d2e072df779f7ec812b0eab2e3561baa52e4cd5e1543ebdaef9e3d8fb",
+      "audit_id": "aud.ps025.v018.a.0004",
+      "before_hash": "c46e46f8424d6b562f2c44813de4cc5ec58c043473b7696eeb49068c6bbc8833",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.526763+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v018.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal for God to see the speaker’s suffering and struggle, followed by the request to remove all his sins. “All” and the repeated first-person reference remain intact.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "c5412b4cdca82cf9ecd42a10f7c9bb8515cd44ed7a8140a4df3f88caf2aacf80",
+      "audit_ids": [
+        "aud.ps025.v018.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v018.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Pain” emphasizes experienced suffering within “affliction,” while “struggle” idiomatically conveys toil or trouble.",
+      "display_reference": "Psalm 25:18",
+      "english_rendering_id": "rnd.ps025.v018.a.lyric.alt.0001",
+      "generation_run_id": "cxr.114f49774c22",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "רְאֵ֣ה עָ֭נְיִי וַעֲמָלִ֑י וְ֝שָׂ֗א לְכָל־חַטֹּאותָֽי׃",
+      "literal_backbone": [
+        "See my affliction and my toil.",
+        "And lift away all my sins."
+      ],
+      "literal_rendering_id": "rnd.ps025.v018.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:18",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v018.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and lift, carry, bear, take away; forgive",
+          "note": "Retains the verb’s lifting or removal imagery; in connection with sins, the expression conveys forgiveness.",
+          "rendered_as": "lift … away",
+          "token_ids": [
+            "ps025.v018.t004"
+          ],
+          "transliteration": "wəśāʾ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v018.a.0001"
   ],
@@ -15,7 +132,223 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:18",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps the lifting verb that also appears in the psalm's opening.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lifting away sins",
+          "note": "Retains the lifting sense of נָשָׂא within its forgiveness idiom.",
+          "source_id": "ps025.v018.a",
+          "token_ids": [
+            "ps025.v018.t004",
+            "ps025.v018.t005",
+            "ps025.v018.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v018.t001 → See",
+          "ps025.v018.t002–t003 → my affliction and my toil",
+          "ps025.v018.t004 → and lift away",
+          "ps025.v018.t005–t006 → all my sins"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v018.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Pairs a request to see suffering with the lifting-away image of forgiveness.",
+      "rendering_id": "rnd.ps025.v018.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "See my affliction and my toil,\nand lift away all my sins.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v018.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The isolated final word gives the lifting action room to complete.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.49,
+        "stress_approximation": 0.59,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lifting away sins",
+          "note": "Retains the physical verb underlying the forgiveness idiom.",
+          "source_id": "ps025.v018.a",
+          "token_ids": [
+            "ps025.v018.t004",
+            "ps025.v018.t005",
+            "ps025.v018.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v018.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Pairs visible suffering with the lifting-away action of forgiveness, recalling the opening lifting of the soul.",
+      "rendering_id": "rnd.ps025.v018.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Look at my pain,\nmy struggle;\nlift all my sins\naway.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v018.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "רְאֵ֣ה עָ֭נְיִי וַעֲמָלִ֑י וְ֝שָׂ֗א לְכָל־חַטֹּאותָֽי׃",

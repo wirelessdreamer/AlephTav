@@ -1,6 +1,788 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps004.v001.a.0003"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T22:27:58.403470+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verse 2 requests an answer, grace, and a hearing; verse 3 concerns the speaker's honor becoming shame; verse 4 affirms that Yahweh hears the speaker's call.",
+            "claim": "The speaker appeals to God amid distress and dishonor while expressing confidence in being heard."
+          },
+          {
+            "basis": "Verse 2 addresses God; verses 3–6 address plural human listeners; verses 7–9 include petition and personal address to Yahweh.",
+            "claim": "The psalm alternates divine address with instruction or challenge to human listeners."
+          },
+          {
+            "basis": "Verses 5–6 prohibit sin, command inward speech and silence, and explicitly command righteous sacrifices and trust in Yahweh.",
+            "claim": "Righteous conduct, inward restraint, sacrifice, and trust belong to the psalm's exhortation."
+          },
+          {
+            "basis": "Verse 8 attributes inward joy to God and compares it with abundant grain and new wine; verse 9 grounds lying down and sleeping in God's provision of security.",
+            "claim": "The closing movement connects God-given joy with confidence in peaceful rest."
+          },
+          {
+            "basis": "Selah occurs at the ends of Masoretic verses 3 and 5.",
+            "claim": "Two explicit Selah markers articulate the received text."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David demonstrably composed or personally spoke this psalm during a specific crisis.",
+            "why_not": "The heading supplies an ascription without independent historical evidence or an occasion notice."
+          },
+          {
+            "claim": "The opponents are an identifiable rabble or compulsive consumers.",
+            "why_not": "The Hebrew challenges human addressees over dishonor, worthlessness, and falsehood; rabble and shopping sprees are the setting's characterizations."
+          },
+          {
+            "claim": "The speaker is conducting a lawsuit or awaiting a judicial verdict.",
+            "why_not": "Verse 6 commands sacrifice and trust; the case and verdict are introduced by the English."
+          },
+          {
+            "claim": "God promises an instantaneous response and has already repaired every aspect of the speaker's life.",
+            "why_not": "The Hebrew affirms hearing and secure dwelling without specifying split-second timing or comprehensive completed restoration."
+          },
+          {
+            "claim": "The psalm prescribes this arrangement's pauses, instruments, vocal roles, or an identifiable evening liturgy.",
+            "why_not": "The heading mentions stringed instruments, and the poem mentions sleep, but neither supplies these modern performance details or a particular service; Selah's exact performance function is not established by the supplied text."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.fae243cfcf3c",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The musical heading and the command to offer sacrifices of righteousness imply a setting compatible with performed worship and sacrificial practice. References to beds and sleep also supply a setting for personal reflection and trust. These features do not identify a particular sanctuary, festival, service, or historical occasion. The English courtroom substitution obscures the explicit sacrificial dimension.",
+        "heading_attribution": "The received heading identifies a psalm, directs it to the musical director with stringed instruments, and associates it with David through לְדָוִד. This is a traditional Davidic ascription within the text; it does not independently establish David's authorship, the speaker's historical identity, or a particular episode in David's life. No English heading is stored."
+      },
+      "method": "Compared the supplied Hebrew clauses, token forms, and glosses with the stored English and the arrangement instructions supplied earlier. The compact literal backbones used in the verse audits served as comparison checks, not proposed replacement lyrics. Sections cover Masoretic verses 1–9 once in order; reprises and instrumental passages are described without duplicating verse coverage. No external edition or lexicon was consulted.",
+      "non_source_material": [
+        {
+          "kind": "other",
+          "note": "Modern section duration and performance instruction; it supplies neither a Hebrew translation nor a time signature.",
+          "text": "[INTRO - 4 bars no vocals]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Introduces the recurring instrumental motif and dramatic texture; these specifics are not prescribed by the stringed-instrument heading.",
+          "text": "[Lead motif teased on bright guitar, tense pads, then drop to near-silence.]"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "Represents the setting's allocation of voices and vocal effects, which the Hebrew does not specify.",
+          "text": "[Gang-style energy; female lead with harmonies, screams on key words]"
+        },
+        {
+          "kind": "dynamics",
+          "note": "Directs the arrangement's renewed escalation and emotional characterization.",
+          "text": "[BUILD - fed up escalation resumes, rising intensity]"
+        },
+        {
+          "kind": "other",
+          "note": "Modern rhythmic and structural apparatus without a prescribed Hebrew counterpart.",
+          "text": "[BREAKDOWN - brutal halftime, stark, stop-start]"
+        },
+        {
+          "kind": "dynamics",
+          "note": "Adds the concluding instrumental resolution and victorious characterization.",
+          "text": "[Motif reprise, bright and victorious, hard stop.]"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps004.0001",
+      "psalm_id": "ps004",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Frames the received psalm before its prayer begins; the instrumental intro does not translate this heading.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction, genre, and Davidic association.",
+          "title": "Heading — no English stored"
+        },
+        {
+          "arc_note": "The setting explicitly contrasts past rescue with renewed trouble. Its final appeal later returns in the Build; that reprise does not create another verse in this ordered map.",
+          "first_verse": 2,
+          "last_verse": 2,
+          "theme": "Appeal for an answer and grace grounded in remembered relief.",
+          "title": "Verse 1"
+        },
+        {
+          "arc_note": "Prayer turns outward toward opponents, with the English heightening insult and agitation.",
+          "first_verse": 3,
+          "last_verse": 3,
+          "theme": "Challenge to dishonor and attachment to falsehood.",
+          "title": "Verse 2"
+        },
+        {
+          "arc_note": "The command to recognize becomes a repeated attention call, followed by the hook about being picked and heard immediately.",
+          "first_verse": 4,
+          "last_verse": 4,
+          "theme": "God's distinguishing action and assurance of hearing.",
+          "title": "Pre-Chorus + Chorus"
+        },
+        {
+          "arc_note": "The three-line reset joins two Hebrew verses across a Selah. Sacrificial worship and trust become presenting a case and waiting for a verdict.",
+          "first_verse": 5,
+          "last_verse": 6,
+          "theme": "Restraint, inward reflection, and dependence on God.",
+          "title": "Calm Reset"
+        },
+        {
+          "arc_note": "The communal petition becomes personal sufficiency, while grain and wine become shopping sprees; the musical direction makes this contrast confrontational.",
+          "first_verse": 7,
+          "last_verse": 8,
+          "theme": "Desired good and joy exceeding material abundance.",
+          "title": "Final Section"
+        },
+        {
+          "arc_note": "The voice settles toward sleep, explaining its confidence through a restored life rather than God's provision of secure dwelling.",
+          "first_verse": 9,
+          "last_verse": 9,
+          "theme": "Rest grounded in God's care.",
+          "title": "Outro"
+        }
+      ],
+      "source_fingerprint": "467c80b6a9ca5ce948b449dc15576fdc59cd5a4c1143c353bd31253a144cabe9",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 3,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 5,
+          "aligns_with_section": false,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting turns the psalm's movement from distress through confrontation and confidence to peaceful sleep into an intensely dramatic song. A repeated assurance of divine hearing becomes its chorus; a brief calm passage interrupts escalating anger. The adaptation strengthens contempt toward opponents, substitutes courtroom language for sacrifice, and recasts the desire for good and agricultural abundance as consumer dissatisfaction. It retains the closing dependence on God but describes restored wholeness rather than secure dwelling. The heading is unsung, and several distinctive elements disappear: the faithful person's characterization, the prayer for God's radiant face, and God's exclusive role in securing rest.",
+      "translation_id": "tr.ps004.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps004.0001",
+      "audit_ids": [
+        "aud.ps004.v001.a.0002"
+      ],
+      "created_at": "2026-09-26T22:24:14.338237+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.e9d1fd6ecff6",
+      "guidance": "From the imported translation:\n[INTRO - 4 bars no vocals]\n[Lead motif teased on bright guitar, tense pads, then drop to near-silence.]\n[Female clean, calm, sparse]\n[Sharp snap: full band in, scream accents over female]\n[GUITAR SOLO / INTERLUDE 1 - 16 bars\nMotif becomes the lead; fast run + tapping tag; drums ramp in; slam back.]\n[VERSE 2 - new tone begins, trading lines, more fed up]\n[Female clean with edge]\n[Screamer accent over the last words]\n[Female clean, sharper; echo/call-response]\n[PRE-CHORUS - stop-start stutters]\n[Duet call/response]\n[CHORUS - big hook, motif underneath]\n[Gang-style energy; female lead with harmonies, screams on key words]\n[CUTOUT 1 - near-silence, 4-8 bars]\n[Only guitar harmonics + distant pads; breathy vocal ad-libs, no drums.]\n[GUITAR INTERLUDE 2 - 8-16 bars]\n[Motif in full, tighter and angrier; quick duel lick, then drop.]\n[CALM RESET - return to original tone for exactly these three lines]\n[Female clean, calm again; minimal instrumentation]\n[BUILD - fed up escalation resumes, rising intensity]\n[Female clean grows more forceful; screams increasingly present]\n[Nod to Verse 1 for emphasis, short]\n[BREAKDOWN - brutal halftime, stark, stop-start]\n[Screams punch over chugs; then a tight pause.]\n[FINAL SECTION - \"Why is everyone hungry...\" huge and confrontational]\n[Female lead, soaring; screams accent the \"More, more\" and key words]\n[CUTOUT 2 - near-silence, then epic rebuild]\n[Drop to a single clean guitar playing the motif slowly; swell back into full band.]\n[OUTRO - resolve, calmer but still intense]\n[Female clean with warm harmonies; screams only as distant texture]\n[FINAL GUITAR TAG - 4-8 bars]\n[Motif reprise, bright and victorious, hard stop.]",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The superscription is not sung; the guitar directions provide instrumentation without rendering the Hebrew attribution or instructions.",
+          "token_ids": [
+            "ps004.v001.t001",
+            "ps004.v001.t002",
+            "ps004.v001.t003",
+            "ps004.v001.t004"
+          ],
+          "unit_id": "ps004.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither Selah is rendered as a lyric or explicitly identified with a musical pause.",
+          "token_ids": [
+            "ps004.v003.t011"
+          ],
+          "unit_id": "ps004.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither Selah is rendered as a lyric or explicitly identified with a musical pause.",
+          "token_ids": [
+            "ps004.v005.t009"
+          ],
+          "unit_id": "ps004.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Being picked by God does not express that the person is set apart for himself.",
+          "token_ids": [
+            "ps004.v004.t006"
+          ],
+          "unit_id": "ps004.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The instruction to speak inwardly retains no reference to being on one's bed.",
+          "token_ids": [
+            "ps004.v005.t006",
+            "ps004.v005.t007"
+          ],
+          "unit_id": "ps004.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The communal petition to lift the light of God's face upon the speakers is absent, giving way to a personal assertion of divine abundance.",
+          "token_ids": [
+            "ps004.v007.t006",
+            "ps004.v007.t007",
+            "ps004.v007.t008",
+            "ps004.v007.t009"
+          ],
+          "unit_id": "ps004.v007.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The closing sleep line does not express the togetherness or simultaneity of lying down and sleeping.",
+          "token_ids": [
+            "ps004.v009.t002"
+          ],
+          "unit_id": "ps004.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The closing attribution to God does not retain alone.",
+          "token_ids": [
+            "ps004.v009.t008"
+          ],
+          "unit_id": "ps004.v009.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps004",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "[INTRO - 4 bars no vocals]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "[Female clean, calm, sparse]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v002.t001",
+                    "ps004.v002.t002",
+                    "ps004.v002.t003",
+                    "ps004.v002.t004"
+                  ],
+                  "unit_id": "ps004.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0001",
+              "rationale": "The address to the God of my righteousness becomes an explicit appeal for God to take the speaker's side.",
+              "text": "When I call, give me answers. God, take my side!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v002.t005",
+                    "ps004.v002.t006",
+                    "ps004.v002.t007"
+                  ],
+                  "unit_id": "ps004.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "The spatial image of relief from distress is retained, with Once making it a distinct remembered occasion.",
+              "text": "Once, in a tight place, you gave me room;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v002.t005",
+                    "ps004.v002.t008",
+                    "ps004.v002.t009",
+                    "ps004.v002.t010"
+                  ],
+                  "unit_id": "ps004.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0003",
+              "rationale": "The appeals for favor and a hearing gain an explicit return to present trouble, while my prayer becomes me.",
+              "text": "Now I'm in trouble again: grace me! hear me!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "other",
+          "label": "[GUITAR SOLO / INTERLUDE 1 - 16 bars\nMotif becomes the lead; fast run + tapping tag; drums ramp in; slam back.]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "[VERSE 2 - new tone begins, trading lines, more fed up]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v003.t001",
+                    "ps004.v003.t002",
+                    "ps004.v003.t003",
+                    "ps004.v003.t004",
+                    "ps004.v003.t005",
+                    "ps004.v003.t006"
+                  ],
+                  "unit_id": "ps004.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "The human addressees become rabble, and the dishonoring of the speaker becomes a complaint about enduring their scorn.",
+              "text": "You rabble - how long do I put up with your scorn?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v003.t003",
+                    "ps004.v003.t004",
+                    "ps004.v003.t007",
+                    "ps004.v003.t008",
+                    "ps004.v003.t010"
+                  ],
+                  "unit_id": "ps004.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "The duration question is repeated, love is intensified to lust, and worthlessness merges with the following clause's falsehood.",
+              "text": "How long will you lust after lies?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v003.t003",
+                    "ps004.v003.t004",
+                    "ps004.v003.t009",
+                    "ps004.v003.t010"
+                  ],
+                  "unit_id": "ps004.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Seeking falsehood becomes living crazed by illusion, with the duration question repeated again.",
+              "text": "How long will you live crazed by illusion?"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "other",
+          "label": "[PRE-CHORUS - stop-start stutters]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v004.t001"
+                  ],
+                  "unit_id": "ps004.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "The command to know becomes a doubled invitation to look.",
+              "text": "Look at this: look"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v004.t001"
+                  ],
+                  "unit_id": "ps004.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "The same invitation repeats the Hebrew command as a musical call and response.",
+              "text": "Look at this: look"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "chorus",
+          "label": "[CHORUS - big hook, motif underneath]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v004.t002",
+                    "ps004.v004.t003",
+                    "ps004.v004.t004",
+                    "ps004.v004.t005"
+                  ],
+                  "unit_id": "ps004.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0009",
+              "rationale": "God's setting apart of the faithful person becomes being picked, with who leaving that person's faithfulness unspecified.",
+              "text": "Who got picked by God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v004.t007",
+                    "ps004.v004.t008",
+                    "ps004.v004.t009",
+                    "ps004.v004.t010"
+                  ],
+                  "unit_id": "ps004.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "The promise of hearing gains the explicit immediacy of the split second.",
+              "text": "He listens the split second I call to him."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v004.t007",
+                    "ps004.v004.t008",
+                    "ps004.v004.t009",
+                    "ps004.v004.t010"
+                  ],
+                  "unit_id": "ps004.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "The expanded promise of immediate hearing repeats for musical emphasis.",
+              "text": "He listens the split second I call to him."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "other",
+          "label": "[CUTOUT 1 - near-silence, 4-8 bars]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "other",
+          "label": "[GUITAR INTERLUDE 2 - 8-16 bars]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "verse",
+          "label": "[CALM RESET - return to original tone for exactly these three lines]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v005.t001",
+                    "ps004.v005.t002",
+                    "ps004.v005.t003"
+                  ],
+                  "unit_id": "ps004.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Trembling or agitation becomes permission to complain, while the prohibition of sin narrows to lashing out.",
+              "text": "Complain if you must, but don't lash out."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v005.t004",
+                    "ps004.v005.t005",
+                    "ps004.v005.t008"
+                  ],
+                  "unit_id": "ps004.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0013",
+              "rationale": "Silence moves before inward speech, which is personified as the heart doing the talking.",
+              "text": "Keep your mouth shut, and let your heart do the talking."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v006.t001",
+                    "ps004.v006.t002",
+                    "ps004.v006.t003",
+                    "ps004.v006.t004",
+                    "ps004.v006.t005",
+                    "ps004.v006.t006"
+                  ],
+                  "unit_id": "ps004.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0014",
+              "rationale": "Righteous sacrifice and trust in God are freely recast as presenting a case and awaiting a divine verdict, replacing the sacrificial imagery.",
+              "text": "Build your case before God and wait for his verdict."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "verse",
+          "label": "[BUILD - fed up escalation resumes, rising intensity]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v002.t005",
+                    "ps004.v002.t008",
+                    "ps004.v002.t009",
+                    "ps004.v002.t010"
+                  ],
+                  "unit_id": "ps004.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "The closing appeal from the opening verse returns alone, including its added statement of renewed trouble.",
+              "text": "Now I'm in trouble again: grace me! hear me!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "other",
+          "label": "[BREAKDOWN - brutal halftime, stark, stop-start]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        },
+        {
+          "kind": "verse",
+          "label": "[FINAL SECTION - \"Why is everyone hungry...\" huge and confrontational]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v007.t001",
+                    "ps004.v007.t002",
+                    "ps004.v007.t003",
+                    "ps004.v007.t004",
+                    "ps004.v007.t005"
+                  ],
+                  "unit_id": "ps004.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "Many people's question about who will show them good becomes a universal appetite for more and a repeated demand.",
+              "text": "Why is everyone hungry for more? \"More, more,\" they say."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v007.t005"
+                  ],
+                  "unit_id": "ps004.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "The preceding recasting of good as more becomes an additional repeated vocal demand.",
+              "text": "\"More, more.\""
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v007.t010"
+                  ],
+                  "unit_id": "ps004.v007.a"
+                },
+                {
+                  "token_ids": [
+                    "ps004.v008.t001"
+                  ],
+                  "unit_id": "ps004.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "The reference to God and the following assertion of his gift become a first-person declaration of more-than-enough.",
+              "text": "I have God's more-than-enough,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v008.t002",
+                    "ps004.v008.t003",
+                    "ps004.v008.t004"
+                  ],
+                  "unit_id": "ps004.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "The speaker's inward joy and its comparison gain the invented time frame of one ordinary day.",
+              "text": "More joy in one ordinary day"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v008.t004",
+                    "ps004.v008.t005",
+                    "ps004.v008.t006",
+                    "ps004.v008.t007"
+                  ],
+                  "unit_id": "ps004.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Abundant grain and new wine are replaced by the contemporary consumer image of shopping sprees.",
+              "text": "Than they get in all their shopping sprees."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0012"
+        },
+        {
+          "kind": "other",
+          "label": "[CUTOUT 2 - near-silence, then epic rebuild]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0013"
+        },
+        {
+          "kind": "outro",
+          "label": "[OUTRO - resolve, calmer but still intense]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v009.t001",
+                    "ps004.v009.t003",
+                    "ps004.v009.t004"
+                  ],
+                  "unit_id": "ps004.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0021",
+              "rationale": "Peaceful lying down and sleeping become readiness for sound sleep, with day's end supplied as the setting.",
+              "text": "At day's end I'm ready for sound sleep,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps004.v009.t005",
+                    "ps004.v009.t006",
+                    "ps004.v009.t007",
+                    "ps004.v009.t009",
+                    "ps004.v009.t010"
+                  ],
+                  "unit_id": "ps004.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "God's provision of secure dwelling becomes restoration of the speaker's whole life, implying an earlier disruption.",
+              "text": "For you, God, have put my life back together."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0014"
+        },
+        {
+          "kind": "outro",
+          "label": "[FINAL GUITAR TAG - 4-8 bars]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0015"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 4",
+      "translation_id": "tr.ps004.0001",
+      "updated_at": "2026-09-26T22:24:14.338237+00:00"
+    }
+  ],
   "psalm_id": "ps004",
   "title": "Psalm 4",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps004.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T22:21:25.518751+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "guidance": "From the imported translation:\n[INTRO - 4 bars no vocals]\n[Lead motif teased on bright guitar, tense pads, then drop to near-silence.]\n[Female clean, calm, sparse]\n[Sharp snap: full band in, scream accents over female]\n[GUITAR SOLO / INTERLUDE 1 - 16 bars\nMotif becomes the lead; fast run + tapping tag; drums ramp in; slam back.]\n[VERSE 2 - new tone begins, trading lines, more fed up]\n[Female clean with edge]\n[Screamer accent over the last words]\n[Female clean, sharper; echo/call-response]\n[PRE-CHORUS - stop-start stutters]\n[Duet call/response]\n[CHORUS - big hook, motif underneath]\n[Gang-style energy; female lead with harmonies, screams on key words]\n[CUTOUT 1 - near-silence, 4-8 bars]\n[Only guitar harmonics + distant pads; breathy vocal ad-libs, no drums.]\n[GUITAR INTERLUDE 2 - 8-16 bars]\n[Motif in full, tighter and angrier; quick duel lick, then drop.]\n[CALM RESET - return to original tone for exactly these three lines]\n[Female clean, calm again; minimal instrumentation]\n[BUILD - fed up escalation resumes, rising intensity]\n[Female clean grows more forceful; screams increasingly present]\n[Nod to Verse 1 for emphasis, short]\n[BREAKDOWN - brutal halftime, stark, stop-start]\n[Screams punch over chugs; then a tight pause.]\n[FINAL SECTION - \"Why is everyone hungry...\" huge and confrontational]\n[Female lead, soaring; screams accent the \"More, more\" and key words]\n[CUTOUT 2 - near-silence, then epic rebuild]\n[Drop to a single clean guitar playing the motif slowly; swell back into full band.]\n[OUTRO - resolve, calmer but still intense]\n[Female clean with warm harmonies; screams only as distant texture]\n[FINAL GUITAR TAG - 4-8 bars]\n[Motif reprise, bright and victorious, hard stop.]",
+      "psalm_id": "ps004",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps004.0001"
+    }
+  ],
   "unit_ids": [
     "ps004.v001.a",
     "ps004.v002.a",

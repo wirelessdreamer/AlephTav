@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v006.a.literal.alt.0001",
+    "rnd.ps025.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v006.a.0001",
+    "aud.ps025.v006.a.0002",
+    "aud.ps025.v006.a.0003",
+    "aud.ps025.v006.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "330aa009f17cfb12bcf9f68e2b4d603440e6c51e5df7d476197b0720bddec753",
+      "audit_id": "aud.ps025.v006.a.0001",
+      "before_hash": "8d96835634ad2975cfd883fd5b0cd4697981ec7ea47d541466743e65ef42115a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.792300+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Begins the repeated appeal to remembrance and introduces consistent loyal-love vocabulary.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "77f7033457823dfdf712ec9dead0248ea19a0a1c9221bda80135e9828c2d25c9",
+      "audit_id": "aud.ps025.v006.a.0002",
+      "before_hash": "987eb8594bc11198884000dca0db1754dda4151edc35475de29e5c8b61ea74cc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.196613+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Introduces the remembrance appeal that the following unit turns toward the speaker.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a87dc1a7064a357930a4f54f4c2badb79a04cd7d1ac9062b8847b9f20e1e785f",
+      "audit_id": "aud.ps025.v006.a.0003",
+      "before_hash": "03fbc8ea26a4d29fd95f62ff1232ce460d475a9337c1f60ffad7e1a5ca9eb4c5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:44.663107+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0cfd650112b79a8f480e9dfc3c62aa9c44ce1398c2fbdb6f4c8e0cfaa1cbe788",
+      "audit_id": "aud.ps025.v006.a.0004",
+      "before_hash": "3f337b593e48bae71d2479f3b30022f4d2770b362a310596c36ba1d300b63562",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.485318+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal to Yahweh to remember his mercy and faithful love, followed by the affirmation that these have been his from ancient times.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "a958624b98b62e0d3eb02a0c995d097bb913eb17ef9c8fb63cbad1c5f5afa844",
+      "audit_ids": [
+        "aud.ps025.v006.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The Hebrew plural nouns are expressed as collective singulars, “mercy” and “faithful love.” The explicit causal link “for” is left implicit; “been yours” restates the possession already expressed by “your.”",
+      "display_reference": "Psalm 25:6",
+      "english_rendering_id": "rnd.ps025.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.18197adb006b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זְכֹר־רַחֲמֶ֣יךָ יְ֭הוָה וַחֲסָדֶ֑יךָ כִּ֖י מֵעוֹלָ֣ם הֵֽמָּה׃",
+      "literal_backbone": [
+        "Remember your mercies, Yahweh, and your acts of loyal love.",
+        "For they are from of old."
+      ],
+      "literal_rendering_id": "rnd.ps025.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:6",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v006.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v006.a.0001"
   ],
@@ -15,7 +121,193 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the plurality of mercies and expressions of loyal love.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v006.t001–t003 → Remember your mercies, Yahweh",
+          "ps025.v006.t004 → and your acts of loyal love",
+          "ps025.v006.t005–t007 → for they are from of old"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v006.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Begins the repeated appeal to remembrance and introduces consistent loyal-love vocabulary.",
+      "rendering_id": "rnd.ps025.v006.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Remember your mercies, Yahweh,\nand your acts of loyal love,\nfor they are from of old.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v006.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Plain temporal language carries the appeal to ancient mercy.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.79,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v006.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Introduces the remembrance appeal that the following unit turns toward the speaker.",
+      "rendering_id": "rnd.ps025.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Remember your mercy,\nYahweh, your faithful love—\nthey have been yours\nsince ancient days.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "זְכֹר־רַחֲמֶ֣יךָ יְ֭הוָה וַחֲסָדֶ֑יךָ כִּ֖י מֵעוֹלָ֣ם הֵֽמָּה׃",

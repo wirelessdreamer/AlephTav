@@ -1,9 +1,125 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v004.a.0001",
+    "aud.ps003.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "bbf705f015c7aab91080d0735598768c93897183292021f070c454d138e923dd",
+      "audit_id": "aud.ps003.v004.a.0001",
+      "before_hash": "ae0791c81e09e786119be820861f9dfb54bf80a203f49922bb1046d0b52fdec4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.546121+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5ac9e841293f5b8cd4f9f858e55294db2908f1545859321c42478297d258742b",
+      "audit_id": "aud.ps003.v004.a.0002",
+      "before_hash": "075eaa1b29dd68c94b2a4c1f47a62c5e68bea2adf711faca945a58361f828538",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:50:04.172000+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the contrastive address to God, surrounding protection, and the lifting of the speaker's head. It does not preserve the description of God as 'my glory' or 'my honor.'",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "33836235747479423f8343ce8d1d7430e6af4910b91baec481d99315f392efda",
+      "audit_ids": [
+        "aud.ps003.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'You ground my feet' introduces an image of stability in place of the honor language. Repeated phrases provide lyric emphasis; the final 'Lift my head high!' turns the description of God's action into a petition.",
+      "display_reference": "Psalm 3:4",
+      "english_rendering_id": "rnd.ps003.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1bc7ae914e3b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְאַתָּ֣ה יְ֭הוָה מָגֵ֣ן בַּעֲדִ֑י כְּ֝בוֹדִ֗י וּמֵרִ֥ים רֹאשִֽׁ",
+      "literal_backbone": [
+        "But you, Yahweh, are a shield around me,",
+        "my glory,",
+        "and the one who lifts my head."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:4",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Yahweh, the divine name",
+          "note": "Preserves the divine address while replacing the personal name with a general designation.",
+          "rendered_as": "God",
+          "token_ids": [
+            "ps003.v004.t002"
+          ],
+          "transliteration": "yhwh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "shield; around, about, on behalf of, with first-person singular suffix",
+          "note": "Turns the shield metaphor into a verb and makes its surrounding protection explicit.",
+          "rendered_as": "shield me on all sides!",
+          "token_ids": [
+            "ps003.v004.t003",
+            "ps003.v004.t004"
+          ],
+          "transliteration": "māḡēn baʿădî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "glory, honor, splendor; with first-person possessive suffix",
+          "note": "Grounding the feet has no lexical counterpart here and substitutes stability for God being the speaker's honor.",
+          "rendered_as": "You ground my feet",
+          "token_ids": [
+            "ps003.v004.t005"
+          ],
+          "transliteration": "kəḇôḏî",
+          "verdict": "unsupported"
+        },
+        {
+          "lexical_gloss": "and one who raises or lifts; my head",
+          "note": "The first statement closely preserves the image; the repeated imperative adds a request absent from the Hebrew description.",
+          "rendered_as": "you lift my head high!\nLift my head high!",
+          "token_ids": [
+            "ps003.v004.t006",
+            "ps003.v004.t007"
+          ],
+          "transliteration": "ûmērîm rōʾšî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v004.a.0001"
   ],
@@ -15,7 +131,99 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 24,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.42,
+        "singability_score": 0.16,
+        "stress_approximation": 0.54,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "But you, God, shield me on all sides!\nOn all sides!\nYou ground my feet, you lift my head high!\nLift my head high!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְאַתָּ֣ה יְ֭הוָה מָגֵ֣ן בַּעֲדִ֑י כְּ֝בוֹדִ֗י וּמֵרִ֥ים רֹאשִֽׁ",

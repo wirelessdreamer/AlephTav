@@ -1,9 +1,116 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v020.a.literal.alt.0001",
+    "rnd.ps025.v020.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v020.a.0001",
+    "aud.ps025.v020.a.0002",
+    "aud.ps025.v020.a.0003",
+    "aud.ps025.v020.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "62e6705f9567a3360089bc1ec84cb51f6d6fe0d4312ab202eebe858975854693",
+      "audit_id": "aud.ps025.v020.a.0001",
+      "before_hash": "053b09e9afe1526c227dd411465e454c16900dee7f75c61b2ec3951d7b384c40",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.782577+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v020.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the soul and shame vocabulary of the opening while retaining refuge as the ground of appeal.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d0365d8edc763fef2287261d2793dbc68f2b775df1dfb48cef06739c9cb77461",
+      "audit_id": "aud.ps025.v020.a.0002",
+      "before_hash": "907511c3e545ab2a58fd0808c6e034bee98696de62849814b34a6def2fe2a64b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.885809+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v020.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the opening soul and shame language while keeping refuge as the ground for the request.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b43d62fdf64114394611bb3fc2d98511b45c682d550f80816fa2c3aada0af5ed",
+      "audit_id": "aud.ps025.v020.a.0003",
+      "before_hash": "50e257e0b296aa205eda9863e0b074db915498d5aa659b4ffe87aa33e3916573",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:44.474362+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v020.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4e4e3a7475e9dbf10dadbad88ecde7e52d2f7c8db439942adb93081a0df3dbf0",
+      "audit_id": "aud.ps025.v020.a.0004",
+      "before_hash": "38901bf215f7008094aecf57a40934c2a2cbd6def93cd0b432a0a2f1423e3453",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.532831+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v020.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the requests to guard the speaker’s soul, rescue him, and spare him shame, followed by his declaration of having taken refuge in God. “Taken shelter” naturally conveys the Hebrew refuge imagery.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "1ff8225c84a5efa740e7773ed0cf4d221289b1b4e50e9fb935ad43e802d1d90c",
+      "audit_ids": [
+        "aud.ps025.v020.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v020.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The Hebrew’s explicit causal “for” is left implicit after the dash.",
+      "display_reference": "Psalm 25:20",
+      "english_rendering_id": "rnd.ps025.v020.a.lyric.alt.0001",
+      "generation_run_id": "cxr.cce4c05da368",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שָׁמְרָ֣ה נַ֭פְשִׁי וְהַצִּילֵ֑נִי אַל־אֵ֝ב֗וֹשׁ כִּֽי־חָסִ֥יתִי בָֽךְ׃",
+      "literal_backbone": [
+        "Guard my soul and rescue me.",
+        "Let me not be put to shame.",
+        "For I have taken refuge in you."
+      ],
+      "literal_rendering_id": "rnd.ps025.v020.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:20",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v020.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v020.a.0001"
   ],
@@ -15,7 +122,232 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:20",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Links the opening soul and shame petitions with the closing refuge appeal.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guarding the soul",
+          "note": "'Soul' retains the wording used at the psalm's opening.",
+          "source_id": "ps025.v020.a",
+          "token_ids": [
+            "ps025.v020.t001",
+            "ps025.v020.t002"
+          ]
+        },
+        {
+          "label": "Refuge in Yahweh",
+          "note": "Retains refuge rather than substituting an abstract trust statement.",
+          "source_id": "ps025.v020.a",
+          "token_ids": [
+            "ps025.v020.t007",
+            "ps025.v020.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v020.t001–t002 → Guard my soul",
+          "ps025.v020.t003 → and rescue me",
+          "ps025.v020.t004–t005 → let me not be put to shame",
+          "ps025.v020.t006–t008 → for I have taken refuge in you"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v020.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v020.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Returns to the soul and shame vocabulary of the opening while retaining refuge as the ground of appeal.",
+      "rendering_id": "rnd.ps025.v020.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Guard my soul and rescue me;\nlet me not be put to shame,\nfor I have taken refuge in you.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v020.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v020.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Contracted petition + em-dash breath break + paired short requests.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.67,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guarding the soul",
+          "note": "Keeps the soul named at the psalm's opening.",
+          "source_id": "ps025.v020.a",
+          "token_ids": [
+            "ps025.v020.t001",
+            "ps025.v020.t002"
+          ]
+        },
+        {
+          "label": "Shelter in Yahweh",
+          "note": "Shelter preserves the refuge image and its divine location.",
+          "source_id": "ps025.v020.a",
+          "token_ids": [
+            "ps025.v020.t007",
+            "ps025.v020.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v020.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v020.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Returns to the opening soul and shame language while keeping refuge as the ground for the request.",
+      "rendering_id": "rnd.ps025.v020.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Guard my soul;\nrescue me.\nDon't let me be shamed—\nI've taken shelter\nin you.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v020.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v020.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שָׁמְרָ֣ה נַ֭פְשִׁי וְהַצִּילֵ֑נִי אַל־אֵ֝ב֗וֹשׁ כִּֽי־חָסִ֥יתִי בָֽךְ׃",

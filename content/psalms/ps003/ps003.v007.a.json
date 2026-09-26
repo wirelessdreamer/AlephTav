@@ -1,9 +1,104 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v007.a.0001",
+    "aud.ps003.v007.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "274fb4aaa863dc77abae747ee6ffa4c73f5af6414281d9dd5b987b1e712a8f01",
+      "audit_id": "aud.ps003.v007.a.0001",
+      "before_hash": "1cb7bf526ebf1ef7d35f1349773ea8d43efd5fd67364962a7fca7ef94c36bcd5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.597893+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c762610a15279ac2a9c3228ca0f6a323dc0be198946f8a03ee266216d382e701",
+      "audit_id": "aud.ps003.v007.a.0002",
+      "before_hash": "f76b339e00a76f810708ed2a0450ee65d7425f85a0bb034ad8bb2676b0583d54",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:50:50.388777+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the speaker's fearlessness before numerous hostile people surrounding him. It compresses the scale of 'ten thousands' into 'mobs' and depicts their hostile positioning as movement toward him.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "c2b336e09a6d7bd49c6f9221367fc5bc97dda662072c8460cc935b79fec6ba0c",
+      "audit_ids": [
+        "aud.ps003.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Fearless' condenses the explicit first-person declaration. 'Coming at me' makes the threat more active, and 'All sides... all sides...' repeats the surrounding image for lyric emphasis.",
+      "display_reference": "Psalm 3:7",
+      "english_rendering_id": "rnd.ps003.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.530fe585bbdb",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹֽא־אִ֭ירָא מֵרִבְב֥וֹת עָ֑ם אֲשֶׁ֥ר סָ֝בִ֗יב שָׁ֣תוּ עָלָֽ",
+      "literal_backbone": [
+        "I will not fear tens of thousands of people",
+        "who have stationed themselves against me all around."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:7",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "ten thousands, myriads; people",
+          "note": "Conveys a hostile multitude but loses the explicit magnitude of myriads; 'enemy' makes the opposition stated later in the Hebrew explicit here.",
+          "rendered_as": "the enemy mobs",
+          "token_ids": [
+            "ps003.v007.t003",
+            "ps003.v007.t004"
+          ],
+          "transliteration": "mēriḇəḇôṯ ʿām",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "set, place, station; against me",
+          "note": "Preserves hostility toward the speaker but substitutes advancing movement for having taken position against him.",
+          "rendered_as": "Coming at me",
+          "token_ids": [
+            "ps003.v007.t007",
+            "ps003.v007.t008"
+          ],
+          "transliteration": "šāṯû ʿālay",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v007.a.0001"
   ],
@@ -15,7 +110,106 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "number_change",
+          "confidence": 0.9,
+          "message": "Number marking diverges between source cues and English line.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.27,
+        "singability_score": 0.17,
+        "stress_approximation": 0.73,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Fearless before the enemy mobs\nComing at me from all sides.\nAll sides... all sides...",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לֹֽא־אִ֭ירָא מֵרִבְב֥וֹת עָ֑ם אֲשֶׁ֥ר סָ֝בִ֗יב שָׁ֣תוּ עָלָֽ",

@@ -1,6 +1,1085 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps003.v001.a.0003"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T18:52:21.804696+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verse 1 names David, fleeing, Absalom, and his son.",
+            "claim": "The received heading connects the psalm with David's flight from Absalom."
+          },
+          {
+            "basis": "Verses 2–3 describe many rising against him and quote their denial of deliverance in God.",
+            "claim": "The speaker faces numerous opponents who deny that God will deliver him."
+          },
+          {
+            "basis": "Verses 4–5 name God as shield, honor, and head-lifter, then describe an answer from his holy mountain.",
+            "claim": "Protection and answered prayer counter the opponents' denial."
+          },
+          {
+            "basis": "Verse 6 joins waking to 'because Yahweh sustains me'; the English leaves that explanation unstated.",
+            "claim": "The Hebrew explicitly grounds the speaker's waking in God's sustaining action."
+          },
+          {
+            "basis": "Verse 8 follows its opening imperatives with 'you have struck' and 'you have broken'; the lyric recasts this material.",
+            "claim": "The rescue appeal includes assertions of divine blows against enemies."
+          },
+          {
+            "basis": "Verse 9 couples deliverance belonging to Yahweh with blessing upon 'your people.'",
+            "claim": "The conclusion extends beyond the individual to God's people."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed these words during the flight described.",
+            "why_not": "The heading supplies an attribution and occasion, without independent confirmation of authorship or composition circumstances."
+          },
+          {
+            "claim": "The body identifies particular opponents or reconstructs a specific battle.",
+            "why_not": "Its adversaries remain unnamed, and its imagery supplies no detailed historical sequence."
+          },
+          {
+            "claim": "The holy mountain's answer was audible thunder.",
+            "why_not": "Verse 5 states that God answered; thunder is supplied by the English setting."
+          },
+          {
+            "claim": "The sleep passage establishes a prescribed morning ritual.",
+            "why_not": "Sleeping and waking appear in the speaker's account without ritual instructions or a specified performance time."
+          },
+          {
+            "claim": "Selah specifies the setting's repetitions, instruments, or pauses.",
+            "why_not": "The markers provide structural signals but do not establish those particular performance choices."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.6bcb776a15f2",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The holy mountain as the source of God's answer, the closing blessing upon God's people, and the Selah markers suggest a sacred and communal worship horizon. They do not identify a particular ceremony, sanctuary performance, priestly speaker, or musical practice, nor place the speaker physically at the mountain.",
+        "heading_attribution": "The received heading identifies a psalm associated with David and situates it in his flight from his son Absalom. This is the text's traditional attribution and narrative frame; it does not independently establish David's authorship, eyewitness composition, or a date. No English heading is stored."
+      },
+      "method": "The audit uses the supplied Hebrew, token forms, and English, with Masoretic numbering. Literal backbones were derived from the supplied wording and checked against its syntax and morphology; no external edition or lexicon was consulted. Section titles are analytical labels grouping the supplied verse lyrics, not original arrangement headings. No explicit meter, instrumentation, or vocal apparatus appears in this whole-psalm extract.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps003.0001",
+      "psalm_id": "ps003",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Frames the received psalm historically, but has no stored English lyric.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Davidic attribution and flight from Absalom.",
+          "title": "Heading — untranslated"
+        },
+        {
+          "arc_note": "Counting language, mushrooms, roaring, and repeated denial dramatize the opening distress.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "Numerous adversaries challenge the speaker's prospect of divine rescue.",
+          "title": "Enemies and their taunt"
+        },
+        {
+          "arc_note": "The contrastive address turns toward confidence; repeated protection and mountain imagery give this stretch a chorus-like character.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "God shields the speaker, lifts his head, and answers from the holy mountain.",
+          "title": "Protection and answered prayer"
+        },
+        {
+          "arc_note": "The lyric emphasizes bodily recovery and steadiness while leaving the Hebrew's explicit sustaining agent and causal explanation unstated.",
+          "first_verse": 6,
+          "last_verse": 7,
+          "theme": "Waking and confidence despite surrounding opponents.",
+          "title": "Sleep and fearlessness"
+        },
+        {
+          "arc_note": "Repeated cries for help heighten urgency; commands and fist imagery replace the Hebrew's assertions of striking and breaking.",
+          "first_verse": 8,
+          "last_verse": 8,
+          "theme": "God is called to arise and save amid imagery of defeated enemies.",
+          "title": "Appeal for rescue"
+        },
+        {
+          "arc_note": "The personal crisis opens into communal concern; repeated divine-source language closes with an added clothing metaphor.",
+          "first_verse": 9,
+          "last_verse": 9,
+          "theme": "Deliverance belongs to God, and blessing extends to his people.",
+          "title": "Deliverance and communal blessing"
+        }
+      ],
+      "source_fingerprint": "cae441af5768bc0596b798375d201814a9384e6c334286ad1cced58b6109de3a",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 3,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 5,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 9,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting moves from overwhelming enemies and their denial of divine help to protection, answered prayer, sleep and renewed confidence, an urgent rescue appeal, and blessing for God's people. Repetition makes protection, surrounding danger, and divine help its principal hooks. Mushrooms, thunder, grounded feet, successive slaps, a fist, and clothing intensify the imagery. Significant shifts include losing God as the speaker's honor, leaving divine sustaining unstated, and turning accomplished blows against enemies into a demand for blows. The untranslated heading removes the explicit David–Absalom frame from the sung text.",
+      "translation_id": "tr.ps003.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps003.0001",
+      "audit_ids": [
+        "aud.ps003.v001.a.0002"
+      ],
+      "created_at": "2026-09-26T18:48:57.301558+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.e83806a38bbd",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The setting omits the superscription identifying David and his flight from Absalom.",
+          "token_ids": [
+            "ps003.v001.t001",
+            "ps003.v001.t002",
+            "ps003.v001.t003",
+            "ps003.v001.t004",
+            "ps003.v001.t005",
+            "ps003.v001.t006"
+          ],
+          "unit_id": "ps003.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "No lyric explicitly renders Selah.",
+          "token_ids": [
+            "ps003.v003.t008"
+          ],
+          "unit_id": "ps003.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "No lyric explicitly renders Selah.",
+          "token_ids": [
+            "ps003.v005.t008"
+          ],
+          "unit_id": "ps003.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "No lyric explicitly renders Selah.",
+          "token_ids": [
+            "ps003.v009.t006"
+          ],
+          "unit_id": "ps003.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "God as the speaker's honor has no explicit rendering; the corresponding line introduces grounded feet.",
+          "token_ids": [
+            "ps003.v004.t005"
+          ],
+          "unit_id": "ps003.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The waking stanza leaves out the explicit causal connection and identification of Yahweh as the sustainer.",
+          "token_ids": [
+            "ps003.v006.t005",
+            "ps003.v006.t006"
+          ],
+          "unit_id": "ps003.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The striking passage omits the explanatory connective and the explicit scope of all enemies.",
+          "token_ids": [
+            "ps003.v008.t005",
+            "ps003.v008.t008"
+          ],
+          "unit_id": "ps003.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The teeth passage leaves their owners' wickedness and the accomplished breaking unstated.",
+          "token_ids": [
+            "ps003.v008.t012",
+            "ps003.v008.t013"
+          ],
+          "unit_id": "ps003.v008.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps003",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Opening petition",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t003"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0001",
+              "rationale": "Anticipates the shield image and changes the declaration into a petition.",
+              "text": "Please be my shield."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t003",
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "Anticipates God's surrounding protection as an imperative.",
+              "text": "Shield me on all sides."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Enemies and mockery",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v002.t001",
+                    "ps003.v002.t002",
+                    "ps003.v002.t003",
+                    "ps003.v002.t004"
+                  ],
+                  "unit_id": "ps003.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0003",
+              "rationale": "Adds the appeal to look and intensifies the enemies' multitude into being beyond counting.",
+              "text": "God! Look! Enemies past counting!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v002.t003"
+                  ],
+                  "unit_id": "ps003.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "Repeats and intensifies the statement that the foes are many.",
+              "text": "Past counting!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v002.t004",
+                    "ps003.v002.t005",
+                    "ps003.v002.t006"
+                  ],
+                  "unit_id": "ps003.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "Recasts the many rising adversaries through an added mushroom simile.",
+              "text": "Enemies sprouting like mushrooms,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0006",
+              "rationale": "Repeats the setting's mushroom simile, which has no Hebrew counterpart.",
+              "text": "Like mushrooms!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v002.t007"
+                  ],
+                  "unit_id": "ps003.v002.a"
+                },
+                {
+                  "token_ids": [
+                    "ps003.v003.t001",
+                    "ps003.v003.t002",
+                    "ps003.v003.t003"
+                  ],
+                  "unit_id": "ps003.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "Combines hostility against the speaker with the many speakers and adds surrounding mobs, roaring, and explicit mockery.",
+              "text": "Mobs of them all around me, roaring their mockery:"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0008",
+              "rationale": "Adds a performed mocking interjection.",
+              "text": "Hah!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v003.t004",
+                    "ps003.v003.t005",
+                    "ps003.v003.t006",
+                    "ps003.v003.t007"
+                  ],
+                  "unit_id": "ps003.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "No help for him from God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v003.t004",
+                    "ps003.v003.t005",
+                    "ps003.v003.t007"
+                  ],
+                  "unit_id": "ps003.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0010",
+              "rationale": "Reprises the taunt without its explicit beneficiary.",
+              "text": "No help... from God..."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "refrain",
+          "label": "Shield and lifted head",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t001",
+                    "ps003.v004.t002",
+                    "ps003.v004.t003",
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "But you, God, shield me on all sides;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t006",
+                    "ps003.v004.t007"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Adds the grounding of the speaker's feet to the lifting of the head.",
+              "text": "You ground my feet, you lift my head high;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t003",
+                    "ps003.v004.t006"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Turns the descriptions of God as shield and lifter into repeated petitions.",
+              "text": "Shield me! Lift me!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "chorus",
+          "label": "Protection and answering mountain",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t001",
+                    "ps003.v004.t002",
+                    "ps003.v004.t003",
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "But you, God, shield me on all sides!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "On all sides!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t006",
+                    "ps003.v004.t007"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "Adds the grounding of the speaker's feet to the lifting of the head.",
+              "text": "You ground my feet, you lift my head high!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t006",
+                    "ps003.v004.t007"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "Changes the description of God's action into a petition.",
+              "text": "Lift my head high!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t001",
+                    "ps003.v005.t002",
+                    "ps003.v005.t003",
+                    "ps003.v005.t004"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "Adds maximal effort and upward direction while making the call present tense.",
+              "text": "With all my might I shout up to God,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t005",
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Makes God's answer plural and thundering while leaving its recipient and the mountain's possessive implicit.",
+              "text": "His answers thunder from the holy mountain!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t005",
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Reprises God's answer through the added thunder image.",
+              "text": "Thunder from the holy mountain!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0021",
+              "rationale": "Isolates the mountain image without its source relation or explicit divine possessive.",
+              "text": "Holy mountain!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0022",
+              "rationale": "Repeats the isolated mountain image without its source relation or explicit divine possessive.",
+              "text": "Holy mountain!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "Sleep, waking, and fearlessness",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v006.t001",
+                    "ps003.v006.t002",
+                    "ps003.v006.t003"
+                  ],
+                  "unit_id": "ps003.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "I stretch myself out... I sleep."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v006.t003"
+                  ],
+                  "unit_id": "ps003.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "I sleep..."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v006.t004",
+                    "ps003.v006.t007"
+                  ],
+                  "unit_id": "ps003.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0025",
+              "rationale": "Expresses waking and being sustained as bodily steadiness, adding restfulness and height while leaving the sustainer unnamed.",
+              "text": "Then I'm up again, rested, tall and steady,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v007.t001",
+                    "ps003.v007.t002",
+                    "ps003.v007.t003",
+                    "ps003.v007.t004"
+                  ],
+                  "unit_id": "ps003.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0026",
+              "rationale": "Condenses refusal to fear tens of thousands into fearlessness before mobs.",
+              "text": "Fearless before the enemy mobs"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v007.t005",
+                    "ps003.v007.t006",
+                    "ps003.v007.t007",
+                    "ps003.v007.t008"
+                  ],
+                  "unit_id": "ps003.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "Turns the enemies' surrounding position into an active approach.",
+              "text": "Coming at me from all sides."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v007.t006"
+                  ],
+                  "unit_id": "ps003.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "Doubles the surrounding image as a vocal echo.",
+              "text": "All sides... all sides..."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Appeal for rescue and blows",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t001",
+                    "ps003.v008.t002",
+                    "ps003.v008.t003",
+                    "ps003.v008.t004"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0029",
+              "rationale": "Places the address to my God before the request for help.",
+              "text": "Up, God! My God, help me!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t003"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "Help me!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t003"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0031",
+              "rationale": "Repeats the rescue request without its explicit first-person object.",
+              "text": "Help!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t006",
+                    "ps003.v008.t007",
+                    "ps003.v008.t009",
+                    "ps003.v008.t010"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0032",
+              "rationale": "Recasts accomplished striking as a command and reduces the named enemies to a pronoun.",
+              "text": "Slap their faces,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t010"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Expands the cheek image into successive blows to both cheeks.",
+              "text": "First this cheek, then the other,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t011"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0034",
+              "rationale": "Adds God's fist and the force of impact without explicitly stating that the teeth are broken.",
+              "text": "Your fist hard in their teeth!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v008.t011"
+                  ],
+                  "unit_id": "ps003.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0035",
+              "rationale": "Repeats the added emphasis on force against the teeth.",
+              "text": "Hard in their teeth!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "refrain",
+          "label": "Help from God",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t001",
+                    "ps003.v009.t002"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "Adds the emphasis on real help and expresses deliverance belonging to God as coming from God.",
+              "text": "Real help comes from God..."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t001"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "From God..."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t001",
+                    "ps003.v009.t002"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0038",
+              "rationale": "Repeats the emphasis on real help and its divine source.",
+              "text": "Real help comes from God..."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "chorus",
+          "label": "Protection and mountain reprise",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t001",
+                    "ps003.v004.t002",
+                    "ps003.v004.t003",
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "But you, God, shield me on all sides!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v004.t004"
+                  ],
+                  "unit_id": "ps003.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0040",
+              "rationale": "",
+              "text": "On all sides!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t001",
+                    "ps003.v005.t002",
+                    "ps003.v005.t003",
+                    "ps003.v005.t004"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0041",
+              "rationale": "Adds maximal effort and upward direction while making the call present tense.",
+              "text": "With all my might I shout up to God,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t005",
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0042",
+              "rationale": "Makes God's answer plural and thundering while leaving its recipient and the mountain's possessive implicit.",
+              "text": "His answers thunder from the holy mountain!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t005"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0043",
+              "rationale": "Echoes the divine answer through the setting's added thunder image.",
+              "text": "Thunder!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v005.t006",
+                    "ps003.v005.t007"
+                  ],
+                  "unit_id": "ps003.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0044",
+              "rationale": "Isolates the mountain image without its source relation or explicit divine possessive.",
+              "text": "Holy mountain!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "outro",
+          "label": "Help and blessing",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t001",
+                    "ps003.v009.t002"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0045",
+              "rationale": "Adds the emphasis on real help and expresses deliverance belonging to God as coming from God.",
+              "text": "Real help comes from God."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t001"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0046",
+              "rationale": "",
+              "text": "From God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps003.v009.t003",
+                    "ps003.v009.t004",
+                    "ps003.v009.t005"
+                  ],
+                  "unit_id": "ps003.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0047",
+              "rationale": "Turns blessing upon the people into an image of clothing them.",
+              "text": "Your blessing clothes your people!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        }
+      ],
+      "status": "proposed",
+      "title": "Shield me on all sides.",
+      "translation_id": "tr.ps003.0001",
+      "updated_at": "2026-09-26T18:48:57.301558+00:00"
+    }
+  ],
   "psalm_id": "ps003",
   "title": "Psalm 3",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps003.v001.a.0001",
+        "aud.ps003.v001.a.0004"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T18:46:00.722742+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "psalm_id": "ps003",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps003.0001"
+    }
+  ],
   "unit_ids": [
     "ps003.v001.a",
     "ps003.v002.a",

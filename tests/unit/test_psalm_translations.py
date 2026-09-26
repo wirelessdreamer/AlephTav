@@ -10,9 +10,11 @@ from typing import Any
 
 import pytest
 
+from app.core.config import get_settings
 from app.core.errors import NotFoundError, ValidationError
 from app.services import (
     arrangement_service,
+    collections_service,
     registry_service,
     rendering_service,
     verse_notes_service,
@@ -41,6 +43,7 @@ UNIT_ID = "ps001.v001.a"
 def _restore_psalm():
     translation._store_path().unlink(missing_ok=True)
     translation._suggestions_path().unlink(missing_ok=True)
+    get_settings().collections_file.unlink(missing_ok=True)
     meta = registry_service.load_psalm_meta(PSALM_ID)
     unit = registry_service.load_unit(UNIT_ID)
     yield
@@ -48,10 +51,18 @@ def _restore_psalm():
     registry_service.save_unit(unit)
     translation._store_path().unlink(missing_ok=True)
     translation._suggestions_path().unlink(missing_ok=True)
+    get_settings().collections_file.unlink(missing_ok=True)
 
 
-def _added(title: str = "Sung in 6/8") -> str:
-    return translations.create_translation(PSALM_ID, title)["translation_id"]
+def _project(title: str) -> str:
+    return collections_service.create_collection(title)["collection_id"]
+
+
+def _added(title: str = "Sung in 6/8", created_via: str = "human") -> str:
+    """A translation of the psalm in a project of its own, named as it is."""
+    return translations.create_translation(
+        PSALM_ID, title, _project(title), created_via=created_via
+    )["translation_id"]
 
 
 def _session(
@@ -85,7 +96,7 @@ def _passage(layer: str, text: str) -> dict[str, Any]:
 
 
 def test_a_new_translation_is_listed_after_the_main_one_with_an_audit_record() -> None:
-    created = translations.create_translation(PSALM_ID, "Sung in 6/8")
+    created = translations.create_translation(PSALM_ID, "Sung in 6/8", _project("Sung in 6/8"))
 
     assert created["translation_id"] == "tr.ps001.0001"
     listed = translations.list_translations(PSALM_ID)
@@ -99,7 +110,7 @@ def test_a_new_translation_is_listed_after_the_main_one_with_an_audit_record() -
 
 def test_a_translation_needs_a_name() -> None:
     with pytest.raises(ValidationError):
-        translations.create_translation(PSALM_ID, "   ")
+        translations.create_translation(PSALM_ID, "   ", _project("Unnamed"))
 
 
 def test_an_unknown_translation_is_refused() -> None:
@@ -252,9 +263,7 @@ def test_song_settings_are_listed_per_translation() -> None:
 
 def test_an_import_lands_in_the_sessions_translation() -> None:
     translation.set_guidance(PSALM_ID, "Keep it plain.")
-    added = translations.create_translation(PSALM_ID, "Psalm 1, sung", created_via="import")[
-        "translation_id"
-    ]
+    added = _added("Psalm 1, sung", created_via="import")
     client, session_id = _session([_reading()], added)
 
     result = importing.import_translation(client, session_id, PSALM_ID, PASTE, layer="lyric")

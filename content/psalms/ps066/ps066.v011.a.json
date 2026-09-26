@@ -1,8 +1,29 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps066.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps066.v011.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ad952492163eef7f6de7633c5925920fb72eba3e3c34cd9436d780851fde4dd3",
+      "audit_id": "aud.ps066.v011.a.0001",
+      "before_hash": "d24e17c312b4bd1b010cb41fc9b0e27609eeab6a1cc7bc06bf9c6532584d9269",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:05:06.021896+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps066.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps066.v011.a.0001"
@@ -15,7 +36,99 @@
   "pr_links": [],
   "psalm_id": "ps066",
   "ref": "Psalm 66:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.46,
+        "stress_approximation": 0.59,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6995d046b85a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps066.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You brought us into the net\nLaid weight upon our backs",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הֲבֵאתָ֥נוּ בַמְּצוּדָ֑ה שַׂ֖מְתָּ מוּעָקָ֣ה בְמָתְנֵֽינוּ׃",

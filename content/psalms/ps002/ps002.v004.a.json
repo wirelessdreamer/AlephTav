@@ -1,9 +1,114 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v004.a.0001",
+    "aud.ps002.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3b9917b7f34d9b52949f611a6971c76b80f1574bc16f43cb2ac039f527355165",
+      "audit_id": "aud.ps002.v004.a.0001",
+      "before_hash": "49f4e8aef22d567466dac7cb60f4bad86b8a2497dc356c7ec8bbf2c4f9661c9f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.602925+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2f84493ad4ced44a67f1602d6425036db8840d69e5be86e0df4cbdab835f08e5",
+      "audit_id": "aud.ps002.v004.a.0002",
+      "before_hash": "19dca0c20b715b990ee05f2f046cde041b723d9bf3aadc4afd85d7186cede93b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:08:05.439821+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the heavenly location and divine laughter, followed by a reaction directed toward the rebels. It softens the Lord's mockery into amusement.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "2500aacabd03459c6f55bc801fdd54cf7e32064edad209d6f8ff05e742f4b4ad",
+      "audit_ids": [
+        "aud.ps002.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Heaven-throned” makes the royal setting explicit, and “breaks out” adds suddenness. “At first” introduces a temporal stage absent from this verse; “their presumption” supplies a contextual explanation for the reaction.",
+      "display_reference": "Psalm 2:4",
+      "english_rendering_id": "rnd.ps002.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.543bf5546a16",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יוֹשֵׁ֣ב בַּשָּׁמַ֣יִם יִשְׂחָ֑ק אֲ֝דֹנָ֗י יִלְעַג־לָֽמוֹ׃",
+      "literal_backbone": [
+        "The one seated in the heavens laughs;",
+        "the Lord mocks them."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:4",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "sit, dwell, remain; in the heavens",
+          "note": "Enthronement is a contextually fitting interpretation of being seated in heaven, though no throne is explicitly named.",
+          "rendered_as": "Heaven-throned",
+          "token_ids": [
+            "ps002.v004.t001",
+            "ps002.v004.t002"
+          ],
+          "transliteration": "yôšēḇ baššāmayim",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "laugh; play; mock",
+          "note": "Preserves laughter while adding an abrupt onset.",
+          "rendered_as": "breaks out laughing",
+          "token_ids": [
+            "ps002.v004.t003"
+          ],
+          "transliteration": "yiśḥāq",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "mock, deride; at them",
+          "note": "Recasts directed mockery as amusement and supplies both timing and the rebels' presumption as its occasion.",
+          "rendered_as": "At first he's amused at their presumption;",
+          "token_ids": [
+            "ps002.v004.t005",
+            "ps002.v004.t006"
+          ],
+          "transliteration": "yilʿaḡ lāmô",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v004.a.0001"
   ],
@@ -15,7 +120,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.21,
+        "stress_approximation": 0.69,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Heaven-throned God breaks out laughing.\nAt first he's amused at their presumption;",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יוֹשֵׁ֣ב בַּשָּׁמַ֣יִם יִשְׂחָ֑ק אֲ֝דֹנָ֗י יִלְעַג־לָֽמוֹ׃",

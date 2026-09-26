@@ -22,7 +22,11 @@ import {
   useReviseComparisonAssessment,
 } from '../hooks/useComparisonAssessments';
 import { useArrangeImport, useDraftArrangement } from '../hooks/useArrangements';
-import { useCreateTranslation } from '../hooks/useTranslations';
+import {
+  useCollections,
+  useCreateCollection,
+  useCreateTranslation,
+} from '../hooks/useTranslations';
 import { type ArrangementPane, ArrangementWorkspace } from './ArrangementWorkspace';
 import {
   type ImportOptions,
@@ -284,19 +288,22 @@ interface Props {
   psalmId: string | null;
   /** The translation on show; null is the psalm's main translation. */
   translationId: string | null;
+  /** The project on show, where an import goes unless another is chosen. */
+  collectionId: string | null;
   /** Every psalm, for the import dialog to pick from. */
   psalms: PsalmSummary[];
   onOpenRendering?: (renderingId: string) => void;
   /** The import dialog, opened from the page header. */
   importOpen?: boolean;
   onImportClose?: () => void;
-  /** Show a translation of a psalm, as an import does once it knows where the paste goes. */
-  onShowTranslation: (psalmId: string, translationId: string | null) => void;
+  /** Show a psalm's translation in a project, as an import does once it knows where it goes. */
+  onShowTranslation: (psalmId: string, collectionId: string) => void;
 }
 
 export function TranslationComparisonTable({
   psalmId,
   translationId,
+  collectionId,
   psalms,
   onOpenRendering,
   importOpen = false,
@@ -358,6 +365,8 @@ export function TranslationComparisonTable({
   const importTranslation = useImportTranslation(psalmId);
   const arrangeImport = useArrangeImport(psalmId);
   const identifyPsalm = useIdentifyPsalm();
+  const collections = useCollections();
+  const createCollection = useCreateCollection();
   const createTranslation = useCreateTranslation();
   const [importSteps, setImportSteps] = useState<ImportStep[]>([]);
   const [importRunning, setImportRunning] = useState(false);
@@ -798,36 +807,55 @@ export function TranslationComparisonTable({
   }
 
   /**
-   * Start an import from the dialog: make the new translation it goes into, if it goes
-   * into one, show that translation of the psalm, and run the import once it is shown,
-   * so the import's Codex thread and every step belong to it.
+   * Start an import from the dialog: make the project it goes into, if it is new, and the
+   * psalm's translation there, if the project has none; show that translation, and run the
+   * import once it is shown, so the import's Codex thread and every step belong to it.
    */
   async function startImport({ text, psalmId: target, target: into, options }: ImportRequest) {
     setImportRunning(true);
-    let intoId: string | null;
-    if (into.kind === 'new') {
-      setImportSteps([
-        { key: 'create', label: `Making the translation “${into.title}”`, status: 'running' },
-      ]);
+    setImportSteps([]);
+    /** One making step, shown as it goes; null when it failed, which ends the import. */
+    async function make<T>(key: string, label: string, work: () => Promise<T>) {
+      setImportSteps((made) => [...made, { key, label, status: 'running' }]);
       try {
-        intoId = (
-          await createTranslation.mutateAsync({
-            psalmId: target,
-            title: into.title,
-            created_via: 'import',
-          })
-        ).translation_id;
+        const result = await work();
+        markImport(key, { status: 'done' });
+        return result;
       } catch (error) {
-        markImport('create', { status: 'failed', detail: thrownFailure(error) });
+        markImport(key, { status: 'failed', detail: thrownFailure(error) });
         setImportRunning(false);
-        return;
+        return null;
       }
-      markImport('create', { status: 'done' });
-    } else {
-      setImportSteps([]);
-      intoId = into.translationId;
     }
-    onShowTranslation(target, intoId);
+    const project =
+      into.kind === 'new-project'
+        ? await make('project', `Making the project “${into.title}”`, () =>
+            createCollection.mutateAsync(into.title),
+          )
+        : (collections.data ?? []).find((c) => c.collection_id === into.collectionId);
+    if (!project) {
+      setImportRunning(false);
+      return;
+    }
+    const held = (collections.data ?? [])
+      .find((c) => c.collection_id === project.collection_id)
+      ?.members.find((m) => m.psalm_id === target);
+    let intoId: string | null;
+    if (held) {
+      intoId = held.translation_id;
+    } else {
+      const made = await make('create', `Making its translation in “${project.title}”`, () =>
+        createTranslation.mutateAsync({
+          psalmId: target,
+          title: project.title,
+          collection_id: project.collection_id,
+          created_via: 'import',
+        }),
+      );
+      if (!made) return;
+      intoId = made.translation_id;
+    }
+    onShowTranslation(target, project.collection_id);
     setQueuedImport({ psalmId: target, translationId: intoId, text, options });
   }
 
@@ -850,6 +878,8 @@ export function TranslationComparisonTable({
       key="import"
       open={importOpen}
       psalms={psalms}
+      collections={collections.data ?? []}
+      collectionId={collectionId}
       codex={{ ready: codexReady, hint: codexHint, busy: Boolean(batch) }}
       identify={{
         run: (text) => identifyPsalm.mutate(text),
@@ -1165,6 +1195,8 @@ export function TranslationComparisonTable({
         <ArrangementWorkspace
           psalmId={psalmId}
           translationId={translationId}
+          rows={data?.rows ?? []}
+          sections={analysis?.sections ?? []}
           pane={pane}
           englishLayer={englishLayer}
           selectedId={arrangementId}

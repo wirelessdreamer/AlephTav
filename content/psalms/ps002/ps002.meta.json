@@ -1,6 +1,892 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps002.v001.a.0005"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T16:10:48.057978+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 2–3 name both targets and depict their restraints as bonds the rulers wish to break.",
+            "claim": "The conflict concerns resistance to Yahweh and his anointed ruler."
+          },
+          {
+            "basis": "Verse 6 uses God's first-person declaration of installation and calls the ruler “my king.”",
+            "claim": "The Hebrew explicitly grounds the king's position in divine appointment."
+          },
+          {
+            "basis": "Verses 7–9 place the declaration of sonship alongside inheritance, possession, and authority to break opponents.",
+            "claim": "The royal declaration connects sonship with promised dominion over the nations."
+          },
+          {
+            "basis": "Verses 10–12 command wisdom and reverent service, warn of anger and perishing, and pronounce blessing on those taking refuge.",
+            "claim": "The ending joins warning with an invitation to refuge."
+          },
+          {
+            "basis": "Its banquet, birthday formulation, commanded dancing, and tomorrow's trash replace or expand installation, begetting, breaking, and shattering.",
+            "claim": "The English introduces interpretive imagery beyond the Hebrew's stated details."
+          },
+          {
+            "basis": "The supplied Hebrew of verses 1–12 contains no Selah; the section boundaries above follow thematic and speaker changes.",
+            "claim": "There is no explicit Selah marker in this psalm."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "A particular author, king, date, or rebellion can be identified.",
+            "why_not": "No superscription or named historical event supplies those identifications."
+          },
+          {
+            "claim": "The psalm documents a specific coronation banquet or prescribed worship ceremony.",
+            "why_not": "Royal and sacred language supports a setting broadly, but supplies neither a banquet nor a ritual program."
+          },
+          {
+            "claim": "The sonship declaration records a literal birthday or biological event.",
+            "why_not": "The verse presents divine speech within a royal decree; the birthday formulation is the setting's interpretation."
+          },
+          {
+            "claim": "The capitalized title Messiah establishes a uniquely identified later figure.",
+            "why_not": "The Hebrew names God's anointed without supplying that later identification; capitalization in English cannot establish it."
+          },
+          {
+            "claim": "The ancient music or performance arrangement can be recovered.",
+            "why_not": "The supplied text gives no tune, meter, instrumentation, or vocal assignments."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.b21f2f3af8e0",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Zion as God's holy mountain, the installed king, and the divine decree support a sacred royal setting and are compatible with an enthronement context. The text does not specify an actual ceremony, festival, performance venue, or banquet; the coronation banquet belongs to the English interpretation.",
+        "heading_attribution": "Psalm 2 has no Masoretic superscription naming an author, occasion, or performer. The supplied reference identifies the psalm; it establishes no Davidic authorship or historical occasion."
+      },
+      "method": "Compared the English with the supplied Masoretic verses, token forms, morphology, and glosses, attending to agency, imagery, possessives, speech transitions, and omissions. Earlier audit conclusions were checked against that evidence rather than treated as independent authorities. Section titles are analytical labels; the verse ranges tile verses 1–12 once. No external edition or lexicon was consulted.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps002.0001",
+      "psalm_id": "ps002",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Questions become political satire, followed by the rebels' declaration of independence; the Hebrew's futile plotting becomes malicious plotting.",
+          "first_verse": 1,
+          "last_verse": 3,
+          "theme": "Nations and rulers resist Yahweh and his anointed.",
+          "title": "Opening verse: rebellion"
+        },
+        {
+          "arc_note": "The setting stages a progression from amusement to anger and silencing, softening mockery and replacing explicit speech and terror.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "Divine laughter and anger answer the rebellion.",
+          "title": "Lead-in: heaven's response"
+        },
+        {
+          "arc_note": "Repeated questions make kingship the musical center; the added banquet replaces God's emphatic declaration of installation.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "The established king and Zion's holiness.",
+          "title": "Chorus: King in Zion"
+        },
+        {
+          "arc_note": "The royal speaker reports divine speech. Birthday and gift language make the promise conversational; compelled dancing and disposal replace the iron rod and shattered pottery.",
+          "first_verse": 7,
+          "last_verse": 9,
+          "theme": "Divine sonship, the nations as inheritance, and power over opponents.",
+          "title": "Royal declaration"
+        },
+        {
+          "arc_note": "Scolding gives way to worship, mortal warning, and reassurance. The closing blessing becomes a direct invitation promising no regret.",
+          "first_verse": 10,
+          "last_verse": 12,
+          "theme": "Rulers must accept instruction, serve reverently, and seek refuge.",
+          "title": "Closing exhortation"
+        }
+      ],
+      "source_fingerprint": "09aa76b1ba45a97bf8588d5349e1026c64a7cb9e7a59c6ab6f80a253fc1a31cb",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting turns the psalm's royal confrontation into colloquial political drama: rebellious leaders face heaven's response, the king in Zion takes center stage, divine sonship and worldwide dominion follow, and the ending urges submission and refuge. Repetition makes verse 6 function as a chorus. Modern political labels sharpen the satire, while birthday, banquet, dance, and trash imagery substantially reshape the Hebrew's decree, installation, and destructive power. “Kiss Messiah!” crosses into the line assigned to verse 11 but preserves the opening injunction of verse 12 within the setting.",
+      "translation_id": "tr.ps002.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps002.0001",
+      "audit_ids": [
+        "aud.ps002.v001.a.0003"
+      ],
+      "created_at": "2026-09-26T16:06:56.359915+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.ef8fd2561eac",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The plots are called mean, but their futility is not expressed.",
+          "token_ids": [
+            "ps002.v001.t006"
+          ],
+          "unit_id": "ps002.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Anger and silencing replace the explicit statement that he speaks to them.",
+          "token_ids": [
+            "ps002.v005.t002",
+            "ps002.v005.t003"
+          ],
+          "unit_id": "ps002.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The chorus leaves out God's emphatic first-person declaration.",
+          "token_ids": [
+            "ps002.v006.t001"
+          ],
+          "unit_id": "ps002.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The introduction recounts God's words without identifying their subject as the decree.",
+          "token_ids": [
+            "ps002.v007.t002",
+            "ps002.v007.t003"
+          ],
+          "unit_id": "ps002.v007.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The birthday statement leaves out the explicit first-person subject.",
+          "token_ids": [
+            "ps002.v007.t009"
+          ],
+          "unit_id": "ps002.v007.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The command-to-dance image leaves out the iron rod.",
+          "token_ids": [
+            "ps002.v009.t002",
+            "ps002.v009.t003"
+          ],
+          "unit_id": "ps002.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The trash image replaces the comparison to a potter's vessel.",
+          "token_ids": [
+            "ps002.v009.t004",
+            "ps002.v009.t005"
+          ],
+          "unit_id": "ps002.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The address to judges leaves out their earthly domain.",
+          "token_ids": [
+            "ps002.v010.t006"
+          ],
+          "unit_id": "ps002.v010.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The warning about endangered lives leaves out the way.",
+          "token_ids": [
+            "ps002.v012.t006"
+          ],
+          "unit_id": "ps002.v012.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps002",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Opening vocalization",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0001",
+              "rationale": "This vocalization has no Hebrew counterpart.",
+              "text": "Yea Yea Yea"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "intro",
+          "label": "Opening exclamation",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0002",
+              "rationale": "This exclamation has no Hebrew counterpart.",
+              "text": "Cry!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Nations and rulers",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v001.t001",
+                    "ps002.v001.t002",
+                    "ps002.v001.t003"
+                  ],
+                  "unit_id": "ps002.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "Why the big noise, nations?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v001.t001",
+                    "ps002.v001.t004",
+                    "ps002.v001.t005"
+                  ],
+                  "unit_id": "ps002.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "The opening question is repeated, and the plots are characterized as mean.",
+              "text": "Why the mean plots, peoples?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v001.t004",
+                    "ps002.v001.t005"
+                  ],
+                  "unit_id": "ps002.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "This echo repeats the peoples' plotting and the added characterization mean.",
+              "text": "mean plots peoples"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v002.t001",
+                    "ps002.v002.t002",
+                    "ps002.v002.t003"
+                  ],
+                  "unit_id": "ps002.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Taking a stand becomes competitive positioning, and kings become leaders.",
+              "text": "Earth-leaders push for position,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v002.t004",
+                    "ps002.v002.t005",
+                    "ps002.v002.t006"
+                  ],
+                  "unit_id": "ps002.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "The assembled rulers receive modern political identities and a summit setting.",
+              "text": "Demagogues and delegates meet for summit talks,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v002.t007",
+                    "ps002.v002.t008",
+                    "ps002.v002.t009",
+                    "ps002.v002.t010"
+                  ],
+                  "unit_id": "ps002.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Opposition to Yahweh and his anointed becomes explicit denial and defiance.",
+              "text": "The God-deniers, the Messiah-defiers:"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "refrain",
+          "label": "Rebels' declaration",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v003.t001",
+                    "ps002.v003.t002",
+                    "ps002.v003.t003"
+                  ],
+                  "unit_id": "ps002.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0009",
+              "rationale": "Tearing apart their fetters becomes getting free, with God identified as the authority rejected.",
+              "text": "\"Let's get free of God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v003.t004",
+                    "ps002.v003.t005",
+                    "ps002.v003.t006"
+                  ],
+                  "unit_id": "ps002.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0010",
+              "rationale": "Throwing off their ropes becomes casting loose, with Messiah identified as the authority rejected.",
+              "text": "Cast loose from Messiah!\""
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "other",
+          "label": "Vocal interjection",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0011",
+              "rationale": "This vocalization has no Hebrew counterpart.",
+              "text": "Yeow"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "refrain",
+          "label": "Rebels' declaration repeated",
+          "lines": [],
+          "repeat_of": "sec.0004",
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "verse",
+          "label": "Heaven's response",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v004.t001",
+                    "ps002.v004.t002",
+                    "ps002.v004.t003",
+                    "ps002.v004.t004"
+                  ],
+                  "unit_id": "ps002.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "Heaven-throned God breaks out laughing."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v004.t005",
+                    "ps002.v004.t006"
+                  ],
+                  "unit_id": "ps002.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Mockery becomes amusement, with an initial stage and presumption supplied.",
+              "text": "At first he's amused at their presumption;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v005.t001",
+                    "ps002.v005.t004"
+                  ],
+                  "unit_id": "ps002.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0014",
+              "rationale": "Anger becomes a developing emotional reaction intensified by good and.",
+              "text": "Then he gets good and angry."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v005.t005",
+                    "ps002.v005.t006"
+                  ],
+                  "unit_id": "ps002.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0015",
+              "rationale": "Terrifying them in fury is recast as silencing them.",
+              "text": "Furiously, he shuts them up:"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "chorus",
+          "label": "King in Zion",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v006.t003",
+                    "ps002.v006.t004",
+                    "ps002.v006.t005"
+                  ],
+                  "unit_id": "ps002.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "The king's location becomes a rhetorical question, without the possessive my.",
+              "text": "Don't you know there's a King in Zion?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v006.t002"
+                  ],
+                  "unit_id": "ps002.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "Installing the king is recast as preparing a coronation banquet.",
+              "text": "A coronation banquet is spread for him"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v006.t004",
+                    "ps002.v006.t006",
+                    "ps002.v006.t007"
+                  ],
+                  "unit_id": "ps002.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0018",
+              "rationale": "The holy mountain becomes a summit, without the possessive my.",
+              "text": "On the holy summit."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v006.t003",
+                    "ps002.v006.t004",
+                    "ps002.v006.t005"
+                  ],
+                  "unit_id": "ps002.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "The rhetorical question repeats the king's location for musical emphasis.",
+              "text": "Don't you know there's a King in Zion?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v006.t004",
+                    "ps002.v006.t006",
+                    "ps002.v006.t007"
+                  ],
+                  "unit_id": "ps002.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0020",
+              "rationale": "The repeated location retains holiness but leaves out the possessive my.",
+              "text": "On the holy summit."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "verse",
+          "label": "The son's declaration",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v007.t001",
+                    "ps002.v007.t004",
+                    "ps002.v007.t005"
+                  ],
+                  "unit_id": "ps002.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0021",
+              "rationale": "Recounting God's speech becomes direct address to listeners with an added next.",
+              "text": "Let me tell you what God said next."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v007.t005",
+                    "ps002.v007.t006",
+                    "ps002.v007.t007",
+                    "ps002.v007.t008"
+                  ],
+                  "unit_id": "ps002.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "He said, \"You're my son,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v007.t010",
+                    "ps002.v007.t011"
+                  ],
+                  "unit_id": "ps002.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0023",
+              "rationale": "Begetting the son today becomes a birthday statement that leaves the begetter unstated.",
+              "text": "And today is your birthday.\""
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "verse",
+          "label": "The promised nations",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v008.t001",
+                    "ps002.v008.t002"
+                  ],
+                  "unit_id": "ps002.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0024",
+              "rationale": "The invitation to ask becomes a question and an imperative, with the recipient of the request implicit.",
+              "text": "What do you want? Name it:"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v008.t003",
+                    "ps002.v008.t004",
+                    "ps002.v008.t005",
+                    "ps002.v008.t006",
+                    "ps002.v008.t007",
+                    "ps002.v008.t008"
+                  ],
+                  "unit_id": "ps002.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0025",
+              "rationale": "The promised inheritance and possession become proposed gifts, with the earth's ends recast as continents.",
+              "text": "Nations as a present? Continents as a prize?"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "chorus",
+          "label": "King in Zion repeated",
+          "lines": [],
+          "repeat_of": "sec.0008",
+          "section_id": "sec.0011"
+        },
+        {
+          "kind": "verse",
+          "label": "Power over the nations",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v009.t001"
+                  ],
+                  "unit_id": "ps002.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0026",
+              "rationale": "Breaking the nations is recast as commanding their submission through an added dance image.",
+              "text": "You can command them all to dance for you,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v009.t006"
+                  ],
+                  "unit_id": "ps002.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "Smashing them becomes disposal as trash, introduced as an alternative.",
+              "text": "Or throw them out with tomorrow's trash."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0012"
+        },
+        {
+          "kind": "verse",
+          "label": "Warning and refuge",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v010.t001",
+                    "ps002.v010.t002",
+                    "ps002.v010.t003"
+                  ],
+                  "unit_id": "ps002.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "The kings are explicitly called rebels while prudence becomes using their heads.",
+              "text": "So, rebel-kings, use your heads;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v010.t004",
+                    "ps002.v010.t005"
+                  ],
+                  "unit_id": "ps002.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0029",
+              "rationale": "The judges receive the added characterization upstart.",
+              "text": "Upstart-judges, learn your lesson:"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v011.t001",
+                    "ps002.v011.t002",
+                    "ps002.v011.t003",
+                    "ps002.v011.t004"
+                  ],
+                  "unit_id": "ps002.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0030",
+              "rationale": "Service with fear becomes worship expressed through an added adoring embrace.",
+              "text": "Worship God in adoring embrace,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v011.t005",
+                    "ps002.v011.t006"
+                  ],
+                  "unit_id": "ps002.v011.a"
+                },
+                {
+                  "token_ids": [
+                    "ps002.v012.t001",
+                    "ps002.v012.t002"
+                  ],
+                  "unit_id": "ps002.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0031",
+              "rationale": "The line joins two verses, adds awe to trembling, and identifies the son as Messiah.",
+              "text": "Celebrate in trembling awe. Kiss Messiah!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v012.t003",
+                    "ps002.v012.t005"
+                  ],
+                  "unit_id": "ps002.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "The warning against perishing becomes immediate danger with an added conversational appeal.",
+              "text": "Your very lives are in danger, you know;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v012.t004",
+                    "ps002.v012.t007",
+                    "ps002.v012.t008",
+                    "ps002.v012.t009",
+                    "ps002.v012.t010"
+                  ],
+                  "unit_id": "ps002.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0033",
+              "rationale": "The two anger clauses merge into one image of an imminent explosion.",
+              "text": "His anger is about to explode,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps002.v012.t011",
+                    "ps002.v012.t012",
+                    "ps002.v012.t013",
+                    "ps002.v012.t014"
+                  ],
+                  "unit_id": "ps002.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0034",
+              "rationale": "Blessing for all who seek refuge becomes a conditional personal invitation, with God named and blessing expressed as freedom from regret.",
+              "text": "But if you make a run for God - you won't regret it!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0013"
+        }
+      ],
+      "status": "proposed",
+      "title": "King in Zion",
+      "translation_id": "tr.ps002.0001",
+      "updated_at": "2026-09-26T16:06:56.359915+00:00"
+    }
+  ],
   "psalm_id": "ps002",
   "title": "Psalm 2",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps002.v001.a.0001",
+        "aud.ps002.v001.a.0006",
+        "aud.ps002.v001.a.0007"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T16:04:26.791820+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "psalm_id": "ps002",
+      "title": "Imported translation",
+      "translation_id": "tr.ps002.0001"
+    }
+  ],
   "unit_ids": [
     "ps002.v001.a",
     "ps002.v002.a",

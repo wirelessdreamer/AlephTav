@@ -1,9 +1,125 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v009.a.0001",
+    "aud.ps004.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "61724161bfbc22c3e40465181793f59870f21fcde93bc27b2c57362b717469f7",
+      "audit_id": "aud.ps004.v009.a.0001",
+      "before_hash": "94ccb2d9e77b45d228c4cdd6653b71271da5255bb89825038df303ee60effc27",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.755172+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "92ed545ffdb6107e21775a4d74631c411dfdaf42e5c738e10c3920cdce4d042d",
+      "audit_id": "aud.ps004.v009.a.0002",
+      "before_hash": "4b38c6bc5a2aa0eaf5f7bd16a85b2defc14336fe4a9d5bd8375a1b94e3f44e51",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:26:51.337483+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves peaceful sleep and the causal appeal to God as its basis. Lying down and sleeping become readiness for sound sleep, while God's provision of secure dwelling becomes restoration of the speaker's life. “Together” and “alone” are not retained in their Hebrew functions.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "283aa7d988014add575b495d88ea97d66b16571fde6d09f086b32edefc4ca4e7",
+      "audit_ids": [
+        "aud.ps004.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“At day's end” supplies a plausible but unstated setting. “I'm ready” shifts the speaker's intention to lie down and sleep into a statement of readiness. “Have put my life back together” introduces prior disruption and completed restoration beyond the Hebrew's assurance of security.",
+      "display_reference": "Psalm 4:9",
+      "english_rendering_id": "rnd.ps004.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d12e6dc8c8c4",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בְּשָׁל֣וֹם יַחְדָּו֮ אֶשְׁכְּבָ֢ה וְאִ֫ישָׁ֥ן כִּֽי־אַתָּ֣ה יְהוָ֣ה לְבָדָ֑ד לָ֝בֶ֗טַח תּוֹשִׁיבֵֽנִי׃",
+      "literal_backbone": [
+        "In peace I will both lie down and sleep,",
+        "for you alone, Yahweh, make me dwell securely."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:9",
+      "non_source_material": [],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "in peace, well-being; lie down; sleep",
+          "note": "Conveys restful sleep but compresses lying down and sleeping into readiness, with peace expressed as soundness of sleep.",
+          "rendered_as": "I'm ready for sound sleep",
+          "token_ids": [
+            "ps004.v009.t001",
+            "ps004.v009.t003",
+            "ps004.v009.t004"
+          ],
+          "transliteration": "bəšālôm ʾeškəḇāh wəʾîšān",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "together, jointly, at the same time",
+          "note": "The connection between lying down and sleeping is not explicit; “together” in the second English line serves a different meaning.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps004.v009.t002"
+          ],
+          "transliteration": "yaḥdāw",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "alone, apart, in isolation",
+          "note": "No counterpart expresses aloneness or exclusivity.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps004.v009.t008"
+          ],
+          "transliteration": "ləḇāḏāḏ",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "securely, in safety; cause to dwell, settle",
+          "note": "Replaces secure dwelling with comprehensive personal restoration and changes the ongoing assurance into a completed act.",
+          "rendered_as": "have put my life back together",
+          "token_ids": [
+            "ps004.v009.t009",
+            "ps004.v009.t010"
+          ],
+          "transliteration": "lāḇeṭaḥ tôšîḇēnî",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v009.a.0001"
   ],
@@ -15,7 +131,99 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.62,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "At day's end I'm ready for sound sleep,\nFor you, God, have put my life back together.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בְּשָׁל֣וֹם יַחְדָּו֮ אֶשְׁכְּבָ֢ה וְאִ֫ישָׁ֥ן כִּֽי־אַתָּ֣ה יְהוָ֣ה לְבָדָ֑ד לָ֝בֶ֗טַח תּוֹשִׁיבֵֽנִי׃",

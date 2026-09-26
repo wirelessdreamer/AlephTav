@@ -57,6 +57,19 @@ def validate_all_content() -> dict[str, Any]:
     else:
         errors.append("content/project.json missing")
 
+    # The projects translations are kept in; the default one is built in.
+    collection_ids = {"col.default"}
+    if settings.collections_file.exists():
+        collections = registry_service.read_json(settings.collections_file)
+        for error in _validator("collections.schema.json").iter_errors(collections):
+            errors.append(f"collections.json: {error.message}")
+        if settings.collections_file.read_text(encoding="utf-8") != _deterministic_text(
+            collections
+        ):
+            errors.append("collections.json: non-deterministic serialization")
+        collection_ids.update(c.get("collection_id") for c in collections.get("collections", []))
+        validated_files.append(settings.collections_file.relative_to(settings.root_dir).as_posix())
+
     id_kinds = ["unit", "token", "alignment", "rendering", "audit", "concept"]
     seen_ids: dict[str, set[str]] = {key: set() for key in id_kinds}
 
@@ -69,6 +82,7 @@ def validate_all_content() -> dict[str, Any]:
                 errors.append(
                     f"{path.relative_to(settings.root_dir)}: non-deterministic serialization"
                 )
+            _validate_collections_of(path, meta, collection_ids, errors)
             validated_files.append(path.relative_to(settings.root_dir).as_posix())
             continue
         unit = registry_service.read_json(path)
@@ -122,6 +136,20 @@ def validate_all_content() -> dict[str, Any]:
         validated_files.append(path.relative_to(settings.root_dir).as_posix())
 
     return {"validated_files": validated_files, "errors": errors}
+
+
+def _validate_collections_of(
+    path: Path, meta: dict[str, Any], collection_ids: set[str], errors: list[str]
+) -> None:
+    """Each translation is in a project that exists, and no project has the psalm twice."""
+    placed = [meta.get("main_collection_id", "col.default")] + [
+        t.get("collection_id") for t in meta.get("translations", [])
+    ]
+    for collection_id in placed:
+        if collection_id not in collection_ids:
+            errors.append(f"{_display_path(path)}: unknown project {collection_id}")
+    for collection_id in {c for c in placed if placed.count(c) > 1}:
+        errors.append(f"{_display_path(path)}: project {collection_id} has the psalm twice")
 
 
 def _register_unique(bucket: set[str], value: str | None, errors: list[str], message: str) -> None:

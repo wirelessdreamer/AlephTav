@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v003.a.literal.alt.0001",
+    "rnd.ps025.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v003.a.0001",
+    "aud.ps025.v003.a.0002",
+    "aud.ps025.v003.a.0003",
+    "aud.ps025.v003.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "78115d98260c3f38af23261fcda7245e19aa71312fb1a47f70d86d949b1709d8",
+      "audit_id": "aud.ps025.v003.a.0001",
+      "before_hash": "f23ca30d503548a61c373cfe786b90c032aebf37ffe9f4706acb00fa8f3e4fc6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.767506+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding petition with contrasting statements that repeat 'put to shame.'",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "54e3d17243e20d07b68fecf6df1916093c0ee4c5238b505390689395b68492f9",
+      "audit_id": "aud.ps025.v003.a.0002",
+      "before_hash": "9c9ff8828bef3622ef07462ec309175f0bdbc6fc7cfbdac3edcbad271f4212fe",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.166969+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding petition through the source's repeated shame verb.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "71e7db51cdb8e3ce70d358386dc1726af387f0191289a4df501ff992c8c725fd",
+      "audit_id": "aud.ps025.v003.a.0003",
+      "before_hash": "fce508305bad74678f31ca489f0ed6ac78e0edd298dde2a9f79649732530a710",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:15.891239+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "aae81c094386365b610e34719ae67422e7bd7d80d0e83af4e8d7b09ad8ea5994",
+      "audit_id": "aud.ps025.v003.a.0004",
+      "before_hash": "6113e075c2ccbed8ca24d121c1480be04ef27414e83f6759e11682ea462b0f1c",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.474333+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the opening affirmation, the assurance that all who wait for God will escape shame, and the contrasting declaration that those who betray without cause will be shamed.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "b3306669137e2ba049866a1b938d9010f132479811145b5d4b4c43e1ca4631a9",
+      "audit_ids": [
+        "aud.ps025.v003.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:3",
+      "english_rendering_id": "rnd.ps025.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.93f0f93d7c39",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "גַּ֣ם כָּל־ק֭וֹיֶ לֹ֣א יֵבֹ֑שׁוּ יֵ֝בֹ֗שׁוּ הַבּוֹגְדִ֥ים רֵיקָֽם׃",
+      "literal_backbone": [
+        "Indeed, all who wait for you will not be ashamed.",
+        "Those who act treacherously without cause will be ashamed."
+      ],
+      "literal_rendering_id": "rnd.ps025.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:3",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v003.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v003.a.0001"
   ],
@@ -15,7 +121,201 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the contrasting outcomes through exact verbal repetition.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v003.t001 → Indeed",
+          "ps025.v003.t002–t005 → none who wait for you will be put to shame",
+          "ps025.v003.t006 → will be put to shame",
+          "ps025.v003.t007–t008 → those who betray without cause"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated from the supplied verse and token evidence.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v003.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Answers the preceding petition with contrasting statements that repeat 'put to shame.'",
+      "rendering_id": "rnd.ps025.v003.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Indeed, none who wait for you\nwill be put to shame;\nthose who betray without cause\nwill be put to shame.",
+      "translation_basis": {
+        "basis_note": "Translated from the supplied verse and token evidence.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v003.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matched endings distinguish waiting from groundless betrayal.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.68,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct rendering from the supplied verse and token evidence.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v003.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Answers the preceding petition through the source's repeated shame verb.",
+      "rendering_id": "rnd.ps025.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yes, all who wait for you\nwon't be shamed.\nThose who betray without cause\nwill be shamed.",
+      "translation_basis": {
+        "basis_note": "Direct rendering from the supplied verse and token evidence.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "גַּ֣ם כָּל־ק֭וֹיֶ לֹ֣א יֵבֹ֑שׁוּ יֵ֝בֹ֗שׁוּ הַבּוֹגְדִ֥ים רֵיקָֽם׃",

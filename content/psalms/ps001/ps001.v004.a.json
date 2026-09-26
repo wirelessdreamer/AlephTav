@@ -1,9 +1,218 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v004.a.literal.alt.0001",
+    "rnd.ps001.v004.a.lyric.alt.0001",
+    "rnd.ps001.v004.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v004.a.0001",
+    "aud.ps001.v004.a.0002",
+    "aud.ps001.v004.a.0003",
+    "aud.ps001.v004.a.0004",
+    "aud.ps001.v004.a.0005",
+    "aud.ps001.v004.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cca0d5b3187b98dcc264c17e4ed714180b66523bff13c3f277b93e67961cc84d",
+      "audit_id": "aud.ps001.v004.a.0001",
+      "before_hash": "d54f1c37f3aaa244ea4ddaae4042bfa8de2a67508402c4e178ed4a859ce20650",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T13:57:39.799036+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Sets the wind-driven chaff against the planted tree with the source's abrupt contrast.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "77f3ac02b8cfc584625c6c4ccf2a0c19e7d355d32a8c8ba462bf5ea467ec5bfe",
+      "audit_id": "aud.ps001.v004.a.0002",
+      "before_hash": "c0590660f8cdbe9ec476e34ff7c8d350867c467490a97bd5a10443279bf08a70",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:00:15.273686+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The short wind-driven image breaks sharply from the tree's sustained growth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5fb0cda5bf6710fb00d1ef658fc782e71ce2d1c481a1a12282360635f9a9b549",
+      "audit_id": "aud.ps001.v004.a.0003",
+      "before_hash": "4858c08e7226f6153ea3faee8314bc4e099861a76aebc2fad25cf94c573c886f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:26:30.661244+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1a49a8c48741ea9034e1f84af728b412aed456a174f1db7db3d1e61bba998e44",
+      "audit_id": "aud.ps001.v004.a.0004",
+      "before_hash": "10763713b82d1d74ca7d38db264bbe44d5b7211ef184d1d8d9d36f04d8f65294",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:41:36.782351+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps001.v004.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8cb729f7f4f8af03b21bc8f9fad289e00c2b835f511f894ba4fbf831f8101c45",
+      "audit_id": "aud.ps001.v004.a.0005",
+      "before_hash": "6403b94337b5811542bc18be7ec496f610d200945b93cff8654af576f7ed0200",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:43:50.167881+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v004.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9559c085c2f0903c8d8a68e6cbe2c8f66877fca86cf5023f8d9ab2151c1c5fb9",
+      "audit_id": "aud.ps001.v004.a.0006",
+      "before_hash": "9223b16ae58d3e99bb49efd7494d254b473066845e04417ad6ad1db5ada0e0ec",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.150423+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps001.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.fb69adaad6a5",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the contrast between the wicked and the preceding tree image, followed by the comparison to chaff displaced by wind. The wind remains the agent, and the chaff remains what it drives away. The literal rendering preserves the explicit “not so … but” structure more directly.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "0483a3145fd00ae4bbf42b7c71ed06fe658b179691cd6e1b8ad04d6d4becb051",
+      "audit_ids": [
+        "aud.ps001.v004.a.0003"
+      ],
+      "comparison_id": "cmp.ps001.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“The wicked are different” recasts the backward-pointing “not so” as an affirmative statement. The colon leaves “but rather” implicit. “Sweeps away” gives an idiomatic description of the wind's driving action without changing the image.",
+      "display_reference": "Psalm 1:4",
+      "english_rendering_id": "rnd.ps001.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ab39497ea03b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹא־כֵ֥ן הָרְשָׁעִ֑ים כִּ֥י אִם־כַּ֝מֹּ֗ץ אֲ‍ֽשֶׁר־תִּדְּפֶ֥נּוּ רֽוּחַ׃",
+      "literal_backbone": [
+        "Not so the wicked,",
+        "but rather like chaff",
+        "which the wind drives away."
+      ],
+      "literal_rendering_id": "rnd.ps001.v004.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:4",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps001.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Not so; not thus.",
+          "note": "Preserves the contrast in context, though the Hebrew more explicitly denies that the preceding description applies to the wicked.",
+          "rendered_as": "are different",
+          "token_ids": [
+            "ps001.v004.t001",
+            "ps001.v004.t002"
+          ],
+          "transliteration": "lōʾ-ḵēn",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the contrast between the preceding person and the wicked, followed by an image of insubstantial material moved by wind.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "fa18ec30e4da4425b02bd3be54089547510e4373c05a9334910f4c6de52d815c",
+      "audit_ids": [
+        "aud.ps001.v004.a.0005"
+      ],
+      "comparison_id": "cmp.ps001.v004.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Recasts “Not so the wicked” as direct address and intensifies the contrast with “at all.” Changes the chaff comparison into a dust metaphor; “mere” emphasizes insignificance, while “windblown” compresses the wind's driving action.",
+      "display_reference": "Psalm 1:4",
+      "english_rendering_id": "rnd.ps001.v004.a.lyric.alt.0002",
+      "generation_run_id": "cxr.b57010814d2e",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹא־כֵ֥ן הָרְשָׁעִ֑ים כִּ֥י אִם־כַּ֝מֹּ֗ץ אֲ‍ֽשֶׁר־תִּדְּפֶ֥נּוּ רֽוּחַ׃",
+      "literal_backbone": [
+        "Not so the wicked,",
+        "but like chaff that the wind drives away."
+      ],
+      "literal_rendering_id": "rnd.ps001.v004.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:4",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Like chaff, the husks or refuse separated from grain.",
+          "note": "Dust retains lightness and susceptibility to wind but replaces the specific agricultural image of chaff; “mere” adds explicit disparagement.",
+          "rendered_as": "mere windblown dust",
+          "token_ids": [
+            "ps001.v004.t006"
+          ],
+          "transliteration": "kammōṣ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Which the wind drives or blows away.",
+          "note": "Compactly preserves the wind's action, though removal is less explicit.",
+          "rendered_as": "windblown",
+          "token_ids": [
+            "ps001.v004.t007",
+            "ps001.v004.t008",
+            "ps001.v004.t009"
+          ],
+          "transliteration": "ʾăšer-tiddəp̄ennû rûaḥ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps001.v004.a.0001"
   ],
@@ -15,7 +224,320 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps the brief, elliptical construction.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Chaff driven by wind",
+          "note": "Retains chaff, wind, and the driving action.",
+          "source_id": "ps001.v004.a",
+          "token_ids": [
+            "ps001.v004.t006",
+            "ps001.v004.t008",
+            "ps001.v004.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps001.v004.t001–t003 → Not so the wicked",
+          "ps001.v004.t004–t006 → but like chaff",
+          "ps001.v004.t007–t009 → that the wind drives away"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T13:57:39.702551+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.fb69adaad6a5",
+        "source_ids": [
+          "ps001.v004.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v004.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8d9-81cc-7cc1-bab8-07b862a876ac"
+      },
+      "rationale": "Sets the wind-driven chaff against the planted tree with the source's abrupt contrast.",
+      "rendering_id": "rnd.ps001.v004.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Not so the wicked,\nbut like chaff\nthat the wind drives away.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v004.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v004.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A brief final line gives the displacement musical space.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.29,
+        "stress_approximation": 0.73,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Chaff swept away by wind",
+          "note": "Retains chaff, the wind's agency, and forced displacement.",
+          "source_id": "ps001.v004.a",
+          "token_ids": [
+            "ps001.v004.t006",
+            "ps001.v004.t008",
+            "ps001.v004.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T14:00:15.170055+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.8feb9663d895",
+        "source_ids": [
+          "ps001.v004.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v004.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8db-83f2-7d33-a195-ed40eddf1656"
+      },
+      "rationale": "The short wind-driven image breaks sharply from the tree's sustained growth.",
+      "rendering_id": "rnd.ps001.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The wicked are different:\nlike chaff that the wind\nsweeps away.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v004.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.19,
+        "stress_approximation": 0.69,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.76c3ad21531f",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps001.v004.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You’re not at all like the wicked,\n    who are mere windblown dust—",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לֹא־כֵ֥ן הָרְשָׁעִ֑ים כִּ֥י אִם־כַּ֝מֹּ֗ץ אֲ‍ֽשֶׁר־תִּדְּפֶ֥נּוּ רֽוּחַ׃",

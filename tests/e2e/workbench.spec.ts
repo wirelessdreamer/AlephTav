@@ -148,8 +148,14 @@ test('psalm selector exposes the full audited corpus', async ({ page }) => {
   await page.goto('/#/workbench');
 
   const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
-  await expect(psalmSelect.locator('option')).toHaveCount(4);
-  await expect(psalmSelect.locator('option')).toHaveText(['Psalm 1', 'Psalm 19', 'Psalm 23', 'Psalm 51']);
+  await expect(psalmSelect.locator('option')).toHaveCount(5);
+  await expect(psalmSelect.locator('option')).toHaveText([
+    'Psalm 1',
+    'Psalm 19',
+    'Psalm 23',
+    'Psalm 51',
+    'Add a psalm…',
+  ]);
 });
 
 test('layered english flow renders populated content and falls back when the selected layer is missing', async ({ page }) => {

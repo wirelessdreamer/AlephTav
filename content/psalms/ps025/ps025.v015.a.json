@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v015.a.literal.alt.0001",
+    "rnd.ps025.v015.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v015.a.0001",
+    "aud.ps025.v015.a.0002",
+    "aud.ps025.v015.a.0003",
+    "aud.ps025.v015.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cb68d1091762c7b79ff40fedd0e1da4d6b7f0570825c376b578db3f01ddc2c70",
+      "audit_id": "aud.ps025.v015.a.0001",
+      "before_hash": "e4addf97fe881e05abf964a080b25b088c0b08a32895ae4a7259e1e2d9672b7c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.747118+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v015.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the speaker's own voice and keeps both the directed gaze and trapped feet.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a052471552a8e24b1726590981ca0d845ceacc848cbaa46dea537553cc872146",
+      "audit_id": "aud.ps025.v015.a.0002",
+      "before_hash": "cd38e70792443fa18eaeed4a6fb88411db8d4921f23db2127dd7b430c5e0e073",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.842890+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v015.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the speaker's voice with the gaze and trapped feet fully visible.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2a51055ff0e1101ec5871865a1ecabd8fd5f24d9dfdef599c166dfc4a470f26e",
+      "audit_id": "aud.ps025.v015.a.0003",
+      "before_hash": "1f4a455dcc8d7a46c8d91de36b4c1e2e2f3e07b9b5783bcb641334c6de30b295",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:00.265929+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v015.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "224920d540ddd098b744e44175a1edec66592a820bdb6f14e4feecbd9a62dbec",
+      "audit_id": "aud.ps025.v015.a.0004",
+      "before_hash": "75d23dae13b9c5af1522b99f120e1603f879e93a56ffcb920d5aed744fa5589e",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.517382+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v015.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker’s sustained gaze toward Yahweh and its stated reason: he will bring the speaker’s feet out of the net. The concrete imagery and future deliverance remain intact.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "2e46070c0f422ef556c5abfab0ec46e1c7a3e2804c49f3875f1a52092c8c8874",
+      "audit_ids": [
+        "aud.ps025.v015.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v015.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Stay on” conveys continuing attention, though the Hebrew’s explicit “always” is less emphatic in the English.",
+      "display_reference": "Psalm 25:15",
+      "english_rendering_id": "rnd.ps025.v015.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d292fd7017bf",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עֵינַ֣י תָּ֭מִיד אֶל־יְהוָ֑ה כִּ֤י הֽוּא־יוֹצִ֖יא מֵרֶ֣שֶׁת רַגְלָֽי׃",
+      "literal_backbone": [
+        "My eyes are continually toward Yahweh.",
+        "For he will bring my feet out of the net."
+      ],
+      "literal_rendering_id": "rnd.ps025.v015.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:15",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v015.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v015.a.0001"
   ],
@@ -15,7 +121,245 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:15",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Leaves eyes, feet, and net explicit.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Eyes toward Yahweh",
+          "note": "Preserves the gaze rather than paraphrasing it as trust.",
+          "source_id": "ps025.v015.a",
+          "token_ids": [
+            "ps025.v015.t001",
+            "ps025.v015.t002",
+            "ps025.v015.t003",
+            "ps025.v015.t004"
+          ]
+        },
+        {
+          "label": "Feet brought out of a net",
+          "note": "Retains the concrete entrapment and release.",
+          "source_id": "ps025.v015.a",
+          "token_ids": [
+            "ps025.v015.t007",
+            "ps025.v015.t008",
+            "ps025.v015.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v015.t001–t004 → My eyes are always toward Yahweh",
+          "ps025.v015.t005–t007 → for he will bring",
+          "ps025.v015.t009 → my feet",
+          "ps025.v015.t008 → out of the net"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v015.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v015.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Returns to the speaker's own voice and keeps both the directed gaze and trapped feet.",
+      "rendering_id": "rnd.ps025.v015.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "My eyes are always toward Yahweh,\nfor he will bring my feet\nout of the net.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v015.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v015.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Contemporary gaze language retains the complete entrapment scene.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.57,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Eyes directed toward Yahweh",
+          "note": "'Stay on' preserves the continuing direction of the eyes.",
+          "source_id": "ps025.v015.a",
+          "token_ids": [
+            "ps025.v015.t001",
+            "ps025.v015.t002",
+            "ps025.v015.t003",
+            "ps025.v015.t004"
+          ]
+        },
+        {
+          "label": "Feet brought out of a net",
+          "note": "Both feet and net remain explicit.",
+          "source_id": "ps025.v015.a",
+          "token_ids": [
+            "ps025.v015.t007",
+            "ps025.v015.t008",
+            "ps025.v015.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v015.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v015.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Returns to the speaker's voice with the gaze and trapped feet fully visible.",
+      "rendering_id": "rnd.ps025.v015.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My eyes stay on Yahweh,\nbecause he'll bring my feet\nout of the net.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v015.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v015.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עֵינַ֣י תָּ֭מִיד אֶל־יְהוָ֑ה כִּ֤י הֽוּא־יוֹצִ֖יא מֵרֶ֣שֶׁת רַגְלָֽי׃",

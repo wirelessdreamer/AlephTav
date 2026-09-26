@@ -15,7 +15,7 @@ const TONE: Record<AccuracyRating, 'close' | 'interpret' | 'caution'> = {
   no_source_basis: 'caution',
 };
 
-function Fidelity({ rating }: { rating: AccuracyRating | null }) {
+export function Fidelity({ rating }: { rating: AccuracyRating | null }) {
   if (!rating) return <span className="fidelity">Not assessed</span>;
   return <span className={`fidelity fidelity--${TONE[rating]}`}>{rating.replace(/_/g, ' ')}</span>;
 }

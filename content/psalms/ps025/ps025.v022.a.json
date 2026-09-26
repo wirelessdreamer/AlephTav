@@ -1,9 +1,125 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v022.a.literal.alt.0001",
+    "rnd.ps025.v022.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v022.a.0001",
+    "aud.ps025.v022.a.0002",
+    "aud.ps025.v022.a.0003",
+    "aud.ps025.v022.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cf0b731f9a10c8818f582cfccddbdbeb4b79a8faf4eb0de8758173c2b0cbc8af",
+      "audit_id": "aud.ps025.v022.a.0001",
+      "before_hash": "e2bf1d6ab4a3ac93ec6b12ce3c4642b35fe6fbf8402790a6a97c563f5d4b70f2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.799169+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v022.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Broadens the individual plea to Israel while repeating the word for troubles.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "db9f7b9c50ca6cd6f81f4db42c5683f2570f89810e8f2f31793b49253021f8a7",
+      "audit_id": "aud.ps025.v022.a.0002",
+      "before_hash": "f000b42c5aa35477269a3381b89228610c58c771394582c712f3dcc00a8d093d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.906146+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v022.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Extends the speaker's request for release to Israel and ends with a petition rather than an announced resolution.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3e1e7ab9df14fa7b847801b3f2ff3bd4e989b9c756025c0b957cb47d2cd3d24d",
+      "audit_id": "aud.ps025.v022.a.0003",
+      "before_hash": "9fd06c6c38d5dc98fc3574228918bb7769b313edca9a6a58b5facbf5ddbeeff3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:34:00.534121+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v022.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "221daafe51ee23270d29371a0293f3d2210df3b7546255f2edd4565a10536503",
+      "audit_id": "aud.ps025.v022.a.0004",
+      "before_hash": "164936436292e35c9302f6d620f67ebdcec351ce7a93f1b31b2e5b1ca4f318be",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.539542+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v022.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal to God to deliver Israel from all his troubles, including the comprehensive “all” and the singular reference to Israel.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "3939ce74625213924d86f659520f7d521d8dd3f10ec06c2712ac122f080777e2",
+      "audit_ids": [
+        "aud.ps025.v022.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v022.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Set Israel free” conveys the requested deliverance while making the redemption imagery less explicit.",
+      "display_reference": "Psalm 25:22",
+      "english_rendering_id": "rnd.ps025.v022.a.lyric.alt.0001",
+      "generation_run_id": "cxr.040a27851db3",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "פְּדֵ֣ה אֱ֭לֹהִים אֶת־יִשְׂרָאֵ֑ל מִ֝כֹּ֗ל צָֽרוֹתָיו׃",
+      "literal_backbone": [
+        "Redeem Israel, God, from all his troubles."
+      ],
+      "literal_rendering_id": "rnd.ps025.v022.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:22",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v022.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "ransom, redeem, release, deliver",
+          "note": "Expresses the release sought by the petition without explicitly retaining the verb’s redemption or ransom associations.",
+          "rendered_as": "set … free",
+          "token_ids": [
+            "ps025.v022.t001"
+          ],
+          "transliteration": "pəḏēh",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v022.a.0001"
   ],
@@ -15,7 +131,225 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:22",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps Israel's singular pronoun and the comprehensive 'all.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Israel redeemed from troubles",
+          "note": "Retains redemption and Israel's collective singular presentation.",
+          "source_id": "ps025.v022.a",
+          "token_ids": [
+            "ps025.v022.t001",
+            "ps025.v022.t004",
+            "ps025.v022.t005",
+            "ps025.v022.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v022.t001 → Redeem",
+          "ps025.v022.t002 → God",
+          "ps025.v022.t003–t004 → Israel; אֶת marks the direct object and has no separate English word",
+          "ps025.v022.t005–t006 → from all his troubles"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v022.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Broadens the individual plea to Israel while repeating the word for troubles.",
+      "rendering_id": "rnd.ps025.v022.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Redeem Israel, God,\nfrom all his troubles.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v022.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A compact communal release petition closes the passage.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 8,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.76,
+        "stress_approximation": 0.62,
+        "syllable_count": 10,
+        "syllables": 10
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Israel released from troubles",
+          "note": "Preserves liberation from trouble and Israel's collective singular presentation.",
+          "source_id": "ps025.v022.a",
+          "token_ids": [
+            "ps025.v022.t001",
+            "ps025.v022.t004",
+            "ps025.v022.t005",
+            "ps025.v022.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v022.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Extends the speaker's request for release to Israel and ends with a petition rather than an announced resolution.",
+      "rendering_id": "rnd.ps025.v022.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "God, set Israel free\nfrom all his troubles.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v022.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "פְּדֵ֣ה אֱ֭לֹהִים אֶת־יִשְׂרָאֵ֑ל מִ֝כֹּ֗ל צָֽרוֹתָיו׃",

@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import { type FocusEvent, type MouseEvent, useMemo, useState } from 'react';
 
 import type { ArrangementEdit } from '../hooks/useArrangements';
-import type { ArrangementView, Liberty, LibertyKind } from '../types';
+import type {
+  ArrangementView,
+  ComparisonTableRow,
+  Liberty,
+  LibertyKind,
+  PsalmAnalysisSection,
+} from '../types';
 import {
   LIBERTY_HINTS,
   LIBERTY_LABELS,
@@ -11,12 +17,26 @@ import {
   saveReviewer,
   verseOf,
 } from './arrangementShared';
+import { type HoveredWord, WordContextCard, placeCard } from './WordContextCard';
 
 interface Props {
   view: ArrangementView;
   edit: (change: ArrangementEdit) => Promise<unknown>;
   pending: boolean;
+  /** The psalm's verses as the comparison table shows them, for a hovered word's context. */
+  rows: ComparisonTableRow[];
+  sections: PsalmAnalysisSection[];
+  englishLayer: string;
 }
+
+/** What makes a Hebrew word show its context card while hovered or focused. */
+type WordHover = (tokenId: string) => {
+  tabIndex?: number;
+  onMouseEnter?: (event: MouseEvent<HTMLElement>) => void;
+  onFocus?: (event: FocusEvent<HTMLElement>) => void;
+  onMouseLeave?: () => void;
+  onBlur?: () => void;
+};
 
 const RULE_ORDER: LibertyKind[] = [
   'repeated',
@@ -29,11 +49,16 @@ const RULE_ORDER: LibertyKind[] = [
 
 function LibertyRow({
   item,
+  words,
+  wordHover,
   reviewer,
   pending,
   edit,
 }: {
   item: Liberty;
+  /** The Hebrew words the liberty concerns, in order. */
+  words: Array<{ token_id: string; surface: string }>;
+  wordHover: WordHover;
   reviewer: Reviewer;
   pending: boolean;
   edit: Props['edit'];
@@ -79,7 +104,16 @@ function LibertyRow({
         </span>
       </td>
       <td lang="he" dir="rtl" className="hebrew arr-lib__he">
-        {item.hebrew}
+        {words.length > 0
+          ? words.map((word, index) => (
+              <span key={word.token_id}>
+                {index > 0 ? ' ' : null}
+                <span className="arr-lib__word" {...wordHover(word.token_id)}>
+                  {word.surface}
+                </span>
+              </span>
+            ))
+          : item.hebrew}
       </td>
       <td className="arr-lib__why">
         {item.rationale ||
@@ -124,11 +158,59 @@ function LibertyRow({
 }
 
 /** Every Hebrew word's coverage, and every departure with the approvals it needs. */
-export function ArrangementLiberties({ view, edit, pending }: Props) {
+export function ArrangementLiberties({
+  view,
+  edit,
+  pending,
+  rows,
+  sections,
+  englishLayer,
+}: Props) {
   const [reviewer, setReviewer] = useState<Reviewer>(loadReviewer);
+  const [hovered, setHovered] = useState<HoveredWord | null>(null);
   const { coverage, liberties, required_approvals: rules, summary, arrangement } = view;
   const open = liberties.filter((item) => !item.settled);
   const settled = liberties.filter((item) => item.settled);
+
+  /** Each Hebrew word's verse, and each word's surface and each line's words by id. */
+  const { rowOf, surfaceOf, lineWords } = useMemo(
+    () => ({
+      rowOf: new Map(
+        rows.flatMap((row) => (row.tokens ?? []).map((token) => [token.token_id, row] as const)),
+      ),
+      surfaceOf: new Map(
+        coverage.units.flatMap((unit) =>
+          unit.tokens.map((token) => [token.token_id, token.surface] as const),
+        ),
+      ),
+      lineWords: new Map(
+        arrangement.sections.flatMap((section) =>
+          section.lines.map(
+            (line) => [line.line_id, line.anchors.flatMap((anchor) => anchor.token_ids)] as const,
+          ),
+        ),
+      ),
+    }),
+    [rows, coverage, arrangement],
+  );
+  const hoveredRow = hovered ? rowOf.get(hovered.tokenId) : undefined;
+
+  const wordHover: WordHover = (tokenId) =>
+    rowOf.has(tokenId)
+      ? {
+          tabIndex: 0,
+          onMouseEnter: (event) => setHovered(placeCard(tokenId, event.currentTarget)),
+          onFocus: (event) => setHovered(placeCard(tokenId, event.currentTarget)),
+          onMouseLeave: () => setHovered(null),
+          onBlur: () => setHovered(null),
+        }
+      : {};
+
+  /** The words a liberty concerns: its line's anchors, or the Hebrew it leaves out. */
+  function wordsOf(item: Liberty) {
+    const ids = item.token_ids ?? (item.line_id ? lineWords.get(item.line_id) : undefined) ?? [];
+    return ids.map((id) => ({ token_id: id, surface: surfaceOf.get(id) ?? '' }));
+  }
 
   function updateReviewer(next: Reviewer) {
     setReviewer(next);
@@ -154,8 +236,9 @@ export function ArrangementLiberties({ view, edit, pending }: Props) {
               <span
                 key={token.token_id}
                 lang="he"
-                title={token.gloss}
+                title={rowOf.has(token.token_id) ? undefined : token.gloss}
                 className={`arr-word${token.count === 0 ? ' is-dropped' : token.count > 1 ? ' is-repeated' : ''}`}
+                {...wordHover(token.token_id)}
               >
                 {token.surface}
                 {token.count > 1 ? <span dir="ltr">×{token.count}</span> : null}
@@ -188,7 +271,15 @@ export function ArrangementLiberties({ view, edit, pending }: Props) {
               </thead>
               <tbody>
                 {[...open, ...settled].map((item) => (
-                  <LibertyRow key={item.key} item={item} reviewer={reviewer} pending={pending} edit={edit} />
+                  <LibertyRow
+                    key={item.key}
+                    item={item}
+                    words={wordsOf(item)}
+                    wordHover={wordHover}
+                    reviewer={reviewer}
+                    pending={pending}
+                    edit={edit}
+                  />
                 ))}
               </tbody>
             </table>
@@ -252,6 +343,16 @@ export function ArrangementLiberties({ view, edit, pending }: Props) {
           </section>
         </aside>
       </div>
+
+      {hovered && hoveredRow ? (
+        <WordContextCard
+          hovered={hovered}
+          row={hoveredRow}
+          sections={sections}
+          sung={view.sung}
+          englishLayer={englishLayer}
+        />
+      ) : null}
     </div>
   );
 }

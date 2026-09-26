@@ -12,6 +12,7 @@ app/api/main.py
 app/api/routes/__init__.py
 app/api/routes/alignments.py
 app/api/routes/alternates.py
+app/api/routes/arrangements.py
 app/api/routes/assistant.py
 app/api/routes/audit.py
 app/api/routes/codex.py
@@ -27,7 +28,9 @@ app/api/routes/search.py
 app/api/routes/source_map.py
 app/api/routes/speech.py
 app/api/routes/tokens.py
+app/api/routes/translations.py
 app/api/routes/units.py
+app/api/routes/verse_notes.py
 app/core/__init__.py
 app/core/config.py
 app/core/errors.py
@@ -40,6 +43,7 @@ app/db/models.py
 app/db/session.py
 app/llm/__init__.py
 app/llm/base.py
+app/llm/strict_schema.py
 app/llm/adapters/__init__.py
 app/llm/adapters/codex_app_server.py
 app/llm/adapters/llamacpp.py
@@ -61,11 +65,15 @@ app/llm/prompts/pass_06_metered_lyric.md
 app/llm/prompts/pass_07_parallelism_lyric.md
 app/services/__init__.py
 app/services/alignment_service.py
+app/services/arrangement_service.py
 app/services/assistant_service.py
 app/services/audit_service.py
 app/services/codex_analysis_service.py
 app/services/codex_app_server_service.py
+app/services/codex_arrangement_service.py
+app/services/codex_import_service.py
 app/services/codex_translation_service.py
+app/services/collections_service.py
 app/services/comparison_assessment_service.py
 app/services/composer_suggestion_service.py
 app/services/concordance_service.py
@@ -78,6 +86,7 @@ app/services/lexical_service.py
 app/services/llama_runtime_service.py
 app/services/lyric_reference_service.py
 app/services/poetic_analysis_service.py
+app/services/psalm_translations_service.py
 app/services/registry_service.py
 app/services/rendering_service.py
 app/services/report_service.py
@@ -86,6 +95,7 @@ app/services/search_service.py
 app/services/settings_service.py
 app/services/source_translation_map_service.py
 app/services/speech_service.py
+app/services/verse_notes_service.py
 app/services/visual_flow_service.py
 psalms_copyleft.egg-info/PKG-INFO
 psalms_copyleft.egg-info/SOURCES.txt

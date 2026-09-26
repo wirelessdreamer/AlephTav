@@ -1,9 +1,127 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v013.a.literal.alt.0001",
+    "rnd.ps025.v013.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v013.a.0001",
+    "aud.ps025.v013.a.0002",
+    "aud.ps025.v013.a.0003",
+    "aud.ps025.v013.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e14046b82809fa76c506c8ec63329b4f254675ee2aaa1695e0b69202e948e219",
+      "audit_id": "aud.ps025.v013.a.0001",
+      "before_hash": "551bf75b804cf790e046db24d81d909a1fb5ac6fb1cb7744daa030c9927030aa",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.733523+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v013.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the description of the person who fears Yahweh, preserving lodging and inheritance.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "93041276bb24139508f9f82f22f31cc42d22194ccb08d886316accbefe5585c3",
+      "audit_id": "aud.ps025.v013.a.0002",
+      "before_hash": "bd67399cf49b7fd541b253db16cc5cdd6d801223283d95b5ac5f25495de3b4d2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.828270+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the person described in verse 12, preserving rest, seed, and inheritance.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "32b5eca2e8df1fbf585122773322f0dc67aa7c434a5ab5ae13555a16f141c4f9",
+      "audit_id": "aud.ps025.v013.a.0003",
+      "before_hash": "c241953d2f1414f1889f21ef960bca8bd7198faf460cf210271c0568e803677c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:45.314566+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7085ce08c025a4f95dc73403255d7d1bd51d1e1cf638ff21825190a25b504b56",
+      "audit_id": "aud.ps025.v013.a.0004",
+      "before_hash": "cb1353d52a6c7cc379093b8aefed9a9d277e998293a115f11983ae09d1740d06",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.510868+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v013.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker’s description of personal well-being and the promise that his offspring will inherit the land. “Soul” and “seed” retain the Hebrew expressions.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "a06f9c167267a4dc75b43e2f215ff954f84e98c85b45b44e681f6936a51893ee",
+      "audit_ids": [
+        "aud.ps025.v013.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Rest at ease” emphasizes repose within the broader picture of dwelling in well-being.",
+      "display_reference": "Psalm 25:13",
+      "english_rendering_id": "rnd.ps025.v013.a.lyric.alt.0001",
+      "generation_run_id": "cxr.5b1ecc830cf9",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נַ֭פְשׁוֹ בְּט֣וֹב תָּלִ֑ין וְ֝זַרְע֗וֹ יִ֣ירַשׁ אָֽרֶץ׃",
+      "literal_backbone": [
+        "His soul will lodge in well-being.",
+        "And his offspring will inherit the land."
+      ],
+      "literal_rendering_id": "rnd.ps025.v013.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:13",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "in good, welfare, prosperity; lodge, spend the night, remain",
+          "note": "An idiomatic expression of settled well-being, with greater emphasis on rest than the Hebrew requires.",
+          "rendered_as": "will rest at ease",
+          "token_ids": [
+            "ps025.v013.t002",
+            "ps025.v013.t003"
+          ],
+          "transliteration": "bəṭôḇ tālîn",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v013.a.0001"
   ],
@@ -15,7 +133,236 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves soul, lodging, seed, and land.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Soul lodging in well-being",
+          "note": "Retains the lodging verb rather than replacing it with an abstract statement of prosperity.",
+          "source_id": "ps025.v013.a",
+          "token_ids": [
+            "ps025.v013.t001",
+            "ps025.v013.t002",
+            "ps025.v013.t003"
+          ]
+        },
+        {
+          "label": "Seed inheriting land",
+          "note": "'Seed' retains the Hebrew image for descendants.",
+          "source_id": "ps025.v013.a",
+          "token_ids": [
+            "ps025.v013.t004",
+            "ps025.v013.t005",
+            "ps025.v013.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v013.t001 → His soul",
+          "ps025.v013.t002–t003 → will lodge in well-being",
+          "ps025.v013.t004 → and his seed",
+          "ps025.v013.t005–t006 → will inherit the land"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v013.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v013.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Continues the description of the person who fears Yahweh, preserving lodging and inheritance.",
+      "rendering_id": "rnd.ps025.v013.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "His soul will lodge in well-being,\nand his seed will inherit the land.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v013.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v013.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Two balanced declarations retain the bodily and generational imagery.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.33,
+        "stress_approximation": 0.58,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Soul lodging in well-being",
+          "note": "Rest retains the lodging image, though its overnight nuance is softened.",
+          "source_id": "ps025.v013.a",
+          "token_ids": [
+            "ps025.v013.t001",
+            "ps025.v013.t002",
+            "ps025.v013.t003"
+          ]
+        },
+        {
+          "label": "Seed inheriting land",
+          "note": "Retains seed as the image for descendants and land as their inheritance.",
+          "source_id": "ps025.v013.a",
+          "token_ids": [
+            "ps025.v013.t004",
+            "ps025.v013.t005",
+            "ps025.v013.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v013.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v013.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Continues the person described in verse 12, preserving rest, seed, and inheritance.",
+      "rendering_id": "rnd.ps025.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "His soul will rest at ease;\nhis seed will inherit the land.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v013.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נַ֭פְשׁוֹ בְּט֣וֹב תָּלִ֑ין וְ֝זַרְע֗וֹ יִ֣ירַשׁ אָֽרֶץ׃",

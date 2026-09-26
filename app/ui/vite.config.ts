@@ -14,6 +14,7 @@ export default defineConfig({
       '/project': apiTarget,
       '/assistant': apiTarget,
       '/codex': apiTarget,
+      '/collections': apiTarget,
       '/comparison-assessments': apiTarget,
       '/corpus': apiTarget,
       '/psalms': apiTarget,

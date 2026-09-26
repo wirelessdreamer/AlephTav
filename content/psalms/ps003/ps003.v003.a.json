@@ -1,9 +1,135 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v003.a.0001",
+    "aud.ps003.v003.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8e44bd364b796a650398a5517c7b41097a264ec7d84e8aa7161c71255328d575",
+      "audit_id": "aud.ps003.v003.a.0001",
+      "before_hash": "cd6679bc8c9e5aed20e21e1913984e8468b8787fc2905393e57b471df5a5808f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.530078+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5ab4b1355123fda40b1ee2765e7c255c0bbd4bc14ba8c1710753001ed44ba0ad",
+      "audit_id": "aud.ps003.v003.a.0002",
+      "before_hash": "b041b6530034627159124884105ad00ca4fb70b67aa235452bb86f4a56d5ec6b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:49:46.960686+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the many speakers and their claim that he has no help from God. Their speech concerns the psalmist, though the introductory phrase substitutes surrounding him for explicitly speaking about him. Selah is omitted.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "d865fcbcf6bed8bc13da727c9bd5fdf8c6708e5d9305e755a6386e68ec056550",
+      "audit_ids": [
+        "aud.ps003.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Mobs,' 'all around me,' and 'roaring their mockery' dramatize the speakers' grouping, location, volume, and attitude. 'Hah!' adds a mocking interjection, and the final line repeats the denial for lyric emphasis.",
+      "display_reference": "Psalm 3:3",
+      "english_rendering_id": "rnd.ps003.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.540fb9cc55db",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "רַבִּים֮ אֹמְרִ֢ים לְנַ֫פְשִׁ֥י אֵ֤ין יְֽשׁוּעָ֓תָה לּ֬וֹ בֵֽאלֹהִ֬ים סֶֽלָה׃",
+      "literal_backbone": [
+        "Many are saying of me:",
+        "There is no deliverance for him in God.",
+        "Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:3",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "many, numerous; many people",
+          "note": "Adds the image of gathered crowds to the statement that many people speak.",
+          "rendered_as": "Mobs of them",
+          "token_ids": [
+            "ps003.v003.t001"
+          ],
+          "transliteration": "rabbîm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "say, speak",
+          "note": "The quoted claim supports a taunting interpretation, but neither roaring nor explicit mockery is stated by the verb.",
+          "rendered_as": "roaring their mockery:",
+          "token_ids": [
+            "ps003.v003.t002"
+          ],
+          "transliteration": "ʾōməriym",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "to or concerning my soul, life, self",
+          "note": "Retains reference to the speaker but changes the relation into a spatial one; this phrase does not mean surrounding him.",
+          "rendered_as": "all around me",
+          "token_ids": [
+            "ps003.v003.t003"
+          ],
+          "transliteration": "lənapšî",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "salvation, deliverance, help; for him; in God",
+          "note": "'Help' is within the noun's range, and 'from God' naturally expresses God as the source of deliverance.",
+          "rendered_as": "help for him from God!",
+          "token_ids": [
+            "ps003.v003.t005",
+            "ps003.v003.t006",
+            "ps003.v003.t007"
+          ],
+          "transliteration": "yəšûʿātâ lô ḇēʾlōhîm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Selah; a liturgical or musical marker of uncertain meaning",
+          "note": "There is no explicit rendering of Selah; the lyric repetition cannot securely be identified as its equivalent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps003.v003.t008"
+          ],
+          "transliteration": "selâ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v003.a.0001"
   ],
@@ -15,7 +141,99 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.12,
+        "stress_approximation": 0.57,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Mobs of them all around me, roaring their mockery:\nHah! \nNo help for him from God!\nNo help... from God...",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "רַבִּים֮ אֹמְרִ֢ים לְנַ֫פְשִׁ֥י אֵ֤ין יְֽשׁוּעָ֓תָה לּ֬וֹ בֵֽאלֹהִ֬ים סֶֽלָה׃",

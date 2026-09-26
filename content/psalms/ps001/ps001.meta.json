@@ -1,7 +1,586 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps001.v001.a.0004"
+      ],
+      "citations": [],
+      "created_at": "2026-09-25T14:27:44.633953+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "The opening man and subsequent pronouns are third-person singular; the LORD is also spoken about in verses 2 and 6.",
+            "claim": "The psalm speaks about a representative person rather than addressing God directly."
+          },
+          {
+            "basis": "Verse 1 pairs walking with wicked counsel, standing with sinners' way, and sitting with mockers' seat.",
+            "claim": "The opening distinguishes three actions and their associations."
+          },
+          {
+            "basis": "Verse 2 repeats תּוֹרָה and specifies day and night. The lyric's “murmurs” selects an audible sense of הָגָה.",
+            "claim": "Delight and sustained engagement with divine teaching define the positive portrait."
+          },
+          {
+            "basis": "Verse 3 describes a planted, fruit-bearing tree with unwithered foliage; verse 4 counters with wind-driven chaff.",
+            "claim": "The tree and chaff form the central imagistic contrast."
+          },
+          {
+            "basis": "Verse 5 names judgment and the righteous assembly; verse 6 repeats “way” for righteous and wicked, making the wicked's way the subject of perishing.",
+            "claim": "The ending connects judgment, community, and contrasting ways."
+          },
+          {
+            "basis": "The supplied Hebrew across verses 1–6 contains no such marker.",
+            "claim": "There is no explicit Selah or comparable performance marker in this psalm."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "A particular author, date, or historical incident occasioned the psalm.",
+            "why_not": "There is no superscription or identifying historical detail."
+          },
+          {
+            "claim": "The judgment is explicitly a particular earthly trial or final eschatological event.",
+            "why_not": "Verse 5 names judgment without identifying its time, venue, or procedure."
+          },
+          {
+            "claim": "The righteous assembly identifies a specific sanctuary service or institution.",
+            "why_not": "The gathering is named without location or ritual directions."
+          },
+          {
+            "claim": "The prosperity language guarantees unrestricted material success.",
+            "why_not": "Verse 3 uses broad flourishing and success language without specifying wealth or enumerating guaranteed outcomes."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.e7a541b0e2b8",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Teaching, moral instruction, judgment, and an assembly of righteous people suggest a communal religious horizon. The language does not specify a temple ceremony, festival, sacrifice, officiant, or original performance occasion.",
+        "heading_attribution": "Psalm 1 has no Masoretic superscription attributing authorship or naming an occasion. “Psalm 1” and the unit identifiers are reference labels; they establish no attribution to David or anyone else."
+      },
+      "method": "Compared the setting directly with the supplied Hebrew, checking repeated vocabulary, clause relationships, imagery, and grammatical subjects. Compact literal backbones were based on that Hebrew. Section titles here are analytical labels; the setting supplies none. No external editions or lexica were consulted.",
+      "non_source_material": [
+        {
+          "kind": "meter",
+          "note": "Earlier translator guidance for this setting, not Hebrew content. The unscored lyric alone does not establish its realized musical meter.",
+          "text": "target 6/8 meter"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps001.0001",
+      "psalm_id": "ps001",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Three negative clauses give way to positive delight and sustained engagement, then to the planted tree's fruit and enduring foliage.",
+          "first_verse": 1,
+          "last_verse": 3,
+          "theme": "A person distinguished by conduct, delight in teaching, and flourishing.",
+          "title": "Opening portrait"
+        },
+        {
+          "arc_note": "The abrupt chaff comparison reverses the tree image. “So” carries that contrast into judgment and the righteous gathering.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "The wicked's instability and inability to stand.",
+          "title": "Contrasting fate"
+        },
+        {
+          "arc_note": "“For” supplies the concluding explanation. The repeated path image gathers the earlier contrasts into a final opposition.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "The LORD's knowledge and the contrasting paths.",
+          "title": "Closing explanation"
+        }
+      ],
+      "source_fingerprint": "cb037df26e40b3ded1f182e2b528b43f1c6e7fc93dfdd6cf6ad3d19e70b2ac64",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting preserves the psalm's movement from rejected company and delighted attention to the LORD's teaching, through the contrasting images of tree and chaff, to judgment and the two paths. Contractions and verbal phrasing make the English conversational. “Murmurs” selects audible engagement with the teaching; “when judgment comes” adds temporal framing. Repeated “path” connects the opening conduct with the closing outcome."
+    },
+    {
+      "audit_ids": [
+        "aud.ps001.v001.a.0010"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T13:45:08.083786+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–2 contrast rejected conduct with delight in YHWH's instruction; verse 6 explicitly names the ways of the righteous and wicked.",
+            "claim": "The psalm contrasts righteous and wicked ways of life."
+          },
+          {
+            "basis": "Verse 2 joins delight in YHWH's instruction with meditation day and night.",
+            "claim": "Regular attention to divine instruction anchors the positive portrait."
+          },
+          {
+            "basis": "The planted tree of verse 3 contrasts with wind-driven chaff in verse 4; verses 5–6 describe failure to stand in judgment and the wicked way's perishing.",
+            "claim": "Fruitfulness and instability lead into judgment and divergent outcomes."
+          },
+          {
+            "basis": "Verse 3 specifies streams of water and fruit in its season, without Eden or monthly production; verse 6 says YHWH knows the righteous way, without an explicit act of charting it.",
+            "claim": "Several distinctive English images are interpretive additions or substitutions."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "A named author, composition date, or historical occasion.",
+            "why_not": "There is no attribution or historical notice, and the general portraits identify no particular event."
+          },
+          {
+            "claim": "A specific liturgy, tune, instrument, or distribution of singers.",
+            "why_not": "Neither a superscription nor the poem supplies such directions."
+          },
+          {
+            "claim": "The judgment is definitively a particular earthly court or final eschatological proceeding.",
+            "why_not": "Verse 5 names judgment without specifying its time or institutional setting."
+          },
+          {
+            "claim": "The tree is explicitly located in Eden or bears fruit monthly.",
+            "why_not": "Those details occur in the English setting; the Hebrew gives a watered location and appropriate seasonal fruit."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.c1f95c0eceee",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Instruction, meditation, judgment, and the assembly of the righteous imply a community concerned with faithful conduct before YHWH. They support a wisdom and teaching setting, but identify no particular temple ceremony, festival, sacrifice, or musical performance.",
+        "heading_attribution": "Psalm 1 has no Masoretic superscription attributing authorship, naming an occasion, or giving performance directions. “Psalm 1” identifies its position; it does not establish an author."
+      },
+      "method": "Compared the supplied English with the supplied Masoretic text, token information, and literal renderings across all six verses. The literal backbone follows the Hebrew clauses and repeated images; stanza boundaries follow the original paste. No external edition, lexicon, or commentary was consulted.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps001.0002",
+      "psalm_id": "ps001",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Retains the walk–stand–sit sequence while replacing the Hebrew's moral descriptions with colloquial characterizations.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Blessedness and refusal of corrupt company.",
+          "title": "Stanza 1"
+        },
+        {
+          "arc_note": "Moves from habitual meditation to the tree image; Eden, monthly fruit, and perpetual blossom amplify flourishing while replacing the water supply, seasonal timing, and explicit success in one's actions.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "Delight in instruction and enduring fruitfulness.",
+          "title": "Stanza 2"
+        },
+        {
+          "arc_note": "Windblown dust leads into courtroom defenselessness and unsuitable company, retaining the negative progression while leaving its explicit causal connector unstated.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "The wicked's instability and failure in judgment.",
+          "title": "Stanza 3"
+        },
+        {
+          "arc_note": "Closes with parallel roads: God charts one, while the other leads nowhere; the Hebrew's knowledge and destruction become guidance and futility.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "Two ways and their contrasting outcomes.",
+          "title": "Stanza 4"
+        }
+      ],
+      "source_fingerprint": "c2d4857301cbd36a58b2cc483c61506d65097a8424f1c965db41e3486bc46bd8",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting turns a third-person wisdom portrait into vivid, colloquial address to “you.” It preserves the movement from refusing corrupt company, through delight in divine instruction and fruitful stability, to the wicked's instability, judgment, and contrasting destiny. Its imagery substantially interprets that movement: blessedness becomes God's liking, watered planting becomes Eden, seasonal fruit becomes monthly fruit, chaff becomes dust, and divine knowledge becomes charting a road. The ending emphasizes futility more than the Hebrew's perishing.",
+      "translation_id": "tr.ps001.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps001.0001",
+      "audit_ids": [
+        "aud.ps001.v001.a.0008"
+      ],
+      "created_at": "2026-09-26T13:42:36.553814+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.f70e432f2296",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The location beside streams of water is not expressed; the translation supplies Eden instead.",
+          "token_ids": [
+            "ps001.v003.t004",
+            "ps001.v003.t005",
+            "ps001.v003.t006"
+          ],
+          "unit_id": "ps001.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The explicit therefore connecting judgment to the preceding description is absent.",
+          "token_ids": [
+            "ps001.v005.t001",
+            "ps001.v005.t002"
+          ],
+          "unit_id": "ps001.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The explanatory for introducing the final verse is absent.",
+          "token_ids": [
+            "ps001.v006.t001"
+          ],
+          "unit_id": "ps001.v006.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps001",
+      "sections": [
+        {
+          "kind": "verse",
+          "label": "Stanza 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v001.t001",
+                    "ps001.v001.t002"
+                  ],
+                  "unit_id": "ps001.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0001",
+              "rationale": "The blessing becomes a direct address that explicitly interprets happiness as God's liking.",
+              "text": "How well God must like you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v001.t003",
+                    "ps001.v001.t004",
+                    "ps001.v001.t005",
+                    "ps001.v001.t006",
+                    "ps001.v001.t007"
+                  ],
+                  "unit_id": "ps001.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "The relative clause becomes direct address, with ruts replacing counsel and an added blindness image characterizing the wicked.",
+              "text": "you don’t walk in the ruts of those blind-as-bats,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v001.t008",
+                    "ps001.v001.t009",
+                    "ps001.v001.t010",
+                    "ps001.v001.t011"
+                  ],
+                  "unit_id": "ps001.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0003",
+              "rationale": "Standing in sinners' way becomes standing with them, with good-for-nothings replacing sinners.",
+              "text": "you don’t stand with the good-for-nothings,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v001.t012",
+                    "ps001.v001.t013",
+                    "ps001.v001.t014",
+                    "ps001.v001.t015"
+                  ],
+                  "unit_id": "ps001.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "The seating image is retained while mockers are interpretively characterized as know-it-alls.",
+              "text": "you don’t take your seat among the know-it-alls."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v002.t001",
+                    "ps001.v002.t002",
+                    "ps001.v002.t003",
+                    "ps001.v002.t004",
+                    "ps001.v002.t005"
+                  ],
+                  "unit_id": "ps001.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "Instead you thrill to God’s Word,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v002.t006",
+                    "ps001.v002.t007",
+                    "ps001.v002.t008",
+                    "ps001.v002.t009"
+                  ],
+                  "unit_id": "ps001.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Meditation becomes a chewing metaphor, and his instruction is identified as Scripture.",
+              "text": "you chew on Scripture day and night."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v003.t001",
+                    "ps001.v003.t002",
+                    "ps001.v003.t003"
+                  ],
+                  "unit_id": "ps001.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "The tree comparison becomes a direct metaphor, with replanting and Eden supplied beyond the statement that the tree is planted.",
+              "text": "You’re a tree replanted in Eden,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v003.t007",
+                    "ps001.v003.t008",
+                    "ps001.v003.t009",
+                    "ps001.v003.t010"
+                  ],
+                  "unit_id": "ps001.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Fruit in its appropriate season becomes fresh fruit every month, adding freshness and specifying a monthly frequency.",
+              "text": "bearing fresh fruit every month,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v003.t011",
+                    "ps001.v003.t012",
+                    "ps001.v003.t013"
+                  ],
+                  "unit_id": "ps001.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0009",
+              "rationale": "The leaf's not withering is recast as never dropping even one leaf.",
+              "text": "Never dropping a leaf,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v003.t014",
+                    "ps001.v003.t015",
+                    "ps001.v003.t016",
+                    "ps001.v003.t017"
+                  ],
+                  "unit_id": "ps001.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0010",
+              "rationale": "Success in everything the person does is folded into the continuing tree image as perpetual blossom.",
+              "text": "always in blossom."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v004.t001",
+                    "ps001.v004.t002",
+                    "ps001.v004.t003"
+                  ],
+                  "unit_id": "ps001.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0011",
+              "rationale": "The statement that the wicked are not so becomes a comparison with the addressed person as its subject.",
+              "text": "You’re not at all like the wicked,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v004.t004",
+                    "ps001.v004.t005",
+                    "ps001.v004.t006",
+                    "ps001.v004.t007",
+                    "ps001.v004.t008",
+                    "ps001.v004.t009"
+                  ],
+                  "unit_id": "ps001.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0012",
+              "rationale": "The contrasting chaff comparison and the clause about wind driving it away become a relative clause describing windblown dust.",
+              "text": "who are mere windblown dust—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v005.t003",
+                    "ps001.v005.t004",
+                    "ps001.v005.t005",
+                    "ps001.v005.t006"
+                  ],
+                  "unit_id": "ps001.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0013",
+              "rationale": "The wicked remain the implied subject, and their inability to stand in judgment becomes having no defense in court.",
+              "text": "Without defense in court,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v005.t007",
+                    "ps001.v005.t008",
+                    "ps001.v005.t009"
+                  ],
+                  "unit_id": "ps001.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0014",
+              "rationale": "Sinners' exclusion from the righteous assembly becomes unfitness for innocent people's company, leaving sinners implicit.",
+              "text": "unfit company for innocent people."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v006.t002",
+                    "ps001.v006.t003",
+                    "ps001.v006.t004",
+                    "ps001.v006.t005"
+                  ],
+                  "unit_id": "ps001.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "God's knowing the righteous person's way becomes actively charting the road of the addressed person.",
+              "text": "God charts the road you take."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps001.v006.t006",
+                    "ps001.v006.t007",
+                    "ps001.v006.t008"
+                  ],
+                  "unit_id": "ps001.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "The wicked are represented by they, and their way's perishing becomes a road leading to nowhere.",
+              "text": "The road they take leads to nowhere."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 1",
+      "translation_id": "tr.ps001.0001",
+      "updated_at": "2026-09-26T13:42:36.553814+00:00"
+    }
+  ],
   "psalm_id": "ps001",
   "title": "Psalm 1",
   "translation_guidance": "target 6/8 meter",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps001.v001.a.0006",
+        "aud.ps001.v001.a.0012"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T12:36:52.693067+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "psalm_id": "ps001",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps001.0001"
+    }
+  ],
   "unit_ids": [
     "ps001.v001.a",
     "ps001.v002.a",

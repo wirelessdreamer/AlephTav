@@ -1,9 +1,258 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v005.a.literal.alt.0001",
+    "rnd.ps001.v005.a.lyric.alt.0001",
+    "rnd.ps001.v005.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v005.a.0001",
+    "aud.ps001.v005.a.0002",
+    "aud.ps001.v005.a.0003",
+    "aud.ps001.v005.a.0004",
+    "aud.ps001.v005.a.0005",
+    "aud.ps001.v005.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f18fb7f76d9a7610e9506766e71ffdd4762170aafa7fa8a9706455cbac9ab996",
+      "audit_id": "aud.ps001.v005.a.0001",
+      "before_hash": "d471250b1988d0b7e7406554e2319e899c20eeed79850e68611489798ac6ce8b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T13:57:39.804911+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Preserves the consequence and the parallel exclusion of wicked people and sinners.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7f32af4a7b566ae4f5f2730aa00fad577f0b0654ffce17a0d017119c0212e6e7",
+      "audit_id": "aud.ps001.v005.a.0002",
+      "before_hash": "292445e72404bd8a36023aa521941abb677c3701bb7ebf50d38ecbfe025df222",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:00:15.281875+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats the standing verb to make the Hebrew's elliptical parallel audible in English.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b25c945f58fcacc7d067f9cd52505e1b509f3047605bcf676eea3922e4ba0caa",
+      "audit_id": "aud.ps001.v005.a.0003",
+      "before_hash": "dfa850ba3c6584d448dff28b059a9855fbf1d0b2f059acf2e6d61d5bb28defad",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:26:42.780056+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "30e32ecbf83e7a25d743d83f4b8f92b392ee8783517ef27194207c8b68fdfced",
+      "audit_id": "aud.ps001.v005.a.0004",
+      "before_hash": "13d8f0b328c8ecb4d8a9d8142f1ccb16d684b8b91d3a83422335504df1d4aca3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:41:36.802976+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps001.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8910986c4dbe41b9414c949af609d5d9ebf5b7ea68f179888fa285866c47824a",
+      "audit_id": "aud.ps001.v005.a.0005",
+      "before_hash": "935feb884ec8f814943288ae1aaec4033b85021aeab72dcde243efc9a5eca066",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:44:09.931531+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v005.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1d6d5c86f32200ad3eba46955e300ab17386a97f7b2f038e8b6b335769de71ff",
+      "audit_id": "aud.ps001.v005.a.0006",
+      "before_hash": "5d92d72b40faaf99f48f4b67c3e2bec76abdc57332a5d7814b43f744a73fc32e",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.154930+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps001.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.fb69adaad6a5",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the consequential opening, the wicked's failure to stand in judgment, and the parallel exclusion of sinners from the righteous assembly. Repeating “won't stand” makes explicit the predicate understood in the second Hebrew clause. The literal rendering follows the Hebrew's nominal phrases and ellipsis more directly.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "71cc04e5209a7045c7aa7e98f60777e931a22718a07ed8b96adcc886a8d167b6",
+      "audit_ids": [
+        "aud.ps001.v005.a.0003"
+      ],
+      "comparison_id": "cmp.ps001.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“When judgment comes” turns “in the judgment” into a temporal clause, presenting judgment as an arriving event without identifying it further. “Where the righteous gather” recasts the assembly as an activity and setting.",
+      "display_reference": "Psalm 1:5",
+      "english_rendering_id": "rnd.ps001.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.3b60698f5f69",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עַל־כֵּ֤ן׀ לֹא־יָקֻ֣מוּ רְ֭שָׁעִים בַּמִּשְׁפָּ֑ט וְ֝חַטָּאִ֗ים בַּעֲדַ֥ת צַדִּיקִֽים׃",
+      "literal_backbone": [
+        "Therefore the wicked will not stand in the judgment,",
+        "nor sinners in the assembly of the righteous."
+      ],
+      "literal_rendering_id": "rnd.ps001.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:5",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps001.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Judgment, justice, judicial decision, legal ordinance.",
+          "note": "The judgment setting is preserved, but “when” and “comes” supply temporal framing absent from the Hebrew phrase.",
+          "rendered_as": "when judgment comes",
+          "token_ids": [
+            "ps001.v005.t006"
+          ],
+          "transliteration": "ba–mmišpāṭ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "Assembly, congregation, community; righteous or just people.",
+          "note": "Preserves the communal scene while shifting emphasis from the assembled body to its gathering.",
+          "rendered_as": "where the righteous gather",
+          "token_ids": [
+            "ps001.v005.t008",
+            "ps001.v005.t009"
+          ],
+          "transliteration": "baʿăḏaṯ ṣaddîqiym",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the judicial setting and the negative contrast with righteous people, in the Hebrew's order. The wicked remain implicit from the preceding verse.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "e8b5febbb8d8c8e529c3e4365703c027de64d9a0a4da6416ab8d61f826afd139",
+      "audit_ids": [
+        "aud.ps001.v005.a.0005"
+      ],
+      "comparison_id": "cmp.ps001.v005.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Omits the explicit consequence marker “Therefore” and the separate naming of sinners. Inability to stand in judgment becomes lack of defense in court; exclusion from the righteous assembly becomes social unfitness.",
+      "display_reference": "Psalm 1:5",
+      "english_rendering_id": "rnd.ps001.v005.a.lyric.alt.0002",
+      "generation_run_id": "cxr.604d08258469",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עַל־כֵּ֤ן׀ לֹא־יָקֻ֣מוּ רְ֭שָׁעִים בַּמִּשְׁפָּ֑ט וְ֝חַטָּאִ֗ים בַּעֲדַ֥ת צַדִּיקִֽים׃",
+      "literal_backbone": [
+        "Therefore the wicked will not stand in the judgment,",
+        "nor sinners in the assembly of the righteous."
+      ],
+      "literal_rendering_id": "rnd.ps001.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:5",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Therefore, for this reason.",
+          "note": "The causal connection to the preceding verse is not explicitly expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps001.v005.t001",
+            "ps001.v005.t002"
+          ],
+          "transliteration": "ʿal-kēn",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "They will not stand or endure in the judgment.",
+          "note": "A plausible judicial interpretation, but absence of a defense is more specific than failure to stand in judgment.",
+          "rendered_as": "Without defense in court",
+          "token_ids": [
+            "ps001.v005.t003",
+            "ps001.v005.t004",
+            "ps001.v005.t006"
+          ],
+          "transliteration": "lōʾ-yāqumû bammišpāṭ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "And sinners.",
+          "note": "The second designation is not expressed; the English continues with the preceding wicked as its implied subject.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps001.v005.t007"
+          ],
+          "transliteration": "wəḥaṭṭāʾîm",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "In the assembly, congregation, or community of.",
+          "note": "Recasts inability to stand within an assembly as unfitness to associate with its members.",
+          "rendered_as": "unfit company for",
+          "token_ids": [
+            "ps001.v005.t008"
+          ],
+          "transliteration": "baʿăḏaṯ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Righteous, just, or innocent people.",
+          "note": "Innocence fits the judicial context, though it emphasizes freedom from guilt rather than the broader quality of righteousness.",
+          "rendered_as": "innocent people",
+          "token_ids": [
+            "ps001.v005.t009"
+          ],
+          "transliteration": "ṣaddîqîm",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps001.v005.a.0001"
   ],
@@ -15,7 +264,323 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the source's elliptical second clause.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Standing in judgment and assembly",
+          "note": "Preserves the standing language and the gathered community.",
+          "source_id": "ps001.v005.a",
+          "token_ids": [
+            "ps001.v005.t004",
+            "ps001.v005.t006",
+            "ps001.v005.t008",
+            "ps001.v005.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps001.v005.t001–t002 → Therefore",
+          "ps001.v005.t003–t006 → the wicked will not stand in the judgment",
+          "ps001.v005.t007 → nor sinners",
+          "ps001.v005.t008–t009 → in the assembly of the righteous"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T13:57:39.702551+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.fb69adaad6a5",
+        "source_ids": [
+          "ps001.v005.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v005.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8d9-81cc-7cc1-bab8-07b862a876ac"
+      },
+      "rationale": "Preserves the consequence and the parallel exclusion of wicked people and sinners.",
+      "rendering_id": "rnd.ps001.v005.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Therefore the wicked\nwill not stand in the judgment,\nnor sinners\nin the assembly of the righteous.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v005.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v005.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matching “won't stand” clauses answer the opening verse's standing image.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.16,
+        "stress_approximation": 0.73,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Standing at judgment and among the gathered righteous",
+          "note": "Retains the standing action and the communal gathering.",
+          "source_id": "ps001.v005.a",
+          "token_ids": [
+            "ps001.v005.t004",
+            "ps001.v005.t006",
+            "ps001.v005.t008",
+            "ps001.v005.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T14:00:15.170055+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.8feb9663d895",
+        "source_ids": [
+          "ps001.v005.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v005.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8db-83f2-7d33-a195-ed40eddf1656"
+      },
+      "rationale": "Repeats the standing verb to make the Hebrew's elliptical parallel audible in English.",
+      "rendering_id": "rnd.ps001.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "So the wicked won't stand\nwhen judgment comes;\nsinners won't stand\nwhere the righteous gather.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v005.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 9,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.34,
+        "stress_approximation": 0.83,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.76c3ad21531f",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps001.v005.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Without defense in court,\n    unfit company for innocent people.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עַל־כֵּ֤ן׀ לֹא־יָקֻ֣מוּ רְ֭שָׁעִים בַּמִּשְׁפָּ֑ט וְ֝חַטָּאִ֗ים בַּעֲדַ֥ת צַדִּיקִֽים׃",

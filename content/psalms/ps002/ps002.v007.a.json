@@ -1,9 +1,105 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v007.a.0001",
+    "aud.ps002.v007.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c6f144ae7bfcc014744b85e187d37c1e6ff8ddfcdef32c7348202546fc46da8d",
+      "audit_id": "aud.ps002.v007.a.0001",
+      "before_hash": "cfaf08a915bba4970eeafdff5e35fca0768c3abebd3c410f0a4a50cd2c206ff0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.657051+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "59d7bbb611fc933b6bb187b1c7ecabe8a9dd2c569fbcc0c8198b1534e94b4232",
+      "audit_id": "aud.ps002.v007.a.0002",
+      "before_hash": "4ff662a86bcf6eca35f5b5329196a14194035e07f8dbe7c3a0492caf7a7877b6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:08:48.318342+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the speaker's intention to recount divine speech, the declaration “You're my son,” and the emphasis on today. It leaves the decree unspecified and recasts God's begetting of the son as a birthday statement.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "79ae84ef2f3af59b1b67b43e58ca7f52a37b813a3a7e512e6100457b9e2a57d3",
+      "audit_ids": [
+        "aud.ps002.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Next” adds narrative sequencing. “To me” is implicit rather than stated. “Your birthday” removes the explicit divine agency in “I have begotten you” and can suggest an annual anniversary rather than an act occurring today.",
+      "display_reference": "Psalm 2:7",
+      "english_rendering_id": "rnd.ps002.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.af9aad9e0d9f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אֲסַפְּרָ֗ה אֶֽ֫ל חֹ֥ק יְֽהוָ֗ה אָמַ֘ר אֵלַ֥י בְּנִ֥י אַ֑תָּה אֲ֝נִ֗י הַיּ֥וֹם יְלִדְתִּֽיךָ׃",
+      "literal_backbone": [
+        "I will recount the decree:",
+        "Yahweh said to me,",
+        "You are my son; I have begotten you today."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:7",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "decree; statute; prescribed ordinance",
+          "note": "Divine speech is retained, but its designation as a decree is lost; “next” has no counterpart.",
+          "rendered_as": "what God said next",
+          "token_ids": [
+            "ps002.v007.t003"
+          ],
+          "transliteration": "ḥōq",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "I; today; I have begotten you",
+          "note": "Preserves today and a birth association, but substitutes a birthday statement for God's explicit act of begetting.",
+          "rendered_as": "And today is your birthday.",
+          "token_ids": [
+            "ps002.v007.t009",
+            "ps002.v007.t010",
+            "ps002.v007.t011"
+          ],
+          "transliteration": "ʾănî hayyôm yəliḏtîḵā",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v007.a.0001"
   ],
@@ -15,7 +111,99 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.58,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let me tell you what God said next.\nHe said, \"You're my son,\nAnd today is your birthday.\"",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אֲסַפְּרָ֗ה אֶֽ֫ל חֹ֥ק יְֽהוָ֗ה אָמַ֘ר אֵלַ֥י בְּנִ֥י אַ֑תָּה אֲ֝נִ֗י הַיּ֥וֹם יְלִדְתִּֽיךָ׃",

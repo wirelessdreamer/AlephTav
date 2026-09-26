@@ -202,6 +202,121 @@ export function choiceInVerse(
   return runs.filter((run) => run.text);
 }
 
+/** Gloss words too common to point at one place in a line. */
+const GLOSS_STOP_WORDS = new Set(
+  'a an and the of in to for with by on at from is are be as this that these those it he she they we you i his her their its my your our them him me us who which o'.split(
+    ' ',
+  ),
+);
+
+/**
+ * Whole words of ``text`` between ``from`` and ``to`` that share a content word with
+ * ``gloss``, each taken where it stands nearest ``hint`` (0 to 1 along the text).
+ */
+function glossRanges(text: string, gloss: string, from: number, to: number, hint?: number): Range[] {
+  const target = from + (hint ?? 0) * (to - from);
+  const words = new Set(
+    (fold(gloss).match(/[a-z']+/g) ?? []).filter((word) => !GLOSS_STOP_WORDS.has(word)),
+  );
+  const ranges: Range[] = [];
+  for (const word of words) {
+    const found: number[] = [];
+    const pattern = new RegExp(`\\b${word}\\b`, 'g');
+    const span = fold(text).slice(from, to);
+    for (let match = pattern.exec(span); match; match = pattern.exec(span)) {
+      found.push(from + match.index);
+    }
+    if (found.length === 0) continue;
+    const at = found.reduce((best, index) =>
+      Math.abs(index - target) < Math.abs(best - target) ? index : best,
+    );
+    ranges.push([at, at + word.length]);
+  }
+  return ranges.sort((a, b) => a[0] - b[0]);
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Where ``phrase`` stands in ``text``, as ``findRanges`` finds it, except that a space
+ * in the phrase matches any run of spaces and line breaks: an aligned phrase can run
+ * across the lines of a literal.
+ */
+function spansAcrossLines(text: string, phrase: string, hint?: number): Range[] | null {
+  const haystack = fold(text);
+  const matches = (part: string): Range[] => {
+    const words = fold(part).trim().split(/\s+/).filter(Boolean);
+    if (words.length === 0) return [];
+    const pattern = new RegExp(words.map(escapeRegExp).join('\\s+'), 'g');
+    return [...haystack.matchAll(pattern)].map((match): Range => [
+      match.index ?? 0,
+      (match.index ?? 0) + match[0].length,
+    ]);
+  };
+  const parts = phrase.split(/\s*;\s*/).filter(Boolean);
+  if (parts.length > 1) {
+    const ranges: Range[] = [];
+    let from = 0;
+    for (const part of parts) {
+      const next = matches(part).find(([start]) => start >= from);
+      if (!next) return null;
+      ranges.push(next);
+      from = next[1];
+    }
+    return ranges;
+  }
+  const found = matches(phrase);
+  if (found.length === 0) return null;
+  const target = (hint ?? 0) * text.length;
+  return [
+    found.reduce((best, range) =>
+      Math.abs(range[0] - target) < Math.abs(best[0] - target) ? range : best,
+    ),
+  ];
+}
+
+/**
+ * The literal with a Hebrew word's rendering marked. ``link`` is the phrase Codex
+ * aligned the word to: it is found first, then narrowed to the words in it that share
+ * the word's gloss, or marked whole when none do. Without a link, the gloss's words
+ * are looked for across the text. Null when nothing can be marked.
+ */
+export function literalMarks(
+  text: string | null | undefined,
+  link: { text: string; hint?: number; within?: number } | undefined,
+  gloss: string | undefined,
+  hint?: number,
+): ContextRun[] | null {
+  if (!text) return null;
+  let ranges: Range[] = [];
+  // "will … stand" is looked for part by part, as "will; stand" is.
+  const phrase = link?.text
+    .replace(/\s*(?:…|\.\.\.)\s*/g, '; ')
+    .replace(/^[\s"“”'‘’(]+|[\s"“”'‘’).,;:!?]+$/g, '');
+  // ``link.hint`` places the phrase in the verse; ``link.within`` the word in the phrase.
+  const spans = phrase ? spansAcrossLines(text, phrase, link?.hint) : null;
+  if (spans) {
+    for (const [start, end] of spans) {
+      const words = gloss ? glossRanges(text, gloss, start, end, link?.within) : [];
+      ranges.push(...(words.length > 0 ? words : [[start, end] as Range]));
+    }
+  } else if (gloss) {
+    ranges = glossRanges(text, gloss, 0, text.length, hint);
+  }
+  if (ranges.length === 0) return null;
+  const runs: ContextRun[] = [];
+  let cursor = 0;
+  for (const [start, end] of ranges) {
+    runs.push({ text: text.slice(cursor, start), marked: false });
+    runs.push({ text: text.slice(start, end), marked: true });
+    cursor = end;
+  }
+  runs.push({ text: text.slice(cursor), marked: false });
+  return runs.filter((run) => run.text);
+}
+
 /** Where a word sits in its verse, 0 to 1, to pick between repeated phrases. */
 export function positionHint(tokenIds: string[], allTokenIds: string[]): number | undefined {
   const at = allTokenIds.indexOf(tokenIds[0]);

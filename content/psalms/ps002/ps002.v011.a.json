@@ -1,9 +1,118 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v011.a.0001",
+    "aud.ps002.v011.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e088f3d08905d7cb6bce63ffcce7dd13ddf596b1b53d6ac3619b14115f65d524",
+      "audit_id": "aud.ps002.v011.a.0001",
+      "before_hash": "8b5363c7966570a022e1f55b863ced341344bfb27e525e8e2ae2d5c718e07ba3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.728424+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "65d4684edd0136551c434fb806ab550ef212fed2ed9a396f7cf35ef1892c94f4",
+      "audit_id": "aud.ps002.v011.a.0002",
+      "before_hash": "7e997e1fd967e5a80421927bedc6728b0dffdb69ded4f88354ec2808a7016e83",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:09:52.641341+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the commands to serve God and rejoice with trembling, in their Hebrew order. It recasts fearful service as an adoring embrace and appends an injunction belonging to the following verse.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "ad7d92c17fa923b0fc04775ae22c44dc243e9fd1773f24f4c641e140431f86cd",
+      "audit_ids": [
+        "aud.ps002.v011.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Adoring embrace” introduces physical affection and softens the explicit fear accompanying service. “Trembling awe” retains trembling and expresses reverence. “Kiss Messiah!” anticipates Psalm 2:12.",
+      "display_reference": "Psalm 2:11",
+      "english_rendering_id": "rnd.ps002.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.c750188f312f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עִבְד֣וּ אֶת־יְהוָ֣ה בְּיִרְאָ֑ה וְ֝גִ֗ילוּ בִּרְעָדָֽה׃",
+      "literal_backbone": [
+        "Serve Yahweh with fear,",
+        "and rejoice with trembling."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:11",
+      "non_source_material": [
+        {
+          "kind": "other",
+          "note": "An anticipatory rendering of the opening injunction of Psalm 2:12; it has no counterpart within Psalm 2:11.",
+          "text": "Kiss Messiah!"
+        }
+      ],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "serve; work; worship",
+          "note": "Worship is an appropriate expression of service directed toward God, though service has a broader scope.",
+          "rendered_as": "Worship",
+          "token_ids": [
+            "ps002.v011.t001"
+          ],
+          "transliteration": "ʿiḇḏû",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "with fear; with reverence",
+          "note": "Adoration can suggest reverence, but an embrace is not expressed, and the element of fear is softened.",
+          "rendered_as": "in adoring embrace",
+          "token_ids": [
+            "ps002.v011.t004"
+          ],
+          "transliteration": "bəyirʾāh",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "with trembling; with quaking",
+          "note": "Retains trembling while interpreting its emotional character as awe.",
+          "rendered_as": "in trembling awe",
+          "token_ids": [
+            "ps002.v011.t006"
+          ],
+          "transliteration": "birʿāḏāh",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v011.a.0001"
   ],
@@ -15,7 +124,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.29,
+        "stress_approximation": 0.82,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Worship God in adoring embrace,\nCelebrate in trembling awe. Kiss Messiah!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עִבְד֣וּ אֶת־יְהוָ֣ה בְּיִרְאָ֑ה וְ֝גִ֗ילוּ בִּרְעָדָֽה׃",

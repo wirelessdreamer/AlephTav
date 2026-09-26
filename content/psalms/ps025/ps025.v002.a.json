@@ -1,9 +1,116 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v002.a.literal.alt.0001",
+    "rnd.ps025.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v002.a.0001",
+    "aud.ps025.v002.a.0002",
+    "aud.ps025.v002.a.0003",
+    "aud.ps025.v002.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "04f752cd2133af07c3e7176fce1a2c6437889acd212e0a834fd0a919ffa3977c",
+      "audit_id": "aud.ps025.v002.a.0001",
+      "before_hash": "264953447bd7a0bd3c832fda33b1101ca068a7ec4739682c8c66b0fa6f280c15",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.760976+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries the direct address into a confession of trust and paired petitions.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ec76e448446e2874b731df7f8ffd7022e480b9ce0551da04b6514feecf3a204e",
+      "audit_id": "aud.ps025.v002.a.0002",
+      "before_hash": "6ce9cce2ac6eb02981d4d1d8467f5febc0e2c80be7930d620f45bd5b2b98c216",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.158049+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Keeps trust beside the unresolved fear of public humiliation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "31b1f7ee90c1f759b52710b49d96e82e4c18a622ebfda095eaafe5c24054e979",
+      "audit_id": "aud.ps025.v002.a.0003",
+      "before_hash": "c2edf0a91986f59dd20819b23ea46f44ffffe8aa07c08f2aa4d98696b0a65210",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:07.732590+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "41d2a06242d3f849bc7fc1a229eeff9b325341bfb8dd844a12ffe8d7ec26da12",
+      "audit_id": "aud.ps025.v002.a.0004",
+      "before_hash": "600a8469174e8d0e940ddcb9ecd01338aef0d9f932d3dcbb661f07f82e742b06",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.470448+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the address “My God,” the speaker’s declared trust in God, and both petitions: against being shamed and against his enemies gloating over him. “I've trusted you” naturally expresses the Hebrew “in you I have trusted.”",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "d8b47c3630e872198a33b666850428203b9c9f3d272b7eb42eed98758ac62ef2",
+      "audit_ids": [
+        "aud.ps025.v002.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:2",
+      "english_rendering_id": "rnd.ps025.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.8c2c866d7d9a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אֱ‍ֽלֹהַ֗י בְּךָ֣ בָ֭טַחְתִּי אַל־אֵב֑וֹשָׁה אַל־יַֽעַלְצ֖וּ אֹיְבַ֣י לִֽי׃",
+      "literal_backbone": [
+        "My God, in you I have trusted.",
+        "Let me not be put to shame.",
+        "Let not my enemies exult over me."
+      ],
+      "literal_rendering_id": "rnd.ps025.v002.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:2",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v002.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v002.a.0001"
   ],
@@ -15,7 +122,201 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps the trust statement and both negative petitions distinct.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v002.t001 → My God",
+          "ps025.v002.t002–t003 → in you I have trusted",
+          "ps025.v002.t004–t005 → Let me not be put to shame",
+          "ps025.v002.t006–t009 → let not my enemies gloat over me"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v002.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Carries the direct address into a confession of trust and paired petitions.",
+      "rendering_id": "rnd.ps025.v002.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "My God, in you I have trusted.\nLet me not be put to shame;\nlet not my enemies gloat over me.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v002.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Conversational petitions with the enemies' gloating given a separate landing.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.24,
+        "singability_score": 0.13,
+        "stress_approximation": 0.65,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v002.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Keeps trust beside the unresolved fear of public humiliation.",
+      "rendering_id": "rnd.ps025.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My God, I've trusted you.\nDon't let me be shamed;\ndon't let my enemies\ngloat over me.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אֱ‍ֽלֹהַ֗י בְּךָ֣ בָ֭טַחְתִּי אַל־אֵב֑וֹשָׁה אַל־יַֽעַלְצ֖וּ אֹיְבַ֣י לִֽי׃",

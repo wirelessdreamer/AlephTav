@@ -1,9 +1,124 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v007.a.0001",
+    "aud.ps004.v007.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2677374e0fad72829b7b5b9df61e73a461956a39a4da6a3ffb6d869f024ebdf9",
+      "audit_id": "aud.ps004.v007.a.0001",
+      "before_hash": "898393afb8c6c0962f59ea88e183bbdbddf3f83847abc61cd64aeeb1cc7b267f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.698528+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "58e1f68557578f37225a785d01f9fb2b41bd77903e64ec5c79f0ff766ac2bb8e",
+      "audit_id": "aud.ps004.v007.a.0002",
+      "before_hash": "e30f6d29ff7a4d61aeeca488faa1930c1f0706f383c47d12a740721429710079",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:26:15.581485+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves people speaking about desired good and a subsequent reference to God. It changes their question into a demand for more and replaces the communal petition for the light of Yahweh's face with a personal assertion of divine abundance.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "95c5b3ab1a812700766698337d9f2838636691469bb5a4d14a8b841b537df92b",
+      "audit_ids": [
+        "aud.ps004.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Everyone” universalizes “many.” Hunger for more and the repeated demands characterize the speakers as dissatisfied, which the Hebrew does not explicitly do. “I have God's more-than-enough” changes a request into an assertion, shifts from us to I, and removes the light-and-face imagery.",
+      "display_reference": "Psalm 4:7",
+      "english_rendering_id": "rnd.ps004.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.93849d2bcb50",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "רַבִּ֥ים אֹמְרִים֮ מִֽי־יַרְאֵ֢נ֫וּ ט֥וֹב נְֽסָה־עָ֭לֵינוּ א֨וֹר פָּנֶ֬יךָ יְהוָֽה׃",
+      "literal_backbone": [
+        "Many are saying, “Who will show us good?”",
+        "Lift upon us the light of your face, O Yahweh."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:7",
+      "non_source_material": [
+        {
+          "kind": "other",
+          "note": "An additional lyric repetition with no separate Hebrew counterpart.",
+          "text": "\"More, more.\""
+        }
+      ],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "many, numerous; many people",
+          "note": "Extends the statement from many people to everyone.",
+          "rendered_as": "everyone",
+          "token_ids": [
+            "ps004.v007.t001"
+          ],
+          "transliteration": "rabbîm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "who; show us, cause us to see; good, goodness, welfare, prosperity",
+          "note": "A question about who will provide an experience of good becomes a question about people's appetite and a demand for increasing quantities.",
+          "rendered_as": "Why is everyone hungry for more? \"More, more,\"",
+          "token_ids": [
+            "ps004.v007.t003",
+            "ps004.v007.t004",
+            "ps004.v007.t005"
+          ],
+          "transliteration": "mî-yarʾēnû ṭôḇ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "lift up; upon us; light; your face, presence; Yahweh",
+          "note": "Divine favor may connect the two conceptually, but the English replaces the petition and its imagery with an assertion of personal abundance.",
+          "rendered_as": "I have God's more-than-enough,",
+          "token_ids": [
+            "ps004.v007.t006",
+            "ps004.v007.t007",
+            "ps004.v007.t008",
+            "ps004.v007.t009",
+            "ps004.v007.t010"
+          ],
+          "transliteration": "nəsâ-ʿālênû ʾôr pāneḵā YHWH",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v007.a.0001"
   ],
@@ -15,7 +130,106 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.28,
+        "singability_score": 0.14,
+        "stress_approximation": 0.78,
+        "syllable_count": 30,
+        "syllables": 30
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Why is everyone hungry for more? \"More, more,\" they say.\n\"More, more.\"\nI have God's more-than-enough,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "רַבִּ֥ים אֹמְרִים֮ מִֽי־יַרְאֵ֢נ֫וּ ט֥וֹב נְֽסָה־עָ֭לֵינוּ א֨וֹר פָּנֶ֬יךָ יְהוָֽה׃",

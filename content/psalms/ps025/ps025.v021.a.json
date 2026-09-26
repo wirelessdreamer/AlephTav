@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v021.a.literal.alt.0001",
+    "rnd.ps025.v021.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v021.a.0001",
+    "aud.ps025.v021.a.0002",
+    "aud.ps025.v021.a.0003",
+    "aud.ps025.v021.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0af1e0a77097060ec80148843be2acc305f08daae20526ca59352d48797e9f30",
+      "audit_id": "aud.ps025.v021.a.0001",
+      "before_hash": "6d89306f155a7a86560817101907eff545c2fe23c9c54987da187e6da08e243d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.789806+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v021.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the guarding petition and returns to the waiting expressed earlier in the psalm.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1131bb4413a534ca2ca496b17b4db74d376c17dc0bc940e77ac261b204e8e7a0",
+      "audit_id": "aud.ps025.v021.a.0002",
+      "before_hash": "abe29b407d4e920cbf0d20383ea595775bca612da990f73384bd9a2aea2acda3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.898026+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v021.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Keeps the qualities as guardians and closes the personal petition with the waiting heard earlier.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5676f3914b0f3faa8e842a15d06a3b758c73ad2fa982e6a2d39f86f4029f77ef",
+      "audit_id": "aud.ps025.v021.a.0003",
+      "before_hash": "898919cf2a53f1a6ebc52e54373e44d57c16c741c222b4a633d38b690087ec75",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:51.221336+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v021.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0f9e2733c19221b827d1ff26f5176575ed58e6f5ab63d0f4c1436a7fd830a234",
+      "audit_id": "aud.ps025.v021.a.0004",
+      "before_hash": "797c2b456918d645993b76661b384551c36c8ec657537eaa5d93b08a7a5ea9cc",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.536025+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v021.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the wish that integrity and uprightness guard the speaker, followed by his waiting for God.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "c1e62d320254b246f067b4a4121ab2297cdc90b6a3ffa654bbe3336040cd35da",
+      "audit_ids": [
+        "aud.ps025.v021.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v021.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The explicit causal connection “for” is omitted. “I wait” presents the Hebrew “I have waited” as ongoing waiting.",
+      "display_reference": "Psalm 25:21",
+      "english_rendering_id": "rnd.ps025.v021.a.lyric.alt.0001",
+      "generation_run_id": "cxr.f8f5fbc99144",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תֹּם־וָיֹ֥שֶׁר יִצְּר֑וּנִי כִּ֝֗י קִוִּיתִֽיךָ׃",
+      "literal_backbone": [
+        "May integrity and uprightness guard me.",
+        "For I have waited for you."
+      ],
+      "literal_rendering_id": "rnd.ps025.v021.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:21",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v021.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v021.a.0001"
   ],
@@ -15,7 +121,222 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:21",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the protective agency of integrity and uprightness without adding a possessor.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Integrity and uprightness as guardians",
+          "note": "Keeps the two qualities as the grammatical agents of protection.",
+          "source_id": "ps025.v021.a",
+          "token_ids": [
+            "ps025.v021.t001",
+            "ps025.v021.t002",
+            "ps025.v021.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v021.t001–t002 → integrity and uprightness",
+          "ps025.v021.t003 → May ... guard me",
+          "ps025.v021.t004–t005 → for I have waited for you"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v021.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Continues the guarding petition and returns to the waiting expressed earlier in the psalm.",
+      "rendering_id": "rnd.ps025.v021.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "May integrity and uprightness guard me,\nfor I have waited for you.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v021.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A longer invocation resolves into the established short waiting phrase.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.37,
+        "stress_approximation": 0.6,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Integrity and uprightness as guardians",
+          "note": "Preserves the protective agency of the two qualities without assigning ownership.",
+          "source_id": "ps025.v021.a",
+          "token_ids": [
+            "ps025.v021.t001",
+            "ps025.v021.t002",
+            "ps025.v021.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v021.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Keeps the qualities as guardians and closes the personal petition with the waiting heard earlier.",
+      "rendering_id": "rnd.ps025.v021.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let integrity and uprightness\nguard me.\nI wait for you.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v021.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "תֹּם־וָיֹ֥שֶׁר יִצְּר֑וּנִי כִּ֝֗י קִוִּיתִֽיךָ׃",

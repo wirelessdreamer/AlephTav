@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v012.a.literal.alt.0001",
+    "rnd.ps025.v012.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v012.a.0001",
+    "aud.ps025.v012.a.0002",
+    "aud.ps025.v012.a.0003",
+    "aud.ps025.v012.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "5a0a7f11b7c8e8de1d036cff3aa8c9c39a1c9cf34a53b3f5142d45392d25ba38",
+      "audit_id": "aud.ps025.v012.a.0001",
+      "before_hash": "f39bb246c76b4472cb73080a12ff3fb76b104b7425eed7e143ad2313f68b135a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.845273+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v012.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Closes the requested passage with a question and an answering promise of instruction.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "56803ee6e030275555e21d2c3185ae583b730cb3346a33d6fc0ab96bed624bf8",
+      "audit_id": "aud.ps025.v012.a.0002",
+      "before_hash": "817956badce0010e648de11fb7cd2a330fbba7829442e9bb7ce3dcd1f18f3983",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.254610+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v012.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Pairs the source's question with instruction, returning to the way image without explaining the final chooser.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "552bd05812caec4dbe94bf8836ea0c62df470d2629c3fb56d68cd05988e47fa2",
+      "audit_id": "aud.ps025.v012.a.0003",
+      "before_hash": "7657ea464ac14c12e7447f5c430a080fe2cbec4494b702b8dc7fd58e0fbdbcde",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:34.680572+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v012.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "023847c2707fed7b559caf46d2293b05ed33b34926a3bc9f0a40bbdaf9885727",
+      "audit_id": "aud.ps025.v012.a.0004",
+      "before_hash": "220f3cd78441a956f9e6ff5a5445ee3f3753a51d7a81ae4968ef0c2240f2e28a",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.507605+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v012.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the question identifying the person who fears Yahweh and the promise of instruction in the way he chooses. “The one” naturally expresses the generic “man,” and “show him the way” conveys instruction. The English retains the Hebrew’s ambiguity about who chooses the way.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "f5755d0bdd86da660f41fa5e6208da4c09c328c62d051c20ab8c37176a219ff7",
+      "audit_ids": [
+        "aud.ps025.v012.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v012.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:12",
+      "english_rendering_id": "rnd.ps025.v012.a.lyric.alt.0001",
+      "generation_run_id": "cxr.26cbdae22e9a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִי־זֶ֣ה הָ֭אִישׁ יְרֵ֣א יְהוָ֑ה י֝וֹרֶ֗נּוּ בְּדֶ֣רֶךְ יִבְחָֽר׃",
+      "literal_backbone": [
+        "Who is the man who fears Yahweh?",
+        "He will instruct him in the way he chooses."
+      ],
+      "literal_rendering_id": "rnd.ps025.v012.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:12",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v012.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v012.a.0001"
   ],
@@ -15,7 +121,214 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:12",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps the final chooser implicit, as in the Hebrew.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The chosen way",
+          "note": "Retains the way and the act of choosing.",
+          "source_id": "ps025.v012.a",
+          "token_ids": [
+            "ps025.v012.t007",
+            "ps025.v012.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v012.t001–t003 → Who is the man",
+          "ps025.v012.t004–t005 → who fears Yahweh",
+          "ps025.v012.t006 → He will instruct him",
+          "ps025.v012.t007–t008 → in the way he chooses"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v012.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Closes the requested passage with a question and an answering promise of instruction.",
+      "rendering_id": "rnd.ps025.v012.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Who is the man who fears Yahweh?\nHe will instruct him\nin the way he chooses.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v012.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Short answering phrases retain fear and the implicit chooser.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.61,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The chosen way",
+          "note": "Retains the route and the act of choosing.",
+          "source_id": "ps025.v012.a",
+          "token_ids": [
+            "ps025.v012.t007",
+            "ps025.v012.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v012.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Pairs the source's question with instruction, returning to the way image without explaining the final chooser.",
+      "rendering_id": "rnd.ps025.v012.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who is the one\nwho fears Yahweh?\nHe'll show him the way\nhe chooses.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v012.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִי־זֶ֣ה הָ֭אִישׁ יְרֵ֣א יְהוָ֑ה י֝וֹרֶ֗נּוּ בְּדֶ֣רֶךְ יִבְחָֽר׃",

@@ -4,6 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.api.main import app
+from app.core.config import get_settings
 from app.services import registry_service
 
 client = TestClient(app)
@@ -14,15 +15,26 @@ UNIT_ID = "ps001.v001.a"
 
 @pytest.fixture(autouse=True)
 def _restore_psalm():
+    get_settings().collections_file.unlink(missing_ok=True)
     meta = registry_service.load_psalm_meta(PSALM_ID)
     unit = registry_service.load_unit(UNIT_ID)
     yield
     registry_service.save_psalm_meta(PSALM_ID, meta)
     registry_service.save_unit(unit)
+    get_settings().collections_file.unlink(missing_ok=True)
+
+
+def _project(title: str) -> str:
+    response = client.post("/collections", json={"title": title})
+    assert response.status_code == 200
+    return response.json()["collection_id"]
 
 
 def _create(title: str = "Sung in 6/8") -> str:
-    response = client.post(f"/psalms/{PSALM_ID}/translations", json={"title": title})
+    response = client.post(
+        f"/psalms/{PSALM_ID}/translations",
+        json={"title": title, "collection_id": _project(title)},
+    )
     assert response.status_code == 200
     return response.json()["translation_id"]
 
@@ -115,3 +127,49 @@ def test_an_unknown_translation_is_not_found_and_an_unnamed_one_is_refused() -> 
 
     assert missing.status_code == 404
     assert unnamed.status_code == 400
+
+
+def test_projects_are_listed_created_renamed_and_hold_their_translations() -> None:
+    translation_id = _create("Bone and Ash")
+
+    listed = client.get("/collections").json()
+    renamed = client.patch(f"/collections/{listed[1]['collection_id']}", json={"title": "Ash"})
+    duplicate = client.post("/collections", json={"title": "ash"})
+    default = client.patch("/collections/col.default", json={"title": "Mine"})
+
+    assert [c["title"] for c in listed] == ["Main translations", "Bone and Ash"]
+    assert listed[1]["members"] == [
+        {"psalm_id": PSALM_ID, "translation_id": translation_id, "title": "Bone and Ash"}
+    ]
+    assert renamed.status_code == 200 and renamed.json()["title"] == "Ash"
+    assert duplicate.status_code == 400
+    assert default.status_code == 400
+
+
+def test_a_translation_moves_between_projects_but_not_into_one_with_the_psalm() -> None:
+    translation_id = _create("Bone and Ash")
+    hymnal = _project("Hymnal")
+
+    moved = client.post(
+        f"/psalms/{PSALM_ID}/translations/move",
+        json={"translation_id": translation_id, "collection_id": hymnal},
+    )
+    refused = client.post(
+        f"/psalms/{PSALM_ID}/translations/move",
+        json={"translation_id": None, "collection_id": hymnal},
+    )
+
+    assert moved.status_code == 200 and moved.json()["collection_id"] == hymnal
+    assert refused.status_code == 400
+    listed = {c["collection_id"]: c for c in client.get("/collections").json()}
+    assert [m["translation_id"] for m in listed[hymnal]["members"]] == [translation_id]
+
+
+def test_a_translation_without_a_project_is_refused() -> None:
+    missing = client.post(f"/psalms/{PSALM_ID}/translations", json={"title": "Loose"})
+    unknown = client.post(
+        f"/psalms/{PSALM_ID}/translations", json={"title": "Loose", "collection_id": "col.0042"}
+    )
+
+    assert missing.status_code == 400
+    assert unknown.status_code == 404

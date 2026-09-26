@@ -1,9 +1,126 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v016.a.literal.alt.0001",
+    "rnd.ps025.v016.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v016.a.0001",
+    "aud.ps025.v016.a.0002",
+    "aud.ps025.v016.a.0003",
+    "aud.ps025.v016.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "205b73768024fa4bb90d97494534f4431a103f72bc82a46a27477abc99059691",
+      "audit_id": "aud.ps025.v016.a.0001",
+      "before_hash": "e4ce418267eda030c9ece1b211cc4f7a26e2e6951ad466d8412698124646a34d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.753145+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v016.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the speaker's directed gaze with a request for Yahweh to turn toward him.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "98095a143a17829b80b0fc7a9065cc1333d50ae699a3bda6d46aa194760d6283",
+      "audit_id": "aud.ps025.v016.a.0002",
+      "before_hash": "2a60254145c4d91681396c5567ac37a49e3bde937033bfb403007d9082f2f306",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.848395+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v016.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The speaker's gaze becomes a request for God's attention, grounded in loneliness and pain.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "37e0880bf54d7a6e9448bf22929424e3070e962a13464a9a2bcd1a079c908bc8",
+      "audit_id": "aud.ps025.v016.a.0003",
+      "before_hash": "d43d9e9905ca9552764cc270a384dead847ef1e38ca8fb7c6194e6c5006241e0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:11.279725+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v016.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5b62f7ab28be995d674289d6584305f3e0389c8aa68cee7b522dbd25c5098c11",
+      "audit_id": "aud.ps025.v016.a.0004",
+      "before_hash": "5cc15c216c15701bb7a4f9e02f5d8f0f0bfbc77a1ef66d1b68bbc8b3b267b830",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.520745+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v016.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the requests for God to turn toward the speaker and show mercy, followed by the speaker’s loneliness and suffering. “Have mercy” naturally conveys the appeal for gracious favor.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "7de144438425e8d5c5e243fd7795afe2c7c8e379436c4d0875e4994e714154f2",
+      "audit_ids": [
+        "aud.ps025.v016.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v016.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Hurting” expresses affliction through experienced pain. The Hebrew’s explicit causal “for” is left implicit after the dash.",
+      "display_reference": "Psalm 25:16",
+      "english_rendering_id": "rnd.ps025.v016.a.lyric.alt.0001",
+      "generation_run_id": "cxr.bcb7802bf1df",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "פְּנֵה־אֵלַ֥י וְחָנֵּ֑נִי כִּֽי־יָחִ֖יד וְעָנִ֣י אָֽנִי׃",
+      "literal_backbone": [
+        "Turn to me and be gracious to me.",
+        "For I am alone and afflicted."
+      ],
+      "literal_rendering_id": "rnd.ps025.v016.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:16",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v016.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and poor, afflicted, lowly",
+          "note": "A colloquial expression of suffering that emphasizes felt pain within the broader condition of affliction.",
+          "rendered_as": "and hurting",
+          "token_ids": [
+            "ps025.v016.t006"
+          ],
+          "transliteration": "wəʿānî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v016.a.0001"
   ],
@@ -15,7 +132,220 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:16",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps both petitions and both descriptions of distress.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Turning toward the speaker",
+          "note": "Retains the directional action.",
+          "source_id": "ps025.v016.a",
+          "token_ids": [
+            "ps025.v016.t001",
+            "ps025.v016.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v016.t001–t002 → Turn to me",
+          "ps025.v016.t003 → and be gracious to me",
+          "ps025.v016.t004–t007 → for I am alone and afflicted"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v016.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Answers the speaker's directed gaze with a request for Yahweh to turn toward him.",
+      "rendering_id": "rnd.ps025.v016.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Turn to me and be gracious to me,\nfor I am alone and afflicted.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v016.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Conversational imperatives + em-dash breath break.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.29,
+        "stress_approximation": 0.68,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Turning toward the speaker",
+          "note": "Preserves the directional request that answers the preceding gaze.",
+          "source_id": "ps025.v016.a",
+          "token_ids": [
+            "ps025.v016.t001",
+            "ps025.v016.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v016.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "The speaker's gaze becomes a request for God's attention, grounded in loneliness and pain.",
+      "rendering_id": "rnd.ps025.v016.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Turn to me;\nhave mercy on me—\nI'm alone and hurting.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v016.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "פְּנֵה־אֵלַ֥י וְחָנֵּ֑נִי כִּֽי־יָחִ֖יד וְעָנִ֣י אָֽנִי׃",

@@ -1,9 +1,135 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v008.a.0001",
+    "aud.ps002.v008.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "61c084cc39a299642593d0bb5c6064b31429b5563e7ee9172d3031dfd8f9067a",
+      "audit_id": "aud.ps002.v008.a.0001",
+      "before_hash": "159ad11162c4f6c8a230ed6ce0bb883745e7b8d1773b39cedd68324b66deaa34",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.676851+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6848d62fdf699b7d2c74fecd888cc8753e603b6061a68d56f458de8e85d6b668",
+      "audit_id": "aud.ps002.v008.a.0002",
+      "before_hash": "012183bb7b781854baa1ff79eb3a5b8bbadcd1262d519aa90fbe03deb400a97a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:09:06.360857+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the invitation to ask, followed by nations and extensive territory offered to the addressee. The explicit promise to give an inheritance and possession becomes a series of conversational questions.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "c6bcccc1cdc36e06690687adbeaf3b61d25d82080eaaf61048db4ddefaa3829e",
+      "audit_ids": [
+        "aud.ps002.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“What do you want? Name it” expands the invitation. The divine giver and recipient's ownership remain implicit. “Present” and “prize” replace inheritance and possession, while “continents” substitutes a modern geographical category for the earth's farthest limits.",
+      "display_reference": "Psalm 2:8",
+      "english_rendering_id": "rnd.ps002.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.98b46535e7f7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שְׁאַ֤ל מִמֶּ֗נִּי וְאֶתְּנָ֣ה ג֭וֹיִם נַחֲלָתֶ֑ךָ וַ֝אֲחֻזָּתְךָ֗ אַפְסֵי־אָֽרֶץ׃",
+      "literal_backbone": [
+        "Ask of me,",
+        "and I will give nations as your inheritance,",
+        "and the ends of the earth as your possession."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:8",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "ask, request; from me",
+          "note": "Turns a single invitation into a question and command, leaving “of me” implicit.",
+          "rendered_as": "What do you want? Name it:",
+          "token_ids": [
+            "ps002.v008.t001",
+            "ps002.v008.t002"
+          ],
+          "transliteration": "šəʾal mimmennî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "give; grant; make",
+          "note": "The explicit first-person promise to give is unstated, though an offer is implied by the questions.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps002.v008.t003"
+          ],
+          "transliteration": "wəʾettənāh",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "your inheritance; your allotted property",
+          "note": "Conveys a gift but loses the sense of an allotted inheritance.",
+          "rendered_as": "as a present",
+          "token_ids": [
+            "ps002.v008.t005"
+          ],
+          "transliteration": "naḥălāṯeḵā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "and your possession; your landed holding",
+          "note": "Introduces the idea of a reward or winnings where the Hebrew specifies possession.",
+          "rendered_as": "as a prize",
+          "token_ids": [
+            "ps002.v008.t006"
+          ],
+          "transliteration": "waʾăḥuzzāṯəḵā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "ends; extremities; limits of the earth",
+          "note": "Suggests vast territory but replaces the expression of worldwide extent with distinct landmasses.",
+          "rendered_as": "Continents",
+          "token_ids": [
+            "ps002.v008.t007",
+            "ps002.v008.t008"
+          ],
+          "transliteration": "ʾafsê-ʾāreṣ",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v008.a.0001"
   ],
@@ -15,7 +141,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.68,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "What do you want? Name it:\nNations as a present? Continents as a prize?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שְׁאַ֤ל מִמֶּ֗נִּי וְאֶתְּנָ֣ה ג֭וֹיִם נַחֲלָתֶ֑ךָ וַ֝אֲחֻזָּתְךָ֗ אַפְסֵי־אָֽרֶץ׃",

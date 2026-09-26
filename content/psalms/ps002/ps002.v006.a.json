@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v006.a.0001",
+    "aud.ps002.v006.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "010bc21a9aab9cc0a1043b92507d9e3ea1057ebd9369115511ec47b71e1154ef",
+      "audit_id": "aud.ps002.v006.a.0001",
+      "before_hash": "f5241c2d78ee4db0e51e37182d6d777213dcc564da71e4eb3d6f5a0beee073d1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.638389+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b04327e387fa227a007ef190d36f16533daa648c21e2d345ca3aa8bd271d4118",
+      "audit_id": "aud.ps002.v006.a.0002",
+      "before_hash": "443ccd9b2f5ee3ee20cb70bde3ca4f0c6ab1f74a8bc2a6cf9f92ff882ea987ad",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:08:35.407310+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves a king in Zion and the holiness of its mountain setting. It replaces God's declaration that he has installed his king with a rhetorical question and a coronation banquet, leaving divine agency and both possessives unstated.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "012f87c702829ded4591ec6a76eb6ada7ec5cb70d96c572884cfa1a9b92b9e1e",
+      "audit_ids": [
+        "aud.ps002.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Don't you know” introduces an address to listeners. The banquet is an invented elaboration of royal installation. “Summit” specifies the mountain's top, and the repeated question and location provide lyrical emphasis.",
+      "display_reference": "Psalm 2:6",
+      "english_rendering_id": "rnd.ps002.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.cd9323fc23aa",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַ֭אֲנִי נָסַ֣כְתִּי מַלְכִּ֑י עַל־צִ֝יּ֗וֹן הַר־קָדְשִֽׁי׃",
+      "literal_backbone": [
+        "But I have installed my king on Zion, my holy mountain."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:6",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and I; but I; as for me",
+          "note": "The emphatic divine first-person subject is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps002.v006.t001"
+          ],
+          "transliteration": "waʾănî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "install; establish; pour out",
+          "note": "Coronation relates to installing a king, but the verb supplies neither a banquet nor its preparation; God's completed act becomes a passive banquet scene.",
+          "rendered_as": "A coronation banquet is spread for him",
+          "token_ids": [
+            "ps002.v006.t002"
+          ],
+          "transliteration": "nāsaḵtî",
+          "verdict": "unsupported"
+        },
+        {
+          "lexical_gloss": "my king",
+          "note": "Preserves kingship but drops the possessive identifying the king as God's own.",
+          "rendered_as": "a King",
+          "token_ids": [
+            "ps002.v006.t003"
+          ],
+          "transliteration": "malkî",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "mountain of my holiness; my holy mountain",
+          "note": "Retains holiness, specifies the mountain's summit, and omits the divine possessive.",
+          "rendered_as": "the holy summit",
+          "token_ids": [
+            "ps002.v006.t006",
+            "ps002.v006.t007"
+          ],
+          "transliteration": "har-qodšî",
+          "verdict": "narrowing"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v006.a.0001"
   ],
@@ -15,7 +128,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 31,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.42,
+        "singability_score": 0.16,
+        "stress_approximation": 0.63,
+        "syllable_count": 41,
+        "syllables": 41
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Don't you know there's a King in Zion?\nA coronation banquet is spread for him\nOn the holy summit.\nDon't you know there's a King in Zion?\nOn the holy summit.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וַ֭אֲנִי נָסַ֣כְתִּי מַלְכִּ֑י עַל־צִ֝יּ֗וֹן הַר־קָדְשִֽׁי׃",

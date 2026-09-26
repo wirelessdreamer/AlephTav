@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v004.a.literal.alt.0001",
+    "rnd.ps025.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v004.a.0001",
+    "aud.ps025.v004.a.0002",
+    "aud.ps025.v004.a.0003",
+    "aud.ps025.v004.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d748a31cd458aefb2209ba27e6c9137af9f3a887b1d773fd7696472a0d32a0d0",
+      "audit_id": "aud.ps025.v004.a.0001",
+      "before_hash": "29f4947aad7c34101efc006ebaf8571400d06fda1af444526aff42fa29a153a6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.775806+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Introduces the paired ways and paths imagery continued through the passage.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a23be3c1198f8ed4891a48a0be284bee653dd0be894fe32a38a979dd034758a7",
+      "audit_id": "aud.ps025.v004.a.0002",
+      "before_hash": "47546cf76b261d111a59b5af8f009829dd07e9122d9284f8ebaabc3d2fd45e81",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.175010+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Uses direct speech while establishing the ways and paths that recur below.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c1a0f8dc5a7a7645ec2287c49ac758739dad6ea162937a748ef931c417c121c4",
+      "audit_id": "aud.ps025.v004.a.0003",
+      "before_hash": "455b6035f468a6bc451000d5b29fd6e4882035416777b0e977d0887da945b380",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:21.054797+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b769897342bd07ca5bef2f230711d9bd7cd51c0e4f483aec3c6b026af8bdfbda",
+      "audit_id": "aud.ps025.v004.a.0004",
+      "before_hash": "950e529b0df314ab0df18326f305f1001d76691d98b9f7588dc3c74d073162c0",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.477581+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves both petitions in order: that Yahweh make his ways known to the speaker and teach him his paths. “Show me” naturally expresses “make known to me,” retaining the parallel imagery of ways and paths.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "2de24ad4ed75940c737deb4878f5fe02fdc2f66a69d4b5584660fabf074070a6",
+      "audit_ids": [
+        "aud.ps025.v004.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:4",
+      "english_rendering_id": "rnd.ps025.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.379618668ff5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "דְּרָכֶ֣יךָ יְ֭הוָה הוֹדִיעֵ֑נִי אֹ֖רְחוֹתֶ֣יךָ לַמְּדֵֽנִי׃",
+      "literal_backbone": [
+        "Your ways, Yahweh, make known to me.",
+        "Your paths, teach me."
+      ],
+      "literal_rendering_id": "rnd.ps025.v004.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:4",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v004.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v004.a.0001"
   ],
@@ -15,7 +121,212 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps 'make known' distinct from 'teach.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Ways and paths",
+          "note": "Retains both related route nouns.",
+          "source_id": "ps025.v004.a",
+          "token_ids": [
+            "ps025.v004.t001",
+            "ps025.v004.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v004.t001–t003 → Make your ways known to me, Yahweh",
+          "ps025.v004.t004–t005 → teach me your paths"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v004.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v004.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Introduces the paired ways and paths imagery continued through the passage.",
+      "rendering_id": "rnd.ps025.v004.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Make your ways known to me, Yahweh;\nteach me your paths.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v004.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v004.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Compact paired requests anchored in ways and paths.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 9,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.76,
+        "stress_approximation": 0.56,
+        "syllable_count": 10,
+        "syllables": 10
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Ways and paths",
+          "note": "Both route nouns remain explicit.",
+          "source_id": "ps025.v004.a",
+          "token_ids": [
+            "ps025.v004.t001",
+            "ps025.v004.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v004.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v004.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Uses direct speech while establishing the ways and paths that recur below.",
+      "rendering_id": "rnd.ps025.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Show me your ways, Yahweh;\nteach me your paths.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v004.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "דְּרָכֶ֣יךָ יְ֭הוָה הוֹדִיעֵ֑נִי אֹ֖רְחוֹתֶ֣יךָ לַמְּדֵֽנִי׃",

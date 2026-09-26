@@ -16,6 +16,11 @@
       "description": "The translator's standing direction for the psalm's main translation, injected into translation prompts. Never shown to the analysis pass, which must judge the text independently of the intent behind it.",
       "type": "string"
     },
+    "main_collection_id": {
+      "description": "The project (collection) the main translation is in, once moved out of the default one; absent means the default.",
+      "type": "string",
+      "pattern": "^col\\.\\d{4}$"
+    },
     "translations": {
       "description": "Translations added beside the main one, oldest first. Records of the main translation carry no translation_id; an added translation's English renderings, assessments, analyses, arrangements, verse notes and rebuilds carry its id. The literal and gloss are shared.",
       "type": "array",
@@ -35,12 +40,17 @@
   "$defs": {
     "translation": {
       "type": "object",
-      "required": ["translation_id", "psalm_id", "title", "created_by", "created_via", "created_at", "audit_ids"],
+      "required": ["translation_id", "psalm_id", "title", "collection_id", "created_by", "created_via", "created_at", "audit_ids"],
       "additionalProperties": false,
       "properties": {
         "translation_id": { "type": "string", "pattern": "^tr\\.ps\\d{3}\\.\\d{4}$" },
         "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
         "title": { "type": "string", "minLength": 1 },
+        "collection_id": {
+          "description": "The project (collection) the translation is in: the default one, or one in content/collections.json. A project holds at most one translation of a psalm.",
+          "type": "string",
+          "pattern": "^col\\.(default|\\d{4})$"
+        },
         "guidance": {
           "description": "This translation's standing direction, as translation_guidance is the main translation's.",
           "type": "string"

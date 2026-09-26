@@ -1,9 +1,147 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v002.a.0001",
+    "aud.ps002.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c31a5e5bcda47831674dbe2c4b8fff9b418b123b8c8369a63d25b3b35de3da09",
+      "audit_id": "aud.ps002.v002.a.0001",
+      "before_hash": "28e8202961308c989899dbdaba7ec3108c07fa32cf73e7e2c394e343cbdddffd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.568095+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a79d8487cde9ed9eaf7f2b326f9fef9dcbedffbb9c56fddb561123971fdc2492",
+      "audit_id": "aud.ps002.v002.a.0002",
+      "before_hash": "1f1b3b44a3832f6522f1485ac5603a1dcc79acfd76bdb3c411141c2e89e38b01",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:07:38.097440+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the sequence of earthly kings taking a stand, rulers gathering together, and their opposition to Yahweh and his anointed. It recasts these actions in modern political language.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "a8c8821b58d06d388ce88059a5ebf5a19cb48411f0c1b9dcf9fb96262bcc9ded",
+      "audit_ids": [
+        "aud.ps002.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Push for position” suggests competition for status. “Demagogues and delegates” supplies political identities absent from the Hebrew, while “summit talks” modernizes their consultation. “God-deniers” interprets opposition as denial; “Messiah-defiers” preserves defiance but leaves God's possessive relationship to his anointed unstated.",
+      "display_reference": "Psalm 2:2",
+      "english_rendering_id": "rnd.ps002.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0d3b5675ac06",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יִ֥תְיַצְּב֨וּ׀ מַלְכֵי־אֶ֗רֶץ וְרוֹזְנִ֥ים נֽוֹסְדוּ־יָ֑חַד עַל־יְ֝הוָה וְעַל־מְשִׁיחֽ",
+      "literal_backbone": [
+        "The kings of the earth take their stand,",
+        "and rulers consult together",
+        "against Yahweh and against his anointed."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:2",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "kings of the earth",
+          "note": "Preserves earthly leadership but broadens kings to leaders generally.",
+          "rendered_as": "Earth-leaders",
+          "token_ids": [
+            "ps002.v002.t002",
+            "ps002.v002.t003"
+          ],
+          "transliteration": "malḵê-ʾereṣ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "take one's stand; station oneself",
+          "note": "Adds competitive maneuvering to the act of taking a stand.",
+          "rendered_as": "push for position",
+          "token_ids": [
+            "ps002.v002.t001"
+          ],
+          "transliteration": "yiṯəyaṣṣəḇû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and rulers; potentates",
+          "note": "Introduces two specific political categories and a derogatory characterization not expressed by the Hebrew.",
+          "rendered_as": "Demagogues and delegates",
+          "token_ids": [
+            "ps002.v002.t004"
+          ],
+          "transliteration": "wərôzənîm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "assemble together; consult together",
+          "note": "A modern political analogy for the rulers' joint consultation.",
+          "rendered_as": "meet for summit talks",
+          "token_ids": [
+            "ps002.v002.t005",
+            "ps002.v002.t006"
+          ],
+          "transliteration": "nôsəḏû-yāḥaḏ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "against Yahweh",
+          "note": "Opposition does not itself specify denial of God's existence or authority.",
+          "rendered_as": "The God-deniers",
+          "token_ids": [
+            "ps002.v002.t007",
+            "ps002.v002.t008"
+          ],
+          "transliteration": "ʿal-YHWH",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and against his anointed one",
+          "note": "Defiance captures opposition, and Messiah reflects the Hebrew title; the possessive “his” is lost.",
+          "rendered_as": "the Messiah-defiers",
+          "token_ids": [
+            "ps002.v002.t009",
+            "ps002.v002.t010"
+          ],
+          "transliteration": "wəʿal-məšîḥô",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v002.a.0001"
   ],
@@ -15,7 +153,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.72,
+        "syllable_count": 31,
+        "syllables": 31
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Earth-leaders push for position,\nDemagogues and delegates meet for summit talks,\nThe God-deniers, the Messiah-defiers:",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יִ֥תְיַצְּב֨וּ׀ מַלְכֵי־אֶ֗רֶץ וְרוֹזְנִ֥ים נֽוֹסְדוּ־יָ֑חַד עַל־יְ֝הוָה וְעַל־מְשִׁיחֽ",

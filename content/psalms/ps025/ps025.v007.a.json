@@ -1,9 +1,128 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v007.a.literal.alt.0001",
+    "rnd.ps025.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v007.a.0001",
+    "aud.ps025.v007.a.0002",
+    "aud.ps025.v007.a.0003",
+    "aud.ps025.v007.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "43abef7f25cb04c685470152a49c34f9dd2ee8ae10691a8ef58e62f872f735be",
+      "audit_id": "aud.ps025.v007.a.0001",
+      "before_hash": "cb41448f64336533800f37e7507c70edd96571c22f84acfd14ec3fa649b9e2f0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.803033+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v007.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding call to remember mercies with a contrasting request about sins and the speaker.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d22e7f21a6e697d7b3f83807a7ffd379bfde5daf8ea23f42d5b60676e9dcf434",
+      "audit_id": "aud.ps025.v007.a.0002",
+      "before_hash": "58f3bd7f97c8716ec5cf1b915f978b5bde01383a9bf7a75455f18ab51478db46",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.206703+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Lets 'Don't remember' answer 'Remember,' preserving the personal pressure of the appeal.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f2b883f329542a61f427a9cf04e8f63ad78f433635e032753b54a039903f6241",
+      "audit_id": "aud.ps025.v007.a.0003",
+      "before_hash": "88972c37a60e01362e8a9d2e2b54bcbb21bbc9555b1351a9d78bd8a4cce880c8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:57.358800+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f350b56d93a039d0f37f1fd3ed1f2fe01d8beaaba0c725ef8a84e5095b0854b",
+      "audit_id": "aud.ps025.v007.a.0004",
+      "before_hash": "912ff9059040519065ff316b95aca3244dba58399a48e912e286d7b0007a5c36",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.488935+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v007.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the plea not to remember youthful sins or rebellions, followed by the request to remember the speaker in faithful love and the closing appeal to Yahweh’s goodness.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "4ef264a48c14c92bcc0b660db20e7eba9de075fa259cf86bfb4b27cfe615271f",
+      "audit_ids": [
+        "aud.ps025.v007.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“The ways I've rebelled” expresses “my transgressions” as actions. “With your faithful love” slightly loosens “according to your loyal love,” and “because you're good” recasts an appeal for goodness’ sake as a statement of God’s character.",
+      "display_reference": "Psalm 25:7",
+      "english_rendering_id": "rnd.ps025.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.09f6212d50d0",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "חַטֹּ֤אות נְעוּרַ֨י׀ וּפְשָׁעַ֗י אַל־תִּ֫זְכֹּ֥ר כְּחַסְדְּךָ֥ זְכָר־לִי־אַ֑תָּה לְמַ֖עַן טוּבְךָ֣ יְהוָֽה׃",
+      "literal_backbone": [
+        "Do not remember the sins of my youth or my transgressions.",
+        "According to your loyal love, you, remember me.",
+        "For your goodness’ sake, Yahweh."
+      ],
+      "literal_rendering_id": "rnd.ps025.v007.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:7",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for the sake of your goodness",
+          "note": "Preserves goodness as the basis of the appeal, while changing the explicit formulation from “for the sake of” to “because.”",
+          "rendered_as": "because you're good",
+          "token_ids": [
+            "ps025.v007.t010",
+            "ps025.v007.t011"
+          ],
+          "transliteration": "ləmaʿan ṭûḇəḵā",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v007.a.0001"
   ],
@@ -15,7 +134,194 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the explicit 'you' in the positive remembrance petition.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v007.t001–t005 → Do not remember the sins of my youth or my transgressions",
+          "ps025.v007.t006 → according to your loyal love",
+          "ps025.v007.t007–t009 → you, remember me",
+          "ps025.v007.t010–t012 → for your goodness' sake, Yahweh"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v007.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Answers the preceding call to remember mercies with a contrasting request about sins and the speaker.",
+      "rendering_id": "rnd.ps025.v007.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Do not remember the sins of my youth\nor my transgressions;\naccording to your loyal love,\nyou, remember me,\nfor your goodness' sake, Yahweh.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v007.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Direct confession framed by opposing uses of 'remember.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.04,
+        "singability_score": 0.09,
+        "stress_approximation": 0.7,
+        "syllable_count": 36,
+        "syllables": 36
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v007.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Lets 'Don't remember' answer 'Remember,' preserving the personal pressure of the appeal.",
+      "rendering_id": "rnd.ps025.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Don't remember\nmy sins when I was young,\nor the ways I've rebelled.\nRemember me\nwith your faithful love,\nbecause you're good, Yahweh.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "חַטֹּ֤אות נְעוּרַ֨י׀ וּפְשָׁעַ֗י אַל־תִּ֫זְכֹּ֥ר כְּחַסְדְּךָ֥ זְכָר־לִי־אַ֑תָּה לְמַ֖עַן טוּבְךָ֣ יְהוָֽה׃",

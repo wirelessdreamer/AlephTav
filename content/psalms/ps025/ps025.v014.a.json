@@ -1,9 +1,126 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v014.a.literal.alt.0001",
+    "rnd.ps025.v014.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v014.a.0001",
+    "aud.ps025.v014.a.0002",
+    "aud.ps025.v014.a.0003",
+    "aud.ps025.v014.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8f82bbcb48b8140d6cba227b8169fd33d3d3297c8005cd3b9b0bbe72eb8eab1a",
+      "audit_id": "aud.ps025.v014.a.0001",
+      "before_hash": "fe00b4f13ffe5ca2d6b7bce5a7858888e50cb91ea29c4d6fa00b596c6b6fadfa",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.740421+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v014.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Connects fear of Yahweh with shared counsel and knowledge of his covenant.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8b26b8f0e32ef066a207ffbaa1387fa5e56c8591130c141b3339788aa0625fbd",
+      "audit_id": "aud.ps025.v014.a.0002",
+      "before_hash": "e6159c5977049a0f48a59ea7c41e992d181780a171761bb00c33409baef6af18",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.834799+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v014.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Expresses intimate counsel through an ordinary verb while retaining fear and covenant.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ebddd721191991334380c88a03364366da3c8ead0e0ae968c474c40f4e853b10",
+      "audit_id": "aud.ps025.v014.a.0003",
+      "before_hash": "32e2d8809760e0fd5ce4a74695bf75b5de7eabd6962481c4d9eb0c9f16640a58",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:54.706340+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v014.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f9f25eb08112e0dea96488e6726e227ec2e5fde95f096099f1da409a215d03a3",
+      "audit_id": "aud.ps025.v014.a.0004",
+      "before_hash": "887bdbd526bec865825683cfe0f0fd5c1f89547e73097258f953f28f3f0f3e15",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.513872+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v014.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the association of Yahweh’s confidential counsel with those who fear him, followed by his making his covenant known to them.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "60c3487d4d8d9c7b7f49f10146bf5577993fc754101002b336ac3a48e24cce56",
+      "audit_ids": [
+        "aud.ps025.v014.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v014.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Yahweh confides” turns the Hebrew noun phrase into an action, emphasizing the sharing of confidential counsel.",
+      "display_reference": "Psalm 25:14",
+      "english_rendering_id": "rnd.ps025.v014.a.lyric.alt.0001",
+      "generation_run_id": "cxr.86e38c92b4ee",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ס֣וֹד יְ֭הוָה לִירֵאָ֑יו וּ֝בְרִית֗וֹ לְהוֹדִיעָֽם׃",
+      "literal_backbone": [
+        "Yahweh’s confidential counsel is for those who fear him.",
+        "And his covenant he makes known to them."
+      ],
+      "literal_rendering_id": "rnd.ps025.v014.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:14",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v014.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "council, confidential counsel, secret, intimate fellowship",
+          "note": "Expresses the confidential counsel sense through a verb, foregrounding communication within a close relationship.",
+          "rendered_as": "confides",
+          "token_ids": [
+            "ps025.v014.t001"
+          ],
+          "transliteration": "sôḏ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v014.a.0001"
   ],
@@ -15,7 +132,214 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:14",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves confidential counsel without reducing it to general friendship.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Confidential counsel",
+          "note": "Retains the sense of admission to intimate counsel.",
+          "source_id": "ps025.v014.a",
+          "token_ids": [
+            "ps025.v014.t001",
+            "ps025.v014.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v014.t001–t002 → Yahweh's confidential counsel",
+          "ps025.v014.t003 → is for those who fear him",
+          "ps025.v014.t004–t005 → he makes his covenant known to them"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v014.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Connects fear of Yahweh with shared counsel and knowledge of his covenant.",
+      "rendering_id": "rnd.ps025.v014.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Yahweh's confidential counsel\nis for those who fear him;\nhe makes his covenant known to them.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v014.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Turns the counsel noun into direct, singable action.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.68,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Confidential counsel",
+          "note": "'Confides' retains the sharing of intimate counsel.",
+          "source_id": "ps025.v014.a",
+          "token_ids": [
+            "ps025.v014.t001",
+            "ps025.v014.t002",
+            "ps025.v014.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v014.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Expresses intimate counsel through an ordinary verb while retaining fear and covenant.",
+      "rendering_id": "rnd.ps025.v014.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh confides\nin those who fear him;\nhe makes his covenant\nknown to them.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v014.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ס֣וֹד יְ֭הוָה לִירֵאָ֑יו וּ֝בְרִית֗וֹ לְהוֹדִיעָֽם׃",

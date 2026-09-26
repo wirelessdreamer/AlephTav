@@ -1,9 +1,146 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v008.a.0001",
+    "aud.ps003.v008.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7d8e0b953a41033716adc7a8441fbcaa392301e54567f98325d757c3df10b750",
+      "audit_id": "aud.ps003.v008.a.0001",
+      "before_hash": "8952acb8af13a832800933dacb709a720e7677100235af21c19ffa9e270ccee9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.618251+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bfb28416a3447d7add5c03072ae880b15647125a05cc0e831acb071f632803e7",
+      "audit_id": "aud.ps003.v008.a.0002",
+      "before_hash": "e96ae104f47dcde805e0302846108ceae0fffda88321f91070b041bae5bfe65c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:51:14.757282+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the calls for God to arise and rescue the speaker, followed by blows to the face and teeth. It changes the statements of accomplished striking and breaking into a command and an image of impact. The explanatory 'for,' the scope 'all my enemies,' and the designation 'wicked' are not explicitly retained.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "b038dcf99253ac8a6fdfa6aacbaf8f2688ded32e4492ca5ee6e8458fa55ea946",
+      "audit_ids": [
+        "aud.ps003.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The rescue request is repeated for lyric emphasis. Successive blows to both cheeks, God's fist, and the repeated emphasis on force are added details. Impact replaces the explicit result of broken teeth.",
+      "display_reference": "Psalm 3:8",
+      "english_rendering_id": "rnd.ps003.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.202a681343fd",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ק֘וּמָ֤ה יְהוָ֨ה׀ הוֹשִׁ֘יעֵ֤נִי אֱלֹהַ֗י כִּֽי־הִכִּ֣יתָ אֶת־כָּל־אֹיְבַ֣י לֶ֑חִי שִׁנֵּ֖י רְשָׁעִ֣ים שִׁבַּֽרְתָּ׃",
+      "literal_backbone": [
+        "Arise, Yahweh; save me, my God!",
+        "For you have struck all my enemies on the cheek;",
+        "you have broken the teeth of the wicked."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:8",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "save, deliver, rescue me",
+          "note": "Fits the appeal for divine intervention, though 'help' is broader than rescue or deliverance.",
+          "rendered_as": "help me!",
+          "token_ids": [
+            "ps003.v008.t003"
+          ],
+          "transliteration": "hôšîʿēnî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "for, because, indeed",
+          "note": "The English does not retain the explanatory connection between the rescue request and the following statements.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps003.v008.t005"
+          ],
+          "transliteration": "kî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "strike, hit, smite",
+          "note": "Specifies a slap and turns 'you have struck' into an imperative.",
+          "rendered_as": "Slap",
+          "token_ids": [
+            "ps003.v008.t006"
+          ],
+          "transliteration": "hikkîṯā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "all; my enemies, those hostile to me",
+          "note": "The pronoun leaves the targets implicit and does not express either 'all' or their hostility to the speaker.",
+          "rendered_as": "their",
+          "token_ids": [
+            "ps003.v008.t008",
+            "ps003.v008.t009"
+          ],
+          "transliteration": "kol-ʾōyəḇay",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "jaw, cheek",
+          "note": "Cheek is a standard sense, but the sequence of blows to both cheeks is added.",
+          "rendered_as": "faces,\nFirst this cheek, then the other,",
+          "token_ids": [
+            "ps003.v008.t010"
+          ],
+          "transliteration": "leḥî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "teeth; wicked people; you have broken, shattered",
+          "note": "Retains the teeth but introduces a fist and forceful impact, leaving both the wickedness of their owners and the accomplished breaking unstated.",
+          "rendered_as": "Your fist hard in their teeth!\nHard in their teeth!",
+          "token_ids": [
+            "ps003.v008.t011",
+            "ps003.v008.t012",
+            "ps003.v008.t013"
+          ],
+          "transliteration": "šinnê rəšāʿîm šibbartā",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v008.a.0001"
   ],
@@ -15,7 +152,106 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 28,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.32,
+        "singability_score": 0.14,
+        "stress_approximation": 0.54,
+        "syllable_count": 30,
+        "syllables": 30
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Up, God! My God, help me!\nHelp me!\nHelp!\nSlap their faces,\nFirst this cheek, then the other,\nYour fist hard in their teeth!\nHard in their teeth!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ק֘וּמָ֤ה יְהוָ֨ה׀ הוֹשִׁ֘יעֵ֤נִי אֱלֹהַ֗י כִּֽי־הִכִּ֣יתָ אֶת־כָּל־אֹיְבַ֣י לֶ֑חִי שִׁנֵּ֖י רְשָׁעִ֣ים שִׁבַּֽרְתָּ׃",

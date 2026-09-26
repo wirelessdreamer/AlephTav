@@ -1,9 +1,127 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v005.a.0001",
+    "aud.ps003.v005.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1bdbce46723f5f54c73f61bce006a67b902f3abcc913e2ceecf598c4f2533f6e",
+      "audit_id": "aud.ps003.v005.a.0001",
+      "before_hash": "343a2638358d2bb3da7ec67ba550f3263452dcf6633674def1117bb405a05fa9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.564488+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "125495b17629aa60c594cdac7e7a3866385a7aae704a6bc93cc2b4537384554b",
+      "audit_id": "aud.ps003.v005.a.0002",
+      "before_hash": "e6cbf0692d9e049b5b1b25c89338f9b6fcdd82a2e42cb4cfdb9d67dac3bd30e9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:50:22.263886+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the speaker's vocal call to God and God's answer from the holy mountain. It leaves the answer's explicit recipient ('me') and the mountain's divine possessive unstated, and omits Selah.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "057a0dda8a3b7e864169ffbeae4818a03c670874bbd7ab28937bfcb4d6e312ff",
+      "audit_ids": [
+        "aud.ps003.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'With all my might' intensifies the vocal call, and 'up' adds spatial direction. 'His answers thunder' makes the answering plural and introduces thunder imagery. The mountain and thunder phrases are repeated for lyric emphasis.",
+      "display_reference": "Psalm 3:5",
+      "english_rendering_id": "rnd.ps003.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.9ca55ee43041",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ק֖ אֶל־יְהוָ֣ה אֶקְרָ֑א וַיַּֽעֲנֵ֨נִי מֵהַ֖ר קָדְשׁ֣וֹ סֶֽלָה׃",
+      "literal_backbone": [
+        "With my voice I call to Yahweh,",
+        "and he answered me from his holy mountain.",
+        "Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:5",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "my voice; to; Yahweh; call, cry out, summon",
+          "note": "Shouting conveys a vocal call, but maximal effort and upward direction are additions; 'God' replaces the divine name.",
+          "rendered_as": "With all my might I shout up to God,",
+          "token_ids": [
+            "ps003.v005.t001",
+            "ps003.v005.t002",
+            "ps003.v005.t003",
+            "ps003.v005.t004"
+          ],
+          "transliteration": "qôlî ʾel-yhwh ʾeqrāʾ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and he answered or responded to me",
+          "note": "Adds thunder as the manner of answering, recasts the verb as plural present-tense answers, and leaves 'me' implicit.",
+          "rendered_as": "His answers thunder",
+          "token_ids": [
+            "ps003.v005.t005"
+          ],
+          "transliteration": "wayyaʿănēnî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "from the mountain of his holiness; from his holy mountain",
+          "note": "Preserves the source and holiness of the mountain but does not explicitly retain 'his.'",
+          "rendered_as": "from the holy mountain!",
+          "token_ids": [
+            "ps003.v005.t006",
+            "ps003.v005.t007"
+          ],
+          "transliteration": "mēhar qoḏšô",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Selah; a musical or liturgical marker of uncertain meaning",
+          "note": "No explicit rendering appears; the repetitions cannot securely be identified as its equivalent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps003.v005.t008"
+          ],
+          "transliteration": "selâ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v005.a.0001"
   ],
@@ -15,7 +133,99 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 25,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.36,
+        "singability_score": 0.15,
+        "stress_approximation": 0.72,
+        "syllable_count": 36,
+        "syllables": 36
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "With all my might I shout up to God,\nHis answers thunder from the holy mountain!\nThunder from the holy mountain!\nHoly mountain!\nHoly mountain!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ק֖ אֶל־יְהוָ֣ה אֶקְרָ֑א וַיַּֽעֲנֵ֨נִי מֵהַ֖ר קָדְשׁ֣וֹ סֶֽלָה׃",

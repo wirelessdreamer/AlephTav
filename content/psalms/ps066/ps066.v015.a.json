@@ -1,8 +1,29 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps066.v015.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps066.v015.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "36c2519be4654d9f4a183e044ef9eae19a1127f9b829af0032cd748fb4add5d1",
+      "audit_id": "aud.ps066.v015.a.0001",
+      "before_hash": "ac912a19c5496614ff4a5a589e94db6785a2b5dd611c16c37916e5d939748229",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:05:06.098497+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps066.v015.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps066.v015.a.0001"
@@ -15,7 +36,106 @@
   "pr_links": [],
   "psalm_id": "ps066",
   "ref": "Psalm 66:15",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.3,
+        "singability_score": 0.49,
+        "stress_approximation": 0.6,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6995d046b85a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps066.v015.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Bring the smoke of dedication\nBring the best of all",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v015.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עֹ֘ל֤וֹת מֵחִ֣ים אַעֲלֶה־לָּ֭ךְ עִם־קְטֹ֣רֶת אֵילִ֑ים אֶ֥עֱשֶֽׂה בָקָ֖ר עִם־עַתּוּדִ֣ים סֶֽלָה׃",

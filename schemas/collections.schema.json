@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Collections",
+  "description": "The projects translations are kept in (content/collections.json). A project gathers translations across psalms and holds at most one translation of each psalm. The default project is built in and not listed here. Not the workbench project of content/project.json.",
+  "type": "object",
+  "required": ["collections"],
+  "additionalProperties": false,
+  "properties": {
+    "collections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["collection_id", "title", "created_by", "created_at"],
+        "additionalProperties": false,
+        "properties": {
+          "collection_id": { "type": "string", "pattern": "^col\\.\\d{4}$" },
+          "title": { "type": "string", "minLength": 1 },
+          "created_by": { "type": "string" },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" }
+        }
+      }
+    }
+  }
+}

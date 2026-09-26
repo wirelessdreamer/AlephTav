@@ -1,9 +1,133 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v004.a.0001",
+    "aud.ps004.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1a797fc52c0304f0fd109f09890910d66756a892c8811d85728b1ddc57bd76a3",
+      "audit_id": "aud.ps004.v004.a.0001",
+      "before_hash": "5d587b619610432f533bfedcb60ee6ac6095c3d7ce9b63f17799be71c3ba5481",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.631390+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7b54315073e8df0a93f5208596dfc573b46758ce9b92b3fbbe1eccd6b648e945",
+      "audit_id": "aud.ps004.v004.a.0002",
+      "before_hash": "5c49c2fc5365c5f0ea96625a0e8ced71004c7d9bb8d2035e02cf3d8bae546e02",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:25:23.428096+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the call to recognize God's action in setting someone apart, followed by confidence that God hears when the speaker calls to him. It leaves the person's faithfulness unspecified and omits “for himself.”",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "64277823b70b1e2ed8fc8203b4c5a0a3008dd90e5ceed5962100f9ed46df8d9c",
+      "audit_ids": [
+        "aud.ps004.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Knowing becomes a repeated invitation to look, setting apart becomes being picked, and “the split second” adds an assurance of immediate hearing that the Hebrew does not explicitly give.",
+      "display_reference": "Psalm 4:4",
+      "english_rendering_id": "rnd.ps004.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2612ecb29bf6",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וּדְע֗וּ כִּֽי־הִפְלָ֣ה יְ֭הוָה חָסִ֣יד ל֑וֹ יְהוָ֥ה יִ֝שְׁמַ֗ע בְּקָרְאִ֥י אֵלָֽיו׃",
+      "literal_backbone": [
+        "And know that Yahweh has set apart a faithful person for himself.",
+        "Yahweh will hear when I call to him."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:4",
+      "non_source_material": [],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "know, recognize, acknowledge",
+          "note": "Turns recognition into a doubled attention-getting command.",
+          "rendered_as": "Look at this: look",
+          "token_ids": [
+            "ps004.v004.t001"
+          ],
+          "transliteration": "ûḏəʿû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "set apart, distinguish, treat distinctly",
+          "note": "Selection conveys distinction, though it does not fully express being set apart.",
+          "rendered_as": "got picked",
+          "token_ids": [
+            "ps004.v004.t003"
+          ],
+          "transliteration": "hip̄lāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "faithful, loyal, devout, godly",
+          "note": "Retains a personal referent but loses the characterization as faithful or devout.",
+          "rendered_as": "Who",
+          "token_ids": [
+            "ps004.v004.t005"
+          ],
+          "transliteration": "ḥāsîḏ",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "to him, for him; reflexively, for himself",
+          "note": "The relationship expressed by God's setting the person apart for himself is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps004.v004.t006"
+          ],
+          "transliteration": "lô",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "hear, listen; when I call",
+          "note": "Preserves hearing in response to calling but specifies instantaneous timing beyond the Hebrew.",
+          "rendered_as": "listens the split second I call",
+          "token_ids": [
+            "ps004.v004.t008",
+            "ps004.v004.t009"
+          ],
+          "transliteration": "yišmaʿ bəqorʾî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v004.a.0001"
   ],
@@ -15,7 +139,106 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.58,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Look at this: look\nWho got picked by God!\nHe listens the split second I call to him.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וּדְע֗וּ כִּֽי־הִפְלָ֣ה יְ֭הוָה חָסִ֣יד ל֑וֹ יְהוָ֥ה יִ֝שְׁמַ֗ע בְּקָרְאִ֥י אֵלָֽיו׃",

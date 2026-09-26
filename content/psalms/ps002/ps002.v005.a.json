@@ -1,9 +1,113 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v005.a.0001",
+    "aud.ps002.v005.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "91fdbb9cc6cf3f30a2eb63189826495da789d55974bc953557d498f667e21232",
+      "audit_id": "aud.ps002.v005.a.0001",
+      "before_hash": "a283c51a73f9de5e11100de3f0632af5bbe201d7eead0e82829779fa1417053d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.622013+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "dd504aeb53c4c3534a81928985a46b3e2c4ea52498c541f2fdbd2008dc13d596",
+      "audit_id": "aud.ps002.v005.a.0002",
+      "before_hash": "ed61e94b9ada43e6fc1786cef6356536cac19cdd8fdcdfcd83f8145fb0adaf1e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:08:20.427486+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves “then,” God's anger, and his furious action toward the rebels. It omits his speaking to them and replaces terrifying them with silencing them.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "e2d8d9772d390953533292f9026667edadc995ddb42e12b28ed6068a07cbbacf",
+      "audit_ids": [
+        "aud.ps002.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Gets good and angry” presents anger as an intensified emotional development. “Shuts them up” supplies a possible effect of intimidation rather than expressing the terror named in the Hebrew.",
+      "display_reference": "Psalm 2:5",
+      "english_rendering_id": "rnd.ps002.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1b5b91c06f97",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אָ֤ז יְדַבֵּ֣ר אֵלֵ֣ימוֹ בְאַפּ֑וֹ וּֽבַחֲרוֹנ֥וֹ יְבַהֲלֵֽמוֹ׃",
+      "literal_backbone": [
+        "Then he speaks to them in his anger,",
+        "and in his fury he terrifies them."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:5",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "speak; to them",
+          "note": "Neither line explicitly carries the act of speaking to the rebels.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps002.v005.t002",
+            "ps002.v005.t003"
+          ],
+          "transliteration": "yəḏabbēr ʾēlêmô",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "in his anger; in his wrath",
+          "note": "Anger accompanying speech becomes an intensified change of emotional state.",
+          "rendered_as": "he gets good and angry",
+          "token_ids": [
+            "ps002.v005.t004"
+          ],
+          "transliteration": "bəʾappô",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "terrify; alarm; dismay",
+          "note": "Silencing is a possible inferred consequence of terror, but the verb itself describes frightening or dismaying them.",
+          "rendered_as": "he shuts them up",
+          "token_ids": [
+            "ps002.v005.t006"
+          ],
+          "transliteration": "yəḇahălēmô",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v005.a.0001"
   ],
@@ -15,7 +119,99 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.41,
+        "stress_approximation": 0.59,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Then he gets good and angry.\nFuriously, he shuts them up:",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אָ֤ז יְדַבֵּ֣ר אֵלֵ֣ימוֹ בְאַפּ֑וֹ וּֽבַחֲרוֹנ֥וֹ יְבַהֲלֵֽמוֹ׃",

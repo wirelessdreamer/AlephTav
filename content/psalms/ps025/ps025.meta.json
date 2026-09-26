@@ -1,6 +1,141 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps025.v001.a.0004"
+      ],
+      "citations": [],
+      "created_at": "2026-09-25T21:35:04.779826+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Trust and refuge appear in verses 2 and 20; shame and enemies in verses 2–3 and 19–20; forgiveness in verses 7, 11, and 18.",
+            "claim": "The speaker combines trust with appeals for protection and forgiveness."
+          },
+          {
+            "basis": "Ways, paths, teaching, and guidance recur in verses 4–5, 8–10, and 12; covenant language appears in verses 10 and 14.",
+            "claim": "Instruction and covenant relationship are central concerns."
+          },
+          {
+            "basis": "Direct address in verses 4–7 and 11 surrounds statements about sinners, the humble, covenant keepers, and those who fear Yahweh in verses 8–10 and 12–14.",
+            "claim": "Prayer alternates with general statements about those who relate rightly to Yahweh."
+          },
+          {
+            "basis": "Verses 16–19 explicitly name solitude, affliction, increasing troubles, sins, numerous enemies, and violent hatred.",
+            "claim": "The speaker describes isolation, distress, guilt, and violent hostility."
+          },
+          {
+            "basis": "Verse 22 names Israel as the object of deliverance after the preceding first-person petitions.",
+            "claim": "The conclusion broadens the petition to Israel."
+          },
+          {
+            "basis": "The prayer follows a broadly alphabetic progression, with irregularities including repeated resh openings in verses 18–19 and a further pe opening in verse 22 after taw in verse 21.",
+            "claim": "The Hebrew has an irregular alphabetic design."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed the psalm during a particular historical crisis.",
+            "why_not": "The heading supplies an attribution but no independently verifiable authorship evidence or named event."
+          },
+          {
+            "claim": "The enemies, youthful sins, or afflictions can be identified with specific people or incidents.",
+            "why_not": "The poem gives no identifying details sufficient for those connections."
+          },
+          {
+            "claim": "The speaker’s suffering is explicitly presented as punishment for his sins.",
+            "why_not": "Distress and confession occur together, but the psalm does not state that one caused the other."
+          },
+          {
+            "claim": "The psalm prescribes a temple ceremony, musical ensemble, or distribution of voices.",
+            "why_not": "Neither the heading nor the body provides such instructions."
+          },
+          {
+            "claim": "The final appeal for Israel must have been added by a later editor.",
+            "why_not": "Its formal and communal distinctiveness marks a closing extension but does not establish its compositional history."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.47d224722877",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The language supports prayer within Israel’s worship of Yahweh, with covenant allegiance, confession, instruction, and communal concern. It specifies no sanctuary, sacrifice, festival, priestly role, or performance arrangement; a particular liturgical occasion cannot be recovered from it.",
+        "heading_attribution": "“Of David” preserves לְדָוִד, the received heading’s association with David. The heading does not independently establish David’s historical authorship, identify the speaker with the historical David, or name an occasion."
+      },
+      "method": "The audit’s literal backbones were derived from the supplied Masoretic wording, morphology, and clause relationships, then compared with the supplied literal renderings and lyrics. Whole-psalm divisions follow changes in address, subject, and repeated motifs. The alphabetic closing seam was checked against the supplied Hebrew verse openings. No external edition, lexicon, or commentary was consulted.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps025.0001",
+      "psalm_id": "ps025",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The Davidic heading precedes personal prayer, which broadens into an assurance concerning all who wait for God.",
+          "first_verse": 1,
+          "last_verse": 3,
+          "theme": "Trust in Yahweh amid enemies and the prospect of shame.",
+          "title": "Opening trust and threatened shame"
+        },
+        {
+          "arc_note": "Requests to learn God’s ways lead into the contrast between remembering divine mercy and not remembering the speaker’s sins.",
+          "first_verse": 4,
+          "last_verse": 7,
+          "theme": "Guidance grounded in God’s enduring mercy rather than the speaker’s past conduct.",
+          "title": "Instruction and merciful remembrance"
+        },
+        {
+          "arc_note": "Direct petition gives way to statements about God teaching sinners and the humble, culminating in covenant observance.",
+          "first_verse": 8,
+          "last_verse": 10,
+          "theme": "God’s goodness, uprightness, and covenant faithfulness.",
+          "title": "Yahweh’s character and guidance"
+        },
+        {
+          "arc_note": "A brief direct petition interrupts the surrounding instruction and acknowledges the greatness of the speaker’s guilt.",
+          "first_verse": 11,
+          "last_verse": 11,
+          "theme": "Pardon sought for Yahweh’s name’s sake.",
+          "title": "Central appeal for forgiveness"
+        },
+        {
+          "arc_note": "A question introduces the God-fearing person and develops the benefits associated with that relationship.",
+          "first_verse": 12,
+          "last_verse": 14,
+          "theme": "Guidance, well-being, inheritance, and knowledge of the covenant.",
+          "title": "Those who fear Yahweh"
+        },
+        {
+          "arc_note": "Confidence in release from the net leads into concentrated petitions. The section returns to shame, refuge, and waiting, recalling the opening.",
+          "first_verse": 15,
+          "last_verse": 21,
+          "theme": "Dependence on God amid loneliness, affliction, guilt, and hostile enemies.",
+          "title": "Renewed trust and urgent rescue"
+        },
+        {
+          "arc_note": "The individual prayer closes with a national petition, repeating the language of troubles on a wider scale.",
+          "first_verse": 22,
+          "last_verse": 22,
+          "theme": "Deliverance extended to Israel.",
+          "title": "Closing appeal for Israel"
+        }
+      ],
+      "source_fingerprint": "f2ef76fe6ee256abfae85b11b24db02ed675e7c7cd1447d34bee8308dc22ca83",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 21,
+          "aligns_with_section": true,
+          "marker": "The irregular alphabetic sequence reaches taw in verse 21; verse 22 adds a pe-initial petition for Israel. There is no Selah."
+        }
+      ],
+      "summary": "The setting follows the Hebrew’s verse order and movement from personal trust and threatened shame through requests for instruction and forgiveness, reflections on Yahweh’s guidance, renewed distress, and a final appeal for Israel. Its short lines and conversational language preserve the recurring images of ways, remembrance, refuge, and rescue. Some explicit causal links become implicit, and completed waiting becomes present waiting. The Hebrew’s irregular alphabetic structure is not reproduced. The sections below are analytical divisions; the setting supplies no section labels."
+    }
+  ],
   "psalm_id": "ps025",
   "title": "Psalm 25",
+  "translation_guidance": "target 6/8 meter",
   "unit_ids": [
     "ps025.v001.a",
     "ps025.v002.a",

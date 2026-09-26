@@ -1,9 +1,82 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v012.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v012.a.0001",
+    "aud.ps002.v012.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fb43b2fb85279b2ac80af99fe0e1b2685ae6c5522a9a81913be3b0da7348a134",
+      "audit_id": "aud.ps002.v012.a.0001",
+      "before_hash": "ffeff77fb70a85ad6a908d076cefc7c988038b2c7393b3f36c84bd1931e1871c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.745148+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v012.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c4f13de8207bc655dcdf5fb61c9aaefe63f676b1d8668955b8a246b2dac88b41",
+      "audit_id": "aud.ps002.v012.a.0002",
+      "before_hash": "35039633ba18a220654d3394defeadec5cc9b1dbe83a3a1557c9c1ee628f948e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:10:00.456488+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v012.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the warning of mortal danger, the threat of anger, and the favorable outcome for those seeking refuge. The opening injunction is absent from this cell, having appeared as “Kiss Messiah!” in the preceding cell. The reference to the way is omitted.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "b27ffca851a8a16164881f79622228930a0e9d0580bdca207fa8c4e36689d46d",
+      "audit_ids": [
+        "aud.ps002.v012.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v012.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“You know” adds conversational emphasis. “About to explode” replaces burning anger with an imminent explosion. The blessing on all who take refuge becomes a personal conditional assurance of no regret, and “God” explicitly identifies the Hebrew's “him.”",
+      "display_reference": "Psalm 2:12",
+      "english_rendering_id": "rnd.ps002.v012.a.lyric.alt.0001",
+      "generation_run_id": "cxr.5de670f13a7f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נַשְּׁקוּ־בַ֡ר פֶּן־יֶאֱנַ֤ף׀ וְתֹ֬אבְדוּ דֶ֗רֶךְ כִּֽי־יִבְעַ֣ר כִּמְעַ֣ט אַפּ֑וֹ אַ֝שְׁרֵ֗י כָּל־ח֥וֹסֵי בֽוֹ׃",
+      "literal_backbone": [
+        "Kiss the son, lest he become angry",
+        "and you perish in the way,",
+        "for his anger may quickly blaze up; otherwise phrase second?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:12",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v012.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v012.a.0001"
   ],
@@ -15,7 +88,99 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:12",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 26,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.1,
+        "stress_approximation": 0.67,
+        "syllable_count": 36,
+        "syllables": 36
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v012.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Your very lives are in danger, you know;\nHis anger is about to explode,\nBut if you make a run for God - you won't regret it!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v012.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נַשְּׁקוּ־בַ֡ר פֶּן־יֶאֱנַ֤ף׀ וְתֹ֬אבְדוּ דֶ֗רֶךְ כִּֽי־יִבְעַ֣ר כִּמְעַ֣ט אַפּ֑וֹ אַ֝שְׁרֵ֗י כָּל־ח֥וֹסֵי בֽוֹ׃",

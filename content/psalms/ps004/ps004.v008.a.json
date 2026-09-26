@@ -1,9 +1,124 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v008.a.0001",
+    "aud.ps004.v008.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "49561df3217983cc4f990c82e1df9313f9e77b54867e8a35177185cf49d20f5e",
+      "audit_id": "aud.ps004.v008.a.0001",
+      "before_hash": "cf1dff0b5115f3659b9e7b5434a0a758f95b33ec6d486c816597242dffbd120f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.726880+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0f9b32f13b22b880917c60003e0d43bbb3f6934eb5602b060fb36b2f0fc08aa0",
+      "audit_id": "aud.ps004.v008.a.0002",
+      "before_hash": "e700002c624d8f41ad99107ef7c962e302ddcb76a6b6bbaeb82a9ab44d84c3ca",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:26:33.391322+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves joy and the comparison with others' material prosperity. This cell does not express God's giving the joy or its location in the speaker's heart. Grain and new wine become shopping sprees.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "7f9b4c6ee58c75cbd097eb7c626ad2884a037b8c3a2e2fbfd75ec52335b0b2e4",
+      "audit_ids": [
+        "aud.ps004.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“One ordinary day” introduces a duration and ordinariness absent from the Hebrew. “All their shopping sprees” replaces agricultural abundance with consumer activity and adds an exhaustive contrast. “They get” makes explicit the others' enjoyment implied by the comparison.",
+      "display_reference": "Psalm 4:8",
+      "english_rendering_id": "rnd.ps004.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.27822feb5720",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נָתַ֣תָּה שִׂמְחָ֣ה בְלִבִּ֑י מֵעֵ֬ת דְּגָנָ֖ם וְתִֽירוֹשָׁ֣ם רָֽבּוּ׃",
+      "literal_backbone": [
+        "You have put joy in my heart,",
+        "more than when their grain and new wine abound."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:8",
+      "non_source_material": [],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "give, put, place",
+          "note": "This cell leaves unstated the direct address to God as the giver of joy.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps004.v008.t001"
+          ],
+          "transliteration": "nāṯattā",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "in my heart, in my inner self",
+          "note": "The speaker's heart has no explicit counterpart in these lines.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps004.v008.t003"
+          ],
+          "transliteration": "ḇəlibbî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "from a time; comparatively, than at the time of",
+          "note": "Retains the comparison but adds one ordinary day as the measure of the speaker's joy; the Hebrew time expression introduces the others' abundance.",
+          "rendered_as": "More joy in one ordinary day\nThan",
+          "token_ids": [
+            "ps004.v008.t004"
+          ],
+          "transliteration": "mēʿēṯ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "their grain; their new wine; increase, become numerous, abound",
+          "note": "Replaces abundant agricultural produce with shopping and explicitly attributes enjoyment to the others; “all” has no stated equivalent.",
+          "rendered_as": "they get in all their shopping sprees",
+          "token_ids": [
+            "ps004.v008.t005",
+            "ps004.v008.t006",
+            "ps004.v008.t007"
+          ],
+          "transliteration": "dəḡānām wəṯîrôšām rābû",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v008.a.0001"
   ],
@@ -15,7 +130,106 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.64,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "More joy in one ordinary day\nThan they get in all their shopping sprees.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נָתַ֣תָּה שִׂמְחָ֣ה בְלִבִּ֑י מֵעֵ֬ת דְּגָנָ֖ם וְתִֽירוֹשָׁ֣ם רָֽבּוּ׃",

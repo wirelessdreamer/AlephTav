@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v009.a.0001",
+    "aud.ps002.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "729accaeae271a14d391fe3de66b3884dfde6243a4a7f53b5b016899419e1e4f",
+      "audit_id": "aud.ps002.v009.a.0001",
+      "before_hash": "b978226e96934f6952247731b4dd09436432c3b1c82d323c753970158e0daa99",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.693034+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "67d465a08343f8121fccb05020e2d3c27e7769942a450c0fb688f144945f4b56",
+      "audit_id": "aud.ps002.v009.a.0002",
+      "before_hash": "94d2706a3529795fd95862e26d93fb9a1acf64b4cd0be7a1e0654ad5901b2e35",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:09:20.727433+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English retains the addressee's power over them and a second image of their defeat. It replaces breaking with an iron rod and shattering pottery with compelled dancing and disposal as trash.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "7e304eec4e92ebb8cf6b00f47d0d5a45dde338c33178359c89b16dabc83b0113",
+      "audit_ids": [
+        "aud.ps002.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps002.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Can” presents ability rather than the Hebrew's prospective actions. Dancing, “all,” “for you,” and “tomorrow's trash” are supplied imagery. “Or” makes the two actions alternatives, whereas the Hebrew places parallel descriptions of destruction side by side.",
+      "display_reference": "Psalm 2:9",
+      "english_rendering_id": "rnd.ps002.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.a5c4bfd056ea",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תְּ֭רֹעֵם בְּשֵׁ֣בֶט בַּרְזֶ֑ל כִּכְלִ֖י יוֹצֵ֣ר תְּנַפְּצֵֽם׃",
+      "literal_backbone": [
+        "You will break them with an iron rod;",
+        "like a potter's vessel you will shatter them."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:9",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "break; shatter",
+          "note": "Conveys domination through an invented dance image, leaving the explicit breaking unexpressed.",
+          "rendered_as": "You can command them all to dance for you",
+          "token_ids": [
+            "ps002.v009.t001"
+          ],
+          "transliteration": "tərōʿēm",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "with a rod, staff, or scepter of iron",
+          "note": "Neither the instrument nor its iron material appears.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps002.v009.t002",
+            "ps002.v009.t003"
+          ],
+          "transliteration": "bəšēḇeṭ barzel",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "like a potter's vessel; you will shatter them",
+          "note": "Replaces the shattering of pottery with disposal of refuse, adding a time reference and an alternative relationship to the first action.",
+          "rendered_as": "Or throw them out with tomorrow's trash.",
+          "token_ids": [
+            "ps002.v009.t004",
+            "ps002.v009.t005",
+            "ps002.v009.t006"
+          ],
+          "transliteration": "kiḵlî yôṣēr tənappəṣēm",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v009.a.0001"
   ],
@@ -15,7 +121,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.59,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You can command them all to dance for you,\nOr throw them out with tomorrow's trash.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "תְּ֭רֹעֵם בְּשֵׁ֣בֶט בַּרְזֶ֑ל כִּכְלִ֖י יוֹצֵ֣ר תְּנַפְּצֵֽם׃",

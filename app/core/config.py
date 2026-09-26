@@ -21,6 +21,7 @@ class Settings:
     audit_reports_dir: Path
     release_reports_dir: Path
     project_file: Path
+    collections_file: Path
     db_path: Path
     assistant_settings_file: Path
 
@@ -45,6 +46,7 @@ def get_settings() -> Settings:
         audit_reports_dir=root / "reports" / "audit",
         release_reports_dir=root / "reports" / "release",
         project_file=root / "content" / "project.json",
+        collections_file=root / "content" / "collections.json",
         db_path=root / "data" / "derived" / "indexes" / "workbench.sqlite3",
         assistant_settings_file=root / "data" / "derived" / "caches" / "assistant_settings.json",
     )

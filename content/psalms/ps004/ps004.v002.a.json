@@ -1,9 +1,133 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps004.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps004.v002.a.0001",
+    "aud.ps004.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "04cca4eda09695804a96073c161747c5a52c17b16ea8b684837c660f5cbd23b6",
+      "audit_id": "aud.ps004.v002.a.0001",
+      "before_hash": "0133754ea55e467f517aebbff670f2b184be9a41d0f56a16ec62ca0bb87b4f18",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:22:08.574880+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps004.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "942ebe5ded4ba52744484582515d10e8217c43f59079295d02337eef9de7a35f",
+      "audit_id": "aud.ps004.v002.a.0002",
+      "before_hash": "bd635c293721e6e55c74faa3253c1fea4284724613c44bb1f4c197350fe9c79d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T22:24:39.564000+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps004.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the appeal for an answer when calling, the address to God, the image of receiving room in distress, and the closing requests for grace and a hearing. It turns God's relation to the speaker's righteousness into a request for support and compresses hearing the speaker's prayer into hearing the speaker.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "428f220003b9fe938efc9758e2023da35d4454849ec261463e851cfaf7fe2bde",
+      "audit_ids": [
+        "aud.ps004.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps004.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Give me answers” can suggest information rather than a response. “Take my side” interprets righteousness as vindication and changes an address into a command. “Once” and “Now I'm in trouble again” construct an explicit past deliverance and renewed crisis; that sequence is plausible but not stated in the Hebrew.",
+      "display_reference": "Psalm 4:2",
+      "english_rendering_id": "rnd.ps004.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.229322361384",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בְּקָרְאִ֡י עֲנֵ֤נִי׀ אֱלֹ֘הֵ֤י צִדְקִ֗י בַּ֭צָּר הִרְחַ֣בְתָּ לִּ֑י חָ֝נֵּ֗נִי וּשְׁמַ֥ע תְּפִלָּתִֽי׃",
+      "literal_backbone": [
+        "When I call, answer me, O God of my righteousness.",
+        "In distress you have made room for me.",
+        "Be gracious to me and hear my prayer."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 4:2",
+      "non_source_material": [
+        {
+          "kind": "other",
+          "note": "An added lyric clause making renewed distress explicit; the Hebrew contains no separate statement of trouble occurring again.",
+          "text": "Now I'm in trouble again:"
+        }
+      ],
+      "psalm_id": "ps004",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "answer, respond",
+          "note": "Preserves the request for a response, though the plural noun can suggest answers to questions.",
+          "rendered_as": "give me answers",
+          "token_ids": [
+            "ps004.v002.t002"
+          ],
+          "transliteration": "ʿănēnî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "God; righteousness, rightness, justice",
+          "note": "Interprets the divine title through vindication and supplies an imperative absent from the phrase.",
+          "rendered_as": "God, take my side!",
+          "token_ids": [
+            "ps004.v002.t003",
+            "ps004.v002.t004"
+          ],
+          "transliteration": "ʾĕlōhê ṣidqî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "in straits or distress; make wide, give room; for me",
+          "note": "Closely preserves the spatial metaphor and a natural past reading of the verb; “Once” specifies a past occasion beyond what the Hebrew states.",
+          "rendered_as": "Once, in a tight place, you gave me room;",
+          "token_ids": [
+            "ps004.v002.t005",
+            "ps004.v002.t006",
+            "ps004.v002.t007"
+          ],
+          "transliteration": "baṣṣār hirḥaḇtā lî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "hear, listen; prayer, supplication",
+          "note": "Idiomatic compression retains the appeal for a hearing but leaves prayer unnamed.",
+          "rendered_as": "hear me!",
+          "token_ids": [
+            "ps004.v002.t009",
+            "ps004.v002.t010"
+          ],
+          "transliteration": "ûšəmaʿ təfillātî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps004.v002.a.0001"
   ],
@@ -15,7 +139,106 @@
   "pr_links": [],
   "psalm_id": "ps004",
   "ref": "Psalm 4:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "added_doctrine",
+          "confidence": 0.93,
+          "message": "Lyric line adds doctrinal vocabulary not present in the canonical literal line.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 28,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.68,
+        "syllable_count": 38,
+        "syllables": 38
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.69d3dd035c91",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps004.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "When I call, give me answers. God, take my side!\nOnce, in a tight place, you gave me room;\nNow I'm in trouble again: grace me! hear me!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps004.0001",
+      "unit_id": "ps004.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בְּקָרְאִ֡י עֲנֵ֤נִי׀ אֱלֹ֘הֵ֤י צִדְקִ֗י בַּ֭צָּר הִרְחַ֣בְתָּ לִּ֑י חָ֝נֵּ֗נִי וּשְׁמַ֥ע תְּפִלָּתִֽי׃",

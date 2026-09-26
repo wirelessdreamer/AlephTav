@@ -1,9 +1,235 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v006.a.literal.alt.0001",
+    "rnd.ps001.v006.a.lyric.alt.0001",
+    "rnd.ps001.v006.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v006.a.0001",
+    "aud.ps001.v006.a.0002",
+    "aud.ps001.v006.a.0003",
+    "aud.ps001.v006.a.0004",
+    "aud.ps001.v006.a.0005",
+    "aud.ps001.v006.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "9c6ad94ba95d10fa456f44824affaa2b9167f64de207713e4848eed404a62de1",
+      "audit_id": "aud.ps001.v006.a.0001",
+      "before_hash": "60a6a961144fe66751c371863eaa4eeb707e58f11ca38cf3a423db7d4e9d4c8d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T13:57:39.809621+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Closes with the two ways, repeating the opening verse's path vocabulary.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0b78ab36b03e07edee796c02a458c75be5263005d8d53e248a0ec363f39eea96",
+      "audit_id": "aud.ps001.v006.a.0002",
+      "before_hash": "b610e85582305c3d2030c26e01a0bf6d18384002c4022585c158ae59403d3f93",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:00:15.292061+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the opening path image and closes on the contrasting fate of the wicked's path.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0db5eeb234c274411da3a9e0c846e9fa4f54f197a841e4feceeafe1e8fad861a",
+      "audit_id": "aud.ps001.v006.a.0003",
+      "before_hash": "233c0f668e10acc469ac200039ae688bf9c6631c889df1a2909bd20a1fdeade9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:26:55.132394+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d15fa310820578dad6a6cd4859095e8003b85bdecd7f1cd2d3af61206129880c",
+      "audit_id": "aud.ps001.v006.a.0004",
+      "before_hash": "84c8a4e4b473c66f0d58dee235c8ccac33338f38794d61dd55e41dfff54c206f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:41:36.825178+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps001.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "57d1cfd59fe387e82f011d95270134ad61c2fade5ab542a29f67c41039008941",
+      "audit_id": "aud.ps001.v006.a.0005",
+      "before_hash": "a6dbba7d8387d579e873c8a6ef1ff06479da8092de1b070dde25909ffc0c4ec6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:44:29.423532+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v006.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "38eaea4bf7ecc00cefc00bdc9fb7ae34d01f6b5a9db59d2cb0594c336e81cf10",
+      "audit_id": "aud.ps001.v006.a.0006",
+      "before_hash": "92e4617b7a540e180f8818e16dc018b438f1e648f126811d88981955fee65be7",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.158717+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps001.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.fb69adaad6a5",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the explanatory “For,” the LORD's knowing, and the contrasting paths of the righteous and wicked. The wicked's path remains the subject of the final verb. The literal rendering closely follows the same Hebrew structure.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "44484805cea090a3ed9762d9ea5d482d46c0cb5a73c6e07159f81202601f155f",
+      "audit_ids": [
+        "aud.ps001.v006.a.0003"
+      ],
+      "comparison_id": "cmp.ps001.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Will come to ruin” idiomatically expresses “will perish.” Both versions use “but” to bring out the contrast conveyed by the Hebrew conjunction. Neither expands divine knowing into an explicit promise of protection.",
+      "display_reference": "Psalm 1:6",
+      "english_rendering_id": "rnd.ps001.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.49495aa332d7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־יוֹדֵ֣עַ יְ֭הוָה דֶּ֣רֶךְ צַדִּיקִ֑ים וְדֶ֖רֶךְ רְשָׁעִ֣ים תֹּאבֵֽד׃",
+      "literal_backbone": [
+        "For YHWH knows the way of the righteous,",
+        "and the way of the wicked will perish."
+      ],
+      "literal_rendering_id": "rnd.ps001.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:6",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps001.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Perish, be lost, vanish, be destroyed.",
+          "note": "Expresses the destructive outcome while preserving the path itself as the grammatical subject.",
+          "rendered_as": "will come to ruin",
+          "token_ids": [
+            "ps001.v006.t008"
+          ],
+          "transliteration": "tōʾḇēḏ",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves God's relation to the first way, the repeated road image, and the unfavorable outcome of the second way, in the Hebrew's order.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "04d9bfda15bb658e4b3ebb990f04af270298486cb48a1b4c74fcea00f21137d4",
+      "audit_ids": [
+        "aud.ps001.v006.a.0005"
+      ],
+      "comparison_id": "cmp.ps001.v006.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Omits the explanatory “For.” Knowing becomes charting, suggesting direction or planning. The righteous and wicked become “you” and “they,” relying on context for their moral identities. Perishing becomes a journey leading nowhere, shifting the emphasis toward futility.",
+      "display_reference": "Psalm 1:6",
+      "english_rendering_id": "rnd.ps001.v006.a.lyric.alt.0002",
+      "generation_run_id": "cxr.99e021198145",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־יוֹדֵ֣עַ יְ֭הוָה דֶּ֣רֶךְ צַדִּיקִ֑ים וְדֶ֖רֶךְ רְשָׁעִ֣ים תֹּאבֵֽד׃",
+      "literal_backbone": [
+        "For the LORD knows the way of the righteous,",
+        "but the way of the wicked will perish."
+      ],
+      "literal_rendering_id": "rnd.ps001.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:6",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "For, because.",
+          "note": "The explicit explanatory connection to the preceding verse is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps001.v006.t001"
+          ],
+          "transliteration": "kiy-",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "Knowing, recognizing, being acquainted with.",
+          "note": "Charting suggests mapping or determining a course; the Hebrew expresses knowledge, contextually capable of implying attentive care.",
+          "rendered_as": "charts",
+          "token_ids": [
+            "ps001.v006.t002"
+          ],
+          "transliteration": "yôḏēᵃʿ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Righteous or just people; wicked or guilty people.",
+          "note": "The pronouns maintain the setting's direct address and contextual contrast, but leave the Hebrew's explicit moral descriptions unstated.",
+          "rendered_as": "you; they",
+          "token_ids": [
+            "ps001.v006.t005",
+            "ps001.v006.t007"
+          ],
+          "transliteration": "ṣaddîqiym; rəšāʿiym",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Perish, be lost, come to ruin.",
+          "note": "Replaces the way's destruction with a destination metaphor suggesting futility; the force of perishing is reduced.",
+          "rendered_as": "leads to nowhere",
+          "token_ids": [
+            "ps001.v006.t008"
+          ],
+          "transliteration": "tōʾḇēḏ",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps001.v006.a.0001"
   ],
@@ -15,7 +241,325 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains “knows” without expanding it into a promise of protection.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The two ways",
+          "note": "Preserves both ways and makes the wicked's way the subject of “will perish.”",
+          "source_id": "ps001.v006.a",
+          "token_ids": [
+            "ps001.v006.t004",
+            "ps001.v006.t005",
+            "ps001.v006.t006",
+            "ps001.v006.t007",
+            "ps001.v006.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps001.v006.t001 → For",
+          "ps001.v006.t002–t003 → the LORD knows",
+          "ps001.v006.t004–t005 → the way of the righteous",
+          "ps001.v006.t006–t008 → but the way of the wicked will perish"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T13:57:39.702551+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.fb69adaad6a5",
+        "source_ids": [
+          "ps001.v006.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v006.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8d9-81cc-7cc1-bab8-07b862a876ac"
+      },
+      "rationale": "Closes with the two ways, repeating the opening verse's path vocabulary.",
+      "rendering_id": "rnd.ps001.v006.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "For the LORD knows\nthe way of the righteous,\nbut the way of the wicked\nwill perish.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v006.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v006.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Closes the repeated path image without expanding “knows” into protection.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.32,
+        "singability_score": 0.14,
+        "stress_approximation": 0.58,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Contrasting paths",
+          "note": "Both paths remain explicit; the wicked's path itself comes to ruin.",
+          "source_id": "ps001.v006.a",
+          "token_ids": [
+            "ps001.v006.t004",
+            "ps001.v006.t005",
+            "ps001.v006.t006",
+            "ps001.v006.t007",
+            "ps001.v006.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T14:00:15.170055+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.8feb9663d895",
+        "source_ids": [
+          "ps001.v006.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v006.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8db-83f2-7d33-a195-ed40eddf1656"
+      },
+      "rationale": "Returns to the opening path image and closes on the contrasting fate of the wicked's path.",
+      "rendering_id": "rnd.ps001.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For the LORD knows the path\nof the righteous;\nbut the path of the wicked\nwill come to ruin.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v006.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.23,
+        "singability_score": 0.24,
+        "stress_approximation": 0.62,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.76c3ad21531f",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps001.v006.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "God charts the road you take.\nThe road they take leads to nowhere.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּֽי־יוֹדֵ֣עַ יְ֭הוָה דֶּ֣רֶךְ צַדִּיקִ֑ים וְדֶ֖רֶךְ רְשָׁעִ֣ים תֹּאבֵֽד׃",

@@ -8,7 +8,7 @@ import {
   useCreateArrangement,
   useEditArrangement,
 } from '../hooks/useArrangements';
-import type { Arrangement } from '../types';
+import type { Arrangement, ComparisonTableRow, PsalmAnalysisSection } from '../types';
 import { ArrangementEditor } from './ArrangementEditor';
 import { ArrangementLiberties } from './ArrangementLiberties';
 import { ArrangementSources } from './ArrangementSources';
@@ -19,6 +19,9 @@ interface Props {
   psalmId: string;
   /** The translation whose settings are shown; null is the psalm's main one. */
   translationId: string | null;
+  /** The psalm's verses as the comparison table shows them, and its analysed sections. */
+  rows: ComparisonTableRow[];
+  sections: PsalmAnalysisSection[];
   pane: ArrangementPane;
   englishLayer: string;
   selectedId: string | null;
@@ -52,6 +55,8 @@ function preferred(arrangements: Arrangement[], layer: string): string | null {
 export function ArrangementWorkspace({
   psalmId,
   translationId,
+  rows,
+  sections,
   pane,
   englishLayer,
   selectedId,
@@ -189,9 +194,16 @@ export function ArrangementWorkspace({
         pane === 'arrangement' ? (
           <ArrangementEditor view={view.data} edit={apply} pending={edit.isPending} />
         ) : pane === 'sources' ? (
-          <ArrangementSources view={view.data} />
+          <ArrangementSources view={view.data} rows={rows} englishLayer={englishLayer} />
         ) : (
-          <ArrangementLiberties view={view.data} edit={apply} pending={edit.isPending} />
+          <ArrangementLiberties
+            view={view.data}
+            edit={apply}
+            pending={edit.isPending}
+            rows={rows}
+            sections={sections}
+            englishLayer={englishLayer}
+          />
         )
       ) : null}
     </section>

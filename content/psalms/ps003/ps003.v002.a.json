@@ -1,9 +1,133 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v002.a.0001",
+    "aud.ps003.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "09fe1de9a2fcf1d2cd8fb1a64586807fe26b7ba8666bebb180775b7cce4c9629",
+      "audit_id": "aud.ps003.v002.a.0001",
+      "before_hash": "e6c4ab5301258b9105497dab386363f30928cc194c4274e7807564136ffcb583",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.513030+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f20417db18ce4bc5059ad2caa30fc7d0dff1443b2a27a28a644078cd09386df7",
+      "audit_id": "aud.ps003.v002.a.0002",
+      "before_hash": "6cc23a7b427180522577e76dd19f461be4586777fe743f822fbd9ff7fcc67458",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:49:24.001132+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the address to God, the exclamation over numerous enemies, and an image of their rising. It leaves the Hebrew's explicit personal relationship—'my foes' and 'against me'—unstated.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "94a6d83a249749ea0515840b6816048af1515a7c5072c6727d15831c5ee67d21",
+      "audit_ids": [
+        "aud.ps003.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Look!' adds an appeal for attention. 'Past counting' intensifies the repeated statement of multitude, while 'sprouting like mushrooms' introduces a simile that shifts hostile rising toward rapid proliferation. Repeated phrases provide lyric emphasis beyond the Hebrew wording.",
+      "display_reference": "Psalm 3:2",
+      "english_rendering_id": "rnd.ps003.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1287e2233d7c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְ֭הוָה מָֽה־רַבּ֣וּ צָרָ֑י רַ֝בִּ֗ים קָמִ֥ים עָלָֽי׃",
+      "literal_backbone": [
+        "Yahweh, how numerous are my foes!",
+        "Many are rising against me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:2",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Yahweh, the divine name",
+          "note": "Preserves the divine address but substitutes a general designation for the personal name.",
+          "rendered_as": "God!",
+          "token_ids": [
+            "ps003.v002.t001"
+          ],
+          "transliteration": "yhwh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "how; be many, become numerous",
+          "note": "The Hebrew exclaims over their number; it neither commands attention nor explicitly says they cannot be counted.",
+          "rendered_as": "Look! Enemies past counting!\nPast counting!",
+          "token_ids": [
+            "ps003.v002.t002",
+            "ps003.v002.t003"
+          ],
+          "transliteration": "māh-rabû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "foe, adversary; here with a first-person possessive suffix",
+          "note": "'Enemies' fits the noun, but the explicit 'my' is absent.",
+          "rendered_as": "Enemies",
+          "token_ids": [
+            "ps003.v002.t004"
+          ],
+          "transliteration": "ṣāray",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "rise, stand, arise",
+          "note": "The botanical simile suggests proliferation; in context the Hebrew describes people rising in opposition.",
+          "rendered_as": "sprouting like mushrooms,\nLike mushrooms!",
+          "token_ids": [
+            "ps003.v002.t006"
+          ],
+          "transliteration": "qāmiym",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "on, upon, over, against; with first-person singular suffix",
+          "note": "No wording explicitly carries 'against me.'",
+          "rendered_as": "",
+          "token_ids": [
+            "ps003.v002.t007"
+          ],
+          "transliteration": "ʿālay",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v002.a.0001"
   ],
@@ -15,7 +139,106 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.38,
+        "singability_score": 0.27,
+        "stress_approximation": 0.85,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "God! Look! Enemies past counting!\nPast counting!\nEnemies sprouting like mushrooms,\nLike mushrooms!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְ֭הוָה מָֽה־רַבּ֣וּ צָרָ֑י רַ֝בִּ֗ים קָמִ֥ים עָלָֽי׃",

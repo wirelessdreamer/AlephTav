@@ -1,58 +1,149 @@
 # Unit Change Log
 
 ## ps001.v001.a
+- 2026-09-25T13:57:39.777074+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.248137+00:00: Create rendering (codex)
+- 2026-09-25T14:25:44.990040+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-25T14:27:44.637063+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-25T17:10:01.023218+00:00: Add verse note (reviewer)
+- 2026-09-26T12:36:52.694066+00:00: Create translation “Bone and Ash” (reviewer)
+- 2026-09-26T13:41:36.708095+00:00: Create rendering (import)
+- 2026-09-26T13:42:36.555897+00:00: Create song setting “Psalm 1” (import)
+- 2026-09-26T13:43:03.156504+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T13:45:08.086930+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-26T15:02:01.135878+00:00: Record alignment hints (codex-backfill)
+- 2026-09-26T20:10:57.955557+00:00: Move translation “Bone and Ash” to “Bone and Ash” (reviewer)
 
 ## ps001.v002.a
+- 2026-09-25T13:57:39.784126+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.256686+00:00: Create rendering (codex)
+- 2026-09-25T14:26:04.629964+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-25T17:10:17.777560+00:00: Add verse note (reviewer)
+- 2026-09-26T13:41:36.729871+00:00: Create rendering (import)
+- 2026-09-26T13:43:18.018322+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.140902+00:00: Record alignment hints (codex-backfill)
 
 ## ps001.v003.a
+- 2026-09-25T13:57:39.792608+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.265466+00:00: Create rendering (codex)
+- 2026-09-25T14:26:17.497717+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T13:41:36.758361+00:00: Create rendering (import)
+- 2026-09-26T13:43:38.629973+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.146414+00:00: Record alignment hints (codex-backfill)
 
 ## ps001.v004.a
+- 2026-09-25T13:57:39.799036+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.273686+00:00: Create rendering (codex)
+- 2026-09-25T14:26:30.661244+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T13:41:36.782351+00:00: Create rendering (import)
+- 2026-09-26T13:43:50.167881+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.150423+00:00: Record alignment hints (codex-backfill)
 
 ## ps001.v005.a
+- 2026-09-25T13:57:39.804911+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.281875+00:00: Create rendering (codex)
+- 2026-09-25T14:26:42.780056+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T13:41:36.802976+00:00: Create rendering (import)
+- 2026-09-26T13:44:09.931531+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.154930+00:00: Record alignment hints (codex-backfill)
 
 ## ps001.v006.a
+- 2026-09-25T13:57:39.809621+00:00: Create rendering (codex)
+- 2026-09-25T14:00:15.292061+00:00: Create rendering (codex)
+- 2026-09-25T14:26:55.132394+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T13:41:36.825178+00:00: Create rendering (import)
+- 2026-09-26T13:44:29.423532+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.158717+00:00: Record alignment hints (codex-backfill)
 
 ## ps002.v001.a
+- 2026-09-26T16:04:26.793037+00:00: Create translation “Imported translation” (reviewer)
+- 2026-09-26T16:04:55.550002+00:00: Create rendering (import)
+- 2026-09-26T16:06:56.363915+00:00: Create song setting “King in Zion” (import)
+- 2026-09-26T16:07:12.097069+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T16:10:48.062995+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-26T20:10:57.970220+00:00: Move translation “Imported translation” to “Imported translation” (reviewer)
 
 ## ps002.v002.a
+- 2026-09-26T16:04:55.568095+00:00: Create rendering (import)
+- 2026-09-26T16:07:38.097440+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v003.a
+- 2026-09-26T16:04:55.583812+00:00: Create rendering (import)
+- 2026-09-26T16:07:51.505041+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v004.a
+- 2026-09-26T16:04:55.602925+00:00: Create rendering (import)
+- 2026-09-26T16:08:05.439821+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v005.a
+- 2026-09-26T16:04:55.622013+00:00: Create rendering (import)
+- 2026-09-26T16:08:20.427486+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v006.a
+- 2026-09-26T16:04:55.638389+00:00: Create rendering (import)
+- 2026-09-26T16:08:35.407310+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v007.a
+- 2026-09-26T16:04:55.657051+00:00: Create rendering (import)
+- 2026-09-26T16:08:48.318342+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v008.a
+- 2026-09-26T16:04:55.676851+00:00: Create rendering (import)
+- 2026-09-26T16:09:06.360857+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v009.a
+- 2026-09-26T16:04:55.693034+00:00: Create rendering (import)
+- 2026-09-26T16:09:20.727433+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v010.a
+- 2026-09-26T16:04:55.711461+00:00: Create rendering (import)
+- 2026-09-26T16:09:36.878135+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v011.a
+- 2026-09-26T16:04:55.728424+00:00: Create rendering (import)
+- 2026-09-26T16:09:52.641341+00:00: Create comparison assessment (codex-analysis)
 
 ## ps002.v012.a
+- 2026-09-26T16:04:55.745148+00:00: Create rendering (import)
+- 2026-09-26T16:10:00.456488+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v001.a
+- 2026-09-26T18:46:00.724748+00:00: Create translation “Bone and Ash” (reviewer)
+- 2026-09-26T18:48:57.304567+00:00: Create song setting “Shield me on all sides.” (import)
+- 2026-09-26T18:52:21.808205+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-26T20:10:57.964099+00:00: Move translation “Bone and Ash” to “Bone and Ash” (reviewer)
 
 ## ps003.v002.a
+- 2026-09-26T18:46:38.513030+00:00: Create rendering (import)
+- 2026-09-26T18:49:24.001132+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v003.a
+- 2026-09-26T18:46:38.530078+00:00: Create rendering (import)
+- 2026-09-26T18:49:46.960686+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v004.a
+- 2026-09-26T18:46:38.546121+00:00: Create rendering (import)
+- 2026-09-26T18:50:04.172000+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v005.a
+- 2026-09-26T18:46:38.564488+00:00: Create rendering (import)
+- 2026-09-26T18:50:22.263886+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v006.a
+- 2026-09-26T18:46:38.580211+00:00: Create rendering (import)
+- 2026-09-26T18:50:38.077867+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v007.a
+- 2026-09-26T18:46:38.597893+00:00: Create rendering (import)
+- 2026-09-26T18:50:50.388777+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v008.a
+- 2026-09-26T18:46:38.618251+00:00: Create rendering (import)
+- 2026-09-26T18:51:14.757282+00:00: Create comparison assessment (codex-analysis)
 
 ## ps003.v009.a
+- 2026-09-26T18:46:38.635687+00:00: Create rendering (import)
+- 2026-09-26T18:51:29.528354+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v001.a
 
@@ -651,48 +742,137 @@
 ## ps024.v010.a
 
 ## ps025.v001.a
+- 2026-09-25T19:51:38.752254+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.149029+00:00: Create rendering (codex)
+- 2026-09-25T21:31:00.872040+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-25T21:35:04.782829+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-26T15:02:01.466622+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v002.a
+- 2026-09-25T19:51:38.760976+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.158049+00:00: Create rendering (codex)
+- 2026-09-25T21:31:07.732590+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.470448+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v003.a
+- 2026-09-25T19:51:38.767506+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.166969+00:00: Create rendering (codex)
+- 2026-09-25T21:31:15.891239+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.474333+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v004.a
+- 2026-09-25T19:51:38.775806+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.175010+00:00: Create rendering (codex)
+- 2026-09-25T21:31:21.054797+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.477581+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v005.a
+- 2026-09-25T19:51:38.785613+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.185600+00:00: Create rendering (codex)
+- 2026-09-25T21:31:34.483535+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.481478+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v006.a
+- 2026-09-25T19:51:38.792300+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.196613+00:00: Create rendering (codex)
+- 2026-09-25T21:31:44.663107+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.485318+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v007.a
+- 2026-09-25T19:51:38.803033+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.206703+00:00: Create rendering (codex)
+- 2026-09-25T21:31:57.358800+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.488935+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v008.a
+- 2026-09-25T19:51:38.812619+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.214705+00:00: Create rendering (codex)
+- 2026-09-25T21:32:02.685066+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.492958+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v009.a
+- 2026-09-25T19:51:38.822902+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.224256+00:00: Create rendering (codex)
+- 2026-09-25T21:32:10.418522+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.496097+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v010.a
+- 2026-09-25T19:51:38.829640+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.234425+00:00: Create rendering (codex)
+- 2026-09-25T21:32:19.789930+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.499843+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v011.a
+- 2026-09-25T19:51:38.838140+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.244950+00:00: Create rendering (codex)
+- 2026-09-25T21:32:27.465207+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.503921+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v012.a
+- 2026-09-25T19:51:38.845273+00:00: Create rendering (codex)
+- 2026-09-25T19:55:47.254610+00:00: Create rendering (codex)
+- 2026-09-25T21:32:34.680572+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.507605+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v013.a
+- 2026-09-25T19:59:14.733523+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.828270+00:00: Create rendering (codex)
+- 2026-09-25T21:32:45.314566+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.510868+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v014.a
+- 2026-09-25T19:59:14.740421+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.834799+00:00: Create rendering (codex)
+- 2026-09-25T21:32:54.706340+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.513872+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v015.a
+- 2026-09-25T19:59:14.747118+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.842890+00:00: Create rendering (codex)
+- 2026-09-25T21:33:00.265929+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.517382+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v016.a
+- 2026-09-25T19:59:14.753145+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.848395+00:00: Create rendering (codex)
+- 2026-09-25T21:33:11.279725+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.520745+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v017.a
+- 2026-09-25T19:59:14.759859+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.854418+00:00: Create rendering (codex)
+- 2026-09-25T21:33:20.928745+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.523257+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v018.a
+- 2026-09-25T19:59:14.767493+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.865694+00:00: Create rendering (codex)
+- 2026-09-25T21:33:32.873884+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.526763+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v019.a
+- 2026-09-25T19:59:14.774006+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.876594+00:00: Create rendering (codex)
+- 2026-09-25T21:33:39.040224+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.529813+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v020.a
+- 2026-09-25T19:59:14.782577+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.885809+00:00: Create rendering (codex)
+- 2026-09-25T21:33:44.474362+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.532831+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v021.a
+- 2026-09-25T19:59:14.789806+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.898026+00:00: Create rendering (codex)
+- 2026-09-25T21:33:51.221336+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.536025+00:00: Record alignment hints (codex-backfill)
 
 ## ps025.v022.a
+- 2026-09-25T19:59:14.799169+00:00: Create rendering (codex)
+- 2026-09-25T20:02:16.906146+00:00: Create rendering (codex)
+- 2026-09-25T21:34:00.534121+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T15:02:01.539542+00:00: Record alignment hints (codex-backfill)
 
 ## ps026.v001.a
 

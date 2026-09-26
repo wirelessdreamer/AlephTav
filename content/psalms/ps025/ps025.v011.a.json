@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v011.a.literal.alt.0001",
+    "rnd.ps025.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v011.a.0001",
+    "aud.ps025.v011.a.0002",
+    "aud.ps025.v011.a.0003",
+    "aud.ps025.v011.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a893a216d9f93b68615ff21297aa3132f9bdd3049c4e2f93ff57cf7f556d3287",
+      "audit_id": "aud.ps025.v011.a.0001",
+      "before_hash": "e476eb869dcde390dcc3849bcfb056049eb10dc4803c286b9947dd585f7245b2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.838140+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v011.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to direct petition and echoes the earlier appeal made for God's goodness' sake.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7951a12a2a084ef022a17f70dfb48535ad539f69ba69983ced898e8421aec720",
+      "audit_id": "aud.ps025.v011.a.0002",
+      "before_hash": "76e94746f90c37f6669d8309aab2b4a6fc17affa4a301487ee52d641d59b1234",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.244950+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns abruptly from declaration to personal guilt and a request for forgiveness.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9be47e3a5ea774653d0b6d66db813c69881463203c209ac9fe18b897f42134c8",
+      "audit_id": "aud.ps025.v011.a.0003",
+      "before_hash": "b5d476894e4d903c3ffd7e7e267a4db6a87dfbc8e2d1a16d12e61279b97dbb7a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:27.465207+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3a1a4c2958ff553b38b8864221c7fdf1239e90c808d846a771b77633299d03f2",
+      "audit_id": "aud.ps025.v011.a.0004",
+      "before_hash": "4d51259e8a04cfb1e5aa8a24ba2425b286b06114142fc4d4c6adb3b77df8f5c9",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.503921+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v011.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal to Yahweh for his name’s sake, the request to forgive the speaker’s guilt, and the acknowledgment that this guilt is great. “Guilt” is a standard sense of the Hebrew noun.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "e8c49b22235f896a590f54b1c8dea88b1892f4d3c9b84eb4febbd1f0de5a36b3",
+      "audit_ids": [
+        "aud.ps025.v011.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“So great” adds slight emphasis. The Hebrew’s explicit causal “for” is left implicit in the final statement.",
+      "display_reference": "Psalm 25:11",
+      "english_rendering_id": "rnd.ps025.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.7ac96e7ab1fb",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לְמַֽעַן־שִׁמְךָ֥ יְהוָ֑ה וְֽסָלַחְתָּ֥ לַ֝עֲוֺנִ֗י כִּ֣י רַב־הֽוּא׃",
+      "literal_backbone": [
+        "For your name’s sake, Yahweh, pardon my iniquity.",
+        "For it is great."
+      ],
+      "literal_rendering_id": "rnd.ps025.v011.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:11",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v011.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v011.a.0001"
   ],
@@ -15,7 +121,200 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the causal 'for' and singular 'iniquity.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v011.t001–t003 → For your name's sake, Yahweh",
+          "ps025.v011.t004–t005 → pardon my iniquity",
+          "ps025.v011.t006–t008 → for it is great"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v011.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Returns to direct petition and echoes the earlier appeal made for God's goodness' sake.",
+      "rendering_id": "rnd.ps025.v011.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "For your name's sake, Yahweh,\npardon my iniquity,\nfor it is great.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v011.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A short admission of guilt closes the petition without resolving it.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.23,
+        "stress_approximation": 0.67,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v011.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Returns abruptly from declaration to personal guilt and a request for forgiveness.",
+      "rendering_id": "rnd.ps025.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, for your name's sake,\nforgive my guilt—\nit is so great.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לְמַֽעַן־שִׁמְךָ֥ יְהוָ֑ה וְֽסָלַחְתָּ֥ לַ֝עֲוֺנִ֗י כִּ֣י רַב־הֽוּא׃",

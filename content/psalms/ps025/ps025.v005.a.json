@@ -1,9 +1,128 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v005.a.literal.alt.0001",
+    "rnd.ps025.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v005.a.0001",
+    "aud.ps025.v005.a.0002",
+    "aud.ps025.v005.a.0003",
+    "aud.ps025.v005.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "37a3cbc69bbe52608e4a34dcc7ba03a9f7c54b1f9f010c1760c25765d0493992",
+      "audit_id": "aud.ps025.v005.a.0001",
+      "before_hash": "4c271ed71fd256f2a3946cb0dbadb4a46f666d9b8ccf137ef9978652ff902119",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.785613+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the teaching petition and recalls the waiting of the third unit.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f48757c2f4786b31e46272679bb30b3eb3321d63bc999e78c23345cfdc2c2f6b",
+      "audit_id": "aud.ps025.v005.a.0002",
+      "before_hash": "8dbfb76bb2cb8cbea760ce45e5e0e2e2a86297b8f8a7c331bc8af24873385d62",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.185600+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Connects guidance and teaching to salvation, then leaves the voice waiting.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6f6fab407891637015f29341ee21da01c37f6a81a90ca65e4da6b35a78c2003d",
+      "audit_id": "aud.ps025.v005.a.0003",
+      "before_hash": "e59c868a5e92240b1be2e98b73b53f390200a4ae5ff19d332d2bb899c804b603",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:31:34.483535+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9f3967902d6909a62443754f946ec402496afb2b3a2f9cf4b9803fbc09f3e04f",
+      "audit_id": "aud.ps025.v005.a.0004",
+      "before_hash": "588edadedaf2f2ad0169ffa3e61255a69379bf199a0b83e1bac148b49c6b464b",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.481478+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the requests for guidance in God's truth and for instruction, their grounding in God as the speaker's salvation, and the speaker's waiting for him all day.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "50ab9a8d7ccbe3f6ff90625d1b47bc3b834aa149a60fa6758fd5424520942066",
+      "audit_ids": [
+        "aud.ps025.v005.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“The God who saves me” recasts “the God of my salvation” as a verbal clause. “I wait” presents the Hebrew “I have waited” as ongoing waiting.",
+      "display_reference": "Psalm 25:5",
+      "english_rendering_id": "rnd.ps025.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.9e9ba6d051d1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַדְרִ֘יכֵ֤נִי בַאֲמִתֶּ֨ךָ׀ וְֽלַמְּדֵ֗נִי כִּֽי־אַ֭תָּה אֱלֹהֵ֣י יִשְׁעִ֑י אוֹתְךָ֥ קִ֝וִּ֗יתִי כָּל־הַיּֽוֹם׃",
+      "literal_backbone": [
+        "Guide me in your truth and teach me.",
+        "For you are the God of my salvation.",
+        "For you I have waited all day."
+      ],
+      "literal_rendering_id": "rnd.ps025.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:5",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "God of my salvation, deliverance, rescue",
+          "note": "An idiomatic verbal reformulation that preserves God as the source of the speaker's salvation.",
+          "rendered_as": "the God who saves me",
+          "token_ids": [
+            "ps025.v005.t006",
+            "ps025.v005.t007"
+          ],
+          "transliteration": "ʾĕlōhēy yišʿî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v005.a.0001"
   ],
@@ -15,7 +134,213 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the explicit phrase 'God of my salvation.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance",
+          "note": "Preserves guidance within God's truth.",
+          "source_id": "ps025.v005.a",
+          "token_ids": [
+            "ps025.v005.t001",
+            "ps025.v005.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v005.t001–t003 → Guide me in your truth and teach me",
+          "ps025.v005.t004–t007 → for you are the God of my salvation",
+          "ps025.v005.t008–t011 → for you I have waited all day"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v005.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Continues the teaching petition and recalls the waiting of the third unit.",
+      "rendering_id": "rnd.ps025.v005.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Guide me in your truth and teach me,\nfor you are the God of my salvation;\nfor you I have waited all day.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v005.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The short final phrase gives the duration of waiting room to sound.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.1,
+        "singability_score": 0.1,
+        "stress_approximation": 0.6,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance in truth",
+          "note": "Retains guidance within God's truth.",
+          "source_id": "ps025.v005.a",
+          "token_ids": [
+            "ps025.v005.t001",
+            "ps025.v005.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v005.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Connects guidance and teaching to salvation, then leaves the voice waiting.",
+      "rendering_id": "rnd.ps025.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Guide me in your truth;\nteach me,\nbecause you're the God\nwho saves me.\nI wait for you\nall day.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הַדְרִ֘יכֵ֤נִי בַאֲמִתֶּ֨ךָ׀ וְֽלַמְּדֵ֗נִי כִּֽי־אַ֭תָּה אֱלֹהֵ֣י יִשְׁעִ֑י אוֹתְךָ֥ קִ֝וִּ֗יתִי כָּל־הַיּֽוֹם׃",

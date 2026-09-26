@@ -3705,6 +3705,63 @@ button.composer-path-chip {
   white-space: pre-wrap;
 }
 
+.word-context__word {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.word-context__word .hebrew {
+  font-family: var(--hebrew);
+  font-size: 1.5rem;
+}
+
+.word-context__note .verdict {
+  margin-left: 0.25rem;
+}
+
+.word-context__prose {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+.word-context__sung {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.word-context__sung ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+}
+
+/* Hebrew words in the Liberties pane that show their context when hovered. */
+.arr-word[tabindex],
+.arr-lib__word[tabindex] {
+  cursor: help;
+}
+
+.arr-word[tabindex]:hover,
+.arr-word[tabindex]:focus-visible {
+  border-color: var(--gold);
+}
+
+.arr-lib__word[tabindex]:hover,
+.arr-lib__word[tabindex]:focus-visible {
+  color: var(--gold-hi);
+  text-decoration: underline dotted;
+  text-underline-offset: 0.3em;
+}
+
 .word-tray__noted {
   display: flex;
   flex-wrap: wrap;
@@ -5852,6 +5909,20 @@ button.composer-path-chip {
   gap: 0.25rem;
 }
 
+.arr-sources__verses {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Once measured, each verse sits beside the lines that sing it, in order. */
+.arr-sources__verses.is-spread > .arr-verse {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
 .arr-verse {
   display: flex;
   align-items: center;
@@ -5889,6 +5960,50 @@ button.composer-path-chip {
   font-size: 1.2rem;
 }
 
+/* A verse clicked open to its words, transliteration and glosses, and its literal. */
+.arr-verse[role='button'] {
+  cursor: pointer;
+}
+
+.arr-verse.is-open {
+  align-items: flex-start;
+}
+
+.arr-verse__open {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.arr-verse__words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+}
+
+.arr-verse__word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.arr-verse__word .interlinear__he {
+  font-size: 1.6rem;
+}
+
+.arr-verse__literal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 .arr-sung__section {
   margin-top: 0.5rem;
   color: var(--muted);
@@ -5923,6 +6038,49 @@ button.composer-path-chip {
 
 .arr-sung.is-hover {
   background: var(--raised);
+}
+
+/* The Sources pane's hover card: a verse's accuracy and creative liberties, a line's liberty. */
+.source-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.source-card__section + .source-card__section {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.source-card__section p {
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+.source-card .interlinear__he {
+  font-size: 1.3rem;
+}
+
+.source-card .source-card__text {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+}
+
+.source-card__kinds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.source-card__section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .arr-sources__summary {

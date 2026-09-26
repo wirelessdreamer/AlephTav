@@ -1,9 +1,351 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v001.a.literal.alt.0001",
+    "rnd.ps001.v001.a.lyric.alt.0001",
+    "rnd.ps001.v001.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v001.a.0001",
+    "aud.ps001.v001.a.0002",
+    "aud.ps001.v001.a.0003",
+    "aud.ps001.v001.a.0004",
+    "aud.ps001.v001.a.0005",
+    "aud.ps001.v001.a.0006",
+    "aud.ps001.v001.a.0007",
+    "aud.ps001.v001.a.0008",
+    "aud.ps001.v001.a.0009",
+    "aud.ps001.v001.a.0010",
+    "aud.ps001.v001.a.0011",
+    "aud.ps001.v001.a.0012"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b96537edcf1db28ab62ae304e56a0b88712c821fc0362f654ae4d21bfe901a82",
+      "audit_id": "aud.ps001.v001.a.0001",
+      "before_hash": "8206e6f57c6d326e43420cd738467a8cfd94860819618ea57a84d359c8204fe8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T13:57:39.777074+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Establishes the walk–stand–sit progression and the vocabulary carried through the passage.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1de1683c83268ce811b2aed2e2f61e8e976fafeb2d10c25bc1a162a819081cee",
+      "audit_id": "aud.ps001.v001.a.0002",
+      "before_hash": "b8faa2696da82c847a339991626712a9c161069945a6c25bdc6d4dc47d708978",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:00:15.248137+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The repeated negatives carry the walk–stand–sit progression, while “path” establishes the image that returns at the close.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9c9b6a5684ab4473b6201b174b6ab9557d6e0294d6437823acee647110e4b5ea",
+      "audit_id": "aud.ps001.v001.a.0003",
+      "before_hash": "8985289f8def820d6ef8637e5f84951a5671895ba775f4d0ee20a20fa5e0288a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:25:44.990040+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2a6c054db84df7efb09acfec33da62c748e3dd371af51aaf680fca861a3d0372",
+      "audit_id": "aud.ps001.v001.a.0004",
+      "before_hash": "10a56494ae30676b099fe69d3c52f6d471c51dbd8993b268be05a186aedc1312",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:27:44.637063+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps001.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8961f99a6744d381e7999880176eb91c7d9f05d625d61d4997f785f9fcfa6144",
+      "audit_id": "aud.ps001.v001.a.0005",
+      "before_hash": "c4f438ecc1a2b56cc2c4d4e357fb16b15065a96c72598ff3c446214589b582d9",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-25T17:10:01.023218+00:00",
+      "created_by": "reviewer",
+      "entity_id": "vn.ps001.v001.a.0001",
+      "entity_type": "verse_note",
+      "rationale": "Render baʿăṣaṯ rəšāʿiym (בַּעֲצַ֪ת רְשָׁ֫עִ֥ים) as “by the plans of the wicked”.",
+      "review_signoff": {},
+      "summary": "Add verse note",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5693a4479b7ccb922198d1f130ebe2fba2744efc3bd633f2988987f0fc306122",
+      "audit_id": "aud.ps001.v001.a.0006",
+      "before_hash": "7bece48bbb349f2d5c45868633f7fac3126359fcdc2f867ff7bb7945c0ea617e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T12:36:52.694066+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps001.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "67c59a293e9cd5bf5985d18a0846079e713fbe4cc9de1db53c665ba76d6068dd",
+      "audit_id": "aud.ps001.v001.a.0007",
+      "before_hash": "4685d7146e6f7bd8433cac75b7378567afc4718c5e03697f123af0e6b3b6fb6e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:41:36.708095+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "24bc5914b315c88372ebd09946e090609df5162fec1a7332958e8b34cd1d7aea",
+      "audit_id": "aud.ps001.v001.a.0008",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:42:36.555897+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps001.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “Psalm 1”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "62afb41f15d6e3b1e254233c59eb9f14cf8478280dc8198b30519a8a000eab61",
+      "audit_id": "aud.ps001.v001.a.0009",
+      "before_hash": "1fd72a62a851f406223261434f9776b54914659c38fba1d18d116141b7c428fe",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:43:03.156504+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v001.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "72a88ecff5e8cb7b07f193345612121398fe2122064e62ded53fa8bb7cbadad6",
+      "audit_id": "aud.ps001.v001.a.0010",
+      "before_hash": "b2da9fdb087e734eed0d7e6cd21d37e46c874ec49c4fee930c838e9d532e7a44",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:45:08.086930+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps001.0002",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ebd45be676eee1d2fc10669e9560828000fafa1d1a1bf06893934d0de8637019",
+      "audit_id": "aud.ps001.v001.a.0011",
+      "before_hash": "30f8009e3b049924947e13f318faf8107517fea45cf20b08e241ebc002d2c411",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.135878+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.fb69adaad6a5",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ead70f865de39a97bdd05d74aefcf65a6daa929a71ddd77ac0ad64cf35e13f52",
+      "audit_id": "aud.ps001.v001.a.0012",
+      "before_hash": "0f1b8d1ef9a41c44c3d912d4e04de398e353269734c1a8b39b72b583ce0c2ed1",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-26T20:10:57.955557+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps001.0001",
+      "entity_type": "translation",
+      "rationale": "from “Main translations”",
+      "review_signoff": {},
+      "summary": "Move translation “Bone and Ash” to “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the opening declaration of happiness, the singular man, and all three negative clauses in order: walking according to wicked counsel, standing on sinners' path, and sitting in mockers' seat. The walk–stand–sit progression and its distinct associations remain intact. The supplied literal rendering also closely follows the Hebrew.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "c5428ee47b68f71db7255c2d87970bf61e9f2d8fbd11b7c22206487c71ca437a",
+      "audit_ids": [
+        "aud.ps001.v001.a.0003"
+      ],
+      "comparison_id": "cmp.ps001.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric turns “in the counsel of the wicked” into “as the wicked advise.” Its habitual present “doesn't” is a defensible contextual rendering of the Hebrew perfect verbs, which the literal version represents with “has not.” The opening omits the English copula; the Hebrew likewise has no expressed copula.",
+      "display_reference": "Psalm 1:1",
+      "english_rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.7df77fccc86c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ אֲשֶׁ֤ר׀ לֹ֥א הָלַךְ֮ בַּעֲצַ֢ת רְשָׁ֫עִ֥ים וּבְדֶ֣רֶךְ חַ֭טָּאִים לֹ֥א עָמָ֑ד וּבְמוֹשַׁ֥ב לֵ֝צִ֗ים לֹ֣א יָשָֽׁב׃",
+      "literal_backbone": [
+        "Happy is the man",
+        "who has not walked in the counsel of the wicked,",
+        "and has not stood in the way of sinners, graded"
+      ],
+      "literal_rendering_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:1",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps001.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Counsel, advice, plan; wicked or guilty people.",
+          "note": "Changes the noun phrase into a verbal clause while preserving the relationship between walking and the wicked's advice.",
+          "rendered_as": "as the wicked advise",
+          "token_ids": [
+            "ps001.v001.t006",
+            "ps001.v001.t007"
+          ],
+          "transliteration": "baʿăṣaṯ rəšāʿiym",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the opening positive assessment and the ordered threefold refusal to walk, stand, and sit among negatively characterized people. The seating image remains explicit.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "b1da8122ccf107ecf2bf0881143bf8e7b1281391acea31a5994d0fece96a42e0",
+      "audit_ids": [
+        "aud.ps001.v001.a.0009"
+      ],
+      "comparison_id": "cmp.ps001.v001.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Changes third-person description to direct address. Blessedness becomes God's liking; counsel becomes habitual ruts; wickedness becomes blindness; sinners become good-for-nothings; and scoffers become know-it-alls. Standing in sinners' way is compressed to standing with them.",
+      "display_reference": "Psalm 1:1",
+      "english_rendering_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "generation_run_id": "cxr.8e6a99f13686",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ אֲשֶׁ֤ר׀ לֹ֥א הָלַךְ֮ בַּעֲצַ֢ת רְשָׁ֫עִ֥ים וּבְדֶ֣רֶךְ חַ֭טָּאִים לֹ֥א עָמָ֑ד וּבְמוֹשַׁ֥ב לֵ֝צִ֗ים לֹ֣א יָשָֽׁב׃",
+      "literal_backbone": [
+        "Happy is the man",
+        "who has not walked in the counsel of the wicked,",
+        "nor stood in the way of sinners, / nor sat in the seat of scoffers;"
+      ],
+      "literal_rendering_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:1",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Happy/blessed is the man/person.",
+          "note": "Introduces God as an explicit agent and interprets blessedness as divine liking; neither liking nor the inference conveyed by 'must' is expressed.",
+          "rendered_as": "How well God must like you",
+          "token_ids": [
+            "ps001.v001.t001",
+            "ps001.v001.t002"
+          ],
+          "transliteration": "ʾašərê- hāʾiyš",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "In the counsel, advice, or plan.",
+          "note": "Replaces advice or counsel with an image of entrenched behavior.",
+          "rendered_as": "in the ruts",
+          "token_ids": [
+            "ps001.v001.t006"
+          ],
+          "transliteration": "baʿăṣaṯ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Wicked, guilty, or culpable people.",
+          "note": "Substitutes lack of perception for the Hebrew's moral characterization.",
+          "rendered_as": "those blind-as-bats",
+          "token_ids": [
+            "ps001.v001.t007"
+          ],
+          "transliteration": "rəšāʿiym",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "And in the way, path, or manner of sinners.",
+          "note": "Compresses the way image into association and replaces sinfulness with a disparaging judgment of worth.",
+          "rendered_as": "with the good-for-nothings",
+          "token_ids": [
+            "ps001.v001.t008",
+            "ps001.v001.t009"
+          ],
+          "transliteration": "ûḇəḏereḵ ḥaṭṭāʾîm",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Scoffers, mockers.",
+          "note": "Emphasizes presumed superior knowledge rather than the contempt or ridicule expressed by scoffing.",
+          "rendered_as": "the know-it-alls",
+          "token_ids": [
+            "ps001.v001.t013"
+          ],
+          "transliteration": "lēṣiym",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps001.v001.a.0001"
   ],
@@ -15,7 +357,323 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the concrete progression and repeated negative clauses.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Walking, standing, and sitting",
+          "note": "Preserves all three bodily actions and their order.",
+          "source_id": "ps001.v001.a",
+          "token_ids": [
+            "ps001.v001.t005",
+            "ps001.v001.t011",
+            "ps001.v001.t015"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps001.v001.t001–t003 → Happy is the man who",
+          "ps001.v001.t004–t007 → has not walked in the counsel of the wicked",
+          "ps001.v001.t008–t011 → nor stood in the way of sinners",
+          "ps001.v001.t012–t015 → nor sat in the seat of scoffers"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T13:57:39.702551+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.fb69adaad6a5",
+        "source_ids": [
+          "ps001.v001.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v001.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8d9-81cc-7cc1-bab8-07b862a876ac"
+      },
+      "rationale": "Establishes the walk–stand–sit progression and the vocabulary carried through the passage.",
+      "rendering_id": "rnd.ps001.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Happy is the man\nwho has not walked\nin the counsel of the wicked,\nnor stood in the way of sinners,\nnor sat in the seat of scoffers;",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v001.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Repeated “doesn't” gives the three refusals matching musical shapes.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 25,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.24,
+        "singability_score": 0.13,
+        "stress_approximation": 0.6,
+        "syllable_count": 31,
+        "syllables": 31
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Walking, standing, sitting",
+          "note": "Retains the three bodily actions, the path, and the seat in their original sequence.",
+          "source_id": "ps001.v001.a",
+          "token_ids": [
+            "ps001.v001.t005",
+            "ps001.v001.t008",
+            "ps001.v001.t011",
+            "ps001.v001.t012",
+            "ps001.v001.t015"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T14:00:15.170055+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.8feb9663d895",
+        "source_ids": [
+          "ps001.v001.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v001.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8db-83f2-7d33-a195-ed40eddf1656"
+      },
+      "rationale": "The repeated negatives carry the walk–stand–sit progression, while “path” establishes the image that returns at the close.",
+      "rendering_id": "rnd.ps001.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "How happy the man\nwho doesn't walk as the wicked advise,\ndoesn't stand on the path of sinners,\ndoesn't sit in the seat of mockers.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v001.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 38,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.24,
+        "singability_score": 0.13,
+        "stress_approximation": 0.57,
+        "syllable_count": 43,
+        "syllables": 43
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.76c3ad21531f",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps001.v001.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "How well God must like you\n    you don’t walk in the ruts of those blind-as-bats,\n    you don’t stand with the good-for-nothings,\n    you don’t take your seat among the know-it-alls.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ אֲשֶׁ֤ר׀ לֹ֥א הָלַךְ֮ בַּעֲצַ֢ת רְשָׁ֫עִ֥ים וּבְדֶ֣רֶךְ חַ֭טָּאִים לֹ֥א עָמָ֑ד וּבְמוֹשַׁ֥ב לֵ֝צִ֗ים לֹ֣א יָשָֽׁב׃",
@@ -1878,6 +2536,21 @@
     }
   ],
   "unit_id": "ps001.v001.a",
+  "verse_notes": [
+    {
+      "applies_to": "english",
+      "created_at": "2026-09-25T17:10:01.022141+00:00",
+      "created_by": "reviewer",
+      "kind": "instruction",
+      "note_id": "vn.ps001.v001.a.0001",
+      "status": "open",
+      "text": "Render baʿăṣaṯ rəšāʿiym (בַּעֲצַ֪ת רְשָׁ֫עִ֥ים) as “by the plans of the wicked”.",
+      "token_ids": [
+        "ps001.v001.t006",
+        "ps001.v001.t007"
+      ]
+    }
+  ],
   "witnesses": [
     {
       "language": "en",

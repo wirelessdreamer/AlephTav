@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v008.a.literal.alt.0001",
+    "rnd.ps025.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v008.a.0001",
+    "aud.ps025.v008.a.0002",
+    "aud.ps025.v008.a.0003",
+    "aud.ps025.v008.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cee6df86c7b7a9ff05dae784fe6b596eb61336ec8cd3594b5daa1a0cecaaafb1",
+      "audit_id": "aud.ps025.v008.a.0001",
+      "before_hash": "e76d169c3de20232a2859777b1139a5dc902d62e76c270102d5f840e98e3b261",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.812619+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v008.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Connects the appeal to goodness with God's instruction along the way.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7e36b24eaddc95d96efc1cf44353b840bcf32bbd9691e6444f4645dbc045f46d",
+      "audit_id": "aud.ps025.v008.a.0002",
+      "before_hash": "122637d5231f4d0c4cd274749bacbd5113b51e661fd2a401b97717d99b20c720",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.214705+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries 'good' forward from the petition into the source's declaration about instruction.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1961031144db80cfe810041439c0f36e41f0c516bedbac58fada646b55685b86",
+      "audit_id": "aud.ps025.v008.a.0003",
+      "before_hash": "980640f4f1877e24eae21f4c1ce309851458230973928f9d625160374180c4b4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:02.685066+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6f4005f2102d593c108001c5532f985ebd6f9a70bbf04615adf0c62f583b1b80",
+      "audit_id": "aud.ps025.v008.a.0004",
+      "before_hash": "cc20ad353b0e0ee854532fd2bdc9339abdbc2640ed887a511acb2f8280b4ab37",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.492958+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v008.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves Yahweh’s goodness and uprightness, the explicit consequence (“that's why”), and his instruction of sinners in the way. “Shows sinners the way” idiomatically conveys the Hebrew teaching expression.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "31fc7fa98e544ceda7ecd08583e29f2099a1a1ba96e6b9227c10d821d80733bf",
+      "audit_ids": [
+        "aud.ps025.v008.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:8",
+      "english_rendering_id": "rnd.ps025.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1d0f6bcad25b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "טוֹב־וְיָשָׁ֥ר יְהוָ֑ה עַל־כֵּ֤ן יוֹרֶ֖ה חַטָּאִ֣ים בַּדָּֽרֶךְ׃",
+      "literal_backbone": [
+        "Good and upright is Yahweh.",
+        "Therefore he instructs sinners in the way."
+      ],
+      "literal_rendering_id": "rnd.ps025.v008.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:8",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v008.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v008.a.0001"
   ],
@@ -15,7 +121,211 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the opening predicate order and explicit consequence.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The way",
+          "note": "Retains the singular way as the setting of instruction.",
+          "source_id": "ps025.v008.a",
+          "token_ids": [
+            "ps025.v008.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v008.t001–t003 → Good and upright is Yahweh",
+          "ps025.v008.t004–t005 → therefore",
+          "ps025.v008.t006–t008 → he instructs sinners in the way"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v008.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Connects the appeal to goodness with God's instruction along the way.",
+      "rendering_id": "rnd.ps025.v008.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Good and upright is Yahweh;\ntherefore he instructs sinners in the way.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v008.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Natural spoken causality leads into a short way-image ending.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.29,
+        "stress_approximation": 0.62,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The way",
+          "note": "The route remains explicit as the subject of instruction.",
+          "source_id": "ps025.v008.a",
+          "token_ids": [
+            "ps025.v008.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v008.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Carries 'good' forward from the petition into the source's declaration about instruction.",
+      "rendering_id": "rnd.ps025.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh is good and upright;\nthat's why he shows sinners\nthe way.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "טוֹב־וְיָשָׁ֥ר יְהוָ֑ה עַל־כֵּ֤ן יוֹרֶ֖ה חַטָּאִ֣ים בַּדָּֽרֶךְ׃",

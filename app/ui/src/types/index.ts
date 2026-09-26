@@ -258,9 +258,26 @@ export interface PsalmTranslation {
   translation_id: string | null;
   psalm_id: string;
   title: string;
+  /** The project the translation is in. */
+  collection_id: string;
   created_by?: string;
   created_via?: 'human' | 'import';
   created_at?: string;
+}
+
+/**
+ * A project: translations gathered across psalms, at most one of each psalm. The built-in
+ * default one holds every psalm's main translation until it is moved.
+ */
+export interface Collection {
+  collection_id: string;
+  title: string;
+  built_in?: boolean;
+  created_by?: string;
+  created_at?: string;
+  updated_at?: string;
+  /** The psalms it has a translation of, in psalm order. */
+  members: Array<{ psalm_id: string; translation_id: string | null; title: string }>;
 }
 
 /** Codex's answer to which psalm a pasted translation translates. */
@@ -896,6 +913,8 @@ export interface ComparisonTableRow {
   tokens: StudyToken[];
   literal_text: string | null;
   literal_rendering_ids: string[];
+  /** Which Hebrew tokens each part of the literal renders, where Codex said. */
+  literal_links?: RenderingLink[];
   english_text: string | null;
   english_rendering_ids: string[];
   accuracy_rating: AccuracyRating | null;
@@ -963,6 +982,12 @@ export interface CanonicalNumbering {
   mt: number;
   septuagint: number[];
   vulgate: number[];
+}
+
+/** Hebrew tokens and the words of a rendering that render them. */
+export interface RenderingLink {
+  token_ids: string[];
+  text: string;
 }
 
 export interface ComparisonTable {

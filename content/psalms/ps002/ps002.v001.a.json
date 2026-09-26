@@ -1,9 +1,197 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps002.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps002.v001.a.0001",
+    "aud.ps002.v001.a.0002",
+    "aud.ps002.v001.a.0003",
+    "aud.ps002.v001.a.0004",
+    "aud.ps002.v001.a.0005",
+    "aud.ps002.v001.a.0006",
+    "aud.ps002.v001.a.0007"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "67e4f0ee87327f4f64dffbf78e4b194d6cf0f51efa7a87f217981add764f562c",
+      "audit_id": "aud.ps002.v001.a.0001",
+      "before_hash": "37bf2f0165590eb15ee97f36d12365d8f6b248a86bcc8080dc274832186b6cca",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:26.793037+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps002.0001",
+      "entity_type": "translation",
+      "rationale": "import translation",
+      "review_signoff": {},
+      "summary": "Create translation “Imported translation”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ab647ac28bed290a2284cdffe57205f0c8bac202f615134c8db7edb4b45533bd",
+      "audit_id": "aud.ps002.v001.a.0002",
+      "before_hash": "bb9f2acce73f83c6c5a5ccfee31fcc5016d5a6a8571058b7593d6041f6e87aea",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:04:55.550002+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps002.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1d80438805b71e372bdec8a53e2464cefda68231b0deb2e3bd0f739cbe386fed",
+      "audit_id": "aud.ps002.v001.a.0003",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:06:56.363915+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps002.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “King in Zion”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3ef76996f56ca2f374c6669c517c0d99d2f8d83d5a224c49d371d587033bfb5d",
+      "audit_id": "aud.ps002.v001.a.0004",
+      "before_hash": "64cdc408b20ab7faadcd7a55445663a402a419ea06cd6675666a591d6becbf35",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:07:12.097069+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps002.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d0a04c99b819c6497a0fe114ec797c434d49506f6221116e9839eaebabb6c75f",
+      "audit_id": "aud.ps002.v001.a.0005",
+      "before_hash": "ad70c4edb4c5e9785942a706b0c9ecae999856710d4c376526e89ce4fea744f6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T16:10:48.062995+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps002.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "41a6dab90c891fe2fec87041573b16061f8b698d61089add92802af415be5dd5",
+      "audit_id": "aud.ps002.v001.a.0006",
+      "before_hash": "8f2e23268ef0e277a91c7496d917bf1de6d1c4b08eea2a1978f51d8d76c374cf",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-26T20:10:57.970220+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps002.0001",
+      "entity_type": "translation",
+      "rationale": "from “Main translations”",
+      "review_signoff": {},
+      "summary": "Move translation “Imported translation” to “Imported translation”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1143df9c35b54ca9c29b0ded7fe8feb7d5f08234687167dc341fe528cd583051",
+      "audit_id": "aud.ps002.v001.a.0007",
+      "before_hash": "3c50f46ad5fb52916fbd0bc690aa446aa626e55ed4845d3467c29ab4b27a96bd",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-26T22:20:53.523608+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps002.0001",
+      "entity_type": "translation",
+      "rationale": "from “Imported translation”",
+      "review_signoff": {},
+      "summary": "Move translation “Imported translation” to “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the opening question, the nations' tumult, and the peoples' plotting, in Hebrew order. It does not preserve the characterization of their plotting as futile.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "6f2a8c78fb0bf8e62710d3dc489aa6f17698b5d502f821ec1c13f092c380f9a5",
+      "audit_ids": [
+        "aud.ps002.v001.a.0004"
+      ],
+      "comparison_id": "cmp.ps002.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Big noise” colloquially expresses tumult. “Mean” adds a moral characterization in place of futility. The second question repeats “Why,” and the final line echoes the preceding phrase for lyrical emphasis.",
+      "display_reference": "Psalm 2:1",
+      "english_rendering_id": "rnd.ps002.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2072464f1c97",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לָ֭מָּה רָגְשׁ֣וּ גוֹיִ֑ם וּ֝לְאֻמִּ֗ים יֶהְגּוּ־רִֽ",
+      "literal_backbone": [
+        "Why do the nations tumult?",
+        "And the peoples devise emptiness?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 2:1",
+      "non_source_material": [],
+      "psalm_id": "ps002",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "be in tumult; throng tumultuously",
+          "note": "Captures the noisy aspect of tumult, though the Hebrew describes collective agitation.",
+          "rendered_as": "the big noise",
+          "token_ids": [
+            "ps002.v001.t002"
+          ],
+          "transliteration": "rāḡəšû",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "murmur; meditate; ponder; devise",
+          "note": "Plotting is a contextually appropriate sense, expressed here as a noun.",
+          "rendered_as": "plots",
+          "token_ids": [
+            "ps002.v001.t005"
+          ],
+          "transliteration": "yehgû",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "emptiness; vanity; worthlessness",
+          "note": "“Mean” characterizes the plots as malicious; the Hebrew characterizes them as empty or futile.",
+          "rendered_as": "mean",
+          "token_ids": [
+            "ps002.v001.t006"
+          ],
+          "transliteration": "rîq",
+          "verdict": "unsupported"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps002.v001.a.0001"
   ],
@@ -15,7 +203,106 @@
   "pr_links": [],
   "psalm_id": "ps002",
   "ref": "Psalm 2:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.38,
+        "singability_score": 0.27,
+        "stress_approximation": 0.65,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.60b330fcd376",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps002.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Why the big noise, nations?\nWhy the mean plots, peoples?\nmean plots peoples",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps002.0001",
+      "unit_id": "ps002.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לָ֭מָּה רָגְשׁ֣וּ גוֹיִ֑ם וּ֝לְאֻמִּ֗ים יֶהְגּוּ־רִֽ",

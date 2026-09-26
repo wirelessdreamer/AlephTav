@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v009.a.literal.alt.0001",
+    "rnd.ps025.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v009.a.0001",
+    "aud.ps025.v009.a.0002",
+    "aud.ps025.v009.a.0003",
+    "aud.ps025.v009.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b490d29e7c1fc635b8f91c5e414fd2fc6f8fc2b7013291886a8f28db17099117",
+      "audit_id": "aud.ps025.v009.a.0001",
+      "before_hash": "52ff4d269a6a35b057e356cc7b4e1d5bfd54e6cf48e8ed9c51f212a3cb3e2c22",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:51:38.822902+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v009.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the earlier requests to guide and teach with matching declarative verbs.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "579ab103bed4792698dfa9f23e36b28ec8587ccfa5f647fc53d71180eae7db83",
+      "audit_id": "aud.ps025.v009.a.0002",
+      "before_hash": "3ebe17cad362e92598e618aa58c9a1e25821f982abdf45bed432e9ea678ff1ef",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:55:47.224256+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the earlier guide-and-teach petitions with corresponding actions and repeated recipients.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5927420df90001ccf56c519fc8242d65d091bfa118d47402d6d63ef565c298b4",
+      "audit_id": "aud.ps025.v009.a.0003",
+      "before_hash": "deda76e0fb4fe9c893492b3cd36cae9f5601b04d9892688daee38521c2be0fa5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:32:10.418522+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c4d1a3f7c09f04648be47462aeabe2173f5f132d9a31942674a47387b3583789",
+      "audit_id": "aud.ps025.v009.a.0004",
+      "before_hash": "aad5a31211ff2e0dfc3615d6906384c45772fb75f17a3b7734bbad9c250832d9",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.496097+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v009.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.12329643f485",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves both parallel statements: he guides the humble in what is right and teaches the humble his way. “What is right” is a standard contextual rendering of mišpāṭ, and the repeated “the humble” is retained.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "9f70e8c0789b66728fb48fb8864c18e87f25cb3046ad37e05ead18c7c20e89b5",
+      "audit_ids": [
+        "aud.ps025.v009.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:9",
+      "english_rendering_id": "rnd.ps025.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.6c626803dad0",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יַדְרֵ֣ךְ עֲ֭נָוִים בַּמִּשְׁפָּ֑ט וִֽילַמֵּ֖ד עֲנָוִ֣ים דַּרְכּֽוֹ׃",
+      "literal_backbone": [
+        "He guides the humble in justice.",
+        "And he teaches the humble his way."
+      ],
+      "literal_rendering_id": "rnd.ps025.v009.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:9",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v009.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v009.a.0001"
   ],
@@ -15,7 +121,212 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains 'the humble' in both answering clauses.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance in God's way",
+          "note": "Maintains the passage's guidance and way imagery.",
+          "source_id": "ps025.v009.a",
+          "token_ids": [
+            "ps025.v009.t001",
+            "ps025.v009.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v009.t001–t003 → He guides the humble in justice",
+          "ps025.v009.t004–t006 → and teaches the humble his way"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:51:38.655472+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.12329643f485",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v009.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1b-8d84-79e0-856c-776958c7c977"
+      },
+      "rationale": "Answers the earlier requests to guide and teach with matching declarative verbs.",
+      "rendering_id": "rnd.ps025.v009.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "He guides the humble in justice\nand teaches the humble his way.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v009.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matching clause shapes preserve the Hebrew repetition.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.21,
+        "singability_score": 0.2,
+        "stress_approximation": 0.64,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance and the way",
+          "note": "Retains the guidance verb and God's way.",
+          "source_id": "ps025.v009.a",
+          "token_ids": [
+            "ps025.v009.t001",
+            "ps025.v009.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:55:47.051976+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.d3a4dd33d253",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v009.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da1f-9913-7b50-9d5c-5e38111f0536"
+      },
+      "rationale": "Answers the earlier guide-and-teach petitions with corresponding actions and repeated recipients.",
+      "rendering_id": "rnd.ps025.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He guides the humble\nin what is right;\nhe teaches the humble\nhis way.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יַדְרֵ֣ךְ עֲ֭נָוִים בַּמִּשְׁפָּ֑ט וִֽילַמֵּ֖ד עֲנָוִ֣ים דַּרְכּֽוֹ׃",

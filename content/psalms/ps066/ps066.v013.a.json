@@ -1,8 +1,29 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps066.v013.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps066.v013.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7588fc2d8e8cebf7ba831f1d6cd0801f38c720c21baf083e88e801b8cd78e8c3",
+      "audit_id": "aud.ps066.v013.a.0001",
+      "before_hash": "496f839c3e30d11a98fb294a5f10643b2b822c94ac21d8c75b8a3bdf9b52c461",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:05:06.060276+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps066.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps066.v013.a.0001"
@@ -15,7 +36,99 @@
   "pr_links": [],
   "psalm_id": "ps066",
   "ref": "Psalm 66:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.26,
+        "singability_score": 0.13,
+        "stress_approximation": 0.67,
+        "syllable_count": 38,
+        "syllables": 38
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6995d046b85a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps066.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I will come into Your house\nWith offerings lifted high\nI will pay the vows I spoke\nI will bring it there\nI lay before Your throne",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אָב֣וֹא בֵיתְךָ֣ בְעוֹל֑וֹת אֲשַׁלֵּ֖ם לְךָ֣ נְדָרָֽי׃",

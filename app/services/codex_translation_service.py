@@ -21,15 +21,16 @@ from app.core.config import get_settings
 from app.core.errors import GenerationError, NotFoundError, ValidationError
 from app.llm.strict_schema import strict_output_schema
 from app.services import (
+    audit_service,
+    generation_service,
+    registry_service,
+    rendering_service,
+)
+from app.services import (
     codex_app_server_service as codex,
 )
 from app.services import (
     comparison_assessment_service as comparisons,
-)
-from app.services import (
-    generation_service,
-    registry_service,
-    rendering_service,
 )
 from app.services import (
     psalm_translations_service as translations,
@@ -701,6 +702,12 @@ def save_run_candidates(run_id: str, created_by: str = "codex") -> list[dict[str
     ]
 
 
+def _alignment_hints(candidate: dict[str, Any]) -> dict[str, list[str]]:
+    """The candidate's hints, as provenance: which Hebrew tokens each part renders."""
+    hints = [str(hint) for hint in candidate.get("alignment_hints") or [] if str(hint).strip()]
+    return {"alignment_hints": hints} if hints else {}
+
+
 def _create_rendering(
     run: dict[str, Any], unit_id: str, candidate: dict[str, Any], created_by: str
 ) -> dict[str, Any]:
@@ -730,8 +737,77 @@ def _create_rendering(
             "prompt_template_version": run["prompt_template_version"],
             "generated_at": run.get("completed_at"),
             "contract_validated": True,
+            **_alignment_hints(candidate),
         },
     )
+
+
+REVIEWED = ("canonical", "accepted_as_alternate")
+
+
+def recover_alignment_hints(created_by: str = "codex-backfill") -> dict[str, int]:
+    """Store on each literal Codex wrote the alignment hints its run returned with it.
+
+    Literals saved before the hints were kept lost them, but the local run log can still
+    hold the run: its candidate for the same unit with the same text carries them. Each
+    recovery is audited on the unit. Reviewed renderings are left as they are.
+    """
+    runs = _read_store()["runs"]
+    counts = {"recovered": 0, "already_kept": 0, "reviewed": 0, "not_in_log": 0}
+    for summary in registry_service.list_psalm_summaries():
+        for unit_id in registry_service.load_psalm_meta(summary["psalm_id"]).get("unit_ids", []):
+            unit = registry_service.load_unit(unit_id)
+            changed = False
+            for rendering in unit.get("renderings", []):
+                provenance = rendering.get("provenance") or {}
+                if rendering.get("layer") != "literal" or not provenance.get("run_id"):
+                    continue
+                if provenance.get("alignment_hints"):
+                    counts["already_kept"] += 1
+                    continue
+                if rendering.get("status") in REVIEWED:
+                    counts["reviewed"] += 1
+                    continue
+                run = runs.get(provenance["run_id"]) or {}
+                payload = run.get("payload") or {}
+                candidates = [
+                    candidate
+                    for item in payload.get("units", [])
+                    if item.get("unit_id") == unit_id
+                    for candidate in item.get("candidates", [])
+                ]
+                if run.get("unit_id") == unit_id:
+                    candidates += payload.get("candidates", [])
+                hints = next(
+                    (
+                        _alignment_hints(candidate)
+                        for candidate in candidates
+                        if candidate.get("text") == rendering["text"]
+                        and _alignment_hints(candidate)
+                    ),
+                    None,
+                )
+                if hints is None:
+                    counts["not_in_log"] += 1
+                    continue
+                before = registry_service.file_hash(unit)
+                provenance.update(hints)
+                rendering["provenance"] = provenance
+                audit_service.create_audit_record(
+                    unit,
+                    before_hash=before,
+                    after_hash=registry_service.file_hash(unit),
+                    summary="Record alignment hints",
+                    rationale=f"Recovered from Codex run {provenance['run_id']}",
+                    created_by=created_by,
+                    entity_type="rendering",
+                    entity_id=rendering["rendering_id"],
+                )
+                counts["recovered"] += 1
+                changed = True
+            if changed:
+                registry_service.save_unit(unit)
+    return counts
 
 
 # -- Rebuilding a verse with its notes -----------------------------------------

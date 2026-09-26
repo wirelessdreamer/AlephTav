@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps025.v019.a.literal.alt.0001",
+    "rnd.ps025.v019.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps025.v019.a.0001",
+    "aud.ps025.v019.a.0002",
+    "aud.ps025.v019.a.0003",
+    "aud.ps025.v019.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "17e6bf3e27854e4b825edab910463bcc7d459f16d86687173a8f8cce5177e64f",
+      "audit_id": "aud.ps025.v019.a.0001",
+      "before_hash": "5cd261bf702512b7601af4068332b0aec6b45acf33836a36119c697a546c5942",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T19:59:14.774006+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v019.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats 'See' from the preceding unit and preserves the emphatic hate–hatred pairing.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a6a54d68d2141302530d1939eafa3f4d041dca24f350295595eefbba4e822649",
+      "audit_id": "aud.ps025.v019.a.0002",
+      "before_hash": "fca389edea6863b5a8811696acfbab9241009e7f1040cdf0cab0b1907926edf0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T20:02:16.876594+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v019.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats the preceding request to look, moving from the speaker's pain to the enemies who threaten him.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0e6d918b069ca4b0bf903c1cc0532f5879eeb94da4287f69f4b1a8a754d9c4df",
+      "audit_id": "aud.ps025.v019.a.0003",
+      "before_hash": "4b1f6b1e461020b3dad10528b6bddfaab9c77d274be60147e3fdb171810e1924",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T21:33:39.040224+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v019.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "72d6e8761d1d478e6b3026b5b18c5e9f65d3612b2ddf73ff660f51893a5a5bbf",
+      "audit_id": "aud.ps025.v019.a.0004",
+      "before_hash": "3670587479b27ac6a6cdf1a0a8331f7b10cc8491b5a8c05812cce59dedf8d992",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.529813+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps025.v019.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.3b50dcfe56f7",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal to consider the speaker’s enemies, their great number, and the violence of their hatred toward him.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "74c3eb866ad8e02a7d74f8f186c10e1ebe66d3f7833d6be13531aa292d7381cb",
+      "audit_ids": [
+        "aud.ps025.v019.a.0003"
+      ],
+      "comparison_id": "cmp.ps025.v019.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“So many” adds slight emphasis. “Their hatred for me is violent” recasts “they hate me with violent hatred,” preserving its content while dropping the repeated hate/hatred wording.",
+      "display_reference": "Psalm 25:19",
+      "english_rendering_id": "rnd.ps025.v019.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d9371ee82272",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "רְאֵֽה־אוֹיְבַ֥י כִּי־רָ֑בּוּ וְשִׂנְאַ֖ת חָמָ֣ס שְׂנֵאֽוּנִי׃",
+      "literal_backbone": [
+        "See my enemies, for they are many.",
+        "And they hate me with violent hatred."
+      ],
+      "literal_rendering_id": "rnd.ps025.v019.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:19",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps025.v019.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps025.v019.a.0001"
   ],
@@ -15,7 +121,200 @@
   "pr_links": [],
   "psalm_id": "ps025",
   "ref": "Psalm 25:19",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the source's emphatic repetition of hatred.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v019.t001–t002 → See my enemies",
+          "ps025.v019.t003–t004 → for they are many",
+          "ps025.v019.t005–t007 → and they hate me with violent hatred"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T19:59:14.631994+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.3b50dcfe56f7",
+        "source_ids": [
+          "ps025.v019.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v019.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da23-63e4-7a61-a6b2-f2cae570d28c"
+      },
+      "rationale": "Repeats 'See' from the preceding unit and preserves the emphatic hate–hatred pairing.",
+      "rendering_id": "rnd.ps025.v019.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "See my enemies, for they are many,\nand they hate me with violent hatred.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v019.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v019.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Anaphora across units + em-dash breath break.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.71,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T20:02:16.737251+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.f09f4d3b8341",
+        "source_ids": [
+          "ps025.v019.a"
+        ],
+        "thread_id": "01a0da1b-8bd7-7fa3-be6e-b8e23a19bc1a",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v019.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0da26-8e7e-75d1-bb3b-5680efff2f27"
+      },
+      "rationale": "Repeats the preceding request to look, moving from the speaker's pain to the enemies who threaten him.",
+      "rendering_id": "rnd.ps025.v019.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Look at my enemies—\nthere are so many.\nTheir hatred for me\nis violent.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v019.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps025.v019.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "רְאֵֽה־אוֹיְבַ֥י כִּי־רָ֑בּוּ וְשִׂנְאַ֖ת חָמָ֣ס שְׂנֵאֽוּנִי׃",

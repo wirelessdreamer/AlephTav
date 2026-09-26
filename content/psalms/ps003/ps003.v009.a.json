@@ -1,9 +1,116 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps003.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps003.v009.a.0001",
+    "aud.ps003.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8ec724374141f5e7d50e43ddc29f368b46233333f2c3c9ba0877a170ec7b566b",
+      "audit_id": "aud.ps003.v009.a.0001",
+      "before_hash": "f5a659a705e23d9cb579725898fdfb6f59b3aa8b70a69c69d895cf9794a097e8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:46:38.635687+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps003.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8b56f8d3f1ea534de6ae0b9d86dcca11e2677e708b42b8bc8de568a15cf6f4a0",
+      "audit_id": "aud.ps003.v009.a.0002",
+      "before_hash": "35c4ae474e123ef648da716f66671763d9d581a0c7f56e1d3f038b89d30ff4b2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T18:51:29.528354+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps003.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves God's relation to deliverance, then the direct address affirming his blessing upon his people. It expresses deliverance belonging to Yahweh as help coming from God. Selah is omitted.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "2aecf34d8bca933386e75accd3c5c42a6c9a452eca67ec8a022bc6d7dd1deec1",
+      "audit_ids": [
+        "aud.ps003.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps003.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Real' adds emphasis, and 'From God!' repeats the source of help. 'Clothes' introduces a covering metaphor for blessing upon the people and presents the clause as an assertion rather than a possible wish.",
+      "display_reference": "Psalm 3:9",
+      "english_rendering_id": "rnd.ps003.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.59fec9ce807b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לַיהוָ֥ה הַיְשׁוּעָ֑ה עַֽל־עַמְּךָ֖ בִרְכָתֶ֣ךָ סֶּֽלָה׃",
+      "literal_backbone": [
+        "Deliverance belongs to Yahweh.",
+        "Your blessing upon your people.",
+        "Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 3:9",
+      "non_source_material": [],
+      "psalm_id": "ps003",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "to or belonging to Yahweh; salvation, deliverance, help",
+          "note": "Divine source is a defensible interpretation of belonging to Yahweh; 'real' and the repeated phrase add emphasis, while 'God' replaces the personal name.",
+          "rendered_as": "Real help comes from God.\nFrom God!",
+          "token_ids": [
+            "ps003.v009.t001",
+            "ps003.v009.t002"
+          ],
+          "transliteration": "layhwh hayəšûʿāh",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "upon; your people; your blessing",
+          "note": "Preserves the blessing and its recipients but adds clothing imagery to a Hebrew clause without an explicit verb.",
+          "rendered_as": "Your blessing clothes your people!",
+          "token_ids": [
+            "ps003.v009.t003",
+            "ps003.v009.t004",
+            "ps003.v009.t005"
+          ],
+          "transliteration": "ʿal-ʿamməḵā birḵāṯeḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "Selah; a musical or liturgical marker of uncertain meaning",
+          "note": "No explicit rendering appears.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps003.v009.t006"
+          ],
+          "transliteration": "selâ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps003.v009.a.0001"
   ],
@@ -15,7 +122,99 @@
   "pr_links": [],
   "psalm_id": "ps003",
   "ref": "Psalm 3:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.25,
+        "singability_score": 0.28,
+        "stress_approximation": 0.67,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.5a30825be66c",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps003.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Real help comes from God.\nFrom God!\nYour blessing clothes your people!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps003.0001",
+      "unit_id": "ps003.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לַיהוָ֥ה הַיְשׁוּעָ֑ה עַֽל־עַמְּךָ֖ בִרְכָתֶ֣ךָ סֶּֽלָה׃",

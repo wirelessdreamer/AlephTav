@@ -1,9 +1,255 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps001.v003.a.literal.alt.0001",
+    "rnd.ps001.v003.a.lyric.alt.0001",
+    "rnd.ps001.v003.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps001.v003.a.0001",
+    "aud.ps001.v003.a.0002",
+    "aud.ps001.v003.a.0003",
+    "aud.ps001.v003.a.0004",
+    "aud.ps001.v003.a.0005",
+    "aud.ps001.v003.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fb5d4f6f60108a3268058d848e76ecbed00aaeec6366d71cf32da58fee4f5c3f",
+      "audit_id": "aud.ps001.v003.a.0001",
+      "before_hash": "8e9501cb27dd51ddbfce89033ede59a8d0c95fb3c095b874f881b2cd5d6c3979",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T13:57:39.792608+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Develops the tree image without expanding its meaning into additional promises.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "999499340e238dadb5f6cb14ad078961419b422f0b66d71559986cbe720c16f1",
+      "audit_id": "aud.ps001.v003.a.0002",
+      "before_hash": "7e9e9d48ea46697e9a396acbd2dde7bbd8c1749c15de37c6bdb06f0c659409fc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:00:15.265466+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps001.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Lets the planted tree, seasonal fruit, and enduring leaves carry the promise without explanatory expansion.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "677b1d65d5f846d835687071b7a92bd6f11f80975794513b8e3637e243a26ca2",
+      "audit_id": "aud.ps001.v003.a.0003",
+      "before_hash": "f9f6ae36383189f3400a688f3825c3e8a05f6593c27a2681c3e4d263a5167839",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-25T14:26:17.497717+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "87eab45db05b7bf3aa5c46afddf1b2fb1e94c5c84cb46fb7e0e468c76210cd5a",
+      "audit_id": "aud.ps001.v003.a.0004",
+      "before_hash": "9f13b038ad1463cc6c5514649b68dccf1bcbd21e55cf6c8a9af8a7d34777f4ca",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:41:36.758361+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps001.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "aaf7f768c0e3a193d013679d3818e92a2fb9686f0d28c9d888db9cb3e7c1af76",
+      "audit_id": "aud.ps001.v003.a.0005",
+      "before_hash": "cf7ad270cba401832de8a33956a4e26b760cdf485a023644959ae0dda59774a7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T13:43:38.629973+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps001.v003.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ce44bd1bd23ca6bf16b6d27e83aab3ca9eddd50f54dbf6100812d1b1bf8f975a",
+      "audit_id": "aud.ps001.v003.a.0006",
+      "before_hash": "6495a03fac295cb51052961e9ca7a2b266be5eb7896b528a4ce66d23e9bb3e67",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-09-26T15:02:01.146414+00:00",
+      "created_by": "codex-backfill",
+      "entity_id": "rnd.ps001.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Recovered from Codex run cxr.fb69adaad6a5",
+      "review_signoff": {},
+      "summary": "Record alignment hints",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the comparison to a planted tree beside watercourses, fruit produced in its season, unwithered foliage, and success in whatever the person does. The literal rendering follows the same sequence and retains the Hebrew's connecting conjunctions more explicitly.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "e529a6671fbb0abbb2e8d9bf69ea7ef46dfd46ca31f07c2696bfdeb159edf9dd",
+      "audit_ids": [
+        "aud.ps001.v003.a.0003"
+      ],
+      "comparison_id": "cmp.ps001.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Bearing” idiomatically expresses giving fruit. “When its season comes” expands “in its season” without materially changing the timing. “Leaves” naturally represents the collective singular. The lyric drops several conjunctions and uses “thrive” for success, echoing the surrounding tree imagery.",
+      "display_reference": "Psalm 1:3",
+      "english_rendering_id": "rnd.ps001.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0b935e0771ab",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת֢וּל עַֽל־פַּלְגֵ֫י מָ֥יִם אֲשֶׁ֤ר פִּרְי֨וֹ׀ יִתֵּ֬ן בְּעִתּ֗וֹ וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃",
+      "literal_backbone": [
+        "And he will be like a tree planted beside streams of water,",
+        "which gives its fruit in its season,",
+        "and its leaf does not wither, aged"
+      ],
+      "literal_rendering_id": "rnd.ps001.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:3",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "unit_id": "ps001.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Prosper, succeed; cause to prosper, bring to a successful outcome.",
+          "note": "Conveys flourishing success and sustains the botanical resonance. It still applies to whatever the person does, rather than adding a separate claim about the tree.",
+          "rendered_as": "will thrive",
+          "token_ids": [
+            "ps001.v003.t017"
+          ],
+          "transliteration": "yaṣliyᵃḥ",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the tree image, deliberate planting, fruitfulness, enduring foliage, and a general picture of flourishing, in the Hebrew's order.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "c78192f55e806583cfecffe08b799b798a8173137af1b66701f838f069ca51cb",
+      "audit_ids": [
+        "aud.ps001.v003.a.0005"
+      ],
+      "comparison_id": "cmp.ps001.v003.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Turns a third-person comparison into a direct-address metaphor. Eden replaces streams of water; freshness and monthly fruiting are supplied. Unwithering foliage becomes never dropping a leaf, and success in everything the person does becomes perpetual blossom.",
+      "display_reference": "Psalm 1:3",
+      "english_rendering_id": "rnd.ps001.v003.a.lyric.alt.0002",
+      "generation_run_id": "cxr.c4d873a4a20c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת֢וּל עַֽל־פַּלְגֵ֫י מָ֥יִם אֲשֶׁ֤ר פִּרְי֨וֹ׀ יִתֵּ֬ן בְּעִתּ֗וֹ וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃",
+      "literal_backbone": [
+        "And he will be like a tree planted beside streams of water,",
+        "which yields its fruit in its season,",
+        "and its leaf does not wither; / and all that he does will prosper."
+      ],
+      "literal_rendering_id": "rnd.ps001.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 1:3",
+      "non_source_material": [],
+      "psalm_id": "ps001",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Planted, transplanted.",
+          "note": "The verb can describe transplanting, so replanting is a defensible choice.",
+          "rendered_as": "replanted",
+          "token_ids": [
+            "ps001.v003.t003"
+          ],
+          "transliteration": "šāṯûl",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Beside streams or channels of water.",
+          "note": "Eden is not named; its introduction replaces the explicit water-source image.",
+          "rendered_as": "in Eden",
+          "token_ids": [
+            "ps001.v003.t004",
+            "ps001.v003.t005",
+            "ps001.v003.t006"
+          ],
+          "transliteration": "ʿal-palḡēy māyim",
+          "verdict": "unsupported"
+        },
+        {
+          "lexical_gloss": "It gives its fruit at its time or in its season.",
+          "note": "Bearing fruit is preserved, but freshness is added and seasonal timing becomes an unsupported monthly schedule.",
+          "rendered_as": "bearing fresh fruit every month",
+          "token_ids": [
+            "ps001.v003.t008",
+            "ps001.v003.t009",
+            "ps001.v003.t010"
+          ],
+          "transliteration": "piryô yittēn bəʿittô",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "And its leaf or foliage does not wither or fade.",
+          "note": "Retains enduring foliage but substitutes leaf retention for the stated absence of withering.",
+          "rendered_as": "Never dropping a leaf",
+          "token_ids": [
+            "ps001.v003.t011",
+            "ps001.v003.t012",
+            "ps001.v003.t013"
+          ],
+          "transliteration": "wəʿālēhû lōʾ-yibbôl",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "And everything that he does succeeds or prospers.",
+          "note": "Extends the botanical metaphor while leaving the explicit claim about success in the person's actions unexpressed; blossoms are not mentioned.",
+          "rendered_as": "always in blossom",
+          "token_ids": [
+            "ps001.v003.t014",
+            "ps001.v003.t015",
+            "ps001.v003.t016",
+            "ps001.v003.t017"
+          ],
+          "transliteration": "wəḵōl ʾăšer-yaʿăśeh yaṣlîaḥ",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps001.v003.a.0001"
   ],
@@ -15,7 +261,345 @@
   "pr_links": [],
   "psalm_id": "ps001",
   "ref": "Psalm 1:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves each element of the extended tree comparison.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Planted tree beside water",
+          "note": "Preserves planting and multiple watercourses.",
+          "source_id": "ps001.v003.a",
+          "token_ids": [
+            "ps001.v003.t002",
+            "ps001.v003.t003",
+            "ps001.v003.t004",
+            "ps001.v003.t005",
+            "ps001.v003.t006"
+          ]
+        },
+        {
+          "label": "Seasonal fruit and unwithered leaf",
+          "note": "Keeps the fruit's season and the singular collective “leaf.”",
+          "source_id": "ps001.v003.a",
+          "token_ids": [
+            "ps001.v003.t008",
+            "ps001.v003.t009",
+            "ps001.v003.t010",
+            "ps001.v003.t011",
+            "ps001.v003.t012",
+            "ps001.v003.t013"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps001.v003.t001–t002 → And he will be like a tree",
+          "ps001.v003.t003–t006 → planted beside streams of water",
+          "ps001.v003.t007–t010 → which yields its fruit in its season",
+          "ps001.v003.t011–t013 → and its leaf does not wither",
+          "ps001.v003.t014–t017 → and all that he does will prosper"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-25T13:57:39.702551+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.fb69adaad6a5",
+        "source_ids": [
+          "ps001.v003.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied text.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v003.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8d9-81cc-7cc1-bab8-07b862a876ac"
+      },
+      "rationale": "Develops the tree image without expanding its meaning into additional promises.",
+      "rendering_id": "rnd.ps001.v003.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "And he will be like a tree\nplanted beside streams of water,\nwhich yields its fruit in its season,\nand its leaf does not wither;\nand all that he does will prosper.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied text.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v003.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v003.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Pairs short image-bearing lines within the continuing musical pulse.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 26,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.1,
+        "stress_approximation": 0.69,
+        "syllable_count": 37,
+        "syllables": 37
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Tree planted beside watercourses",
+          "note": "Retains the planted tree and plural streams of water.",
+          "source_id": "ps001.v003.a",
+          "token_ids": [
+            "ps001.v003.t002",
+            "ps001.v003.t003",
+            "ps001.v003.t004",
+            "ps001.v003.t005",
+            "ps001.v003.t006"
+          ]
+        },
+        {
+          "label": "Fruit in season and unwithered foliage",
+          "note": "All botanical details remain visible.",
+          "source_id": "ps001.v003.a",
+          "token_ids": [
+            "ps001.v003.t008",
+            "ps001.v003.t009",
+            "ps001.v003.t010",
+            "ps001.v003.t011",
+            "ps001.v003.t012",
+            "ps001.v003.t013"
+          ]
+        }
+      ],
+      "provenance": {
+        "contract_validated": true,
+        "generated_at": "2026-09-25T14:00:15.170055+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.8feb9663d895",
+        "source_ids": [
+          "ps001.v003.a"
+        ],
+        "thread_id": "01a0d8d9-800b-7fe3-a324-362266798a01",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps001.v003.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0d8db-83f2-7d33-a195-ed40eddf1656"
+      },
+      "rationale": "Lets the planted tree, seasonal fruit, and enduring leaves carry the promise without explanatory expansion.",
+      "rendering_id": "rnd.ps001.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He'll be like a tree\nplanted by streams of water,\nbearing its fruit\nwhen its season comes.\nIts leaves don't wither;\nwhatever he does will thrive.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps001.v003.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps001.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.71,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.76c3ad21531f",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps001.v003.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You’re a tree replanted in Eden,\n    bearing fresh fruit every month,\nNever dropping a leaf,\n    always in blossom.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps001.0001",
+      "unit_id": "ps001.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת֢וּל עַֽל־פַּלְגֵ֫י מָ֥יִם אֲשֶׁ֤ר פִּרְי֨וֹ׀ יִתֵּ֬ן בְּעִתּ֗וֹ וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃",
