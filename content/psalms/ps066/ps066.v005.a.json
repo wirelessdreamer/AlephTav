@@ -4,7 +4,8 @@
     "rnd.ps066.v005.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v005.a.0001"
+    "aud.ps066.v005.a.0001",
+    "aud.ps066.v005.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,71 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8670ff86b788d9bf8387b7df945472dbc1c4f64830e23714b255b550f661ce9d",
+      "audit_id": "aud.ps066.v005.a.0002",
+      "before_hash": "b7e3f7919740e2c7e6c32c45380b5b6b670fbd783892f57acebd2812a7882d46",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:10:59.468656+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the invitation to see God's works and describes him as fearsome in his deeds toward humankind.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "f089e0b060ecd78fcf1b3e93061275056b72ceed8b0c41d30f10a27d775265d5",
+      "audit_ids": [
+        "aud.ps066.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Fearsome” and “Awesome” repeat one Hebrew description across two lines. “Sons of dust” introduces an image of human earthliness where the Hebrew simply refers to human beings.",
+      "display_reference": "Psalm 66:5",
+      "english_rendering_id": "rnd.ps066.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.433bdab49efe",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לְכ֣וּ וּ֭רְאוּ מִפְעֲל֣וֹת אֱלֹהִ֑ים נוֹרָ֥א עֲ֝לִילָ֗ה עַל־בְּנֵ֥י אָדָֽם׃",
+      "literal_backbone": [
+        "Come and see the works of God.",
+        "He is fearsome in deeds toward humankind."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:5",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "children of humankind; human beings",
+          "note": "Retains the human referent but adds dust imagery; ʾāḏām means humankind here, not dust.",
+          "rendered_as": "the sons of dust",
+          "token_ids": [
+            "ps066.v005.t008",
+            "ps066.v005.t009"
+          ],
+          "transliteration": "bənēy ʾāḏām",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v005.a.0001"
   ],

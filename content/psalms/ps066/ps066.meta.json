@@ -1,4 +1,2081 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps066.v001.a.0005"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T23:15:19.259936+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1 and 4 address all the earth; verses 7–8 mention nations and peoples.",
+            "claim": "The praise has a universal audience."
+          },
+          {
+            "basis": "Verse 6 describes the sea becoming dry ground and a river crossed on foot.",
+            "claim": "Remembered deliverance grounds the praise."
+          },
+          {
+            "basis": "Verses 10–12 address God as the one who tested, refined, brought into a net, imposed affliction, caused people to ride over their heads, and brought them out.",
+            "claim": "The community attributes both testing and deliverance to God."
+          },
+          {
+            "basis": "Verses 9–12 use “us” and “our”; verses 13–20 use first-person singular vows, distress, prayer, and testimony.",
+            "claim": "The discourse moves from communal experience to individual commitment and testimony."
+          },
+          {
+            "basis": "Verses 13 and 15 specify burnt offerings; verse 15 names fattened animals, rams, cattle, and male goats.",
+            "claim": "The offerings are concrete sacrificial acts in the Hebrew."
+          },
+          {
+            "basis": "Verse 19 explicitly affirms hearing and attention; verse 20 blesses God for not turning away prayer or steadfast kindness.",
+            "claim": "The speaker affirms that God heard the prayer and did not withdraw kindness."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David or another named person composed or spoke the psalm.",
+            "why_not": "The heading contains no personal attribution, and the first-person speaker remains unnamed."
+          },
+          {
+            "claim": "The speaker was a king, priest, or identifiable historical individual.",
+            "why_not": "Vow fulfillment and sacrifice do not specify the speaker's social or cultic office."
+          },
+          {
+            "claim": "The suffering describes one identifiable war, exile, or persecution.",
+            "why_not": "The net, bodily oppression, fire, and water are not tied to named events, enemies, or dates."
+          },
+          {
+            "claim": "Verse 6 explicitly identifies the sea and river or dates the psalm to their crossing.",
+            "why_not": "Neither body of water is named, and recollection of deliverance does not date composition."
+          },
+          {
+            "claim": "The individual testimony establishes that the speaker had never sinned.",
+            "why_not": "Verse 18 concerns regarding wickedness in the heart and God's hearing; it does not assert lifelong sinlessness."
+          },
+          {
+            "claim": "The modern instruments, tempo, or section breaks reconstruct the ancient performance.",
+            "why_not": "The Hebrew gives no such arrangement instructions, and Selah's precise performance function is not established by the supplied evidence."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.7c4bd74b0be5",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "God's house, payment of vows, burnt offerings, and named sacrificial animals in verses 13–15 imply sanctuary worship with actual sacrifice. The invitation to hear testimony in verse 16 gives the thanksgiving a public dimension. The English retains house, vows, offerings, and smoke but generalizes their sacrificial specificity. The text does not identify the speaker's office, a particular festival, or a securely dated ceremony.",
+        "heading_attribution": "The Hebrew heading says “For the director. A song. A psalm.” It supplies a performance designation and genre terms, but names no author, Davidic attribution, or historical occasion. The English omits this heading; its modern section labels supply no ancient attribution."
+      },
+      "method": "The audit compares the supplied Hebrew clauses, morphology, and token glosses with the English and the earlier full arrangement. Literal backbones preserve clause content and agency before evaluating compression, repetition, and added imagery. In verse 7, the supplied token list includes an exaltation verb absent from the displayed Hebrew line; the mismatched final glosses were not treated as translations of Selah. No external edition or lexicon was consulted.",
+      "non_source_material": [
+        {
+          "kind": "section_label",
+          "note": "Modern arrangement labels; repeated occurrences organize the performance without adding Hebrew verse content.",
+          "text": "[Intro]\n[Chorus]\n[Instrumental Break]\n[Verse 1]\n[Verse 2]\n[Bridge]\n[Outro]\n[Instrumental Outro]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Modern instrumental, rhythmic, and intensity instructions from the supplied arrangement; none translates Hebrew wording.",
+          "text": "[fast-paced drum fill, distorted guitar riff with high-pitched lead]\n[full band, driving rhythm]\n[syncopated guitar chugging, rapid double-kick drumming]\n[bass and drums continue, palm-muted guitars]\n[half-time feel, heavy guitar chords]\n[atmospheric clean guitar with delay, vocals building in intensity]\n[full band re-enters]\n[guitar solo with wah-pedal effect, aggressive drumming]\n[clean guitar arpeggios]\n[distorted guitars re-enter]\n[final heavy chord ring out]\n[fading guitar feedback and drum hits]"
+        },
+        {
+          "kind": "dynamics",
+          "note": "A modern vocal-delivery instruction with no Hebrew counterpart.",
+          "text": "[belted vocals]"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps066.0001",
+      "psalm_id": "ps066",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Establishes the universal horizon and moves from commands to the prospect of worldwide worship. The opening chorus ends at the first Selah.",
+          "first_verse": 1,
+          "last_verse": 4,
+          "theme": "All the earth is summoned to acclaim God's glorious name and overwhelming deeds.",
+          "title": "Chorus"
+        },
+        {
+          "arc_note": "Moves from universal praise to remembered sea and river crossings, then warns rebels against self-exaltation. This section ends at Selah; the arrangement subsequently reprises verses 1–2.",
+          "first_verse": 5,
+          "last_verse": 7,
+          "theme": "An invitation to witness God's deliverance, enduring rule, and scrutiny of the nations.",
+          "title": "Verse 1"
+        },
+        {
+          "arc_note": "Verse 2 previews suffering and rescue; the bridge develops the trials and repeatedly celebrates relief. “Refine us” introduces a petition into the Hebrew's retrospective account. Combining these arrangement sections keeps their overlapping treatment of verses 10–12 within one continuous verse range.",
+          "first_verse": 8,
+          "last_verse": 12,
+          "theme": "Communal preservation through testing, oppression, fire, and water into abundance.",
+          "title": "Verse 2 + Bridge"
+        },
+        {
+          "arc_note": "The communal voice becomes an individual speaker at verse 13. The outro contains both the sacrificial commitment of verses 13–15 and the invitation to listen in verses 16–20. Guitar re-entry marks that internal turn, but the named section continues across Selah after verse 15. A closing reprise reconnects communal rescue with personal thanksgiving.",
+          "first_verse": 13,
+          "last_verse": 20,
+          "theme": "Personal fulfillment of vows, testimony to answered prayer, and blessing for enduring kindness.",
+          "title": "Outro"
+        }
+      ],
+      "source_fingerprint": "97532abdeef20ce92f0da13fd8a073ee89986950d107212da02ba27caf8d1178",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 4,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 7,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 15,
+          "aligns_with_section": false,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting follows the psalm from worldwide praise through remembered deliverance and communal suffering to personal vows, testimony, and blessing. Its driving rock arrangement and repeated deliverance refrain emphasize survival and relief. Poetic expansions make the language bodily and immediate, especially “Into room to breathe.” The principal losses are the specific sacrificial vocabulary, God's explicit agency in allowing oppression in verse 12, and the explicit description of the testimony as what God did for the speaker in verse 16. Selah is not sung, and the Hebrew superscription is omitted.",
+      "translation_id": "tr.ps066.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps066.0001",
+      "audit_ids": [
+        "aud.ps066.v001.a.0003"
+      ],
+      "created_at": "2026-09-26T23:09:41.703903+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.5ecd320f7c38",
+      "guidance": "From the imported translation:\n[fast-paced drum fill, distorted guitar riff with high-pitched lead]\n[full band, driving rhythm]\n[syncopated guitar chugging, rapid double-kick drumming]\n[bass and drums continue, palm-muted guitars]\n[belted vocals]\n[half-time feel, heavy guitar chords]\n[atmospheric clean guitar with delay, vocals building in intensity]\n[full band re-enters]\n[guitar solo with wah-pedal effect, aggressive drumming]\n[clean guitar arpeggios]\n[distorted guitars re-enter]\n[final heavy chord ring out]\n[fading guitar feedback and drum hits]",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The superscription identifying the director, song, and psalm is not rendered.",
+          "token_ids": [
+            "ps066.v001.t001",
+            "ps066.v001.t002",
+            "ps066.v001.t003"
+          ],
+          "unit_id": "ps066.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The Selah markers are not rendered or explicitly identified with the instrumental passages.",
+          "token_ids": [
+            "ps066.v004.t009"
+          ],
+          "unit_id": "ps066.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The Selah markers are not rendered or explicitly identified with the instrumental passages.",
+          "token_ids": [
+            "ps066.v007.t011"
+          ],
+          "unit_id": "ps066.v007.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The Selah markers are not rendered or explicitly identified with the instrumental passages.",
+          "token_ids": [
+            "ps066.v015.t012"
+          ],
+          "unit_id": "ps066.v015.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The explanatory connective introducing the testing is not expressed.",
+          "token_ids": [
+            "ps066.v010.t001"
+          ],
+          "unit_id": "ps066.v010.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The named rams, cattle, and accompanying goats are absent from the generalized offering language.",
+          "token_ids": [
+            "ps066.v015.t007",
+            "ps066.v015.t009",
+            "ps066.v015.t010",
+            "ps066.v015.t011"
+          ],
+          "unit_id": "ps066.v015.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The story is announced without explicitly saying that it recounts what God did for the speaker.",
+          "token_ids": [
+            "ps066.v016.t007",
+            "ps066.v016.t008",
+            "ps066.v016.t009"
+          ],
+          "unit_id": "ps066.v016.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The recipient of the cry is left implicit.",
+          "token_ids": [
+            "ps066.v017.t001"
+          ],
+          "unit_id": "ps066.v017.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps066",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0001",
+              "rationale": "This directs the musical performance.",
+              "text": "[fast-paced drum fill, distorted guitar riff with high-pitched lead]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0002",
+              "rationale": "This directs the musical performance.",
+              "text": "[full band, driving rhythm]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v001.t004",
+                    "ps066.v001.t005",
+                    "ps066.v001.t006",
+                    "ps066.v001.t007"
+                  ],
+                  "unit_id": "ps066.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "All the earth cry out to God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v001.t004",
+                    "ps066.v001.t006",
+                    "ps066.v001.t007"
+                  ],
+                  "unit_id": "ps066.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "The earth's shout becomes an additional image of ringing ground.",
+              "text": "Let the whole ground ring"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v002.t001",
+                    "ps066.v002.t002",
+                    "ps066.v002.t003"
+                  ],
+                  "unit_id": "ps066.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "Glory is expressed through the metaphor of weight.",
+              "text": "Sing the weight of His name"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v002.t004",
+                    "ps066.v002.t005",
+                    "ps066.v002.t006"
+                  ],
+                  "unit_id": "ps066.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Making his praise glorious becomes giving him glory while singing.",
+              "text": "Give Him glory when you sing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v003.t001",
+                    "ps066.v003.t002",
+                    "ps066.v003.t003",
+                    "ps066.v003.t004",
+                    "ps066.v003.t005"
+                  ],
+                  "unit_id": "ps066.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "Say to God Your works strike wonder"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v003.t006",
+                    "ps066.v003.t007",
+                    "ps066.v003.t008",
+                    "ps066.v003.t010"
+                  ],
+                  "unit_id": "ps066.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "The enemies' submission under great power becomes proud people being shaken.",
+              "text": "Your power shakes the proud"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v003.t010"
+                  ],
+                  "unit_id": "ps066.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0009",
+              "rationale": "Enemies are described as people who hate God's reign.",
+              "text": "Even those who hate Your reign"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v003.t008",
+                    "ps066.v003.t009"
+                  ],
+                  "unit_id": "ps066.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Cringing before God becomes bending beneath his sound.",
+              "text": "Bend low beneath Your sound"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v004.t001",
+                    "ps066.v004.t002",
+                    "ps066.v004.t003",
+                    "ps066.v004.t004"
+                  ],
+                  "unit_id": "ps066.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "All the earth will bow before You"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v004.t001",
+                    "ps066.v004.t002",
+                    "ps066.v004.t005",
+                    "ps066.v004.t006"
+                  ],
+                  "unit_id": "ps066.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0012",
+              "rationale": "The recipient of the singing remains implicit.",
+              "text": "All the earth will sing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v004.t007",
+                    "ps066.v004.t008"
+                  ],
+                  "unit_id": "ps066.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Singing God's name is expanded into every voice lifting it.",
+              "text": "Every voice will lift Your name"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v004.t001",
+                    "ps066.v004.t002",
+                    "ps066.v004.t005",
+                    "ps066.v004.t006"
+                  ],
+                  "unit_id": "ps066.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0014",
+              "rationale": "The earth's praise is restated as praise brought by every land.",
+              "text": "Every land will bring You praise"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "other",
+          "label": "Instrumental Break",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0015",
+              "rationale": "This directs the musical performance.",
+              "text": "[syncopated guitar chugging, rapid double-kick drumming]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0016",
+              "rationale": "This directs the musical performance.",
+              "text": "[bass and drums continue, palm-muted guitars]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v005.t001",
+                    "ps066.v005.t002",
+                    "ps066.v005.t003",
+                    "ps066.v005.t004"
+                  ],
+                  "unit_id": "ps066.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "Come and look at what God has done"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v005.t005",
+                    "ps066.v005.t006"
+                  ],
+                  "unit_id": "ps066.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "Fearsome in His deeds"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v005.t005",
+                    "ps066.v005.t007",
+                    "ps066.v005.t008",
+                    "ps066.v005.t009"
+                  ],
+                  "unit_id": "ps066.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Humankind becomes sons of dust, introducing an image of human earthliness.",
+              "text": "Awesome toward the sons of dust"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v007.t001",
+                    "ps066.v007.t003"
+                  ],
+                  "unit_id": "ps066.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0020",
+              "rationale": "The rule described in verse 7 is anticipated before verse 6 and recast as rule over history.",
+              "text": "Ruling history"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v006.t001",
+                    "ps066.v006.t002",
+                    "ps066.v006.t003"
+                  ],
+                  "unit_id": "ps066.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0021",
+              "rationale": "Dry ground is generalized as open ground.",
+              "text": "He changed the sea to open ground"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v006.t004",
+                    "ps066.v006.t005",
+                    "ps066.v006.t006"
+                  ],
+                  "unit_id": "ps066.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "The river crossing is described as walking across a flood.",
+              "text": "They walked across the flood"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v006.t007",
+                    "ps066.v006.t008",
+                    "ps066.v006.t009"
+                  ],
+                  "unit_id": "ps066.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0023",
+              "rationale": "The invitation to rejoice becomes a recollection of finding joy.",
+              "text": "There we found our joy in Him"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v006.t007",
+                    "ps066.v006.t008",
+                    "ps066.v006.t009"
+                  ],
+                  "unit_id": "ps066.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0024",
+              "rationale": "Rejoicing in God is repeated as singing about God.",
+              "text": "There we sang of God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v007.t001",
+                    "ps066.v007.t002",
+                    "ps066.v007.t003"
+                  ],
+                  "unit_id": "ps066.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "By His strength He reigns forever"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v007.t004",
+                    "ps066.v007.t005",
+                    "ps066.v007.t006"
+                  ],
+                  "unit_id": "ps066.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0026",
+              "rationale": "His eyes watching the nations becomes watching every land.",
+              "text": "Watching every land"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v007.t007",
+                    "ps066.v007.t008",
+                    "ps066.v007.t009",
+                    "ps066.v007.t010"
+                  ],
+                  "unit_id": "ps066.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "Let the rebels not rise higher"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v007.t007"
+                  ],
+                  "unit_id": "ps066.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "The rebels' opposition is elaborated as opposition to God's hand.",
+              "text": "Against His hand"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0029",
+              "rationale": "This directs the vocal performance.",
+              "text": "[belted vocals]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v001.t004",
+                    "ps066.v001.t005",
+                    "ps066.v001.t006",
+                    "ps066.v001.t007"
+                  ],
+                  "unit_id": "ps066.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "All the earth cry out to God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v001.t004",
+                    "ps066.v001.t006",
+                    "ps066.v001.t007"
+                  ],
+                  "unit_id": "ps066.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0031",
+              "rationale": "The earth's shout becomes an additional image of ringing ground.",
+              "text": "Let the whole ground ring"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v002.t001",
+                    "ps066.v002.t002",
+                    "ps066.v002.t003"
+                  ],
+                  "unit_id": "ps066.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "Glory is expressed through the metaphor of weight.",
+              "text": "Sing the weight of His name"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v002.t004",
+                    "ps066.v002.t005",
+                    "ps066.v002.t006"
+                  ],
+                  "unit_id": "ps066.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Making his praise glorious becomes giving him glory while singing.",
+              "text": "Give Him glory when you sing"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0034",
+              "rationale": "This directs the musical performance.",
+              "text": "[half-time feel, heavy guitar chords]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v008.t001",
+                    "ps066.v008.t002",
+                    "ps066.v008.t003",
+                    "ps066.v008.t005"
+                  ],
+                  "unit_id": "ps066.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0035",
+              "rationale": "",
+              "text": "Peoples bless our God aloud"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v008.t004",
+                    "ps066.v008.t005",
+                    "ps066.v008.t006"
+                  ],
+                  "unit_id": "ps066.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0036",
+              "rationale": "",
+              "text": "Let the praise be heard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t001",
+                    "ps066.v009.t002",
+                    "ps066.v009.t003"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "He has kept our souls alive"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t004",
+                    "ps066.v009.t005",
+                    "ps066.v009.t006",
+                    "ps066.v009.t007"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0038",
+              "rationale": "Not allowing the feet to slip becomes keeping them secure.",
+              "text": "And our feet secure"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t001",
+                    "ps066.v009.t002",
+                    "ps066.v009.t003"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0039",
+              "rationale": "The statement about God becomes a direct address to God.",
+              "text": "You held us living"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t004",
+                    "ps066.v009.t005",
+                    "ps066.v009.t006",
+                    "ps066.v009.t007"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0040",
+              "rationale": "Preventing the feet from slipping becomes keeping the people standing.",
+              "text": "You kept us standing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t006",
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0041",
+              "rationale": "Verse 12's passage and deliverance are anticipated before the account of testing.",
+              "text": "You brought us over"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t005",
+                    "ps066.v012.t006",
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0042",
+              "rationale": "Passage through fire and water and God's deliverance are combined without naming the trials.",
+              "text": "You brought us through"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t002",
+                    "ps066.v010.t004",
+                    "ps066.v010.t005",
+                    "ps066.v010.t006"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0043",
+              "rationale": "Testing and refining become one passive comparison that leaves God's agency implicit.",
+              "text": "We were tried like silver"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v011.t004"
+                  ],
+                  "unit_id": "ps066.v011.a"
+                },
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t005"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0044",
+              "rationale": "Affliction and passage through fire are folded into a brief description of suffering.",
+              "text": "Pressed down and burning"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0045",
+              "rationale": "",
+              "text": "But You led us out"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0046",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0047",
+              "rationale": "This directs the musical performance.",
+              "text": "[atmospheric clean guitar with delay, vocals building in intensity]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t002",
+                    "ps066.v010.t003"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0048",
+              "rationale": "",
+              "text": "You tested us O God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t002",
+                    "ps066.v010.t003"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0049",
+              "rationale": "",
+              "text": "You tested us O God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t004"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0050",
+              "rationale": "Completed refining becomes a request for refining, with an explicit flame.",
+              "text": "Refine us in the flame"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t005",
+                    "ps066.v010.t006"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0051",
+              "rationale": "Fire is made explicit in the silver-refining comparison.",
+              "text": "Like silver in the fire"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0052",
+              "rationale": "This directs the musical performance.",
+              "text": "[full band re-enters]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t004"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0053",
+              "rationale": "Refining is elaborated as removing dross.",
+              "text": "You drove the dross away"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v011.t001",
+                    "ps066.v011.t002"
+                  ],
+                  "unit_id": "ps066.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0054",
+              "rationale": "",
+              "text": "You brought us into the net"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v011.t003",
+                    "ps066.v011.t004",
+                    "ps066.v011.t005"
+                  ],
+                  "unit_id": "ps066.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0055",
+              "rationale": "Affliction on the hips becomes a weight laid on the backs.",
+              "text": "Laid weight upon our backs"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t001",
+                    "ps066.v012.t002",
+                    "ps066.v012.t003"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0056",
+              "rationale": "The riding is retained while God's causing it is left implicit.",
+              "text": "Men rode over our heads"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t001",
+                    "ps066.v012.t002",
+                    "ps066.v012.t003"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0057",
+              "rationale": "Being ridden over is restated as being driven down.",
+              "text": "We were driven down"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t005"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0058",
+              "rationale": "",
+              "text": "We crossed through fire"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t006"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0059",
+              "rationale": "",
+              "text": "We crossed through water"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0060",
+              "rationale": "This adds an assurance of God's nearness during the trials.",
+              "text": "Still Your hand was near"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0061",
+              "rationale": "",
+              "text": "You brought us out"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0062",
+              "rationale": "Abundance receives the additional spatial description of width.",
+              "text": "Into wide abundance"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0063",
+              "rationale": "Deliverance is restated as arrival at the singers' present location.",
+              "text": "You brought us here"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0064",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0065",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0066",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0067",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "other",
+          "label": "Instrumental Break",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0068",
+              "rationale": "This directs the musical performance.",
+              "text": "[guitar solo with wah-pedal effect, aggressive drumming]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0069",
+              "rationale": "This directs the musical performance.",
+              "text": "[clean guitar arpeggios]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t001",
+                    "ps066.v013.t002"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0070",
+              "rationale": "",
+              "text": "I will come into Your house"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t003"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0071",
+              "rationale": "Burnt offerings become unspecified offerings with an added image of lifting them high.",
+              "text": "With offerings lifted high"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t004",
+                    "ps066.v013.t005",
+                    "ps066.v013.t006"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                },
+                {
+                  "token_ids": [
+                    "ps066.v014.t004",
+                    "ps066.v014.t005"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0072",
+              "rationale": "The paying of vows incorporates the speaking of them from the following verse.",
+              "text": "I will pay the vows I spoke"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v014.t006",
+                    "ps066.v014.t007"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0073",
+              "rationale": "Personal distress gains the image of trouble shutting the speaker's eyes.",
+              "text": "When trouble shut my eyes"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v014.t001",
+                    "ps066.v014.t002",
+                    "ps066.v014.t003"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0074",
+              "rationale": "",
+              "text": "What my lips broke open"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v014.t004",
+                    "ps066.v014.t005"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0075",
+              "rationale": "",
+              "text": "What my mouth declared"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v014.t006",
+                    "ps066.v014.t007"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0076",
+              "rationale": "Personal distress becomes an image of life being pressed small.",
+              "text": "When my life was pressed small"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t002",
+                    "ps066.v013.t004",
+                    "ps066.v013.t005",
+                    "ps066.v013.t006"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0077",
+              "rationale": "Fulfilling vows at God's house is expressed through the unspecified pronouns it and there.",
+              "text": "I will bring it there"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v015.t001",
+                    "ps066.v015.t003",
+                    "ps066.v015.t004",
+                    "ps066.v015.t005",
+                    "ps066.v015.t006"
+                  ],
+                  "unit_id": "ps066.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0078",
+              "rationale": "Offering burnt sacrifices with smoke is generalized as bringing the smoke of dedication.",
+              "text": "Bring the smoke of dedication"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v015.t002",
+                    "ps066.v015.t008"
+                  ],
+                  "unit_id": "ps066.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0079",
+              "rationale": "Offering fatlings is generalized as bringing the best.",
+              "text": "Bring the best of all"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t006"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                },
+                {
+                  "token_ids": [
+                    "ps066.v014.t001",
+                    "ps066.v014.t006",
+                    "ps066.v014.t007"
+                  ],
+                  "unit_id": "ps066.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0080",
+              "rationale": "Vows made in distress become promises made in a storm.",
+              "text": "All I promised in the storm"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v013.t004",
+                    "ps066.v013.t005"
+                  ],
+                  "unit_id": "ps066.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0081",
+              "rationale": "Paying vows to God becomes laying them before an introduced throne.",
+              "text": "I lay before Your throne"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0082",
+              "rationale": "This directs the musical performance.",
+              "text": "[distorted guitars re-enter]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v016.t001",
+                    "ps066.v016.t002",
+                    "ps066.v016.t004",
+                    "ps066.v016.t005",
+                    "ps066.v016.t006"
+                  ],
+                  "unit_id": "ps066.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0083",
+              "rationale": "",
+              "text": "Come and listen all who fear God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v016.t003"
+                  ],
+                  "unit_id": "ps066.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0084",
+              "rationale": "",
+              "text": "I will tell the story"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v017.t002",
+                    "ps066.v017.t003"
+                  ],
+                  "unit_id": "ps066.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0085",
+              "rationale": "",
+              "text": "I cried out with my mouth"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v017.t004",
+                    "ps066.v017.t005",
+                    "ps066.v017.t006"
+                  ],
+                  "unit_id": "ps066.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0086",
+              "rationale": "Praise beneath the tongue receives the added action of rising.",
+              "text": "And praise rose under my tongue"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v018.t001",
+                    "ps066.v018.t002",
+                    "ps066.v018.t003",
+                    "ps066.v018.t004"
+                  ],
+                  "unit_id": "ps066.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0087",
+              "rationale": "Regarding evil in the heart is interpreted as keeping evil hidden.",
+              "text": "Had I kept evil hidden"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v018.t001",
+                    "ps066.v018.t002",
+                    "ps066.v018.t003",
+                    "ps066.v018.t004"
+                  ],
+                  "unit_id": "ps066.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0088",
+              "rationale": "The condition is repeated as loving evil, with chest replacing heart.",
+              "text": "Had I loved it in my chest"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v018.t005",
+                    "ps066.v018.t006",
+                    "ps066.v018.t007"
+                  ],
+                  "unit_id": "ps066.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0089",
+              "rationale": "",
+              "text": "The Lord would not have listened"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v018.t005",
+                    "ps066.v018.t006"
+                  ],
+                  "unit_id": "ps066.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0090",
+              "rationale": "Not listening is repeated with the added object of the speaker's breath.",
+              "text": "Would not have heard my breath"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v019.t001",
+                    "ps066.v019.t002",
+                    "ps066.v019.t003"
+                  ],
+                  "unit_id": "ps066.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0091",
+              "rationale": "",
+              "text": "But truly God has heard me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v019.t004",
+                    "ps066.v019.t005",
+                    "ps066.v019.t006"
+                  ],
+                  "unit_id": "ps066.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0092",
+              "rationale": "Attending to the sound of prayer becomes the bodily image of leaning into it.",
+              "text": "He leaned into my prayer"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t003",
+                    "ps066.v020.t004",
+                    "ps066.v020.t005",
+                    "ps066.v020.t006"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0093",
+              "rationale": "",
+              "text": "He did not turn my cry away"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t007",
+                    "ps066.v020.t008"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0094",
+              "rationale": "Unwithdrawn covenant loyalty becomes mercy meeting the speaker at an unspecified place.",
+              "text": "His mercy met me there"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0095",
+              "rationale": "This directs the musical performance.",
+              "text": "[final heavy chord ring out]"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t001",
+                    "ps066.v009.t002",
+                    "ps066.v009.t003"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0096",
+              "rationale": "The statement about God becomes a direct address to God.",
+              "text": "You held us living"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v009.t004",
+                    "ps066.v009.t005",
+                    "ps066.v009.t006",
+                    "ps066.v009.t007"
+                  ],
+                  "unit_id": "ps066.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0097",
+              "rationale": "Preventing the feet from slipping becomes keeping the people standing.",
+              "text": "You kept us standing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t006",
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0098",
+              "rationale": "Passage through water and God's deliverance are combined without naming the water.",
+              "text": "You brought us over"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t005",
+                    "ps066.v012.t006",
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0099",
+              "rationale": "Passage through fire and water and God's deliverance are combined without naming the trials.",
+              "text": "You brought us through"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v010.t002",
+                    "ps066.v010.t004",
+                    "ps066.v010.t005",
+                    "ps066.v010.t006"
+                  ],
+                  "unit_id": "ps066.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0100",
+              "rationale": "Testing and refining become one passive comparison that leaves God's agency implicit.",
+              "text": "We were tried like silver"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v011.t004"
+                  ],
+                  "unit_id": "ps066.v011.a"
+                },
+                {
+                  "token_ids": [
+                    "ps066.v012.t004",
+                    "ps066.v012.t005"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0101",
+              "rationale": "Affliction and passage through fire are folded into a brief description of suffering.",
+              "text": "Pressed down and burning"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t007"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0102",
+              "rationale": "",
+              "text": "But You led us out"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v012.t008"
+                  ],
+                  "unit_id": "ps066.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0103",
+              "rationale": "Abundance becomes the bodily image of having room to breathe.",
+              "text": "Into room to breathe"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v019.t002",
+                    "ps066.v019.t005",
+                    "ps066.v019.t006"
+                  ],
+                  "unit_id": "ps066.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0104",
+              "rationale": "Hearing the sound of prayer becomes hearing crying in direct address.",
+              "text": "You heard my crying"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t004",
+                    "ps066.v020.t005",
+                    "ps066.v020.t007",
+                    "ps066.v020.t008"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0105",
+              "rationale": "Not withdrawing covenant loyalty becomes God not leaving the speaker.",
+              "text": "You did not leave me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t004",
+                    "ps066.v020.t005",
+                    "ps066.v020.t007",
+                    "ps066.v020.t008"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0106",
+              "rationale": "Withdrawing covenant loyalty becomes tearing kindness away in direct address.",
+              "text": "You did not tear Your kindness away"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t001",
+                    "ps066.v020.t002"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0107",
+              "rationale": "",
+              "text": "Blessed be God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t001",
+                    "ps066.v020.t002"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0108",
+              "rationale": "",
+              "text": "Blessed be God"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t003",
+                    "ps066.v020.t004",
+                    "ps066.v020.t005",
+                    "ps066.v020.t006"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0109",
+              "rationale": "Not turning prayer away becomes holding it.",
+              "text": "Who held my prayer"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps066.v020.t007",
+                    "ps066.v020.t008"
+                  ],
+                  "unit_id": "ps066.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0110",
+              "rationale": "Continuing covenant loyalty is personalized as God's staying with the speaker.",
+              "text": "And stayed with me"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "outro",
+          "label": "Instrumental Outro",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0111",
+              "rationale": "This directs the musical performance.",
+              "text": "[fading guitar feedback and drum hits]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 66",
+      "translation_id": "tr.ps066.0001",
+      "updated_at": "2026-09-26T23:09:41.703903+00:00"
+    }
+  ],
   "psalm_id": "ps066",
   "title": "Psalm 66",
   "translations": [

@@ -4,7 +4,8 @@
     "rnd.ps066.v014.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v014.a.0001"
+    "aud.ps066.v014.a.0001",
+    "aud.ps066.v014.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,82 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e814c3fd936afc908556abf53f3423a0b61ddd7bb014e8d08cfd7652bbd01df7",
+      "audit_id": "aud.ps066.v014.a.0002",
+      "before_hash": "6e54094b558126429d9c3a7435fcab8b243a2819a2e052e5870026c919c38d39",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:12:46.347828+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v014.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the lips and mouth uttering vows during personal distress. “All I promised” makes explicit the connection to the preceding verse's vows.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "5f06c837d515b23c78bbe0617c83563e76affaa101d414d4a8af151e7a814b93",
+      "audit_ids": [
+        "aud.ps066.v014.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v014.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Distress is moved to the opening and repeated through images of shut eyes, a life pressed small, and a storm. These images are not specified in the Hebrew. “What my lips broke open” awkwardly recasts the lips' utterance as something they broke open.",
+      "display_reference": "Psalm 66:14",
+      "english_rendering_id": "rnd.ps066.v014.a.lyric.alt.0001",
+      "generation_run_id": "cxr.9676cba46d2f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אֲשֶׁר־פָּצ֥וּ שְׂפָתָ֑י וְדִבֶּר־פִּ֝֗י בַּצַּר־לִֽי׃",
+      "literal_backbone": [
+        "Which my lips uttered.",
+        "And my mouth spoke when I was in distress."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:14",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v014.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "open, utter; my lips",
+          "note": "The Hebrew refers to the lips opening in utterance; the English suggests that the lips broke something open.",
+          "rendered_as": "What my lips broke open",
+          "token_ids": [
+            "ps066.v014.t002",
+            "ps066.v014.t003"
+          ],
+          "transliteration": "pāṣû śəp̄āṯāy",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in distress, in straits; for me",
+          "note": "Three images elaborate one expression of personal distress; none establishes literal blindness, crushing, or a storm.",
+          "rendered_as": "When trouble shut my eyes / When my life was pressed small / in the storm",
+          "token_ids": [
+            "ps066.v014.t006",
+            "ps066.v014.t007"
+          ],
+          "transliteration": "baṣṣar lî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v014.a.0001"
   ],

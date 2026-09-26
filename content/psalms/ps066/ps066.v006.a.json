@@ -4,7 +4,8 @@
     "rnd.ps066.v006.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v006.a.0001"
+    "aud.ps066.v006.a.0001",
+    "aud.ps066.v006.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,91 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9becf49cd24eae153f59402e74098fbf45cee3437cd6410a109dec14f41d9e42",
+      "audit_id": "aud.ps066.v006.a.0002",
+      "before_hash": "70d17b9f446d5e3b2deb3cf8b637064babdd6faafcc9e3b56b35c5fa7f464af9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:11:12.414563+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the sea's transformation into ground, a crossing on foot, and communal joy in God there.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "2bd264ad52ada7ec46d281771b8ac3778ef1f5bec78b3e46d9d087ad04058750",
+      "audit_ids": [
+        "aud.ps066.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Open ground” leaves dryness implicit, and “flood” makes the river less specific. “Found our joy” presents the rejoicing retrospectively. The final line repeats that rejoicing as singing, which the Hebrew does not mention.",
+      "display_reference": "Psalm 66:6",
+      "english_rendering_id": "rnd.ps066.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.a7074b7c0a2d",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הָ֤פַךְ יָ֨ם׀ לְֽיַבָּשָׁ֗ה בַּ֭נָּהָר יַֽעַבְר֣וּ בְרָ֑גֶל שָׁ֝֗ם נִשְׂמְחָה־בּֽוֹ׃",
+      "literal_backbone": [
+        "He turned the sea into dry ground.",
+        "They passed through the river on foot.",
+        "There let us rejoice in him."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:6",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "into dry land, onto dry ground",
+          "note": "Retains ground but substitutes openness for the explicitly stated dryness.",
+          "rendered_as": "to open ground",
+          "token_ids": [
+            "ps066.v006.t003"
+          ],
+          "transliteration": "ləyabbāšāh",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in, through the river or stream",
+          "note": "“Flood” can poetically denote flowing water, though it may suggest inundation absent from the Hebrew.",
+          "rendered_as": "across the flood",
+          "token_ids": [
+            "ps066.v006.t004"
+          ],
+          "transliteration": "ba–nnāhār",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "rejoice, be glad",
+          "note": "The cohortative invites shared rejoicing; the lyric makes it a past experience and adds singing as its expression.",
+          "rendered_as": "we found our joy / we sang",
+          "token_ids": [
+            "ps066.v006.t008"
+          ],
+          "transliteration": "niśməḥâ",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v006.a.0001"
   ],

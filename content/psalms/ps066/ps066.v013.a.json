@@ -4,7 +4,8 @@
     "rnd.ps066.v013.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v013.a.0001"
+    "aud.ps066.v013.a.0001",
+    "aud.ps066.v013.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,80 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "731564d61122d0cdb1fb90c904ca61a6fb249a9b9cb4f0ca6ca407a5e997612e",
+      "audit_id": "aud.ps066.v013.a.0002",
+      "before_hash": "78a8ed878509eb6346541e2813d2889b1bb23d35f0c2047b44bc2a9d7d1e06b5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:12:33.859321+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the speaker's intention to enter God's house with offerings and fulfill vows to God, in the Hebrew's order.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "3dc1e202eec5d21f8e5a45b1454c790e589be44357ec6c13adf928346d3fb558",
+      "audit_ids": [
+        "aud.ps066.v013.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Offerings lifted high” leaves the burnt-offering type unspecified and adds a lifting gesture. “I spoke” elaborates the vows. The final two lines expand their presentation, introducing a throne absent from this verse.",
+      "display_reference": "Psalm 66:13",
+      "english_rendering_id": "rnd.ps066.v013.a.lyric.alt.0001",
+      "generation_run_id": "cxr.72e33ce8b0f7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אָב֣וֹא בֵיתְךָ֣ בְעוֹל֑וֹת אֲשַׁלֵּ֖ם לְךָ֣ נְדָרָֽי׃",
+      "literal_backbone": [
+        "I will come into your house with burnt offerings.",
+        "I will pay my vows to you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:13",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "with burnt offerings, whole burnt sacrifices",
+          "note": "Retains offerings but replaces the specific sacrificial category with an image of physical elevation.",
+          "rendered_as": "With offerings lifted high",
+          "token_ids": [
+            "ps066.v013.t003"
+          ],
+          "transliteration": "ḇəʿôlôṯ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "to you, for you",
+          "note": "Elaborates presentation to God with royal imagery not stated in the Hebrew.",
+          "rendered_as": "before Your throne",
+          "token_ids": [
+            "ps066.v013.t005"
+          ],
+          "transliteration": "ləḵā",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v013.a.0001"
   ],

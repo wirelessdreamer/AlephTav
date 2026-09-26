@@ -4,7 +4,8 @@
     "rnd.ps066.v003.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v003.a.0001"
+    "aud.ps066.v003.a.0001",
+    "aud.ps066.v003.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,100 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1a21f4f57607f073f532a5f35766ed406f67ff2f19f6ee61800f6206e2a8b9c7",
+      "audit_id": "aud.ps066.v003.a.0002",
+      "before_hash": "8a132b5373763f28bf65a8b4db328405d6427ecb30d92a58b29a948707efa440",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:10:39.077148+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the command to address God, the awe inspired by his deeds, and his power compelling enemies to submit.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "bb6b97426fd39b1ec1763a67757f39b07437b04143151292995d6fdb1338ea20",
+      "audit_ids": [
+        "aud.ps066.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Shakes the proud” adds a description of the enemies and their reaction. “Hate Your reign” specifies their hostility beyond the Hebrew. “Beneath Your sound” introduces sound where the Hebrew simply says “to you.”",
+      "display_reference": "Psalm 66:3",
+      "english_rendering_id": "rnd.ps066.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.00ea2493e855",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אִמְר֣וּ לֵ֭אלֹהִים מַה־נּוֹרָ֣א מַעֲשֶׂ֑יךָ בְּרֹ֥ב עֻ֝זְּךָ֗ יְֽכַחֲשׁ֖וּ לְךָ֣ אֹיְבֶֽיךָ׃",
+      "literal_backbone": [
+        "Say to God: How fearsome are your deeds!",
+        "Because of your great strength, your enemies will cringe before you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:3",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "fearsome, awe-inspiring, awesome",
+          "note": "Conveys awe, though the element of fear is less explicit.",
+          "rendered_as": "strike wonder",
+          "token_ids": [
+            "ps066.v003.t004"
+          ],
+          "transliteration": "nôrāʾ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "your enemies, your foes",
+          "note": "Pride and hostility specifically toward God's reign are added characterizations.",
+          "rendered_as": "the proud / those who hate Your reign",
+          "token_ids": [
+            "ps066.v003.t010"
+          ],
+          "transliteration": "ʾōyəḇeḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "lie, deny; feign submission, cringe",
+          "note": "Expresses submission but leaves its potentially feigned or unwilling character implicit.",
+          "rendered_as": "Bend low",
+          "token_ids": [
+            "ps066.v003.t008"
+          ],
+          "transliteration": "yəḵaḥăšû",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "to you, before you",
+          "note": "The Hebrew identifies God as the recipient of submission without mentioning sound.",
+          "rendered_as": "beneath Your sound",
+          "token_ids": [
+            "ps066.v003.t009"
+          ],
+          "transliteration": "ləḵā",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v003.a.0001"
   ],

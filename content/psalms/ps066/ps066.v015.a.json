@@ -4,7 +4,8 @@
     "rnd.ps066.v015.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v015.a.0001"
+    "aud.ps066.v015.a.0001",
+    "aud.ps066.v015.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,81 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0ed26e7eb131f73f8aea501c46ddcdbd5e017daddfeb37e6f329982f61529230",
+      "audit_id": "aud.ps066.v015.a.0002",
+      "before_hash": "da0b9ddb2a056811640234b91c4b175bff1055e3cd9c0e5f4f937c92b60555a6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:13:05.843143+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v015.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English retains offering and sacrificial smoke imagery, with “best” loosely reflecting the fattened animals. It omits the explicit burnt offerings, rams, cattle, goats, and Selah, and leaves the speaker's commitment to offer them to God unstated.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "8823e0e7905564ea881c2aa1d881b8b7af2627856c4732d60b081cd454b3365b",
+      "audit_ids": [
+        "aud.ps066.v015.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v015.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Dedication” replaces the identification of the smoke as coming from rams. “Best of all” generalizes well-fed sacrificial animals into unspecified offerings of supreme quality. The repeated “Bring” compresses the two first-person promises.",
+      "display_reference": "Psalm 66:15",
+      "english_rendering_id": "rnd.ps066.v015.a.lyric.alt.0001",
+      "generation_run_id": "cxr.62a557f567f3",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עֹ֘ל֤וֹת מֵחִ֣ים אַעֲלֶה־לָּ֭ךְ עִם־קְטֹ֣רֶת אֵילִ֑ים אֶ֥עֱשֶֽׂה בָקָ֖ר עִם־עַתּוּדִ֣ים סֶֽלָה׃",
+      "literal_backbone": [
+        "I will offer up burnt offerings of fattened animals to you, with the smoke of rams.",
+        "I will offer cattle with male goats. Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:15",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v015.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "sacrificial smoke, incense; rams",
+          "note": "Preserves smoke but substitutes an interpretation of its purpose for the named animals.",
+          "rendered_as": "the smoke of dedication",
+          "token_ids": [
+            "ps066.v015.t006",
+            "ps066.v015.t007"
+          ],
+          "transliteration": "qəṭōreṯ ʾêlîm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "fatlings, fattened animals",
+          "note": "Interprets well-fed animals as superior offerings while removing the animal reference and adding a superlative.",
+          "rendered_as": "the best of all",
+          "token_ids": [
+            "ps066.v015.t002"
+          ],
+          "transliteration": "mēḥîm",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v015.a.0001"
   ],

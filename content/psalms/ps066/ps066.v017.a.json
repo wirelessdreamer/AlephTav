@@ -4,7 +4,8 @@
     "rnd.ps066.v017.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v017.a.0001"
+    "aud.ps066.v017.a.0001",
+    "aud.ps066.v017.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,80 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f9f50b4c8a628ba8c56b619379342ab3dd36161ba123755f1ae63830e14674f",
+      "audit_id": "aud.ps066.v017.a.0002",
+      "before_hash": "0abb03ffb0784d5717647b75d56e298092940ef2b0368e8a6cebbd347d11c8c1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:13:24.975945+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v017.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the speaker's vocal cry and praise beneath the tongue, in the Hebrew's order. It leaves the explicit recipient, “to him,” unstated.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "ab317075ff5ea40d8d8b04b2308e1e85fbd6d1052fbf90f43de4ead56ce2d68a",
+      "audit_ids": [
+        "aud.ps066.v017.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v017.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Rose” adds movement to the Hebrew's description of praise beneath the tongue.",
+      "display_reference": "Psalm 66:17",
+      "english_rendering_id": "rnd.ps066.v017.a.lyric.alt.0001",
+      "generation_run_id": "cxr.eb0e8039a290",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אֵלָ֥יו פִּֽי־קָרָ֑אתִי וְ֝רוֹמַ֗ם תַּ֣חַת לְשׁוֹנִֽי׃",
+      "literal_backbone": [
+        "To him I called with my mouth.",
+        "And praise was under my tongue."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:17",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v017.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "to him, toward him",
+          "note": "The lyric does not explicitly identify whom the speaker addressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps066.v017.t001"
+          ],
+          "transliteration": "ʾēlāw",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "and exaltation, extolling, praise",
+          "note": "“Praise” conveys the noun; “rose” supplies an action absent from the Hebrew clause.",
+          "rendered_as": "And praise rose",
+          "token_ids": [
+            "ps066.v017.t004"
+          ],
+          "transliteration": "wərômam",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v017.a.0001"
   ],

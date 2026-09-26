@@ -4,7 +4,8 @@
     "rnd.ps066.v002.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v002.a.0001"
+    "aud.ps066.v002.a.0001",
+    "aud.ps066.v002.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,82 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ca7e86b38ef2d32dd52c92d87a9f319375b6687fef10e5779034f1c6cd519feb",
+      "audit_id": "aud.ps066.v002.a.0002",
+      "before_hash": "78a2159069fab7475c750a371faec454d4e6c18f9ca9452e0a17d1520c4d4863",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:10:20.932692+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves both commands: sing concerning the glory of God's name, and give glory in praising him.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "91960ee1f8d83ead2adbc726047a67e7b2f257d34d2e329fdfd4d809c68f052b",
+      "audit_ids": [
+        "aud.ps066.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Weight” introduces a metaphor for glory or honor. “Give Him glory when you sing” recasts making his praise glorious as honoring him during singing.",
+      "display_reference": "Psalm 66:2",
+      "english_rendering_id": "rnd.ps066.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.63ef27b4bdf4",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זַמְּר֥וּ כְבֽוֹד־שְׁמ֑וֹ שִׂ֥ימוּ כָ֝ב֗וֹד תְּהִלָּֽתוֹ׃",
+      "literal_backbone": [
+        "Sing the glory of his name.",
+        "Make his praise glorious."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:2",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "glory, honor, splendor",
+          "note": "The metaphor suggests significance or gravitas, but “weight” is not the ordinary contextual sense of this noun.",
+          "rendered_as": "weight",
+          "token_ids": [
+            "ps066.v002.t002"
+          ],
+          "transliteration": "ḵəḇôḏ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "set, place, make; glory, honor; his praise",
+          "note": "Preserves the call to glorious praise while introducing a temporal clause about singing.",
+          "rendered_as": "Give Him glory when you sing",
+          "token_ids": [
+            "ps066.v002.t004",
+            "ps066.v002.t005",
+            "ps066.v002.t006"
+          ],
+          "transliteration": "śiymû ḵāḇôḏ təhillātô",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v002.a.0001"
   ],

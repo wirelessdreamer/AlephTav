@@ -4,7 +4,8 @@
     "rnd.ps066.v004.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v004.a.0001"
+    "aud.ps066.v004.a.0001",
+    "aud.ps066.v004.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,82 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "db03434213ad6a5b3e0d82750a05931d7e89ab6e5db0c1506685fc5185fb3170",
+      "audit_id": "aud.ps066.v004.a.0002",
+      "before_hash": "4fe2cea9b25c0ab2f903df3127ac417adf4ac02b54efd693f1218db4bca39b7e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:10:50.345942+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves all the earth bowing to God, singing to him, and praising his name, in that order. Selah is omitted.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "8677fbf27e5b1d1546cc77adbcd971853b7497063cc71f6d715a97eedfc40878",
+      "audit_ids": [
+        "aud.ps066.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Every voice will lift Your name” recasts singing God's name as lifting it. “Every land will bring You praise” adds a restatement of the earth's praise rather than rendering a separate clause.",
+      "display_reference": "Psalm 66:4",
+      "english_rendering_id": "rnd.ps066.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d101f34d386b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כָּל־הָאָ֤רֶץ׀ יִשְׁתַּחֲו֣וּ לְ֭ךָ וִֽיזַמְּרוּ־לָ֑ךְ יְזַמְּר֖וּ שִׁמְךָ֣ סֶֽלָה׃",
+      "literal_backbone": [
+        "All the earth will bow down to you.",
+        "And they will sing praises to you.",
+        "They will sing praises to your name. Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:4",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "sing praises, make music; your name",
+          "note": "Retains praise of God's name while supplying “every voice” and replacing singing with the metaphor of lifting.",
+          "rendered_as": "Every voice will lift Your name",
+          "token_ids": [
+            "ps066.v004.t007",
+            "ps066.v004.t008"
+          ],
+          "transliteration": "yəzammərû šimḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "Selah; a musical or liturgical marker of uncertain meaning",
+          "note": "The marker has no counterpart in the supplied lyric.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps066.v004.t009"
+          ],
+          "transliteration": "selâ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v004.a.0001"
   ],

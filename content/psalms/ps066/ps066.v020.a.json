@@ -4,7 +4,8 @@
     "rnd.ps066.v020.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v020.a.0001"
+    "aud.ps066.v020.a.0001",
+    "aud.ps066.v020.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,84 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "efb01b4d59c1db7f3947de52195e44a39aad53fc4b532fc84886512d46b4b9cf",
+      "audit_id": "aud.ps066.v020.a.0002",
+      "before_hash": "336062b17bed24538096627d4a202a3da15bfd57fb8ebe4e631aa0323e9d0db0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:14:05.103981+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v020.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English retains the blessing of God, though placed later, and both reasons for it: he has not rejected the speaker's prayer or withdrawn his steadfast kindness.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "459f025f91bd9ec1f8d4a31ac9ce2ec149e7a639beedf562bbb299ac3651d7f1",
+      "audit_ids": [
+        "aud.ps066.v020.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v020.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric repeats these assurances and shifts between speaking about God and addressing him. Mercy meeting the speaker “there,” kindness being torn away, prayer being held, and God staying personally elaborate the Hebrew's language of nonwithdrawal.",
+      "display_reference": "Psalm 66:20",
+      "english_rendering_id": "rnd.ps066.v020.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1a376faa36ec",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בָּר֥וּךְ אֱלֹהִ֑ים אֲשֶׁ֥ר לֹֽא־הֵסִ֘יר תְּפִלָּתִ֥י וְ֝חַסְדּ֗וֹ מֵאִתִּֽי׃",
+      "literal_backbone": [
+        "Blessed be God,",
+        "who has not turned away my prayer,",
+        "nor his steadfast kindness from me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:20",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v020.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "not; turn aside, remove; my prayer",
+          "note": "The first expression closely conveys nonrejection; “held my prayer” restates it through an added image of holding.",
+          "rendered_as": "He did not turn my cry away / Who held my prayer",
+          "token_ids": [
+            "ps066.v020.t004",
+            "ps066.v020.t005",
+            "ps066.v020.t006"
+          ],
+          "transliteration": "lōʾ hēsîr təp̄illātî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and his kindness, steadfast love, loyalty; from me",
+          "note": "“Mercy” and “kindness” are standard equivalents; meeting, tearing, and God's personal staying expand the statement that his kindness was not withdrawn.",
+          "rendered_as": "His mercy met me there / You did not leave me / You did not tear Your kindness away / And stayed with me",
+          "token_ids": [
+            "ps066.v020.t007",
+            "ps066.v020.t008"
+          ],
+          "transliteration": "wəḥasdô mēʾittî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v020.a.0001"
   ],

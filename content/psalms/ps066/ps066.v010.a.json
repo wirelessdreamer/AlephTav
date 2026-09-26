@@ -4,7 +4,8 @@
     "rnd.ps066.v010.a.lyric.alt.0001"
   ],
   "audit_ids": [
-    "aud.ps066.v010.a.0001"
+    "aud.ps066.v010.a.0001",
+    "aud.ps066.v010.a.0002"
   ],
   "audit_records": [
     {
@@ -22,9 +23,70 @@
       "summary": "Create rendering",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a5b3333bbbaad160ea49080ae1f16cbb43f4a1d36a39a5b46f98f15b9c2417aa",
+      "audit_id": "aud.ps066.v010.a.0002",
+      "before_hash": "fa19110e52f81205e977fa343a4be53fe342609035da23be0a29ef8d5ea2ca8b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:12:00.468626+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps066.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves God's testing of the community and the comparison with refining silver. The opening explanatory “for” is omitted, and the silver comparison is brought forward and repeated.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "e18d086c9a7543d1a9b2f31dd1cc7912dc249ac3797e855832f4a7062abe9606",
+      "audit_ids": [
+        "aud.ps066.v010.a.0002"
+      ],
+      "comparison_id": "cmp.ps066.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Refine us” changes a statement about completed refining into a request. Flame, fire, and removal of dross develop the refining image beyond what the Hebrew explicitly states.",
+      "display_reference": "Psalm 66:10",
+      "english_rendering_id": "rnd.ps066.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.90780d691a00",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־בְחַנְתָּ֥נוּ אֱלֹהִ֑ים צְ֝רַפְתָּ֗נוּ כִּצְרָף־כָּֽסֶף׃",
+      "literal_backbone": [
+        "For you have tested us, O God.",
+        "You have refined us as silver is refined."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 66:10",
+      "non_source_material": [],
+      "psalm_id": "ps066",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps066.0001",
+      "unit_id": "ps066.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "smelt, refine, assay",
+          "note": "The Hebrew states that God has refined the people; the English adds a petition and specifies the removal of impurities.",
+          "rendered_as": "Refine us in the flame / You drove the dross away",
+          "token_ids": [
+            "ps066.v010.t004"
+          ],
+          "transliteration": "ṣərap̄tānû",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps066.v010.a.0001"
   ],
