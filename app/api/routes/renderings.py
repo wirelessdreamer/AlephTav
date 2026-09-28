@@ -53,6 +53,7 @@ def create_rendering(unit_id: str, payload: dict) -> dict:
             metric_profile=payload.get("metric_profile"),
             issue_links=payload.get("issue_links"),
             pr_links=payload.get("pr_links"),
+            translation_id=payload.get("translation_id") or None,
         )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

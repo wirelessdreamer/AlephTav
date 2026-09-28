@@ -86,6 +86,11 @@ For multi-step tasks, state a brief plan:
 
 - `app/api/` — FastAPI app (`app.api.main:app`). Routers live in
   `app/api/routes/`. Errors map to HTTP via `app/api/deps.py:raise_as_http`.
+- `app/api/mcp_server.py` — the same operations as MCP tools, served by the
+  API at `http://127.0.0.1:43174/mcp` (registered in `.mcp.json`) so an
+  outside LLM can drive the workbench. Each tool calls a route or its
+  service; names it records are stamped `mcp:<name>`. A new route needs a
+  tool or an entry in `EXCLUDED` (a test checks).
 - `app/cli.py` — Typer CLI exposed as `psalms-workbench`. Most user-facing
   operations have a CLI command; prefer them over ad-hoc scripts.
 - `app/services/` — All business logic. Routes and the CLI both call into

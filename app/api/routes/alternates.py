@@ -54,6 +54,7 @@ def create_alternate(unit_id: str, payload: dict) -> dict:
             metric_profile=payload.get("metric_profile"),
             issue_links=payload.get("issue_links"),
             pr_links=payload.get("pr_links"),
+            translation_id=payload.get("translation_id") or None,
         )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
@@ -71,7 +72,9 @@ def accept_alternate(rendering_id: str, payload: dict | None = None) -> dict:
             notes=request.get("rationale", "accepted alternate"),
         )
         unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
-        return next(item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id)
+        return next(
+            item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id
+        )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 
@@ -88,7 +91,9 @@ def reject_alternate(rendering_id: str, payload: dict | None = None) -> dict:
             notes=request.get("rationale", "rejected alternate"),
         )
         unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
-        return next(item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id)
+        return next(
+            item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id
+        )
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 

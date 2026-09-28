@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api import mcp_server
 from app.api.routes import (
     alignments,
     alternates,
@@ -53,7 +54,8 @@ async def lifespan(_: FastAPI):
     except Exception:  # pragma: no cover - witness cache is best-effort
         pass
     try:
-        yield
+        async with mcp_server.server.session_manager.run():
+            yield
     finally:
         llama_runtime_service.shutdown_all()
         codex_app_server_service.shutdown()
@@ -90,6 +92,11 @@ app.include_router(speech.router)
 app.include_router(verse_notes.router)
 app.include_router(arrangements.router)
 app.include_router(translations.router)
+
+# The same operations as MCP tools at /mcp, for an outside LLM (see app/api/mcp_server.py).
+app.router.routes.extend(
+    mcp_server.server.streamable_http_app(stateless_http=True, json_response=True).routes
+)
 
 
 @app.get("/health")
