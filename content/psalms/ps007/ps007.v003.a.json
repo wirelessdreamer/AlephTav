@@ -1,9 +1,130 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v003.a.literal.alt.0001",
+    "rnd.ps007.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v003.a.0001",
+    "aud.ps007.v003.a.0002",
+    "aud.ps007.v003.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "34ad5e9ec189172a72c8a23921d665c070231e6a371251500c7fe07231ad6882",
+      "audit_id": "aud.ps007.v003.a.0001",
+      "before_hash": "b0e10e8cfb69b1f2d640d6208ffd1998c682bbca5fd7fe36dc9bd38a2f2782b0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.358687+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries the preceding rescue appeal into the singular lion threat.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f694625d742ebbf5e4972a75b2574fbb5ce8494ea20686281773595cdbad89c4",
+      "audit_id": "aud.ps007.v003.a.0002",
+      "before_hash": "2a904b6a74a0030c449e4ee7baf511f134b67d7e5f8c83c54f12e4d7ffcce6fd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.074866+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The feared consequence completes the preceding appeal without softening the attack.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c4bb1658055de15fcd2c9fca38ca0478204b5ce49877ad4e3019374827b1660d",
+      "audit_id": "aud.ps007.v003.a.0003",
+      "before_hash": "2aff93123c921b4c01497afac7b7d86ab664a0baef32633ee7ca97733420167e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:49:32.415437+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the singular attacker, the lion comparison, the threatened speaker, the further violent action, and the absence of a rescuer. The lyric's opening depends on the preceding rescue appeal to convey the Hebrew feared consequence.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "a3be0dbe952bc3f55313a80690d689411dead8fbbc8386f9c3af158bb5646c83",
+      "audit_ids": [
+        "aud.ps007.v003.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Or he'll' presents the feared outcome more assertively than 'lest.' 'Rip me apart' turns the participle into a parallel active verb and supplies its understood object.",
+      "display_reference": "Psalm 7:3",
+      "english_rendering_id": "rnd.ps007.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.31776ed2a48b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "פֶּן־יִטְרֹ֣ף כְּאַרְיֵ֣ה נַפְשִׁ֑י פֹּ֝רֵ֗ק וְאֵ֣ין מַצִּֽיל׃",
+      "literal_backbone": [
+        "Lest he tear my life like a lion,",
+        "tearing away, with no one to rescue."
+      ],
+      "literal_rendering_id": "rnd.ps007.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:3",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Lest, otherwise; introduces an outcome to be feared or prevented.",
+          "note": "Works as a continuation of 'rescue me,' though the contracted future makes the threat sound more certain.",
+          "rendered_as": "or he'll",
+          "token_ids": [
+            "ps007.v003.t001"
+          ],
+          "transliteration": "pen",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "My life, self, person, soul.",
+          "note": "Naturally denotes the threatened person without imposing a distinction between body and soul.",
+          "rendered_as": "me",
+          "token_ids": [
+            "ps007.v003.t004"
+          ],
+          "transliteration": "nap̄šî",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "Tearing away, wrenching off, breaking apart; dragging away.",
+          "note": "Selects the rending sense appropriate to the lion image; the supplied display gloss instead emphasizes dragging away.",
+          "rendered_as": "rip me apart",
+          "token_ids": [
+            "ps007.v003.t005"
+          ],
+          "transliteration": "pōrēq",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v003.a.0001"
   ],
@@ -15,7 +136,233 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps the bodily threat and the absence of a rescuer.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lion tearing its prey",
+          "note": "Retains both tearing and rending without adding prey anatomy.",
+          "source_id": "ps007.v003.a",
+          "token_ids": [
+            "ps007.v003.t002",
+            "ps007.v003.t003",
+            "ps007.v003.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v003.t001 → lest",
+          "ps007.v003.t002 → he tear",
+          "ps007.v003.t003 → like a lion",
+          "ps007.v003.t004 → my life",
+          "ps007.v003.t005 → rending",
+          "ps007.v003.t006–t007 → with none to rescue"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v003.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Carries the preceding rescue appeal into the singular lion threat.",
+      "rendering_id": "rnd.ps007.v003.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "lest he tear my life like a lion,\nrending, with none to rescue.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v003.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A full threat breaks into the shorter phrase 'rip me apart.'",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.62,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lion tearing a person apart",
+          "note": "Both the lion comparison and the rending remain explicit.",
+          "source_id": "ps007.v003.a",
+          "token_ids": [
+            "ps007.v003.t002",
+            "ps007.v003.t003",
+            "ps007.v003.t004",
+            "ps007.v003.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v003.t001 → or; connects the feared outcome to 'rescue me'",
+          "ps007.v003.t002–t004 → he'll tear me like a lion",
+          "ps007.v003.t005 → rip me apart",
+          "ps007.v003.t006–t007 → with no one to rescue me"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v003.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The feared consequence completes the preceding appeal without softening the attack.",
+      "rendering_id": "rnd.ps007.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "or he'll tear me like a lion,\nrip me apart,\nwith no one to rescue me.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "פֶּן־יִטְרֹ֣ף כְּאַרְיֵ֣ה נַפְשִׁ֑י פֹּ֝רֵ֗ק וְאֵ֣ין מַצִּֽיל׃",

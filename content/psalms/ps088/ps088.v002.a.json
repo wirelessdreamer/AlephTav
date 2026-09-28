@@ -1,9 +1,93 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v002.a.0001",
+    "aud.ps088.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f3258cfb52fbf7657b78187d7fcfa477366da46928665f83395131ce7a0b24ad",
+      "audit_id": "aud.ps088.v002.a.0001",
+      "before_hash": "1b097a8cd11deba5e12176cc5cc2c06736e4e8efc77ddcbf70139b2345a2929d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.825001+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2d7dbeda0c75b3ae7c19388604b0d7a080017c8ae3e0d1cb200d82639e429ad0",
+      "audit_id": "aud.ps088.v002.a.0002",
+      "before_hash": "2a0f110d7df52cf555bd7dfd8f5f0937116f97c482e220e297e6d90755e3809d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:32:26.185326+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the address to LORD as God of the speaker’s salvation, followed by daytime crying and nighttime presence before God.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "c78d1e05859f16248c1d0c84064fdf895ac9a37599a3ef757298e8444c354748",
+      "audit_ids": [
+        "aud.ps088.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The English supplies a separate action, “I come,” for the night phrase; the Hebrew has no corresponding verb of coming and keeps the night phrase connected with the cry.",
+      "display_reference": "Psalm 88:2",
+      "english_rendering_id": "rnd.ps088.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.8b5d8c4b2618",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְ֭הוָה אֱלֹהֵ֣י יְשׁוּעָתִ֑י יוֹם־צָעַ֖קְתִּי בַלַּ֣יְלָה נֶגְדֶּֽךָ׃",
+      "literal_backbone": [
+        "YHWH, God of my salvation,",
+        "by day I have cried out; at night before you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:2",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "at night; before you, in your presence",
+          "note": "The time and presence language is preserved, but “I come” adds an action absent from the Hebrew.",
+          "rendered_as": "by night I come before you.",
+          "token_ids": [
+            "ps088.v002.t006",
+            "ps088.v002.t007"
+          ],
+          "transliteration": "ḇallaylâ negdekha",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v002.a.0001"
   ],
@@ -15,7 +99,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "added_doctrine",
+          "confidence": 0.93,
+          "message": "Lyric line adds doctrinal vocabulary not present in the canonical literal line.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.16,
+        "singability_score": 0.11,
+        "stress_approximation": 0.58,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "O LORD… God of my salvation—\nBy day I cry out to you,\nby night I come before you.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְ֭הוָה אֱלֹהֵ֣י יְשׁוּעָתִ֑י יוֹם־צָעַ֖קְתִּי בַלַּ֣יְלָה נֶגְדֶּֽךָ׃",

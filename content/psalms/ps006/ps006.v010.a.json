@@ -1,9 +1,104 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v010.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v010.a.0001",
+    "aud.ps006.v010.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "bdcf0766cd381c66d4d5fc7ee823660955c0eddeb798614c434d4a4a203226ec",
+      "audit_id": "aud.ps006.v010.a.0001",
+      "before_hash": "72f3419896a80b64a2ab59760d964d3b1026b1562d56b939ddc7653c1980aee7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.826948+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "89a34c0347c45fcc43404610b2137188c884a5e3d2ab0ec3167d8c4efe250d50",
+      "audit_id": "aud.ps006.v010.a.0002",
+      "before_hash": "d62aaad00de3d05c91ce03fd177f5d8648a1f5e168324e865b974dd6b3e1e871",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:34:10.254480+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the second clause’s acceptance of the speaker’s prayer. Omits the first clause, which declares that Yahweh has heard the speaker’s supplication, and uses “He” instead of naming Yahweh.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "d5dcfcffdc1e5b13fe9609829166c3e5e7e6ef10ca6d0f6a6d2911ff5e7be683",
+      "audit_ids": [
+        "aud.ps006.v010.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Received” presents acceptance as completed, whereas the Hebrew’s second verb expresses anticipated or ongoing acceptance.",
+      "display_reference": "Psalm 6:10",
+      "english_rendering_id": "rnd.ps006.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.eb0c44cab2bf",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שָׁמַ֣ע יְ֭הוָה תְּחִנָּתִ֑י יְ֝הוָ֗ה תְּֽפִלָּתִ֥י יִקָּֽח׃",
+      "literal_backbone": [
+        "Yahweh has heard my supplication.",
+        "Yahweh will accept my prayer."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:10",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "hear, heed; Yahweh; my supplication, plea for favor",
+          "note": "The distinct declaration that Yahweh has heard the plea is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps006.v010.t001",
+            "ps006.v010.t002",
+            "ps006.v010.t003"
+          ],
+          "transliteration": "šāmaʿ YHWH təḥinnāṯî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "take, receive, accept",
+          "note": "The lexical sense fits, but the English past tense removes the contrast between completed hearing and anticipated or ongoing acceptance.",
+          "rendered_as": "received",
+          "token_ids": [
+            "ps006.v010.t006"
+          ],
+          "transliteration": "yiqqāḥ",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v010.a.0001"
   ],
@@ -15,7 +110,99 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 4,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.6,
+        "stress_approximation": 0.62,
+        "syllable_count": 6,
+        "syllables": 6
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He received\nmy prayer",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שָׁמַ֣ע יְ֭הוָה תְּחִנָּתִ֑י יְ֝הוָ֗ה תְּֽפִלָּתִ֥י יִקָּֽח׃",

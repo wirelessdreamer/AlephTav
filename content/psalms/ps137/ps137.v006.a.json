@@ -1,9 +1,113 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v006.a.literal.alt.0001",
+    "rnd.ps137.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v006.a.0001",
+    "aud.ps137.v006.a.0002",
+    "aud.ps137.v006.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ce3146803cfb7793483207e099f81963894050fdadabd0a38c36e0329b5869d8",
+      "audit_id": "aud.ps137.v006.a.0001",
+      "before_hash": "776614447f55ff5e118387befbfe6903eb6077861b80f94993b124d34122a4b4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.526496+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the bodily oath and answers both the remembrance of verse 1 and the demanded joy of verse 3.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "38570cea55961fd33eb0a7615352c807085b4259d50f7a33bcddead0f8518537",
+      "audit_id": "aud.ps137.v006.a.0002",
+      "before_hash": "172dd74cd153a65bd9e54cdd1df88780a2927e3cc86eca70bec71e397c5d0916",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.212642+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Extends the oath from hand to tongue, then brings remembering and joy back into the same breath.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "03ab8b78059ba7c614db28f7ea77c8173e8f14c785b52418c8319c8cbfcb4da2",
+      "audit_id": "aud.ps137.v006.a.0003",
+      "before_hash": "4b6fdc494e4edbcecfe40120a6b3044a8bbb54541d93b80e4c3140c6a0797c0a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:08:30.686685+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the self-curse involving the tongue and palate, the two negative conditions, remembrance of the feminine addressee Jerusalem, and Jerusalem's elevation above the speaker's joy. The lyric's 'stick' and 'roof of my mouth' retain the physical image in ordinary English.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "c02fba7f3d6944730e42695067c31eb417793673a54eea67a22348157d24a7f9",
+      "audit_ids": [
+        "aud.ps137.v006.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Highest joy' and 'greatest joy' interpret the Hebrew 'head of my joy' as supreme joy. The lyric's contractions and line breaks do not change the sense.",
+      "display_reference": "Psalm 137:6",
+      "english_rendering_id": "rnd.ps137.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2e3096cc096c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תִּדְבַּֽק־לְשׁוֹנִ֨י׀ לְחִכִּי֮ אִם־לֹ֢א אֶזְכְּ֫רֵ֥כִי אִם־לֹ֣א אַ֭עֲלֶה אֶת־יְרוּשָׁלַ֑͏ִם עַ֝֗ל רֹ֣אשׁ שִׂמְחָתֽ͏ִי׃",
+      "literal_backbone": [
+        "May my tongue cling to my palate,",
+        "if I do not remember you,",
+        "if I do not raise Jerusalem above the head of my joy."
+      ],
+      "literal_rendering_id": "rnd.ps137.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:6",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "above/upon; head, top, chief; my joy, gladness",
+          "note": "Both render the head/top metaphor as preeminence. 'Greatest' expresses rank rather than height, while 'lift ... above' retains the surrounding spatial imagery.",
+          "rendered_as": "Literal: 'above my highest joy'; lyric: 'above my greatest joy'",
+          "token_ids": [
+            "ps137.v006.t012",
+            "ps137.v006.t013",
+            "ps137.v006.t014"
+          ],
+          "transliteration": "ʿal rōʾš śimḥāṯî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v006.a.0001"
   ],
@@ -15,7 +119,255 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves both 'if I do not' clauses.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Tongue clinging to the palate",
+          "note": "Retains the physical image without explaining it as inability to sing.",
+          "source_id": "ps137.v006.a",
+          "token_ids": [
+            "ps137.v006.t001",
+            "ps137.v006.t002",
+            "ps137.v006.t003"
+          ]
+        },
+        {
+          "label": "Jerusalem raised above joy",
+          "note": "Retains the upward movement and priority of Jerusalem.",
+          "source_id": "ps137.v006.a",
+          "token_ids": [
+            "ps137.v006.t009",
+            "ps137.v006.t011",
+            "ps137.v006.t012",
+            "ps137.v006.t013",
+            "ps137.v006.t014"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Let my tongue cling to my palate = ps137.v006.t001–t003",
+          "if I do not remember you = ps137.v006.t004–t006",
+          "if I do not raise Jerusalem = ps137.v006.t007–t011; t010 marks the object",
+          "above my highest joy = ps137.v006.t012–t014"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v006.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Continues the bodily oath and answers both the remembrance of verse 1 and the demanded joy of verse 3.",
+      "rendering_id": "rnd.ps137.v006.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Let my tongue cling to my palate\nif I do not remember you,\nif I do not raise Jerusalem\nabove my highest joy.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v006.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Physical speech followed by two matching 'if I don't' clauses.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 24,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.21,
+        "singability_score": 0.12,
+        "stress_approximation": 0.6,
+        "syllable_count": 33,
+        "syllables": 33
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Tongue stuck to the palate",
+          "note": "Uses 'roof of my mouth' for the same physical location.",
+          "source_id": "ps137.v006.a",
+          "token_ids": [
+            "ps137.v006.t001",
+            "ps137.v006.t002",
+            "ps137.v006.t003"
+          ]
+        },
+        {
+          "label": "Jerusalem lifted above joy",
+          "note": "Retains the upward motion and Jerusalem's priority.",
+          "source_id": "ps137.v006.a",
+          "token_ids": [
+            "ps137.v006.t009",
+            "ps137.v006.t011",
+            "ps137.v006.t012",
+            "ps137.v006.t013",
+            "ps137.v006.t014"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Let my tongue stick = ps137.v006.t001–t002",
+          "to the roof of my mouth = ps137.v006.t003",
+          "if I don't remember you = ps137.v006.t004–t006",
+          "if I don't lift Jerusalem = ps137.v006.t007–t011; t010 marks the object",
+          "above my greatest joy = ps137.v006.t012–t014"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v006.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Extends the oath from hand to tongue, then brings remembering and joy back into the same breath.",
+      "rendering_id": "rnd.ps137.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let my tongue stick\nto the roof of my mouth\nif I don't remember you,\nif I don't lift Jerusalem\nabove my greatest joy.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "תִּדְבַּֽק־לְשׁוֹנִ֨י׀ לְחִכִּי֮ אִם־לֹ֢א אֶזְכְּ֫רֵ֥כִי אִם־לֹ֣א אַ֭עֲלֶה אֶת־יְרוּשָׁלַ֑͏ִם עַ֝֗ל רֹ֣אשׁ שִׂמְחָתֽ͏ִי׃",

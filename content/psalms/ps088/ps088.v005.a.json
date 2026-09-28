@@ -1,9 +1,114 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v005.a.0001",
+    "aud.ps088.v005.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fde784bf129b940c85a3c039ced252fa6da8ed3eec7e374a67ff5c3f1a2d0f46",
+      "audit_id": "aud.ps088.v005.a.0001",
+      "before_hash": "928b95d19d24d5e36d0ddae8cf1d15f67bf6ef1102beceb9ca1a22f09b54baa3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.895591+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "719d28ae677b56e72675eb57a817c66ae9631903ad37c7e9d148125b37151195",
+      "audit_id": "aud.ps088.v005.a.0002",
+      "before_hash": "fb8b091e87f9fafe2f2d5e63deb1e840870b76af0965480cdacc181d2c6f6964",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:32:58.569009+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves being counted among those approaching death, followed by comparison with someone without strength.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "0c1de2aa39704b3b4bf25c3ead61a834133ed388eca46bf7b6f61aa0dff78e30",
+      "audit_ids": [
+        "aud.ps088.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“The ones gone” loses the image of descent into the pit. “Written off” interprets being counted among the dying; “abandoned” adds an assertion absent from this verse. “To stand” specifies an activity where the Hebrew describes strength generally.",
+      "display_reference": "Psalm 88:5",
+      "english_rendering_id": "rnd.ps088.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.6df880f54b8f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נֶ֭חְשַׁבְתִּי עִם־י֣וֹרְדֵי ב֑וֹר הָ֝יִ֗יתִי כְּגֶ֣בֶר אֵֽין־אֱיָֽל׃",
+      "literal_backbone": [
+        "I am counted among those going down to the pit;",
+        "I have become like a man without strength."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:5",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "be counted, reckoned, considered",
+          "note": "“Counted” is direct; “written off” adds the implication that others regard the speaker as beyond hope.",
+          "rendered_as": "I’m counted; written off",
+          "token_ids": [
+            "ps088.v005.t001"
+          ],
+          "transliteration": "neḥšaḇtî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "those descending to the pit",
+          "note": "Suggests the dead but leaves both the downward movement and the pit unexpressed.",
+          "rendered_as": "the ones gone",
+          "token_ids": [
+            "ps088.v005.t003",
+            "ps088.v005.t004"
+          ],
+          "transliteration": "yôrəḏê ḇôr",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "without strength, lacking power",
+          "note": "Standing is supplied; the Hebrew does not specify what the strength would enable.",
+          "rendered_as": "no strength to stand",
+          "token_ids": [
+            "ps088.v005.t007",
+            "ps088.v005.t008"
+          ],
+          "transliteration": "ʾēyn ʾĕyāl",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v005.a.0001"
   ],
@@ -15,7 +120,99 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.67,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I’m counted with the ones gone—\nwritten off,\nabandoned—\nlike I’ve got no strength to stand.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נֶ֭חְשַׁבְתִּי עִם־י֣וֹרְדֵי ב֑וֹר הָ֝יִ֗יתִי כְּגֶ֣בֶר אֵֽין־אֱיָֽל׃",

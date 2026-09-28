@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v007.a.literal.alt.0001",
+    "rnd.ps007.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v007.a.0001",
+    "aud.ps007.v007.a.0002",
+    "aud.ps007.v007.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2499f45b2c4422d40ae1ff5db555ffd1ec3fd035d9dd6262d2207c731d940f4e",
+      "audit_id": "aud.ps007.v007.a.0001",
+      "before_hash": "6cd170f83cc2ffd6ba39d65c440b2e1ac1f1cd6f9a7b76581dec4cbeed02989c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.393568+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v007.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding downward images with three rising imperatives.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bddacbb94fcf3e38b8dd07c329b8a5855b89b32636819431e20421698430861a",
+      "audit_id": "aud.ps007.v007.a.0002",
+      "before_hash": "0d194250c60150292de1bb05d747095528b6088c478272b080d10895a2f13dd6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.112518+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The rising commands answer the preceding fall into dust, while the wake-up appeal keeps its confrontational force.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f7fd722845ed01c5990ab625d92cb2cf49c9d7ed5480a7cc800d8c5a87787fb8",
+      "audit_id": "aud.ps007.v007.a.0003",
+      "before_hash": "9b151491b1f6244b4a719057e62c47132e360919fe5825e85d32b413ffd32392",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:25.660955+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal for Yahweh to rise in anger, confront the enemies' rage, and awaken for the speaker, followed by the declaration that he has commanded judgment. The lyric's 'stand' weakens the second imperative's explicit upward movement, but retains its confrontational force.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "257465b0e4e0f02e882c95e50e05cc6973fd495323dcdd994753a0b19f7e3d75",
+      "audit_ids": [
+        "aud.ps007.v007.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'In anger' leaves the Hebrew possessive 'your' implicit. 'Stand against' interprets the lifting imperative and its prepositional phrase; singular 'rage' compresses the Hebrew plural. 'Wake up' and 'you've ordered' modernize the diction.",
+      "display_reference": "Psalm 7:7",
+      "english_rendering_id": "rnd.ps007.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.228f9aec3d10",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ק֘וּמָ֤ה יְהוָ֨ה׀ בְּאַפֶּ֗ךָ הִ֭נָּשֵׂא בְּעַבְר֣וֹת צוֹרְרָ֑י וְע֥וּרָה אֵ֝לַ֗י מִשְׁפָּ֥ט צִוִּֽיתָ׃",
+      "literal_backbone": [
+        "Rise, Yahweh, in your anger;",
+        "lift yourself against the fury of my foes;",
+        "awake for me; you have commanded judgment."
+      ],
+      "literal_rendering_id": "rnd.ps007.v007.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:7",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Be lifted up, rise, lift oneself.",
+          "note": "Conveys readiness to confront, but reduces the explicit elevation expressed by the Hebrew imperative.",
+          "rendered_as": "stand",
+          "token_ids": [
+            "ps007.v007.t004"
+          ],
+          "transliteration": "hinnāśēʾ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "In, amid, or against the outbursts of wrath of my adversaries.",
+          "note": "'Against' selects an oppositional relation; collective 'rage' naturally conveys the plural expressions of fury.",
+          "rendered_as": "against my enemies' rage",
+          "token_ids": [
+            "ps007.v007.t005",
+            "ps007.v007.t006"
+          ],
+          "transliteration": "bəʿaḇrôṯ ṣōrərāy",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v007.a.0001"
   ],
@@ -15,7 +128,232 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves commanded judgment as a completed declaration.",
+      "drift_flags": [],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Rising and awakening",
+          "note": "Retains all three embodied appeals.",
+          "source_id": "ps007.v007.a",
+          "token_ids": [
+            "ps007.v007.t001",
+            "ps007.v007.t004",
+            "ps007.v007.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v007.t001–t003 → Arise, Yahweh, in your anger",
+          "ps007.v007.t004 → lift yourself",
+          "ps007.v007.t005–t006 → against my foes' fury",
+          "ps007.v007.t007–t008 → awake for me",
+          "ps007.v007.t009–t010 → you have commanded judgment"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v007.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Answers the preceding downward images with three rising imperatives.",
+      "rendering_id": "rnd.ps007.v007.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Arise, Yahweh, in your anger;\nlift yourself against my foes' fury;\nawake for me:\nyou have commanded judgment.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v007.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Three direct imperatives followed by the speaker's stated ground for appeal.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.95,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.08,
+        "stress_approximation": 0.81,
+        "syllable_count": 28,
+        "syllables": 28
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Rising and waking",
+          "note": "Rise, stand, and wake preserve the embodied sequence.",
+          "source_id": "ps007.v007.a",
+          "token_ids": [
+            "ps007.v007.t001",
+            "ps007.v007.t004",
+            "ps007.v007.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v007.t001–t003 → Rise, Yahweh, in anger",
+          "ps007.v007.t004 → stand",
+          "ps007.v007.t005–t006 → against my enemies' rage",
+          "ps007.v007.t007–t008 → Wake up for me",
+          "ps007.v007.t009–t010 → you've ordered judgment"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v007.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The rising commands answer the preceding fall into dust, while the wake-up appeal keeps its confrontational force.",
+      "rendering_id": "rnd.ps007.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Rise, Yahweh, in anger;\nstand against my enemies' rage.\nWake up for me—\nyou've ordered judgment.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ק֘וּמָ֤ה יְהוָ֨ה׀ בְּאַפֶּ֗ךָ הִ֭נָּשֵׂא בְּעַבְר֣וֹת צוֹרְרָ֑י וְע֥וּרָה אֵ֝לַ֗י מִשְׁפָּ֥ט צִוִּֽיתָ׃",

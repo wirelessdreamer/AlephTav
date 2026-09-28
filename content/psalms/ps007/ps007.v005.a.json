@@ -1,9 +1,121 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v005.a.literal.alt.0001",
+    "rnd.ps007.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v005.a.0001",
+    "aud.ps007.v005.a.0002",
+    "aud.ps007.v005.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7aff6340d34cc8b35d4c07e0400b16ff779b173c932b462be0965f34bfa1c3b0",
+      "audit_id": "aud.ps007.v005.a.0001",
+      "before_hash": "6331dc67b65850cf6f5a13da3666a8c219562b6e2d57e13ae3e95951ead0fe3d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.372691+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the oath while preserving the rescue reading of the difficult second clause.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0d49fc10f12ff4417254492530a2bfe4a714beb77583a82b14d8a19781417591",
+      "audit_id": "aud.ps007.v005.a.0002",
+      "before_hash": "ceb3d2d9c6ef8c974002c9a1ae85b80d1772f3d5d7c5ce15262fc6d2ac5e8b2f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.093805+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the oath and retains the difficult rescue assertion as a parenthetical interruption.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a602443b560cba7caa66f22b71ae829b6d0d4c650cc68fbb9c05aea61f08a25c",
+      "audit_id": "aud.ps007.v005.a.0003",
+      "before_hash": "1cda0067fb000aa36f423a49b3938c8b287e989a09825f364b0aa3194795f459",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:00.643106+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the conditional repayment of harm to someone at peace with the speaker. The second clause follows a defensible but disputed reading: the speaker rescued an enemy whose hostility was unprovoked. The lyric makes that interpretation more explicit than the Hebrew or the literal rendering.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "2a8717472f898289574bddb6ebb174023835758633ffbe4fa3cbc00fd69d34fa",
+      "audit_ids": [
+        "aud.ps007.v005.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Though' makes the conjunction concessive, and the dashes mark a parenthetical counterclaim. 'A foe who opposed me for no cause' expands the enemy expression and attaches 'without cause' specifically to the hostility.",
+      "display_reference": "Psalm 7:5",
+      "english_rendering_id": "rnd.ps007.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.5814129de4bd",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אִם־גָּ֭מַלְתִּי שֽׁוֹלְמִ֥י רָ֑ע וָאֲחַלְּצָ֖ה צוֹרְרִ֣י רֵיקָֽם׃",
+      "literal_backbone": [
+        "If I repaid one at peace with me with evil,",
+        "and I rescued my foe, without cause."
+      ],
+      "literal_rendering_id": "rnd.ps007.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:5",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "And I drew out, delivered, rescued; the root also has a stripping-off sense.",
+          "note": "Rescue is a recognized reading of the verb. 'Though' interprets the conjunction and makes this an assertion interrupting the conditional oath; that relationship is not explicit in the conjunction alone.",
+          "rendered_as": "though I rescued",
+          "token_ids": [
+            "ps007.v005.t005"
+          ],
+          "transliteration": "wāʾăḥalləṣāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "My adversary, one hostile to me; empty-handed, in vain, without cause.",
+          "note": "Makes 'without cause' qualify the adversary's hostility. The Hebrew lacks the added relative clause, and the adverb's attachment is open to interpretation.",
+          "rendered_as": "a foe who opposed me for no cause",
+          "token_ids": [
+            "ps007.v005.t006",
+            "ps007.v005.t007"
+          ],
+          "transliteration": "ṣōrərî rêqām",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v005.a.0001"
   ],
@@ -15,7 +127,219 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves rescue rather than adopting the alternative plunder reading.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_CLAUSE",
+          "confidence": 0.96,
+          "message": "The second clause is difficult. This rendering takes חלץ as rescue, the conjunction concessively, and 'without cause' as describing the foe's hostility.",
+          "severity": "medium"
+        }
+      ],
+      "grounding_confidence": 0.79,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v005.t001–t002 → if I repaid",
+          "ps007.v005.t003 → one at peace with me",
+          "ps007.v005.t004 → with evil",
+          "ps007.v005.t005 → though I rescued",
+          "ps007.v005.t006 → one hostile to me",
+          "ps007.v005.t007 → without cause; understood as qualifying the hostility"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v005.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew; the difficult clause is not emended.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Continues the oath while preserving the rescue reading of the difficult second clause.",
+      "rendering_id": "rnd.ps007.v005.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "if I repaid with evil\none at peace with me—\nthough I rescued one hostile to me\nwithout cause—",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew; the difficult clause is not emended.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v005.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A claim of rescuing an enemy interrupts the conditional oath.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_CLAUSE",
+          "confidence": 0.96,
+          "message": "Chooses the rescue reading, a concessive connection, and causeless hostility. The Hebrew clause admits other interpretations.",
+          "severity": "medium"
+        }
+      ],
+      "grounding_confidence": 0.79,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 22,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.61,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v005.t001–t002 → if I paid back",
+          "ps007.v005.t003 → someone at peace with me",
+          "ps007.v005.t004 → with harm",
+          "ps007.v005.t005 → though I rescued",
+          "ps007.v005.t006 → a foe who opposed me",
+          "ps007.v005.t007 → for no cause; attached to the opposition"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v005.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering; the difficult clause is not emended.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "Continues the oath and retains the difficult rescue assertion as a parenthetical interruption.",
+      "rendering_id": "rnd.ps007.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "if I paid back with harm\nsomeone at peace with me—\nthough I rescued a foe\nwho opposed me for no cause—",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering; the difficult clause is not emended.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אִם־גָּ֭מַלְתִּי שֽׁוֹלְמִ֥י רָ֑ע וָאֲחַלְּצָ֖ה צוֹרְרִ֣י רֵיקָֽם׃",

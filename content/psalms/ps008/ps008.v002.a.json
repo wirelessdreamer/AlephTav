@@ -1,9 +1,104 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps008.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps008.v002.a.0001",
+    "aud.ps008.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "35406f0b6fca92d2192aed272ccb06822ee8052cc81a7944ef077ffc87072f41",
+      "audit_id": "aud.ps008.v002.a.0001",
+      "before_hash": "61c7d580f2c5a6a9b1bdc208f6a6bb3b229c5b87babc52a3bd18569fa21a42cb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:23:55.268945+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d8366fe8f46f5180ff04dcc38ad9668f0854cb43eb674fcc0e7c223069da6ebb",
+      "audit_id": "aud.ps008.v002.a.0002",
+      "before_hash": "aea9abc9d873d8ccc4570878d1ba3510ca84b6239ade1c3e66de0af6f05dbefb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:25:48.661500+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the address to Yahweh as our Lord, the majesty of his name throughout the earth, and his glory above the heavens, in Hebrew order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "77b8b5557b1f20bc732fd13652c4a4905a4ae9037e1f3f04d183318ca3a16cb3",
+      "audit_ids": [
+        "aud.ps008.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps008.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The final relative clause becomes an independent sentence. “You have set” adopts a conventional interpretation of the difficult Hebrew construction, whose verb is formally imperative.",
+      "display_reference": "Psalm 8:2",
+      "english_rendering_id": "rnd.ps008.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d3be78360472",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֤ה אֲדֹנֵ֗ינוּ מָֽה־אַדִּ֣יר שִׁ֭מְךָ בְּכָל־הָאָ֑רֶץ אֲשֶׁ֥ר תְּנָ֥ה ה֝וֹדְךָ֗ עַל־הַשָּׁמָֽיִם׃",
+      "literal_backbone": [
+        "Yahweh, our Lord,",
+        "how majestic is your name in all the earth!",
+        "Who [have] set your splendor above the heavens."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:2",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Yahweh, the divine name",
+          "note": "Uses the traditional title substitution for the divine name, making its distinction from “our Lord” less visible.",
+          "rendered_as": "O Lord",
+          "token_ids": [
+            "ps008.v002.t001"
+          ],
+          "transliteration": "yəhwāh",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "who/which; give, put, set",
+          "note": "Resolves the difficult relative-plus-imperative construction as a completed action and removes the explicit relative connection; the backbone's bracketed “have” reflects this interpretive uncertainty.",
+          "rendered_as": "You have set",
+          "token_ids": [
+            "ps008.v002.t008",
+            "ps008.v002.t009"
+          ],
+          "transliteration": "ʾăšer tənāh",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps008.v002.a.0001"
   ],
@@ -15,7 +110,99 @@
   "pr_links": [],
   "psalm_id": "ps008",
   "ref": "Psalm 8:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.64,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.e6c8ea5823f0",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "O Lord, our Lord,\nhow majestic is your name in all the earth!\nYou have set your glory above the heavens.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָ֤ה אֲדֹנֵ֗ינוּ מָֽה־אַדִּ֣יר שִׁ֭מְךָ בְּכָל־הָאָ֑רֶץ אֲשֶׁ֥ר תְּנָ֥ה ה֝וֹדְךָ֗ עַל־הַשָּׁמָֽיִם׃",

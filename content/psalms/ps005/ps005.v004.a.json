@@ -1,9 +1,237 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v004.a.lyric.alt.0001",
+    "rnd.ps005.v004.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v004.a.0001",
+    "aud.ps005.v004.a.0002",
+    "aud.ps005.v004.a.0003",
+    "aud.ps005.v004.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b880839ed4db588dbe2c683056119ca47107402994c6488e49ab7b2beb5dbc7b",
+      "audit_id": "aud.ps005.v004.a.0001",
+      "before_hash": "8017d8ed90de74a1fbfbebc408089b46686b8a71eba69752224a7e9124b0b504",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.798772+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3b70a3894b1051f40a6db1b37462cde8562be5b6e6681cee9d35f2da2f7efea9",
+      "audit_id": "aud.ps005.v004.a.0002",
+      "before_hash": "737005d64b1c34edd4247710a50b59a81c645a8c65ddcd4c46dd8c05c65fc3f8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:00:04.343831+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6e0346d6dde6de41ebabc7fd3290e396378ba6ace5fe690aaaa4e561db2731b1",
+      "audit_id": "aud.ps005.v004.a.0003",
+      "before_hash": "58a32f99b720900033c06b9f8ad9310d9a130b0227fa507956dd5f5891fd2235",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.412581+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v004.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4cebdd4fa2b25967a1f213ef366d771efc758762ff3a2d7bcd1a93d7a3e32268",
+      "audit_id": "aud.ps005.v004.a.0004",
+      "before_hash": "5325b410bf847c3927b7d99d6456727373021cf35bda73127c68fdff6118c1dc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:13:31.420068+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v004.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the morning setting, God's hearing the speaker, the act of arranging something before God, and expectant watching, in Hebrew order. The invocation to Yahweh is omitted.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "140d3a49178818efaa95067e1305051b85c649b929fd1a9fafa90625b626f4e5",
+      "audit_ids": [
+        "aud.ps005.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric develops the unspecified act of arranging into offering the pieces of one's life on an altar, and makes descending fire the expected response. Neither the altar nor fire is stated in the Hebrew. Repetition extends the Hebrew's two occurrences of 'morning' and adds musical echoes.",
+      "display_reference": "Psalm 5:4",
+      "english_rendering_id": "rnd.ps005.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.828672665a57",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְֽהוָ֗ה בֹּ֭קֶר תִּשְׁמַ֣ע קוֹלִ֑י בֹּ֥קֶר אֶֽעֱרָךְ־לְ֝ךָ֗ וַאֲצַפֶּֽה׃",
+      "literal_backbone": [
+        "Yahweh, in the morning you hear my voice.",
+        "In the morning I arrange [something] for you.",
+        "And I watch expectantly."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:4",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "morning, daybreak",
+          "note": "A recurring morning practice is a reasonable reading, although 'every' is not explicit.",
+          "rendered_as": "Every morning",
+          "token_ids": [
+            "ps005.v004.t002",
+            "ps005.v004.t005"
+          ],
+          "transliteration": "bōqer",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "you hear / will hear; my voice",
+          "note": "Preserves God's hearing the speaker while adding the colloquial characterization of repeated activity.",
+          "rendered_as": "you'll hear me at it again.\nat it again.",
+          "token_ids": [
+            "ps005.v004.t003",
+            "ps005.v004.t004"
+          ],
+          "transliteration": "tišmaʿ qôlî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "I arrange, set in order, prepare; for you / before you",
+          "note": "The verb can describe arranging offerings, among other things, but here its object is unstated; the speaker's life and an altar are supplied by the lyric.",
+          "rendered_as": "I lay out the pieces of my life\non your altar\non your altar",
+          "token_ids": [
+            "ps005.v004.t006",
+            "ps005.v004.t007"
+          ],
+          "transliteration": "ʾeʿĕrāḵ ləḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and I watch, look out, wait expectantly",
+          "note": "Retains watching but supplies descending fire as its object; the Hebrew specifies no such response.",
+          "rendered_as": "and watch for fire to descend.\nfire to descend.",
+          "token_ids": [
+            "ps005.v004.t008"
+          ],
+          "transliteration": "waʾăṣappeh",
+          "verdict": "expansion"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves morning as the setting, God's hearing the speaker, presenting something before God, and expectant waiting. It omits the explicit address to Yahweh and adds an assertion that God answers.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "f6a11a87a2d2e1b3663c8475e8b20c8de8ce41a000168da5f83b70ec6520ee67",
+      "audit_ids": [
+        "aud.ps005.v004.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v004.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Every morning' makes recurrence explicit and repeats the morning phrase a third time. 'You hear me' compresses 'you hear my voice.' 'And you answer' turns expectation into an asserted response.",
+      "display_reference": "Psalm 5:4",
+      "english_rendering_id": "rnd.ps005.v004.a.lyric.alt.0002",
+      "generation_run_id": "cxr.380e9bc5f464",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְֽהוָ֗ה בֹּ֭קֶר תִּשְׁמַ֣ע קוֹלִ֑י בֹּ֥קֶר אֶֽעֱרָךְ־לְ֝ךָ֗ וַאֲצַפֶּֽה׃",
+      "literal_backbone": [
+        "Yahweh, in the morning you hear my voice.",
+        "In the morning I arrange [something] before you.",
+        "And I watch expectantly."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:4",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Yahweh, the divine name",
+          "note": "The explicit divine address is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v004.t001"
+          ],
+          "transliteration": "yəhwāh",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "morning, daybreak",
+          "note": "A habitual reading is reasonable; the English repeats the phrase three times where the Hebrew has it twice.",
+          "rendered_as": "Every morning",
+          "token_ids": [
+            "ps005.v004.t002",
+            "ps005.v004.t005"
+          ],
+          "transliteration": "bōqer",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "arrange, set in order, present; to you",
+          "note": "Preserves the act of presenting without specifying the object, which the Hebrew also leaves unstated.",
+          "rendered_as": "I lay it before you",
+          "token_ids": [
+            "ps005.v004.t006",
+            "ps005.v004.t007"
+          ],
+          "transliteration": "ʾeʿĕrāḵ ləḵā",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "and I watch, look out, await expectantly",
+          "note": "'I wait' conveys expectation, but the Hebrew does not assert that God answers here.",
+          "rendered_as": "I wait, and you answer",
+          "token_ids": [
+            "ps005.v004.t008"
+          ],
+          "transliteration": "waʾăṣappeh",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v004.a.0001"
   ],
@@ -15,7 +243,190 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 38,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.34,
+        "singability_score": 0.15,
+        "stress_approximation": 0.71,
+        "syllable_count": 57,
+        "syllables": 57
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Every morning\nEvery morning\nyou'll hear me at it again.\nat it again.\nEvery morning\nI lay out the pieces of my life\non your altar\non your altar\nand watch for fire to descend.\nfire to descend.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.37,
+        "singability_score": 0.15,
+        "stress_approximation": 0.71,
+        "syllable_count": 31,
+        "syllables": 31
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v004.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Every morning — you hear me\nEvery morning — I lay it before you\nEvery morning — I wait, and you answer",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְֽהוָ֗ה בֹּ֭קֶר תִּשְׁמַ֣ע קוֹלִ֑י בֹּ֥קֶר אֶֽעֱרָךְ־לְ֝ךָ֗ וַאֲצַפֶּֽה׃",

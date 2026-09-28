@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v013.a.literal.alt.0001",
+    "rnd.ps007.v013.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v013.a.0001",
+    "aud.ps007.v013.a.0002",
+    "aud.ps007.v013.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "93004974b2524476c6a4e6edb1acb956ace7dd182b79143fe0a4c9cb6845e382",
+      "audit_id": "aud.ps007.v013.a.0001",
+      "before_hash": "d8a83ec88df5c6b79811bde1665a999c7527cd4094bd07c2b6d8b70510f4f7d2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.104844+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v013.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the preceding judgment scene with the conditional warning and paired weapons.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0e2604a5d09a0fbe8d4959bc8e2956dab6f748ee80a9c3c52446ddf43f31ae7c",
+      "audit_id": "aud.ps007.v013.a.0002",
+      "before_hash": "1778bb1dd698a44b5bc758fb3a3fde50a937c9faf737b57810242fce1901a3f9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.628194+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries the preceding judgment into a conditional warning, with the sword and bow answering each other.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "851f10d0406bfcbe588c3a857c70cbba64447630596aaf29a1f18e65197ada71",
+      "audit_id": "aud.ps007.v013.a.0003",
+      "before_hash": "fb7aae854cbde923bb2d812e4055a9e6c812433c35381d3e9e0b998713fbc874",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:51:27.199075+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the negative condition, turning back, prospective sword sharpening, and completed bow preparation. Both renderings retain the unnamed subjects rather than explicitly distinguishing an offender who turns back from God who prepares the weapons.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "0616082e70876db23bc69c76168967d99f350f181deb8a77e9dfc5c8ed149c5b",
+      "audit_ids": [
+        "aud.ps007.v013.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric uses contractions and replaces 'bent' with the idiomatic 'drawn.' These changes preserve the weapon imagery and sequence.",
+      "display_reference": "Psalm 7:13",
+      "english_rendering_id": "rnd.ps007.v013.a.lyric.alt.0001",
+      "generation_run_id": "cxr.327781d29cae",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אִם־לֹ֣א יָ֭שׁוּב חַרְבּ֣וֹ יִלְט֑וֹשׁ קַשְׁתּ֥וֹ דָ֝רַ֗ךְ וַֽיְכוֹנְנֶֽהָ׃",
+      "literal_backbone": [
+        "If he does not turn back,",
+        "he will sharpen his sword;",
+        "he has bent his bow and made it ready."
+      ],
+      "literal_rendering_id": "rnd.ps007.v013.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:13",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Return, turn back; contextually, turn away from wrongdoing.",
+          "note": "Preserves the turning language without explicitly specifying repentance. The verb marks a third-person masculine singular subject but does not identify its referent.",
+          "rendered_as": "doesn't turn back",
+          "token_ids": [
+            "ps007.v013.t003"
+          ],
+          "transliteration": "yāšûḇ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "His bow; tread, bend, draw a bow.",
+          "note": "Uses the normal English expression for the Hebrew bow-bending idiom.",
+          "rendered_as": "he's drawn his bow",
+          "token_ids": [
+            "ps007.v013.t006",
+            "ps007.v013.t007"
+          ],
+          "transliteration": "qaštô ḏāraḵ",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v013.a.0001"
   ],
@@ -15,7 +128,241 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the unnamed subjects and the concrete turning verb.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_SUBJECT",
+          "confidence": 0.98,
+          "message": "The Hebrew does not name the subjects. A common contextual reading distinguishes the offender who might turn back from God who prepares the weapons; the translation retains the pronouns.",
+          "severity": "medium"
+        }
+      ],
+      "grounding_confidence": 0.91,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Sharpened sword and bent bow",
+          "note": "Retains both weapons and their distinct preparation actions.",
+          "source_id": "ps007.v013.a",
+          "token_ids": [
+            "ps007.v013.t004",
+            "ps007.v013.t005",
+            "ps007.v013.t006",
+            "ps007.v013.t007",
+            "ps007.v013.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v013.t001–t003 → If he does not turn back",
+          "ps007.v013.t004–t005 → he will sharpen his sword",
+          "ps007.v013.t006–t007 → he has bent his bow",
+          "ps007.v013.t008 → and made it ready"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v013.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v013.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "Continues the preceding judgment scene with the conditional warning and paired weapons.",
+      "rendering_id": "rnd.ps007.v013.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "If he does not turn back,\nhe will sharpen his sword;\nhe has bent his bow\nand made it ready.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v013.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v013.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Compact spoken warning with the source's subject ambiguity retained.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_SUBJECT",
+          "confidence": 0.98,
+          "message": "Retains the unnamed subjects. The opening may refer to an offender and the weapon clauses to God; the English pronouns leave that distinction unresolved.",
+          "severity": "medium"
+        }
+      ],
+      "grounding_confidence": 0.92,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.59,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Sword sharpening and bow drawing",
+          "note": "Both weapons and their preparation remain explicit.",
+          "source_id": "ps007.v013.a",
+          "token_ids": [
+            "ps007.v013.t004",
+            "ps007.v013.t005",
+            "ps007.v013.t006",
+            "ps007.v013.t007",
+            "ps007.v013.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v013.t001–t003 → If he doesn't turn back",
+          "ps007.v013.t004–t005 → he'll sharpen his sword",
+          "ps007.v013.t006–t007 → he's drawn his bow",
+          "ps007.v013.t008 → and made it ready"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v013.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v013.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "Carries the preceding judgment into a conditional warning, with the sword and bow answering each other.",
+      "rendering_id": "rnd.ps007.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "If he doesn't turn back,\nhe'll sharpen his sword;\nhe's drawn his bow\nand made it ready.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v013.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אִם־לֹ֣א יָ֭שׁוּב חַרְבּ֣וֹ יִלְט֑וֹשׁ קַשְׁתּ֥וֹ דָ֝רַ֗ךְ וַֽיְכוֹנְנֶֽהָ׃",

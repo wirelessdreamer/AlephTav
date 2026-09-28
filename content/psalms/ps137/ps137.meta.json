@@ -1,6 +1,137 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps137.v001.a.0005"
+      ],
+      "citations": [],
+      "created_at": "2026-09-27T00:10:05.386338+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–3 name Babylon's rivers, weeping while remembering Zion, and 'our captors.'",
+            "claim": "The represented speakers mourn Zion while situated in Babylon under captivity."
+          },
+          {
+            "basis": "The request for Zion's songs in verse 3 is answered by the question about singing Yahweh's song on foreign soil in verse 4.",
+            "claim": "The demand for song conflicts with the speakers' relationship to place and sacred song."
+          },
+          {
+            "basis": "Verses 1–4 use the communal voice; verses 5–6 use 'I' and address Jerusalem; verse 7 addresses Yahweh; verses 8–9 address Babylon.",
+            "claim": "The poem changes grammatical voice and addressee as its pressure increases."
+          },
+          {
+            "basis": "Verses 5–6 name the right hand, tongue, palate, and repeated negative conditions concerning remembrance and Jerusalem.",
+            "claim": "The oath threatens the speaker's own bodily capacities if Jerusalem is forgotten or displaced in priority."
+          },
+          {
+            "basis": "Verse 7 attributes to them the repeated stripping command extending to the city's foundation.",
+            "claim": "Edom's people are represented as urging Jerusalem's destruction."
+          },
+          {
+            "basis": "Verses 8–9 repeat the happiness formula, connect repayment to Babylon's treatment of 'us,' and name seizing and smashing her little ones against the rock.",
+            "claim": "The conclusion commends a prospective retaliator and explicitly includes violence against Babylon's young children."
+          },
+          {
+            "basis": "No such marker appears in the nine supplied Hebrew verses; the proposed sections follow rhetorical changes.",
+            "claim": "The supplied text contains no Selah or comparable explicit section marker."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "The author's identity, exact composition date, or location while composing.",
+            "why_not": "There is no attributive superscription, and a represented or remembered scene does not establish the circumstances of composition."
+          },
+          {
+            "claim": "The speakers were professional temple musicians.",
+            "why_not": "Possessing lyres and knowing sacred songs does not establish an institutional office."
+          },
+          {
+            "claim": "The right hand's threatened forgetting specifically means losing the ability to play an instrument.",
+            "why_not": "Verse 5 leaves the object of forgetting unstated. The lyric supplies a plausible musical interpretation."
+          },
+          {
+            "claim": "Babylon's devastation had already occurred at the time of composition.",
+            "why_not": "The passive description in verse 8 does not independently settle its temporal reference; 'laid waste' can sound more temporally settled in English."
+          },
+          {
+            "claim": "Babylon had committed the identical act against the speakers' children, or the closing act subsequently occurred.",
+            "why_not": "The poem invokes repayment and describes the desired retaliator's action, but gives neither that specific prior report nor a subsequent fulfillment narrative."
+          },
+          {
+            "claim": "The closing wish is a command spoken by Yahweh or a general rule governing conduct.",
+            "why_not": "It belongs to the psalm's speaking voice; the text supplies no divine speech introducing or authorizing it."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.29c53eca3e5d",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Lyres, Zion's songs, and 'Yahweh's song' imply a sacred musical association with Jerusalem. The represented scene is captivity on foreign soil, where captors demand songs. The text does not identify a particular temple ceremony, festival, priestly office, or original liturgical performance.",
+        "heading_attribution": "Psalm 137 has no Masoretic superscription attributing it to an author, named occasion, performer, or musical direction. 'Psalm 137' identifies its canonical position; it establishes no authorship. No traditional attribution should be presented as a fact established here."
+      },
+      "method": "Compared the English directly with the supplied Masoretic Hebrew, using clause relationships, pronouns, repeated vocabulary, and imagery. Literal backbones from the verse audits served as compact grammatical checks, not as independent witnesses. Section titles are analytical descriptions, not supplied arrangement labels. No external edition or lexicon was consulted.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps137.0001",
+      "psalm_id": "ps137",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Weeping and suspended lyres lead to the captors' demand; the communal question answers that demand without resolving it.",
+          "first_verse": 1,
+          "last_verse": 4,
+          "theme": "Displacement, remembered Zion, and singing under captivity.",
+          "title": "Lament and the demand for song"
+        },
+        {
+          "arc_note": "The voice shifts from 'we' to 'I.' Hand and tongue become pledges of remembrance, and Jerusalem takes precedence over the speaker's greatest joy.",
+          "first_verse": 5,
+          "last_verse": 6,
+          "theme": "Personal loyalty secured by conditional bodily self-curses.",
+          "title": "The oath to Jerusalem"
+        },
+        {
+          "arc_note": "The obligation to remember becomes a demand that Yahweh remember. The lyric makes the petition's adverse force explicit through 'hold it against.'",
+          "first_verse": 7,
+          "last_verse": 7,
+          "theme": "An appeal to Yahweh concerning Edom's destructive words.",
+          "title": "Remember Edom"
+        },
+        {
+          "arc_note": "The address shifts to Babylon. Repeated declarations of happiness culminate in violence against her children, with no subsequent release or qualification.",
+          "first_verse": 8,
+          "last_verse": 9,
+          "theme": "Reciprocal retribution directed at personified Babylon.",
+          "title": "Repayment upon Babylon"
+        }
+      ],
+      "source_fingerprint": "97bd1198b5f8655523ef801a7b6741f5eb49a7c8531be8522aaab789dd2ceba4",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting moves from communal grief in Babylon and a demand for songs to an unresolved question about singing Yahweh's song abroad. It then narrows to a personal oath of loyalty to Jerusalem, turns remembrance into an accusation against Edom, and addresses Babylon with a wish for reciprocal violence. 'Remembering,' 'forget,' and 'remember' connect these movements; the repeated 'Happy is the one' binds the final verses. The English retains the bodily and destructive images without adding reconciliation. Its main interpretive expansions are 'forget how to play' and the separate imperative 'hold it against.'",
+      "translation_id": "tr.ps137.0001"
+    }
+  ],
   "psalm_id": "ps137",
   "title": "Psalm 137",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps137.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T23:59:54.773799+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target 6/8 meter",
+      "psalm_id": "ps137",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps137.0001"
+    }
+  ],
   "unit_ids": [
     "ps137.v001.a",
     "ps137.v002.a",

@@ -1,6 +1,1422 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps006.v001.a.0003"
+      ],
+      "citations": [],
+      "created_at": "2026-09-27T15:35:44.609455+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 3 and 5 contain these petitions explicitly; the English preserves mercy and rescue but omits “heal me.”",
+            "claim": "The speaker appeals for mercy, healing, rescue, and salvation."
+          },
+          {
+            "basis": "Disturbed bones in verse 3 are followed by the greatly disturbed nephesh in verse 4; verses 7–8 add tears and deteriorating sight.",
+            "claim": "The lament joins bodily distress with distress of the self."
+          },
+          {
+            "basis": "Verse 5 asks for salvation on account of God's hesed, expressed in the setting as “for your love.”",
+            "claim": "Divine steadfast love supplies the stated ground for rescue."
+          },
+          {
+            "basis": "Verse 6 connects death with absent remembrance and asks who will give thanks in Sheol.",
+            "claim": "The speaker uses the loss of remembrance and thanksgiving in death as an argument within the plea."
+          },
+          {
+            "basis": "Verses 9–10 declare divine hearing and acceptance, but no intervening rescue event is described.",
+            "claim": "The closing confidence is expressed before any narrated account of outward deliverance."
+          },
+          {
+            "basis": "The root for disturbance occurs in verses 3–4 and 11; the return petition in verse 5 corresponds to the enemies’ turning back in verse 11.",
+            "claim": "The ending transfers the language of disturbance to the enemies and repeats the language of turning."
+          },
+          {
+            "basis": "No Selah appears in verses 1–11; the song’s section headings are modern arrangement divisions.",
+            "claim": "The supplied Hebrew has no Selah marker."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed this psalm during a known historical crisis.",
+            "why_not": "The heading supplies a Davidic attribution without a historical episode or independent authorship evidence."
+          },
+          {
+            "claim": "A particular disease, attack, or named enemy caused the distress.",
+            "why_not": "The text names symptoms, grief, and foes without diagnosing an illness or identifying opponents and events."
+          },
+          {
+            "claim": "The speaker confesses a specific sin that caused divine punishment.",
+            "why_not": "The opening plea concerns rebuke and discipline in anger, but the psalm contains no explicit confession or stated causal explanation for the suffering."
+          },
+          {
+            "claim": "The suffering lasted years or divine hearing is explicitly described as continuous throughout it.",
+            "why_not": "The Hebrew says every night and that God has heard; “year after year” and “all along” are English expansions."
+          },
+          {
+            "claim": "The enemies literally encircled, tore, fell, or scattered.",
+            "why_not": "Those actions are introduced by the setting; the Hebrew describes foes, shame, disturbance, and turning back."
+          },
+          {
+            "claim": "The psalm establishes a comprehensive doctrine of the afterlife.",
+            "why_not": "Its death and Sheol language functions within a plea for preservation and does not systematically address postmortem existence."
+          },
+          {
+            "claim": "A priestly oracle, ritual act, or reported cure produced the closing assurance.",
+            "why_not": "The change in confidence is explicit, but its external occasion is not narrated."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.712ab8864e46",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The heading supports organized musical performance, while prayer, remembrance, and thanksgiving place the lament within a worship context. The body speaks in an individual voice and evokes private suffering at night. It names no temple, priest, sacrifice, festival, or specific ritual, so an exact sanctuary ceremony or original performance occasion cannot be recovered from its language.",
+        "heading_attribution": "The Hebrew heading identifies a psalm associated with David, addresses a director, specifies stringed accompaniment, and includes the designation sheminith. The Davidic attribution belongs to the received heading; it does not independently establish historical authorship, the speaker’s identity, or a particular incident in David’s life. The precise performance meaning of sheminith is not established by this psalm. The English omits the heading entirely."
+      },
+      "method": "Compared the stored English with the supplied Hebrew verse text and token forms, using the earlier full paste to identify arrangement sections. Literal backbones follow the Hebrew clauses rather than reconstructing wording from the lyric. The truncated verse 3 ending was read using the supplied complete bones token; verse 4’s inconsistent token metadata was checked against its displayed Hebrew text. No external edition or lexicon was consulted. Adjacent arrangement sections were grouped where their boundaries divide a Masoretic verse, producing complete, nonoverlapping coverage of verses 1–11.",
+      "non_source_material": [
+        {
+          "kind": "section_label",
+          "note": "Modern section heading with a performance-density instruction.",
+          "text": "[VERSE 1 – very sparse]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern section heading with an emotional progression cue.",
+          "text": "[VERSE 2 – tension rising]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern song-form designation and delivery cue.",
+          "text": "[PRE-CHORUS – pleading]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern song-form designation and intensity cue.",
+          "text": "[CHORUS – restrained lift]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern section heading prescribing an emotional turn.",
+          "text": "[VERSE 3 – collapse]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern transition label and delivery cue.",
+          "text": "[TURN – quiet shift]"
+        },
+        {
+          "kind": "section_label",
+          "note": "Modern closing-section designation and performance cue.",
+          "text": "[FINAL CHORUS – stronger, grounded]"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps006.0001",
+      "psalm_id": "ps006",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The received heading frames the psalm for musical performance; the English begins with the lament instead.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction, genre, and Davidic association.",
+          "title": "Superscription — not sung"
+        },
+        {
+          "arc_note": "Sparse pleading grows into trembling and the repeated duration question. The arrangement boundary falls within verse 3, between weakness and disturbed bones, so these sections are grouped for whole-verse coverage.",
+          "first_verse": 2,
+          "last_verse": 4,
+          "theme": "Mercy amid bodily and inward distress.",
+          "title": "Verse 1 + Verse 2"
+        },
+        {
+          "arc_note": "The arrangement anticipates the return petition with a question, then repeats it as commands. Rescue supplies the forward movement out of the preceding distress.",
+          "first_verse": 5,
+          "last_verse": 5,
+          "theme": "Return, rescue, and saving love.",
+          "title": "Verse 2 ending + Pre-Chorus"
+        },
+        {
+          "arc_note": "The Hebrew’s assertion and question become two personal conditional questions. Singing and calling God’s name give the argument an explicitly vocal character.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "Death threatens remembrance and thanksgiving.",
+          "title": "Chorus"
+        },
+        {
+          "arc_note": "The emotional collapse concentrates on the drenched bed and deteriorating eyes. Added years and enemy actions intensify the suffering beyond the stated details.",
+          "first_verse": 7,
+          "last_verse": 8,
+          "theme": "Exhaustion, tears, failing sight, and foes.",
+          "title": "Verse 3"
+        },
+        {
+          "arc_note": "The speaker dismisses wrongdoers and repeatedly affirms divine hearing. These arrangement sections share verse 9 and are grouped here. The stored verse 10 lyric compresses acceptance into a completed event; the conclusion substitutes falling and scattering for much of the Hebrew’s shame language.",
+          "first_verse": 9,
+          "last_verse": 11,
+          "theme": "Heard prayer and the enemies’ reversal.",
+          "title": "Turn + Final Chorus"
+        }
+      ],
+      "source_fingerprint": "a3b6d06ca9d2ea02de8863438eb30b790054ce1282a23ca41143d94953b1287b",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting preserves the movement from distress and appeals for mercy, through the threat of death and exhausting tears, to confidence that God has heard and that enemies will retreat. Short lines and repeated petitions intensify the personal voice. It omits the superscription and the explicit healing petition, softens covenant loyalty into love, and adds images of fading, surrounding darkness, and attacking enemies. “Year after year” and “all along” extend the duration beyond what the Hebrew states. The ending retains fear and retreat but loses the repeated shame and sudden reversal. The Hebrew’s movement from the speaker’s disturbance to the enemies’ disturbance remains recognizable, though expressed with different English imagery.",
+      "translation_id": "tr.ps006.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps006.0001",
+      "audit_ids": [
+        "aud.ps006.v001.a.0002"
+      ],
+      "created_at": "2026-09-27T15:31:43.246139+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.4c5480cca209",
+      "guidance": "From the imported translation:\nvery sparse\ntension rising\npleading\nrestrained lift\ncollapse\nquiet shift\nstronger, grounded",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The song omits the superscription, including its performance directions, genre designation, and attribution.",
+          "token_ids": [
+            "ps006.v001.t001",
+            "ps006.v001.t002",
+            "ps006.v001.t003",
+            "ps006.v001.t004",
+            "ps006.v001.t005",
+            "ps006.v001.t006"
+          ],
+          "unit_id": "ps006.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither invocation of the divine name in this verse is sung.",
+          "token_ids": [
+            "ps006.v003.t002",
+            "ps006.v003.t007"
+          ],
+          "unit_id": "ps006.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The causal links introducing frailty and disturbed bones are left implicit.",
+          "token_ids": [
+            "ps006.v003.t003",
+            "ps006.v003.t008"
+          ],
+          "unit_id": "ps006.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The explicit request for healing is absent.",
+          "token_ids": [
+            "ps006.v003.t006"
+          ],
+          "unit_id": "ps006.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The soul’s trembling is retained without the explicit degree of intensity.",
+          "token_ids": [
+            "ps006.v004.t003"
+          ],
+          "unit_id": "ps006.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The separately supplied ואת token has no independent rendering.",
+          "token_ids": [
+            "ps006.v004.t004"
+          ],
+          "unit_id": "ps006.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The chorus does not explicitly connect the death argument to the preceding plea with a causal conjunction.",
+          "token_ids": [
+            "ps006.v006.t001"
+          ],
+          "unit_id": "ps006.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Grief is not explicitly named as the cause of the eyes’ deterioration.",
+          "token_ids": [
+            "ps006.v008.t002"
+          ],
+          "unit_id": "ps006.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The reference to enemies leaves both the explicit causal connection and the quantifier all unexpressed.",
+          "token_ids": [
+            "ps006.v008.t005"
+          ],
+          "unit_id": "ps006.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The connection between dismissing the wrongdoers and God hearing is conveyed through sequence without an explicit for.",
+          "token_ids": [
+            "ps006.v009.t006"
+          ],
+          "unit_id": "ps006.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither occurrence of the enemies’ shame is explicitly rendered.",
+          "token_ids": [
+            "ps006.v011.t001",
+            "ps006.v011.t007"
+          ],
+          "unit_id": "ps006.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Fear is retained without the explicit intensifier exceedingly.",
+          "token_ids": [
+            "ps006.v011.t003"
+          ],
+          "unit_id": "ps006.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The final chorus does not explicitly say all the enemies.",
+          "token_ids": [
+            "ps006.v011.t004"
+          ],
+          "unit_id": "ps006.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The suddenness of the reversal is absent; the added ending instead refers to an eventual outcome.",
+          "token_ids": [
+            "ps006.v011.t008"
+          ],
+          "unit_id": "ps006.v011.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps006",
+      "sections": [
+        {
+          "kind": "verse",
+          "label": "VERSE 1 – very sparse",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v002.t001"
+                  ],
+                  "unit_id": "ps006.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0001",
+              "rationale": "",
+              "text": "LORD—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v002.t002",
+                    "ps006.v002.t003",
+                    "ps006.v002.t004"
+                  ],
+                  "unit_id": "ps006.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "don’t rebuke me in anger"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v002.t005",
+                    "ps006.v002.t007"
+                  ],
+                  "unit_id": "ps006.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0003",
+              "rationale": "Recasts discipline as physically pressing the speaker down.",
+              "text": "don’t press me down"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v002.t006"
+                  ],
+                  "unit_id": "ps006.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0004",
+              "rationale": "",
+              "text": "in your wrath"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t001"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "Develops the appeal for favor into a request for gentleness before restating it as mercy.",
+              "text": "Be gentle with me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t001"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "have mercy"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t004",
+                    "ps006.v003.t005"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "I’m weak…"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t004",
+                    "ps006.v003.t005"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Repeats frailty as an ongoing process of fading.",
+              "text": "I’m fading"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 2 – tension rising",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t010"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "My bones—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v003.t009"
+                  ],
+                  "unit_id": "ps006.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Makes the bones’ disturbance into shaking and adds an explicit inward location.",
+              "text": "they shake inside me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v004.t001"
+                  ],
+                  "unit_id": "ps006.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "My soul—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v004.t001",
+                    "ps006.v004.t002"
+                  ],
+                  "unit_id": "ps006.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "it trembles too"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v004.t005",
+                    "ps006.v004.t006",
+                    "ps006.v004.t007"
+                  ],
+                  "unit_id": "ps006.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "How long, LORD?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v004.t006",
+                    "ps006.v004.t007"
+                  ],
+                  "unit_id": "ps006.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0014",
+              "rationale": "Repeats the duration question for emphasis.",
+              "text": "how much longer?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t001"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "Begins a question that recasts the command to return as an appeal about timing.",
+              "text": "When will you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t001"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "Completes the return question and makes its destination explicitly the speaker.",
+              "text": "turn back to me?"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "other",
+          "label": "PRE-CHORUS – pleading",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t001",
+                    "ps006.v005.t002"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "Turn, LORD—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t001"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "Repeats the command to return.",
+              "text": "come back"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t003",
+                    "ps006.v005.t004"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0019",
+              "rationale": "Condenses rescuing the speaker’s life into pulling the speaker out.",
+              "text": "Pull me out"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0020",
+              "rationale": "Adds an unspecified situation from which rescue is requested.",
+              "text": "of this"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t005"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "Save me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v005.t006",
+                    "ps006.v005.t007"
+                  ],
+                  "unit_id": "ps006.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0022",
+              "rationale": "Expresses covenant loyalty simply as love.",
+              "text": "for your love"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0023",
+              "rationale": "Adds an explicit plea against abandonment.",
+              "text": "don’t leave me"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0024",
+              "rationale": "Completes the added abandonment plea with a reference to the speaker’s condition.",
+              "text": "like this"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "chorus",
+          "label": "CHORUS – restrained lift",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t003"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0025",
+              "rationale": "Recasts death as the speaker becoming permanently silent in a conditional statement.",
+              "text": "If I go quiet for good"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t002",
+                    "ps006.v006.t004"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0026",
+              "rationale": "Turns the absence of remembrance into a rhetorical question about calling.",
+              "text": "who will call"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t004"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "Makes remembering God specifically an act of calling God’s name.",
+              "text": "your name?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t005"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "Adds a conditional descent to the reference to being in Sheol.",
+              "text": "If I sink"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t005"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0029",
+              "rationale": "Uses the grave for Sheol within the added descent image.",
+              "text": "into the grave"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t006",
+                    "ps006.v006.t007"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0030",
+              "rationale": "Specifies singing as the form of thanksgiving.",
+              "text": "who will sing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v006.t007",
+                    "ps006.v006.t008"
+                  ],
+                  "unit_id": "ps006.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "your praise?"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0032",
+              "rationale": "Adds a direct request for continued presence.",
+              "text": "Stay—"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0033",
+              "rationale": "Adds a plea to be held or preserved.",
+              "text": "don’t let me go"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0034",
+              "rationale": "Begins an additional plea for preservation.",
+              "text": "don’t let me"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0035",
+              "rationale": "Completes the added plea with an image of disappearance.",
+              "text": "fade away"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 3 – collapse",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t001"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0036",
+              "rationale": "",
+              "text": "I’m worn out"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t002"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0037",
+              "rationale": "Interprets the groaning specifically as crying.",
+              "text": "from crying"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t004",
+                    "ps006.v007.t005"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "every night"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t007"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0039",
+              "rationale": "Moves the tears before the first mention of the bed.",
+              "text": "in tears"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t006",
+                    "ps006.v007.t008"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0040",
+              "rationale": "Combines the parallel references to bed and couch into one.",
+              "text": "My bed—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t003",
+                    "ps006.v007.t007"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0041",
+              "rationale": "Replaces making the bed swim with its resulting soaked condition.",
+              "text": "it’s soaked with tears"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v007.t009"
+                  ],
+                  "unit_id": "ps006.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0042",
+              "rationale": "Reduces the speaker’s melting or dissolving the couch to its drenched condition.",
+              "text": "drenched"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0043",
+              "rationale": "Adds a duration of years absent from the Hebrew.",
+              "text": "year after year"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t003"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0044",
+              "rationale": "",
+              "text": "My eyes—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t001",
+                    "ps006.v008.t004"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0045",
+              "rationale": "Combines wasting away and growing weak into failing.",
+              "text": "they’re failing"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t001",
+                    "ps006.v008.t004"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0046",
+              "rationale": "Develops the eyes’ deterioration into dimness and adds surrounding darkness.",
+              "text": "dim in the dark"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t006"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0047",
+              "rationale": "",
+              "text": "Enemies"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t006"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0048",
+              "rationale": "Gives the foes an encircling movement not stated in the Hebrew.",
+              "text": "closing in"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v008.t006"
+                  ],
+                  "unit_id": "ps006.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0049",
+              "rationale": "Develops the foes’ harmful presence into an image of tearing the speaker apart.",
+              "text": "tearing me apart"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "bridge",
+          "label": "TURN – quiet shift",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t001"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0050",
+              "rationale": "",
+              "text": "Go—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t001",
+                    "ps006.v009.t002"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0051",
+              "rationale": "",
+              "text": "get away from me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t003"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0052",
+              "rationale": "",
+              "text": "all of you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t004",
+                    "ps006.v009.t005"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0053",
+              "rationale": "",
+              "text": "who do wrong"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t008"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0054",
+              "rationale": "",
+              "text": "The LORD"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t007",
+                    "ps006.v009.t009",
+                    "ps006.v009.t010"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0055",
+              "rationale": "Condenses hearing the sound of the speaker’s weeping into hearing the speaker.",
+              "text": "has heard me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t007"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0056",
+              "rationale": "",
+              "text": "He’s heard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t009",
+                    "ps006.v009.t010"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0057",
+              "rationale": "Generalizes the weeping to the speaker and adds continuous past duration.",
+              "text": "me all along"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "chorus",
+          "label": "FINAL CHORUS – stronger, grounded",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t007"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0058",
+              "rationale": "",
+              "text": "He has heard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v009.t009",
+                    "ps006.v009.t010"
+                  ],
+                  "unit_id": "ps006.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0059",
+              "rationale": "Combines the sound of weeping into crying.",
+              "text": "my crying"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v010.t004",
+                    "ps006.v010.t006"
+                  ],
+                  "unit_id": "ps006.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0060",
+              "rationale": "Presents the anticipated acceptance as already completed and refers to the LORD by a pronoun.",
+              "text": "He received"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v010.t005"
+                  ],
+                  "unit_id": "ps006.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0061",
+              "rationale": "",
+              "text": "my prayer"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t005"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0062",
+              "rationale": "Begins an image of the enemies as people standing in opposition.",
+              "text": "Those who stand"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t005"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0063",
+              "rationale": "",
+              "text": "against me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t002"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0064",
+              "rationale": "Adds falling as an outward consequence of the enemies’ disturbance.",
+              "text": "will fall"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t002"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0065",
+              "rationale": "",
+              "text": "in fear"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t006"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0066",
+              "rationale": "",
+              "text": "They will turn"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v011.t006"
+                  ],
+                  "unit_id": "ps006.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0067",
+              "rationale": "Develops turning back into dispersal.",
+              "text": "and scatter"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0068",
+              "rationale": "Adds an explicit prediction that the opponents will not endure.",
+              "text": "they won’t stand"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0069",
+              "rationale": "Adds an eventual outcome rather than the Hebrew’s sudden reversal.",
+              "text": "in the end"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v010.t002"
+                  ],
+                  "unit_id": "ps006.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0070",
+              "rationale": "Returns to the hearing declaration from verse 10 after the enemies’ reversal in verse 11.",
+              "text": "The LORD"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps006.v010.t001",
+                    "ps006.v010.t003"
+                  ],
+                  "unit_id": "ps006.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0071",
+              "rationale": "Restates the earlier hearing declaration while reducing the speaker’s supplication to the speaker.",
+              "text": "has heard me"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0072",
+              "rationale": "Adds an explicit promise of defense as the closing assurance.",
+              "text": "He will defend"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        }
+      ],
+      "status": "proposed",
+      "title": "How long, LORD?",
+      "translation_id": "tr.ps006.0001",
+      "updated_at": "2026-09-27T15:31:43.246139+00:00"
+    }
+  ],
   "psalm_id": "ps006",
   "title": "Psalm 6",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps006.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-27T15:28:16.365113+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "guidance": "From the imported translation:\nvery sparse\ntension rising\npleading\nrestrained lift\ncollapse\nquiet shift\nstronger, grounded",
+      "psalm_id": "ps006",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps006.0001"
+    }
+  ],
   "unit_ids": [
     "ps006.v001.a",
     "ps006.v002.a",

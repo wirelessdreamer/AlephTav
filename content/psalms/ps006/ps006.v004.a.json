@@ -1,9 +1,113 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v004.a.0001",
+    "aud.ps006.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d064c5fa937bdef45df6cc9f58e3aa7b5714cb8b6684b695f013a61eed8a5895",
+      "audit_id": "aud.ps006.v004.a.0001",
+      "before_hash": "fa54631b8172d8e7aa8c183b5d437b20984717236c55caf835698b024707b8b6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.714158+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d62c7619f704070bd859f9beac31adb8162698c75d4296793f6c9e98efd354e1",
+      "audit_id": "aud.ps006.v004.a.0002",
+      "before_hash": "eb4707c8ed858540460f0b7a489c02da6be33fefc641e678d55c1d9ac2d6b510",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:32:36.030060+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the soul’s distress, its connection to the preceding distress through “too,” and the question addressed to the LORD. The explicit intensity “exceedingly” is absent.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "5bcbeeb40d3c8a08f83d1da1c7f50a5762b0c407d79470c5d042315717541e27",
+      "audit_ids": [
+        "aud.ps006.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Trembles” gives distress a trembling image. “How much longer?” repeats and amplifies the single Hebrew question.",
+      "display_reference": "Psalm 6:4",
+      "english_rendering_id": "rnd.ps006.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0ed3f8fe316f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְ֭נַפְשִׁי נִבְהֲלָ֣ה מְאֹ֑ד יְ֝הוָ֗ה עַד־מָתָֽי׃",
+      "literal_backbone": [
+        "And my soul is exceedingly disturbed.",
+        "O Yahweh, how long?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:4",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "be disturbed, dismayed, terrified",
+          "note": "Trembling is a plausible poetic expression of the soul’s distress.",
+          "rendered_as": "it trembles too",
+          "token_ids": [
+            "ps006.v004.t002"
+          ],
+          "transliteration": "niḇhălāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "very, exceedingly, greatly",
+          "note": "“Too” conveys addition, not the Hebrew’s explicit degree of distress.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps006.v004.t003"
+          ],
+          "transliteration": "məʾōḏ",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "until when; how long",
+          "note": "The duration question is stated twice for emphasis; the Hebrew states it once.",
+          "rendered_as": "How long, LORD?\nhow much longer?",
+          "token_ids": [
+            "ps006.v004.t006",
+            "ps006.v004.t007"
+          ],
+          "transliteration": "ʿaḏ-mātāy",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v004.a.0001"
   ],
@@ -15,7 +119,106 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.47,
+        "stress_approximation": 0.59,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My soul—\nit trembles too\n\nHow long, LORD?\nhow much longer?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְ֭נַפְשִׁי נִבְהֲלָ֣ה מְאֹ֑ד יְ֝הוָ֗ה עַד־מָתָֽי׃",

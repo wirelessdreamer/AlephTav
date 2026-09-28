@@ -1,9 +1,93 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v009.a.0001",
+    "aud.ps088.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "325519edac56d2dfc5e2e2ac5a7fda2cc86b7d3e4304849ffd05fb573cce6a4a",
+      "audit_id": "aud.ps088.v009.a.0001",
+      "before_hash": "437a663fd49cf840074788f6ec8e2958eec7bf78518eb56ed9f94b366d65fbd7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:50.021049+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "07ef71c2dc77f880583ff9a8668603e8fe0cb67873656b315b9b6a2acdb2e760",
+      "audit_id": "aud.ps088.v009.a.0002",
+      "before_hash": "120bd20ebf4f660d03256912e6ea1f6db523f6721ecda1f31578ae497eb6bfc4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:33:44.579476+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves God’s removal of the speaker’s companions, making the speaker repugnant to them, and the resulting description of confinement without escape, in the Hebrew’s order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "50fcdb3d6bb6372ef6ccf1111f8250001b5f4c59f12fcb7048477f8ffd16d621",
+      "audit_ids": [
+        "aud.ps088.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Pushed” gives the removal a more physical coloring. “Friends” is a natural contextual rendering of acquaintances, and “can’t get out” makes inability explicit in the statement about not going out.",
+      "display_reference": "Psalm 88:9",
+      "english_rendering_id": "rnd.ps088.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.c7f7c910a847",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הִרְחַ֥קְתָּ מְיֻדָּעַ֗י מִ֫מֶּ֥נִּי שַׁתַּ֣נִי תוֹעֵב֣וֹת לָ֑מוֹ כָּ֝לֻ֗א וְלֹ֣א אֵצֵֽא׃",
+      "literal_backbone": [
+        "You have removed my acquaintances far from me;",
+        "you have made me an object of abhorrence to them;",
+        "I am shut in and do not go out."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:9",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "abominations, detestable things, objects of abhorrence",
+          "note": "Expresses the speaker’s repugnance to others; the Hebrew emphasizes abhorrence rather than fear alone.",
+          "rendered_as": "a horror",
+          "token_ids": [
+            "ps088.v009.t005"
+          ],
+          "transliteration": "ṯôʿēḇôṯ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v009.a.0001"
   ],
@@ -15,7 +99,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 25,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.16,
+        "singability_score": 0.11,
+        "stress_approximation": 0.56,
+        "syllable_count": 28,
+        "syllables": 28
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You’ve pushed my friends far from me;\nyou’ve made me a horror to them.\nI’m shut in, I can’t get out;",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הִרְחַ֥קְתָּ מְיֻדָּעַ֗י מִ֫מֶּ֥נִּי שַׁתַּ֣נִי תוֹעֵב֣וֹת לָ֑מוֹ כָּ֝לֻ֗א וְלֹ֣א אֵצֵֽא׃",

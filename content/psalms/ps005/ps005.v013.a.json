@@ -1,9 +1,241 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v013.a.lyric.alt.0001",
+    "rnd.ps005.v013.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v013.a.0001",
+    "aud.ps005.v013.a.0002",
+    "aud.ps005.v013.a.0003",
+    "aud.ps005.v013.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "08d5079c18d9cee29ea96ef0d86ac2259a2d686d27a06314baeeaee733e578f2",
+      "audit_id": "aud.ps005.v013.a.0001",
+      "before_hash": "7619da5d8b60d6d1caf08484e0f9d5dfa3876cbc0abe47ddc886aba9e044548c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:04.131728+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9135e1382c9cfa343e4900e62612eb3ad86f16d937d581fdc17de8f7590fece1",
+      "audit_id": "aud.ps005.v013.a.0002",
+      "before_hash": "b3010b3b1d469ba77d8d58d35f30af31dc5fe10f7fd946214c879179fa754fb1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:03:00.841188+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fa5742b0dae7a01f289c4373db650c3ddb7a4daf1cb7d0b88664d10eaf59b39d",
+      "audit_id": "aud.ps005.v013.a.0003",
+      "before_hash": "aa80dd3f08401542ea016f45b62e162dc2f82a58a510ec5330a6f195da290f6c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.646034+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v013.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f952c049562a2c86f8526288764630fd5f772be463598fd47086b78f903bbb3d",
+      "audit_id": "aud.ps005.v013.a.0004",
+      "before_hash": "0038f1e4e47206def0c66674f4a56f0a2e5fb64254910dc72612a647eaadeb27",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:15:48.471849+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v013.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves direct address to God and the sequence of divine blessing followed by favor bestowed on its recipients. It recasts the righteous as God-seekers, shifts the singular recipient to 'us,' and omits the shield comparison.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "579e533aa45234a75c52d159874542dfdd28e364e43593945856a1082fa930db",
+      "audit_ids": [
+        "aud.ps005.v013.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'You are famous' adds a claim about reputation. Blessing becomes welcoming, while surrounding someone with favor becomes festive adornment with delight, displacing the Hebrew's protective image.",
+      "display_reference": "Psalm 5:13",
+      "english_rendering_id": "rnd.ps005.v013.a.lyric.alt.0001",
+      "generation_run_id": "cxr.3ed701fa0be2",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־אַתָּה֮ תְּבָרֵ֢ךְ צַ֫דִּ֥יק יְהוָ֑ה כַּ֝צִּנָּ֗ה רָצ֥וֹן תַּעְטְרֶֽנּוּ׃",
+      "literal_backbone": [
+        "For you bless the righteous person, Yahweh.",
+        "You surround him with favor as with a shield."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:13",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "bless, bestow blessing",
+          "note": "Selects hospitable acceptance as the expression of blessing; the Hebrew does not specify a welcome.",
+          "rendered_as": "welcoming",
+          "token_ids": [
+            "ps005.v013.t003"
+          ],
+          "transliteration": "təḇārēḵ",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "righteous, just, in the right",
+          "note": "Substitutes seeking God for the Hebrew's characterization of a person as righteous.",
+          "rendered_as": "God-seekers",
+          "token_ids": [
+            "ps005.v013.t004"
+          ],
+          "transliteration": "ṣaddîq",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "like a shield, as with a large shield",
+          "note": "The explicit comparison conveying protection is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v013.t006"
+          ],
+          "transliteration": "kaṣṣinnāh",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "favor, acceptance, goodwill, pleasure; you surround or crown him",
+          "note": "Adorning loosely draws on the verb's crowning sense, but replaces protective encirclement with festive imagery; 'delight' also leaves God's favor less explicit.",
+          "rendered_as": "for decking us out in delight.",
+          "token_ids": [
+            "ps005.v013.t007",
+            "ps005.v013.t008"
+          ],
+          "transliteration": "rāṣôn taʿṭərennû",
+          "verdict": "expansion"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English retains God's beneficence toward people and loosely echoes surrounding them with favor. It replaces blessing the righteous with welcoming God-seekers, omits the shield comparison, and changes the singular recipient to 'us.'",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "2c3a315dea91e0b5401e9b4ce1f00791ca73cba4089cadfb8d07415d0ae4e53d",
+      "audit_ids": [
+        "aud.ps005.v013.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v013.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'You are famous' adds a claim about God's reputation. 'God' replaces the divine name. 'Decking us out in delight' turns protective favor into adornment and enjoyment.",
+      "display_reference": "Psalm 5:13",
+      "english_rendering_id": "rnd.ps005.v013.a.lyric.alt.0002",
+      "generation_run_id": "cxr.44731e8a8db7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־אַתָּה֮ תְּבָרֵ֢ךְ צַ֫דִּ֥יק יְהוָ֑ה כַּ֝צִּנָּ֗ה רָצ֥וֹן תַּעְטְרֶֽנּוּ׃",
+      "literal_backbone": [
+        "For you bless the righteous person, Yahweh.",
+        "You surround him with favor as with a shield."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:13",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "bless, bestow blessing",
+          "note": "Welcome can express beneficence but specifies a form of blessing that the Hebrew does not name.",
+          "rendered_as": "welcoming",
+          "token_ids": [
+            "ps005.v013.t003"
+          ],
+          "transliteration": "təḇārēḵ",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "righteous, just, in the right",
+          "note": "Replaces a description of righteousness with religious seeking; these are not lexical equivalents.",
+          "rendered_as": "God-seekers",
+          "token_ids": [
+            "ps005.v013.t004"
+          ],
+          "transliteration": "ṣaddîq",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "like a large shield",
+          "note": "The explicit image of protective shielding is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v013.t006"
+          ],
+          "transliteration": "kaṣṣinnāh",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "favor, goodwill, acceptance, pleasure",
+          "note": "Here the noun denotes God's favor toward the recipient; 'delight' shifts the emphasis toward enjoyment.",
+          "rendered_as": "delight",
+          "token_ids": [
+            "ps005.v013.t007"
+          ],
+          "transliteration": "rāṣôn",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "surround him, encircle him, crown him",
+          "note": "Adornment draws on the verb's crowning sense, but replaces its protective force in this context and changes 'him' to 'us.'",
+          "rendered_as": "decking us out",
+          "token_ids": [
+            "ps005.v013.t008"
+          ],
+          "transliteration": "taʿṭərēnnû",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v013.a.0001"
   ],
@@ -15,7 +247,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.71,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You are famous, God, for welcoming God-seekers,\nfor decking us out in delight.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.71,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v013.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You are famous, God, for welcoming God-seekers,\nfor decking us out in delight.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּֽי־אַתָּה֮ תְּבָרֵ֢ךְ צַ֫דִּ֥יק יְהוָ֑ה כַּ֝צִּנָּ֗ה רָצ֥וֹן תַּעְטְרֶֽנּוּ׃",

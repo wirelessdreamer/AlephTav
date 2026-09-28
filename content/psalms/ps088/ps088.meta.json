@@ -1,6 +1,1211 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps088.v001.a.0003"
+      ],
+      "citations": [],
+      "created_at": "2026-09-26T23:36:58.130116+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 2–3 request a hearing; verse 10 describes daily calling and outstretched hands; verse 14 renews the appeal in the morning.",
+            "claim": "The speaker continues addressing God throughout severe distress."
+          },
+          {
+            "basis": "Verses 4–7 invoke Sheol, the pit, the dead, and the grave; verses 9 and 19 describe companions being removed.",
+            "claim": "The lament portrays suffering as proximity to death and exclusion from ordinary companionship."
+          },
+          {
+            "basis": "Direct second-person statements in verses 7–9 and 19 describe God placing, afflicting, and removing companions; verses 17–18 describe God’s wrath and terrors.",
+            "claim": "The speaker explicitly attributes the affliction and separation to God."
+          },
+          {
+            "basis": "Verse 11 asks about wonders and the shades rising to give thanks; verses 12–13 ask whether divine loyalty, faithfulness, wonders, and righteousness are recounted or known.",
+            "claim": "The Hebrew questions connect death with the problem of praising and making God’s deeds known."
+          },
+          {
+            "basis": "Verses 11–13 use “reach me,” “find me,” and “when I’ve been forgotten” where the Hebrew asks about doing wonders, recounting, and knowing.",
+            "claim": "The setting changes those questions toward personal accessibility to God’s care."
+          },
+          {
+            "basis": "Verses 17–19 remain within wrath, encirclement, removed companions, and darkness.",
+            "claim": "The psalm ends without a narrated rescue or divine reply."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "Heman personally composed the psalm or experienced every circumstance described.",
+            "why_not": "The heading supplies an association; it does not independently establish authorship or an autobiographical identity for the speaker."
+          },
+          {
+            "claim": "The speaker has a particular illness, psychiatric diagnosis, or literal imprisonment.",
+            "why_not": "Pain, failing eyes, confinement, and proximity to death describe distress without identifying its medical or historical cause."
+          },
+          {
+            "claim": "The suffering is punishment for a specified wrongdoing.",
+            "why_not": "The lament names divine wrath but provides no particular offense or explanatory judgment."
+          },
+          {
+            "claim": "The questions establish a comprehensive doctrine denying resurrection or any existence after death.",
+            "why_not": "They function as urgent questions within a lament; they do not present a systematic account of the afterlife."
+          },
+          {
+            "claim": "The speaker is eventually rescued or permanently abandoned.",
+            "why_not": "The poem supplies neither a subsequent outcome nor a statement covering all future time."
+          },
+          {
+            "claim": "Selah specifies an exact pause, instrumental interlude, or duration.",
+            "why_not": "The markers are present, but the supplied text does not define their performance."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.2a06fe07f89a",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The song designation, director’s instruction, and Korahite association support a musical worship setting. Direct address to YHWH, prayer, outstretched palms, and concern for praise reinforce that setting. The text does not specify a temple location, particular rite, festival, sacrifice, instrument, or division of singers; the technical heading terms do not securely supply a recoverable tune or performance procedure.",
+        "heading_attribution": "The Hebrew heading identifies a song and psalm, associates it with the sons of Korah, addresses the director, includes the direction Mahalath Leannoth, and identifies a maskil associated with Heman the Ezrahite. These are received attributions and performance indications. They do not independently establish personal authorship, identify the first-person speaker as Heman, or document a historical occasion. The English omits the heading."
+      },
+      "method": "Compared the supplied English with the supplied Masoretic Hebrew, token glosses, and immediate context. Literal backbones in the verse audits served as compact checks of agency, actions, images, and relationships, not proposed replacement lyrics. No external edition or lexicon was consulted. Section titles here are analytical descriptions: the verse-aligned setting supplies no section labels. The sections cover all nineteen Masoretic verses, including the untranslated heading; Selah alignment is measured against those sections. No separate performance apparatus appears in this setting.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps088.0001",
+      "psalm_id": "ps088",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The received heading frames the prayer as a song; the English setting omits it.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical directions, classification, and traditional associations.",
+          "title": "Heading — not set"
+        },
+        {
+          "arc_note": "The address establishes the relationship within which the accusations and questions follow; it does not announce that rescue has occurred.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "Calling to the God of salvation and asking to be heard.",
+          "title": "Opening plea"
+        },
+        {
+          "arc_note": "The setting descends through being counted among the dying to the grave, forgetting, and separation from God’s hand.",
+          "first_verse": 4,
+          "last_verse": 6,
+          "theme": "Overwhelming trouble, lost strength, and identification with the dead.",
+          "title": "At the edge of death"
+        },
+        {
+          "arc_note": "The imagery moves from depths and darkness to crushing wrath and waves; “drown” intensifies the Hebrew’s affliction.",
+          "first_verse": 7,
+          "last_verse": 8,
+          "theme": "God addressed as the agent of confinement and affliction.",
+          "title": "The pit and the waves"
+        },
+        {
+          "arc_note": "Social abandonment leads into the speaker’s persistent calling and outstretched hands.",
+          "first_verse": 9,
+          "last_verse": 10,
+          "theme": "Alienated companions, confinement, failing eyes, and continued prayer.",
+          "title": "Isolation and daily appeal"
+        },
+        {
+          "arc_note": "The English personalizes the questions as whether God’s action and care reach the speaker, reducing the Hebrew’s emphasis on praise, recounting, and recognition among the dead.",
+          "first_verse": 11,
+          "last_verse": 13,
+          "theme": "Divine wonders, praise, love, faithfulness, and righteousness in relation to death.",
+          "title": "Questions from the boundary of death"
+        },
+        {
+          "arc_note": "“But still” marks persistence; morning brings another prayer without a narrated reversal.",
+          "first_verse": 14,
+          "last_verse": 14,
+          "theme": "Continued appeal despite the preceding questions.",
+          "title": "Renewed morning prayer"
+        },
+        {
+          "arc_note": "The renewed appeal turns immediately into questions of rejection and the experience of breaking under terror.",
+          "first_verse": 15,
+          "last_verse": 16,
+          "theme": "God’s hidden face and distress extending from youth.",
+          "title": "Rejection and lifelong suffering"
+        },
+        {
+          "arc_note": "The setting closes without relief, making darkness the speaker’s “closest friend”; the superlative is the English setting’s addition.",
+          "first_verse": 17,
+          "last_verse": 19,
+          "theme": "Overwhelming wrath, surrounding terrors, and the loss of companions.",
+          "title": "Encirclement and darkness"
+        }
+      ],
+      "source_fingerprint": "e416c820f7a003d6ce12edb4ce1be6140fcd7967c6b5bfe149fe90145e88f279",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 8,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 11,
+          "aligns_with_section": false,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting retains the psalm’s movement from urgent prayer through proximity to death, divine wrath, isolation, questions about the dead, renewed prayer, and a final return to darkness. Its short lines and conversational expressions make the lament immediate and personal. The largest shift occurs in verses 11–13: questions about wonders, praise, and the recognition of God’s faithfulness among the dead become questions about whether God can reach the speaker. Elsewhere, images of breaking and being undone soften explicit dying and destruction into personal disintegration. The ending preserves the absence of a reported answer or deliverance, while “my closest friend” intensifies an interpretive personification of darkness.",
+      "translation_id": "tr.ps088.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps088.0001",
+      "audit_ids": [
+        "aud.ps088.v001.a.0002"
+      ],
+      "created_at": "2026-09-26T23:32:15.157373+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.534cdedeeaa6",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The setting does not render the superscription.",
+          "token_ids": [
+            "ps088.v001.t001",
+            "ps088.v001.t002",
+            "ps088.v001.t003",
+            "ps088.v001.t004",
+            "ps088.v001.t005",
+            "ps088.v001.t006",
+            "ps088.v001.t007",
+            "ps088.v001.t008",
+            "ps088.v001.t009",
+            "ps088.v001.t010",
+            "ps088.v001.t011"
+          ],
+          "unit_id": "ps088.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The causal connector introducing the speaker’s troubles is absent.",
+          "token_ids": [
+            "ps088.v004.t001"
+          ],
+          "unit_id": "ps088.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The destination of those going down, the pit, is absent from this verse’s rendering.",
+          "token_ids": [
+            "ps088.v005.t004"
+          ],
+          "unit_id": "ps088.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Being set free or released among the dead receives no distinct rendering.",
+          "token_ids": [
+            "ps088.v006.t002"
+          ],
+          "unit_id": "ps088.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The grave image does not explicitly identify its occupants as slain.",
+          "token_ids": [
+            "ps088.v006.t004"
+          ],
+          "unit_id": "ps088.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The reference to all the breakers is reduced to waves without the comprehensive modifier.",
+          "token_ids": [
+            "ps088.v008.t004"
+          ],
+          "unit_id": "ps088.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither Selah appears in the setting.",
+          "token_ids": [
+            "ps088.v008.t007"
+          ],
+          "unit_id": "ps088.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Neither Selah appears in the setting.",
+          "token_ids": [
+            "ps088.v011.t008"
+          ],
+          "unit_id": "ps088.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The question about reaching the speaker does not carry the explicit reference to wonders.",
+          "token_ids": [
+            "ps088.v011.t003"
+          ],
+          "unit_id": "ps088.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The question about retaining a voice omits the shades arising.",
+          "token_ids": [
+            "ps088.v011.t006"
+          ],
+          "unit_id": "ps088.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The question about hiding God’s face leaves “from me” unexpressed.",
+          "token_ids": [
+            "ps088.v015.t007"
+          ],
+          "unit_id": "ps088.v015.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The surrounding terrors are not explicitly compared with water here, although the preceding verse uses washing imagery.",
+          "token_ids": [
+            "ps088.v018.t002"
+          ],
+          "unit_id": "ps088.v018.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps088",
+      "sections": [
+        {
+          "kind": "verse",
+          "label": "Stanza 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v002.t001",
+                    "ps088.v002.t002",
+                    "ps088.v002.t003"
+                  ],
+                  "unit_id": "ps088.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0001",
+              "rationale": "",
+              "text": "O LORD… God of my salvation—"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0002",
+              "rationale": "Adds a retrospective comment on addressing God as the source of salvation.",
+              "text": "that’s what I’ve called you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v002.t004",
+                    "ps088.v002.t005"
+                  ],
+                  "unit_id": "ps088.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "By day I cry out to you,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v002.t006",
+                    "ps088.v002.t007"
+                  ],
+                  "unit_id": "ps088.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "Adds coming before God where the Hebrew continues the description of crying out.",
+              "text": "by night I come before you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v003.t001",
+                    "ps088.v003.t002",
+                    "ps088.v003.t003"
+                  ],
+                  "unit_id": "ps088.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "Let this prayer come before you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v003.t004",
+                    "ps088.v003.t005",
+                    "ps088.v003.t006"
+                  ],
+                  "unit_id": "ps088.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0006",
+              "rationale": "Compresses the request to incline an ear into a request to hear.",
+              "text": "hear the sound of my cry."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v004.t002",
+                    "ps088.v004.t003",
+                    "ps088.v004.t004"
+                  ],
+                  "unit_id": "ps088.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "My soul is full of trouble,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v004.t005",
+                    "ps088.v004.t006",
+                    "ps088.v004.t007"
+                  ],
+                  "unit_id": "ps088.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0008",
+              "rationale": "",
+              "text": "my life draws near the grave."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v005.t001",
+                    "ps088.v005.t002",
+                    "ps088.v005.t003"
+                  ],
+                  "unit_id": "ps088.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0009",
+              "rationale": "Condenses those descending into people already gone.",
+              "text": "I’m counted with the ones gone—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v005.t001"
+                  ],
+                  "unit_id": "ps088.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Restates being reckoned among the dead as being dismissed.",
+              "text": "written off,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0011",
+              "rationale": "Adds an explicit declaration of abandonment within the description of being counted among the dying.",
+              "text": "abandoned—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v005.t005",
+                    "ps088.v005.t006",
+                    "ps088.v005.t007",
+                    "ps088.v005.t008"
+                  ],
+                  "unit_id": "ps088.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Adds standing as the specific activity for which strength is lacking.",
+              "text": "like I’ve got no strength to stand."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v006.t001"
+                  ],
+                  "unit_id": "ps088.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Carries forward the preceding verse’s counting language into being among the dead.",
+              "text": "I’m counted among the dead,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v006.t003",
+                    "ps088.v006.t005",
+                    "ps088.v006.t006"
+                  ],
+                  "unit_id": "ps088.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0014",
+              "rationale": "Turns the comparison with those lying in a grave into a direct description of the speaker.",
+              "text": "laid out in the grave—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v006.t007",
+                    "ps088.v006.t008",
+                    "ps088.v006.t009",
+                    "ps088.v006.t010"
+                  ],
+                  "unit_id": "ps088.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0015",
+              "rationale": "Condenses those whom God no longer remembers into a single passive description.",
+              "text": "forgotten—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v006.t011",
+                    "ps088.v006.t013"
+                  ],
+                  "unit_id": "ps088.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0016",
+              "rationale": "Leaves the plural subject implicit as the setting continues to describe the speaker.",
+              "text": "cut off"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v006.t012"
+                  ],
+                  "unit_id": "ps088.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "from your hand."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v007.t001",
+                    "ps088.v007.t002",
+                    "ps088.v007.t003"
+                  ],
+                  "unit_id": "ps088.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "You have put me in the lowest pit,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v007.t004"
+                  ],
+                  "unit_id": "ps088.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0019",
+              "rationale": "",
+              "text": "in the dark places,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v007.t005"
+                  ],
+                  "unit_id": "ps088.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "in the depths below."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v008.t001",
+                    "ps088.v008.t002",
+                    "ps088.v008.t003"
+                  ],
+                  "unit_id": "ps088.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "Your wrath presses down on me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v008.t005",
+                    "ps088.v008.t006"
+                  ],
+                  "unit_id": "ps088.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "Makes affliction by breakers explicitly a drowning.",
+              "text": "you drown me in your waves."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 5",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v009.t001",
+                    "ps088.v009.t002",
+                    "ps088.v009.t003"
+                  ],
+                  "unit_id": "ps088.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "You’ve pushed my friends far from me;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v009.t004",
+                    "ps088.v009.t005",
+                    "ps088.v009.t006"
+                  ],
+                  "unit_id": "ps088.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "you’ve made me a horror to them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v009.t007",
+                    "ps088.v009.t008",
+                    "ps088.v009.t009"
+                  ],
+                  "unit_id": "ps088.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "I’m shut in, I can’t get out;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v010.t001",
+                    "ps088.v010.t002",
+                    "ps088.v010.t003",
+                    "ps088.v010.t004"
+                  ],
+                  "unit_id": "ps088.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0026",
+              "rationale": "",
+              "text": "my eyes grow dim from the pain."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 6",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v010.t005",
+                    "ps088.v010.t006",
+                    "ps088.v010.t007",
+                    "ps088.v010.t008"
+                  ],
+                  "unit_id": "ps088.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "Every day I call to you, LORD;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v010.t009",
+                    "ps088.v010.t010",
+                    "ps088.v010.t011"
+                  ],
+                  "unit_id": "ps088.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0028",
+              "rationale": "",
+              "text": "I reach my hands out to you."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 7",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v011.t001",
+                    "ps088.v011.t002"
+                  ],
+                  "unit_id": "ps088.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0029",
+              "rationale": "Recasts acting for the dead as reaching the speaker under the added condition of fading out.",
+              "text": "Do you reach me if I fade out?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v011.t004",
+                    "ps088.v011.t005",
+                    "ps088.v011.t007"
+                  ],
+                  "unit_id": "ps088.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0030",
+              "rationale": "Personalizes the shades’ praise as the speaker retaining a voice.",
+              "text": "Do I still have a voice to praise you?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v012.t001",
+                    "ps088.v012.t002",
+                    "ps088.v012.t003"
+                  ],
+                  "unit_id": "ps088.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0031",
+              "rationale": "Changes love being recounted in the grave into love finding the departed speaker.",
+              "text": "Does your love find me when I’m gone,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v012.t004",
+                    "ps088.v012.t005"
+                  ],
+                  "unit_id": "ps088.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "Recasts Abaddon as the speaker’s darkness and continues the preceding line’s added image of being found.",
+              "text": "your faithfulness when I’m in the dark?"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 8",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v013.t001",
+                    "ps088.v013.t002",
+                    "ps088.v013.t003"
+                  ],
+                  "unit_id": "ps088.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Changes wonders being known in darkness into works reaching the speaker there.",
+              "text": "Do your works reach me when I’m in the dark,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v013.t004",
+                    "ps088.v013.t005",
+                    "ps088.v013.t006"
+                  ],
+                  "unit_id": "ps088.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0034",
+              "rationale": "Turns the land of forgetting into the speaker’s condition of being forgotten.",
+              "text": "your justice when I’ve been forgotten?"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 9",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v014.t001",
+                    "ps088.v014.t002",
+                    "ps088.v014.t003",
+                    "ps088.v014.t004"
+                  ],
+                  "unit_id": "ps088.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0035",
+              "rationale": "",
+              "text": "But still, O LORD, I cry to you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v014.t005",
+                    "ps088.v014.t006",
+                    "ps088.v014.t007"
+                  ],
+                  "unit_id": "ps088.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "Makes the morning prayer explicitly recurrent through “each.”",
+              "text": "each morning my prayer meets you."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 10",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v015.t001",
+                    "ps088.v015.t002",
+                    "ps088.v015.t003",
+                    "ps088.v015.t004"
+                  ],
+                  "unit_id": "ps088.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "Why, O LORD, do you cast me off?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v015.t001",
+                    "ps088.v015.t005",
+                    "ps088.v015.t006"
+                  ],
+                  "unit_id": "ps088.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "Why do you hide your face?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v016.t001",
+                    "ps088.v016.t002",
+                    "ps088.v016.t003",
+                    "ps088.v016.t004"
+                  ],
+                  "unit_id": "ps088.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0039",
+              "rationale": "Combines affliction and being near death into the image of breaking from youth.",
+              "text": "I’ve been breaking since I was young,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v016.t005",
+                    "ps088.v016.t006",
+                    "ps088.v016.t007"
+                  ],
+                  "unit_id": "ps088.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0040",
+              "rationale": "Condenses bearing terrors and being bewildered into an inability to hold together.",
+              "text": "your terrors won’t let me hold together."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 11",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v017.t001",
+                    "ps088.v017.t002",
+                    "ps088.v017.t003"
+                  ],
+                  "unit_id": "ps088.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0041",
+              "rationale": "Makes anger passing over the speaker explicitly resemble moving water.",
+              "text": "Your anger washes over me,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0042",
+              "rationale": "The unfinished fragment does not identify a Hebrew phrase sufficiently to align it.",
+              "text": "Your ---"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 12",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v017.t001",
+                    "ps088.v017.t002",
+                    "ps088.v017.t003"
+                  ],
+                  "unit_id": "ps088.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0043",
+              "rationale": "Repeats the preceding stanza’s water image in a stanza whose remaining lines change.",
+              "text": "Your anger washes over me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v017.t004",
+                    "ps088.v017.t005"
+                  ],
+                  "unit_id": "ps088.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0044",
+              "rationale": "Presents destruction by terrors as an ongoing condition maintained by them.",
+              "text": "your terrors keep me undone."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v018.t003",
+                    "ps088.v018.t004"
+                  ],
+                  "unit_id": "ps088.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0045",
+              "rationale": "Moves the duration before the statement that the terrors surround the speaker.",
+              "text": "All day—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v018.t001"
+                  ],
+                  "unit_id": "ps088.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0046",
+              "rationale": "",
+              "text": "they surround me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v018.t005",
+                    "ps088.v018.t006",
+                    "ps088.v018.t007"
+                  ],
+                  "unit_id": "ps088.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0047",
+              "rationale": "Turns surrounding together into an image of advancing inward from every side.",
+              "text": "closing in on every side."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v019.t001",
+                    "ps088.v019.t002",
+                    "ps088.v019.t003",
+                    "ps088.v019.t004"
+                  ],
+                  "unit_id": "ps088.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0048",
+              "rationale": "Generalizes the loving companion and friend as friend and neighbor while leaving “from me” implicit.",
+              "text": "You’ve pushed friend and neighbor away—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v019.t006"
+                  ],
+                  "unit_id": "ps088.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0049",
+              "rationale": "Places darkness before the expression identifying the speaker’s remaining acquaintance.",
+              "text": "darkness…"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps088.v019.t005"
+                  ],
+                  "unit_id": "ps088.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0050",
+              "rationale": "Turns plural acquaintances into one friend and adds the superlative intimacy of “closest.”",
+              "text": "my closest friend."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0012"
+        }
+      ],
+      "status": "proposed",
+      "title": "God of my salvation",
+      "translation_id": "tr.ps088.0001",
+      "updated_at": "2026-09-26T23:32:15.157373+00:00"
+    }
+  ],
   "psalm_id": "ps088",
   "title": "Psalm 88",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps088.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-26T23:29:22.369438+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "psalm_id": "ps088",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps088.0001"
+    }
+  ],
   "unit_ids": [
     "ps088.v001.a",
     "ps088.v002.a",

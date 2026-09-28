@@ -1,9 +1,98 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v009.a.literal.alt.0001",
+    "rnd.ps137.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v009.a.0001",
+    "aud.ps137.v009.a.0002",
+    "aud.ps137.v009.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "87ee7fcd9b4140b87112b046cb1352cbfc5981aa9445d1239c401ee00b3a07cf",
+      "audit_id": "aud.ps137.v009.a.0001",
+      "before_hash": "10d3bc082d5c4e95d7c884bf8aea6ca936750b25510c7f14c911ab9d776a291b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.557007+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v009.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats the preceding declaration and preserves the final image without expansion or softening.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "42bf1c644448cd0782fa71629926c8fefe29eddcb8b2bbf804f65bf22ca468e6",
+      "audit_id": "aud.ps137.v009.a.0002",
+      "before_hash": "bc6a66070e53afb510942052d8ad68ef4812313b9c928895f8a1298848545bae",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.237555+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats the preceding declaration and lets the final concrete image end the passage without explanation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "de233ea36a902cc2ef98b1ea065b4c48244397a40270b79e25cfd9a788e2910b",
+      "audit_id": "aud.ps137.v009.a.0003",
+      "before_hash": "793514e7fd691c588c794f2c042780720d2eeb4d66a464569c960acc8ad851c7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:09:11.937080+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the declaration of happiness, the person who seizes and smashes, the young children belonging to the feminine addressee Babylon, and the definite singular rock. The lyric's 'grabs' and 'smashes' convey the actions directly without softening or adding detail.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "b032de6cbd5a47307eeb86324f481819d3580421947fedcb9163461ddbf54d80",
+      "audit_ids": [
+        "aud.ps137.v009.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Both versions place the shared object after the first verb and resume it with 'them' after the second for natural English syntax. The lyric's lineation changes no substantive meaning.",
+      "display_reference": "Psalm 137:9",
+      "english_rendering_id": "rnd.ps137.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0444291bb9cc",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אַשְׁרֵ֤י׀ שֶׁיֹּאחֵ֓ז וְנִפֵּ֬ץ אֶֽת־עֹלָלַ֗יִךְ אֶל־הַסָּֽלַע׃",
+      "literal_backbone": [
+        "Happy the one who seizes and smashes your little ones against the rock."
+      ],
+      "literal_rendering_id": "rnd.ps137.v009.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:9",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v009.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v009.a.0001"
   ],
@@ -15,7 +104,236 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matches 'Happy the one' exactly to verse 8.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Little ones dashed against the rock",
+          "note": "Retains the children, both actions, and the definite singular rock.",
+          "source_id": "ps137.v009.a",
+          "token_ids": [
+            "ps137.v009.t002",
+            "ps137.v009.t003",
+            "ps137.v009.t005",
+            "ps137.v009.t006",
+            "ps137.v009.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Happy the one = ps137.v009.t001 with the relative construction beginning at t002",
+          "who seizes = ps137.v009.t002",
+          "your little ones = ps137.v009.t004–t005; t004 marks the shared object",
+          "and dashes them = ps137.v009.t003; 'them' resumes the shared object in English",
+          "against the rock = ps137.v009.t006–t007"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v009.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v009.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Repeats the preceding declaration and preserves the final image without expansion or softening.",
+      "rendering_id": "rnd.ps137.v009.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Happy the one who seizes your little ones\nand dashes them against the rock.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v009.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v009.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matches verse 8's opening while using direct verbs for the final actions.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.7,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Little ones seized and smashed against the rock",
+          "note": "Retains the young children, both violent actions, and the definite singular rock.",
+          "source_id": "ps137.v009.a",
+          "token_ids": [
+            "ps137.v009.t002",
+            "ps137.v009.t003",
+            "ps137.v009.t005",
+            "ps137.v009.t006",
+            "ps137.v009.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Happy is the one = ps137.v009.t001 with the following relative construction",
+          "who grabs = ps137.v009.t002",
+          "your little ones = ps137.v009.t004–t005; t004 marks the shared object",
+          "and smashes them = ps137.v009.t003; 'them' resumes the shared object",
+          "against the rock = ps137.v009.t006–t007"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v009.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v009.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Repeats the preceding declaration and lets the final concrete image end the passage without explanation.",
+      "rendering_id": "rnd.ps137.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Happy is the one\nwho grabs your little ones\nand smashes them\nagainst the rock.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v009.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַשְׁרֵ֤י׀ שֶׁיֹּאחֵ֓ז וְנִפֵּ֬ץ אֶֽת־עֹלָלַ֗יִךְ אֶל־הַסָּֽלַע׃",

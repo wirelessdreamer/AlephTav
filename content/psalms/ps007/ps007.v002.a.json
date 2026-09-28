@@ -1,9 +1,100 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v002.a.literal.alt.0001",
+    "rnd.ps007.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v002.a.0001",
+    "aud.ps007.v002.a.0002",
+    "aud.ps007.v002.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7670c6fade60b7ea3e75f556c560c915597245d5bd0a31a93b2e80108ddf2689",
+      "audit_id": "aud.ps007.v002.a.0001",
+      "before_hash": "77ccbbb6cff81969107335a6f098717a68a2b9694ceaf5be708d311a2e676c8d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.352526+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Begins the prayer with refuge and paired appeals that lead into the following danger.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ab0f13e7025552f255fad78cf0a8ca310d27c2b2af8f9a647e1e2f3e9b2b6e1a",
+      "audit_id": "aud.ps007.v002.a.0002",
+      "before_hash": "4cd4cf0093366a83a22208bc9ba56cb898cf0cad25ade5118624f8568b2f091e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.067346+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The shelter declaration turns into two urgent appeals, with the final appeal running into the lion threat.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1bd95bd4f6bae550d964d67ecf8b841c9957a7aadfd8aaba16a0d8fbdac1701b",
+      "audit_id": "aud.ps007.v002.a.0003",
+      "before_hash": "512b4e3034d2c93dd56fd50d748b3185641a59ba7bf32738db08beb1b55913e3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:49:19.277135+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the address to Yahweh as 'my God,' the speaker's having taken refuge in him, the appeal for salvation from all pursuers, and the concluding rescue imperative. 'Shelter' and 'chase' convey the Hebrew refuge and pursuit language naturally.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "a722f3e018fd7fee8fc324c0ebbc281eae51caf2ef766fd18ec8041039d5ff12",
+      "audit_ids": [
+        "aud.ps007.v002.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric moves 'in you' after the refuge verb and replaces the final coordinating conjunction with punctuation. These changes preserve the sense and urgency.",
+      "display_reference": "Psalm 7:2",
+      "english_rendering_id": "rnd.ps007.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.47d0682f71eb",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֣ה אֱ֭לֹהַי בְּךָ֣ חָסִ֑יתִי הוֹשִׁיעֵ֥נִי מִכָּל־רֹ֝דְפַ֗י וְהַצִּילֵֽנִי׃",
+      "literal_backbone": [
+        "Yahweh, my God, in you I have taken refuge.",
+        "Save me from all who pursue me,",
+        "and rescue me."
+      ],
+      "literal_rendering_id": "rnd.ps007.v002.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:2",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v002.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v002.a.0001"
   ],
@@ -15,7 +106,222 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the completed act of taking refuge.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Refuge",
+          "note": "Retains taking refuge in the addressee.",
+          "source_id": "ps007.v002.a",
+          "token_ids": [
+            "ps007.v002.t003",
+            "ps007.v002.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v002.t001–t002 → Yahweh, my God",
+          "ps007.v002.t003–t004 → in you I have taken refuge",
+          "ps007.v002.t005 → save me",
+          "ps007.v002.t006–t007 → from all who pursue me",
+          "ps007.v002.t008 → and rescue me"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v002.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Begins the prayer with refuge and paired appeals that lead into the following danger.",
+      "rendering_id": "rnd.ps007.v002.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, my God,\nin you I have taken refuge;\nsave me from all who pursue me,\nand rescue me,",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v002.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Shelter declaration followed by increasingly short rescue appeals.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.71,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Shelter in God",
+          "note": "Shelter preserves the refuge image.",
+          "source_id": "ps007.v002.a",
+          "token_ids": [
+            "ps007.v002.t003",
+            "ps007.v002.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v002.t001–t002 → Yahweh, my God",
+          "ps007.v002.t003–t004 → I've taken shelter in you",
+          "ps007.v002.t005–t007 → Save me from all who chase me",
+          "ps007.v002.t008 → rescue me"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v002.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The shelter declaration turns into two urgent appeals, with the final appeal running into the lion threat.",
+      "rendering_id": "rnd.ps007.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, my God,\nI've taken shelter in you.\nSave me from all who chase me;\nrescue me—",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָ֣ה אֱ֭לֹהַי בְּךָ֣ חָסִ֑יתִי הוֹשִׁיעֵ֥נִי מִכָּל־רֹ֝דְפַ֗י וְהַצִּילֵֽנִי׃",

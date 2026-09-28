@@ -1,6 +1,1297 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps007.v001.a.0005"
+      ],
+      "citations": [],
+      "created_at": "2026-09-27T18:53:20.374745+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 2–3 address Yahweh, name pursuers, and compare the threatened attack to a lion tearing its victim.",
+            "claim": "The speaker presents himself as pursued and seeks rescue."
+          },
+          {
+            "basis": "The repeated conditions in verses 4–5 lead to the consequences permitted in verse 6.",
+            "claim": "The speaker makes a conditional oath rather than admitting guilt."
+          },
+          {
+            "basis": "Verses 8–10 name assembled peoples, judgment, the wicked, the righteous, and testing hearts and kidneys.",
+            "claim": "The judgment appeal extends beyond the speaker to peoples and moral categories."
+          },
+          {
+            "basis": "Hands and dust occur in verses 4–6; hearts and kidneys in verse 10; shield and weapons in verses 11–14; childbirth, pit, and head in verses 15–17.",
+            "claim": "The setting preserves bodily and material images alongside its modern diction."
+          },
+          {
+            "basis": "Verse 5 assigns causelessness to the foe's hostility; verse 9 renders righteousness as 'the right I've done'; verse 12 adds burning to the expression of indignation.",
+            "claim": "The setting makes several interpretive choices explicit."
+          },
+          {
+            "basis": "The pit's digger falls into it in verse 16, and his trouble and violence return onto his head in verse 17.",
+            "claim": "The final sequence portrays wrongdoing recoiling upon its maker."
+          },
+          {
+            "basis": "Verse 18 uses paired first-person declarations of thanksgiving and singing, without narrating a completed rescue.",
+            "claim": "The ending expresses a commitment to praise."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David's historical authorship or a securely identified event involving Cush.",
+            "why_not": "The heading supplies a received attribution and brief occasion, without independent corroboration or an identifiable narrative."
+          },
+          {
+            "claim": "The exact charge, identities of the pursuers, or historical truth of the speaker's innocence.",
+            "why_not": "The poem offers the speaker's conditional self-defense and appeals, without an external account or detailed accusation."
+          },
+          {
+            "claim": "A uniquely settled interpretation of verse 5 or the pronouns in verses 13–14.",
+            "why_not": "Verse 5 permits disputed lexical and syntactic readings; verses 13–14 leave subjects and pronoun referents unnamed."
+          },
+          {
+            "claim": "A specific historical ritual, venue, instrumentation, or vocal arrangement.",
+            "why_not": "Singing, Selah, and the judicial assembly do not specify those performance circumstances."
+          },
+          {
+            "claim": "An ancient 6/8 meter or a verified musical realization of this English setting.",
+            "why_not": "The 6/8 target comes from translator guidance; no score or performance is supplied."
+          },
+          {
+            "claim": "The speaker has already received the requested deliverance.",
+            "why_not": "The final thanksgiving commitment provides no narrative confirmation that the threat has ended."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.01a0cd1e32d1",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The heading's singing to Yahweh and the closing resolve to sing praise support a religious song or prayer setting. Selah is a received structural or performance-related marker whose exact function is uncertain. The assembly of peoples and divine judgment provide a public judicial scene within the poem; they do not establish an actual congregation, temple ceremony, festival, sacrifice, priestly role, or particular performance venue.",
+        "heading_attribution": "The heading associates the Shiggayon with David, presents him as its singer to Yahweh, and connects it with the words or matter of Cush, a Benjaminite. The lyric's possessive preserves that association, while its passive 'sung' leaves the singer implicit. The heading does not independently establish historical authorship, identify Cush beyond this designation, or establish a specific biographical episode. Shiggayon's precise significance remains uncertain."
+      },
+      "method": "Compared the complete English setting with the supplied Masoretic text, ordered token evidence, and the literal backbones examined in the preceding verse audits. Tracked speaker, addressee, conditions, imagery, repeated vocabulary, and the explicit Selah. Section titles are analytical descriptions because no arrangement labels were supplied. No external edition, lexicon, or commentary was consulted.",
+      "non_source_material": [
+        {
+          "kind": "meter",
+          "note": "Translator guidance supplied earlier in the task, not wording or meter established by the Hebrew. It does not appear as sung text.",
+          "text": "target 6/8 meter"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps007.0001",
+      "psalm_id": "ps007",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Introduces the song's received attribution and occasion before the first-person prayer.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Davidic association and the matter of Cush.",
+          "title": "Heading"
+        },
+        {
+          "arc_note": "The shelter declaration turns immediately into the feared lion attack; the dash links the appeal to its threatened consequence.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "An appeal for rescue from a lethal pursuer.",
+          "title": "Shelter and pursuit"
+        },
+        {
+          "arc_note": "Repeated if clauses culminate in permission for pursuit, capture, trampling, and humiliation. The disputed rescue clause interrupts the conditions as a counterclaim. Selah closes the stretch.",
+          "first_verse": 4,
+          "last_verse": 6,
+          "theme": "The speaker submits himself to consequences if guilty.",
+          "title": "Conditional oath"
+        },
+        {
+          "arc_note": "Rising and awakening answer the preceding downward imagery. The scene widens to assembled peoples, then returns to the speaker's integrity and the testing of inward life.",
+          "first_verse": 7,
+          "last_verse": 10,
+          "theme": "Divine intervention and judgment among the peoples.",
+          "title": "Rise and judge"
+        },
+        {
+          "arc_note": "The shield declaration becomes a warning through daily anger, sword, bow, and burning arrows. Verse 13 retains a potentially confusing shift between unnamed subjects.",
+          "first_verse": 11,
+          "last_verse": 14,
+          "theme": "Protection of the upright and readiness for judgment.",
+          "title": "Shield, judge, and weapons"
+        },
+        {
+          "arc_note": "Childbirth gives way to excavation and a fall; the trouble conceived in verse 15 returns onto the head in verse 17.",
+          "first_verse": 15,
+          "last_verse": 17,
+          "theme": "Evil produces deception and recoils upon its maker.",
+          "title": "Wrongdoing returns"
+        },
+        {
+          "arc_note": "The first-person voice returns with paired commitments to thanks and song, ending on Most High.",
+          "first_verse": 18,
+          "last_verse": 18,
+          "theme": "Thanksgiving grounded in Yahweh's righteousness.",
+          "title": "Commitment to praise"
+        }
+      ],
+      "source_fingerprint": "63a873ed6ce0145c281b159373a3f7e4bbec65d4e9fdaffc24587b6ea95b3c0d",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 6,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting moves from urgent shelter-seeking through a conditional oath of innocence to an appeal for public judgment. Confidence in God's protection leads into weapon imagery, then images of wrongdoing returning upon its maker, and finally a commitment to thanksgiving. Short phrases and contractions modernize the voice while retaining the lion, hands, dust, hearts and kidneys, shield, weapons, childbirth, pit, and head imagery. Interpretive choices include the rescue reading in verse 5, righteousness expressed as conduct in verse 9, and an added heat metaphor in verse 12. The closing praise does not report that rescue has already occurred.",
+      "translation_id": "tr.ps007.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps007.0001",
+      "audit_ids": [
+        "aud.ps007.v001.a.0006"
+      ],
+      "created_at": "2026-09-27T19:24:17.801023+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.5362d0a35743",
+      "guidance": "target 6/8 meter",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v1",
+      "psalm_id": "ps007",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro — 6/8 throughout; two-bar phrases with held endings",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v001.t001",
+                    "ps007.v001.t002"
+                  ],
+                  "unit_id": "ps007.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0001",
+              "rationale": "",
+              "text": "David's Shiggayon,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v001.t003",
+                    "ps007.v001.t004",
+                    "ps007.v001.t005"
+                  ],
+                  "unit_id": "ps007.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "which he sang to Yahweh,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v001.t006",
+                    "ps007.v001.t007",
+                    "ps007.v001.t008"
+                  ],
+                  "unit_id": "ps007.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "about the words of Cush,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v001.t009",
+                    "ps007.v001.t010"
+                  ],
+                  "unit_id": "ps007.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0004",
+              "rationale": "",
+              "text": "a man of Benjamin."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v002.t001",
+                    "ps007.v002.t002"
+                  ],
+                  "unit_id": "ps007.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "Yahweh, my God,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v002.t003",
+                    "ps007.v002.t004"
+                  ],
+                  "unit_id": "ps007.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "I've taken shelter in you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v002.t005",
+                    "ps007.v002.t006",
+                    "ps007.v002.t007"
+                  ],
+                  "unit_id": "ps007.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "Save me from all who chase me;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v002.t008"
+                  ],
+                  "unit_id": "ps007.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0008",
+              "rationale": "The conjunction becomes a breath break that leads directly into the feared consequence.",
+              "text": "rescue me—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v003.t001",
+                    "ps007.v003.t002",
+                    "ps007.v003.t003",
+                    "ps007.v003.t004"
+                  ],
+                  "unit_id": "ps007.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "or he'll tear me like a lion,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v003.t005"
+                  ],
+                  "unit_id": "ps007.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "The rending participle becomes an active phrase with its understood personal object supplied.",
+              "text": "rip me apart,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v003.t006",
+                    "ps007.v003.t007"
+                  ],
+                  "unit_id": "ps007.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "with no one to rescue me."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2 — The oath",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v004.t001",
+                    "ps007.v004.t002"
+                  ],
+                  "unit_id": "ps007.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "Yahweh, my God,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v004.t003",
+                    "ps007.v004.t004",
+                    "ps007.v004.t005"
+                  ],
+                  "unit_id": "ps007.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "if I've done this,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v004.t006",
+                    "ps007.v004.t007",
+                    "ps007.v004.t008",
+                    "ps007.v004.t009"
+                  ],
+                  "unit_id": "ps007.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "if there's wrong in my hands,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v005.t001",
+                    "ps007.v005.t002",
+                    "ps007.v005.t004"
+                  ],
+                  "unit_id": "ps007.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0015",
+              "rationale": "The evil repaid precedes its recipient so the conditional phrase can span two balanced lines.",
+              "text": "if I paid back with evil"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v005.t003"
+                  ],
+                  "unit_id": "ps007.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0016",
+              "rationale": "",
+              "text": "someone at peace with me—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v005.t005",
+                    "ps007.v005.t006"
+                  ],
+                  "unit_id": "ps007.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "The disputed conjunction is given an explicit concessive force within the rescue interpretation.",
+              "text": "though I rescued my foe,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v005.t006",
+                    "ps007.v005.t007"
+                  ],
+                  "unit_id": "ps007.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "The foe expression is unfolded into a relative clause that explicitly attaches causelessness to his hostility.",
+              "text": "who opposed me for no cause—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v006.t001",
+                    "ps007.v006.t002",
+                    "ps007.v006.t003"
+                  ],
+                  "unit_id": "ps007.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Then makes the consequence of the preceding conditions explicit while me represents the threatened life.",
+              "text": "then let an enemy chase me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v006.t004"
+                  ],
+                  "unit_id": "ps007.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "let him catch me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v006.t005",
+                    "ps007.v006.t006",
+                    "ps007.v006.t007"
+                  ],
+                  "unit_id": "ps007.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "trample my life to the ground,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v006.t008",
+                    "ps007.v006.t009",
+                    "ps007.v006.t010"
+                  ],
+                  "unit_id": "ps007.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "lay my honor in dust."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v006.t011"
+                  ],
+                  "unit_id": "ps007.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "Selah."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v007.t001",
+                    "ps007.v007.t002",
+                    "ps007.v007.t003"
+                  ],
+                  "unit_id": "ps007.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "Rise, Yahweh, in your anger;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v007.t004",
+                    "ps007.v007.t005",
+                    "ps007.v007.t006"
+                  ],
+                  "unit_id": "ps007.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "rise against my enemies' rage."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v007.t007",
+                    "ps007.v007.t008"
+                  ],
+                  "unit_id": "ps007.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0026",
+              "rationale": "The conjunction is absorbed into the sequence of imperatives.",
+              "text": "Wake up for me—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v007.t009",
+                    "ps007.v007.t010"
+                  ],
+                  "unit_id": "ps007.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "you've commanded judgment."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 3 — The gathered peoples",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v008.t001",
+                    "ps007.v008.t002",
+                    "ps007.v008.t003"
+                  ],
+                  "unit_id": "ps007.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0028",
+              "rationale": "The assembly noun and surrounding verb are folded into the action of peoples gathering around the addressee.",
+              "text": "Let the peoples gather around you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v008.t004",
+                    "ps007.v008.t005",
+                    "ps007.v008.t006"
+                  ],
+                  "unit_id": "ps007.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0029",
+              "rationale": "The return command leads the phrase, with the spatial relation following and the pronoun referring to the assembly's members.",
+              "text": "return to the heights above them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v009.t001",
+                    "ps007.v009.t002",
+                    "ps007.v009.t003"
+                  ],
+                  "unit_id": "ps007.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "Yahweh judges the peoples."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v009.t004",
+                    "ps007.v009.t005"
+                  ],
+                  "unit_id": "ps007.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "Judge me, Yahweh,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v009.t006"
+                  ],
+                  "unit_id": "ps007.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0032",
+              "rationale": "",
+              "text": "by my righteousness,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v009.t007",
+                    "ps007.v009.t008"
+                  ],
+                  "unit_id": "ps007.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0033",
+              "rationale": "The possessive and difficult concluding prepositional phrase are combined as integrity belonging to the speaker.",
+              "text": "by the integrity in me."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v010.t001",
+                    "ps007.v010.t002",
+                    "ps007.v010.t003",
+                    "ps007.v010.t004"
+                  ],
+                  "unit_id": "ps007.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0034",
+              "rationale": "",
+              "text": "Please, let the wicked's evil end;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v010.t005",
+                    "ps007.v010.t006"
+                  ],
+                  "unit_id": "ps007.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0035",
+              "rationale": "",
+              "text": "make the righteous stand firm."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v010.t007",
+                    "ps007.v010.t008",
+                    "ps007.v010.t009"
+                  ],
+                  "unit_id": "ps007.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0036",
+              "rationale": "",
+              "text": "You test hearts and kidneys,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v010.t010",
+                    "ps007.v010.t011"
+                  ],
+                  "unit_id": "ps007.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "you righteous God."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 4 — Shield and weapons",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v011.t001",
+                    "ps007.v011.t002",
+                    "ps007.v011.t003"
+                  ],
+                  "unit_id": "ps007.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "My shield is with God;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v011.t004",
+                    "ps007.v011.t005",
+                    "ps007.v011.t006"
+                  ],
+                  "unit_id": "ps007.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "he saves the upright in heart."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v012.t001",
+                    "ps007.v012.t002",
+                    "ps007.v012.t003"
+                  ],
+                  "unit_id": "ps007.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0040",
+              "rationale": "",
+              "text": "God is a righteous judge,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v012.t004",
+                    "ps007.v012.t005",
+                    "ps007.v012.t006",
+                    "ps007.v012.t007"
+                  ],
+                  "unit_id": "ps007.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0041",
+              "rationale": "",
+              "text": "a God who is angry each day."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v013.t001",
+                    "ps007.v013.t002",
+                    "ps007.v013.t003"
+                  ],
+                  "unit_id": "ps007.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0042",
+              "rationale": "",
+              "text": "If he doesn't return,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v013.t004",
+                    "ps007.v013.t005"
+                  ],
+                  "unit_id": "ps007.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0043",
+              "rationale": "",
+              "text": "he'll sharpen his sword;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v013.t006",
+                    "ps007.v013.t007"
+                  ],
+                  "unit_id": "ps007.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0044",
+              "rationale": "",
+              "text": "he's drawn his bow"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v013.t008"
+                  ],
+                  "unit_id": "ps007.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0045",
+              "rationale": "",
+              "text": "and made it ready."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v014.t002",
+                    "ps007.v014.t003",
+                    "ps007.v014.t004"
+                  ],
+                  "unit_id": "ps007.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0046",
+              "rationale": "The preparation clause precedes its recipient and continues into ready on the next line.",
+              "text": "He's made weapons of death"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v014.t001",
+                    "ps007.v014.t002"
+                  ],
+                  "unit_id": "ps007.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0047",
+              "rationale": "",
+              "text": "ready for him;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v014.t005",
+                    "ps007.v014.t006",
+                    "ps007.v014.t007"
+                  ],
+                  "unit_id": "ps007.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0048",
+              "rationale": "",
+              "text": "he sets his arrows burning."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus — Repeat",
+          "lines": [],
+          "repeat_of": "sec.0004",
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge — Trouble returns",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v015.t001",
+                    "ps007.v015.t002",
+                    "ps007.v015.t003"
+                  ],
+                  "unit_id": "ps007.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0049",
+              "rationale": "",
+              "text": "Look—he's in labor with evil;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v015.t004",
+                    "ps007.v015.t005"
+                  ],
+                  "unit_id": "ps007.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0050",
+              "rationale": "",
+              "text": "he's conceived trouble"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v015.t006",
+                    "ps007.v015.t007"
+                  ],
+                  "unit_id": "ps007.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0051",
+              "rationale": "",
+              "text": "and given birth to lies."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v016.t001",
+                    "ps007.v016.t002"
+                  ],
+                  "unit_id": "ps007.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0052",
+              "rationale": "",
+              "text": "He dug a pit,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v016.t003"
+                  ],
+                  "unit_id": "ps007.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0053",
+              "rationale": "",
+              "text": "he hollowed it out,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v016.t004",
+                    "ps007.v016.t005"
+                  ],
+                  "unit_id": "ps007.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0054",
+              "rationale": "",
+              "text": "then fell in the hole"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v016.t006"
+                  ],
+                  "unit_id": "ps007.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0055",
+              "rationale": "",
+              "text": "he'd made."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v017.t001",
+                    "ps007.v017.t002"
+                  ],
+                  "unit_id": "ps007.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0056",
+              "rationale": "",
+              "text": "His trouble will return"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v017.t003"
+                  ],
+                  "unit_id": "ps007.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0057",
+              "rationale": "",
+              "text": "on his own head;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v017.t006",
+                    "ps007.v017.t007"
+                  ],
+                  "unit_id": "ps007.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0058",
+              "rationale": "The subject and descending action precede their destination to match the preceding pair of lines.",
+              "text": "his violence will fall"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v017.t004",
+                    "ps007.v017.t005"
+                  ],
+                  "unit_id": "ps007.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0059",
+              "rationale": "The conjunction becomes parallel phrasing while the crown-of-the-head image remains explicit.",
+              "text": "on the crown of his head."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "refrain",
+          "label": "Closing refrain",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v018.t001",
+                    "ps007.v018.t002"
+                  ],
+                  "unit_id": "ps007.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0060",
+              "rationale": "",
+              "text": "I'll thank Yahweh"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v018.t003"
+                  ],
+                  "unit_id": "ps007.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0061",
+              "rationale": "For gives the contextual ground of thanksgiving in place of the fuller according to.",
+              "text": "for his righteousness;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v018.t004",
+                    "ps007.v018.t005"
+                  ],
+                  "unit_id": "ps007.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0062",
+              "rationale": "",
+              "text": "I'll sing praise to the name"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps007.v018.t006",
+                    "ps007.v018.t007"
+                  ],
+                  "unit_id": "ps007.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0063",
+              "rationale": "",
+              "text": "of Yahweh Most High."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "outro",
+          "label": "Closing refrain — Repeat and finish",
+          "lines": [],
+          "repeat_of": "sec.0009",
+          "section_id": "sec.0010"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 7 — Shelter and Judgment",
+      "translation_id": "tr.ps007.0001",
+      "updated_at": "2026-09-27T19:24:17.801023+00:00"
+    }
+  ],
   "psalm_id": "ps007",
   "title": "Psalm 7",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps007.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-27T16:10:27.277993+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target 6/8 meter",
+      "psalm_id": "ps007",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps007.0001"
+    }
+  ],
   "unit_ids": [
     "ps007.v001.a",
     "ps007.v002.a",

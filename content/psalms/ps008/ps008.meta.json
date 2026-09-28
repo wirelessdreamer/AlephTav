@@ -1,6 +1,142 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps008.v001.a.0002"
+      ],
+      "citations": [],
+      "created_at": "2026-09-28T01:27:52.992737+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verse 10 repeats the address and declaration in the first part of verse 2.",
+            "claim": "The psalm is framed by the same declaration of God's majesty."
+          },
+          {
+            "basis": "Verse 3 links children and nursing infants with established strength and the cessation of the enemy and avenger.",
+            "claim": "Children's mouths are connected with strength that stops adversaries."
+          },
+          {
+            "basis": "Verses 4–5 move from the moon and stars to the parallel expressions enosh and ben-adam and God's remembering and attending.",
+            "claim": "The heavens prompt a question about God's attention to humanity."
+          },
+          {
+            "basis": "Verses 6–9 address God as the one who crowns humanity, grants rule, and places creatures under human feet.",
+            "claim": "Human honor and dominion are gifts from God."
+          },
+          {
+            "basis": "The Hebrew has elohim, supplied with the gloss “God”; the English selects an interpretation involving heavenly beings.",
+            "claim": "“Angels” makes the comparison in verse 6 more specific."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed the psalm during a particular event.",
+            "why_not": "The heading supplies a Davidic attribution without independent authorship evidence or a narrative occasion."
+          },
+          {
+            "claim": "The psalm was performed at a specified temple ceremony using a particular instrument or tune.",
+            "why_not": "The musical heading does not define Gittith or identify a ceremony, venue, or recoverable musical specification."
+          },
+          {
+            "claim": "The enemies are identifiable historical individuals or nations.",
+            "why_not": "Verse 3 names categories of adversaries without identifying them."
+          },
+          {
+            "claim": "“Son of man” identifies a particular individual here.",
+            "why_not": "Its parallel with enosh supports a reference to humanity; no individual is named."
+          },
+          {
+            "claim": "The Hebrew explicitly and unambiguously says “angels.”",
+            "why_not": "Elohim permits more than the specific interpretation selected by the English."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.fae8b176bddd",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The director and Gittith notation indicate a musical performance context, while direct address to God and “our Lord” suit shared worship. The text does not identify a particular sanctuary, festival, ritual, ensemble, or distribution of singers. The precise meaning of Gittith is not established by the supplied text.",
+        "heading_attribution": "Verse 1 identifies a psalm, addresses the director, specifies “on the Gittith,” and associates the psalm with David through ledawid. This is a received Davidic attribution; it does not independently establish personal authorship, a date, or a biographical occasion. The English setting omits it."
+      },
+      "method": "Compared the English with the supplied Masoretic text, token glosses, and morphology. Literal backbones used in the verse audits followed Hebrew clause structure while marking interpretive choices. Section ranges follow the source psalm and cover verses 1–10 once; their titles are descriptive because the paste supplies none. No external editions or lexica were consulted.",
+      "non_source_material": [
+        {
+          "kind": "other",
+          "note": "The original performance paste adds occurrences beyond the opening and closing appearances in the Hebrew; the words themselves have source counterparts.",
+          "text": "O Lord, our Lord,\nhow majestic is your name in all the earth!"
+        },
+        {
+          "kind": "other",
+          "note": "The original performance paste adds this shortened reprise of verses 4–5; its repetition and ellipses are arrangement features.",
+          "text": "When I look at your heavens...\n...the work of your fingers...\nwhat is man that you are mindful of him,\nand the son of man that you care for him?"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps008.0001",
+      "psalm_id": "ps008",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The received heading frames the psalm, but no English is stored for it.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction and Davidic attribution.",
+          "title": "Heading — unsung"
+        },
+        {
+          "arc_note": "The opening proclamation leads into the striking connection between vulnerable children and divine strength.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "God's majesty encompasses earth and heavens; strength proceeds from children's mouths against adversaries.",
+          "title": "Opening praise and established strength"
+        },
+        {
+          "arc_note": "The speaker moves from cosmic observation to a question about human significance.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "Contemplating the heavens prompts wonder at God's attention to humanity.",
+          "title": "Heavens and the human question"
+        },
+        {
+          "arc_note": "The question receives an answer in bestowed honor and authority, followed by an expanding catalogue of animals.",
+          "first_verse": 6,
+          "last_verse": 9,
+          "theme": "God crowns humanity and grants rule over the creatures of land, sky, and sea.",
+          "title": "Human dignity and dominion"
+        },
+        {
+          "arc_note": "The opening declaration returns, enclosing human dignity within praise of God.",
+          "first_verse": 10,
+          "last_verse": 10,
+          "theme": "God's majestic name throughout the earth.",
+          "title": "Closing refrain"
+        }
+      ],
+      "source_fingerprint": "9af2986036398e1101e52a91c572470330cace8fe5bd764eeaca146d4eaf6209",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting moves from praise of God's universal majesty through strength expressed by infants, wonder at the heavens, and astonishment at humanity's dignity and dominion, before returning to the opening praise. It preserves the psalm's imagery and progression while omitting the superscription. “Angels” specifies one interpretation of elohim in verse 6. The original performance paste amplifies the framing praise through repeated refrains and reprises the question about humanity.",
+      "translation_id": "tr.ps008.0001"
+    }
+  ],
   "psalm_id": "ps008",
   "title": "Psalm 8",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps008.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-28T01:23:36.276908+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "psalm_id": "ps008",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps008.0001"
+    }
+  ],
   "unit_ids": [
     "ps008.v001.a",
     "ps008.v002.a",

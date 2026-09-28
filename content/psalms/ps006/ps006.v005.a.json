@@ -1,9 +1,114 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v005.a.0001",
+    "aud.ps006.v005.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "865749f7fc061f5f0c3202f05901bb0cd8a5ef9ef42a39a62eb27a90f7b895ef",
+      "audit_id": "aud.ps006.v005.a.0001",
+      "before_hash": "8c2391f7c9ba24406b187c4b6f555b87455ab8f70f7da91f28dbacf04b6d1b89",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.735606+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7471da0b5b2158cdbbecce2a5a14156c7333f47eeb5f32a628178ce82354892a",
+      "audit_id": "aud.ps006.v005.a.0002",
+      "before_hash": "8987f6b0fbbb982fed5c0e1f721583b98f2a8c6b2bf44707fab87eb399df0e05",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:32:53.212829+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeals for the LORD to return, rescue the speaker, and save on account of divine love, in the Hebrew’s order.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "0fcad522e00f377cb89b47f4501379fe481718ba3812b3a7d405376a5f2a3b91",
+      "audit_ids": [
+        "aud.ps006.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Adds an opening question about when the LORD will return, then repeats the return appeal. “To me” and “of this” make implied relationships explicit. “Love” conveys a central sense of ḥesed but leaves its steadfastness and loyalty unstated.",
+      "display_reference": "Psalm 6:5",
+      "english_rendering_id": "rnd.ps006.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.c9f2b92d1946",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שׁוּבָ֣ה יְ֭הוָה חַלְּצָ֣ה נַפְשִׁ֑י ה֝וֹשִׁיעֵ֗נִי לְמַ֣עַן חַסְדֶּֽךָ׃",
+      "literal_backbone": [
+        "Return, O Yahweh.",
+        "Rescue my life.",
+        "Save me for the sake of your steadfast love."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:5",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "turn, return, turn back",
+          "note": "One imperative becomes a timing question followed by a doubled command; the Hebrew does not explicitly say “to me.”",
+          "rendered_as": "When will you\nturn back to me?\n\nTurn, LORD—\ncome back",
+          "token_ids": [
+            "ps006.v005.t001"
+          ],
+          "transliteration": "šûḇāh",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "rescue, deliver; my life, self, soul",
+          "note": "Idiomatic rescue language represents the speaker’s life or self as “me”; “this” supplies an unspecified predicament.",
+          "rendered_as": "Pull me out\nof this",
+          "token_ids": [
+            "ps006.v005.t003",
+            "ps006.v005.t004"
+          ],
+          "transliteration": "ḥalləṣāh nap̄šî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "kindness, steadfast love, loyalty, faithfulness",
+          "note": "“Love” is within the word’s range, though it does not explicitly convey enduring loyalty.",
+          "rendered_as": "your love",
+          "token_ids": [
+            "ps006.v005.t007"
+          ],
+          "transliteration": "ḥasdeḵā",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v005.a.0001"
   ],
@@ -15,7 +120,99 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.57,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "When will you\nturn back to me?\n\nTurn, LORD—\ncome back\n\nPull me out\nof this\n\nSave me\nfor your love",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שׁוּבָ֣ה יְ֭הוָה חַלְּצָ֣ה נַפְשִׁ֑י ה֝וֹשִׁיעֵ֗נִי לְמַ֣עַן חַסְדֶּֽךָ׃",

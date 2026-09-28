@@ -1,9 +1,102 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v017.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v017.a.0001",
+    "aud.ps088.v017.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2766c6a896cb6f11497215c761aca84a581dd7ba4c70c8f9b385d1a5d037b135",
+      "audit_id": "aud.ps088.v017.a.0001",
+      "before_hash": "d8b5e23a67c8e7b61374f1fca438a12f7f5af16369fa44293cb6b688150057ce",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:50.237286+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v017.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a633c0aa876f39acef88b6ba93cf87254edd56564a7107cc617c4c2bb8c7e786",
+      "audit_id": "aud.ps088.v017.a.0002",
+      "before_hash": "b606bb8db9aaa157290ba15cfd0aa7fd89d83e37b2010567c250251ef255c3a9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:35:24.058546+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v017.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves God’s anger passing over the speaker, followed by the destructive effect of God’s terrors, in the Hebrew’s order.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "94322b3c06cb608af24244e8af4deb965c7c6aa99bc0b4d472dfbeeab5ac7279",
+      "audit_ids": [
+        "aud.ps088.v017.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v017.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Washes” makes the movement explicitly watery. “Keep me undone” presents destruction as a continuing state rather than an accomplished act, with “undone” less explicit than “destroyed.”",
+      "display_reference": "Psalm 88:17",
+      "english_rendering_id": "rnd.ps088.v017.a.lyric.alt.0001",
+      "generation_run_id": "cxr.756933c05fdf",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עָ֭לַי עָבְר֣וּ חֲרוֹנֶ֑יךָ בִּ֝עוּתֶ֗יךָ צִמְּתוּתֻֽנִי׃",
+      "literal_backbone": [
+        "Your burning angers have passed over me;",
+        "your terrors have destroyed me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:17",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v017.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "pass, pass over, go through",
+          "note": "Adds water imagery to the verb of passing, fitting the surrounding psalm imagery.",
+          "rendered_as": "washes over",
+          "token_ids": [
+            "ps088.v017.t002"
+          ],
+          "transliteration": "ʿāḇərû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "destroy, annihilate, put an end to",
+          "note": "“Undone” can convey ruin, but “keep” adds sustained duration and shifts attention from destruction to its continuing effect.",
+          "rendered_as": "keep me undone",
+          "token_ids": [
+            "ps088.v017.t005"
+          ],
+          "transliteration": "ṣimməṯûṯunî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v017.a.0001"
   ],
@@ -15,7 +108,99 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:17",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.34,
+        "stress_approximation": 0.75,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v017.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Your anger washes over me,\nyour terrors keep me undone.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v017.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עָ֭לַי עָבְר֣וּ חֲרוֹנֶ֑יךָ בִּ֝עוּתֶ֗יךָ צִמְּתוּתֻֽנִי׃",

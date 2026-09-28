@@ -1,9 +1,111 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v015.a.literal.alt.0001",
+    "rnd.ps007.v015.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v015.a.0001",
+    "aud.ps007.v015.a.0002",
+    "aud.ps007.v015.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b980bb08ba145f00173969ee5a8ec45a5fa2964873c9c5c556cbe9f69a16cc92",
+      "audit_id": "aud.ps007.v015.a.0001",
+      "before_hash": "071f289573196972cbe0b19b178c3d26b95488c68c4aa82404b224394545df24",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.119352+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v015.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Introduces the wrongdoing figure through the source's sequence of labor, conception, and birth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3b0db93c37a80442ce1be6c469ddd6768e622ec3293b55e4a7d854813f1e22b3",
+      "audit_id": "aud.ps007.v015.a.0002",
+      "before_hash": "3510a62abf356319c5ac50e52e5300bb7853fc2d9b1c24796b34db99c69d117b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.643834+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v015.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Turns attention to the wrongdoer through the full bodily sequence of labor, conception, and birth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1f240e35526218292e8ad9a525cdbd32263ff6796c4b289c5f95d3247486ff2b",
+      "audit_id": "aud.ps007.v015.a.0003",
+      "before_hash": "78c27b5d6559ee12b9de00d0c9abd489c9aa4acbd4fb922804d686d8cbff10de",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:51:47.771419+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v015.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the attention marker, the male subject, and the sequence of labor with evil, conception of trouble, and birth of falsehood. Both renderings retain the childbirth imagery without rearranging the clauses into biological chronology.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "cdec47f1cac9e473e86f8381979dd1a6ba0402c076252154a8910e39f2fd3f0e",
+      "audit_ids": [
+        "aud.ps007.v015.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v015.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric uses contractions, replaces 'iniquity' with ordinary 'evil,' and makes the abstract 'falsehood' concrete as plural 'lies.'",
+      "display_reference": "Psalm 7:15",
+      "english_rendering_id": "rnd.ps007.v015.a.lyric.alt.0001",
+      "generation_run_id": "cxr.66a02d71878a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הִנֵּ֥ה יְחַבֶּל־אָ֑וֶן וְהָרָ֥ה עָ֝מָ֗ל וְיָ֣לַד שָֽׁקֶר׃",
+      "literal_backbone": [
+        "Look, he is in labor with iniquity;",
+        "he has conceived trouble",
+        "and given birth to falsehood."
+      ],
+      "literal_rendering_id": "rnd.ps007.v015.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:15",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v015.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Falsehood, deception, a lie.",
+          "note": "The plural naturally expresses the Hebrew abstract noun, though it may suggest individual false statements rather than deception more broadly.",
+          "rendered_as": "lies",
+          "token_ids": [
+            "ps007.v015.t007"
+          ],
+          "transliteration": "šāqer",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v015.a.0001"
   ],
@@ -15,7 +117,236 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:15",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the source's image order rather than rearranging it into biological chronology.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Labor, conception, and birth",
+          "note": "Retains the male figure's pregnancy and childbirth metaphor without explaining it away.",
+          "source_id": "ps007.v015.a",
+          "token_ids": [
+            "ps007.v015.t002",
+            "ps007.v015.t003",
+            "ps007.v015.t004",
+            "ps007.v015.t005",
+            "ps007.v015.t006",
+            "ps007.v015.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v015.t001 → Look",
+          "ps007.v015.t002–t003 → he is in labor with iniquity",
+          "ps007.v015.t004–t005 → he has conceived trouble",
+          "ps007.v015.t006–t007 → and given birth to falsehood"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v015.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v015.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "Introduces the wrongdoing figure through the source's sequence of labor, conception, and birth.",
+      "rendering_id": "rnd.ps007.v015.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Look, he is in labor with iniquity;\nhe has conceived trouble\nand given birth to falsehood.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v015.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v015.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Plain diction retains the strange bodily metaphor without explaining it away.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.68,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "A man laboring, conceiving, and giving birth",
+          "note": "Preserves the striking male childbirth metaphor and its three products.",
+          "source_id": "ps007.v015.a",
+          "token_ids": [
+            "ps007.v015.t002",
+            "ps007.v015.t003",
+            "ps007.v015.t004",
+            "ps007.v015.t005",
+            "ps007.v015.t006",
+            "ps007.v015.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v015.t001 → Look",
+          "ps007.v015.t002–t003 → he's in labor with evil",
+          "ps007.v015.t004–t005 → he's conceived trouble",
+          "ps007.v015.t006–t007 → and given birth to lies"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v015.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v015.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "Turns attention to the wrongdoer through the full bodily sequence of labor, conception, and birth.",
+      "rendering_id": "rnd.ps007.v015.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Look—he's in labor with evil;\nhe's conceived trouble\nand given birth to lies.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v015.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v015.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הִנֵּ֥ה יְחַבֶּל־אָ֑וֶן וְהָרָ֥ה עָ֝מָ֗ל וְיָ֣לַד שָֽׁקֶר׃",

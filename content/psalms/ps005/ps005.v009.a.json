@@ -1,9 +1,236 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v009.a.lyric.alt.0001",
+    "rnd.ps005.v009.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v009.a.0001",
+    "aud.ps005.v009.a.0002",
+    "aud.ps005.v009.a.0003",
+    "aud.ps005.v009.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "99dbf4d1969ea84a008c5cbcabc2df3beb5ae23b5c45a2704b9f3ed8fa7bd379",
+      "audit_id": "aud.ps005.v009.a.0001",
+      "before_hash": "745cd59c6ce5cc2bd9c01ea005230ce0f6275971de14780252a3d00475ad868f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.972810+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "99ac47e6c53dc39b01ce9690400bd892a67d0b5da6b897aefaefbab88486f9c9",
+      "audit_id": "aud.ps005.v009.a.0002",
+      "before_hash": "88369bea2e9f83486e6a5132319e79704fd332b15609e7fe22ee7797e7259833",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:01:29.105056+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "12496d8734b766eb1fa52a7c0b2e031e8cfc59c5280fed18884b911a8c5a2840",
+      "audit_id": "aud.ps005.v009.a.0003",
+      "before_hash": "f5e448f5b817df696a95c67c83acacc56705d9dc42c2a7e6536bd50973811d9a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.532765+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4e07450388efcad90e07d9d15c885cc2258119fdbc8eb9fb7c080d3f3c268d62",
+      "audit_id": "aud.ps005.v009.a.0004",
+      "before_hash": "0ff5d7d59e4ba1be769ba80c906c4015b663072c7b290f29611c27b9df63f634",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:14:40.880421+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v009.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Retains the need for guidance in the face of enemies. It omits the invocation to Yahweh and explicit reference to God's righteousness, while absorbing the request to straighten God's way before the speaker into an image of safe passage.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "319c0a94c5f0a46c39f283bc5b789b9f19319d56eda5af87c6e43c93d34a14cc",
+      "audit_ids": [
+        "aud.ps005.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The direct request for God to lead becomes 'Waiting for directions.' Safety and passage through 'enemy lines' introduce a military scenario that the Hebrew does not specify. The final phrase is repeated for lyrical emphasis.",
+      "display_reference": "Psalm 5:9",
+      "english_rendering_id": "rnd.ps005.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.6d2e7354ebca",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י לְפָנַ֣י דַּרְכֶּֽךָ׃",
+      "literal_backbone": [
+        "Yahweh, lead me in your righteousness because of my enemies.",
+        "Make your way straight before me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:9",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "lead me, guide me",
+          "note": "Recasts an imperative addressed to God as the speaker's waiting for instructions; waiting is not expressed by this verb.",
+          "rendered_as": "Waiting for directions",
+          "token_ids": [
+            "ps005.v009.t002"
+          ],
+          "transliteration": "nəḥēnî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "in or by your righteousness, justice",
+          "note": "The explicit connection between divine guidance and God's righteousness is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v009.t003"
+          ],
+          "transliteration": "bəṣidqāṯeḵā",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "because of, on account of; my enemies, those watching me with hostility",
+          "note": "Turns enemies as the reason for requesting guidance into a military formation through which the speaker must pass safely.",
+          "rendered_as": "to get me safely through enemy lines.\nenemy lines.",
+          "token_ids": [
+            "ps005.v009.t004",
+            "ps005.v009.t005"
+          ],
+          "transliteration": "ləmaʿan šôrərāy",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "make straight; before me; your way, path",
+          "note": "The general idea of a guided route survives, but safe passage replaces the specific request that God's own way be made straight before the speaker.",
+          "rendered_as": "directions\nto get me safely through enemy lines.",
+          "token_ids": [
+            "ps005.v009.t006",
+            "ps005.v009.t007",
+            "ps005.v009.t008"
+          ],
+          "transliteration": "hayšar ləp̄ānay darkeḵā",
+          "verdict": "nonstandard"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the need for guidance because of enemies. It omits the address to Yahweh and guidance in God's righteousness, while recasting the request to straighten God's way before the speaker as safe passage through enemy lines.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "9d848b4b8825ef237ddd13ea44ba1bcfb28d63bebc54d617b8c7de02991eda53",
+      "audit_ids": [
+        "aud.ps005.v009.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v009.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The direct appeals become a description of waiting. 'Safely through enemy lines' introduces a military scenario and an explicit goal of safety beyond the Hebrew's reference to adversaries.",
+      "display_reference": "Psalm 5:9",
+      "english_rendering_id": "rnd.ps005.v009.a.lyric.alt.0002",
+      "generation_run_id": "cxr.bb136dbae6e2",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י לְפָנַ֣י דַּרְכֶּֽךָ׃",
+      "literal_backbone": [
+        "Yahweh, lead me in your righteousness because of my enemies.",
+        "Make your way straight before me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:9",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "lead me, guide me",
+          "note": "Retains the guidance theme but substitutes waiting for a direct imperative; waiting is not expressed in this verse.",
+          "rendered_as": "Waiting for directions",
+          "token_ids": [
+            "ps005.v009.t002"
+          ],
+          "transliteration": "nəḥēnî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "in your righteousness, justice, rightness",
+          "note": "The explicit connection between God's guidance and righteousness is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v009.t003"
+          ],
+          "transliteration": "bəṣidqāṯeḵā",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "because of my adversaries, those watching me with hostility",
+          "note": "Preserves hostile opposition but turns the reason for guidance into a military obstacle to traverse.",
+          "rendered_as": "through enemy lines",
+          "token_ids": [
+            "ps005.v009.t004",
+            "ps005.v009.t005"
+          ],
+          "transliteration": "ləmaʿan šôrərāy",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "make straight; before me; your way",
+          "note": "Safe passage loosely replaces the path imagery but does not retain making God's own way straight before the speaker.",
+          "rendered_as": "to get me safely through enemy lines.",
+          "token_ids": [
+            "ps005.v009.t006",
+            "ps005.v009.t007",
+            "ps005.v009.t008"
+          ],
+          "transliteration": "hôšar ləp̄ānay darkeḵā",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v009.a.0001"
   ],
@@ -15,7 +242,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.26,
+        "stress_approximation": 0.79,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Waiting for directions\nto get me safely through enemy lines.\nenemy lines.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.3,
+        "stress_approximation": 0.75,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v009.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Waiting for directions\nto get me safely through enemy lines.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י לְפָנַ֣י דַּרְכֶּֽךָ׃",

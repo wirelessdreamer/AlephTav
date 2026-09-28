@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v011.a.literal.alt.0001",
+    "rnd.ps007.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v011.a.0001",
+    "aud.ps007.v011.a.0002",
+    "aud.ps007.v011.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a909ed855c506fc1eb802d2508438cb6254c6cf26fa988068aae01795ae975ca",
+      "audit_id": "aud.ps007.v011.a.0001",
+      "before_hash": "f1f757fce09b97d7946948728f8f280ab83a8614d29c697a5aeeefaef0fa103f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.431227+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v011.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns from judicial testing to protection and salvation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "32842afa4c32f5bbc07d3c31d2c9bb29041f3ce67e547f844bd5ac10d11364ff",
+      "audit_id": "aud.ps007.v011.a.0002",
+      "before_hash": "442a8ae20c0875a048b5f94502344a71f844ef5e3c102e9429fc269e703961ba",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.153262+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to protection and saving while carrying the heart image forward from the preceding examination.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "04b1d8dea2135e587f99597757ccb231df3b3e999074e77d30405578cebc6bdd",
+      "audit_id": "aud.ps007.v011.a.0003",
+      "before_hash": "64c7a4aae1acda7db6e288625c66c11d179bb9e379a17ccc225a7d02f1589720",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:51:07.296761+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker's shield, its relation to God, and God's saving of the upright in heart. The lyric turns the saving participle into a natural present-tense statement.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "0a122eb9495bdfefb8c62ebc1e72393e8d87bb4f5489d60f3070afb618fdf34d",
+      "audit_ids": [
+        "aud.ps007.v011.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Is with God' smooths the unusual Hebrew 'upon God' into a broader relationship. The literal rendering's 'rests' likewise supplies a verb absent from the Hebrew.",
+      "display_reference": "Psalm 7:11",
+      "english_rendering_id": "rnd.ps007.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.13429df2a895",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מָֽגִנִּ֥י עַל־אֱלֹהִ֑ים מ֝וֹשִׁ֗יעַ יִשְׁרֵי־לֵֽב׃",
+      "literal_backbone": [
+        "My shield is upon God,",
+        "who saves the upright in heart."
+      ],
+      "literal_rendering_id": "rnd.ps007.v011.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:11",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "On, upon, over, against, concerning; senses vary with context.",
+          "note": "Expresses the shield's association with God, but leaves less explicit the dependence or bearing suggested by 'upon.'",
+          "rendered_as": "with",
+          "token_ids": [
+            "ps007.v011.t002"
+          ],
+          "transliteration": "ʿal",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v011.a.0001"
   ],
@@ -15,7 +116,244 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the prepositional relation between shield and God.",
+      "drift_flags": [],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Shield",
+          "note": "Preserves the protective object.",
+          "source_id": "ps007.v011.a",
+          "token_ids": [
+            "ps007.v011.t001"
+          ]
+        },
+        {
+          "label": "Upright heart",
+          "note": "Retains the heart language following the testing of hearts.",
+          "source_id": "ps007.v011.a",
+          "token_ids": [
+            "ps007.v011.t005",
+            "ps007.v011.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v011.t001 → my shield",
+          "ps007.v011.t002–t003 → rests upon God",
+          "ps007.v011.t004 → who saves",
+          "ps007.v011.t005–t006 → the upright in heart"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v011.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v011.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Returns from judicial testing to protection and salvation.",
+      "rendering_id": "rnd.ps007.v011.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "My shield rests upon God,\nwho saves the upright in heart.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v011.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v011.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A short shield statement answers the earlier shelter appeal.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.46,
+        "stress_approximation": 0.59,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Shield",
+          "note": "Retains the protective object.",
+          "source_id": "ps007.v011.a",
+          "token_ids": [
+            "ps007.v011.t001"
+          ]
+        },
+        {
+          "label": "Upright heart",
+          "note": "Keeps the source's heart language.",
+          "source_id": "ps007.v011.a",
+          "token_ids": [
+            "ps007.v011.t005",
+            "ps007.v011.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v011.t001 → My shield",
+          "ps007.v011.t002–t003 → is with God",
+          "ps007.v011.t004 → he saves",
+          "ps007.v011.t005–t006 → the upright in heart"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v011.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v011.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "Returns to protection and saving while carrying the heart image forward from the preceding examination.",
+      "rendering_id": "rnd.ps007.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My shield is with God;\nhe saves the upright in heart.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v011.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מָֽגִנִּ֥י עַל־אֱלֹהִ֑ים מ֝וֹשִׁ֗יעַ יִשְׁרֵי־לֵֽב׃",

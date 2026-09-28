@@ -1,9 +1,144 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v001.a.literal.alt.0001",
+    "rnd.ps137.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v001.a.0001",
+    "aud.ps137.v001.a.0002",
+    "aud.ps137.v001.a.0003",
+    "aud.ps137.v001.a.0004",
+    "aud.ps137.v001.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "908c826371cc412cf5debab37ba5e344ceaea28d011ffc35c0e37fd85666a466",
+      "audit_id": "aud.ps137.v001.a.0001",
+      "before_hash": "688020424944feb4d4d330341a647220b2c651bfefecc8d65a3302199e71683d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:59:54.774799+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps137.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "39216082d28cb7710d28c29b07f352b6fd98d205b9aeafabc417b956ec4ce587",
+      "audit_id": "aud.ps137.v001.a.0002",
+      "before_hash": "b1564364ef9b715a5ac348ab2d322060dc07981edb02185555cc6f2450ced06b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.483928+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Establishes the communal voice and the remembrance motif continued throughout the passage.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f319cddb66c5a2bc1e4bf45636bd97e65747c323fe435c3a755469893782903d",
+      "audit_id": "aud.ps137.v001.a.0003",
+      "before_hash": "62faf87cfbd18a6e53b8fe54fea9e42ff12f4e711f4f2b464910a13778a58593",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.169464+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Opens with a rolling two-pulse cadence, keeping the remembered city at the end of the breath.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1f092ece6ce20998426dc426a77985ae8c8892a2202fb31ff74586bab9781a41",
+      "audit_id": "aud.ps137.v001.a.0004",
+      "before_hash": "02df0e2abc64cedd2c4e19c4feceabb56ad74051a21f762d9e9dba94599ada6d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:07:14.461730+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "619c975d59758978c16db5c0d880b0e7b2a3b737f69783a29cfe5b309c996ff8",
+      "audit_id": "aud.ps137.v001.a.0005",
+      "before_hash": "85f71ca0198d353f562a199ebfdf6f02388394cd5f19208a160173a3b5c2a604",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:10:05.388342+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps137.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves Babylon's rivers, the explicit 'there,' the communal sitting and weeping, and remembrance of Zion. The supplied literal rendering also preserves the separate 'also' emphasis.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "92732a87987c0e56dc002495e8a768a0c57edfb576ff3aec4d1bca67d8da1f6b",
+      "audit_ids": [
+        "aud.ps137.v001.a.0004"
+      ],
+      "comparison_id": "cmp.ps137.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric absorbs 'also' into 'and' and compresses 'as we remembered' into 'remembering,' leaving the temporal connection implicit. The possessive 'Babylon's' preserves the Hebrew relationship.",
+      "display_reference": "Psalm 137:1",
+      "english_rendering_id": "rnd.ps137.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.900907fe12c1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עַ֥ל נַהֲר֨וֹת׀ בָּבֶ֗ל שָׁ֣ם יָ֭שַׁבְנוּ גַּם־בָּכִ֑ינוּ בְּ֝זָכְרֵ֗נוּ אֶת־צִיּֽוֹן׃",
+      "literal_backbone": [
+        "By the rivers of Babylon, there we sat; we also wept.",
+        "When we remembered Zion."
+      ],
+      "literal_rendering_id": "rnd.ps137.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:1",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "also, even, indeed",
+          "note": "The lyric retains the additive connection but reduces the particle's explicit emphasis.",
+          "rendered_as": "Literal: 'and also'; lyric: 'and'",
+          "token_ids": [
+            "ps137.v001.t006"
+          ],
+          "transliteration": "gam",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v001.a.0001"
   ],
@@ -15,7 +150,223 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the explicit 'there' and 'also.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Weeping beside Babylon's rivers",
+          "note": "Preserves the location, seated posture, and tears.",
+          "source_id": "ps137.v001.a",
+          "token_ids": [
+            "ps137.v001.t002",
+            "ps137.v001.t003",
+            "ps137.v001.t005",
+            "ps137.v001.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "By the rivers of Babylon = ps137.v001.t001–t003",
+          "there we sat and also wept = ps137.v001.t004–t007",
+          "as we remembered Zion = ps137.v001.t008–t010"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v001.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Establishes the communal voice and the remembrance motif continued throughout the passage.",
+      "rendering_id": "rnd.ps137.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "By the rivers of Babylon,\nthere we sat and also wept,\nas we remembered Zion.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Three flowing phrases ending on rivers, weeping, and Zion.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.3,
+        "stress_approximation": 0.7,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Sitting and weeping beside Babylon's rivers",
+          "note": "The location, posture, tears, and communal speaker remain.",
+          "source_id": "ps137.v001.a",
+          "token_ids": [
+            "ps137.v001.t002",
+            "ps137.v001.t003",
+            "ps137.v001.t005",
+            "ps137.v001.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "By Babylon's rivers = ps137.v001.t001–t003",
+          "we sat there and wept = ps137.v001.t004–t007",
+          "remembering Zion = ps137.v001.t008–t010"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v001.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Opens with a rolling two-pulse cadence, keeping the remembered city at the end of the breath.",
+      "rendering_id": "rnd.ps137.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "By Babylon's rivers\nwe sat there and wept,\nremembering Zion.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עַ֥ל נַהֲר֨וֹת׀ בָּבֶ֗ל שָׁ֣ם יָ֭שַׁבְנוּ גַּם־בָּכִ֑ינוּ בְּ֝זָכְרֵ֗נוּ אֶת־צִיּֽוֹן׃",

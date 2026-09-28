@@ -1,9 +1,123 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v011.a.0001",
+    "aud.ps006.v011.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4df850397d3feda326dac93fe4fe5a098053e36887401561e954e5659455ec03",
+      "audit_id": "aud.ps006.v011.a.0001",
+      "before_hash": "03d70b9a6e9e193f378ae5874845854ae617c36e5f95ee2e878c2609555e3a48",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.845591+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4c8f282483df16a80a87747906f5299a89640d3372a509bb578d5728d07ddf68",
+      "audit_id": "aud.ps006.v011.a.0002",
+      "before_hash": "b09744151d87ba032151a529b840ca2a4b119011440658ce3b6f6c6c08380757",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:34:25.198069+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker’s enemies as those opposing him, their distress as fear, and their turning back. Omits both references to shame, the explicit intensity of distress, “all,” and the suddenness of the reversal.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "cdd77702c70449f7d20bcf8f526163b5b31c76c2ff1c4ea2de57c89cecf1091e",
+      "audit_ids": [
+        "aud.ps006.v011.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Will fall” adds collapse or defeat to the enemies’ fear. “Scatter” develops their turning back into dispersal, which the Hebrew does not specify.",
+      "display_reference": "Psalm 6:11",
+      "english_rendering_id": "rnd.ps006.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.fe38fce88f0b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יֵבֹ֤שׁוּ׀ וְיִבָּהֲל֣וּ מְ֭אֹד כָּל־אֹיְבָ֑י יָ֝שֻׁ֗בוּ יֵבֹ֥שׁוּ רָֽגַע׃",
+      "literal_backbone": [
+        "All my enemies will be ashamed and greatly disturbed.",
+        "They will turn back; they will be ashamed in a moment."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:11",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "be ashamed, be put to shame, be disappointed",
+          "note": "The repeated shame motif is absent; falling in fear does not explicitly convey it.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps006.v011.t001",
+            "ps006.v011.t007"
+          ],
+          "transliteration": "yēḇōšû",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "and be disturbed, dismayed, terrified",
+          "note": "Fear fits the verb’s range, but falling adds an action or outcome.",
+          "rendered_as": "will fall\nin fear",
+          "token_ids": [
+            "ps006.v011.t002"
+          ],
+          "transliteration": "wəyibbāhălû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "turn, return, turn back",
+          "note": "Turning is preserved, while scattering adds dispersal rather than simply retreat.",
+          "rendered_as": "They will turn\nand scatter",
+          "token_ids": [
+            "ps006.v011.t006"
+          ],
+          "transliteration": "yāšuḇû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "a moment, an instant",
+          "note": "The abruptness of the enemies’ shame is not expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps006.v011.t008"
+          ],
+          "transliteration": "reḡaʿ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v011.a.0001"
   ],
@@ -15,7 +129,99 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.61,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Those who stand\nagainst me\n\nwill fall\nin fear\n\nThey will turn\nand scatter",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יֵבֹ֤שׁוּ׀ וְיִבָּהֲל֣וּ מְ֭אֹד כָּל־אֹיְבָ֑י יָ֝שֻׁ֗בוּ יֵבֹ֥שׁוּ רָֽגַע׃",

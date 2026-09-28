@@ -1,9 +1,192 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v006.a.lyric.alt.0001",
+    "rnd.ps005.v006.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v006.a.0001",
+    "aud.ps005.v006.a.0002",
+    "aud.ps005.v006.a.0003",
+    "aud.ps005.v006.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8ead4ce9e799a98b04cafb99f26299c5c2ed47ec61dfa2be478a33a3004b903a",
+      "audit_id": "aud.ps005.v006.a.0001",
+      "before_hash": "b1744951c3ffe3e5d6617a78ee08bada83f6b46aa9bac1e1c5e6b54e2f684fc0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.871788+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2a00d212730d5be44f95056cf52125e9e87864183f65d415ea0efcde7ac27b87",
+      "audit_id": "aud.ps005.v006.a.0002",
+      "before_hash": "9a4ca42172131580a59fd74df2aff478d44baae4cc9f5ada5be2569ec4630748",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:00:34.786706+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f75479612184b6c23e9781f950557c37c010b3fceaa783ad58b33385bcef5d50",
+      "audit_id": "aud.ps005.v006.a.0003",
+      "before_hash": "edb49e309be22a69f18bc8f60e480aedb115eeb5a207537950e02b056c32139f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.454748+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bf2cb8d0c46b412d965fa5a3e7d5edffa633141200d9337ce51c07477ba8ac9f",
+      "audit_id": "aud.ps005.v006.a.0004",
+      "before_hash": "7a64e284eb5861604d1ba3bae0405d388b1db3c43518ee8debd2f95e0cdb2f3b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:13:47.921277+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v006.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the order of boastful people failing to stand before God, followed by God's opposition to evildoers. The plural groups become singular named characters, and the explicit scope 'all' is lost.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "3f34148a9c18c5e734b3c5396b8506b694b359bd3bb6123ceb414353af47c851",
+      "audit_ids": [
+        "aud.ps005.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Collapses' supplies a physical event where the Hebrew says they will not stand. Shaking the head replaces explicit hatred with a gesture of disapproval. 'Hot-Air-Boaster' and 'Mischief-Maker' add caricature, and the collapse line is repeated.",
+      "display_reference": "Psalm 5:6",
+      "english_rendering_id": "rnd.ps005.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.a6973028062e",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+      "literal_backbone": [
+        "The boastful will not stand before your eyes.",
+        "You hate all workers of wickedness."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:6",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "boastful people, the arrogant",
+          "note": "Turns a plural description into a singular named character and adds the suggestion of empty talk.",
+          "rendered_as": "Hot-Air-Boaster",
+          "token_ids": [
+            "ps005.v006.t003"
+          ],
+          "transliteration": "hôləlîm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "they will not stand, take their stand, station themselves",
+          "note": "Not standing before God does not itself specify physical collapse.",
+          "rendered_as": "collapses",
+          "token_ids": [
+            "ps005.v006.t001",
+            "ps005.v006.t002"
+          ],
+          "transliteration": "lōʾ yiṯyaṣṣəḇû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "hate, detest",
+          "note": "Introduces a gesture absent from the Hebrew and weakens the explicit force of hatred.",
+          "rendered_as": "you shake your head over",
+          "token_ids": [
+            "ps005.v006.t006"
+          ],
+          "transliteration": "śānēʾṯā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "all workers of iniquity, wrongdoing, wickedness",
+          "note": "Replaces all evildoers with a singular representative character; 'mischief' can suggest less serious wrongdoing than the Hebrew here.",
+          "rendered_as": "Mischief-Maker",
+          "token_ids": [
+            "ps005.v006.t007",
+            "ps005.v006.t008",
+            "ps005.v006.t009"
+          ],
+          "transliteration": "kol pōʿălê ʾāwen",
+          "verdict": "narrowing"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves both clauses: the boastful will not stand before God's eyes, and God hates all who practice wrongdoing. 'Injustice' is a supported rendering of the final noun.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "f9ca393e39cda8824cf8f92140083c1d48e3aa61df575fba8ecb893d139e527e",
+      "audit_ids": [
+        "aud.ps005.v006.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v006.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 5:6",
+      "english_rendering_id": "rnd.ps005.v006.a.lyric.alt.0002",
+      "generation_run_id": "cxr.fe8c45b50f80",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+      "literal_backbone": [
+        "The boastful will not take their stand before your eyes.",
+        "You hate all workers of wrongdoing."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:6",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v006.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v006.a.0001"
   ],
@@ -15,7 +198,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.3,
+        "singability_score": 0.14,
+        "stress_approximation": 0.68,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Hot-Air-Boaster collapses in front of you;\ncollapses in front of you;\nyou shake your head over Mischief-Maker.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.64,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v006.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The boastful will not stand before your eyes;\nyou hate all who do injustice.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",

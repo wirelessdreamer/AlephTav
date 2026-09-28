@@ -1,9 +1,102 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps008.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps008.v003.a.0001",
+    "aud.ps008.v003.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d71a5598cd9a168747a092417f7f7f423ce33e69d6a6ee9bb204505efa7f772c",
+      "audit_id": "aud.ps008.v003.a.0001",
+      "before_hash": "2b69cfde6887642fbf0ece8ceeb9fef2fa06927ccf6464484c16b03d89f10346",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:23:55.285695+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ddfcc3a93e67568340cb21ce51d3a640505804d2a2a005fb9aaca2f5d7460f4f",
+      "audit_id": "aud.ps008.v003.a.0002",
+      "before_hash": "bfa3b08427dabfb82ca1681076e55b7ee9821363df4c009ed309345b8193deaa",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:26:02.940085+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the mouth of young children as the source, God's establishment of strength on account of his foes, and the purpose of stopping the enemy and avenger, in Hebrew order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "2846d341a8cd9a128ff54a0e124ab2dae8f1bfa39e1b522802fa73b550c4e382",
+      "audit_ids": [
+        "aud.ps008.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps008.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Infants” leaves the Hebrew's explicit nursing description unstated.",
+      "display_reference": "Psalm 8:3",
+      "english_rendering_id": "rnd.ps008.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.c27fc9a0a66e",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִפִּ֤י עֽוֹלְלִ֨ים׀ וְֽיֹנְקִים֮ יִסַּ֢דְתָּ֫ עֹ֥ז לְמַ֥עַן צוֹרְרֶ֑יךָ לְהַשְׁבִּ֥ית א֝וֹיֵ֗ב וּמִתְנַקֵּֽ",
+      "literal_backbone": [
+        "From the mouth of children and nursing infants you have established strength on account of your foes,",
+        "to cause the enemy and avenger to cease."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:3",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and those nursing or suckling",
+          "note": "Identifies the children by age rather than explicitly describing them as nursing.",
+          "rendered_as": "and infants",
+          "token_ids": [
+            "ps008.v003.t003"
+          ],
+          "transliteration": "wəyōnəqîm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "to cause to cease, stop, put an end to",
+          "note": "“Still” appropriately conveys stopping the adversaries' activity without restricting the action to silencing speech.",
+          "rendered_as": "to still",
+          "token_ids": [
+            "ps008.v003.t008"
+          ],
+          "transliteration": "ləhašbiyṯ",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps008.v003.a.0001"
   ],
@@ -15,7 +108,99 @@
   "pr_links": [],
   "psalm_id": "ps008",
   "ref": "Psalm 8:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.65,
+        "syllable_count": 35,
+        "syllables": 35
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.e6c8ea5823f0",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Out of the mouth of babies and infants,\nyou have established strength because of your foes,\nto still the enemy and the avenger.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִפִּ֤י עֽוֹלְלִ֨ים׀ וְֽיֹנְקִים֮ יִסַּ֢דְתָּ֫ עֹ֥ז לְמַ֥עַן צוֹרְרֶ֑יךָ לְהַשְׁבִּ֥ית א֝וֹיֵ֗ב וּמִתְנַקֵּֽ",

@@ -1,9 +1,172 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v001.a.literal.alt.0001",
+    "rnd.ps007.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v001.a.0001",
+    "aud.ps007.v001.a.0002",
+    "aud.ps007.v001.a.0003",
+    "aud.ps007.v001.a.0004",
+    "aud.ps007.v001.a.0005",
+    "aud.ps007.v001.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "865651a72dd90aa5b9e5c0fff1383a3a6fe20127e478d52c55dec93c9b8338b6",
+      "audit_id": "aud.ps007.v001.a.0001",
+      "before_hash": "eaa7f250a00e8be30bbb410d4326d088d453b893fa8b6105365fe6fe1333a800",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:10:27.307021+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps007.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "342af379cda70c105587c33186c4042d66f22a51d559f9461f659e6f187f013b",
+      "audit_id": "aud.ps007.v001.a.0002",
+      "before_hash": "3be94b7b140880b1e70a35dc240b65ba46129e179a94246301cba13cc520fda9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.345734+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Retains the heading and its uncertain genre term as the passage's introduction.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8d016ea70af4825c48a8733db330f5240d77a38ca249d0a5bed65fd71856e6d4",
+      "audit_id": "aud.ps007.v001.a.0003",
+      "before_hash": "f979f5613bae50f1c630abefe1635ea5321f3b831ecda546bf552dba92bc91b7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.057939+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "A compact introduction preserves the heading's attribution, addressee, and occasion.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "164ff0d0883b9c0cfbb32b13dc35155001c2f7f54972d38e63f1a7f0dc896241",
+      "audit_id": "aud.ps007.v001.a.0004",
+      "before_hash": "a94e6d9de6c2536740869b6f848056a441c5f3cf3eb486ea2c782895d27b923e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:49:12.409049+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "041123b3155555f50e7d9b9b29d0a5aa6a66117b30f9a64f6b6aa7a7d84fcf5d",
+      "audit_id": "aud.ps007.v001.a.0005",
+      "before_hash": "080cfa00cc765b0e6ef88a8da4228847ef23d0ffc2d80d83b9414a46e3078520",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:53:20.376745+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps007.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f17905b3f2fa967bc75d081fb5f0a0222bb15f806210ac107c23bfad927cc1ed",
+      "audit_id": "aud.ps007.v001.a.0006",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T19:24:17.807529+00:00",
+      "created_by": "codex",
+      "entity_id": "arr.ps007.0001",
+      "entity_type": "arrangement",
+      "rationale": "codex arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “Psalm 7 — Shelter and Judgment”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the Shiggayon designation, association with David, singing to Yahweh, reference to Cush's words, and Cush's Benjaminite identity. The lyric's passive 'sung' leaves David's role as singer implicit; the literal rendering retains the explicit 'he sang.'",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "603b8819486af56ed118349f5c6bb2e061a5f22bdad2ec6d463d2140df80d5ab",
+      "audit_ids": [
+        "aud.ps007.v001.a.0004"
+      ],
+      "comparison_id": "cmp.ps007.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric compresses 'of David, which he sang' into 'David's ... sung' and expands 'a Benjaminite' into 'a man of Benjamin.'",
+      "display_reference": "Psalm 7:1",
+      "english_rendering_id": "rnd.ps007.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0af8abd3569b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שִׁגָּי֗וֹן לְדָ֫וִ֥ד אֲשֶׁר־שָׁ֥ר לַיהוָ֑ה עַל־דִּבְרֵי־כ֝֗וּשׁ בֶּן־יְמִינִֽי׃",
+      "literal_backbone": [
+        "A Shiggayon of David,",
+        "which he sang to Yahweh,",
+        "concerning the words of Cush, a Benjaminite."
+      ],
+      "literal_rendering_id": "rnd.ps007.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:1",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "An uncertain designation for a song or poem.",
+          "note": "Transliteration appropriately leaves the term's precise genre or musical significance unresolved.",
+          "rendered_as": "Shiggayon",
+          "token_ids": [
+            "ps007.v001.t001"
+          ],
+          "transliteration": "šiggāyôn",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "Words, matters, affairs.",
+          "note": "Selects the speech sense; the phrase can also concern the matter or affair of Cush.",
+          "rendered_as": "the words",
+          "token_ids": [
+            "ps007.v001.t007"
+          ],
+          "transliteration": "diḇrê",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v001.a.0001"
   ],
@@ -15,7 +178,209 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the superscription without inventing a musical definition.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v001.t001 → A Shiggayon",
+          "ps007.v001.t002 → of David",
+          "ps007.v001.t003–t005 → which he sang to Yahweh",
+          "ps007.v001.t006–t008 → concerning the words of Cush",
+          "ps007.v001.t009–t010 → a Benjaminite"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v001.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Retains the heading and its uncertain genre term as the passage's introduction.",
+      "rendering_id": "rnd.ps007.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "A Shiggayon of David,\nwhich he sang to Yahweh,\nconcerning the words of Cush,\na Benjaminite.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Compact sung heading with the uncertain genre term retained.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.68,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v001.t001–t002 → David's Shiggayon",
+          "ps007.v001.t003–t005 → sung to Yahweh",
+          "ps007.v001.t006–t008 → about the words of Cush",
+          "ps007.v001.t009–t010 → a man of Benjamin"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v001.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "A compact introduction preserves the heading's attribution, addressee, and occasion.",
+      "rendering_id": "rnd.ps007.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "David's Shiggayon,\nsung to Yahweh\nabout the words of Cush,\na man of Benjamin.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שִׁגָּי֗וֹן לְדָ֫וִ֥ד אֲשֶׁר־שָׁ֥ר לַיהוָ֑ה עַל־דִּבְרֵי־כ֝֗וּשׁ בֶּן־יְמִינִֽי׃",

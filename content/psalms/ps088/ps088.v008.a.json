@@ -1,9 +1,93 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v008.a.0001",
+    "aud.ps088.v008.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ee436890d2734708f2b902990ffa27f8014867d84a7c1b5b7807072ab318cc7b",
+      "audit_id": "aud.ps088.v008.a.0001",
+      "before_hash": "f8330e9c6b8e959197921dc25131e3c01121f26b5df5edb3fe18636cc6c70459",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.987596+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b962fdcf654ada30647deab88737accc9be303beaac279098b8e2586dc3173d8",
+      "audit_id": "aud.ps088.v008.a.0002",
+      "before_hash": "dbcb74cec56799727186e5d86609e1b6683ab55e3c3a205af34c04ff3ebf7626",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:33:35.261494+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the weight of God’s wrath upon the speaker, followed by affliction through God’s waves, in the Hebrew’s order.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "0847c055d61603461d3a563414c7dc21e38702b3db54295ca8c1a27f5f410036",
+      "audit_ids": [
+        "aud.ps088.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Drown” intensifies affliction into a specific water image beyond what the verb states. “All” and Selah are omitted.",
+      "display_reference": "Psalm 88:8",
+      "english_rendering_id": "rnd.ps088.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.c0df38a84ffb",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עָ֭לַי סָמְכָ֣ה חֲמָתֶ֑ךָ וְכָל־מִ֝שְׁבָּרֶ֗יךָ עִנִּ֥יתָ סֶּֽלָה׃",
+      "literal_backbone": [
+        "Your wrath has rested upon me;",
+        "with all your breakers you have afflicted me. Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:8",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "your breakers, breaking waves; you have afflicted, oppressed, humbled",
+          "note": "“Waves” preserves the image, but “drown” specifies an effect stronger than the Hebrew verb’s stated affliction.",
+          "rendered_as": "you drown me in your waves",
+          "token_ids": [
+            "ps088.v008.t005",
+            "ps088.v008.t006"
+          ],
+          "transliteration": "mišbāreḵā ʿinnîṯā",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v008.a.0001"
   ],
@@ -15,7 +99,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.39,
+        "stress_approximation": 0.58,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Your wrath presses down on me,\nyou drown me in your waves.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עָ֭לַי סָמְכָ֣ה חֲמָתֶ֑ךָ וְכָל־מִ֝שְׁבָּרֶ֗יךָ עִנִּ֥יתָ סֶּֽלָה׃",

@@ -1,9 +1,111 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v005.a.literal.alt.0001",
+    "rnd.ps137.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v005.a.0001",
+    "aud.ps137.v005.a.0002",
+    "aud.ps137.v005.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "5395f48227017f7cd07add60a0a9f9621e855d3ea13cad020613be3f6b24fcb0",
+      "audit_id": "aud.ps137.v005.a.0001",
+      "before_hash": "81fdba82c05477fdfdedd6ee2919d7f7641bbed122e57594a1c073a0070e7b5b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.516755+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Retains the shift to a personal oath and the repeated verb 'forget.'",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7107fb5f4ba76b991845c862060845f7479e7ff0bbad6adba783a7699454524f",
+      "audit_id": "aud.ps137.v005.a.0002",
+      "before_hash": "d78504723df92d5b85194ce83a76266acd3a590403321b741ec7a18cad29f2cb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.202625+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The communal lament becomes a personal oath; repeated forgetting links memory to the idle lyres.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "34bea0a7ede2872d07a3e916c00e7e4def7ff3e349743d7bd569c700a1913ac6",
+      "audit_id": "aud.ps137.v005.a.0003",
+      "before_hash": "0823a7ede6647b4ee35006d1efd33aec649617a2e92fc6c607e74677dc3c23fb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:08:18.659338+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the conditional address to Jerusalem, the first-person speaker, the self-curse involving the right hand, and the repetition of 'forget.' The literal retains the Hebrew's unstated object of the hand's forgetting.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "d121edbd260623098d1826c1f3fd6fe0fb1e3728d815f59c5be3b6446aec12a4",
+      "audit_ids": [
+        "aud.ps137.v005.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric moves 'Jerusalem' to the opening and supplies 'how to play.' Musical ability is a plausible interpretation in the psalm's setting, but the Hebrew does not specify what the hand forgets.",
+      "display_reference": "Psalm 137:5",
+      "english_rendering_id": "rnd.ps137.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.70289e3ba67b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אִֽם־אֶשְׁכָּחֵ֥ךְ יְֽרוּשָׁלִָ֗ם תִּשְׁכַּ֥ח יְמִינֽ͏ִי׃",
+      "literal_backbone": [
+        "If I forget you, Jerusalem,",
+        "may my right hand forget."
+      ],
+      "literal_rendering_id": "rnd.ps137.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:5",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "forget; my right hand",
+          "note": "'How to play' resolves the Hebrew ellipsis as loss of musical ability. The earlier lyres support this reading contextually, but it remains an added specification.",
+          "rendered_as": "Literal: 'let my right hand forget'; lyric: 'let my right hand forget how to play'",
+          "token_ids": [
+            "ps137.v005.t004",
+            "ps137.v005.t005"
+          ],
+          "transliteration": "tiškaḥ yəmînî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v005.a.0001"
   ],
@@ -15,7 +117,233 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Does not supply 'its skill' after 'forget.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The right hand forgetting",
+          "note": "Leaves the hand's unspecified object of forgetting unstated.",
+          "source_id": "ps137.v005.a",
+          "token_ids": [
+            "ps137.v005.t004",
+            "ps137.v005.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "If I forget you = ps137.v005.t001–t002",
+          "Jerusalem = ps137.v005.t003",
+          "let my right hand forget = ps137.v005.t004–t005"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v005.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Retains the shift to a personal oath and the repeated verb 'forget.'",
+      "rendering_id": "rnd.ps137.v005.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "If I forget you, Jerusalem,\nlet my right hand forget.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v005.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Makes the hand's threatened loss singable as 'forget how to play.'",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        },
+        {
+          "code": "ELLIPSIS_RESOLVED",
+          "confidence": 0.99,
+          "message": "'How to play' specifies musical ability where the Hebrew leaves what the hand forgets unstated.",
+          "severity": "medium"
+        }
+      ],
+      "grounding_confidence": 0.9,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.21,
+        "stress_approximation": 0.62,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The right hand forgetting",
+          "note": "Retains the hand and forgetting, interpreting the missing complement through the musical setting.",
+          "source_id": "ps137.v005.a",
+          "token_ids": [
+            "ps137.v005.t004",
+            "ps137.v005.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Jerusalem = ps137.v005.t003; moved to the opening",
+          "if I forget you = ps137.v005.t001–t002",
+          "let my right hand forget = ps137.v005.t004–t005",
+          "how to play = contextual completion of the unstated object of ps137.v005.t004"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v005.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from Hebrew; the musical complement is explicitly identified as interpretation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "The communal lament becomes a personal oath; repeated forgetting links memory to the idle lyres.",
+      "rendering_id": "rnd.ps137.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Jerusalem,\nif I forget you,\nlet my right hand\nforget how to play.",
+      "translation_basis": {
+        "basis_note": "Composed directly from Hebrew; the musical complement is explicitly identified as interpretation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אִֽם־אֶשְׁכָּחֵ֥ךְ יְֽרוּשָׁלִָ֗ם תִּשְׁכַּ֥ח יְמִינֽ͏ִי׃",

@@ -1,9 +1,230 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v011.a.lyric.alt.0001",
+    "rnd.ps005.v011.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v011.a.0001",
+    "aud.ps005.v011.a.0002",
+    "aud.ps005.v011.a.0003",
+    "aud.ps005.v011.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ed8beb561a17cebeadfd42911174e0938298493039edae53c5c3c124d0af2a85",
+      "audit_id": "aud.ps005.v011.a.0001",
+      "before_hash": "2a9c5fbf68226a6bd129bd5ff7913625609ae80723253d9b2616d959f2ff21f0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:04.046452+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2eb55f90428e1d6fc491e843d92cbc1815f383116c520dde90aaaa456790eea0",
+      "audit_id": "aud.ps005.v011.a.0002",
+      "before_hash": "262b9fe3a40bf95009bc09f44dd4359565b77fed6c82a5454af135fe77f64081",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:02:22.540204+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "319732f3dfaa8dfef7d83a3b0f66b505f511a38843b1ff852f6f1b5bceb5f99e",
+      "audit_id": "aud.ps005.v011.a.0003",
+      "before_hash": "131757077af36962deccf387fd5d630bb783dc56fe4427b5826d2379be53b882",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.587452+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v011.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5b765c68d6ea75a097d8b60ebf8e821321755d9cf50cc5cfdf45dedfeab054f8",
+      "audit_id": "aud.ps005.v011.a.0004",
+      "before_hash": "d05c5199556e2c2fbff0a66018225093fd19ecca746d28bdbdd2c7c36f2773b4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:15:08.968399+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v011.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeals for God to condemn the enemies, let their own counsels bring their downfall, and expel them, in Hebrew order. It omits the explicit grounds of numerous transgressions and rebellion against God.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "559b29fd5cb24e9e35438012782ede587e96db5a9436e106ed1d16bbb7e9d0de",
+      "audit_ids": [
+        "aud.ps005.v011.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Pile on' makes condemnation sound cumulative. 'So-called wisdom' adds sarcasm to their counsels, while 'wreck them' intensifies their fall and is repeated. 'They've had their chance' supplies an exhausted-opportunity rationale absent from the Hebrew.",
+      "display_reference": "Psalm 5:11",
+      "english_rendering_id": "rnd.ps005.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.4491a0e1d24f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַֽאֲשִׁימֵ֨ם׀ אֱ‍ֽלֹהִ֗ים יִפְּלוּ֮ מִֽמֹּעֲצ֢וֹתֵ֫יהֶ֥ם בְּרֹ֣ב פִּ֭שְׁעֵיהֶם הַדִּיחֵ֑מוֹ כִּי־מָ֥רוּ בָֽךְ׃",
+      "literal_backbone": [
+        "Hold them guilty, God.",
+        "Let them fall through their own counsels.",
+        "Cast them out because of their many transgressions, for they have rebelled against you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:11",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "declare them guilty, hold them guilty, condemn them",
+          "note": "The Hebrew requests a judgment of guilt; it does not describe adding or accumulating guilt.",
+          "rendered_as": "Pile on the guilt",
+          "token_ids": [
+            "ps005.v011.t001"
+          ],
+          "transliteration": "haʾăšîmēm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "let them fall; through or from their counsels, plans",
+          "note": "Preserves downfall through their own planning but characterizes the plans sarcastically as supposed wisdom.",
+          "rendered_as": "Let their so-called wisdom wreck them.\nwreck them.",
+          "token_ids": [
+            "ps005.v011.t003",
+            "ps005.v011.t004"
+          ],
+          "transliteration": "yippəlû mimmōʿăṣōṯêhem",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "because of their many transgressions; for they have rebelled against you",
+          "note": "Replaces specified wrongdoing and rebellion with a claim about a prior opportunity that the Hebrew does not state.",
+          "rendered_as": "They've had their chance.",
+          "token_ids": [
+            "ps005.v011.t005",
+            "ps005.v011.t006",
+            "ps005.v011.t008",
+            "ps005.v011.t009",
+            "ps005.v011.t010"
+          ],
+          "transliteration": "bərōḇ pišʿêhem; kî mārû ḇāḵ",
+          "verdict": "unsupported"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the appeal to God for condemnation, downfall through the enemies' own counsel, and expulsion. It does not explicitly retain their many transgressions or their rebellion against God as grounds for judgment.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "15588f13bf11b27f2cc07e33ce0f8204b8134e52904857b7427c21d591b35b8e",
+      "audit_ids": [
+        "aud.ps005.v011.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v011.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Pile on' adds an image of accumulating guilt. 'So-called wisdom' adds mockery, and 'They've had their chance' substitutes an exhausted opportunity for the Hebrew's stated reasons for expulsion.",
+      "display_reference": "Psalm 5:11",
+      "english_rendering_id": "rnd.ps005.v011.a.lyric.alt.0002",
+      "generation_run_id": "cxr.ab14424931fd",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַֽאֲשִׁימֵ֨ם׀ אֱ‍ֽלֹהִ֗ים יִפְּלוּ֮ מִֽמֹּעֲצ֢וֹתֵ֫יהֶ֥ם בְּרֹ֣ב פִּ֭שְׁעֵיהֶם הַדִּיחֵ֑מוֹ כִּי־מָ֥רוּ בָֽךְ׃",
+      "literal_backbone": [
+        "Hold them guilty, God.",
+        "Let them fall through their own counsels.",
+        "Cast them out for their many transgressions,​for they have rebelled against you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:11",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "hold guilty, declare guilty, condemn",
+          "note": "The Hebrew asks for a guilty verdict or condemnation, without an image of piling up guilt.",
+          "rendered_as": "Pile on the guilt",
+          "token_ids": [
+            "ps005.v011.t001"
+          ],
+          "transliteration": "haʾăšîmēm",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "from or through their counsels, plans, schemes",
+          "note": "Counsel becomes supposed wisdom, with an explicitly mocking qualification.",
+          "rendered_as": "their so-called wisdom",
+          "token_ids": [
+            "ps005.v011.t004"
+          ],
+          "transliteration": "mimmōʿăṣōṯêhem",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "for or in the multitude of their transgressions",
+          "note": "Their numerous transgressions are not explicitly given as the grounds for expulsion.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v011.t005",
+            "ps005.v011.t006"
+          ],
+          "transliteration": "bərōḇ pišʿêhem",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "for they have rebelled against you",
+          "note": "The Hebrew identifies rebellion against God; it does not mention a prior opportunity or its exhaustion.",
+          "rendered_as": "They've had their chance.",
+          "token_ids": [
+            "ps005.v011.t008",
+            "ps005.v011.t009",
+            "ps005.v011.t010"
+          ],
+          "transliteration": "kî mārû ḇāḵ",
+          "verdict": "unsupported"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v011.a.0001"
   ],
@@ -15,7 +236,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.62,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Pile on the guilt, God!\nLet their so-called wisdom wreck them.\nwreck them.\nKick them out! They've had their chance.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.63,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v011.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Pile on the guilt, God!\nLet their so-called wisdom wreck them.\nKick them out! They've had their chance.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הַֽאֲשִׁימֵ֨ם׀ אֱ‍ֽלֹהִ֗ים יִפְּלוּ֮ מִֽמֹּעֲצ֢וֹתֵ֫יהֶ֥ם בְּרֹ֣ב פִּ֭שְׁעֵיהֶם הַדִּיחֵ֑מוֹ כִּי־מָ֥רוּ בָֽךְ׃",

@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v011.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v011.a.0001",
+    "aud.ps088.v011.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fd3125a3fd6c1fd19dbe2a501e3d6c3c637bda0b5f9375ad48c284f7033dc30a",
+      "audit_id": "aud.ps088.v011.a.0001",
+      "before_hash": "8d04a292dd39fbdc6af7a1a3b866111cf3b071fb9367cfb74f41f48e2e3eb98e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:50.078875+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v011.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "333edeaa1207f291cbbad0ccfc3d6c82b3f11a1add8051a326b9c95859663f9c",
+      "audit_id": "aud.ps088.v011.a.0002",
+      "before_hash": "e32b0431cadb43c3eac4359426be13c7f1300c1d270d28adba67eb0bef5274fb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:34:09.771478+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v011.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Retains two questions addressed to God, first about divine action in relation to death and then about praising God. The Hebrew’s explicit dead, wonders, and rising shades are substantially recast.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "e460ed9e3eb98e96d3132dc6a36ab93cba2126b4fc96b91f53f1f52176627a10",
+      "audit_ids": [
+        "aud.ps088.v011.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v011.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Reach me” replaces doing wonders for the dead; “if I fade out” makes death a conditional, personal image. The shades rising to praise become the speaker still having a voice, adding continuity and vocal ability while omitting rising. Selah is omitted.",
+      "display_reference": "Psalm 88:11",
+      "english_rendering_id": "rnd.ps088.v011.a.lyric.alt.0001",
+      "generation_run_id": "cxr.efd3bbfcb81f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הֲלַמֵּתִ֥ים תַּעֲשֶׂה־פֶּ֑לֶא אִם־רְ֝פָאִ֗ים יָק֤וּמוּ׀ יוֹד֬וּךָ סֶּֽלָה׃",
+      "literal_backbone": [
+        "Will you work a wonder for the dead?",
+        "Or will the shades arise and praise you? Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:11",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for the dead, with an interrogative prefix",
+          "note": "Changes an explicit reference to dead people into an ambiguous image of the speaker fading away.",
+          "rendered_as": "me if I fade out",
+          "token_ids": [
+            "ps088.v011.t001"
+          ],
+          "transliteration": "hălammēṯîm",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "do, make; a wonder, extraordinary deed",
+          "note": "Divine contact replaces the specific question about performing a wonder.",
+          "rendered_as": "Do you reach me",
+          "token_ids": [
+            "ps088.v011.t002",
+            "ps088.v011.t003"
+          ],
+          "transliteration": "taʿăśeh peleʾ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "shades, departed dead; rise, stand; praise you, give you thanks",
+          "note": "Preserves praise directed to God but replaces the dead rising with an added question about the speaker retaining a voice.",
+          "rendered_as": "Do I still have a voice to praise you?",
+          "token_ids": [
+            "ps088.v011.t005",
+            "ps088.v011.t006",
+            "ps088.v011.t007"
+          ],
+          "transliteration": "rəfāʾîm yāqûmû yôḏûḵā",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v011.a.0001"
   ],
@@ -15,7 +121,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:11",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.62,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v011.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Do you reach me if I fade out?\nDo I still have a voice to praise you?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v011.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הֲלַמֵּתִ֥ים תַּעֲשֶׂה־פֶּ֑לֶא אִם־רְ֝פָאִ֗ים יָק֤וּמוּ׀ יוֹד֬וּךָ סֶּֽלָה׃",

@@ -1,8 +1,61 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps006.v001.a.0001",
+    "aud.ps006.v001.a.0002",
+    "aud.ps006.v001.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "5e72adf0ee89bf4c804a6342c19f1d4619a736d62d63d5d4887735a2031b9ea7",
+      "audit_id": "aud.ps006.v001.a.0001",
+      "before_hash": "3e500abedae0572b9105364b7702b51634c8eb506bced23d35602e39c6cb53d1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:28:16.393879+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps006.0001",
+      "entity_type": "translation",
+      "rationale": "import translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "94553786ddbd07f934f9fe4d517d87126e2faeae9955dba33cefb640eeb6072c",
+      "audit_id": "aud.ps006.v001.a.0002",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:31:43.254487+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps006.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “How long, LORD?”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "cdb20811f699943c1f04841bec387f20e8eaae0a45e87df6a955544e393475f0",
+      "audit_id": "aud.ps006.v001.a.0003",
+      "before_hash": "546e4728f5ae8b741f48526995ee35f522abf0117949c80c49156f50921d4e2d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:35:44.614504+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps006.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps006.v001.a.0001"

@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v008.a.literal.alt.0001",
+    "rnd.ps137.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v008.a.0001",
+    "aud.ps137.v008.a.0002",
+    "aud.ps137.v008.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "47343c2995b969a3751f524ab00b67f5ebe87cbb8721c4cfaff65bf0aaf7ac94",
+      "audit_id": "aud.ps137.v008.a.0001",
+      "before_hash": "ce29d529af29a5f3eb3f307b7d42f8db3dfbd1a544a16cf543c24b5ba390ec2f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.547428+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v008.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Retains the address to personified Babylon and begins the repeated declaration completed in verse 9.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2c29bf94aef3e64afc2022e147f1875b88c26011045e7c6caac85cd526635597",
+      "audit_id": "aud.ps137.v008.a.0002",
+      "before_hash": "85de5ad44155f164182212411ef7930b097fbebe0cab34551f37e113dcc76531",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.229816+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Keeps the strained address and passive devastation, then establishes the declaration repeated in the closing unit.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "242cdbc62bec5bc3fb1284c13106cec40da36b8275beb31900105be7e1f9d97a",
+      "audit_id": "aud.ps137.v008.a.0003",
+      "before_hash": "ceec32fb82b6ab913efabc0e704d2c499ac18c86e752c7b9d1fb6c1fb5bc0cf7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:09:05.341251+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the address to personified Daughter Babylon, her passive devastation, the declaration of happiness, and repayment for her treatment of the speakers. The literal makes repayment in kind more explicit than the lyric's 'for what you did to us.'",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "ecf0fc3dc840bc7ecd3244decbb781c04d49956010f105753797ffa31ba54baa",
+      "audit_ids": [
+        "aud.ps137.v008.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric compresses the related Hebrew expressions 'your dealing' and 'you dealt' into 'what you did.' 'Laid waste' and 'devastated' preserve the passive description but can suggest completed destruction; the Hebrew participle does not by itself settle its timing.",
+      "display_reference": "Psalm 137:8",
+      "english_rendering_id": "rnd.ps137.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.013260e72fd7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בַּת־בָּבֶ֗ל הַשְּׁד֫וּדָ֥ה אַשְׁרֵ֥י שֶׁיְשַׁלֶּם־לָ֑ךְ אֶת־גְּ֝מוּלֵ֗ךְ שֶׁגָּמַ֥לְתְּ לָֽנוּ׃",
+      "literal_backbone": [
+        "Daughter Babylon, the devastated one,",
+        "happy the one who repays you your dealing that you dealt to us."
+      ],
+      "literal_rendering_id": "rnd.ps137.v008.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:8",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "the devastated, ravaged, or despoiled one",
+          "note": "Both follow the passive form. The supplied gloss 'about to be destroyed' interprets its temporal reference; imminence is not independently expressed.",
+          "rendered_as": "Literal: 'devastated'; lyric: 'laid waste'",
+          "token_ids": [
+            "ps137.v008.t003"
+          ],
+          "transliteration": "haššəḏûḏāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "your dealing, treatment, recompense; which you dealt to us",
+          "note": "The lyric retains the reason for repayment but compresses the word-family repetition and leaves equivalent treatment less explicit.",
+          "rendered_as": "Literal: 'with the treatment you dealt us'; lyric: 'for what you did to us'",
+          "token_ids": [
+            "ps137.v008.t008",
+            "ps137.v008.t009",
+            "ps137.v008.t010"
+          ],
+          "transliteration": "gəmûlēḵ šegāmalt lānû",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v008.a.0001"
   ],
@@ -15,7 +128,232 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the passive 'devastated' without changing it to 'destroyer.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.92,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Devastated Daughter Babylon",
+          "note": "Preserves the feminine personification and passive devastation.",
+          "source_id": "ps137.v008.a",
+          "token_ids": [
+            "ps137.v008.t001",
+            "ps137.v008.t002",
+            "ps137.v008.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Daughter Babylon = ps137.v008.t001–t002",
+          "devastated = ps137.v008.t003",
+          "happy the one who repays you = ps137.v008.t004–t006",
+          "with the treatment = ps137.v008.t007–t008; English 'with' expresses the repayment's content",
+          "you dealt us = ps137.v008.t009–t010"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v008.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Retains the address to personified Babylon and begins the repeated declaration completed in verse 9.",
+      "rendering_id": "rnd.ps137.v008.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Daughter Babylon, devastated,\nhappy the one who repays you\nwith the treatment you dealt us.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v008.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "A suspended address gives way to the repeated 'happy is the one' phrase.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.64,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Daughter Babylon laid waste",
+          "note": "Retains the daughter personification and passive devastation without assigning an explicit time.",
+          "source_id": "ps137.v008.a",
+          "token_ids": [
+            "ps137.v008.t001",
+            "ps137.v008.t002",
+            "ps137.v008.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Daughter Babylon = ps137.v008.t001–t002",
+          "laid waste = ps137.v008.t003",
+          "happy is the one = ps137.v008.t004 with the following relative construction",
+          "who pays you back = ps137.v008.t005–t006",
+          "for what you did to us = ps137.v008.t007–t010; condenses the treatment/dealing word-family repetition"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v008.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Keeps the strained address and passive devastation, then establishes the declaration repeated in the closing unit.",
+      "rendering_id": "rnd.ps137.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Daughter Babylon,\nlaid waste—\nhappy is the one\nwho pays you back\nfor what you did to us.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בַּת־בָּבֶ֗ל הַשְּׁד֫וּדָ֥ה אַשְׁרֵ֥י שֶׁיְשַׁלֶּם־לָ֑ךְ אֶת־גְּ֝מוּלֵ֗ךְ שֶׁגָּמַ֥לְתְּ לָֽנוּ׃",

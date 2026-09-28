@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v008.a.literal.alt.0001",
+    "rnd.ps007.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v008.a.0001",
+    "aud.ps007.v008.a.0002",
+    "aud.ps007.v008.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a834b3ed3f2ace34f613085b48478f337f33539baf9bef6c381e4b4844159ccd",
+      "audit_id": "aud.ps007.v008.a.0001",
+      "before_hash": "39726f145985b143b69c0dbbb42dad4a412b381fc9738cae06840d67d7fc66da",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.402620+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v008.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the petitions with the gathered peoples and the elevated divine position.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b8e56561aa01565ac263c8c042bf7cb6314a339c7dc58cb088a70ee56ee4fa11",
+      "audit_id": "aud.ps007.v008.a.0002",
+      "before_hash": "2089d8a147c7ba6e242dba726e07c12dc52e338f3a2992a0fa504b74b8e1f5c3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.122596+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The personal petition opens into a public gathering, retaining both surrounding and elevation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9854f5f375de719820778370d73437b0e4f4e69e8f3b7c7a2b18245d2012fa1e",
+      "audit_id": "aud.ps007.v008.a.0003",
+      "before_hash": "a90ffc136e71a3bcf992473b18eae782313651e4ae40586ec88f442fdff3c607",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:35.626099+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the petition for peoples to surround the addressee and the command to return to an elevated position above the assembly. The lyric expresses the assembly through the action of gathering and refers back to its members as 'them.'",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "b5cd88013290974f2127efc466de1c05bd664928fb2538603c35cef13410afc2",
+      "audit_ids": [
+        "aud.ps007.v008.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Gather around' combines the assembly noun and surrounding verb. 'The heights' gives an idiomatic plural form to the singular high-place expression; conjunctions are absorbed into punctuation.",
+      "display_reference": "Psalm 7:8",
+      "english_rendering_id": "rnd.ps007.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0183677a43ef",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַעֲדַ֣ת לְ֭אֻמִּים תְּסוֹבְבֶ֑ךָּ וְ֝עָלֶ֗יהָ לַמָּר֥וֹם שֽׁוּבָה׃",
+      "literal_backbone": [
+        "Let an assembly of peoples surround you;",
+        "and above it, return to the high place."
+      ],
+      "literal_rendering_id": "rnd.ps007.v008.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:8",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "And upon it, over it, above it; on its behalf.",
+          "note": "Selects the spatial reading. The Hebrew feminine singular refers to the assembly; the English plural refers to the peoples composing it.",
+          "rendered_as": "above them",
+          "token_ids": [
+            "ps007.v008.t004"
+          ],
+          "transliteration": "wəʿālêhā",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v008.a.0001"
   ],
@@ -15,7 +116,234 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Leaves the high place unspecified.",
+      "drift_flags": [],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Surrounding assembly and return on high",
+          "note": "Retains the circular and vertical spatial imagery.",
+          "source_id": "ps007.v008.a",
+          "token_ids": [
+            "ps007.v008.t001",
+            "ps007.v008.t003",
+            "ps007.v008.t004",
+            "ps007.v008.t005",
+            "ps007.v008.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v008.t001–t002 → the assembly of peoples",
+          "ps007.v008.t003 → let surround you",
+          "ps007.v008.t004 → and above it",
+          "ps007.v008.t005–t006 → return on high"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v008.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Continues the petitions with the gathered peoples and the elevated divine position.",
+      "rendering_id": "rnd.ps007.v008.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Let the assembly of peoples surround you;\nand above it, return on high.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v008.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Two balanced lines carry the scene from gathering to elevation.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.25,
+        "stress_approximation": 0.71,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Peoples surrounding God below the heights",
+          "note": "Both the encircling assembly and the elevated position remain.",
+          "source_id": "ps007.v008.a",
+          "token_ids": [
+            "ps007.v008.t001",
+            "ps007.v008.t002",
+            "ps007.v008.t003",
+            "ps007.v008.t004",
+            "ps007.v008.t005",
+            "ps007.v008.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v008.t001–t003 → Let the peoples gather around you",
+          "ps007.v008.t004 → above them",
+          "ps007.v008.t005–t006 → return to the heights"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v008.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The personal petition opens into a public gathering, retaining both surrounding and elevation.",
+      "rendering_id": "rnd.ps007.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let the peoples gather around you;\nreturn to the heights above them.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וַעֲדַ֣ת לְ֭אֻמִּים תְּסוֹבְבֶ֑ךָּ וְ֝עָלֶ֗יהָ לַמָּר֥וֹם שֽׁוּבָה׃",

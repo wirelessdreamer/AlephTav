@@ -1,9 +1,80 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v007.a.0001",
+    "aud.ps088.v007.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cccf4f63762faf26464febd8c758b10f5d1fea9c400d1b1d232a83398c82c7e1",
+      "audit_id": "aud.ps088.v007.a.0001",
+      "before_hash": "d0f438466e91e894bd9e4e07daf3c9be7cd324eb34e2fdf8df03e2326177f852",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.962839+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b8b60eeb7b530f39cf9eb39036624d71875a3d869e6948e80a48021d15419d07",
+      "audit_id": "aud.ps088.v007.a.0002",
+      "before_hash": "b543468a0209f99c783abbe2325cbed09863abe3f18481535a5d20dfc27a2ec9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:33:25.907520+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves God’s action of placing the speaker in the lowest pit, followed by the dark places and the depths, in the Hebrew’s order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "8fdf7e9dbb62a5efb6b93b0a15b264fe81512e02aee9c81badd309880736a8d9",
+      "audit_ids": [
+        "aud.ps088.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Below” reinforces the downward location already conveyed by “depths,” without materially changing the sense.",
+      "display_reference": "Psalm 88:7",
+      "english_rendering_id": "rnd.ps088.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.5ca1a7da2f38",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שַׁ֭תַּנִי בְּב֣וֹר תַּחְתִּיּ֑וֹת בְּ֝מַחֲשַׁכִּ֗ים בִּמְצֹלֽוֹת׃",
+      "literal_backbone": [
+        "You have put me in the lowest pit, in dark places, in the depths."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:7",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v007.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v007.a.0001"
   ],
@@ -15,7 +86,99 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.25,
+        "singability_score": 0.13,
+        "stress_approximation": 0.62,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You have put me in the lowest pit,\nin the dark places,\nin the depths below.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שַׁ֭תַּנִי בְּב֣וֹר תַּחְתִּיּ֑וֹת בְּ֝מַחֲשַׁכִּ֗ים בִּמְצֹלֽוֹת׃",

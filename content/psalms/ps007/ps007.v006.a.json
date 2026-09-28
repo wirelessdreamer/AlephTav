@@ -1,9 +1,121 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v006.a.literal.alt.0001",
+    "rnd.ps007.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v006.a.0001",
+    "aud.ps007.v006.a.0002",
+    "aud.ps007.v006.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "31bb8454afd73fcb96317627cf2cb7e4bce844add3f5d3049b382908ee580124",
+      "audit_id": "aud.ps007.v006.a.0001",
+      "before_hash": "9def7acceb169f4200c42f5ac5ecdff96ff443307779f0bc0bce21441ac60cee",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.384311+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Completes the oath with its escalating consequences and preserves the earth-and-dust parallel.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8de88266ab70a799e439e6b398fe40d7958228117c070c4e53f388b5ec28c1ad",
+      "audit_id": "aud.ps007.v006.a.0002",
+      "before_hash": "95434d374b5919dfdc1d25f28a1f78a4b6cfc5f32aa2943aa96371b6ebd7eb4b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.103513+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Completes the conditional oath with pursuit, capture, trampling, and humiliation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "45174d028c0430e611d1eccb758a35bc78a42fc761df758358a58ac7365c4ca0",
+      "audit_id": "aud.ps007.v006.a.0003",
+      "before_hash": "59b6e8782bb637842ce9d11862542c2a6f37f04ce4a04ddc0de5c01465af6d0d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:12.310771+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the oath's consequence: pursuit and capture, trampling the speaker's life to the ground, and laying his honor in dust. The permissive 'let' governs the sequence, and Selah is retained from the Hebrew.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "83089e853b7d8625a8c10db1ecd18fa781e327802e99927bc42a6c323799ff5f",
+      "audit_ids": [
+        "aud.ps007.v006.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Then' makes the connection to the preceding conditions explicit. 'My enemy' personalizes the Hebrew 'an enemy'; 'chase me' renders pursuit of the speaker's life as pursuit of the person. Conjunctions become a continuous list of actions.",
+      "display_reference": "Psalm 7:6",
+      "english_rendering_id": "rnd.ps007.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.28c43ba2380f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יִֽרַדֹּ֥ף אוֹיֵ֨ב׀ נַפְשִׁ֡י וְיַשֵּׂ֗ג וְיִרְמֹ֣ס לָאָ֣רֶץ חַיָּ֑י וּכְבוֹדִ֓י׀ לֶעָפָ֖ר יַשְׁכֵּ֣ן סֶֽלָה׃",
+      "literal_backbone": [
+        "Let an enemy pursue my life and overtake it;",
+        "let him trample my life to the ground,",
+        "and make my glory dwell in the dust. Selah."
+      ],
+      "literal_rendering_id": "rnd.ps007.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:6",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "And my glory, honor, dignity.",
+          "note": "Selects the ordinary honor sense while preserving the image of its abasement into dust.",
+          "rendered_as": "my honor",
+          "token_ids": [
+            "ps007.v006.t008"
+          ],
+          "transliteration": "ûḵəḇôḏî",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "Cause to dwell, settle, lodge.",
+          "note": "Expresses the causative placement naturally, though it does not retain the dwelling nuance.",
+          "rendered_as": "lay",
+          "token_ids": [
+            "ps007.v006.t010"
+          ],
+          "transliteration": "yaškēn",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v006.a.0001"
   ],
@@ -15,7 +127,246 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains glory and Selah without explanatory substitutions.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Life trampled to earth; glory laid in dust",
+          "note": "Preserves both images and their distinct earth and dust terms.",
+          "source_id": "ps007.v006.a",
+          "token_ids": [
+            "ps007.v006.t005",
+            "ps007.v006.t006",
+            "ps007.v006.t007",
+            "ps007.v006.t008",
+            "ps007.v006.t009",
+            "ps007.v006.t010"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v006.t001–t003 → let an enemy pursue my life",
+          "ps007.v006.t004 → and overtake it",
+          "ps007.v006.t005–t007 → let him trample my life to the earth",
+          "ps007.v006.t008 → and my glory",
+          "ps007.v006.t009–t010 → lay in the dust",
+          "ps007.v006.t011 → Selah"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v006.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Completes the oath with its escalating consequences and preserves the earth-and-dust parallel.",
+      "rendering_id": "rnd.ps007.v006.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "let an enemy pursue my life\nand overtake it;\nlet him trample my life to the earth\nand lay my glory in the dust.\nSelah.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v006.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Short capture phrase between pursuit and the parallel ground-and-dust lines.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 22,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.64,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Life trampled to the ground",
+          "note": "Retains trampling and the downward motion.",
+          "source_id": "ps007.v006.a",
+          "token_ids": [
+            "ps007.v006.t005",
+            "ps007.v006.t006",
+            "ps007.v006.t007"
+          ]
+        },
+        {
+          "label": "Honor laid in dust",
+          "note": "Retains dust as the resting place of the speaker's honor.",
+          "source_id": "ps007.v006.a",
+          "token_ids": [
+            "ps007.v006.t008",
+            "ps007.v006.t009",
+            "ps007.v006.t010"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v006.t001–t003 → then let my enemy chase me",
+          "ps007.v006.t004 → let him catch me",
+          "ps007.v006.t005–t007 → trample my life to the ground",
+          "ps007.v006.t008–t010 → lay my honor in dust",
+          "ps007.v006.t011 → Selah"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v006.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "Completes the conditional oath with pursuit, capture, trampling, and humiliation.",
+      "rendering_id": "rnd.ps007.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "then let my enemy chase me,\nlet him catch me,\ntrample my life to the ground,\nlay my honor in dust.\nSelah.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יִֽרַדֹּ֥ף אוֹיֵ֨ב׀ נַפְשִׁ֡י וְיַשֵּׂ֗ג וְיִרְמֹ֣ס לָאָ֣רֶץ חַיָּ֑י וּכְבוֹדִ֓י׀ לֶעָפָ֖ר יַשְׁכֵּ֣ן סֶֽלָה׃",

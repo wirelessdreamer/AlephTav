@@ -1,9 +1,113 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v013.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v013.a.0001",
+    "aud.ps088.v013.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "43d2da8bc5b4401358dfb0fbc24d68f7788d36c1d80c428c99d10d7a0c0454d4",
+      "audit_id": "aud.ps088.v013.a.0001",
+      "before_hash": "9e71fb5251defd442c86ed869115261de299315814e41730529173aae6f24de0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:50.130403+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ba5c9403e1236c09d202212ec8b5add44f2fe7aafa01006ed6b6960754f21ecb",
+      "audit_id": "aud.ps088.v013.a.0002",
+      "before_hash": "83430bf9e5b10b82eb2671aac5d71d2ff5e090c0632297ee6b15f6455f11d1b5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:34:39.678056+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the question concerning God’s deeds in darkness, followed by God’s righteousness in connection with forgetting.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "a9196e8a0bfcb90ab075dbce5ca3d88433854c664623f86b5094ff9d2cf02e65",
+      "audit_ids": [
+        "aud.ps088.v013.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Changes being known into reaching the speaker. “Works” generalizes wonders, and “when I’ve been forgotten” turns the land of forgetfulness into a personal condition, losing the explicit realm imagery.",
+      "display_reference": "Psalm 88:13",
+      "english_rendering_id": "rnd.ps088.v013.a.lyric.alt.0001",
+      "generation_run_id": "cxr.3f89bde46e7b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הֲיִוָּדַ֣ע בַּחֹ֣שֶׁךְ פִּלְאֶ֑ךָ וְ֝צִדְקָ בְּאֶ֣רֶץ נְשִׁיָּֽה׃",
+      "literal_backbone": [
+        "Will your wonder be known in the darkness,",
+        "and your righteousness in the land of forgetfulness?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:13",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "will it be known, recognized?",
+          "note": "Replaces recognition of God’s deeds with their reaching the speaker; the Hebrew does not specify a first-person recipient.",
+          "rendered_as": "Do your works reach me",
+          "token_ids": [
+            "ps088.v013.t001"
+          ],
+          "transliteration": "hăyiwwāḏaʿ",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "your wonder, extraordinary deed",
+          "note": "Retains divine activity but loses its explicitly wondrous character.",
+          "rendered_as": "your works",
+          "token_ids": [
+            "ps088.v013.t003"
+          ],
+          "transliteration": "pilʾeḵā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in the land of forgetfulness, oblivion",
+          "note": "Recasts a realm characterized by oblivion as the speaker’s experience of being forgotten.",
+          "rendered_as": "when I’ve been forgotten",
+          "token_ids": [
+            "ps088.v013.t005",
+            "ps088.v013.t006"
+          ],
+          "transliteration": "bəʾereṣ nəšiyyāh",
+          "verdict": "nonstandard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v013.a.0001"
   ],
@@ -15,7 +119,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.11,
+        "stress_approximation": 0.56,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Do your works reach me when I’m in the dark,\nyour justice when I’ve been forgotten?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הֲיִוָּדַ֣ע בַּחֹ֣שֶׁךְ פִּלְאֶ֑ךָ וְ֝צִדְקָ בְּאֶ֣רֶץ נְשִׁיָּֽה׃",

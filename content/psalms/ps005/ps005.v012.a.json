@@ -1,9 +1,264 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v012.a.lyric.alt.0001",
+    "rnd.ps005.v012.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v012.a.0001",
+    "aud.ps005.v012.a.0002",
+    "aud.ps005.v012.a.0003",
+    "aud.ps005.v012.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8aad15ee7ff18f1884e1ad298406421b4e2a6fd42b208c86fc3a3a035431cce4",
+      "audit_id": "aud.ps005.v012.a.0001",
+      "before_hash": "7f9d8533ff026a7a94d75e73e082bc7183c77ba430f5314cfb098868fb92b46b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:04.084647+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v012.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "002426dc060172862de62fe6666bc6a29ebc067fa2fcd0282ea683f7da31fde2",
+      "audit_id": "aud.ps005.v012.a.0002",
+      "before_hash": "0ffa39a38ab89ce044ae18282b5bcfec051e37310f4dc27ca2a8b7629c132fa1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:02:44.899982+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v012.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "cb757ca011d6947fa6c96dce7bf9bcbb058fd0b172d797543fac9f1e60140833",
+      "audit_id": "aud.ps005.v012.a.0003",
+      "before_hash": "68da95bba863bc9f1ef134215ac5ddf06e2f60bb127730554a481cce18da0ba9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.616024+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v012.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "434d556091d9c922e5b5b20cd1d0782291bbcc10ef7430942a2eb5f7c54ac1e2",
+      "audit_id": "aud.ps005.v012.a.0004",
+      "before_hash": "e6263f82922680d2dbd2b6ac262fdb9a938076d3e69753db631ba99423c66588",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:15:30.939696+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v012.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Retains refuge in God, joyful celebration, and divine protection. It moves welcome and refuge ahead of rejoicing, changes the beneficiaries from 'all' who seek refuge to 'us,' and omits the closing identification of those who love God's name and exult in him.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "a17fce3cdab22588187cb158eb22af52f340bee385e1241164bcb238e9365d99",
+      "audit_ids": [
+        "aud.ps005.v012.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v012.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Adds an open-armed welcome and running for cover. Rejoicing becomes a party, its perpetual duration becomes 'all night,' and covering people becomes guarding their celebration. Repeated fragments provide lyrical emphasis.",
+      "display_reference": "Psalm 5:12",
+      "english_rendering_id": "rnd.ps005.v012.a.lyric.alt.0001",
+      "generation_run_id": "cxr.1d8c6acfdc26",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְיִשְׂמְח֨וּ כָל־ח֪וֹסֵי בָ֡ךְ לְעוֹלָ֣ם יְ֭רַנֵּנוּ וְתָסֵ֣ךְ עָלֵ֑ימוֹ וְֽיַעְלְצ֥וּ בְ֝ךָ֗ אֹהֲבֵ֥י שְׁמֶֽךָ׃",
+      "literal_backbone": [
+        "Let all who take refuge in you rejoice.",
+        "Let them shout for joy forever, and spread protection over them.",
+        "Let those who love your name exult in you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:12",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v012.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "those taking refuge, seeking shelter, trusting; in you",
+          "note": "Preserves seeking refuge while adding running and turning a description of the beneficiaries into a first-person temporal clause.",
+          "rendered_as": "when we run for cover to you.\nrun for cover to you.",
+          "token_ids": [
+            "ps005.v012.t003",
+            "ps005.v012.t004"
+          ],
+          "transliteration": "ḥôsê ḇāḵ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "forever, perpetually, for an enduring time",
+          "note": "Replaces enduring or perpetual joy with a single night's duration.",
+          "rendered_as": "all night",
+          "token_ids": [
+            "ps005.v012.t005"
+          ],
+          "transliteration": "ləʿôlām",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "let them rejoice; let them shout or sing for joy",
+          "note": "Interprets rejoicing and joyful shouting as a party rather than retaining the stated actions.",
+          "rendered_as": "Let the party last all night!",
+          "token_ids": [
+            "ps005.v012.t001",
+            "ps005.v012.t006"
+          ],
+          "transliteration": "wəyiśməḥû; yərannēnû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and cover, shelter, protect; over them",
+          "note": "Guarding conveys protection, but the open-armed welcome is supplied and the object of protection shifts from people to their celebration.",
+          "rendered_as": "But you'll welcome us with open arms\nStand guard over our celebration.\nStand guard",
+          "token_ids": [
+            "ps005.v012.t007",
+            "ps005.v012.t008"
+          ],
+          "transliteration": "wəṯāsēḵ ʿālêmô",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and let them exult in you; those who love your name",
+          "note": "Celebration preserves the general joy, but its explicit focus on God and the participants' love of God's name are absent.",
+          "rendered_as": "our celebration",
+          "token_ids": [
+            "ps005.v012.t009",
+            "ps005.v012.t010",
+            "ps005.v012.t011",
+            "ps005.v012.t012"
+          ],
+          "transliteration": "wəyaʿləṣû ḇəḵā ʾōhăḇê šəmeḵā",
+          "verdict": "narrowing"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English retains refuge in God, communal joy, and divine protection. It changes 'all who take refuge' into 'we/us,' reduces everlasting rejoicing to an all-night celebration, and leaves out the closing identification of those who love God's name and exult in him.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "8b10c4c810f0ef75236bc1f7df640f4c01b964440b3c0b2cd16dfacaa5902f82",
+      "audit_ids": [
+        "aud.ps005.v012.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v012.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "An open-armed welcome adds hospitality imagery. 'Party' recasts rejoicing in colloquial terms, while 'Stand guard over our celebration' makes the celebration, rather than the people, the object of protection.",
+      "display_reference": "Psalm 5:12",
+      "english_rendering_id": "rnd.ps005.v012.a.lyric.alt.0002",
+      "generation_run_id": "cxr.2af4376b56e2",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְיִשְׂמְח֨וּ כָל־ח֪וֹסֵי בָ֡ךְ לְעוֹלָ֣ם יְ֭רַנֵּנוּ וְתָסֵ֣ךְ עָלֵ֑ימוֹ וְֽיַעְלְצ֥וּ בְ֝ךָ֗ אֹהֲבֵ֥י שְׁמֶֽךָ׃",
+      "literal_backbone": [
+        "Let all who take refuge in you rejoice.",
+        "Let them shout for joy forever.",
+        "And spread protection over them. And let those who love your name exult in you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:12",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v012.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "those taking refuge in you",
+          "note": "The idiom conveys seeking refuge, with added motion and a shift to first-person participation.",
+          "rendered_as": "when we run for cover to you",
+          "token_ids": [
+            "ps005.v012.t003",
+            "ps005.v012.t004"
+          ],
+          "transliteration": "ḥôsê ḇāḵ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "forever, perpetually, for an enduring time",
+          "note": "Limits enduring joy to one night; the Hebrew does not mention nighttime.",
+          "rendered_as": "all night",
+          "token_ids": [
+            "ps005.v012.t005"
+          ],
+          "transliteration": "ləʿôlām",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "let them rejoice; let them shout or sing for joy",
+          "note": "Preserves celebration but supplies a party setting and does not explicitly retain joyful vocal expression.",
+          "rendered_as": "Let the party last",
+          "token_ids": [
+            "ps005.v012.t001",
+            "ps005.v012.t006"
+          ],
+          "transliteration": "wəyiśməḥû; yərannēnû",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and cover, screen, or shelter over them",
+          "note": "Develops protection into both welcome and guardianship, adding open arms and shifting protection from people to their celebration.",
+          "rendered_as": "you'll welcome us with open arms; Stand guard over our celebration",
+          "token_ids": [
+            "ps005.v012.t007",
+            "ps005.v012.t008"
+          ],
+          "transliteration": "wəṯāsēḵ ʿālêmô",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and let those who love your name exult in you",
+          "note": "General celebration echoes the joy, but this distinct appeal, its focus on God, and its identification of the celebrants are absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v012.t009",
+            "ps005.v012.t010",
+            "ps005.v012.t011",
+            "ps005.v012.t012"
+          ],
+          "transliteration": "wəyaʿləṣû ḇəḵā ʾōhăḇê šəmeḵā",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v012.a.0001"
   ],
@@ -15,7 +270,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:12",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 32,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.61,
+        "syllable_count": 42,
+        "syllables": 42
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v012.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "But you'll welcome us with open arms\nwhen we run for cover to you.\nrun for cover to you.\nLet the party last all night!\nStand guard over our celebration.\nStand guard",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v012.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 25,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.08,
+        "stress_approximation": 0.62,
+        "syllable_count": 34,
+        "syllables": 34
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v012.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "But you'll welcome us with open arms\nwhen we run for cover to you.\nLet the party last all night!\nStand guard over our celebration.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v012.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְיִשְׂמְח֨וּ כָל־ח֪וֹסֵי בָ֡ךְ לְעוֹלָ֣ם יְ֭רַנֵּנוּ וְתָסֵ֣ךְ עָלֵ֑ימוֹ וְֽיַעְלְצ֥וּ בְ֝ךָ֗ אֹהֲבֵ֥י שְׁמֶֽךָ׃",

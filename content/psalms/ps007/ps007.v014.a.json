@@ -1,9 +1,121 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v014.a.literal.alt.0001",
+    "rnd.ps007.v014.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v014.a.0001",
+    "aud.ps007.v014.a.0002",
+    "aud.ps007.v014.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4c187aa584407002f6ed5ff9e43077893387ced07e1e228970f9a55613e8eea0",
+      "audit_id": "aud.ps007.v014.a.0001",
+      "before_hash": "a2d4b820a8da9ef78555fa976372223bc13548701f6e92de1db09fc5685ff13c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.112449+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v014.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the preparation of weapons, moving from their deadly purpose to the burning arrows.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "40973c22990db1435813f3f429824588034b1901124009e7cda3ff40d1f810bd",
+      "audit_id": "aud.ps007.v014.a.0002",
+      "before_hash": "8786da11658f3e639f7195224f7b5e16bfac44124a5e9045f2c2eead93d6dcb3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.636280+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v014.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the weapon preparation and lets the short final word carry the burning-arrow image.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6ec1dec3b892056eda2660d4a6bb02bf03f1e5e3ef1c0107be1d39cc0dcb1989",
+      "audit_id": "aud.ps007.v014.a.0003",
+      "before_hash": "5378c55926b5bc488fa6faea53e9e9669f48bfb9d685c795c54f8f653165bbb3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:51:39.000861+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v014.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the preparation of lethal weapons for an unnamed 'him,' followed by the making of fiery arrows. Both renderings leave the pronoun's referent unresolved and retain the distinction between completed preparation and the subsequent arrow-making action.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "209313128a064ef9a259cb6728368167f6d1adaae6abe5a7d5b56a1872005e0a",
+      "audit_ids": [
+        "aud.ps007.v014.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v014.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Deadly weapons' compresses 'instruments of death.' 'Sets his arrows burning' presents their fiery character as an action of ignition, a natural interpretation of making them into burning projectiles.",
+      "display_reference": "Psalm 7:14",
+      "english_rendering_id": "rnd.ps007.v014.a.lyric.alt.0001",
+      "generation_run_id": "cxr.dd47fc0b3c3e",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְ֭לוֹ הֵכִ֣ין כְּלֵי־מָ֑וֶת חִ֝צָּ֗יו לְֽדֹלְקִ֥ים יִפְעָֽל׃",
+      "literal_backbone": [
+        "For him he has prepared instruments of death;",
+        "he makes his arrows into burning things."
+      ],
+      "literal_rendering_id": "rnd.ps007.v014.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:14",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v014.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "And for him, to him; contextually, for himself.",
+          "note": "Preserves the pronoun without deciding whether it refers to the intended target or reflexively to the one preparing the weapons.",
+          "rendered_as": "for him",
+          "token_ids": [
+            "ps007.v014.t001"
+          ],
+          "transliteration": "wəlô",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Into burning ones; he makes, fashions, works.",
+          "note": "Follows the burning-projectile reading and expresses the result through a natural English causative construction.",
+          "rendered_as": "he sets his arrows burning",
+          "token_ids": [
+            "ps007.v014.t006",
+            "ps007.v014.t007"
+          ],
+          "transliteration": "ləḏōləqîm yip̄ʿāl",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v014.a.0001"
   ],
@@ -15,7 +127,259 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:14",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves both the general death instruments and the specific burning arrows.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_PRONOUN_REFERENCE",
+          "confidence": 0.96,
+          "message": "'For him' retains the Hebrew pronoun; its referent and possible reflexive force are not made explicit.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.91,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Instruments of death",
+          "note": "Retains the concrete instruments and their association with death.",
+          "source_id": "ps007.v014.a",
+          "token_ids": [
+            "ps007.v014.t003",
+            "ps007.v014.t004"
+          ]
+        },
+        {
+          "label": "Burning arrows",
+          "note": "Retains burning as a property of the arrows.",
+          "source_id": "ps007.v014.a",
+          "token_ids": [
+            "ps007.v014.t005",
+            "ps007.v014.t006",
+            "ps007.v014.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v014.t001 → For him",
+          "ps007.v014.t002 → he has prepared",
+          "ps007.v014.t003–t004 → instruments of death",
+          "ps007.v014.t005 → his arrows",
+          "ps007.v014.t006 → into burning shafts",
+          "ps007.v014.t007 → he makes"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v014.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v014.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "Continues the preparation of weapons, moving from their deadly purpose to the burning arrows.",
+      "rendering_id": "rnd.ps007.v014.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "For him he has prepared\ninstruments of death;\nhe makes his arrows\ninto burning shafts.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v014.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v014.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The preparation phrase resolves into the isolated word burning.",
+      "drift_flags": [
+        {
+          "code": "AMBIGUOUS_PRONOUN_REFERENCE",
+          "confidence": 0.97,
+          "message": "'For him' preserves the unspecified referent and does not decide whether the Hebrew pronoun is reflexive.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.92,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.23,
+        "stress_approximation": 0.75,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Deadly weapons",
+          "note": "The death instruments remain physical weapons.",
+          "source_id": "ps007.v014.a",
+          "token_ids": [
+            "ps007.v014.t002",
+            "ps007.v014.t003",
+            "ps007.v014.t004"
+          ]
+        },
+        {
+          "label": "Burning arrows",
+          "note": "The arrows themselves burn; the image is not replaced by an explanation of punishment.",
+          "source_id": "ps007.v014.a",
+          "token_ids": [
+            "ps007.v014.t005",
+            "ps007.v014.t006",
+            "ps007.v014.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v014.t001 → for him",
+          "ps007.v014.t002 → He's made ready",
+          "ps007.v014.t003–t004 → deadly weapons",
+          "ps007.v014.t005 → his arrows",
+          "ps007.v014.t006–t007 → he sets burning"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v014.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v014.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "Continues the weapon preparation and lets the short final word carry the burning-arrow image.",
+      "rendering_id": "rnd.ps007.v014.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He's made deadly weapons\nready for him;\nhe sets his arrows\nburning.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v014.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v014.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְ֭לוֹ הֵכִ֣ין כְּלֵי־מָ֑וֶת חִ֝צָּ֗יו לְֽדֹלְקִ֥ים יִפְעָֽל׃",

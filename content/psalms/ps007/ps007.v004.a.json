@@ -1,9 +1,112 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v004.a.literal.alt.0001",
+    "rnd.ps007.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v004.a.0001",
+    "aud.ps007.v004.a.0002",
+    "aud.ps007.v004.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4c194be09064bb7a17acec77b5d5ff8e3a641cb9b462e21853578cc6d27f67fc",
+      "audit_id": "aud.ps007.v004.a.0001",
+      "before_hash": "3ef892dd7f9325f7d4731023acaa0ab7c10a622c9fea9601d17266035e8e9818",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.365552+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Opens the conditional oath and preserves its repeated if clauses.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1af7750b4e97c5e9c2ac8387910bc761172463314b1f7e92a9261e5325c360f7",
+      "audit_id": "aud.ps007.v004.a.0002",
+      "before_hash": "acb824df75a4d9071000c1ba3e95c7f2daf89d29e3a1eda7f3bf1b2c34631306",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.084896+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The repeated address opens an unfinished oath, with each condition increasing the pressure.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "06639db5377c99d8a92aa0d2a02296afce8257f0e313435445877045dbb14481",
+      "audit_id": "aud.ps007.v004.a.0003",
+      "before_hash": "c05c5f8e1e5ad37ecea54f7b46ba34552ed814b630850e8e09f439890fa201c3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:49:42.987448+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the address to Yahweh as 'my God,' both conditional clauses, the unspecified 'this,' and the association of wrongdoing with the speaker's hands. The conditions remain open rather than becoming admissions.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "da78b76cefc66b70685f25899be20ba4f1413e3863cd7d90bb7961460675ecfb",
+      "audit_ids": [
+        "aud.ps007.v004.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric recasts 'wrong in my palms' as the idiomatic 'guilt on my hands,' shifting from wrongdoing to culpability while retaining the bodily image.",
+      "display_reference": "Psalm 7:4",
+      "english_rendering_id": "rnd.ps007.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.4a2ccd785a10",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֣ה אֱ֭לֹהַי אִם־עָשִׂ֣יתִי זֹ֑את אִֽם־יֶשׁ־עָ֥וֶל בְּכַפָּֽי׃",
+      "literal_backbone": [
+        "Yahweh, my God,",
+        "if I have done this,",
+        "if there is wrongdoing in my palms."
+      ],
+      "literal_rendering_id": "rnd.ps007.v004.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:4",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Wrongdoing, injustice, unrighteousness; in my palms or hands.",
+          "note": "An idiomatic rendering of responsibility for wrongdoing. 'Guilt' emphasizes culpability, while 'hands' broadens the more specific 'palms' and 'on' adapts the Hebrew spatial expression.",
+          "rendered_as": "guilt on my hands",
+          "token_ids": [
+            "ps007.v004.t008",
+            "ps007.v004.t009"
+          ],
+          "transliteration": "ʿāwel bəḵappāy",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v004.a.0001"
   ],
@@ -15,7 +118,220 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Uses palms to retain the particular Hebrew body term.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Wrong in the palms",
+          "note": "Preserves the concrete bodily location of wrongdoing.",
+          "source_id": "ps007.v004.a",
+          "token_ids": [
+            "ps007.v004.t008",
+            "ps007.v004.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v004.t001–t002 → Yahweh, my God",
+          "ps007.v004.t003–t005 → if I have done this",
+          "ps007.v004.t006–t008 → if there is wrong",
+          "ps007.v004.t009 → in my palms"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v004.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v004.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Opens the conditional oath and preserves its repeated if clauses.",
+      "rendering_id": "rnd.ps007.v004.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, my God,\nif I have done this,\nif there is wrong in my palms,",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v004.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v004.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Repeated if clauses begin an oath spanning three units.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.22,
+        "stress_approximation": 0.65,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Wrongdoing in the hands",
+          "note": "The hands remain visible as the location of culpability.",
+          "source_id": "ps007.v004.a",
+          "token_ids": [
+            "ps007.v004.t008",
+            "ps007.v004.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v004.t001–t002 → Yahweh, my God",
+          "ps007.v004.t003–t005 → if I've done this",
+          "ps007.v004.t006–t009 → if there's guilt on my hands"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v004.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v004.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The repeated address opens an unfinished oath, with each condition increasing the pressure.",
+      "rendering_id": "rnd.ps007.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, my God,\nif I've done this,\nif there's guilt on my hands,",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v004.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָ֣ה אֱ֭לֹהַי אִם־עָשִׂ֣יתִי זֹ֑את אִֽם־יֶשׁ־עָ֥וֶל בְּכַפָּֽי׃",

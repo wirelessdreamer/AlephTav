@@ -1,9 +1,92 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v009.a.0001",
+    "aud.ps006.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b8f0f194bf06210dfea8822bf46872b4d51fe3509cc4de2ebb7a1eba575d96c6",
+      "audit_id": "aud.ps006.v009.a.0001",
+      "before_hash": "797cdb623d0f38775487295e100a036544a0e3c65c16100340ad8ac12955beff",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.810583+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "347b7d41a5e80586bd627be994f8b51a245543792669122f834d8b106ebbdb4d",
+      "audit_id": "aud.ps006.v009.a.0002",
+      "before_hash": "6dae5d24284dbbdbe9965817ecd5279d2ea31a1a46cbd89b807633472acd3acf",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:33:59.374782+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the command for all wrongdoers to depart and the declaration that the LORD has heard the speaker’s weeping. The causal link between these statements is left implicit, and “my crying” conveys the sound of weeping without naming the sound separately.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "5ebabfac8868a58ad74a70e2f457bc492171e96707c3374c8e178465f7b5ddbc",
+      "audit_ids": [
+        "aud.ps006.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Repeats both the departure command and the declaration of hearing. “All along” adds continuous prior attentiveness that the Hebrew’s “has heard” does not itself specify.",
+      "display_reference": "Psalm 6:9",
+      "english_rendering_id": "rnd.ps006.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0c8b724c2e74",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ס֣וּרוּ מִ֭מֶּנִּי כָּל־פֹּ֣עֲלֵי אָ֑וֶן כִּֽי־שָׁמַ֥ע יְ֝הוָ֗ה ק֣וֹל בִּכְיִֽי׃",
+      "literal_backbone": [
+        "Depart from me, all workers of wickedness.",
+        "For Yahweh has heard the sound of my weeping."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:9",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "hear, listen, heed",
+          "note": "The completed hearing is preserved, but “all along” introduces a duration not expressed in the Hebrew.",
+          "rendered_as": "He’s heard\nme all along",
+          "token_ids": [
+            "ps006.v009.t007"
+          ],
+          "transliteration": "šāmaʿ",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v009.a.0001"
   ],
@@ -15,7 +98,99 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.26,
+        "singability_score": 0.13,
+        "stress_approximation": 0.54,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Go—\nget away from me\n\nall of you\nwho do wrong\n\nThe LORD\nhas heard me\n\nHe’s heard\nme all along\n\nHe has heard\nmy crying",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ס֣וּרוּ מִ֭מֶּנִּי כָּל־פֹּ֣עֲלֵי אָ֑וֶן כִּֽי־שָׁמַ֥ע יְ֝הוָ֗ה ק֣וֹל בִּכְיִֽי׃",

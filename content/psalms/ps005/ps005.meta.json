@@ -1,6 +1,2592 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps005.v001.a.0003"
+      ],
+      "citations": [],
+      "created_at": "2026-09-27T02:04:09.594281+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 2–3 contain listening imperatives, words and a cry for help, and the titles 'my king' and 'my God.'",
+            "claim": "The speaker addresses God as king and seeks an attentive hearing."
+          },
+          {
+            "basis": "Verse 4 repeats בֹּקֶר, describes arranging something for God, and ends with watching; the English repeats these actions extensively.",
+            "claim": "Morning presentation and expectant watching structure the opening prayer."
+          },
+          {
+            "basis": "Verses 5–7 describe God's rejection of wrongdoing; verse 8 turns to 'I' and entry through abundant חֶסֶד.",
+            "claim": "The psalm contrasts evildoers' exclusion with the speaker's approach through divine kindness."
+          },
+          {
+            "basis": "Verse 9 names enemies; verse 10 describes unreliable and destructive speech; verse 11 requests condemnation and expulsion.",
+            "claim": "Hostile people and their speech motivate requests for guidance and judgment."
+          },
+          {
+            "basis": "Verses 12–13 concern all who take refuge, those who love God's name, and the righteous; the English makes participation explicit through 'us' and 'our.'",
+            "claim": "The conclusion extends beyond the individual speaker."
+          },
+          {
+            "basis": "Verse 12 combines rejoicing with God's covering; verse 13 compares surrounding favor to a shield.",
+            "claim": "The Hebrew conclusion joins joy to divine protection and favor."
+          },
+          {
+            "basis": "The supplied Hebrew verses 1–13 contain no such marker; the section divisions are analytical.",
+            "claim": "No Selah or comparable explicit pause marker is present in the supplied psalm."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed or performed this prayer during an identifiable event.",
+            "why_not": "The heading supplies an association with David but no narrative occasion or independent historical verification."
+          },
+          {
+            "claim": "The speaker is a priest, or the prayer accompanies a particular morning sacrifice.",
+            "why_not": "Morning prayer and sanctuary language do not identify the speaker's office or name a sacrifice."
+          },
+          {
+            "claim": "The speaker places an offering on an altar and expects miraculous fire.",
+            "why_not": "Verse 4 leaves the object of arranging and the expected response unspecified; altar and fire appear only in the English."
+          },
+          {
+            "claim": "The speaker worships inside the sanctuary's innermost chamber.",
+            "why_not": "Verse 8 describes bowing toward the holy temple, without specifying entry into an inner chamber."
+          },
+          {
+            "claim": "The enemies are an army in a literal battlefield encounter.",
+            "why_not": "The Hebrew describes hostility, wrongdoing, and deceptive speech; enemy lines, land mines, and poison gas are the setting's imagery."
+          },
+          {
+            "claim": "The enemies received a prior opportunity that has now expired.",
+            "why_not": "Verse 11 grounds expulsion in transgressions and rebellion, without describing a previous chance."
+          },
+          {
+            "claim": "The psalm prescribes an overnight party.",
+            "why_not": "Verse 12 calls for enduring joy; 'all night' and the party framing are English adaptations."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.9adbd590d51e",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Morning address to God, entry into God's house, and bowing toward the holy temple support a sanctuary-oriented setting of prayer and worship. The text does not specify an offering in verse 4, an altar, descending fire, or entry into an inner sanctum. Those details belong to the English interpretation. Nor does the sanctuary language establish a particular temple building, historical period, or ritual occasion.",
+        "heading_attribution": "The Hebrew heading designates a psalm, addresses the director, includes a performance term glossed 'the flutes' in the supplied material, and associates the psalm with David through לְדָוִד. This is a received attribution, not independent proof of David's authorship, personal circumstances, or performance. The English omits it entirely; the supplied instrument gloss alone does not establish the original instrumentation with certainty."
+      },
+      "method": "Compared the supplied English with the supplied Hebrew clauses and token information, distinguishing retained meaning, compression, added imagery, and omissions. Literal backbones in the preceding verse audits were working grammatical renderings, not proposed replacement lyrics. Hebrew wording took precedence where token metadata was inconsistent. Section titles here are analytical labels and tile every Masoretic verse once; they do not assert supplied arrangement headings. No external edition, lexicon, or historical reconstruction was used.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps005.0001",
+      "psalm_id": "ps005",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The received heading frames the psalm, but the English begins with the prayer.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction and Davidic association.",
+          "title": "Unrendered heading"
+        },
+        {
+          "arc_note": "Conversational urgency establishes the speaker's need; 'King-God' compresses the paired personal titles.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "A plea for divine attention and help.",
+          "title": "Opening appeal"
+        },
+        {
+          "arc_note": "Echoes prolong the expectation, while an altar and descending fire give the unspecified presentation and response a sacrificial interpretation.",
+          "first_verse": 4,
+          "last_verse": 4,
+          "theme": "Repeated morning prayer and expectant watching.",
+          "title": "Morning refrain"
+        },
+        {
+          "arc_note": "Named characters dramatize exclusion from God's company; destruction and disgust retain judgment's force, although head-shaking softens explicit hatred.",
+          "first_verse": 5,
+          "last_verse": 7,
+          "theme": "God's opposition to wickedness, arrogance, falsehood, bloodshed, and deceit.",
+          "title": "Rejected company"
+        },
+        {
+          "arc_note": "Hospitality contrasts the speaker with the rejected wrongdoers, then military imagery recasts the request for a straight way as safe passage.",
+          "first_verse": 8,
+          "last_verse": 9,
+          "theme": "The speaker approaches God's house and seeks guidance amid hostility.",
+          "title": "Welcome and guidance"
+        },
+        {
+          "arc_note": "Land mines, poison gas, and mudslides surround the retained open-grave image, intensifying the sense of danger.",
+          "first_verse": 10,
+          "last_verse": 10,
+          "theme": "Unreliable speech and destructive inward character.",
+          "title": "Dangerous speech"
+        },
+        {
+          "arc_note": "Sharp commands preserve the judgment petition, but an exhausted chance replaces the stated grounds of transgression and rebellion.",
+          "first_verse": 11,
+          "last_verse": 11,
+          "theme": "Condemnation, self-defeating counsel, and expulsion.",
+          "title": "Petition for judgment"
+        },
+        {
+          "arc_note": "The lyric explicitly includes 'us' and ends in welcome and delight; love of God's name and the concluding shield comparison disappear.",
+          "first_verse": 12,
+          "last_verse": 13,
+          "theme": "Joy for those seeking refuge and divine favor toward the righteous.",
+          "title": "Protected celebration"
+        }
+      ],
+      "source_fingerprint": "fe96908c7c2e080c7240810963b9ded8aaa984e99d98b6507da139772846ccc8",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting follows the psalm's movement from personal appeal and morning expectation through God's rejection of evil, sanctuary approach, hostile speech, and judgment, ending in communal joy and favor. Repetition makes the morning prayer a refrain and gives individual images musical echoes. Colloquial hospitality, named villain figures, modern weapons, and party imagery make the argument vivid but alter its emphasis: hatred becomes head-shaking, righteousness becomes seeking God, perpetual joy becomes an all-night celebration, and protective favor becomes festive adornment. The heading is untranslated.",
+      "translation_id": "tr.ps005.0001"
+    },
+    {
+      "audit_ids": [
+        "aud.ps005.v001.a.0007"
+      ],
+      "citations": [],
+      "created_at": "2026-09-27T02:17:00.346511+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verse 3 contains 'my king and my God' and 'to you I pray.'",
+            "claim": "The speaker addresses God as king and directs prayer to him."
+          },
+          {
+            "basis": "Verse 4 repeats בֹּקֶר, 'morning,' and closes with וַאֲצַפֶּה, 'and I watch.'",
+            "claim": "Morning and expectant watching structure the opening prayer."
+          },
+          {
+            "basis": "Verse 8 connects בְּרֹב חַסְדְּךָ with entering God's house and bowing toward his holy temple.",
+            "claim": "The speaker grounds access to God's house in abundant divine kindness or loyalty."
+          },
+          {
+            "basis": "Verses 7 and 10 describe falsehood, deceit, unreliable speech, inward destruction, and a flattering tongue.",
+            "claim": "The prayer presents opposition involving deceit and wrongdoing."
+          },
+          {
+            "basis": "Verse 11 explicitly names numerous transgressions and rebellion against 'you.'",
+            "claim": "Judgment is requested on grounds of transgression and rebellion against God."
+          },
+          {
+            "basis": "Verse 12 names all who take refuge in God and those who love his name; verse 13 promises blessing and shield-like favor to the righteous.",
+            "claim": "The conclusion extends joy and protection beyond the individual speaker."
+          },
+          {
+            "basis": "No occurrence of סֶלָה appears in the supplied Hebrew verses 1–13.",
+            "claim": "The supplied psalm contains no Selah marker."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed this prayer during an identifiable crisis.",
+            "why_not": "The heading supplies a Davidic association without a historical episode or independent evidence of authorship."
+          },
+          {
+            "claim": "The speaker is traversing an actual battlefield.",
+            "why_not": "The Hebrew identifies adversaries but provides no military lines, campaign, or geographical route."
+          },
+          {
+            "claim": "The speaker enters the sanctuary's innermost chamber.",
+            "why_not": "Verse 8 describes entering God's house and bowing toward the holy temple; it does not identify an inner chamber."
+          },
+          {
+            "claim": "Verse 4 reports an answer already received or identifies a particular offering.",
+            "why_not": "It expresses hearing, arranging or presenting, and watching; neither an explicit answer nor the presented object's identity is stated."
+          },
+          {
+            "claim": "The enemies were previously offered a final chance.",
+            "why_not": "Verse 11 gives transgression and rebellion as grounds for judgment, without describing an opportunity now exhausted."
+          },
+          {
+            "claim": "The conclusion describes a literal nighttime party or its historical performance practice.",
+            "why_not": "The Hebrew calls for enduring joy and protection; the party, nighttime duration, piano, and vocal roles belong to the English setting."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.1220d4f120f0",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Morning prayer, entrance into God's house, and bowing toward his holy temple support a sanctuary-oriented worship setting. They do not establish entry into an inner chamber, a particular temple building or historical period, or a specified sacrificial rite. The object of arranging or presenting in verse 4 is unstated.",
+        "heading_attribution": "Verse 1 identifies a psalm, addresses the director, includes the musical designation commonly rendered 'for flutes,' and associates the work with David through לְדָוִד. This is a received Davidic ascription, not independent proof of personal authorship, date, or a particular event in David's life. The English leaves the heading untranslated."
+      },
+      "method": "Compared the supplied English with the supplied Hebrew wording, morphology, and token glosses, distinguishing lexical content from interpretive additions and performance apparatus. Section ranges use Masoretic numbering, include the untranslated heading, and group repeated musical treatments of verse 4 into one range. For verse 9, the supplied token list includes the straightening verb missing from the continuous displayed line; its final glosses are misaligned, so the Hebrew forms govern the reading. No external edition or lexicon was consulted.",
+      "non_source_material": [
+        {
+          "kind": "instrumentation",
+          "note": "Modern introduction length, instrumentation, and dynamic direction; not a translation of the superscription.",
+          "text": "8 bars, solo piano only, near-silence"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Arrangement-wide sound design supplied by the setting.",
+          "text": "[very sparse piano, distant motif, no percussion, no ambient layers]"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "Representative of the A, B, and C singer assignments throughout; the Hebrew does not specify these roles.",
+          "text": "B,C:"
+        },
+        {
+          "kind": "dynamics",
+          "note": "A modern vocal instruction, alongside the setting's whispers, accents, echoes, and swells.",
+          "text": "[scream, controlled]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "The Verse 4 direction contains an unresolved tension between pads and solo piano; neither comes from the verse.",
+          "text": "pads, sparse solo piano only"
+        },
+        {
+          "kind": "section_label",
+          "note": "The verse, hook, chorus, bridge, and instrumental labels describe the arrangement rather than received Hebrew divisions.",
+          "text": "FINAL CHORUS"
+        },
+        {
+          "kind": "dynamics",
+          "note": "The closing performance direction has no Hebrew counterpart.",
+          "text": "[very light piano, slowing tempo, natural decay, no added elements]"
+        }
+      ],
+      "prompt_template_version": "codex-analysis-v1",
+      "psalm_analysis_id": "anl.ps005.0002",
+      "psalm_id": "ps005",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The received heading precedes the prayer; the arrangement's instrumental introduction does not translate it.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction, genre, and Davidic association.",
+          "title": "Heading — no English stored"
+        },
+        {
+          "arc_note": "Colloquial urgency and 'King-God' condense the requests for attention and the explicit statement of prayer.",
+          "first_verse": 2,
+          "last_verse": 3,
+          "theme": "Appeal for God to hear words and distress.",
+          "title": "Verse 1"
+        },
+        {
+          "arc_note": "The full arrangement repeatedly develops this single verse; the stored hook advances beyond waiting to an asserted divine answer.",
+          "first_verse": 4,
+          "last_verse": 4,
+          "theme": "Morning presentation and expectant watching.",
+          "title": "Hook + Pre-Chorus + Chorus"
+        },
+        {
+          "arc_note": "The prayer establishes God's moral opposition to the enemies; vivid character epithets sharpen the final clause.",
+          "first_verse": 5,
+          "last_verse": 7,
+          "theme": "God rejects wickedness, arrogance, falsehood, and violence.",
+          "title": "Verse 2"
+        },
+        {
+          "arc_note": "The speaker's contrasting access becomes guest hospitality, followed by imagined passage through enemy lines; reverence and divine righteousness are not explicit in the English.",
+          "first_verse": 8,
+          "last_verse": 9,
+          "theme": "Access to God's house and a plea for righteous guidance.",
+          "title": "Verse 3"
+        },
+        {
+          "arc_note": "The setting closely preserves the movement from unreliable mouths and inward ruin to the open grave and flattering tongue.",
+          "first_verse": 10,
+          "last_verse": 10,
+          "theme": "The enemies' destructive and deceptive speech.",
+          "title": "Verse 4"
+        },
+        {
+          "arc_note": "Vocal intensity peaks with judgment language; exhausted opportunity replaces the Hebrew's stated grounds of transgression and rebellion.",
+          "first_verse": 11,
+          "last_verse": 11,
+          "theme": "Petition for condemnation, downfall, and expulsion.",
+          "title": "Bridge"
+        },
+        {
+          "arc_note": "The English turns the closing petition and assurance into an inclusive celebration of welcome, replacing protective shield imagery with delight.",
+          "first_verse": 12,
+          "last_verse": 13,
+          "theme": "Joy for those seeking refuge and favor surrounding the righteous.",
+          "title": "Final Chorus"
+        }
+      ],
+      "source_fingerprint": "3aa64f0d6168958d16c190adc581df9a94a876d42637e96952969bb19620f50a",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting follows the psalm from urgent personal prayer through God's rejection of evil, sanctuary access, guidance amid hostility, judgment on deceitful enemies, and communal joy under divine protection. Its repeated morning material makes expectant prayer the musical center, while 'and you answer' supplies a response the Hebrew does not explicitly report. Verses 5–7 and 10 retain much of the source's force and imagery. Elsewhere, hospitality, military passage, and party language reshape the prayer: covenant loyalty becomes an invitation, enemies become enemy lines, and lasting rejoicing becomes an all-night celebration. The ending emphasizes welcome and delight while losing the explicit shield, righteousness, and love of God's name.",
+      "translation_id": "tr.ps005.0002"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps005.0001",
+      "audit_ids": [
+        "aud.ps005.v001.a.0002"
+      ],
+      "created_at": "2026-09-27T01:59:05.305452+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.ecf276ae88e1",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The setting leaves out the superscription, including the director, flutes, psalm designation, and attribution to David.",
+          "token_ids": [
+            "ps005.v001.t001",
+            "ps005.v001.t002",
+            "ps005.v001.t003",
+            "ps005.v001.t004",
+            "ps005.v001.t005"
+          ],
+          "unit_id": "ps005.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The causal link introducing prayer to God is not expressed.",
+          "token_ids": [
+            "ps005.v003.t006"
+          ],
+          "unit_id": "ps005.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The morning passages do not repeat the divine invocation.",
+          "token_ids": [
+            "ps005.v004.t001"
+          ],
+          "unit_id": "ps005.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The opening causal link and explicit description of the addressee as a God are absent from the socializing image.",
+          "token_ids": [
+            "ps005.v005.t001",
+            "ps005.v005.t003"
+          ],
+          "unit_id": "ps005.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The singular Mischief-Maker does not explicitly carry the Hebrew's universal all.",
+          "token_ids": [
+            "ps005.v006.t007"
+          ],
+          "unit_id": "ps005.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "Prostration is retained, but fear or reverence is not explicitly expressed.",
+          "token_ids": [
+            "ps005.v008.t010"
+          ],
+          "unit_id": "ps005.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The request for directions omits both the divine invocation and God's righteousness.",
+          "token_ids": [
+            "ps005.v009.t001",
+            "ps005.v009.t003"
+          ],
+          "unit_id": "ps005.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The description of dangerous speech omits its introductory causal connection.",
+          "token_ids": [
+            "ps005.v010.t001"
+          ],
+          "unit_id": "ps005.v010.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "They've had their chance replaces the stated grounds of numerous transgressions and rebellion against God without expressing them.",
+          "token_ids": [
+            "ps005.v011.t005",
+            "ps005.v011.t006",
+            "ps005.v011.t008",
+            "ps005.v011.t009",
+            "ps005.v011.t010"
+          ],
+          "unit_id": "ps005.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The first-person refuge language does not explicitly retain all who seek refuge.",
+          "token_ids": [
+            "ps005.v012.t002"
+          ],
+          "unit_id": "ps005.v012.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The celebration does not explicitly retain exulting in God or identify the celebrants as lovers of God's name.",
+          "token_ids": [
+            "ps005.v012.t010",
+            "ps005.v012.t011",
+            "ps005.v012.t012"
+          ],
+          "unit_id": "ps005.v012.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The closing image of being decked out in delight omits the shield comparison.",
+          "token_ids": [
+            "ps005.v013.t006"
+          ],
+          "unit_id": "ps005.v013.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps005",
+      "sections": [
+        {
+          "kind": "verse",
+          "label": "Stanza 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t002",
+                    "ps005.v002.t003"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                },
+                {
+                  "token_ids": [
+                    "ps005.v003.t001"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0001",
+              "rationale": "Brings the following verse's appeal for attention into the opening invocation.",
+              "text": "Listen, God! Please, pay attention!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t001",
+                    "ps005.v002.t004"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "Recasts the request to consider the speaker's words as a question about making sense of ramblings.",
+              "text": "Can you make sense of these ramblings,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t005"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                },
+                {
+                  "token_ids": [
+                    "ps005.v003.t002",
+                    "ps005.v003.t003"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0003",
+              "rationale": "Combines sighing and the sound of a cry for help into the preceding question.",
+              "text": "my groans and cries?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v003.t004",
+                    "ps005.v003.t005",
+                    "ps005.v003.t007",
+                    "ps005.v003.t008"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0004",
+              "rationale": "Combines the two divine titles and renders prayer to God as a statement of need.",
+              "text": "King-God, I need your help."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "Every morning"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "Every morning"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "Expresses hearing the speaker's voice as hearing a recurring activity.",
+              "text": "you'll hear me at it again."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Echoes the preceding description of the speaker's voice as a recurring activity.",
+              "text": "at it again."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t005"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "Every morning"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t006"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Supplies the pieces of the speaker's life as the object of laying out or arranging.",
+              "text": "I lay out the pieces of my life"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t007"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "Gives the presentation to God an altar setting absent from the Hebrew.",
+              "text": "on your altar"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t007"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Repeats the added altar setting for the presentation to God.",
+              "text": "on your altar"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Specifies descending fire as what the speaker watches for, although the Hebrew leaves the expected response unspecified.",
+              "text": "and watch for fire to descend."
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0014",
+              "rationale": "Echoes the descending fire introduced by the translation rather than an explicit Hebrew image.",
+              "text": "fire to descend."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "refrain",
+          "label": "Stanza 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002",
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "Recombines the morning appeal and describes the speaker's voice as a recurring activity.",
+              "text": "Every morning you'll hear me at it again."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "Echoes the description of the speaker's voice as a recurring activity.",
+              "text": "at it again."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "Repeats the interpretation of watching as expecting descending fire.",
+              "text": "and watch for fire to descend."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002",
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "Repeats the morning appeal with the added description of recurring activity.",
+              "text": "Every morning you'll hear me at it again."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Repeats the interpretation of watching as expecting descending fire.",
+              "text": "and watch for fire to descend."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 5",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t002",
+                    "ps005.v005.t004",
+                    "ps005.v005.t005",
+                    "ps005.v005.t006"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Recasts taking no pleasure in wickedness as refusing social contact with a personified Wicked.",
+              "text": "You don't socialize with Wicked,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t005"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0021",
+              "rationale": "Echoes wickedness as a named character.",
+              "text": "Wicked"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t007",
+                    "ps005.v005.t008",
+                    "ps005.v005.t009"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "Recasts evil's inability to dwell with God as God's refusal to invite a personified houseguest.",
+              "text": "or invite Evil over as your houseguest."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t009"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0023",
+              "rationale": "Echoes evil as a named character.",
+              "text": "Evil"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v006.t001",
+                    "ps005.v006.t002",
+                    "ps005.v006.t003",
+                    "ps005.v006.t004",
+                    "ps005.v006.t005"
+                  ],
+                  "unit_id": "ps005.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0024",
+              "rationale": "Turns boastful people unable to stand before God's eyes into a single named character who collapses.",
+              "text": "Hot-Air-Boaster collapses in front of you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v006.t001",
+                    "ps005.v006.t002",
+                    "ps005.v006.t004",
+                    "ps005.v006.t005"
+                  ],
+                  "unit_id": "ps005.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0025",
+              "rationale": "Repeats collapse as a concrete interpretation of being unable to stand before God.",
+              "text": "collapses in front of you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v006.t006",
+                    "ps005.v006.t008",
+                    "ps005.v006.t009"
+                  ],
+                  "unit_id": "ps005.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0026",
+              "rationale": "Substitutes a gesture of disapproval for hatred and personifies workers of wickedness as Mischief-Maker.",
+              "text": "you shake your head over Mischief-Maker."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t001",
+                    "ps005.v007.t002",
+                    "ps005.v007.t003",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0027",
+              "rationale": "Turns plural speakers of falsehood into a single named character and states God's action in the third person.",
+              "text": "God destroys Lie-Speaker;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t001",
+                    "ps005.v007.t002",
+                    "ps005.v007.t003",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0028",
+              "rationale": "Repeats the singular personification of those who speak falsehood.",
+              "text": "God destroys Lie-Speaker;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t004",
+                    "ps005.v007.t005",
+                    "ps005.v007.t006",
+                    "ps005.v007.t007",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0029",
+              "rationale": "Splits the bloodshed-and-deceit description into two named characters and addresses God directly.",
+              "text": "Blood-Thirsty and Truth-Bender disgust you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t006",
+                    "ps005.v007.t007",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0030",
+              "rationale": "Repeats deceit as the named character Truth-Bender.",
+              "text": "Truth-Bender disgust you."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 6",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t001",
+                    "ps005.v008.t002",
+                    "ps005.v008.t003"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0031",
+              "rationale": "Interprets abundant covenant loyalty as an invitation and adds an exclamation of amazement.",
+              "text": "And here I am, your invited guest--it's incredible!"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0032",
+              "rationale": "Repeats the translator's exclamation of amazement.",
+              "text": "it's incredible!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t001",
+                    "ps005.v008.t004",
+                    "ps005.v008.t005"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Adds a renewed announcement of the speaker's presence to entering God's house.",
+              "text": "I enter your house; here I am,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t006",
+                    "ps005.v008.t007",
+                    "ps005.v008.t008",
+                    "ps005.v008.t009"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0034",
+              "rationale": "Turns bowing toward the holy temple into being prostrate inside an inner sanctum.",
+              "text": "prostrate in your inner sanctum,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t002",
+                    "ps005.v009.t008"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0035",
+              "rationale": "Recasts the request for divine leading along God's way as waiting for directions.",
+              "text": "Waiting for directions"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t004",
+                    "ps005.v009.t005",
+                    "ps005.v009.t006",
+                    "ps005.v009.t007"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "Interprets making the way straight before the speaker because of enemies as safe passage through enemy lines.",
+              "text": "to get me safely through enemy lines."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t005"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0037",
+              "rationale": "Echoes the enemies as a military formation.",
+              "text": "enemy lines."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 7",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t002",
+                    "ps005.v010.t003",
+                    "ps005.v010.t004"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0038",
+              "rationale": "Transforms the absence of reliable speech into an image of every spoken word as an explosive danger.",
+              "text": "Every word they speak is a land mine;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t002",
+                    "ps005.v010.t004"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0039",
+              "rationale": "Echoes the added metaphor for unreliable speech.",
+              "text": "land mine;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t005",
+                    "ps005.v010.t006"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0040",
+              "rationale": "Specifies lungs and poison gas where the Hebrew describes inward destruction.",
+              "text": "their lungs breathe out poison gas."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t006"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0041",
+              "rationale": "Repeats poison gas as a concrete image of destruction.",
+              "text": "poison gas."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t007",
+                    "ps005.v010.t008",
+                    "ps005.v010.t009"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0042",
+              "rationale": "",
+              "text": "Their throats are gaping graves,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t007",
+                    "ps005.v010.t008"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0043",
+              "rationale": "",
+              "text": "gaping graves,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t010",
+                    "ps005.v010.t011"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0044",
+              "rationale": "Adds a mudslide comparison to the image of smooth tongues.",
+              "text": "their tongues slick as mudslides."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t011"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0045",
+              "rationale": "Repeats the mudslide comparison added to smoothness.",
+              "text": "slick as mudslides."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 8",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t001",
+                    "ps005.v011.t002"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0046",
+              "rationale": "Intensifies holding the enemies guilty into piling guilt upon them.",
+              "text": "Pile on the guilt, God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t003",
+                    "ps005.v011.t004"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0047",
+              "rationale": "Recasts falling through their own counsels as being wrecked by their sarcastically described wisdom.",
+              "text": "Let their so-called wisdom wreck them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t003"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0048",
+              "rationale": "Echoes wrecking as the interpretation of their falling.",
+              "text": "wreck them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t007"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0049",
+              "rationale": "Renders expulsion colloquially and adds a statement about an exhausted opportunity.",
+              "text": "Kick them out! They've had their chance."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007",
+                    "ps005.v012.t008"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0050",
+              "rationale": "Anticipates God's covering protection as an open-armed welcome and changes its beneficiaries to us.",
+              "text": "But you'll welcome us with open arms"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t003",
+                    "ps005.v012.t004"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0051",
+              "rationale": "Turns those taking refuge in God into a first-person group running for cover.",
+              "text": "when we run for cover to you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t003",
+                    "ps005.v012.t004"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0052",
+              "rationale": "Repeats the image of running as the manner of seeking refuge.",
+              "text": "run for cover to you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t001",
+                    "ps005.v012.t005",
+                    "ps005.v012.t006"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0053",
+              "rationale": "Recasts perpetual rejoicing and joyful shouting as a party lasting all night.",
+              "text": "Let the party last all night!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007",
+                    "ps005.v012.t008",
+                    "ps005.v012.t009"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0054",
+              "rationale": "Combines divine covering and exultation into a request to guard a first-person celebration.",
+              "text": "Stand guard over our celebration."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0055",
+              "rationale": "Repeats guarding as the interpretation of God's covering protection.",
+              "text": "Stand guard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v013.t001",
+                    "ps005.v013.t002",
+                    "ps005.v013.t003",
+                    "ps005.v013.t004",
+                    "ps005.v013.t005"
+                  ],
+                  "unit_id": "ps005.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0056",
+              "rationale": "Recasts blessing the righteous as welcoming God-seekers and adds a claim about God's reputation.",
+              "text": "You are famous, God, for welcoming God-seekers,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v013.t007",
+                    "ps005.v013.t008"
+                  ],
+                  "unit_id": "ps005.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0057",
+              "rationale": "Turns surrounding the righteous person with favor into adorning us with delight.",
+              "text": "for decking us out in delight."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        }
+      ],
+      "status": "proposed",
+      "title": "Every morning",
+      "translation_id": "tr.ps005.0001",
+      "updated_at": "2026-09-27T01:59:05.305452+00:00"
+    },
+    {
+      "arrangement_id": "arr.ps005.0002",
+      "audit_ids": [
+        "aud.ps005.v001.a.0006"
+      ],
+      "created_at": "2026-09-27T02:12:35.727545+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.cf4e1f0e085b",
+      "guidance": "From the imported translation:\n8 bars, solo piano only, near-silence\n[very sparse piano, distant motif, no percussion, no ambient layers]\nsolo piano only, restrained, intimate, lots of space\nsolo piano only, steady, slightly stronger touch\nsolo piano only, gradual intensity through playing, not volume\nsolo piano only, fuller chords, no added instruments\nsolo piano only, motif variation, no layers\nsolo piano only, sparse rhythm\nnear silence, piano decay only\nsolo piano only, very soft, minimal notes, slow phrasing\npads, sparse solo piano only\nsolo piano only, strongest vocal intensity, piano heavy but alone\nsolo piano only, emotional lift through chords, no layering\nsolo piano only, soft resolution, fading motif\n[very light piano, slowing tempo, natural decay, no added elements]\nB:\nB,C:\nC:\nA:\nA,C:\nA,B,C:\n[spoken, very soft]\n[swell in voice only]\n[echo, soft]\n[accent]\n[harsh vocal]\n[whisper]\n[harsh tag, restrained]\n[harsh]\n[scream, controlled]",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The superscription naming the director, flutes, psalm, and David is not rendered; the setting supplies its own piano directions.",
+          "token_ids": [
+            "ps005.v001.t001",
+            "ps005.v001.t002",
+            "ps005.v001.t003",
+            "ps005.v001.t004",
+            "ps005.v001.t005"
+          ],
+          "unit_id": "ps005.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The explicit causal connection introducing the speaker's prayer is absent.",
+          "token_ids": [
+            "ps005.v003.t006"
+          ],
+          "unit_id": "ps005.v003.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The morning passages omit the explicit address to Yahweh.",
+          "token_ids": [
+            "ps005.v004.t001"
+          ],
+          "unit_id": "ps005.v004.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The statement about God's rejection of evil omits its introductory 'for'.",
+          "token_ids": [
+            "ps005.v005.t001"
+          ],
+          "unit_id": "ps005.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The temple passage does not explicitly render worship in fear or reverence.",
+          "token_ids": [
+            "ps005.v008.t010"
+          ],
+          "unit_id": "ps005.v008.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The directions and enemy-lines imagery omit the explicit divine address and guidance in God's righteousness.",
+          "token_ids": [
+            "ps005.v009.t001",
+            "ps005.v009.t003"
+          ],
+          "unit_id": "ps005.v009.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The description of the enemies' speech omits its introductory 'for'.",
+          "token_ids": [
+            "ps005.v010.t001"
+          ],
+          "unit_id": "ps005.v010.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The multitude of transgressions and rebellion against God are replaced by the explanation that the enemies have had their chance.",
+          "token_ids": [
+            "ps005.v011.t005",
+            "ps005.v011.t006",
+            "ps005.v011.t008",
+            "ps005.v011.t009",
+            "ps005.v011.t010"
+          ],
+          "unit_id": "ps005.v011.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The first-person refuge language does not explicitly preserve 'all'.",
+          "token_ids": [
+            "ps005.v012.t002"
+          ],
+          "unit_id": "ps005.v012.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The celebration does not explicitly retain exulting in God or identify the celebrants as lovers of God's name.",
+          "token_ids": [
+            "ps005.v012.t010",
+            "ps005.v012.t011",
+            "ps005.v012.t012"
+          ],
+          "unit_id": "ps005.v012.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The closing image of being decked out in delight omits the shield comparison.",
+          "token_ids": [
+            "ps005.v013.t006"
+          ],
+          "unit_id": "ps005.v013.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps005",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "INTRO",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0001",
+              "rationale": "This is an instrumental performance direction, not a rendering of Hebrew words.",
+              "text": "[very sparse piano, distant motif, no percussion, no ambient layers]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t002",
+                    "ps005.v002.t003"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                },
+                {
+                  "token_ids": [
+                    "ps005.v003.t001"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "The appeals for attention are brought together with an added 'Please' and God substituted for the divine name.",
+              "text": "B: Listen, God! Please, pay attention!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t001",
+                    "ps005.v002.t004"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0003",
+              "rationale": "The request to consider the speaker's words becomes a question that characterizes them as ramblings.",
+              "text": "B,C: Can you make sense of these ramblings,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v002.t005"
+                  ],
+                  "unit_id": "ps005.v002.a"
+                },
+                {
+                  "token_ids": [
+                    "ps005.v003.t002",
+                    "ps005.v003.t003"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0004",
+              "rationale": "Sighing and the sound of a cry for help are folded into the preceding question.",
+              "text": "B: my groans and cries?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v003.t004",
+                    "ps005.v003.t005",
+                    "ps005.v003.t007",
+                    "ps005.v003.t008"
+                  ],
+                  "unit_id": "ps005.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0005",
+              "rationale": "The two possessive titles become King-God, and praying to God becomes an expression of need.",
+              "text": "B,C: King-God, I need your help."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "refrain",
+          "label": "HOOK",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002",
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0006",
+              "rationale": "Hearing the speaker's voice becomes hearing the speaker, with morning expressed as a recurring occasion.",
+              "text": "B,C: Every morning — you hear me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t005",
+                    "ps005.v004.t006",
+                    "ps005.v004.t007"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "C: [spoken, very soft] Every morning — I lay it before you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t005",
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "The morning motif is repeated, and waiting is extended into an assurance that God answers.",
+              "text": "B: Every morning — I wait, and you answer"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "other",
+          "label": "PRE-CHORUS",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t006",
+                    "ps005.v004.t007"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0009",
+              "rationale": "Presenting or arranging something before God becomes laying bare the speaker's entire life.",
+              "text": "B: I lay bare my life before you,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t006"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0010",
+              "rationale": "",
+              "text": "B,C: I set it in order—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t006"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "A: [swell in voice only] set it in order—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "B: and I watch, waiting."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "C: [echo, soft] waiting."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "chorus",
+          "label": "CHORUS",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002",
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "B,C: Every morning you hear my voice."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "A: [accent] hear my voice."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t006",
+                    "ps005.v004.t007"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0016",
+              "rationale": "",
+              "text": "B,C: I set it before you—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t002",
+                    "ps005.v004.t003",
+                    "ps005.v004.t004"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "B: At dawn you hear my voice,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v004.t008"
+                  ],
+                  "unit_id": "ps005.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "B: and I wait, watching."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "other",
+          "label": "INTERLUDE",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t002",
+                    "ps005.v005.t003",
+                    "ps005.v005.t004",
+                    "ps005.v005.t005",
+                    "ps005.v005.t006"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0019",
+              "rationale": "",
+              "text": "B,C: You are not a God who delights in evil;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t005"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "A: [accent] evil"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t007",
+                    "ps005.v005.t008",
+                    "ps005.v005.t009"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "B,C: wicked do not dwell with you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v005.t008"
+                  ],
+                  "unit_id": "ps005.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "A: [accent] dwell with you"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v006.t001",
+                    "ps005.v006.t002",
+                    "ps005.v006.t003",
+                    "ps005.v006.t004",
+                    "ps005.v006.t005"
+                  ],
+                  "unit_id": "ps005.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "B: The boastful will not stand before your eyes;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v006.t006",
+                    "ps005.v006.t007",
+                    "ps005.v006.t008",
+                    "ps005.v006.t009"
+                  ],
+                  "unit_id": "ps005.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "B: you hate all who do injustice."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t001",
+                    "ps005.v007.t002",
+                    "ps005.v007.t003"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "B: You destroy speakers of lies;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t001",
+                    "ps005.v007.t002",
+                    "ps005.v007.t003"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0026",
+              "rationale": "The echo drops the speakers and makes lies themselves the object of destruction.",
+              "text": "A: [harsh vocal] destroy lies"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t004",
+                    "ps005.v007.t005",
+                    "ps005.v007.t006",
+                    "ps005.v007.t007",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "Bloodshed and deceit become character epithets, and the statement about Yahweh becomes direct address.",
+              "text": "B: Blood-Thirsty and Truth-Bender disgust you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v007.t004",
+                    "ps005.v007.t006",
+                    "ps005.v007.t007",
+                    "ps005.v007.t008"
+                  ],
+                  "unit_id": "ps005.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "The echo recasts the deceitful person as Truth-Bender and addresses God directly.",
+              "text": "A: [accent] Truth-Bender disgust you."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "other",
+          "label": "CUTOUT",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t001",
+                    "ps005.v008.t002",
+                    "ps005.v008.t003"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0029",
+              "rationale": "Access through abundant covenant loyalty becomes an invitation to a guest, with an added exclamation of wonder.",
+              "text": "B,C: And here I am, your invited guest--it's incredible!"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0030",
+              "rationale": "This repeats the setting's added exclamation of wonder.",
+              "text": "C: [whisper] it's incredible!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t004",
+                    "ps005.v008.t005"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0031",
+              "rationale": "The entrance into God's house receives an additional declaration of presence.",
+              "text": "B,C: I enter your house; here I am,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v008.t006",
+                    "ps005.v008.t007",
+                    "ps005.v008.t008",
+                    "ps005.v008.t009"
+                  ],
+                  "unit_id": "ps005.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "Bowing toward the holy temple becomes prostration inside an inner sanctum.",
+              "text": "B,C: prostrate in your inner sanctum,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t002"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "The request for God to lead becomes a description of waiting for directions.",
+              "text": "B,C: Waiting for directions"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t004",
+                    "ps005.v009.t005",
+                    "ps005.v009.t006",
+                    "ps005.v009.t007",
+                    "ps005.v009.t008"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0034",
+              "rationale": "The straight way requested because of enemies becomes safe passage through military lines.",
+              "text": "C: to get me safely through enemy lines."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v009.t005"
+                  ],
+                  "unit_id": "ps005.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0035",
+              "rationale": "The enemies are pictured as an organized military line.",
+              "text": "A: [harsh tag, restrained] enemy lines."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t002",
+                    "ps005.v010.t003",
+                    "ps005.v010.t004"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0036",
+              "rationale": "",
+              "text": "B: There is no truth in their mouth;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t002",
+                    "ps005.v010.t004"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "A: [accent] no truth"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t005",
+                    "ps005.v010.t006"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "B: their inward part is ruin."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t006"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "A: [harsh] ruin"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t007",
+                    "ps005.v010.t008",
+                    "ps005.v010.t009"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0040",
+              "rationale": "",
+              "text": "B: Their throat is an open grave;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t007",
+                    "ps005.v010.t008"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0041",
+              "rationale": "",
+              "text": "A: [accent] open grave"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v010.t010",
+                    "ps005.v010.t011"
+                  ],
+                  "unit_id": "ps005.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0042",
+              "rationale": "",
+              "text": "B: they flatter with their tongue."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "bridge",
+          "label": "BRIDGE",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t001",
+                    "ps005.v011.t002"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0043",
+              "rationale": "Holding the enemies guilty becomes the more intensive image of piling guilt upon them.",
+              "text": "A,C: Pile on the guilt, God!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t003",
+                    "ps005.v011.t004"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0044",
+              "rationale": "Falling through their own schemes becomes being wrecked by mockingly described wisdom.",
+              "text": "B: Let their so-called wisdom wreck them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t003"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0045",
+              "rationale": "The enemies' fall becomes a forceful call for their destruction.",
+              "text": "A: [scream, controlled] wreck them."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v011.t007"
+                  ],
+                  "unit_id": "ps005.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0046",
+              "rationale": "The expulsion request gains an explanation about an exhausted opportunity that is not stated in the Hebrew.",
+              "text": "B,C: Kick them out! They've had their chance."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        },
+        {
+          "kind": "chorus",
+          "label": "FINAL CHORUS",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007",
+                    "ps005.v012.t008"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0047",
+              "rationale": "God's covering protection is anticipated as an open-armed welcome and shifted from them to us.",
+              "text": "B,C: But you'll welcome us with open arms"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t003",
+                    "ps005.v012.t004"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0048",
+              "rationale": "Those taking refuge in God become a first-person group actively running for cover.",
+              "text": "B,C: when we run for cover to you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t003",
+                    "ps005.v012.t004"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0049",
+              "rationale": "Taking refuge receives the added physical image of running for cover.",
+              "text": "C: [accent] run for cover to you."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t001",
+                    "ps005.v012.t005",
+                    "ps005.v012.t006",
+                    "ps005.v012.t009"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0050",
+              "rationale": "The rejoicing and exultation become a party, while everlasting joy is reduced to an all-night celebration.",
+              "text": "B,C: Let the party last all night!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007",
+                    "ps005.v012.t008"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0051",
+              "rationale": "Covering the people becomes an imperative to guard their celebration.",
+              "text": "B: Stand guard over our celebration."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v012.t007"
+                  ],
+                  "unit_id": "ps005.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0052",
+              "rationale": "God's covering protection is recast as a command to keep watch.",
+              "text": "C: [accent] Stand guard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v013.t001",
+                    "ps005.v013.t002",
+                    "ps005.v013.t003",
+                    "ps005.v013.t004",
+                    "ps005.v013.t005"
+                  ],
+                  "unit_id": "ps005.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0053",
+              "rationale": "Blessing the righteous becomes welcoming God-seekers, with an added assertion of God's fame.",
+              "text": "A,B,C: You are famous, God, for welcoming God-seekers,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps005.v013.t007",
+                    "ps005.v013.t008"
+                  ],
+                  "unit_id": "ps005.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0054",
+              "rationale": "Surrounding the righteous person with favor becomes adorning a first-person community with delight.",
+              "text": "B,C: for decking us out in delight."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0012"
+        },
+        {
+          "kind": "outro",
+          "label": "OUTRO",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0055",
+              "rationale": "This is an instrumental performance direction, not a rendering of Hebrew words.",
+              "text": "[very light piano, slowing tempo, natural decay, no added elements]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0013"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 5 — Solo Piano",
+      "translation_id": "tr.ps005.0002",
+      "updated_at": "2026-09-27T02:12:35.727545+00:00"
+    }
+  ],
   "psalm_id": "ps005",
   "title": "Psalm 5",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps005.v001.a.0001",
+        "aud.ps005.v001.a.0004"
+      ],
+      "collection_id": "col.0003",
+      "created_at": "2026-09-27T01:55:18.231937+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "psalm_id": "ps005",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps005.0001"
+    },
+    {
+      "audit_ids": [
+        "aud.ps005.v001.a.0005"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-09-27T02:08:27.508647+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "guidance": "From the imported translation:\n8 bars, solo piano only, near-silence\n[very sparse piano, distant motif, no percussion, no ambient layers]\nsolo piano only, restrained, intimate, lots of space\nsolo piano only, steady, slightly stronger touch\nsolo piano only, gradual intensity through playing, not volume\nsolo piano only, fuller chords, no added instruments\nsolo piano only, motif variation, no layers\nsolo piano only, sparse rhythm\nnear silence, piano decay only\nsolo piano only, very soft, minimal notes, slow phrasing\npads, sparse solo piano only\nsolo piano only, strongest vocal intensity, piano heavy but alone\nsolo piano only, emotional lift through chords, no layering\nsolo piano only, soft resolution, fading motif\n[very light piano, slowing tempo, natural decay, no added elements]\nB:\nB,C:\nC:\nA:\nA,C:\nA,B,C:\n[spoken, very soft]\n[swell in voice only]\n[echo, soft]\n[accent]\n[harsh vocal]\n[whisper]\n[harsh tag, restrained]\n[harsh]\n[scream, controlled]",
+      "psalm_id": "ps005",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps005.0002"
+    }
+  ],
   "unit_ids": [
     "ps005.v001.a",
     "ps005.v002.a",

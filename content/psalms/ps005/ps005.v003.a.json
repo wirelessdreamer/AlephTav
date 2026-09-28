@@ -1,9 +1,229 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v003.a.lyric.alt.0001",
+    "rnd.ps005.v003.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v003.a.0001",
+    "aud.ps005.v003.a.0002",
+    "aud.ps005.v003.a.0003",
+    "aud.ps005.v003.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4b58b28b39945c88cb0b0ad0f7d580609c3b50511d7b35b464ae2d7d6e42aaa1",
+      "audit_id": "aud.ps005.v003.a.0001",
+      "before_hash": "5a9d696e2f6a2ec3522dd117bff026580c1d7d5aafadc65bb0704418b2d96dbc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.768428+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "24c63ddb2ca8dc54dc8c09731a18b7b5080e738ff81bc2d326089b2f5b3a34e5",
+      "audit_id": "aud.ps005.v003.a.0002",
+      "before_hash": "4ff0b0ba61569249bae491b16292aceb6995c11fac60dc5ff863cb60b50aebda",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:59:46.058979+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0366fd5b6ecefae52fea60ddc70f49c31aaaabe021be0a8db7e21591abc92164",
+      "audit_id": "aud.ps005.v003.a.0003",
+      "before_hash": "9700eac77603a853f23942c793bdfa8dbc2ff1788fecb0c94e0c42ce624c05df",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.389745+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ce0ae94f5e0c7a5c54e8b08b7791c818942490df669fb171d4089864659c8b4f",
+      "audit_id": "aud.ps005.v003.a.0004",
+      "before_hash": "7c705a54c28da6dc889dcf364aefd3d7e9df781ea469ef0a442bd9544f32a36e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:13:14.954773+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v003.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Retains the divine titles king and God and the speaker's appeal for help. It compresses the request to hear a cry and the concluding declaration of prayer into a single statement of need.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "2782621f2b82266fcaa8299df9857069afdcfed08d7da75f95eec7e92f10d37b",
+      "audit_ids": [
+        "aud.ps005.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'King-God' fuses 'my king and my God,' dropping both possessives. 'I need your help' conveys the situation behind the cry but leaves the listening imperative and 'for to you I pray' unexpressed.",
+      "display_reference": "Psalm 5:3",
+      "english_rendering_id": "rnd.ps005.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.930cd130d1f7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+      "literal_backbone": [
+        "Pay attention to the sound of my cry for help, my king and my God.",
+        "For to you I pray."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:3",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "pay attention; to the sound or voice of",
+          "note": "The explicit request to attend to the speaker's voice is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v003.t001",
+            "ps005.v003.t002"
+          ],
+          "transliteration": "haqšîḇāh ləqôl",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "my cry for help",
+          "note": "Expresses the need motivating the cry rather than the cry itself.",
+          "rendered_as": "I need your help",
+          "token_ids": [
+            "ps005.v003.t003"
+          ],
+          "transliteration": "šawʿî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "my king and my God",
+          "note": "Preserves both titles in a compound but loses their repeated personal possessives.",
+          "rendered_as": "King-God",
+          "token_ids": [
+            "ps005.v003.t004",
+            "ps005.v003.t005"
+          ],
+          "transliteration": "malkî wēʾlōhāy",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "for; to you; I pray",
+          "note": "The English functions as a prayer but does not express this explanatory declaration or its emphasis on the addressee.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v003.t006",
+            "ps005.v003.t007",
+            "ps005.v003.t008"
+          ],
+          "transliteration": "kî ʾēleḵā ʾeṯpallāl",
+          "verdict": "omitted"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English retains the royal and divine address and the speaker's appeal for help. It omits the explicit request to attend to the cry and the explanatory statement that the speaker prays to God.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "2e9a59dd5469dd65c01888b82cc84da602c8192cd99854cef212474d34870d5e",
+      "audit_ids": [
+        "aud.ps005.v003.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v003.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'King-God' fuses two possessive titles. 'I need your help' summarizes the plea rather than explicitly expressing either the cry or the act of prayer.",
+      "display_reference": "Psalm 5:3",
+      "english_rendering_id": "rnd.ps005.v003.a.lyric.alt.0002",
+      "generation_run_id": "cxr.4e60176fef71",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+      "literal_backbone": [
+        "Pay attention to the sound of my cry for help, my king and my God.",
+        "For to you I pray."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:3",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "pay attention; sound, voice; my cry for help",
+          "note": "Conveys the underlying need but leaves the command to listen and the audible cry unexpressed.",
+          "rendered_as": "I need your help",
+          "token_ids": [
+            "ps005.v003.t001",
+            "ps005.v003.t002",
+            "ps005.v003.t003"
+          ],
+          "transliteration": "haqšîḇāh ləqôl šawʿî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "my king and my God",
+          "note": "Retains both titles but fuses them and drops both possessive suffixes.",
+          "rendered_as": "King-God",
+          "token_ids": [
+            "ps005.v003.t004",
+            "ps005.v003.t005"
+          ],
+          "transliteration": "malkî wēʾlōhāy",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "for; to you; I pray",
+          "note": "Direct address implies an appeal to God, but the causal connection and explicit statement of prayer are absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v003.t006",
+            "ps005.v003.t007",
+            "ps005.v003.t008"
+          ],
+          "transliteration": "kî ʾēleḵā ʾeṯpallāl",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v003.a.0001"
   ],
@@ -15,7 +235,190 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 6,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.68,
+        "stress_approximation": 0.5,
+        "syllable_count": 6,
+        "syllables": 6
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "King-God, I need your help.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 6,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.68,
+        "stress_approximation": 0.5,
+        "syllable_count": 6,
+        "syllables": 6
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v003.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "King-God, I need your help.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",

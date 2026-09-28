@@ -1,9 +1,216 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v008.a.lyric.alt.0001",
+    "rnd.ps005.v008.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v008.a.0001",
+    "aud.ps005.v008.a.0002",
+    "aud.ps005.v008.a.0003",
+    "aud.ps005.v008.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "77523d1383b3aa44d0bce563de73da3828a99d282f0f80c65c8f160b7bf3f8dd",
+      "audit_id": "aud.ps005.v008.a.0001",
+      "before_hash": "88d9774cedaa1e0571bf7196d2df963a8dc836064e3eace6c9a0379f27c4a47c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.940211+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0cd6542d8b7fdd87173a5aa33f4ca6afc1f5de18f0f32ddc26e31502fb9a57de",
+      "audit_id": "aud.ps005.v008.a.0002",
+      "before_hash": "c7ce91b2a890272b8f462190d8c32492f1ef9a1f4c9f4e6d7e622d4a27fe5b1c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:01:07.371785+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "745706bd11fd9370390a49c6e9e47ad5393f605f1d168324270dc7e34c882e27",
+      "audit_id": "aud.ps005.v008.a.0003",
+      "before_hash": "6ea93de47f7778abcb47a5b190a9f0147923a9c4491c6d03456277a1a5de0cfb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.509263+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5a660c2e01921ee8ee7554103646e0d27405cf269ae5f0fdef876f24df4f549e",
+      "audit_id": "aud.ps005.v008.a.0004",
+      "before_hash": "e6ae070844c7ae80d01f94aec6dfd920b520dc9c102461b85834a3a8bb3fea78",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:14:19.139724+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v008.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker's personal approach, entry into God's house, and bowing in worship, in that order. God's abundant steadfast love is recast as hospitality, and explicit reverence is omitted.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "4c447f1d3739a6950dbd4d296a73ec7c024175f913867d9cdab7e0fcd632f469",
+      "audit_ids": [
+        "aud.ps005.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Your invited guest' supplies an invitation, while 'it's incredible!' adds repeated amazement. 'In your inner sanctum' relocates worship from facing the holy temple to being inside a more specific sacred space.",
+      "display_reference": "Psalm 5:8",
+      "english_rendering_id": "rnd.ps005.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.36f7ae90679f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+      "literal_backbone": [
+        "But I, through the abundance of your steadfast love, will enter your house.",
+        "I will bow down toward your holy temple in reverence for you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:8",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "in or through the abundance of your kindness, steadfast love, loyalty",
+          "note": "Interprets abundant divine kindness as an invitation and the speaker's amazement; neither is explicitly stated.",
+          "rendered_as": "your invited guest--it's incredible!",
+          "token_ids": [
+            "ps005.v008.t002",
+            "ps005.v008.t003"
+          ],
+          "transliteration": "bərōḇ ḥasdəḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "toward your holy temple or palace",
+          "note": "Changes orientation toward the sanctuary into location within it and adds an inner-space restriction absent from the Hebrew.",
+          "rendered_as": "in your inner sanctum",
+          "token_ids": [
+            "ps005.v008.t007",
+            "ps005.v008.t008",
+            "ps005.v008.t009"
+          ],
+          "transliteration": "ʾel hêḵal qodšeḵā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in fear of you, in reverence for you",
+          "note": "Prostration remains, but the explicit attitude of fear or reverence toward God is not expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v008.t010"
+          ],
+          "transliteration": "bəyirʾāṯeḵā",
+          "verdict": "omitted"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the speaker's entrance into God's house and posture of worship. It recasts abundant divine lovingkindness as guest hospitality, relocates worship toward the holy temple to a position inside an inner sanctum, and omits explicit fear or reverence.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "c00efd90e1d6e563a6a1fcd0dac261f6507e99683d59451b6c6fe6609b052077",
+      "audit_ids": [
+        "aud.ps005.v008.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v008.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Your invited guest' supplies an invitation, and 'it's incredible!' adds wonder. The repeated 'here I am' emphasizes presence. 'Inner sanctum' specifies an interior location that the Hebrew does not identify.",
+      "display_reference": "Psalm 5:8",
+      "english_rendering_id": "rnd.ps005.v008.a.lyric.alt.0002",
+      "generation_run_id": "cxr.7ff7466a969b",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+      "literal_backbone": [
+        "But I, through the abundance of your lovingkindness, will enter your house.",
+        "I will bow down toward your holy temple in fear of you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:8",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "in or through the abundance of your kindness, steadfast love, loyalty",
+          "note": "Interprets divine kindness through hospitality and amazement without explicitly retaining its abundance or its role as the basis for entrance.",
+          "rendered_as": "your invited guest--it's incredible!",
+          "token_ids": [
+            "ps005.v008.t002",
+            "ps005.v008.t003"
+          ],
+          "transliteration": "bərōḇ ḥasdəḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "toward your holy temple or palace",
+          "note": "Changes direction toward the sanctuary into location within it and adds an inner-chamber specification.",
+          "rendered_as": "in your inner sanctum",
+          "token_ids": [
+            "ps005.v008.t007",
+            "ps005.v008.t008",
+            "ps005.v008.t009"
+          ],
+          "transliteration": "ʾel hêḵal qodšəḵā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in fear, awe, or reverence of you",
+          "note": "Prostration preserves the worship gesture, but the explicit disposition of fear or reverence is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v008.t010"
+          ],
+          "transliteration": "bəyirʾāṯeḵā",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v008.a.0001"
   ],
@@ -15,7 +222,190 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.35,
+        "singability_score": 0.15,
+        "stress_approximation": 0.72,
+        "syllable_count": 39,
+        "syllables": 39
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "And here I am, your invited guest--it's incredible!\nit's incredible!\nI enter your house; here I am,\nprostrate in your inner sanctum,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.29,
+        "singability_score": 0.14,
+        "stress_approximation": 0.71,
+        "syllable_count": 34,
+        "syllables": 34
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v008.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "And here I am, your invited guest--it's incredible!\nI enter your house; here I am,\nprostrate in your inner sanctum,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",

@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v003.a.0001",
+    "aud.ps006.v003.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fcb5b2f4c05ed3dcffb2d6a86a7876d97f0242852257243a15309e54f81522d5",
+      "audit_id": "aud.ps006.v003.a.0001",
+      "before_hash": "9a841afafaf2fb292a76d8a8230d20fda0251d6b569927012b21493d6f7ba988",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.696545+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f597b86fc6ad750d6659c286e66a6dc953415b0413df49def4819ffa5ce6ee7",
+      "audit_id": "aud.ps006.v003.a.0002",
+      "before_hash": "0a3d85d9af14a36d118fb744989692251f74ef801500d5b41a4be0024b8087b3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:32:20.736455+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the appeal for mercy, the speaker’s frailty, and the disturbance of the bones, in that order. Omits the explicit request for healing, both addresses to Yahweh, and both causal conjunctions.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "adb68a46125462325fc06501fdda2da7e2d83971d4d92d601656c184f3781aa1",
+      "audit_ids": [
+        "aud.ps006.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Doubles the mercy plea with “Be gentle with me,” develops weakness into “fading,” and depicts the bones’ disturbance as shaking “inside me.”",
+      "display_reference": "Psalm 6:3",
+      "english_rendering_id": "rnd.ps006.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.8ebdcd1994de",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "חָנֵּ֥נִי יְהוָה֮ כִּ֤י אֻמְלַ֫ל אָ֥נִי רְפָאֵ֥נִי יְהוָ֑ה כִּ֖י נִבְהֲל֣וּ עֲצָֽ",
+      "literal_backbone": [
+        "Be gracious to me, O Yahweh, for I am frail.",
+        "Heal me, O Yahweh, for my bones are disturbed."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:3",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "show favor, be gracious, have mercy",
+          "note": "“Have mercy” closely expresses the petition; the additional request for gentleness interprets and repeats it.",
+          "rendered_as": "Be gentle with me\nhave mercy",
+          "token_ids": [
+            "ps006.v003.t001"
+          ],
+          "transliteration": "ḥonnēnî",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "weak, frail, languishing",
+          "note": "Weakness is preserved; “fading” adds a second image suggesting ongoing decline.",
+          "rendered_as": "I’m weak…\nI’m fading",
+          "token_ids": [
+            "ps006.v003.t004"
+          ],
+          "transliteration": "ʾumlal",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "heal, restore to health",
+          "note": "The distinct petition for healing has no counterpart in this lyric.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps006.v003.t006"
+          ],
+          "transliteration": "rəfāʾēnî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "be disturbed, dismayed, terrified",
+          "note": "Makes the bones’ disturbance explicitly physical shaking and adds the inward location.",
+          "rendered_as": "they shake inside me",
+          "token_ids": [
+            "ps006.v003.t009"
+          ],
+          "transliteration": "niḇhălû",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v003.a.0001"
   ],
@@ -15,7 +128,106 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.11,
+        "stress_approximation": 0.69,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Be gentle with me\nhave mercy\n\nI’m weak…\nI’m fading\n\nMy bones—\nthey shake inside me",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "חָנֵּ֥נִי יְהוָה֮ כִּ֤י אֻמְלַ֫ל אָ֥נִי רְפָאֵ֥נִי יְהוָ֑ה כִּ֖י נִבְהֲל֣וּ עֲצָֽ",

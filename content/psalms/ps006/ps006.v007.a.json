@@ -1,9 +1,114 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps006.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps006.v007.a.0001",
+    "aud.ps006.v007.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "34e120d0a3b7159c1a7b2a8c474c6218b58a063432f23df99dd47ab6b6960919",
+      "audit_id": "aud.ps006.v007.a.0001",
+      "before_hash": "326f2c94efb3fabb13c4ae98dcb2ee9670d5135460dfcf33e28a262f799a9375",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:29:07.770184+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps006.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7e055273bfeb7bc65eca47b09692428245a43d9021d83ecda9c4d2b19dd188c7",
+      "audit_id": "aud.ps006.v007.a.0002",
+      "before_hash": "5ed71badc547693d198dc77fc699b8e2a6563214bf22100415256f6f1ce319a2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T15:33:34.372511+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps006.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker’s exhaustion, nightly distress, and bed saturated with tears. Combines the parallel bed and couch references and presents the resulting soaked condition rather than the speaker’s actions.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "27981708271f49974703e60ad18f03957ae8aa8c3dcd491d0b844c1f1ef03191",
+      "audit_ids": [
+        "aud.ps006.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps006.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Crying” replaces groaning. “Soaked” and “drenched” soften the extravagant images of making the bed swim and melting the couch. “Year after year” adds a duration absent from the Hebrew, which specifies every night.",
+      "display_reference": "Psalm 6:7",
+      "english_rendering_id": "rnd.ps006.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ecf9a8e3c010",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יָגַ֤עְתִּי׀ בְּֽאַנְחָתִ֗י אַשְׂחֶ֣ה בְכָל־לַ֭יְלָה מִטָּתִ֑י בְּ֝דִמְעָתִ֗י עַרְשִׂ֥י אַמְסֶֽה׃",
+      "literal_backbone": [
+        "I am weary with my groaning.",
+        "Every night I make my bed swim.",
+        "With my tears I melt my couch."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 6:7",
+      "non_source_material": [],
+      "psalm_id": "ps006",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "with my sighing or groaning",
+          "note": "Fits the surrounding tears but merges groaning with weeping, which the Hebrew distinguishes.",
+          "rendered_as": "from crying",
+          "token_ids": [
+            "ps006.v007.t002"
+          ],
+          "transliteration": "bəʾanḥāṯî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "cause to swim, make swim, flood",
+          "note": "Conveys saturation while reducing the swimming image and changing the speaker’s action into the bed’s condition.",
+          "rendered_as": "it’s soaked with tears",
+          "token_ids": [
+            "ps006.v007.t003"
+          ],
+          "transliteration": "ʾaśḥeh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "my couch; melt, dissolve, liquefy",
+          "note": "Retains the effect of abundant tears but absorbs the couch into the earlier bed reference and replaces melting with drenching.",
+          "rendered_as": "drenched",
+          "token_ids": [
+            "ps006.v007.t008",
+            "ps006.v007.t009"
+          ],
+          "transliteration": "ʿarśî ʾamseh",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps006.v007.a.0001"
   ],
@@ -15,7 +120,99 @@
   "pr_links": [],
   "psalm_id": "ps006",
   "ref": "Psalm 6:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.1,
+        "singability_score": 0.1,
+        "stress_approximation": 0.6,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.441e4814a4b8",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps006.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I’m worn out\nfrom crying\n\nevery night\nin tears\n\nMy bed—\nit’s soaked with tears\n\ndrenched\nyear after year",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps006.0001",
+      "unit_id": "ps006.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יָגַ֤עְתִּי׀ בְּֽאַנְחָתִ֗י אַשְׂחֶ֣ה בְכָל־לַ֭יְלָה מִטָּתִ֑י בְּ֝דִמְעָתִ֗י עַרְשִׂ֥י אַמְסֶֽה׃",

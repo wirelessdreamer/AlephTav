@@ -1,9 +1,121 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v003.a.literal.alt.0001",
+    "rnd.ps137.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v003.a.0001",
+    "aud.ps137.v003.a.0002",
+    "aud.ps137.v003.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8576fc8eda8da7cd24bea38a8698b941aefcb4a803b9c99c37d0c88be7cc1f1d",
+      "audit_id": "aud.ps137.v003.a.0001",
+      "before_hash": "29a4f248ace4d35c958cc739ac4755917f15ab30c48e2480fb09b6901c5b928e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.499237+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Preserves the parallel demands and the repeated song vocabulary that leads into the next unit.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "047586095c97dadd136344ea9893ea31b6be9e240087736b6d89ee62400da6a4",
+      "audit_id": "aud.ps137.v003.a.0002",
+      "before_hash": "f22f76f7d088f4dcacace27a8cb39beaa26102142baf9d19aa317b3446a56eb7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.188390+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Matched demands create a rhythmic pair, followed by the command that the next unit answers.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "632096b88223498aff6c42fbc70b0f1058163b3b376c1a83391e3608b0ee3652",
+      "audit_id": "aud.ps137.v003.a.0003",
+      "before_hash": "caa3add27da3cc573ceaecb085b2ac1d757e3529cb00b7567c8f16d52bc7a264",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:07:57.808350+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the location, the captors' request for song, the parallel demand for joy, and the command to sing for them from Zion's songs. The literal explicitly retains the explanatory 'for' and the speakers as those asked; the lyric leaves both implicit.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "3780b54d7d755e26d7f5efc40623e721dd7523400b1bce82da665c788a648e9c",
+      "audit_ids": [
+        "aud.ps137.v003.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric compresses 'words of song' to 'songs' and repeats 'asked' where Hebrew leaves the second verb understood. 'A song of Zion' conveys the selection less explicitly than 'one of Zion's songs.'",
+      "display_reference": "Psalm 137:3",
+      "english_rendering_id": "rnd.ps137.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.b9b487711b46",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י שָׁ֨ם שְֽׁאֵל֪וּנוּ שׁוֹבֵ֡ינוּ דִּבְרֵי־שִׁ֭יר וְתוֹלָלֵ֣ינוּ שִׂמְחָ֑ה שִׁ֥ירוּ לָ֝֗נוּ מִשִּׁ֥יר צִיּֽוֹן׃",
+      "literal_backbone": [
+        "For there our captors asked us for words of song, and our tormentors for gladness:",
+        "Sing for us from the songs of Zion."
+      ],
+      "literal_rendering_id": "rnd.ps137.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:3",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "words of song; song",
+          "note": "The lyric condenses the phrase idiomatically without changing what the captors request.",
+          "rendered_as": "Literal: 'words of song'; lyric: 'songs'",
+          "token_ids": [
+            "ps137.v003.t005",
+            "ps137.v003.t006"
+          ],
+          "transliteration": "diḇrê-šîr",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "and our tormentors/mockers; an uncertain designation",
+          "note": "'Tormentors' is a recognized contextual interpretation of a difficult word. It does not establish a particular form of mistreatment.",
+          "rendered_as": "Literal: 'and our tormentors'; lyric: 'our tormentors'",
+          "token_ids": [
+            "ps137.v003.t007"
+          ],
+          "transliteration": "wəṯôlālênû",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v003.a.0001"
   ],
@@ -15,7 +127,211 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps both 'words of song' and 'joy' explicit.",
+      "drift_flags": [],
+      "grounding_confidence": 0.9,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "For there = ps137.v003.t001–t002",
+          "our captors asked us = ps137.v003.t003–t004",
+          "for words of song = ps137.v003.t005–t006",
+          "and our tormentors for joy = ps137.v003.t007–t008; 'asked' remains understood",
+          "Sing us = ps137.v003.t009–t010",
+          "one of Zion's songs = ps137.v003.t011–t012"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v003.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Preserves the parallel demands and the repeated song vocabulary that leads into the next unit.",
+      "rendering_id": "rnd.ps137.v003.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "For there our captors asked us\nfor words of song,\nand our tormentors for joy:\n“Sing us one of Zion's songs!”",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v003.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Repeats 'asked for' to make the parallel demands audible.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.91,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.65,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "There = ps137.v003.t002; the explanatory connector at t001 is implicit",
+          "our captors asked for songs = ps137.v003.t003–t006; 'us' as the people asked is implicit",
+          "our tormentors asked for joy = ps137.v003.t007–t008; repeats the verb understood in Hebrew",
+          "Sing us = ps137.v003.t009–t010",
+          "a song of Zion = ps137.v003.t011–t012"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v003.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Matched demands create a rhythmic pair, followed by the command that the next unit answers.",
+      "rendering_id": "rnd.ps137.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "There our captors asked for songs,\nour tormentors asked for joy:\n“Sing us a song of Zion!”",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּ֤י שָׁ֨ם שְֽׁאֵל֪וּנוּ שׁוֹבֵ֡ינוּ דִּבְרֵי־שִׁ֭יר וְתוֹלָלֵ֣ינוּ שִׂמְחָ֑ה שִׁ֥ירוּ לָ֝֗נוּ מִשִּׁ֥יר צִיּֽוֹן׃",

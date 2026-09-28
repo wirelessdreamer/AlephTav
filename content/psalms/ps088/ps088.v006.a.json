@@ -1,9 +1,119 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v006.a.0001",
+    "aud.ps088.v006.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c922015fd789cdb0bae046b68c3db52ffc9cd7668d8f6e1c65cb2abb4591d519",
+      "audit_id": "aud.ps088.v006.a.0001",
+      "before_hash": "f1077017a4b21ad3d36d85823e3565d314ccf0a1c31901af76b690cb423dc299",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.924919+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0adfe43ced1efecbf014497eaee067f449d1ca72f2ded14ac219b67cc33423ed",
+      "audit_id": "aud.ps088.v006.a.0002",
+      "before_hash": "b3ef9d4cb0d16aec4cf23e396fd2e8edab0b5a6c1caa92419ef447f068e5a09b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:33:17.415736+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves being among the dead, lying in the grave, being forgotten, and being cut off from God’s hand, in the Hebrew’s order.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "2496c41651e5cfdf873a08633247a1b5833ff2144a9b9cecb1c5573de760e908",
+      "audit_ids": [
+        "aud.ps088.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Counted” replaces the description of being free or released among the dead. The comparison with slain people becomes a direct description of the speaker. “Forgotten” compresses God’s no longer remembering them, leaving the agent and temporal emphasis unstated.",
+      "display_reference": "Psalm 88:6",
+      "english_rendering_id": "rnd.ps088.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0bb66a3efe13",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בַּמֵּתִ֗ים חָ֫פְשִׁ֥י כְּמ֤וֹ חֲלָלִ֨ים׀ שֹׁ֥כְבֵי קֶ֗בֶר אֲשֶׁ֤ר לֹ֣א זְכַרְתָּ֣ם ע֑וֹד וְ֝הֵ֗מָּה מִיָּדְךָ֥ נִגְזָֽרוּ׃",
+      "literal_backbone": [
+        "Free among the dead,",
+        "like the slain lying in the grave,",
+        "whom you remember no more, / and they are cut off from your hand."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:6",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "free, released",
+          "note": "Being counted among the dead fits the preceding verse’s language but does not express this adjective’s sense of freedom or release.",
+          "rendered_as": "counted",
+          "token_ids": [
+            "ps088.v006.t002"
+          ],
+          "transliteration": "ḥāp̄əšî",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "like slain people lying in a grave",
+          "note": "Retains the grave scene but drops the explicit comparison and the identification of its occupants as slain.",
+          "rendered_as": "laid out in the grave—",
+          "token_ids": [
+            "ps088.v006.t003",
+            "ps088.v006.t004",
+            "ps088.v006.t005",
+            "ps088.v006.t006"
+          ],
+          "transliteration": "kəmô ḥălālîm šōḵəḇê qeḇer",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "whom you no longer remember",
+          "note": "A compact passive paraphrase that leaves God’s agency and “no longer” implicit.",
+          "rendered_as": "forgotten—",
+          "token_ids": [
+            "ps088.v006.t007",
+            "ps088.v006.t008",
+            "ps088.v006.t009",
+            "ps088.v006.t010"
+          ],
+          "transliteration": "ʾăšer lōʾ zəḵartām ʿôḏ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v006.a.0001"
   ],
@@ -15,7 +125,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.62,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I’m counted among the dead,\nlaid out in the grave—\nforgotten—\ncut off \nfrom your hand.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בַּמֵּתִ֗ים חָ֫פְשִׁ֥י כְּמ֤וֹ חֲלָלִ֨ים׀ שֹׁ֥כְבֵי קֶ֗בֶר אֲשֶׁ֤ר לֹ֣א זְכַרְתָּ֣ם ע֑וֹד וְ֝הֵ֗מָּה מִיָּדְךָ֥ נִגְזָֽרוּ׃",

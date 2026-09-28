@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v018.a.literal.alt.0001",
+    "rnd.ps007.v018.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v018.a.0001",
+    "aud.ps007.v018.a.0002",
+    "aud.ps007.v018.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f39dee1124b5d97dacfc85d1059799a167606f33f7ab9008781e77d960d529b4",
+      "audit_id": "aud.ps007.v018.a.0001",
+      "before_hash": "b73182101b58bc09ac5687fd7de91c50f0043f41e252791d0fe56dbd6d496cc9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.141037+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v018.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the first-person speaker and closes with paired acts of thanks and song, retaining righteousness as the stated ground.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "33543b9724aebc25f412837b0884dbd602f786d6f266f856097508e1573ba35a",
+      "audit_id": "aud.ps007.v018.a.0002",
+      "before_hash": "e99451d75692b8d067f1f7e89c0464703610f3c9995689bf26e7309fce6eaeb7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.670809+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v018.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Returns to the speaker's voice with paired commitments to thanks and song, closing on the divine name and title.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4b02015f12f9e8f24294bfccbfd3988e813fb3138b1d3baaf8763968940363d6",
+      "audit_id": "aud.ps007.v018.a.0003",
+      "before_hash": "6e26aad7726052efa863b3230a40880b1f5e62b6e074b04c49e333d83e31cd32",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:52:14.568116+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v018.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker's commitment to thank Yahweh, the reference to his righteousness, and the resolve to sing praise to the name of Yahweh Most High. The lyric treats righteousness as the reason for thanksgiving.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "574e903bd8c58af062a0237f8b297e617bb335101e60113da1e7f87ae2b94b73",
+      "audit_ids": [
+        "aud.ps007.v018.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v018.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'For' interprets 'according to' causally rather than expressing correspondence or measure. Contractions and parallel punctuation leave the first-person resolve intact.",
+      "display_reference": "Psalm 7:18",
+      "english_rendering_id": "rnd.ps007.v018.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2fc4db5b8e82",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אוֹדֶ֣ה יְהוָ֣ה כְּצִדְק֑וֹ וַ֝אֲזַמְּרָ֗ה שֵֽׁם־יְהוָ֥ה עֶלְיֽוֹן׃",
+      "literal_backbone": [
+        "I will thank Yahweh according to his righteousness;",
+        "I will sing praise to the name of Yahweh Most High."
+      ],
+      "literal_rendering_id": "rnd.ps007.v018.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:18",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v018.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "According to, in keeping with his righteousness or justice.",
+          "note": "Makes righteousness the ground of thanksgiving; the Hebrew more explicitly expresses correspondence with that righteousness.",
+          "rendered_as": "for his righteousness",
+          "token_ids": [
+            "ps007.v018.t003"
+          ],
+          "transliteration": "kəṣidqô",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v018.a.0001"
   ],
@@ -15,7 +116,234 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:18",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Closes with thanks and song without adding a report of rescue.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Singing praise to the divine name",
+          "note": "Retains the name as the object of the song and Most High as the divine epithet.",
+          "source_id": "ps007.v018.a",
+          "token_ids": [
+            "ps007.v018.t004",
+            "ps007.v018.t005",
+            "ps007.v018.t006",
+            "ps007.v018.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v018.t001–t002 → I will thank Yahweh",
+          "ps007.v018.t003 → according to his righteousness",
+          "ps007.v018.t004 → I will sing praise",
+          "ps007.v018.t005 → to the name",
+          "ps007.v018.t006–t007 → of Yahweh Most High"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v018.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v018.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "Returns to the first-person speaker and closes with paired acts of thanks and song, retaining righteousness as the stated ground.",
+      "rendering_id": "rnd.ps007.v018.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "I will thank Yahweh\naccording to his righteousness;\nI will sing praise to the name\nof Yahweh Most High.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v018.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v018.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Two matching I'll phrases close the passage without adding a rescue report.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.66,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Song directed to the divine name",
+          "note": "Preserves singing to the name and the epithet Most High.",
+          "source_id": "ps007.v018.a",
+          "token_ids": [
+            "ps007.v018.t004",
+            "ps007.v018.t005",
+            "ps007.v018.t006",
+            "ps007.v018.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v018.t001–t002 → I'll thank Yahweh",
+          "ps007.v018.t003 → for his righteousness",
+          "ps007.v018.t004 → I'll sing praise",
+          "ps007.v018.t005 → to the name",
+          "ps007.v018.t006–t007 → of Yahweh Most High"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v018.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v018.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "Returns to the speaker's voice with paired commitments to thanks and song, closing on the divine name and title.",
+      "rendering_id": "rnd.ps007.v018.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I'll thank Yahweh\nfor his righteousness;\nI'll sing praise to the name\nof Yahweh Most High.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v018.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v018.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אוֹדֶ֣ה יְהוָ֣ה כְּצִדְק֑וֹ וַ֝אֲזַמְּרָ֗ה שֵֽׁם־יְהוָ֥ה עֶלְיֽוֹן׃",

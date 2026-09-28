@@ -1,9 +1,119 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v002.a.literal.alt.0001",
+    "rnd.ps137.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v002.a.0001",
+    "aud.ps137.v002.a.0002",
+    "aud.ps137.v002.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0115517df6190c2cc8f0fad17be24130c55d10b668de3f435f1afebdbcfb2950",
+      "audit_id": "aud.ps137.v002.a.0001",
+      "before_hash": "474f50f98b40cd6e22440b5afa0099aeb4f1516bc2a78a745abccc89a561e6f7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.491218+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues Babylon's feminine personification and introduces the silenced instruments.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fec2be1272b8b74950ce259a4043ca37ec9de95a4ebf7c6dddd61f8befb171f8",
+      "audit_id": "aud.ps137.v002.a.0002",
+      "before_hash": "37b928c597556795b13c60eaf2e0778f89b92b002c8290e6de21232455a8b071",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.178565+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries the river scene into the suspended instruments with a short closing phrase.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6e5ae4ac0267067641ce281a203a77342dbe898e305028abd49b947eccc2d43d",
+      "audit_id": "aud.ps137.v002.a.0003",
+      "before_hash": "6d3ca07d14fca2f2ec888ad84cd89e835fe7f03ecf6b161f36a173f76cd82f36",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:07:33.023813+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the trees as the support on which the speakers hung their own instruments. The literal retains 'within her'; the lyric identifies the contextual referent as Babylon. 'Lyres' appropriately identifies the instruments.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "b1c0670e38f3d8814d14fd4ad4f7b14858b3968f98c804e67dae0949c850d5ea",
+      "audit_ids": [
+        "aud.ps137.v002.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric replaces the explicit location 'within her' with 'of Babylon,' preserving the general setting while making the spatial relationship less precise.",
+      "display_reference": "Psalm 137:2",
+      "english_rendering_id": "rnd.ps137.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.aff7cfade652",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עַֽל־עֲרָבִ֥ים בְּתוֹכָ֑הּ תָּ֝לִ֗ינוּ כִּנֹּרוֹתֵֽינוּ׃",
+      "literal_backbone": [
+        "On the willows/poplar trees in her midst we hung our lyres."
+      ],
+      "literal_rendering_id": "rnd.ps137.v002.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:2",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "willows; poplars",
+          "note": "A traditional identification of these trees; the supplied gloss 'poplars' reflects another identification. The precise species is uncertain.",
+          "rendered_as": "willows",
+          "token_ids": [
+            "ps137.v002.t002"
+          ],
+          "transliteration": "ʿărāḇîm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "in her/its midst; within her/it",
+          "note": "Babylon is the contextual antecedent of the feminine suffix. The lyric names it but compresses the explicit 'in the midst' relationship.",
+          "rendered_as": "Literal: 'within her'; lyric: 'of Babylon'",
+          "token_ids": [
+            "ps137.v002.t003"
+          ],
+          "transliteration": "bəṯôḵāh",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v002.a.0001"
   ],
@@ -15,7 +125,229 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves 'within her' rather than replacing it with 'there.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lyres hung on willows",
+          "note": "Retains both the trees and the suspended instruments.",
+          "source_id": "ps137.v002.a",
+          "token_ids": [
+            "ps137.v002.t002",
+            "ps137.v002.t004",
+            "ps137.v002.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "On the willows = ps137.v002.t001–t002",
+          "within her = ps137.v002.t003; 'her' refers to Babylon",
+          "we hung up = ps137.v002.t004",
+          "our lyres = ps137.v002.t005"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v002.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Continues Babylon's feminine personification and introduces the silenced instruments.",
+      "rendering_id": "rnd.ps137.v002.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "On the willows within her\nwe hung up our lyres.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v002.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Names Babylon where Hebrew uses a feminine location pronoun.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 9,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.53,
+        "stress_approximation": 0.67,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lyres hanging on willows",
+          "note": "Both the trees and the instruments remain visible.",
+          "source_id": "ps137.v002.a",
+          "token_ids": [
+            "ps137.v002.t002",
+            "ps137.v002.t004",
+            "ps137.v002.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "On the willows = ps137.v002.t001–t002",
+          "of Babylon = ps137.v002.t003; names the antecedent of 'within her'",
+          "we hung our lyres = ps137.v002.t004–t005"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v002.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Carries the river scene into the suspended instruments with a short closing phrase.",
+      "rendering_id": "rnd.ps137.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "On the willows of Babylon\nwe hung our lyres.",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עַֽל־עֲרָבִ֥ים בְּתוֹכָ֑הּ תָּ֝לִ֗ינוּ כִּנֹּרוֹתֵֽינוּ׃",

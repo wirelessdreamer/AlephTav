@@ -1,9 +1,92 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps008.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps008.v005.a.0001",
+    "aud.ps008.v005.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8567e60adc7494560d2e2cdc0e0c17d32653c9a3f0336e7f9369bc2adbc78acb",
+      "audit_id": "aud.ps008.v005.a.0001",
+      "before_hash": "a3eeac7eb8ea1a3bf1278410ba8a48ecf75c126d77eced0f4a123ae292374a76",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:23:55.319045+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e052ef31da2d876ec8424267662f8537787c49b5d80bdc800753987e83f6b90b",
+      "audit_id": "aud.ps008.v005.a.0002",
+      "before_hash": "bbd7c25ad7e1e126df67cf6c0b409a3cc9df7ac3f2da8157d378e329c10b5661",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:26:20.862342+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the parallel question about humanity, God's remembrance and attention, and the singular pronouns, in Hebrew order. “Man” and “son of man” refer here to human beings generically.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "0893f30da3764aa6fcb79de77ee9ae142ce9b424d153a0c09551b102579257af",
+      "audit_ids": [
+        "aud.ps008.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps008.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Care for” expresses God's attention as benevolent concern, a reading supported by the surrounding psalm.",
+      "display_reference": "Psalm 8:5",
+      "english_rendering_id": "rnd.ps008.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.27449ce59d72",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מָֽה־אֱנ֥וֹשׁ כִּֽי־תִזְכְּרֶ֑נּוּ וּבֶן־אָ֝דָ֗ם כִּ֣י תִפְקְדֶֽנּוּ׃",
+      "literal_backbone": [
+        "What is humankind that you remember him,",
+        "and a son of humankind that you attend to him?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:5",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "attend to, visit, inspect, muster",
+          "note": "Selects the benevolent sense of divine attention appropriate to this context; the verb itself can describe other kinds of visitation or oversight.",
+          "rendered_as": "care for him",
+          "token_ids": [
+            "ps008.v005.t008"
+          ],
+          "transliteration": "ṯip̄qəḏennû",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps008.v005.a.0001"
   ],
@@ -15,7 +98,106 @@
   "pr_links": [],
   "psalm_id": "ps008",
   "ref": "Psalm 8:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.26,
+        "singability_score": 0.13,
+        "stress_approximation": 0.58,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.e6c8ea5823f0",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "what is man that you are mindful of him,\nand the son of man that you care for him?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מָֽה־אֱנ֥וֹשׁ כִּֽי־תִזְכְּרֶ֑נּוּ וּבֶן־אָ֝דָ֗ם כִּ֣י תִפְקְדֶֽנּוּ׃",

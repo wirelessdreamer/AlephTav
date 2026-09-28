@@ -1,9 +1,92 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v004.a.0001",
+    "aud.ps088.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "49795b87ff9aee0def1be1994449f2baf3145315cfc9b68ffee5eaa3048eb010",
+      "audit_id": "aud.ps088.v004.a.0001",
+      "before_hash": "0a826dd53b4e21fbcd06ec1046d48495ba7f332fc72b1ef2cd136d2e3b8c4174",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.869730+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "15ceedaa30abc8d1925f5c22af7e87fc87518af056354a4b90ffb4d451f4cafd",
+      "audit_id": "aud.ps088.v004.a.0002",
+      "before_hash": "6ee5ab5df25222b31ab5ce2b5ac74c98ca03c0c112eff87578b5a32201f8a543",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:32:44.888387+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker’s fullness of trouble followed by life approaching the realm of death.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "796c97676b5b47e8cc910d46bde419caa0924b87c0591293697702f5b7ca6512",
+      "audit_ids": [
+        "aud.ps088.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Omits the opening causal “for.” “The grave” is a conventional rendering of Sheol but makes the Hebrew realm of the dead less explicit.",
+      "display_reference": "Psalm 88:4",
+      "english_rendering_id": "rnd.ps088.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.6f1d96085684",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־שָֽׂבְעָ֣ה בְרָע֣וֹת נַפְשִׁ֑י וְ֝חַיַּ֗י לִשְׁא֥וֹל הִגִּֽיעוּ׃",
+      "literal_backbone": [
+        "For my soul is sated with troubles;",
+        "and my life has drawn near to Sheol."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:4",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "to Sheol, the realm of the dead",
+          "note": "A conventional poetic equivalent, though Sheol denotes the realm of the dead rather than simply a burial place.",
+          "rendered_as": "the grave",
+          "token_ids": [
+            "ps088.v004.t006"
+          ],
+          "transliteration": "lišəʾôl",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v004.a.0001"
   ],
@@ -15,7 +98,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.31,
+        "stress_approximation": 0.62,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My soul is full of trouble,\nmy life draws near the grave.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּֽי־שָֽׂבְעָ֣ה בְרָע֣וֹת נַפְשִׁ֑י וְ֝חַיַּ֗י לִשְׁא֥וֹל הִגִּֽיעוּ׃",

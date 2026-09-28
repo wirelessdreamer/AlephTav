@@ -1,9 +1,123 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps137.v007.a.literal.alt.0001",
+    "rnd.ps137.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps137.v007.a.0001",
+    "aud.ps137.v007.a.0002",
+    "aud.ps137.v007.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "42fc343481554a06d3edc6a8e39d9e8fd7338643a7a60c8ca3474c910000e2a9",
+      "audit_id": "aud.ps137.v007.a.0001",
+      "before_hash": "091aea1f95d856a0a95f9500ed3a7f907cde4979b28fb347194b4c4698fab5ff",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:03:28.537895+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v007.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Turns the remembrance motif into a petition and preserves the repeated destructive command.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "17066ead2d3f399cd2aad4c810686a7fbfb6dd567905ef303ea8549f86fc8f7f",
+      "audit_id": "aud.ps137.v007.a.0002",
+      "before_hash": "811ddcf83e627345c9f686505d9ec52413ed506c5444e15b3ab9e2e22a119c7a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:06:57.221761+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps137.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Turns remembrance into accusation, followed by the doubled command against the personified city.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ac8f51e57d063f5d1e0f39ee275444896d9a36955fb6bed55c0f7a4817a428a6",
+      "audit_id": "aud.ps137.v007.a.0003",
+      "before_hash": "a3e6f54036eeb674ea7a57f58ea12242ea2c3bb08feb00ba15f1761f5bd699a9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T00:08:51.186200+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps137.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Both versions preserve the appeal to Yahweh to remember Jerusalem's day against Edom, identify the Edomites as the speakers, and retain the repeated command to strip the city down to her foundation. 'Edom's people' appropriately expresses the collective 'sons of Edom.'",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "557f3706693d9df676facd5774362317fc60a4e900aa9c500d02a8b483362554",
+      "audit_ids": [
+        "aud.ps137.v007.a.0003"
+      ],
+      "comparison_id": "cmp.ps137.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric expands the adverse remembrance petition into two imperatives: 'remember' and 'hold it against.' This makes its contextual force explicit without specifying a punishment. 'Bare' expresses the stripping verb's sense; 'her' supplies its implied object, Jerusalem.",
+      "display_reference": "Psalm 137:7",
+      "english_rendering_id": "rnd.ps137.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.2810925649b5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זְכֹ֤ר יְהוָ֨ה׀ לִבְנֵ֬י אֱד֗וֹם אֵת֮ י֤וֹם יְֽרוּשָׁ֫לָ֥͏ִם הָ֭אֹ֣מְרִים עָ֤רוּ׀ עָ֑רוּ עָ֝֗ד הַיְס֥וֹד בָּֽהּ׃",
+      "literal_backbone": [
+        "Remember, Yahweh, against the sons of Edom, the day of Jerusalem,",
+        "those who said, 'Strip! Strip! Down to the foundation in her!'"
+      ],
+      "literal_rendering_id": "rnd.ps137.v007.a.literal.alt.0001",
+      "mt_reference": "Psalm 137:7",
+      "non_source_material": [],
+      "psalm_id": "ps137",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "remember, call to mind; to/for the sons of Edom",
+          "note": "The adverse sense arises from the context and construction. The lyric gives it a separate imperative where Hebrew has only 'remember.'",
+          "rendered_as": "Literal: 'Remember ... against the sons of Edom'; lyric: 'remember ... hold it against Edom's people'",
+          "token_ids": [
+            "ps137.v007.t001",
+            "ps137.v007.t003",
+            "ps137.v007.t004"
+          ],
+          "transliteration": "zəḵōr … liḇnê ʾĕḏôm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "strip, lay bare; here, raze",
+          "note": "Preserves the repeated command and exposure imagery. The foundation phrase establishes that the stripping concerns destruction of the city.",
+          "rendered_as": "Literal: 'Strip her! Strip her!'; lyric: 'Strip her bare! Strip her bare!'",
+          "token_ids": [
+            "ps137.v007.t009",
+            "ps137.v007.t010"
+          ],
+          "transliteration": "ʿārû ʿārû",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps137.v007.a.0001"
   ],
@@ -15,7 +129,244 @@
   "pr_links": [],
   "psalm_id": "ps137",
   "ref": "Psalm 137:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Uses 'strip' to retain the verb's underlying exposure imagery.",
+      "drift_flags": [],
+      "grounding_confidence": 0.95,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Jerusalem stripped to her foundation",
+          "note": "Preserves the stripping metaphor, repetition, and foundation.",
+          "source_id": "ps137.v007.a",
+          "token_ids": [
+            "ps137.v007.t009",
+            "ps137.v007.t010",
+            "ps137.v007.t011",
+            "ps137.v007.t012",
+            "ps137.v007.t013"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Remember, Yahweh = ps137.v007.t001–t002",
+          "against the sons of Edom = ps137.v007.t003–t004",
+          "the day of Jerusalem = ps137.v007.t005–t007; t005 marks the object",
+          "when they said = ps137.v007.t008",
+          "Strip her! Strip her! = ps137.v007.t009–t010; the object is supplied from Jerusalem",
+          "Down to her foundation = ps137.v007.t011–t013"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:03:28.259859+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6af743c4e6ec",
+        "source_ids": [
+          "ps137.v007.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e029-70bc-7fe1-8b55-92d351239d6b"
+      },
+      "rationale": "Turns the remembrance motif into a petition and preserves the repeated destructive command.",
+      "rendering_id": "rnd.ps137.v007.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Remember, Yahweh, against the sons of Edom,\nthe day of Jerusalem,\nwhen they said, “Strip her! Strip her!\nDown to her foundation!”",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps137.v007.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Separates remembrance from its accusatory force in natural spoken clauses.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        },
+        {
+          "code": "JUDICIAL_FORCE_EXPLICIT",
+          "confidence": 0.97,
+          "message": "'Hold it against' makes the adverse force of the remembrance petition explicit in a second clause.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.95,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.71,
+        "syllable_count": 34,
+        "syllables": 34
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Jerusalem stripped to her foundation",
+          "note": "Retains stripping, the repeated command, feminine reference, and foundation.",
+          "source_id": "ps137.v007.a",
+          "token_ids": [
+            "ps137.v007.t009",
+            "ps137.v007.t010",
+            "ps137.v007.t011",
+            "ps137.v007.t012",
+            "ps137.v007.t013"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "Yahweh, remember = ps137.v007.t001–t002; English order reversed",
+          "Jerusalem's day = ps137.v007.t005–t007",
+          "hold it against Edom's people = ps137.v007.t003–t004 together with the adverse force of 'remember'",
+          "They said = ps137.v007.t008",
+          "Strip her bare! Strip her bare! = ps137.v007.t009–t010",
+          "Down to her foundation = ps137.v007.t011–t013"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T00:06:56.917125+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.1492eca984fa",
+        "source_ids": [
+          "ps137.v007.a"
+        ],
+        "thread_id": "01a0e029-6ce0-7462-999f-a623581d89f0",
+        "translation_basis": {
+          "basis_note": "Composed directly from the Hebrew wording and syntax.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps137.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e02c-8491-74c2-b059-bf6314364a77"
+      },
+      "rationale": "Turns remembrance into accusation, followed by the doubled command against the personified city.",
+      "rendering_id": "rnd.ps137.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, remember Jerusalem's day;\nhold it against Edom's people.\nThey said, “Strip her bare! Strip her bare!\nDown to her foundation!”",
+      "translation_basis": {
+        "basis_note": "Composed directly from the Hebrew wording and syntax.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps137.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps137.0001",
+      "unit_id": "ps137.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "זְכֹ֤ר יְהוָ֨ה׀ לִבְנֵ֬י אֱד֗וֹם אֵת֮ י֤וֹם יְֽרוּשָׁ֫לָ֥͏ִם הָ֭אֹ֣מְרִים עָ֤רוּ׀ עָ֑רוּ עָ֝֗ד הַיְס֥וֹד בָּֽהּ׃",

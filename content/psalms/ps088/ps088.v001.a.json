@@ -1,8 +1,61 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps088.v001.a.0001",
+    "aud.ps088.v001.a.0002",
+    "aud.ps088.v001.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cf219ccfc24bef100c13592af1dd9a4c0c4c61fb05d3d1bfcf979970ce941bd9",
+      "audit_id": "aud.ps088.v001.a.0001",
+      "before_hash": "93b4778446974262afab18277030a66f72972ab4ff6a9e00bc8af295704b7b05",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:22.370438+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps088.0001",
+      "entity_type": "translation",
+      "rationale": "import translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e310c405a9647c1866fecf07e3fc2d917ceea678fbcfedff852815417e7ded8c",
+      "audit_id": "aud.ps088.v001.a.0002",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:32:15.163569+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps088.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “God of my salvation”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3a84e2da3a8bd5c08597f6754bb2bfcff4b42dd30c0a6b36ec7988556c2f1690",
+      "audit_id": "aud.ps088.v001.a.0003",
+      "before_hash": "6f15754beacc0ae63d5f8b17126d7155e9782e77a756b4b3b6c7e41380c14598",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:36:58.138713+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps088.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps088.v001.a.0001"

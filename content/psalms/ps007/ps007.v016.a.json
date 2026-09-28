@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v016.a.literal.alt.0001",
+    "rnd.ps007.v016.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v016.a.0001",
+    "aud.ps007.v016.a.0002",
+    "aud.ps007.v016.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "255f12fe82647ad38dfba9ecbfd41e7a9218c6bce661490e5fde5ff4128a00b2",
+      "audit_id": "aud.ps007.v016.a.0001",
+      "before_hash": "9db02d80ec99bcbfa2455d6a0cc9c66d606a7532b5cea81ea2bcd768b24058ab",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.125696+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v016.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The repeated digging actions lead directly to the maker's fall into his own excavation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c85644c628c5f752232aabaadcb2d94d24031f8604fdc0b1d4ee9aae1c86ec62",
+      "audit_id": "aud.ps007.v016.a.0002",
+      "before_hash": "dce3d75cb8cf4c0995108c94045d560ac5f5b77cf18c664a72123fd5301be8c2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.650488+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v016.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The paired digging actions lead into the maker's own fall, with a short ending identifying his responsibility.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "094396c9e191f6e0bee9ee0489015f302d40f1ccd9bbb5ed6a02ffdcfd06a815",
+      "audit_id": "aud.ps007.v016.a.0003",
+      "before_hash": "b737dea89e588ce5acc8eac2362b721db56410a5b9fe0b3ee27a1baf37cd7c24",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:51:56.481075+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v016.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves both excavation actions, the subsequent fall, and the identification of the hole as the man's own work. 'Pit' and 'hole' naturally represent the two Hebrew excavation nouns.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "5d2fe2656a1cc75b98716aec12af1d6634560e03890328ae21c550fe5dcbac67",
+      "audit_ids": [
+        "aud.ps007.v016.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v016.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Then' makes the narrative sequence explicit. 'He'd made' interprets the final imperfect through English past-tense sequencing; it is not a Hebrew pluperfect form.",
+      "display_reference": "Psalm 7:16",
+      "english_rendering_id": "rnd.ps007.v016.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ec98988b80c1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בּ֣וֹר כָּ֭רָֽה וַֽיַּחְפְּרֵ֑הוּ וַ֝יִּפֹּ֗ל בְּשַׁ֣חַת יִפְעָֽל׃",
+      "literal_backbone": [
+        "He dug a pit and excavated it;",
+        "he fell into the pit he made."
+      ],
+      "literal_rendering_id": "rnd.ps007.v016.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:16",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v016.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Do, make, work, fashion.",
+          "note": "The past-perfect rendering places the making before the fall. This is a contextual interpretation of the Hebrew imperfect, rather than a direct tense correspondence.",
+          "rendered_as": "he'd made",
+          "token_ids": [
+            "ps007.v016.t006"
+          ],
+          "transliteration": "yip̄ʿāl",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v016.a.0001"
   ],
@@ -15,7 +116,229 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:16",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Balanced clauses make the fall answer the digging.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Digger falling into his own pit",
+          "note": "Retains both excavation verbs and the reversal onto the maker.",
+          "source_id": "ps007.v016.a",
+          "token_ids": [
+            "ps007.v016.t001",
+            "ps007.v016.t002",
+            "ps007.v016.t003",
+            "ps007.v016.t004",
+            "ps007.v016.t005",
+            "ps007.v016.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v016.t001–t002 → He dug a pit",
+          "ps007.v016.t003 → and hollowed it out",
+          "ps007.v016.t004–t005 → he fell into the hole",
+          "ps007.v016.t006 → he had made"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v016.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v016.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "The repeated digging actions lead directly to the maker's fall into his own excavation.",
+      "rendering_id": "rnd.ps007.v016.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "He dug a pit\nand hollowed it out;\nhe fell into the hole\nhe had made.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v016.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v016.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The clipped final phrase makes the maker's reversal audible.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.6,
+        "syllable_count": 19,
+        "syllables": 19
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Digger falling into his own excavation",
+          "note": "Retains both excavation actions and the fall into the resulting hole.",
+          "source_id": "ps007.v016.a",
+          "token_ids": [
+            "ps007.v016.t001",
+            "ps007.v016.t002",
+            "ps007.v016.t003",
+            "ps007.v016.t004",
+            "ps007.v016.t005",
+            "ps007.v016.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v016.t001–t002 → He dug a pit",
+          "ps007.v016.t003 → he hollowed it out",
+          "ps007.v016.t004–t005 → then fell in the hole",
+          "ps007.v016.t006 → he'd made"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v016.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v016.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "The paired digging actions lead into the maker's own fall, with a short ending identifying his responsibility.",
+      "rendering_id": "rnd.ps007.v016.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He dug a pit,\nhe hollowed it out,\nthen fell in the hole\nhe'd made.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v016.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v016.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בּ֣וֹר כָּ֭רָֽה וַֽיַּחְפְּרֵ֑הוּ וַ֝יִּפֹּ֗ל בְּשַׁ֣חַת יִפְעָֽל׃",

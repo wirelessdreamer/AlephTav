@@ -1,9 +1,122 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v009.a.literal.alt.0001",
+    "rnd.ps007.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v009.a.0001",
+    "aud.ps007.v009.a.0002",
+    "aud.ps007.v009.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8fd6ddf0f47dc3bedc8426ba19f3c4a742600cfaccd6ce63e4e9d397bebd0363",
+      "audit_id": "aud.ps007.v009.a.0001",
+      "before_hash": "0fc439ffc705d749379691d73b32d82cbb35fee42fe7eea7e9a26a6591e034bc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.411778+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v009.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Moves from judgment of the assembled peoples to the speaker's personal appeal.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "157ee9578136f4b15de4ba18f4ead972a8321683a94a49d2de512674d2c751b6",
+      "audit_id": "aud.ps007.v009.a.0002",
+      "before_hash": "086ef30e569b89f9ef181ddff0f4b15094bfcaa49a4a1875b2071f96e4559df9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.130996+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The gathered peoples lead into universal judgment, then the speaker places himself under the same judgment.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "47ca33ee2e04c197ec6e23dffeb9c0d3d74a0ad07621b9ccb7d889cb4ef7b3ca",
+      "audit_id": "aud.ps007.v009.a.0003",
+      "before_hash": "cf8225e0796f00c12a847ff455e0402002205ad9ab205a820755449ebd8e02a5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:48.119756+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves Yahweh's judgment of peoples, the speaker's personal appeal to be judged, and the parallel grounds of righteousness and integrity. The lyric expresses righteousness as right conduct and leaves the difficult concluding 'upon me' implicit in 'my integrity.'",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "c2b9f1da6f9d46d6b257ccc34aa4a078ade9b6e4ebd9476fbf225edee740632a",
+      "audit_ids": [
+        "aud.ps007.v009.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'The right I've done' turns an abstract quality or standing into actions performed. Repeating 'by' preserves the parallel Hebrew prepositions, while the final prepositional phrase is compressed.",
+      "display_reference": "Psalm 7:9",
+      "english_rendering_id": "rnd.ps007.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.8919d903c8c7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָה֮ יָדִ֢ין עַ֫מִּ֥ים שָׁפְטֵ֥נִי יְהוָ֑ה כְּצִדְקִ֖י וּכְתֻמִּ֣י עָלָֽי׃",
+      "literal_backbone": [
+        "Yahweh judges peoples.",
+        "Judge me, Yahweh, according to my righteousness",
+        "and according to my integrity upon me."
+      ],
+      "literal_rendering_id": "rnd.ps007.v009.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:9",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "According to my righteousness, rightness, justice.",
+          "note": "Concretizes righteousness as past conduct; the Hebrew can also express the speaker's being in the right in the dispute.",
+          "rendered_as": "by the right I've done",
+          "token_ids": [
+            "ps007.v009.t006"
+          ],
+          "transliteration": "kəṣidqî",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "And according to my integrity or completeness; upon me, concerning me.",
+          "note": "Preserves integrity but absorbs the difficult final phrase into the possessive. This follows an attributive reading of that phrase rather than representing it separately.",
+          "rendered_as": "by my integrity",
+          "token_ids": [
+            "ps007.v009.t007",
+            "ps007.v009.t008"
+          ],
+          "transliteration": "ûḵəṯummî ʿālay",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v009.a.0001"
   ],
@@ -15,7 +128,214 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the speaker's stated grounds for judgment.",
+      "drift_flags": [],
+      "grounding_confidence": 0.95,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v009.t001–t003 → Yahweh judges the peoples",
+          "ps007.v009.t004–t005 → Judge me, Yahweh",
+          "ps007.v009.t006 → according to my righteousness",
+          "ps007.v009.t007–t008 → and the integrity that is mine"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v009.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v009.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Moves from judgment of the assembled peoples to the speaker's personal appeal.",
+      "rendering_id": "rnd.ps007.v009.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Yahweh judges the peoples.\nJudge me, Yahweh,\naccording to my righteousness\nand the integrity that is mine.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v009.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v009.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The public judgment statement contracts into a personal appeal.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        },
+        {
+          "code": "SEMANTIC_NARROWING",
+          "confidence": 0.95,
+          "message": "'The right I've done' expresses righteousness through conduct, narrowing the Hebrew noun's broader range.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.16,
+        "stress_approximation": 0.77,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v009.t001–t003 → Yahweh judges the peoples",
+          "ps007.v009.t004–t005 → Judge me, Yahweh",
+          "ps007.v009.t006 → by the right I've done",
+          "ps007.v009.t007–t008 → by my integrity"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v009.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v009.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "The gathered peoples lead into universal judgment, then the speaker places himself under the same judgment.",
+      "rendering_id": "rnd.ps007.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh judges the peoples.\nJudge me, Yahweh,\nby the right I've done,\nby my integrity.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v009.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָה֮ יָדִ֢ין עַ֫מִּ֥ים שָׁפְטֵ֥נִי יְהוָ֑ה כְּצִדְקִ֖י וּכְתֻמִּ֣י עָלָֽי׃",

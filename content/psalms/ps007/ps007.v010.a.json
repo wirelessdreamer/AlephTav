@@ -1,9 +1,111 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v010.a.literal.alt.0001",
+    "rnd.ps007.v010.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v010.a.0001",
+    "aud.ps007.v010.a.0002",
+    "aud.ps007.v010.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "de44c0401f1a5ebc73ea42ef7af19c64aaf513bfea25918ac4e62596bb40869e",
+      "audit_id": "aud.ps007.v010.a.0001",
+      "before_hash": "2f7ce1ed4a1ce2a68793d2505f062949a5ea23cc6fb0f330c3d44bcee8937e4b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:14:36.423386+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v010.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Preserves the contrast between ending evil and establishing the righteous, followed by inward examination.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5f0a2a740caffc9a4766ec93eafce5a949796582201aceeeaafbb52175412d58",
+      "audit_id": "aud.ps007.v010.a.0002",
+      "before_hash": "2d1bd9361093f80894d70f5ef419b9750ede04ace3cd45daee4ed2f04c633441",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:18:29.145179+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Pairs the ending of evil with the establishing of the righteous, then retains the unsettling bodily image of examination.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5922f0952bb9429203597c320594c53347d8c69766fb2a34d8cc294843aead1a",
+      "audit_id": "aud.ps007.v010.a.0003",
+      "before_hash": "02c4b0dc5fafac5bc5c80a0aa900ba75315c93d5b4dc95af74d082f56639ce9e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:50:58.877857+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the plea for the wicked's evil to end, the establishing of the righteous, the testing of hearts and kidneys, and the address to righteous God. The complete 'hearts' form is supplied in the ordered token evidence.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "44d3476cabab4e7a4053e35b17a1896346a690034235f0163707016bc0d21d36",
+      "audit_ids": [
+        "aud.ps007.v010.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Make the righteous stand firm' gives an idiomatic expression for establishing them. The participial description becomes the direct statement 'You test.' English 'the righteous' leaves number unspecified where Hebrew has a generic singular.",
+      "display_reference": "Psalm 7:10",
+      "english_rendering_id": "rnd.ps007.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.57ec665c07d4",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יִגְמָר־נָ֬א רַ֨ע׀ רְשָׁעִים֮ וּתְכוֹנֵ֢ן צַ֫דִּ֥יק וּבֹחֵ֣ן לִ֭בּ֗ וּכְלָי֗וֹת אֱלֹהִ֥ים צַדּֽ͏ִיק׃",
+      "literal_backbone": [
+        "Please, let the evil of the wicked come to an end;",
+        "establish the righteous one,",
+        "you who test hearts and kidneys, righteous God."
+      ],
+      "literal_rendering_id": "rnd.ps007.v010.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:10",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "And establish, make firm, secure.",
+          "note": "Naturally expresses establishing or securing the righteous; 'stand' makes the underlying firmness image more explicit.",
+          "rendered_as": "make the righteous stand firm",
+          "token_ids": [
+            "ps007.v010.t005"
+          ],
+          "transliteration": "ûṯəḵônēn",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v010.a.0001"
   ],
@@ -15,7 +117,232 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains kidneys and the singular righteous one.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Testing hearts and kidneys",
+          "note": "Preserves the bodily imagery rather than substituting abstract faculties.",
+          "source_id": "ps007.v010.a",
+          "token_ids": [
+            "ps007.v010.t007",
+            "ps007.v010.t008",
+            "ps007.v010.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v010.t001–t002 → let end, please",
+          "ps007.v010.t003–t004 → the evil of the wicked",
+          "ps007.v010.t005–t006 → and establish the righteous one",
+          "ps007.v010.t007 → you who test",
+          "ps007.v010.t008–t009 → hearts and kidneys",
+          "ps007.v010.t010–t011 → righteous God"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:14:36.023374+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b228eb4c9586",
+        "source_ids": [
+          "ps007.v010.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "The ordered token evidence supplies the complete hearts noun where the passage display is truncated.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v010.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew token evidence"
+        },
+        "turn_id": "01a0e3a2-2a3f-7fb2-b0a8-38c9981c7820"
+      },
+      "rationale": "Preserves the contrast between ending evil and establishing the righteous, followed by inward examination.",
+      "rendering_id": "rnd.ps007.v010.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Let the evil of the wicked end, please;\nand establish the righteous one,\nyou who test hearts and kidneys,\nrighteous God.",
+      "translation_basis": {
+        "basis_note": "The ordered token evidence supplies the complete hearts noun where the passage display is truncated.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v010.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew token evidence"
+      },
+      "unit_id": "ps007.v010.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Ordinary imperatives frame the deliberately retained hearts-and-kidneys image.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.16,
+        "singability_score": 0.11,
+        "stress_approximation": 0.68,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Testing hearts and kidneys",
+          "note": "Both organs remain visible rather than becoming abstract thoughts and feelings.",
+          "source_id": "ps007.v010.a",
+          "token_ids": [
+            "ps007.v010.t007",
+            "ps007.v010.t008",
+            "ps007.v010.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v010.t001–t004 → Please, let the wicked's evil end",
+          "ps007.v010.t005–t006 → make the righteous stand firm",
+          "ps007.v010.t007–t009 → You test hearts and kidneys",
+          "ps007.v010.t010–t011 → you righteous God"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:18:28.805612+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.2bd07a29b840",
+        "source_ids": [
+          "ps007.v010.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based rendering; the ordered tokens supply the complete hearts noun.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v010.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew token evidence"
+        },
+        "turn_id": "01a0e3a5-9d7c-72d0-b09c-07e6f93b6a51"
+      },
+      "rationale": "Pairs the ending of evil with the establishing of the righteous, then retains the unsettling bodily image of examination.",
+      "rendering_id": "rnd.ps007.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Please, let the wicked's evil end;\nmake the righteous stand firm.\nYou test hearts and kidneys,\nyou righteous God.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based rendering; the ordered tokens supply the complete hearts noun.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v010.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew token evidence"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יִגְמָר־נָ֬א רַ֨ע׀ רְשָׁעִים֮ וּתְכוֹנֵ֢ן צַ֫דִּ֥יק וּבֹחֵ֣ן לִ֭בּ֗ וּכְלָי֗וֹת אֱלֹהִ֥ים צַדּֽ͏ִיק׃",

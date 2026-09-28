@@ -1,9 +1,185 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v010.a.lyric.alt.0001",
+    "rnd.ps005.v010.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v010.a.0001",
+    "aud.ps005.v010.a.0002",
+    "aud.ps005.v010.a.0003",
+    "aud.ps005.v010.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0726a1c86ce14cf1f01562ab30290056c53152ccbf2a0ce88052652a59486d8d",
+      "audit_id": "aud.ps005.v010.a.0001",
+      "before_hash": "7342ed399a19678ff966c45ca68e011f2c9289dc15ba8615eb88832bda54956e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:04.010405+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "05115095205df7e0e70e559b40d666a325c5bedddd545ff0a9c3ac89d631ec2c",
+      "audit_id": "aud.ps005.v010.a.0002",
+      "before_hash": "b1b6cd63005ef3b502c9c8de9055a7bf57226232b23af15f9047e7929842852d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:01:51.957500+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "58182421eca471bf81f3535808664cca9b8278d5c1f0a291bac1c99ba1f63146",
+      "audit_id": "aud.ps005.v010.a.0003",
+      "before_hash": "85ca25278fc9204855b738f83153b7d5b66a23aa036004d493c8b768c751e6dd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.560254+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8b26be640fe7d1254b18b9ba71e341375a5c6b1d3f4a11c2caa4744288a704ae",
+      "audit_id": "aud.ps005.v010.a.0004",
+      "before_hash": "0e447ed51e35c9367b1b3650a94e801f976a43a0dc99da69a3587c76f356d46b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:14:51.162975+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v010.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Follows the Hebrew's sequence of unreliable speech, destructive inward character, the throat as an open grave, and smooth tongues. The grave image remains close; the other clauses receive new imagery. The introductory 'for' is omitted.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "c3f55d863a81087713ff832293122a9d0be712c8e4129fe22179016f7a831e3c",
+      "audit_ids": [
+        "aud.ps005.v010.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Land mines turn untrustworthy speech into explosive danger. Lungs emitting poison gas replace the description of inward destruction. Mudslides amplify smooth speech into a hazardous physical image, making the implication of flattery less explicit. Each image receives a lyrical echo.",
+      "display_reference": "Psalm 5:10",
+      "english_rendering_id": "rnd.ps005.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.bb8f0fd4d07a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+      "literal_backbone": [
+        "For there is nothing reliable in his mouth.",
+        "Their inward being is destruction.",
+        "Their throat is an open grave; they make their tongue smooth."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:10",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "there is not; in his mouth; anything firm, reliable, trustworthy",
+          "note": "Replaces the absence of trustworthy speech with a metaphor of concealed explosive harm and regularizes the singular 'his' to plural 'they'.",
+          "rendered_as": "Every word they speak is a land mine;\nland mine;",
+          "token_ids": [
+            "ps005.v010.t002",
+            "ps005.v010.t003",
+            "ps005.v010.t004"
+          ],
+          "transliteration": "ʾên bəp̄îhû nəḵônāh",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "their inward part, inner being; destruction, ruin, calamities",
+          "note": "Specifies lungs as the inward part and adds breathing and poison gas; none of those details is stated in the Hebrew.",
+          "rendered_as": "their lungs breathe out poison gas.\npoison gas.",
+          "token_ids": [
+            "ps005.v010.t005",
+            "ps005.v010.t006"
+          ],
+          "transliteration": "qirbām hawwôṯ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "their tongue; they make smooth, use smooth speech, flatter",
+          "note": "Retains smoothness but supplies the mudslide comparison and changes deliberate smoothing or flattery into a description of the tongues.",
+          "rendered_as": "their tongues slick as mudslides.\nslick as mudslides.",
+          "token_ids": [
+            "ps005.v010.t010",
+            "ps005.v010.t011"
+          ],
+          "transliteration": "ləšônām yaḥălîqûn",
+          "verdict": "expansion"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves all four clauses in order: unreliable speech, inward ruin, the open-grave image for the throat, and flattering speech. It omits the introductory 'for' and regularizes 'his mouth' to 'their mouth' alongside the subsequent plurals.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "611aef4cee5aa02e58ae98859bdc0cff97879996d60b369ced5e0eb85095ab48",
+      "audit_ids": [
+        "aud.ps005.v010.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v010.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Truth' expresses reliability as truthfulness, and 'flatter' gives the idiomatic sense of making the tongue smooth.",
+      "display_reference": "Psalm 5:10",
+      "english_rendering_id": "rnd.ps005.v010.a.lyric.alt.0002",
+      "generation_run_id": "cxr.21abb202675f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+      "literal_backbone": [
+        "For there is nothing reliable in his mouth.",
+        "Their inward part is destruction.",
+        "Their throat is an open grave somatic phrase is metaphorical?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:10",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v010.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v010.a.0001"
   ],
@@ -15,7 +191,197 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 33,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.33,
+        "singability_score": 0.15,
+        "stress_approximation": 0.71,
+        "syllable_count": 50,
+        "syllables": 50
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Every word they speak is a land mine;\nland mine;\ntheir lungs breathe out poison gas.\npoison gas.\nTheir throats are gaping graves,\ngaping graves,\ntheir tongues slick as mudslides.\nslick as mudslides.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.63,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v010.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "There is no truth in their mouth;\ntheir inward part is ruin.\nTheir throat is an open grave;\nthey flatter with their tongue.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",

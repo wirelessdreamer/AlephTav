@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps007.v017.a.literal.alt.0001",
+    "rnd.ps007.v017.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps007.v017.a.0001",
+    "aud.ps007.v017.a.0002",
+    "aud.ps007.v017.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d7b46dcd4b217ec3ed23941d12e3f02c58a1f0ec78477ad26f95ed7482bc4161",
+      "audit_id": "aud.ps007.v017.a.0001",
+      "before_hash": "22ae8324cf4979959f469a41b1f1ee9038a60d862dc2105d36e7473394adb349",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:20:19.133532+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v017.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Makes the returning trouble answer the trouble conceived earlier, while the downward violence continues the fall imagery.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f5331ddfadd7d9abd3b568d6d78797d6ccd9e419b761200bcf77204f5a17d05e",
+      "audit_id": "aud.ps007.v017.a.0002",
+      "before_hash": "d7ee8e09a589ccb233a41ba7ce29d2aa8f89c5a760852d23c1d31ed57c81cfcd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T16:22:13.660773+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps007.v017.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "The trouble conceived earlier returns to its maker; the two downward consequences answer the preceding fall into the pit.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8ee185e9e5a00181036b0f35dc619894b68d9a0ca125515d77cd81120fcdab2c",
+      "audit_id": "aud.ps007.v017.a.0003",
+      "before_hash": "14fc7bee1a3fe8c64db1344fe9a5189a7a4988712570350c03ecfa876c751d3e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T18:52:05.341565+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps007.v017.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves trouble returning onto its author's head and violence descending onto the crown of his head. Both bodily targets and the parallel consequences remain explicit. The lyric's present tense and the literal rendering's future are defensible readings of the Hebrew imperfects.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "af3907c84b4760e291b28c54814afc582f31d0e3c990a23d30fcc1b950d4700b",
+      "audit_ids": [
+        "aud.ps007.v017.a.0003"
+      ],
+      "comparison_id": "cmp.ps007.v017.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Own' emphasizes the consequence returning to the same person. 'Falls' compresses 'comes down,' and the conjunction becomes parallel punctuation.",
+      "display_reference": "Psalm 7:17",
+      "english_rendering_id": "rnd.ps007.v017.a.lyric.alt.0001",
+      "generation_run_id": "cxr.5079941cc437",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יָשׁ֣וּב עֲמָל֣וֹ בְרֹאשׁ֑וֹ וְעַ֥ל קָ֝דְקֳד֗וֹ חֲמָס֥וֹ יֵרֵֽד׃",
+      "literal_backbone": [
+        "His trouble returns upon his head;",
+        "his violence comes down upon the crown of his head."
+      ],
+      "literal_rendering_id": "rnd.ps007.v017.a.literal.alt.0001",
+      "mt_reference": "Psalm 7:17",
+      "non_source_material": [],
+      "psalm_id": "ps007",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v017.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "His toil, trouble, hardship, mischief.",
+          "note": "Preserves the repeated noun from verse 15. In context it concerns the harmful trouble he generates, rather than merely hardship he suffers.",
+          "rendered_as": "His trouble",
+          "token_ids": [
+            "ps007.v017.t002"
+          ],
+          "transliteration": "ʿămālô",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps007.v017.a.0001"
   ],
@@ -15,7 +116,245 @@
   "pr_links": [],
   "psalm_id": "ps007",
   "ref": "Psalm 7:17",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves both bodily targets and the repeated trouble vocabulary.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Trouble returning onto the head",
+          "note": "Retains the return and its bodily destination.",
+          "source_id": "ps007.v017.a",
+          "token_ids": [
+            "ps007.v017.t001",
+            "ps007.v017.t002",
+            "ps007.v017.t003"
+          ]
+        },
+        {
+          "label": "Violence descending onto the crown",
+          "note": "Crown means the top of the head, not royal headwear.",
+          "source_id": "ps007.v017.a",
+          "token_ids": [
+            "ps007.v017.t004",
+            "ps007.v017.t005",
+            "ps007.v017.t006",
+            "ps007.v017.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v017.t001–t003 → His trouble will return upon his head",
+          "ps007.v017.t004–t005 → upon the crown of his head",
+          "ps007.v017.t006 → his violence",
+          "ps007.v017.t007 → will come down"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:20:18.855774+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.6440fd436529",
+        "source_ids": [
+          "ps007.v017.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v017.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3a9-2af0-7653-81f9-53ba7d2a70ce"
+      },
+      "rationale": "Makes the returning trouble answer the trouble conceived earlier, while the downward violence continues the fall imagery.",
+      "rendering_id": "rnd.ps007.v017.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "His trouble will return upon his head;\nhis violence will come down\nupon the crown of his head.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v017.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "unit_id": "ps007.v017.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Two matching clauses retain the repeated head image and the returning trouble.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.29,
+        "singability_score": 0.14,
+        "stress_approximation": 0.59,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Trouble returning onto the head",
+          "note": "Preserves returning trouble and its bodily destination.",
+          "source_id": "ps007.v017.a",
+          "token_ids": [
+            "ps007.v017.t001",
+            "ps007.v017.t002",
+            "ps007.v017.t003"
+          ]
+        },
+        {
+          "label": "Violence descending onto the crown",
+          "note": "Crown remains explicitly the crown of the head.",
+          "source_id": "ps007.v017.a",
+          "token_ids": [
+            "ps007.v017.t004",
+            "ps007.v017.t005",
+            "ps007.v017.t006",
+            "ps007.v017.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps007.v017.t001–t002 → His trouble comes back",
+          "ps007.v017.t003 → on his own head",
+          "ps007.v017.t004–t005 → on the crown of his head",
+          "ps007.v017.t006–t007 → his violence falls"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-09-27T16:22:13.369005+00:00",
+        "generator": "codex",
+        "model": "",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.4579d978346f",
+        "source_ids": [
+          "ps007.v017.a"
+        ],
+        "thread_id": "01a0e3a2-2737-7311-b676-ae3f44a3c648",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps007.v017.a"
+          ],
+          "source_language": "he",
+          "source_version": "User-supplied Hebrew"
+        },
+        "turn_id": "01a0e3aa-d806-7bf0-8ead-057936124663"
+      },
+      "rationale": "The trouble conceived earlier returns to its maker; the two downward consequences answer the preceding fall into the pit.",
+      "rendering_id": "rnd.ps007.v017.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "His trouble comes back\non his own head;\nhis violence falls\non the crown of his head.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps007.v017.a"
+        ],
+        "source_language": "he",
+        "source_version": "User-supplied Hebrew"
+      },
+      "translation_id": "tr.ps007.0001",
+      "unit_id": "ps007.v017.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יָשׁ֣וּב עֲמָל֣וֹ בְרֹאשׁ֑וֹ וְעַ֥ל קָ֝דְקֳד֗וֹ חֲמָס֥וֹ יֵרֵֽד׃",

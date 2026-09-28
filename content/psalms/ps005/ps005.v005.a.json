@@ -1,9 +1,183 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps005.v005.a.lyric.alt.0001",
+    "rnd.ps005.v005.a.lyric.alt.0002"
+  ],
+  "audit_ids": [
+    "aud.ps005.v005.a.0001",
+    "aud.ps005.v005.a.0002",
+    "aud.ps005.v005.a.0003",
+    "aud.ps005.v005.a.0004"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "abaf64411675657dc5cf903eb8643a52b21086cba85c46b51aa8590e2d468dea",
+      "audit_id": "aud.ps005.v005.a.0001",
+      "before_hash": "0849dbbbffd1a63ff5f36b5534ae50a7c94b26b33489a8f01b1e63acb55cd95a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T01:56:03.833581+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5da2b913d0e74a6a4a69ff594e4d56f9586f6b2af662147c862d75b809214fb6",
+      "audit_id": "aud.ps005.v005.a.0002",
+      "before_hash": "251f5a520fdefbe629a701b7fe324674d08c761590018da817a7a83e5aa3b3f9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:00:17.620362+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "948e5578c031469604bb026d40b095e15bd5f7447b63fd9456d798f190ddee40",
+      "audit_id": "aud.ps005.v005.a.0003",
+      "before_hash": "00e4c92ff7ceb9243833957d1f8635f60a2c78d60625cd720353e2880b470f3e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:09:23.432523+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "676ab8632c00a38736e87b5389e2de191e79f4c233335655fe61ee01fa6573b9",
+      "audit_id": "aud.ps005.v005.a.0004",
+      "before_hash": "38cf190c1bdfacd65e9765848c363709e29c13d11ad33baadf72f656786005d2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-27T02:13:41.456808+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v005.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the two negative statements in order: God's rejection of wickedness and evil's exclusion from dwelling with him. The introductory 'for' and explicit designation 'God' are omitted.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "596a2fdc57de333469fb627e2987bbae8d185a95ac8bfd0b81f8f13d0cf4dda6",
+      "audit_ids": [
+        "aud.ps005.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps005.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Personifies wickedness and evil as named social acquaintances. Not delighting in wickedness becomes refusing to socialize, while evil's not dwelling with God becomes God's refusal to invite it. The isolated names provide lyrical echoes.",
+      "display_reference": "Psalm 5:5",
+      "english_rendering_id": "rnd.ps005.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.7b0dbd7f2f86",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+      "literal_backbone": [
+        "For you are not a God who delights in wickedness.",
+        "Evil does not dwell with you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:5",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "delighting in, desiring; wickedness, wrongdoing",
+          "note": "Substitutes social association for delight or desire and turns abstract wickedness into a named character.",
+          "rendered_as": "socialize with Wicked,\nWicked",
+          "token_ids": [
+            "ps005.v005.t004",
+            "ps005.v005.t005"
+          ],
+          "transliteration": "ḥāp̄ēṣ rešaʿ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "not; sojourn, dwell as a guest with you; evil, wicked",
+          "note": "The houseguest image draws on the verb's sense of sojourning, but an invitation is supplied and the grammatical subject changes from evil to God.",
+          "rendered_as": "or invite Evil over as your houseguest.\nEvil",
+          "token_ids": [
+            "ps005.v005.t007",
+            "ps005.v005.t008",
+            "ps005.v005.t009"
+          ],
+          "transliteration": "lōʾ yəḡurḵā rāʿ",
+          "verdict": "expansion"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves both denials: God does not delight in wickedness, and evil cannot dwell with him. It omits the opening causal link, 'for,' and understands the second clause's subject as wicked people.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "01e8c86acef2b27c9cafffdc3a631acc1138100bf07def54525bb5dbbad917c6",
+      "audit_ids": [
+        "aud.ps005.v005.a.0004"
+      ],
+      "comparison_id": "cmp.ps005.v005.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Wicked do not dwell' gives the Hebrew singular 'evil/evil one' a collective personal sense.",
+      "display_reference": "Psalm 5:5",
+      "english_rendering_id": "rnd.ps005.v005.a.lyric.alt.0002",
+      "generation_run_id": "cxr.4a20f6472687",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+      "literal_backbone": [
+        "For you are not a God who delights in wickedness.",
+        "Evil does not sojourn with you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:5",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "bad, evil; an evil person or thing",
+          "note": "The plural verb 'do' indicates wicked people; the Hebrew singular permits either evil generally or an evil person.",
+          "rendered_as": "wicked",
+          "token_ids": [
+            "ps005.v005.t009"
+          ],
+          "transliteration": "rāʿ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps005.v005.a.0001"
   ],
@@ -15,7 +189,204 @@
   "pr_links": [],
   "psalm_id": "ps005",
   "ref": "Psalm 5:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.79,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.818ca6fe3b92",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You don't socialize with Wicked,\nWicked\nor invite Evil over as your houseguest.\nEvil",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0001",
+      "unit_id": "ps005.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.14,
+        "stress_approximation": 0.63,
+        "syllable_count": 19,
+        "syllables": 19
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a897e59314c9",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v005.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You are not a God who delights in evil;\nwicked do not dwell with you.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",

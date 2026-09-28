@@ -1,9 +1,81 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps008.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps008.v004.a.0001",
+    "aud.ps008.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "9a426ebaf8a92fd827a9d5421c9dc5591a5104cec6d8438b486d609ba81fa221",
+      "audit_id": "aud.ps008.v004.a.0001",
+      "before_hash": "57834c3e7d8af5882902ef4c2d37427d8af623e7dfd7fd23c48f3b1832638baa",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:23:55.302535+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7cf96f1bbf34dc17ef1258b070adb23de3ddc6498a0037baa2637b5724b85fd8",
+      "audit_id": "aud.ps008.v004.a.0002",
+      "before_hash": "943cd4bc99daa247e5aeb22929fceb0b2278cad5a8fd2d6f1b42feea2a6ddbc5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:26:11.834897+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the temporal opening, the speaker's observation of God's heavens, their description as the work of his fingers, and the moon and stars that he established, in Hebrew order.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "16a7a782f29cf80356bd3248d763ac5e60530224240f0de0c311c5194ac4ad1d",
+      "audit_ids": [
+        "aud.ps008.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps008.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 8:4",
+      "english_rendering_id": "rnd.ps008.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.db513941dc7c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּֽי־אֶרְאֶ֣ה שָׁ֭מֶיךָ מַעֲשֵׂ֣י אֶצְבְּעֹתֶ֑יךָ יָרֵ֥חַ וְ֝כוֹכָבִ֗ים אֲשֶׁ֣ר כּוֹנָֽנְתָּה׃",
+      "literal_backbone": [
+        "When I see your heavens, the works of your fingers,",
+        "the moon and stars which you have established,"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:4",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v004.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps008.v004.a.0001"
   ],
@@ -15,7 +87,99 @@
   "pr_links": [],
   "psalm_id": "ps008",
   "ref": "Psalm 8:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 22,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.59,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.e6c8ea5823f0",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "When I look at your heavens, the work of your fingers,\nthe moon and the stars, which you have set in place,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּֽי־אֶרְאֶ֣ה שָׁ֭מֶיךָ מַעֲשֵׂ֣י אֶצְבְּעֹתֶ֑יךָ יָרֵ֥חַ וְ֝כוֹכָבִ֗ים אֲשֶׁ֣ר כּוֹנָֽנְתָּה׃",

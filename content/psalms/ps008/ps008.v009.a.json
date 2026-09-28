@@ -1,9 +1,81 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps008.v009.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps008.v009.a.0001",
+    "aud.ps008.v009.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3d6bfe266534092addee6be988c6bd700a5cf53c4c2ff2b183f586e33fbd3282",
+      "audit_id": "aud.ps008.v009.a.0001",
+      "before_hash": "8bc9edf6c65749f2b27ced9bf8a0b1dcfede14ecbc459e71661a16916918007a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:23:55.386879+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v009.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8aca0e477dc3053e127bc0c3c709dfff87d24f7045334fd6a0ae39ba04283442",
+      "audit_id": "aud.ps008.v009.a.0002",
+      "before_hash": "e5afeb7b908e4197306124059f7695424f1980cc29d30910e4b7fd6fe96ac9cd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T01:26:55.150335+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v009.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the birds of the heavens, the fish of the sea, and the concluding description of passage along the seas' paths, in Hebrew order. “Whatever passes” naturally expresses the Hebrew's singular participle collectively.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "c89b93b793107be9c42199af30a783f89f00d8ac72c11fb25a043b2cee89c307",
+      "audit_ids": [
+        "aud.ps008.v009.a.0002"
+      ],
+      "comparison_id": "cmp.ps008.v009.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 8:9",
+      "english_rendering_id": "rnd.ps008.v009.a.lyric.alt.0001",
+      "generation_run_id": "cxr.78ad322797f5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "צִפּ֣וֹר שָׁ֭מַיִם וּדְגֵ֣י הַיָּ֑ם עֹ֝בֵ֗ר אָרְחֽ יַמִּֽים׃",
+      "literal_backbone": [
+        "Birds of the heavens and fish of the sea,",
+        "that which passes along the paths of the seas."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:9",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v009.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps008.v009.a.0001"
   ],
@@ -15,7 +87,99 @@
   "pr_links": [],
   "psalm_id": "ps008",
   "ref": "Psalm 8:9",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.37,
+        "singability_score": 0.15,
+        "stress_approximation": 0.61,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.e6c8ea5823f0",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v009.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "the birds of the heavens, and the fish of the sea,\nwhatever passes along the paths of the seas.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "צִפּ֣וֹר שָׁ֭מַיִם וּדְגֵ֣י הַיָּ֑ם עֹ֝בֵ֗ר אָרְחֽ יַמִּֽים׃",

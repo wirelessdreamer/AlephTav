@@ -1,9 +1,103 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v003.a.0001",
+    "aud.ps088.v003.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c6d17a7e843acf81862f240ac5defc65d61de003dde44f69ed5cac0e36cbf218",
+      "audit_id": "aud.ps088.v003.a.0001",
+      "before_hash": "1b174f5e9bb690988ad2ad5c0a0f760602eacff6158e75418784a3ab78dfd4de",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:49.845593+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "38074e0c4db310f8f82deaf8fb64fb8b9e0f2e4d5964a46c4e708050542ee7b2",
+      "audit_id": "aud.ps088.v003.a.0002",
+      "before_hash": "c6ba87564514fedcf658afa92b08a6d58d442d7f93d4e567d9792d7a8ca4c0c4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:32:36.848791+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the request for the prayer to come before God, followed by the plea for attention to the speaker’s cry.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "749d7df851fa473912dbf35245299a1e7e4c012fc6f950b92845271a058dcec2",
+      "audit_ids": [
+        "aud.ps088.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“This prayer” replaces “my prayer.” “Hear the sound” expresses the intent of “incline your ear” while dropping its bodily image.",
+      "display_reference": "Psalm 88:3",
+      "english_rendering_id": "rnd.ps088.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0a1c52c81afa",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תָּב֣וֹא לְ֭פָנֶיךָ תְּפִלָּתִ֑י הַטֵּֽה־אָ֝זְנְךָ֗ לְרִנָּתִֽי׃",
+      "literal_backbone": [
+        "May my prayer come before you;",
+        "incline your ear to my cry."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:3",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "prayer, petition; here, my prayer",
+          "note": "Changes the possessive to a demonstrative, with the speaker’s ownership still clear from context.",
+          "rendered_as": "this prayer",
+          "token_ids": [
+            "ps088.v003.t003"
+          ],
+          "transliteration": "təfillātî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "incline, turn; your ear",
+          "note": "An idiomatic compression of the request for attentive listening; the ear imagery is lost.",
+          "rendered_as": "hear the sound",
+          "token_ids": [
+            "ps088.v003.t004",
+            "ps088.v003.t005"
+          ],
+          "transliteration": "haṭṭēh ʾoznəkhā",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v003.a.0001"
   ],
@@ -15,7 +109,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.29,
+        "stress_approximation": 0.58,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let this prayer come before you;\nhear the sound of my cry.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "תָּב֣וֹא לְ֭פָנֶיךָ תְּפִלָּתִ֑י הַטֵּֽה־אָ֝זְנְךָ֗ לְרִנָּתִֽי׃",

@@ -1,9 +1,95 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps088.v010.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps088.v010.a.0001",
+    "aud.ps088.v010.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "46e3e8762f43cea8adf8a7fa43baa9e6852d0cac7dd284fbcb0585b2be6a6129",
+      "audit_id": "aud.ps088.v010.a.0001",
+      "before_hash": "6835e7ba7db07593ee8986128368a5ca9ea140313a07e80753aa1b2b1603ab8e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:29:50.049720+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps088.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ff14fbe9c92839b7679b6bc0da5e348997422b06c063dad5c36a4839c6002b6b",
+      "audit_id": "aud.ps088.v010.a.0002",
+      "before_hash": "8b4b013e73db56e3d8ea55456833c3241d557665551b9a30f9cec85a42ba0a04",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-26T23:33:54.627450+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps088.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the failing eyes caused by suffering, the daily appeal to LORD, and the hands extended toward God, in the Hebrew’s order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "ab988928e407f17142b5043458373b50b1644b235459721c4cb766ce1abc298b",
+      "audit_ids": [
+        "aud.ps088.v010.a.0002"
+      ],
+      "comparison_id": "cmp.ps088.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Reach my hands out” conveys the prayer gesture but leaves the spreading of the palms less explicit. Present-tense verbs portray the distress and prayer as ongoing.",
+      "display_reference": "Psalm 88:10",
+      "english_rendering_id": "rnd.ps088.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.cfb0c268fd28",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עֵינִ֥י דָאֲבָ֗ה מִנִּ֫י עֹ֥נִי קְרָאתִ֣יךָ יְהוָ֣ה בְּכָל־י֑וֹם שִׁטַּ֖חְתִּי אֵלֶ֣יךָ כַפָּֽי׃",
+      "literal_backbone": [
+        "My eye has grown faint from affliction;",
+        "I have called to you, YHWH, every day;",
+        "I have spread out my palms toward you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 88:10",
+      "non_source_material": [],
+      "psalm_id": "ps088",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "spread out; toward you; my palms, hands",
+          "note": "Preserves the gesture toward God while generalizing the explicit spreading of the palms.",
+          "rendered_as": "I reach my hands out to you.",
+          "token_ids": [
+            "ps088.v010.t009",
+            "ps088.v010.t010",
+            "ps088.v010.t011"
+          ],
+          "transliteration": "šiṭṭaḥtî ʾēleḵā kappāy",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps088.v010.a.0001"
   ],
@@ -15,7 +101,106 @@
   "pr_links": [],
   "psalm_id": "ps088",
   "ref": "Psalm 88:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.52,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.95f0ecf20d4a",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps088.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "my eyes grow dim from the pain.\nEvery day I call to you, LORD;\nI reach my hands out to you.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps088.0001",
+      "unit_id": "ps088.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עֵינִ֥י דָאֲבָ֗ה מִנִּ֫י עֹ֥נִי קְרָאתִ֣יךָ יְהוָ֣ה בְּכָל־י֑וֹם שִׁטַּ֖חְתִּי אֵלֶ֣יךָ כַפָּֽי׃",
