@@ -951,6 +951,15 @@ export interface StructuralSeam {
   aligns_with_section: boolean;
 }
 
+/** An existing translation the English resembles, as the psalm analysis judged it. */
+export interface SimilarTranslation {
+  translation: string;
+  /** supplied: compared with its text; recalled: from Codex's own knowledge, unchecked. */
+  basis: 'supplied' | 'recalled';
+  closeness: 'reproduces' | 'adapts' | 'echoes';
+  evidence: string;
+}
+
 export interface PsalmAnalysis {
   psalm_analysis_id: string;
   psalm_id: string;
@@ -965,6 +974,8 @@ export interface PsalmAnalysis {
   non_source_material: NonSourceMaterial[];
   method: string;
   citations: string[];
+  /** Absent from analyses made before the auditor compared translations. */
+  similar_translations?: SimilarTranslation[];
   source_fingerprint: string | null;
   status: string;
   created_by: string;

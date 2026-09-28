@@ -4384,7 +4384,7 @@ button.composer-path-chip {
   color: var(--muted);
 }
 
-.comparison-shell :is(.analysis-prose, .epistemic ul) {
+.comparison-shell :is(.analysis-prose, .epistemic ul, .similar-translations) {
   color: var(--text-soft);
 }
 
@@ -4823,14 +4823,16 @@ button.composer-path-chip {
 .analysis-defs dt { color: #94a3b8; }
 .analysis-defs dd { margin: 0; color: #e2e8f0; }
 
-.epistemic ul {
+.epistemic ul,
+.similar-translations {
   margin: 0;
   padding-inline-start: 1rem;
   font-size: 0.8rem;
   color: #cbd5e1;
 }
 
-.epistemic li { margin-bottom: 0.3rem; }
+.epistemic li,
+.similar-translations li { margin-bottom: 0.3rem; }
 
 /* The grounds for a claim, so a reviewer can check rather than trust it. */
 .basis {
@@ -5250,6 +5252,31 @@ button.composer-path-chip {
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.arr-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.arr-text__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.arr-text__sheet {
+  margin: 0;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
 }
 
 .arr-refrains {
@@ -6225,6 +6252,22 @@ button.composer-path-chip {
 
 .import-dialog__actions .verse-notes__hint {
   margin-right: auto;
+}
+
+.confirm-dialog {
+  width: min(460px, calc(100vw - 32px));
+}
+
+.confirm-dialog__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.confirm-dialog__body p {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .import-steps {

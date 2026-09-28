@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useAppRuntime } from '../app/AppContext';
+import { MoveTranslationDialog } from '../components/MoveTranslationDialog';
 import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useCollections,
@@ -56,6 +57,8 @@ export function ComparisonPage() {
   /** Picking a psalm to add to the project, in place of the psalm picker. */
   const [adding, setAdding] = useState(false);
   const [addPsalmId, setAddPsalmId] = useState('');
+  /** The project the translation on show would move to, while the move awaits confirmation. */
+  const [moveTarget, setMoveTarget] = useState<string | null>(null);
 
   const psalmTitle = (id: string) => psalms.find((p) => p.psalm_id === id)?.title ?? id;
 
@@ -74,6 +77,11 @@ export function ComparisonPage() {
     setName('');
     createCollection.reset();
     renameCollection.reset();
+  }
+
+  function cancelMove() {
+    setMoveTarget(null);
+    moveTranslation.reset();
   }
 
   function stopAdding() {
@@ -259,13 +267,7 @@ export function ComparisonPage() {
               value=""
               disabled={moveTranslation.isPending || collections.length < 2}
               onChange={(event) => {
-                const target = event.target.value;
-                if (!target) return;
-                moveTranslation.mutate(
-                  { psalmId, translation_id: translationId, collection_id: target },
-                  // Follow the translation to where it now is.
-                  { onSuccess: () => updateWorkbenchSelection({ collectionId: target, unitId: null }) },
-                );
+                if (event.target.value) setMoveTarget(event.target.value);
               }}
             >
               <option value="">{moveTranslation.isPending ? 'Moving…' : 'Choose a project…'}</option>
@@ -281,12 +283,37 @@ export function ComparisonPage() {
                   );
                 })}
             </select>
-            {moveTranslation.error ? (
-              <span className="comparison-error">{detail(moveTranslation.error)}</span>
-            ) : null}
           </label>
         ) : null}
       </header>
+
+      <MoveTranslationDialog
+        move={
+          psalmId && collection && moveTarget
+            ? {
+                psalm: psalmTitle(psalmId),
+                from: collection.title,
+                to: collections.find((c) => c.collection_id === moveTarget)?.title ?? moveTarget,
+              }
+            : null
+        }
+        moving={moveTranslation.isPending}
+        error={moveTranslation.error ? detail(moveTranslation.error) : null}
+        onCancel={cancelMove}
+        onConfirm={() => {
+          if (!psalmId || !moveTarget) return;
+          moveTranslation.mutate(
+            { psalmId, translation_id: translationId, collection_id: moveTarget },
+            {
+              onSuccess: () => {
+                setMoveTarget(null);
+                // Follow the translation to where it now is.
+                updateWorkbenchSelection({ collectionId: moveTarget, unitId: null });
+              },
+            },
+          );
+        }}
+      />
 
       <TranslationComparisonTable
         psalmId={psalmId}

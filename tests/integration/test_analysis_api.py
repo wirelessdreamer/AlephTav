@@ -58,6 +58,7 @@ def _psalm_payload() -> dict[str, Any]:
         "non_source_material": [],
         "method": "Checked against the Masoretic text.",
         "citations": ["BDB"],
+        "similar_translations": [],
     }
 
 

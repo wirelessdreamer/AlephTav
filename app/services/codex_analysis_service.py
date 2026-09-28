@@ -45,6 +45,8 @@ from app.services import (
 )
 
 PROMPT_TEMPLATE_VERSION = "codex-analysis-v1"
+# The psalm turn's own version: an analysis from an earlier prompt re-runs, not skips.
+PSALM_PROMPT_TEMPLATE_VERSION = "codex-psalm-analysis-v2"
 
 ANALYSIS_STATUS_PROPOSED = "proposed"
 ANALYSIS_STATUS_SUPERSEDED = "superseded"
@@ -188,17 +190,46 @@ def build_verse_analysis_prompt(
     )
 
 
+def _compared_translations(psalm_id: str) -> list[str]:
+    """The public-domain English of the psalm, each whole and in its own verse numbering.
+
+    Not paired with the Masoretic verses: where a psalm has a heading, English numbering
+    runs a verse or two behind, and a mispaired verse would mislead the comparison.
+    """
+    number = int(psalm_id.removeprefix("ps"))
+    lines: list[str] = []
+    for source in registry_service.PUBLIC_DOMAIN_WITNESS_SOURCES:
+        texts = registry_service._load_public_domain_witness_map(source["source_id"])
+        verses = [f"  {v} {text}" for (p, v), text in sorted(texts.items()) if p == number]
+        if verses:
+            lines += ["", f"### {source['versionTitle']}", *verses]
+    return lines
+
+
 def build_psalm_analysis_prompt(
     psalm_id: str, english_layer: str = "lyric", translation_id: str | None = None
 ) -> str:
     psalm = registry_service.load_psalm(psalm_id)
     verses = []
+    imported = 0
     for unit in psalm["units"]:
         english = comparisons.select_rendering(unit, english_layer, translation_id)
+        if english and (english.get("provenance") or {}).get("imported"):
+            imported += 1
         verses.append(
             f"  {unit['ref']} [{unit['unit_id']}]: "
             f"{english['text'] if english else '(no English stored)'}"
         )
+    provenance = (
+        [
+            f"{imported} of the {len(psalm['units'])} verses below were imported: pasted in",
+            "from an existing translation, not written here. Say plainly whether the English",
+            "reproduces or adapts a translation you can identify, and which.",
+            "",
+        ]
+        if imported
+        else []
+    )
     return "\n".join(
         [
             "# Translation audit -- whole psalm",
@@ -217,8 +248,20 @@ def build_psalm_analysis_prompt(
             "basis, and what it does not, each with why not. Do not treat a",
             "traditional ascription as a fact the text establishes.",
             "",
+            "Last, name the existing translations this English resembles, closest first:",
+            "the public-domain translations below (basis supplied), and any published",
+            "translation, metrical psalter or hymn you recognise in it (basis recalled),",
+            "quoted by a few words at most. Wording every translation shares is no",
+            "resemblance; look for the choices that set a translation apart. Cite verses",
+            "by the Masoretic numbers of the English under audit; the translations below",
+            "keep their own numbering, a verse or two behind where the psalm has a heading.",
+            "",
+            *provenance,
             "## English setting under audit",
             "\n".join(verses),
+            "",
+            "## Public-domain translations for comparison",
+            *_compared_translations(psalm_id),
         ]
     )
 
@@ -516,7 +559,12 @@ def analyze_psalm_scope(
     }
 
     current = active_analysis(psalm_id, translation_id)
-    if not force and current is not None and current.get("source_fingerprint") == fingerprint:
+    if (
+        not force
+        and current is not None
+        and current.get("source_fingerprint") == fingerprint
+        and current.get("prompt_template_version") == PSALM_PROMPT_TEMPLATE_VERSION
+    ):
         result["skipped"] = True
         result["analysis"] = current
         return result
@@ -528,7 +576,7 @@ def analyze_psalm_scope(
         validator=PSALM_VALIDATOR,
         kind=translation.KIND_ANALYSIS,
         psalm_id=psalm_id,
-        prompt_template_version=PROMPT_TEMPLATE_VERSION,
+        prompt_template_version=PSALM_PROMPT_TEMPLATE_VERSION,
     )
     result["run_id"] = run["run_id"]
     if run["status"] != translation.RUN_COMPLETED:
@@ -559,13 +607,14 @@ def analyze_psalm_scope(
         "non_source_material": payload["non_source_material"],
         "method": payload["method"],
         "citations": payload["citations"],
+        "similar_translations": payload["similar_translations"],
         "source_fingerprint": fingerprint,
         "status": ANALYSIS_STATUS_PROPOSED,
         "created_by": created_by,
         "created_via": "codex",
         "generator_provider": codex.PROVIDER_NAME,
         "generation_run_id": run["run_id"],
-        "prompt_template_version": PROMPT_TEMPLATE_VERSION,
+        "prompt_template_version": PSALM_PROMPT_TEMPLATE_VERSION,
         "created_at": _now(),
         "revision_of": current["psalm_analysis_id"] if current else None,
         "audit_ids": [],

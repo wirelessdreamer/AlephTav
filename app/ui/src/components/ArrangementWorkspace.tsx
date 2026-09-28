@@ -12,8 +12,9 @@ import type { Arrangement, ComparisonTableRow, PsalmAnalysisSection } from '../t
 import { ArrangementEditor } from './ArrangementEditor';
 import { ArrangementLiberties } from './ArrangementLiberties';
 import { ArrangementSources } from './ArrangementSources';
+import { ArrangementText } from './ArrangementText';
 
-export type ArrangementPane = 'arrangement' | 'sources' | 'liberties';
+export type ArrangementPane = 'arrangement' | 'sources' | 'liberties' | 'text';
 
 interface Props {
   psalmId: string;
@@ -195,6 +196,8 @@ export function ArrangementWorkspace({
           <ArrangementEditor view={view.data} edit={apply} pending={edit.isPending} />
         ) : pane === 'sources' ? (
           <ArrangementSources view={view.data} rows={rows} englishLayer={englishLayer} />
+        ) : pane === 'text' ? (
+          <ArrangementText view={view.data} />
         ) : (
           <ArrangementLiberties
             view={view.data}

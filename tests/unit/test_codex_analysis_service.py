@@ -12,8 +12,9 @@ from app.core.errors import ValidationError
 from app.services import codex_analysis_service as analysis
 from app.services import codex_app_server_service as codex
 from app.services import codex_translation_service as translation
+from app.services import collections_service, registry_service, rendering_service
 from app.services import comparison_assessment_service as comparisons
-from app.services import registry_service, rendering_service
+from app.services import psalm_translations_service as translations
 
 UNIT_ID = "ps001.v001.a"
 PSALM_ID = "ps001"
@@ -78,6 +79,14 @@ def _psalm_payload(**overrides: Any) -> dict[str, Any]:
         "non_source_material": [],
         "method": "Compact literal renderings checked against the Masoretic text.",
         "citations": [],
+        "similar_translations": [
+            {
+                "translation": "King James Version",
+                "basis": "supplied",
+                "closeness": "echoes",
+                "evidence": "v. 1 keeps the KJV's 'counsel of the ungodly' ordering.",
+            }
+        ],
     }
     payload.update(overrides)
     return payload
@@ -278,6 +287,7 @@ def test_psalm_analysis_lands_on_the_meta_file_with_an_audit_record() -> None:
     assert record["status"] == "proposed"
     assert record["sections"][0]["title"] == "Verse 1"
     assert record["epistemics"]["not_known_from_text"][0]["why_not"]
+    assert record["similar_translations"][0]["translation"] == "King James Version"
     assert record["source_fingerprint"]
 
     meta = registry_service.load_psalm_meta(PSALM_ID)
@@ -362,6 +372,54 @@ def test_a_second_psalm_analysis_supersedes_the_first() -> None:
     statuses = {a["psalm_analysis_id"]: a["status"] for a in meta["analyses"]}
     assert statuses[first["analysis"]["psalm_analysis_id"]] == "superseded"
     assert analysis.active_analysis(PSALM_ID)["summary"] == "Revised reading of the two ways."
+
+
+def test_an_analysis_from_an_earlier_prompt_runs_again() -> None:
+    client, session_id = _session([_psalm_payload(), _psalm_payload()])
+    analysis.analyze_psalm_scope(client, session_id, PSALM_ID)
+    meta = registry_service.load_psalm_meta(PSALM_ID)
+    meta["analyses"][0]["prompt_template_version"] = "codex-analysis-v1"
+    registry_service.save_psalm_meta(PSALM_ID, meta)
+
+    again = analysis.analyze_psalm_scope(client, session_id, PSALM_ID)
+
+    # Nothing in the psalm changed, but the old prompt never compared translations.
+    assert again["skipped"] is False
+    assert again["analysis"]["prompt_template_version"] == analysis.PSALM_PROMPT_TEMPLATE_VERSION
+
+
+def test_the_psalm_prompt_compares_the_public_domain_translations_whole() -> None:
+    prompt = analysis.build_psalm_analysis_prompt(PSALM_ID)
+
+    assert "## Public-domain translations for comparison" in prompt
+    for title in ("King James Version", "American Standard Version", "World English Bible"):
+        assert f"### {title}" in prompt
+    assert "  1 Blessed [is] the man that walketh not in the counsel of the ungodly" in prompt
+    assert "basis recalled" in prompt
+
+
+def test_the_psalm_prompt_says_which_verses_were_imported() -> None:
+    project = collections_service.create_collection("Hymnal")
+    created = translations.create_translation(PSALM_ID, "Hymnal", project["collection_id"])
+    rendering_service.create_rendering(
+        unit_id=UNIT_ID,
+        layer="lyric",
+        text="How blest the man who walks not where the wicked counsel",
+        status="proposed",
+        rationale="Imported from an existing translation",
+        created_by="import",
+        translation_id=created["translation_id"],
+        provenance={"imported": True},
+    )
+    verses = len(registry_service.load_psalm_meta(PSALM_ID)["unit_ids"])
+
+    imported = analysis.build_psalm_analysis_prompt(
+        PSALM_ID, translation_id=created["translation_id"]
+    )
+    written_here = analysis.build_psalm_analysis_prompt(PSALM_ID)
+
+    assert f"1 of the {verses} verses below were imported" in imported
+    assert "were imported" not in written_here
 
 
 def test_meta_carrying_an_analysis_still_validates() -> None:

@@ -12,7 +12,8 @@
     "epistemics",
     "non_source_material",
     "method",
-    "citations"
+    "citations",
+    "similar_translations"
   ],
   "additionalProperties": false,
   "properties": {
@@ -139,6 +140,37 @@
       "description": "Lexica, editions and discussions relied on. Free-form strings; an empty array is honest when nothing beyond the supplied evidence was used.",
       "type": "array",
       "items": { "type": "string", "minLength": 1 }
+    },
+    "similar_translations": {
+      "description": "Existing translations the English resembles, closest first. Wording every translation shares is no resemblance; an empty array is honest when none stands out.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["translation", "basis", "closeness", "evidence"],
+        "additionalProperties": false,
+        "properties": {
+          "translation": {
+            "description": "The translation by name, e.g. 'King James Version' or 'Scottish Metrical Psalter (1650)'.",
+            "type": "string",
+            "minLength": 1
+          },
+          "basis": {
+            "description": "supplied: compared with text given in the prompt. recalled: recognised from the auditor's own knowledge of a published translation, which the reviewer cannot check here.",
+            "type": "string",
+            "enum": ["supplied", "recalled"]
+          },
+          "closeness": {
+            "description": "reproduces: its wording throughout, small changes aside. adapts: follows it closely, reworded or re-metered. echoes: shares distinctive phrasing in places.",
+            "type": "string",
+            "enum": ["reproduces", "adapts", "echoes"]
+          },
+          "evidence": {
+            "description": "Which verses, and the wording they share. Quote a recalled translation by a few words at most.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
   }
 }

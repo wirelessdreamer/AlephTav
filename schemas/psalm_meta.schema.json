@@ -298,6 +298,21 @@
         },
         "method": { "type": "string" },
         "citations": { "type": "array", "items": { "type": "string" } },
+        "similar_translations": {
+          "description": "Existing translations the English resembles, closest first. Absent from analyses made before the auditor compared translations.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["translation", "basis", "closeness", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+              "translation": { "type": "string" },
+              "basis": { "type": "string", "enum": ["supplied", "recalled"] },
+              "closeness": { "type": "string", "enum": ["reproduces", "adapts", "echoes"] },
+              "evidence": { "type": "string" }
+            }
+          }
+        },
         "source_fingerprint": {
           "description": "Fingerprint of the psalm state this analysis audited, used to detect staleness and to skip a no-op re-run.",
           "type": ["string", "null"]

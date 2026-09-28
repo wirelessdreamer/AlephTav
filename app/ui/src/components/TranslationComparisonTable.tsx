@@ -45,6 +45,7 @@ import type {
   PsalmAnalysis,
   PsalmAnalysisSection,
   PsalmSummary,
+  SimilarTranslation,
 } from '../types';
 
 const ACCURACY_RATINGS: AccuracyRating[] = [
@@ -72,6 +73,12 @@ const VIA_LABELS: Record<CreatedVia, string> = {
   codex: 'Codex suggested',
   local_model: 'Other local model suggested',
   deterministic: 'Deterministically composed',
+};
+
+const CLOSENESS_LABELS: Record<SimilarTranslation['closeness'], string> = {
+  reproduces: 'reproduced',
+  adapts: 'adapted',
+  echoes: 'echoed in places',
 };
 
 /** Severity grouping for the row stripe, so fidelity reads before the prose. */
@@ -346,7 +353,7 @@ export function TranslationComparisonTable({
   const [evidenceFor, setEvidenceFor] = useState<string | null>(null);
   const [analysisOpen, setAnalysisOpen] = useState(false);
   const [analysisTab, setAnalysisTab] = useState<
-    'summary' | 'architecture' | 'guardrails' | 'epistemics' | 'sources'
+    'summary' | 'architecture' | 'guardrails' | 'epistemics' | 'similar' | 'sources'
   >('summary');
 
   const { data: codexStatus } = useCodexStatus();
@@ -983,6 +990,7 @@ export function TranslationComparisonTable({
               ['arrangement', 'Arrangement'],
               ['sources', 'Sources'],
               ['liberties', 'Liberties'],
+              ['text', 'Raw text'],
             ] as const
           ).map(([key, label]) => (
             <button key={key} type="button" aria-pressed={pane === key} onClick={() => setPane(key)}>
@@ -1241,6 +1249,7 @@ export function TranslationComparisonTable({
                     ['architecture', 'Architecture'],
                     ['guardrails', 'Historical guardrails'],
                     ['epistemics', 'Known / not known'],
+                    ['similar', 'Similar translations'],
                     ['sources', 'Method and sources'],
                   ] as const
                 ).map(([key, label]) => (
@@ -1317,6 +1326,31 @@ export function TranslationComparisonTable({
                     </ul>
                   </div>
                 </div>
+              ) : null}
+
+              {analysisTab === 'similar' ? (
+                !analysis.similar_translations ? (
+                  <p className="analysis-prose subtle-note">
+                    This analysis ran before translations were compared. Analyse the psalm again to
+                    compare it.
+                  </p>
+                ) : analysis.similar_translations.length === 0 ? (
+                  <p className="analysis-prose subtle-note">
+                    No existing translation stood out as close to this English.
+                  </p>
+                ) : (
+                  <ul className="similar-translations">
+                    {analysis.similar_translations.map((item) => (
+                      <li key={item.translation}>
+                        <strong>{item.translation}</strong> {CLOSENESS_LABELS[item.closeness]}
+                        {item.basis === 'recalled' ? (
+                          <em> · recalled by Codex, not checked against its text</em>
+                        ) : null}
+                        <span className="basis">{item.evidence}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )
               ) : null}
 
               {analysisTab === 'sources' ? (
