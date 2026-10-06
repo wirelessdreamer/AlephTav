@@ -472,8 +472,10 @@ def build_comparison_table(
         hebrew_parts: list[str] = []
         assessments: list[dict[str, Any]] = []
         literal_ids: list[str] = []
+        literal_statuses: list[str] = []
         literal_links: list[dict[str, Any]] = []
         english_ids: list[str] = []
+        english_statuses: list[str] = []
         tokens: list[dict[str, Any]] = []
 
         for unit in units:
@@ -491,10 +493,12 @@ def build_comparison_table(
             if literal:
                 literal_parts.append(literal["text"])
                 literal_ids.append(literal["rendering_id"])
+                literal_statuses.append(literal["status"])
                 literal_links.extend(alignment_links(unit, literal))
             if english:
                 english_parts.append(english["text"])
                 english_ids.append(english["rendering_id"])
+                english_statuses.append(english["status"])
             active = _active_assessment(unit, translation_id)
             if active:
                 assessments.append(active)
@@ -517,10 +521,12 @@ def build_comparison_table(
                 "tokens": tokens,
                 "literal_text": "\n".join(literal_parts) if literal_parts else None,
                 "literal_rendering_ids": literal_ids,
+                "literal_status": _edit_status(literal_statuses),
                 # Which Hebrew tokens each part of the literal renders, where known.
                 "literal_links": literal_links,
                 "english_text": "\n".join(english_parts) if english_parts else None,
                 "english_rendering_ids": english_ids,
+                "english_status": _edit_status(english_statuses),
                 "accuracy_rating": (assessment or {}).get("accuracy_rating"),
                 "accuracy_note": (assessment or {}).get("accuracy_note", ""),
                 "creative_liberties_note": (assessment or {}).get("creative_liberties_note", ""),
@@ -632,6 +638,26 @@ def _notes_by_token(assessment: dict[str, Any] | None) -> dict[str, dict[str, An
         for token_id in note.get("token_ids", []):
             index.setdefault(token_id, note)
     return index
+
+
+#: Most protected first. Text at one of the reviewed statuses only changes through
+#: review, so an edit to it has to arrive as a new proposal.
+_EDIT_PROTECTION = (
+    "canonical",
+    "accepted_as_alternate",
+    "under_review",
+    "reviewed",
+    "proposed",
+    "draft",
+)
+
+
+def _edit_status(statuses: list[str]) -> str | None:
+    """The status an edit to a row must respect: the most protected of its parts."""
+    for status in _EDIT_PROTECTION:
+        if status in statuses:
+            return status
+    return statuses[0] if statuses else None
 
 
 def _is_stale(

@@ -354,3 +354,28 @@ def test_units_carrying_the_new_evidence_fields_still_validate() -> None:
     )
 
     assert validate_all_content()["errors"] == []
+
+
+def test_rows_report_the_status_of_the_text_they_show() -> None:
+    # An editor needs this to tell text it may change in place from text that
+    # only changes through review.
+    table = comparison_assessment_service.build_comparison_table("ps001")
+    row = next(row for row in table["rows"] if UNIT_ID in row["unit_ids"])
+    unit = registry_service.load_unit(UNIT_ID)
+
+    assert (
+        row["literal_status"]
+        == comparison_assessment_service.select_rendering(unit, "literal")["status"]
+    )
+    assert (
+        row["english_status"]
+        == comparison_assessment_service.select_rendering(unit, "lyric")["status"]
+    )
+
+
+def test_rows_without_text_report_no_status_to_edit() -> None:
+    table = comparison_assessment_service.build_comparison_table("ps019")
+
+    row = next(row for row in table["rows"] if LITERAL_ONLY_UNIT_ID in row["unit_ids"])
+    assert row["literal_status"]
+    assert row["english_status"] is None

@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi.testclient import TestClient
 
 from app.api.main import app
-
+from app.services import registry_service
 
 client = TestClient(app)
 
@@ -77,3 +77,33 @@ def test_release_export_endpoint_blocks_forbidden_source_licenses() -> None:
 
     assert export_response.status_code == 400
     assert "forbidden source license policy" in export_response.json()["detail"]
+
+
+def test_editing_a_rendering_records_the_editor_in_the_audit_trail() -> None:
+    created = client.post(
+        "/units/ps023.v001.a/renderings",
+        json={
+            "layer": "lyric",
+            "text": "A first draft line",
+            "status": "proposed",
+            "rationale": "edit tracking coverage",
+            "created_by": "integration-test",
+        },
+    ).json()
+
+    edited = client.patch(
+        f"/renderings/{created['rendering_id']}",
+        json={"text": "A line written by hand", "created_by": "nathanael"},
+    )
+
+    assert edited.status_code == 200, edited.text
+    assert edited.json()["text"] == "A line written by hand"
+    # The text changed in place; who changed it is recorded in the audit trail.
+    assert edited.json()["rendering_id"] == created["rendering_id"]
+
+    unit = registry_service.load_unit("ps023.v001.a")
+    mine = [
+        record for record in unit["audit_records"] if record["entity_id"] == created["rendering_id"]
+    ]
+    assert mine[-1]["created_by"] == "nathanael"
+    assert mine[-1]["summary"] == "Update rendering"

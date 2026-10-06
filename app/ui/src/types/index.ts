@@ -913,10 +913,13 @@ export interface ComparisonTableRow {
   tokens: StudyToken[];
   literal_text: string | null;
   literal_rendering_ids: string[];
+  /** Status of the rendering shown, so an edit knows whether it may change it in place. */
+  literal_status: string | null;
   /** Which Hebrew tokens each part of the literal renders, where Codex said. */
   literal_links?: RenderingLink[];
   english_text: string | null;
   english_rendering_ids: string[];
+  english_status: string | null;
   accuracy_rating: AccuracyRating | null;
   accuracy_note: string;
   creative_liberties_note: string;
