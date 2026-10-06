@@ -90,6 +90,12 @@ function spotOf(key: string, element: HTMLElement): Spot {
 
 const GAP = 8;
 
+/**
+ * A card squeezed smaller than this is useless, so it may overlap a block taller than the
+ * window rather than collapse to nothing.
+ */
+const MIN_CARD = 160;
+
 /** How often the song carries a word, as the class that colours it. */
 function carried(count: number) {
   return count === 0 ? 'is-dropped' : count > 1 ? 'is-repeated' : undefined;
@@ -210,15 +216,18 @@ function SourceCard({
   layer: string;
 }) {
   const card = useRef<HTMLDivElement>(null);
-  const [top, setTop] = useState<number | null>(null);
-  // Below the hovered block when it fits, else above, else as far up as keeps it on screen.
+  const [place, setPlace] = useState<{ top: number; maxHeight: number } | null>(null);
+  // Below the hovered block when it fits, else above. When neither fits it takes the
+  // roomier side and gives up the height it cannot have, scrolling inside instead of
+  // covering the block being read.
   useLayoutEffect(() => {
-    const height = card.current?.offsetHeight ?? 0;
-    const below = spot.bottom + GAP;
-    const above = spot.top - GAP - height;
-    if (below + height <= window.innerHeight - GAP) setTop(below);
-    else if (above >= GAP) setTop(above);
-    else setTop(Math.max(GAP, window.innerHeight - height - GAP));
+    const height = card.current?.scrollHeight ?? 0;
+    const below = Math.max(MIN_CARD, window.innerHeight - spot.bottom - GAP * 2);
+    const above = Math.max(MIN_CARD, spot.top - GAP * 2);
+    if (height <= below) setPlace({ top: spot.bottom + GAP, maxHeight: below });
+    else if (height <= above) setPlace({ top: spot.top - GAP - height, maxHeight: above });
+    else if (below >= above) setPlace({ top: spot.bottom + GAP, maxHeight: below });
+    else setPlace({ top: GAP, maxHeight: above });
   }, [spot]);
 
   const line = sung.find((item) => `line:${item.position}` === spot.key);
@@ -267,9 +276,10 @@ function SourceCard({
       role="tooltip"
       className="occurrence-card source-card"
       style={{
-        top: top ?? spot.bottom + GAP,
+        top: place?.top ?? spot.bottom + GAP,
         left: spot.left,
-        visibility: top === null ? 'hidden' : undefined,
+        maxHeight: place?.maxHeight,
+        visibility: place === null ? 'hidden' : undefined,
       }}
     >
       {line ? (
