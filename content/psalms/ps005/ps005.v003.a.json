@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v003.a.lyric.alt.0001",
-    "rnd.ps005.v003.a.lyric.alt.0002"
+    "rnd.ps005.v003.a.lyric.alt.0002",
+    "rnd.ps005.v003.a.lyric.alt.0003",
+    "rnd.ps005.v003.a.lyric.alt.0004",
+    "rnd.ps005.v003.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v003.a.0001",
     "aud.ps005.v003.a.0002",
     "aud.ps005.v003.a.0003",
-    "aud.ps005.v003.a.0004"
+    "aud.ps005.v003.a.0004",
+    "aud.ps005.v003.a.0005",
+    "aud.ps005.v003.a.0006",
+    "aud.ps005.v003.a.0007",
+    "aud.ps005.v003.a.0008",
+    "aud.ps005.v003.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:13:14.954773+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v003.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f5a2677cfd388ef3951da14b43ea23c9bc317f9225312ef4c4dc79e9c98721f6",
+      "audit_id": "aud.ps005.v003.a.0005",
+      "before_hash": "2b5ef7a62017586c0454c3b95e4e569c210f224a5e379b2e4ec548834bbf8a53",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.925367+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The audible cry remains explicit; both personal titles and the causal explanation are retained.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "88e25777bfcc2588eb5857e8184556ddd2d6c6b25ee1c1511dbeb49d96732a6a",
+      "audit_id": "aud.ps005.v003.a.0006",
+      "before_hash": "cd4f5d5e37e40e181de69236abe1bde73b4769423933f8619094360d52347265",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.390237+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "96e7faca2a3e1e2dff3bea345e568d165aa20abee5410b8d87559ce5111d6e59",
+      "audit_id": "aud.ps005.v003.a.0007",
+      "before_hash": "e574576c97f632bb69b8c1222f38ce8fc5a0af6963a4035c43bbd957e0be1ce1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.134806+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Retains the petition, address, and reason.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ed76bec151c31df1b51dbf5e0a06a4fb0f4a4b8ff1e02113cabe06742d46c1fd",
+      "audit_id": "aud.ps005.v003.a.0008",
+      "before_hash": "6f685c1fa5452942d01510eaf1415b32a5597e09e8ad15564a0b4c13910d57d5",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.588129+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v003.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "10674df1291f3ea197b944fa161ac66aeb8a21b7b9b407df84d4ce869ef6e137",
+      "audit_id": "aud.ps005.v003.a.0009",
+      "before_hash": "0d9f20b9e03bbbd2e6884ca5d9455ca74babb494a0aa497248e869ad484e6742",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:53:35.408919+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v003.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -220,6 +308,92 @@
           ],
           "transliteration": "kî ʾēleḵā ʾeṯpallāl",
           "verdict": "omitted"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the paired address to the speaker’s king and God and the general idea of seeking help. It does not express the opening request for attention to the cry or the closing reason that the speaker prays to God.",
+      "accuracy_rating": "omission",
+      "analyzed_text_hash": "1c60e851028beed3cd0d94c547abbdc4c35504365131fe961e55f1c7959a5600",
+      "audit_ids": [
+        "aud.ps005.v003.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v003.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“King-God” fuses the two titles and drops both possessives. “I need your help” recasts the cry and prayer as a statement of need.",
+      "display_reference": "Psalm 5:3",
+      "english_rendering_id": "rnd.ps005.v003.a.lyric.alt.0005",
+      "generation_run_id": "cxr.4a85eaf139f5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+      "literal_backbone": [
+        "Pay attention to the sound of my cry for help, my king and my God.",
+        "For to you I pray."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:3",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "pay attention to the sound",
+          "note": "The request that God attend to the sound is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v003.t001",
+            "ps005.v003.t002"
+          ],
+          "transliteration": "haqšîḇâ ləqôl",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "my cry for help",
+          "note": "The need for help remains, but the speaker’s audible cry is not represented.",
+          "rendered_as": "help",
+          "token_ids": [
+            "ps005.v003.t003"
+          ],
+          "transliteration": "šawʿî",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "my king and my God",
+          "note": "The compound retains both titles but removes the conjunction and the repeated first-person possession.",
+          "rendered_as": "King-God",
+          "token_ids": [
+            "ps005.v003.t004",
+            "ps005.v003.t005"
+          ],
+          "transliteration": "malkî wēʾlōhāy",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "for, because",
+          "note": "The causal link introducing the reason for the appeal is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v003.t006"
+          ],
+          "transliteration": "kî",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "to you I pray",
+          "note": "The direction toward God is implicit, but an act of prayer is replaced by a statement of need.",
+          "rendered_as": "I need your help",
+          "token_ids": [
+            "ps005.v003.t007",
+            "ps005.v003.t008"
+          ],
+          "transliteration": "ʾēleyḵā ʾeṯpallāl",
+          "verdict": "nonstandard"
         }
       ]
     }
@@ -413,6 +587,403 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "three short clauses",
+      "differentiator": "Three short clauses preserve appeal, address, and reason.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.22,
+        "stress_approximation": 0.5,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Audible cry for help",
+          "note": "Sound is carried by hearing the cry rather than a separate English noun.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v003.t002",
+            "ps005.v003.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v003.t001",
+          "ps005.v003.t002",
+          "ps005.v003.t003",
+          "ps005.v003.t006",
+          "ps005.v003.t007"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v003.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "The audible cry remains explicit; both personal titles and the causal explanation are retained.",
+      "rendering_id": "rnd.ps005.v003.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+        "token_ids": [
+          "ps005.v003.t001",
+          "ps005.v003.t002",
+          "ps005.v003.t003",
+          "ps005.v003.t004",
+          "ps005.v003.t005",
+          "ps005.v003.t006",
+          "ps005.v003.t007",
+          "ps005.v003.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Hear my cry for help,\nmy King and my God,\nfor I pray to you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v003.a",
+      "variation_basis": [
+        "Compressed auditory phrase"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Petition, address, and reason across three phrases.",
+      "differentiator": "Gives the double address its own breathing space.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.25,
+        "singability_score": 0.13,
+        "stress_approximation": 0.53,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v003.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Retains the petition, address, and reason.",
+      "rendering_id": "rnd.ps005.v003.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+        "basis_note": "Supplied UXLC Hebrew only.",
+        "source_language": "he",
+        "source_text": "הַקְשִׁ֤יבָה׀ לְק֬וֹל שַׁוְעִ֗י מַלְכִּ֥י וֵאלֹהָ֑י כִּֽי־אֵ֝לֶ֗יךָ אֶתְפַּלָּֽל׃",
+        "token_ids": [
+          "ps005.v003.t001",
+          "ps005.v003.t002",
+          "ps005.v003.t003",
+          "ps005.v003.t004",
+          "ps005.v003.t005",
+          "ps005.v003.t006",
+          "ps005.v003.t007",
+          "ps005.v003.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Listen to my cry for help,\nmy King and my God,\nfor I pray to you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v003.a",
+      "variation_basis": [
+        "Approved wording retained"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 6,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.68,
+        "stress_approximation": 0.5,
+        "syllable_count": 6,
+        "syllables": 6
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v003.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "King-God, I need your help.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v003.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

@@ -1,0 +1,196 @@
+{
+  "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+  "basis_arrangement_id": "arr.ps005.0002",
+  "basis_translation_id": "tr.ps005.0002",
+  "basis_note": "Numeric and structural constraints only. Counts derive from the earlier proposed arrangement; none of its translated English lines are included in this artifact or supplied to generation.",
+  "count_method": "AlephTav UI heuristic, with natural-sung ranges independently reviewed; counts are targets, not exact scansion.",
+  "source_fingerprints": {
+    "ps005_meta_sha256_before_generation": "9240a9ec3d50b2f377c1729d936a49f711745f335c04c39eaedca35b2e1a91f0",
+    "arrangement_object_sha256": "f2df2a5707e3e551f44d8a45868db7ab34b535849a62fd62177b27bfbcbb4878",
+    "section_skeleton_sha256": "bc4e37b6d5994f9c32b0b1506f892a1e0b3021ac5d6f168e12996fb5f217ac0c",
+    "arrangement_line_text_concat_sha256": "9d8b75410090237cb8c54f0fe4fce3341b1b3f028f69aabfbb2b19dff4d5476b"
+  },
+  "global": {
+    "form": "heterometric free-accentual",
+    "main_line_syllables": "usually 6-11",
+    "main_line_stresses": "usually 3-5",
+    "echo_line_syllables": "usually 1-6",
+    "echo_line_stresses": "usually 1-3",
+    "total_ui_heuristic_syllables": 356,
+    "total_natural_sung_estimate": "344-351",
+    "melody_known": false,
+    "time_signature_known": false
+  },
+  "sections": [
+    {
+      "source_section": "sec.0001",
+      "kind": "intro",
+      "label": "INTRO",
+      "source_units": [],
+      "performance": "8 bars; solo piano; near-silence; sparse distant motif; no percussion or ambient layers",
+      "slots": [
+        {"source_line": "ln.0001", "role": "instrumental_direction", "voice": null, "target_syllables": 0, "target_stresses": 0}
+      ]
+    },
+    {
+      "source_section": "sec.0002",
+      "kind": "verse",
+      "label": "VERSE 1",
+      "source_units": ["ps005.v002.a", "ps005.v003.a"],
+      "performance": "solo piano; restrained, intimate, spacious",
+      "slots": [
+        {"source_line": "ln.0002", "voice": "B", "target_syllables": 8, "target_stresses": "4-5", "cadence": "two-part exclamation"},
+        {"source_line": "ln.0003", "voice": "B,C", "target_syllables": 8, "target_stresses": "3-4", "cadence": "rising/open"},
+        {"source_line": "ln.0004", "voice": "B", "target_syllables": 4, "target_stresses": 2, "cadence": "close"},
+        {"source_line": "ln.0005", "voice": "B,C", "target_syllables": 6, "target_stresses": 4, "cadence": "firm close"}
+      ]
+    },
+    {
+      "source_section": "sec.0003",
+      "kind": "refrain",
+      "label": "HOOK",
+      "source_units": ["ps005.v004.a"],
+      "performance": "solo piano; steady; slightly stronger touch",
+      "slots": [
+        {"source_line": "ln.0006", "voice": "B,C", "target_syllables": "7-8", "target_stresses": 4, "cadence": "medial caesura"},
+        {"source_line": "ln.0007", "voice": "C", "delivery": "spoken, very soft", "target_syllables": "10-11", "target_stresses": 5, "cadence": "medial caesura"},
+        {"source_line": "ln.0008", "voice": "B", "target_syllables": "10-11", "target_stresses": 5, "cadence": "two-part refrain"}
+      ]
+    },
+    {
+      "source_section": "sec.0004",
+      "kind": "other",
+      "label": "PRE-CHORUS",
+      "source_units": ["ps005.v004.a"],
+      "performance": "solo piano; gradual intensity through playing, not volume",
+      "slots": [
+        {"source_line": "ln.0009", "voice": "B", "target_syllables": 8, "target_stresses": 5, "cadence": "open/enjambed"},
+        {"source_line": "ln.0010", "voice": "B,C", "target_syllables": 6, "target_stresses": 2, "cadence": "sustained"},
+        {"source_line": "ln.0011", "voice": "A", "delivery": "voice-only swell", "target_syllables": 5, "target_stresses": 2, "relationship": "echo ln.0010"},
+        {"source_line": "ln.0012", "voice": "B", "target_syllables": 5, "target_stresses": 2, "cadence": "close"},
+        {"source_line": "ln.0013", "voice": "C", "delivery": "soft echo", "target_syllables": 2, "target_stresses": 1, "relationship": "echo ln.0012"}
+      ]
+    },
+    {
+      "source_section": "sec.0005",
+      "kind": "chorus",
+      "label": "CHORUS",
+      "source_units": ["ps005.v004.a"],
+      "performance": "solo piano; fuller chords; no added instruments",
+      "slots": [
+        {"source_line": "ln.0014", "voice": "B,C", "target_syllables": "8-9", "target_stresses": 4, "cadence": "full refrain close"},
+        {"source_line": "ln.0015", "voice": "A", "delivery": "accent", "target_syllables": 3, "target_stresses": 2, "relationship": "tag ln.0014"},
+        {"source_line": "ln.0016", "voice": "B,C", "target_syllables": 6, "target_stresses": 3, "cadence": "sustained"},
+        {"source_line": "ln.0017", "voice": "B", "target_syllables": 6, "target_stresses": 3, "cadence": "open/enjambed"},
+        {"source_line": "ln.0018", "voice": "B", "target_syllables": 5, "target_stresses": 2, "cadence": "close"}
+      ]
+    },
+    {
+      "source_section": "sec.0006",
+      "kind": "other",
+      "label": "INTERLUDE",
+      "source_units": [],
+      "performance": "solo piano; motif variation; no layers",
+      "slots": []
+    },
+    {
+      "source_section": "sec.0007",
+      "kind": "verse",
+      "label": "VERSE 2",
+      "source_units": ["ps005.v005.a", "ps005.v006.a", "ps005.v007.a"],
+      "performance": "solo piano; sparse rhythm",
+      "slots": [
+        {"source_line": "ln.0019", "voice": "B,C", "target_syllables": 11, "target_stresses": 4, "cadence": "open"},
+        {"source_line": "ln.0020", "voice": "A", "delivery": "accent", "target_syllables": 2, "target_stresses": 1, "relationship": "tag ln.0019"},
+        {"source_line": "ln.0021", "voice": "B,C", "target_syllables": 7, "target_stresses": 4, "cadence": "close"},
+        {"source_line": "ln.0022", "voice": "A", "delivery": "accent", "target_syllables": 3, "target_stresses": 2, "relationship": "tag ln.0021"},
+        {"source_line": "ln.0023", "voice": "B", "target_syllables": 10, "target_stresses": 5, "cadence": "open"},
+        {"source_line": "ln.0024", "voice": "B", "target_syllables": 8, "target_stresses": 4, "cadence": "close"},
+        {"source_line": "ln.0025", "voice": "B", "target_syllables": 7, "target_stresses": 3, "cadence": "open"},
+        {"source_line": "ln.0026", "voice": "A", "delivery": "harsh tag", "target_syllables": 3, "target_stresses": 2, "relationship": "tag ln.0025"},
+        {"source_line": "ln.0027", "voice": "B", "target_syllables": 10, "target_stresses": 5, "cadence": "close"},
+        {"source_line": "ln.0028", "voice": "A", "delivery": "accent", "target_syllables": 6, "target_stresses": 4, "relationship": "tag ln.0027"}
+      ]
+    },
+    {
+      "source_section": "sec.0008",
+      "kind": "other",
+      "label": "CUTOUT",
+      "source_units": [],
+      "performance": "near silence; piano decay only",
+      "slots": []
+    },
+    {
+      "source_section": "sec.0009",
+      "kind": "verse",
+      "label": "VERSE 3",
+      "source_units": ["ps005.v008.a", "ps005.v009.a"],
+      "performance": "solo piano; very soft; minimal notes; slow phrasing",
+      "slots": [
+        {"source_line": "ln.0029", "voice": "B,C", "target_syllables": 14, "target_stresses": 5, "cadence": "long two-part"},
+        {"source_line": "ln.0030", "voice": "C", "delivery": "whisper", "target_syllables": 5, "target_stresses": 1, "relationship": "echo/tag ln.0029", "allow_unanchored_repeat_only": true},
+        {"source_line": "ln.0031", "voice": "B,C", "target_syllables": 8, "target_stresses": 4, "cadence": "open/enjambed"},
+        {"source_line": "ln.0032", "voice": "B,C", "target_syllables": 8, "target_stresses": 3, "cadence": "open/enjambed"},
+        {"source_line": "ln.0033", "voice": "B,C", "target_syllables": 6, "target_stresses": 2, "cadence": "run-on setup"},
+        {"source_line": "ln.0034", "voice": "C", "target_syllables": 10, "target_stresses": 5, "cadence": "close"},
+        {"source_line": "ln.0035", "voice": "A", "delivery": "restrained harsh tag", "target_syllables": 4, "target_stresses": 2, "relationship": "tag ln.0034"}
+      ]
+    },
+    {
+      "source_section": "sec.0010",
+      "kind": "verse",
+      "label": "VERSE 4",
+      "source_units": ["ps005.v010.a"],
+      "performance": "sparse piano; no added layer; resolve the inherited contradictory pad instruction in favor of solo piano",
+      "slots": [
+        {"source_line": "ln.0036", "voice": "B", "target_syllables": 7, "target_stresses": 3, "cadence": "open"},
+        {"source_line": "ln.0037", "voice": "A", "delivery": "accent", "target_syllables": 2, "target_stresses": 2, "relationship": "tag ln.0036"},
+        {"source_line": "ln.0038", "voice": "B", "target_syllables": "6-7", "target_stresses": 3, "cadence": "close"},
+        {"source_line": "ln.0039", "voice": "A", "delivery": "harsh tag", "target_syllables": "1-2", "target_stresses": 1, "relationship": "tag ln.0038"},
+        {"source_line": "ln.0040", "voice": "B", "target_syllables": 7, "target_stresses": 3, "cadence": "open"},
+        {"source_line": "ln.0041", "voice": "A", "delivery": "accent", "target_syllables": 3, "target_stresses": 2, "relationship": "tag ln.0040"},
+        {"source_line": "ln.0042", "voice": "B", "target_syllables": 6, "target_stresses": 2, "cadence": "close"}
+      ]
+    },
+    {
+      "source_section": "sec.0011",
+      "kind": "bridge",
+      "label": "BRIDGE",
+      "source_units": ["ps005.v011.a"],
+      "performance": "solo piano; strongest vocal intensity; heavy piano touch but no added instruments",
+      "slots": [
+        {"source_line": "ln.0043", "voice": "A,C", "target_syllables": 5, "target_stresses": 3, "cadence": "imperative close"},
+        {"source_line": "ln.0044", "voice": "B", "target_syllables": 8, "target_stresses": 4, "cadence": "close"},
+        {"source_line": "ln.0045", "voice": "A", "delivery": "controlled-scream tag", "target_syllables": 2, "target_stresses": 2, "relationship": "tag ln.0044"},
+        {"source_line": "ln.0046", "voice": "B,C", "target_syllables": 7, "target_stresses": 4, "cadence": "two short punches"}
+      ]
+    },
+    {
+      "source_section": "sec.0012",
+      "kind": "chorus",
+      "label": "FINAL CHORUS",
+      "source_units": ["ps005.v012.a", "ps005.v013.a"],
+      "performance": "solo piano; emotional lift through chords; no layering",
+      "slots": [
+        {"source_line": "ln.0047", "voice": "B,C", "target_syllables": 9, "target_stresses": 3, "cadence": "run-on into next slot"},
+        {"source_line": "ln.0048", "voice": "B,C", "target_syllables": 8, "target_stresses": 3, "cadence": "close"},
+        {"source_line": "ln.0049", "voice": "C", "delivery": "accent", "target_syllables": 6, "target_stresses": 3, "relationship": "tag ln.0048"},
+        {"source_line": "ln.0050", "voice": "B,C", "target_syllables": 7, "target_stresses": 4, "cadence": "exclamatory close"},
+        {"source_line": "ln.0051", "voice": "B", "target_syllables": "9-10", "target_stresses": 4, "cadence": "close"},
+        {"source_line": "ln.0052", "voice": "C", "delivery": "accent", "target_syllables": 2, "target_stresses": 2, "relationship": "tag ln.0051"},
+        {"source_line": "ln.0053", "voice": "A,B,C", "target_syllables": 12, "target_stresses": 5, "cadence": "open/enjambed"},
+        {"source_line": "ln.0054", "voice": "B,C", "target_syllables": 8, "target_stresses": 3, "cadence": "final close"}
+      ]
+    },
+    {
+      "source_section": "sec.0013",
+      "kind": "outro",
+      "label": "OUTRO",
+      "source_units": [],
+      "performance": "solo piano; soft resolution; fading motif; very light touch; slowing tempo; natural decay",
+      "slots": [
+        {"source_line": "ln.0055", "role": "instrumental_direction", "voice": null, "target_syllables": 0, "target_stresses": 0}
+      ]
+    }
+  ]
+}

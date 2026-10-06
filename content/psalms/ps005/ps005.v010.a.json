@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v010.a.lyric.alt.0001",
-    "rnd.ps005.v010.a.lyric.alt.0002"
+    "rnd.ps005.v010.a.lyric.alt.0002",
+    "rnd.ps005.v010.a.lyric.alt.0003",
+    "rnd.ps005.v010.a.lyric.alt.0004",
+    "rnd.ps005.v010.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v010.a.0001",
     "aud.ps005.v010.a.0002",
     "aud.ps005.v010.a.0003",
-    "aud.ps005.v010.a.0004"
+    "aud.ps005.v010.a.0004",
+    "aud.ps005.v010.a.0005",
+    "aud.ps005.v010.a.0006",
+    "aud.ps005.v010.a.0007",
+    "aud.ps005.v010.a.0008",
+    "aud.ps005.v010.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:14:51.162975+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v010.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1c896414520d94a2679e7e5ecfaa109461e4487e6053cbd947e6330ee5be0720",
+      "audit_id": "aud.ps005.v010.a.0005",
+      "before_hash": "2cf615a03f0e447f84d2fce54842cd925032d8cbd2c25f66530295cbb0ff87c7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.999241+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "True construes reliability as truthfulness in speech. Destructive things preserves the unspecified plural without cumulative intensification or invented schemes.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "92a952fdc46f0881039edc0b513c16dc8c28c896957af2b11869eedad67718d3",
+      "audit_id": "aud.ps005.v010.a.0006",
+      "before_hash": "5dc81f1256b555e65d0b497fb83270625539893985cb7d9645012197b0a53c3f",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.463305+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "413418ff528f0d0f9a635aa4751b5041db1cfbda537b2aa0fb6786f14f4c22f7",
+      "audit_id": "aud.ps005.v010.a.0007",
+      "before_hash": "99ccc5be48088c89f46e354e773e8eafb66dc2065409594ba7c720eb9c32f9b2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.267745+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Makes the smooth-tongue idiom sing naturally while retaining its concrete image.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "931d52e50cc6cb80cf0f292023987aa4c3edf8dbffd892ccc9c1798fee078961",
+      "audit_id": "aud.ps005.v010.a.0008",
+      "before_hash": "143c8b8bb81997415aeb84591d677830414912ae5ea5bb7236a567b5baace0c3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.830631+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v010.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "447af0f4fe7122d87c426d9a275670861f71aabd43125b7ecee2d950d4a34ab0",
+      "audit_id": "aud.ps005.v010.a.0009",
+      "before_hash": "519fd6d78475c1dbc91b3bae0764c1420dddc79717bdc444169670b7bbd337ee",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:55:59.722786+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v010.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -178,6 +266,80 @@
       "translation_id": "tr.ps005.0002",
       "unit_id": "ps005.v010.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "The English preserves the Hebrew sequence and all four accusations: nothing trustworthy in the mouth, ruin within, the throat as an open grave, and smooth or flattering speech.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "8fa6a755d0fe9dc4840532b0b868e6c2235bb58051fc9d99638c39eb864f8280",
+      "audit_ids": [
+        "aud.ps005.v010.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v010.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric adds emphatic echoes of “no truth,” “ruin,” and “open grave.” It also regularizes the Hebrew’s singular “his mouth” to the plural group described by the rest of the verse.",
+      "display_reference": "Psalm 5:10",
+      "english_rendering_id": "rnd.ps005.v010.a.lyric.alt.0005",
+      "generation_run_id": "cxr.02041b3990f7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+      "literal_backbone": [
+        "For there is nothing reliable in his mouth.",
+        "Their inner being is ruin.",
+        "Their throat is an open grave; they make their tongue smooth."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:10",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for, because",
+          "note": "The causal connection to the preceding petition is not expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v010.t001"
+          ],
+          "transliteration": "kiy",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "in his mouth",
+          "note": "The lyric changes the singular possessive to plural in agreement with the group described by the following clauses.",
+          "rendered_as": "in their mouth",
+          "token_ids": [
+            "ps005.v010.t003"
+          ],
+          "transliteration": "bəp̄îhû",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "something reliable, steadfast, or trustworthy",
+          "note": "“Truth” captures the lack of trustworthiness, though it states the idea more specifically as absence of truth.",
+          "rendered_as": "truth",
+          "token_ids": [
+            "ps005.v010.t004"
+          ],
+          "transliteration": "nəḵônāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "they make smooth, speak smoothly, flatter",
+          "note": "The lyric expresses the idiomatic force of making the tongue smooth.",
+          "rendered_as": "they flatter",
+          "token_ids": [
+            "ps005.v010.t011"
+          ],
+          "transliteration": "yaḥălîqûn",
+          "verdict": "standard"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -376,6 +538,468 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "four short image-centered lines",
+      "differentiator": "Removes audible-sound ambiguity and cumulative ruin language.",
+      "drift_flags": [
+        {
+          "code": "reliability_as_truthfulness",
+          "confidence": 0.95,
+          "message": "True selects truthfulness within the broader sense of reliability.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.64,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Mouth and inward core",
+          "note": "Retains his mouth, their singular core, and plural destructive contents.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t003",
+            "ps005.v010.t005",
+            "ps005.v010.t006"
+          ]
+        },
+        {
+          "label": "Throat as open grave",
+          "note": "Preserves the concrete grave metaphor.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t007",
+            "ps005.v010.t008",
+            "ps005.v010.t009"
+          ]
+        },
+        {
+          "label": "Smoothed tongue",
+          "note": "Retains the singular tongue and plural actors.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t010",
+            "ps005.v010.t011"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v010.t003",
+          "ps005.v010.t004",
+          "ps005.v010.t005",
+          "ps005.v010.t006",
+          "ps005.v010.t010",
+          "ps005.v010.t011"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v010.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "True construes reliability as truthfulness in speech. Destructive things preserves the unspecified plural without cumulative intensification or invented schemes.",
+      "rendering_id": "rnd.ps005.v010.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+        "token_ids": [
+          "ps005.v010.t001",
+          "ps005.v010.t002",
+          "ps005.v010.t003",
+          "ps005.v010.t004",
+          "ps005.v010.t005",
+          "ps005.v010.t006",
+          "ps005.v010.t007",
+          "ps005.v010.t008",
+          "ps005.v010.t009",
+          "ps005.v010.t010",
+          "ps005.v010.t011"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For his mouth holds nothing true;\ntheir core holds destructive things;\ntheir throat is an open grave;\nthey smooth their tongue.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v010.a",
+      "variation_basis": [
+        "Clear destructive plural",
+        "Compact active smoothing"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Four complete clauses, one per line.",
+      "differentiator": "Preserves the number shift without the wooden 'make their tongue smooth.'",
+      "drift_flags": [],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.67,
+        "syllable_count": 37,
+        "syllables": 37
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Mouth and inward parts",
+          "note": "Retains singular 'his' followed by plural possessors.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t003",
+            "ps005.v010.t005",
+            "ps005.v010.t006"
+          ]
+        },
+        {
+          "label": "Throat as an open grave",
+          "note": "The grave comparison remains explicit.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t007",
+            "ps005.v010.t008",
+            "ps005.v010.t009"
+          ]
+        },
+        {
+          "label": "Smooth tongue",
+          "note": "Smoothness and tongue remain explicit alongside their implication of flattery.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v010.t010",
+            "ps005.v010.t011"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v010.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Makes the smooth-tongue idiom sing naturally while retaining its concrete image.",
+      "rendering_id": "rnd.ps005.v010.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+        "basis_note": "Supplied UXLC Hebrew only; preserves the source's possessive-number shift.",
+        "source_language": "he",
+        "source_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮ קִרְבָּ֢ם הַ֫וּ֥וֹת קֶֽבֶר־פָּת֥וּחַ גְּרוֹנָ֑ם לְ֝שׁוֹנָ֗ם יַחֲלִֽיקוּן׃",
+        "token_ids": [
+          "ps005.v010.t001",
+          "ps005.v010.t002",
+          "ps005.v010.t003",
+          "ps005.v010.t004",
+          "ps005.v010.t005",
+          "ps005.v010.t006",
+          "ps005.v010.t007",
+          "ps005.v010.t008",
+          "ps005.v010.t009",
+          "ps005.v010.t010",
+          "ps005.v010.t011"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For there is nothing true in his mouth;\ntheir inward parts are full of destruction.\nTheir throat is an open grave;\nthey flatter with their smooth tongue.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v010.a",
+      "variation_basis": [
+        "Flattery expressed through the retained smooth-tongue image"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 28,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.36,
+        "singability_score": 0.15,
+        "stress_approximation": 0.64,
+        "syllable_count": 36,
+        "syllables": 36
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v010.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "There is no truth in their mouth;\nno truth\ntheir inward part is ruin.\nruin\nTheir throat is an open grave;\nopen grave\nthey flatter with their tongue.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v010.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

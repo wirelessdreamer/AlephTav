@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v008.a.lyric.alt.0001",
-    "rnd.ps005.v008.a.lyric.alt.0002"
+    "rnd.ps005.v008.a.lyric.alt.0002",
+    "rnd.ps005.v008.a.lyric.alt.0003",
+    "rnd.ps005.v008.a.lyric.alt.0004",
+    "rnd.ps005.v008.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v008.a.0001",
     "aud.ps005.v008.a.0002",
     "aud.ps005.v008.a.0003",
-    "aud.ps005.v008.a.0004"
+    "aud.ps005.v008.a.0004",
+    "aud.ps005.v008.a.0005",
+    "aud.ps005.v008.a.0006",
+    "aud.ps005.v008.a.0007",
+    "aud.ps005.v008.a.0008",
+    "aud.ps005.v008.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:14:19.139724+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v008.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4e909f885224328a1344c3c7e1528e43f35ac0804ca9e834282ef6fe0f434575",
+      "audit_id": "aud.ps005.v008.a.0005",
+      "before_hash": "7605d21efc356193c2a3c20cd966eda48e0d5b03046f0ab432b6bdac6997a1fc",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.978115+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Loyal love retains enduring kindness without doctrinal specification. Temple also permits a palace sense.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0e26a09156f0b5c6995c334ccf7f49ff80b7d520987d6cc80e8162ff13b50ca2",
+      "audit_id": "aud.ps005.v008.a.0006",
+      "before_hash": "b0c8b26fb9cd7bf01a38c1b06d91d3406d4dfa16fc8ecfc64b85ad0b491489b0",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.439524+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bab2c2803441ce3a7871ff7dfc1b18fffc1b78183ae66f638d89a05ba335983c",
+      "audit_id": "aud.ps005.v008.a.0007",
+      "before_hash": "43241786a481ef673c344526738a16e844a6e01210b35a6ab2ebb8d25c2f019a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.239123+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Retains the reviewed contrast and natural phrase boundaries.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e5eff1fb860472c51cee0f649ac15bf590219b834da4976900af32b764354dd6",
+      "audit_id": "aud.ps005.v008.a.0008",
+      "before_hash": "3c0ebe79ecd58bab79200a1bf68b19065fa26422e5d1b3d394a5829b7b96fbeb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.764081+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v008.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c6b4d1f07ae8d63f6913459e87ba3504341165c10d117f8f6f34a47901633b7d",
+      "audit_id": "aud.ps005.v008.a.0009",
+      "before_hash": "bc6e0b300e6950d20959389f28ad1f3bb370c0f9adfdebb4ad7dbe411f03d601",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:55:20.026485+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v008.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -201,6 +289,82 @@
         {
           "lexical_gloss": "in fear, awe, or reverence of you",
           "note": "Prostration preserves the worship gesture, but the explicit disposition of fear or reverence is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v008.t010"
+          ],
+          "transliteration": "bəyirʾāṯeḵā",
+          "verdict": "omitted"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The lyric preserves the speaker’s entrance into God’s house and a posture of worship associated with the holy temple. It interprets access through God’s abundant covenant loyalty as being an invited guest, changes bowing toward the holy temple into being prostrate inside an inner sanctum, and leaves fear or reverence unstated.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "bb25ea2bd313522c50e7261abdc15fa7bdb38254f62fbc7563516eb733f6052f",
+      "audit_ids": [
+        "aud.ps005.v008.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v008.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Here I am” and the repeated “it’s incredible!” add dramatic reaction. “Invited guest” is an inference from receiving access through covenant loyalty, while “inner sanctum” makes the location more specific than the Hebrew does.",
+      "display_reference": "Psalm 5:8",
+      "english_rendering_id": "rnd.ps005.v008.a.lyric.alt.0005",
+      "generation_run_id": "cxr.6dd26f025ffb",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+      "literal_backbone": [
+        "And I, in the greatness of your covenant loyalty, will enter your house.",
+        "I will bow down toward your holy temple in fear of you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:8",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "in or through the abundance of your covenant loyalty, steadfast love, or kindness",
+          "note": "The lyric infers welcomed access but does not directly express either the abundance or the covenant loyalty that grounds it.",
+          "rendered_as": "your invited guest--it's incredible!",
+          "token_ids": [
+            "ps005.v008.t002",
+            "ps005.v008.t003"
+          ],
+          "transliteration": "bərōḇ ḥasdəkā",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "I will bow down, prostrate myself, or worship",
+          "note": "“Prostrate” directly represents the bodily posture conveyed by the verb.",
+          "rendered_as": "prostrate",
+          "token_ids": [
+            "ps005.v008.t006"
+          ],
+          "transliteration": "ʾeštaḥăweh",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "toward the temple of your holiness, your holy temple",
+          "note": "It changes orientation toward the temple into location inside it and specifies an inner sanctuary not stated by the Hebrew.",
+          "rendered_as": "in your inner sanctum",
+          "token_ids": [
+            "ps005.v008.t007",
+            "ps005.v008.t008",
+            "ps005.v008.t009"
+          ],
+          "transliteration": "ʾel hêḵal qodšəkā",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "in fear of you, in reverence or awe of you",
+          "note": "The attitude of fear or reverence accompanying the worship is not expressed.",
           "rendered_as": "",
           "token_ids": [
             "ps005.v008.t010"
@@ -400,6 +564,438 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "alternating long and short lines",
+      "differentiator": "Keeps entering the house distinct from bowing toward the temple.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 22,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.23,
+        "singability_score": 0.13,
+        "stress_approximation": 0.66,
+        "syllable_count": 30,
+        "syllables": 30
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "House and holy temple",
+          "note": "No inner sanctuary is added.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v008.t005",
+            "ps005.v008.t008",
+            "ps005.v008.t009"
+          ]
+        },
+        {
+          "label": "Bowing toward",
+          "note": "Retains posture and direction.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v008.t006",
+            "ps005.v008.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v008.t002",
+          "ps005.v008.t003",
+          "ps005.v008.t005",
+          "ps005.v008.t006",
+          "ps005.v008.t010"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v008.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "Loyal love retains enduring kindness without doctrinal specification. Temple also permits a palace sense.",
+      "rendering_id": "rnd.ps005.v008.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+        "token_ids": [
+          "ps005.v008.t001",
+          "ps005.v008.t002",
+          "ps005.v008.t003",
+          "ps005.v008.t004",
+          "ps005.v008.t005",
+          "ps005.v008.t006",
+          "ps005.v008.t007",
+          "ps005.v008.t008",
+          "ps005.v008.t009",
+          "ps005.v008.t010"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "But I, in your abundant loyal love,\nwill enter your house;\nI will bow toward your holy temple,\nin fear of you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v008.a",
+      "variation_basis": [
+        "Retained contrasting movement and posture"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Four phrases with intact verb-object groups.",
+      "differentiator": "Keeps fear explicit.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 22,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.23,
+        "singability_score": 0.13,
+        "stress_approximation": 0.66,
+        "syllable_count": 30,
+        "syllables": 30
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Entering God's house",
+          "note": "Entry remains grounded in God's abundant loyal love.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v008.t004",
+            "ps005.v008.t005"
+          ]
+        },
+        {
+          "label": "Bowing toward the holy temple",
+          "note": "Direction toward the temple is retained.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v008.t006",
+            "ps005.v008.t007",
+            "ps005.v008.t008",
+            "ps005.v008.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v008.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Retains the reviewed contrast and natural phrase boundaries.",
+      "rendering_id": "rnd.ps005.v008.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+        "basis_note": "Supplied UXLC Hebrew only.",
+        "source_language": "he",
+        "source_text": "וַאֲנִ֗י בְּרֹ֣ב חַ֭סְדְּךָ אָב֣וֹא בֵיתֶ֑ךָ אֶשְׁתַּחֲוֶ֥ה אֶל־הֽ͏ֵיכַל־קָ֝דְשְׁךָ֗ בְּיִרְאָתֶֽךָ׃",
+        "token_ids": [
+          "ps005.v008.t001",
+          "ps005.v008.t002",
+          "ps005.v008.t003",
+          "ps005.v008.t004",
+          "ps005.v008.t005",
+          "ps005.v008.t006",
+          "ps005.v008.t007",
+          "ps005.v008.t008",
+          "ps005.v008.t009",
+          "ps005.v008.t010"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "But in your abundant loyal love,\nI will enter your house.\nI will bow toward your holy temple\nin fear of you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v008.a",
+      "variation_basis": [
+        "Approved wording retained"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.35,
+        "singability_score": 0.15,
+        "stress_approximation": 0.72,
+        "syllable_count": 39,
+        "syllables": 39
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v008.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "And here I am, your invited guest--it's incredible!\nit's incredible!\nI enter your house; here I am,\nprostrate in your inner sanctum,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v008.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

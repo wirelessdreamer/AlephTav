@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v005.a.lyric.alt.0001",
-    "rnd.ps005.v005.a.lyric.alt.0002"
+    "rnd.ps005.v005.a.lyric.alt.0002",
+    "rnd.ps005.v005.a.lyric.alt.0003",
+    "rnd.ps005.v005.a.lyric.alt.0004",
+    "rnd.ps005.v005.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v005.a.0001",
     "aud.ps005.v005.a.0002",
     "aud.ps005.v005.a.0003",
-    "aud.ps005.v005.a.0004"
+    "aud.ps005.v005.a.0004",
+    "aud.ps005.v005.a.0005",
+    "aud.ps005.v005.a.0006",
+    "aud.ps005.v005.a.0007",
+    "aud.ps005.v005.a.0008",
+    "aud.ps005.v005.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:13:41.456808+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v005.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c838aa0d341d8706cc09188a396102e63519ac75e3dbc43683f189a6ba109a25",
+      "audit_id": "aud.ps005.v005.a.0005",
+      "before_hash": "28a44924aba8e35de623c1d2ebc3d54485be026d0ecf38701aa832cc1871720e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.949341+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Evil remains open to an abstract or personified reading. The first two lines form one negative statement.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d821dc06aa621cd5b6ac561d7d084f3c4756fd9970c785765bb4476baef7c510",
+      "audit_id": "aud.ps005.v005.a.0006",
+      "before_hash": "16a302d2782b095a4d327479a66d8bd5f0b7868fb23f6f4d2d40a1a964d51eb4",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.407316+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "544bc7cc1842bc2ef336869d731250c3e4d1619aeab20d440deeaac86e08154d",
+      "audit_id": "aud.ps005.v005.a.0007",
+      "before_hash": "67c01f20d2cae7f117a4491657ec4cfe1e0b31beb5fba6ed05b247dc0a3c96bf",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.171769+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Retains two intact, natural clauses.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "928dcaed43fb9ba93569e3ba52647fdfa7d6147324dc9e56bac5e2cc2a2308d3",
+      "audit_id": "aud.ps005.v005.a.0008",
+      "before_hash": "76bcb8ae6a8fd99008e5c283547ca9f8d9bc586088251fe067979759c44e0d40",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.664738+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v005.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "77b1be3476cd4075dc2e52dddbc91187dcf218ba014b7011f8c0f3882fe576c0",
+      "audit_id": "aud.ps005.v005.a.0009",
+      "before_hash": "d697a568e4aca206c72e38a430240b1e459486f95df80a38bcd7ac9489319780",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:54:27.543650+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v005.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -168,6 +256,69 @@
         {
           "lexical_gloss": "bad, evil; an evil person or thing",
           "note": "The plural verb 'do' indicates wicked people; the Hebrew singular permits either evil generally or an evil person.",
+          "rendered_as": "wicked",
+          "token_ids": [
+            "ps005.v005.t009"
+          ],
+          "transliteration": "rāʿ",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves both negative claims in their Hebrew order: God does not delight in wickedness, and evil does not dwell with God. The opening causal link is absent, and the second claim presents evil as wicked persons.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "0099d6481f9a58250dd79b7397ab0f866126b4eed7e7a32ac598aa3bd58b9f0f",
+      "audit_ids": [
+        "aud.ps005.v005.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v005.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The isolated repetitions intensify “evil” and “dwell with you.” The final echo leaves the negation unstated and depends on the preceding line for its negative sense.",
+      "display_reference": "Psalm 5:5",
+      "english_rendering_id": "rnd.ps005.v005.a.lyric.alt.0005",
+      "generation_run_id": "cxr.b562e905fed7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+      "literal_backbone": [
+        "For you are not a God who delights in wickedness.",
+        "Evil does not sojourn with you."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:5",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for, because",
+          "note": "The causal connection with the preceding appeal is not expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v005.t001"
+          ],
+          "transliteration": "kiy",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "it sojourns, dwells, or stays with you",
+          "note": "“Dwell” naturally represents the verb’s residential imagery.",
+          "rendered_as": "dwell with you",
+          "token_ids": [
+            "ps005.v005.t008"
+          ],
+          "transliteration": "yəgurḵā",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "evil, badness, or an evil person",
+          "note": "The lyric understands the singular evil as wicked people, shifting from a general or singular expression to a plural human subject.",
           "rendered_as": "wicked",
           "token_ids": [
             "ps005.v005.t009"
@@ -381,6 +532,435 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "enjambed opening and complete close",
+      "differentiator": "Splits the longer clause without reducing wickedness to a weaker term.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.63,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Evil excluded from dwelling",
+          "note": "Dwelling with the addressee remains explicit.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v005.t008",
+            "ps005.v005.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v005.t001",
+          "ps005.v005.t004",
+          "ps005.v005.t008",
+          "ps005.v005.t009"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v005.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "Evil remains open to an abstract or personified reading. The first two lines form one negative statement.",
+      "rendering_id": "rnd.ps005.v005.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+        "token_ids": [
+          "ps005.v005.t001",
+          "ps005.v005.t002",
+          "ps005.v005.t003",
+          "ps005.v005.t004",
+          "ps005.v005.t005",
+          "ps005.v005.t006",
+          "ps005.v005.t007",
+          "ps005.v005.t008",
+          "ps005.v005.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For you are no God\nwho delights in wickedness;\nevil will not dwell with you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v005.a",
+      "variation_basis": [
+        "Shorter lineation without lexical change"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Two complete statements.",
+      "differentiator": "Keeps the causal link and both negations.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.62,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Evil dwelling with God",
+          "note": "The denied dwelling relationship remains concrete.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v005.t008",
+            "ps005.v005.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v005.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Retains two intact, natural clauses.",
+      "rendering_id": "rnd.ps005.v005.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+        "basis_note": "Supplied UXLC Hebrew only.",
+        "source_language": "he",
+        "source_text": "כִּ֤י׀ לֹ֤א אֵֽל־חָפֵ֘ץ רֶ֥שַׁע׀ אָ֑תָּה לֹ֖א יְגֻרְךָ֣ רָֽע׃",
+        "token_ids": [
+          "ps005.v005.t001",
+          "ps005.v005.t002",
+          "ps005.v005.t003",
+          "ps005.v005.t004",
+          "ps005.v005.t005",
+          "ps005.v005.t006",
+          "ps005.v005.t007",
+          "ps005.v005.t008",
+          "ps005.v005.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For you are not a God who delights in wickedness;\nevil will not dwell with you.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v005.a",
+      "variation_basis": [
+        "Approved wording retained"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.32,
+        "singability_score": 0.14,
+        "stress_approximation": 0.63,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v005.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You are not a God who delights in evil;\nevil\nwicked do not dwell with you.\ndwell with you",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v005.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

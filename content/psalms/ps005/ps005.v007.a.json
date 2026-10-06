@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v007.a.lyric.alt.0001",
-    "rnd.ps005.v007.a.lyric.alt.0002"
+    "rnd.ps005.v007.a.lyric.alt.0002",
+    "rnd.ps005.v007.a.lyric.alt.0003",
+    "rnd.ps005.v007.a.lyric.alt.0004",
+    "rnd.ps005.v007.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v007.a.0001",
     "aud.ps005.v007.a.0002",
     "aud.ps005.v007.a.0003",
-    "aud.ps005.v007.a.0004"
+    "aud.ps005.v007.a.0004",
+    "aud.ps005.v007.a.0005",
+    "aud.ps005.v007.a.0006",
+    "aud.ps005.v007.a.0007",
+    "aud.ps005.v007.a.0008",
+    "aud.ps005.v007.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:14:02.284103+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v007.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0ca61b82c8c65a1ad742eea0a6366f5fb7d21911628afd389ed3edbe016181fd",
+      "audit_id": "aud.ps005.v007.a.0005",
+      "before_hash": "1844c35996a3e8c40645dd6125bd60f65f72d4341aef0136da3f5c46dcb17bd1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.967622+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v007.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Retains plural speakers followed by a singular man, and direct address followed by the named divine subject.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0e79249d52edc1af3a29c58968db845fd61b9f9db233c4a24ea2ade05f4705bd",
+      "audit_id": "aud.ps005.v007.a.0006",
+      "before_hash": "8f53a7c80adc88a146d3ae8a7ff6d2f5a7d4f0135ada918082eaf41937cf0f4f",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.425172+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v007.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "dff50e93b7c81cda1167ea4f81fff374019244eb51d2dbbfd3a3f9940defdd67",
+      "audit_id": "aud.ps005.v007.a.0007",
+      "before_hash": "530786cadf3745cf7cef9de1eb1bc971598fc200b8d0c220170c16684d1279bf",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.210292+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v007.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Expresses the singular man's defining conduct with natural verbs.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "224a4d4b406990ea8d1626e47ba1f3d86a77df6a0c950999678a3bb96760b19c",
+      "audit_id": "aud.ps005.v007.a.0008",
+      "before_hash": "0064361d9c72605ac7c0d532cc8bd42d098f12a0509d102bea17d1310f5bcf89",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.730536+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v007.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a540e255f7e48750ee8cb9dab444ad646a0a2a9cd621069e4fdf9f287452f977",
+      "audit_id": "aud.ps005.v007.a.0009",
+      "before_hash": "a4d93e974bb2ef92f2aa1a1da24e3282329852c62770418fe23f9a745cae34e6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:54:58.037174+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v007.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -190,6 +278,71 @@
         {
           "lexical_gloss": "Yahweh abhors, detests",
           "note": "Preserves strong aversion while changing a statement about Yahweh into direct address.",
+          "rendered_as": "disgust you",
+          "token_ids": [
+            "ps005.v007.t007",
+            "ps005.v007.t008"
+          ],
+          "transliteration": "yəṯāʿēḇ yəhwāh",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the destruction of those who speak falsehood and God’s abhorrence of a bloodshed-associated and deceitful person. The final clause changes from naming Yahweh in the third person to addressing God as “you.”",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "386a815d2d6c7de53e4af178635b7d8a19bc43794d100a713dc29b82c9c410ae",
+      "audit_ids": [
+        "aud.ps005.v007.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v007.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The echo “destroy lies” shifts destruction from the speakers to the lies themselves. “Blood-Thirsty” and “Truth-Bender” turn the Hebrew descriptions into coined character labels, and the latter personifies deceit.",
+      "display_reference": "Psalm 5:7",
+      "english_rendering_id": "rnd.ps005.v007.a.lyric.alt.0005",
+      "generation_run_id": "cxr.8baaf595c208",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תְּאַבֵּד֮ דֹּבְרֵ֢י כָ֫זָ֥ב אִישׁ־דָּמִ֥ים וּמִרְמָ֗ה יְתָ֘עֵ֥ב׀ יְהוָֽה׃",
+      "literal_backbone": [
+        "You destroy those who speak falsehood.",
+        "Yahweh abhors a man of bloodshed and deceit."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:7",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "a man of bloodshed, a bloodguilty or violent person",
+          "note": "The label conveys violent bloodshed, though “thirsty” adds an image of appetite or desire.",
+          "rendered_as": "Blood-Thirsty",
+          "token_ids": [
+            "ps005.v007.t004",
+            "ps005.v007.t005"
+          ],
+          "transliteration": "ʾîš dāmîm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "and deceit, treachery, fraud",
+          "note": "The abstract quality of deceit is recast as a coined name for a deceptive person.",
+          "rendered_as": "Truth-Bender",
+          "token_ids": [
+            "ps005.v007.t006"
+          ],
+          "transliteration": "ûmirmāh",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "Yahweh abhors or detests",
+          "note": "The emotional relation is retained, but its grammar is reversed and Yahweh’s name becomes a second-person pronoun.",
           "rendered_as": "disgust you",
           "token_ids": [
             "ps005.v007.t007",
@@ -404,6 +557,434 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "short opening with enjambed judgment",
+      "differentiator": "Fits the first judgment into seven syllables without weakening destruction.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.7,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Bloodshed",
+          "note": "Bloodshed renders the Hebrew plural blood idiom.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v007.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v007.t001",
+          "ps005.v007.t002",
+          "ps005.v007.t003",
+          "ps005.v007.t004",
+          "ps005.v007.t007",
+          "ps005.v007.t008"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v007.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "Retains plural speakers followed by a singular man, and direct address followed by the named divine subject.",
+      "rendering_id": "rnd.ps005.v007.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "תְּאַבֵּד֮ דֹּבְרֵ֢י כָ֫זָ֥ב אִישׁ־דָּמִ֥ים וּמִרְמָ֗ה יְתָ֘עֵ֥ב׀ יְהוָֽה׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "תְּאַבֵּד֮ דֹּבְרֵ֢י כָ֫זָ֥ב אִישׁ־דָּמִ֥ים וּמִרְמָ֗ה יְתָ֘עֵ֥ב׀ יְהוָֽה׃",
+        "token_ids": [
+          "ps005.v007.t001",
+          "ps005.v007.t002",
+          "ps005.v007.t003",
+          "ps005.v007.t004",
+          "ps005.v007.t005",
+          "ps005.v007.t006",
+          "ps005.v007.t007",
+          "ps005.v007.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You will destroy those who lie;\na man of bloodshed and deceit\nYahweh will abhor.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v007.a",
+      "variation_basis": [
+        "Compact falsehood clause"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Two complete judgment clauses.",
+      "differentiator": "Retains destruction, abhorrence, and the shift to naming Yahweh.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.66,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Bloodshed",
+          "note": "'Sheds blood' preserves the bloodshed image and singular agent.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v007.t004",
+            "ps005.v007.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v007.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Expresses the singular man's defining conduct with natural verbs.",
+      "rendering_id": "rnd.ps005.v007.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "תְּאַבֵּד֮ דֹּבְרֵ֢י כָ֫זָ֥ב אִישׁ־דָּמִ֥ים וּמִרְמָ֗ה יְתָ֘עֵ֥ב׀ יְהוָֽה׃",
+        "basis_note": "Supplied UXLC Hebrew only.",
+        "source_language": "he",
+        "source_text": "תְּאַבֵּד֮ דֹּבְרֵ֢י כָ֫זָ֥ב אִישׁ־דָּמִ֥ים וּמִרְמָ֗ה יְתָ֘עֵ֥ב׀ יְהוָֽה׃",
+        "token_ids": [
+          "ps005.v007.t001",
+          "ps005.v007.t002",
+          "ps005.v007.t003",
+          "ps005.v007.t004",
+          "ps005.v007.t005",
+          "ps005.v007.t006",
+          "ps005.v007.t007",
+          "ps005.v007.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You will destroy those who lie;\nYahweh will abhor a man who sheds blood and deceives.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v007.a",
+      "variation_basis": [
+        "Relative clause for bloodshed and deceit"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.39,
+        "singability_score": 0.16,
+        "stress_approximation": 0.72,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v007.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You destroy speakers of lies;\ndestroy lies\nBlood-Thirsty and Truth-Bender disgust you.\nTruth-Bender disgust you.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v007.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

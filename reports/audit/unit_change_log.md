@@ -62,6 +62,7 @@
 - 2026-09-26T16:07:12.097069+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T16:10:48.062995+00:00: Record psalm analysis (codex-analysis)
 - 2026-09-26T20:10:57.970220+00:00: Move translation “Imported translation” to “Imported translation” (reviewer)
+- 2026-09-26T22:20:53.523608+00:00: Move translation “Imported translation” to “Bone and Ash” (reviewer)
 
 ## ps002.v002.a
 - 2026-09-26T16:04:55.568095+00:00: Create rendering (import)
@@ -146,126 +147,349 @@
 - 2026-09-26T18:51:29.528354+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v001.a
+- 2026-09-26T22:21:25.520426+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-26T22:24:14.342261+00:00: Create song setting “Psalm 4” (import)
+- 2026-09-26T22:27:58.408481+00:00: Record psalm analysis (codex-analysis)
 
 ## ps004.v002.a
+- 2026-09-26T22:22:08.574880+00:00: Create rendering (import)
+- 2026-09-26T22:24:39.564000+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v003.a
+- 2026-09-26T22:22:08.603776+00:00: Create rendering (import)
+- 2026-09-26T22:25:04.939093+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v004.a
+- 2026-09-26T22:22:08.631390+00:00: Create rendering (import)
+- 2026-09-26T22:25:23.428096+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v005.a
+- 2026-09-26T22:22:08.652165+00:00: Create rendering (import)
+- 2026-09-26T22:25:44.925063+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v006.a
+- 2026-09-26T22:22:08.676717+00:00: Create rendering (import)
+- 2026-09-26T22:25:57.847404+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v007.a
+- 2026-09-26T22:22:08.698528+00:00: Create rendering (import)
+- 2026-09-26T22:26:15.581485+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v008.a
+- 2026-09-26T22:22:08.726880+00:00: Create rendering (import)
+- 2026-09-26T22:26:33.391322+00:00: Create comparison assessment (codex-analysis)
 
 ## ps004.v009.a
+- 2026-09-26T22:22:08.755172+00:00: Create rendering (import)
+- 2026-09-26T22:26:51.337483+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v001.a
+- 2026-09-27T01:55:18.243407+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-27T01:59:05.310953+00:00: Create song setting “Every morning” (import)
+- 2026-09-27T02:04:09.600285+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-27T02:07:42.151421+00:00: Move translation “Bone and Ash” to “Anime Psalm Book” (reviewer)
+- 2026-09-27T02:08:27.518943+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-27T02:12:35.733676+00:00: Create song setting “Psalm 5 — Solo Piano” (import)
+- 2026-09-27T02:17:00.355948+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-28T15:59:23.904066+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T15:59:32.699955+00:00: Create song setting “Psalm 5 — At First Light (Hebrew-First Meter Draft)” (codex:psalm5-isolated-meter)
+- 2026-09-28T16:00:19.557360+00:00: Correct generated arrangement provenance label (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.301083+00:00: Move translation “Bone and Ash” to “Imported translation” (codex:psalm5-project-transfer)
+- 2026-09-28T17:25:43.338828+00:00: Create translation “Bone and Ash” in “Bone and Ash” (codex:psalm5-project-transfer)
+- 2026-09-28T17:25:43.372101+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T17:25:43.631867+00:00: Move song setting to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T17:25:43.724951+00:00: Set guidance for translation tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T17:50:47.539756+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-28T18:23:09.103559+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-09-28T18:23:09.122061+00:00: Create song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
+- 2026-09-28T18:23:49.435452+00:00: Create song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
+- 2026-09-28T18:25:24.496236+00:00: Delete song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
 
 ## ps005.v002.a
+- 2026-09-27T01:56:03.737603+00:00: Create rendering (import)
+- 2026-09-27T01:59:29.484501+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.365039+00:00: Create rendering (import)
+- 2026-09-27T02:12:59.113900+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.915667+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.381132+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.117401+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v003.a
+- 2026-09-27T01:56:03.768428+00:00: Create rendering (import)
+- 2026-09-27T01:59:46.058979+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.389745+00:00: Create rendering (import)
+- 2026-09-27T02:13:14.954773+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.925367+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.390237+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.134806+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v004.a
+- 2026-09-27T01:56:03.798772+00:00: Create rendering (import)
+- 2026-09-27T02:00:04.343831+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.412581+00:00: Create rendering (import)
+- 2026-09-27T02:13:31.420068+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.937818+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.398774+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.155364+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v005.a
+- 2026-09-27T01:56:03.833581+00:00: Create rendering (import)
+- 2026-09-27T02:00:17.620362+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.432523+00:00: Create rendering (import)
+- 2026-09-27T02:13:41.456808+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.949341+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.407316+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.171769+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v006.a
+- 2026-09-27T01:56:03.871788+00:00: Create rendering (import)
+- 2026-09-27T02:00:34.786706+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.454748+00:00: Create rendering (import)
+- 2026-09-27T02:13:47.921277+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.959422+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.417350+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.190051+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v007.a
+- 2026-09-27T01:56:03.903666+00:00: Create rendering (import)
+- 2026-09-27T02:00:50.763005+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.479853+00:00: Create rendering (import)
+- 2026-09-27T02:14:02.284103+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.967622+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.425172+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.210292+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v008.a
+- 2026-09-27T01:56:03.940211+00:00: Create rendering (import)
+- 2026-09-27T02:01:07.371785+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.509263+00:00: Create rendering (import)
+- 2026-09-27T02:14:19.139724+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.978115+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.439524+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.239123+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v009.a
+- 2026-09-27T01:56:03.972810+00:00: Create rendering (import)
+- 2026-09-27T02:01:29.105056+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.532765+00:00: Create rendering (import)
+- 2026-09-27T02:14:40.880421+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.989045+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.451544+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.253322+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v010.a
+- 2026-09-27T01:56:04.010405+00:00: Create rendering (import)
+- 2026-09-27T02:01:51.957500+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.560254+00:00: Create rendering (import)
+- 2026-09-27T02:14:51.162975+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:23.999241+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.463305+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.267745+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v011.a
+- 2026-09-27T01:56:04.046452+00:00: Create rendering (import)
+- 2026-09-27T02:02:22.540204+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.587452+00:00: Create rendering (import)
+- 2026-09-27T02:15:08.968399+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:24.010341+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.473050+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.282280+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v012.a
+- 2026-09-27T01:56:04.084647+00:00: Create rendering (import)
+- 2026-09-27T02:02:44.899982+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.616024+00:00: Create rendering (import)
+- 2026-09-27T02:15:30.939696+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:24.020425+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.486498+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.299652+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps005.v013.a
+- 2026-09-27T01:56:04.131728+00:00: Create rendering (import)
+- 2026-09-27T02:03:00.841188+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T02:09:23.646034+00:00: Create rendering (import)
+- 2026-09-27T02:15:48.471849+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-28T15:59:24.030588+00:00: Create rendering (codex:psalm5-isolated-meter)
+- 2026-09-28T17:25:43.498703+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
+- 2026-09-28T18:23:09.434332+00:00: Create rendering (codex:psalm5-smoothing)
 
 ## ps006.v001.a
+- 2026-09-27T15:28:16.393879+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-27T15:31:43.254487+00:00: Create song setting “How long, LORD?” (import)
+- 2026-09-27T15:35:44.614504+00:00: Record psalm analysis (codex-analysis)
 
 ## ps006.v002.a
+- 2026-09-27T15:29:07.677743+00:00: Create rendering (import)
+- 2026-09-27T15:31:59.616274+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v003.a
+- 2026-09-27T15:29:07.696545+00:00: Create rendering (import)
+- 2026-09-27T15:32:20.736455+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v004.a
+- 2026-09-27T15:29:07.714158+00:00: Create rendering (import)
+- 2026-09-27T15:32:36.030060+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v005.a
+- 2026-09-27T15:29:07.735606+00:00: Create rendering (import)
+- 2026-09-27T15:32:53.212829+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v006.a
+- 2026-09-27T15:29:07.750639+00:00: Create rendering (import)
+- 2026-09-27T15:33:10.494705+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v007.a
+- 2026-09-27T15:29:07.770184+00:00: Create rendering (import)
+- 2026-09-27T15:33:34.372511+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v008.a
+- 2026-09-27T15:29:07.790603+00:00: Create rendering (import)
+- 2026-09-27T15:33:50.273039+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v009.a
+- 2026-09-27T15:29:07.810583+00:00: Create rendering (import)
+- 2026-09-27T15:33:59.374782+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v010.a
+- 2026-09-27T15:29:07.826948+00:00: Create rendering (import)
+- 2026-09-27T15:34:10.254480+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v011.a
+- 2026-09-27T15:29:07.845591+00:00: Create rendering (import)
+- 2026-09-27T15:34:25.198069+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v001.a
+- 2026-09-27T16:10:27.307021+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-27T16:14:36.345734+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.057939+00:00: Create rendering (codex)
+- 2026-09-27T18:49:12.409049+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T18:53:20.376745+00:00: Record psalm analysis (codex-analysis)
+- 2026-09-27T19:24:17.807529+00:00: Create song setting “Psalm 7 — Shelter and Judgment” (codex)
 
 ## ps007.v002.a
+- 2026-09-27T16:14:36.352526+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.067346+00:00: Create rendering (codex)
+- 2026-09-27T18:49:19.277135+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v003.a
+- 2026-09-27T16:14:36.358687+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.074866+00:00: Create rendering (codex)
+- 2026-09-27T18:49:32.415437+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v004.a
+- 2026-09-27T16:14:36.365552+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.084896+00:00: Create rendering (codex)
+- 2026-09-27T18:49:42.987448+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v005.a
+- 2026-09-27T16:14:36.372691+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.093805+00:00: Create rendering (codex)
+- 2026-09-27T18:50:00.643106+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v006.a
+- 2026-09-27T16:14:36.384311+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.103513+00:00: Create rendering (codex)
+- 2026-09-27T18:50:12.310771+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v007.a
+- 2026-09-27T16:14:36.393568+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.112518+00:00: Create rendering (codex)
+- 2026-09-27T18:50:25.660955+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v008.a
+- 2026-09-27T16:14:36.402620+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.122596+00:00: Create rendering (codex)
+- 2026-09-27T18:50:35.626099+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v009.a
+- 2026-09-27T16:14:36.411778+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.130996+00:00: Create rendering (codex)
+- 2026-09-27T18:50:48.119756+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v010.a
+- 2026-09-27T16:14:36.423386+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.145179+00:00: Create rendering (codex)
+- 2026-09-27T18:50:58.877857+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v011.a
+- 2026-09-27T16:14:36.431227+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.153262+00:00: Create rendering (codex)
+- 2026-09-27T18:51:07.296761+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v012.a
+- 2026-09-27T16:14:36.437738+00:00: Create rendering (codex)
+- 2026-09-27T16:18:29.161296+00:00: Create rendering (codex)
+- 2026-09-27T18:51:15.933027+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v013.a
+- 2026-09-27T16:20:19.104844+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.628194+00:00: Create rendering (codex)
+- 2026-09-27T18:51:27.199075+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v014.a
+- 2026-09-27T16:20:19.112449+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.636280+00:00: Create rendering (codex)
+- 2026-09-27T18:51:39.000861+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v015.a
+- 2026-09-27T16:20:19.119352+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.643834+00:00: Create rendering (codex)
+- 2026-09-27T18:51:47.771419+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v016.a
+- 2026-09-27T16:20:19.125696+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.650488+00:00: Create rendering (codex)
+- 2026-09-27T18:51:56.481075+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v017.a
+- 2026-09-27T16:20:19.133532+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.660773+00:00: Create rendering (codex)
+- 2026-09-27T18:52:05.341565+00:00: Create comparison assessment (codex-analysis)
 
 ## ps007.v018.a
+- 2026-09-27T16:20:19.141037+00:00: Create rendering (codex)
+- 2026-09-27T16:22:13.670809+00:00: Create rendering (codex)
+- 2026-09-27T18:52:14.568116+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v001.a
+- 2026-09-28T01:23:36.312989+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-28T01:27:52.995740+00:00: Record psalm analysis (codex-analysis)
 
 ## ps008.v002.a
+- 2026-09-28T01:23:55.268945+00:00: Create rendering (import)
+- 2026-09-28T01:25:48.661500+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v003.a
+- 2026-09-28T01:23:55.285695+00:00: Create rendering (import)
+- 2026-09-28T01:26:02.940085+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v004.a
+- 2026-09-28T01:23:55.302535+00:00: Create rendering (import)
+- 2026-09-28T01:26:11.834897+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v005.a
+- 2026-09-28T01:23:55.319045+00:00: Create rendering (import)
+- 2026-09-28T01:26:20.862342+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v006.a
+- 2026-09-28T01:23:55.335933+00:00: Create rendering (import)
+- 2026-09-28T01:26:33.189665+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v007.a
+- 2026-09-28T01:23:55.352714+00:00: Create rendering (import)
+- 2026-09-28T01:26:40.848955+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v008.a
+- 2026-09-28T01:23:55.367802+00:00: Create rendering (import)
+- 2026-09-28T01:26:49.060295+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v009.a
+- 2026-09-28T01:23:55.386879+00:00: Create rendering (import)
+- 2026-09-28T01:26:55.150335+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v010.a
+- 2026-09-28T01:23:55.407598+00:00: Create rendering (import)
+- 2026-09-28T01:27:04.754403+00:00: Create comparison assessment (codex-analysis)
 
 ## ps009.v001.a
 
@@ -2143,44 +2367,87 @@
 ## ps065.v014.a
 
 ## ps066.v001.a
+- 2026-09-26T23:04:03.675235+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-26T23:05:05.823012+00:00: Create rendering (import)
+- 2026-09-26T23:09:41.717102+00:00: Create song setting “Psalm 66” (import)
+- 2026-09-26T23:10:03.036369+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-26T23:15:19.267064+00:00: Record psalm analysis (codex-analysis)
 
 ## ps066.v002.a
+- 2026-09-26T23:05:05.841083+00:00: Create rendering (import)
+- 2026-09-26T23:10:20.932692+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v003.a
+- 2026-09-26T23:05:05.862673+00:00: Create rendering (import)
+- 2026-09-26T23:10:39.077148+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v004.a
+- 2026-09-26T23:05:05.884979+00:00: Create rendering (import)
+- 2026-09-26T23:10:50.345942+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v005.a
+- 2026-09-26T23:05:05.903768+00:00: Create rendering (import)
+- 2026-09-26T23:10:59.468656+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v006.a
+- 2026-09-26T23:05:05.923137+00:00: Create rendering (import)
+- 2026-09-26T23:11:12.414563+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v007.a
+- 2026-09-26T23:05:05.944581+00:00: Create rendering (import)
+- 2026-09-26T23:11:36.221249+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v008.a
+- 2026-09-26T23:05:05.967123+00:00: Create rendering (import)
+- 2026-09-26T23:11:41.833624+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v009.a
+- 2026-09-26T23:05:05.986072+00:00: Create rendering (import)
+- 2026-09-26T23:11:50.399106+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v010.a
+- 2026-09-26T23:05:06.005123+00:00: Create rendering (import)
+- 2026-09-26T23:12:00.468626+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v011.a
+- 2026-09-26T23:05:06.021896+00:00: Create rendering (import)
+- 2026-09-26T23:12:10.530477+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v012.a
+- 2026-09-26T23:05:06.036991+00:00: Create rendering (import)
+- 2026-09-26T23:12:23.466533+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v013.a
+- 2026-09-26T23:05:06.060276+00:00: Create rendering (import)
+- 2026-09-26T23:12:33.859321+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v014.a
+- 2026-09-26T23:05:06.079946+00:00: Create rendering (import)
+- 2026-09-26T23:12:46.347828+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v015.a
+- 2026-09-26T23:05:06.098497+00:00: Create rendering (import)
+- 2026-09-26T23:13:05.843143+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v016.a
+- 2026-09-26T23:05:06.120084+00:00: Create rendering (import)
+- 2026-09-26T23:13:14.732502+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v017.a
+- 2026-09-26T23:05:06.141949+00:00: Create rendering (import)
+- 2026-09-26T23:13:24.975945+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v018.a
+- 2026-09-26T23:05:06.163874+00:00: Create rendering (import)
+- 2026-09-26T23:13:41.446255+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v019.a
+- 2026-09-26T23:05:06.184987+00:00: Create rendering (import)
+- 2026-09-26T23:13:51.697496+00:00: Create comparison assessment (codex-analysis)
 
 ## ps066.v020.a
+- 2026-09-26T23:05:06.209236+00:00: Create rendering (import)
+- 2026-09-26T23:14:05.103981+00:00: Create comparison assessment (codex-analysis)
 
 ## ps067.v001.a
 
@@ -3037,42 +3304,81 @@
 ## ps087.v007.a
 
 ## ps088.v001.a
+- 2026-09-26T23:29:22.370438+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-26T23:32:15.163569+00:00: Create song setting “God of my salvation” (import)
+- 2026-09-26T23:36:58.138713+00:00: Record psalm analysis (codex-analysis)
 
 ## ps088.v002.a
+- 2026-09-26T23:29:49.825001+00:00: Create rendering (import)
+- 2026-09-26T23:32:26.185326+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v003.a
+- 2026-09-26T23:29:49.845593+00:00: Create rendering (import)
+- 2026-09-26T23:32:36.848791+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v004.a
+- 2026-09-26T23:29:49.869730+00:00: Create rendering (import)
+- 2026-09-26T23:32:44.888387+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v005.a
+- 2026-09-26T23:29:49.895591+00:00: Create rendering (import)
+- 2026-09-26T23:32:58.569009+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v006.a
+- 2026-09-26T23:29:49.924919+00:00: Create rendering (import)
+- 2026-09-26T23:33:17.415736+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v007.a
+- 2026-09-26T23:29:49.962839+00:00: Create rendering (import)
+- 2026-09-26T23:33:25.907520+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v008.a
+- 2026-09-26T23:29:49.987596+00:00: Create rendering (import)
+- 2026-09-26T23:33:35.261494+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v009.a
+- 2026-09-26T23:29:50.021049+00:00: Create rendering (import)
+- 2026-09-26T23:33:44.579476+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v010.a
+- 2026-09-26T23:29:50.049720+00:00: Create rendering (import)
+- 2026-09-26T23:33:54.627450+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v011.a
+- 2026-09-26T23:29:50.078875+00:00: Create rendering (import)
+- 2026-09-26T23:34:09.771478+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v012.a
+- 2026-09-26T23:29:50.105953+00:00: Create rendering (import)
+- 2026-09-26T23:34:26.540628+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v013.a
+- 2026-09-26T23:29:50.130403+00:00: Create rendering (import)
+- 2026-09-26T23:34:39.678056+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v014.a
+- 2026-09-26T23:29:50.159121+00:00: Create rendering (import)
+- 2026-09-26T23:34:47.479188+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v015.a
+- 2026-09-26T23:29:50.181526+00:00: Create rendering (import)
+- 2026-09-26T23:34:53.654511+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v016.a
+- 2026-09-26T23:29:50.210655+00:00: Create rendering (import)
+- 2026-09-26T23:35:10.945984+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v017.a
+- 2026-09-26T23:29:50.237286+00:00: Create rendering (import)
+- 2026-09-26T23:35:24.058546+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v018.a
+- 2026-09-26T23:29:50.261216+00:00: Create rendering (import)
+- 2026-09-26T23:35:34.758196+00:00: Create comparison assessment (codex-analysis)
 
 ## ps088.v019.a
+- 2026-09-26T23:29:50.289151+00:00: Create rendering (import)
+- 2026-09-26T23:35:49.739673+00:00: Create comparison assessment (codex-analysis)
 
 ## ps089.v001.a
 
@@ -4875,22 +5181,51 @@
 ## ps136.v026.a
 
 ## ps137.v001.a
+- 2026-09-26T23:59:54.774799+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-09-27T00:03:28.483928+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.169464+00:00: Create rendering (codex)
+- 2026-09-27T00:07:14.461730+00:00: Create comparison assessment (codex-analysis)
+- 2026-09-27T00:10:05.388342+00:00: Record psalm analysis (codex-analysis)
 
 ## ps137.v002.a
+- 2026-09-27T00:03:28.491218+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.178565+00:00: Create rendering (codex)
+- 2026-09-27T00:07:33.023813+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v003.a
+- 2026-09-27T00:03:28.499237+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.188390+00:00: Create rendering (codex)
+- 2026-09-27T00:07:57.808350+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v004.a
+- 2026-09-27T00:03:28.509724+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.195998+00:00: Create rendering (codex)
+- 2026-09-27T00:08:06.181557+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v005.a
+- 2026-09-27T00:03:28.516755+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.202625+00:00: Create rendering (codex)
+- 2026-09-27T00:08:18.659338+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v006.a
+- 2026-09-27T00:03:28.526496+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.212642+00:00: Create rendering (codex)
+- 2026-09-27T00:08:30.686685+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v007.a
+- 2026-09-27T00:03:28.537895+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.221761+00:00: Create rendering (codex)
+- 2026-09-27T00:08:51.186200+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v008.a
+- 2026-09-27T00:03:28.547428+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.229816+00:00: Create rendering (codex)
+- 2026-09-27T00:09:05.341251+00:00: Create comparison assessment (codex-analysis)
 
 ## ps137.v009.a
+- 2026-09-27T00:03:28.557007+00:00: Create rendering (codex)
+- 2026-09-27T00:06:57.237555+00:00: Create rendering (codex)
+- 2026-09-27T00:09:11.937080+00:00: Create comparison assessment (codex-analysis)
 
 ## ps138.v001.a
 

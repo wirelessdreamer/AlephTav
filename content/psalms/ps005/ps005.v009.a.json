@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v009.a.lyric.alt.0001",
-    "rnd.ps005.v009.a.lyric.alt.0002"
+    "rnd.ps005.v009.a.lyric.alt.0002",
+    "rnd.ps005.v009.a.lyric.alt.0003",
+    "rnd.ps005.v009.a.lyric.alt.0004",
+    "rnd.ps005.v009.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v009.a.0001",
     "aud.ps005.v009.a.0002",
     "aud.ps005.v009.a.0003",
-    "aud.ps005.v009.a.0004"
+    "aud.ps005.v009.a.0004",
+    "aud.ps005.v009.a.0005",
+    "aud.ps005.v009.a.0006",
+    "aud.ps005.v009.a.0007",
+    "aud.ps005.v009.a.0008",
+    "aud.ps005.v009.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:14:40.880421+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v009.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "76c45403e5f7d654ea92291c1aa497ea3f2704eaaad4b31bc77b8ed1f3c67920",
+      "audit_id": "aud.ps005.v009.a.0005",
+      "before_hash": "32db3035b3d14644f790d66bb65440dfa3f4a4a28610a1c618ef5f3c2b94d36f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.989045+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Uses qere הַיְשַׁ֖ר, straighten; ketiv הושר remains noted here. Foes watch me expresses the hostile watchers without adding a setting.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0d268000422e0dd9ba9055603cb9ce7c0c34656683b2b1241f8c2580e4f1e27e",
+      "audit_id": "aud.ps005.v009.a.0006",
+      "before_hash": "e326dc4bb1e295af7da2c16670315f62d772216a12a6400b8bbab60aa2bff687",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.451544+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "406aa79420f346ddcd9e93ac94bad5dc7fc699a9d0423eabbd897534cc585fe6",
+      "audit_id": "aud.ps005.v009.a.0007",
+      "before_hash": "e718ab9c35df18c1cf248e9d9e1dca57b1d5409c7431543e9b2a9830390cd398",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.253322+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "Retains both requests and the explicit hostile watching.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "106f3525ed08a1e0f238314ac291ce13e033614e41e34f7ae02d6b429ac33f6a",
+      "audit_id": "aud.ps005.v009.a.0008",
+      "before_hash": "4779cad581b01cccb72219d03311adab168fb4089e9ba49ac041c93b5529d9d9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.794791+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v009.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ed4f214b2858fb5b90d6596ef3bc31326eab6e4d046aaa2f6aceb16bb904e9ce",
+      "audit_id": "aud.ps005.v009.a.0009",
+      "before_hash": "c1eef84831fefda1adaa60c501171f34d254d15897e02eaabc616a89c750b1e0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:55:42.729548+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v009.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -226,6 +314,92 @@
             "ps005.v009.t008"
           ],
           "transliteration": "hôšar ləp̄ānay darkeḵā",
+          "verdict": "nonstandard"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The lyric preserves the broad ideas of seeking direction and facing enemies. It does not directly express the address to Yahweh, the request to be led in God’s righteousness, or the request that God make his way straight before the speaker.",
+      "accuracy_rating": "omission",
+      "analyzed_text_hash": "38296914f107de4a7ec3ccc2da1d1bad441bec1c13509fce766b21c9d2e4ab8e",
+      "audit_ids": [
+        "aud.ps005.v009.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v009.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Waiting” changes an imperative request into the speaker’s posture. “Safely through enemy lines” introduces safety and a military route, while the repeated “enemy lines” intensifies that image.",
+      "display_reference": "Psalm 5:9",
+      "english_rendering_id": "rnd.ps005.v009.a.lyric.alt.0005",
+      "generation_run_id": "cxr.bd8d24ea43a1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י לְפָנַ֣י דַּרְכֶּֽךָ׃",
+      "literal_backbone": [
+        "O Yahweh, lead me in your righteousness because of my enemies.",
+        "Make your way straight before me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:9",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v009.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Yahweh, the divine proper name",
+          "note": "The direct address to Yahweh is absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v009.t001"
+          ],
+          "transliteration": "yəhwāh",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "lead me, guide me",
+          "note": "The idea of guidance remains, but the request that God lead the speaker becomes a statement that the speaker is waiting.",
+          "rendered_as": "Waiting for directions",
+          "token_ids": [
+            "ps005.v009.t002"
+          ],
+          "transliteration": "nəḥēnî",
+          "verdict": "nonstandard"
+        },
+        {
+          "lexical_gloss": "in your righteousness",
+          "note": "God’s righteousness as the manner or sphere of guidance is not expressed.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps005.v009.t003"
+          ],
+          "transliteration": "ḇəṣiḏqāṯeḵā",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "on account of my enemies, because of those watching or opposing me",
+          "note": "The enemies remain, but the reason for the petition becomes a militarized route through their lines.",
+          "rendered_as": "through enemy lines",
+          "token_ids": [
+            "ps005.v009.t004",
+            "ps005.v009.t005"
+          ],
+          "transliteration": "ləmaʿan šôrərāy",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "make your way straight before me",
+          "note": "The general idea of a navigable course survives, but God’s way, its straightness, and its placement before the speaker are not directly represented, while safety is added.",
+          "rendered_as": "directions / to get me safely through",
+          "token_ids": [
+            "ps005.v009.t006",
+            "ps005.v009.t007",
+            "ps005.v009.t008"
+          ],
+          "transliteration": "hayšar ləp̄ānay darkeḵā",
           "verdict": "nonstandard"
         }
       ]
@@ -434,6 +608,441 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v009.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "three linked clauses",
+      "differentiator": "Uses a finite watching clause and a single straightening verb.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 17,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.65,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Watching foes",
+          "note": "Preserves watching and its relation to the speaker.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v009.t005"
+          ]
+        },
+        {
+          "label": "Straightened path ahead",
+          "note": "The path still belongs to the addressee.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v009.t006",
+            "ps005.v009.t007",
+            "ps005.v009.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v009.t001",
+          "ps005.v009.t003",
+          "ps005.v009.t004",
+          "ps005.v009.t005",
+          "ps005.v009.t006",
+          "ps005.v009.t007",
+          "ps005.v009.t008"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v009.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "Uses qere הַיְשַׁ֖ר, straighten; ketiv הושר remains noted here. Foes watch me expresses the hostile watchers without adding a setting.",
+      "rendering_id": "rnd.ps005.v009.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י הַיְשַׁ֖ר לְפָנַ֣י דַּרְכֶּֽךָ׃",
+        "basis_note": "Supplied Hebrew, its qere, and fresh literal only.",
+        "source_language": "he",
+        "source_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י הַיְשַׁ֖ר לְפָנַ֣י דַּרְכֶּֽךָ׃",
+        "token_ids": [
+          "ps005.v009.t001",
+          "ps005.v009.t002",
+          "ps005.v009.t003",
+          "ps005.v009.t004",
+          "ps005.v009.t005",
+          "ps005.v009.t006",
+          "ps005.v009.t007",
+          "ps005.v009.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, lead me in your righteousness;\nbecause my foes watch me,\nstraighten your path ahead of me.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v009.a",
+      "variation_basis": [
+        "Compact hostile-watching clause",
+        "Direct straightening verb"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Two requests with a complete intervening reason.",
+      "differentiator": "Makes the qere imperative unmistakable.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.11,
+        "stress_approximation": 0.69,
+        "syllable_count": 28,
+        "syllables": 28
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Hostile watchers",
+          "note": "Both hostility and watching remain explicit.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v009.t005"
+          ]
+        },
+        {
+          "label": "God's path made straight",
+          "note": "The path remains God's, situated before the speaker.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v009.t006",
+            "ps005.v009.t007",
+            "ps005.v009.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v009.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "Retains both requests and the explicit hostile watching.",
+      "rendering_id": "rnd.ps005.v009.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י הַיְשַׁ֖ר לְפָנַ֣י דַּרְכֶּֽךָ׃",
+        "basis_note": "Supplied UXLC Hebrew only; follows the supplied qere הַיְשַׁ֖ר.",
+        "source_language": "he",
+        "source_text": "יְהוָ֤ה׀ נְחֵ֬נִי בְצִדְקָתֶ֗ךָ לְמַ֥עַן שׁוֹרְרָ֑י הַיְשַׁ֖ר לְפָנַ֣י דַּרְכֶּֽךָ׃",
+        "token_ids": [
+          "ps005.v009.t001",
+          "ps005.v009.t002",
+          "ps005.v009.t003",
+          "ps005.v009.t004",
+          "ps005.v009.t005",
+          "ps005.v009.t006",
+          "ps005.v009.t007",
+          "ps005.v009.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yahweh, lead me in your righteousness\nbecause my foes are watching me;\nmake your path straight before me.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v009.a",
+      "variation_basis": [
+        "Approved wording retained"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.26,
+        "stress_approximation": 0.79,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v009.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Waiting for directions\nto get me safely through enemy lines.\nenemy lines.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v009.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

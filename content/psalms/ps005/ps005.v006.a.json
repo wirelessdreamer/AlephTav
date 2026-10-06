@@ -2,13 +2,21 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps005.v006.a.lyric.alt.0001",
-    "rnd.ps005.v006.a.lyric.alt.0002"
+    "rnd.ps005.v006.a.lyric.alt.0002",
+    "rnd.ps005.v006.a.lyric.alt.0003",
+    "rnd.ps005.v006.a.lyric.alt.0004",
+    "rnd.ps005.v006.a.lyric.alt.0005"
   ],
   "audit_ids": [
     "aud.ps005.v006.a.0001",
     "aud.ps005.v006.a.0002",
     "aud.ps005.v006.a.0003",
-    "aud.ps005.v006.a.0004"
+    "aud.ps005.v006.a.0004",
+    "aud.ps005.v006.a.0005",
+    "aud.ps005.v006.a.0006",
+    "aud.ps005.v006.a.0007",
+    "aud.ps005.v006.a.0008",
+    "aud.ps005.v006.a.0009"
   ],
   "audit_records": [
     {
@@ -68,6 +76,86 @@
       "created_at": "2026-09-27T02:13:47.921277+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps005.v006.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a62d0573c337e9a71857acb0c57b3508c248b9424561ba169060e54b4db7e2da",
+      "audit_id": "aud.ps005.v006.a.0005",
+      "before_hash": "7b6692000fd15c7b3b0239ab9312877bec7265d62f64b1d0e92589b4490ac34e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T15:59:23.959422+00:00",
+      "created_by": "codex:psalm5-isolated-meter",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Boastful identifies arrogant people. Hatred still takes the wrongdoers themselves as its object.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a5c4d1cab4a22ad8736e71d1c4c736b26b14ffcf10bb437a9e0268a4c4e44211",
+      "audit_id": "aud.ps005.v006.a.0006",
+      "before_hash": "8ac66de645a7b59d84e90ad4dae460ca6b165d3fa3dd5c01d03bd1936fce04ba",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-09-28T17:25:43.417350+00:00",
+      "created_by": "codex:psalm5-project-transfer",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "from tr.ps005.0002",
+      "review_signoff": {},
+      "summary": "Move rendering to tr.ps005.0003",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9bde8aba61649ccfd7344ad0610c35bb8a39f908fc6d1f2dc7f6246cef0f4f70",
+      "audit_id": "aud.ps005.v006.a.0007",
+      "before_hash": "82792063009daab818d7fb4cf883fd0de68a3848100b7e354cdb0eb3dc3dd07f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-09-28T18:23:09.190051+00:00",
+      "created_by": "codex:psalm5-smoothing",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0004",
+      "entity_type": "rendering",
+      "rationale": "'In your sight' flows naturally while retaining the visual relationship.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1f0a666b5a4aa1f060d16ba6d44c15f1383e9f916572ae16218b5d292a28c057",
+      "audit_id": "aud.ps005.v006.a.0008",
+      "before_hash": "ae6003ef14c6cca9d260176ffaa650a6533d6d60e359bd941e28cbce11bf8275",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:50:14.698019+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps005.v006.a.lyric.alt.0005",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "401f9a19be91f906af7727ab52a581973bb53f152b706f13b98d429509b2d71e",
+      "audit_id": "aud.ps005.v006.a.0009",
+      "before_hash": "ef63603b44df7d1d75a86ad1c961e8b846be9c27e428a7e93e66fad940cef37d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-05T17:54:39.043234+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps005.v006.a.0003",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -185,6 +273,49 @@
       "translation_id": "tr.ps005.0002",
       "unit_id": "ps005.v006.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "The English preserves both clauses in their original order: the boastful cannot stand before God’s eyes, and God hates everyone who practices wrongdoing.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "97d81729cbe6ae0a9562f3012be0adc02f856da08723f9209386abddbea4f1e2",
+      "audit_ids": [
+        "aud.ps005.v006.a.0009"
+      ],
+      "comparison_id": "cmp.ps005.v006.a.0003",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 5:6",
+      "english_rendering_id": "rnd.ps005.v006.a.lyric.alt.0005",
+      "generation_run_id": "cxr.d026a6d793e1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+      "literal_backbone": [
+        "The boastful will not take their stand before your eyes.",
+        "You hate all who do wickedness."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 5:6",
+      "non_source_material": [],
+      "psalm_id": "ps005",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps005.0004",
+      "unit_id": "ps005.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "wickedness, wrongdoing, iniquity, trouble",
+          "note": "“Injustice” expresses moral wrongdoing within the word’s range, though the Hebrew term can be broader than unjust conduct specifically.",
+          "rendered_as": "injustice",
+          "token_ids": [
+            "ps005.v006.t009"
+          ],
+          "transliteration": "ʾāwen",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -390,6 +521,438 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps005.0002",
+      "unit_id": "ps005.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "long-short judgment couplet",
+      "differentiator": "Shortens the second clause without softening hate or narrowing all.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "arr.ps005.0002 numeric skeleton",
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.61,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Standing before divine eyes",
+          "note": "Retains posture and eyes.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v006.t002",
+            "ps005.v006.t004",
+            "ps005.v006.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps005.v006.t002",
+          "ps005.v006.t003",
+          "ps005.v006.t005",
+          "ps005.v006.t006",
+          "ps005.v006.t008"
+        ],
+        "base_instructions_sha256": "996051806baabad604acd5fe175c40fc776bfd2aa31da3b69391800140c02404",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T15:36:59.020164+00:00",
+        "generator": "codex:psalm5-isolated-meter",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          },
+          {
+            "artifact_id": "meter.ps005.arr.ps005.0002.numeric-v1",
+            "basis_arrangement_id": "arr.ps005.0002",
+            "contains_translated_words": false,
+            "sha256": "eb7f9d44dd82b08b18f081a2c5ccb90e0c5d160c8841351ee70df5703ec23881"
+          }
+        ],
+        "input_isolation": {
+          "allowed_source_ids": [
+            "uxlc"
+          ],
+          "excluded_english_witnesses": true,
+          "excluded_enrichment_sources": [
+            "oshb",
+            "macula",
+            "lxx"
+          ],
+          "excluded_existing_english": true
+        },
+        "input_prompt_sha256": "fe2db6b75606024aafb87e68c178c4db0088e9242bfa28196d85976fb916991d",
+        "intended_output_license": "CC0-1.0",
+        "isolation_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "lineage": {
+          "comparison_predecessor": "rnd.ps005.v006.a.lyric.alt.0002",
+          "meter_basis_arrangement_id": "arr.ps005.0002",
+          "meter_basis_scope": "numeric and structural constraints only",
+          "note": "Fresh Hebrew-first proposed alternative; no prior English wording supplied to generation."
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-isolated-uxlc-ps005-lyric-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication for this new candidate; provenance and bounded overlap review are recorded, but this is not a legal-clearance claim.",
+        "run_id": "cxr.fc5ebd4220b1",
+        "source_ids": [
+          "uxlc"
+        ],
+        "thread_id": "01a0e888-5afe-7cc0-a2ab-923fc8c6b11a",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English; no external wording source.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e8a1-e6f3-7550-91d0-2dd408719322"
+      },
+      "rationale": "Boastful identifies arrogant people. Hatred still takes the wrongdoers themselves as its object.",
+      "rendering_id": "rnd.ps005.v006.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+        "basis_note": "Supplied Hebrew and fresh literal only.",
+        "source_language": "he",
+        "source_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+        "token_ids": [
+          "ps005.v006.t001",
+          "ps005.v006.t002",
+          "ps005.v006.t003",
+          "ps005.v006.t004",
+          "ps005.v006.t005",
+          "ps005.v006.t006",
+          "ps005.v006.t007",
+          "ps005.v006.t008",
+          "ps005.v006.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "independent Hebrew-first meter-compatible candidate",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The boastful will not stand before your eyes;\nyou hate all who do wrong.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English; no external wording source.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v006.a",
+      "variation_basis": [
+        "Compact description of wrongdoers"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "Two direct, unbroken clauses.",
+      "differentiator": "Smooths the visual phrase without softening hate.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": "relaxed meter; complete clauses prioritized",
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.57,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Standing in God's sight",
+          "note": "Standing and divine sight remain; the explicit anatomical noun is rendered idiomatically.",
+          "source_id": "uxlc",
+          "token_ids": [
+            "ps005.v006.t002",
+            "ps005.v006.t004",
+            "ps005.v006.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "accuracy_review": {
+          "overall": "pass",
+          "prompt_sha256": "03760c55d6fb83d02335736072a06962be5a95f97a5bb80e01e33ee5b9957eb2",
+          "run_id": "cxr.9811d0b4c038",
+          "summary": "All 13 units preserve the Hebrew meaning. Lexical choices and modest expansions are defensible; no accuracy corrections are required."
+        },
+        "base_instructions_sha256": "09d9a38fae3276e4d15dfe806e678979525d201981b0dc08b7fc60115dd12317",
+        "contract_validated": true,
+        "generated_at": "2026-09-28T18:18:27.300511+00:00",
+        "generator": "codex:psalm5-smoothing",
+        "input_artifacts": [
+          {
+            "artifact_id": "uxlc.ps005.qere-reading-packet.v1",
+            "sha256": "f325b532d1b19dc34fa17738c3ec1012eaf6e7eb526b6653908de1fa4e8b1b2e",
+            "source_id": "uxlc",
+            "source_version": "vendored-2026.04"
+          }
+        ],
+        "input_prompt_sha256": "951100d243ff918f2877a04d387ce6596e5924dfb01b6c406b98ae46f3fb254b",
+        "intended_output_license": "CC0-1.0",
+        "lineage": {
+          "note": "Natural-delivery revision; meter deliberately relaxed.",
+          "revision_of_run_id": "cxr.1c7502eb2ed4",
+          "smoothing_predecessor": "rnd.ps005.v006.a.lyric.alt.0003"
+        },
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-uxlc-ps005-smoothing-v1",
+        "provider": "codex-app-server",
+        "provider_version": "0.1.0",
+        "rights_note": "Intended CC0 dedication; not a legal-clearance claim.",
+        "run_id": "cxr.83deb9238ec3",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_validation": {
+          "errors": [],
+          "status": "pass"
+        },
+        "thread_id": "01a0e92c-7aaf-7ac3-98f4-1fc4dec78ac5",
+        "translation_basis": {
+          "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        },
+        "turn_id": "01a0e938-aa4b-7b83-89e3-4f156567249d"
+      },
+      "rationale": "'In your sight' flows naturally while retaining the visual relationship.",
+      "rendering_id": "rnd.ps005.v006.a.lyric.alt.0004",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+        "basis_note": "Supplied UXLC Hebrew only.",
+        "source_language": "he",
+        "source_text": "לֹֽא־יִתְיַצְּב֣וּ הֽ֭וֹלְלִים לְנֶ֣גֶד עֵינֶ֑יךָ שָׂ֝נֵ֗אתָ כָּל־פֹּ֥עֲלֵי אָֽוֶן׃",
+        "token_ids": [
+          "ps005.v006.t001",
+          "ps005.v006.t002",
+          "ps005.v006.t003",
+          "ps005.v006.t004",
+          "ps005.v006.t005",
+          "ps005.v006.t006",
+          "ps005.v006.t007",
+          "ps005.v006.t008",
+          "ps005.v006.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": "accurate natural sung delivery with relaxed meter",
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The boastful will not stand in your sight;\nyou hate all who do wrong.",
+      "translation_basis": {
+        "basis_note": "Hebrew-to-English revision of the supplied Hebrew-first draft.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps005.0003",
+      "unit_id": "ps005.v006.a",
+      "variation_basis": [
+        "Idiomatic rendering of before your eyes"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.64,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.277590578661",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps005.v006.a.lyric.alt.0005",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The boastful will not stand before your eyes;\nyou hate all who do injustice.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps005.0004",
       "unit_id": "ps005.v006.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
