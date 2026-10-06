@@ -417,6 +417,45 @@ def update_rendering(
     return rendering
 
 
+def move_rendering_to_translation(
+    rendering_id_value: str,
+    translation_id: str | None,
+    *,
+    created_by: str = "reviewer",
+) -> dict[str, Any]:
+    """Reassign an English rendering without changing its text or provenance."""
+    unit_id = _rendering_unit_id(rendering_id_value)
+    psalm_id = unit_id.split(".")[0]
+    psalm_translations_service.require(psalm_id, translation_id)
+    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+    rendering = _rendering_lookup(unit, rendering_id_value)
+    if rendering["layer"] in psalm_translations_service.SHARED_LAYERS:
+        raise ValidationError(
+            f"Shared {rendering['layer']} renderings do not belong to a translation"
+        )
+    previous = rendering.get("translation_id")
+    if previous == translation_id:
+        return rendering
+    if translation_id is None:
+        rendering.pop("translation_id", None)
+    else:
+        rendering["translation_id"] = translation_id
+    _sync_rendering_membership(unit)
+    audit_service.create_audit_record(
+        unit,
+        before_hash=registry_service.file_hash(before),
+        after_hash=registry_service.file_hash(unit),
+        summary=f"Move rendering to {translation_id or 'the main translation'}",
+        rationale=f"from {previous or 'the main translation'}",
+        created_by=created_by,
+        entity_type="rendering",
+        entity_id=rendering_id_value,
+        change_type="move",
+    )
+    registry_service.save_unit(unit)
+    return rendering
+
+
 def _approvals_for(unit: dict[str, Any], target_id: str) -> int:
     return sum(
         1

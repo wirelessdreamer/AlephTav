@@ -47,6 +47,25 @@ export function useRenameCollection() {
   });
 }
 
+export function useSetCollectionLicense() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      collectionId,
+      outputTextLicense,
+    }: {
+      collectionId: string;
+      outputTextLicense: NonNullable<Collection['output_text_license']>;
+    }) =>
+      sendJson<Collection>(
+        `/collections/${collectionId}`,
+        { output_text_license: outputTextLicense },
+        'PATCH',
+      ),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['collections'] }),
+  });
+}
+
 /** A new translation of a psalm, in a project that has none of it yet. */
 export function useCreateTranslation() {
   const queryClient = useQueryClient();

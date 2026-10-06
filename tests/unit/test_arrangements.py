@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from app.core.errors import ReviewRequiredError, ValidationError
+from app.core.errors import NotFoundError, ReviewRequiredError, ValidationError
 from app.services import arrangement_service as arrangements
 from app.services import codex_app_server_service as codex
 from app.services import codex_arrangement_service as drafting
@@ -94,6 +94,27 @@ def test_a_setting_is_stored_on_the_psalm_validated_and_audited() -> None:
     assert records[-1]["entity_id"] == "arr.ps001.0001"
     assert arrangement["audit_ids"] == [records[-1]["audit_id"]]
     assert validate_all_content()["errors"] == []
+
+
+def test_a_setting_can_be_deleted_with_an_audit_record() -> None:
+    arrangement_id = _setting()["arrangement"]["arrangement_id"]
+    audits = len(registry_service.load_unit(UNIT_ID).get("audit_records", []))
+
+    result = arrangements.delete_arrangement(
+        PSALM_ID,
+        arrangement_id,
+        created_by="tester",
+        rationale="remove accidental duplicate",
+    )
+
+    assert result["deleted"] == arrangement_id
+    assert registry_service.load_psalm_meta(PSALM_ID)["arrangements"] == []
+    records = registry_service.load_unit(UNIT_ID)["audit_records"]
+    assert len(records) == audits + 1
+    assert records[-1]["entity_id"] == arrangement_id
+    assert records[-1]["change_type"] == "delete"
+    with pytest.raises(NotFoundError):
+        arrangements.get_arrangement(PSALM_ID, arrangement_id)
 
 
 def test_a_repeat_is_sung_again_and_counted_in_the_coverage() -> None:

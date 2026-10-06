@@ -146,6 +146,20 @@ def test_projects_are_listed_created_renamed_and_hold_their_translations() -> No
     assert default.status_code == 400
 
 
+def test_a_projects_output_text_license_is_managed_independently() -> None:
+    bone_and_ash = _project("Bone and Ash")
+    hymnal = _project("Hymnal")
+
+    licensed = client.patch(f"/collections/{bone_and_ash}", json={"output_text_license": "CC0 1.0"})
+    refused = client.patch(f"/collections/{hymnal}", json={"output_text_license": "CC0"})
+    listed = {c["collection_id"]: c for c in client.get("/collections").json()}
+
+    assert licensed.status_code == 200
+    assert listed[bone_and_ash]["output_text_license"] == "CC0 1.0"
+    assert "output_text_license" not in listed[hymnal]
+    assert refused.status_code == 400
+
+
 def test_a_translation_moves_between_projects_but_not_into_one_with_the_psalm() -> None:
     translation_id = _create("Bone and Ash")
     hymnal = _project("Hymnal")

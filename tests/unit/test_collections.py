@@ -159,6 +159,22 @@ def test_a_project_needs_a_name_of_its_own_and_can_be_renamed() -> None:
         collections_service.rename_collection("col.0042", "Mine")
 
 
+def test_a_project_has_its_own_output_text_license() -> None:
+    album = _project("Bone and Ash")
+    hymnal = _project("Hymnal")
+
+    licensed = collections_service.set_collection_license(album, "CC0 1.0")
+
+    assert licensed["output_text_license"] == "CC0 1.0"
+    assert "output_text_license" not in collections_service.get_collection(hymnal)
+    with pytest.raises(ValidationError, match="Unknown project license"):
+        collections_service.set_collection_license(album, "CC0")
+    with pytest.raises(ValidationError, match="workbench text license"):
+        collections_service.set_collection_license(DEFAULT, "CC0 1.0")
+    with pytest.raises(NotFoundError):
+        collections_service.set_collection_license("col.0042", "CC0 1.0")
+
+
 def test_projects_and_moves_still_validate_and_a_missing_project_is_caught() -> None:
     from scripts.validate_content import validate_all_content
 

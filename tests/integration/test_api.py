@@ -115,6 +115,15 @@ class FakeAssistantAdapter:
                     {"action_id": "workbench.set_drawer_tab", "input": {"tab": "compare"}}
                 ],
             }
+        elif (
+            "User message:\nExplain the shift in address" in prompt
+            and '"hebrew_text": "תְּאַבֵּד"' in prompt
+        ):
+            payload = {
+                "reply": "The second clause shifts from direct address to naming Yahweh.",
+                "speakable_text": "The second clause shifts from direct address to naming Yahweh.",
+                "tool_calls": [],
+            }
         else:
             payload = {
                 "reply": "I can prepare a rendering.",
@@ -255,6 +264,45 @@ def test_assistant_endpoints_support_navigation_read_tools_and_confirmed_writes(
         compare_tab.json()["message"]["client_actions"][0]["action_id"]
         == "workbench.set_drawer_tab"
     )
+
+    study = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={
+            "message": "Explain the shift in address",
+            "context": {
+                "route": "workbench",
+                "workbench": {"unitId": "ps005.v007.a", "layer": "lyric"},
+                "ui": {"surface": "verse-study-desk"},
+                "study": {
+                    "reference": "Psalm 5:7",
+                    "hebrew_text": "תְּאַבֵּד",
+                    "english_text": "You will destroy those who lie.",
+                },
+            },
+        },
+    )
+    assert study.status_code == 200
+    assert study.json()["message"]["content"] == (
+        "The second clause shifts from direct address to naming Yahweh."
+    )
+    assert study.json()["message"]["tool_results"] == []
+
+    blocked_study_write = client.post(
+        f"/assistant/sessions/{session_id}/messages",
+        json={
+            "message": "Change the lyric from inside the study desk",
+            "context": {
+                "route": "workbench",
+                "ui": {"surface": "verse-study-desk"},
+                "study": {"reference": "Psalm 5:7", "hebrew_text": "תְּאַבֵּד"},
+            },
+        },
+    )
+    assert blocked_study_write.status_code == 200
+    assert blocked_study_write.json()["message"]["pending_actions"] == []
+    assert blocked_study_write.json()["message"]["tool_results"] == [
+        {"action_id": "renderings.create", "error": "Verse study chat is read-only"}
+    ]
 
     read_result = client.post(
         f"/assistant/sessions/{session_id}/messages",

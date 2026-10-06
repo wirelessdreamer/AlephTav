@@ -127,6 +127,18 @@ def test_refusals_reach_the_llm_with_their_reason() -> None:
     assert "One of each" in second[1]
 
 
+def test_an_outside_llm_sets_a_projects_content_license() -> None:
+    project = _call("create_project", title="Bone and Ash")
+
+    licensed = _call(
+        "set_project_license",
+        collection_id=project["collection_id"],
+        output_text_license="CC0 1.0",
+    )
+
+    assert licensed["output_text_license"] == "CC0 1.0"
+
+
 def test_status_and_canonical_text_do_not_change_outside_review() -> None:
     rendering = _call(
         "create_rendering", unit_id=UNIT_ID, layer="lyric", text="Happy the one", rationale="r"

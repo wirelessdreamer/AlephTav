@@ -9,6 +9,7 @@ import {
   useCreateTranslation,
   useMoveTranslation,
   useRenameCollection,
+  useSetCollectionLicense,
 } from '../hooks/useTranslations';
 import { usePsalms } from '../hooks/useWorkbench';
 import type { PsalmSummary } from '../types';
@@ -17,6 +18,12 @@ import type { PsalmSummary } from '../types';
 const NEW_PROJECT = '__new__';
 const RENAME_PROJECT = '__rename__';
 const ADD_PSALM = '__add__';
+const OUTPUT_TEXT_LICENSES = [
+  'CC0 1.0',
+  'CC BY 4.0',
+  'CC BY-SA 4.0',
+  'All Rights Reserved',
+] as const;
 
 /** An API error's detail, else its text. */
 function detail(error: Error): string {
@@ -48,6 +55,7 @@ export function ComparisonPage() {
   const translationId = member?.translation_id ?? null;
   const createCollection = useCreateCollection();
   const renameCollection = useRenameCollection();
+  const setCollectionLicense = useSetCollectionLicense();
   const createTranslation = useCreateTranslation();
   const moveTranslation = useMoveTranslation();
   const [importOpen, setImportOpen] = useState(false);
@@ -192,6 +200,34 @@ export function ComparisonPage() {
             </select>
           </label>
         )}
+
+        <label className="compact-field">
+          <span>License</span>
+          <select
+            aria-label="Project license"
+            value={collection?.output_text_license ?? ''}
+            disabled={!collection || Boolean(collection.built_in) || setCollectionLicense.isPending}
+            onChange={(event) => {
+              if (!collection || !event.target.value) return;
+              setCollectionLicense.mutate({
+                collectionId: collection.collection_id,
+                outputTextLicense: event.target.value as (typeof OUTPUT_TEXT_LICENSES)[number],
+              });
+            }}
+          >
+            <option value="">
+              {collection?.built_in ? 'Workbench default' : 'Not set'}
+            </option>
+            {OUTPUT_TEXT_LICENSES.map((license) => (
+              <option key={license} value={license}>
+                {license}
+              </option>
+            ))}
+          </select>
+          {setCollectionLicense.error ? (
+            <span className="comparison-error">{detail(setCollectionLicense.error)}</span>
+          ) : null}
+        </label>
 
         {adding && collection ? (
           <form

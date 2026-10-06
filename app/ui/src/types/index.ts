@@ -272,6 +272,11 @@ export interface PsalmTranslation {
 export interface Collection {
   collection_id: string;
   title: string;
+  output_text_license?:
+    | 'CC0 1.0'
+    | 'CC BY 4.0'
+    | 'CC BY-SA 4.0'
+    | 'All Rights Reserved';
   built_in?: boolean;
   created_by?: string;
   created_at?: string;

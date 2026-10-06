@@ -300,6 +300,19 @@ def rename_project(collection_id: str, title: str) -> Any:
     return _call(translations.rename_collection, collection_id, {"title": title})
 
 
+@_tool(translations.rename_collection)
+def set_project_license(
+    collection_id: str,
+    output_text_license: Literal["CC0 1.0", "CC BY 4.0", "CC BY-SA 4.0", "All Rights Reserved"],
+) -> Any:
+    """Set the content license for the English text in one project."""
+    return _call(
+        translations.rename_collection,
+        collection_id,
+        {"output_text_license": output_text_license},
+    )
+
+
 @_tool(translations.list_translations, read_only=True)
 def list_translations(psalm_id: str) -> Any:
     """The psalm's translations, its main one (translation_id null) first."""

@@ -6,6 +6,7 @@ import { RebuildReview } from './RebuildReview';
 import { positionHint, type RebuildProgress, type VerseCodex } from './verseActions';
 import { VerseHistoryPanel } from './VerseHistoryPanel';
 import { VerseNotes } from './VerseNotes';
+import { VerseStudyDesk, type VerseStudyTab } from './VerseStudyDesk';
 import { WordChoices } from './WordChoices';
 
 /** Lexical fields shown in the word tray, in order. Absent fields are skipped. */
@@ -423,10 +424,12 @@ export function VerseDetail({
   const notes = row.verse_notes ?? [];
   const composerId = `note-composer-${unitId}`;
   const [tab, setTab] = useState<'verse' | 'history'>('verse');
+  const [studyTab, setStudyTab] = useState<VerseStudyTab>('chat');
   const [quote, setQuote] = useState('');
 
   const focusComposer = () => {
     setTab('verse');
+    setStudyTab('notes');
     window.setTimeout(() => {
       const composer = document.getElementById(composerId);
       composer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -473,7 +476,9 @@ export function VerseDetail({
       onPointerDown={(event) => {
         if (!selectedTokenId) return;
         const target = event.target as HTMLElement;
-        if (!target.closest('.interlinear__word, .word-tray')) onSelectToken(null);
+        if (!target.closest('.interlinear__word, .word-tray, .verse-study-desk')) {
+          onSelectToken(null);
+        }
       }}
     >
       <div className="segmented verse-tabs" role="tablist" aria-label="Verse views">
@@ -613,17 +618,29 @@ export function VerseDetail({
         }
       />
 
-      <VerseNotes
+      <VerseStudyDesk
+        key={`${unitId}-${translationId ?? 'main'}-${englishLayer}`}
+        row={row}
+        englishLayer={englishLayer}
         psalmId={psalmId}
         translationId={translationId}
-        unitId={unitId}
-        notes={notes}
-        englishLayer={englishLayer}
-        quote={quote}
-        onClearQuote={() => setQuote('')}
-        composerId={composerId}
-        hasPendingRebuild={Boolean(row.pending_rebuild)}
-        codex={codex}
+        selectedToken={selected}
+        activeTab={studyTab}
+        onTabChange={setStudyTab}
+        notesPanel={
+          <VerseNotes
+            psalmId={psalmId}
+            translationId={translationId}
+            unitId={unitId}
+            notes={notes}
+            englishLayer={englishLayer}
+            quote={quote}
+            onClearQuote={() => setQuote('')}
+            composerId={composerId}
+            hasPendingRebuild={Boolean(row.pending_rebuild)}
+            codex={codex}
+          />
+        }
       />
         </>
       ) : null}

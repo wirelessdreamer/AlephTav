@@ -24,6 +24,12 @@ from app.services import registry_service
 
 DEFAULT_ID = "col.default"
 DEFAULT_TITLE = "Main translations"
+OUTPUT_TEXT_LICENSES = (
+    "CC0 1.0",
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "All Rights Reserved",
+)
 
 
 def _now() -> str:
@@ -94,6 +100,23 @@ def rename_collection(collection_id: str, title: str) -> dict[str, Any]:
     for collection in collections:
         if collection["collection_id"] == collection_id:
             collection["title"] = cleaned
+            collection["updated_at"] = _now()
+            _save(collections)
+            return collection
+    raise NotFoundError(f"There is no project {collection_id}")
+
+
+def set_collection_license(collection_id: str, output_text_license: str) -> dict[str, Any]:
+    """Set the license for the English text in one created project."""
+    if collection_id == DEFAULT_ID:
+        raise ValidationError(f"“{DEFAULT_TITLE}” uses the workbench text license")
+    cleaned = output_text_license.strip()
+    if cleaned not in OUTPUT_TEXT_LICENSES:
+        raise ValidationError(f"Unknown project license: {cleaned or 'blank'}")
+    collections = _stored()
+    for collection in collections:
+        if collection["collection_id"] == collection_id:
+            collection["output_text_license"] = cleaned
             collection["updated_at"] = _now()
             _save(collections)
             return collection

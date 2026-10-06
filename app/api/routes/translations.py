@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
+from app.core.errors import ValidationError
 from app.services import collections_service
 from app.services import psalm_translations_service as translations
 
@@ -69,6 +70,17 @@ def create_collection(payload: dict) -> dict:
 @router.patch("/collections/{collection_id}")
 def rename_collection(collection_id: str, payload: dict) -> dict:
     try:
-        return collections_service.rename_collection(collection_id, str(payload.get("title", "")))
+        collection = collections_service.get_collection(collection_id)
+        if "title" in payload:
+            collection = collections_service.rename_collection(
+                collection_id, str(payload.get("title", ""))
+            )
+        if "output_text_license" in payload:
+            collection = collections_service.set_collection_license(
+                collection_id, str(payload.get("output_text_license", ""))
+            )
+        if not {"title", "output_text_license"} & payload.keys():
+            raise ValidationError("Say what to change on the project")
+        return collection
     except Exception as error:
         raise_as_http(error)

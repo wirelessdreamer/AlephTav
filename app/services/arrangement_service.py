@@ -355,6 +355,37 @@ def create_arrangement(
     return arrangement_view(psalm_id, arrangement["arrangement_id"])
 
 
+def delete_arrangement(
+    psalm_id: str,
+    arrangement_id: str,
+    *,
+    created_by: str = "reviewer",
+    rationale: str = "remove song setting",
+) -> dict[str, str]:
+    """Delete one song setting while retaining an audit record of the removal."""
+    meta = registry_service.load_psalm_meta(psalm_id)
+    arrangement = _find_arrangement(meta, arrangement_id)
+    before = deepcopy(arrangement)
+    before.pop("audit_ids", None)
+    meta["arrangements"].remove(arrangement)
+
+    anchor = registry_service.load_unit(meta["unit_ids"][0])
+    record = audit_service.create_audit_record(
+        anchor,
+        before_hash=registry_service.file_hash(before),
+        after_hash=registry_service.file_hash({}),
+        summary=f"Delete song setting “{arrangement['title']}”",
+        rationale=rationale,
+        created_by=created_by,
+        entity_type="arrangement",
+        entity_id=arrangement_id,
+        change_type="delete",
+    )
+    registry_service.save_unit(anchor)
+    registry_service.save_psalm_meta(psalm_id, meta)
+    return {"deleted": arrangement_id, "audit_id": record["audit_id"]}
+
+
 def update_arrangement(
     psalm_id: str,
     arrangement_id: str,
@@ -390,6 +421,36 @@ def update_arrangement(
     if status == "accepted":
         _supersede_others(psalm_id, view["arrangement"], created_by)
     return view
+
+
+def move_arrangement_to_translation(
+    psalm_id: str,
+    arrangement_id: str,
+    translation_id: str | None,
+    *,
+    created_by: str = "reviewer",
+) -> dict[str, Any]:
+    """Reassign a song setting without rebuilding its sections or provenance."""
+    translations.require(psalm_id, translation_id)
+    current = get_arrangement(psalm_id, arrangement_id)
+    previous = current.get("translation_id")
+    if previous == translation_id:
+        return arrangement_view(psalm_id, arrangement_id)
+
+    def apply(arrangement: dict[str, Any], _psalm: dict[str, Any]) -> None:
+        if translation_id is None:
+            arrangement.pop("translation_id", None)
+        else:
+            arrangement["translation_id"] = translation_id
+
+    return _mutate(
+        psalm_id,
+        arrangement_id,
+        apply,
+        summary=f"Move song setting to {translation_id or 'the main translation'}",
+        rationale=f"from {previous or 'the main translation'}",
+        created_by=created_by,
+    )
 
 
 def _supersede_others(psalm_id: str, accepted: dict[str, Any], created_by: str) -> None:
