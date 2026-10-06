@@ -408,6 +408,9 @@ def run_contract_turn(
     feed an analysis run to the translation saver, or the reverse.
     """
     session = get_session(session_id)
+    # Named explicitly: left to itself Codex runs the model in the user's config.toml,
+    # which the account may not be entitled to use. The account's default always is.
+    model = session.get("model") or client.default_model() or ""
     run: dict[str, Any] = {
         "run_id": f"cxr.{uuid.uuid4().hex[:12]}",
         "kind": kind,
@@ -419,7 +422,7 @@ def run_contract_turn(
         "translation_id": session.get("translation_id"),
         "layer": layer,
         "provider": codex.PROVIDER_NAME,
-        "model": session.get("model", ""),
+        "model": model,
         "prompt_template_version": prompt_template_version,
         "started_at": _now(),
         "completed_at": None,
@@ -438,7 +441,7 @@ def run_contract_turn(
             thread_id=session["thread_id"],
             text=prompt,
             output_schema=strict_output_schema(validator.schema),
-            model=session.get("model") or None,
+            model=model or None,
             effort=TURN_EFFORT,
         )
     except GenerationError as error:

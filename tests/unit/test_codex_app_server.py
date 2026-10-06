@@ -130,6 +130,22 @@ def test_run_turn_sends_the_output_schema_and_returns_the_final_message() -> Non
     assert params["input"] == [{"type": "text", "text": "translate"}]
 
 
+def test_default_model_is_the_account_default_read_once() -> None:
+    def handler(message, _transport):
+        return [
+            _ok(
+                message,
+                {"data": [{"id": "gpt-5.6-sol"}, {"id": "gpt-6-astra", "isDefault": True}]},
+            )
+        ]
+
+    client = _client(handler)
+
+    assert client.default_model() == "gpt-6-astra"
+    assert client.default_model() == "gpt-6-astra"
+    assert client.transport.sent_methods().count("model/list") == 1
+
+
 @pytest.mark.parametrize(
     "approval_method",
     [

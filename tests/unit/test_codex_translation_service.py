@@ -52,6 +52,14 @@ class ScriptedTransport:
             self._push(
                 {"jsonrpc": "2.0", "method": "turn/completed", "params": {"turn": {"id": "turn-1"}}}
             )
+        elif method == "model/list":
+            self._push(
+                {
+                    "jsonrpc": "2.0",
+                    "id": message["id"],
+                    "result": {"data": [{"id": "gpt-6-astra", "isDefault": True}]},
+                }
+            )
         elif "id" in message:
             self._push({"jsonrpc": "2.0", "id": message["id"], "result": {}})
 
@@ -157,6 +165,18 @@ def test_valid_run_completes_and_records_provenance() -> None:
     assert client.transport.params_for("turn/start")["outputSchema"] == strict_output_schema(
         generation_service.OUTPUT_VALIDATOR.schema
     )
+
+
+def test_a_session_without_a_model_runs_the_account_default() -> None:
+    """Codex would otherwise fall back to the model in the user's config.toml,
+    which a ChatGPT account may not be allowed to run."""
+    client = _client(json.dumps(_valid_payload()))
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+
+    run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
+
+    assert client.transport.params_for("turn/start")["model"] == "gpt-6-astra"
+    assert run["model"] == "gpt-6-astra"
 
 
 def test_output_failing_the_contract_is_preserved_as_an_auditable_error() -> None:

@@ -172,6 +172,10 @@ class CodexAppServerClient:
     _stream_tail: str = field(default="", repr=False, compare=False)
     #: Why the watchdog stopped the turn, reported in place of a bare "stopped".
     _stop_reason: str | None = field(default=None, repr=False, compare=False)
+    #: The account's default model, read once from ``model/list``. Without it a turn
+    #: runs whatever ``~/.codex/config.toml`` names, which the account may not be
+    #: entitled to use.
+    _default_model: str | None = field(default=None, repr=False, compare=False)
 
     def _ensure_transport(self) -> Transport:
         if self.transport is None:
@@ -267,6 +271,17 @@ class CodexAppServerClient:
         result = self.request("model/list", {})
         items = result.get("data") or []
         return [item for item in items if isinstance(item, dict)]
+
+    def default_model(self) -> str | None:
+        """The model this account defaults to, read once and kept for the process."""
+        if self._default_model is None:
+            models = self.list_models()
+            chosen = next(
+                (item for item in models if item.get("isDefault")),
+                models[0] if models else None,
+            )
+            self._default_model = str((chosen or {}).get("id") or "")
+        return self._default_model or None
 
     def login(self) -> dict[str, Any]:
         """Start Codex's own managed sign-in. AlephTav never sees the tokens."""
