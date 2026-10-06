@@ -20,6 +20,7 @@ import {
   useComparisonTable,
   useCreateComparisonAssessment,
   useReviseComparisonAssessment,
+  useSaveVerseText,
 } from '../hooks/useComparisonAssessments';
 import { useArrangeImport, useDraftArrangement } from '../hooks/useArrangements';
 import {
@@ -34,6 +35,7 @@ import {
   type ImportStep,
   ImportTranslationDialog,
 } from './ImportTranslationDialog';
+import { loadReviewer } from './arrangementShared';
 import { VerseDetail } from './VerseDetail';
 import { WordSummary, type WordSummaryItem } from './WordSummary';
 import type {
@@ -358,6 +360,7 @@ export function TranslationComparisonTable({
 
   const { data: codexStatus } = useCodexStatus();
   const connectCodex = useConnectCodex();
+  const saveVerseText = useSaveVerseText(psalmId, translationId);
   const { data: guidance } = useTranslationGuidance(psalmId, translationId);
   const saveGuidance = useSaveTranslationGuidance(psalmId, translationId);
   const createSession = useCreateCodexSession();
@@ -921,6 +924,9 @@ export function TranslationComparisonTable({
     });
   }, [data, statusFilter, ratingFilter]);
 
+  /** Verses edited since their analysis ran, which the sweep below re-analyses. */
+  const staleRows = useMemo(() => rows.filter((row) => row.stale), [rows]);
+
   /** The section a row starts, so a band can be rendered above it. */
   function sectionOpening(row: ComparisonTableRow): PsalmAnalysisSection | null {
     if (!analysis) return null;
@@ -1108,6 +1114,16 @@ export function TranslationComparisonTable({
                 >
                   Analyse psalm
                 </button>
+                {staleRows.length > 0 ? (
+                  <button
+                    type="button"
+                    disabled={!codexReady || analyzeVerse.isPending}
+                    title={codexHint ?? 'Analyse the verses edited since their last analysis'}
+                    onClick={() => void runBatch('analyse', staleRows.map(analyseStep))}
+                  >
+                    Re-analyse {staleRows.length} changed
+                  </button>
+                ) : null}
               </>
             )}
           </div>
@@ -1541,6 +1557,20 @@ export function TranslationComparisonTable({
                       onOpenRendering={onOpenRendering}
                       psalmId={psalmId}
                       translationId={translationId}
+                      onSaveText={({ layer, text }) =>
+                        saveVerseText.mutateAsync({
+                          unitId: row.unit_ids[0],
+                          renderingId:
+                            layer === 'literal'
+                              ? row.literal_rendering_ids[0]
+                              : row.english_rendering_ids[0],
+                          status: layer === 'literal' ? row.literal_status : row.english_status,
+                          layer: layer === 'literal' ? 'literal' : englishLayer,
+                          text,
+                          // Edits are recorded under the reviewer name kept for approvals.
+                          editor: loadReviewer().name.trim() || 'workbench',
+                        })
+                      }
                       codex={{
                         ready: codexReady,
                         hint: codexHint,

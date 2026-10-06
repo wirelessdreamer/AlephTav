@@ -7,6 +7,7 @@ import type {
   ComparisonTable,
   OccurrenceContext,
   Rebuild,
+  Rendering,
   VerseHistory,
   VerseNote,
   WordSuggestions,
@@ -81,6 +82,51 @@ function useRefreshVerse(psalmId: string | null) {
     queryClient.invalidateQueries({ queryKey: ['comparison-table', psalmId] });
     queryClient.invalidateQueries({ queryKey: ['verse-history'] });
   };
+}
+
+/** Statuses a human edit may change in place. */
+const EDITABLE_IN_PLACE = new Set(['draft', 'proposed']);
+
+/**
+ * Save a human edit of a verse's text. Draft and proposed text is edited in place;
+ * reviewed, accepted or canonical text gets a new proposal instead, because that text
+ * only changes through review. Either way the edit is recorded under the editor's name
+ * and leaves the verse's analysis stale until it is run again.
+ */
+export function useSaveVerseText(psalmId: string | null, translationId: string | null) {
+  const refresh = useRefreshVerse(psalmId);
+  return useMutation({
+    mutationFn: ({
+      unitId,
+      renderingId,
+      status,
+      layer,
+      text,
+      editor,
+    }: {
+      unitId: string;
+      renderingId?: string;
+      status: string | null;
+      layer: string;
+      text: string;
+      editor: string;
+    }) =>
+      renderingId && status && EDITABLE_IN_PLACE.has(status)
+        ? patchJson<Rendering>(`/renderings/${renderingId}`, {
+            text,
+            rationale: 'edited in the workbench',
+            created_by: editor,
+          })
+        : postJson<Rendering>(`/units/${unitId}/renderings`, {
+            layer,
+            text,
+            status: 'proposed',
+            rationale: 'edited in the workbench',
+            created_by: editor,
+            translation_id: translationId,
+          }),
+    onSuccess: refresh,
+  });
 }
 
 /** A note belongs to the translation it is written in; null is the psalm's main one. */

@@ -345,6 +345,8 @@ interface Props {
   codex: VerseCodex;
   /** Set while a rebuild of this verse is running. */
   rebuildProgress: RebuildProgress | null;
+  /** Save a human edit of this verse's text; absent when editing is not offered. */
+  onSaveText?: (edit: { layer: 'literal' | 'english'; text: string }) => Promise<unknown>;
 }
 
 /** Quote the reader's selection inside ``element``, or all of it when nothing is selected. */
@@ -416,6 +418,7 @@ export function VerseDetail({
   translationId,
   codex,
   rebuildProgress,
+  onSaveText,
 }: Props) {
   const tokens = row.tokens ?? [];
   const selected = tokens.find((token) => token.token_id === selectedTokenId) ?? null;
@@ -466,6 +469,87 @@ export function VerseDetail({
     }
     return <p className="verse-text">{value}</p>;
   };
+
+  const [editingLayer, setEditingLayer] = useState<'literal' | 'english' | null>(null);
+  const [draftText, setDraftText] = useState('');
+  const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+
+  const saveEdit = async () => {
+    if (!onSaveText || !editingLayer) return;
+    setSaving(true);
+    setSaveError(null);
+    try {
+      await onSaveText({ layer: editingLayer, text: draftText.trim() });
+      setEditingLayer(null);
+    } catch (error) {
+      setSaveError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  /** The text, or the box editing it, for one of the two English-side columns. */
+  const textOrEditor = (layer: 'literal' | 'english', value: string | null, missing: string) => {
+    const renderingId =
+      layer === 'literal' ? row.literal_rendering_ids[0] : row.english_rendering_ids[0];
+    if (editingLayer !== layer) return text(value, renderingId, missing);
+    const status = layer === 'literal' ? row.literal_status : row.english_status;
+    const proposes = !renderingId || !(status === 'draft' || status === 'proposed');
+    return (
+      <div className="verse-edit">
+        <label className="visually-hidden" htmlFor={`edit-${layer}-${unitId}`}>
+          Edit the {layer} text of {row.display_reference}
+        </label>
+        <textarea
+          id={`edit-${layer}-${unitId}`}
+          rows={4}
+          value={draftText}
+          onChange={(event) => setDraftText(event.target.value)}
+        />
+        <p className="verse-notes__hint">
+          {proposes
+            ? 'Saved as a new proposal, because reviewed text only changes through review.'
+            : 'Saved over the current text, which is still a draft.'}{' '}
+          The verse then needs analysing again.
+        </p>
+        <div className="verse-edit__actions">
+          <button
+            type="button"
+            className="btn-primary"
+            disabled={saving || !draftText.trim()}
+            onClick={() => void saveEdit()}
+          >
+            {saving ? 'Saving…' : 'Save'}
+          </button>
+          <button
+            type="button"
+            className="btn-sm"
+            disabled={saving}
+            onClick={() => setEditingLayer(null)}
+          >
+            Cancel
+          </button>
+        </div>
+        {saveError ? <p className="comparison-error">{saveError}</p> : null}
+      </div>
+    );
+  };
+
+  const editButton = (layer: 'literal' | 'english', value: string | null) =>
+    onSaveText && editingLayer !== layer ? (
+      <button
+        type="button"
+        className="btn-sm"
+        onClick={() => {
+          setEditingLayer(layer);
+          setDraftText(value ?? '');
+          setSaveError(null);
+        }}
+      >
+        Edit
+      </button>
+    ) : null;
 
   const openNotes = notes.filter((note) => note.status === 'open').length;
 
@@ -562,14 +646,16 @@ export function VerseDetail({
 
       <div className="verse-columns">
         <div>
-          <h4 className="verse-label">Literal</h4>
-          {text(row.literal_text, row.literal_rendering_ids[0], 'No literal rendering selected')}
+          <h4 className="verse-label">Literal {editButton('literal', row.literal_text)}</h4>
+          {textOrEditor('literal', row.literal_text, 'No literal rendering selected')}
         </div>
         <div>
-          <h4 className="verse-label">{englishLayer.replace(/_/g, ' ')}</h4>
-          {text(
+          <h4 className="verse-label">
+            {englishLayer.replace(/_/g, ' ')} {editButton('english', row.english_text)}
+          </h4>
+          {textOrEditor(
+            'english',
             row.english_text,
-            row.english_rendering_ids[0],
             `No ${englishLayer.replace(/_/g, ' ')} rendering selected`,
           )}
         </div>

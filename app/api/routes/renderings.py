@@ -62,7 +62,10 @@ def create_rendering(unit_id: str, payload: dict) -> dict:
 @router.patch("/renderings/{rendering_id}")
 def patch_rendering(rendering_id: str, payload: dict) -> dict:
     try:
-        return rendering_service.update_rendering(rendering_id, payload)
+        # created_by names the editor in the audit record; it is not a rendering field.
+        request = dict(payload)
+        created_by = str(request.pop("created_by", "api"))
+        return rendering_service.update_rendering(rendering_id, request, created_by=created_by)
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 

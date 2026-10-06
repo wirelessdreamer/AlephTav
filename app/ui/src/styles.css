@@ -4830,6 +4830,26 @@ button.composer-path-chip {
   }
 }
 
+.verse-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.verse-edit textarea {
+  width: 100%;
+  min-height: 5rem;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.5;
+}
+
+.verse-edit__actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
 .batch-report {
   display: flex;
   flex-direction: column;
