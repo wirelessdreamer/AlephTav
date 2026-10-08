@@ -30,7 +30,7 @@ export function PhoneWarnings({ row }: { row: ComparisonTableRow }) {
             △
           </span>
           <span>
-            <strong>{item.kind.replace(/_/g, ' ')}</strong>
+            <strong className="phone-warning__kind">{item.kind.replace(/_/g, ' ')}</strong>
             <br />
             “{item.text}”{item.note ? ` — ${item.note}` : ' adds meaning to the source clause.'}
           </span>
