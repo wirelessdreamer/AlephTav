@@ -42,6 +42,9 @@ export function PhoneCompare({
                 token.token_id === selectedTokenId ? ' phone-token--selected' : ''
               }`}
               aria-pressed={token.token_id === selectedTokenId}
+              aria-label={`Inspect ${token.surface}${
+                token.display_gloss ? `, ${token.display_gloss}` : ''
+              }`}
               onClick={() => onSelectToken(token.token_id)}
             >
               <span className="phone-token__hebrew">{token.surface}</span>

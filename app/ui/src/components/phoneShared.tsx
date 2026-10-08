@@ -56,7 +56,11 @@ export function PhoneWarnings({ row }: { row: ComparisonTableRow }) {
           <span>
             <strong>Not translated yet</strong>
             <br />
-            This verse has no English rendering in this translation.
+            {!row.literal_text && !row.english_text
+              ? 'This verse has neither a literal nor an English rendering here.'
+              : row.literal_text
+                ? 'This verse has no English rendering in this translation.'
+                : 'This verse has no literal rendering to anchor the English.'}
           </span>
         </p>
       ) : null}
