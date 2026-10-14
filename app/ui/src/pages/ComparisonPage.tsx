@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useAppRuntime } from '../app/AppContext';
 import { MoveTranslationDialog } from '../components/MoveTranslationDialog';
+import { PhoneComparison } from '../components/PhoneComparison';
 import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useCollections,
@@ -11,6 +12,7 @@ import {
   useRenameCollection,
   useSetCollectionLicense,
 } from '../hooks/useTranslations';
+import { useIsPhone } from '../hooks/useIsPhone';
 import { usePsalms } from '../hooks/useWorkbench';
 import type { PsalmSummary } from '../types';
 
@@ -43,6 +45,7 @@ function detail(error: Error): string {
  */
 export function ComparisonPage() {
   const { workbenchSelection, updateWorkbenchSelection } = useAppRuntime();
+  const phone = useIsPhone();
   const psalmsQuery = usePsalms();
   const psalms = (psalmsQuery.data ?? []) as PsalmSummary[];
   const collectionsQuery = useCollections();
@@ -100,6 +103,20 @@ export function ComparisonPage() {
 
   const namingError = createCollection.error ?? renameCollection.error;
   const outside = psalms.filter((psalm) => !members.some((m) => m.psalm_id === psalm.psalm_id));
+
+  // A phone reads the same psalm as three screens; project and psalm management
+  // stays on the desktop, where there is room for it.
+  if (phone) {
+    return (
+      <PhoneComparison
+        psalms={psalms}
+        collections={collections}
+        collection={collection}
+        psalmId={psalmId}
+        translationId={translationId}
+      />
+    );
+  }
 
   return (
     <main className="comparison-shell">

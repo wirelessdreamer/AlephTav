@@ -36,13 +36,13 @@ import {
   ImportTranslationDialog,
 } from './ImportTranslationDialog';
 import { loadReviewer } from './arrangementShared';
+import { ACCURACY_RATINGS, RATING_TONE, STATUS_LABELS, VIA_LABELS } from './comparisonLabels';
 import { VerseDetail } from './VerseDetail';
 import { WordSummary, type WordSummaryItem } from './WordSummary';
 import type {
   AccuracyRating,
   ComparisonStatus,
   ComparisonTableRow,
-  CreatedVia,
   ImportResult,
   PsalmAnalysis,
   PsalmAnalysisSection,
@@ -50,48 +50,10 @@ import type {
   SimilarTranslation,
 } from '../types';
 
-const ACCURACY_RATINGS: AccuracyRating[] = [
-  'literal',
-  'very_close',
-  'close',
-  'adapted',
-  'interpretive',
-  'omission',
-  'no_source_basis',
-];
-
-const STATUS_LABELS: Record<ComparisonStatus, string> = {
-  draft: 'Draft',
-  proposed: 'Proposed',
-  reviewed: 'Reviewed',
-  accepted_as_alternate: 'Accepted alternate',
-  canonical: 'Canonical',
-  rejected: 'Rejected',
-  superseded: 'Superseded',
-};
-
-const VIA_LABELS: Record<CreatedVia, string> = {
-  human: 'Human authored',
-  codex: 'Codex suggested',
-  local_model: 'Other local model suggested',
-  deterministic: 'Deterministically composed',
-};
-
 const CLOSENESS_LABELS: Record<SimilarTranslation['closeness'], string> = {
   reproduces: 'reproduced',
   adapts: 'adapted',
   echoes: 'echoed in places',
-};
-
-/** Severity grouping for the row stripe, so fidelity reads before the prose. */
-const RATING_TONE: Record<AccuracyRating, 'close' | 'interpret' | 'caution'> = {
-  literal: 'close',
-  very_close: 'close',
-  close: 'close',
-  adapted: 'interpret',
-  interpretive: 'interpret',
-  omission: 'caution',
-  no_source_basis: 'caution',
 };
 
 function download(filename: string, body: string, mime: string) {
