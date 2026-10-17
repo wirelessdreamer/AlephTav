@@ -204,6 +204,39 @@ def test_non_json_output_is_rejected_without_creating_a_rendering() -> None:
         translation.save_run_candidates(run["run_id"])
 
 
+def test_a_septuagint_claim_without_greek_behind_it_is_rejected() -> None:
+    """The generation path's basis_blur check holds for Codex too."""
+    payload = _valid_payload()
+    payload["candidates"][0]["translation_basis"]["basis_type"] = "septuagint_greek_to_english"
+    client = _client(json.dumps(payload))
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+    run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
+
+    assert run["status"] == translation.RUN_INVALID_OUTPUT
+    assert run["payload"] is None
+    assert [item["path"] for item in run["validation"]] == ["candidates/0"]
+    assert "requires grc" in run["validation"][0]["message"]
+    assert "lxx" in run["validation"][0]["message"]
+    with pytest.raises(ValidationError):
+        translation.save_run_candidates(run["run_id"])
+
+
+def test_a_septuagint_candidate_with_greek_behind_it_completes() -> None:
+    payload = _valid_payload()
+    candidate = payload["candidates"][0]
+    candidate["translation_basis"].update(
+        basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+    )
+    candidate["source_anchor"].update(
+        anchor_text="μακάριος", source_language="grc", source_text="μακάριος ἀνήρ"
+    )
+    client = _client(json.dumps(payload))
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+    run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
+
+    assert run["status"] == translation.RUN_COMPLETED
+
+
 def test_saved_candidates_are_always_proposed_and_carry_codex_provenance() -> None:
     client = _client(json.dumps(_valid_payload()))
     session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID, model="gpt-5")

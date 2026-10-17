@@ -229,6 +229,20 @@ def test_a_passage_reply_that_is_not_json_saves_nothing() -> None:
     assert result["rendering_ids"] == []
 
 
+def test_a_passage_with_an_unbacked_septuagint_claim_saves_nothing() -> None:
+    entry = _entry(UNIT_ID, "lyric")
+    entry["candidates"][0]["translation_basis"]["basis_type"] = "septuagint_greek_to_english"
+    reply = json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": [entry]})
+    client, session_id = _session(PassageTransport(raw_reply=reply))
+
+    result = translation.fill_psalm_passage(client, session_id, "ps001", [UNIT_ID])
+
+    assert result["status"] == translation.RUN_INVALID_OUTPUT
+    assert result["rendering_ids"] == []
+    run = translation.get_run(result["run_ids"][0])
+    assert [item["path"] for item in run["validation"]] == ["units/0/candidates/0"]
+
+
 def test_passage_fill_refuses_units_from_another_psalm() -> None:
     client, session_id = _session(PassageTransport())
 

@@ -289,7 +289,9 @@ function WordTray({
             <dt>{label}</dt>
             <dd lang={key === 'lemma' ? 'he' : undefined}>
               {String(token[key])}
-              {key === 'greek' && token.greek_strong ? ` · G${token.greek_strong}` : null}
+              {key === 'greek' && token.greek_strong
+                ? ` · G${token.greek_strong.replace(/^G/, '')}`
+                : null}
             </dd>
           </div>
         ))}

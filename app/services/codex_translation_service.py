@@ -389,6 +389,29 @@ def get_run(run_id: str) -> dict[str, Any]:
     return run
 
 
+def _septuagint_basis_errors(payload: dict[str, Any]) -> list[dict[str, str]]:
+    """The generation path's ``basis_blur`` check, for candidates claiming a Greek basis.
+
+    Hebrew-basis candidates are not held to it: Codex labels those loosely
+    ("hebrew", unit ids as source ids), and no prompt here asks it for Greek.
+    """
+    if "candidates" in payload:
+        entries = [("", payload)]
+    else:
+        entries = [(f"units/{i}/", item) for i, item in enumerate(payload.get("units", []))]
+    errors: list[dict[str, str]] = []
+    for prefix, entry in entries:
+        for index, candidate in enumerate(entry.get("candidates", [])):
+            basis = candidate["translation_basis"]
+            if basis["basis_type"] != "septuagint_greek_to_english":
+                continue
+            for flag in generation_service._source_basis_drift_flags(
+                basis, candidate["source_anchor"]
+            ):
+                errors.append({"path": f"{prefix}candidates/{index}", "message": flag["message"]})
+    return errors
+
+
 def run_contract_turn(
     client: codex.CodexAppServerClient,
     session_id: str,
@@ -473,6 +496,13 @@ def run_contract_turn(
             for error in errors
         ]
         run["error"] = "Codex output failed the contract."
+        return _save_run(run)
+
+    blurred = _septuagint_basis_errors(payload) if kind == KIND_TRANSLATION else []
+    if blurred:
+        run["status"] = RUN_INVALID_OUTPUT
+        run["validation"] = blurred
+        run["error"] = "Codex output claimed a Septuagint basis it does not carry."
         return _save_run(run)
 
     run["status"] = RUN_COMPLETED
