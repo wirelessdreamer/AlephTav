@@ -15,6 +15,27 @@ const fullSetup = [
   'API:       http://127.0.0.1:43174',
 ];
 
+const walkthrough = [
+  {
+    title: 'Choose your direction before you translate',
+    image: 'translator-briefing.jpg',
+    alt: 'Psalm 26 translator’s briefing with translation questions, saved answers, and Hebrew and Greek reading context.',
+    description: 'Should Psalm 26 open with “judge me” or “vindicate me”? Read the context, choose an answer, and add your notes. Saved answers guide the translation automatically, so you do not have to repeat your decisions in a separate prompt.',
+  },
+  {
+    title: 'Shape the words into a song',
+    image: 'song-arrangement.jpg',
+    alt: 'Psalm 26 in Arrangement, with editable song sections, lyric lines, and source references.',
+    description: 'Work beyond verse boundaries: give a phrase its own line, build stanzas, or bring back a chorus. Keep explanations beside the lines that compress, expand, or depart from the original wording.',
+  },
+  {
+    title: 'Return to the reasons behind a line',
+    image: 'translation-history.jpg',
+    alt: 'Saved Psalm 26 briefing and guidance history, preserving the decisions behind the translation.',
+    description: 'Come back to a draft and see the briefing, answers, and guidance that shaped it. Review the recorded decisions alongside the translation instead of reconstructing why you chose a particular phrase.',
+  },
+];
+
 const workflows = [
   {
     title: 'Brief, decide, translate',
@@ -79,6 +100,45 @@ export function WelcomePage() {
             <li>Projects, imports, exports, and a focused phone view</li>
           </ul>
         </div>
+      </section>
+
+      <section className="welcome-section walkthrough" aria-labelledby="walkthrough-title">
+        <div className="section-heading">
+          <p className="eyebrow">The workbench in action</p>
+          <h2 id="walkthrough-title">See a psalm become a song</h2>
+          <p>Start with a psalm or import a lyric draft. Explore what the words mean, decide how to render them, and shape a singable English setting while keeping its connection to the source. Here is Psalm 26 in the running application.</p>
+          <p className="walkthrough-hint">Select any screenshot to see it at full size.</p>
+        </div>
+        <figure className="walkthrough-feature">
+          <a href="./screenshots/current/source-flow.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge screenshot: Follow a lyric back to its source">
+            <img src="./screenshots/current/source-flow.jpg" width="1265" height="712" alt="Sources view connects Hebrew and Greek words on the left to English lyric lines on the right with colored ribbons and meanings beneath each word." fetchPriority="high" />
+          </a>
+          <figcaption className="workflow-copy">
+            <p className="eyebrow">Read · Compare · Trace</p>
+            <h3>Follow a lyric back to its source</h3>
+            <p>Why does this draft say “I please you in your truth” where the Hebrew speaks of walking? Read both originals with word meanings underneath, then follow the ribbons into the English lyric: this line draws on the Greek. Colors distinguish Hebrew, Greek, and phrases drawing on both. Click a word for closer study; matching lyric lines highlight as you move through the source.</p>
+          </figcaption>
+        </figure>
+        <div className="walkthrough-grid">
+          {walkthrough.map((flow) => (
+            <figure className="walkthrough-card" key={flow.image}>
+              <a href={`./screenshots/current/${flow.image}`} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge screenshot: ${flow.title}`}>
+                <img src={`./screenshots/current/${flow.image}`} width="1265" height="712" alt={flow.alt} loading="lazy" />
+              </a>
+              <figcaption className="workflow-copy">
+                <h3>{flow.title}</h3>
+                <p>{flow.description}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <details className="walkthrough-credits">
+          <summary>About these examples and source credits</summary>
+          <p>These screenshots show a local Psalm 26 draft and its saved study context. Drafts and proposed lexical matches remain subject to review.</p>
+          <p>Hebrew: Tanach.us UXLC/WLC (public domain), with <a href="https://github.com/Clear-Bible/macula-hebrew">MACULA Hebrew</a> word data (CC BY 4.0) and <a href="https://github.com/openscriptures/morphhb">Open Scriptures Hebrew Bible</a> morphology (Open Scriptural Data).</p>
+          <p>Greek: H. B. Swete, <i>The Old Testament in Greek according to the Septuagint</i>, vol. 2 (Cambridge, 1896), Psalms; transcribed from page images by the rahlfs1931-psalter project (CC BY-SA 4.0). Word meanings use <a href="https://www.STEPBible.org">STEP Bible</a>, based on work at Tyndale House Cambridge (TBESG brief Greek definitions and TIPNR names, CC BY 4.0), reformatted and matched to proposed lemmas; and <a href="https://github.com/QuantForgeSoftware/lxx">QuantForgeSoftware/lxx</a> Morpheus analyses of the First1KGreek Swete transcription (CC BY-SA 4.0), matched to local Swete spellings as unreviewed candidates.</p>
+          <p>Additional Greek dictionary context: <i>A Greek-English Lexicon</i>, Liddell, Scott, Jones and McKenzie, Clarendon Press, provided by <a href="https://github.com/PerseusDL/lexica/">Perseus Digital Library</a> with National Endowment for the Humanities funding (CC BY-SA 4.0). Lookup keys convert Beta Code and omit quantity marks; brief English entries and explicit dictionary cross-references are retained as proposed matches. License terms: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+        </details>
       </section>
 
       <section className="welcome-section" id="run-it">

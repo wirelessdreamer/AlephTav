@@ -220,6 +220,30 @@ pre {
   padding: 1rem 1.1rem 1.1rem;
 }
 
+.walkthrough-feature,
+.walkthrough-card {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.45);
+}
+
+.walkthrough-feature { margin-bottom: 1rem; }
+.walkthrough-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.walkthrough img { display: block; width: 100%; height: auto; background: #14120d; }
+.walkthrough a:focus-visible { outline: 3px solid #fbbf24; outline-offset: -3px; }
+.walkthrough .workflow-copy p { line-height: 1.6; }
+.walkthrough-hint { font-size: 0.9rem; }
+.walkthrough-credits { margin-top: 1.25rem; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; }
+.walkthrough-credits summary { cursor: pointer; }
+.walkthrough-credits a { text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .walkthrough-grid { grid-template-columns: 1fr; }
+}
+
 .doc-card {
   display: grid;
   gap: 0.65rem;

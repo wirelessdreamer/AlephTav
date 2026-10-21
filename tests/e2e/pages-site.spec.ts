@@ -11,6 +11,21 @@ for (const width of [1440, 430, 360]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('./');
     await expect(page.getByRole('heading', { name: 'Psalms Copyleft Workbench', exact: true })).toBeVisible();
+    const walkthrough = page.getByRole('region', { name: 'See a psalm become a song', exact: true });
+    await expect(walkthrough).toBeVisible();
+    await expect(walkthrough.getByRole('link', { name: /Enlarge screenshot:/ })).toHaveCount(4);
+    for (const image of await walkthrough.getByRole('img').all()) {
+      await image.scrollIntoViewIfNeeded();
+      await expect(image).toBeVisible();
+      await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(1000);
+      const link = image.locator('..');
+      await expect(link).toHaveAttribute('href', await image.getAttribute('src') ?? '');
+      await expect(link).toHaveAttribute('target', '_blank');
+    }
+    expect(await walkthrough.evaluate(element => {
+      const setup = document.querySelector('#run-it');
+      return setup !== null && Boolean(element.compareDocumentPosition(setup) & Node.DOCUMENT_POSITION_FOLLOWING);
+    })).toBe(true);
     await expect(page.getByRole('heading', { name: 'Brief, decide, translate', exact: true })).toBeVisible();
     await expect(page.getByText(/Lexical lookup resources cover Septuagint and Greek New Testament forms/)).toBeVisible();
     await expect(page.getByRole('button', { name: /Open assistant/ })).toHaveCount(0);
