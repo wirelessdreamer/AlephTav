@@ -1,6 +1,941 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps026.v001.a.0047"
+      ],
+      "citations": [
+        "Supplied Masoretic text and token lists for Psalm 26:1–12.",
+        "Supplied King James Version, American Standard Version, and World English Bible comparison texts.",
+        "[Sefaria, Psalm 26: complete Hebrew text and current JPS English](https://www.sefaria.org/Psalms.26/).",
+        "[Orthodox Study Bible, St. Athanasius Academy Septuagint: Psalm 25, corresponding to MT Psalm 26](https://orthodoxperth.org/files/Reading-Pdf-Recources-/Orthodox-Study-Bible-Old-Testament.pdf).",
+        "[Brenton's Septuagint, Psalm 25, corresponding to MT Psalm 26](https://psalter.app/psalm/25/)."
+      ],
+      "created_at": "2026-10-21T11:47:19.841061+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–2 combine 'Judge me,' the integrity claim, trust in the LORD, and requests for testing.",
+            "claim": "The speaker appeals to God for judgment and examination while asserting integrity and trust."
+          },
+          {
+            "basis": "Verses 4–5 deny sitting or entering with deceitful and wicked people; verse 11 renews the integrity claim.",
+            "claim": "The speaker distinguishes his conduct and associations from those of evildoers."
+          },
+          {
+            "basis": "Verses 6–8 name handwashing, the altar, thanksgiving, God's house, and the dwelling of God's glory.",
+            "claim": "Sanctuary worship is central to the prayer's imagery and desired activity."
+          },
+          {
+            "basis": "Verses 9–10 connect the plea concerning his life with sinners, men of bloodshed, evil schemes, and bribes.",
+            "claim": "The speaker asks not to share the fate of violent and corrupt people."
+          },
+          {
+            "basis": "Verse 11 places the integrity declaration immediately beside 'Redeem me' and 'have mercy on me.'",
+            "claim": "The assertion of integrity coexists with an appeal for divine mercy."
+          },
+          {
+            "basis": "Verse 12 joins standing on level ground with blessing the LORD in assemblies.",
+            "claim": "The ending expresses secure footing and an intention to bless God publicly."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David demonstrably composed the psalm during a particular event.",
+            "why_not": "The heading supplies a traditional attribution without a narrative occasion or independent evidence of authorship."
+          },
+          {
+            "claim": "The speaker is a priest or king performing a specified entrance or purification rite.",
+            "why_not": "The cultic imagery identifies neither an office nor a formal ritual script."
+          },
+          {
+            "claim": "The sanctuary must be Solomon's temple or a particular later building.",
+            "why_not": "House, dwelling, altar, and assemblies do not establish architectural identity or date."
+          },
+          {
+            "claim": "A documented human trial or identifiable group of false accusers prompted the prayer.",
+            "why_not": "The appeal for judgment permits a forensic reading, but no human proceedings, accusations, or named opponents are narrated."
+          },
+          {
+            "claim": "The speaker's entire life was sinless, or rescue has already occurred as a historical event.",
+            "why_not": "The text presents the speaker's claims, petitions, and confidence rather than an independent moral assessment or narrative report of deliverance."
+          },
+          {
+            "claim": "The setting directly borrowed from one identifiable English translation.",
+            "why_not": "Distinctive verbal parallels support resemblance; they do not establish the arranger's sources or working process."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.862ae8561fea",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Handwashing, circling God's altar, God's house and glorious dwelling, thanksgiving, and assemblies imply sanctuary worship (verses 6–8, 12). The text does not identify a particular sanctuary building, festival, priestly office, or prescribed ceremony.",
+        "heading_attribution": "'Of David' renders the received heading לְדָוִד and preserves its traditional Davidic attribution or association. It does not independently establish David's authorship, the speaker's historical identity, a date, or a particular episode."
+      },
+      "method": "The preceding verse-level backbones were checked against the supplied Hebrew forms and syntax, then considered across the complete psalm. The complete Hebrew was also checked in Sefaria; its verse 2 includes the refining verb omitted from the earlier displayed Hebrew line but present in that unit's token list. Psalm 26 has no internal Selah or comparable explicit section marker; the sections above are analytical divisions, with no supplied chorus or performance labels. Translation comparisons distinguish shared biblical vocabulary from more diagnostic choices. KJV was compared but is not separately listed below because its overlaps here do not distinguish it from the broader translation tradition. Recalled resemblances do not establish borrowing.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps026.0001",
+      "psalm_id": "ps026",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Opens with confidence submitted to scrutiny. The lyric's 'I please you' changes the Hebrew's description of walking in God's truth.",
+          "first_verse": 1,
+          "last_verse": 3,
+          "theme": "Appeal for judgment and testing, grounded in integrity, trust, and God's faithful love.",
+          "title": "Integrity and examination"
+        },
+        {
+          "arc_note": "Gives social expression to the opening claim of integrity through repeated refusals to sit or enter with evildoers.",
+          "first_verse": 4,
+          "last_verse": 5,
+          "theme": "Refusal to associate with deceitful and wicked people.",
+          "title": "Rejected company"
+        },
+        {
+          "arc_note": "Turns from rejected gatherings to desired worship. Verses 6–7 form a connected action-and-purpose sequence; verse 8 declares attachment to the sanctuary.",
+          "first_verse": 6,
+          "last_verse": 8,
+          "theme": "Washing, movement around the altar, thanksgiving, and love for God's dwelling.",
+          "title": "Altar and beloved sanctuary"
+        },
+        {
+          "arc_note": "The earlier refusal of their company becomes a plea not to share their fate. Verse 10 continues verse 9 by describing their wrongdoing.",
+          "first_verse": 9,
+          "last_verse": 10,
+          "theme": "Prayer against being taken away with violent and corrupt people.",
+          "title": "Rescue from the wicked's fate"
+        },
+        {
+          "arc_note": "Returns to the opening claim while retaining the need for redemption. The final gathering of worshipers contrasts with the evildoers' gathering in verse 5.",
+          "first_verse": 11,
+          "last_verse": 12,
+          "theme": "Renewed integrity, dependence on mercy, secure footing, and congregational praise.",
+          "title": "Mercy and public blessing"
+        }
+      ],
+      "similar_translations": [
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "Closest among the supplied comparators: MT verse 4 shares 'deceitful men'; verse 7 shares 'all your wondrous deeds'; verse 9 combines 'my soul' with 'bloodthirsty men.' Verse 1 also associates unwaveringness directly with trust.",
+          "translation": "World English Bible"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "A diagnostic cluster occurs at MT verses 3, 6–8: pleasing God in truth, washing 'among the innocent,' hearing praise, and the house's beauty. These resemble Septuagint-based wording, although the setting rephrases them. [Comparison text](https://orthodoxperth.org/files/Reading-Pdf-Recources-/Orthodox-Study-Bible-Old-Testament.pdf).",
+          "translation": "Orthodox Study Bible — St. Athanasius Academy Septuagint"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "MT verses 1 and 11 repeat the distinctive 'walk without blame'; verse 11 also closely follows its compact sequence of integrity, redemption, and mercy. Verse 12 similarly uses plural feet with level ground.",
+          "translation": "JPS Tanakh (1985)"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "MT verse 2 makes the fire imagery explicit; verse 7 shares the listener's role, 'to hear'; verse 8 introduces beauty. Verse 3 also resembles its pleasure-and-truth wording, but changes who is pleased. [Comparison text](https://psalter.app/psalm/25/).",
+          "translation": "Brenton's English Septuagint"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "At MT verse 1, 'never wavers' resembles the ASV's attachment of 'without wavering' to trusting in God, rather than the KJV's separate assurance that the speaker will not slide. This resemblance is also shared with the WEB.",
+          "translation": "American Standard Version"
+        }
+      ],
+      "source_fingerprint": "e70bc22e89b10c038b395dbaa3dfa2e99c18264dcac60251d74d394e4af89925",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting makes the psalm a compact, colloquial prayer, using short lines and contractions. It moves from integrity and divine examination through rejection of corrupt company to devotion at the altar, then asks for rescue and mercy before ending in public blessing. Repeated 'walk without blame' links verses 1 and 11. The broad movement survives, although verses 3 and 6–8 introduce significant departures from the Masoretic wording: pleasing God, washing among innocent people, hearing thanksgiving, and loving the sanctuary's beauty.",
+      "translation_id": "tr.ps026.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps026.0001",
+      "audit_ids": [
+        "aud.ps026.v001.a.0045"
+      ],
+      "created_at": "2026-10-20T23:13:33.793547+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.44cca90d3467",
+      "guidance": "target a 6/8 meter",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v1",
+      "psalm_id": "ps026",
+      "sections": [
+        {
+          "kind": "other",
+          "label": "Heading (not sung; setting in 6/8, with pickups and held notes)",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v001.t001"
+                  ],
+                  "unit_id": "ps026.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0001",
+              "rationale": "",
+              "text": "Of David"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v001.t002",
+                    "ps026.v001.t003"
+                  ],
+                  "unit_id": "ps026.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "Judge me, O LORD,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v001.t004",
+                    "ps026.v001.t005",
+                    "ps026.v001.t006",
+                    "ps026.v001.t007"
+                  ],
+                  "unit_id": "ps026.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "for I walk without blame."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v001.t008",
+                    "ps026.v001.t009"
+                  ],
+                  "unit_id": "ps026.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0004",
+              "rationale": "",
+              "text": "And my trust in the LORD"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v001.t010",
+                    "ps026.v001.t011"
+                  ],
+                  "unit_id": "ps026.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "never wavers."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v002.t001",
+                    "ps026.v002.t002"
+                  ],
+                  "unit_id": "ps026.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "Examine me, O LORD,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v002.t003"
+                  ],
+                  "unit_id": "ps026.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "and put me to proof."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v002.t004"
+                  ],
+                  "unit_id": "ps026.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Makes purification by fire explicit from the supplied refining token, whose verb is absent from the displayed Hebrew verse.",
+              "text": "Refine in the fire"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v002.t005",
+                    "ps026.v002.t006"
+                  ],
+                  "unit_id": "ps026.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0009",
+              "rationale": "Interprets kidneys and heart as inward desires and thoughts, following the saved decision rather than the shifted supplied glosses.",
+              "text": "my desires and thoughts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v003.t001",
+                    "ps026.v003.t002"
+                  ],
+                  "unit_id": "ps026.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0010",
+              "rationale": "",
+              "text": "For your faithful love"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v003.t003",
+                    "ps026.v003.t004"
+                  ],
+                  "unit_id": "ps026.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "is before my eyes;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v003.t005",
+                    "ps026.v003.t006"
+                  ],
+                  "unit_id": "ps026.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Follows Greek Psalm 25:3 by replacing Hebrew walking with pleasing in God's truth, retaining the requested present tense; Greek departures throughout this proposed setting require review and derive from lxx and swete1896, source_version swete1896:r0001:edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e (attribution: H. B. Swete, The Old Testament in Greek according to the Septuagint, vol. 2 (Cambridge, 1896), Psalms; transcribed from page images by the rahlfs1931-psalter project, licensed CC BY-SA 4.0).",
+              "text": "and I please you in your truth."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v004.t001",
+                    "ps026.v004.t002"
+                  ],
+                  "unit_id": "ps026.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "I do not sit"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v004.t003",
+                    "ps026.v004.t004",
+                    "ps026.v004.t005"
+                  ],
+                  "unit_id": "ps026.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "with deceitful men;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v004.t006",
+                    "ps026.v004.t008",
+                    "ps026.v004.t009"
+                  ],
+                  "unit_id": "ps026.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "and I do not enter"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v004.t006",
+                    "ps026.v004.t007"
+                  ],
+                  "unit_id": "ps026.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0016",
+              "rationale": "",
+              "text": "with pretenders."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v005.t001",
+                    "ps026.v005.t002"
+                  ],
+                  "unit_id": "ps026.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "I hate the gathering"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v005.t003"
+                  ],
+                  "unit_id": "ps026.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "of evildoers;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v005.t004",
+                    "ps026.v005.t006",
+                    "ps026.v005.t007"
+                  ],
+                  "unit_id": "ps026.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0019",
+              "rationale": "",
+              "text": "and I do not sit"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v005.t004",
+                    "ps026.v005.t005"
+                  ],
+                  "unit_id": "ps026.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "with the wicked."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v006.t001",
+                    "ps026.v006.t003"
+                  ],
+                  "unit_id": "ps026.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "I wash my hands"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v006.t002"
+                  ],
+                  "unit_id": "ps026.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "Follows Greek Psalm 25:6 by locating the washing among innocent people rather than rendering the Hebrew abstract phrase 'in innocence'.",
+              "text": "among the innocent,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v006.t004",
+                    "ps026.v006.t005",
+                    "ps026.v006.t006",
+                    "ps026.v006.t007"
+                  ],
+                  "unit_id": "ps026.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "and I circle your altar, O LORD,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v007.t001",
+                    "ps026.v007.t002",
+                    "ps026.v007.t003"
+                  ],
+                  "unit_id": "ps026.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0024",
+              "rationale": "Follows Greek Psalm 25:7 by making hearing the purpose instead of Hebrew making heard, and explicitly interprets the thanksgiving voice as a song.",
+              "text": "to hear a thanksgiving song"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v007.t004",
+                    "ps026.v007.t005"
+                  ],
+                  "unit_id": "ps026.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "and tell of all"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v007.t006"
+                  ],
+                  "unit_id": "ps026.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0026",
+              "rationale": "",
+              "text": "your wondrous deeds."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v008.t001",
+                    "ps026.v008.t002"
+                  ],
+                  "unit_id": "ps026.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "O LORD, I love"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v008.t003",
+                    "ps026.v008.t004"
+                  ],
+                  "unit_id": "ps026.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "Follows Greek Psalm 25:8 by rendering beauty instead of Hebrew habitation, and identifies the house as the temple as directed.",
+              "text": "your temple's beauty"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v008.t005"
+                  ],
+                  "unit_id": "ps026.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0029",
+              "rationale": "",
+              "text": "and the place"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v008.t006",
+                    "ps026.v008.t007"
+                  ],
+                  "unit_id": "ps026.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "where your splendor dwells."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v009.t001",
+                    "ps026.v009.t002",
+                    "ps026.v009.t005"
+                  ],
+                  "unit_id": "ps026.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "Do not sweep my soul"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v009.t002",
+                    "ps026.v009.t003",
+                    "ps026.v009.t004"
+                  ],
+                  "unit_id": "ps026.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "Makes death explicit as the meaning of being swept away, following the saved interpretation of the Hebrew gathering image.",
+              "text": "to death with sinners,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v009.t001",
+                    "ps026.v009.t006",
+                    "ps026.v009.t009"
+                  ],
+                  "unit_id": "ps026.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0033",
+              "rationale": "",
+              "text": "nor my life"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v009.t006",
+                    "ps026.v009.t007",
+                    "ps026.v009.t008"
+                  ],
+                  "unit_id": "ps026.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0034",
+              "rationale": "",
+              "text": "with bloodthirsty men,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v010.t001",
+                    "ps026.v010.t002",
+                    "ps026.v010.t003"
+                  ],
+                  "unit_id": "ps026.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0035",
+              "rationale": "",
+              "text": "whose hands hold evil schemes,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v010.t004",
+                    "ps026.v010.t005",
+                    "ps026.v010.t006"
+                  ],
+                  "unit_id": "ps026.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0036",
+              "rationale": "",
+              "text": "and whose right hand is full of bribes."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v011.t001",
+                    "ps026.v011.t002",
+                    "ps026.v011.t003"
+                  ],
+                  "unit_id": "ps026.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "But I walk without blame."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v011.t004"
+                  ],
+                  "unit_id": "ps026.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "Redeem me,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v011.t005"
+                  ],
+                  "unit_id": "ps026.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "and have mercy on me."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v012.t001",
+                    "ps026.v012.t002"
+                  ],
+                  "unit_id": "ps026.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0040",
+              "rationale": "",
+              "text": "My foot stands"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v012.t003"
+                  ],
+                  "unit_id": "ps026.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0041",
+              "rationale": "",
+              "text": "on level ground."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v012.t004"
+                  ],
+                  "unit_id": "ps026.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0042",
+              "rationale": "Identifies the plural assemblies as gatherings of worshipers, preserving their contrast with the gathering of evildoers.",
+              "text": "In assemblies of worshipers"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps026.v012.t005",
+                    "ps026.v012.t006"
+                  ],
+                  "unit_id": "ps026.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0043",
+              "rationale": "",
+              "text": "I will bless the LORD."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 26 — Judge Me, O LORD",
+      "translation_id": "tr.ps026.0001",
+      "updated_at": "2026-10-20T23:13:33.793547+00:00"
+    }
+  ],
   "psalm_id": "ps026",
   "title": "Psalm 26",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps026.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-10-20T00:25:29.900498+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target a 6/8 meter",
+      "psalm_id": "ps026",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps026.0001"
+    }
+  ],
   "unit_ids": [
     "ps026.v001.a",
     "ps026.v002.a",

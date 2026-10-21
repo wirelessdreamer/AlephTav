@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v007.a.lyric.alt.0001"
+    "rnd.ps008.v007.a.lyric.alt.0001",
+    "rnd.ps008.v007.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v007.a.0001",
-    "aud.ps008.v007.a.0002"
+    "aud.ps008.v007.a.0002",
+    "aud.ps008.v007.a.0003",
+    "aud.ps008.v007.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:26:40.848955+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3f533176d5647fda221c278bcb3d58a0cfd1b55097383cded19e1c8177b73f0d",
+      "audit_id": "aud.ps008.v007.a.0003",
+      "before_hash": "6d68803fb18275662a55adc5dd442f6201d737f0b56bbd4947cf77a6eee585de",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.508120+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v007.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4816124545ce8bf32ddad855f30e2b26975c5e5369fac3ac5681adeca0eb817d",
+      "audit_id": "aud.ps008.v007.a.0004",
+      "before_hash": "0a8867509d87f38135bca7ef147227df6eb5cc4655f4bcadd3b684d861b22ef4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:03:04.796714+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v007.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -74,6 +109,49 @@
       "translation_id": "tr.ps008.0001",
       "unit_id": "ps008.v007.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "The English preserves God granting human rule over the works of his hands and placing everything beneath human feet.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "5a30ec3b0df98327703d6ba3955cfa0631c4b119db8e2fc34dfd8fa2b21708df",
+      "audit_ids": [
+        "aud.ps008.v007.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v007.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The Hebrew's generic singular “him” and “his” become inclusive “us” and “our.” “Gave” presents the granting of dominion as past action, where the Hebrew uses an imperfect verb.",
+      "display_reference": "Psalm 8:7",
+      "english_rendering_id": "rnd.ps008.v007.a.lyric.alt.0002",
+      "generation_run_id": "cxr.0053693f247a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תַּ֭מְשִׁילֵהוּ בְּמַעֲשֵׂ֣י יָדֶ֑יךָ כֹּ֝ל שַׁ֣תָּה תַֽחַת־רַגְלָֽיו׃",
+      "literal_backbone": [
+        "You make him rule over the works of your hands;",
+        "everything you have put under his feet."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:7",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "cause to rule, give dominion",
+          "note": "The expression preserves the causative sense of granting rule while changing the generic third-person singular to first-person plural and choosing past tense.",
+          "rendered_as": "You gave us dominion",
+          "token_ids": [
+            "ps008.v007.t001"
+          ],
+          "transliteration": "tamšîlēhû",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -174,6 +252,104 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.66,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v007.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You gave us dominion\nOver works of Your hands\nYou placed all things\nUnder our feet",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v007.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

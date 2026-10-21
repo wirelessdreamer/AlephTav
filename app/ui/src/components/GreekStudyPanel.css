@@ -1,0 +1,8 @@
+.greek-study { padding: 1rem; border: 1px solid var(--border, #888); border-radius: .5rem; margin: 1rem; overflow-wrap: anywhere; }
+.greek-study label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .5rem; }
+.greek-study button, .greek-study select { min-height: 44px; max-width: 100%; white-space: normal; }
+.greek-study button:focus-visible, .greek-study select:focus-visible { outline: 3px solid #397aab; outline-offset: 2px; }
+.greek-study__tokens { display: flex; flex-wrap: wrap; gap: .35rem; font-size: 1.2rem; }
+.greek-study__card { padding: 1rem; border: 2px solid var(--border, #888); border-radius: .5rem; }
+.greek-study__card section { margin-block: .75rem; }
+.greek-study__attribution { font-size: .9rem; }

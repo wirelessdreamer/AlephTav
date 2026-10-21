@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v012.a.literal.alt.0001",
-    "rnd.ps025.v012.a.lyric.alt.0001"
+    "rnd.ps025.v012.a.lyric.alt.0001",
+    "rnd.ps025.v012.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v012.a.0001",
     "aud.ps025.v012.a.0002",
     "aud.ps025.v012.a.0003",
-    "aud.ps025.v012.a.0004"
+    "aud.ps025.v012.a.0004",
+    "aud.ps025.v012.a.0005",
+    "aud.ps025.v012.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "935ffc59da91b8d043a5735711badde3563e4be0ac08d33293c7e49d54105fef",
+      "audit_id": "aud.ps025.v012.a.0005",
+      "before_hash": "321916d7f50dbaafb946ba5423e1620b1aaaa5d4f31344172d1c2aecfb04516d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.814251+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v012.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Closes this passage with the source question and returns to instruction through the path image.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f659803bb2a8b34db600bea7921ca296687d39eb07b3c990ff4ae8d3e2a14337",
+      "audit_id": "aud.ps025.v012.a.0006",
+      "before_hash": "a04449659d4030568b58a5608cf60ca7b2036421e30c5e048d11a8060afa3a60",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:32:45.474324+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v012.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v012.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the question about fearing Yahweh, divine instruction of that person, and the path image. 'One' and singular 'them' convey the Hebrew masculine reference generically.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "215f91a68398063caede3947a632be321fb0fbc4323789242f3f2edac9a2e4cf",
+      "audit_ids": [
+        "aud.ps025.v012.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v012.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Renders instruction as 'showing' and interprets the final clause as guidance about which path the recipient should choose.",
+      "display_reference": "Psalm 25:12",
+      "english_rendering_id": "rnd.ps025.v012.a.lyric.alt.0002",
+      "generation_run_id": "cxr.808801b1c2e0",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִי־זֶ֣ה הָ֭אִישׁ יְרֵ֣א יְהוָ֑ה י֝וֹרֶ֗נּוּ בְּדֶ֣רֶךְ יִבְחָֽר׃",
+      "literal_backbone": [
+        "Who is the man who fears Yahweh?",
+        "He will instruct him in the way he chooses."
+      ],
+      "literal_rendering_id": "rnd.ps025.v012.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:12",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v012.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "choose, select",
+          "note": "The English makes the instructed person the chooser. The Hebrew third-person masculine singular verb can refer to that person or to Yahweh.",
+          "rendered_as": "to choose",
+          "token_ids": [
+            "ps025.v012.t008"
+          ],
+          "transliteration": "yiḇḥār",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -326,6 +404,140 @@
       "unit_id": "ps025.v012.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; two longer phrases spanning two measures each.",
+      "differentiator": "Question answered through the recurring path image",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        },
+        {
+          "code": "chooser_ambiguity",
+          "confidence": 0.96,
+          "message": "The English presents the instructed person as choosing; the Hebrew can also be understood as referring to the way God chooses.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.14,
+        "stress_approximation": 0.57,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Choosing a path",
+          "note": "Retains the road and the act of choosing.",
+          "source_id": "ps025.v012.a",
+          "token_ids": [
+            "ps025.v012.t007",
+            "ps025.v012.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v012.t001–t005 → Who is the one who fears the LORD",
+          "ps025.v012.t006–t008 → He'll show them which path to choose"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v012.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Closes this passage with the source question and returns to instruction through the path image.",
+      "rendering_id": "rnd.ps025.v012.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "י֝וֹרֶ֗נּוּ בְּדֶ֣רֶךְ יִבְחָֽר",
+        "basis_note": "Supplied Hebrew; the chooser is interpretively ambiguous.",
+        "source_language": "Hebrew",
+        "source_text": "י֝וֹרֶ֗נּוּ בְּדֶ֣רֶךְ יִבְחָֽר",
+        "token_ids": [
+          "ps025.v012.t006",
+          "ps025.v012.t007",
+          "ps025.v012.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who is the one who fears the LORD?\nHe'll show them which path to choose.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v012.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v012.a",
+      "variation_basis": [
+        "Question and answering promise",
+        "Return to the path motif"
       ]
     }
   ],

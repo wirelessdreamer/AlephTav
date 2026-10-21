@@ -1,6 +1,149 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps121.v001.a.0005"
+      ],
+      "citations": [],
+      "created_at": "2026-10-07T12:17:28.554015+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verse 1 asks where aid will come from; verse 2 answers with the LORD and the making of heavens and earth.",
+            "claim": "Aid is attributed to the LORD as creator, not explicitly to the mountains."
+          },
+          {
+            "basis": "My eyes and my aid in verses 1–2 give way to singular possessive and object suffixes in verses 3–8.",
+            "claim": "The grammatical perspective changes from first-person speech to address of a singular you."
+          },
+          {
+            "basis": "Verse 3 renders the two al-plus-jussive constructions with may ... not; verse 4 renders the lo-negated clauses as doesn't doze, doesn't sleep.",
+            "claim": "The setting distinguishes wishes from declarations."
+          },
+          {
+            "basis": "Forms of shamar occur in verses 3, 4, 5, twice in verse 7, and again in verse 8; the English consistently uses guard.",
+            "claim": "Guarding is the central repeated action."
+          },
+          {
+            "basis": "Day/night in verse 6, all harm and life in verse 7, and going out/coming in plus now and forever in verse 8.",
+            "claim": "The closing assurances express comprehensive scope through paired images and duration."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "The author's identity, date, or particular historical journey.",
+            "why_not": "Neither the heading nor the body supplies these details."
+          },
+          {
+            "claim": "The mountains are a specific sacred site or a place of hostile worship.",
+            "why_not": "The mountains are unnamed, and the question does not explain their significance."
+          },
+          {
+            "claim": "A priest, pilgrim, or choir necessarily takes over at verse 3.",
+            "why_not": "The pronoun shift permits dialogue or responsive performance but supplies no speaker labels."
+          },
+          {
+            "claim": "The moon line identifies a particular illness, supernatural agent, or physical mechanism.",
+            "why_not": "Verse 6 names the moon and striking without explaining how harm would occur."
+          },
+          {
+            "claim": "Life and forever establish a doctrine of an immortal soul or the afterlife.",
+            "why_not": "Nephesh and the duration formula support the person's life and enduring protection without specifying such doctrines."
+          },
+          {
+            "claim": "The written lyric establishes an exact 6/8 realization.",
+            "why_not": "No melody, note durations, or bar divisions accompany the English. Short lines can support that musical intention but do not demonstrate it."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.379cab4dfda5",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The heading, mountains, footing, and going out/coming in are compatible with travel and pilgrimage. The language supports a song of trust and protective blessing, but does not name Jerusalem, a temple, a festival, a sacrifice, or a priest. A particular pilgrimage ceremony or antiphonal ritual remains a reconstruction.",
+        "heading_attribution": "A song for the ascents renders the received heading within Masoretic verse 1. It designates a song associated with ascents but names no author, dedicatee, historical occasion, or instrument. It does not attribute the psalm to David or establish any traditional account of its origin."
+      },
+      "method": "Compared the complete setting with the supplied Hebrew, token morphology, and literal baselines from the preceding verse audits. The literal backbone preserves the question/answer movement, negative wishes in verse 3, repeated guarding vocabulary, concrete images, and temporal pairs. The four sections are analytical divisions; no arrangement section names were supplied. Psalm 121 has no Selah or comparable explicit internal pause marker, so structural_seams is empty. Translation resemblances are limited echoes, not claims of dependence; recalled wording was not externally checked.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps121.0001",
+      "psalm_id": "ps121",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The heading precedes lifted eyes and an unresolved question; the repeated aid connects the answer to the LORD, maker of heavens and earth. This is an analytical section label, not supplied arrangement apparatus.",
+          "first_verse": 1,
+          "last_verse": 2,
+          "theme": "The source of aid.",
+          "title": "Opening: question and answer"
+        },
+        {
+          "arc_note": "The address shifts to you. Repeated may preserves the wishes, followed by a declaration about Israel's guard; doze links the two verses.",
+          "first_verse": 3,
+          "last_verse": 4,
+          "theme": "Secure footing and an unsleeping guardian.",
+          "title": "Wishes and assurance"
+        },
+        {
+          "arc_note": "Repeated LORD identifies the guardian and shade. The sun/moon pair develops the protection image; repeating won't strike you makes the Hebrew's elliptical second clause fully explicit.",
+          "first_verse": 5,
+          "last_verse": 6,
+          "theme": "Protection at hand through day and night.",
+          "title": "Guard and shade"
+        },
+        {
+          "arc_note": "Matching LORD will guard you openings broaden the assurance from particular images to all harm, the person's life, outward and inward movement, and unlimited duration.",
+          "first_verse": 7,
+          "last_verse": 8,
+          "theme": "Life, movement, and enduring protection.",
+          "title": "Comprehensive keeping"
+        }
+      ],
+      "similar_translations": [
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "MT verses 3 and 7 share the choices “foot slip,” “all harm,” and “life.” This cluster is more distinctive than generic protection language; the setting differs by retaining wishes in verse 3 and consistently using guard.",
+          "translation": "New International Version"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "MT verse 1 combines mountains with an explicit question about where aid will come from, unlike the supplied KJV's hills and relative-clause presentation. The setting substantially modernizes the wording.",
+          "translation": "American Standard Version"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "MT verses 1–2 share the separate, conversational source question followed by a comes-from-the-LORD answer and a who-made clause. The resemblance is local and modest; mountains, aid, guard, the verse 3 wishes, and the harm/life pairing distinguish this setting.",
+          "translation": "World English Bible"
+        }
+      ],
+      "source_fingerprint": "ef51a38176264ddc06d49d79d7fb21dee48d0dbc2093d41b5439d55d6d433229",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting moves from a first-person question about aid to an answer naming the LORD as creator, then turns toward a singular addressee. Verse 3 retains two wishes rather than converting them into predictions; verse 4 answers with assurance. Repeated guard/guarding language binds the remaining movement together: protection beside the person, through day and night, against harm, and throughout outward and inward movement, now and forever. Concrete mountains, foot, shade, right hand, sun, and moon remain visible. Contractions and short lines modernize the diction. The main interpretive choices are harm for the broader evil/adversity term, life for nephesh, and guarding the person during movement rather than grammatically guarding the movements themselves.",
+      "translation_id": "tr.ps121.0001"
+    }
+  ],
   "psalm_id": "ps121",
   "title": "Psalm 121",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps121.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-10-07T11:58:54.574250+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target 6/8 meter. the translation of ezer to helper is weak and looses meaning of the hebrew, do not use that generic translation",
+      "psalm_id": "ps121",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps121.0001"
+    }
+  ],
   "unit_ids": [
     "ps121.v001.a",
     "ps121.v002.a",

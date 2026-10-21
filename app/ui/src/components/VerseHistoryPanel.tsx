@@ -1,19 +1,22 @@
 import { useVerseHistory } from '../hooks/useComparisonAssessments';
+import { RequestStatus } from './RequestStatus';
 import { Diff } from './RebuildReview';
 import { layerLabel, shortTime } from './verseActions';
+import { TranslationContextDetails, TranslationContextHistory } from './TranslationContextHistory';
 
 const STATUS_LABEL = { pending: 'Waiting for a decision', accepted: 'Kept', discarded: 'Discarded' };
 
 /** Everything that happened to a verse, newest first, with each rebuild's changes. */
-export function VerseHistoryPanel({ unitId }: { unitId: string }) {
-  const { data, isLoading, error } = useVerseHistory(unitId);
-  if (isLoading) return <p className="verse-notes__hint">Loading history…</p>;
-  if (error) return <p className="comparison-error">{String(error)}</p>;
+export function VerseHistoryPanel({ unitId, translationId }: { unitId: string; translationId: string | null }) {
+  const { data, isLoading, error, refetch } = useVerseHistory(unitId, translationId);
+  if (isLoading || error) return <RequestStatus loading={isLoading} error={error}
+    label={isLoading ? 'Loading history…' : 'Could not load history.'} onRetry={() => void refetch()} />;
   if (!data) return null;
 
   return (
     <div className="verse-history">
       <section aria-label="History">
+        {data.events.length === 0 ? <p className="verse-notes__hint">No verse history recorded yet.</p> : null}
         <ol className="verse-history__timeline">
           {data.events.map((event) => (
             <li key={event.audit_id}>
@@ -30,6 +33,17 @@ export function VerseHistoryPanel({ unitId }: { unitId: string }) {
             </li>
           ))}
         </ol>
+        <TranslationContextHistory events={data.translation_history ?? []} />
+        <section className="translation-context-history" aria-label="Context used for translations">
+          <h4>Context used for each translation</h4>
+          {data.translation_contexts?.map(item => <details key={item.rendering_id}>
+            <summary>{layerLabel(item.layer)} · {shortTime(item.created_at)} · {item.rendering_id}</summary>
+            {!item.complete ? <p>Only guidance was recorded for this older rendering.</p> : null}
+            <TranslationContextDetails event={{ ...item.context, kind: 'guidance',
+              audit_id: '', created_at: item.created_at, created_by: '', summary: '' }} />
+            <p className="basis">History: {item.context.history_ids.join(', ') || 'No linked history recorded.'}</p>
+          </details>)}
+        </section>
       </section>
 
       <aside className="verse-history__rebuilds" aria-label="Rebuilds">

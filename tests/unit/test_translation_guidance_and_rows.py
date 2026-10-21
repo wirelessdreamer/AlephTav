@@ -10,7 +10,8 @@ import pytest
 
 from app.services import codex_app_server_service as codex
 from app.services import codex_translation_service as translation
-from app.services import comparison_assessment_service, registry_service
+from app.services import collections_service, comparison_assessment_service, registry_service
+from app.services import psalm_translations_service as translations
 
 UNIT_ID = "ps001.v001.a"
 
@@ -261,3 +262,64 @@ def test_row_fill_uses_the_psalm_guidance() -> None:
     translation.fill_comparison_row(client, session["session_id"], UNIT_ID)
 
     assert all("Render YHWH as 'the LORD'." in prompt for prompt in client.transport.prompts())
+
+
+def test_rows_say_whether_their_english_was_made_under_the_guidance_saved_now() -> None:
+    project = collections_service.create_collection("Guidance check")
+    translation_id = translations.create_translation(
+        "ps001", "Guidance check", project["collection_id"]
+    )["translation_id"]
+
+    def english_guidance() -> str | None:
+        table = comparison_assessment_service.build_comparison_table(
+            "ps001", translation_id=translation_id
+        )
+        return next(row for row in table["rows"] if UNIT_ID in row["unit_ids"])["english_guidance"]
+
+    translation.set_guidance("ps001", "Short lines.", translation_id)
+    client = _client()
+    session = translation.create_session(
+        client, psalm_id="ps001", unit_id=UNIT_ID, translation_id=translation_id
+    )
+    translation.fill_comparison_row(client, session["session_id"], UNIT_ID)
+    assert english_guidance() == "current"
+
+    translation.set_guidance("ps001", "Target 6/8 meter.", translation_id)
+    assert english_guidance() == "changed"
+
+
+def test_english_made_before_guidance_was_recorded_is_not_judged() -> None:
+    assert comparison_assessment_service._guidance_state(["Short lines.", None], "x") is None
+    assert comparison_assessment_service._guidance_state([], "x") is None
+
+
+def test_rendering_keeps_context_from_run_start_when_guidance_changes_in_flight() -> None:
+    from app.services import translation_context_service, verse_notes_service
+
+    class ChangingTransport(ScriptedTransport):
+        def send(self, message: dict[str, Any]) -> None:
+            super().send(message)
+            if message.get("method") == "turn/start":
+                translation.set_guidance("ps001", "Changed while generating.")
+
+    translation.set_guidance("ps001", "Guidance sent to the model.")
+    before_ids = [event["audit_id"] for event in translation_context_service.history("ps001")]
+    client = codex.CodexAppServerClient(transport=ChangingTransport())
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+    run = translation.run_translation_turn(
+        client, session["session_id"], UNIT_ID, "lyric", candidate_count=1
+    )
+    rendering = translation.save_run_candidates(run["run_id"])[0]
+
+    assert rendering["provenance"]["guidance"] == "Guidance sent to the model."
+    context = rendering["provenance"]["translation_context"]
+    assert context["guidance"] == "Guidance sent to the model."
+    assert context["history_ids"] == before_ids
+    assert translation.get_guidance("ps001") == "Changed while generating."
+    history = verse_notes_service.verse_history(UNIT_ID)
+    saved = next(
+        item
+        for item in history["translation_contexts"]
+        if item["rendering_id"] == rendering["rendering_id"]
+    )
+    assert saved["context"] == context

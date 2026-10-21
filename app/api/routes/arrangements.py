@@ -43,6 +43,7 @@ def create_arrangement(psalm_id: str, payload: dict) -> dict:
 
 @router.get(BASE + "/{arrangement_id}")
 def get_arrangement(psalm_id: str, arrangement_id: str) -> dict:
+    """Read the setting with MT coverage and verified edition-mapped Greek sources."""
     try:
         return arrangements.arrangement_view(psalm_id, arrangement_id)
     except Exception as error:

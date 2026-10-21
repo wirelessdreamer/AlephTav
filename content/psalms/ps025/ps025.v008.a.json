@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v008.a.literal.alt.0001",
-    "rnd.ps025.v008.a.lyric.alt.0001"
+    "rnd.ps025.v008.a.lyric.alt.0001",
+    "rnd.ps025.v008.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v008.a.0001",
     "aud.ps025.v008.a.0002",
     "aud.ps025.v008.a.0003",
-    "aud.ps025.v008.a.0004"
+    "aud.ps025.v008.a.0004",
+    "aud.ps025.v008.a.0005",
+    "aud.ps025.v008.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "992804a530e4467bf7b8aadc664c42355493ab8fbd0a53d174d286ccc2787f28",
+      "audit_id": "aud.ps025.v008.a.0005",
+      "before_hash": "6027d3f8586d8047523c3945f70dd73f5b8eb745e6d6556d8468f1c261ebbe98",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.733714+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v008.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The preceding appeal to goodness becomes a declaration, while teaching and the road image continue.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e826a51af3e552a8aa6cfe5781d501846150b154d44ead7693ca0843fa18c279",
+      "audit_id": "aud.ps025.v008.a.0006",
+      "before_hash": "3a317fc874afd3d5ebf9eae08d911d2ace31101a04badfdde5d7963428e02468",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:31:58.607970+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v008.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -106,6 +141,38 @@
       "reviewer_id": null,
       "revision_of": null,
       "status": "proposed",
+      "unit_id": "ps025.v008.a",
+      "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves Yahweh's goodness and uprightness, the resulting instruction of sinners, and the way image. LORD conventionally represents the divine name.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "e4dc76d8db19aa8d213cd0f2fb30efa880aae73da1f2d267076d73dfecec08bb",
+      "audit_ids": [
+        "aud.ps025.v008.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v008.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Expands 'in the way' idiomatically to 'the way to go,' making the implied direction explicit.",
+      "display_reference": "Psalm 25:8",
+      "english_rendering_id": "rnd.ps025.v008.a.lyric.alt.0002",
+      "generation_run_id": "cxr.a8c1ebc92e2c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "טוֹב־וְיָשָׁ֥ר יְהוָ֑ה עַל־כֵּ֤ן יוֹרֶ֖ה חַטָּאִ֣ים בַּדָּֽרֶךְ׃",
+      "literal_backbone": [
+        "Good and upright is Yahweh.",
+        "Therefore he instructs sinners in the way."
+      ],
+      "literal_rendering_id": "rnd.ps025.v008.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:8",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
       "unit_id": "ps025.v008.a",
       "word_notes": []
     }
@@ -323,6 +390,125 @@
       "unit_id": "ps025.v008.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; fuller opening phrases followed by a held closing cadence.",
+      "differentiator": "Declaration resolving into a short road-image cadence",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.17,
+        "stress_approximation": 0.61,
+        "syllable_count": 17,
+        "syllables": 17
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "The way",
+          "note": "Retains the road as the setting of instruction.",
+          "source_id": "ps025.v008.a",
+          "token_ids": [
+            "ps025.v008.t008"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v008.t001–t003 → The LORD is good and upright",
+          "ps025.v008.t004–t008 → so he teaches sinners the way to go"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v008.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "The preceding appeal to goodness becomes a declaration, while teaching and the road image continue.",
+      "rendering_id": "rnd.ps025.v008.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "יוֹרֶ֖ה חַטָּאִ֣ים בַּדָּֽרֶךְ",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "יוֹרֶ֖ה חַטָּאִ֣ים בַּדָּֽרֶךְ",
+        "token_ids": [
+          "ps025.v008.t006",
+          "ps025.v008.t007",
+          "ps025.v008.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The LORD is good and upright;\nso he teaches sinners\nthe way to go.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v008.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v008.a",
+      "variation_basis": [
+        "Goodness linking petition and declaration"
       ]
     }
   ],

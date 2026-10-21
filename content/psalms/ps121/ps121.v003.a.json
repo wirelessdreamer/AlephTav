@@ -1,9 +1,123 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v003.a.literal.alt.0001",
+    "rnd.ps121.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v003.a.0001",
+    "aud.ps121.v003.a.0002",
+    "aud.ps121.v003.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b735f877d467e808eafdc71c96bd69896d9b3776539f0566d149e97d9a6ecc64",
+      "audit_id": "aud.ps121.v003.a.0001",
+      "before_hash": "3a181e0a9d66bdcde7e715d9566c84b86dab666750e8d4e2bc26f7b9945adeb6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.633761+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v003.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Retains the two negative wishes before verse 4's declarative assurance.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f60ae63b0f6e4d9e397c82ad49bf37be23994947849b4588076e3bb3d43933b",
+      "audit_id": "aud.ps121.v003.a.0002",
+      "before_hash": "276fe9844fcf405503100928741fc9f0a929ec232a54007ac02806efbe687360",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.266380+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Preserves the repeated wish before the following verse gives assurance.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a64d950ce24107ccb5fdf9cbb1acfe7c177b5274499a6695bb0fbdffd8befcbf",
+      "audit_id": "aud.ps121.v003.a.0003",
+      "before_hash": "80e9ec6ee1603cf0739bc793a777ce23dcca36482910c30dd3f08ca2c9b700c2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:14:51.255325+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves both negative wishes: that he not allow the addressee's foot to slip, and that the addressee's guardian not slumber. Retains the singular address, concrete foot image, and parallel construction without turning the wishes into predictions.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "3dfa86afc2d0162e05ad5664f8da63a3e696ff16cb6e7182b336877618f80612",
+      "audit_ids": [
+        "aud.ps121.v003.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Guard and doze modernize keeper and slumber without materially changing the sense. The second clause places its subject before the verb for natural English.",
+      "display_reference": "Psalm 121:3",
+      "english_rendering_id": "rnd.ps121.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d6cc104f87fc",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אַל־יִתֵּ֣ן לַמּ֣וֹט רַגְלֶ֑ךָ אַל־יָ֝נ֗וּם שֹֽׁמְרֶֽךָ׃",
+      "literal_backbone": [
+        "May he not allow your foot to slip.",
+        "May the one guarding you not slumber."
+      ],
+      "literal_rendering_id": "rnd.ps121.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:3",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "ʾal: negative particle used with prohibitions or wishes; nātan: give, put, allow; nûm: slumber, doze.",
+          "note": "The repeated may ... not preserves the negative jussive force of both clauses.",
+          "rendered_as": "May he not let; may ... not doze",
+          "token_ids": [
+            "ps121.v003.t001",
+            "ps121.v003.t002",
+            "ps121.v003.t005",
+            "ps121.v003.t006"
+          ],
+          "transliteration": "ʾal-yittēn; ʾal-yānûm",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "One who keeps, guards, watches over, or preserves.",
+          "note": "Naturally renders the substantival participle and its second-person singular suffix without specifying a military role.",
+          "rendered_as": "your guard",
+          "token_ids": [
+            "ps121.v003.t007"
+          ],
+          "transliteration": "šōmreḵā",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v003.a.0001"
   ],
@@ -15,7 +129,223 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the wish construction with repeated may.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "A slipping foot",
+          "note": "Keeps the concrete image of unstable footing.",
+          "source_id": "ps121.v003.a",
+          "token_ids": [
+            "ps121.v003.t003",
+            "ps121.v003.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v003.t001–t002 → May he not let",
+          "ps121.v003.t003–t004 → your foot slip",
+          "ps121.v003.t005–t006 → may ... not slumber",
+          "ps121.v003.t007 → your keeper"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v003.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Retains the two negative wishes before verse 4's declarative assurance.",
+      "rendering_id": "rnd.ps121.v003.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "May he not let your foot slip;\nmay your keeper not slumber.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v003.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Short parallel wishes without added certainty.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.25,
+        "singability_score": 0.47,
+        "stress_approximation": 0.54,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Slipping foot and wakeful guard",
+          "note": "Preserves unstable footing and the possibility of the guard dozing.",
+          "source_id": "ps121.v003.a",
+          "token_ids": [
+            "ps121.v003.t003",
+            "ps121.v003.t004",
+            "ps121.v003.t006",
+            "ps121.v003.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v003.t001–t002 → May he not let",
+          "ps121.v003.t003–t004 → your foot slip",
+          "ps121.v003.t005–t006 → may ... not doze",
+          "ps121.v003.t007 → your guard"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v003.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v003.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Preserves the repeated wish before the following verse gives assurance.",
+      "rendering_id": "rnd.ps121.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "May he not let your foot slip;\nmay your guard not doze.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v003.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַל־יִתֵּ֣ן לַמּ֣וֹט רַגְלֶ֑ךָ אַל־יָ֝נ֗וּם שֹֽׁמְרֶֽךָ׃",

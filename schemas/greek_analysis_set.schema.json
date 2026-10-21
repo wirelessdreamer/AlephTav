@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "analysis_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "proposed"
+    },
+    "spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "span_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "proposed"
+          },
+          "normalizer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "method": {
+            "const": "verse_surface_span"
+          },
+          "token_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_row_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "span_id",
+          "status",
+          "normalizer",
+          "reference",
+          "method",
+          "token_ids",
+          "source_row_ids"
+        ]
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "token_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "unresolved"
+            ]
+          },
+          "analyses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "analysis_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "analysis_set_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "token_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lexeme_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "lemma": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "identifiers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "scheme": {
+                        "enum": [
+                          "Strong",
+                          "eStrong",
+                          "dStrong",
+                          "uStrong"
+                        ]
+                      },
+                      "value": {
+                        "type": "string",
+                        "pattern": "^[GH][1-9][0-9]*[A-Za-z]*$"
+                      },
+                      "raw_value": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "raw_expression": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "relation": {
+                        "enum": [
+                          "entry",
+                          "related",
+                          "combination_component",
+                          "crasis_component",
+                          "hebrew_cross_reference"
+                        ]
+                      },
+                      "source_entry_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "status": {
+                        "const": "source_asserted"
+                      }
+                    },
+                    "required": [
+                      "scheme",
+                      "value",
+                      "raw_value",
+                      "raw_expression",
+                      "relation",
+                      "source_entry_id",
+                      "status"
+                    ]
+                  }
+                },
+                "status": {
+                  "const": "proposed"
+                },
+                "scheme": {
+                  "const": "MorphGNT"
+                },
+                "raw_tag": {
+                  "type": "string",
+                  "minLength": 8,
+                  "maxLength": 8
+                },
+                "raw_pos": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 2
+                },
+                "features": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "part_of_speech": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "person": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "tense": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "voice": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "mood": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "case": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "number": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "gender": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "degree": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "part_of_speech",
+                    "person",
+                    "tense",
+                    "voice",
+                    "mood",
+                    "case",
+                    "number",
+                    "gender",
+                    "degree"
+                  ]
+                },
+                "unknowns": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "field": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "field",
+                      "value"
+                    ]
+                  }
+                },
+                "synthetic": {
+                  "type": "boolean"
+                },
+                "confidence": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "source_package_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "normalizer": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "reference": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "method": {
+                      "const": "verse_surface_span"
+                    },
+                    "token_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "source_row_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "normalizer",
+                    "reference",
+                    "method",
+                    "token_ids",
+                    "source_row_ids"
+                  ]
+                }
+              },
+              "required": [
+                "analysis_id",
+                "analysis_set_id",
+                "token_id",
+                "lexeme_id",
+                "lemma",
+                "identifiers",
+                "status",
+                "scheme",
+                "raw_tag",
+                "raw_pos",
+                "features",
+                "unknowns",
+                "synthetic",
+                "confidence",
+                "source_package_id",
+                "evidence"
+              ]
+            }
+          },
+          "selected_analysis_id": {
+            "type": "null"
+          },
+          "ambiguous": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "token_id",
+          "status",
+          "analyses",
+          "selected_analysis_id",
+          "ambiguous"
+        ]
+      }
+    },
+    "unmatched_source_row_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proposed_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reviewed_tokens": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "total_tokens",
+        "proposed_tokens",
+        "unresolved_tokens",
+        "reviewed_tokens"
+      ]
+    }
+  },
+  "required": [
+    "analysis_set_id",
+    "status",
+    "spans",
+    "annotations",
+    "unmatched_source_row_ids",
+    "coverage"
+  ]
+}

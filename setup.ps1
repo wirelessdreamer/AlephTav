@@ -49,22 +49,17 @@ function Write-ManagedServicesState {
 }
 
 function Stop-ProcessTree {
-    param(
-        [int]$ProcessId,
-        [string]$Label,
-        [switch]$Force
-    )
+    param([int]$ProcessId)
 
     if (-not $ProcessId) {
         return
     }
 
-    $children = Get-CimInstance Win32_Process -Filter "ParentProcessId = $ProcessId" -ErrorAction SilentlyContinue
-    foreach ($child in $children) {
-        Stop-ProcessTree -ProcessId $child.ProcessId -Label "$Label child" -Force:$Force
-    }
-
-    Stop-Process -Id $ProcessId -Force:$Force -ErrorAction SilentlyContinue
+    # One taskkill walks the whole tree. A WMI query per child process can take
+    # ~10 s each on a busy machine, which stalled setup for minutes.
+    # Continue keeps Windows PowerShell from throwing on taskkill's stderr.
+    $ErrorActionPreference = 'Continue'
+    & taskkill.exe /PID $ProcessId /T /F *> $null
 }
 
 function Stop-ManagedProcess {
@@ -82,7 +77,7 @@ function Stop-ManagedProcess {
         return
     }
 
-    Stop-ProcessTree -ProcessId $ProcessId -Label $Label
+    Stop-ProcessTree -ProcessId $ProcessId
     for ($i = 0; $i -lt 5; $i++) {
         Start-Sleep -Seconds 1
         $process = Get-Process -Id $ProcessId -ErrorAction SilentlyContinue
@@ -91,8 +86,8 @@ function Stop-ManagedProcess {
         }
     }
 
-    Write-Warning "[setup] $Label process $ProcessId did not exit cleanly; forcing shutdown."
-    Stop-ProcessTree -ProcessId $ProcessId -Label $Label -Force
+    Write-Warning "[setup] $Label process $ProcessId did not exit; retrying."
+    Stop-ProcessTree -ProcessId $ProcessId
 }
 
 function Get-ListenerProcessId {

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator, RefResolver
+from jsonschema import ValidationError as SchemaValidationError
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -13,6 +14,10 @@ if str(ROOT) not in sys.path:
 
 from app.core.config import get_settings  # noqa: E402
 from app.services import poetic_analysis_service, registry_service  # noqa: E402
+from app.services.foundation_contract_service import (  # noqa: E402
+    validate_contract,
+    validate_greek_unit,
+)
 
 
 def _load_schema(path: Path) -> dict[str, Any]:
@@ -135,6 +140,34 @@ def validate_all_content() -> dict[str, Any]:
             )
         validated_files.append(path.relative_to(settings.root_dir).as_posix())
 
+    for path in sorted(settings.content_dir.glob("lxx/editions/*/*/psalms/ps*/*.json")):
+        try:
+            unit = registry_service.read_json(path)
+            validate_greek_unit(unit)
+            if path != registry_service.unit_path(unit["unit_id"]):
+                raise ValueError("Greek unit storage path does not match its identity")
+            if path.read_text(encoding="utf-8") != _deterministic_text(unit):
+                raise ValueError("non-deterministic serialization")
+        except (ValueError, KeyError, SchemaValidationError) as error:
+            # Schema errors are reported with the same file attribution as MT.
+            errors.append(f"{_display_path(path)}: {error}")
+        validated_files.append(path.relative_to(settings.root_dir).as_posix())
+    contracts = [
+        ("source_registry.json", "source_registry.schema.json"),
+        ("lxx/editions/*/*/package.json", "source_package.schema.json"),
+        ("lexicons/grc/*/*/package.json", "source_package.schema.json"),
+        ("lexemes/grc/*/package.json", "source_package.schema.json"),
+        ("mt/source_snapshots/*/source_tokens.json", "mt_source_snapshot.schema.json"),
+        ("audit/packages/*.json", "audit_record.schema.json"),
+        ("study_snapshots/study.*.json", "study_snapshot.schema.json"),
+    ]
+    for pattern, schema_name in contracts:
+        for path in sorted(settings.content_dir.glob(pattern)):
+            try:
+                validate_contract(schema_name, registry_service.read_json(path))
+            except (ValueError, SchemaValidationError) as error:
+                errors.append(f"{_display_path(path)}: {error}")
+            validated_files.append(path.relative_to(settings.root_dir).as_posix())
     return {"validated_files": validated_files, "errors": errors}
 
 

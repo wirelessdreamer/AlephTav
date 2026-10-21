@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from app.core.ids import alignment_id
 from app.core.errors import NotFoundError, ValidationError
+from app.core.ids import alignment_id, unit_id_from_entity_id
 from app.services import audit_service, registry_service
 
 LOW_CONFIDENCE_THRESHOLD = 0.75
@@ -131,8 +131,7 @@ def create_alignment(unit_id: str, payload: dict[str, Any], created_by: str = "a
 
 
 def update_alignment(alignment_id_value: str, payload: dict[str, Any]) -> dict[str, Any]:
-    unit_id = alignment_id_value.split(".")[1:4]
-    target_unit_id = ".".join(unit_id)
+    target_unit_id = unit_id_from_entity_id("alignment_id", alignment_id_value)
     before, unit = registry_service.update_unit(target_unit_id, lambda existing: existing)
     for item in unit.get("alignments", []):
         if item["alignment_id"] == alignment_id_value:
@@ -159,7 +158,7 @@ def update_alignment(alignment_id_value: str, payload: dict[str, Any]) -> dict[s
 
 
 def delete_alignment(alignment_id_value: str) -> dict[str, str]:
-    target_unit_id = ".".join(alignment_id_value.split(".")[1:4])
+    target_unit_id = unit_id_from_entity_id("alignment_id", alignment_id_value)
     before, unit = registry_service.update_unit(target_unit_id, lambda existing: existing)
     unit["alignments"] = [item for item in unit.get("alignments", []) if item["alignment_id"] != alignment_id_value]
     _sync_rendering_alignment_ids(unit)

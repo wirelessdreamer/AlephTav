@@ -59,7 +59,7 @@ function OccurrenceCard({
       className={`occurrence-card${hovered.above ? ' occurrence-card--above' : ''}`}
       style={{ top: hovered.top, left: hovered.left }}
     >
-      {isLoading ? <p className="word-tray__hint">Loading {hovered.ref}…</p> : null}
+      {isLoading ? <p className="word-tray__hint" role="status">Loading {hovered.ref}…</p> : null}
       {error ? <p className="comparison-error">{String(error)}</p> : null}
       {data ? (
         <>
@@ -138,9 +138,7 @@ function OccurrenceCard({
                 </div>
               ) : null}
             </div>
-          ) : (
-            <p className="word-tray__hint">This verse has no literal or {layer} rendering yet.</p>
-          )}
+          ) : null}
         </>
       ) : null}
     </div>
@@ -588,7 +586,7 @@ export function VerseDetail({
         </button>
       </div>
 
-      {tab === 'history' ? <VerseHistoryPanel unitId={unitId} /> : null}
+      {tab === 'history' ? <VerseHistoryPanel unitId={unitId} translationId={translationId} /> : null}
 
       {tab === 'verse' && rebuildProgress ? <Progress progress={rebuildProgress} /> : null}
 

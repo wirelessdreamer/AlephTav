@@ -2,14 +2,34 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Optional
 
 import typer
 
 from app.core.config import get_settings
-from app.services import concordance_service, export_service, generation_service, github_link_service, ingest_service, registry_service, rendering_service, report_service, visual_flow_service
+from app.services import (
+    concordance_service,
+    export_service,
+    generation_service,
+    github_link_service,
+    ingest_service,
+    registry_service,
+    rendering_service,
+    report_service,
+    visual_flow_service,
+)
 
 app = typer.Typer(help="Psalms translation workbench CLI")
+
+
+@app.command("migrate-operational-state")
+def migrate_operational_state(writers_quiesced: bool = False) -> None:
+    """After stopping API/job writers, copy legacy jobs/cards to durable local storage."""
+    from app.db.session import migrate_operational_state as migrate
+
+    if not writers_quiesced:
+        typer.echo("Stop API/job writers, then rerun with --writers-quiesced.", err=True)
+        raise typer.Exit(1)
+    typer.echo(json.dumps(migrate(writers_quiesced=True), indent=2))
 
 
 @app.command("init-project")
@@ -56,13 +76,17 @@ def audit_licenses() -> None:
 
 @app.command("translate-unit")
 def translate_unit(unit_id: str, layer: str, style_profile: str = "study_literal") -> None:
-    job = generation_service.generate_for_unit(unit_id=unit_id, layer=layer, style_profile=style_profile)
+    job = generation_service.generate_for_unit(
+        unit_id=unit_id, layer=layer, style_profile=style_profile
+    )
     typer.echo(json.dumps(job, indent=2))
 
 
 @app.command("translate-psalm")
 def translate_psalm(psalm_id: str, layer: str, style_profile: str = "study_literal") -> None:
-    jobs = generation_service.generate_for_psalm(psalm_id=psalm_id, layer=layer, style_profile=style_profile)
+    jobs = generation_service.generate_for_psalm(
+        psalm_id=psalm_id, layer=layer, style_profile=style_profile
+    )
     typer.echo(json.dumps(jobs, indent=2))
 
 
@@ -93,7 +117,9 @@ def add_alternate(unit_id: str, layer: str, text: str, rationale: str) -> None:
 
 @app.command("promote-alternate")
 def promote_alternate(rendering_id: str) -> None:
-    rendering = rendering_service.promote_rendering(rendering_id, reviewer="cli", reviewer_role="release reviewer")
+    rendering = rendering_service.promote_rendering(
+        rendering_id, reviewer="cli", reviewer_role="release reviewer"
+    )
     typer.echo(json.dumps(rendering, indent=2, ensure_ascii=False))
 
 
@@ -128,7 +154,7 @@ def generate_release_report(release_id: str) -> None:
 
 
 @app.command("export-book")
-def export_book(psalm_id: Optional[str] = None, output_dir: Optional[Path] = None) -> None:
+def export_book(psalm_id: str | None = None, output_dir: Path | None = None) -> None:
     destination = export_service.export_book(psalm_id=psalm_id, output_dir=output_dir)
     typer.echo(str(destination))
 
@@ -142,6 +168,53 @@ def export_release(release_id: str) -> None:
 @app.command("rebuild-vector-index")
 def rebuild_vector_index() -> None:
     typer.echo(json.dumps(visual_flow_service.rebuild_vector_index(), indent=2))
+
+
+@app.command("greek-build-swete")
+def greek_build_swete(psalter_repo: Path, commit: str = "HEAD", revision: str = "r0001") -> None:
+    """Build the Swete 1896 package from a rahlfs1931-psalter commit and stage it."""
+    from app.services import swete_package_service
+
+    result = swete_package_service.build_and_stage(psalter_repo, commit=commit, revision=revision)
+    typer.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@app.command("greek-approve-preview")
+def greek_approve_preview(
+    reviewer_id: str,
+    rationale: str,
+    package_id: str = "swete1896.text",
+    revision: str = "r0001",
+) -> None:
+    """Owner approval to show a staged Greek package as an unreviewed display preview."""
+    from app.services import greek_preview_service
+
+    result = greek_preview_service.approve_preview(
+        package_id, revision, reviewer_id=reviewer_id, rationale=rationale
+    )
+    typer.echo(json.dumps(result, indent=2))
+
+
+@app.command("greek-load-lexical-preview")
+def greek_load_lexical_preview(reviewer_id: str, rationale: str) -> None:
+    """Load pinned Greek dictionary meanings for local source review and hover cards."""
+    from app.services import greek_lexical_preview_service
+
+    result = greek_lexical_preview_service.enable(reviewer_id=reviewer_id, rationale=rationale)
+    typer.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@app.command("greek-audit-lookups")
+def greek_audit_lookups(preview_only: bool = False) -> None:
+    """Audit every pinned Greek corpus book; --preview-only limits to displayed text."""
+    from app.services import greek_lexical_preview_service
+
+    result = (
+        greek_lexical_preview_service.audit_lookups()
+        if preview_only
+        else greek_lexical_preview_service.audit_corpus_lookups()
+    )
+    typer.echo(json.dumps(result, indent=2))
 
 
 @app.command("open-settings")

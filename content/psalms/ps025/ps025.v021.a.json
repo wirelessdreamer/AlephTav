@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v021.a.literal.alt.0001",
-    "rnd.ps025.v021.a.lyric.alt.0001"
+    "rnd.ps025.v021.a.lyric.alt.0001",
+    "rnd.ps025.v021.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v021.a.0001",
     "aud.ps025.v021.a.0002",
     "aud.ps025.v021.a.0003",
-    "aud.ps025.v021.a.0004"
+    "aud.ps025.v021.a.0004",
+    "aud.ps025.v021.a.0005",
+    "aud.ps025.v021.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2f5905b580c9a0e245d250f704a23f3a7851f3358ff51c923da6260c9f1e1010",
+      "audit_id": "aud.ps025.v021.a.0005",
+      "before_hash": "0aca964e65d2ad4d1f3816dd67b65bcd0b10084aa69bc3595c61f9f4b94e6c1f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.335012+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v021.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Keeps integrity and uprightness as the guarding agents and returns to the passage's unresolved waiting.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5cc2d0bc2c1eaf32713a7dcf1f488dad1b91d4c0bc5e0e81b9a98609605f674b",
+      "audit_id": "aud.ps025.v021.a.0006",
+      "before_hash": "45fc0386616d37332ba58ed32f2c8d7e3e25467cd23de83e5b92307cffbef1f2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:34:29.625839+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v021.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v021.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the wish that integrity and uprightness guard the speaker, followed by waiting directed toward God. The qualities remain the grammatical agents of protection.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "89d13efdc7897724016266bff6f5d53105a059b4330cb2f4d462f3c3dc0ff8f1",
+      "audit_ids": [
+        "aud.ps025.v021.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v021.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Leaves the causal 'for' implicit and presents the waiting as ongoing rather than explicitly already undertaken.",
+      "display_reference": "Psalm 25:21",
+      "english_rendering_id": "rnd.ps025.v021.a.lyric.alt.0002",
+      "generation_run_id": "cxr.b12df3427965",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "תֹּם־וָיֹ֥שֶׁר יִצְּר֑וּנִי כִּ֝֗י קִוִּיתִֽיךָ׃",
+      "literal_backbone": [
+        "May integrity and uprightness guard me.",
+        "For I have waited for you."
+      ],
+      "literal_rendering_id": "rnd.ps025.v021.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:21",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v021.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "wait for, hope for, expect",
+          "note": "The Hebrew perfect presents waiting as already undertaken; the English foregrounds its continuation.",
+          "rendered_as": "I wait for you",
+          "token_ids": [
+            "ps025.v021.t005"
+          ],
+          "transliteration": "qiwwîṯîḵā",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -334,6 +412,135 @@
       "unit_id": "ps025.v021.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; extended opening phrase, sustained 'guard me,' then a short waiting cadence.",
+      "differentiator": "Guarding petition suspended over continued waiting",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 10,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.37,
+        "stress_approximation": 0.6,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Integrity and uprightness as guards",
+          "note": "Retains the qualities themselves as the grammatical agents of protection.",
+          "source_id": "ps025.v021.a",
+          "token_ids": [
+            "ps025.v021.t001",
+            "ps025.v021.t002",
+            "ps025.v021.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v021.t001–t003 → Let integrity and uprightness guard me",
+          "ps025.v021.t004–t005 → I wait for you"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v021.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Keeps integrity and uprightness as the guarding agents and returns to the passage's unresolved waiting.",
+      "rendering_id": "rnd.ps025.v021.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "תֹּם־וָיֹ֥שֶׁר יִצְּר֑וּנִי",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "תֹּם־וָיֹ֥שֶׁר יִצְּר֑וּנִי",
+        "token_ids": [
+          "ps025.v021.t001",
+          "ps025.v021.t002",
+          "ps025.v021.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Let integrity and uprightness\nguard me;\nI wait for you.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v021.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v021.a",
+      "variation_basis": [
+        "Guard vocabulary continuing verse 20",
+        "Waiting vocabulary returning from verse 5"
       ]
     }
   ],

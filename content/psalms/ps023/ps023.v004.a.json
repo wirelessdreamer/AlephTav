@@ -1,9 +1,104 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps023.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps023.v004.a.0001",
+    "aud.ps023.v004.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a98ec987bb8731457fa3a63ff450f42a97d350fbb70f46b23012abc10f9dc3b8",
+      "audit_id": "aud.ps023.v004.a.0001",
+      "before_hash": "1e4d3fe85abdcdd0b7e1cfc051fdef16c34d5439dc6d212da381fc2733e0e4a8",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.351509+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps023.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7ce75dc71730d0b37b2f085fd4684fbc875840443b578eb0f05f2bb6c73b4444",
+      "audit_id": "aud.ps023.v004.a.0002",
+      "before_hash": "8c6d0ca0d3282081e1a57184bb081cb946ceabf2b680d44af4df151616c39028",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:02:02.369668+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps023.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the dark valley, freedom from fear of harm because of divine presence, and the comfort supplied by the rod and staff, in the Hebrew’s order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "53cd0328378b237f8164179fdc1716ec5ea0dcf7139b5aacb19ad7f30556510c",
+      "audit_ids": [
+        "aud.ps023.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps023.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Though” softens the opening emphasis of “even though.” “Here at my side” idiomatically expresses presence, while “the comfort I know” adds explicit personal awareness to the statement that the rod and staff comfort the speaker.",
+      "display_reference": "Psalm 23:4",
+      "english_rendering_id": "rnd.ps023.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d0dfc905c9b4",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "גַּ֤ם כִּֽי־אֵלֵ֨ךְ בְּגֵ֪יא צַלְמָ֡וֶת לֹא־אִ֘ירָ֤א רָ֗ע כִּי־אַתָּ֥ה עִמָּדִ֑י שִׁבְטְךָ֥ וּ֝מִשְׁעַנְתֶּ֗ךָ הֵ֣מָּה יְנַֽחֲמֻֽנִי׃",
+      "literal_backbone": [
+        "Even though I walk in a valley of deep darkness,",
+        "I will fear no harm,",
+        "for you are with me, protection-relevant action? no just presence."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 23:4",
+      "non_source_material": [],
+      "psalm_id": "ps023",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "deep darkness, death-shadow",
+          "note": "Preserves the deep-darkness sense without explicitly mentioning death.",
+          "rendered_as": "where darkness lies deep",
+          "token_ids": [
+            "ps023.v004.t005"
+          ],
+          "transliteration": "ṣalmāweṯ",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "they; comfort, console",
+          "note": "Turns the act of comforting the speaker into a description of familiar comfort, adding “I know.”",
+          "rendered_as": "are the comfort I know.",
+          "token_ids": [
+            "ps023.v004.t014",
+            "ps023.v004.t015"
+          ],
+          "transliteration": "hēmmâ yənaḥămûnî",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps023.v004.a.0001"
   ],
@@ -15,7 +110,106 @@
   "pr_links": [],
   "psalm_id": "ps023",
   "ref": "Psalm 23:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 31,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.11,
+        "stress_approximation": 0.61,
+        "syllable_count": 38,
+        "syllables": 38
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b66847408714",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps023.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Though I walk through the valley where darkness lies deep,\nI fear no harm, for you’re here at my side.\nYour rod and your staff are the comfort I know.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "גַּ֤ם כִּֽי־אֵלֵ֨ךְ בְּגֵ֪יא צַלְמָ֡וֶת לֹא־אִ֘ירָ֤א רָ֗ע כִּי־אַתָּ֥ה עִמָּדִ֑י שִׁבְטְךָ֥ וּ֝מִשְׁעַנְתֶּ֗ךָ הֵ֣מָּה יְנַֽחֲמֻֽנִי׃",

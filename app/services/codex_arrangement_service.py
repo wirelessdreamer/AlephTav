@@ -99,7 +99,7 @@ def _verse_block(unit: dict[str, Any], layer: str, translation_id: str | None = 
 
 def build_arrangement_prompt(psalm_id: str, layer: str, translation_id: str | None = None) -> str:
     psalm = registry_service.load_psalm(psalm_id)
-    guidance = translation.get_guidance(psalm_id, translation_id)
+    guidance = translation.generation_guidance(psalm_id, translation_id)
     sections = [
         "# Song setting task",
         f"Psalm: {psalm.get('title', psalm_id)} ({psalm_id})",
@@ -112,6 +112,18 @@ def build_arrangement_prompt(psalm_id: str, layer: str, translation_id: str | No
     ]
     for unit in psalm["units"]:
         sections += ["", *_verse_block(unit, layer, translation_id)]
+    from app.services import greek_generation_service
+
+    sections.append(
+        greek_generation_service.prompt_evidence(
+            psalm_id, [unit["unit_id"] for unit in psalm["units"]]
+        )
+    )
+    sections.append(
+        "For a Greek-derived line, retain its Hebrew coverage token_ids and identify "
+        "the exact Greek reference and departure in rationale. The source_anchor "
+        "instructions apply to verse translation candidates, not this section contract."
+    )
     refrains = arrangements.find_refrains(psalm["units"])
     if refrains:
         sections += ["", "## Words the Hebrew itself repeats"]

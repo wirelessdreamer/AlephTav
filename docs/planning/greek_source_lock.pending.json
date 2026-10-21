@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "status": "pending_external_approval",
+  "activation_allowed": false,
+  "decisions": {
+    "identity": "edition and text revision qualified; preserve MT locators and storage",
+    "source_intake": "stage outside raw; normalized immutable package installation does not activate",
+    "legacy_macula_greek": "unconfirmed hints; no generation or export capability",
+    "generation": "disabled until separate source capability and specialist release gates",
+    "operational_state": "durable data/local/workbench_state.sqlite3; explicit offline migration",
+    "raw_writes": "forbidden; owner-authorized raw intake procedure still pending"
+  },
+  "proposed_source": {
+    "edition_id": "swete1896",
+    "release_package": null,
+    "text_revision_id": null,
+    "parser_version": "greek-source-contract-1.0",
+    "inspected_artifact_hashes": {
+      "text": "9fc94c39ef80b37297885b5bff01344040a666a990c99aa9eb96fb4197c57017",
+      "words": "7d31d58ba9843e67e179616e216824c2aceed4b82558e98bcd485fd0b20d5524",
+      "spans": "b911120521882618311ca91627ddf0db92dead767aa2117bba22c1db5e9d2d51"
+    },
+    "locked_files": [],
+    "license_text_sha256": null,
+    "approved_uses": []
+  },
+  "gates": {
+    "immutable_released_package_with_exact_filenames_sizes_and_hashes": "pending",
+    "license_lineage_and_attribution_review": "pending",
+    "owner_source_sample_review": "pending",
+    "schema_owner_review": "pending",
+    "raw_intake_policy": "pending",
+    "fragment_bounding_box_requirement": "pending",
+    "qualified_greek_accuracy_review": "pending"
+  },
+  "evidence": "docs/GREEK_LEXICAL_IMPLEMENTATION_PLAN.md section 4; inspected hashes are not release approval"
+}

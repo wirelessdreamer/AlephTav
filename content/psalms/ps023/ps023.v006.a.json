@@ -1,9 +1,115 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps023.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps023.v006.a.0001",
+    "aud.ps023.v006.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cac3d2893be857ec6ce73effba96faca6f207d073360190fb34ae200b0959c5d",
+      "audit_id": "aud.ps023.v006.a.0001",
+      "before_hash": "61cfdca8683a9e099f657bda12ca57d19c5014499e13e6c5cc0f317dd39addf6",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.395753+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps023.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3df8c8af6e8df924ec1151fdd2db2f6bb9fd774d572f146bdba77b8b019c7272",
+      "audit_id": "aud.ps023.v006.a.0002",
+      "before_hash": "2e634bea0af2a7f0a787f6d8b505a919a84716db52936a5b5b9a93ec3cbf21ac",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:02:48.315869+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps023.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves the confident affirmation that goodness and loyal love pursue the speaker throughout life, followed by the prospect of being in Yahweh’s house for an extended duration.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "44cd3faad0096ab982dd4d05862d6c4408ab2be6cb59933b2c2510986ccaf182",
+      "audit_ids": [
+        "aud.ps023.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps023.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Settle and stay” adopts a dwelling interpretation rather than explicitly expressing return. Both duration phrases receive lyrical restatements, and “own” emphasizes Yahweh’s possession of the house.",
+      "display_reference": "Psalm 23:6",
+      "english_rendering_id": "rnd.ps023.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ac9b262e9143",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אַ֤ךְ׀ ט֤וֹב וָחֶ֣סֶד יִ֭רְדְּפוּנִי כָּל־יְמֵ֣י חַיָּ֑י וְשַׁבְתִּ֥י בְּבֵית־יְ֝הוָ֗ה לְאֹ֣רֶךְ יָמִֽים׃",
+      "literal_backbone": [
+        "Surely goodness and loyal love will pursue me all the days of my life.",
+        "And I will return to the house of Yahweh for length of days."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 23:6",
+      "non_source_material": [],
+      "psalm_id": "ps023",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and I will return, turn back",
+          "note": "Follows the traditional dwelling interpretation; the supplied Masoretic form more directly expresses returning.",
+          "rendered_as": "I will settle and stay",
+          "token_ids": [
+            "ps023.v006.t008"
+          ],
+          "transliteration": "wəšaḇtî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "all the days of my life",
+          "note": "Expresses the same lifelong duration twice for lyrical emphasis.",
+          "rendered_as": "Through all of my days, for as long as I live.",
+          "token_ids": [
+            "ps023.v006.t005",
+            "ps023.v006.t006",
+            "ps023.v006.t007"
+          ],
+          "transliteration": "kol yəmê ḥayyāy",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "for length of days, for a long duration",
+          "note": "Adds a personal possessive and elaborates the duration as future years; the Hebrew does not specify a number of years.",
+          "rendered_as": "For the length of my days, through the years yet to come.",
+          "token_ids": [
+            "ps023.v006.t011",
+            "ps023.v006.t012"
+          ],
+          "transliteration": "ləʾōreḵ yāmîm",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps023.v006.a.0001"
   ],
@@ -15,7 +121,106 @@
   "pr_links": [],
   "psalm_id": "ps023",
   "ref": "Psalm 23:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 41,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.61,
+        "syllable_count": 50,
+        "syllables": 50
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b66847408714",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps023.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Yes, goodness and loyal love chase after me\nThrough all of my days, for as long as I live.\nIn Yahweh’s own house I will settle and stay,\nFor the length of my days, through the years yet to come.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "אַ֤ךְ׀ ט֤וֹב וָחֶ֣סֶד יִ֭רְדְּפוּנִי כָּל־יְמֵ֣י חַיָּ֑י וְשַׁבְתִּ֥י בְּבֵית־יְ֝הוָ֗ה לְאֹ֣רֶךְ יָמִֽים׃",

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useAppRuntime } from '../app/AppContext';
 import { MoveTranslationDialog } from '../components/MoveTranslationDialog';
+import { RequestStatus } from '../components/RequestStatus';
+import { GreekStudyPanel } from '../components/GreekStudyPanel';
 import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useCollections,
@@ -59,6 +61,7 @@ export function ComparisonPage() {
   const createTranslation = useCreateTranslation();
   const moveTranslation = useMoveTranslation();
   const [importOpen, setImportOpen] = useState(false);
+  const [studyMode, setStudyMode] = useState<'mt' | 'lxx' | 'parallel'>('mt');
   /** Naming a project, in place of the project picker: a new one, or this one anew. */
   const [naming, setNaming] = useState<'new' | 'rename' | null>(null);
   const [name, setName] = useState('');
@@ -161,7 +164,7 @@ export function ComparisonPage() {
               type="submit"
               disabled={!name.trim() || createCollection.isPending || renameCollection.isPending}
             >
-              {naming === 'new' ? 'Create' : 'Rename'}
+              {createCollection.isPending ? 'Creating…' : renameCollection.isPending ? 'Renaming…' : naming === 'new' ? 'Create' : 'Rename'}
             </button>
             <button type="button" onClick={stopNaming}>
               Cancel
@@ -172,6 +175,7 @@ export function ComparisonPage() {
           <label className="compact-field">
             <span>Project</span>
             <select
+              aria-label="Project"
               value={collection?.collection_id ?? ''}
               disabled={!collection}
               onChange={(event) => {
@@ -285,7 +289,7 @@ export function ComparisonPage() {
                 }
               }}
             >
-              {members.length === 0 ? <option value="">No psalms yet</option> : null}
+              {members.length === 0 ? <option value="">{collectionsQuery.isLoading || psalmsQuery.isLoading ? 'Loading psalms…' : 'No psalms yet'}</option> : null}
               {members.map((m) => (
                 <option key={m.psalm_id} value={m.psalm_id}>
                   {psalmTitle(m.psalm_id)}
@@ -351,7 +355,22 @@ export function ComparisonPage() {
         }}
       />
 
-      <TranslationComparisonTable
+      <RequestStatus loading={collectionsQuery.isLoading} error={collectionsQuery.error}
+        label={collectionsQuery.isLoading ? 'Loading projects…' : 'Could not load projects.'}
+        onRetry={() => void collectionsQuery.refetch()} />
+      <RequestStatus loading={psalmsQuery.isLoading} error={psalmsQuery.error}
+        label={psalmsQuery.isLoading ? 'Loading psalms…' : 'Could not load psalms.'}
+        onRetry={() => void psalmsQuery.refetch()} />
+      {setCollectionLicense.isPending ? <RequestStatus loading label="Saving project license…" /> : null}
+      <GreekStudyPanel
+        collectionId={collection?.collection_id ?? null}
+        mtPsalmId={psalmId}
+        hasTranslation={Boolean(translationId)}
+        mode={studyMode}
+        onModeChange={setStudyMode}
+      />
+
+      {studyMode !== 'lxx' && collection ? <TranslationComparisonTable
         psalmId={psalmId}
         translationId={translationId}
         collectionId={collection?.collection_id ?? null}
@@ -361,7 +380,7 @@ export function ComparisonPage() {
         onShowTranslation={(shownPsalmId, collectionId) =>
           updateWorkbenchSelection({ psalmId: shownPsalmId, collectionId, unitId: null })
         }
-      />
+      /> : null}
     </main>
   );
 }

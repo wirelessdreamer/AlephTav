@@ -28,7 +28,7 @@
   "additionalProperties": false,
   "properties": {
     "psalm_id": { "type": "string", "pattern": "^ps\\d{3}$" },
-    "unit_id": { "type": "string", "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
+    "unit_id": { "type": "string", "pattern": "^(?:(?:lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.)|lxx\\.)?ps\\d{3}\\.v\\d{3}\\.[a-z]$" },
     "ref": { "type": "string" },
     "segmentation_type": { "type": "string", "enum": ["verse", "colon"] },
     "source_hebrew": { "type": "string" },
@@ -142,7 +142,7 @@
         "required": ["decision_id", "target_id", "reviewer_role", "reviewer", "decision", "notes", "timestamp"],
         "additionalProperties": false,
         "properties": {
-          "decision_id": { "type": "string", "pattern": "^rev\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$" },
+          "decision_id": { "type": "string", "pattern": "^rev\\.(?:(?:lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.)|lxx\\.)?ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$" },
           "target_id": { "type": "string" },
           "reviewer_role": { "type": "string" },
           "reviewer": { "type": "string" },

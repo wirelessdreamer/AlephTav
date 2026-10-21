@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v017.a.literal.alt.0001",
-    "rnd.ps025.v017.a.lyric.alt.0001"
+    "rnd.ps025.v017.a.lyric.alt.0001",
+    "rnd.ps025.v017.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v017.a.0001",
     "aud.ps025.v017.a.0002",
     "aud.ps025.v017.a.0003",
-    "aud.ps025.v017.a.0004"
+    "aud.ps025.v017.a.0004",
+    "aud.ps025.v017.a.0005",
+    "aud.ps025.v017.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "851eb65019f901b56d1897a02702cd1d713010f483760e9a51a8de288b945ec7",
+      "audit_id": "aud.ps025.v017.a.0005",
+      "before_hash": "36217859216708b357af1ab683d58abdae71ecaa6911a3a4ea8e5f52b4655cce",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.248932+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v017.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Preserves the growing inward trouble and answers the earlier promised bringing-out with a present imperative.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "02ffdc91d2be62dfbf1c1cb98fe60223221a2efd17afad93e4c3c0d7f6864270",
+      "audit_id": "aud.ps025.v017.a.0006",
+      "before_hash": "9133d76bf9e50b247f970caf4eea4893215cb46e6e6392fc36fecfd6aa3b0fd4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:33:37.151523+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v017.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v017.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the heart's increasing troubles and the direct plea to be brought out of distress. The heart image and movement out of trouble remain intact.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "15f9174b580cf49b68d28db70fcb453f4b21fba62635607769cddd709a6d7845",
+      "audit_ids": [
+        "aud.ps025.v017.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v017.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Changes 'of my heart' to 'in my heart' and renders plural distresses as collective singular 'distress.'",
+      "display_reference": "Psalm 25:17",
+      "english_rendering_id": "rnd.ps025.v017.a.lyric.alt.0002",
+      "generation_run_id": "cxr.663a0784c396",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "צָר֣וֹת לְבָבִ֣י הִרְחִ֑יבוּ מִ֝מְּצֽוּקוֹתַ֗י הוֹצִיאֵֽנִי׃",
+      "literal_backbone": [
+        "The troubles of my heart have grown.",
+        "Bring me out of my distresses."
+      ],
+      "literal_rendering_id": "rnd.ps025.v017.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:17",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v017.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "make wide, enlarge, widen",
+          "note": "Understands the widening as an increase in troubles rather than retaining the spatial wording.",
+          "rendered_as": "have grown",
+          "token_ids": [
+            "ps025.v017.t003"
+          ],
+          "transliteration": "hirḥîḇû",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -352,6 +430,143 @@
       "unit_id": "ps025.v017.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; two longer phrases, each suited to two measures.",
+      "differentiator": "Growing trouble answered by a plea for release",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.21,
+        "stress_approximation": 0.62,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Growing heart troubles",
+          "note": "Retains the heart and the expansion of its troubles.",
+          "source_id": "ps025.v017.a",
+          "token_ids": [
+            "ps025.v017.t001",
+            "ps025.v017.t002",
+            "ps025.v017.t003"
+          ]
+        },
+        {
+          "label": "Being brought out",
+          "note": "Keeps the movement out of distress.",
+          "source_id": "ps025.v017.a",
+          "token_ids": [
+            "ps025.v017.t004",
+            "ps025.v017.t005"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v017.t001–t003 → The troubles in my heart have grown",
+          "ps025.v017.t004–t005 → bring me out of my distress"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v017.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v017.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Preserves the growing inward trouble and answers the earlier promised bringing-out with a present imperative.",
+      "rendering_id": "rnd.ps025.v017.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "צָר֣וֹת לְבָבִ֣י הִרְחִ֑יבוּ",
+        "basis_note": "Supplied Hebrew, read as increasing troubles.",
+        "source_language": "Hebrew",
+        "source_text": "צָר֣וֹת לְבָבִ֣י הִרְחִ֑יבוּ",
+        "token_ids": [
+          "ps025.v017.t001",
+          "ps025.v017.t002",
+          "ps025.v017.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The troubles in my heart have grown;\nbring me out of my distress.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v017.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v017.a",
+      "variation_basis": [
+        "Bring-out vocabulary linking verses 15 and 17"
       ]
     }
   ],

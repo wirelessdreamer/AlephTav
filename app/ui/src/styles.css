@@ -249,7 +249,15 @@ pre {
 }
 
 .app-shell--assistant-side.app-shell--assistant-closed {
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.app-shell--assistant-side.app-shell--assistant-closed > .assistant-launcher {
+  position: fixed;
+  top: auto;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
 }
 
 .app-shell--assistant-footer {
@@ -3217,6 +3225,11 @@ button.composer-path-chip {
   color: var(--gold);
 }
 
+.verse-row__n--heading {
+  padding-inline: 0.5rem;
+  font-size: 0.75rem;
+}
+
 .verse-row__he {
   font-family: var(--hebrew);
   font-size: 1.2rem;
@@ -3379,6 +3392,12 @@ button.composer-path-chip {
   border-color: var(--gold);
   background: #2e2719;
 }
+
+.request-status { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; padding: .85rem 1rem; margin: .5rem 0; border: 1px solid var(--line, #394150); border-radius: 8px; background: var(--panel, #1a1712); color: var(--text, #ece4d4); font: .9rem/1.5 var(--sans, sans-serif); overflow-wrap: anywhere; }
+.request-status--error { color: #ffb5a8; }
+.request-status__spinner { display: inline-block; flex: 0 0 auto; width: 1rem; height: 1rem; border: 2px solid var(--line, #394150); border-top-color: var(--gold, #d8a43c); border-radius: 50%; animation: request-spin 1s linear infinite; }
+@keyframes request-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .request-status__spinner { animation: none; border-color: var(--gold, #d8a43c); border-style: dotted; } }
 
 .interlinear__he {
   font-family: var(--hebrew);
@@ -3744,10 +3763,11 @@ button.composer-path-chip {
   font-size: 0.92rem;
 }
 
-/* Hebrew words in the Liberties pane that show their context when hovered. */
+/* Interactive source words share the pointer used by Greek word study. */
+[data-hebrew-token][tabindex],
 .arr-word[tabindex],
 .arr-lib__word[tabindex] {
-  cursor: help;
+  cursor: pointer;
 }
 
 .arr-word[tabindex]:hover,
@@ -4656,7 +4676,7 @@ button.composer-path-chip {
   }
 
   .verse-row {
-    grid-template-columns: 3rem minmax(0, 1fr) 2.5rem;
+    grid-template-columns: 4rem minmax(0, 1fr) 2.5rem;
   }
 
   .verse-row__he,
@@ -4790,6 +4810,287 @@ button.composer-path-chip {
   display: flex;
   gap: 0.4rem;
   align-items: center;
+}
+
+.briefing-panel h4 {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: #7dd3fc;
+}
+
+.comparison-shell .briefing-panel {
+  border-color: #766034;
+  border-inline-start: 3px solid var(--gold);
+  padding: 1.1rem 1.25rem;
+  background: linear-gradient(110deg, rgba(217, 164, 65, 0.12), var(--panel) 65%);
+}
+
+.briefing-panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.briefing-panel__intro {
+  flex: 0 1 38rem;
+}
+
+.briefing-panel__intro h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.comparison-shell .briefing-panel__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: auto;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+}
+
+.briefing-panel__body:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.source-licenses {
+  margin-top: 0.75rem;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.briefing-inference {
+  margin: 0.6rem 0;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.briefing-source-limit {
+  color: var(--text-soft);
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--gold-hi);
+}
+
+.briefing-inference summary {
+  cursor: pointer;
+  color: var(--text-soft);
+}
+
+.source-licenses summary {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.source-licenses p {
+  max-width: 90rem;
+  margin: 0.6rem 0;
+}
+
+.briefing-sources {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 90rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--ink);
+}
+
+.briefing-sources summary,
+.translation-context-history summary {
+  cursor: pointer;
+  color: var(--gold-hi);
+  font-size: 0.85rem;
+}
+
+.briefing-source-verse + .briefing-source-verse {
+  border-top: 1px solid var(--line);
+  margin-top: 0.8rem;
+}
+
+.briefing-source-verse :is(h5, h6) {
+  margin: 0.65rem 0 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.briefing-source-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.briefing-source-pair p {
+  margin: 0.4rem 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.briefing-source-pair .briefing-source-words {
+  font-size: 1.35rem;
+  line-height: 1.9;
+}
+
+.briefing-source-words[lang='he'] {
+  font-family: var(--hebrew);
+}
+
+.briefing-source-words [tabindex] {
+  display: inline-block;
+  margin-inline: 0.15rem;
+}
+
+.briefing-question-notes {
+  display: grid;
+  gap: 0.35rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 64rem;
+}
+
+.briefing-question-notes textarea {
+  box-sizing: border-box;
+}
+
+.translation-context-history {
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--line-strong);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.translation-context-history li {
+  margin-block: 0.5rem;
+}
+
+.briefing-greek-tooltip {
+  max-height: min(320px, 70vh);
+  overflow-y: auto;
+}
+
+.briefing-panel__head p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.comparison-shell .briefing-panel__prepare {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: auto;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+.comparison-shell .briefing-panel__prepare:hover:not(:disabled) {
+  border-color: var(--gold-hi);
+  background: var(--gold-hi);
+}
+
+@media (max-width: 720px) {
+  .briefing-source-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .briefing-panel__head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .briefing-panel__intro {
+    flex: none;
+  }
+}
+
+.briefing-panel .analysis-defs {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.briefing-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+
+.briefing-questions fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.briefing-questions legend {
+  padding: 0;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.briefing-question {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.briefing-questions .basis {
+  margin: 0;
+}
+
+.briefing-option {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  width: 100%;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+/* A briefing runs to dozens of questions; keep the way to the guidance in reach. */
+.briefing-panel__body > .guidance-actions {
+  position: sticky;
+  bottom: 0;
+  padding: 0.5rem 0;
+  background: var(--ink);
+  flex-wrap: wrap;
+}
+
+/* The app sizes every input to its container; a radio should stay a radio. */
+.briefing-option input[type='radio'] {
+  flex: none;
+  width: auto;
+  margin: 0;
+}
+
+.briefing-option input[type='text'] {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
 }
 
 .comparison-generate {
@@ -6640,6 +6941,10 @@ button.composer-path-chip {
 .confirm-dialog__body p {
   margin: 0;
   line-height: 1.5;
+}
+
+.confirm-dialog__warning {
+  color: var(--warn);
 }
 
 .import-steps {

@@ -16,7 +16,7 @@ import json
 from collections.abc import Callable
 from typing import Any, Literal
 
-from fastapi import HTTPException
+from fastapi import HTTPException, Request
 from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
@@ -31,6 +31,7 @@ from app.api.routes import (
     comparisons,
     corpus,
     export,
+    greek_study,
     jobs,
     project,
     psalms,
@@ -138,6 +139,80 @@ def _payload(**fields: Any) -> dict[str, Any]:
 
 
 # --- Corpus and psalms -------------------------------------------------------------------
+
+
+@_tool(greek_study.editions, read_only=True)
+def list_greek_editions() -> str:
+    """List Greek study editions with applicable current release permission."""
+    return _call(greek_study.editions)
+
+
+@_tool(greek_study.psalms, read_only=True)
+def list_greek_psalms(study_snapshot_id: str, policy_revision_id: str) -> str:
+    return _call(greek_study.psalms, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.reader, read_only=True)
+def read_greek_psalm(psalm: int, study_snapshot_id: str, policy_revision_id: str) -> str:
+    return _call(greek_study.reader, psalm, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.unit, read_only=True)
+def get_greek_unit(unit_id: str, study_snapshot_id: str, policy_revision_id: str) -> str:
+    return _call(greek_study.unit, unit_id, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.card, read_only=True)
+def get_greek_word_card(token_id: str, study_snapshot_id: str, policy_revision_id: str) -> str:
+    return _call(greek_study.card, token_id, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.entry, read_only=True)
+def get_greek_dictionary_entry(
+    entry_id: str, study_snapshot_id: str, policy_revision_id: str
+) -> str:
+    return _call(greek_study.entry, entry_id, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.identifiers, read_only=True)
+def lookup_greek_identifier(
+    scheme: str,
+    value: str,
+    study_snapshot_id: str,
+    policy_revision_id: str,
+) -> str:
+    return _call(greek_study.identifiers, scheme, value, study_snapshot_id, policy_revision_id)
+
+
+@_tool(greek_study.concordance, read_only=True)
+def search_greek_concordance(
+    study_snapshot_id: str,
+    policy_revision_id: str,
+    query_kind: Literal["lexeme_id", "lemma_text", "identifier", "surface"],
+    value: str,
+    identifier_scheme: str | None = None,
+    analysis_scope: Literal["reviewed", "proposed", "all"] = "all",
+    analysis_selection: Literal["selected", "possible"] = "possible",
+    match_unit: Literal["token", "expression"] = "token",
+    expand_components: bool = False,
+    page_size: int = 50,
+    cursor: str | None = None,
+) -> str:
+    return _call(
+        greek_study.concordance,
+        Request({"type": "http", "query_string": b""}),
+        study_snapshot_id,
+        policy_revision_id,
+        query_kind,
+        value,
+        identifier_scheme,
+        analysis_scope,
+        analysis_selection,
+        match_unit,
+        expand_components,
+        page_size,
+        cursor,
+    )
 
 
 @_tool(project.get_project, read_only=True)
@@ -367,13 +442,54 @@ def get_translation_guidance(psalm_id: str, translation_id: str | None = None) -
 
 @_tool(codex.put_translation_guidance)
 def set_translation_guidance(
-    psalm_id: str, translation_guidance: str, translation_id: str | None = None
+    psalm_id: str,
+    translation_guidance: str,
+    translation_id: str | None = None,
+    briefing_annotations: list[dict[str, Any]] | None = None,
+    created_by: str = "reviewer",
 ) -> Any:
     """Store the translator's standing direction for one translation of the psalm."""
     return _call(
         codex.put_translation_guidance,
         psalm_id,
-        {"translation_guidance": translation_guidance, "translation_id": translation_id},
+        {
+            "translation_guidance": translation_guidance,
+            "translation_id": translation_id,
+            "briefing_annotations": briefing_annotations,
+            "created_by": _mcp(created_by),
+        },
+    )
+
+
+@_tool(codex.get_briefing, read_only=True)
+def get_briefing(
+    psalm_id: str, translation_id: str | None = None, include_sources: bool = True
+) -> Any:
+    """The translator's briefing: background and open questions, or null when none is made."""
+    return _call(
+        codex.get_briefing,
+        psalm_id,
+        translation_id=translation_id,
+        include_sources=include_sources,
+    )
+
+
+@_tool(codex.put_briefing_decision)
+def save_briefing_decision(
+    psalm_id: str,
+    annotation: dict[str, Any],
+    translation_id: str | None = None,
+    created_by: str = "reviewer",
+) -> Any:
+    """Record a briefing answer/notes against its exact question and translation."""
+    return _call(
+        codex.put_briefing_decision,
+        psalm_id,
+        {
+            "translation_id": translation_id,
+            "annotation": annotation,
+            "created_by": _mcp(created_by),
+        },
     )
 
 
@@ -795,9 +911,9 @@ def discard_rebuild(unit_id: str, rebuild_id: str, created_by: str = "") -> Any:
 
 
 @_tool(verse_notes.get_verse_history, read_only=True)
-def get_verse_history(unit_id: str) -> Any:
+def get_verse_history(unit_id: str, translation_id: str | None = None) -> Any:
     """A verse's history: renderings, notes and rebuilds over time."""
-    return _call(verse_notes.get_verse_history, unit_id)
+    return _call(verse_notes.get_verse_history, unit_id, translation_id=translation_id)
 
 
 @_tool(verse_notes.get_word_suggestions, read_only=True)
@@ -1315,6 +1431,12 @@ def codex_analyse_psalm(
         psalm_id,
         {"session_id": session_id, "english_layer": english_layer, "force": force},
     )
+
+
+@_tool(codex.prepare_briefing)
+def codex_prepare_briefing(session_id: str, psalm_id: str) -> Any:
+    """Have Codex brief the translator: background, and the questions left for them to decide."""
+    return _call(codex.prepare_briefing, psalm_id, {"session_id": session_id})
 
 
 @_tool(codex.rebuild_verse)

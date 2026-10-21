@@ -198,7 +198,8 @@ export function RebuildReview({
           {replacesAll ? 'Use rebuilt' : 'Keep rebuilt as a proposal'}
         </button>
       </div>
-      {decide.isError ? <p className="comparison-error">{String(decide.error)}</p> : null}
+      {decide.isPending ? <p role="status">Saving your rebuild decision…</p> : null}
+      {decide.isError ? <p className="comparison-error" role="alert">{String(decide.error)}</p> : null}
     </section>
   );
 }

@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v003.a.literal.alt.0001",
-    "rnd.ps025.v003.a.lyric.alt.0001"
+    "rnd.ps025.v003.a.lyric.alt.0001",
+    "rnd.ps025.v003.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v003.a.0001",
     "aud.ps025.v003.a.0002",
     "aud.ps025.v003.a.0003",
-    "aud.ps025.v003.a.0004"
+    "aud.ps025.v003.a.0004",
+    "aud.ps025.v003.a.0005",
+    "aud.ps025.v003.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0a272dc705e9f455120e6d2fb1883c26400125a12f025d32b9489a8acc65d618",
+      "audit_id": "aud.ps025.v003.a.0005",
+      "before_hash": "c0af74967a82b7ea9d7a1bb437b3dfeecfad028e46c1b5c43b95fc36f134eb7a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.642013+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Repeating the shame cadence preserves the Hebrew reversal and connects it to the preceding petition.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e627474a4699391162af87ec9b56b96c1f9b5acbcf0bff7ed2fac867e77e2d0e",
+      "audit_id": "aud.ps025.v003.a.0006",
+      "before_hash": "2bd4e2666f6e4628f58a711d42fb5c9c50cbf43c353183cb40ec89e49666deb2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:31:06.033018+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v003.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v003.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the universal statement about those waiting for God and its reversal for those acting treacherously without cause. The repeated shame predicate maintains the Hebrew contrast.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "39ed555892c22c90e1516e0962cb4d3a364cf9fffeace44de43dcf0d27001d85",
+      "audit_ids": [
+        "aud.ps025.v003.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v003.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The opening connective or emphatic particle is left unexpressed.",
+      "display_reference": "Psalm 25:3",
+      "english_rendering_id": "rnd.ps025.v003.a.lyric.alt.0002",
+      "generation_run_id": "cxr.7966cd13d071",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "גַּ֣ם כָּל־ק֭וֹיֶ לֹ֣א יֵבֹ֑שׁוּ יֵ֝בֹ֗שׁוּ הַבּוֹגְדִ֥ים רֵיקָֽם׃",
+      "literal_backbone": [
+        "Indeed, none who wait for you will be ashamed.",
+        "Those who act treacherously without cause will be ashamed."
+      ],
+      "literal_rendering_id": "rnd.ps025.v003.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:3",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "also, even, indeed",
+          "note": "Its linking or emphatic force has no explicit English counterpart.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps025.v003.t001"
+          ],
+          "transliteration": "gam",
+          "verdict": "omitted"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -313,6 +391,123 @@
       "unit_id": "ps025.v003.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; matching phrase pairs, with a pickup for the longer third line.",
+      "differentiator": "Identical cadences carrying opposite outcomes",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.3,
+        "singability_score": 0.14,
+        "stress_approximation": 0.68,
+        "syllable_count": 27,
+        "syllables": 27
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v003.t002–t005 → None who wait for you will be put to shame",
+          "ps025.v003.t006–t008 → Those who betray without cause will be put to shame"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation using the supplied token evidence.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v003.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Repeating the shame cadence preserves the Hebrew reversal and connects it to the preceding petition.",
+      "rendering_id": "rnd.ps025.v003.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "הַבּוֹגְדִ֥ים רֵיקָֽם",
+        "basis_note": "Uses the supplied evidence tokens.",
+        "source_language": "Hebrew",
+        "source_text": "הַבּוֹגְדִ֥ים רֵיקָֽם",
+        "token_ids": [
+          "ps025.v003.t007",
+          "ps025.v003.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "None who wait for you\nwill be put to shame.\nThose who betray without cause\nwill be put to shame.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation using the supplied token evidence.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v003.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v003.a",
+      "variation_basis": [
+        "Matched musical cadences",
+        "Source-grounded repetition"
       ]
     }
   ],

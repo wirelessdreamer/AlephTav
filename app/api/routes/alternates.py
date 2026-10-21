@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Query
 
 from app.api.deps import raise_as_http
+from app.core.ids import unit_id_from_entity_id
 from app.services import registry_service, rendering_service, review_service
 
 router = APIRouter(tags=["alternates"])
@@ -71,7 +72,7 @@ def accept_alternate(rendering_id: str, payload: dict | None = None) -> dict:
             reviewer_role=request.get("reviewer_role", "alignment reviewer"),
             notes=request.get("rationale", "accepted alternate"),
         )
-        unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
+        unit = registry_service.load_unit(unit_id_from_entity_id("rendering_id", rendering_id))
         return next(
             item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id
         )
@@ -90,7 +91,7 @@ def reject_alternate(rendering_id: str, payload: dict | None = None) -> dict:
             reviewer_role=request.get("reviewer_role", "alignment reviewer"),
             notes=request.get("rationale", "rejected alternate"),
         )
-        unit = registry_service.load_unit(".".join(rendering_id.split(".")[1:4]))
+        unit = registry_service.load_unit(unit_id_from_entity_id("rendering_id", rendering_id))
         return next(
             item for item in unit.get("renderings", []) if item["rendering_id"] == rendering_id
         )

@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from app.core.errors import ReviewRequiredError, ValidationError
-from app.core.ids import decision_id
+from app.core.ids import decision_id, unit_id_from_entity_id
 from app.services import audit_service, registry_service, rendering_service
 
 REVIEWER_ROLES = (
@@ -110,7 +110,7 @@ def hydrate_unit_review_state(unit: dict[str, Any]) -> dict[str, Any]:
 
 
 def add_review_decision(target_id: str, decision: str, reviewer: str, reviewer_role: str, notes: str = "") -> dict[str, Any]:
-    unit_id = ".".join(target_id.split(".")[1:4])
+    unit_id = unit_id_from_entity_id("rendering_id", target_id)
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
     reviewer, reviewer_role = validate_reviewer_identity(reviewer, reviewer_role)
     existing_ids = [item["decision_id"] for item in unit.get("review_decisions", [])]

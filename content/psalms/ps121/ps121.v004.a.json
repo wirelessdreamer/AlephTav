@@ -1,9 +1,112 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v004.a.literal.alt.0001",
+    "rnd.ps121.v004.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v004.a.0001",
+    "aud.ps121.v004.a.0002",
+    "aud.ps121.v004.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1ce0a68c4b19d241f1fb8888a792224e17339c1c61346b06fa7a2addcf47ea66",
+      "audit_id": "aud.ps121.v004.a.0001",
+      "before_hash": "e7818c161da94497f76800e46a82be46cdbd92ea328fc95066c3e3e9516f8129",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.642355+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v004.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding wish with assurance and expands the individual keeper to Israel's keeper.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a634ef2dd9281b2de894fe1821bd303113a87685314196fd12098244743d40bf",
+      "audit_id": "aud.ps121.v004.a.0002",
+      "before_hash": "0859a1748d37d39bd75a28297b9a210e4a14d7f48cd201bc1c002721a2efde9a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.276709+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding wish while retaining both sleep verbs and the collective name Israel.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0fd2c159635af07df66e370fa1befe7154d647df9f07fb8237b5220eeb019e64",
+      "audit_id": "aud.ps121.v004.a.0003",
+      "before_hash": "721be60a5c181c789289f23ff38bf6339a46a075b2588f8e3bb5b0241c581271",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:15:07.811083+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the attention marker, the two negated actions of slumbering and sleeping, and the identification of their subject as Israel's guardian. Retains the declarative assurance following verse 3's wishes.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "6b08511d1f5d101f05fe370317341352315cdd58faa1ddfcba0b984b97c4fc7f",
+      "audit_ids": [
+        "aud.ps121.v004.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Moves the subject before the verbs and replaces explicit coordination with parallel contracted negatives. The lyric uses general present tense where the literal version uses future tense; both are defensible readings of the Hebrew imperfects.",
+      "display_reference": "Psalm 121:4",
+      "english_rendering_id": "rnd.ps121.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.7dd6c3f84368",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הִנֵּ֣ה לֹֽא־יָ֭נוּם וְלֹ֣א יִישָׁ֑ן שׁ֝וֹמֵ֗ר יִשְׂרָאֵֽל׃",
+      "literal_backbone": [
+        "Look: the keeper of Israel neither slumbers nor sleeps."
+      ],
+      "literal_rendering_id": "rnd.ps121.v004.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:4",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Nûm: slumber, doze; yāšēn: sleep; lōʾ: not.",
+          "note": "Preserves both verbs and negations. Present tense expresses a general characteristic rather than an explicitly future assurance.",
+          "rendered_as": "doesn't doze, doesn't sleep",
+          "token_ids": [
+            "ps121.v004.t002",
+            "ps121.v004.t003",
+            "ps121.v004.t004",
+            "ps121.v004.t005"
+          ],
+          "transliteration": "lōʾ-yānûm wəlōʾ yîšān",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v004.a.0001"
   ],
@@ -15,7 +118,220 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains the attention marker and both sleep verbs.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v004.t001 → Look!",
+          "ps121.v004.t002–t003 → will neither slumber",
+          "ps121.v004.t004–t005 → nor sleep",
+          "ps121.v004.t006–t007 → The keeper of Israel"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v004.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v004.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Answers the preceding wish with assurance and expands the individual keeper to Israel's keeper.",
+      "rendering_id": "rnd.ps121.v004.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "Look! The keeper of Israel\nwill neither slumber nor sleep.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v004.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v004.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Two direct negatives answer the preceding doze.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 7,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.81,
+        "stress_approximation": 0.64,
+        "syllable_count": 9,
+        "syllables": 9
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Israel's unsleeping guard",
+          "note": "Keeps dozing and sleeping distinct.",
+          "source_id": "ps121.v004.a",
+          "token_ids": [
+            "ps121.v004.t003",
+            "ps121.v004.t005",
+            "ps121.v004.t006",
+            "ps121.v004.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v004.t001 → Look",
+          "ps121.v004.t002–t003 → doesn't doze",
+          "ps121.v004.t004–t005 → doesn't sleep",
+          "ps121.v004.t006–t007 → Israel's guard"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v004.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v004.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Answers the preceding wish while retaining both sleep verbs and the collective name Israel.",
+      "rendering_id": "rnd.ps121.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Look—Israel's guard\ndoesn't doze, doesn't sleep.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v004.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "הִנֵּ֣ה לֹֽא־יָ֭נוּם וְלֹ֣א יִישָׁ֑ן שׁ֝וֹמֵ֗ר יִשְׂרָאֵֽל׃",

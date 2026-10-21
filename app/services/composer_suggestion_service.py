@@ -4,10 +4,15 @@ import json
 import re
 from typing import Any
 
-from app.core.errors import GenerationError, NotFoundError, ValidationError
+from app.core.errors import GenerationError, LicensePolicyError, NotFoundError, ValidationError
 from app.llm.adapters import build_adapter
 from app.llm.base import GenerationRequest
-from app.services import lyric_reference_service, registry_service
+from app.services import (
+    generation_source_policy_service,
+    lyric_reference_service,
+    registry_service,
+    source_basis_service,
+)
 
 STAGES = {"phrase", "concept", "lyric"}
 DEFAULT_STYLE_PROFILE = "study_literal"
@@ -22,7 +27,6 @@ DELIVERY_PROFILES = {
     "hook_refrain",
 }
 HEBREW_TEXT_RE = re.compile(r"[\u0590-\u05FF]")
-GREEK_TEXT_RE = re.compile(r"[\u0370-\u03FF\u1F00-\u1FFF]")
 
 
 def _style_profile(style_profile: str | None) -> dict[str, Any]:
@@ -230,8 +234,7 @@ def _token_prompt_payload(token: dict[str, Any]) -> dict[str, Any]:
         "token_id": token.get("token_id"),
         "surface": token.get("surface"),
         "transliteration": token.get("transliteration"),
-        "greek": token.get("greek"),
-        "greek_strong": token.get("greek_strong"),
+        **{key: token[key] for key in ("greek", "greek_strong") if key in token},
         "lemma": token.get("lemma"),
         "strong": token.get("strong"),
         "display_gloss": token.get("display_gloss"),
@@ -247,6 +250,7 @@ def _token_prompt_payload(token: dict[str, Any]) -> dict[str, Any]:
 def _chunk_prompt_payload(
     unit: dict[str, Any], chunks: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
+    unit = generation_source_policy_service.model_unit(unit)
     unit_tokens = list(unit.get("tokens") or [])
     lxx_witness = next(
         (item for item in unit.get("witnesses", []) if item.get("source_id") == "lxx"), None
@@ -289,7 +293,7 @@ def _chunk_prompt_payload(
                         "token_id": token.get("token_id"),
                         "surface": token.get("surface"),
                         "transliteration": token.get("transliteration"),
-                        "greek": token.get("greek"),
+                        **({"greek": token["greek"]} if "greek" in token else {}),
                         "display_gloss": token.get("display_gloss"),
                     }
                     for token in chunk_tokens
@@ -318,6 +322,7 @@ def _chunk_prompt_payload(
 def _enrich_chunk_source_context(
     unit: dict[str, Any], chunks: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
+    unit = generation_source_policy_service.model_unit(unit)
     unit_tokens = list(unit.get("tokens") or [])
     lxx_witness = next(
         (
@@ -642,6 +647,9 @@ def _prompt(
     candidate_count: int,
     style: dict[str, Any],
 ) -> str:
+    from app.services import greek_generation_service
+
+    greek_evidence = greek_generation_service.prompt_evidence(unit["psalm_id"], [unit["unit_id"]])
     unit_context = {
         "unit_id": unit["unit_id"],
         "ref": unit["ref"],
@@ -693,6 +701,7 @@ def _prompt(
         f"Produce up to {candidate_count} candidates per chunk across both source "
         "bases combined. Fewer is acceptable only when the chunk is genuinely constrained.\n\n"
         f"Style target:\n{registry_service.deterministic_json(style)}\n"
+        f"Approved Greek source evidence:\n{greek_evidence}\n"
         f"Unit context:\n{registry_service.deterministic_json(unit_context)}\n"
         f"Chunk input:\n{registry_service.deterministic_json(chunk_input)}\n"
         f"Output contract:\n{json.dumps(_contract(candidate_count), indent=2, sort_keys=True)}"
@@ -890,11 +899,10 @@ def _source_basis_drift_codes(
         problems.append("Septuagint-derived candidates must include lxx in source_ids")
     if expected_language == "he" and not (source_ids & {"uxlc", "oshb", "macula"}):
         problems.append("Hebrew-derived candidates must include a Hebrew source id")
-    if expected_language == "grc" and source_text:
-        if HEBREW_TEXT_RE.search(source_text):
-            problems.append("Septuagint-derived source_anchor.source_text contains Hebrew text")
-        elif not GREEK_TEXT_RE.search(source_text):
-            problems.append("Septuagint-derived source_anchor.source_text lacks Greek text")
+    if expected_language == "grc":
+        script_problem = source_basis_service.greek_source_anchor_problem(source_text)
+        if script_problem:
+            problems.append(script_problem)
     if expected_language == "he" and source_text and not HEBREW_TEXT_RE.search(source_text):
         problems.append("Hebrew-derived source_anchor.source_text lacks Hebrew text")
 
@@ -1215,11 +1223,25 @@ def suggest_for_unit(
             "chunks": [],
         }
 
-    return _normalize_response(
-        response.payload,
+    projected_payload = {**response.payload, "chunks": []}
+    blocked = 0
+    for chunk in response.payload.get("chunks", []):
+        permitted = []
+        for candidate in chunk.get("candidates", []):
+            try:
+                source_basis_service.require_generation_basis_available(candidate, unit_id)
+            except LicensePolicyError:
+                blocked += 1
+                continue
+            permitted.append(candidate)
+        projected_payload["chunks"].append({**chunk, "candidates": permitted})
+    result = _normalize_response(
+        projected_payload,
         unit_id,
         stage,
         candidate_count,
         source_enriched_chunks,
         basis_filter=basis_filter,
     )
+    result["blocked_source_candidate_count"] = blocked
+    return result

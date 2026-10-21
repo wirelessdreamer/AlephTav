@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v006.a.lyric.alt.0001"
+    "rnd.ps008.v006.a.lyric.alt.0001",
+    "rnd.ps008.v006.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v006.a.0001",
-    "aud.ps008.v006.a.0002"
+    "aud.ps008.v006.a.0002",
+    "aud.ps008.v006.a.0003",
+    "aud.ps008.v006.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:26:33.189665+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "42a629e8763ff5f6f5266e7fe6dc1bc34252faaef72a6ff2470467aa9d1cff30",
+      "audit_id": "aud.ps008.v006.a.0003",
+      "before_hash": "7c6bb897d444a6825b7a4209d68bcbbff642b946a27f22e633a5c918b63c2746",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.490353+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5eede892acfa0c639d53bcd6b85b15c9f63ea565abd3b14b8a080a6fca1b23c1",
+      "audit_id": "aud.ps008.v006.a.0004",
+      "before_hash": "96bf962126c2b3dbb13a0d31ef56f1b9482bfacb6e57c6260a39f794c0b5674d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:02:58.812141+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v006.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -83,6 +118,49 @@
           ],
           "transliteration": "mēʾĕlōhiym",
           "verdict": "narrowing"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves humanity's position a little below God and the crowning with glory and honor, in the Hebrew's order.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "b43eeea54368b8d77eacae2a7004a1c5abf03f7ad08b06a5e79e5b8f01406833",
+      "audit_ids": [
+        "aud.ps008.v006.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v006.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The Hebrew's generic singular “him” becomes inclusive “us.” The lyric repeats the crowning verb, which occurs once in Hebrew.",
+      "display_reference": "Psalm 8:6",
+      "english_rendering_id": "rnd.ps008.v006.a.lyric.alt.0002",
+      "generation_run_id": "cxr.d9a224bb3f72",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וַתְּחַסְּרֵ֣הוּ מְּ֭עַט מֵאֱלֹהִ֑ים וְכָב֖וֹד וְהָדָ֣ר תְּעַטְּרֵֽהוּ׃",
+      "literal_backbone": [
+        "You made him a little lower than God/divine beings,",
+        "and crowned him with glory and splendor."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:6",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "than God, gods, or divine beings",
+          "note": "“God” is an established reading of this ambiguous noun; “divine beings” is another possible understanding.",
+          "rendered_as": "Lower than God",
+          "token_ids": [
+            "ps008.v006.t003"
+          ],
+          "transliteration": "mēʾĕlōhiym",
+          "verdict": "defensible"
         }
       ]
     }
@@ -192,6 +270,104 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.33,
+        "singability_score": 0.15,
+        "stress_approximation": 0.69,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v006.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You made us a little\nLower than God\nYou crowned us with glory\nYou crowned us with honor",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v006.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

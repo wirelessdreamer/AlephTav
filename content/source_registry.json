@@ -1,0 +1,38 @@
+{
+  "policy_revision_id": "owner-greek-generation-20261020-v1",
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "components": {
+        "text": {
+          "approvals": [
+            {
+              "decision": "approve",
+              "payload_hash": "7ece10a59916f4a0d7bfee7af03974424181e651bb204f812e5969cf5b764d5d",
+              "reviewer_id": "chat:user",
+              "role": "owner"
+            },
+            {
+              "decision": "approve",
+              "payload_hash": "7ece10a59916f4a0d7bfee7af03974424181e651bb204f812e5969cf5b764d5d",
+              "reviewer_id": "codex:automated-license-policy-audit",
+              "role": "license"
+            }
+          ],
+          "capabilities": {
+            "analysis": false,
+            "dictionary": false,
+            "display": true,
+            "export": false,
+            "generation": true
+          },
+          "package_hashes": {
+            "swete1896.text": "edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e"
+          },
+          "status": "approved"
+        }
+      },
+      "source_id": "swete1896"
+    }
+  ]
+}

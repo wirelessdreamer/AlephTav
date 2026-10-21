@@ -18,13 +18,15 @@ from typing import Any
 from jsonschema import Draft202012Validator
 
 from app.core.config import get_settings
-from app.core.errors import GenerationError, NotFoundError, ValidationError
+from app.core.errors import GenerationError, LicensePolicyError, NotFoundError, ValidationError
 from app.llm.strict_schema import strict_output_schema
 from app.services import (
     audit_service,
     generation_service,
+    generation_source_policy_service,
     registry_service,
     rendering_service,
+    source_basis_service,
 )
 from app.services import (
     codex_app_server_service as codex,
@@ -36,12 +38,12 @@ from app.services import (
     psalm_translations_service as translations,
 )
 
-PROMPT_TEMPLATE_VERSION = "codex-translation-v2"
+PROMPT_TEMPLATE_VERSION = "codex-translation-v5"
 #: Reasoning effort asked of Codex for AlephTav's turns, rather than whatever the user's
 #: Codex config uses for coding. A six-verse passage at the highest setting never came
 #: back; the same turn at "high" finished in about two minutes with every verse.
 TURN_EFFORT = "high"
-PASSAGE_TEMPLATE_VERSION = "codex-passage-v1"
+PASSAGE_TEMPLATE_VERSION = "codex-passage-v4"
 
 RUN_RUNNING = "running"
 RUN_COMPLETED = "completed"
@@ -188,9 +190,44 @@ def get_guidance(psalm_id: str, translation_id: str | None = None) -> str:
     return translations.get_guidance(psalm_id, translation_id)
 
 
-def set_guidance(psalm_id: str, guidance: str, translation_id: str | None = None) -> dict[str, Any]:
+def generation_guidance(psalm_id: str, translation_id: str | None = None) -> str:
+    """Editable guidance plus the independently saved briefing decisions."""
+    from app.services import translation_context_service
+
+    return "\n\n".join(
+        filter(
+            None,
+            [
+                get_guidance(psalm_id, translation_id),
+                translation_context_service.briefing_instructions(psalm_id, translation_id),
+            ],
+        )
+    )
+
+
+def set_guidance(
+    psalm_id: str,
+    guidance: str,
+    translation_id: str | None = None,
+    *,
+    briefing_annotations: list[dict[str, Any]] | None = None,
+    created_by: str = "reviewer",
+) -> dict[str, Any]:
+    from app.services import translation_context_service
+
     cleaned = guidance.strip()
-    translations.set_guidance(psalm_id, translation_id, cleaned)
+    notes = translation_context_service.validate_annotations(
+        psalm_id,
+        translation_id,
+        briefing_annotations or [],
+    )
+    translations.set_guidance(
+        psalm_id,
+        translation_id,
+        cleaned,
+        annotations=notes,
+        created_by=created_by,
+    )
     return {"psalm_id": psalm_id, "translation_id": translation_id, GUIDANCE_KEY: cleaned}
 
 
@@ -207,7 +244,7 @@ def build_translation_prompt(
     translation_id: str | None = None,
 ) -> str:
     """Assemble only the evidence the task needs, as required by FR-4."""
-    unit = registry_service.load_unit(unit_id)
+    unit = generation_source_policy_service.model_unit(registry_service.load_unit(unit_id))
 
     literal = next(
         (r for r in unit.get("renderings", []) if r.get("layer") == "literal"),
@@ -221,7 +258,7 @@ def build_translation_prompt(
         and translations.shows_in(r, translation_id)
     ]
 
-    guidance = get_guidance(unit["psalm_id"], translation_id)
+    guidance = generation_guidance(unit["psalm_id"], translation_id)
 
     sections = [
         "# Translation task",
@@ -242,6 +279,8 @@ def build_translation_prompt(
         ]
     sections += [
         "",
+        source_basis_service.generation_prompt_rules(layer, unit["psalm_id"]),
+        "",
         f"## Layer instructions ({layer})",
         _layer_rules(layer),
         "",
@@ -251,6 +290,9 @@ def build_translation_prompt(
         "## Hebrew tokens (ordered)",
         _token_lines(unit),
     ]
+    from app.services import greek_generation_service
+
+    sections.append(greek_generation_service.prompt_evidence(unit["psalm_id"], [unit_id]))
     if literal is not None and layer != "literal":
         sections += ["", "## Literal baseline", f"  {literal['text']}"]
     if locked:
@@ -269,6 +311,7 @@ def build_translation_prompt(
 
 
 def _token_lines(unit: dict[str, Any]) -> str:
+    unit = generation_source_policy_service.model_unit(unit)
     lines = []
     for token in unit.get("tokens", []):
         bits = [f"{token.get('token_id')}: {token.get('surface', '')}"]
@@ -304,8 +347,12 @@ def build_passage_prompt(
     recurring terms and parallelism consistent across verse boundaries.
     """
     psalm = registry_service.load_psalm(psalm_id)
+    psalm = {
+        **psalm,
+        "units": [generation_source_policy_service.model_unit(unit) for unit in psalm["units"]],
+    }
     units = {unit["unit_id"]: unit for unit in psalm["units"]}
-    guidance = get_guidance(psalm_id, translation_id)
+    guidance = generation_guidance(psalm_id, translation_id)
 
     sections = [
         "# Translation task -- psalm passage",
@@ -316,7 +363,7 @@ def build_passage_prompt(
         "Translate these units as one continuous passage rather than as separate verses:",
         "keep word choices, meter and imagery consistent from verse to verse, and let",
         "parallel lines answer each other. Return exactly one entry per unit, in the order",
-        "listed, each with one candidate.",
+        "listed, with one candidate unless the source limits below require an empty list.",
     ]
     if guidance:
         sections += [
@@ -324,8 +371,17 @@ def build_passage_prompt(
             "## Translator guidance for this psalm (follow this above general style rules)",
             guidance,
         ]
-    sections += ["", f"## Layer instructions ({layer})", _layer_rules(layer)]
+    sections += [
+        "",
+        source_basis_service.generation_prompt_rules(layer, psalm_id),
+        "",
+        f"## Layer instructions ({layer})",
+        _layer_rules(layer),
+    ]
 
+    from app.services import greek_generation_service
+
+    sections.append(greek_generation_service.prompt_evidence(psalm_id, unit_ids))
     sections += ["", "## The whole psalm (units to translate are marked)"]
     for unit in psalm["units"]:
         target = unit["unit_id"] in unit_ids
@@ -390,11 +446,7 @@ def get_run(run_id: str) -> dict[str, Any]:
 
 
 def _septuagint_basis_errors(payload: dict[str, Any]) -> list[dict[str, str]]:
-    """The generation path's ``basis_blur`` check, for candidates claiming a Greek basis.
-
-    Hebrew-basis candidates are not held to it: Codex labels those loosely
-    ("hebrew", unit ids as source ids), and no prompt here asks it for Greek.
-    """
+    """Check Greek basis labels and resolve their exact, currently approved source."""
     if "candidates" in payload:
         entries = [("", payload)]
     else:
@@ -403,12 +455,33 @@ def _septuagint_basis_errors(payload: dict[str, Any]) -> list[dict[str, str]]:
     for prefix, entry in entries:
         for index, candidate in enumerate(entry.get("candidates", [])):
             basis = candidate["translation_basis"]
-            if basis["basis_type"] != "septuagint_greek_to_english":
-                continue
-            for flag in generation_service._source_basis_drift_flags(
-                basis, candidate["source_anchor"]
-            ):
-                errors.append({"path": f"{prefix}candidates/{index}", "message": flag["message"]})
+            problems: list[str] = []
+            code = "invalid_source_basis"
+            if basis["basis_type"] == "septuagint_greek_to_english":
+                problems.extend(
+                    flag["message"]
+                    for flag in generation_service._source_basis_drift_flags(
+                        basis, candidate["source_anchor"]
+                    )
+                )
+            try:
+                source_basis_service.require_generation_basis_available(
+                    candidate, entry.get("unit_id")
+                )
+            except source_basis_service.GreekGenerationUnavailableError as error:
+                code = "greek_generation_unavailable"
+                problems.append(str(error))
+            except LicensePolicyError as error:
+                problems.append(str(error))
+            if problems:
+                errors.append(
+                    {
+                        "path": f"{prefix}candidates/{index}",
+                        "message": "; ".join(problems),
+                        "code": code,
+                        "unit_id": entry.get("unit_id", ""),
+                    }
+                )
     return errors
 
 
@@ -456,6 +529,21 @@ def run_contract_turn(
         "payload": None,
         "error": None,
     }
+    if run["psalm_id"] and kind in {KIND_TRANSLATION, "briefing", "rebuild"}:
+        from app.services import translation_context_service
+
+        run["translation_context"] = translation_context_service.capture(
+            run["psalm_id"],
+            run["translation_id"],
+        )
+    if run["psalm_id"]:
+        from app.services import greek_generation_service
+
+        greek_context = greek_generation_service.context(run["psalm_id"])
+        if greek_context:
+            run["greek_generation_source"] = {
+                key: value for key, value in greek_context.items() if key != "by_mt_unit"
+            }
     _save_run(run)
 
     before = len(client.notifications)
@@ -498,12 +586,30 @@ def run_contract_turn(
         run["error"] = "Codex output failed the contract."
         return _save_run(run)
 
-    blurred = _septuagint_basis_errors(payload) if kind == KIND_TRANSLATION else []
+    blurred = _septuagint_basis_errors(payload) if kind in {KIND_TRANSLATION, "rebuild"} else []
     if blurred:
-        run["status"] = RUN_INVALID_OUTPUT
         run["validation"] = blurred
-        run["error"] = "Codex output claimed a Septuagint basis it does not carry."
-        return _save_run(run)
+        unavailable = any(error["code"] == "greek_generation_unavailable" for error in blurred)
+        message = (
+            "The requested Greek source is not currently approved or available for generation. "
+            "Your briefing answers remain saved."
+            if unavailable
+            else "Greek source verification failed: "
+            + "; ".join(f"{error['unit_id']}: {error['message']}" for error in blurred[:2])
+        )
+        blocked = {error["unit_id"] for error in blurred}
+        # A bad unit must not discard independent, fully validated Hebrew units.
+        kept = [item for item in payload.get("units", []) if item["unit_id"] not in blocked]
+        if kept and kind == KIND_TRANSLATION:
+            run["source_failures"] = [
+                {"unit_id": unit_id, "error": message}
+                for unit_id in dict.fromkeys(error["unit_id"] for error in blurred)
+            ]
+            payload = {**payload, "units": kept}
+        else:
+            run["status"] = RUN_INVALID_OUTPUT
+            run["error"] = message
+            return _save_run(run)
 
     run["status"] = RUN_COMPLETED
     run["payload"] = payload
@@ -661,6 +767,7 @@ def fill_psalm_passage(
     failures: dict[str, str] = {}
 
     for layer, targets in (("literal", lacking_literal), (english_layer, unit_ids)):
+        targets = [unit_id for unit_id in targets if unit_id not in failures]
         if not targets:
             continue
         run = run_contract_turn(
@@ -687,13 +794,21 @@ def fill_psalm_passage(
             result["error"] = run.get("error")
             return result
 
+        for failure in run.get("source_failures", []):
+            failures[failure["unit_id"]] = failure["error"]
+
         answered: dict[str, dict[str, Any]] = {}
         for item in run["payload"]["units"]:
             answered.setdefault(item["unit_id"], item)
         for unit_id in targets:
             item = answered.get(unit_id)
             if item is None or not item["candidates"]:
-                failures.setdefault(unit_id, f"Codex returned no {layer} rendering for this unit")
+                failures.setdefault(
+                    unit_id,
+                    f"Codex returned no {layer} rendering for this unit. If a saved choice "
+                    "requires Greek, the exact approved Greek source anchor is required. "
+                    "Your saved answer has not been changed.",
+                )
                 continue
             for candidate in item["candidates"]:
                 rendering = _create_rendering(run, unit_id, candidate, created_by)
@@ -728,6 +843,8 @@ def save_run_candidates(run_id: str, created_by: str = "codex") -> list[dict[str
         raise ValidationError(f"Run {run_id} has no validated payload to save")
     if not run.get("unit_id"):
         raise ValidationError(f"Run {run_id} is a passage; its renderings were saved when it ran")
+    for candidate in run["payload"].get("candidates", []):
+        source_basis_service.require_generation_basis_available(candidate, run["unit_id"])
 
     return [
         _create_rendering(run, run["unit_id"], candidate, created_by)
@@ -744,6 +861,7 @@ def _alignment_hints(candidate: dict[str, Any]) -> dict[str, list[str]]:
 def _create_rendering(
     run: dict[str, Any], unit_id: str, candidate: dict[str, Any], created_by: str
 ) -> dict[str, Any]:
+    greek_source = source_basis_service.require_generation_basis_available(candidate, unit_id)
     return rendering_service.create_rendering(
         unit_id=unit_id,
         layer=run["layer"],
@@ -758,6 +876,9 @@ def _create_rendering(
         metrics=candidate.get("metrics"),
         grounding_confidence=candidate.get("grounding_confidence"),
         translation_basis=candidate.get("translation_basis"),
+        source_anchor=candidate.get("source_anchor"),
+        delivery_profile=candidate.get("delivery_profile"),
+        variation_basis=candidate.get("variation_basis"),
         preserved_source_images=candidate.get("preserved_source_images"),
         differentiator=candidate.get("differentiator"),
         translation_id=run.get("translation_id"),
@@ -768,8 +889,15 @@ def _create_rendering(
             "turn_id": run.get("turn_id"),
             "run_id": run["run_id"],
             "prompt_template_version": run["prompt_template_version"],
+            # The guidance the prompt carried, so the table can tell when it has since changed.
+            "guidance": (run.get("translation_context") or {}).get(
+                "guidance",
+                get_guidance(unit_id.split(".")[0], run.get("translation_id")),
+            ),
+            "translation_context": run.get("translation_context"),
             "generated_at": run.get("completed_at"),
             "contract_validated": True,
+            **({"greek_generation_source": greek_source} if greek_source else {}),
             **_alignment_hints(candidate),
         },
     )
@@ -1075,14 +1203,14 @@ def cached_suggestions(
     entry = _read_suggestions().get(_suggestion_key(unit_id, token_ids, layer, translation_id))
     if entry is None:
         return None
-    return _with_freshness(entry, get_guidance(unit_id.split(".")[0], translation_id))
+    return _with_freshness(entry, generation_guidance(unit_id.split(".")[0], translation_id))
 
 
 def cached_suggestions_for_unit(
     unit_id: str, layer: str, translation_id: str | None = None
 ) -> list[dict[str, Any]]:
     """Every word of a unit that has choices for ``layer``, for the psalm-wide summary."""
-    guidance = get_guidance(unit_id.split(".")[0], translation_id)
+    guidance = generation_guidance(unit_id.split(".")[0], translation_id)
     return [
         _with_freshness(entry, guidance)
         for entry in _read_suggestions().values()
@@ -1095,6 +1223,7 @@ def cached_suggestions_for_unit(
 def _readings_elsewhere(unit: dict[str, Any], token_ids: list[str], layer: str) -> list[str]:
     """How the corpus glosses each word in focus, here and wherever its lemma recurs in
     the Psalms, with the LXX, and this translation's own rendering of those verses."""
+    unit = generation_source_policy_service.model_unit(unit)
     tokens = {token["token_id"]: token for token in unit.get("tokens", [])}
     lines: list[str] = []
     seen: set[str] = set()
@@ -1118,7 +1247,8 @@ def _readings_elsewhere(unit: dict[str, Any], token_ids: list[str], layer: str) 
                 context = comparisons.occurrence_context(token_id, ref, layer)
             except (NotFoundError, ValidationError):
                 continue  # outside the Psalms, or a psalm this workspace does not hold
-            for match in context["matches"]:
+            for original in context["matches"]:
+                match = generation_source_policy_service.model_token(original)
                 key = (match.get("display_gloss") or "?", match.get("greek") or "")
                 readings.setdefault(key, []).append(ref)
             if context["english_text"]:
@@ -1136,7 +1266,7 @@ def _readings_elsewhere(unit: dict[str, Any], token_ids: list[str], layer: str) 
 def build_suggestion_prompt(
     unit_id: str, token_ids: list[str], layer: str, translation_id: str | None = None
 ) -> str:
-    unit = registry_service.load_unit(unit_id)
+    unit = generation_source_policy_service.model_unit(registry_service.load_unit(unit_id))
     tokens = {token["token_id"]: token for token in unit.get("tokens", [])}
     unknown = [token_id for token_id in token_ids if token_id not in tokens]
     if not token_ids or unknown:
@@ -1151,7 +1281,7 @@ def build_suggestion_prompt(
                 bits.append(f"{key}={token[key]}")
         focus.append("  " + " | ".join(bits))
 
-    guidance = get_guidance(unit["psalm_id"], translation_id)
+    guidance = generation_guidance(unit["psalm_id"], translation_id)
     sections = [
         "# Word choice task",
         f"Unit: {unit_id} ({unit['ref']})",
@@ -1166,6 +1296,9 @@ def build_suggestion_prompt(
         "## The word(s) in focus",
         *focus,
     ]
+    from app.services import greek_generation_service
+
+    sections.append(greek_generation_service.prompt_evidence(unit["psalm_id"], [unit_id]))
     for shown in ("literal", layer):
         rendering = comparisons.select_rendering(unit, shown, translation_id)
         if rendering is not None:
@@ -1257,7 +1390,7 @@ def suggest_word_renderings(
         "suggestions": [],
         "created_at": run.get("completed_at"),
         # Kept so choices from older guidance, or an older prompt, are flagged outdated.
-        "guidance": get_guidance(unit_id.split(".")[0], translation_id),
+        "guidance": generation_guidance(unit_id.split(".")[0], translation_id),
         "template_version": SUGGEST_TEMPLATE_VERSION,
     }
     if run["status"] != RUN_COMPLETED:

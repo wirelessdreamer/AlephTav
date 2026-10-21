@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "token_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.ps\\d{3}\\.v\\d{3}\\.t\\d{3}$"
+    },
+    "position": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "surface": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalized": {
+      "type": "string",
+      "minLength": 1
+    },
+    "text_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    "source_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fragments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "leaf": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "page": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "line": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "strip": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      "required": [
+        "file",
+        "locator",
+        "fragments"
+      ]
+    }
+  },
+  "required": [
+    "token_id",
+    "position",
+    "surface",
+    "normalized",
+    "text_span",
+    "source_locator"
+  ]
+}

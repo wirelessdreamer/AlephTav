@@ -1,9 +1,215 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps077.v019.a.literal.alt.0001",
+    "rnd.ps077.v019.a.lyric.alt.0001",
+    "rnd.ps077.v019.a.lyric.alt.0002",
+    "rnd.ps077.v019.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps077.v019.a.0001",
+    "aud.ps077.v019.a.0002",
+    "aud.ps077.v019.a.0003",
+    "aud.ps077.v019.a.0004",
+    "aud.ps077.v019.a.0005",
+    "aud.ps077.v019.a.0006",
+    "aud.ps077.v019.a.0007",
+    "aud.ps077.v019.a.0008",
+    "aud.ps077.v019.a.0009"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4c9564c85ab944ec7d97a293c4a03ff981c9cd38821fa6b2e9b796549c7fb689",
+      "audit_id": "aud.ps077.v019.a.0001",
+      "before_hash": "a786535a2fd3b70df3145c7702a541ce6f74a181859f8283870cc63601ccbb6e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:46:37.067632+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v019.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries the skies' voice into thunder, then answers the trembling depths with the trembling earth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f8088df8af40dba57115f326fba6a318a047e6820a07056d96c811c780cb62ce",
+      "audit_id": "aud.ps077.v019.a.0002",
+      "before_hash": "705308a9b09f8abf1c473349c2647d78150f37412fa202366592c0841764cfac",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:48:41.626818+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Develops the skies' voice into thunder and answers the shaking depths with the shaking earth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "01ebeadc5e10937069bca148ccf1eba7542488e025446161fe5308ad8696df60",
+      "audit_id": "aud.ps077.v019.a.0003",
+      "before_hash": "d3a8bc58e8af71e4e514da086b0a25e90a7d9a73e1115eea791b44ea3bcd795c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:06:47.294714+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Carries the voice motif into thunder and repeats the depths' trembling at the scale of the earth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7194d633e37095fbc82f617580293d5e06df706e14d4dd899760c65ea73951bb",
+      "audit_id": "aud.ps077.v019.a.0004",
+      "before_hash": "be99f70d80a61fd997321592505c4d641ce4edd6d544cfb699ccf40f374aa64a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:11:10.152520+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Carries the voice motif into thunder and repeats the depths' trembling at the scale of the earth.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a4712795ea902d33611c936573b7c37e30c3ef9aa92b19c2408fc6365d5f1574",
+      "audit_id": "aud.ps077.v019.a.0005",
+      "before_hash": "c0e46f0d084e7214c9b44a3389e68b284889ac6643de3e344d7b23e62f51e299",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:14:31.918725+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps077.v019.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "cf11efbf6fc560e72ef2b13e8250d7b7657f5190db7999e46e408b371ed3d24c",
+      "audit_id": "aud.ps077.v019.a.0006",
+      "before_hash": "4ddf221364f9cabcb924ec6c2a1ec89aa7bc1b4054ce28c1a146301223f08270",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.645604+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.c5f237f33b53",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "753b81742ff67916d612154b8e35705d8900895d8e38ae3b053a67010ba675ce",
+      "audit_id": "aud.ps077.v019.a.0007",
+      "before_hash": "bd7d9cacae93458008e0dd3f9825b218c32bb55f01caf42539265a97dcd0d9f5",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.667191+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.a7948303f387",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bf10524595e08c2678588fea87b87409103d2ed108e7530bf7be949ab91bb7f7",
+      "audit_id": "aud.ps077.v019.a.0008",
+      "before_hash": "a6c669988001c54b5d9b1abd2b88d5e76ec4e2c84a12797c4a3693a188fd648a",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.643242+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e8f0c9572e8bd68f951e5263abd22d3c2fcfb8713daec04354c3d7a1e80765f6",
+      "audit_id": "aud.ps077.v019.a.0009",
+      "before_hash": "3c430705dfe67fffd63c4f9d89c397efb71453b19edcb593a4ac6386cf5fb903",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.663680+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v019.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the voice of God's thunder in the whirlwind, lightning illuminating the world, and the earth's trembling and shaking, in source order. Both earth-motion verbs and direct reference to God's thunder remain intact.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "ad20813479022272342610d849f504b4434be397c22ab495babf2a3199517502",
+      "audit_ids": [
+        "aud.ps077.v019.a.0005"
+      ],
+      "comparison_id": "cmp.ps077.v019.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Rang out' supplies an audible action in the verbless opening clause. Collective 'lightning' naturally represents the Hebrew plural flashes. 'Whirlwind' selects a contextual interpretation of the rolling or wheeling term.",
+      "display_reference": "Psalm 77:19",
+      "english_rendering_id": "rnd.ps077.v019.a.lyric.alt.0003",
+      "generation_run_id": "cxr.fd4864fff7fe",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ק֤וֹל רַעַמְךָ֨׀ בַּגַּלְגַּ֗ל הֵאִ֣ירוּ בְרָקִ֣ים תֵּבֵ֑ל רָגְזָ֖ה וַתִּרְעַ֣שׁ הָאָֽרֶץ׃",
+      "literal_backbone": [
+        "The voice of your thunder was in the whirlwind;",
+        "lightning flashes lit up the world;",
+        "the earth trembled and shook."
+      ],
+      "literal_rendering_id": "rnd.ps077.v019.a.literal.alt.0001",
+      "mt_reference": "Psalm 77:19",
+      "non_source_material": [],
+      "psalm_id": "ps077",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v019.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Wheel, rolling or whirling thing; whirlwind.",
+          "note": "Fits the storm context and the supplied gloss. It selects the whirlwind sense without retaining the term's broader rolling or wheeling associations.",
+          "rendered_as": "in the whirlwind",
+          "token_ids": [
+            "ps077.v019.t003"
+          ],
+          "transliteration": "baggalgal",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps077.v019.a.0001"
   ],
@@ -15,7 +221,549 @@
   "pr_links": [],
   "psalm_id": "ps077",
   "ref": "Psalm 77:19",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Voice, illumination, and shaking in successive clauses.",
+      "drift_flags": [
+        {
+          "code": "contextual_whirlwind_reading",
+          "confidence": 0.96,
+          "message": "גַּלְגַּל is rendered contextually as 'whirlwind'; its wheel or rolling sense allows other interpretations.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Thunder's voice in a whirling storm",
+          "note": "Preserves voice and circular motion through the contextual 'whirlwind' reading.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t001",
+            "ps077.v019.t002",
+            "ps077.v019.t003"
+          ]
+        },
+        {
+          "label": "Illuminated world and shaking earth",
+          "note": "Keeps the light and both verbs of earth movement.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t004",
+            "ps077.v019.t005",
+            "ps077.v019.t006",
+            "ps077.v019.t007",
+            "ps077.v019.t008",
+            "ps077.v019.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v019.t001–t002 → The voice of your thunder",
+          "ps077.v019.t003 → was in the whirlwind",
+          "ps077.v019.t004–t006 → lightning flashes lit up the world",
+          "ps077.v019.t007–t009 → the earth trembled and quaked"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:46:36.545916+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b6ea55c084ec",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-to-English translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v019.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a12758-a60f-7c62-96be-3aaba6a8f56d"
+      },
+      "rationale": "Carries the skies' voice into thunder, then answers the trembling depths with the trembling earth.",
+      "rendering_id": "rnd.ps077.v019.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "The voice of your thunder was in the whirlwind;\nlightning flashes lit up the world;\nthe earth trembled and quaked.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-to-English translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "unit_id": "ps077.v019.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Storm voice followed by light and bodily shaking.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        },
+        {
+          "code": "contextual_whirlwind_reading",
+          "confidence": 0.96,
+          "message": "Selects 'whirlwind' for גַּלְגַּל; the Hebrew's wheel or rolling sense permits other interpretations.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.93,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.64,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Thunder's voice in the whirlwind",
+          "note": "Retains the voice and selects the whirling-storm interpretation.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t001",
+            "ps077.v019.t002",
+            "ps077.v019.t003"
+          ]
+        },
+        {
+          "label": "Lit world and shaking earth",
+          "note": "Keeps the illumination and two expressions of earth movement.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t004",
+            "ps077.v019.t005",
+            "ps077.v019.t006",
+            "ps077.v019.t007",
+            "ps077.v019.t008",
+            "ps077.v019.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v019.t001–t002 → Your thunder's voice rang out",
+          "ps077.v019.t003 → in the whirlwind",
+          "ps077.v019.t004–t006 → Lightning lit up the world",
+          "ps077.v019.t007–t009 → the earth shook and shuddered"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:48:41.129975+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.9f437ea2ac07",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v019.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a1275a-648f-7003-a477-9c0de79715ee"
+      },
+      "rationale": "Develops the skies' voice into thunder and answers the shaking depths with the shaking earth.",
+      "rendering_id": "rnd.ps077.v019.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Your thunder's voice rang out\nin the whirlwind.\nLightning lit up the world;\nthe earth shook and shuddered.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v019.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Voice-to-light progression ending in doubled earth movement",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.11,
+        "stress_approximation": 0.62,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Thunder's voice in the whirlwind",
+          "note": "Uses the whirlwind reading of the rolling or wheeling storm expression.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t001",
+            "ps077.v019.t002",
+            "ps077.v019.t003"
+          ]
+        },
+        {
+          "label": "World lit by lightning and shaking earth",
+          "note": "Retains illumination and both earth-motion verbs.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t004",
+            "ps077.v019.t005",
+            "ps077.v019.t006",
+            "ps077.v019.t007",
+            "ps077.v019.t008",
+            "ps077.v019.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "The voice of your thunder / rang out in the whirlwind → ps077.v019.t001–ps077.v019.t003",
+          "Lightning lit up the world → ps077.v019.t004–ps077.v019.t006",
+          "the earth trembled and shook → ps077.v019.t007–ps077.v019.t009"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:06:47.172161+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not admit selah",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.c5f237f33b53",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v019.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a2-70a7-7172-b6d3-0fe7d3830f25"
+      },
+      "rationale": "Carries the voice motif into thunder and repeats the depths' trembling at the scale of the earth.",
+      "rendering_id": "rnd.ps077.v019.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "בַּגַּלְגַּ֗ל",
+        "basis_note": "Chooses the storm-context whirlwind interpretation.",
+        "source_language": "he",
+        "source_text": "בַּגַּלְגַּ֗ל",
+        "token_ids": [
+          "ps077.v019.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The voice of your thunder\nrang out in the whirlwind.\nLightning lit up the world;\nthe earth trembled and shook.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v019.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Voice-to-light progression ending in doubled earth movement",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.94,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.11,
+        "stress_approximation": 0.62,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Thunder's voice in the whirlwind",
+          "note": "Uses the whirlwind interpretation of the rolling or wheeling storm expression.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t001",
+            "ps077.v019.t002",
+            "ps077.v019.t003"
+          ]
+        },
+        {
+          "label": "Lightning-lit world and shaking earth",
+          "note": "Retains illumination and both earth-motion verbs.",
+          "source_id": "ps077.v019.a",
+          "token_ids": [
+            "ps077.v019.t004",
+            "ps077.v019.t005",
+            "ps077.v019.t006",
+            "ps077.v019.t007",
+            "ps077.v019.t008",
+            "ps077.v019.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "The voice of your thunder / rang out in the whirlwind → ps077.v019.t001–ps077.v019.t003",
+          "Lightning lit up the world → ps077.v019.t004–ps077.v019.t006",
+          "the earth trembled and shook → ps077.v019.t007–ps077.v019.t009"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:11:10.013583+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a7948303f387",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v019.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a6-cce2-7d50-b0f5-c69476a085cf"
+      },
+      "rationale": "Carries the voice motif into thunder and repeats the depths' trembling at the scale of the earth.",
+      "rendering_id": "rnd.ps077.v019.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "בַּגַּלְגַּ֗ל",
+        "basis_note": "Chooses the storm-context whirlwind interpretation.",
+        "source_language": "he",
+        "source_text": "בַּגַּלְגַּ֗ל",
+        "token_ids": [
+          "ps077.v019.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The voice of your thunder\nrang out in the whirlwind.\nLightning lit up the world;\nthe earth trembled and shook.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v019.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v019.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "ק֤וֹל רַעַמְךָ֨׀ בַּגַּלְגַּ֗ל הֵאִ֣ירוּ בְרָקִ֣ים תֵּבֵ֑ל רָגְזָ֖ה וַתִּרְעַ֣שׁ הָאָֽרֶץ׃",

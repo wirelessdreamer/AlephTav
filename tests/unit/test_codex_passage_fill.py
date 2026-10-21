@@ -241,6 +241,80 @@ def test_a_passage_with_an_unbacked_septuagint_claim_saves_nothing() -> None:
     assert result["rendering_ids"] == []
     run = translation.get_run(result["run_ids"][0])
     assert [item["path"] for item in run["validation"]] == ["units/0/candidates/0"]
+    assert "Greek source is not currently approved" in result["error"]
+
+
+def test_passage_rejects_greek_labels_over_a_hebrew_anchor_before_saving() -> None:
+    entry = _entry(UNIT_ID, "lyric")
+    candidate = entry["candidates"][0]
+    candidate["translation_basis"].update(
+        basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+    )
+    candidate["source_anchor"].update(source_language="grc", source_text="אשרי האיש")
+    reply = json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": [entry]})
+    client, session_id = _session(PassageTransport(raw_reply=reply))
+    before = registry_service.load_unit(UNIT_ID)
+
+    result = translation.fill_psalm_passage(client, session_id, "ps001", [UNIT_ID])
+
+    assert result["status"] == translation.RUN_INVALID_OUTPUT
+    assert result["rendering_ids"] == []
+    assert registry_service.load_unit(UNIT_ID)["renderings"] == before["renderings"]
+
+
+def test_passage_cannot_activate_greek_generation_from_script_only_anchors() -> None:
+    _add_second_verse(keep_renderings=True)
+    entries = [_entry(UNIT_ID, "lyric"), _entry(SECOND_ID, "lyric")]
+    for index, entry in enumerate(entries):
+        candidate = entry["candidates"][0]
+        candidate["translation_basis"].update(
+            basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+        )
+        candidate["source_anchor"].update(
+            anchor_text="μακάριος" if index == 0 else "νόμῳ",
+            source_language="grc",
+            source_text="μακάριος ἀνήρ" if index == 0 else "ἐν τῷ νόμῳ κυρίου",
+        )
+        candidate["variation_basis"] = ["greek_source_wording"]
+    reply = json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": entries})
+    client, session_id = _session(PassageTransport(raw_reply=reply))
+
+    before = {entry["unit_id"]: registry_service.load_unit(entry["unit_id"]) for entry in entries}
+    result = translation.fill_psalm_passage(client, session_id, "ps001", [UNIT_ID, SECOND_ID])
+    assert result["status"] == translation.RUN_INVALID_OUTPUT
+    assert result["rendering_ids"] == []
+    assert all(registry_service.load_unit(unit_id) == unit for unit_id, unit in before.items())
+
+
+def test_blocked_greek_unit_does_not_discard_supported_hebrew_units() -> None:
+    _add_second_verse(keep_renderings=True)
+    entries = [_entry(UNIT_ID, "lyric"), _entry(SECOND_ID, "lyric")]
+    entries[1]["candidates"][0]["translation_basis"].update(
+        basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+    )
+    reply = json.dumps({"psalm_id": "ps001", "layer": "lyric", "units": entries})
+    client, session_id = _session(PassageTransport(raw_reply=reply))
+    before = registry_service.load_unit(SECOND_ID)
+    result = translation.fill_psalm_passage(client, session_id, "ps001", [UNIT_ID, SECOND_ID])
+    assert result["status"] == translation.RUN_COMPLETED
+    assert len(result["rendering_ids"]) == 1
+    assert result["failed_units"][0]["unit_id"] == SECOND_ID
+    assert "Greek source is not currently approved" in result["failed_units"][0]["error"]
+    assert registry_service.load_unit(SECOND_ID) == before
+    run = translation.get_run(result["run_ids"][0])
+    assert [item["unit_id"] for item in run["payload"]["units"]] == [UNIT_ID]
+    assert run["validation"][0]["unit_id"] == SECOND_ID
+    assert run["validation"][0]["code"] == "greek_generation_unavailable"
+
+
+def test_literal_prompt_keeps_shared_hebrew_baseline_and_defers_greek_setting_choices() -> None:
+    prompt = translation.build_passage_prompt("ps001", [UNIT_ID], "literal")
+    assert "This is the shared Hebrew baseline" in prompt
+    assert "Defer that variant to the setting" in prompt
+    assert "source_language=he" in prompt
+    prompt = translation.build_passage_prompt("ps001", [UNIT_ID], "lyric")
+    assert "candidates=[]" in prompt
+    assert "rather than silently substituting a Hebrew reading" in prompt
 
 
 def test_passage_fill_refuses_units_from_another_psalm() -> None:

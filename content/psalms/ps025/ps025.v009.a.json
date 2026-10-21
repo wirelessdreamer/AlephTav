@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v009.a.literal.alt.0001",
-    "rnd.ps025.v009.a.lyric.alt.0001"
+    "rnd.ps025.v009.a.lyric.alt.0001",
+    "rnd.ps025.v009.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v009.a.0001",
     "aud.ps025.v009.a.0002",
     "aud.ps025.v009.a.0003",
-    "aud.ps025.v009.a.0004"
+    "aud.ps025.v009.a.0004",
+    "aud.ps025.v009.a.0005",
+    "aud.ps025.v009.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "13d7b0921f50ca73033ead9ba3136317b09b2fa54181ee4b0cf4f37e16b6ac7a",
+      "audit_id": "aud.ps025.v009.a.0005",
+      "before_hash": "50dbf11da2b8a5386fe7f9eabc65d201cb03eb5783397601787bdea2f9241d24",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.752633+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v009.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Retains the repeated recipients and lets the two lines answer each other.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fb2103e65afa8457e4e190aadb10d27b82f1dcbcf15488990e63e0aa7e98ebdc",
+      "audit_id": "aud.ps025.v009.a.0006",
+      "before_hash": "c96f3de869b3d5df5424725722fdf3a6c6e76d83fc0692680981649ac28178df",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:32:04.482175+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v009.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -106,6 +141,38 @@
       "reviewer_id": null,
       "revision_of": null,
       "status": "proposed",
+      "unit_id": "ps025.v009.a",
+      "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves guidance in justice, instruction in his way, and the repeated identification of the recipients as the humble. The parallel clauses retain the same divine agent.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "8f0106be659fe8f82d7e9d309ae5812da2e65b32d3d2a40e8948a1f4071c1f4c",
+      "audit_ids": [
+        "aud.ps025.v009.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v009.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 25:9",
+      "english_rendering_id": "rnd.ps025.v009.a.lyric.alt.0002",
+      "generation_run_id": "cxr.f15e7fe3c5fc",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יַדְרֵ֣ךְ עֲ֭נָוִים בַּמִּשְׁפָּ֑ט וִֽילַמֵּ֖ד עֲנָוִ֣ים דַּרְכּֽוֹ׃",
+      "literal_backbone": [
+        "He guides the humble in justice.",
+        "And he teaches the humble his way."
+      ],
+      "literal_rendering_id": "rnd.ps025.v009.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:9",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
       "unit_id": "ps025.v009.a",
       "word_notes": []
     }
@@ -324,6 +391,125 @@
       "unit_id": "ps025.v009.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; each line spans two measures, with a sustained final word.",
+      "differentiator": "Balanced declaration with repeated 'the humble'",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.25,
+        "singability_score": 0.28,
+        "stress_approximation": 0.71,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance in his way",
+          "note": "Keeps guidance and the road image together.",
+          "source_id": "ps025.v009.a",
+          "token_ids": [
+            "ps025.v009.t001",
+            "ps025.v009.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v009.t001–t003 → He guides the humble in justice",
+          "ps025.v009.t004–t006 → he teaches the humble his way"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v009.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Retains the repeated recipients and lets the two lines answer each other.",
+      "rendering_id": "rnd.ps025.v009.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "עֲ֭נָוִים בַּמִּשְׁפָּ֑ט",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "עֲ֭נָוִים בַּמִּשְׁפָּ֑ט",
+        "token_ids": [
+          "ps025.v009.t002",
+          "ps025.v009.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He guides the humble in justice;\nhe teaches the humble his way.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v009.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v009.a",
+      "variation_basis": [
+        "Parallel full-length phrases"
       ]
     }
   ],

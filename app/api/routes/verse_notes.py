@@ -74,9 +74,9 @@ def discard_rebuild(unit_id: str, rebuild_id: str, payload: dict | None = None) 
 
 
 @router.get("/units/{unit_id}/verse-history")
-def get_verse_history(unit_id: str) -> dict:
+def get_verse_history(unit_id: str, translation_id: str | None = Query(default=None)) -> dict:
     try:
-        return verse_notes_service.verse_history(unit_id)
+        return verse_notes_service.verse_history(unit_id, translation_id or None)
     except Exception as error:
         raise_as_http(error)
 

@@ -1,0 +1,21 @@
+{
+  "after_hash": "c3ef5d46ca0a807ed7a1aab04f70317030e98bcb06c95cbab5536c2e53ced76c",
+  "audit_id": "aud.pkg.greek_lexical_preview.5d7b66331172b255345286ab.0001",
+  "before_hash": "4e46ed85fbcd07c958a50cda1cf836ee516b759b4bdbac38201ef29d23c204b2",
+  "change_type": "update",
+  "checks": [
+    "pinned_source_hashes",
+    "dictionary_row_accounting",
+    "morphology_parser",
+    "owner_local_display_authorization"
+  ],
+  "created_at": "2026-10-20T12:15:36.786923+00:00",
+  "created_by": "chat:user",
+  "entity_id": "greek_lexical_preview",
+  "entity_type": "package",
+  "rationale": "User requested Greek word context across the full corpus on 2026-10-20; load all 55 pinned Septuagint books as proposed lexical evidence, retain unresolved words and source findings explicitly.",
+  "review_signoff": {},
+  "summary": "Load pinned Greek dictionary and lemma candidates for local review",
+  "triggered_by_issue": null,
+  "triggered_by_pr": null
+}

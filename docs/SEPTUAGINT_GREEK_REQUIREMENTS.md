@@ -1,6 +1,7 @@
 # Septuagint (Greek Psalter) Support Requirements
 
-Status: draft for owner review, 2026-10-16. Nothing here is implemented yet.
+Status: draft for owner review, 2026-10-16; baseline validation and ID-contract
+corrections approved on 2026-10-17. The Greek corpus feature is not yet implemented.
 Section 15 lists the decisions the owner must make before Phase 1 starts.
 
 ## 1. Goal
@@ -52,7 +53,7 @@ Hebrew, which give the LXX equivalent of each **Hebrew** word.
 | Unit "LXX witness" | `source_id: "lxx"`, `versionTitle: "Septuagint Greek"` on all 2,527 units (`_load_lxx_verses`, 578-593) | **Not an LXX text.** It joins the token Greek in Hebrew word order and drops Greek words that have no Hebrew match. Its references are always MT, so ps010.v001 says "Psalm 10:1" although in the Greek that verse is LXX 9:22. |
 | Source manifest `lxx` | `LXX_SOURCE` (103-112): license "CC BY 4.0", generation, display and export enabled | No LXX edition is named. Research (§4.4) suggests MACULA's Greek is a Rahlfs-type text, probably from the restricted CCAT line. Its provenance is unconfirmed upstream. |
 | Versification | `content/versification.json`, built by `scripts/build_versification.py` | Psalm level only. No verse-level MT↔LXX map, no Psalm 151. |
-| Basis `septuagint_greek_to_english` | Generation and composer paths, with `basis_blur` checks | The Codex path (`codex_translation_service.py:714-740`) skips the check. 0 of 365 saved renderings use the basis. The UI label and filter live only in `WorkbenchPage` / `BottomDrawer`, which `App.tsx` no longer mounts. |
+| Basis `septuagint_greek_to_english` | Generation, composer and Codex paths validate source metadata and Greek anchor text; computed basis errors cannot be weakened by model flags | Script validation does not establish the Greek edition or prove that an anchor belongs to its source verse. Real Greek units and edition-aware anchors remain required. The UI label and filter live only in `WorkbenchPage` / `BottomDrawer`, which `App.tsx` no longer mounts. |
 | Alignment | Hebrew tokens → English spans only | No Greek token IDs exist, so Hebrew↔Greek links exist only implicitly through `token.greek`. |
 | Lexical stack | Greek appears only in the word card and "readings elsewhere" | No Greek lemma, morphology, lexicon, concordance or index columns. |
 | Codex briefing | Asks where the MT and LXX differ (`codex_briefing_service.py:133`) | It supplies no LXX data, so the answers come from model memory. |
@@ -70,6 +71,11 @@ Hebrew, which give the LXX equivalent of each **Hebrew** word.
 - **FR-0.4** Fix the `GG` display bug.
 - **FR-0.5** Give the Codex rendering path the same `basis_blur` validation that the
   generation and composer paths have.
+  Baseline repair: `python scripts/recover_codex_source_anchors.py` inventories missing
+  saved evidence. `--apply` restores anchors only on proposed renderings when the completed
+  cached run matches the unit, layer, text, translation and full source basis uniquely and
+  the anchor validates. Every repair is audited. Reviewed or unrecoverable cases are
+  reported for review or a replacement proposal; no source evidence is synthesized.
 - **FR-0.6** Make language codes an enum (`he`, `grc`, `en`) and normalize existing values
   through an audited migration.
 - **FR-0.7** Record the MACULA Greek provenance as unconfirmed in the manifest and link
@@ -239,10 +245,15 @@ letters and is unusable.
     against the image
 - **FR-O.4 Checks against other Greek texts** (after the fact, word by word, through the
   verse alignment):
-  - **Swete (B):** when our text differs from Swete, Rahlfs' own apparatus on that page
-    should record B's reading there. If it doesn't, the spot is a suspected transcription
-    error.
-  - **Brenton Greek:** the same check, as a second witness.
+  - **Swete:** record the manuscript supplying each comparison span. Use Vaticanus (B)
+    through LXX 105:26 and Sinaiticus (S) from 105:27 through the first clause of 137:6.
+    B resumes within 137:6 at the printed `§` before `καὶ τὰ ὑψηλὰ`; this verse therefore
+    needs two witness spans, not one verse-wide label. Preserve the printed boundary signs
+    in the sigla register. Check the corresponding B or S reading in Rahlfs' apparatus.
+    Apparatus silence is an unresolved comparison requiring an image check, not proof of a
+    transcription error. Further substitutions follow the edition's own manuscript signs.
+  - **Brenton Greek:** use it as another edition-level comparison, with its own recorded
+    provenance; do not assume it independently attests B at every span.
   - **MACULA Greek** (a Rahlfs-type text): flagging only, subject to D1.
   - **Orthography differences** expected between editions (Δαυιδ/Δαυείδ, movable ν,
     elision) are classified, not flagged.
@@ -392,7 +403,11 @@ alignment seed.
 This is the core new dataset. Every comparison and expert view reads from it.
 
 - **FR-A.1 New contract** `schemas/cross_alignment.schema.json`.
-  `alignment.schema.json` is a mandatory contract and is **not** loosened. Fields:
+  `alignment.schema.json` remains the mandatory Greek/Hebrew-to-English contract. Its
+  ID patterns and the related audit/entity ID validators receive the approved,
+  backward-compatible `lxx.` extension through schema-owner review; required fields,
+  alignment types and referential-integrity checks are retained. The new cross-alignment
+  contract is separate. Fields:
 
   ```text
   cross_alignment_id
@@ -633,7 +648,9 @@ There are two different things, and the UI must never blur them:
   | Cross alignment acceptance | alignment reviewer + Greek reviewer |
   | Dossier with a theological cause | adds a theology reviewer |
 
-- **FR-R.2** Every mutation writes an `AuditRecord` under the existing schema, unchanged.
+- **FR-R.2** Every mutation writes an `AuditRecord` under the existing mandatory schema.
+  The approved ID-pattern extension admits `aud.lxx.psNNN.vVVV.a.NNNN` alongside existing
+  Hebrew audit IDs; all required audit fields and hash/signoff requirements remain.
   This covers Greek content, OCR corrections, cross alignments, dossiers and key-term
   notes.
 - **FR-R.3** Provenance badges distinguish Human, Codex, Deterministic, Other local model,
@@ -676,6 +693,9 @@ GET    /reports/translation-technique?scope=psalm|book|psalter
   - A Greek fixture in `tests/support.py`: LXX 1, part of LXX 9 (merge), LXX 113 (join),
     LXX 114–115 (split), LXX 151. It needs no network.
   - Unit tests for versification, normalization and coverage.
+  - ID-contract compatibility tests for existing Hebrew and prefixed Greek entities.
+  - Witness-span fixtures for Swete at 105:26, 105:27, and both sides of the within-verse
+    B resumption at 137:6; missing apparatus evidence remains unresolved.
   - Integration tests for the routes.
   - Goldens from Appendix A.
   - UI unit tests for the bridge view, and e2e tests for the source switch.

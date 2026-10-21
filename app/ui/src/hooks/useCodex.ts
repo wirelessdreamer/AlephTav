@@ -1,6 +1,10 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import type {
+  BriefingResult,
+  BriefingAnnotation,
+  BriefingView,
+  BriefingGreekSources,
   CodexModel,
   CodexRun,
   CodexRunEvents,
@@ -156,10 +160,11 @@ export function useTranslationGuidance(psalmId: string | null, translationId: st
 export function useSaveTranslationGuidance(psalmId: string | null, translationId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (guidance: string) => {
+    mutationFn: (value: string | { guidance: string; annotations: BriefingAnnotation[] }) => {
       const body = JSON.stringify({
-        translation_guidance: guidance,
+        translation_guidance: typeof value === 'string' ? value : value.guidance,
         translation_id: translationId,
+        briefing_annotations: typeof value === 'string' ? [] : value.annotations,
       });
       return fetch(`/psalms/${psalmId}/translation-guidance`, {
         method: 'PUT',
@@ -170,8 +175,13 @@ export function useSaveTranslationGuidance(psalmId: string | null, translationId
         return response.json() as Promise<TranslationGuidance>;
       });
     },
-    onSuccess: (data) =>
-      queryClient.setQueryData(['translation-guidance', psalmId, translationId], data),
+    onSuccess: (data) => {
+      queryClient.setQueryData(['translation-guidance', psalmId, translationId], data);
+      // Rows say whether their English was made under the guidance saved now.
+      queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
+      queryClient.invalidateQueries({ queryKey: ['briefing', psalmId, translationId] });
+      queryClient.invalidateQueries({ queryKey: ['verse-history'] });
+    },
   });
 }
 
@@ -309,6 +319,38 @@ export function useSuggestWordRenderings() {
       );
       // The psalm-wide word summary reads choices from the table rows.
       queryClient.invalidateQueries({ queryKey: ['comparison-table'] });
+    },
+  });
+}
+
+export function useBriefing(psalmId: string | null, translationId: string | null) {
+  const query = translationId ? `&translation_id=${encodeURIComponent(translationId)}` : '';
+  return useQuery({
+    queryKey: ['briefing', psalmId, translationId],
+    queryFn: () =>
+      getJson<BriefingView>(`/psalms/${psalmId}/briefing?include_sources=false${query}`),
+    enabled: Boolean(psalmId),
+  });
+}
+
+/** Dictionary loading must never delay restoring saved briefing decisions. */
+export function useBriefingGreekSources(psalmId: string | null) {
+  return useQuery({
+    queryKey: ['briefing-sources', psalmId],
+    queryFn: async (): Promise<BriefingGreekSources> =>
+      (await getJson<BriefingView>(`/psalms/${psalmId}/briefing?include_sources=true`)).greek_sources,
+    enabled: Boolean(psalmId),
+  });
+}
+
+export function usePrepareBriefing(psalmId: string | null) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: { session_id: string }) =>
+      postJson<BriefingResult>(`/codex/psalms/${psalmId}/briefing`, payload),
+    onSuccess: (result) => {
+      queryClient.invalidateQueries({ queryKey: ['briefing', psalmId, result.translation_id] });
+      queryClient.invalidateQueries({ queryKey: ['verse-history'] });
     },
   });
 }

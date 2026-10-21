@@ -16,6 +16,7 @@ from app.api.routes import (
     comparisons,
     corpus,
     export,
+    greek_study,
     jobs,
     project,
     psalms,
@@ -87,6 +88,7 @@ app.include_router(comparisons.router)
 app.include_router(review.router)
 app.include_router(audit.router)
 app.include_router(export.router)
+app.include_router(greek_study.router)
 app.include_router(jobs.router)
 app.include_router(speech.router)
 app.include_router(verse_notes.router)

@@ -1,9 +1,12 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import { RequestStatus } from './RequestStatus';
 
 import {
   useAnalyzePsalm,
   useAnalyseRebuild,
   useAnalyzeVerse,
+  useBriefing,
+  useBriefingGreekSources,
   useCodexStatus,
   useConnectCodex,
   useCreateCodexSession,
@@ -11,6 +14,7 @@ import {
   useIdentifyPsalm,
   useImportTranslation,
   useInterruptCodexSession,
+  usePrepareBriefing,
   useRebuildVerse,
   useSaveTranslationGuidance,
   useSuggestWordRenderings,
@@ -29,6 +33,7 @@ import {
   useCreateTranslation,
 } from '../hooks/useTranslations';
 import { type ArrangementPane, ArrangementWorkspace } from './ArrangementWorkspace';
+import { BriefingPanel } from './BriefingPanel';
 import {
   type ImportOptions,
   type ImportRequest,
@@ -36,6 +41,7 @@ import {
   ImportTranslationDialog,
 } from './ImportTranslationDialog';
 import { loadReviewer } from './arrangementShared';
+import { type PendingRetranslation, RetranslateDialog } from './RetranslateDialog';
 import { VerseDetail } from './VerseDetail';
 import { WordSummary, type WordSummaryItem } from './WordSummary';
 import type {
@@ -155,9 +161,10 @@ function toCsv(rows: ComparisonTableRow[]): string {
   return [header.join(','), ...body].join('\n');
 }
 
-type BatchKind = 'translate' | 'analyse' | 'rebuild' | 'suggest' | 'arrange' | 'import';
+type BatchKind = 'brief' | 'translate' | 'analyse' | 'rebuild' | 'suggest' | 'arrange' | 'import';
 
 const BATCH_WORDS: Record<BatchKind, { active: string; noun: string }> = {
+  brief: { active: 'Preparing a briefing on', noun: 'Briefing' },
   translate: { active: 'Translating', noun: 'Translation' },
   analyse: { active: 'Analysing', noun: 'Analysis' },
   rebuild: { active: 'Rebuilding', noun: 'Rebuild' },
@@ -330,8 +337,11 @@ export function TranslationComparisonTable({
 
   const [guidanceDraft, setGuidanceDraft] = useState('');
   const [guidanceOpen, setGuidanceOpen] = useState(false);
+  const [briefingOpen, setBriefingOpen] = useState(false);
+  const saveBriefingBeforeAction = useRef<(() => Promise<boolean>) | null>(null);
   const [batch, setBatch] = useState<BatchProgress | null>(null);
   const [report, setReport] = useState<BatchReport | null>(null);
+  const [retranslation, setRetranslation] = useState<PendingRetranslation | null>(null);
   const stopRequested = useRef(false);
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -340,7 +350,7 @@ export function TranslationComparisonTable({
     return () => window.clearInterval(timer);
   }, [batch]);
 
-  const { data, isLoading, error } = useComparisonTable(
+  const { data, isLoading, isFetching, error, refetch } = useComparisonTable(
     psalmId,
     'literal',
     englishLayer,
@@ -358,11 +368,17 @@ export function TranslationComparisonTable({
     'summary' | 'architecture' | 'guardrails' | 'epistemics' | 'similar' | 'sources'
   >('summary');
 
-  const { data: codexStatus } = useCodexStatus();
+  const codexStatusQuery = useCodexStatus();
+  const codexStatus = codexStatusQuery.data;
   const connectCodex = useConnectCodex();
   const saveVerseText = useSaveVerseText(psalmId, translationId);
-  const { data: guidance } = useTranslationGuidance(psalmId, translationId);
+  const guidanceQuery = useTranslationGuidance(psalmId, translationId);
+  const guidance = guidanceQuery.data;
   const saveGuidance = useSaveTranslationGuidance(psalmId, translationId);
+  const { data: briefingView, isPending: briefingLoading, error: briefingError, refetch: refetchBriefing } = useBriefing(psalmId, translationId);
+  const briefingSources = useBriefingGreekSources(psalmId);
+  const briefing = briefingView?.briefing;
+  const prepareBriefing = usePrepareBriefing(psalmId);
   const createSession = useCreateCodexSession();
   const fillPassage = useFillPsalmPassage(psalmId);
   const interruptSession = useInterruptCodexSession();
@@ -405,6 +421,9 @@ export function TranslationComparisonTable({
   }, [psalmId, translationId]);
 
   async function ensureSession(): Promise<string> {
+    if (saveBriefingBeforeAction.current && !(await saveBriefingBeforeAction.current())) {
+      throw new Error('Briefing decisions could not be saved. Retry saving them before translating.');
+    }
     if (sessionRef.current) return sessionRef.current;
     const session = await createSession.mutateAsync({
       psalm_id: psalmId as string,
@@ -494,6 +513,10 @@ export function TranslationComparisonTable({
         }
       },
     };
+  }
+
+  function translate(targets: ComparisonTableRow[]) {
+    void runBatch('translate', passages(targets, analysis?.sections).map(passageStep));
   }
 
   /** Audit a held rebuild; skipped when the rebuild before it did not produce one. */
@@ -610,6 +633,24 @@ export function TranslationComparisonTable({
             }),
           );
           return error ? [{ label: wholeLabel, error }] : [];
+        },
+      },
+    ]);
+  }
+
+  /** One Codex turn: background on the psalm and the questions it leaves to the translator. */
+  function brief() {
+    const label = `${data?.title ?? 'the psalm'}`;
+    return runBatch('brief', [
+      {
+        label,
+        unitIds: [],
+        rows: 1,
+        run: async () => {
+          const error = await failureOf(async () =>
+            prepareBriefing.mutateAsync({ session_id: await ensureSession() }),
+          );
+          return error ? [{ label, error }] : [];
         },
       },
     ]);
@@ -926,6 +967,13 @@ export function TranslationComparisonTable({
 
   /** Verses edited since their analysis ran, which the sweep below re-analyses. */
   const staleRows = useMemo(() => rows.filter((row) => row.stale), [rows]);
+  /** Verses still lacking a literal or English, which Translate psalm fills. */
+  const missingRows = useMemo(() => rows.filter((row) => row.incomplete), [rows]);
+  /** Verses whose English a new proposal would replace on show; reviewed English outranks it. */
+  const replaceableRows = useMemo(
+    () => rows.filter((row) => row.english_status === 'proposed' || row.english_status === 'draft'),
+    [rows],
+  );
 
   /** The section a row starts, so a band can be rendered above it. */
   function sectionOpening(row: ComparisonTableRow): PsalmAnalysisSection | null {
@@ -973,12 +1021,13 @@ export function TranslationComparisonTable({
   }
 
   // The dialog stays mounted, keyed, while an import switches psalm and the table loads.
-  if (!psalmId || isLoading || error) {
+  if (!psalmId || isLoading || (error && !data)) {
     return (
       <section aria-label="Translation comparison">
-        <p className={`comparison-empty${error ? ' comparison-error' : ''}`}>
-          {!psalmId ? 'Select a psalm to compare.' : isLoading ? 'Loading comparison…' : String(error)}
-        </p>
+        {!psalmId ? <p className="comparison-empty">Select a psalm to compare.</p> :
+          <RequestStatus loading={isLoading} error={error}
+            label={isLoading ? 'Loading comparison…' : 'Could not load comparison.'}
+            onRetry={() => void refetch()} />}
         {importDialog}
       </section>
     );
@@ -988,6 +1037,12 @@ export function TranslationComparisonTable({
 
   return (
     <section className="comparison-view" aria-label="Translation comparison">
+      <RequestStatus loading={codexStatusQuery.isLoading} error={codexStatusQuery.error}
+        label={codexStatusQuery.isLoading ? 'Checking translation assistant connection…' : 'Could not check the translation assistant connection.'}
+        onRetry={() => void codexStatusQuery.refetch()} />
+      <RequestStatus loading={isFetching && !isLoading} error={error}
+        label={isFetching ? 'Updating comparison…' : 'Could not refresh comparison; showing saved content.'}
+        onRetry={() => void refetch()} />
       <header className="comparison-toolbar">
         <div className="segmented comparison-panes" role="group" aria-label="View">
           {(
@@ -1058,6 +1113,14 @@ export function TranslationComparisonTable({
             >
               {guidance?.translation_guidance ? 'Guidance ✓' : 'Guidance'}
             </button>
+            <button
+              type="button"
+              aria-expanded={briefingOpen}
+              title="Background on the psalm, and the questions it leaves for you to decide"
+              onClick={() => setBriefingOpen((open) => !open)}
+            >
+              {briefingLoading ? 'Briefing…' : briefing ? 'Briefing ✓' : 'Briefing'}
+            </button>
             {batch ? (
               <>
                 <span className="batch-progress" role="status">
@@ -1092,19 +1155,32 @@ export function TranslationComparisonTable({
                 ) : null}
                 <button
                   type="button"
-                  disabled={!codexReady || fillPassage.isPending}
-                  title={codexHint}
+                  disabled={
+                    !codexReady ||
+                    fillPassage.isPending ||
+                    (missingRows.length === 0 && replaceableRows.length === 0)
+                  }
+                  title={
+                    codexHint ??
+                    (missingRows.length === 0 && replaceableRows.length === 0
+                      ? 'No verse shown has English a retranslation would replace'
+                      : undefined)
+                  }
                   onClick={() =>
-                    void runBatch(
-                      'translate',
-                      passages(
-                        rows.filter((row) => row.incomplete),
-                        analysis?.sections,
-                      ).map(passageStep),
-                    )
+                    missingRows.length > 0
+                      ? translate(missingRows)
+                      : setRetranslation({
+                          verses: replaceableRows.length,
+                          kept: rows.length - replaceableRows.length,
+                          unsavedGuidance:
+                            guidanceDraft.trim() !== (guidance?.translation_guidance ?? ''),
+                          sameGuidance: replaceableRows.every(
+                            (row) => row.english_guidance === 'current',
+                          ),
+                        })
                   }
                 >
-                  Translate psalm
+                  {missingRows.length > 0 ? 'Translate psalm' : 'Retranslate psalm'}
                 </button>
                 <button
                   type="button"
@@ -1177,6 +1253,9 @@ export function TranslationComparisonTable({
 
       {guidanceOpen ? (
         <section className="guidance-panel" aria-label="Translation guidance">
+          <RequestStatus loading={guidanceQuery.isLoading} error={guidanceQuery.error}
+            label={guidanceQuery.isLoading ? 'Loading saved guidance…' : 'Could not load saved guidance.'}
+            onRetry={() => void guidanceQuery.refetch()} />
           <label htmlFor="translation-guidance">
             How this translation of the psalm should be made. Codex reads this before the source,
             and it outranks the generic layer prompts. Saved with the translation, so it is
@@ -1184,6 +1263,7 @@ export function TranslationComparisonTable({
           </label>
           <textarea
             id="translation-guidance"
+            disabled={!guidanceQuery.data}
             value={guidanceDraft}
             rows={6}
             placeholder={
@@ -1196,7 +1276,7 @@ export function TranslationComparisonTable({
           <div className="guidance-actions">
             <button
               type="button"
-              disabled={saveGuidance.isPending}
+              disabled={saveGuidance.isPending || !guidanceQuery.data}
               onClick={() => saveGuidance.mutate(guidanceDraft)}
             >
               {saveGuidance.isPending ? 'Saving…' : 'Save guidance'}
@@ -1204,6 +1284,7 @@ export function TranslationComparisonTable({
             <button
               type="button"
               onClick={() => setGuidanceDraft(guidance?.translation_guidance ?? '')}
+              disabled={!guidanceQuery.data || saveGuidance.isPending}
             >
               Revert
             </button>
@@ -1213,6 +1294,31 @@ export function TranslationComparisonTable({
           </div>
         </section>
       ) : null}
+
+      <div hidden={!briefingOpen}>
+        <RequestStatus loading={briefingLoading} error={briefingError}
+          label={briefingLoading ? 'Loading saved briefing and decisions…' : 'Could not load briefing history.'}
+          onRetry={() => void refetchBriefing()} />
+        {briefingView ? <BriefingPanel
+          key={`${psalmId}|${translationId}|${briefing?.run_id}`}
+          psalmId={psalmId}
+          translationId={translationId}
+          beforeAction={saveBriefingBeforeAction}
+          briefing={briefing}
+          rows={data?.rows ?? []}
+          greekSources={briefingSources.data}
+          sourcesLoading={briefingSources.isPending}
+          history={briefingView?.history ?? []}
+          englishLayer={englishLayer}
+          savedGuidance={guidance?.translation_guidance ?? ''}
+          codex={{ ready: codexReady, hint: codexHint, busy: Boolean(batch) }}
+          onPrepare={() => void brief()}
+        /> : null}
+        {briefingSources.error ? <p className="comparison-error" role="alert">
+          Could not load Greek reading context. Your saved briefing is available.{' '}
+          <button type="button" onClick={() => void briefingSources.refetch()}>Retry sources</button>
+        </p> : null}
+      </div>
 
 
       {pane !== 'verses' ? (
@@ -1487,7 +1593,7 @@ export function TranslationComparisonTable({
                     setSelectedTokenId(null);
                   }}
                 >
-                  <span className="verse-row__n">{verse ?? 'Heading'}</span>
+                      <span className={`verse-row__n${verse == null ? ' verse-row__n--heading' : ''}`}>{verse ?? 'Heading'}</span>
                   {isOpen ? (
                     <span className="verse-row__meta">
                       {row.display_reference}
@@ -1732,6 +1838,14 @@ export function TranslationComparisonTable({
       </>
       ) : null}
       {importDialog}
+      <RetranslateDialog
+        retranslation={retranslation}
+        onCancel={() => setRetranslation(null)}
+        onConfirm={() => {
+          setRetranslation(null);
+          translate(replaceableRows);
+        }}
+      />
     </section>
   );
 }

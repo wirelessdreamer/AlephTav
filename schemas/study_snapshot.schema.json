@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "study_snapshot_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^study\\.[0-9a-f]{24}$"
+    },
+    "predecessor_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^study\\.[0-9a-f]{24}$"
+    },
+    "edition_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$"
+    },
+    "text_revision_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^r[0-9]{4,}$"
+    },
+    "policy_revision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "package_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "package_id",
+          "path",
+          "sha256"
+        ]
+      },
+      "minItems": 1
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ]
+    },
+    "mt_source_snapshot": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "snapshot_id": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^mt\\.[0-9a-f]{24}$"
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "snapshot_id",
+            "path",
+            "sha256"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "study_snapshot_id",
+    "predecessor_id",
+    "edition_id",
+    "text_revision_id",
+    "policy_revision_id",
+    "source_ids",
+    "packages",
+    "catalog",
+    "mt_source_snapshot"
+  ]
+}

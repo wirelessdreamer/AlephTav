@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v014.a.literal.alt.0001",
-    "rnd.ps025.v014.a.lyric.alt.0001"
+    "rnd.ps025.v014.a.lyric.alt.0001",
+    "rnd.ps025.v014.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v014.a.0001",
     "aud.ps025.v014.a.0002",
     "aud.ps025.v014.a.0003",
-    "aud.ps025.v014.a.0004"
+    "aud.ps025.v014.a.0004",
+    "aud.ps025.v014.a.0005",
+    "aud.ps025.v014.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4e306d15a7f1c06ca7c3a28396d68c37c29e51a8a988a6482dac86fe8523071e",
+      "audit_id": "aud.ps025.v014.a.0005",
+      "before_hash": "534f727681850d10dd1cc51d52bf8d1cd120a664ebe3ad77bc8d05d35818075f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.187923+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v014.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Keeps the intimacy of confidential counsel and repeats the earlier fear-and-covenant vocabulary.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "32189b9420f050227c143940a2a105e11497c9e996368b6bcd324328fb9216ca",
+      "audit_id": "aud.ps025.v014.a.0006",
+      "before_hash": "04a35e790d18e932410ce1fa418503fe7c10bdd2620f6a33f14a41b05b9a274d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:33:08.057131+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v014.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -111,6 +146,49 @@
         {
           "lexical_gloss": "council, confidential counsel, secret, intimate fellowship",
           "note": "Expresses the confidential counsel sense through a verb, foregrounding communication within a close relationship.",
+          "rendered_as": "confides",
+          "token_ids": [
+            "ps025.v014.t001"
+          ],
+          "transliteration": "sôḏ",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves Yahweh's confidential relationship with those who fear him and the making known of his covenant. The covenant's recipients remain implicit in the English final clause.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "9672ec194ad1b3a09b1861fff5b113fdd3911deb21b07f0455f1afdb8a118a75",
+      "audit_ids": [
+        "aud.ps025.v014.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v014.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Turns the noun phrase about confidential counsel into the action 'confides in.' The explicit 'to them' is not repeated.",
+      "display_reference": "Psalm 25:14",
+      "english_rendering_id": "rnd.ps025.v014.a.lyric.alt.0002",
+      "generation_run_id": "cxr.ad9382b75425",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "ס֣וֹד יְ֭הוָה לִירֵאָ֑יו וּ֝בְרִית֗וֹ לְהוֹדִיעָֽם׃",
+      "literal_backbone": [
+        "Yahweh's confidential counsel is for those who fear him.",
+        "He makes his covenant known to them."
+      ],
+      "literal_rendering_id": "rnd.ps025.v014.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:14",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v014.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "council, counsel, confidential discussion, intimate fellowship",
+          "note": "Selects the confidential communication sense and expresses it as an action by the LORD.",
           "rendered_as": "confides",
           "token_ids": [
             "ps025.v014.t001"
@@ -337,6 +415,116 @@
       "unit_id": "ps025.v014.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; short central cadence between two fuller phrases.",
+      "differentiator": "Intimate counsel followed by covenant disclosure",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.19,
+        "stress_approximation": 0.65,
+        "syllable_count": 19,
+        "syllables": 19
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v014.t001–t003 → The LORD confides in those who fear him",
+          "ps025.v014.t004–t005 → he makes his covenant known"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v014.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Keeps the intimacy of confidential counsel and repeats the earlier fear-and-covenant vocabulary.",
+      "rendering_id": "rnd.ps025.v014.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "ס֣וֹד יְ֭הוָה לִירֵאָ֑יו",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "ס֣וֹד יְ֭הוָה לִירֵאָ֑יו",
+        "token_ids": [
+          "ps025.v014.t001",
+          "ps025.v014.t002",
+          "ps025.v014.t003"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The LORD confides in those\nwho fear him;\nhe makes his covenant known.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v014.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v014.a",
+      "variation_basis": [
+        "Confidential counsel expressed as direct action"
       ]
     }
   ],

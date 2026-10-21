@@ -458,6 +458,7 @@ def build_comparison_table(
     translations.require(psalm_id, translation_id)
     psalm = registry_service.load_psalm(psalm_id)
     english_layer = english_layer or layer or "lyric"
+    guidance = translations.get_guidance(psalm_id, translation_id)
 
     grouped: dict[int, list[dict[str, Any]]] = {}
     for unit in psalm["units"]:
@@ -476,6 +477,7 @@ def build_comparison_table(
         literal_links: list[dict[str, Any]] = []
         english_ids: list[str] = []
         english_statuses: list[str] = []
+        english_guidance: list[str | None] = []
         tokens: list[dict[str, Any]] = []
 
         for unit in units:
@@ -499,6 +501,7 @@ def build_comparison_table(
                 english_parts.append(english["text"])
                 english_ids.append(english["rendering_id"])
                 english_statuses.append(english["status"])
+                english_guidance.append((english.get("provenance") or {}).get("guidance"))
             active = _active_assessment(unit, translation_id)
             if active:
                 assessments.append(active)
@@ -527,6 +530,7 @@ def build_comparison_table(
                 "english_text": "\n".join(english_parts) if english_parts else None,
                 "english_rendering_ids": english_ids,
                 "english_status": _edit_status(english_statuses),
+                "english_guidance": _guidance_state(english_guidance, guidance),
                 "accuracy_rating": (assessment or {}).get("accuracy_rating"),
                 "accuracy_note": (assessment or {}).get("accuracy_note", ""),
                 "creative_liberties_note": (assessment or {}).get("creative_liberties_note", ""),
@@ -658,6 +662,14 @@ def _edit_status(statuses: list[str]) -> str | None:
         if status in statuses:
             return status
     return statuses[0] if statuses else None
+
+
+def _guidance_state(made_under: list[str | None], guidance: str) -> str | None:
+    """Whether a row's English was made under the guidance saved now: ``current`` or
+    ``changed``, or None when a part predates the record or was not made by Codex."""
+    if not made_under or None in made_under:
+        return None
+    return "current" if all(text == guidance for text in made_under) else "changed"
 
 
 def _is_stale(

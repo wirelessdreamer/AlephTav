@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v002.a.literal.alt.0001",
-    "rnd.ps025.v002.a.lyric.alt.0001"
+    "rnd.ps025.v002.a.lyric.alt.0001",
+    "rnd.ps025.v002.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v002.a.0001",
     "aud.ps025.v002.a.0002",
     "aud.ps025.v002.a.0003",
-    "aud.ps025.v002.a.0004"
+    "aud.ps025.v002.a.0004",
+    "aud.ps025.v002.a.0005",
+    "aud.ps025.v002.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1dcfe1986987d5445cbb526b575f1cbd89e08214c3eb3608a553fab478afddb8",
+      "audit_id": "aud.ps025.v002.a.0005",
+      "before_hash": "3873280b05e3cd5a11dde6718eadb2fce63ead7fd027e35e0f166c34edfbbe0a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.627114+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v002.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The two negative petitions answer each other without strengthening trust into guaranteed rescue.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ac192b37e58242b4ab6d2f742aafdc03a2663d8952d8177707b6e39dd27cf364",
+      "audit_id": "aud.ps025.v002.a.0006",
+      "before_hash": "90e53a085ffa7e8b6a7c636f381f89c0c80ce9fac7d8e7368e0aaed04895d60c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:30:55.098662+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v002.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -107,6 +142,39 @@
       "reviewer_id": null,
       "revision_of": null,
       "status": "proposed",
+      "unit_id": "ps025.v002.a",
+      "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the address to 'my God,' trust placed in God, and both negative petitions: against the speaker's shame and the enemies' gloating over the speaker.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "fa1602fb731704d40cc2cb081faaec3762db6714373de7f835a07b0c637692e8",
+      "audit_ids": [
+        "aud.ps025.v002.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v002.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Don't let' voices the Hebrew negative wishes as direct requests for God to prevent those outcomes.",
+      "display_reference": "Psalm 25:2",
+      "english_rendering_id": "rnd.ps025.v002.a.lyric.alt.0002",
+      "generation_run_id": "cxr.53506723cbd5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "אֱ‍ֽלֹהַ֗י בְּךָ֣ בָ֭טַחְתִּי אַל־אֵב֑וֹשָׁה אַל־יַֽעַלְצ֖וּ אֹיְבַ֣י לִֽי׃",
+      "literal_backbone": [
+        "My God, in you I have trusted.",
+        "May I not be ashamed.",
+        "May my enemies not exult over me."
+      ],
+      "literal_rendering_id": "rnd.ps025.v002.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:2",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
       "unit_id": "ps025.v002.a",
       "word_notes": []
     }
@@ -314,6 +382,124 @@
       "unit_id": "ps025.v002.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; paired phrases with pickups and held endings.",
+      "differentiator": "Parallel negative petitions",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.64,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v002.t001–t003 → My God, I've trusted in you",
+          "ps025.v002.t004–t005 → don't let me be shamed",
+          "ps025.v002.t006–t009 → Don't let my enemies gloat over me"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v002.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "The two negative petitions answer each other without strengthening trust into guaranteed rescue.",
+      "rendering_id": "rnd.ps025.v002.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "אַל־אֵב֑וֹשָׁה",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "אַל־אֵב֑וֹשָׁה",
+        "token_ids": [
+          "ps025.v002.t004",
+          "ps025.v002.t005"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My God, I've trusted in you;\ndon't let me be shamed.\nDon't let my enemies\ngloat over me.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v002.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v002.a",
+      "variation_basis": [
+        "Paired petitions",
+        "Contemporary contractions"
       ]
     }
   ],

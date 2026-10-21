@@ -479,6 +479,7 @@ def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch)
         lambda profile: FakeComposerAdapter(profile),
     )
 
+    before = registry_service.load_unit("ps001.v001.a")
     response = client.post(
         "/units/ps001.v001.a/composer-suggestions",
         json={
@@ -506,8 +507,8 @@ def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch)
     assert payload["chunks"][0]["chunk_id"] == "chunk-1"
     assert payload["chunks"][0]["quality_filter"] == {
         "threshold": 0.85,
-        "candidate_count_before_filter": 2,
-        "surfaceable_candidate_count": 2,
+        "candidate_count_before_filter": 1,
+        "surfaceable_candidate_count": 1,
         "suppressed_candidate_count": 0,
         "production_ready": True,
         "rejection_reason": None,
@@ -515,19 +516,17 @@ def test_composer_suggestions_endpoint_returns_ephemeral_candidates(monkeypatch)
         "seed_match_used": False,
     }
     assert payload["chunks"][0]["candidates"][0]["text"] == "phrase option 1"
-    assert payload["chunks"][0]["candidates"][1]["drift_flags"] == ["low-confidence"]
+    assert payload["blocked_source_candidate_count"] == 1
+    assert len(payload["chunks"][0]["candidates"]) == 1
     assert (
         payload["chunks"][0]["candidates"][0]["translation_basis"]["basis_type"]
         == "hebrew_to_english"
-    )
-    assert (
-        payload["chunks"][0]["candidates"][1]["translation_basis"]["basis_type"]
-        == "septuagint_greek_to_english"
     )
     assert payload["chunks"][0]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
     assert (
         payload["chunks"][0]["candidates"][0]["source_anchor"]["anchor_text"] == "Blessed the man"
     )
+    assert registry_service.load_unit("ps001.v001.a") == before
 
 
 def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
@@ -558,41 +557,9 @@ def test_composer_suggestions_endpoint_can_filter_by_basis(monkeypatch) -> None:
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["chunks"][0]["quality_filter"] == {
-        "threshold": 0.85,
-        "candidate_count_before_filter": 1,
-        "surfaceable_candidate_count": 1,
-        "suppressed_candidate_count": 0,
-        "production_ready": True,
-        "rejection_reason": None,
-        "fallback_used": False,
-        "seed_match_used": False,
-    }
-    candidate = payload["chunks"][0]["candidates"][0]
-    assert candidate["text"] == "phrase option 2"
-    assert candidate["rationale"] == "phrase rationale 2"
-    assert candidate["alignment_hints"] == ["seed-2"]
-    assert candidate["drift_flags"] == ["low-confidence"]
-    assert candidate["metrics"] == {
-        "confidence": 0.66,
-        "distinctness_score": 1.0,
-        "grounding_score": 0.72,
-        "production_quality_score": 1.0,
-    }
-    assert candidate["variation_basis"] == ["symbolic_recast"]
-    assert candidate["preserved_source_images"] == [{"label": "darkness", "source_id": "lxx"}]
-    assert candidate["differentiator"] == "Septuagint pressure"
-    assert candidate["grounding_confidence"] == 0.72
-    assert candidate["translation_basis"] == {
-        "basis_type": "septuagint_greek_to_english",
-        "source_ids": ["lxx", "macula"],
-        "source_language": "grc",
-        "source_version": "fixture-2026.04",
-        "basis_note": "Fixture Septuagint basis",
-    }
-    assert candidate["delivery_profile"] == "source_grounded_phrase"
-    assert candidate["source_anchor"]["anchor_text"] == "Blessed the man"
-    assert candidate["source_anchor"]["source_language"] == "grc"
+    assert payload["available"] is False
+    assert payload["chunks"] == []
+    assert payload["blocked_source_candidate_count"] == 1
 
 
 def test_composer_suggestions_endpoint_degrades_when_generation_fails(monkeypatch) -> None:
@@ -719,21 +686,18 @@ def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None
     assert second.status_code == 200
     assert first.json()["job_id"] == second.json()["job_id"]
     assert first.json()["input_hash"] == second.json()["input_hash"]
-    assert first.json()["runtime_metadata"]["candidate_count"] == 2
+    assert first.json()["runtime_metadata"]["candidate_count"] == 1
+    assert first.json()["runtime_metadata"]["quality_filter"]["blocked_source_candidate_count"] == 1
     assert first.json()["runtime_metadata"]["production_ready"] is True
-    assert len(first.json()["output"]["candidates"]) == 2
+    assert len(first.json()["output"]["candidates"]) == 1
+    assert first.json()["output"] == second.json()["output"]
     assert (
         first.json()["output"]["candidates"][0]["translation_basis"]["basis_type"]
         == "hebrew_to_english"
     )
-    assert (
-        first.json()["output"]["candidates"][1]["translation_basis"]["basis_type"]
-        == "septuagint_greek_to_english"
-    )
     assert first.json()["output"]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
     assert first.json()["output"]["candidates"][0]["source_anchor"]["source_language"] == "he"
     assert first.json()["output"]["candidates"][0]["source_anchor"]["source_text"]
-    assert first.json()["output"]["candidates"][1]["source_anchor"]["source_language"] == "grc"
 
     unit = registry_service.load_unit("ps019.v001.a")
     phrase_renderings = [
@@ -741,7 +705,7 @@ def test_generation_job_is_reproducible_and_persists_output(monkeypatch) -> None
         for item in unit["renderings"]
         if item["layer"] == "phrase" and item["status"] == "proposed"
     ]
-    assert len(phrase_renderings) == 2
+    assert len(phrase_renderings) == 1
     assert phrase_renderings[0]["delivery_profile"] == "source_grounded_phrase"
     assert phrase_renderings[0]["source_anchor"]["source_language"] == "he"
 

@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "edition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "text_revision_id": {
+      "type": "string",
+      "pattern": "^r[0-9]{4,}$"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mapping_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "equivalent",
+              "title",
+              "greek_only",
+              "mt_only",
+              "edition_absent",
+              "hallelujah_shift",
+              "partial"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "baseline": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text_span": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ]
+                },
+                "alias": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "baseline",
+                "reference"
+              ]
+            }
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "baseline": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text_span": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ]
+                },
+                "alias": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "baseline",
+                "reference"
+              ]
+            }
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "reviewed"
+            ]
+          }
+        },
+        "required": [
+          "mapping_id",
+          "relation",
+          "sources",
+          "targets",
+          "provenance",
+          "status"
+        ]
+      }
+    },
+    "witness_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "witness": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provenance": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "unit_id",
+          "start",
+          "end",
+          "witness",
+          "provenance"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "edition_id",
+    "text_revision_id",
+    "records",
+    "witness_spans"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^mt\\.[0-9a-f]{24}$"
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^ps[0-9]{3}\\.v[0-9]{3}\\.[a-z]$"
+          },
+          "source_hebrew": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "token_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^ps[0-9]{3}\\.v[0-9]{3}\\.t[0-9]{3}$"
+                },
+                "surface": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "normalized": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "token_id",
+                "surface",
+                "normalized"
+              ]
+            }
+          }
+        },
+        "required": [
+          "unit_id",
+          "source_hebrew",
+          "tokens"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "units"
+  ]
+}

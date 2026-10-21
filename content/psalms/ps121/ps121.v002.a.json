@@ -1,9 +1,120 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v002.a.literal.alt.0001",
+    "rnd.ps121.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v002.a.0001",
+    "aud.ps121.v002.a.0002",
+    "aud.ps121.v002.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7e31a3cc90b32ad1f9fc21a341637b9dd50a721b757e76bed0dbfb0bb09abf62",
+      "audit_id": "aud.ps121.v002.a.0001",
+      "before_hash": "13f73ced145e8a66575fd1ebb528e62ec81c24ebf977f1905eb56c13027b271e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.624619+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v002.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers verse 1 with the same noun and identifies the LORD through creation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "647d7e5a23bc1b68b661b1bb94fa7cbce7d46d10000135cca21e093a6fa5991d",
+      "audit_id": "aud.ps121.v002.a.0002",
+      "before_hash": "97ef9bfae94461cc0513ca2db862aed98079487cc32fa8b7dc2621792dd1c2e7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.252630+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Answers the preceding question with the same noun and expands the view from mountains to creation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ae8857781f28af212d532d86854801cd9e88a7ccff432110939c1b07fe97607a",
+      "audit_id": "aud.ps121.v002.a.0003",
+      "before_hash": "1407a3c2fbbcaba36885cd6ac7722c78d1d6ccf828082b10bd898a937dd3455f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:14:34.148588+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker's aid, its source in YHWH, and the identification of YHWH as maker of the heavens and earth. Both English versions retain the Hebrew clause order and scope.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "9e95f49ebbd0585d020a45bd326f4003bd2e802ae990efdc5e583520b8227952",
+      "audit_ids": [
+        "aud.ps121.v002.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric supplies comes in a Hebrew clause without an explicit verb, echoing the preceding verse's question. Who made recasts the participial description maker as a past-tense relative clause.",
+      "display_reference": "Psalm 121:2",
+      "english_rendering_id": "rnd.ps121.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.19a2b2f0d930",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "עֶ֭זְרִי מֵעִ֣ם יְהוָ֑ה עֹ֝שֵׂ֗ה שָׁמַ֥יִם וָאָֽרֶץ׃",
+      "literal_backbone": [
+        "My help is from YHWH,",
+        "maker of heavens and earth."
+      ],
+      "literal_rendering_id": "rnd.ps121.v002.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:2",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Help, aid, assistance.",
+          "note": "Preserves the assistance noun and first-person possessive.",
+          "rendered_as": "My aid",
+          "token_ids": [
+            "ps121.v002.t001"
+          ],
+          "transliteration": "ʿezrî",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "Do, make, produce; participle: making, maker.",
+          "note": "Accurately identifies the maker, though the Hebrew participle itself does not specify past tense. The literal version's maker retains its grammatical form more closely.",
+          "rendered_as": "who made",
+          "token_ids": [
+            "ps121.v002.t004"
+          ],
+          "transliteration": "ʿōśēh",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v002.a.0001"
   ],
@@ -15,7 +126,221 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains maker as a participial description.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Heaven and earth",
+          "note": "Retains the paired cosmic scope.",
+          "source_id": "ps121.v002.a",
+          "token_ids": [
+            "ps121.v002.t005",
+            "ps121.v002.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v002.t001 → My aid",
+          "ps121.v002.t002–t003 → is from the LORD",
+          "ps121.v002.t004 → maker of",
+          "ps121.v002.t005–t006 → heaven and earth"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v002.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Answers verse 1 with the same noun and identifies the LORD through creation.",
+      "rendering_id": "rnd.ps121.v002.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "My aid is from the LORD,\nmaker of heaven and earth.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v002.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "The answer echoes aid and come from verse 1.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.31,
+        "stress_approximation": 0.62,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Heavens and earth",
+          "note": "Retains the paired scope of creation.",
+          "source_id": "ps121.v002.a",
+          "token_ids": [
+            "ps121.v002.t005",
+            "ps121.v002.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v002.t001 → My aid",
+          "ps121.v002.t002–t003 → comes from the LORD",
+          "ps121.v002.t004 → who made",
+          "ps121.v002.t005–t006 → the heavens and earth"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v002.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v002.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Answers the preceding question with the same noun and expands the view from mountains to creation.",
+      "rendering_id": "rnd.ps121.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My aid comes from the LORD,\nwho made the heavens and earth.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v002.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "עֶ֭זְרִי מֵעִ֣ם יְהוָ֑ה עֹ֝שֵׂ֗ה שָׁמַ֥יִם וָאָֽרֶץ׃",

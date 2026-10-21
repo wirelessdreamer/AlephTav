@@ -5,6 +5,7 @@ from fastapi import APIRouter, Query
 from app.api.deps import raise_as_http
 from app.services import codex_analysis_service as analysis
 from app.services import codex_app_server_service as codex
+from app.services import codex_briefing_service as briefing
 from app.services import codex_import_service as importing
 from app.services import codex_translation_service as translation
 
@@ -163,6 +164,61 @@ def put_translation_guidance(psalm_id: str, payload: dict) -> dict:
             psalm_id,
             payload.get("translation_guidance", ""),
             payload.get("translation_id") or None,
+            briefing_annotations=payload.get("briefing_annotations"),
+            created_by=payload.get("created_by", "reviewer"),
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.get("/psalms/{psalm_id}/briefing")
+def get_briefing(
+    psalm_id: str,
+    translation_id: str | None = Query(default=None),
+    include_sources: bool = True,
+) -> dict:
+    """The translator's briefing on the psalm, or null when none has been prepared."""
+    try:
+        from app.services import briefing_source_service, translation_context_service
+
+        translation_id = translation_id or None
+        return {
+            "psalm_id": psalm_id,
+            "translation_id": translation_id,
+            "briefing": briefing.cached_briefing(psalm_id, translation_id),
+            "history": translation_context_service.history(psalm_id, translation_id),
+            "greek_sources": (
+                briefing_source_service.greek_evidence(psalm_id)
+                if include_sources
+                else {"available": False, "by_mt_unit": {}}
+            ),
+        }
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.post("/codex/psalms/{psalm_id}/briefing")
+def prepare_briefing(psalm_id: str, payload: dict) -> dict:
+    """Background and the open questions a translator decides before translating."""
+    try:
+        return briefing.prepare_briefing(
+            codex.require_client(), session_id=payload["session_id"], psalm_id=psalm_id
+        )
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.put("/psalms/{psalm_id}/briefing-decisions")
+def put_briefing_decision(psalm_id: str, payload: dict) -> dict:
+    """Save a question's answer/notes without requiring a separate guidance save."""
+    try:
+        from app.services import translation_context_service
+
+        return translation_context_service.save_decision(
+            psalm_id,
+            payload.get("translation_id") or None,
+            payload.get("annotation"),
+            created_by=payload.get("created_by", "reviewer"),
         )
     except Exception as error:
         raise_as_http(error)

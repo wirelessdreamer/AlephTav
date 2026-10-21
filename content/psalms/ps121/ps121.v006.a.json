@@ -1,9 +1,99 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v006.a.literal.alt.0001",
+    "rnd.ps121.v006.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v006.a.0001",
+    "aud.ps121.v006.a.0002",
+    "aud.ps121.v006.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "538d738e4dbfb383940e48e6ac889b02882f38f07b2423dc140bb40024d16737",
+      "audit_id": "aud.ps121.v006.a.0001",
+      "before_hash": "79048fed448315f6f7e81bdcdf314efec457b006ebb536b0036c3a24f9cc82f0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.661442+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v006.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Lets the sun and moon answer the preceding shade image through parallel temporal phrases.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a7c562ca620025d30320c818cafdf3774a46b8ede12b51a39d992ba728c0491a",
+      "audit_id": "aud.ps121.v006.a.0002",
+      "before_hash": "e239670680ebd76ab45850ad2bd7b85256d0da1d0deab4b7835202e47776366d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.295859+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Makes the implied second verb explicit so the celestial pair can share one musical shape.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4da1e021c7b4d472c10dd99dfcd8d00b6489514b5f33fdb871c3e53ff1396b8c",
+      "audit_id": "aud.ps121.v006.a.0003",
+      "before_hash": "602a93110b281ec51e11a98f45398025007469db5da1566e2f9d022afd0b27d3",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:15:29.505119+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the assurance that the sun will not strike the singular addressee by day, followed by the corresponding assurance concerning the moon at night. Retains both celestial bodies, the concrete striking image, and the day/night parallel.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "d36fb272d94fa2b35805cba1051c8cf8f954a61646881979ccf31e7253601ad6",
+      "audit_ids": [
+        "aud.ps121.v006.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Moves by day to the end of the first clause and repeats won't strike you where the Hebrew leaves that predicate understood. The semicolon replaces explicit coordination; contractions modernize the diction without changing the sense.",
+      "display_reference": "Psalm 121:6",
+      "english_rendering_id": "rnd.ps121.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.f187b7cf9d13",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יוֹמָ֗ם הַשֶּׁ֥מֶשׁ לֹֽא־יַכֶּ֗כָּה וְיָרֵ֥חַ בַּלָּֽיְלָה׃",
+      "literal_backbone": [
+        "By day the sun will not strike you.",
+        "And the moon [will not strike you] by night."
+      ],
+      "literal_rendering_id": "rnd.ps121.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:6",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v006.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v006.a.0001"
   ],
@@ -15,7 +105,236 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Retains strike without explaining the mechanism of harm.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Sun by day and moon by night",
+          "note": "Retains both celestial bodies and their temporal pairing.",
+          "source_id": "ps121.v006.a",
+          "token_ids": [
+            "ps121.v006.t001",
+            "ps121.v006.t002",
+            "ps121.v006.t005",
+            "ps121.v006.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v006.t001 → By day",
+          "ps121.v006.t002 → the sun",
+          "ps121.v006.t003–t004 → will not strike you",
+          "ps121.v006.t005 → nor the moon",
+          "ps121.v006.t006 → by night"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v006.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Lets the sun and moon answer the preceding shade image through parallel temporal phrases.",
+      "rendering_id": "rnd.ps121.v006.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "By day the sun will not strike you,\nnor the moon by night.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v006.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Matching clauses without archaic conjunctions.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.36,
+        "singability_score": 0.23,
+        "stress_approximation": 0.57,
+        "syllable_count": 16,
+        "syllables": 16
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Sun and moon striking",
+          "note": "Retains the celestial bodies, striking action, and day/night pairing.",
+          "source_id": "ps121.v006.a",
+          "token_ids": [
+            "ps121.v006.t001",
+            "ps121.v006.t002",
+            "ps121.v006.t004",
+            "ps121.v006.t005",
+            "ps121.v006.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v006.t001 → by day",
+          "ps121.v006.t002 → The sun",
+          "ps121.v006.t003–t004 → won't strike you",
+          "ps121.v006.t005 → the moon",
+          "ps121.v006.t006 → by night",
+          "Second won't strike you repeats the predicate implied from ps121.v006.t003–t004."
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v006.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v006.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Makes the implied second verb explicit so the celestial pair can share one musical shape.",
+      "rendering_id": "rnd.ps121.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The sun won't strike you by day;\nthe moon won't strike you by night.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v006.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יוֹמָ֗ם הַשֶּׁ֥מֶשׁ לֹֽא־יַכֶּ֗כָּה וְיָרֵ֥חַ בַּלָּֽיְלָה׃",

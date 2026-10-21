@@ -32,7 +32,7 @@
   "properties": {
     "comparison_id": {
       "type": "string",
-      "pattern": "^cmp\\.ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$"
+      "pattern": "^cmp\\.(?:(?:lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.)|lxx\\.)?ps\\d{3}\\.v\\d{3}\\.[a-z]\\.\\d{4}$"
     },
     "psalm_id": {
       "type": "string",
@@ -40,7 +40,7 @@
     },
     "unit_id": {
       "type": "string",
-      "pattern": "^ps\\d{3}\\.v\\d{3}\\.[a-z]$"
+      "pattern": "^(?:(?:lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.)|lxx\\.)?ps\\d{3}\\.v\\d{3}\\.[a-z]$"
     },
     "mt_reference": {
       "type": "string",
@@ -155,7 +155,7 @@
             "minItems": 1,
             "items": {
               "type": "string",
-              "pattern": "^ps\\d{3}\\.v\\d{3}\\.t\\d{3}$"
+              "pattern": "^(?:(?:lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.)|lxx\\.)?ps\\d{3}\\.v\\d{3}\\.t\\d{3}$"
             }
           },
           "transliteration": { "type": "string" },

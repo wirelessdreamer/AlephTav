@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { RequestStatus } from './RequestStatus';
 
 import {
   useAddVerseNote,
@@ -100,7 +101,7 @@ export function WordChoices({
   // A note can cover a bound phrase; suggestions are for the whole of it.
   const tokenIds = givenTokenIds ?? token.note?.token_ids ?? [token.token_id];
   const surface = givenSurface ?? token.surface;
-  const { data } = useWordSuggestions(unitId, tokenIds, englishLayer, translationId);
+  const { data, isLoading, error, refetch } = useWordSuggestions(unitId, tokenIds, englishLayer, translationId);
   const pick = useWordPick(psalmId, translationId);
   const [showAll, setShowAll] = useState(false);
   const [asking, setAsking] = useState(false);
@@ -132,6 +133,9 @@ export function WordChoices({
 
   return (
     <section className="word-choices" aria-label={`Choices for ${name}`}>
+      <RequestStatus loading={isLoading} error={error}
+        label={isLoading ? 'Loading saved word choices…' : 'Could not load word choices.'}
+        onRetry={() => void refetch()} />
       <div className="verse-actions">
         <h4 className="verse-label">Choices for the {layerLabel(englishLayer).toLowerCase()}</h4>
         <span className="verse-actions__spacer" />
@@ -156,7 +160,7 @@ export function WordChoices({
         </p>
       ) : null}
 
-      {suggestions.length === 0 ? (
+      {suggestions.length === 0 && !isLoading && !error ? (
         <div className="verse-actions">
           <span className="verse-notes__hint">
             Codex offers at least three renderings for this word, best first.

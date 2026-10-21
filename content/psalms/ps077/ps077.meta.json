@@ -1,6 +1,1499 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps077.v001.a.0009"
+      ],
+      "citations": [],
+      "created_at": "2026-10-10T21:15:50.404495+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 3–5 name the night-long hand gesture, the soul's refusal, the fainting spirit, eyelids held open, and inability to speak.",
+            "claim": "The speaker's distress includes sleeplessness, agitation, failed speech, and refusal of comfort."
+          },
+          {
+            "basis": "Verse 2 says 'he listens to me'; verses 3–10 continue the lament without reporting rescue.",
+            "claim": "The setting juxtaposes God's listening with continuing distress."
+          },
+          {
+            "basis": "Verses 8–10 repeatedly ask 'Will' and 'Has,' retaining the interrogative form.",
+            "claim": "The feared end of God's favor is expressed as questioning, not as an established conclusion."
+          },
+          {
+            "basis": "Remembering God accompanies groaning in verse 4; verses 12–13 make remembrance and reflection deliberate commitments that lead into praise.",
+            "claim": "Remembrance changes function during the poem."
+          },
+          {
+            "basis": "Verse 11 explicitly reads 'those years of the right hand'; the supplied verse-level evidence also records a competing changing interpretation.",
+            "claim": "The English selects the years interpretation of the difficult hinge verse."
+          },
+          {
+            "basis": "Verse 16 identifies Jacob's and Joseph's children; verse 20 places God's way through the sea; verse 21 names Moses and Aaron.",
+            "claim": "The closing remembrance evokes Israel's sea deliverance and guidance under Moses and Aaron."
+          },
+          {
+            "basis": "Waters see and writhe in verse 17, skies raise their voice in verse 18, and thunder has a voice in verse 19. Arrows, footprints, arm, hand, and flock remain visible.",
+            "claim": "The natural world is personified rather than explained away."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "The historical identity of the first-person speaker or the individual composer.",
+            "why_not": "The heading's Asaph association does not identify the speaking 'I' or independently establish personal authorship."
+          },
+          {
+            "claim": "The date and specific crisis that prompted the lament.",
+            "why_not": "Distress is described without naming an event, enemy, ruler, illness, or location."
+          },
+          {
+            "claim": "That the speaker's present distress has been resolved.",
+            "why_not": "The ending recalls communal guidance; it does not report a present answer, recovery, or renewed comfort."
+          },
+          {
+            "claim": "A specific festival, sanctuary ceremony, or division among soloists and choir.",
+            "why_not": "The musical heading and markers provide no detailed ritual or vocal assignment."
+          },
+          {
+            "claim": "The exact original performance meaning of Selah or the ancient meter and instrumentation.",
+            "why_not": "The markers are present, but the supplied text contains no instructions defining their execution or a musical score."
+          },
+          {
+            "claim": "That the poem supplies a literal meteorological record or identifies a particular sea-crossing location.",
+            "why_not": "The storm and sea are presented poetically, and no geographical site is named."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.8a0188e0b1ad",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The director heading and Selah markers support a musical or liturgical horizon. The first-person night distress supplies a voiced situation within that horizon, while the ancestral names, redeemed people, sea passage, and Moses and Aaron ground the remembrance in Israel's communal deliverance tradition. The text does not identify a particular service, festival, temple location, or ritual. This English chooses 'your way is holy' in verse 14, so it does not explicitly locate that verse in a sanctuary.",
+        "heading_attribution": "The heading designates a psalm, addresses a director interpreted as musical, and associates the composition with Jeduthun and Asaph. 'Of Asaph' conveys the traditional ascription; it does not independently establish that a particular historical Asaph personally composed these words. 'For Jeduthun' leaves the precise relationship broad and does not establish whether Jeduthun is a recipient, performer, or reference to a performance tradition. No date or historical occasion is named."
+      },
+      "method": "Compared the whole English setting with the supplied Hebrew forms, token evidence, and literal backbones, attending to speaker, agency, imagery, verbal movement, and retained Selah markers. Token forms took precedence over displaced lexical metadata; tokens supply material missing from the displayed Hebrew lines in verses 1, 12, and 20. Section titles are analytical divisions, not supplied arrangement labels. Translation resemblance was assessed against the three supplied English texts and identified recollections, without treating resemblance as proof of dependence. No external editions or lexica were consulted.",
+      "non_source_material": [
+        {
+          "kind": "meter",
+          "note": "Earlier translator guidance for this setting, not Hebrew content or an added line in the lyric. No score is supplied to verify its musical realization.",
+          "text": "target 6/8 meter"
+        }
+      ],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps077.0001",
+      "psalm_id": "ps077",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "Frames the lyric for performance and associates it with Jeduthun and Asaph without supplying an occasion.",
+          "first_verse": 1,
+          "last_verse": 1,
+          "theme": "Musical direction and named associations.",
+          "title": "Heading"
+        },
+        {
+          "arc_note": "The assertion that God listens gives way to the extended hand, groaning, and a fainting spirit. Remembering God initially intensifies distress. Selah closes the movement.",
+          "first_verse": 2,
+          "last_verse": 4,
+          "theme": "Calling to God while comfort remains refused.",
+          "title": "Cry and Unrelieved Distress"
+        },
+        {
+          "arc_note": "Direct accusation—God holds the eyelids open—turns toward former days and a remembered night song. The searching spirit prepares the questions that follow.",
+          "first_verse": 5,
+          "last_verse": 7,
+          "theme": "Enforced wakefulness and inward searching.",
+          "title": "Sleepless Recollection"
+        },
+        {
+          "arc_note": "Parallel questions intensify from rejection to the possibility that God has forgotten kindness or closed away compassion. They receive no immediate verbal answer; Selah remains at their end.",
+          "first_verse": 8,
+          "last_verse": 10,
+          "theme": "Whether rejection, lost favor, and withheld compassion are permanent.",
+          "title": "Questions About Abandonment"
+        },
+        {
+          "arc_note": "The strained statement about the Most High's right-hand years bridges doubt and remembrance. Repeated 'I'll' declarations establish a chosen activity, without asserting that the distress has ended.",
+          "first_verse": 11,
+          "last_verse": 13,
+          "theme": "Affliction and the resolve to recount God's deeds.",
+          "title": "Grief Turning Toward Remembrance"
+        },
+        {
+          "arc_note": "Reflection becomes direct praise, moving from God's holy way to publicly known strength and the arm that freed Jacob's and Joseph's children. Selah marks the close.",
+          "first_verse": 14,
+          "last_verse": 16,
+          "theme": "God's incomparable greatness and deliverance of his people.",
+          "title": "Holiness, Wonder, and Redemption"
+        },
+        {
+          "arc_note": "Repeated seeing becomes writhing and trembling; clouds, voices, arrows, thunder, and lightning enlarge the remembered scene until the earth itself shakes.",
+          "first_verse": 17,
+          "last_verse": 19,
+          "theme": "Creation's bodily response to God's presence.",
+          "title": "Waters and Storm"
+        },
+        {
+          "arc_note": "The holy 'way' returns as a route through the sea. Unknown footprints preserve mystery, while the flock and the hand of Moses and Aaron provide a quieter conclusion.",
+          "first_verse": 20,
+          "last_verse": 21,
+          "theme": "A passage through water and guidance mediated through human leaders.",
+          "title": "Untraceable Way and Guided Flock"
+        }
+      ],
+      "similar_translations": [
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "The strongest supplied cluster occurs at MT verses 4–5: remembering God with groaning and 'You hold my eyelids open.' MT verse 17 shares the waters' writhing, and verses 19–20 share the whirlwind and paths through great waters. Differences include this setting's holy-way reading at verse 14, grief at verse 11, and explicit arrows flying back and forth.",
+          "translation": "World English Bible"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "Recalled similarities cluster at MT verses 4–5 in groaning, a fainting spirit, and eyelids held open; at verse 14 in 'your way is holy'; and at verse 17 in writhing waters and trembling depths. These are local echoes, not evidence that the setting reproduces that translation.",
+          "translation": "English Standard Version"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "MT verse 3 retains the hand and lack of slackening, unlike the supplied KJV's sore. Verse 12's recounting of deeds resembles the ASV's mention-of-deeds choice. Verses 19–20 share the whirlwind interpretation and plural paths. At verse 11 both retain years, but this setting omits the ASV's supplied recollection clause.",
+          "translation": "American Standard Version"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "Limited echoes appear in the combination at MT verse 11 of personal affliction with right-hand years, and at verse 10 in compassion being shut up rather than merely withheld. These choices are also shared with the ASV. The setting diverges from distinctive KJV readings at verses 3, 14, and 19: sore, sanctuary, and heaven.",
+          "translation": "King James Version"
+        }
+      ],
+      "source_fingerprint": "9e008f8444aa91a7e2f1ed79ad307f95f84343629342fe56620f70e000625b9a",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 4,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 10,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 16,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting moves from a repeated cry through sleeplessness and increasingly severe questions about God's faithfulness into deliberate remembrance of deliverance. Short lines and contractions keep the lament conversational; repeated voice, remembrance, way, and bodily imagery connect its movements. Verse 11 retains the difficult 'years of the right hand' reading without turning it into confident reassurance. The remembered storm expands the scene from one troubled person to waters, skies, and earth, before the ending settles on untraceable footprints and a flock guided through Moses and Aaron. Remembered guidance closes the poem, but the speaker never explicitly reports relief from the present distress. All three instances of Selah remain.",
+      "translation_id": "tr.ps077.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps077.0001",
+      "audit_ids": [
+        "aud.ps077.v001.a.0010"
+      ],
+      "created_at": "2026-10-10T21:27:06.980721+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.40d1bf7ecc55",
+      "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v1",
+      "psalm_id": "ps077",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro — 6/8, gently moving",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v001.t001"
+                  ],
+                  "unit_id": "ps077.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0001",
+              "rationale": "Adds 'music' to identify the director's contextually understood role.",
+              "text": "For the music director;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v001.t002",
+                    "ps077.v001.t003"
+                  ],
+                  "unit_id": "ps077.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "for Jeduthun."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v001.t004",
+                    "ps077.v001.t005"
+                  ],
+                  "unit_id": "ps077.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "A psalm of Asaph."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus — matching phrases, held endings",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v002.t001",
+                    "ps077.v002.t002",
+                    "ps077.v002.t003"
+                  ],
+                  "unit_id": "ps077.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "Supplies 'calls' in the verbless phrase to establish the recurring sung line.",
+              "text": "My voice calls to God;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v002.t004"
+                  ],
+                  "unit_id": "ps077.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "Makes the cry's contextually implied recipient explicit.",
+              "text": "I cry out to him."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v002.t005",
+                    "ps077.v002.t006",
+                    "ps077.v002.t007"
+                  ],
+                  "unit_id": "ps077.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Uses the same supplied verb as the first occurrence to preserve the Hebrew repetition.",
+              "text": "My voice calls to God;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v002.t008",
+                    "ps077.v002.t009"
+                  ],
+                  "unit_id": "ps077.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "he listens to me."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1 — restrained; sustain Selah",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t001",
+                    "ps077.v003.t002"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0008",
+              "rationale": "",
+              "text": "In my day of distress,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t003",
+                    "ps077.v003.t004"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "I sought out the Lord."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t005",
+                    "ps077.v003.t006",
+                    "ps077.v003.t007"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Makes the extended hand dynamic and infers 'all night' from its continuing extension.",
+              "text": "My hand reached all night;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t008",
+                    "ps077.v003.t009"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "Adds the physical suggestion of falling and gives the unabated gesture a shade of determination.",
+              "text": "it would not fall slack."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t010",
+                    "ps077.v003.t012"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "My soul refused"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v003.t011"
+                  ],
+                  "unit_id": "ps077.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "to be comforted."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v004.t001",
+                    "ps077.v004.t002"
+                  ],
+                  "unit_id": "ps077.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "I remember God;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v004.t003"
+                  ],
+                  "unit_id": "ps077.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "I groan."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v004.t004"
+                  ],
+                  "unit_id": "ps077.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0016",
+              "rationale": "Expresses meditation through an English idiom with an unspecified object.",
+              "text": "I turn it all over;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v004.t005",
+                    "ps077.v004.t006"
+                  ],
+                  "unit_id": "ps077.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "my spirit grows faint."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v004.t007"
+                  ],
+                  "unit_id": "ps077.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "Selah."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2 — same pulse, growing tension",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v005.t001",
+                    "ps077.v005.t002",
+                    "ps077.v005.t003"
+                  ],
+                  "unit_id": "ps077.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Makes the implied wakefulness explicit through 'open.'",
+              "text": "You hold my eyelids open;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v005.t004",
+                    "ps077.v005.t005",
+                    "ps077.v005.t006"
+                  ],
+                  "unit_id": "ps077.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Interprets the negated speech as inability arising from agitation.",
+              "text": "I'm shaken, I can't speak."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v006.t001",
+                    "ps077.v006.t002",
+                    "ps077.v006.t003"
+                  ],
+                  "unit_id": "ps077.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "I thought of the days long ago,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v006.t004",
+                    "ps077.v006.t005"
+                  ],
+                  "unit_id": "ps077.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "the years of the far distant past."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v007.t001",
+                    "ps077.v007.t002"
+                  ],
+                  "unit_id": "ps077.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "I remember my song"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v007.t003"
+                  ],
+                  "unit_id": "ps077.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "in the night."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v007.t004",
+                    "ps077.v007.t005",
+                    "ps077.v007.t006"
+                  ],
+                  "unit_id": "ps077.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "I talk with my heart;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v007.t007",
+                    "ps077.v007.t008"
+                  ],
+                  "unit_id": "ps077.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0026",
+              "rationale": "",
+              "text": "my spirit searches."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus — repeat before the questions",
+          "lines": [],
+          "repeat_of": "sec.0002",
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge — leave the questions suspended",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v008.t002",
+                    "ps077.v008.t003"
+                  ],
+                  "unit_id": "ps077.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "Supplies the individual speaker as the unstated object of rejection.",
+              "text": "Will the Lord reject me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v008.t001"
+                  ],
+                  "unit_id": "ps077.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0028",
+              "rationale": "",
+              "text": "forever?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v008.t004",
+                    "ps077.v008.t005",
+                    "ps077.v008.t006"
+                  ],
+                  "unit_id": "ps077.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0029",
+              "rationale": "",
+              "text": "Will he never show favor"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v008.t007"
+                  ],
+                  "unit_id": "ps077.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "again?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v009.t001",
+                    "ps077.v009.t003"
+                  ],
+                  "unit_id": "ps077.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "Has his faithful love ended"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v009.t002"
+                  ],
+                  "unit_id": "ps077.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0032",
+              "rationale": "",
+              "text": "for good?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v009.t004",
+                    "ps077.v009.t005"
+                  ],
+                  "unit_id": "ps077.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Supplies the word's contextually implied divine possessor.",
+              "text": "Has his word reached its end"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v009.t006",
+                    "ps077.v009.t007"
+                  ],
+                  "unit_id": "ps077.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0034",
+              "rationale": "Shortens successive generations into successive ages, retaining duration but losing the explicit human succession.",
+              "text": "for age after age?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v010.t001",
+                    "ps077.v010.t003"
+                  ],
+                  "unit_id": "ps077.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0035",
+              "rationale": "",
+              "text": "Has God forgotten"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v010.t002"
+                  ],
+                  "unit_id": "ps077.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "Expresses graciousness as kindness and adds the possible forgotten-ability nuance of 'how to.'",
+              "text": "how to be kind?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v010.t004",
+                    "ps077.v010.t005",
+                    "ps077.v010.t007"
+                  ],
+                  "unit_id": "ps077.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0037",
+              "rationale": "",
+              "text": "Or shut off his compassion"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v010.t006"
+                  ],
+                  "unit_id": "ps077.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "in anger?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v010.t008"
+                  ],
+                  "unit_id": "ps077.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "Selah."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v011.t001",
+                    "ps077.v011.t002",
+                    "ps077.v011.t003"
+                  ],
+                  "unit_id": "ps077.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0040",
+              "rationale": "Narrows the supplied affliction reading to emotional grief without resolving the difficult statement.",
+              "text": "I said, “This is my grief—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v011.t004",
+                    "ps077.v011.t005"
+                  ],
+                  "unit_id": "ps077.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0041",
+              "rationale": "Adds backward-pointing 'those' and follows the supplied lyric's disputed years reading rather than the token gloss's changing reading.",
+              "text": "those years of the right hand"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v011.t006"
+                  ],
+                  "unit_id": "ps077.v011.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0042",
+              "rationale": "",
+              "text": "of the Most High.”"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "refrain",
+          "label": "Refrain — deliberate remembrance, same 6/8 pulse",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v012.t001",
+                    "ps077.v012.t002",
+                    "ps077.v012.t003"
+                  ],
+                  "unit_id": "ps077.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0043",
+              "rationale": "",
+              "text": "I'll recount the deeds of Yah;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v012.t004",
+                    "ps077.v012.t005",
+                    "ps077.v012.t007"
+                  ],
+                  "unit_id": "ps077.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0044",
+              "rationale": "",
+              "text": "yes, I'll remember your wonder"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v012.t006"
+                  ],
+                  "unit_id": "ps077.v012.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0045",
+              "rationale": "",
+              "text": "from long ago."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v013.t001",
+                    "ps077.v013.t002",
+                    "ps077.v013.t003"
+                  ],
+                  "unit_id": "ps077.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0046",
+              "rationale": "",
+              "text": "I'll think of all your work;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v013.t004",
+                    "ps077.v013.t005"
+                  ],
+                  "unit_id": "ps077.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0047",
+              "rationale": "",
+              "text": "I'll turn your deeds over"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v013.t005"
+                  ],
+                  "unit_id": "ps077.v013.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0048",
+              "rationale": "Completes the meditation idiom with an explicit mental location, sharing its source verb with the preceding line.",
+              "text": "in my mind."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 3 — broaden; sustain Selah",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v014.t001",
+                    "ps077.v014.t002",
+                    "ps077.v014.t003"
+                  ],
+                  "unit_id": "ps077.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0049",
+              "rationale": "",
+              "text": "God, your way is holy;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v014.t004",
+                    "ps077.v014.t005",
+                    "ps077.v014.t006",
+                    "ps077.v014.t007"
+                  ],
+                  "unit_id": "ps077.v014.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0050",
+              "rationale": "",
+              "text": "what god is as great as God?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v015.t001",
+                    "ps077.v015.t002",
+                    "ps077.v015.t003",
+                    "ps077.v015.t004"
+                  ],
+                  "unit_id": "ps077.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0051",
+              "rationale": "",
+              "text": "You're the God who works wonders;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v015.t005",
+                    "ps077.v015.t007"
+                  ],
+                  "unit_id": "ps077.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0052",
+              "rationale": "",
+              "text": "you made your strength known"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v015.t006"
+                  ],
+                  "unit_id": "ps077.v015.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0053",
+              "rationale": "",
+              "text": "among nations."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v016.t001",
+                    "ps077.v016.t002",
+                    "ps077.v016.t003"
+                  ],
+                  "unit_id": "ps077.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0054",
+              "rationale": "Makes the arm's implied possessor explicit, while 'freed' conveys deliverance with less of the verb's redemption associations.",
+              "text": "With your arm you freed your people—"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v016.t004",
+                    "ps077.v016.t005"
+                  ],
+                  "unit_id": "ps077.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0055",
+              "rationale": "",
+              "text": "the children of Jacob"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v016.t006"
+                  ],
+                  "unit_id": "ps077.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0056",
+              "rationale": "",
+              "text": "and Joseph."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v016.t007"
+                  ],
+                  "unit_id": "ps077.v016.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0057",
+              "rationale": "",
+              "text": "Selah."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 4 — rising storm; keep the two-beat sway",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v017.t001",
+                    "ps077.v017.t002",
+                    "ps077.v017.t003"
+                  ],
+                  "unit_id": "ps077.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0058",
+              "rationale": "",
+              "text": "The waters saw you, God;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v017.t004",
+                    "ps077.v017.t005",
+                    "ps077.v017.t006"
+                  ],
+                  "unit_id": "ps077.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0059",
+              "rationale": "",
+              "text": "the waters saw you and writhed."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v017.t007",
+                    "ps077.v017.t008",
+                    "ps077.v017.t009"
+                  ],
+                  "unit_id": "ps077.v017.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0060",
+              "rationale": "",
+              "text": "Even the depths trembled."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v018.t001",
+                    "ps077.v018.t002",
+                    "ps077.v018.t003"
+                  ],
+                  "unit_id": "ps077.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0061",
+              "rationale": "",
+              "text": "The clouds poured out water;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v018.t004",
+                    "ps077.v018.t005",
+                    "ps077.v018.t006"
+                  ],
+                  "unit_id": "ps077.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0062",
+              "rationale": "Uses 'raised their voice' for giving voice, introducing a possible increase in volume.",
+              "text": "the skies raised their voice."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v018.t007",
+                    "ps077.v018.t008",
+                    "ps077.v018.t009"
+                  ],
+                  "unit_id": "ps077.v018.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0063",
+              "rationale": "Specifies flight as the arrows' manner of movement while retaining the additive particle.",
+              "text": "Your arrows, too, flew back and forth."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v019.t001",
+                    "ps077.v019.t002"
+                  ],
+                  "unit_id": "ps077.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0064",
+              "rationale": "",
+              "text": "The voice of your thunder"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v019.t003"
+                  ],
+                  "unit_id": "ps077.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0065",
+              "rationale": "Supplies 'rang out' as the action of the preceding thunderous voice in the Hebrew's verbless clause.",
+              "text": "rang out in the whirlwind."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v019.t004",
+                    "ps077.v019.t005",
+                    "ps077.v019.t006"
+                  ],
+                  "unit_id": "ps077.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0066",
+              "rationale": "",
+              "text": "Lightning lit up the world;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v019.t007",
+                    "ps077.v019.t008",
+                    "ps077.v019.t009"
+                  ],
+                  "unit_id": "ps077.v019.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0067",
+              "rationale": "",
+              "text": "the earth trembled and shook."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "refrain",
+          "label": "Refrain — repeat softly after the storm",
+          "lines": [],
+          "repeat_of": "sec.0007",
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro — ease back; leave space after the final name",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v020.t001",
+                    "ps077.v020.t002"
+                  ],
+                  "unit_id": "ps077.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0068",
+              "rationale": "Supplies 'led' to articulate the route expressed by the Hebrew's verbless phrase.",
+              "text": "Your way led through the sea,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v020.t003",
+                    "ps077.v020.t004",
+                    "ps077.v020.t005"
+                  ],
+                  "unit_id": "ps077.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0069",
+              "rationale": "",
+              "text": "your paths through the great waters;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v020.t006",
+                    "ps077.v020.t007",
+                    "ps077.v020.t008"
+                  ],
+                  "unit_id": "ps077.v020.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0070",
+              "rationale": "Interprets footprints not being known as inability to trace them, supplying an observer and a capability claim.",
+              "text": "no one could trace your footprints."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v021.t001",
+                    "ps077.v021.t002",
+                    "ps077.v021.t003"
+                  ],
+                  "unit_id": "ps077.v021.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0071",
+              "rationale": "",
+              "text": "You led your people like a flock"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v021.t004",
+                    "ps077.v021.t005"
+                  ],
+                  "unit_id": "ps077.v021.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0072",
+              "rationale": "",
+              "text": "by the hand of Moses"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps077.v021.t006"
+                  ],
+                  "unit_id": "ps077.v021.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0073",
+              "rationale": "",
+              "text": "and Aaron."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        }
+      ],
+      "status": "proposed",
+      "title": "My Voice Calls to God",
+      "translation_id": "tr.ps077.0001",
+      "updated_at": "2026-10-10T21:27:06.980721+00:00"
+    }
+  ],
   "psalm_id": "ps077",
   "title": "Psalm 77",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps077.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-10-10T19:38:21.960243+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+      "psalm_id": "ps077",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps077.0001"
+    }
+  ],
   "unit_ids": [
     "ps077.v001.a",
     "ps077.v002.a",

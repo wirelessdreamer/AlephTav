@@ -12,6 +12,7 @@ from typing import Any
 
 from app.core.config import get_settings
 from app.core.errors import NotFoundError
+from app.core.ids import parse_unit_id
 from app.core.license_rules import evaluate_manifest
 
 PUBLIC_DOMAIN_WITNESS_SOURCES: tuple[dict[str, str], ...] = (
@@ -369,8 +370,6 @@ def bootstrap_project() -> dict[str, Any]:
     project = project_template()
     project["source_manifests"] = manifest_template()
     write_json(settings.project_file, project)
-    for entry in project["source_manifests"]:
-        write_json(settings.raw_dir / entry["source_id"] / "manifest.json", entry)
     return project
 
 
@@ -384,8 +383,6 @@ def load_project() -> dict[str, Any]:
 def save_project(project: dict[str, Any]) -> None:
     settings = get_settings()
     write_json(settings.project_file, project)
-    for entry in project.get("source_manifests", []):
-        write_json(settings.raw_dir / entry["source_id"] / "manifest.json", entry)
 
 
 def psalm_dir(psalm_id: str) -> Path:
@@ -404,6 +401,30 @@ LAYERS_CACHE_FILENAME = "corpus_layers.json"
 # fresh repo before ``build_indexes.py`` has run).
 _summary_cache: list[dict[str, Any]] | None = None
 _layers_cache: list[str] | None = None
+_cache_revision: str | None = None
+
+
+def _summary_revision() -> str:
+    settings = get_settings()
+    pointer = settings.indexes_dir / "active_catalog.json"
+    return str(settings.root_dir) + ":" + (
+        hashlib.sha256(pointer.read_bytes()).hexdigest() if pointer.exists() else "legacy"
+    )
+
+
+def _cache_revision_path() -> Path:
+    return get_settings().caches_dir / "summary_catalog_revision.json"
+
+
+def _check_summary_revision() -> bool:
+    global _summary_cache, _layers_cache, _cache_revision
+    revision = _summary_revision()
+    if _cache_revision != revision:
+        _summary_cache = None
+        _layers_cache = None
+        _cache_revision = revision
+    marker = _cache_revision_path()
+    return marker.exists() and read_json(marker) == revision
 
 
 def _summary_cache_path() -> Path:
@@ -434,10 +455,9 @@ def _compute_psalm_summaries() -> list[dict[str, Any]]:
 
 def _compute_corpus_layers() -> list[str]:
     """Query SQLite for distinct rendering layer names. Slow — cache the output."""
-    from app.db.session import get_connection  # local import to avoid cycle
+    from app.db.session import catalog_path, get_connection  # local import to avoid cycle
 
-    settings = get_settings()
-    if not settings.db_path.exists():
+    if not catalog_path().exists():
         return []
     connection = get_connection()
     try:
@@ -457,23 +477,30 @@ def build_summary_cache() -> dict[str, int]:
     ``concordance_service.rebuild_indexes`` so any run of ``scripts/build_indexes.py``
     refreshes the cache for free.
     """
-    global _summary_cache, _layers_cache
+    global _summary_cache, _layers_cache, _cache_revision
+    revision = _summary_revision()
     summaries = _compute_psalm_summaries()
     layers = _compute_corpus_layers()
     write_json(_summary_cache_path(), summaries)
     write_json(_layers_cache_path(), layers)
+    if _summary_revision() != revision:
+        raise RuntimeError("Catalog changed while building summary caches; retry the request")
+    write_json(_cache_revision_path(), revision)
     _summary_cache = summaries
     _layers_cache = layers
+    _cache_revision = revision
     return {"psalms": len(summaries), "layers": len(layers)}
 
 
 def invalidate_summary_cache() -> None:
     """Drop the in-memory + on-disk summary caches. Call after content wipes."""
-    global _summary_cache, _layers_cache
+    global _summary_cache, _layers_cache, _cache_revision
     _summary_cache = None
     _layers_cache = None
+    _cache_revision = None
     _summary_cache_path().unlink(missing_ok=True)
     _layers_cache_path().unlink(missing_ok=True)
+    _cache_revision_path().unlink(missing_ok=True)
 
 
 def list_psalm_summaries() -> list[dict[str, Any]]:
@@ -486,10 +513,11 @@ def list_psalm_summaries() -> list[dict[str, Any]]:
       3. Compute on demand and persist for next time (cold-start fallback).
     """
     global _summary_cache
+    disk_current = _check_summary_revision()
     if _summary_cache is not None:
         return _summary_cache
     cache_path = _summary_cache_path()
-    if cache_path.exists():
+    if disk_current and cache_path.exists():
         loaded = read_json(cache_path)
         if isinstance(loaded, list):
             _summary_cache = loaded
@@ -608,18 +636,53 @@ def load_psalm(psalm_id: str) -> dict[str, Any]:
 
 
 def unit_path(unit_id: str) -> Path:
-    psalm_id = unit_id.split(".")[0]
-    return psalm_dir(psalm_id) / f"{unit_id}.json"
+    identity = parse_unit_id(unit_id, require_versioned=True)
+    if identity.corpus == "mt":
+        return psalm_dir(identity.psalm_id) / f"{unit_id}.json"
+    return (
+        get_settings().content_dir / "lxx" / "editions" / str(identity.edition_id)
+        / str(identity.text_revision_id) / "psalms" / identity.psalm_id / f"{unit_id}.json"
+    )
 
 
 def load_unit(unit_id: str) -> dict[str, Any]:
     path = unit_path(unit_id)
     if not path.exists():
         raise NotFoundError(f"Unit not found: {unit_id}")
+    if parse_unit_id(unit_id).corpus == "lxx":
+        from app.services.greek_study_service import load_public_view
+        from app.services.immutable_file_service import sha256_file
+
+        view = load_public_view()
+        package = path.parents[2] / "package.json"
+        if not package.exists():
+            raise NotFoundError("Greek unit has no immutable source package")
+        if not any(
+            (get_settings().root_dir / reference["path"]).resolve() == package.resolve()
+            for reference in view.descriptor["packages"]
+        ):
+            raise NotFoundError("Greek unit is outside the published source snapshot")
+        manifest = read_json(package)
+        relative = path.relative_to(package.parent).as_posix()
+        record = next((item for item in manifest["files"] if item["path"] == relative), None)
+        if (
+            record is None or not path.resolve().is_relative_to(package.parent.resolve())
+            or sha256_file(path) != record["sha256"]
+            or path.stat().st_size != record["size_bytes"]
+        ):
+            raise ValueError("Greek unit is not the approved immutable package file")
+        unit = read_json(path)
+        if unit.get("unit_id") != unit_id or not any(
+            candidate == unit for candidate in view.payload.get("units", [])
+        ):
+            raise ValueError("Greek unit differs from its published catalog source")
+        return unit
     return _augment_public_domain_witnesses(read_json(path))
 
 
 def save_unit(unit: dict[str, Any]) -> None:
+    if parse_unit_id(unit["unit_id"], require_versioned=True).corpus == "lxx":
+        raise ValueError("Greek revisions must be installed immutably through package intake")
     write_json(unit_path(unit["unit_id"]), unit)
 
 
@@ -651,10 +714,11 @@ def get_corpus_layers() -> list[str]:
     which fires at the end of ``concordance_service.rebuild_indexes``.
     """
     global _layers_cache
+    disk_current = _check_summary_revision()
     if _layers_cache is not None:
         return _layers_cache
     cache_path = _layers_cache_path()
-    if cache_path.exists():
+    if disk_current and cache_path.exists():
         loaded = read_json(cache_path)
         if isinstance(loaded, list):
             _layers_cache = [str(item) for item in loaded]

@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v008.a.lyric.alt.0001"
+    "rnd.ps008.v008.a.lyric.alt.0001",
+    "rnd.ps008.v008.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v008.a.0001",
-    "aud.ps008.v008.a.0002"
+    "aud.ps008.v008.a.0002",
+    "aud.ps008.v008.a.0003",
+    "aud.ps008.v008.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:26:49.060295+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5e0c8b625b0b5584a69a8ba4f1782903f95c9aa878caa523dff69eefb6a10ffc",
+      "audit_id": "aud.ps008.v008.a.0003",
+      "before_hash": "dc7a8cb06d6083f7397ec46aff62e4b784a73d0afa248939551c16ecc6a9f7ad",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.526378+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v008.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ef33d512c691de26a0f4073fd6ef17600cb01ad8067fc95b57794199840b3486",
+      "audit_id": "aud.ps008.v008.a.0004",
+      "before_hash": "110ae6c66bf1b276de541e396c1122339901244da553cee54b30457591335395",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:03:11.082277+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v008.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -85,6 +120,38 @@
           "verdict": "standard"
         }
       ]
+    },
+    {
+      "accuracy_note": "The English preserves sheep and cattle in their entirety, followed by the beasts of the field.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "1492c4085840ebf5f193b6c419a9fc79e7c658f6f7d39025621b47d1f19ff139",
+      "audit_ids": [
+        "aud.ps008.v008.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v008.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“All” moves before the animals it qualifies. “And” retains the connection but leaves the Hebrew's explicit “also” unexpressed.",
+      "display_reference": "Psalm 8:8",
+      "english_rendering_id": "rnd.ps008.v008.a.lyric.alt.0002",
+      "generation_run_id": "cxr.f070b03f8881",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "צֹנֶ֣ה וַאֲלָפִ֣ים כֻּלָּ֑ם וְ֝גַ֗ם בַּהֲמ֥וֹת שָׂדָֽי׃",
+      "literal_backbone": [
+        "Sheep and cattle, all of them,",
+        "and also the beasts of the field."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:8",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v008.a",
+      "word_notes": []
     }
   ],
   "concept_ids": [
@@ -192,6 +259,104 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.27,
+        "singability_score": 0.57,
+        "stress_approximation": 0.55,
+        "syllable_count": 12,
+        "syllables": 12
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v008.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "All the sheep and the oxen\nAnd beasts of the field",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v008.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

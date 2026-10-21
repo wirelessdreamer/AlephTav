@@ -14,6 +14,7 @@ import {
 import { useSetPinnedLexicalCard } from '../hooks/useWorkbench';
 import type { AssistantActionPreview, AssistantMessage, AssistantSettings } from '../types';
 import { CodexConnectionPanel } from './CodexConnectionPanel';
+import { RequestStatus } from './RequestStatus';
 
 /** Generation provider the assistant panel is pointed at (section 5). */
 type AssistantProvider = 'local' | 'codex';
@@ -39,8 +40,10 @@ interface AssistantPanelProps {
 export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
   const { assistantContext, applyClientAction, assistantUi, updateAssistantUi } = useAppRuntime();
   const [provider, setProvider] = useState<AssistantProvider>('local');
+  const isOpen = assistantUi.visibility === 'open';
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const sessionStarted = useRef(false);
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
   const [draft, setDraft] = useState('');
   const [apiKeyDraft, setApiKeyDraft] = useState('');
@@ -63,13 +66,18 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
   const setPinnedLexicalCard = useSetPinnedLexicalCard();
 
   useEffect(() => {
-    if (sessionId || createSession.isPending || createSession.isSuccess) {
+    if (!isOpen || sessionStarted.current || sessionId || createSession.isPending || createSession.isSuccess || createSession.isError) {
       return;
     }
-    createSession.mutate(undefined, {
-      onSuccess: (session) => setSessionId(session.session_id),
+    // Start after effect setup so a Strict Mode remount cannot orphan the request.
+    let active = true;
+    queueMicrotask(() => {
+      if (!active || sessionStarted.current) return;
+      sessionStarted.current = true;
+      createSession.mutate(undefined, { onSuccess: (session) => setSessionId(session.session_id) });
     });
-  }, [createSession, sessionId]);
+    return () => { active = false; };
+  }, [createSession, sessionId, isOpen]);
 
   useEffect(() => {
     const settings = settingsQuery.data;
@@ -108,7 +116,6 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
 
   const speechSettings = settingsQuery.data?.providers.speech_to_text;
   const canUseMicrophone = Boolean(speechSettings?.available) && typeof navigator !== 'undefined' && 'mediaDevices' in navigator;
-  const isOpen = assistantUi.visibility === 'open';
 
   const appendTranscript = (text: string) => {
     setDraft((existing) => `${existing}${existing ? '\n' : ''}${text}`.trim());
@@ -285,7 +292,7 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
           <span className="eyebrow">Assistant</span>
           <strong>Open</strong>
           <span className="assistant-launcher__meta">
-            {toolsQuery.data?.length ?? 0} actions {' • '} {pendingCount} pending
+            {toolsQuery.isLoading ? 'Loading actions…' : toolsQuery.error ? 'Actions unavailable' : `${toolsQuery.data?.length ?? 0} actions`} {' • '} {pendingCount} pending
           </span>
         </button>
       </div>
@@ -322,6 +329,9 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
           </div>
 
           <div className="assistant-thread">
+            <RequestStatus loading={createSession.isPending} error={createSession.error}
+              label={createSession.isPending ? 'Starting assistant conversation…' : 'Could not start the assistant.'}
+              onRetry={() => { sessionStarted.current = false; createSession.reset(); }} />
             {messages.length === 0 ? (
               <article className="assistant-message assistant-message--assistant">
                 <p>Use chat to inspect project data, navigate the workbench, manage selections, or stage writes for confirmation.</p>
@@ -362,6 +372,11 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
           </div>
 
           <div className="assistant-composer">
+            {sendMessage.isPending ? <RequestStatus loading label="Waiting for the assistant’s response…" /> : null}
+            {executeAction.isPending ? <RequestStatus loading label="Applying the confirmed action…" /> : null}
+            <RequestStatus error={executeAction.error} label="Could not apply the action." />
+            {transcription.isPending ? <RequestStatus loading label="Transcribing audio…" /> : null}
+            <RequestStatus error={transcription.error} label="Could not transcribe audio." />
             <textarea
               value={draft}
               onChange={(event) => setDraft(event.target.value)}
@@ -393,6 +408,14 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
 
         <aside className="assistant-sidebar">
           <section className="assistant-settings assistant-sidebar__section">
+            <RequestStatus loading={settingsQuery.isLoading} error={settingsQuery.error}
+              label={settingsQuery.isLoading ? 'Loading assistant settings…' : 'Could not load assistant settings.'}
+              onRetry={() => void settingsQuery.refetch()} />
+            <RequestStatus loading={toolsQuery.isLoading} error={toolsQuery.error}
+              label={toolsQuery.isLoading ? 'Loading assistant actions…' : 'Could not load assistant actions.'}
+              onRetry={() => void toolsQuery.refetch()} />
+            <RequestStatus loading={saveSettings.isPending} error={saveSettings.error}
+              label={saveSettings.isPending ? 'Saving assistant settings…' : 'Could not save assistant settings.'} />
             <div className="horizontal-between">
               <strong>Providers</strong>
               <span className="subtle">
@@ -420,15 +443,15 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
             </p>
             <label>
               <span>Assistant model profile</span>
-              <input value={assistantModelDraft} onChange={(event) => setAssistantModelDraft(event.target.value)} placeholder="demo-local" />
+              <input disabled={!settingsQuery.data} value={assistantModelDraft} onChange={(event) => setAssistantModelDraft(event.target.value)} placeholder="demo-local" />
             </label>
             <label>
               <span>OpenAI base URL</span>
-              <input value={baseUrlDraft} onChange={(event) => setBaseUrlDraft(event.target.value)} placeholder="https://api.openai.com/v1" />
+              <input disabled={!settingsQuery.data} value={baseUrlDraft} onChange={(event) => setBaseUrlDraft(event.target.value)} placeholder="https://api.openai.com/v1" />
             </label>
             <label>
               <span>Whisper model</span>
-              <input value={whisperModelDraft} onChange={(event) => setWhisperModelDraft(event.target.value)} placeholder="whisper-1" />
+              <input disabled={!settingsQuery.data} value={whisperModelDraft} onChange={(event) => setWhisperModelDraft(event.target.value)} placeholder="whisper-1" />
             </label>
             {isSettingsOpen ? (
               <>
@@ -441,7 +464,7 @@ export function AssistantPanel({ embedded = false }: AssistantPanelProps) {
                     placeholder={settingsQuery.data?.openai.has_api_key ? 'Stored locally' : 'sk-...'}
                   />
                 </label>
-                <button type="button" className="hero-link hero-link-primary" onClick={() => handleSaveSettings(settingsQuery.data)}>
+                <button type="button" className="hero-link hero-link-primary" disabled={!settingsQuery.data || saveSettings.isPending} onClick={() => handleSaveSettings(settingsQuery.data)}>
                   Save assistant settings
                 </button>
               </>

@@ -22,6 +22,8 @@ export default defineConfig({
       '/units': apiTarget,
       '/tokens': apiTarget,
       '/lexicon': apiTarget,
+      '/lxx': apiTarget,
+      '/greek': apiTarget,
       '/search': apiTarget,
       '/alignments': apiTarget,
       '/renderings': apiTarget,

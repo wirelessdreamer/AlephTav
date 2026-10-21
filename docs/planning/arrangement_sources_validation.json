@@ -1,0 +1,127 @@
+{
+  "recorded_at_utc": "2026-10-17T22:58:06+00:00",
+  "request": "Show Hebrew and Greek in every arrangement Sources verse card.",
+  "ui_status": "implemented and verified with authored mounted browser fixtures",
+  "ui_behavior": [
+    "Hebrew MT and edition-mapped Greek LXX visible in every open and collapsed source card",
+    "Verse and song hover details include Greek evidence",
+    "Greek LTR and Hebrew RTL; Greek native word-study controls preserve focus",
+    "Numbering, merges, partial/absent/unmapped and unavailable states are explicit",
+    "Ribbons remeasure source height changes; coverage remains explicitly Hebrew-based",
+    "Long source details stay within the viewport and support mouse, keyboard and touch scrolling, Close/Escape and focus return"
+  ],
+  "browser_verification": {
+    "build_passed": true,
+    "mounted_tests_passed": 6,
+    "viewports": [
+      "desktop",
+      "430px",
+      "430x320 long source details"
+    ],
+    "screenshots_visually_inspected_by_root": true,
+    "command": "ALEPHTAV_PLAYWRIGHT_CHANNEL=msedge npx playwright test --config playwright.greek.config.ts --reporter=line"
+  },
+  "ui_adversarial_recheck": {
+    "reviewer": "/root/greek_runtime_critical_review",
+    "reasoning_effort": "xhigh",
+    "original_P2": "Long dual-source hover details could be offscreen or unscrollable",
+    "status": "closed on bounded independent recheck",
+    "remaining_findings_in_rechecked_scope": 0,
+    "long_content_screenshot_visually_inspected_by_root": true
+  },
+  "python_full_regression": {
+    "status": "passed after repairing all identified regression failures",
+    "scope": "tests/unit tests/integration tests/golden",
+    "initial_result": {
+      "passed": 561,
+      "failed": 5,
+      "setup_errors": 12,
+      "corpus_audit_passed": true,
+      "findings": [
+        "Captured capability function made catalog tests depend on import order",
+        "Four legacy consumer expectations assumed Greek source use without current approval",
+        "Release export rejected a forbidden project license override with an imprecise error"
+      ]
+    },
+    "focused_repair_checks": {
+      "import_order_regressions_passed": 33,
+      "consumer_policy_regressions_passed": 4,
+      "export_policy_and_closure_tests_passed": 30,
+      "ruff_and_scoped_mypy_passed": true
+    },
+    "final_command": ".venv/Scripts/python.exe -m pytest tests/unit tests/integration tests/golden -q -m \"not corpus_audit\"",
+    "final_result": {
+      "passed": 579,
+      "failed": 0,
+      "setup_errors": 0,
+      "deselected": 1,
+      "existing_deprecation_warnings": 4,
+      "duration_seconds": 496.9,
+      "exit_code": 0
+    },
+    "corpus_audit_repeat": "not repeated because it passed in the initial full run and subsequent repairs do not change corpus audit behavior"
+  },
+  "live_api": {
+    "reload_status": "blocked_by_automatic_approval_review",
+    "reload_rejection_reason": "blocked by policy",
+    "process_stopped": false,
+    "port": 43174,
+    "greek_data": "Owner approved local Swete text preview on 2026-10-18. Updated services return real Greek for all 22 Psalm 25 source cards. Full study release remains pending; the running old API needs restarting.",
+    "latest_activation_evidence": "reports/greek/owner_preview_activation.20261018.json"
+  },
+  "runtime_adversarial_recheck": {
+    "reviewer": "/root/greek_runtime_critical_review",
+    "reasoning_effort": "xhigh",
+    "status": "bounded original-findings recheck completed",
+    "final_focused_tests_passed": 38,
+    "remaining_P0_P1_in_repaired_public_boundaries_reported": 0,
+    "repaired": [
+      "Shared public source availability, release/report hashes and latest applicable decisions",
+      "Published unit membership, exact canonical package and catalog equality before activation/read",
+      "Policy captured before source authorization and rechecked after projection",
+      "Approved package status and actual packaged license byte closure",
+      "Denied Greek prompt hints removed and new Greek-basis model output/apply disabled",
+      "Legacy operational authority preserved until explicit quiesced migration; supported CLI",
+      "Reviewed/selected surface filters enforce matching analysis scope",
+      "Repeated state transitions have distinct audit events; installer retries explicitly idempotent",
+      "Current export permissions, package/audit closure and serialized policy revision",
+      "Greek routes mounted and all eight covered by read-only MCP tools"
+    ],
+    "remaining_release_dependencies": [
+      "Approved immutable Greek source/catalog, provenance/schema-owner decisions and qualified Greek review",
+      "Canonical lexical links/expressions, reviewed selections and accepted bridge authority",
+      "W11 source/token/span generation resolver; generation remains disabled",
+      "Independent bundle reconstruction; Greek bundle returns no bytes",
+      "Full audit export, startup recovery and broader crash/concurrency/full-corpus performance acceptance"
+    ]
+  },
+  "evidence_documents": [
+    "docs/planning/arrangement_sources_execution.md",
+    "docs/planning/greek_application_execution.md",
+    "docs/planning/greek_foundations_execution.md",
+    "docs/planning/export_source_closure_execution.md"
+  ],
+  "production_actions": {
+    "source_import": false,
+    "database_migration": false,
+    "live_index_rebuild": false,
+    "raw_edits": false,
+    "canonical_english_edits": false,
+    "source_approvals_created": false,
+    "commit_or_push": false
+  },
+  "content_validation": {
+    "command": ".venv/Scripts/python.exe scripts/validate_content.py",
+    "exit_code": 0,
+    "errors": 0,
+    "production_content_writes": false
+  },
+  "actual_psalm_25_probe": {
+    "verse_blocks": 22,
+    "hebrew_tokens": 159,
+    "greek_sources_payload_present": true,
+    "greek_available": false,
+    "message": "Greek study unavailable: No active study snapshot",
+    "canonical_content_hashes_unchanged": true
+  }
+}

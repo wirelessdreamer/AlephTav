@@ -1,5 +1,6 @@
-import { useLayoutEffect, useRef, useState } from 'react';
-
+import { useEffect, useRef } from 'react';
+import { useWordCardPosition } from '../hooks/useWordCardPosition';
+import { useWordStudyDismissal } from '../hooks/useWordStudyDismissal';
 import type { ComparisonTableRow, PsalmAnalysisSection, SungLine } from '../types';
 import { literalMarks, positionHint } from './verseActions';
 
@@ -10,6 +11,7 @@ export interface HoveredWord {
   top: number;
   bottom: number;
   left: number;
+  pinned?: boolean;
 }
 
 export function placeCard(tokenId: string, element: HTMLElement): HoveredWord {
@@ -21,8 +23,6 @@ export function placeCard(tokenId: string, element: HTMLElement): HoveredWord {
     left: Math.max(8, Math.min(rect.left - 160, window.innerWidth - 440)),
   };
 }
-
-const GAP = 8;
 
 function verseNumber(row: ComparisonTableRow): number {
   return Number(row.unit_ids[0]?.split('.')[1]?.replace('v', ''));
@@ -36,6 +36,9 @@ interface Props {
   /** The setting's lines in sung order, to find the ones that carry the word. */
   sung: SungLine[];
   englishLayer: string;
+  showSetting?: boolean;
+  onClose?: () => void;
+  onCloseOutside?: () => void;
 }
 
 /**
@@ -43,21 +46,14 @@ interface Props {
  * on it, its verse with the word marked, the verse's literal and English, the section
  * it belongs to, and the lines of the setting that sing it.
  */
-export function WordContextCard({ hovered, row, sections, sung, englishLayer }: Props) {
-  const card = useRef<HTMLDivElement>(null);
-  const [top, setTop] = useState<number | null>(null);
-  // Placed once its height is known, before it is painted: below the word when it fits,
-  // else above, else as far up as keeps it on screen.
-  useLayoutEffect(() => {
-    const height = card.current?.offsetHeight ?? 0;
-    const below = hovered.bottom + GAP;
-    const above = hovered.top - GAP - height;
-    if (below + height <= window.innerHeight - GAP) setTop(below);
-    else if (above >= GAP) setTop(above);
-    else setTop(Math.max(GAP, window.innerHeight - height - GAP));
-  }, [hovered]);
+export function WordContextCard({ hovered, row, sections, sung, englishLayer, showSetting = true, onClose, onCloseOutside }: Props) {
+  const card = useWordCardPosition<HTMLDivElement>(hovered);
+  const close = useRef<HTMLButtonElement>(null);
+  useWordStudyDismissal(card.ref, Boolean(hovered.pinned), onCloseOutside);
+  useEffect(() => { if (hovered.pinned) close.current?.focus(); }, [hovered.pinned]);
   const token = (row.tokens ?? []).find((candidate) => candidate.token_id === hovered.tokenId);
   if (!token) return null;
+  const gloss = token.display_gloss || token.gloss_parts?.join(' / ');
   const verse = verseNumber(row);
   const section = sections.find((s) => verse >= s.first_verse && verse <= s.last_verse);
   const layer = englishLayer.replace(/_/g, ' ');
@@ -78,7 +74,7 @@ export function WordContextCard({ hovered, row, sections, sung, englishLayer }: 
           ? link.token_ids.indexOf(token.token_id) / (link.token_ids.length - 1)
           : undefined,
     },
-    token.display_gloss,
+    gloss,
     positionHint([token.token_id], verseTokens),
   );
 
@@ -93,15 +89,17 @@ export function WordContextCard({ hovered, row, sections, sung, englishLayer }: 
 
   return (
     <div
-      ref={card}
-      role="tooltip"
-      className="occurrence-card word-context"
-      style={{
-        top: top ?? hovered.bottom + GAP,
-        left: hovered.left,
-        visibility: top === null ? 'hidden' : undefined,
+      ref={card.ref}
+      role={hovered.pinned ? 'dialog' : 'tooltip'}
+      aria-label="Hebrew word study"
+      className="occurrence-card word-context arr-source-word-card"
+      style={card.style}
+      onClick={(event) => event.stopPropagation()}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && onClose) { event.stopPropagation(); onClose(); }
       }}
     >
+      {hovered.pinned ? <button type="button" ref={close} onClick={onClose}>Close Hebrew word study</button> : null}
       <div className="occurrence-card__head">
         <strong>{row.display_reference}</strong>
         {section ? <span className="occurrence-card__mt">{section.theme}</span> : null}
@@ -112,7 +110,7 @@ export function WordContextCard({ hovered, row, sections, sung, englishLayer }: 
           {token.surface}
         </span>
         {token.transliteration ? <span className="translit">{token.transliteration}</span> : null}
-        {token.display_gloss ? <span>“{token.display_gloss}”</span> : null}
+        {gloss ? <span>“{gloss}”</span> : null}
       </p>
 
       <dl className="word-tray__fields occurrence-card__form">
@@ -182,11 +180,9 @@ export function WordContextCard({ hovered, row, sections, sung, englishLayer }: 
             </div>
           ) : null}
         </div>
-      ) : (
-        <p className="word-tray__hint">This verse has no literal or {layer} rendering yet.</p>
-      )}
+      ) : null}
 
-      <div className="word-context__sung">
+      {showSetting ? <div className="word-context__sung">
         <h5 className="verse-label">In this setting</h5>
         {singings.size === 0 ? (
           <p className="word-tray__hint">No line sings this word.</p>
@@ -203,7 +199,7 @@ export function WordContextCard({ hovered, row, sections, sung, englishLayer }: 
             ))}
           </ul>
         )}
-      </div>
+      </div> : null}
     </div>
   );
 }

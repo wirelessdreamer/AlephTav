@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v002.a.lyric.alt.0001"
+    "rnd.ps008.v002.a.lyric.alt.0001",
+    "rnd.ps008.v002.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v002.a.0001",
-    "aud.ps008.v002.a.0002"
+    "aud.ps008.v002.a.0002",
+    "aud.ps008.v002.a.0003",
+    "aud.ps008.v002.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:25:48.661500+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b8db58a4a073560141ca3f41e2992b5fcef53d110c5525ce723c4d854bf3ebcd",
+      "audit_id": "aud.ps008.v002.a.0003",
+      "before_hash": "00153699454a4f744fb90435a030e2d2b3178f21c6074fc58c754b8c5f739baa",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.413080+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v002.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b20a72e490f5f0c7cf2fd8da1821302d8bf837d8286ccbc3f7c0ab8b9f888d7b",
+      "audit_id": "aud.ps008.v002.a.0004",
+      "before_hash": "1f7e6470d03c315d714f635d68a0e59a1482c59820e789de662cb52275af0e97",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:02:23.968433+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v002.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -94,6 +129,51 @@
             "ps008.v002.t009"
           ],
           "transliteration": "ʾăšer tənāh",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the address to Yahweh as our Lord, the majesty of his name throughout the earth, and his splendor above the heavens, in the Hebrew's order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "6ed1f1244b966cbae4847307bf67b2f3860e63e4fc2fdda2b12fb51cb20fa388",
+      "audit_ids": [
+        "aud.ps008.v002.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v002.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The lyric repeats “How majestic Your name.” The final clause becomes an independent statement of completed action, resolving a difficult Hebrew construction.",
+      "display_reference": "Psalm 8:2",
+      "english_rendering_id": "rnd.ps008.v002.a.lyric.alt.0002",
+      "generation_run_id": "cxr.6e861b446d6a",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֤ה אֲדֹנֵ֗ינוּ מָֽה־אַדִּ֣יר שִׁ֭מְךָ בְּכָל־הָאָ֑רֶץ אֲשֶׁ֥ר תְּנָ֥ה ה֝וֹדְךָ֗ עַל־הַשָּׁמָֽיִם׃",
+      "literal_backbone": [
+        "Yahweh, our Lord,",
+        "how majestic is your name in all the earth!",
+        "Who / set your splendor above the heavens (construction uncertain)."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:2",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "who, which, that; give, put, set",
+          "note": "The English adopts a declarative reading and drops the explicit relative connection. The supplied morphology identifies the verb as imperative; the Hebrew construction is difficult, so the completed-action reading is an interpretive choice.",
+          "rendered_as": "You have set",
+          "token_ids": [
+            "ps008.v002.t008",
+            "ps008.v002.t009"
+          ],
+          "transliteration": "ʾăšer tə nāh",
           "verdict": "defensible"
         }
       ]
@@ -197,6 +277,97 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 25,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.24,
+        "singability_score": 0.13,
+        "stress_approximation": 0.68,
+        "syllable_count": 37,
+        "syllables": 37
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v002.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "O Yahweh, our Lord\nHow majestic Your name\nThrough all of the earth\nHow majestic Your name\nYou have set Your splendor\nAbove the heavens",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v002.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

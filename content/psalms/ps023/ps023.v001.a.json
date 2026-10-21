@@ -1,9 +1,173 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps023.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps023.v001.a.0001",
+    "aud.ps023.v001.a.0002",
+    "aud.ps023.v001.a.0003",
+    "aud.ps023.v001.a.0004",
+    "aud.ps023.v001.a.0005",
+    "aud.ps023.v001.a.0006"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "42fce46e296025b8e1421d8acb809c57d7aed6768eed4c0cde7eaab2dad60f96",
+      "audit_id": "aud.ps023.v001.a.0001",
+      "before_hash": "30c9915b4b84940229e1e812b0f3d0299c81822dee1454ae47e8e5e4af68206d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T15:59:56.341878+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps023.0001",
+      "entity_type": "translation",
+      "rationale": "import translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "eb3571f824c8a8d95134a114da62860f05e1951546050203aef7489af8ddfafb",
+      "audit_id": "aud.ps023.v001.a.0002",
+      "before_hash": "bd85bcdb8d4e613a79cb62d0903946ad10c83e63dc75f67614c159c0dbf4d184",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.180204+00:00",
+      "created_by": "reviewer",
+      "entity_id": "ctx.5576d84e620a",
+      "entity_type": "translation_context",
+      "rationale": "{\"kind\": \"guidance\", \"translation_id\": \"tr.ps023.0001\", \"previous_guidance\": \"\", \"guidance\": \"From the imported translation:\\n[6/8 structure and phrasing]\\n[down piano driven section, no drums, no guitar]\\n[instrumental guitar break]\\n[instrumental drum driven break]\\n[instrumental outro]\", \"annotations\": [], \"briefing\": null}",
+      "review_signoff": {},
+      "summary": "Save translation guidance and notes",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9e24334b729f22d61b91bee0c17bde6a55b3a59beb49e561ee7f2f6e59819f77",
+      "audit_id": "aud.ps023.v001.a.0003",
+      "before_hash": "2a14a0853c7bb6af5a56ebd300f851a5835b11e22b0bf6e112a81fdc5733a189",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.281950+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps023.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "40197a2150859dbacdb7e9b4e8be594af41363c3af044f86e5e8dbb2456ce1a6",
+      "audit_id": "aud.ps023.v001.a.0004",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:01:01.197262+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps023.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “Psalm 23”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "309f4e5ab89593f9f0967528a0e4494078699eafb3b423169a3b526a07929a4c",
+      "audit_id": "aud.ps023.v001.a.0005",
+      "before_hash": "398861f0bf5e75a86fd9e806706555411aac0c1b041ab7fc94fb8125d1d7dcd7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:01:20.576422+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps023.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "294adb65b452c485bf36488bbad0c2d5b35d1c0343c98b6fd73380412cdd2965",
+      "audit_id": "aud.ps023.v001.a.0006",
+      "before_hash": "13df8d9bb780895cc417e5d199657fb0832c44ce43cc7b3ee698b5f313f07ad9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:04:08.439424+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps023.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The superscription is omitted. The English preserves Yahweh as the speaker’s shepherd and the assurance of lacking nothing.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "a9ee6b0e1359eb4f1f87292b0f40b77e341f37457725e2e2457b336baa019608",
+      "audit_ids": [
+        "aud.ps023.v001.a.0005"
+      ],
+      "comparison_id": "cmp.ps023.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The shepherd phrase comes before Yahweh. “I have all I need” recasts the negative assurance as present possession of everything needed.",
+      "display_reference": "Psalm 23:1",
+      "english_rendering_id": "rnd.ps023.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.10d9170fa6a9",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִזְמ֥וֹר לְדָוִ֑ד יְהוָ֥ה רֹ֝עִ֗י לֹ֣א אֶחְסָֽר׃",
+      "literal_backbone": [
+        "A psalm of David.",
+        "Yahweh is my shepherd.",
+        "I shall not lack."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 23:1",
+      "non_source_material": [],
+      "psalm_id": "ps023",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "a psalm; of/for David",
+          "note": "The superscription has no counterpart in the English.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps023.v001.t001",
+            "ps023.v001.t002"
+          ],
+          "transliteration": "mizmôr ləḏāwiḏ",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "not; lack, be without, have need",
+          "note": "An idiomatic positive expression of sufficiency, with present possession replacing the Hebrew’s negative assurance.",
+          "rendered_as": "I have all I need.",
+          "token_ids": [
+            "ps023.v001.t005",
+            "ps023.v001.t006"
+          ],
+          "transliteration": "lōʾ ʾeḥsār",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps023.v001.a.0001"
   ],
@@ -15,7 +179,99 @@
   "pr_links": [],
   "psalm_id": "ps023",
   "ref": "Psalm 23:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 9,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.61,
+        "stress_approximation": 0.67,
+        "syllable_count": 12,
+        "syllables": 12
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b66847408714",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps023.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "My shepherd is Yahweh; I have all I need.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִזְמ֥וֹר לְדָוִ֑ד יְהוָ֥ה רֹ֝עִ֗י לֹ֣א אֶחְסָֽר׃",

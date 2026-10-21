@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from app.services import composer_suggestion_service, registry_service
 
 
@@ -228,7 +230,10 @@ def test_composer_response_suppresses_basis_blur_when_clean_alternative_exists()
     assert candidates[0]["source_anchor"]["source_language"] == "he"
 
 
-def test_composer_response_suppresses_lxx_candidate_with_non_greek_source_anchor() -> None:
+@pytest.mark.parametrize("source_text", ["הַשָּׁמַיִם", "the heavens", " ", ";", "Οἱ שָׁמַיִם"])
+def test_composer_response_suppresses_lxx_candidate_with_non_greek_source_anchor(
+    source_text: str,
+) -> None:
     blurred = _candidate("The heavens speak", 0.99)
     blurred["translation_basis"] = {
         "basis_type": "septuagint_greek_to_english",
@@ -240,8 +245,8 @@ def test_composer_response_suppresses_lxx_candidate_with_non_greek_source_anchor
     blurred["source_anchor"] = {
         "anchor_text": "heavens",
         "source_language": "grc",
-        "source_text": "הַשָּׁמַיִם",
-        "basis_note": "Bad fixture: Greek label with Hebrew source text",
+        "source_text": source_text,
+        "basis_note": "Bad fixture: Greek label without a Greek source span",
     }
     clean = _candidate("The heavens announce", 0.84)
     clean["translation_basis"] = {

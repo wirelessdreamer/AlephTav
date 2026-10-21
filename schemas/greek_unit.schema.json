@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "unit_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^lxx\\.[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*\\.r[0-9]{4,}\\.ps\\d{3}\\.v\\d{3}\\.[a-z]$"
+    },
+    "corpus": {
+      "const": "lxx"
+    },
+    "edition_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9]*(?:[-_][a-z0-9]+)*$"
+    },
+    "text_revision_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^r[0-9]{4,}$"
+    },
+    "psalm_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^ps[0-9]{3}$"
+    },
+    "ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_greek": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "$ref": "greek_token.schema.json"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "unit_id",
+    "corpus",
+    "edition_id",
+    "text_revision_id",
+    "psalm_id",
+    "ref",
+    "source_greek",
+    "tokens"
+  ]
+}

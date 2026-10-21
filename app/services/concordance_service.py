@@ -1,14 +1,18 @@
 from __future__ import annotations
 
 import json
+import os
+import tempfile
+from pathlib import Path
+from typing import Any
 
-from app.db.session import get_connection, init_db
+from app.core.config import get_settings
+from app.db.session import connect_catalog, init_catalog
 from app.services import registry_service
+from app.services.immutable_file_service import atomic_write, sha256_file, workspace_lock
 
 
-def rebuild_indexes() -> dict[str, int]:
-    init_db()
-    units = registry_service.list_units()
+def _populate_indexes(path: Path, units: list[dict[str, Any]]) -> dict[str, int]:
     token_count = 0
     rendering_count = 0
     alignment_count = 0
@@ -16,7 +20,7 @@ def rebuild_indexes() -> dict[str, int]:
     enrichment_count = 0
     missing_count = 0
     comparison_count = 0
-    with get_connection() as connection:
+    with connect_catalog(path, writable=True) as connection:
         for unit in units:
             connection.execute(
                 "INSERT INTO unit_index(unit_id, psalm_id, ref, status, source_hebrew) VALUES (?, ?, ?, ?, ?)",
@@ -130,7 +134,6 @@ def rebuild_indexes() -> dict[str, int]:
     # Refresh the slim psalm-summary + corpus-layer caches now that the
     # SQLite indexes (specifically ``rendering_index``) are up to date.
     # This makes the post-build summary cache match the indexed corpus state.
-    registry_service.build_summary_cache()
     return {
         "units": len(units),
         "tokens": token_count,
@@ -141,3 +144,55 @@ def rebuild_indexes() -> dict[str, int]:
         "missing_enrichments": missing_count,
         "comparison_assessments": comparison_count,
     }
+
+
+def rebuild_indexes() -> dict[str, int]:
+    """Build privately, validate, then publish without touching the last catalog.
+
+    Retained readers continue using their open immutable file on Windows. No
+    operational tables are copied, dropped or stored in this catalog.
+    """
+    from app.services.mt_source_snapshot_service import capture_mt_source_snapshot
+
+    settings = get_settings()
+    pointer_path = settings.indexes_dir / "active_catalog.json"
+    predecessor = pointer_path.read_bytes() if pointer_path.exists() else None
+    units = registry_service.list_units()
+    catalogs = settings.indexes_dir / "catalogs"
+    catalogs.mkdir(parents=True, exist_ok=True)
+    descriptor, filename = tempfile.mkstemp(prefix=".build-", suffix=".sqlite3", dir=catalogs)
+    os.close(descriptor)
+    staging = Path(filename)
+    try:
+        init_catalog(staging)
+        counts = _populate_indexes(staging, units)
+        with connect_catalog(staging) as connection:
+            if connection.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+                raise RuntimeError("Catalog SQLite integrity validation failed")
+            if connection.execute("PRAGMA foreign_key_check").fetchall():
+                raise RuntimeError("Catalog foreign-key validation failed")
+            indexed_units = connection.execute("SELECT COUNT(*) FROM unit_index").fetchone()[0]
+            if indexed_units != counts["units"]:
+                raise RuntimeError("Catalog unit-count validation failed")
+        digest = sha256_file(staging)
+        published = catalogs / f"catalog.{digest}.sqlite3"
+        with workspace_lock(settings.data_dir / "local" / "catalog-publication.lock"):
+            current = pointer_path.read_bytes() if pointer_path.exists() else None
+            if current != predecessor:
+                raise RuntimeError("Stale catalog builder; active catalog changed")
+            if published.exists():
+                if sha256_file(published) != digest:
+                    raise RuntimeError("Retained catalog bytes changed")
+            else:
+                os.replace(staging, published)
+            mt_snapshot = capture_mt_source_snapshot(units)
+            atomic_write(pointer_path, registry_service.deterministic_json({
+                "path": published.relative_to(settings.root_dir).as_posix(),
+                "sha256": digest, "catalog_revision_id": digest,
+                "mt_source_snapshot": mt_snapshot,
+            }).encode("utf-8"))
+        registry_service.invalidate_summary_cache()
+        registry_service.build_summary_cache()
+        return counts
+    finally:
+        staging.unlink(missing_ok=True)

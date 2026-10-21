@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import {
   type ArrangementEdit,
@@ -13,6 +13,8 @@ import { ArrangementEditor } from './ArrangementEditor';
 import { ArrangementLiberties } from './ArrangementLiberties';
 import { ArrangementSources } from './ArrangementSources';
 import { ArrangementText } from './ArrangementText';
+import { SourceOrigins } from './SourceOrigins';
+import { RequestStatus } from './RequestStatus';
 
 export type ArrangementPane = 'arrangement' | 'sources' | 'liberties' | 'text';
 
@@ -102,7 +104,7 @@ export function ArrangementWorkspace({
             .catch(() => undefined)
         }
       >
-        New empty setting
+        {create.isPending ? 'Creating setting…' : 'New empty setting'}
       </button>
     </>
   );
@@ -132,8 +134,14 @@ export function ArrangementWorkspace({
         </div>
       ) : null}
 
-      {list.isLoading ? <p className="comparison-empty">Loading song settings…</p> : null}
-      {list.error ? <p className="comparison-error">{readable(list.error)}</p> : null}
+      <RequestStatus loading={list.isLoading} error={list.error && readable(list.error)}
+        label={list.isLoading ? 'Loading song settings…' : 'Could not load song settings.'}
+        onRetry={() => void list.refetch()} />
+      {current ? <RequestStatus loading={view.isLoading} error={view.error && readable(view.error)}
+        label={view.isLoading ? `Loading ${pane === 'sources' ? 'source flow and word meanings' : pane === 'liberties' ? 'liberties and coverage' : 'song setting'}…` : 'Could not load the song setting.'}
+        onRetry={() => void view.refetch()} /> : null}
+      {edit.isPending ? <RequestStatus loading label="Saving arrangement changes…" /> : null}
+      {view.isFetching && !view.isLoading ? <RequestStatus loading label="Updating song setting…" /> : null}
 
       {!list.isLoading && !list.error && arrangements.length === 0 ? (
         <div className="arr-empty">
@@ -189,13 +197,17 @@ export function ArrangementWorkspace({
 
       {edit.error ? <p className="comparison-error">{readable(edit.error)}</p> : null}
       {create.error ? <p className="comparison-error">{readable(create.error)}</p> : null}
-      {view.error ? <p className="comparison-error">{readable(view.error)}</p> : null}
+      {view.data && view.data.sung.length === 0 && pane !== 'arrangement' ?
+        <p className="comparison-empty">This setting has no lines yet. Add lines in Arrangement to see its sources, liberties, and text.</p> : null}
 
       {view.data ? (
         pane === 'arrangement' ? (
           <ArrangementEditor view={view.data} edit={apply} pending={edit.isPending} />
         ) : pane === 'sources' ? (
-          <ArrangementSources view={view.data} rows={rows} englishLayer={englishLayer} />
+          <Fragment>
+            <ArrangementSources key={arrangement?.arrangement_id} view={view.data} rows={rows} englishLayer={englishLayer} showLicenses={!view.data.source_choices?.length} />
+            <SourceOrigins key={`origins:${arrangement?.arrangement_id}`} view={view.data} rows={rows} englishLayer={englishLayer} />
+          </Fragment>
         ) : pane === 'text' ? (
           <ArrangementText view={view.data} />
         ) : (

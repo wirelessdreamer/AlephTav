@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
 import os
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 
@@ -23,6 +23,7 @@ class Settings:
     project_file: Path
     collections_file: Path
     db_path: Path
+    operational_db_path: Path
     assistant_settings_file: Path
 
     def as_dict(self) -> dict[str, str]:
@@ -48,12 +49,12 @@ def get_settings() -> Settings:
         project_file=root / "content" / "project.json",
         collections_file=root / "content" / "collections.json",
         db_path=root / "data" / "derived" / "indexes" / "workbench.sqlite3",
+        operational_db_path=root / "data" / "local" / "workbench_state.sqlite3",
         assistant_settings_file=root / "data" / "derived" / "caches" / "assistant_settings.json",
     )
     for path in (
         settings.content_dir,
         settings.psalms_dir,
-        settings.raw_dir,
         settings.normalized_dir,
         settings.indexes_dir,
         settings.caches_dir,

@@ -8,16 +8,19 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 
-from app.core.errors import NotFoundError, ValidationError
+from app.core.errors import LicensePolicyError, NotFoundError, ValidationError
 from app.db.models import JOB_TABLE_SQL
-from app.db.session import get_connection
+from app.db.session import get_operational_connection as get_connection
 from app.llm.adapters import build_adapter
 from app.llm.base import GenerationRequest
 from app.services import (
+    generation_source_policy_service,
     lyric_reference_service,
     poetic_analysis_service,
     registry_service,
     rendering_service,
+    source_basis_service,
+    translation_context_service,
 )
 
 PASS_ORDER = [
@@ -116,6 +119,7 @@ def _model_profile(model_profile: str | None) -> dict[str, Any]:
 
 
 def _locked_inputs(unit: dict[str, Any], layer: str) -> dict[str, Any]:
+    unit = generation_source_policy_service.model_unit(unit)
     locked_inputs: dict[str, Any] = {
         "hebrew_tokens": [
             {
@@ -125,12 +129,22 @@ def _locked_inputs(unit: dict[str, Any], layer: str) -> dict[str, Any]:
                 "strong": token.get("strong"),
                 "morph_code": token.get("morph_code"),
                 "transliteration": token.get("transliteration"),
-                "greek": token.get("greek"),
-                "greek_strong": token.get("greek_strong"),
+                **{key: token[key] for key in ("greek", "greek_strong") if key in token},
             }
             for token in unit.get("tokens", [])
         ]
     }
+    from app.services import greek_generation_service
+
+    greek_evidence = greek_generation_service.prompt_evidence(unit["psalm_id"], [unit["unit_id"]])
+    if greek_evidence:
+        locked_inputs["approved_greek_evidence"] = greek_evidence
+    locked_inputs["generation_source_rules"] = source_basis_service.generation_prompt_rules(
+        layer, unit["psalm_id"]
+    )
+    instructions = translation_context_service.briefing_instructions(unit["psalm_id"])
+    if instructions:
+        locked_inputs["briefing_decisions"] = instructions
     lxx_witness = next(
         (item for item in unit.get("witnesses", []) if item.get("source_id") == "lxx"), None
     )
@@ -455,6 +469,12 @@ def _source_basis_drift_flags(
         problems.append("Septuagint-derived candidates must include lxx in source_ids.")
     if expected_language == "he" and not (source_ids & {"uxlc", "oshb", "macula"}):
         problems.append("Hebrew-derived candidates must include a Hebrew source id.")
+    if expected_language == "grc":
+        script_problem = source_basis_service.greek_source_anchor_problem(
+            str(source_anchor.get("source_text") or "")
+        )
+        if script_problem:
+            problems.append(f"{script_problem}.")
 
     if not problems:
         return []
@@ -515,6 +535,20 @@ def _distinctness_score(text: str, prior_texts: list[str]) -> float:
 
 def _normalized_drift_flags(flags: list[dict[str, Any] | str] | None) -> list[dict[str, Any]]:
     return [poetic_analysis_service.normalize_flag(flag) for flag in (flags or [])]
+
+
+def _merge_computed_drift_flags(
+    model_flags: list[dict[str, Any]], computed_flags: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    severity_rank = {"low": 0, "medium": 1, "high": 2}
+    merged: dict[str, dict[str, Any]] = {}
+    for flag in [*model_flags, *computed_flags]:
+        prior = merged.get(flag["code"])
+        if prior is None or severity_rank.get(flag["severity"], 0) >= severity_rank.get(
+            prior["severity"], 0
+        ):
+            merged[flag["code"]] = flag
+    return list(merged.values())
 
 
 def _candidate_sort_key(candidate: dict[str, Any]) -> tuple[Any, ...]:
@@ -591,7 +625,7 @@ def _normalize_candidates(
             _normalize_candidate_text(candidate.get("differentiator") or "") or "grounded alternate"
         )
         translation_basis = _normalize_translation_basis(candidate.get("translation_basis"))
-        item = {
+        item: dict[str, Any] = {
             "text": text,
             "rationale": _normalize_candidate_text(
                 candidate.get("rationale") or "Generated from grounded source inputs."
@@ -632,20 +666,13 @@ def _normalize_candidates(
         }
         quality = lyric_reference_service.evaluate_candidate_quality(text, layer)
         item["metrics"]["production_quality_score"] = quality["score"]
-        existing_flag_codes = {
-            flag.get("code") for flag in item["drift_flags"] if isinstance(flag, dict)
-        }
-        for flag in lyric_reference_service.quality_drift_flags(text, layer):
-            if flag["code"] not in existing_flag_codes:
-                item["drift_flags"].append(flag)
-                existing_flag_codes.add(flag["code"])
-        for flag in _source_basis_drift_flags(
-            item["translation_basis"],
-            item["source_anchor"],
-        ):
-            if flag["code"] not in existing_flag_codes:
-                item["drift_flags"].append(flag)
-                existing_flag_codes.add(flag["code"])
+        item["drift_flags"] = _merge_computed_drift_flags(
+            item["drift_flags"],
+            [
+                *lyric_reference_service.quality_drift_flags(text, layer),
+                *_source_basis_drift_flags(item["translation_basis"], item["source_anchor"]),
+            ],
+        )
         if not item["preserved_source_images"]:
             source_image = next(
                 (
@@ -692,7 +719,11 @@ def _candidate_to_rendering(
     prompt_version: str,
     candidate: dict[str, Any],
     job_id: str,
+    translation_context: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    greek_source = source_basis_service.require_generation_basis_available(
+        candidate, unit["unit_id"]
+    )
     return rendering_service.create_rendering(
         unit_id=unit["unit_id"],
         layer=layer,
@@ -716,10 +747,19 @@ def _candidate_to_rendering(
                 "source_ids", ["uxlc", "oshb", "macula"]
             ),
             "generator": "generation-service",
+            **({"greek_generation_source": greek_source} if greek_source else {}),
             "model_profile_id": model_profile["model_profile_id"],
             "job_id": job_id,
             "prompt_version": prompt_version,
             "translation_basis": candidate.get("translation_basis"),
+            **(
+                {
+                    "translation_context": translation_context,
+                    "guidance": translation_context["guidance"],
+                }
+                if translation_context
+                else {}
+            ),
         },
     )
 
@@ -749,6 +789,7 @@ def generate_for_unit(
     unit = registry_service.load_unit(unit_id)
     _assert_layer_rules(unit, layer)
     prompt_version, prompt_template = _load_prompt(layer)
+    translation_context = translation_context_service.capture(unit["psalm_id"], None)
     payload = _job_payload(unit_id, layer, style_profile, model_profile, seed, candidate_count)
     model_profile_payload = _model_profile(model_profile)
     job_suffix, input_hash = _job_identity(payload, prompt_version, model_profile_payload)
@@ -762,7 +803,10 @@ def generate_for_unit(
             connection.execute("DELETE FROM generation_jobs WHERE job_id = ?", (job_id,))
             existing = None
     if existing is not None:
-        return _deserialize_job(dict(existing))
+        cached = _deserialize_job(dict(existing))
+        for candidate in (cached.get("output") or {}).get("candidates", []):
+            source_basis_service.require_generation_basis_available(candidate, unit["unit_id"])
+        return cached
 
     adapter = build_adapter(model_profile_payload)
     system_prompt = (
@@ -777,6 +821,7 @@ def generate_for_unit(
     response = adapter.generate_json(
         GenerationRequest(
             prompt=(
+                f"{payload['locked_inputs'].get('briefing_decisions', '')}\n\n"
                 f"{prompt_template}\n\n"
                 "Lyric reference guidance:\n"
                 f"{lyric_reference_service.reference_guidance(layer)}\n\n"
@@ -806,15 +851,33 @@ def generate_for_unit(
     if response.payload["unit_id"] != unit_id or response.payload["layer"] != layer:
         raise ValidationError("Generation output returned the wrong unit or layer")
 
+    permitted_candidates = []
+    for candidate in response.payload["candidates"]:
+        try:
+            source_basis_service.require_generation_basis_available(candidate, unit["unit_id"])
+        except LicensePolicyError:
+            continue
+        permitted_candidates.append(candidate)
     normalized_candidates, quality_filter = _normalize_candidates(
         layer,
         unit,
-        response.payload["candidates"],
+        permitted_candidates,
         candidate_count,
     )
+    if len(permitted_candidates) != len(response.payload["candidates"]):
+        quality_filter["blocked_source_candidate_count"] = len(
+            response.payload["candidates"]
+        ) - len(permitted_candidates)
     created_renderings = [
         _candidate_to_rendering(
-            unit, layer, style_profile, model_profile_payload, prompt_version, candidate, job_id
+            unit,
+            layer,
+            style_profile,
+            model_profile_payload,
+            prompt_version,
+            candidate,
+            job_id,
+            translation_context,
         )
         for candidate in normalized_candidates
     ]

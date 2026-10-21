@@ -925,6 +925,8 @@ export interface ComparisonTableRow {
   english_text: string | null;
   english_rendering_ids: string[];
   english_status: string | null;
+  /** Whether the English was made under the guidance saved now; null when not recorded. */
+  english_guidance: 'current' | 'changed' | null;
   accuracy_rating: AccuracyRating | null;
   accuracy_note: string;
   creative_liberties_note: string;
@@ -1110,6 +1112,125 @@ export interface TranslationGuidance {
   translation_guidance: string;
 }
 
+/** One answer a translator could give to a briefing question, and who gives it. */
+export interface BriefingOption {
+  /** Worded as an instruction the translator could adopt into the guidance. */
+  choice: string;
+  held_by: string;
+  /** What it gains and loses in English. */
+  effect: string;
+}
+
+export interface BriefingQuestion {
+  topic: string;
+  /** Masoretic verse numbers; empty when the question runs through the psalm. */
+  verses: number[];
+  question: string;
+  /** Why it is open: the Hebrew, the evidence, where readings divide. */
+  background: string;
+  options: BriefingOption[];
+}
+
+export interface BriefingAnnotation {
+  briefing_run_id: string;
+  question_index: number;
+  answer: string;
+  notes: string;
+  question?: BriefingQuestion;
+}
+
+export interface TranslationContextEvent {
+  audit_id: string;
+  created_at: string;
+  created_by: string;
+  summary: string;
+  kind: 'briefing' | 'guidance' | 'briefing_decision' | 'briefing_inference';
+  guidance: string;
+  previous_guidance?: string;
+  briefing?: PsalmBriefing | null;
+  annotations?: BriefingAnnotation[];
+  inferences?: {
+    briefing_run_id: string;
+    source_hash: string;
+    items: Array<{
+      question_index: number;
+      topic: string;
+      answer: string | null;
+      confidence: 'high' | 'medium' | 'unresolved';
+      evidence: string;
+      rationale: string;
+    }>;
+  };
+}
+
+export interface BriefingGreekSources {
+  generation_available?: boolean;
+  available: boolean;
+  /** Owner-approved unreleased text on a proposed verse map; never a release. */
+  preview?: boolean;
+  lexical_preview?: boolean;
+  lexical_message?: string;
+  message?: string;
+  study_snapshot_id?: string;
+  policy_revision_id?: string;
+  edition_id?: string;
+  text_revision_id?: string;
+  source_attribution?: Array<{ attribution: string; license: string }>;
+  by_mt_unit: Record<string, {
+    relations: string[];
+    units: Array<{
+      unit_id: string;
+      ref: string;
+      source_greek: string;
+      literal_text: string;
+      partial: boolean;
+      tokens: Array<{
+        token_id: string; surface: string; gloss: string | null;
+        lookup_status?: 'matched' | 'possible_variant' | 'related_entry' | 'mark_variant' | 'unresolved';
+        analyses?: Array<{ lemma: string; status: string; scheme: string; raw_tag: string; lookup_note?: string;
+          features: Record<string, string | null> }>;
+        dictionary_entries?: Array<{ entry_id: string; headword: string; gloss: string;
+          attribution: { required_attribution: string; license: string } }>;
+      }>;
+    }>;
+  }>;
+}
+
+export interface BriefingView {
+  briefing: PsalmBriefing | null;
+  history: TranslationContextEvent[];
+  greek_sources: BriefingGreekSources;
+}
+
+/** Background and open questions for the translator, prepared by Codex before translating. */
+export interface PsalmBriefing {
+  psalm_id: string;
+  translation_id: string | null;
+  background: {
+    authorship: string;
+    setting: string;
+    form: string;
+    themes: string;
+    reception: string;
+  };
+  questions: BriefingQuestion[];
+  run_id: string;
+  created_at: string | null;
+  /** The guidance it was made under; questions that guidance settled were left out. */
+  guidance: string;
+  template_version: string;
+}
+
+export interface BriefingResult {
+  psalm_id: string;
+  translation_id: string | null;
+  status: CodexRun['status'];
+  error: string | null;
+  run_id: string;
+  /** The new briefing, or the earlier one when this run failed. */
+  briefing: PsalmBriefing | null;
+}
+
 export interface PassageFillResult {
   psalm_id: string;
   status: CodexRun['status'];
@@ -1208,6 +1329,19 @@ export interface WordSuggestions {
 }
 
 export interface VerseHistory {
+  translation_history?: TranslationContextEvent[];
+  translation_contexts?: Array<{
+    rendering_id: string;
+    layer: string;
+    created_at: string;
+    complete: boolean;
+    context: {
+      guidance: string;
+      briefing?: PsalmBriefing | null;
+      annotations?: BriefingAnnotation[];
+      history_ids: string[];
+    };
+  }>;
   unit_id: string;
   events: Array<{
     audit_id: string;
@@ -1326,7 +1460,29 @@ export interface Liberty {
   settled: boolean;
 }
 
+export interface SourceChoice {
+  /** Explicit saved Hebrew token → English hints within this recorded Greek-choice line. */
+  hebrew_phrases?: Array<{ start: number; end: number; text: string; token_ids: string[] }>;
+  choice_id: string;
+  line_id: string;
+  unit_id: string;
+  mt_reference: string;
+  greek_reference: string;
+  edition_id: string;
+  text_revision_id: string;
+  source_version: string;
+  rendering_id: string;
+  text: string;
+  rationale: string;
+  decisions: BriefingAnnotation[];
+  decision_scope: 'verse_translation';
+  status: 'proposed';
+}
+
 export interface ArrangementView {
+  source_choices?: SourceChoice[];
+  /** Current permitted Greek evidence, keyed by explicit edition-map MT unit endpoints. */
+  greek_sources?: BriefingGreekSources;
   arrangement: Arrangement;
   sung: SungLine[];
   coverage: {

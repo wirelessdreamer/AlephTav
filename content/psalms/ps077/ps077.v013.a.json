@@ -1,9 +1,214 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps077.v013.a.literal.alt.0001",
+    "rnd.ps077.v013.a.lyric.alt.0001",
+    "rnd.ps077.v013.a.lyric.alt.0002",
+    "rnd.ps077.v013.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps077.v013.a.0001",
+    "aud.ps077.v013.a.0002",
+    "aud.ps077.v013.a.0003",
+    "aud.ps077.v013.a.0004",
+    "aud.ps077.v013.a.0005",
+    "aud.ps077.v013.a.0006",
+    "aud.ps077.v013.a.0007",
+    "aud.ps077.v013.a.0008",
+    "aud.ps077.v013.a.0009"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e98cf74574ed4ddf95c83541d7a97b7cbcd4b096fb727fc53cc6dddd9abcec36",
+      "audit_id": "aud.ps077.v013.a.0001",
+      "before_hash": "ff23255817c46beedd8d0501b8cb6a5616ba13b63bd438202f09ee87fe2b0deb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:46:37.012055+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v013.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the preceding resolve to remember, retaining 'muse' from the earlier inward reflections.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ca805e9d50a51adc4de2e4adbb382604ab5d9e5906cb353e25eeddcd37af063a",
+      "audit_id": "aud.ps077.v013.a.0002",
+      "before_hash": "342609296360595bf0c0a8d8b6bd6d94de576e66364769f8bb36f05252a45a25",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:48:41.552747+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues the resolve to remember and returns to the earlier lyric's language of turning things over.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "aa12d34da2bde9e829db17a7408af31ba97f156be423c0c4a3e3cbf8f7dfffa5",
+      "audit_id": "aud.ps077.v013.a.0003",
+      "before_hash": "761c03c53a5871f3e2683bf9509715d10851b7b9633584455f77f2f407a07c82",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:06:47.201449+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Continues the preceding resolve to remember, reusing the passage's language of turning things over.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2b2ab1756c93fab3f0d6bd9ec8d56e90f8c24ba94a67e3eaf53ffa6f21497901",
+      "audit_id": "aud.ps077.v013.a.0004",
+      "before_hash": "6086047c1705a8598f7f498e4c52bdf2ded838723def1ab34fb7a3cb8069fa53",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:11:10.056617+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Continues the preceding resolve to remember and recalls the earlier language of turning things over.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "06163c997a125df61117f8f93fa5c4dd7833234673e87b8e99f16ecb6f937290",
+      "audit_id": "aud.ps077.v013.a.0005",
+      "before_hash": "570699b645fcba9b445c2249bd8949b244ec507ef803e4dee3f8132086afddd4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:13:55.682183+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps077.v013.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d01d504e2f6bc4931fe15b76f9bd6fc3d18192a6e7558e7ac47434115164a356",
+      "audit_id": "aud.ps077.v013.a.0006",
+      "before_hash": "2df5c45729ec7201d216b9aed2519170144bab59b4d3bceac90b0dacd002e1cd",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.449241+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.c5f237f33b53",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "196c1cdc3bedf362b01be2f6e16cf72cd4ddb07b576c0e61a806331d9ed52304",
+      "audit_id": "aud.ps077.v013.a.0007",
+      "before_hash": "8bfca58dceffd0ac0a626e573b1b799e03e3d2a9b75e98d8015560d19deebef3",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.469091+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.a7948303f387",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "85904848ea00c8ff69b4b861383fa723daf7b1b86793116eb3a7819a5ed0ca8d",
+      "audit_id": "aud.ps077.v013.a.0008",
+      "before_hash": "d0ccc8733de4651681ffa512d96fe4de6936b9a83d1b4707b65aaa10395b0944",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.407151+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d0348411f00c08c699a2be464147193d9941872c267b5c8c49ed07644c25a9cd",
+      "audit_id": "aud.ps077.v013.a.0009",
+      "before_hash": "64158badd7694e5370c432089209d586628043d4ee55afae8cc8ab6e05a0d666",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.423751+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v013.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the speaker's intention to reflect on all God's work, followed by reflection on God's deeds. Direct address, the comprehensive 'all,' and the parallel work–deeds pairing remain intact.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "f1d57131698499f19e21e5693f6e05b970bd2e331a2486165230f0b6118abeec",
+      "audit_ids": [
+        "aud.ps077.v013.a.0005"
+      ],
+      "comparison_id": "cmp.ps077.v013.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Think of' expresses meditation broadly; 'turn your deeds over in my mind' makes inward reflection explicit. 'Mind' is supplied by the English idiom rather than a separate Hebrew noun.",
+      "display_reference": "Psalm 77:13",
+      "english_rendering_id": "rnd.ps077.v013.a.lyric.alt.0003",
+      "generation_run_id": "cxr.be8cc50ee4a5",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "וְהָגִ֥יתִי בְכָל־פָּעֳלֶ֑ךָ וּֽבַעֲלִ֖ילוֹתֶ֣יךָ אָשִֽׂיחָה׃",
+      "literal_backbone": [
+        "I will meditate on all your work;",
+        "on your deeds I will muse."
+      ],
+      "literal_rendering_id": "rnd.ps077.v013.a.literal.alt.0001",
+      "mt_reference": "Psalm 77:13",
+      "non_source_material": [],
+      "psalm_id": "ps077",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v013.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Muse, meditate, speak, complain.",
+          "note": "Selects inward meditation from the verb's range. The supplied mental idiom conveys sustained consideration without introducing a new object of reflection.",
+          "rendered_as": "I'll turn your deeds over in my mind",
+          "token_ids": [
+            "ps077.v013.t005"
+          ],
+          "transliteration": "ʾāśîḥâ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps077.v013.a.0001"
   ],
@@ -15,7 +220,416 @@
   "pr_links": [],
   "psalm_id": "ps077",
   "ref": "Psalm 77:13",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Parallel reflection continuing verse 12.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v013.t001 → I will meditate",
+          "ps077.v013.t002–t003 → on all your work",
+          "ps077.v013.t004 → and on your deeds",
+          "ps077.v013.t005 → I will muse"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:46:36.545916+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b6ea55c084ec",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct translation from the Hebrew surface forms.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v013.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a12758-a60f-7c62-96be-3aaba6a8f56d"
+      },
+      "rationale": "Continues the preceding resolve to remember, retaining 'muse' from the earlier inward reflections.",
+      "rendering_id": "rnd.ps077.v013.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "I will meditate on all your work,\nand on your deeds I will muse.",
+      "translation_basis": {
+        "basis_note": "Direct translation from the Hebrew surface forms.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "unit_id": "ps077.v013.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Earlier inward reflection redirected toward God's deeds.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.25,
+        "stress_approximation": 0.54,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v013.t001 → I'll think",
+          "ps077.v013.t002–t003 → of all your work",
+          "ps077.v013.t004–t005 → I'll turn your deeds over in my mind"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:48:41.129975+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.9f437ea2ac07",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based translation; no English witness intermediary.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v013.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a1275a-648f-7003-a477-9c0de79715ee"
+      },
+      "rationale": "Continues the resolve to remember and returns to the earlier lyric's language of turning things over.",
+      "rendering_id": "rnd.ps077.v013.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I'll think of all your work;\nI'll turn your deeds over in my mind.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based translation; no English witness intermediary.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Parallel resolve with a short closing phrase",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.25,
+        "stress_approximation": 0.54,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "I'll think of all your work → ps077.v013.t001–ps077.v013.t003",
+          "I'll turn your deeds over / in my mind → ps077.v013.t004–ps077.v013.t005"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:06:47.172161+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not admit selah",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.c5f237f33b53",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v013.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a2-70a7-7172-b6d3-0fe7d3830f25"
+      },
+      "rationale": "Continues the preceding resolve to remember, reusing the passage's language of turning things over.",
+      "rendering_id": "rnd.ps077.v013.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "וְהָגִ֥יתִי",
+        "basis_note": "Continues the speaker's intention to reflect.",
+        "source_language": "he",
+        "source_text": "וְהָגִ֥יתִי",
+        "token_ids": [
+          "ps077.v013.t001"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I'll think of all your work;\nI'll turn your deeds over\nin my mind.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Paired declarations with a short closing phrase",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.25,
+        "stress_approximation": 0.54,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "I'll think of all your work → ps077.v013.t001–ps077.v013.t003",
+          "I'll turn your deeds over / in my mind → ps077.v013.t004–ps077.v013.t005"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:11:10.013583+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a7948303f387",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v013.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a6-cce2-7d50-b0f5-c69476a085cf"
+      },
+      "rationale": "Continues the preceding resolve to remember and recalls the earlier language of turning things over.",
+      "rendering_id": "rnd.ps077.v013.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "וְהָגִ֥יתִי",
+        "basis_note": "Continues the speaker's intention to reflect.",
+        "source_language": "he",
+        "source_text": "וְהָגִ֥יתִי",
+        "token_ids": [
+          "ps077.v013.t001"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "I'll think of all your work;\nI'll turn your deeds over\nin my mind.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v013.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v013.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "וְהָגִ֥יתִי בְכָל־פָּעֳלֶ֑ךָ וּֽבַעֲלִ֖ילוֹתֶ֣יךָ אָשִֽׂיחָה׃",

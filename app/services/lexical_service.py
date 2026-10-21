@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from app.core.errors import NotFoundError
-from app.db.session import get_connection
+from app.db.session import get_connection, get_operational_connection
 
 LEXICAL_STATE_ID = "global"
 CONCORDANCE_FIELDS = {
@@ -243,7 +243,7 @@ def strong_occurrences(strong: str) -> dict[str, Any]:
 
 
 def get_pinned_lexical_card() -> dict[str, Any]:
-    with get_connection() as connection:
+    with get_operational_connection() as connection:
         row = connection.execute(
             "SELECT token_id, updated_at FROM lexical_card_state WHERE state_id = ?",
             (LEXICAL_STATE_ID,),
@@ -258,7 +258,7 @@ def set_pinned_lexical_card(token_id: str | None) -> dict[str, Any]:
     if token_id is not None:
         get_token(token_id)
     updated_at = datetime.now(timezone.utc).isoformat()
-    with get_connection() as connection:
+    with get_operational_connection() as connection:
         connection.execute(
             """
             INSERT INTO lexical_card_state(state_id, token_id, updated_at)

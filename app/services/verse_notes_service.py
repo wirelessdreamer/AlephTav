@@ -216,9 +216,16 @@ def rebuild_view(unit: dict[str, Any], rebuild: dict[str, Any] | None) -> dict[s
     return {**rebuild, "texts": texts}
 
 
-def verse_history(unit_id: str) -> dict[str, Any]:
+def verse_history(unit_id: str, translation_id: str | None = None) -> dict[str, Any]:
     """Everything that happened to a verse, newest first, plus each rebuild's diff."""
+    from app.services import translation_context_service
+
     unit = registry_service.load_unit(unit_id)
+    rendering_times = {
+        record["entity_id"]: record["created_at"]
+        for record in unit.get("audit_records", [])
+        if record.get("entity_type") == "rendering" and record.get("change_type") == "create"
+    }
     events = [
         {
             key: record.get(key)
@@ -233,6 +240,7 @@ def verse_history(unit_id: str) -> dict[str, Any]:
             )
         }
         for record in unit.get("audit_records", [])
+        if record.get("entity_type") != translation_context_service.ENTITY
     ]
     events.sort(key=lambda event: event["created_at"] or "", reverse=True)
     return {
@@ -240,6 +248,32 @@ def verse_history(unit_id: str) -> dict[str, Any]:
         "events": events,
         "rebuilds": [rebuild_view(unit, r) for r in reversed(unit.get("rebuilds", []))],
         "notes": unit.get("verse_notes", []),
+        "translation_history": translation_context_service.history(
+            unit["psalm_id"], translation_id
+        ),
+        "translation_contexts": [
+            {
+                "rendering_id": rendering["rendering_id"],
+                "layer": rendering["layer"],
+                "created_at": rendering_times.get(rendering["rendering_id"])
+                or rendering.get("provenance", {}).get("generated_at")
+                or "",
+                "complete": bool(rendering.get("provenance", {}).get("translation_context")),
+                "context": rendering.get("provenance", {}).get("translation_context")
+                or {
+                    "guidance": rendering.get("provenance", {}).get("guidance", ""),
+                    "history_ids": [],
+                    "annotations": [],
+                    "briefing": None,
+                },
+            }
+            for rendering in reversed(unit.get("renderings", []))
+            if translations.shows_in(rendering, translation_id)
+            and (
+                rendering.get("provenance", {}).get("translation_context")
+                or "guidance" in rendering.get("provenance", {})
+            )
+        ],
     }
 
 

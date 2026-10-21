@@ -1,0 +1,19 @@
+{
+  "after_hash": "15a75c7b93693cc10c2b1f9d9b5df40db3487987d119f6895d40e243e0c33928",
+  "audit_id": "aud.pkg.mt_f352dcdea73daa036a807af6.57f82486f9f7ff0762542c9a.0001",
+  "before_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "change_type": "register",
+  "checks": [
+    "source_only_projection",
+    "strict_mt_snapshot"
+  ],
+  "created_at": "2026-10-19T14:01:32.037051+00:00",
+  "created_by": "service:catalog-builder",
+  "entity_id": "mt.f352dcdea73daa036a807af6",
+  "entity_type": "package",
+  "rationale": "Preserve source evidence independently of live translations",
+  "review_signoff": {},
+  "summary": "Retain immutable MT source-only snapshot",
+  "triggered_by_issue": null,
+  "triggered_by_pr": null
+}

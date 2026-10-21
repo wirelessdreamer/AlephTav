@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "policy_revision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "components": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "enum": [
+                    "pending",
+                    "approved",
+                    "revoked"
+                  ]
+                },
+                "capabilities": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "display": {
+                      "type": "boolean"
+                    },
+                    "export": {
+                      "type": "boolean"
+                    },
+                    "generation": {
+                      "type": "boolean"
+                    },
+                    "dictionary": {
+                      "type": "boolean"
+                    },
+                    "analysis": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "export",
+                    "generation",
+                    "dictionary",
+                    "analysis"
+                  ]
+                },
+                "approvals": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "role": {
+                        "enum": [
+                          "owner",
+                          "license"
+                        ]
+                      },
+                      "reviewer_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "decision": {
+                        "enum": [
+                          "approve",
+                          "request_changes",
+                          "withdraw"
+                        ]
+                      },
+                      "payload_hash": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "reviewer_id",
+                      "decision",
+                      "payload_hash"
+                    ]
+                  }
+                },
+                "package_hashes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "required": [
+                "status",
+                "capabilities",
+                "approvals"
+              ]
+            }
+          }
+        },
+        "required": [
+          "source_id",
+          "components"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "policy_revision_id",
+    "sources"
+  ]
+}

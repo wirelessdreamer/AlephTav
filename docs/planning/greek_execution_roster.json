@@ -1,0 +1,239 @@
+{
+  "recorded_at_utc": "2026-10-17T16:12:00.537536+00:00",
+  "plan": "docs/GREEK_LEXICAL_IMPLEMENTATION_PLAN.md",
+  "purpose": "Execution assignments requested by the user; not a completion report",
+  "concurrency": {
+    "coordinator": 1,
+    "worker_slots": 3,
+    "workers_dispatched": 3
+  },
+  "workstreams": {
+    "foundations": {
+      "agent": "/root/greek_foundations_execution",
+      "reasoning_effort": "xhigh",
+      "packages": [
+        "W0",
+        "W1",
+        "W2",
+        "W4"
+      ]
+    },
+    "data": {
+      "agent": "/root/greek_data_execution",
+      "reasoning_effort": "high",
+      "packages": [
+        "W3",
+        "W5",
+        "W6"
+      ]
+    },
+    "application": {
+      "agent": "/root/greek_application_execution",
+      "reasoning_effort": "high",
+      "packages": [
+        "W7",
+        "W8",
+        "W9",
+        "W10",
+        "W11"
+      ]
+    }
+  },
+  "packages": [
+    {
+      "id": "W0",
+      "title": "Decisions and source lock",
+      "workstream": "foundations",
+      "agent": "/root/greek_foundations_execution",
+      "recommended_effort": "xhigh",
+      "assigned_agent_effort": "xhigh",
+      "depends_on": [],
+      "status": "Source lock/decisions drafted; actual source/owner/expert gates pending",
+      "critical_review_effort": "high"
+    },
+    {
+      "id": "W1",
+      "title": "Capability and audit foundation",
+      "workstream": "foundations",
+      "agent": "/root/greek_foundations_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "xhigh",
+      "depends_on": [
+        "W0"
+      ],
+      "status": "Software capability/audit/consumer hardening verified; actual source approvals pending",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W2",
+      "title": "Identity and Greek contracts",
+      "workstream": "foundations",
+      "agent": "/root/greek_foundations_execution",
+      "recommended_effort": "xhigh",
+      "assigned_agent_effort": "xhigh",
+      "depends_on": [
+        "W0"
+      ],
+      "status": "Strict identity/contracts implemented and verified; schema-owner gate pending",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W3",
+      "title": "Immutable Greek import and maps",
+      "workstream": "data",
+      "agent": "/root/greek_data_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W1",
+        "W2",
+        "W4"
+      ],
+      "status": "Offline intake/install/map slices verified; real source import and activation pending",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W4",
+      "title": "Catalog lifecycle and durable migration",
+      "workstream": "foundations",
+      "agent": "/root/greek_foundations_execution",
+      "recommended_effort": "xhigh",
+      "assigned_agent_effort": "xhigh",
+      "depends_on": [
+        "W1",
+        "W2"
+      ],
+      "status": "Staging/CAS/migration software verified; explicit live cutover, startup and broader acceptance pending",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W5",
+      "title": "Dictionary adapters",
+      "workstream": "data",
+      "agent": "/root/greek_data_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W1",
+        "W2"
+      ],
+      "status": "Offline dictionary adapters verified; actual permitted package and canonical lexical links pending",
+      "critical_review_effort": "high"
+    },
+    {
+      "id": "W6",
+      "title": "Morphology and lexeme analysis",
+      "workstream": "data",
+      "agent": "/root/greek_data_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W2",
+        "W3",
+        "W5"
+      ],
+      "status": "Proposed-only analysis adapters verified; qualified accuracy review and reviewed authority pending",
+      "critical_review_effort": "high"
+    },
+    {
+      "id": "W7",
+      "title": "Lexical APIs and concordance",
+      "workstream": "application",
+      "agent": "/root/greek_application_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W3",
+        "W4",
+        "W5",
+        "W6"
+      ],
+      "status": "Public routes/MCP/query boundaries wired and verified; real source/catalog unavailable",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W8",
+      "title": "Mounted Greek word study",
+      "workstream": "application",
+      "agent": "/root/greek_application_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W7"
+      ],
+      "status": "Mounted reader and paired arrangement source cards verified with authored fixtures; actual source unavailable",
+      "critical_review_effort": "high"
+    },
+    {
+      "id": "W9",
+      "title": "Reviewed Hebrew-Greek bridge",
+      "workstream": "application",
+      "agent": "/root/greek_application_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W1",
+        "W2",
+        "W3",
+        "W6",
+        "W8"
+      ],
+      "status": "Pure endpoint/distribution slice verified; accepted bridge publication and specialist authority pending",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W10",
+      "title": "Study export and rollout",
+      "workstream": "application",
+      "agent": "/root/greek_application_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W8"
+      ],
+      "status": "Legacy export closure verified; Greek bundle serialization blocked pending reconstruction/release gates",
+      "critical_review_effort": "xhigh"
+    },
+    {
+      "id": "W11",
+      "title": "Later Greek generation",
+      "workstream": "application",
+      "agent": "/root/greek_application_execution",
+      "recommended_effort": "high",
+      "assigned_agent_effort": "high",
+      "depends_on": [
+        "W9",
+        "W10"
+      ],
+      "status": "Legacy denied-input/output guards verified; new Greek generation deliberately disabled",
+      "critical_review_effort": "xhigh"
+    }
+  ],
+  "coordination_owner": "/root",
+  "coordinator_files": [
+    "app/api/main.py",
+    "app/api/mcp_server.py",
+    "app/cli.py",
+    "app/services/review_service.py",
+    "tests/conftest.py"
+  ],
+  "review_queue": [
+    {
+      "scope": "Integrated critical contracts, migration/publication, policy, bridge and generation guards",
+      "reasoning_effort": "xhigh",
+      "status": "completed bounded critical recheck; no P0/P1 in repaired public boundaries reported"
+    }
+  ],
+  "medium_effort_policy": "Use for later isolated mechanical UI/documentation tasks if splitting work creates value; none dispatched at medium yet.",
+  "gates": {
+    "source_owner_license_approvals": "pending; never self-approved by agents",
+    "greek_expert_annotation_bridge_review": "pending; agent tests do not substitute",
+    "schema_owner_review": "required for gated contract changes; user previously approved required schema changes",
+    "raw_immutability": "enforced; no raw writes authorized",
+    "canonical_english": "preserve; canonical edits require qualified approvals",
+    "greek_generation": "disabled until W9/W10 and separate generation capability approval",
+    "release_b": "W10 bridge rollout additionally requires W9"
+  },
+  "latest_verification_record": "docs/planning/arrangement_sources_validation.json",
+  "latest_status": "Assigned software slices and bounded critical review completed; actual source/release gates remain pending."
+}

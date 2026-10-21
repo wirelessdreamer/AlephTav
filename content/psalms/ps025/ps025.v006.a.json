@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v006.a.literal.alt.0001",
-    "rnd.ps025.v006.a.lyric.alt.0001"
+    "rnd.ps025.v006.a.lyric.alt.0001",
+    "rnd.ps025.v006.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v006.a.0001",
     "aud.ps025.v006.a.0002",
     "aud.ps025.v006.a.0003",
-    "aud.ps025.v006.a.0004"
+    "aud.ps025.v006.a.0004",
+    "aud.ps025.v006.a.0005",
+    "aud.ps025.v006.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ab656ac8d8bc47ba392d85c60c691ae1aac9d8d0d4cd74d25de1f96652b83601",
+      "audit_id": "aud.ps025.v006.a.0005",
+      "before_hash": "fe5582bf0ad13d7f28a68936e9811f267e8aa0b4360f0b46f7dc8428e9e970f0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.694398+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Begins the remember sequence and establishes faithful love as the recurring rendering of hesed.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9d4d2550fb50e4b0ef4bc091e598a7e083d16d1874c14be86f5df96551bd12cc",
+      "audit_id": "aud.ps025.v006.a.0006",
+      "before_hash": "b47f1aec2aafd274a057a64f189d2c1d23fe1b81adc9dfca3cb2b4c803b7decd",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:31:41.560266+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v006.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v006.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the appeal to Yahweh to remember his compassion and loyal love, followed by their antiquity. LORD conventionally represents the divine name.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "1710cf39f2022926d1ad335d20c600c487dfac0125b8f50007a35437e8265fc2",
+      "audit_ids": [
+        "aud.ps025.v006.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v006.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Moves the address first, renders plural mercies and acts of loyal love as collective singulars, and leaves the causal 'for' implicit. 'Yours' restates possession already expressed in the Hebrew.",
+      "display_reference": "Psalm 25:6",
+      "english_rendering_id": "rnd.ps025.v006.a.lyric.alt.0002",
+      "generation_run_id": "cxr.37b34c60d9c2",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זְכֹר־רַחֲמֶ֣יךָ יְ֭הוָה וַחֲסָדֶ֑יךָ כִּ֖י מֵעוֹלָ֣ם הֵֽמָּה׃",
+      "literal_backbone": [
+        "Remember your compassions, Yahweh, and your acts of loyal love.",
+        "For they are from long ago."
+      ],
+      "literal_rendering_id": "rnd.ps025.v006.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:6",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "from ancient time, from long ago, from everlasting",
+          "note": "Recasts existence from ancient time as duration across the ages.",
+          "rendered_as": "through the ages",
+          "token_ids": [
+            "ps025.v006.t006"
+          ],
+          "transliteration": "mēʿôlām",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -305,6 +383,123 @@
       "unit_id": "ps025.v006.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; longer opening and closing phrases around a short central cadence.",
+      "differentiator": "Three phrases joined by the memory appeal",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.21,
+        "stress_approximation": 0.73,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v006.t001–t004 → LORD, remember your mercy, your faithful love",
+          "ps025.v006.t005–t007 → they've been yours through the ages"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v006.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Begins the remember sequence and establishes faithful love as the recurring rendering of hesed.",
+      "rendering_id": "rnd.ps025.v006.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֖י מֵעוֹלָ֣ם הֵֽמָּה",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "כִּ֖י מֵעוֹלָ֣ם הֵֽמָּה",
+        "token_ids": [
+          "ps025.v006.t005",
+          "ps025.v006.t006",
+          "ps025.v006.t007"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "LORD, remember your mercy,\nyour faithful love;\nthey've been yours through the ages.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v006.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v006.a",
+      "variation_basis": [
+        "Consistent faithful-love vocabulary"
       ]
     }
   ],

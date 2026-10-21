@@ -1,9 +1,123 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v008.a.literal.alt.0001",
+    "rnd.ps121.v008.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v008.a.0001",
+    "aud.ps121.v008.a.0002",
+    "aud.ps121.v008.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c83a587502c95dde7f65bab16cb21ea09f5d1882617671814d9b709f1be64964",
+      "audit_id": "aud.ps121.v008.a.0001",
+      "before_hash": "42d8b3845cb8b9a742cfab6f2f25b91c063e8574f2c9effee65a428167933d21",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.676834+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v008.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Closes with the same keeping verb, paired movements, and an open-ended temporal horizon.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9710ac555c4ae27bc76fcaf55a31b6acb5a56f6fafeb5b20644d22a4bdcb28f7",
+      "audit_id": "aud.ps121.v008.a.0002",
+      "before_hash": "25ab3d14f89f985ed7d7d38b4f3c63ca43841a3e967a8b6348e0af7a980f50a9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.316646+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Echoes verse 7's opening and closes with paired movements and enduring duration.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4036c997c9fee5d8ffd307a2a70b1b0d89c4f8f31f50538dad0af17d81a0428a",
+      "audit_id": "aud.ps121.v008.a.0003",
+      "before_hash": "f86a90dafa0fdc4155a74c2b4a1fda68ce722c8c982e04d952ea833f5186033a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:16:01.466087+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves YHWH as guardian, the singular addressee, going out followed by coming in, and protection extending from the present into the indefinite future. LORD conventionally represents YHWH.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "8ec20726e901dd13b47a18687c3c8d9b543a4b9687ef3ea3d80c993e3803eb2d",
+      "audit_ids": [
+        "aud.ps121.v008.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Recasts guarding the addressee's going out and coming in as guarding the person during those movements. Now and forever compresses the explicit from-now construction without materially changing its temporal scope.",
+      "display_reference": "Psalm 121:8",
+      "english_rendering_id": "rnd.ps121.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.52f0862e1273",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְֽהוָ֗ה יִשְׁמָר־צֵאתְךָ֥ וּבוֹאֶ֑ךָ מֵֽ֝עַתָּ֗ה וְעַד־עוֹלָֽם׃",
+      "literal_backbone": [
+        "YHWH will guard your going out and your coming in,",
+        "from now and forever."
+      ],
+      "literal_rendering_id": "rnd.ps121.v008.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:8",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Going out, departing; coming in, entering.",
+          "note": "Turns the Hebrew infinitival objects into a clause describing the person's movements. Both movements and their order remain explicit.",
+          "rendered_as": "you as you go out and come in",
+          "token_ids": [
+            "ps121.v008.t003",
+            "ps121.v008.t004"
+          ],
+          "transliteration": "ṣēʾṯəḵā ûḇôʾeḵā",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "From now and unto perpetuity; ʿôlām denotes long or indefinite duration, perpetuity.",
+          "note": "An idiomatic compression of the temporal formula. It does not itself specify an afterlife or a particular account of eternity.",
+          "rendered_as": "now and forever",
+          "token_ids": [
+            "ps121.v008.t005",
+            "ps121.v008.t006",
+            "ps121.v008.t007"
+          ],
+          "transliteration": "mēʿattāh wəʿaḏ-ʿôlām",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v008.a.0001"
   ],
@@ -15,7 +129,229 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Preserves the movement pair without substituting an abstract summary.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Going out and coming in",
+          "note": "Retains the complementary movements in their source order.",
+          "source_id": "ps121.v008.a",
+          "token_ids": [
+            "ps121.v008.t003",
+            "ps121.v008.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v008.t001–t002 → The LORD will keep",
+          "ps121.v008.t003 → your going out",
+          "ps121.v008.t004 → and your coming in",
+          "ps121.v008.t005 → from now",
+          "ps121.v008.t006–t007 → and forever"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v008.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Closes with the same keeping verb, paired movements, and an open-ended temporal horizon.",
+      "rendering_id": "rnd.ps121.v008.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "The LORD will keep your going out\nand your coming in,\nfrom now and forever.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v008.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Direct movement verbs and a brief closing cadence.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.14,
+        "stress_approximation": 0.57,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Going out and coming in",
+          "note": "Retains both movements in their source order.",
+          "source_id": "ps121.v008.a",
+          "token_ids": [
+            "ps121.v008.t003",
+            "ps121.v008.t004"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v008.t001–t002 → The LORD will guard",
+          "ps121.v008.t003–t004 → you as you go out and come in",
+          "ps121.v008.t005 → now",
+          "ps121.v008.t006–t007 → and forever"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v008.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v008.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Echoes verse 7's opening and closes with paired movements and enduring duration.",
+      "rendering_id": "rnd.ps121.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The LORD will guard you\nas you go out and come in,\nnow and forever.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v008.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְֽהוָ֗ה יִשְׁמָר־צֵאתְךָ֥ וּבוֹאֶ֑ךָ מֵֽ֝עַתָּ֗ה וְעַד־עוֹלָֽם׃",

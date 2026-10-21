@@ -9,7 +9,7 @@ from app.core.errors import (
     ReviewRequiredError,
     ValidationError,
 )
-from app.core.ids import rendering_id
+from app.core.ids import rendering_id, unit_id_from_entity_id
 from app.services import (
     alignment_service,
     audit_service,
@@ -23,7 +23,7 @@ BASIS_FILTERS = {"hebrew-derived", "septuagint-derived"}
 
 
 def _rendering_unit_id(rendering_id_value: str) -> str:
-    return ".".join(rendering_id_value.split(".")[1:4])
+    return unit_id_from_entity_id("rendering_id", rendering_id_value)
 
 
 def _rendering_lookup(unit: dict[str, Any], rendering_id_value: str) -> dict[str, Any]:
@@ -356,7 +356,11 @@ def create_rendering(
 
 
 def update_rendering(
-    rendering_id_value: str, payload: dict[str, Any], created_by: str = "api"
+    rendering_id_value: str,
+    payload: dict[str, Any],
+    created_by: str = "api",
+    *,
+    audit_rationale: str | None = None,
 ) -> dict[str, Any]:
     unit_id = _rendering_unit_id(rendering_id_value)
     before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
@@ -408,7 +412,7 @@ def update_rendering(
         before_hash=registry_service.file_hash(before),
         after_hash=registry_service.file_hash(unit),
         summary="Update rendering",
-        rationale=payload.get("rationale", "rendering update"),
+        rationale=audit_rationale or payload.get("rationale", "rendering update"),
         created_by=created_by,
         entity_type="rendering",
         entity_id=rendering_id_value,

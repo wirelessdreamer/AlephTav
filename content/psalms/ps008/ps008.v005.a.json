@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v005.a.lyric.alt.0001"
+    "rnd.ps008.v005.a.lyric.alt.0001",
+    "rnd.ps008.v005.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v005.a.0001",
-    "aud.ps008.v005.a.0002"
+    "aud.ps008.v005.a.0002",
+    "aud.ps008.v005.a.0003",
+    "aud.ps008.v005.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:26:20.862342+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9e252cda8dc30450bf1f8ec52ddbfbe358829c586c681ac4057d1e0d0f856a6c",
+      "audit_id": "aud.ps008.v005.a.0003",
+      "before_hash": "0ef147be1b152ac4263be12fe0bc4e810d2b3aec9ab38f8b0af7aedab4e32820",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.471583+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7b23ca5525568221771fd87119ee2dea6d8c10920439676b24acb2a27c3d7c15",
+      "audit_id": "aud.ps008.v005.a.0004",
+      "before_hash": "f152d4c3dff543f25ca68c197f20d61f95df67324472ed9177f41748d2dfd5e9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:02:49.356996+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v005.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -83,6 +118,59 @@
           ],
           "transliteration": "ṯip̄qəḏennû",
           "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the parallel questions about humanity's significance and God's remembering and attending to human beings.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "8889f760b02858f224645276d42d6284681d596d2d605d0aaad380fa5edf1bb5",
+      "audit_ids": [
+        "aud.ps008.v005.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v005.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Generic third-person singular language becomes inclusive “we,” “us,” and “our.” The second question explicitly repeats “What are we.” “Mere” emphasizes human smallness, and “our lives” specifies an object of care beyond the Hebrew's personal pronoun.",
+      "display_reference": "Psalm 8:5",
+      "english_rendering_id": "rnd.ps008.v005.a.lyric.alt.0002",
+      "generation_run_id": "cxr.9702e2e20375",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מָֽה־אֱנ֥וֹשׁ כִּֽי־תִזְכְּרֶ֑נּוּ וּבֶן־אָ֝דָ֗ם כִּ֣י תִפְקְדֶֽנּוּ׃",
+      "literal_backbone": [
+        "What is humankind that you remember him,",
+        "and a son of humankind that you attend to him?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:5",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "human being, humankind, mortal",
+          "note": "“Mortals” fits the human referent; “mere” makes the question's implied lowliness explicit.",
+          "rendered_as": "mere mortals",
+          "token_ids": [
+            "ps008.v005.t002"
+          ],
+          "transliteration": "ʾĕnôš",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "attend to, visit, inspect, care for",
+          "note": "“Care for” suits the context, but the Hebrew refers to attending to the person rather than explicitly to that person's life.",
+          "rendered_as": "You care for our lives",
+          "token_ids": [
+            "ps008.v005.t008"
+          ],
+          "transliteration": "ṯip̄qəḏennû",
+          "verdict": "expansion"
         }
       ]
     }
@@ -192,6 +280,104 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 23,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.22,
+        "singability_score": 0.12,
+        "stress_approximation": 0.65,
+        "syllable_count": 30,
+        "syllables": 30
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v005.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "What are we, mere mortals\nThat You keep us in mind\nWhat are we, children of man\nThat You care for our lives",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v005.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v005.a.literal.alt.0001",
-    "rnd.ps025.v005.a.lyric.alt.0001"
+    "rnd.ps025.v005.a.lyric.alt.0001",
+    "rnd.ps025.v005.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v005.a.0001",
     "aud.ps025.v005.a.0002",
     "aud.ps025.v005.a.0003",
-    "aud.ps025.v005.a.0004"
+    "aud.ps025.v005.a.0004",
+    "aud.ps025.v005.a.0005",
+    "aud.ps025.v005.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3792d9a4149e013755764e190abb69b652950068149c03374798f2d5efe66dd7",
+      "audit_id": "aud.ps025.v005.a.0005",
+      "before_hash": "8778d690f7cd2ad4e5addc91358acd74bd53ce88d2f3d2ba0c161db9aac5b29c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.667210+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Continues the teaching petition and returns to waiting, without turning that waiting into an answered prayer.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6d4a16611cb2c04a02a0a37ff9d3a7c143b84a6fcddb48919c3b5078603592e1",
+      "audit_id": "aud.ps025.v005.a.0006",
+      "before_hash": "4d61d0738315a5ad037674a6ccdec341db95a3fb14479a5e2797bb71d6505fca",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:31:27.834857+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v005.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -118,6 +153,50 @@
             "ps025.v005.t007"
           ],
           "transliteration": "ʾĕlōhēy yišʿî",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves guidance in God's truth, the request for teaching, God as the source of the speaker's salvation, and all-day waiting directed toward God.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "51c4e8063572b77fd491ee2aa338aa44a23512bb65de776bd49fb9b04e8622d8",
+      "audit_ids": [
+        "aud.ps025.v005.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v005.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Leaves the explicit causal 'for' implicit, verbalizes 'God of my salvation' as 'God who saves me,' and presents the waiting as ongoing.",
+      "display_reference": "Psalm 25:5",
+      "english_rendering_id": "rnd.ps025.v005.a.lyric.alt.0002",
+      "generation_run_id": "cxr.4d1d5589b08c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "הַדְרִ֘יכֵ֤נִי בַאֲמִתֶּ֨ךָ׀ וְֽלַמְּדֵ֗נִי כִּֽי־אַ֭תָּה אֱלֹהֵ֣י יִשְׁעִ֑י אוֹתְךָ֥ קִ֝וִּ֗יתִי כָּל־הַיּֽוֹם׃",
+      "literal_backbone": [
+        "Guide me in your truth and teach me.",
+        "For you are the God of my salvation.",
+        "For you I have waited all day."
+      ],
+      "literal_rendering_id": "rnd.ps025.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:5",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "wait for, hope for, expect",
+          "note": "The Hebrew perfect presents waiting as already undertaken; the English foregrounds its continuation. The Hebrew does not require that the waiting has ended.",
+          "rendered_as": "I wait",
+          "token_ids": [
+            "ps025.v005.t009"
+          ],
+          "transliteration": "qiwwiyṯî",
           "verdict": "defensible"
         }
       ]
@@ -338,6 +417,127 @@
       "unit_id": "ps025.v005.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; sustain 'teach me,' then resume fuller paired phrases.",
+      "differentiator": "Held petition followed by an unresolved waiting cadence",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.11,
+        "stress_approximation": 0.57,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Guidance",
+          "note": "Guidance continues the road imagery of the preceding unit.",
+          "source_id": "ps025.v005.a",
+          "token_ids": [
+            "ps025.v005.t001"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v005.t001–t003 → Guide me in your truth; teach me",
+          "ps025.v005.t004–t007 → You are the God who saves me",
+          "ps025.v005.t008–t011 → I wait for you all day"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v005.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Continues the teaching petition and returns to waiting, without turning that waiting into an answered prayer.",
+      "rendering_id": "rnd.ps025.v005.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "אוֹתְךָ֥ קִ֝וִּ֗יתִי כָּל־הַיּֽוֹם",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "אוֹתְךָ֥ קִ֝וִּ֗יתִי כָּל־הַיּֽוֹם",
+        "token_ids": [
+          "ps025.v005.t008",
+          "ps025.v005.t009",
+          "ps025.v005.t010",
+          "ps025.v005.t011"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Guide me in your truth;\nteach me.\nYou are the God who saves me;\nI wait for you all day.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v005.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v005.a",
+      "variation_basis": [
+        "Short petition beside fuller declaration"
       ]
     }
   ],

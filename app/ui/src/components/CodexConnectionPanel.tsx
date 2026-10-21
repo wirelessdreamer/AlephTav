@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { RequestStatus } from './RequestStatus';
 
 import {
   useCancelCodexRun,
@@ -50,9 +51,11 @@ export function CodexConnectionPanel({ psalmId, unitId }: Props) {
   const [run, setRun] = useState<CodexRun | null>(null);
   const [model, setModel] = useState('');
 
-  const { data: status } = useCodexStatus();
+  const statusQuery = useCodexStatus();
+  const status = statusQuery.data;
   const ready = status?.status === 'ready';
-  const { data: models } = useCodexModels(Boolean(ready));
+  const modelsQuery = useCodexModels(Boolean(ready));
+  const models = modelsQuery.data;
   const connect = useConnectCodex();
   const login = useCodexLogin();
   const createSession = useCreateCodexSession();
@@ -84,6 +87,12 @@ export function CodexConnectionPanel({ psalmId, unitId }: Props) {
 
   return (
     <section className="codex-panel" aria-label="Codex provider">
+      <RequestStatus loading={statusQuery.isLoading} error={statusQuery.error}
+        label={statusQuery.isLoading ? 'Checking Codex connection…' : 'Could not check Codex connection.'}
+        onRetry={() => void statusQuery.refetch()} />
+      <RequestStatus loading={connect.isPending || login.isPending || createSession.isPending}
+        error={connect.error ?? login.error ?? createSession.error ?? startTurn.error ?? cancelRun.error ?? saveCandidates.error}
+        label={connect.isPending ? 'Connecting Codex…' : login.isPending ? 'Waiting for Codex sign-in…' : createSession.isPending ? 'Starting Codex session…' : 'Codex request failed.'} />
       <header className="codex-header">
         <h3>Codex</h3>
         <span className={`codex-status codex-status-${status?.status ?? 'unknown'}`}>
@@ -98,7 +107,7 @@ export function CodexConnectionPanel({ psalmId, unitId }: Props) {
 
       {status?.status === 'available' && (
         <button type="button" onClick={() => connect.mutate()} disabled={connect.isPending}>
-          Connect Codex
+          {connect.isPending ? 'Connecting…' : 'Connect Codex'}
         </button>
       )}
       {status?.status === 'not_signed_in' && (
@@ -142,7 +151,7 @@ export function CodexConnectionPanel({ psalmId, unitId }: Props) {
               <button
                 key={action.label}
                 type="button"
-                disabled={!unitId || startTurn.isPending}
+                disabled={!unitId || startTurn.isPending || createSession.isPending}
                 onClick={() => runQuickAction(action.layer, action.constraints)}
               >
                 {action.label}
@@ -150,7 +159,12 @@ export function CodexConnectionPanel({ psalmId, unitId }: Props) {
             ))}
           </div>
 
-          {startTurn.isPending && <p className="codex-progress">Generating…</p>}
+          {startTurn.isPending ? <RequestStatus loading label="Generating with Codex…" /> : null}
+          <RequestStatus loading={modelsQuery.isLoading} error={modelsQuery.error}
+            label={modelsQuery.isLoading ? 'Loading Codex models…' : 'Could not load Codex models.'}
+            onRetry={() => void modelsQuery.refetch()} />
+          {cancelRun.isPending ? <RequestStatus loading label="Stopping generation…" /> : null}
+          {saveCandidates.isPending ? <RequestStatus loading label="Saving proposed candidates…" /> : null}
 
           {run && (
             <div className="codex-run">

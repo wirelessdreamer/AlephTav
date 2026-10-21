@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { RequestStatus } from './RequestStatus';
 
 import { useAssistantMessage, useCreateAssistantSession } from '../hooks/useAssistant';
 import type { AssistantMessage, ComparisonTableRow, StudyToken } from '../types';
@@ -76,6 +77,7 @@ export function VerseStudyDesk({
     [row.verse_notes],
   );
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const sessionStarted = useRef(false);
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
   const [draft, setDraft] = useState('');
   const createSession = useCreateAssistantSession();
@@ -84,15 +86,19 @@ export function VerseStudyDesk({
   useEffect(() => {
     if (
       activeTab !== 'chat' ||
-      sessionId ||
+      sessionStarted.current || sessionId ||
       createSession.isPending ||
-      createSession.isSuccess
+      createSession.isSuccess || createSession.isError
     ) {
       return;
     }
-    createSession.mutate(undefined, {
-      onSuccess: (session) => setSessionId(session.session_id),
+    let active = true;
+    queueMicrotask(() => {
+      if (!active || sessionStarted.current) return;
+      sessionStarted.current = true;
+      createSession.mutate(undefined, { onSuccess: (session) => setSessionId(session.session_id) });
     });
+    return () => { active = false; };
   }, [activeTab, createSession, sessionId]);
 
   const evidence = useMemo<EvidenceItem[]>(() => {
@@ -307,6 +313,9 @@ export function VerseStudyDesk({
             </div>
 
             <div className="verse-study-thread" aria-live="polite">
+              <RequestStatus loading={createSession.isPending} error={createSession.error}
+                label={createSession.isPending ? 'Starting verse conversation…' : 'Could not start the verse conversation.'}
+                onRetry={() => { sessionStarted.current = false; createSession.reset(); }} />
               {messages.length === 0 ? (
                 <article className="verse-study-message verse-study-message--assistant">
                   <span className="verse-label">AlephTav</span>

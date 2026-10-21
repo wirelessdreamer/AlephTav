@@ -1,9 +1,120 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v007.a.literal.alt.0001",
+    "rnd.ps121.v007.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v007.a.0001",
+    "aud.ps121.v007.a.0002",
+    "aud.ps121.v007.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1a6608b0d8ba8e0d97395fcf434de81da5f5b62b09120bfdaf34f53b616a29d6",
+      "audit_id": "aud.ps121.v007.a.0001",
+      "before_hash": "0b0f2d8bdea73c805577b562e9e4a8041fca8de035e01d3993758af6c5cec82f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.668598+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v007.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries keeper into the repeated verb keep as the assurance broadens.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "68f8bf8691ca791393e750d182dfd3c4a250fa902d88e8f627fbd497a6be1995",
+      "audit_id": "aud.ps121.v007.a.0002",
+      "before_hash": "5d9ce91227dfc1438af245a956de11d4c1aae304a3b494b4b91c2cfa211ede84",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.306784+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Carries guard from the preceding stanzas into the repeated verb and broadens the scope beyond sun and moon.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ba66ea2a01979a8f51e96df3568c2e170b9ccf8e461882cd1e898df1ef5067df",
+      "audit_id": "aud.ps121.v007.a.0003",
+      "before_hash": "51527fba56a69ed0b9555523edcac79418c8d1d7a1e978ddcb850f6f2fa7cf4c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:15:44.157432+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves YHWH as the subject, the promise of guarding the singular addressee from all harm, and the repeated guarding verb applied to the addressee's life. LORD conventionally represents YHWH.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "3f25ef184876f676688292462865de2413914e3127a4387c7ddd4a2384a0a688",
+      "audit_ids": [
+        "aud.ps121.v007.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Harm selects the adversity sense of ra where the literal version uses evil. Guard preserves the repeated Hebrew verb; the additional line break adds no content.",
+      "display_reference": "Psalm 121:7",
+      "english_rendering_id": "rnd.ps121.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.def8b8ff759f",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְֽהוָ֗ה יִשְׁמָרְךָ֥ מִכָּל־רָ֑ע יִ֝שְׁמֹ֗ר אֶת־נַפְשֶֽׁךָ׃",
+      "literal_backbone": [
+        "YHWH will guard you from all evil/harm.",
+        "He will guard your life."
+      ],
+      "literal_rendering_id": "rnd.ps121.v007.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:7",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Bad, evil; harm, adversity, calamity.",
+          "note": "A normal contextual sense in this protection passage. It emphasizes injurious adversity without explicitly expressing moral evil.",
+          "rendered_as": "harm",
+          "token_ids": [
+            "ps121.v007.t004"
+          ],
+          "transliteration": "rāʿ",
+          "verdict": "standard"
+        },
+        {
+          "lexical_gloss": "Life, self, person, soul; appetite or desire.",
+          "note": "Fits the guarding context and preserves the singular possessive without introducing a distinction between body and soul.",
+          "rendered_as": "your life",
+          "token_ids": [
+            "ps121.v007.t007"
+          ],
+          "transliteration": "nap̄šeḵā",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v007.a.0001"
   ],
@@ -15,7 +126,211 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Uses life for nephesh while retaining all evil.",
+      "drift_flags": [],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v007.t001 → The LORD",
+          "ps121.v007.t002 → will keep you",
+          "ps121.v007.t003–t004 → from all evil",
+          "ps121.v007.t005 → he will keep",
+          "ps121.v007.t006 → direct-object marker; no separate English word",
+          "ps121.v007.t007 → your life"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v007.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Carries keeper into the repeated verb keep as the assurance broadens.",
+      "rendering_id": "rnd.ps121.v007.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "The LORD will keep you from all evil;\nhe will keep your life.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v007.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Short harm phrase between repeated guarding clauses.",
+      "drift_flags": [
+        {
+          "code": "semantic_narrowing",
+          "confidence": 0.97,
+          "message": "Harm emphasizes adversity within ra's broader range, which also includes moral evil.",
+          "severity": "low"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.35,
+        "stress_approximation": 0.54,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v007.t001–t002 → The LORD will guard you",
+          "ps121.v007.t003–t004 → from all harm",
+          "ps121.v007.t005 → he will guard",
+          "ps121.v007.t006 → direct-object marker; no separate English word",
+          "ps121.v007.t007 → your life"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v007.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v007.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Carries guard from the preceding stanzas into the repeated verb and broadens the scope beyond sun and moon.",
+      "rendering_id": "rnd.ps121.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The LORD will guard you\nfrom all harm;\nhe will guard your life.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v007.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְֽהוָ֗ה יִשְׁמָרְךָ֥ מִכָּל־רָ֑ע יִ֝שְׁמֹ֗ר אֶת־נַפְשֶֽׁךָ׃",

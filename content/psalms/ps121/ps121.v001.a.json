@@ -1,9 +1,155 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v001.a.literal.alt.0001",
+    "rnd.ps121.v001.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v001.a.0001",
+    "aud.ps121.v001.a.0002",
+    "aud.ps121.v001.a.0003",
+    "aud.ps121.v001.a.0004",
+    "aud.ps121.v001.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1fae85d8d7d0bc0564632b61d6adc35523033aad20025939a7a329e6cff5e88a",
+      "audit_id": "aud.ps121.v001.a.0001",
+      "before_hash": "bfbe0c6d84998739d31b32aaa2480e6e1768172ba0e37737a355c0702a935163",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T11:58:54.619666+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps121.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0ad2b3ccdd24210d25120bef3191dcb0e2c815ecdbb7b956ee4ee7aa83a091cb",
+      "audit_id": "aud.ps121.v001.a.0002",
+      "before_hash": "1dc12cfef40b21e12de33e3c5d0142309ae9cc36c286a08999f0a67fc5dc0211",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.615149+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v001.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Opens the question answered in verse 2, retaining aid as the repeated noun.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d62e98ff68e716efc7b162dae5db0b8bfbc566460c1b5c6d217b1fd7d4566c4d",
+      "audit_id": "aud.ps121.v001.a.0003",
+      "before_hash": "06e5c58b8d06ecc2ac86617f1f99acd2175b89c748d72fe286fc61c02576648a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.242668+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Keeps the opening question open until verse 2 answers it. Aid names assistance rather than a generic helper.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "900143248c5fcc28918b6af0ea08dcca92a407ccf746e3322d29146e8b958e6b",
+      "audit_id": "aud.ps121.v001.a.0004",
+      "before_hash": "c8f55c31128e4d5d8aa3ef5d4f86eac571080fe0b38c062747d14c2db97e1fac",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:14:17.296541+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "67006b92e840c5dde04a17ab84d98ce61632ace2e7f46a8f815f07e28c535173",
+      "audit_id": "aud.ps121.v001.a.0005",
+      "before_hash": "5ba6325a4bf6ac7873b553b20e7b7634126f807b9a83768648d8740553cf1e66",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:17:28.557796+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps121.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the song heading, first-person lifting of the eyes toward the mountains, and the question about the source of aid. The question does not identify the mountains as that source. The heading names no author or particular journey.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "b28da208dbb2213a7858cc97a298c4c251d915969c7006dd4156245bd406898c",
+      "audit_ids": [
+        "aud.ps121.v001.a.0004"
+      ],
+      "comparison_id": "cmp.ps121.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Uses present-tense I lift for the Hebrew imperfect and natural English question order. Paragraphing separates the heading; no substantive content is added.",
+      "display_reference": "Psalm 121:1",
+      "english_rendering_id": "rnd.ps121.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.d665f2f6e7b7",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שִׁ֗יר לַֽמַּ֫עֲל֥וֹת אֶשָּׂ֣א עֵ֭ינַי אֶל־הֶהָרִ֑ים מֵ֝אַ֗יִן יָבֹ֥א עֶזְרִֽי׃",
+      "literal_backbone": [
+        "A song for the ascents.",
+        "I lift my eyes toward the mountains.",
+        "From where will my help come?"
+      ],
+      "literal_rendering_id": "rnd.ps121.v001.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:1",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Ascent, going up; step or stair.",
+          "note": "Retains the prefixed preposition and definite plural without specifying what the ascents involve.",
+          "rendered_as": "for the ascents",
+          "token_ids": [
+            "ps121.v001.t002"
+          ],
+          "transliteration": "la–mmaʿălôṯ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Help, aid, assistance.",
+          "note": "Preserves the assistance noun and first-person possessive; it does not turn assistance into a person called a helper.",
+          "rendered_as": "my aid",
+          "token_ids": [
+            "ps121.v001.t009"
+          ],
+          "transliteration": "ʿezrî",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v001.a.0001"
   ],
@@ -15,7 +161,233 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Uses aid, not helper, and retains the heading.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Eyes lifted toward mountains",
+          "note": "Preserves the bodily action and mountainous landscape.",
+          "source_id": "ps121.v001.a",
+          "token_ids": [
+            "ps121.v001.t003",
+            "ps121.v001.t004",
+            "ps121.v001.t005",
+            "ps121.v001.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v001.t001–t002 → A song for the ascents.",
+          "ps121.v001.t003–t004 → I lift my eyes",
+          "ps121.v001.t005–t006 → to the mountains",
+          "ps121.v001.t007 → from where",
+          "ps121.v001.t008–t009 → will my aid come"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v001.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Opens the question answered in verse 2, retaining aid as the repeated noun.",
+      "rendering_id": "rnd.ps121.v001.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "A song for the ascents.\nI lift my eyes to the mountains;\nfrom where will my aid come?",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v001.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Direct question with concrete landscape.",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.11,
+        "singability_score": 0.1,
+        "stress_approximation": 0.61,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Eyes lifted toward mountains",
+          "note": "Retains the bodily gesture and landscape without identifying the mountains as the source of aid.",
+          "source_id": "ps121.v001.a",
+          "token_ids": [
+            "ps121.v001.t003",
+            "ps121.v001.t004",
+            "ps121.v001.t005",
+            "ps121.v001.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v001.t001–t002 → A song for the ascents.",
+          "ps121.v001.t003–t004 → I lift my eyes",
+          "ps121.v001.t005–t006 → to the mountains",
+          "ps121.v001.t007–t009 → Where will my aid come from?"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v001.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v001.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Keeps the opening question open until verse 2 answers it. Aid names assistance rather than a generic helper.",
+      "rendering_id": "rnd.ps121.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "A song for the ascents.\n\nI lift my eyes to the mountains.\nWhere will my aid come from?",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v001.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שִׁ֗יר לַֽמַּ֫עֲל֥וֹת אֶשָּׂ֣א עֵ֭ינַי אֶל־הֶהָרִ֑ים מֵ֝אַ֗יִן יָבֹ֥א עֶזְרִֽי׃",

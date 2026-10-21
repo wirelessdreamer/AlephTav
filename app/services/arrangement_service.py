@@ -21,7 +21,7 @@ from datetime import UTC, datetime
 from typing import Any
 
 from app.core.errors import NotFoundError, ReviewRequiredError, ValidationError
-from app.services import audit_service, registry_service, review_service
+from app.services import audit_service, briefing_source_service, registry_service, review_service
 from app.services import psalm_translations_service as translations
 
 LINE_LIBERTIES = ("tracks", "compressed", "expanded", "reordered", "added")
@@ -853,7 +853,7 @@ def liberties(
 
 
 def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
-    """The setting with everything the views read: sung order, coverage, liberties."""
+    """The setting, coverage and edition-mapped Greek evidence for each Hebrew verse."""
     psalm = registry_service.load_psalm(psalm_id)
     arrangement = _find_arrangement(psalm, arrangement_id)
     sung = sung_lines(arrangement)
@@ -866,6 +866,9 @@ def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
             by_kind[kind] = by_kind.get(kind, 0) + 1
     by_kind["repeated"] = sum(1 for item in items if item["kind"] == "repeated")
     by_kind["dropped"] = cov["totals"]["dropped"]
+    from app.services import source_origin_service
+
+    greek = briefing_source_service.greek_evidence(psalm_id)
     return {
         "arrangement": arrangement,
         "sung": sung,
@@ -877,6 +880,8 @@ def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
             "by_kind": by_kind,
         },
         "required_approvals": required_approvals(),
+        "greek_sources": greek,
+        "source_choices": source_origin_service.arrangement_choices(psalm, arrangement, greek),
     }
 
 

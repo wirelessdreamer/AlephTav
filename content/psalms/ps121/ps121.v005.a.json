@@ -1,9 +1,110 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps121.v005.a.literal.alt.0001",
+    "rnd.ps121.v005.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps121.v005.a.0001",
+    "aud.ps121.v005.a.0002",
+    "aud.ps121.v005.a.0003"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e1e9767dbaa0ba786805ed139e3f215e7b81756a687f7ce76904566a143d42de",
+      "audit_id": "aud.ps121.v005.a.0001",
+      "before_hash": "20c189d00f3b3703ccf43894d53ae9a14d70b6fd46eba71e9faa395ab8c608fb",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:04:13.652732+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v005.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Repeats the divine name and retains the shade image that leads into sun and moon.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "269a3e46ab6788965b973286c9ed9046d9f3dd5a3aa1fc197f3ce8d8ead23c6b",
+      "audit_id": "aud.ps121.v005.a.0002",
+      "before_hash": "996f6b19d326ada7fe7e4bfcd31d5c35d63fc0d821c4fcd0b0d03793deb9c939",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:07:09.286265+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps121.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Continues guard and preserves the repeated divine name, then introduces shade for the next verse's sun.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1428b8bbced9ab27e69783a3a6e3ae52ff3ee9a4d5bad67ae50eb0bfa94df836",
+      "audit_id": "aud.ps121.v005.a.0003",
+      "before_hash": "4e8c66319661a66fd20688f47162ae082da3b04d1ade2a44cae71acaeafdf844",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-07T12:15:19.907177+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps121.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the repeated divine name, the designation of YHWH as the addressee's guardian, and the image of shade at the right hand. Retains the singular address and parallel clauses. LORD conventionally represents YHWH.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "bd8fd4f59eaa6cf2d570edcc7afb7a88e390470a4e810a76ed363b9b8078b5df",
+      "audit_ids": [
+        "aud.ps121.v005.a.0003"
+      ],
+      "comparison_id": "cmp.ps121.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Supplies is in the Hebrew nominal clauses. Guard modernizes keeper without materially changing the meaning; line breaks add no content.",
+      "display_reference": "Psalm 121:5",
+      "english_rendering_id": "rnd.ps121.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.a06d4ffb8aa4",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יְהוָ֥ה שֹׁמְרֶ֑ךָ יְהוָ֥ה צִ֝לְּךָ֗ עַל־יַ֥ד יְמִינֶֽךָ׃",
+      "literal_backbone": [
+        "YHWH is your keeper.",
+        "YHWH is your shade at your right hand."
+      ],
+      "literal_rendering_id": "rnd.ps121.v005.a.literal.alt.0001",
+      "mt_reference": "Psalm 121:5",
+      "non_source_material": [],
+      "psalm_id": "ps121",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "One who keeps, guards, watches over, or preserves.",
+          "note": "Preserves the substantival participle and second-person singular suffix, continuing the guarding vocabulary of the preceding verses.",
+          "rendered_as": "your guard",
+          "token_ids": [
+            "ps121.v005.t002"
+          ],
+          "transliteration": "šōmreḵā",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps121.v005.a.0001"
   ],
@@ -15,7 +116,223 @@
   "pr_links": [],
   "psalm_id": "ps121",
   "ref": "Psalm 121:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Keeps shade concrete instead of replacing it with abstract protection.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Shade at the right hand",
+          "note": "Preserves both shade and bodily location.",
+          "source_id": "ps121.v005.a",
+          "token_ids": [
+            "ps121.v005.t004",
+            "ps121.v005.t005",
+            "ps121.v005.t006",
+            "ps121.v005.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v005.t001–t002 → The LORD is your keeper",
+          "ps121.v005.t003–t004 → the LORD is your shade",
+          "ps121.v005.t005–t007 → at your right hand"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:04:13.087966+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.65de9a482e2b",
+        "source_ids": [
+          "ps121.v005.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Direct translation of the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163d-a5c8-77b0-86d8-4e05aaf46215"
+      },
+      "rationale": "Repeats the divine name and retains the shade image that leads into sun and moon.",
+      "rendering_id": "rnd.ps121.v005.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "The LORD is your keeper;\nthe LORD is your shade\nat your right hand.",
+      "translation_basis": {
+        "basis_note": "Direct translation of the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "unit_id": "ps121.v005.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Repeated LORD openings with an unexpanded shade image.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.36,
+        "singability_score": 0.29,
+        "stress_approximation": 0.54,
+        "syllable_count": 15,
+        "syllables": 15
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Shade at the right hand",
+          "note": "Retains shade and the specific bodily location.",
+          "source_id": "ps121.v005.a",
+          "token_ids": [
+            "ps121.v005.t004",
+            "ps121.v005.t005",
+            "ps121.v005.t006",
+            "ps121.v005.t007"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps121.v005.t001–t002 → The LORD is your guard",
+          "ps121.v005.t003–t004 → the LORD is your shade",
+          "ps121.v005.t005–t007 → at your right hand"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-07T12:07:08.858762+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.7eb54e2f76de",
+        "source_ids": [
+          "ps121.v005.a"
+        ],
+        "thread_id": "01a1163c-19e3-7fb2-8992-e83b5a9b5829",
+        "translation_basis": {
+          "basis_note": "Translated directly from the supplied Hebrew.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps121.v005.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Masoretic Hebrew"
+        },
+        "turn_id": "01a1163f-fc0d-7e11-b920-304e62f0fbfb"
+      },
+      "rationale": "Continues guard and preserves the repeated divine name, then introduces shade for the next verse's sun.",
+      "rendering_id": "rnd.ps121.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The LORD is your guard;\nthe LORD is your shade\nat your right hand.",
+      "translation_basis": {
+        "basis_note": "Translated directly from the supplied Hebrew.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps121.v005.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Masoretic Hebrew"
+      },
+      "translation_id": "tr.ps121.0001",
+      "unit_id": "ps121.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְהוָ֥ה שֹׁמְרֶ֑ךָ יְהוָ֥ה צִ֝לְּךָ֗ עַל־יַ֥ד יְמִינֶֽךָ׃",

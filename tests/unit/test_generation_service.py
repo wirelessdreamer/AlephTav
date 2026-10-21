@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from copy import deepcopy
 
+import pytest
+
 from app.llm.base import GenerationResponse
-from app.services import generation_service, ingest_service, registry_service
+from app.services import generation_service, registry_service
 
 
 def _source_anchor(
@@ -190,18 +192,12 @@ def test_generate_for_unit_prefers_hebrew_on_ties_and_suppresses_duplicates(monk
 
     assert [candidate["text"] for candidate in job["output"]["candidates"]] == [
         "The heavens declare",
-        "The heavens proclaim",
     ]
     assert job["output"]["candidates"][0]["translation_basis"]["basis_type"] == "hebrew_to_english"
-    assert (
-        job["output"]["candidates"][1]["translation_basis"]["basis_type"]
-        == "septuagint_greek_to_english"
-    )
+    assert job["runtime_metadata"]["quality_filter"]["blocked_source_candidate_count"] == 1
     assert job["output"]["candidates"][0]["delivery_profile"] == "source_grounded_phrase"
     assert job["output"]["candidates"][0]["source_anchor"]["source_language"] == "he"
     assert job["output"]["candidates"][0]["source_anchor"]["source_text"]
-    assert job["output"]["candidates"][1]["source_anchor"]["source_language"] == "grc"
-    assert job["output"]["candidates"][1]["metrics"]["distinctness_score"] > 0
 
     unit = registry_service.load_unit("ps019.v001.a")
     generated_renderings = [
@@ -211,6 +207,56 @@ def test_generate_for_unit_prefers_hebrew_on_ties_and_suppresses_duplicates(monk
     ]
     assert generated_renderings[0]["delivery_profile"] == "source_grounded_phrase"
     assert generated_renderings[0]["source_anchor"]["source_language"] == "he"
+
+
+def test_local_generation_uses_saved_decisions_and_binds_them_to_cache_and_provenance(monkeypatch):
+    from app.services import translation_context_service as context
+
+    question = {
+        "topic": "The divine name",
+        "verses": [1],
+        "question": "Which divine name?",
+        "options": [],
+    }
+    context.append(
+        "ps019",
+        None,
+        kind="briefing",
+        summary="Authored local briefing",
+        snapshot={"guidance": "", "briefing": {"run_id": "brief.local", "questions": [question]}},
+    )
+    note = context.save_decision(
+        "ps019",
+        None,
+        {
+            "briefing_run_id": "brief.local",
+            "question_index": 0,
+            "answer": "Keep the name audible.",
+            "notes": "Preserve this choice.",
+        },
+    )
+
+    class CheckingAdapter(FakeGenerationAdapter):
+        def generate_json(self, request):
+            assert "Decision: Keep the name audible." in request.prompt
+            assert "Translator note: Preserve this choice." in request.prompt
+            assert request.prompt.index("Decision:") < request.prompt.index("Generation input:")
+            return super().generate_json(request)
+
+    monkeypatch.setattr(
+        generation_service, "build_adapter", lambda profile: CheckingAdapter(profile)
+    )
+    before = generation_service._job_payload("ps019.v001.a", "phrase", "study_literal", None, 42, 1)
+    job = generation_service.generate_for_unit("ps019.v001.a", "phrase", force=True)
+    unit = registry_service.load_unit("ps019.v001.a")
+    saved = [
+        r for r in unit["renderings"] if r.get("provenance", {}).get("job_id") == job["job_id"]
+    ]
+    assert saved
+    assert saved[0]["provenance"]["translation_context"]["annotations"] == [note]
+    context.save_decision("ps019", None, {**note, "answer": "Use another rendering."})
+    after = generation_service._job_payload("ps019.v001.a", "phrase", "study_literal", None, 42, 1)
+    assert registry_service.file_hash(before) != registry_service.file_hash(after)
 
 
 def test_generate_for_unit_suppresses_basis_blur_when_clean_alternative_exists(
@@ -233,16 +279,75 @@ def test_generate_for_unit_suppresses_basis_blur_when_clean_alternative_exists(
     assert [candidate["text"] for candidate in candidates] == ["The heavens declare"]
     assert job["runtime_metadata"]["quality_filter"] == {
         "threshold": 0.85,
-        "candidate_count_before_filter": 2,
+        "candidate_count_before_filter": 1,
         "surfaceable_candidate_count": 1,
-        "suppressed_candidate_count": 1,
+        "suppressed_candidate_count": 0,
         "production_ready": True,
         "rejection_reason": None,
         "fallback_used": False,
+        "blocked_source_candidate_count": 1,
     }
     assert job["runtime_metadata"]["production_ready"] is True
     assert candidates[0]["translation_basis"]["basis_type"] == "hebrew_to_english"
     assert candidates[0]["source_anchor"]["source_language"] == "he"
+
+
+@pytest.mark.parametrize("severity", ["low", "medium"])
+@pytest.mark.parametrize("string_flag", [False, True])
+def test_model_flags_cannot_downgrade_computed_basis_blur(
+    monkeypatch: pytest.MonkeyPatch, severity: str, string_flag: bool
+) -> None:
+    class Adapter(FakeBasisBlurGenerationAdapter):
+        def generate_json(self, generation_request) -> GenerationResponse:
+            response = super().generate_json(generation_request)
+            candidate = response.payload["candidates"][0]
+            candidate["drift_flags"] = [
+                f"basis_blur:{severity}"
+                if string_flag
+                else {
+                    "code": "basis_blur",
+                    "severity": severity,
+                    "confidence": 1.0,
+                    "message": "Model understates the basis mismatch.",
+                }
+            ]
+            response.payload["candidates"] = [candidate]
+            return response
+
+    monkeypatch.setattr(generation_service, "build_adapter", lambda profile: Adapter(profile))
+    before = registry_service.load_unit("ps019.v001.a")
+
+    job = generation_service.generate_for_unit(
+        "ps019.v001.a", layer="phrase", candidate_count=1, force=True
+    )
+
+    assert job["output"]["candidates"] == []
+    assert job["runtime_metadata"]["production_ready"] is False
+    assert registry_service.load_unit("ps019.v001.a")["renderings"] == before["renderings"]
+
+
+@pytest.mark.parametrize("source_text", ["הַשָּׁמַיִם", "the heavens", " ", ";", "Οἱ שָׁמַיִם"])
+def test_generation_suppresses_greek_labels_over_non_greek_anchors(
+    monkeypatch: pytest.MonkeyPatch, source_text: str
+) -> None:
+    class Adapter(FakeGenerationAdapter):
+        def generate_json(self, generation_request) -> GenerationResponse:
+            response = super().generate_json(generation_request)
+            candidate = response.payload["candidates"][1]
+            candidate["source_anchor"]["source_text"] = source_text
+            response.payload["candidates"] = [candidate]
+            return response
+
+    monkeypatch.setattr(generation_service, "build_adapter", lambda profile: Adapter(profile))
+    before = registry_service.load_unit("ps019.v001.a")
+
+    job = generation_service.generate_for_unit(
+        "ps019.v001.a", layer="phrase", candidate_count=1, force=True
+    )
+
+    assert job["output"]["candidates"] == []
+    assert job["runtime_metadata"]["production_ready"] is False
+    assert registry_service.load_unit("ps019.v001.a")["renderings"] == before["renderings"]
 
 
 def test_generation_prompts_include_production_lyric_quality_rules() -> None:
@@ -334,19 +439,15 @@ def test_generation_output_contract_requires_auditable_delivery_metadata() -> No
     assert "source_anchor" in str(anchor_errors[0].message)
 
 
-def test_locked_inputs_include_septuagint_witness_for_vendored_import() -> None:
-    try:
-        ingest_service.import_vendored_psalms()
-        unit = registry_service.load_unit("ps001.v001.a")
-        locked_inputs = generation_service._locked_inputs(unit, "gloss")
-
-        assert "septuagint_greek_witness" in locked_inputs
-        assert locked_inputs["septuagint_greek_witness"]["language"] == "grc"
-        assert locked_inputs["septuagint_greek_tokens"]
-    finally:
-        from tests.support import bootstrap_fixture_repo
-
-        bootstrap_fixture_repo()
+def test_locked_inputs_exclude_unapproved_legacy_septuagint_witness() -> None:
+    unit = registry_service.load_unit("ps001.v001.a")
+    locked_inputs = generation_service._locked_inputs(unit, "gloss")
+    assert "septuagint_greek_witness" not in locked_inputs
+    assert "septuagint_greek_tokens" not in locked_inputs
+    assert all(
+        "greek" not in token and "greek_strong" not in token
+        for token in locked_inputs["hebrew_tokens"]
+    )
 
 
 class FakeLyricGenerationAdapter:

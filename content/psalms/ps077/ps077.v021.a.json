@@ -1,9 +1,202 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps077.v021.a.literal.alt.0001",
+    "rnd.ps077.v021.a.lyric.alt.0001",
+    "rnd.ps077.v021.a.lyric.alt.0002",
+    "rnd.ps077.v021.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps077.v021.a.0001",
+    "aud.ps077.v021.a.0002",
+    "aud.ps077.v021.a.0003",
+    "aud.ps077.v021.a.0004",
+    "aud.ps077.v021.a.0005",
+    "aud.ps077.v021.a.0006",
+    "aud.ps077.v021.a.0007",
+    "aud.ps077.v021.a.0008",
+    "aud.ps077.v021.a.0009"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d19370c398ebfd3c179b6d4d2c78a69d730860869f631ba53b3b26513315605e",
+      "audit_id": "aud.ps077.v021.a.0001",
+      "before_hash": "825725f0508876085c68accc8651bd626d1ceb01412d39f1bb7b617612e1b43f",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:46:37.086595+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v021.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Closes the remembered scene with the flock and human hand, retaining God as the one who leads.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a46568462820788c10d67628a597fc3b1c4332bc67ec24a6193bef68879a0b2e",
+      "audit_id": "aud.ps077.v021.a.0002",
+      "before_hash": "f6697022e900155a2b06020d123116d2d1645eb95d6818f78ce13964ccfed812",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:48:41.648856+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Closes on the source's quiet flock image and human agency without adding reassurance about the speaker's present distress.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7638094261278de6f312b6b805ea9eaec80ce04f0b9a5ca8651cccab8926ae6f",
+      "audit_id": "aud.ps077.v021.a.0003",
+      "before_hash": "d5328647a6434dfb2655e31c4b88f0cec89b35d06bbce77ab9afbcad13762eb1",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:06:47.319576+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Closes with remembered guidance through human hands, without adding a resolution to the speaker's present distress.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3bf7ac9e1d0b76882294ce5ba7c56be92cf0e8e7593bb362aa8048cbd34afcb8",
+      "audit_id": "aud.ps077.v021.a.0004",
+      "before_hash": "6e995ec24aefb023306371b4413ea846cc53ecfbb6c41cb9a846760e731f6f17",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:11:10.180256+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Closes with remembered guidance through human hands without adding a resolution to the speaker's present distress.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "dcea0e10df0c7011079e16efac2f841f4ce7d2188be5c334ad382bca4823dbb6",
+      "audit_id": "aud.ps077.v021.a.0005",
+      "before_hash": "83bed6ce17a5a54867103a310b64e9d9f2288005881f2603f4c72aa1aca19b27",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:14:41.771611+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps077.v021.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "30b86fe9159ba1895001d901962e6f05fc7ed183fc3a035cf2376b30846b29c1",
+      "audit_id": "aud.ps077.v021.a.0006",
+      "before_hash": "1ac98ef7b0aec982c1ee4621c2577483b968811d6cff1158a7d966af40cc8a70",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.711167+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.c5f237f33b53",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "125be3cc56e060e05e87e92992dc7eba3947b40f9186f8392762c5d7eb704bcf",
+      "audit_id": "aud.ps077.v021.a.0007",
+      "before_hash": "f648f89f74c609433d9455b733c15b26ffb5c772e8bc43f1455ec18b803a3731",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.730605+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.a7948303f387",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4bdf5982759d730c86c86fe135c11f76218390476cf3370b9c333c52daf34ba8",
+      "audit_id": "aud.ps077.v021.a.0008",
+      "before_hash": "1f12154daf1a62c9259489202b36705bec22c8a18321f1a6d02adba1722232fb",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.838720+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f1f4fdb7c4afa494f443c37e3f64fcdee78c423acacf8c4e539b9bfc61b0aeb8",
+      "audit_id": "aud.ps077.v021.a.0009",
+      "before_hash": "acc8be72050a8937f1d7e492b31d8fc3fbd1f06fd6dadd534bf417244ab41e54",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.859264+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v021.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the completed act of leading, direct address, the people's belonging to the addressee, the flock comparison, and guidance through the hand of Moses and Aaron. Both names and the singular hand idiom remain intact.",
+      "accuracy_rating": "literal",
+      "analyzed_text_hash": "1d8719242ff6bb6de8f24d3ea1deffe6a900c08387401edef6ba691ab624ee50",
+      "audit_ids": [
+        "aud.ps077.v021.a.0005"
+      ],
+      "comparison_id": "cmp.ps077.v021.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 77:21",
+      "english_rendering_id": "rnd.ps077.v021.a.lyric.alt.0003",
+      "generation_run_id": "cxr.f9e111b7ec34",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נָחִ֣יתָ כַצֹּ֣אן עַמֶּ֑ךָ בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",
+      "literal_backbone": [
+        "You led your people like a flock by the hand of Moses and Aaron."
+      ],
+      "literal_rendering_id": "rnd.ps077.v021.a.literal.alt.0001",
+      "mt_reference": "Psalm 77:21",
+      "non_source_material": [],
+      "psalm_id": "ps077",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v021.a",
+      "word_notes": []
+    }
+  ],
   "concept_ids": [
     "cpt.ps077.v021.a.0001"
   ],
@@ -15,7 +208,505 @@
   "pr_links": [],
   "psalm_id": "ps077",
   "ref": "Psalm 77:21",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Plain pastoral close after the storm.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "People led like a flock",
+          "note": "Keeps the comparison without adding pasture, safety, or an explicit shepherd title.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t001",
+            "ps077.v021.t002",
+            "ps077.v021.t003"
+          ]
+        },
+        {
+          "label": "Hand of Moses and Aaron",
+          "note": "Retains the singular hand expressing their agency.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t004",
+            "ps077.v021.t005",
+            "ps077.v021.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v021.t001 → You led",
+          "ps077.v021.t002 → like a flock",
+          "ps077.v021.t003 → your people",
+          "ps077.v021.t004–t006 → by the hand of Moses and Aaron"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:46:36.545916+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b6ea55c084ec",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-to-English translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v021.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a12758-a60f-7c62-96be-3aaba6a8f56d"
+      },
+      "rationale": "Closes the remembered scene with the flock and human hand, retaining God as the one who leads.",
+      "rendering_id": "rnd.ps077.v021.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "You led your people like a flock\nby the hand of Moses and Aaron.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-to-English translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "unit_id": "ps077.v021.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Restrained pastoral ending.",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.64,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "People led like a flock",
+          "note": "Retains the simile without adding pasture, safety, or an explicit shepherd title.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t001",
+            "ps077.v021.t002",
+            "ps077.v021.t003"
+          ]
+        },
+        {
+          "label": "Hand of Moses and Aaron",
+          "note": "Preserves the singular hand expression and both named agents.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t004",
+            "ps077.v021.t005",
+            "ps077.v021.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v021.t001 → You led",
+          "ps077.v021.t002 → like a flock",
+          "ps077.v021.t003 → your people",
+          "ps077.v021.t004–t006 → by the hand of Moses and Aaron"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:48:41.129975+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.9f437ea2ac07",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v021.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a1275a-648f-7003-a477-9c0de79715ee"
+      },
+      "rationale": "Closes on the source's quiet flock image and human agency without adding reassurance about the speaker's present distress.",
+      "rendering_id": "rnd.ps077.v021.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You led your people like a flock\nby the hand of Moses and Aaron.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v021.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Pastoral image with a restrained named ending",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.64,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "People led like a flock",
+          "note": "Preserves the flock comparison and God as the guiding agent.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t001",
+            "ps077.v021.t002",
+            "ps077.v021.t003"
+          ]
+        },
+        {
+          "label": "Hand of Moses and Aaron",
+          "note": "Retains the singular hand idiom and both named human leaders.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t004",
+            "ps077.v021.t005",
+            "ps077.v021.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "You led your people like a flock → ps077.v021.t001–ps077.v021.t003",
+          "by the hand of Moses / and Aaron → ps077.v021.t004–ps077.v021.t006"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:06:47.172161+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not admit selah",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.c5f237f33b53",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v021.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a2-70a7-7172-b6d3-0fe7d3830f25"
+      },
+      "rationale": "Closes with remembered guidance through human hands, without adding a resolution to the speaker's present distress.",
+      "rendering_id": "rnd.ps077.v021.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",
+        "basis_note": "Preserves the hand image and the two names.",
+        "source_language": "he",
+        "source_text": "בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",
+        "token_ids": [
+          "ps077.v021.t004",
+          "ps077.v021.t005",
+          "ps077.v021.t006"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You led your people like a flock\nby the hand of Moses\nand Aaron.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v021.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Pastoral image with a restrained named ending",
+      "drift_flags": [],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.64,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "People led like a flock",
+          "note": "Retains the flock comparison and God as the guiding agent.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t001",
+            "ps077.v021.t002",
+            "ps077.v021.t003"
+          ]
+        },
+        {
+          "label": "Hand of Moses and Aaron",
+          "note": "Retains the singular hand idiom and both named leaders.",
+          "source_id": "ps077.v021.a",
+          "token_ids": [
+            "ps077.v021.t004",
+            "ps077.v021.t005",
+            "ps077.v021.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "You led your people like a flock → ps077.v021.t001–ps077.v021.t003",
+          "by the hand of Moses / and Aaron → ps077.v021.t004–ps077.v021.t006"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:11:10.013583+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a7948303f387",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v021.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a6-cce2-7d50-b0f5-c69476a085cf"
+      },
+      "rationale": "Closes with remembered guidance through human hands without adding a resolution to the speaker's present distress.",
+      "rendering_id": "rnd.ps077.v021.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",
+        "basis_note": "Preserves the hand image and both names.",
+        "source_language": "he",
+        "source_text": "בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",
+        "token_ids": [
+          "ps077.v021.t004",
+          "ps077.v021.t005",
+          "ps077.v021.t006"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "You led your people like a flock\nby the hand of Moses\nand Aaron.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v021.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v021.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נָחִ֣יתָ כַצֹּ֣אן עַמֶּ֑ךָ בְּֽיַד־מֹשֶׁ֥ה וְאַהֲרֹֽן׃",

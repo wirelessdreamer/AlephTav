@@ -1,9 +1,103 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps023.v002.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps023.v002.a.0001",
+    "aud.ps023.v002.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "558842ac445994fe63317d2df106a59af1cfd2757c5336c8539c92d92a3296e6",
+      "audit_id": "aud.ps023.v002.a.0001",
+      "before_hash": "34154a7e8cead6860b1699ad5c474b4395e17a516b8e4796e01bcd30ab13fea0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.303359+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps023.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "73d952c57f92a096c08b0d19a94448ce89c09b1117b637fa7db77cf6cd4eb65f",
+      "audit_id": "aud.ps023.v002.a.0002",
+      "before_hash": "2a86abc755ad7874977221d860b31dc545bfc04b237833d861633aaaaccf8ff7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:01:34.906727+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps023.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves both scenes in order: the shepherd settles the speaker in grassy pastures and leads the speaker beside restful waters.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "611ef4ce5f2291f2c0b5a2ced227a47b023a98a927d299a43d89d15836bee5a1",
+      "audit_ids": [
+        "aud.ps023.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps023.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Settles me down” leaves the lying posture less explicit. “Waters that offer me rest” expresses the waters’ association with rest as a benefit to the speaker.",
+      "display_reference": "Psalm 23:2",
+      "english_rendering_id": "rnd.ps023.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.fe0a5a092c73",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "בִּנְא֣וֹת דֶּ֭שֶׁא יַרְבִּיצֵ֑נִי עַל־מֵ֖י מְנֻח֣וֹת יְנַהֲלֵֽנִי׃",
+      "literal_backbone": [
+        "In pastures of fresh grass he makes me lie down.",
+        "Beside waters of rest he leads me."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 23:2",
+      "non_source_material": [],
+      "psalm_id": "ps023",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "cause to lie down, make recline",
+          "note": "Preserves the shepherd’s action but does not explicitly state that the speaker lies down.",
+          "rendered_as": "He settles me down",
+          "token_ids": [
+            "ps023.v002.t003"
+          ],
+          "transliteration": "yarbîṣēnî",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "waters; rest, resting place",
+          "note": "Makes the restful association explicit without introducing a separate event.",
+          "rendered_as": "waters that offer me rest",
+          "token_ids": [
+            "ps023.v002.t005",
+            "ps023.v002.t006"
+          ],
+          "transliteration": "mēy mənuḥôṯ",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps023.v002.a.0001"
   ],
@@ -15,7 +109,99 @@
   "pr_links": [],
   "psalm_id": "ps023",
   "ref": "Psalm 23:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.11,
+        "stress_approximation": 0.67,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b66847408714",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps023.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He settles me down where the pastures are green.\nHe leads me by waters that offer me rest.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בִּנְא֣וֹת דֶּ֭שֶׁא יַרְבִּיצֵ֑נִי עַל־מֵ֖י מְנֻח֣וֹת יְנַהֲלֵֽנִי׃",

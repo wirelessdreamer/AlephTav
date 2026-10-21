@@ -1,0 +1,357 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "entry_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dictionary": {
+      "enum": [
+        "tbesg",
+        "tflsj_main",
+        "tflsj_extra",
+        "abbott_smith"
+      ]
+    },
+    "headword": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transliteration": {
+      "type": "string"
+    },
+    "lexical_pos_raw": {
+      "type": "string"
+    },
+    "gloss": {
+      "type": "string"
+    },
+    "lexeme_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scheme": {
+            "enum": [
+              "Strong",
+              "eStrong",
+              "dStrong",
+              "uStrong"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "pattern": "^[GH][1-9][0-9]*[A-Za-z]*$"
+          },
+          "raw_value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "raw_expression": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "entry",
+              "related",
+              "combination_component",
+              "crasis_component",
+              "hebrew_cross_reference"
+            ]
+          },
+          "source_entry_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "source_asserted"
+          }
+        },
+        "required": [
+          "scheme",
+          "value",
+          "raw_value",
+          "raw_expression",
+          "relation",
+          "source_entry_id",
+          "status"
+        ]
+      }
+    },
+    "source_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "locator": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "file"
+      ]
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "package_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_text_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "required_attribution": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_id",
+        "package_revision",
+        "license",
+        "license_text_sha256",
+        "required_attribution"
+      ]
+    },
+    "presentation": {
+      "$ref": "#/$defs/node"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "original_label": {
+            "type": "string"
+          },
+          "machine_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "baseline": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_entry_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolution": {
+            "enum": [
+              "resolved",
+              "unresolved"
+            ]
+          },
+          "target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "original_label",
+          "machine_reference",
+          "baseline",
+          "source_entry_id",
+          "resolution",
+          "target"
+        ]
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": [
+              "warning",
+              "error"
+            ]
+          },
+          "tag": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "severity"
+        ]
+      }
+    },
+    "raw_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "entry_id",
+    "package_id",
+    "dictionary",
+    "headword",
+    "transliteration",
+    "lexical_pos_raw",
+    "gloss",
+    "lexeme_id",
+    "identifiers",
+    "source_locator",
+    "attribution",
+    "presentation",
+    "citations",
+    "findings",
+    "raw_fields"
+  ],
+  "$defs": {
+    "node": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "break"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "enum": [
+                "root",
+                "paragraph",
+                "strong",
+                "emphasis"
+              ]
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          },
+          "required": [
+            "type",
+            "children"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "reference"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            },
+            "citation_index": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "type",
+            "children",
+            "citation_index"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "link"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            },
+            "href": {
+              "type": "string",
+              "pattern": "^https?://[^\\s]+$"
+            }
+          },
+          "required": [
+            "type",
+            "children",
+            "href"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "crosswalk_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lexeme_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "assignment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lexeme_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scheme": {
+            "enum": [
+              "Strong",
+              "eStrong",
+              "dStrong",
+              "uStrong"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "pattern": "^[GH][1-9][0-9]*[A-Za-z]*$"
+          },
+          "relation": {
+            "enum": [
+              "entry",
+              "related",
+              "combination_component",
+              "crasis_component",
+              "hebrew_cross_reference"
+            ]
+          },
+          "source_entry_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "reviewed",
+              "unresolved"
+            ]
+          }
+        },
+        "required": [
+          "assignment_id",
+          "lexeme_id",
+          "scheme",
+          "value",
+          "relation",
+          "source_entry_id",
+          "status"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "crosswalk_set_id",
+    "lexeme_set_id",
+    "assignments"
+  ]
+}

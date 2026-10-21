@@ -1,0 +1,211 @@
+{
+  "as_of": "2026-10-17",
+  "scope": "Planning feasibility checks; no Greek feature implemented",
+  "probes": {
+    "accepted_legacy_greek_unit": "lxx.ps023.v001.a",
+    "current_greek_runtime_path": "content\\psalms\\lxx\\lxx.ps023.v001.a.json",
+    "mounted_app_exists": true,
+    "missing_old_app_entry": true,
+    "unrelated_greek_and_foreign_tokens_current_flags": [],
+    "current_schema_greek_field_errors": [
+      "'source_hebrew' is a required property",
+      "Additional properties are not allowed ('source_greek' was unexpected)"
+    ],
+    "current_failed_greek_rebuild_error": "'source_hebrew'",
+    "old_units_remaining_after_current_failed_rebuild": 0
+  },
+  "source_file_sha256": {
+    "CLAUDE.md": "23b0e58af040b51816e03598733e14645fc3cd8ccf4410495ddcfdccd74389f2",
+    "docs/SEPTUAGINT_GREEK_REQUIREMENTS.md": "accebbfa2c838e477f4659637144cac2736a10d5fc81547cd98bad3434d6a449",
+    "app/core/ids.py": "0a8634cd5152cd69c7424dfca9f521bf798a0b9ab4347d0c1aacd7682eaa5e06",
+    "app/services/registry_service.py": "573e3436efa82f950dc506345bc1ec6395e72ca5fafc05e158d2893d1240dc8a",
+    "app/db/models.py": "5ccb5e8b02e3398fdd50815f7da9bd441043e70738cfa561676428fc8a6e3334",
+    "app/db/session.py": "ef520c0c058a781bee7929a11502504fc3ad9886b4db03cb2a1489d15f4f4f34",
+    "app/services/concordance_service.py": "ad2fee241935169ca7c243d805f3c0633802b230e3354aca60824b63ab47e8ce",
+    "app/services/lexical_service.py": "44b3eb1d821e5cae6864316c37d397eb48bed6db5ecd976eb412838a3331f7a2",
+    "app/services/full_psalm_import_service.py": "78a3e5ccb361ce3772b434901b617b9ab3d79a8498fc14fb129928bc00d9ca57",
+    "app/services/generation_service.py": "d50e363cfdb1b7a7388789b1577e7adb544d06e4726b1e4e0e8b5d39ef724c59",
+    "app/services/source_basis_service.py": "4853b3e1c0849dd45d32bf418042213400df304c2f9cfd7e4c46a82ff2252a35",
+    "app/services/export_service.py": "4d2f5a47b95e7101faa9c2c2f54b3772a02420faa3a06bd452cc3c1bc7304e55",
+    "app/services/review_service.py": "8f2eb4af97767fa4de5a275d1b3a009eed780dd42ee3d0bb4a80ca351212e792",
+    "app/ui/src/app/App.tsx": "18bf479977e1e840edf1d6a43f4c48a3edce191c82900cd9f95197cc7175ff74",
+    "app/ui/src/pages/ComparisonPage.tsx": "0206958247282b1edbc53de5feb24bb260202182d4092c7239d9b54285c0c00c",
+    "app/ui/src/components/VerseDetail.tsx": "c164592a8a392a11d5b7fafe35e2b2b6f83ef7426a89ea604ba709eb6c9404c6",
+    "schemas/unit.schema.json": "6c944fdcd586fd346d5e0a0c89e06cd4fb5427370ebc22ce71af9954f6f2ee39",
+    "schemas/token.schema.json": "2058e90b709d8fdfa9283fee9ff6c7a2e8578141ea12f6735c78796ee9883ce8",
+    "schemas/audit_record.schema.json": "df6a90e0b0ab919ac7bb00a7016326d3a2bf20f551819c8e0c50bf0671c303ad",
+    "scripts/validate_content.py": "53b64ccdcc06895a2d2fac34062ac71473cebce64cc2626737be14035936a9fc",
+    "package.json": "883a573cb1c1ac0d707d5b887b22310a2b8344ee84f7027a51b8de097c8076d1"
+  },
+  "review_candidate": {
+    "path": "C:\\Users\\dreamer\\AppData\\Local\\Temp\\alephtav-greek-lexical-plan-review-candidate.md",
+    "sha256": "de7e1d8498e7b66a827556895e065c45104185c454a7849b2052f2d262b2b673",
+    "repository_path": "docs/planning/greek_lexical_review_candidate.md",
+    "archival_note": "Exact original bytes retained. Relative document links reflect its original docs/ location."
+  },
+  "upstream_inspections": {
+    "step": {
+      "commit": "94802ced31e63882ab42a86d79eb0017df4545e3",
+      "tbesg_rows": 11035,
+      "distinct_estrong": 10847,
+      "middle_liddell_rows": 2305,
+      "max_observed_estrong": "G21502",
+      "tbesg_sha256": "312f723d7b8ef263bbdfb0451c9b8057125804dfff390b6f8544cff2a84b57f4",
+      "tflsj_main_sha256": "fcc2845412132a7bb91fc3dbb5a544c807daf57e4791c4d9af61efe209e97691",
+      "tflsj_extra_sha256": "fdb2840067faa11301b208a343a9453fbe40b367e94eac981071261626201bc2",
+      "tvtms_sha256": "63058e0f20201af4bdaa7d830da5be8f493455d947c5f147d84840b33db9ddf8"
+    },
+    "quantforge": {
+      "commit": "46258f8bde173998ef0633d79eff3067b9041575",
+      "path": "data/morph-morpheus/024-Ps.txt",
+      "sha256": "ee28652093cfed7f6262f1d3bb167009c146e54adac680cd95fade74cda858dc",
+      "rows": 34243,
+      "synthetic_fallback_rows": 728,
+      "row_fields": 9,
+      "tag_scheme": "MorphGNT; not Robinson",
+      "strong_ids_present": false
+    },
+    "abbott_smith": {
+      "commit": "8c00cb244761aa23659421a8cbbbf7a3b27b7d59",
+      "path": "abbott-smith.tei.xml",
+      "sha256": "99821bee411626b4aa3e674040297b54b267eff86cb4f9b7ef69a8bdb18b6f90",
+      "entries": 6153
+    },
+    "perseus_lsj": {
+      "commit": "56061ca127f4a2844980baffc5f2b6d1332897b3",
+      "files": 27,
+      "format": "TEI P4; Beta Code source keys"
+    },
+    "copenhagen": {
+      "commit": "519af776ab65d89a51e37f750779250f940459ef",
+      "path": "versification-mappings/standard-mappings/lxx.json",
+      "sha256": "90d980f784512aea00af48646c337b1f7cb97bae3023a9223155369034e466f2"
+    },
+    "swete_sibling": {
+      "git_head": "499067d2c6136ef3fbd70ab4e8763d4eab2e5070",
+      "dirty_exports": true,
+      "owner_signoff": "pending",
+      "verse_lines": 2527,
+      "word_rows": 34614,
+      "joined_words": 61,
+      "text_sha256": "9fc94c39ef80b37297885b5bff01344040a666a990c99aa9eb96fb4197c57017",
+      "words_sha256": "7d31d58ba9843e67e179616e216824c2aceed4b82558e98bcd485fd0b20d5524",
+      "spans_sha256": "b911120521882618311ca91627ddf0db92dead767aa2117bba22c1db5e9d2d51"
+    }
+  },
+  "upstream_validation_method": "Primary upstream file/header/code inspections by greek_sources_evidence; checksums and counts reported by that research task. No source packages installed.",
+  "revised_plan_sha256": "21b75b5039857d12fc2205535d252de0e21ea4df003fd34e597c9b75db98e7ca",
+  "final_plan_sha256": "45e816c89b3c2809ccb12db3e4f73bb0a49c1076d2b6d49225b1c2c20b9d2d5c",
+  "adversarial_review": {
+    "independent_ai_reviewers": 3,
+    "findings": 12,
+    "severity_counts": {
+      "P0": 0,
+      "P1": 5,
+      "P2": 7
+    },
+    "second_pass_closed_at_design_level": 12,
+    "remaining_reported_design_findings": 0,
+    "review_document": "docs/GREEK_LEXICAL_ADVERSARIAL_REVIEW.md",
+    "review_document_sha256": "f5dfbe673aaf17ecfd65008ba83acf030a5a35e2e6b594928a1ac151e6aa7767",
+    "implementation_tests_executed": false
+  },
+  "document_validation": {
+    "baseline_source_files_unchanged": 21,
+    "relative_document_links_checked": [
+      {
+        "document": "docs/GREEK_LEXICAL_IMPLEMENTATION_PLAN.md",
+        "target": "SEPTUAGINT_GREEK_REQUIREMENTS.md"
+      },
+      {
+        "document": "docs/GREEK_LEXICAL_IMPLEMENTATION_PLAN.md",
+        "target": "planning/greek_lexical_validation.json"
+      },
+      {
+        "document": "docs/GREEK_LEXICAL_IMPLEMENTATION_PLAN.md",
+        "target": "GREEK_LEXICAL_ADVERSARIAL_REVIEW.md"
+      },
+      {
+        "document": "docs/GREEK_LEXICAL_ADVERSARIAL_REVIEW.md",
+        "target": "planning/greek_lexical_review_candidate.md"
+      },
+      {
+        "document": "docs/GREEK_LEXICAL_ADVERSARIAL_REVIEW.md",
+        "target": "planning/greek_lexical_validation.json"
+      }
+    ],
+    "balanced_fences": true,
+    "no_trailing_whitespace": true,
+    "dependency_graph_acyclic": true,
+    "dependency_graph": {
+      "W0": [],
+      "W1": [
+        "W0"
+      ],
+      "W2": [
+        "W0"
+      ],
+      "W3": [
+        "W1",
+        "W2",
+        "W4"
+      ],
+      "W4": [
+        "W1",
+        "W2"
+      ],
+      "W5": [
+        "W1",
+        "W2"
+      ],
+      "W6": [
+        "W2",
+        "W3",
+        "W5"
+      ],
+      "W7": [
+        "W3",
+        "W4",
+        "W5",
+        "W6"
+      ],
+      "W8": [
+        "W7"
+      ],
+      "W9": [
+        "W1",
+        "W2",
+        "W3",
+        "W6",
+        "W8"
+      ],
+      "W10A": [
+        "W8"
+      ],
+      "W10B": [
+        "W8",
+        "W9"
+      ],
+      "W11": [
+        "W9",
+        "W10B"
+      ]
+    },
+    "topological_order": [
+      "W0",
+      "W1",
+      "W2",
+      "W4",
+      "W3",
+      "W5",
+      "W6",
+      "W7",
+      "W8",
+      "W9",
+      "W10A",
+      "W10B",
+      "W11"
+    ],
+    "dependency_note": "W3 represents activation after W4; staging can run in parallel. W10A/W10B are the two release gates of W10."
+  }
+}

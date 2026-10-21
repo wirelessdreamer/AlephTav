@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v018.a.literal.alt.0001",
-    "rnd.ps025.v018.a.lyric.alt.0001"
+    "rnd.ps025.v018.a.lyric.alt.0001",
+    "rnd.ps025.v018.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v018.a.0001",
     "aud.ps025.v018.a.0002",
     "aud.ps025.v018.a.0003",
-    "aud.ps025.v018.a.0004"
+    "aud.ps025.v018.a.0004",
+    "aud.ps025.v018.a.0005",
+    "aud.ps025.v018.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7eb482e0cc47fd6a6d9648812c56590f33b938bb48de2a6a152ccc04351b664d",
+      "audit_id": "aud.ps025.v018.a.0005",
+      "before_hash": "9a2617f0f054d5c02ae33338f469c1be74bb20c67b43d4994ac51d0bc60641da",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.272932+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v018.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Begins the paired appeals to see and retains the physical lifting image for forgiveness.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "351cf3743a189f13f71499909d434af40ba642f819b1c1d77e721d03ac91d606",
+      "audit_id": "aud.ps025.v018.a.0006",
+      "before_hash": "18059c0ca1a600c93764b8d3c2d4a6cbdf62fd5e908cbb2070d43781beaee713",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:33:49.424610+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v018.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -117,6 +152,49 @@
           ],
           "transliteration": "wəśāʾ",
           "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the appeal to see the speaker's suffering and hardship, followed by the request concerning all the speaker's sins. 'Lift away' retains the lifting/removal image in the Hebrew forgiveness idiom.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "d88f2ca1ec19f77cc89bf9918658f40920128693016d8ea8fcb173458918bf36",
+      "audit_ids": [
+        "aud.ps025.v018.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v018.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Pain' emphasizes experienced suffering; 'hardship' selects the trouble sense of the word also used for toil.",
+      "display_reference": "Psalm 25:18",
+      "english_rendering_id": "rnd.ps025.v018.a.lyric.alt.0002",
+      "generation_run_id": "cxr.b9e05edb954c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "רְאֵ֣ה עָ֭נְיִי וַעֲמָלִ֑י וְ֝שָׂ֗א לְכָל־חַטֹּאותָֽי׃",
+      "literal_backbone": [
+        "See my affliction and my toil.",
+        "Lift away all my sins."
+      ],
+      "literal_rendering_id": "rnd.ps025.v018.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:18",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v018.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "my affliction, misery, poverty",
+          "note": "Conveys suffering while leaving the term's broader associations with deprivation unexpressed.",
+          "rendered_as": "my pain",
+          "token_ids": [
+            "ps025.v018.t002"
+          ],
+          "transliteration": "ʿonyî",
+          "verdict": "narrowing"
         }
       ]
     }
@@ -346,6 +424,135 @@
       "unit_id": "ps025.v018.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; paired phrases with a firm cadence on 'sins.'",
+      "differentiator": "Suffering seen and sins lifted",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.98,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.49,
+        "stress_approximation": 0.59,
+        "syllable_count": 13,
+        "syllables": 13
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Lifting away sins",
+          "note": "Keeps the lifting action rather than replacing it with an abstract explanation of forgiveness.",
+          "source_id": "ps025.v018.a",
+          "token_ids": [
+            "ps025.v018.t004",
+            "ps025.v018.t005",
+            "ps025.v018.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v018.t001–t003 → See my pain and my hardship",
+          "ps025.v018.t004–t006 → lift away all my sins"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v018.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Begins the paired appeals to see and retains the physical lifting image for forgiveness.",
+      "rendering_id": "rnd.ps025.v018.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "וְ֝שָׂ֗א לְכָל־חַטֹּאותָֽי",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "וְ֝שָׂ֗א לְכָל־חַטֹּאותָֽי",
+        "token_ids": [
+          "ps025.v018.t004",
+          "ps025.v018.t005",
+          "ps025.v018.t006"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "See my pain and my hardship;\nlift away all my sins.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v018.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v018.a",
+      "variation_basis": [
+        "Pain vocabulary continuing verse 16",
+        "See opening continued in verse 19"
       ]
     }
   ],

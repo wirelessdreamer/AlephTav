@@ -1,6 +1,529 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps023.v001.a.0006"
+      ],
+      "citations": [
+        "Supplied Masoretic Hebrew and token annotations for Psalm 23:1–6.",
+        "Supplied King James Version, American Standard Version, and World English Bible comparison texts.",
+        "[Lexham English Bible, Psalm 23, including notes on verse 6](https://www.biblegateway.com/passage/?search=Psalms+23&version=LEB)",
+        "[New Living Translation, Psalm 23](https://www.biblegateway.com/passage/?search=Ps.+23&version=NLT)"
+      ],
+      "created_at": "2026-10-20T16:04:08.436914+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–3 describe Yahweh as “my shepherd,” providing rest, restoration, and right paths.",
+            "claim": "The speaker expresses personal confidence in Yahweh’s provision and guidance."
+          },
+          {
+            "basis": "The third-person verbs of verses 2–3 give way to “you,” “your rod,” and “your staff” in verse 4.",
+            "claim": "Verse 4 marks a change from description to direct address."
+          },
+          {
+            "basis": "Verse 4 retains the dark valley and possible harm; verse 5 places the table in sight of foes.",
+            "claim": "The speaker’s assurance coexists with danger and opposition."
+          },
+          {
+            "basis": "Verse 6 uses יִרְדְּפוּנִי, rendered vividly as “chase after me.”",
+            "claim": "The ending portrays goodness and loyal love as actively pursuing the speaker."
+          },
+          {
+            "basis": "Verse 6 adds parallel expressions about lifelong days and future years, while “settle and stay” interprets וְשַׁבְתִּי, supplied as “I will return.”",
+            "claim": "The English elaborates the Hebrew’s duration language and interprets the final verb as residence."
+          },
+          {
+            "basis": "No such marker occurs in the supplied Hebrew of verses 1–6; the stanza divisions belong to the arrangement.",
+            "claim": "The received text has no Selah or comparable explicit section marker here."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally composed the psalm during a specific episode of his life.",
+            "why_not": "The superscription supplies an association with David without narrating composition or identifying an occasion."
+          },
+          {
+            "claim": "The valley and foes identify a particular journey, illness, battle, or persecutor.",
+            "why_not": "The language names danger and opposition without identifying their historical referents."
+          },
+          {
+            "claim": "The table and oil describe a coronation, sacrifice, or other specific ritual.",
+            "why_not": "Hospitality imagery alone does not identify a ceremony or its participants."
+          },
+          {
+            "claim": "The final house is a particular dated temple building.",
+            "why_not": "“House of Yahweh” supplies a sanctuary reference without architectural or chronological particulars."
+          },
+          {
+            "claim": "The ending explicitly promises residence in heaven after death.",
+            "why_not": "The house and length-of-days language does not explicitly describe death, resurrection, or a heavenly destination."
+          },
+          {
+            "claim": "A particular published translation was directly used to produce these imported lyrics.",
+            "why_not": "Distinctive verbal echoes support comparison, but the import history provides no source attribution or evidence of direct dependence."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.d581732db967",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The house of Yahweh in verse 6 gives the psalm a sanctuary or worship horizon. The table, oil, and cup in verse 5 also evoke generous hospitality. These images do not establish a particular temple ceremony, sacrificial meal, priestly role, or historical sanctuary.",
+        "heading_attribution": "The Hebrew superscription, included in Masoretic verse 1, identifies a psalm associated with David through לְדָוִד, conventionally rendered “of David.” It supplies a traditional attribution but does not independently establish David’s authorship, a date, or an occasion. The English setting omits this superscription."
+      },
+      "method": "Compact literal backbones were derived from the supplied Masoretic Hebrew, clause structure, morphology, and usable token glosses, then compared with the English in context. The final verb’s supplied return sense was distinguished from the English dwelling interpretation. The supplied public-domain versions were compared directly. Recognized LEB and NLT parallels were checked online; resemblance was distinguished from established provenance. No independent lexicon was consulted.",
+      "non_source_material": [
+        {
+          "kind": "meter",
+          "note": "Specifies the musical setting; the Hebrew supplies no time signature.",
+          "text": "[6/8 structure and phrasing]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Directs the accompaniment for verse 4.",
+          "text": "[down piano driven section, no drums, no guitar]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Adds an instrumental transition between verses 4 and 5.",
+          "text": "[instrumental guitar break]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Adds an instrumental transition between verses 5 and 6.",
+          "text": "[instrumental drum driven break]"
+        },
+        {
+          "kind": "other",
+          "note": "Adds a musical ending after verse 6.",
+          "text": "[instrumental outro]"
+        }
+      ],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps023.0001",
+      "psalm_id": "ps023",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The opening groups the shepherd’s provision and guidance into one continuous stanza, speaking about Yahweh in the third person.",
+          "first_verse": 1,
+          "last_verse": 3,
+          "theme": "Sufficiency, rest, restoration, and right guidance.",
+          "title": "Opening stanza"
+        },
+        {
+          "arc_note": "The quieter instrumentation accompanies the turn to direct address and the dark valley; confidence rests on presence rather than the disappearance of danger.",
+          "first_verse": 4,
+          "last_verse": 4,
+          "theme": "Divine companionship and comfort amid danger.",
+          "title": "Piano stanza"
+        },
+        {
+          "arc_note": "After the guitar break, shepherding imagery gives way to table, oil, and cup while direct address continues.",
+          "first_verse": 5,
+          "last_verse": 5,
+          "theme": "Hospitality and abundance in the presence of foes.",
+          "title": "Table stanza"
+        },
+        {
+          "arc_note": "After the drum-driven break, the ending extends both duration phrases and adopts a settled-residence interpretation of the final promise.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "Pursuing goodness and loyal love, and enduring belonging.",
+          "title": "Closing stanza"
+        }
+      ],
+      "similar_translations": [
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "The strongest cluster spans MT verses 1, 3, 4, and 6: Yahweh as the divine name, restoration of life, a dark valley, “loyal love” pursuing the speaker, and an extended-duration ending. These choices distinguish it from the supplied versions, but do not establish a close adaptation throughout. Recognized from memory and checked against [LEB Psalm 23](https://www.biblegateway.com/passage/?search=Psalms+23&version=LEB).",
+          "translation": "Lexham English Bible"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "MT verse 1 resembles “all that I need”; verse 4 resembles “close beside me.” The positive sufficiency statement and intimate spatial expression are more distinctive than shared shepherd vocabulary. Other wording differs substantially. Recognized from memory and checked against [NLT Psalm 23](https://www.biblegateway.com/passage/?search=Ps.+23&version=NLT).",
+          "translation": "New Living Translation"
+        }
+      ],
+      "source_fingerprint": "6468372566a48ae440a1ea7b417055a0d96328be981c8a0f493fe150f722dcdd",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting follows the psalm’s movement from shepherding and restoration to companionship in danger, generous hospitality, and lasting belonging with Yahweh. It preserves the turn from speaking about God to addressing God in verse 4. Four lyric stanzas carry verses 1–3, 4, 5, and 6, with instrumental transitions. The closing stanza expands the duration language. It reproduces none of the supplied translations, and no single source can confidently be identified as its direct base. Its strongest recognizable echoes are of the Lexham English Bible, followed by the New Living Translation.",
+      "translation_id": "tr.ps023.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps023.0001",
+      "audit_ids": [
+        "aud.ps023.v001.a.0004"
+      ],
+      "created_at": "2026-10-20T16:01:01.194534+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.182c87330568",
+      "guidance": "From the imported translation:\n[6/8 structure and phrasing]\n[down piano driven section, no drums, no guitar]\n[instrumental guitar break]\n[instrumental drum driven break]\n[instrumental outro]",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The superscription identifying a psalm of David is absent from the setting.",
+          "token_ids": [
+            "ps023.v001.t001",
+            "ps023.v001.t002"
+          ],
+          "unit_id": "ps023.v001.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps023",
+      "sections": [
+        {
+          "kind": "verse",
+          "label": "[6/8 structure and phrasing]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v001.t003",
+                    "ps023.v001.t004",
+                    "ps023.v001.t005",
+                    "ps023.v001.t006"
+                  ],
+                  "unit_id": "ps023.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0001",
+              "rationale": "The shepherd phrase precedes Yahweh, and the statement about lacking nothing becomes a positive statement of sufficiency.",
+              "text": "My shepherd is Yahweh; I have all I need."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v002.t001",
+                    "ps023.v002.t002",
+                    "ps023.v002.t003"
+                  ],
+                  "unit_id": "ps023.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "He settles me down where the pastures are green."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v002.t004",
+                    "ps023.v002.t005",
+                    "ps023.v002.t006",
+                    "ps023.v002.t007"
+                  ],
+                  "unit_id": "ps023.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "He leads me by waters that offer me rest."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v003.t001",
+                    "ps023.v003.t002",
+                    "ps023.v003.t003"
+                  ],
+                  "unit_id": "ps023.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0004",
+              "rationale": "",
+              "text": "He restores my life, and he guides me along"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v003.t004",
+                    "ps023.v003.t005",
+                    "ps023.v003.t006",
+                    "ps023.v003.t007"
+                  ],
+                  "unit_id": "ps023.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "On the paths that are right, for the sake of his name."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "[down piano driven section, no drums, no guitar]",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v004.t001",
+                    "ps023.v004.t002",
+                    "ps023.v004.t003",
+                    "ps023.v004.t004",
+                    "ps023.v004.t005"
+                  ],
+                  "unit_id": "ps023.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0006",
+              "rationale": "“Though” condenses the opening concessive expression without separately expressing its additive emphasis.",
+              "text": "Though I walk through the valley where darkness lies deep,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v004.t006",
+                    "ps023.v004.t007",
+                    "ps023.v004.t008",
+                    "ps023.v004.t009",
+                    "ps023.v004.t010",
+                    "ps023.v004.t011"
+                  ],
+                  "unit_id": "ps023.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "I fear no harm, for you’re here at my side."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v004.t012",
+                    "ps023.v004.t013",
+                    "ps023.v004.t014",
+                    "ps023.v004.t015"
+                  ],
+                  "unit_id": "ps023.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "The statement that they comfort the speaker becomes a description of comfort with the added expression “I know.”",
+              "text": "Your rod and your staff are the comfort I know."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "other",
+          "label": "[instrumental guitar break]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v005.t001",
+                    "ps023.v005.t002",
+                    "ps023.v005.t003",
+                    "ps023.v005.t004",
+                    "ps023.v005.t005"
+                  ],
+                  "unit_id": "ps023.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0009",
+              "rationale": "The table arranged before the speaker becomes “my table,” leaving its placement before the speaker implicit.",
+              "text": "You set out my table in sight of my foes;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v005.t006",
+                    "ps023.v005.t007",
+                    "ps023.v005.t008"
+                  ],
+                  "unit_id": "ps023.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Refreshing the head with oil is rendered as pouring, with “a rich measure” making the oil’s abundance explicit.",
+              "text": "You pour on my head a rich measure of oil."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v005.t009",
+                    "ps023.v005.t010"
+                  ],
+                  "unit_id": "ps023.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "The cup’s saturation is developed into the explicit image of abundant filling to its brim.",
+              "text": "My cup is abundantly filled to the brim."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "other",
+          "label": "[instrumental drum driven break]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Stanza 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v006.t001",
+                    "ps023.v006.t002",
+                    "ps023.v006.t003",
+                    "ps023.v006.t004"
+                  ],
+                  "unit_id": "ps023.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "Yes, goodness and loyal love chase after me"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v006.t005",
+                    "ps023.v006.t006",
+                    "ps023.v006.t007"
+                  ],
+                  "unit_id": "ps023.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "“All the days of my life” is extended through the restatement “for as long as I live.”",
+              "text": "Through all of my days, for as long as I live."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v006.t008",
+                    "ps023.v006.t009",
+                    "ps023.v006.t010"
+                  ],
+                  "unit_id": "ps023.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0014",
+              "rationale": "The supplied verb “return” is interpreted as settling and staying, while “own” adds emphasis to Yahweh’s possession of the house.",
+              "text": "In Yahweh’s own house I will settle and stay,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps023.v006.t011",
+                    "ps023.v006.t012"
+                  ],
+                  "unit_id": "ps023.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "“For length of days” gains a personal possessive and the further expression “through the years yet to come.”",
+              "text": "For the length of my days, through the years yet to come."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "outro",
+          "label": "[instrumental outro]",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 23",
+      "translation_id": "tr.ps023.0001",
+      "updated_at": "2026-10-20T16:01:01.194534+00:00"
+    }
+  ],
   "psalm_id": "ps023",
   "title": "Psalm 23",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps023.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-10-20T15:59:56.303364+00:00",
+      "created_by": "reviewer",
+      "created_via": "import",
+      "guidance": "From the imported translation:\n[6/8 structure and phrasing]\n[down piano driven section, no drums, no guitar]\n[instrumental guitar break]\n[instrumental drum driven break]\n[instrumental outro]",
+      "psalm_id": "ps023",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps023.0001"
+    }
+  ],
   "unit_ids": [
     "ps023.v001.a",
     "ps023.v002.a",

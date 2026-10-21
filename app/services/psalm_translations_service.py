@@ -226,7 +226,14 @@ def get_guidance(psalm_id: str, translation_id: str | None) -> str:
     raise NotFoundError(f"{translation_id} is not a translation of {psalm_id}")
 
 
-def set_guidance(psalm_id: str, translation_id: str | None, guidance: str) -> None:
+def set_guidance(
+    psalm_id: str,
+    translation_id: str | None,
+    guidance: str,
+    *,
+    annotations: list[dict[str, Any]] | None = None,
+    created_by: str = "reviewer",
+) -> None:
     meta = registry_service.load_psalm_meta(psalm_id)
     holder: dict[str, Any] | None
     if translation_id is None:
@@ -240,6 +247,25 @@ def set_guidance(psalm_id: str, translation_id: str | None, guidance: str) -> No
         if holder is None:
             raise NotFoundError(f"{translation_id} is not a translation of {psalm_id}")
         key = "guidance"
+    previous = str(holder.get(key, ""))
+    if guidance == previous and not annotations:
+        return
+    from app.services import codex_briefing_service, translation_context_service
+
+    translation_context_service.append(
+        psalm_id,
+        translation_id,
+        kind="guidance",
+        summary="Save translation guidance and notes",
+        previous=previous,
+        created_by=created_by,
+        snapshot={
+            "previous_guidance": previous,
+            "guidance": guidance,
+            "annotations": annotations or [],
+            "briefing": codex_briefing_service.cached_briefing(psalm_id, translation_id),
+        },
+    )
     if guidance:
         holder[key] = guidance
     else:

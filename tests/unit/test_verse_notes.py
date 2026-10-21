@@ -437,8 +437,11 @@ def test_the_prompt_lists_every_corpus_reading_of_the_word(monkeypatch) -> None:
     prompt = translation.build_suggestion_prompt(UNIT_ID, [token["token_id"]], "lyric")
 
     here = token.get("display_gloss") or "?"
-    assert f'"{here}" (LXX {token["greek"]}): here' in prompt
-    assert '"blessed are they" (LXX μακάριοι): Psalm 32:1' in prompt
+    assert f'"{here}": here' in prompt
+    assert '"blessed are they": Psalm 32:1' in prompt
+    assert token["surface"] in prompt
+    assert token["greek"] not in prompt
+    assert "μακάριοι" not in prompt
     assert "Psalm 32:1: How blessed is the one / whose wrong is forgiven" in prompt
     assert "every distinct sense in the corpus readings and the lexical range" in prompt
 

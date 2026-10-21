@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "lexeme_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "const": "grc"
+    },
+    "lexemes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "lexeme_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "headword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "distinction": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "reviewed",
+              "unresolved"
+            ]
+          },
+          "replaces": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "lexeme_id",
+          "headword",
+          "distinction",
+          "status",
+          "replaces"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "lexeme_set_id",
+    "language",
+    "lexemes"
+  ]
+}

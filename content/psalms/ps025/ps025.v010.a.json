@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v010.a.literal.alt.0001",
-    "rnd.ps025.v010.a.lyric.alt.0001"
+    "rnd.ps025.v010.a.lyric.alt.0001",
+    "rnd.ps025.v010.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v010.a.0001",
     "aud.ps025.v010.a.0002",
     "aud.ps025.v010.a.0003",
-    "aud.ps025.v010.a.0004"
+    "aud.ps025.v010.a.0004",
+    "aud.ps025.v010.a.0005",
+    "aud.ps025.v010.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "52bcd4c16d6dcf60c7cb403adf9a11b4df1991e7c3f951d8980221b1d8c3ddcf",
+      "audit_id": "aud.ps025.v010.a.0005",
+      "before_hash": "0d4a6b4b93b391d88572700607be2176a7a5d439d278444a4fd9afc7fffae5a9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.779219+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v010.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Brings paths, faithful love, and truth together using the vocabulary established earlier.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "029382a9bb359b283643c88c34b07f228a101f0d884a3d936befde5ed760de20",
+      "audit_id": "aud.ps025.v010.a.0006",
+      "before_hash": "c60f4fe8abaff1d24427d7c100da9517a086e9f5c7aca3d8318385e08d38ab78",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:32:19.381671+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v010.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -112,6 +147,48 @@
           "lexical_gloss": "and his testimonies, attestations, solemn injunctions",
           "note": "Conveys the requirements to be observed, while making the term’s testimonial character less explicit. The preceding “his” naturally governs both English nouns.",
           "rendered_as": "and commands",
+          "token_ids": [
+            "ps025.v010.t008"
+          ],
+          "transliteration": "wəʿēḏōṯāw",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves all the paths of Yahweh, their characterization as loyal love and truth, and the recipients as those keeping his covenant and requirements.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "994626fa6e70320fbe8ca7f67e95e560142e4766751d54096505e1c139dbf349",
+      "audit_ids": [
+        "aud.ps025.v010.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v010.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Commands' emphasizes the prescriptive force of 'testimonies' while leaving its witness nuance unexpressed.",
+      "display_reference": "Psalm 25:10",
+      "english_rendering_id": "rnd.ps025.v010.a.lyric.alt.0002",
+      "generation_run_id": "cxr.c3da9bf6d496",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כָּל־אָרְח֣וֹת יְ֭הוָה חֶ֣סֶד וֶאֱמֶ֑ת לְנֹצְרֵ֥י בְ֝רִית֗וֹ וְעֵדֹתָֽיו׃",
+      "literal_backbone": [
+        "All the paths of Yahweh are loyal love and truth for those who keep his covenant and his testimonies."
+      ],
+      "literal_rendering_id": "rnd.ps025.v010.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:10",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and his testimonies, attestations, solemn ordinances",
+          "note": "Conveys the binding requirements denoted by divine testimonies, though it does not retain their association with witness.",
+          "rendered_as": "and his commands",
           "token_ids": [
             "ps025.v010.t008"
           ],
@@ -345,6 +422,127 @@
       "unit_id": "ps025.v010.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; four phrases with a longer covenant phrase and a short final cadence.",
+      "differentiator": "Gathering earlier motifs into one declaration",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.11,
+        "stress_approximation": 0.65,
+        "syllable_count": 27,
+        "syllables": 27
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "All the paths",
+          "note": "Keeps the paths themselves identified with faithful love and truth.",
+          "source_id": "ps025.v010.a",
+          "token_ids": [
+            "ps025.v010.t001",
+            "ps025.v010.t002",
+            "ps025.v010.t003"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v010.t001–t003 → All the paths of the LORD",
+          "ps025.v010.t004–t005 → are faithful love and truth",
+          "ps025.v010.t006–t008 → for those who keep his covenant and his commands"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v010.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Brings paths, faithful love, and truth together using the vocabulary established earlier.",
+      "rendering_id": "rnd.ps025.v010.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "חֶ֣סֶד וֶאֱמֶ֑ת",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "חֶ֣סֶד וֶאֱמֶ֑ת",
+        "token_ids": [
+          "ps025.v010.t004",
+          "ps025.v010.t005"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "All the paths of the LORD\nare faithful love and truth\nfor those who keep his covenant\nand his commands.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v010.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v010.a",
+      "variation_basis": [
+        "Recurring path and faithful-love vocabulary"
       ]
     }
   ],

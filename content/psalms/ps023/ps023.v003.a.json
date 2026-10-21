@@ -1,9 +1,92 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps023.v003.a.lyric.alt.0001"
+  ],
+  "audit_ids": [
+    "aud.ps023.v003.a.0001",
+    "aud.ps023.v003.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4da8fa4f0565da8c739c61a362ca802c28719e0c0faa4022bc4a7492987aac1a",
+      "audit_id": "aud.ps023.v003.a.0001",
+      "before_hash": "c44b1719080091fe4c7f7d3a7e3737aceb5593eca44fa391c990ca3f7ec1f606",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:00:10.325665+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps023.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a2eac6133c90d33ad6aede00f1d375da3fe62a50e9f79f36855c13d3187605bd",
+      "audit_id": "aud.ps023.v003.a.0002",
+      "before_hash": "4052490eac019c2c9a8007c8a061c90ab38fb7057a362b2280a777974fad541a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T16:01:45.124842+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps023.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The English preserves restoration of the speaker’s life, guidance along right paths, and the purpose expressed as the sake of his name, in the Hebrew’s order.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "41fad8f0a9782122244bafbdcf6a015fa4aff558c95c28716907ef6680363a6e",
+      "audit_ids": [
+        "aud.ps023.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps023.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "",
+      "display_reference": "Psalm 23:3",
+      "english_rendering_id": "rnd.ps023.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.0c7c1e411042",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נַפְשִׁ֥י יְשׁוֹבֵ֑ב יַֽנְחֵ֥נִי בְמַעְגְּלֵי־צֶ֝֗דֶק לְמַ֣עַן שְׁמֽוֹ׃",
+      "literal_backbone": [
+        "My life he restores.",
+        "He guides me in tracks of righteousness for his name’s sake."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 23:3",
+      "non_source_material": [],
+      "psalm_id": "ps023",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "my life, self, soul",
+          "note": "Uses the word’s ordinary sense of the speaker’s life or living self.",
+          "rendered_as": "my life",
+          "token_ids": [
+            "ps023.v003.t001"
+          ],
+          "transliteration": "nap̄šî",
+          "verdict": "standard"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps023.v003.a.0001"
   ],
@@ -15,7 +98,99 @@
   "pr_links": [],
   "psalm_id": "ps023",
   "ref": "Psalm 23:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.1,
+        "singability_score": 0.1,
+        "stress_approximation": 0.67,
+        "syllable_count": 29,
+        "syllables": 29
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b66847408714",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps023.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "He restores my life, and he guides me along\nOn the paths that are right, for the sake of his name.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps023.0001",
+      "unit_id": "ps023.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נַפְשִׁ֥י יְשׁוֹבֵ֑ב יַֽנְחֵ֥נִי בְמַעְגְּלֵי־צֶ֝֗דֶק לְמַ֣עַן שְׁמֽוֹ׃",

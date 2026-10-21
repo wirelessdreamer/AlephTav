@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v022.a.literal.alt.0001",
-    "rnd.ps025.v022.a.lyric.alt.0001"
+    "rnd.ps025.v022.a.lyric.alt.0001",
+    "rnd.ps025.v022.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v022.a.0001",
     "aud.ps025.v022.a.0002",
     "aud.ps025.v022.a.0003",
-    "aud.ps025.v022.a.0004"
+    "aud.ps025.v022.a.0004",
+    "aud.ps025.v022.a.0005",
+    "aud.ps025.v022.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2b07834650e5f41c915d02d158eb0abdf2ae0fde37e519c0d6631665e027f398",
+      "audit_id": "aud.ps025.v022.a.0005",
+      "before_hash": "7ab0ed6011277749cb6cfe1e65507db21fd9b7169d0e1e9fecbf3a3c64508b76",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.353924+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v022.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Widens the personal plea to Israel while ending with a request rather than a declared resolution.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b1707c81a43b90642a92520bed2142cfbcdbcc2f05aee9181440af4490eec667",
+      "audit_id": "aud.ps025.v022.a.0006",
+      "before_hash": "404a5f7af3cdddca016d5fd8f2dfb19aa39fe464939b9827f7c5c6ceb4e3b20b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:34:36.556224+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v022.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -118,6 +153,37 @@
           "verdict": "defensible"
         }
       ]
+    },
+    {
+      "accuracy_note": "Preserves the direct petition to God to redeem Israel from all its troubles. The request remains a plea, without claiming that redemption has occurred.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "ac037b2982e012252266184745ab4613e7a872e28217cca2830b8381307fabea",
+      "audit_ids": [
+        "aud.ps025.v022.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v022.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Moves the divine address first and uses collective 'their' for the Hebrew masculine singular suffix referring to Israel.",
+      "display_reference": "Psalm 25:22",
+      "english_rendering_id": "rnd.ps025.v022.a.lyric.alt.0002",
+      "generation_run_id": "cxr.5ce99f9149d3",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "פְּדֵ֣ה אֱ֭לֹהִים אֶת־יִשְׂרָאֵ֑ל מִ֝כֹּ֗ל צָֽרוֹתָיו׃",
+      "literal_backbone": [
+        "Redeem Israel, God, from all his troubles."
+      ],
+      "literal_rendering_id": "rnd.ps025.v022.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:22",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v022.a",
+      "word_notes": []
     }
   ],
   "concept_ids": [
@@ -347,6 +413,143 @@
       "unit_id": "ps025.v022.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; two short closing phrases with a sustained final cadence.",
+      "differentiator": "Personal lament widened into communal petition",
+      "drift_flags": [
+        {
+          "code": "added_doctrine",
+          "confidence": 0.93,
+          "message": "Lyric line adds doctrinal vocabulary not present in the canonical literal line.",
+          "severity": "high"
+        },
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.99,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 7,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.72,
+        "stress_approximation": 0.71,
+        "syllable_count": 10,
+        "syllables": 10
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Redemption from troubles",
+          "note": "Retains redemption as release, without inventing a payment or named captor.",
+          "source_id": "ps025.v022.a",
+          "token_ids": [
+            "ps025.v022.t001",
+            "ps025.v022.t004",
+            "ps025.v022.t005",
+            "ps025.v022.t006"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v022.t001–t004 → God, redeem Israel",
+          "ps025.v022.t005–t006 → from all their troubles"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v022.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Widens the personal plea to Israel while ending with a request rather than a declared resolution.",
+      "rendering_id": "rnd.ps025.v022.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "פְּדֵ֣ה אֱ֭לֹהִים אֶת־יִשְׂרָאֵ֑ל",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "פְּדֵ֣ה אֱ֭לֹהִים אֶת־יִשְׂרָאֵ֑ל",
+        "token_ids": [
+          "ps025.v022.t001",
+          "ps025.v022.t002",
+          "ps025.v022.t003",
+          "ps025.v022.t004"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "God, redeem Israel\nfrom all their troubles.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v022.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v022.a",
+      "variation_basis": [
+        "Communal closing petition",
+        "Troubles vocabulary returning from verse 17"
       ]
     }
   ],

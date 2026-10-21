@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v011.a.literal.alt.0001",
-    "rnd.ps025.v011.a.lyric.alt.0001"
+    "rnd.ps025.v011.a.lyric.alt.0001",
+    "rnd.ps025.v011.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v011.a.0001",
     "aud.ps025.v011.a.0002",
     "aud.ps025.v011.a.0003",
-    "aud.ps025.v011.a.0004"
+    "aud.ps025.v011.a.0004",
+    "aud.ps025.v011.a.0005",
+    "aud.ps025.v011.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0eca9fdd525d4bcaea2c79c27e250a55585eb4a8865e358926e041ec1667dc7c",
+      "audit_id": "aud.ps025.v011.a.0005",
+      "before_hash": "0909113d0f59fc781bb47fdd53326fe8d89486e50881270e7b55cb719b4dc08c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.796664+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v011.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Returns abruptly from declaration to personal petition, preserving the scale of the guilt.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "06224e1d721cbba9e46bb0f779bb7d8166af496642a52655b818848cac5be318",
+      "audit_id": "aud.ps025.v011.a.0006",
+      "before_hash": "2ef1f0f094e6a5307df9e75ead5f8a5c33b7fd79c1df6ef704235fde8686bbe4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:32:30.180647+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v011.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -108,6 +143,49 @@
       "status": "proposed",
       "unit_id": "ps025.v011.a",
       "word_notes": []
+    },
+    {
+      "accuracy_note": "Preserves the appeal to Yahweh's name, the petition for forgiveness of the speaker's guilt, and the magnitude of that guilt.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "727df0f7a5ebc98d7ff7535709d89e3ee09977687d8f5f6c64239672341b2ff6",
+      "audit_ids": [
+        "aud.ps025.v011.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v011.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Moves the divine address first and recasts 'for it is great' as 'there's so much to forgive,' repeating forgiveness and leaving the causal connection implicit.",
+      "display_reference": "Psalm 25:11",
+      "english_rendering_id": "rnd.ps025.v011.a.lyric.alt.0002",
+      "generation_run_id": "cxr.40d54281a1e1",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לְמַֽעַן־שִׁמְךָ֥ יְהוָ֑ה וְֽסָלַחְתָּ֥ לַ֝עֲוֺנִ֗י כִּ֣י רַב־הֽוּא׃",
+      "literal_backbone": [
+        "For your name's sake, Yahweh, pardon my iniquity.",
+        "For it is great."
+      ],
+      "literal_rendering_id": "rnd.ps025.v011.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:11",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v011.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "great, much, many, abundant",
+          "note": "Expresses the magnitude of the guilt as an amount requiring forgiveness.",
+          "rendered_as": "so much",
+          "token_ids": [
+            "ps025.v011.t007"
+          ],
+          "transliteration": "raḇ",
+          "verdict": "defensible"
+        }
+      ]
     }
   ],
   "concept_ids": [
@@ -312,6 +390,124 @@
       "unit_id": "ps025.v011.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; opening pickup, short central plea, and an extended closing phrase.",
+      "differentiator": "Forgive repeated to carry the magnitude of guilt",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.13,
+        "stress_approximation": 0.67,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v011.t001–t003 → LORD, for the sake of your name",
+          "ps025.v011.t004–t005 → forgive my guilt",
+          "ps025.v011.t006–t008 → there's so much to forgive"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v011.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Returns abruptly from declaration to personal petition, preserving the scale of the guilt.",
+      "rendering_id": "rnd.ps025.v011.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּ֣י רַב־הֽוּא",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "כִּ֣י רַב־הֽוּא",
+        "token_ids": [
+          "ps025.v011.t006",
+          "ps025.v011.t007",
+          "ps025.v011.t008"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "LORD, for the sake of your name,\nforgive my guilt;\nthere's so much to forgive.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v011.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v011.a",
+      "variation_basis": [
+        "Personal petition returning after declaration"
       ]
     }
   ],

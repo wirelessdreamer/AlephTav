@@ -1,9 +1,215 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps077.v018.a.literal.alt.0001",
+    "rnd.ps077.v018.a.lyric.alt.0001",
+    "rnd.ps077.v018.a.lyric.alt.0002",
+    "rnd.ps077.v018.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps077.v018.a.0001",
+    "aud.ps077.v018.a.0002",
+    "aud.ps077.v018.a.0003",
+    "aud.ps077.v018.a.0004",
+    "aud.ps077.v018.a.0005",
+    "aud.ps077.v018.a.0006",
+    "aud.ps077.v018.a.0007",
+    "aud.ps077.v018.a.0008",
+    "aud.ps077.v018.a.0009"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "52286f5479ac5974c7b4aeb8cb0141bb4e76d4789e5ebcebde837e2daccbd79b",
+      "audit_id": "aud.ps077.v018.a.0001",
+      "before_hash": "ae36fe7b05443eb44f6e4e85f55d0e5e1051894ff864e398d71bc694c0729e12",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:46:37.057311+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v018.a.literal.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Retains the storm's three parallel actions and leaves the arrows visible as arrows.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d230aa9c327a2dc29c61551a368c29403f261ef6276a37e071bcab29e330e001",
+      "audit_id": "aud.ps077.v018.a.0002",
+      "before_hash": "b9c4c6eb0017914089c3258b36e55b22a730aea9881470fd516f0074f3d7d9a4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T19:48:41.611037+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Keeps the storm's three actions distinct and carries the opening lament's voice image into the skies.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8b19b8ed7112219f37c4ccb613c8951e1c7b02690c4ab254afd0c6fcfb3e9557",
+      "audit_id": "aud.ps077.v018.a.0003",
+      "before_hash": "129706d16b38bb49edf1f1912534727997d921139236a03b5bdff9f5f4825dae",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:06:47.280851+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Three active phrases build the storm while retaining water, voice, and arrows as distinct images.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f59ae27cf41b4a6c1226586aba0e24bc74926137a48747aa5930c190b52052cf",
+      "audit_id": "aud.ps077.v018.a.0004",
+      "before_hash": "2fb4eb279cf8b1c12cffe4dd5b76b2d0718f462c22e8024c5013e07692c471a9",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:11:10.139321+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Three active phrases build the storm while keeping water, voice, and arrows distinct.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "157193047a3753acaded2d5c1a40bcd9bea4d2bf5cbef671bb14522c034e7f6a",
+      "audit_id": "aud.ps077.v018.a.0005",
+      "before_hash": "c8cfd1f92a2f67e1df5db078e0e09f6868e819a971119735bf46a853e3cce0ae",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-10T21:14:25.515717+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps077.v018.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7bd4241b01e982d4a896d8c03600cebe922be5b8a924a963f8ef1d4e39454953",
+      "audit_id": "aud.ps077.v018.a.0006",
+      "before_hash": "943d8bae3a360d66a1fc7292d86c0059c0cb5aea236eff4805a4cc1e5ad579cd",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.613008+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.c5f237f33b53",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1e9910babbb2f114e91c2e85a075d7ef1eb4f55b398f079e418a3f2ea06d46e7",
+      "audit_id": "aud.ps077.v018.a.0007",
+      "before_hash": "00d3f4450eecbf5faecb65750e6eeb4fc987e80525e2a9368588d6e7f3915156",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:14:35.633332+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Recover original source anchor from cxr.a7948303f387",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "be1e14699b36fec6cf96ff4f53f0badd34bd7582d1acbad247a1604b1fb2cfc9",
+      "audit_id": "aud.ps077.v018.a.0008",
+      "before_hash": "1d79371a3f8d30625ccb866d69a9ebe8d8c288923571ffadac8e4928f1365700",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.602736+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "acc7d1a153bba44fe42080a49763b6b5e3efce169880bdb0abcd4431a85e8883",
+      "audit_id": "aud.ps077.v018.a.0009",
+      "before_hash": "e93d6ce8967235d9544386eab1013a95db583f24cd5131d5945b145d46a3a7ed",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-10-17T13:15:00.620557+00:00",
+      "created_by": "codex-source-anchor-recovery",
+      "entity_id": "rnd.ps077.v018.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "Preserve the original translation rationale during source-anchor recovery",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "Preserves the clouds pouring water, the skies giving voice, and God's arrows moving back and forth, in source order. The personified skies and arrow imagery remain explicit.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "4301b6c6cb96a2e7196fa5c7674a28bb2633913fb52bfb8c3cfd1b13d3da6f91",
+      "audit_ids": [
+        "aud.ps077.v018.a.0005"
+      ],
+      "comparison_id": "cmp.ps077.v018.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "'Raised their voice' idiomatizes giving voice and can suggest increased volume. 'Flew' specifies airborne movement where the Hebrew expresses movement more generally. The additive 'also' is left implicit.",
+      "display_reference": "Psalm 77:18",
+      "english_rendering_id": "rnd.ps077.v018.a.lyric.alt.0003",
+      "generation_run_id": "cxr.6272fd2b97f9",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זֹ֤רְמוּ מַ֨יִם׀ עָב֗וֹת ק֭וֹל נָתְנ֣וּ שְׁחָקִ֑ים אַף־חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ׃",
+      "literal_backbone": [
+        "The clouds poured out water;",
+        "the skies gave voice;",
+        "your arrows also went to and fro."
+      ],
+      "literal_rendering_id": "rnd.ps077.v018.a.literal.alt.0001",
+      "mt_reference": "Psalm 77:18",
+      "non_source_material": [],
+      "psalm_id": "ps077",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v018.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "Go about, move to and fro, walk about.",
+          "note": "'Back and forth' preserves the repeated movement; 'flew' draws its more specific manner from the arrows.",
+          "rendered_as": "flew back and forth",
+          "token_ids": [
+            "ps077.v018.t009"
+          ],
+          "transliteration": "yiṯhallāḵû",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps077.v018.a.0001"
   ],
@@ -15,7 +221,513 @@
   "pr_links": [],
   "psalm_id": "ps077",
   "ref": "Psalm 77:18",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Three storm actions with voice and arrows intact.",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "literal",
+      "metric_profile": null,
+      "metrics": {},
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Clouds pouring water and skies giving voice",
+          "note": "Keeps both the pouring action and the vocal personification.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t001",
+            "ps077.v018.t002",
+            "ps077.v018.t003",
+            "ps077.v018.t004",
+            "ps077.v018.t005",
+            "ps077.v018.t006"
+          ]
+        },
+        {
+          "label": "Ranging arrows",
+          "note": "Does not replace the arrows with lightning or identify a target.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t008",
+            "ps077.v018.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v018.t001–t003 → The clouds poured out water",
+          "ps077.v018.t004–t006 → the skies gave voice",
+          "ps077.v018.t007 → also",
+          "ps077.v018.t008–t009 → your arrows went to and fro"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:46:36.545916+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b6ea55c084ec",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-to-English translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v018.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a12758-a60f-7c62-96be-3aaba6a8f56d"
+      },
+      "rationale": "Retains the storm's three parallel actions and leaves the arrows visible as arrows.",
+      "rendering_id": "rnd.ps077.v018.a.literal.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "literal"
+      ],
+      "target_spans": [],
+      "text": "The clouds poured out water;\nthe skies gave voice;\nyour arrows also went to and fro.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-to-English translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "unit_id": "ps077.v018.a",
+      "variation_basis": [
+        "source_grounded_rendering"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Three compact actions with voice and arrows intact.",
+      "drift_flags": [],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.66,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Pouring clouds and vocal skies",
+          "note": "Water and voice remain explicit rather than being collapsed into a general storm description.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t001",
+            "ps077.v018.t002",
+            "ps077.v018.t003",
+            "ps077.v018.t004",
+            "ps077.v018.t005",
+            "ps077.v018.t006"
+          ]
+        },
+        {
+          "label": "Moving arrows",
+          "note": "Retains the arrows instead of replacing them with lightning.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t008",
+            "ps077.v018.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps077.v018.t001–t003 → The clouds poured out water",
+          "ps077.v018.t004–t006 → the skies raised their voice",
+          "ps077.v018.t007 → additive force carried by the third parallel line",
+          "ps077.v018.t008–t009 → Your arrows flew back and forth"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T19:48:41.129975+00:00",
+        "generator": "codex",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.9f437ea2ac07",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "thread_id": "01a12753-c37a-7681-aa23-8ee5eb2f6b55",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew-based lyric translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v018.a"
+          ],
+          "source_language": "hebrew",
+          "source_version": "User-supplied Hebrew and token evidence"
+        },
+        "turn_id": "01a1275a-648f-7003-a477-9c0de79715ee"
+      },
+      "rationale": "Keeps the storm's three actions distinct and carries the opening lament's voice image into the skies.",
+      "rendering_id": "rnd.ps077.v018.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The clouds poured out water;\nthe skies raised their voice.\nYour arrows flew back and forth.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew-based lyric translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "source_language": "hebrew",
+        "source_version": "User-supplied Hebrew and token evidence"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v018.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Parallel storm actions with explicit arrows",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.66,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Clouds pouring water and skies giving voice",
+          "note": "Retains the pouring water and personified voice.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t001",
+            "ps077.v018.t002",
+            "ps077.v018.t003",
+            "ps077.v018.t004",
+            "ps077.v018.t005",
+            "ps077.v018.t006"
+          ]
+        },
+        {
+          "label": "God's moving arrows",
+          "note": "Keeps arrows visible rather than replacing them with an explanation.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t008",
+            "ps077.v018.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "The clouds poured out water → ps077.v018.t001–ps077.v018.t003",
+          "the skies raised their voice → ps077.v018.t004–ps077.v018.t006",
+          "Your arrows flew back and forth → ps077.v018.t007–ps077.v018.t009"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:06:47.172161+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not admit selah",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.c5f237f33b53",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v018.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a2-70a7-7172-b6d3-0fe7d3830f25"
+      },
+      "rationale": "Three active phrases build the storm while retaining water, voice, and arrows as distinct images.",
+      "rendering_id": "rnd.ps077.v018.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ",
+        "basis_note": "Preserves the arrows and their movement.",
+        "source_language": "he",
+        "source_text": "חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ",
+        "token_ids": [
+          "ps077.v018.t008",
+          "ps077.v018.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The clouds poured out water;\nthe skies raised their voice.\nYour arrows flew back and forth.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v018.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": "Parallel storm actions with visible arrows",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.06,
+        "singability_score": 0.09,
+        "stress_approximation": 0.66,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Pouring clouds and speaking skies",
+          "note": "Retains water poured from clouds and the skies' personified voice.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t001",
+            "ps077.v018.t002",
+            "ps077.v018.t003",
+            "ps077.v018.t004",
+            "ps077.v018.t005",
+            "ps077.v018.t006"
+          ]
+        },
+        {
+          "label": "God's moving arrows",
+          "note": "Keeps arrows explicit rather than substituting an explanation.",
+          "source_id": "ps077.v018.a",
+          "token_ids": [
+            "ps077.v018.t008",
+            "ps077.v018.t009"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "The clouds poured out water → ps077.v018.t001–ps077.v018.t003",
+          "the skies raised their voice → ps077.v018.t004–ps077.v018.t006",
+          "Your arrows flew back and forth → ps077.v018.t007–ps077.v018.t009"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-10T21:11:10.013583+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter, do not drop selah from translation, include it literally",
+        "model": "gpt-6-astra",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.a7948303f387",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "thread_id": "01a127a0-7dd7-7b41-a780-b3f83ffc86ee",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew rendering.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps077.v018.a"
+          ],
+          "source_language": "he",
+          "source_version": "Supplied Hebrew text and ordered tokens"
+        },
+        "turn_id": "01a127a6-cce2-7d50-b0f5-c69476a085cf"
+      },
+      "rationale": "Three active phrases build the storm while keeping water, voice, and arrows distinct.",
+      "rendering_id": "rnd.ps077.v018.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ",
+        "basis_note": "Preserves the arrows and their movement.",
+        "source_language": "he",
+        "source_text": "חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ",
+        "token_ids": [
+          "ps077.v018.t008",
+          "ps077.v018.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The clouds poured out water;\nthe skies raised their voice.\nYour arrows flew back and forth.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew rendering.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps077.v018.a"
+        ],
+        "source_language": "he",
+        "source_version": "Supplied Hebrew text and ordered tokens"
+      },
+      "translation_id": "tr.ps077.0001",
+      "unit_id": "ps077.v018.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "זֹ֤רְמוּ מַ֨יִם׀ עָב֗וֹת ק֭וֹל נָתְנ֣וּ שְׁחָקִ֑ים אַף־חֲ֝צָצֶ֗יךָ יִתְהַלָּֽכוּ׃",

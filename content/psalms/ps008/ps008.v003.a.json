@@ -1,11 +1,14 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [
-    "rnd.ps008.v003.a.lyric.alt.0001"
+    "rnd.ps008.v003.a.lyric.alt.0001",
+    "rnd.ps008.v003.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps008.v003.a.0001",
-    "aud.ps008.v003.a.0002"
+    "aud.ps008.v003.a.0002",
+    "aud.ps008.v003.a.0003",
+    "aud.ps008.v003.a.0004"
   ],
   "audit_records": [
     {
@@ -33,6 +36,38 @@
       "created_at": "2026-09-28T01:26:02.940085+00:00",
       "created_by": "codex-analysis",
       "entity_id": "cmp.ps008.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b59794a839fa38ca2e80001b4b9365a099a70082758d96dbafdc2c9e30290672",
+      "audit_id": "aud.ps008.v003.a.0003",
+      "before_hash": "5325187ad8e7dded6d48581175934e9fd67034248f15961cbd4679edbb9373ca",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:01:16.431872+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps008.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "02edca9422d275bc82196df1be04f2e20e1e755b4615d76c51f92ef743f4d025",
+      "audit_id": "aud.ps008.v003.a.0004",
+      "before_hash": "8d8d952d0fd5149f9c578d36e45a9868b882ae04cb1c5da0e4a06594762f8755",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-20T00:02:33.656628+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps008.v003.a.0002",
       "entity_type": "comparison_assessment",
       "rationale": "codex analysis pass",
       "review_signoff": {},
@@ -93,6 +128,51 @@
           ],
           "transliteration": "ləhašbiyṯ",
           "verdict": "standard"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "The English preserves the progression from children's and nursing infants' mouths to established strength, the opposing foes, and the purpose of silencing the enemy and avenger.",
+      "accuracy_rating": "very_close",
+      "analyzed_text_hash": "0bca0d50d301eaf2f8111632cc8ba076333e6447ef8a4540dd2639358766b22a",
+      "audit_ids": [
+        "aud.ps008.v003.a.0004"
+      ],
+      "comparison_id": "cmp.ps008.v003.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "“Against” makes the relationship to the foes explicitly adversarial, where the Hebrew says “on account of.”",
+      "display_reference": "Psalm 8:3",
+      "english_rendering_id": "rnd.ps008.v003.a.lyric.alt.0002",
+      "generation_run_id": "cxr.0c0089658b65",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִפִּ֤י עֽוֹלְלִ֨ים׀ וְֽיֹנְקִים֮ יִסַּ֢דְתָּ֫ עֹ֥ז לְמַ֥עַן צוֹרְרֶ֑יךָ לְהַשְׁבִּ֥ית א֝וֹיֵ֗ב וּמִתְנַקֵּֽ",
+      "literal_backbone": [
+        "From the mouth of infants and nursing children you have established strength,",
+        "on account of your foes,",
+        "to make the enemy and the avenger cease."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 8:3",
+      "non_source_material": [],
+      "psalm_id": "ps008",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps008.0002",
+      "unit_id": "ps008.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for the sake of, on account of; your adversaries",
+          "note": "The adversarial relationship fits the context, though “against” interprets the connection expressed by the Hebrew preposition.",
+          "rendered_as": "Against those who oppose You",
+          "token_ids": [
+            "ps008.v003.t006",
+            "ps008.v003.t007"
+          ],
+          "transliteration": "ləmaʿan ṣōrăreḵā",
+          "verdict": "defensible"
         }
       ]
     }
@@ -195,6 +275,97 @@
         "source_version": "imported"
       },
       "translation_id": "tr.ps008.0001",
+      "unit_id": "ps008.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 28,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.18,
+        "singability_score": 0.12,
+        "stress_approximation": 0.71,
+        "syllable_count": 44,
+        "syllables": 44
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.221eddbc415e",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps008.v003.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "From the mouths of children\nAnd babes at the breast\nYou have founded strength\nAgainst those who oppose You\nTo silence the enemy\nAnd the one seeking vengeance",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps008.0002",
       "unit_id": "ps008.v003.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"

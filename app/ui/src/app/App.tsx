@@ -5,18 +5,13 @@ import { WelcomePage } from '../pages/WelcomePage';
 
 function AppContent() {
   const { route, assistantUi } = useAppRuntime();
-  const showShellAssistant = route !== 'workbench' || assistantUi.placement === 'footer';
 
   return (
     <div
-      className={`app-shell ${
-        showShellAssistant
-          ? `app-shell--assistant-${assistantUi.placement} app-shell--assistant-${assistantUi.visibility}`
-          : 'app-shell--workbench'
-      }`}
+      className={`app-shell app-shell--assistant-${assistantUi.placement} app-shell--assistant-${assistantUi.visibility}`}
     >
       <div className="app-shell__page">{route === 'workbench' ? <ComparisonPage /> : <WelcomePage />}</div>
-      {showShellAssistant ? <AssistantPanel /> : null}
+      <AssistantPanel />
     </div>
   );
 }

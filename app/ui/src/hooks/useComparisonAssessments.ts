@@ -201,10 +201,10 @@ export function useDecideRebuild(psalmId: string | null) {
   });
 }
 
-export function useVerseHistory(unitId: string | null) {
+export function useVerseHistory(unitId: string | null, translationId: string | null = null) {
   return useQuery({
-    queryKey: ['verse-history', unitId],
-    queryFn: () => getJson<VerseHistory>(`/units/${unitId}/verse-history`),
+    queryKey: ['verse-history', unitId, translationId],
+    queryFn: () => getJson<VerseHistory>(`/units/${unitId}/verse-history${translationId ? `?translation_id=${encodeURIComponent(translationId)}` : ''}`),
     enabled: Boolean(unitId),
   });
 }

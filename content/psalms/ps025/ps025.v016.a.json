@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v016.a.literal.alt.0001",
-    "rnd.ps025.v016.a.lyric.alt.0001"
+    "rnd.ps025.v016.a.lyric.alt.0001",
+    "rnd.ps025.v016.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v016.a.0001",
     "aud.ps025.v016.a.0002",
     "aud.ps025.v016.a.0003",
-    "aud.ps025.v016.a.0004"
+    "aud.ps025.v016.a.0004",
+    "aud.ps025.v016.a.0005",
+    "aud.ps025.v016.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "94460cd55252258aec08a8e0315747cdd81c50261232b58c67169b4159a4ee90",
+      "audit_id": "aud.ps025.v016.a.0005",
+      "before_hash": "d21629fb7eea0022ce52ed222c638a1174e64d527dd62f97e9b8651dee2d88e7",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:15:09.233207+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v016.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Lets the preceding expectation give way to an immediate plea without resolving the speaker's isolation.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5a8807bc3e36b2b9ab17ee58314c6f0b6a13001e711c313c2ac50f5e699724b4",
+      "audit_id": "aud.ps025.v016.a.0006",
+      "before_hash": "7dc2d96667cad811568c0f8969b673dc952043f322e6ccd1af70dcb8273fdc16",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:33:22.799586+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v016.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -117,6 +152,49 @@
           ],
           "transliteration": "wəʿānî",
           "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves the requests for God to turn toward the speaker and show gracious favor, followed by the speaker's loneliness and suffering.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "fe9129e8fa9b94b9550788d6b0501cf7dc76e3b6b108672b17c76e32e078fcc4",
+      "audit_ids": [
+        "aud.ps025.v016.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v016.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Renders gracious favor as mercy, emphasizes suffering through 'in pain,' and leaves the causal 'for' implicit.",
+      "display_reference": "Psalm 25:16",
+      "english_rendering_id": "rnd.ps025.v016.a.lyric.alt.0002",
+      "generation_run_id": "cxr.07e21955ad96",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "פְּנֵה־אֵלַ֥י וְחָנֵּ֑נִי כִּֽי־יָחִ֖יד וְעָנִ֣י אָֽנִי׃",
+      "literal_backbone": [
+        "Turn to me and be gracious to me.",
+        "For I am alone and afflicted."
+      ],
+      "literal_rendering_id": "rnd.ps025.v016.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:16",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v016.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and poor, afflicted, needy, lowly",
+          "note": "Conveys suffering but does not express the word's broader associations with deprivation and lowly circumstances.",
+          "rendered_as": "and in pain",
+          "token_ids": [
+            "ps025.v016.t006"
+          ],
+          "transliteration": "wəʿānî",
+          "verdict": "narrowing"
         }
       ]
     }
@@ -343,6 +421,135 @@
       "unit_id": "ps025.v016.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8 target; two compact phrases with sustained final words.",
+      "differentiator": "Immediate appeal followed by exposed need",
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": 0.96,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 11,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.09,
+        "singability_score": 0.41,
+        "stress_approximation": 0.59,
+        "syllable_count": 14,
+        "syllables": 14
+      },
+      "pr_links": [],
+      "preserved_source_images": [
+        {
+          "label": "Turning toward the speaker",
+          "note": "Preserves the requested turn of attention.",
+          "source_id": "ps025.v016.a",
+          "token_ids": [
+            "ps025.v016.t001",
+            "ps025.v016.t002"
+          ]
+        }
+      ],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v016.t001–t003 → Turn to me, show me mercy",
+          "ps025.v016.t004–t007 → I'm alone and in pain"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:15:09.057654+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.cce9b0774eb1",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v016.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ada-3255-7591-8c22-e623d2774802"
+      },
+      "rationale": "Lets the preceding expectation give way to an immediate plea without resolving the speaker's isolation.",
+      "rendering_id": "rnd.ps025.v016.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כִּֽי־יָחִ֖יד וְעָנִ֣י אָֽנִי",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "כִּֽי־יָחִ֖יד וְעָנִ֣י אָֽנִי",
+        "token_ids": [
+          "ps025.v016.t004",
+          "ps025.v016.t005",
+          "ps025.v016.t006",
+          "ps025.v016.t007"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Turn to me, show me mercy;\nI'm alone and in pain.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v016.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v016.a",
+      "variation_basis": [
+        "Direct petition",
+        "Plain emotional speech"
       ]
     }
   ],

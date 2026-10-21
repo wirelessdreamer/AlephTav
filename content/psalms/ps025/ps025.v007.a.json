@@ -2,13 +2,16 @@
   "alignments": [],
   "alternate_rendering_ids": [
     "rnd.ps025.v007.a.literal.alt.0001",
-    "rnd.ps025.v007.a.lyric.alt.0001"
+    "rnd.ps025.v007.a.lyric.alt.0001",
+    "rnd.ps025.v007.a.lyric.alt.0002"
   ],
   "audit_ids": [
     "aud.ps025.v007.a.0001",
     "aud.ps025.v007.a.0002",
     "aud.ps025.v007.a.0003",
-    "aud.ps025.v007.a.0004"
+    "aud.ps025.v007.a.0004",
+    "aud.ps025.v007.a.0005",
+    "aud.ps025.v007.a.0006"
   ],
   "audit_records": [
     {
@@ -74,6 +77,38 @@
       "summary": "Record alignment hints",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7cae8c7f6a505b06fe7f52063ccc6a3d92c3f88f1fbd462795d042880c08daa7",
+      "audit_id": "aud.ps025.v007.a.0005",
+      "before_hash": "42a04e674d900f2b93821f306955558fe7a51b7c1949855a03e9c1716c8a5100",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:12:55.717985+00:00",
+      "created_by": "codex",
+      "entity_id": "rnd.ps025.v007.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Keeps the contrast between remembering offenses and remembering the person, answering the preceding unit.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "178fc5cee0025d06da701aa44e8827789ba5ac0403fdf971c09747398962c0dd",
+      "audit_id": "aud.ps025.v007.a.0006",
+      "before_hash": "dd7ddbb2f44638ffe70d8827739943dbb3435b53fa97e26bb45ebc3b223e4442",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-10-17T17:31:54.540266+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps025.v007.a.0002",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -113,6 +148,50 @@
           "lexical_gloss": "for the sake of your goodness",
           "note": "Preserves goodness as the basis of the appeal, while changing the explicit formulation from “for the sake of” to “because.”",
           "rendered_as": "because you're good",
+          "token_ids": [
+            "ps025.v007.t010",
+            "ps025.v007.t011"
+          ],
+          "transliteration": "ləmaʿan ṭûḇəḵā",
+          "verdict": "defensible"
+        }
+      ]
+    },
+    {
+      "accuracy_note": "Preserves youthful sins and transgressions, the contrast between not remembering offenses and remembering the speaker, and the appeals to God's loyal love and goodness.",
+      "accuracy_rating": "close",
+      "analyzed_text_hash": "e0c7e447df952ec3067e7a7a75e8fe179e23f405b0125be440dafe36fd8a9197",
+      "audit_ids": [
+        "aud.ps025.v007.a.0006"
+      ],
+      "comparison_id": "cmp.ps025.v007.a.0002",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Verbalizes transgressions as 'the times I rebelled,' leaves the emphatic 'you' unexpressed, and moves LORD before the final appeal.",
+      "display_reference": "Psalm 25:7",
+      "english_rendering_id": "rnd.ps025.v007.a.lyric.alt.0002",
+      "generation_run_id": "cxr.f48147681f41",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "חַטֹּ֤אות נְעוּרַ֨י׀ וּפְשָׁעַ֗י אַל־תִּ֫זְכֹּ֥ר כְּחַסְדְּךָ֥ זְכָר־לִי־אַ֑תָּה לְמַ֖עַן טוּבְךָ֣ יְהוָֽה׃",
+      "literal_backbone": [
+        "Do not remember the sins of my youth or my transgressions.",
+        "According to your loyal love, you, remember me, for your goodness' sake, Yahweh."
+      ],
+      "literal_rendering_id": "rnd.ps025.v007.a.literal.alt.0001",
+      "mt_reference": "Psalm 25:7",
+      "non_source_material": [],
+      "psalm_id": "ps025",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "for the sake of, on account of; goodness, beneficence",
+          "note": "Recasts an appeal for God's goodness' sake as an explanatory statement about God's character.",
+          "rendered_as": "because you are good",
           "token_ids": [
             "ps025.v007.t010",
             "ps025.v007.t011"
@@ -319,6 +398,119 @@
       "unit_id": "ps025.v007.a",
       "variation_basis": [
         "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": "6/8; three phrase pairs, with pickups where needed.",
+      "differentiator": "Memory petition turning from offenses to the speaker",
+      "drift_flags": [],
+      "grounding_confidence": 0.97,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 24,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.1,
+        "stress_approximation": 0.69,
+        "syllable_count": 37,
+        "syllables": 37
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "alignment_hints": [
+          "ps025.v007.t001–t005 → Don't remember the sins of my younger days, or the times I rebelled",
+          "ps025.v007.t006–t009 → In your faithful love, remember me",
+          "ps025.v007.t010–t012 → LORD, because you are good"
+        ],
+        "contract_validated": true,
+        "generated_at": "2026-10-17T17:12:55.524806+00:00",
+        "generator": "codex",
+        "guidance": "target 6/8 meter.",
+        "model": "gpt-6.1-sol",
+        "prompt_template_version": "codex-passage-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.bcbf0475c706",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "thread_id": "01a14ad7-3103-7921-b9eb-0f2d78ba2ec8",
+        "translation_basis": {
+          "basis_note": "Direct Hebrew translation.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "ps025.v007.a"
+          ],
+          "source_language": "Hebrew",
+          "source_version": "Masoretic Hebrew as supplied"
+        },
+        "turn_id": "01a14ad7-34eb-7c23-9b6f-2ffd9c0bcf97"
+      },
+      "rationale": "Keeps the contrast between remembering offenses and remembering the person, answering the preceding unit.",
+      "rendering_id": "rnd.ps025.v007.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": {
+        "anchor_text": "כְּחַסְדְּךָ֥ זְכָר־לִי־אַ֑תָּה",
+        "basis_note": "Supplied Hebrew.",
+        "source_language": "Hebrew",
+        "source_text": "כְּחַסְדְּךָ֥ זְכָר־לִי־אַ֑תָּה",
+        "token_ids": [
+          "ps025.v007.t006",
+          "ps025.v007.t007",
+          "ps025.v007.t008",
+          "ps025.v007.t009"
+        ]
+      },
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Don't remember the sins\nof my younger days,\nor the times I rebelled.\nIn your faithful love,\nremember me, LORD,\nbecause you are good.",
+      "translation_basis": {
+        "basis_note": "Direct Hebrew translation.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "ps025.v007.a"
+        ],
+        "source_language": "Hebrew",
+        "source_version": "Masoretic Hebrew as supplied"
+      },
+      "translation_id": "tr.ps025.0001",
+      "unit_id": "ps025.v007.a",
+      "variation_basis": [
+        "Remember/don't remember contrast",
+        "Verbal rendering of rebellion"
       ]
     }
   ],

@@ -10,7 +10,7 @@ from app.core.errors import ValidationError
 from app.llm.strict_schema import strict_output_schema
 from app.services import codex_app_server_service as codex
 from app.services import codex_translation_service as translation
-from app.services import generation_service, registry_service
+from app.services import composer_suggestion_service, generation_service, registry_service
 
 UNIT_ID = "ps001.v001.a"
 
@@ -221,7 +221,36 @@ def test_a_septuagint_claim_without_greek_behind_it_is_rejected() -> None:
         translation.save_run_candidates(run["run_id"])
 
 
-def test_a_septuagint_candidate_with_greek_behind_it_completes() -> None:
+@pytest.mark.parametrize(
+    "source_text", ["אשרי האיש", "blessed is the man", "", " ", ";", "μακάριος האיש"]
+)
+def test_greek_basis_checks_reject_non_greek_anchors_across_paths(source_text: str) -> None:
+    payload = _valid_payload()
+    candidate = payload["candidates"][0]
+    candidate["translation_basis"].update(
+        basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+    )
+    candidate["source_anchor"].update(source_language="grc", source_text=source_text)
+    assert not list(generation_service.OUTPUT_VALIDATOR.iter_errors(payload))
+    assert generation_service._source_basis_drift_flags(
+        candidate["translation_basis"], candidate["source_anchor"]
+    )
+    assert composer_suggestion_service._source_basis_drift_codes(
+        candidate["translation_basis"], candidate["source_anchor"]
+    )
+    client = _client(json.dumps(payload))
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+
+    run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
+
+    assert run["status"] == translation.RUN_INVALID_OUTPUT
+    assert run["payload"] is None
+    assert [item["path"] for item in run["validation"]] == ["candidates/0"]
+    with pytest.raises(ValidationError):
+        translation.save_run_candidates(run["run_id"])
+
+
+def test_greek_script_does_not_supply_missing_generation_source_resolver() -> None:
     payload = _valid_payload()
     candidate = payload["candidates"][0]
     candidate["translation_basis"].update(
@@ -234,7 +263,28 @@ def test_a_septuagint_candidate_with_greek_behind_it_completes() -> None:
     session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
     run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
 
-    assert run["status"] == translation.RUN_COMPLETED
+    assert run["status"] == translation.RUN_INVALID_OUTPUT
+    assert "source approval" in run["validation"][0]["message"]
+
+
+def test_unapproved_greek_candidate_cannot_be_saved_as_a_new_rendering() -> None:
+    payload = _valid_payload()
+    candidate = payload["candidates"][0]
+    candidate["translation_basis"].update(
+        basis_type="septuagint_greek_to_english", source_ids=["lxx"], source_language="grc"
+    )
+    candidate["source_anchor"].update(
+        anchor_text="μακάριος", source_language="grc", source_text="μακάριος ἀνήρ"
+    )
+    candidate["variation_basis"] = ["greek_source_wording"]
+    client = _client(json.dumps(payload))
+    session = translation.create_session(client, psalm_id="ps001", unit_id=UNIT_ID)
+    run = translation.run_translation_turn(client, session["session_id"], UNIT_ID, "lyric")
+
+    before = registry_service.load_unit(UNIT_ID)
+    with pytest.raises(ValidationError, match="no validated payload"):
+        translation.save_run_candidates(run["run_id"])
+    assert registry_service.load_unit(UNIT_ID) == before
 
 
 def test_saved_candidates_are_always_proposed_and_carry_codex_provenance() -> None:
