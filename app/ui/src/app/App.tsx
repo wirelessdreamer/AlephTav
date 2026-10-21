@@ -20,6 +20,7 @@ function AppContent() {
 }
 
 export function App() {
+  if (import.meta.env.VITE_PUBLIC_SITE === 'true') return <WelcomePage />;
   return (
     <AppRuntimeProvider>
       <AppContent />

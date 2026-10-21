@@ -1,34 +1,36 @@
-# AlephTav Visual Translation Flow Engine
+# AlephTav — Psalms Translation Workbench
 
-Local-first Hebrew-to-English translation workbench for Psalms. AlephTav is designed around a visual translation flow: Hebrew tokens, lexical and morphology evidence, layered English renderings, alignment decisions, reviewer actions, audit state, and release export all stay visible in one reviewable workflow.
+Local-first Psalms translation and song-arrangement workbench. Study Hebrew and edition-mapped Greek word by word, save briefing decisions that guide translation, and follow source contributions into English lyrics through a visible flow map and decision trail.
 
 GitHub Pages welcome site: https://wirelessdreamer.github.io/AlephTav/
 
-![Live translation flow workbench](app/ui/public/screenshots/live-translation-flow.png)
+## Features in the current application
 
-## Visual Translation Flow Engine
-
-The workbench is not just a text editor or backend corpus pipeline. Its main surface is a guided translation console that lets reviewers move from Hebrew source evidence to English rendering decisions without losing provenance.
+The desktop workbench brings together Verses, Arrangement, Sources, Liberties, and Raw text. A focused phone interface offers verse comparison, word evidence, and review, with a Full workbench option for the advanced tools.
 
 ```mermaid
 flowchart LR
-  A["Hebrew token source"] --> B["Lexical and morphology inspection"]
-  B --> C["Layered rendering composer"]
-  C --> D["Alignment and claim controls"]
-  D --> E["Review and audit trail"]
-  E --> F["Release export"]
-  C --> G["Local model candidate runs"]
-  G --> D
+  A["Hebrew source"] --> B["Word study and translator briefing"]
+  G["Edition-mapped Greek source"] --> B
+  B --> C["Saved answers and guidance"]
+  C --> D["English translation and song arrangement"]
+  A --> E["Source flow and phrase contributions"]
+  G --> E
+  D --> E
+  E --> F["Decision history, review, and permitted exports"]
 ```
 
-- Hebrew source pane: token-level Hebrew display with hover, selection, pinning, lexical cards, Strong's data, morphology, syntax, semantic roles, glosses, and corpus usage.
-- Flow composer: word, phrase, concept, lyric, metered lyric, and parallelism-aware pathways that make each translation decision visible before it becomes a verse line.
-- English rendering pane: canonical and alternate renderings by layer, with span-level links back to Hebrew tokens and provenance tags for source and generator accountability.
-- Guided decision rail: focused candidate comparison, word aids, concordance entry points, retrieval support nodes, and warning visibility for coverage, drift, confidence, and provenance gaps.
-- Review drawer: alignment creation and editing, rendering promotion or rejection, comparison, reviewer signoff, audit notes, and release export.
-- Assistant panel: conversational help with workbench context, local model profile settings, action previews, and guarded client-side actions.
+- **Hebrew and Greek word study:** interlinear meanings, lexical details, morphology, matching hover outlines, and click-to-open studies in Sources. Pinned studies support keyboard access and close on outside clicks.
+- **Translator briefing:** contextual questions include Hebrew, Greek, and literal reading aids. Answers and notes save automatically, restore with the translation, and guide subsequent translation without a separate copy into guidance.
+- **Source flow and decision trail:** a visible left-to-right map links sources to the English setting, shows Hebrew and Greek contributions to mixed phrases, follows the source verse while scrolling, and highlights matching English lines.
+- **Arrangements and context:** edit stanzas, choruses, repeats, and added lines. Saved line explanations also appear as a Context section in Sources, with unanchored additions labeled clearly.
+- **Projects, imports, and history:** organize separate translations, import lyrics, compare literal and lyrical readings, annotate accuracy and creative liberties, and inspect the guidance and decisions used for translations and rebuilds.
+- **Reading and recovery:** focused phone views and a full-workbench switch; task-specific loading messages, failure feedback, and retries; saved content remains visible during comparison refreshes.
+- **Assistant and export tools:** configured Codex assistance for briefing, translation, and analysis; contextual chat; Markdown, CSV, and print/PDF controls, plus policy-gated release bundles.
 
-The goal is not a black-box translation oracle. AlephTav is an evidence-preserving review engine where every English decision can be inspected against the Hebrew source, source policy, textual evidence, reviewer judgment, and audit state.
+The translation workspace focuses on Psalms. Greek lexical lookup resources cover Septuagint and Greek New Testament forms; that does not imply a complete New Testament translation interface. Preview sources, proposed lexical matches, and unresolved words remain labeled. Word glosses are reading aids rather than reviewed sentence translations. Display, generation, and export depend on installed source packages and their permissions; canonical promotion and release retain reviewer approval requirements.
+
+GitHub Pages hosts the feature and setup site. The actual workbench, saved projects, and assistant connections run locally against the API.
 
 ## What The Project Includes
 
@@ -41,7 +43,7 @@ The goal is not a black-box translation oracle. AlephTav is an evidence-preservi
 
 ## Run The Workbench
 
-Use the platform setup script from the repo root. It verifies required runtimes, installs dependencies, runs the default rebuild pipeline, and starts both the FastAPI backend and Vite UI.
+Use the platform setup script from the repo root. It verifies required runtimes, installs dependencies, prepares source data and derived indexes, and starts both the FastAPI backend and Vite UI. The PowerShell setup reuses tracked rebuild state when its outputs are current.
 
 ### macOS / Linux
 
@@ -116,7 +118,7 @@ Refresh the generated documentation screenshots with:
 npm run capture:screenshots
 ```
 
-When Playwright can launch in your environment, this writes PNG views under `app/ui/public/screenshots/`. The README leads with a live workbench capture of the actual translation flow:
+When Playwright can launch in your environment, this writes PNG views under `app/ui/public/screenshots/`. The committed capture below is a development reference; the feature list above describes the current workbench:
 
 - `app/ui/public/screenshots/live-translation-flow.png`
 

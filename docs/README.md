@@ -5,6 +5,8 @@ This project publishes a static GitHub Pages welcome page, but the actual transl
 Start here:
 
 - [`../README.md`](../README.md): local setup, quick demo run, screenshot refresh, and test commands
+- [`../README.md#features-in-the-current-application`](../README.md#features-in-the-current-application): implemented briefing, source flow, word study, arrangement, history, and phone workflows
+- [`LOADING_FEEDBACK_AUDIT.md`](LOADING_FEEDBACK_AUDIT.md): loading, failure recovery, and browser verification across the application
 
 Core workflow and policy docs:
 
