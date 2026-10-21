@@ -7,6 +7,7 @@ const query = { ...identity, query_kind: 'surface', value: 'λόγος', analysi
 const token = { token_id: 'lxx.authored.r0001.ps001.v001.t001', surface: 'λόγος', position: 1 };
 
 async function fixtures(page: Page, staleFirstPage = false) {
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({
     visibility: 'closed', placement: 'footer',
   })));

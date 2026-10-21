@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 
 async function briefingFixture(page: Page, { sourceGate = undefined as Promise<void> | undefined, briefingGate = undefined as Promise<void> | undefined, preview = true, generation = false, lexical = false, missing = false, review = false, markVariant = false, long = false, literal = null as string | null, decisions = false, inference = false } = {}) {
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({ visibility: 'closed', placement: 'footer' })));
   const tokenId = 'lxx.authored.r0001.ps025.v001.t001';
   const identity = { study_snapshot_id: 'study.fixture', policy_revision_id: 'policy.fixture' };

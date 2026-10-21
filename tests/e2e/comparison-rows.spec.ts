@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('imported untranslated headings stay separate from Hebrew and align with verse rows', async ({ page }, testInfo) => {
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({ visibility: 'closed', placement: 'footer' })));
   const row = (verse: number, heading = false) => ({
     mt_reference: `Psalm 8:${verse}`, display_reference: heading ? 'Psalm 8 heading' : `Psalm 8:${verse - 1}`,

@@ -62,7 +62,13 @@ suite covers briefing persistence, Greek studies, source flow, word mouseovers,
 outside dismissal, responsive layout and scroll following. Production build and
 canonical content validation are required alongside browser verification.
 
-Verified result: all 42 fixture browser tests passed, including nine loading and
+Verified result: all 43 fixture browser tests passed, including ten loading and
 recovery tests; production TypeScript/Vite build passed; content validation
 checked 2,694 files with zero errors. Provider generation and content-writing
 operations were not run against the user's corpus for this UI audit.
+
+The merged phone interface uses the same startup and comparison feedback. Its
+Full workbench button retains access to Sources, arrangements, briefing and
+advanced editing; Phone view returns to the focused reading interface. The
+choice persists across reloads. Desktop assistant feedback remains available,
+while the phone interface retains its screen without an assistant overlay.

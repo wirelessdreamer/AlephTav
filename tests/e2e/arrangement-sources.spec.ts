@@ -21,6 +21,7 @@ function evidence() {
 }
 
 async function mountedFixture(page: Page, blocked = false, long = false, preview = false, origins = false, tallSources = false, extraMatches = false, context = false) {
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({
     visibility: 'closed', placement: 'footer',
   })));

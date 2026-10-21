@@ -4,6 +4,7 @@ import { useAppRuntime } from '../app/AppContext';
 import { MoveTranslationDialog } from '../components/MoveTranslationDialog';
 import { RequestStatus } from '../components/RequestStatus';
 import { GreekStudyPanel } from '../components/GreekStudyPanel';
+import { PhoneComparison } from '../components/PhoneComparison';
 import { TranslationComparisonTable } from '../components/TranslationComparisonTable';
 import {
   useCollections,
@@ -13,6 +14,7 @@ import {
   useRenameCollection,
   useSetCollectionLicense,
 } from '../hooks/useTranslations';
+import { useIsPhone } from '../hooks/useIsPhone';
 import { usePsalms } from '../hooks/useWorkbench';
 import type { PsalmSummary } from '../types';
 
@@ -45,6 +47,7 @@ function detail(error: Error): string {
  */
 export function ComparisonPage() {
   const { workbenchSelection, updateWorkbenchSelection } = useAppRuntime();
+  const phone = useIsPhone();
   const psalmsQuery = usePsalms();
   const psalms = (psalmsQuery.data ?? []) as PsalmSummary[];
   const collectionsQuery = useCollections();
@@ -70,6 +73,13 @@ export function ComparisonPage() {
   const [addPsalmId, setAddPsalmId] = useState('');
   /** The project the translation on show would move to, while the move awaits confirmation. */
   const [moveTarget, setMoveTarget] = useState<string | null>(null);
+  const [fullWorkbench, setFullWorkbench] = useState(() => {
+    try { return localStorage.getItem('aleph-tav.full-workbench') === 'true'; } catch { return false; }
+  });
+  function chooseFullWorkbench(full: boolean) {
+    setFullWorkbench(full);
+    try { localStorage.setItem('aleph-tav.full-workbench', String(full)); } catch { /* Session preference still works. */ }
+  }
 
   const psalmTitle = (id: string) => psalms.find((p) => p.psalm_id === id)?.title ?? id;
 
@@ -104,8 +114,33 @@ export function ComparisonPage() {
   const namingError = createCollection.error ?? renameCollection.error;
   const outside = psalms.filter((psalm) => !members.some((m) => m.psalm_id === psalm.psalm_id));
 
+  // A phone reads the same psalm as three screens; project and psalm management
+  // stays on the desktop, where there is room for it.
+  const startupNotice = <>
+    <RequestStatus loading={collectionsQuery.isLoading} error={collectionsQuery.error}
+      label={collectionsQuery.isLoading ? 'Loading projects…' : 'Could not load projects.'}
+      onRetry={() => void collectionsQuery.refetch()} />
+    <RequestStatus loading={psalmsQuery.isLoading} error={psalmsQuery.error}
+      label={psalmsQuery.isLoading ? 'Loading psalms…' : 'Could not load psalms.'}
+      onRetry={() => void psalmsQuery.refetch()} />
+  </>;
+  if (phone && !fullWorkbench) {
+    return (
+      <PhoneComparison
+        psalms={psalms}
+        collections={collections}
+        collection={collection}
+        psalmId={psalmId}
+        translationId={translationId}
+        startupNotice={startupNotice}
+        onFullWorkbench={() => chooseFullWorkbench(true)}
+      />
+    );
+  }
+
   return (
     <main className="comparison-shell">
+      {phone ? <button type="button" onClick={() => chooseFullWorkbench(false)}>Phone view</button> : null}
       <header className="comparison-shell__header">
         <div className="comparison-shell__title">
           <a className="brand-home" href="#/" aria-label="AlephTav home">
@@ -355,12 +390,7 @@ export function ComparisonPage() {
         }}
       />
 
-      <RequestStatus loading={collectionsQuery.isLoading} error={collectionsQuery.error}
-        label={collectionsQuery.isLoading ? 'Loading projects…' : 'Could not load projects.'}
-        onRetry={() => void collectionsQuery.refetch()} />
-      <RequestStatus loading={psalmsQuery.isLoading} error={psalmsQuery.error}
-        label={psalmsQuery.isLoading ? 'Loading psalms…' : 'Could not load psalms.'}
-        onRetry={() => void psalmsQuery.refetch()} />
+      {startupNotice}
       {setCollectionLicense.isPending ? <RequestStatus loading label="Saving project license…" /> : null}
       <GreekStudyPanel
         collectionId={collection?.collection_id ?? null}

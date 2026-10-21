@@ -7046,3 +7046,493 @@ button.composer-path-chip {
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------- *
+ * Phone layout                                                      *
+ *                                                                   *
+ * The comparison surface as three screens over one verse, reached    *
+ * from the bar at the bottom. It keeps the warm ink palette the      *
+ * shell already defines; only the layout changes. Every control is   *
+ * at least 48px, the touch target the designs were checked against.  *
+ * ---------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  /* The welcome route reserves a 320px assistant column that a phone has no
+     room for; one column keeps the page inside the viewport. */
+  .app-shell--assistant-side {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.comparison-shell--phone {
+  gap: 0;
+  padding: 0 0 calc(4.5rem + env(safe-area-inset-bottom));
+  overflow-x: hidden;
+}
+
+:where(.comparison-shell--phone) button {
+  min-height: 48px;
+  height: auto;
+  padding: 0 0.9rem;
+  font-size: 0.85rem;
+}
+
+:where(.comparison-shell--phone) :is(select, textarea, input) {
+  min-height: 48px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.phone-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem 0.5rem;
+}
+
+.phone-brand__mark {
+  display: grid;
+  place-items: center;
+  /* A touch target like any other, so the whole surface clears 48px. */
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border: 1px solid var(--gold);
+  border-radius: 11px;
+  color: var(--gold-hi);
+  font-family: var(--hebrew);
+  font-size: 1.25rem;
+  direction: rtl;
+  text-decoration: none;
+}
+
+.phone-brand__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.phone-brand__eyebrow {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-context {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 0.6rem;
+}
+
+.phone-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.phone-picker--psalm {
+  flex: 0 1 9rem;
+}
+
+.phone-picker span {
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.phone-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.2rem 1rem 0.6rem;
+}
+
+.phone-title h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.phone-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex: none;
+}
+
+.phone-stepper span {
+  min-width: 4.2rem;
+  text-align: center;
+  color: var(--gold-hi);
+  font-size: 0.78rem;
+}
+
+:where(.comparison-shell--phone) .phone-stepper button {
+  width: 48px;
+  padding: 0;
+  border-color: var(--line);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.phone-main {
+  padding: 0 1rem;
+}
+
+.phone-card {
+  margin-bottom: 0.65rem;
+  padding: 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.phone-card--source {
+  border-color: #62502b;
+  background: linear-gradient(160deg, #211c13, var(--panel));
+}
+
+.phone-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.phone-label {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.phone-label--gold {
+  color: var(--gold-hi);
+}
+
+.phone-tag {
+  flex: none;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  background: var(--raised);
+  color: var(--text-soft);
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
+
+.phone-tag--proposed,
+.phone-tag--draft {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.phone-tag--canonical,
+.phone-tag--accepted_as_alternate {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.phone-tag--rejected {
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.phone-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.6rem 0 0.1rem;
+}
+
+:where(.comparison-shell--phone) .phone-token {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  min-width: 4.5rem;
+  min-height: 4.4rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.phone-token__hebrew {
+  font-family: var(--hebrew);
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+.phone-token__gloss {
+  color: var(--text-soft);
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+:where(.comparison-shell--phone) .phone-token--selected {
+  border-color: var(--gold);
+  background: #2e2719;
+}
+
+.phone-token--selected .phone-token__gloss {
+  color: var(--gold-hi);
+}
+
+.phone-hint,
+.phone-caption {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.phone-text {
+  margin: 0.45rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.phone-text--literal {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.phone-text mark {
+  border-radius: 4px;
+  background: #2e2719;
+  color: var(--gold-hi);
+  padding: 0 0.15rem;
+}
+
+.phone-provenance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.phone-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.phone-fidelity--close {
+  color: var(--good);
+}
+
+.phone-fidelity--interpret {
+  color: var(--warn);
+}
+
+.phone-fidelity--caution {
+  color: var(--bad);
+}
+
+.phone-warnings {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.phone-warning {
+  display: flex;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #564625;
+  border-radius: 10px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.phone-warning strong {
+  font-weight: 600;
+}
+
+/* The kinds are recorded lower case (non_source_material, section_label). */
+.phone-warning__kind {
+  text-transform: capitalize;
+}
+
+.phone-warning__icon {
+  flex: none;
+}
+
+.phone-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+}
+
+:where(.comparison-shell--phone) .phone-action--primary {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+:where(.comparison-shell--phone) .phone-wide {
+  width: 100%;
+  margin-top: 0.65rem;
+}
+
+:where(.comparison-shell--phone) .phone-chip {
+  min-height: 48px;
+  padding: 0 0.6rem;
+  font-size: 0.65rem;
+}
+
+:where(.comparison-shell--phone) .phone-back {
+  width: 100%;
+  border-color: transparent;
+  background: none;
+  color: var(--gold-hi);
+}
+
+.phone-word {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0 0.7rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.phone-word__hebrew {
+  flex: none;
+  font-family: var(--hebrew);
+  font-size: 2.1rem;
+  line-height: 1.4;
+}
+
+.phone-word__ids {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.phone-definition {
+  margin: 0.7rem 0 0.6rem;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.phone-details {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.phone-details > div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.phone-details dt {
+  color: var(--muted);
+}
+
+.phone-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.phone-source-line {
+  margin: 0.6rem 0 0;
+  font-family: var(--hebrew);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.phone-form {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.phone-form label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.phone-form label span {
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.phone-requirement {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.phone-requirement__mark {
+  flex: none;
+  color: var(--gold);
+}
+
+.phone-note {
+  margin: 0.5rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.phone-note strong {
+  color: var(--text);
+  text-transform: capitalize;
+}
+
+.phone-nav {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+  background: #191610;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:where(.comparison-shell--phone) .phone-nav button {
+  min-height: 4.1rem;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+:where(.comparison-shell--phone) .phone-nav button.is-current {
+  color: var(--gold-hi);
+  box-shadow: inset 0 2px 0 var(--gold);
+}

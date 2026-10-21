@@ -17,6 +17,7 @@ const arrangementView = { arrangement, sung: [], coverage: { units: [], totals: 
   liberties: [], summary: { sung_lines: 0, open: 0, by_kind: {} }, required_approvals: {} };
 
 async function fixture(page: Page) {
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({ visibility: 'closed', placement: 'footer' })));
   await page.route('**/assistant/**', route => route.fulfill({ status: 503, json: { detail: 'Authored unavailable service' } }));
   await page.route('**/codex/**', route => route.fulfill({ json: { status: 'ready' } }));
@@ -183,4 +184,22 @@ test('an initially open assistant does not duplicate or orphan its session reque
   await page.goto('/#/workbench');
   await expect(page.getByRole('alert').filter({ hasText: 'Could not start the assistant.' })).toBeVisible();
   expect(starts).toBe(1);
+});
+
+test('phone layout keeps loading feedback and offers the complete Sources workspace', async ({ page }) => {
+  await fixture(page);
+  await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'false'));
+  await page.setViewportSize({ width: 430, height: 900 });
+  const release = await hold(page, '**/psalms/ps009/comparison-table?*', { psalm_id: 'ps009', title: 'Psalm 9', rows: [row], analysis: null });
+  await page.goto('/#/workbench');
+  await expect(page.getByRole('heading', { name: 'Verse comparison', exact: true })).toBeVisible();
+  await expect(page.getByRole('status').filter({ hasText: 'Loading Psalm 9…' })).toBeVisible();
+  await expect(page.getByText('This psalm has no verses in this translation yet.', { exact: true })).toHaveCount(0);
+  release();
+  await expect(page.getByText('Authored lyric', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Full workbench', exact: true }).click();
+  await page.getByRole('button', { name: 'Sources', exact: true }).click();
+  await expect(page.getByRole('textbox', { name: 'Setting title' })).toHaveValue('Authored setting');
+  await page.getByRole('button', { name: 'Phone view', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Verse comparison', exact: true })).toBeVisible();
 });
