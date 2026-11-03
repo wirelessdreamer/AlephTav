@@ -204,6 +204,12 @@
 - 2026-09-28T18:23:09.122061+00:00: Create song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
 - 2026-09-28T18:23:49.435452+00:00: Create song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
 - 2026-09-28T18:25:24.496236+00:00: Delete song setting “Psalm 5 — At First Light (Smooth Delivery Draft)” (codex:psalm5-smoothing)
+- 2026-10-05T17:45:27.028433+00:00: Create rendering (codex)
+- 2026-10-05T17:45:59.694774+00:00: Move translation “Bone and Ash” to “Placeholder” (reviewer)
+- 2026-10-05T17:46:15.624214+00:00: Create rendering (codex)
+- 2026-10-05T17:46:34.094484+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-05T17:52:50.875473+00:00: Create song setting “Every Morning” (import)
+- 2026-10-05T17:59:42.634119+00:00: Record psalm analysis (codex-analysis)
 
 ## ps005.v002.a
 - 2026-09-27T01:56:03.737603+00:00: Create rendering (import)
@@ -213,6 +219,8 @@
 - 2026-09-28T15:59:23.915667+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.381132+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.117401+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.556589+00:00: Create rendering (import)
+- 2026-10-05T17:53:14.794170+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v003.a
 - 2026-09-27T01:56:03.768428+00:00: Create rendering (import)
@@ -222,6 +230,8 @@
 - 2026-09-28T15:59:23.925367+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.390237+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.134806+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.588129+00:00: Create rendering (import)
+- 2026-10-05T17:53:35.408919+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v004.a
 - 2026-09-27T01:56:03.798772+00:00: Create rendering (import)
@@ -231,6 +241,8 @@
 - 2026-09-28T15:59:23.937818+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.398774+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.155364+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.631831+00:00: Create rendering (import)
+- 2026-10-05T17:54:00.680475+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v005.a
 - 2026-09-27T01:56:03.833581+00:00: Create rendering (import)
@@ -240,6 +252,8 @@
 - 2026-09-28T15:59:23.949341+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.407316+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.171769+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.664738+00:00: Create rendering (import)
+- 2026-10-05T17:54:27.543650+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v006.a
 - 2026-09-27T01:56:03.871788+00:00: Create rendering (import)
@@ -249,6 +263,8 @@
 - 2026-09-28T15:59:23.959422+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.417350+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.190051+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.698019+00:00: Create rendering (import)
+- 2026-10-05T17:54:39.043234+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v007.a
 - 2026-09-27T01:56:03.903666+00:00: Create rendering (import)
@@ -258,6 +274,8 @@
 - 2026-09-28T15:59:23.967622+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.425172+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.210292+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.730536+00:00: Create rendering (import)
+- 2026-10-05T17:54:58.037174+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v008.a
 - 2026-09-27T01:56:03.940211+00:00: Create rendering (import)
@@ -267,6 +285,8 @@
 - 2026-09-28T15:59:23.978115+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.439524+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.239123+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.764081+00:00: Create rendering (import)
+- 2026-10-05T17:55:20.026485+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v009.a
 - 2026-09-27T01:56:03.972810+00:00: Create rendering (import)
@@ -276,6 +296,8 @@
 - 2026-09-28T15:59:23.989045+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.451544+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.253322+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.794791+00:00: Create rendering (import)
+- 2026-10-05T17:55:42.729548+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v010.a
 - 2026-09-27T01:56:04.010405+00:00: Create rendering (import)
@@ -285,6 +307,8 @@
 - 2026-09-28T15:59:23.999241+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.463305+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.267745+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.830631+00:00: Create rendering (import)
+- 2026-10-05T17:55:59.722786+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v011.a
 - 2026-09-27T01:56:04.046452+00:00: Create rendering (import)
@@ -294,6 +318,8 @@
 - 2026-09-28T15:59:24.010341+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.473050+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.282280+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.865674+00:00: Create rendering (import)
+- 2026-10-05T17:56:29.094169+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v012.a
 - 2026-09-27T01:56:04.084647+00:00: Create rendering (import)
@@ -303,6 +329,8 @@
 - 2026-09-28T15:59:24.020425+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.486498+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.299652+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.896057+00:00: Create rendering (import)
+- 2026-10-05T17:56:55.874430+00:00: Create comparison assessment (codex-analysis)
 
 ## ps005.v013.a
 - 2026-09-27T01:56:04.131728+00:00: Create rendering (import)
@@ -312,6 +340,8 @@
 - 2026-09-28T15:59:24.030588+00:00: Create rendering (codex:psalm5-isolated-meter)
 - 2026-09-28T17:25:43.498703+00:00: Move rendering to tr.ps005.0003 (codex:psalm5-project-transfer)
 - 2026-09-28T18:23:09.434332+00:00: Create rendering (codex:psalm5-smoothing)
+- 2026-10-05T17:50:14.931136+00:00: Create rendering (import)
+- 2026-10-05T17:57:19.955592+00:00: Create comparison assessment (codex-analysis)
 
 ## ps006.v001.a
 - 2026-09-27T15:28:16.393879+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
@@ -492,6 +522,8 @@
 - 2026-09-28T01:27:04.754403+00:00: Create comparison assessment (codex-analysis)
 
 ## ps009.v001.a
+- 2026-10-11T14:54:36.350396+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-17T18:15:22.636954+00:00: Preserve earlier translator's briefing (briefing-history-migration)
 
 ## ps009.v002.a
 
@@ -971,132 +1003,180 @@
 - 2026-09-25T21:31:00.872040+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-25T21:35:04.782829+00:00: Record psalm analysis (codex-analysis)
 - 2026-09-26T15:02:01.466622+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T15:58:59.660526+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-17T17:12:55.611087+00:00: Create rendering (codex)
+- 2026-10-17T17:30:45.477322+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T17:36:41.392709+00:00: Record psalm analysis (codex-analysis)
+- 2026-10-17T17:52:09.040348+00:00: Create song setting “Show Me Your Ways — Psalm 25” (codex)
+- 2026-10-17T18:15:22.647924+00:00: Preserve earlier translator's briefing (briefing-history-migration)
 
 ## ps025.v002.a
 - 2026-09-25T19:51:38.760976+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.158049+00:00: Create rendering (codex)
 - 2026-09-25T21:31:07.732590+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.470448+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.627114+00:00: Create rendering (codex)
+- 2026-10-17T17:30:55.098662+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v003.a
 - 2026-09-25T19:51:38.767506+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.166969+00:00: Create rendering (codex)
 - 2026-09-25T21:31:15.891239+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.474333+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.642013+00:00: Create rendering (codex)
+- 2026-10-17T17:31:06.033018+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v004.a
 - 2026-09-25T19:51:38.775806+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.175010+00:00: Create rendering (codex)
 - 2026-09-25T21:31:21.054797+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.477581+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.655935+00:00: Create rendering (codex)
+- 2026-10-17T17:31:12.894585+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v005.a
 - 2026-09-25T19:51:38.785613+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.185600+00:00: Create rendering (codex)
 - 2026-09-25T21:31:34.483535+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.481478+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.667210+00:00: Create rendering (codex)
+- 2026-10-17T17:31:27.834857+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v006.a
 - 2026-09-25T19:51:38.792300+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.196613+00:00: Create rendering (codex)
 - 2026-09-25T21:31:44.663107+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.485318+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.694398+00:00: Create rendering (codex)
+- 2026-10-17T17:31:41.560266+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v007.a
 - 2026-09-25T19:51:38.803033+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.206703+00:00: Create rendering (codex)
 - 2026-09-25T21:31:57.358800+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.488935+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.717985+00:00: Create rendering (codex)
+- 2026-10-17T17:31:54.540266+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v008.a
 - 2026-09-25T19:51:38.812619+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.214705+00:00: Create rendering (codex)
 - 2026-09-25T21:32:02.685066+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.492958+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.733714+00:00: Create rendering (codex)
+- 2026-10-17T17:31:58.607970+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v009.a
 - 2026-09-25T19:51:38.822902+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.224256+00:00: Create rendering (codex)
 - 2026-09-25T21:32:10.418522+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.496097+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.752633+00:00: Create rendering (codex)
+- 2026-10-17T17:32:04.482175+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v010.a
 - 2026-09-25T19:51:38.829640+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.234425+00:00: Create rendering (codex)
 - 2026-09-25T21:32:19.789930+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.499843+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.779219+00:00: Create rendering (codex)
+- 2026-10-17T17:32:19.381671+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v011.a
 - 2026-09-25T19:51:38.838140+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.244950+00:00: Create rendering (codex)
 - 2026-09-25T21:32:27.465207+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.503921+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.796664+00:00: Create rendering (codex)
+- 2026-10-17T17:32:30.180647+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v012.a
 - 2026-09-25T19:51:38.845273+00:00: Create rendering (codex)
 - 2026-09-25T19:55:47.254610+00:00: Create rendering (codex)
 - 2026-09-25T21:32:34.680572+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.507605+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:12:55.814251+00:00: Create rendering (codex)
+- 2026-10-17T17:32:45.474324+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v013.a
 - 2026-09-25T19:59:14.733523+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.828270+00:00: Create rendering (codex)
 - 2026-09-25T21:32:45.314566+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.510868+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.169925+00:00: Create rendering (codex)
+- 2026-10-17T17:32:57.493849+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v014.a
 - 2026-09-25T19:59:14.740421+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.834799+00:00: Create rendering (codex)
 - 2026-09-25T21:32:54.706340+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.513872+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.187923+00:00: Create rendering (codex)
+- 2026-10-17T17:33:08.057131+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v015.a
 - 2026-09-25T19:59:14.747118+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.842890+00:00: Create rendering (codex)
 - 2026-09-25T21:33:00.265929+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.517382+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.204656+00:00: Create rendering (codex)
+- 2026-10-17T17:33:13.726413+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v016.a
 - 2026-09-25T19:59:14.753145+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.848395+00:00: Create rendering (codex)
 - 2026-09-25T21:33:11.279725+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.520745+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.233207+00:00: Create rendering (codex)
+- 2026-10-17T17:33:22.799586+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v017.a
 - 2026-09-25T19:59:14.759859+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.854418+00:00: Create rendering (codex)
 - 2026-09-25T21:33:20.928745+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.523257+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.248932+00:00: Create rendering (codex)
+- 2026-10-17T17:33:37.151523+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v018.a
 - 2026-09-25T19:59:14.767493+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.865694+00:00: Create rendering (codex)
 - 2026-09-25T21:33:32.873884+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.526763+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.272932+00:00: Create rendering (codex)
+- 2026-10-17T17:33:49.424610+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v019.a
 - 2026-09-25T19:59:14.774006+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.876594+00:00: Create rendering (codex)
 - 2026-09-25T21:33:39.040224+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.529813+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.288532+00:00: Create rendering (codex)
+- 2026-10-17T17:34:05.965753+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v020.a
 - 2026-09-25T19:59:14.782577+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.885809+00:00: Create rendering (codex)
 - 2026-09-25T21:33:44.474362+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.532831+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.318145+00:00: Create rendering (codex)
+- 2026-10-17T17:34:20.864166+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v021.a
 - 2026-09-25T19:59:14.789806+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.898026+00:00: Create rendering (codex)
 - 2026-09-25T21:33:51.221336+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.536025+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.335012+00:00: Create rendering (codex)
+- 2026-10-17T17:34:29.625839+00:00: Create comparison assessment (codex-analysis)
 
 ## ps025.v022.a
 - 2026-09-25T19:59:14.799169+00:00: Create rendering (codex)
 - 2026-09-25T20:02:16.906146+00:00: Create rendering (codex)
 - 2026-09-25T21:34:00.534121+00:00: Create comparison assessment (codex-analysis)
 - 2026-09-26T15:02:01.539542+00:00: Record alignment hints (codex-backfill)
+- 2026-10-17T17:15:09.353924+00:00: Create rendering (codex)
+- 2026-10-17T17:34:36.556224+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v001.a
 
@@ -2862,46 +2942,258 @@
 ## ps076.v013.a
 
 ## ps077.v001.a
+- 2026-10-10T19:38:22.049877+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-10T19:42:01.397124+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.340267+00:00: Create rendering (codex)
+- 2026-10-10T19:52:02.093557+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.058339+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.932109+00:00: Create rendering (codex)
+- 2026-10-10T21:12:21.987434+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:21.999373+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-10T21:15:50.407112+00:00: Record psalm analysis (codex-analysis)
+- 2026-10-10T21:27:06.987870+00:00: Create song setting “My Voice Calls to God” (codex)
+- 2026-10-17T13:14:35.063948+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.082332+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:59.883943+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:59.903684+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v002.a
+- 2026-10-10T19:42:01.404305+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.351750+00:00: Create rendering (codex)
+- 2026-10-10T19:52:15.544186+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.067302+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.942264+00:00: Create rendering (codex)
+- 2026-10-10T21:12:29.911289+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:29.925750+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.092550+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.110949+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:59.929452+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:59.950359+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v003.a
+- 2026-10-10T19:42:01.416937+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.362975+00:00: Create rendering (codex)
+- 2026-10-10T19:52:32.408827+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.079828+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.954954+00:00: Create rendering (codex)
+- 2026-10-10T21:12:40.608805+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:40.622491+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.123154+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.142790+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:59.977525+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.001912+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v004.a
+- 2026-10-10T19:42:01.424242+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.372200+00:00: Create rendering (codex)
+- 2026-10-10T19:52:48.547452+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.094722+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.970489+00:00: Create rendering (codex)
+- 2026-10-10T21:12:46.423063+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:46.435818+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.155035+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.174901+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.029546+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.058651+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v005.a
+- 2026-10-10T19:42:01.433950+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.384019+00:00: Create rendering (codex)
+- 2026-10-10T20:05:36.729729+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.105937+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.982018+00:00: Create rendering (codex)
+- 2026-10-10T21:12:53.362328+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:53.377729+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.183074+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.200105+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.081472+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.100025+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v006.a
+- 2026-10-10T19:42:01.444209+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.392741+00:00: Create rendering (codex)
+- 2026-10-10T20:05:45.582386+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.120139+00:00: Create rendering (codex)
+- 2026-10-10T21:10:04.994192+00:00: Create rendering (codex)
+- 2026-10-10T21:12:58.189713+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:12:58.202967+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.209964+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.231236+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.120814+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.138845+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v007.a
+- 2026-10-10T19:42:01.452065+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.401940+00:00: Create rendering (codex)
+- 2026-10-10T20:05:57.271749+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.132784+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.007480+00:00: Create rendering (codex)
+- 2026-10-10T21:13:05.596854+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:13:05.610583+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.241844+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.266742+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.159881+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.180958+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v008.a
+- 2026-10-10T19:42:01.459270+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.412823+00:00: Create rendering (codex)
+- 2026-10-10T20:06:03.036867+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.146028+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.022166+00:00: Create rendering (codex)
+- 2026-10-10T21:13:11.907068+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:13:11.921883+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.279926+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.304642+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.205966+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.226105+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v009.a
+- 2026-10-10T19:42:01.468551+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.422466+00:00: Create rendering (codex)
+- 2026-10-10T20:06:11.566828+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.158417+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.037889+00:00: Create rendering (codex)
+- 2026-10-10T21:13:20.447501+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:13:20.461831+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.315307+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.336736+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.249079+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.269901+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v010.a
+- 2026-10-10T19:42:01.476558+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.431300+00:00: Create rendering (codex)
+- 2026-10-10T20:06:21.639393+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:05:19.169000+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.048727+00:00: Create rendering (codex)
+- 2026-10-10T21:13:28.388361+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-10T21:13:28.422968+00:00: Supersede comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.347817+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.372012+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.292275+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.312610+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v011.a
+- 2026-10-10T19:42:01.482962+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.441518+00:00: Create rendering (codex)
+- 2026-10-10T21:05:19.180136+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.059441+00:00: Create rendering (codex)
+- 2026-10-10T21:13:41.977096+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.384608+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.405669+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.331116+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.350087+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v012.a
+- 2026-10-10T19:42:01.493086+00:00: Create rendering (codex)
+- 2026-10-10T19:44:42.452915+00:00: Create rendering (codex)
+- 2026-10-10T21:05:19.191482+00:00: Create rendering (codex)
+- 2026-10-10T21:10:05.070349+00:00: Create rendering (codex)
+- 2026-10-10T21:13:49.962921+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.415417+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.441868+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.369843+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.389067+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v013.a
+- 2026-10-10T19:46:37.012055+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.552747+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.201449+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.056617+00:00: Create rendering (codex)
+- 2026-10-10T21:13:55.682183+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.449241+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.469091+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.407151+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.423751+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v014.a
+- 2026-10-10T19:46:37.020252+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.562858+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.214615+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.075922+00:00: Create rendering (codex)
+- 2026-10-10T21:14:03.517196+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.478287+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.500885+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.443133+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.462632+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v015.a
+- 2026-10-10T19:46:37.028901+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.573064+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.227742+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.087904+00:00: Create rendering (codex)
+- 2026-10-10T21:14:07.496419+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.511059+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.530703+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.482363+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.502292+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v016.a
+- 2026-10-10T19:46:37.037422+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.583887+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.239913+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.105661+00:00: Create rendering (codex)
+- 2026-10-10T21:14:14.734944+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.541118+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.563038+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.520786+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.539306+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v017.a
+- 2026-10-10T19:46:37.047288+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.595053+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.268519+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.121629+00:00: Create rendering (codex)
+- 2026-10-10T21:14:20.344232+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.574164+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.599845+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.559786+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.580793+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v018.a
+- 2026-10-10T19:46:37.057311+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.611037+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.280851+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.139321+00:00: Create rendering (codex)
+- 2026-10-10T21:14:25.515717+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.613008+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.633332+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.602736+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.620557+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v019.a
+- 2026-10-10T19:46:37.067632+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.626818+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.294714+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.152520+00:00: Create rendering (codex)
+- 2026-10-10T21:14:31.918725+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.645604+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.667191+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.643242+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.663680+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v020.a
+- 2026-10-10T19:46:37.077431+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.638228+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.306975+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.165085+00:00: Create rendering (codex)
+- 2026-10-10T21:14:38.216285+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.677782+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.701733+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.684688+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.706105+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps077.v021.a
+- 2026-10-10T19:46:37.086595+00:00: Create rendering (codex)
+- 2026-10-10T19:48:41.648856+00:00: Create rendering (codex)
+- 2026-10-10T21:06:47.319576+00:00: Create rendering (codex)
+- 2026-10-10T21:11:10.180256+00:00: Create rendering (codex)
+- 2026-10-10T21:14:41.771611+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-17T13:14:35.711167+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:14:35.730605+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.838720+00:00: Update rendering (codex-source-anchor-recovery)
+- 2026-10-17T13:15:00.859264+00:00: Update rendering (codex-source-anchor-recovery)
 
 ## ps078.v001.a
 
@@ -4899,20 +5191,46 @@
 ## ps120.v007.a
 
 ## ps121.v001.a
+- 2026-10-07T11:58:54.619666+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-07T12:04:13.615149+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.242668+00:00: Create rendering (codex)
+- 2026-10-07T12:14:17.296541+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-07T12:17:28.557796+00:00: Record psalm analysis (codex-analysis)
 
 ## ps121.v002.a
+- 2026-10-07T12:04:13.624619+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.252630+00:00: Create rendering (codex)
+- 2026-10-07T12:14:34.148588+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v003.a
+- 2026-10-07T12:04:13.633761+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.266380+00:00: Create rendering (codex)
+- 2026-10-07T12:14:51.255325+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v004.a
+- 2026-10-07T12:04:13.642355+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.276709+00:00: Create rendering (codex)
+- 2026-10-07T12:15:07.811083+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v005.a
+- 2026-10-07T12:04:13.652732+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.286265+00:00: Create rendering (codex)
+- 2026-10-07T12:15:19.907177+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v006.a
+- 2026-10-07T12:04:13.661442+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.295859+00:00: Create rendering (codex)
+- 2026-10-07T12:15:29.505119+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v007.a
+- 2026-10-07T12:04:13.668598+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.306784+00:00: Create rendering (codex)
+- 2026-10-07T12:15:44.157432+00:00: Create comparison assessment (codex-analysis)
 
 ## ps121.v008.a
+- 2026-10-07T12:04:13.676834+00:00: Create rendering (codex)
+- 2026-10-07T12:07:09.316646+00:00: Create rendering (codex)
+- 2026-10-07T12:16:01.466087+00:00: Create comparison assessment (codex-analysis)
 
 ## ps122.v001.a
 

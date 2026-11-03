@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-10-20T22:57:43.074581+00:00",
+  "user_authorization": "no, i want to be able to use both, sign off on that",
+  "scope": "local_generation_with_hebrew_and_greek",
+  "source_id": "swete1896",
+  "package_id": "swete1896.text",
+  "manifest_sha256": "edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e",
+  "policy_revision": "owner-greek-generation-20261020-v1:cee86dad9f7d6a1b4f0aaa0d",
+  "license_review": {
+    "reviewer_id": "codex:automated-license-policy-audit",
+    "type": "automated_policy_and_provenance_check",
+    "license": "CC BY-SA 4.0",
+    "license_text_sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+    "primary_reference": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "upstream_revision": "346986a78109b72d6c6097b9334f41db3c38ad28",
+    "required_attribution": "H. B. Swete, The Old Testament in Greek according to the Septuagint, vol. 2 (Cambridge, 1896), Psalms; transcribed from page images by the rahlfs1931-psalter project, licensed CC BY-SA 4.0",
+    "checks": [
+      "strict_package_manifest",
+      "all_locked_bytes",
+      "exact_upstream_license",
+      "allowlisted_license",
+      "generation_only_no_export",
+      "proposed_output_with_exact_source_anchors"
+    ]
+  },
+  "rationale": "User explicitly authorized Hebrew and Greek generation in this chat: \"no, i want to be able to use both, sign off on that\". Owner approval is chat:user. License role is an automated Codex policy audit, not a human specialist approval: exact staged manifest and all locked bytes verified; CC BY-SA 4.0 license matches upstream revision; attribution and source hashes are retained on proposed renderings. This approves local generation from Swete 1896 Psalms r0001 alongside permitted Hebrew. No canonical, release, or export approval is granted."
+}

@@ -1,0 +1,71 @@
+{
+  "recorded_at_utc": "2026-10-19T01:30:09Z",
+  "user_local_date": "2026-10-18",
+  "request": "User approved showing Greek text beside Hebrew in the requested source cards.",
+  "status": "owner-approved local display enabled in updated services; live API restart still required",
+  "approval": {
+    "path": "content/study_snapshots/preview.json",
+    "reviewer_id": "chat:user",
+    "scope": "local_display_preview",
+    "audit_id": "aud.pkg.greek_preview.95cc305b920514c2140a3b17.0001",
+    "audit_path": "content/audit/packages/greek_preview.95cc305b920514c2140a3b17.json"
+  },
+  "source": {
+    "package_id": "swete1896.text",
+    "revision": "r0001",
+    "edition_id": "swete1896",
+    "manifest_sha256": "edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e",
+    "upstream_commit": "346986a78109b72d6c6097b9334f41db3c38ad28",
+    "license": "CC BY-SA 4.0",
+    "psalms": 151,
+    "units": 2527,
+    "tokens": 34614,
+    "locked_files": 2532,
+    "source_bytes_match_pinned_upstream": true
+  },
+  "actual_psalm25_check": {
+    "transport": "read-only FastAPI TestClient against updated application, not the running old API",
+    "status_code": 200,
+    "hebrew_cards": 22,
+    "greek_mapped_verses": 22,
+    "greek_psalm": 24,
+    "greek_tokens": 293,
+    "preview": true,
+    "canonical_psalm25_files_checked": 23,
+    "canonical_psalm25_hashes_unchanged": true
+  },
+  "checks": {
+    "focused_python_tests_passed": 58,
+    "mounted_browser_tests_passed": 7,
+    "ui_build": "passed",
+    "content_validation": "passed; errors=[]",
+    "ruff": "passed",
+    "scoped_mypy": "passed",
+    "diff_check": "passed"
+  },
+  "review": {
+    "independent_source_byte_and_mapping_check": "passed for local preview; specialist review not asserted",
+    "preview_withdrawal_cache_policy_and_path_safeguards": "implemented and tested"
+  },
+  "limits": {
+    "map_status": "proposed",
+    "unmapped_mt_references": 7,
+    "full_study_release": false,
+    "dictionary_strongs_morphology_included": false,
+    "generation_or_export_permission_granted": false
+  },
+  "live_api": {
+    "greek_routes_loaded": false,
+    "restart_attempted_this_turn": false,
+    "previous_restart_rejected_by_automatic_approval_review": true,
+    "previous_reason": "blocked by policy",
+    "process_stopped": false
+  },
+  "production_actions": {
+    "approval_and_package_audit_written": true,
+    "raw_edits": false,
+    "canonical_english_edits": false,
+    "database_migration": false,
+    "source_install_or_release_activation": false
+  }
+}
