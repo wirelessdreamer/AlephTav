@@ -22,6 +22,14 @@ def _table() -> dict:
     return json.loads((ROOT / "content" / "versification.json").read_text(encoding="utf-8"))
 
 
+@pytest.fixture
+def committed_table(monkeypatch: pytest.MonkeyPatch) -> None:
+    from app.core import versification
+
+    # This module runs unseeded, so the workspace has no table of its own.
+    monkeypatch.setattr(versification, "_table", lambda: _table()["psalms"])
+
+
 def test_table_covers_the_whole_psalter() -> None:
     psalms = _table()["psalms"]
 
@@ -118,6 +126,7 @@ def test_a_psalm_without_a_superscription_displays_its_masoretic_reference() -> 
     assert versification.display_reference("ps001", "Psalm 1:6", 6) == "Psalm 1:6"
 
 
+@pytest.mark.usefixtures("committed_table")
 def test_superscription_verses_are_labelled_rather_than_misnumbered() -> None:
     from app.core import versification
 
@@ -127,6 +136,7 @@ def test_superscription_verses_are_labelled_rather_than_misnumbered() -> None:
     assert versification.display_reference("ps051", "Psalm 51:2", 2) == "Psalm 51 (heading)"
 
 
+@pytest.mark.usefixtures("committed_table")
 def test_verses_after_a_superscription_shift_to_english_numbering() -> None:
     from app.core import versification
 
@@ -139,6 +149,7 @@ def test_verses_after_a_superscription_shift_to_english_numbering() -> None:
     assert versification.display_reference("ps003", "Psalm 3:2", 2) == "Psalm 3:1"
 
 
+@pytest.mark.usefixtures("committed_table")
 def test_canonical_numbering_reports_the_greek_divergence() -> None:
     from app.core import versification
 

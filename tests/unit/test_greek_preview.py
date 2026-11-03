@@ -90,7 +90,7 @@ def test_without_owner_approval_the_released_message_is_unchanged(staged, tmp_pa
 
 
 def test_package_changed_after_approval_shows_no_text(staged):
-    unit_file = next((staged / "psalms").rglob("*.json"))
+    unit_file = next((staged / "psalms" / "ps001").rglob("*.json"))
     unit_file.write_bytes(unit_file.read_bytes().replace("ἀνὴρ".encode(), "ἀνήρ".encode()))
     result = sources.greek_evidence("ps001")
     assert result["available"] is False

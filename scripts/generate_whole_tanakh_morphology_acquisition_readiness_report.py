@@ -517,12 +517,7 @@ def build_gate_rows(
             "evidence": (
                 (
                     "OSHB exception workbook exports "
-                    f"{
-                        exception_summary.get(
-                            'review_row_count',
-                            exception_summary.get('sample_row_count', 0),
-                        )
-                    } "
+                    f"{exception_summary.get('review_row_count', exception_summary.get('sample_row_count', 0))} "
                     "review rows for "
                     f"{exception_summary.get('mismatch_verse_count', 0)} remaining "
                     "exception verses; "
