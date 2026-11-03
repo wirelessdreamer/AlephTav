@@ -16,6 +16,8 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      ALEPHTAV_ROOT_DIR: /tmp/alephtav-ci
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,4 +30,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: audit-reports
-          path: reports/
+          path: /tmp/alephtav-ci/reports/

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import unicodedata
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any
 
 from jsonschema import Draft202012Validator, RefResolver  # type: ignore[import-untyped]
@@ -23,7 +23,8 @@ def validate_contract(schema_name: str, payload: Any) -> None:
 def workspace_path(value: str) -> Path:
     root = get_settings().root_dir.resolve()
     relative = Path(value)
-    if relative.is_absolute() or ".." in relative.parts or "\\" in value:
+    is_drive_path = bool(PureWindowsPath(value).drive)
+    if relative.is_absolute() or is_drive_path or ".." in relative.parts or "\\" in value:
         raise ValueError("Package paths must be portable relative workspace paths")
     result = (root / relative).resolve()
     if not result.is_relative_to(root) or result == root:

@@ -10,7 +10,11 @@ from tests.composer_quality_support import (
     write_audit_reports,
 )
 
-pytestmark = [pytest.mark.no_seeded_repo, pytest.mark.corpus_audit]
+pytestmark = [
+    pytest.mark.no_seeded_repo,
+    pytest.mark.corpus_audit,
+    pytest.mark.usefixtures("fixture_sources"),
+]
 
 
 def test_full_psalter_composer_audit_writes_report(tmp_path_factory) -> None:

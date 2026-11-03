@@ -22,19 +22,6 @@ if str(ROOT) not in sys.path:
 os.environ["ALEPHTAV_ROOT_DIR"] = str(TEST_ROOT)
 
 
-def _link_or_copy(source: Path, target: Path) -> None:
-    if target.exists() or target.is_symlink():
-        return
-    target.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        target.symlink_to(source, target_is_directory=source.is_dir())
-    except OSError:
-        if source.is_dir():
-            shutil.copytree(source, target)
-        else:
-            shutil.copy2(source, target)
-
-
 def _copy_tree(source: Path, target: Path) -> None:
     if target.is_symlink() or target.is_file():
         target.unlink()
@@ -45,7 +32,7 @@ def _copy_tree(source: Path, target: Path) -> None:
 
 
 TEST_ROOT.mkdir(parents=True, exist_ok=True)
-_link_or_copy(ROOT / "schemas", TEST_ROOT / "schemas")
+_copy_tree(ROOT / "schemas", TEST_ROOT / "schemas")
 
 from tests.support import bootstrap_fixture_repo  # noqa: E402
 

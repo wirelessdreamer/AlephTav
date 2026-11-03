@@ -17,7 +17,7 @@ from tests.composer_quality_support import (
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
 COMPOSER_FIXTURE = FIXTURES_DIR / "composer_quality.json"
 COMPOSER_SOURCE = Path(__file__).resolve().parents[2] / "app/ui/src/lib/composerSynthesis.ts"
-pytestmark = pytest.mark.no_seeded_repo
+pytestmark = [pytest.mark.no_seeded_repo, pytest.mark.usefixtures("fixture_sources")]
 
 
 def _load_fixture() -> dict[str, object]:

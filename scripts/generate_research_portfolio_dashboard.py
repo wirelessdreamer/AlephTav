@@ -4426,12 +4426,7 @@ def build_dashboard() -> dict[str, Any]:
                     f"{oshb_exception['sequence_only_exception_verse_count']} sequence-only "
                     "exceptions. "
                     + (
-                        f"All {
-                            oshb_exception.get(
-                                'review_row_count',
-                                oshb_exception['sample_row_count'],
-                            )
-                        } "
+                        f"All {oshb_exception.get('review_row_count', oshb_exception['sample_row_count'])} "
                         "review rows are exported, but reviewer signoff is still absent."
                         if int(oshb_exception["unexported_exception_row_count"]) == 0
                         else (
@@ -8241,9 +8236,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "OSHB exceptions",
                     fmt_int(headline["oshb_exception_review_mismatch_verse_count"]),
                     (
-                        f'{fmt_int(headline[
-                            "oshb_exception_review_token_count_exception_verse_count"
-                        ])} '
+                        f'{fmt_int(headline["oshb_exception_review_token_count_exception_verse_count"])} '
                         "token-count exceptions."
                     ),
                 ),
@@ -8251,9 +8244,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "OSHB review rows",
                     fmt_int(headline["oshb_exception_review_review_row_count"]),
                     (
-                        f'{fmt_int(headline[
-                            "oshb_exception_review_unexported_exception_row_count"
-                        ])} '
+                        f'{fmt_int(headline["oshb_exception_review_unexported_exception_row_count"])} '
                         "rows remain unexported."
                     ),
                 ),
@@ -8277,9 +8268,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "OSHB rule-routing",
                     f'{headline["oshb_mapping_rule_simulation_candidate_rule_reduction_pct"]:.2f}%',
                     (
-                        f'{fmt_int(headline[
-                            "oshb_mapping_rule_simulation_rule_candidate_after_review_count"
-                        ])} '
+                        f'{fmt_int(headline["oshb_mapping_rule_simulation_rule_candidate_after_review_count"])} '
                         "high-confidence rows; candidate only."
                     ),
                 ),
@@ -8287,9 +8276,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "OSHB residual",
                     fmt_int(headline["oshb_mapping_rule_simulation_manual_residual_row_count"]),
                     (
-                        f'{fmt_int(headline[
-                            "oshb_mapping_rule_simulation_targeted_rule_review_count"
-                        ])} '
+                        f'{fmt_int(headline["oshb_mapping_rule_simulation_targeted_rule_review_count"])} '
                         "targeted-rule review rows."
                     ),
                 ),
@@ -8297,9 +8284,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "Morph unlock units",
                     fmt_int(headline["morph_unlock_unlockable_units"]),
                     (
-                        f'{headline[
-                            "morph_unlock_projected_review_ready_score_pct"
-                        ]:.2f}% '
+                        f'{headline["morph_unlock_projected_review_ready_score_pct"]:.2f}% '
                         "projected review-ready lane score."
                     ),
                 ),
@@ -8556,9 +8541,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     (
                         f'{fmt_int(headline["local_bakeoff_contextual_attempt_count"])} '
                         "contextual attempts; "
-                        f'{fmt_int(headline[
-                            "local_bakeoff_contextual_source_anchor_issues"
-                        ])} '
+                        f'{fmt_int(headline["local_bakeoff_contextual_source_anchor_issues"])} '
                         "anchor issues."
                     ),
                 ),
@@ -11923,9 +11906,7 @@ def render_html(dashboard: dict[str, Any]) -> str:
                     "Unlockable units",
                     fmt_int(headline["morph_unlock_unlockable_units"]),
                     (
-                        f'{headline[
-                            "morph_unlock_projected_review_ready_score_pct"
-                        ]:.2f}% '
+                        f'{headline["morph_unlock_projected_review_ready_score_pct"]:.2f}% '
                         "projected review-ready lane score."
                     ),
                 ),
