@@ -10,7 +10,7 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 from app.core.config import get_settings
-from app.services import registry_service
+from app.services import audit_service, registry_service
 
 HEBREW_MARKS_RE = re.compile(r"[\u0591-\u05C7]")
 OSIS_NS = {"osis": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
@@ -463,7 +463,19 @@ def _load_oshb_tokens() -> dict[tuple[int, int], list[dict[str, Any]]]:
             verse_number = int(verse.attrib["osisID"].split(".")[2])
             tokens: list[dict[str, Any]] = []
             word_index = 0
+            qere_words = 0
             for child in verse:
+                if child.tag == f"{{{OSIS_NS['osis']}}}note":
+                    # MACULA gives each qere word its own number after the ketiv, and nothing
+                    # at the ketiv's; OSHB keeps the qere in a note after the ketiv word.
+                    qere = child.findall("osis:rdg[@type='x-qere']/osis:w", OSIS_NS)
+                    if qere and tokens:
+                        ketiv_number = tokens[-1]["macula_word_number"]
+                        tokens[-1]["qere_word_numbers"] = [
+                            ketiv_number + offset for offset in range(1, len(qere) + 1)
+                        ]
+                        qere_words += len(qere)
+                    continue
                 if child.tag != f"{{{OSIS_NS['osis']}}}w":
                     continue
                 word_index += 1
@@ -471,6 +483,7 @@ def _load_oshb_tokens() -> dict[tuple[int, int], list[dict[str, Any]]]:
                 tokens.append(
                     {
                         "word_number": word_index,
+                        "macula_word_number": word_index + qere_words,
                         "surface": _clean_oshb_surface("".join(child.itertext())),
                         "lemma": child.attrib.get("lemma"),
                         "strong": _parse_strong_number(child.attrib.get("lemma")),
@@ -484,7 +497,7 @@ def _load_oshb_tokens() -> dict[tuple[int, int], list[dict[str, Any]]]:
     return tokens_by_verse
 
 
-def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
+def _load_macula_words() -> dict[tuple[int, int, int], dict[str, Any]]:
     grouped: dict[tuple[int, int, int], dict[str, Any]] = {}
     for path in sorted((get_settings().raw_dir / "macula" / "lowfat").glob("19-Psa-*-lowfat.xml")):
         root = ET.fromstring(path.read_text(encoding="utf-8"))
@@ -548,39 +561,42 @@ def _load_macula_groups() -> dict[tuple[int, int, int], dict[str, Any]]:
                     "strongnumberx": _collapse_whitespace(word.attrib.get("strongnumberx")),
                 }
             )
-    normalized: dict[tuple[int, int, int], dict[str, Any]] = {}
-    for key, payload in grouped.items():
-        gloss_parts = [
-            part for part in (_clean_gloss_part(item) for item in payload["glosses"]) if part
-        ]
-        word_sense = payload["glosses"][-1] if payload["glosses"] else None
-        display_gloss = _derive_display_gloss(payload["components"])
-        normalized[key] = {
-            "transliteration": _clean_transliteration(payload["transliterations"]),
-            "lemma": payload["lemmas"][-1] if payload["lemmas"] else None,
-            "syntax_role": payload["roles"][0] if payload["roles"] else None,
-            "semantic_role": None,
-            "referent": None,
-            "word_sense": word_sense,
-            "gloss_parts": gloss_parts,
-            "display_gloss": display_gloss,
-            "compiler_features": _derive_compiler_features(
-                payload["components"], word_sense, display_gloss
-            ),
-            "part_of_speech": payload["pos"][-1] if payload["pos"] else None,
-            "stem": payload["stems"][-1] if payload["stems"] else None,
-            "greek": _collapse_whitespace(" ".join(payload["greek"])) or None,
-            "greek_strong": payload["greekstrong"][-1] if payload["greekstrong"] else None,
-        }
-    return normalized
+    return grouped
+
+
+def _normalize_macula_words(words: list[dict[str, Any]]) -> dict[str, Any]:
+    """Enrichment for one token from the MACULA word(s) it reads as, in order."""
+    payload = {field: [item for word in words for item in word[field]] for field in words[0]}
+    gloss_parts = [
+        part for part in (_clean_gloss_part(item) for item in payload["glosses"]) if part
+    ]
+    word_sense = payload["glosses"][-1] if payload["glosses"] else None
+    display_gloss = _derive_display_gloss(payload["components"])
+    return {
+        "transliteration": _clean_transliteration(payload["transliterations"]),
+        "lemma": payload["lemmas"][-1] if payload["lemmas"] else None,
+        "syntax_role": payload["roles"][0] if payload["roles"] else None,
+        "semantic_role": None,
+        "referent": None,
+        "word_sense": word_sense,
+        "gloss_parts": gloss_parts,
+        "display_gloss": display_gloss,
+        "compiler_features": _derive_compiler_features(
+            payload["components"], word_sense, display_gloss
+        ),
+        "part_of_speech": payload["pos"][-1] if payload["pos"] else None,
+        "stem": payload["stems"][-1] if payload["stems"] else None,
+        "greek": _collapse_whitespace(" ".join(payload["greek"])) or None,
+        "greek_strong": payload["greekstrong"][-1] if payload["greekstrong"] else None,
+    }
 
 
 def _load_lxx_verses(
-    macula_groups: dict[tuple[int, int, int], dict[str, Any]],
+    macula_words: dict[tuple[int, int, int], dict[str, Any]],
 ) -> dict[tuple[int, int], str]:
     verse_words: dict[tuple[int, int], list[tuple[int, str]]] = defaultdict(list)
-    for (psalm_number, verse_number, word_number), payload in macula_groups.items():
-        greek = _collapse_whitespace(payload.get("greek"))
+    for (psalm_number, verse_number, word_number), payload in macula_words.items():
+        greek = _collapse_whitespace(" ".join(payload["greek"]))
         if not greek:
             continue
         verse_words[(psalm_number, verse_number)].append((word_number, greek))
@@ -645,7 +661,7 @@ def _build_unit(
     verse_number: int,
     source_hebrew: str,
     oshb_tokens: list[dict[str, Any]],
-    macula_groups: dict[tuple[int, int, int], dict[str, Any]],
+    macula_words: dict[tuple[int, int, int], dict[str, Any]],
     witness_verses: dict[str, dict[tuple[int, int], str]],
 ) -> dict[str, Any]:
     unit_id = _unit_id(psalm_number, verse_number)
@@ -667,7 +683,16 @@ def _build_unit(
         ]
     for oshb_token in oshb_tokens:
         word_number = oshb_token["word_number"]
-        macula = macula_groups.get((psalm_number, verse_number, word_number), {})
+        # A ketiv has no MACULA word of its own; it reads as its qere.
+        numbers = oshb_token.get("qere_word_numbers") or [
+            oshb_token.get("macula_word_number", word_number)
+        ]
+        words = [
+            macula_words[key]
+            for key in ((psalm_number, verse_number, number) for number in numbers)
+            if key in macula_words
+        ]
+        macula = _normalize_macula_words(words) if words else {}
         token = {
             "token_id": _token_id(unit_id, word_number),
             "ref": f"{ref}#{word_number}",
@@ -942,9 +967,9 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
 
     uxlc_verses = _load_uxlc_verses()
     oshb_tokens = _load_oshb_tokens()
-    macula_groups = _load_macula_groups()
+    macula_words = _load_macula_words()
     witness_verses = {source_id: _load_witness_verses(source_id) for source_id in WITNESS_SOURCES}
-    witness_verses["lxx"] = _load_lxx_verses(macula_groups)
+    witness_verses["lxx"] = _load_lxx_verses(macula_words)
 
     units: list[dict[str, Any]] = []
     by_psalm: dict[int, list[dict[str, Any]]] = defaultdict(list)
@@ -958,7 +983,7 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
                 verse_number=verse_number,
                 source_hebrew=uxlc_verses[(psalm_number, verse_number)],
                 oshb_tokens=oshb_tokens.get((psalm_number, verse_number), []),
-                macula_groups=macula_groups,
+                macula_words=macula_words,
                 witness_verses=witness_verses,
             )
             units.append(unit)
@@ -967,11 +992,20 @@ def import_vendored_psalms() -> list[dict[str, Any]]:
     _apply_occurrence_refs(units)
 
     for unit in units:
-        registry_service.save_unit(
-            _merge_with_existing(
-                unit, registry_service.unit_path(unit["unit_id"]), IMPORTED_UNIT_FIELDS
+        path = registry_service.unit_path(unit["unit_id"])
+        before = registry_service.read_json(path) if path.exists() else None
+        merged = _merge_with_existing(unit, path, IMPORTED_UNIT_FIELDS)
+        if before is not None and merged != before:
+            audit_service.create_audit_record(
+                merged,
+                before_hash=registry_service.file_hash(before),
+                after_hash=registry_service.file_hash(merged),
+                summary="Refresh source text and tokens from the vendored corpus",
+                rationale="Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+                created_by="import-psalms",
+                change_type="import",
             )
-        )
+        registry_service.save_unit(merged)
     for psalm_number, psalm_units in by_psalm.items():
         psalm_id = _psalm_id(psalm_number)
         meta_path = registry_service.psalm_dir(psalm_id) / f"{psalm_id}.meta.json"
