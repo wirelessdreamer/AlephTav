@@ -15,7 +15,8 @@
     "aud.ps077.v018.a.0006",
     "aud.ps077.v018.a.0007",
     "aud.ps077.v018.a.0008",
-    "aud.ps077.v018.a.0009"
+    "aud.ps077.v018.a.0009",
+    "aud.ps077.v018.a.0010"
   ],
   "audit_records": [
     {
@@ -159,6 +160,22 @@
       "rationale": "Preserve the original translation rationale during source-anchor recovery",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d2ecb9c59c6ca08f9d04bd6688d1852291bb6c3285b46e31e6688febf1b31dbc",
+      "audit_id": "aud.ps077.v018.a.0010",
+      "before_hash": "89c3a2f24b11ffc46972ef41826b50c649fb974e4f7ce502d83ed5f9a9691a5f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.641953+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps077.v018.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1637,7 +1654,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "חצציך",
-      "occurrence_index": 2394,
+      "occurrence_index": 2414,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1677,9 +1694,9 @@
         "Psalm 77:9",
         "Psalm 77:10",
         "Psalm 77:11",
+        "Psalm 77:12",
         "Psalm 77:13",
-        "Psalm 77:14",
-        "Psalm 77:15"
+        "Psalm 77:14"
       ],
       "semantic_role": null,
       "stem": null,

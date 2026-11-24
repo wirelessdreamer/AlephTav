@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps101.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "38bcdd7ead8678c52b9d2f173a2e6b05749a48395bcc0b79cb3dc9b526467a81",
+      "audit_id": "aud.ps101.v005.a.0001",
+      "before_hash": "0569988d01b95e55656762ab0189ad74bd9d63d9a38a2249c93dbad5e6254145",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.085972+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps101.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps101.v005.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "בַסֵּ֨תֶר׀ רֵעֵהוּ֮ אוֹת֢וֹ אַ֫צְמִ֥ית גְּֽבַהּ־עֵ֭ינַיִם וּרְחַ֣ב לֵבָ֑ב אֹ֝ת֗וֹ לֹ֣א אוּכָֽל׃",
-  "source_transliteration": "**məlāšəniy ḇa–ssēṯer ʾaṣəmiyṯ gəḇaẖ- ʿênayim ûrəḥaḇ lēḇāḇ lōʾ",
+  "source_transliteration": "**məlāšəniy ḇa–ssēṯer ʾaṣəmiyṯ gəḇaẖ- ʿênayim ûrəḥaḇ lēḇāḇ lōʾ ʾûḵāl:",
   "status": "draft",
   "token_ids": [
     "ps101.v005.t001",
@@ -36,65 +55,6 @@
     "ps101.v005.t012"
   ],
   "tokens": [
-    {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [
-            "lemma",
-            "stem"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "oshb:stem",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Vmrmsc",
-      "morph_readable": "Vmrmsc",
-      "normalized": "מלושני",
-      "occurrence_index": 1,
-      "part_of_speech": "verb",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 101:5#1",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": null,
-      "strong": "H3960",
-      "surface": "מלושני",
-      "syntax_role": null,
-      "token_id": "ps101.v005.t001",
-      "transliteration": null,
-      "word_sense": null
-    },
     {
       "compiler_features": {
         "component_count": 1,
@@ -155,21 +115,21 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Rd/Ncmsa",
-      "morph_readable": "Rd/Ncmsa",
-      "normalized": "בסתר",
+      "morph_code": "Vmrmsc",
+      "morph_readable": "Vmrmsc",
+      "normalized": "מלושני",
       "occurrence_index": 1,
-      "part_of_speech": "noun",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [],
-      "ref": "Psalm 101:5#2",
+      "ref": "Psalm 101:5#1",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "poel",
-      "strong": "H5643",
-      "surface": "בַסֵּ֨תֶר",
+      "strong": "H3960",
+      "surface": "מלושני",
       "syntax_role": "v",
-      "token_id": "ps101.v005.t002",
+      "token_id": "ps101.v005.t001",
       "transliteration": "**məlāšəniy",
       "word_sense": "[one.who].slanders"
     },
@@ -253,11 +213,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncmsc/Sp3ms",
-      "morph_readable": "Ncmsc/Sp3ms",
-      "normalized": "רעהו",
+      "morph_code": "Rd/Ncmsa",
+      "morph_readable": "Rd/Ncmsa",
+      "normalized": "בסתר",
       "occurrence_index": 7,
-      "part_of_speech": "suffix",
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 27:5",
         "Psalm 31:21",
@@ -267,15 +227,15 @@
         "Psalm 91:1",
         "Psalm 139:15"
       ],
-      "ref": "Psalm 101:5#3",
+      "ref": "Psalm 101:5#2",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H7453",
-      "surface": "רֵעֵהוּ֮",
+      "strong": "H5643",
+      "surface": "בַסֵּ֨תֶר",
       "syntax_role": null,
-      "token_id": "ps101.v005.t003",
+      "token_id": "ps101.v005.t002",
       "transliteration": "ḇa–ssēṯer",
       "word_sense": "secrecy"
     },
@@ -377,10 +337,10 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "To/Sp3ms",
-      "morph_readable": "To/Sp3ms",
-      "normalized": "אותו",
-      "occurrence_index": 3135,
+      "morph_code": "Ncmsc/Sp3ms",
+      "morph_readable": "Ncmsc/Sp3ms",
+      "normalized": "רעהו",
+      "occurrence_index": 3160,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -408,7 +368,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 101:5#4",
+      "ref": "Psalm 101:5#3",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:1",
@@ -420,10 +380,10 @@
       ],
       "semantic_role": null,
       "stem": null,
-      "strong": "H853",
-      "surface": "אוֹת֪וֹ",
+      "strong": "H7453",
+      "surface": "רֵעֵהוּ֮",
       "syntax_role": null,
-      "token_id": "ps101.v005.t004",
+      "token_id": "ps101.v005.t003",
       "transliteration": null,
       "word_sense": "his"
     },
@@ -502,11 +462,12 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech",
+            "part_of_speech"
+          ],
+          "missing_fields": [
             "stem"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "status": "partial"
         }
       },
       "gloss_parts": [
@@ -516,15 +477,16 @@
       "greek_strong": "5126",
       "lemma": "הוּא",
       "missing_enrichments": [
+        "oshb:stem",
         "macula:syntax_role",
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vhi1cs",
-      "morph_readable": "Vhi1cs",
-      "normalized": "אצמית",
-      "occurrence_index": 3136,
-      "part_of_speech": "verb",
+      "morph_code": "To/Sp3ms",
+      "morph_readable": "To/Sp3ms",
+      "normalized": "אותו",
+      "occurrence_index": 3161,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -551,7 +513,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 101:5#5",
+      "ref": "Psalm 101:5#4",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:1",
@@ -562,11 +524,11 @@
         "Psalm 101:7"
       ],
       "semantic_role": null,
-      "stem": "hiphil",
-      "strong": "H6789",
-      "surface": "אַ֫צְמִ֥ית",
+      "stem": null,
+      "strong": "H853",
+      "surface": "אוֹת֪וֹ",
       "syntax_role": null,
-      "token_id": "ps101.v005.t005",
+      "token_id": "ps101.v005.t004",
       "transliteration": null,
       "word_sense": "him"
     },
@@ -633,26 +595,26 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Aamsc",
-      "morph_readable": "Aamsc",
-      "normalized": "גבה",
+      "morph_code": "Vhi1cs",
+      "morph_readable": "Vhi1cs",
+      "normalized": "אצמית",
       "occurrence_index": 2,
-      "part_of_speech": "adjective",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 73:27",
         "Psalm 143:12"
       ],
-      "ref": "Psalm 101:5#6",
+      "ref": "Psalm 101:5#5",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:8"
       ],
       "semantic_role": null,
       "stem": "hiphil",
-      "strong": "H1362",
-      "surface": "גְּֽבַהּ",
+      "strong": "H6789",
+      "surface": "אַ֫צְמִ֥ית",
       "syntax_role": "v",
-      "token_id": "ps101.v005.t006",
+      "token_id": "ps101.v005.t005",
       "transliteration": "ʾaṣəmiyṯ",
       "word_sense": "I.will.destroy"
     },
@@ -722,24 +684,24 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncbda",
-      "morph_readable": "Ncbda",
-      "normalized": "עינים",
+      "morph_code": "Aamsc",
+      "morph_readable": "Aamsc",
+      "normalized": "גבה",
       "occurrence_index": 1,
-      "part_of_speech": "noun",
+      "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 104:18",
         "Psalm 138:6"
       ],
-      "ref": "Psalm 101:5#7",
+      "ref": "Psalm 101:5#6",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H5869",
-      "surface": "עֵ֭ינַיִם",
+      "strong": "H1362",
+      "surface": "גְּֽבַהּ",
       "syntax_role": null,
-      "token_id": "ps101.v005.t007",
+      "token_id": "ps101.v005.t006",
       "transliteration": "gəḇaẖ-",
       "word_sense": "[a.person].haughty"
     },
@@ -820,11 +782,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "C/Aamsc",
-      "morph_readable": "C/Aamsc",
-      "normalized": "ורחב",
+      "morph_code": "Ncbda",
+      "morph_readable": "Ncbda",
+      "normalized": "עינים",
       "occurrence_index": 9,
-      "part_of_speech": "adjective",
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 17:8",
         "Psalm 18:28",
@@ -840,15 +802,15 @@
         "Psalm 135:16",
         "Psalm 145:15"
       ],
-      "ref": "Psalm 101:5#8",
+      "ref": "Psalm 101:5#7",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H7342",
-      "surface": "וּרְחַ֣ב",
+      "strong": "H5869",
+      "surface": "עֵ֭ינַיִם",
       "syntax_role": null,
-      "token_id": "ps101.v005.t008",
+      "token_id": "ps101.v005.t007",
       "transliteration": "ʿênayim",
       "word_sense": "of.eyes"
     },
@@ -924,25 +886,25 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncmsa",
-      "morph_readable": "Ncmsa",
-      "normalized": "לבב",
+      "morph_code": "C/Aamsc",
+      "morph_readable": "C/Aamsc",
+      "normalized": "ורחב",
       "occurrence_index": 1,
-      "part_of_speech": "noun",
+      "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 104:25",
         "Psalm 119:45",
         "Psalm 119:96"
       ],
-      "ref": "Psalm 101:5#9",
+      "ref": "Psalm 101:5#8",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H3824",
-      "surface": "לֵבָ֑ב",
+      "strong": "H7342",
+      "surface": "וּרְחַ֣ב",
       "syntax_role": null,
-      "token_id": "ps101.v005.t009",
+      "token_id": "ps101.v005.t008",
       "transliteration": "ûrəḥaḇ",
       "word_sense": "[a.person].wide"
     },
@@ -1019,11 +981,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "To/Sp3ms",
-      "morph_readable": "To/Sp3ms",
-      "normalized": "אתו",
+      "morph_code": "Ncmsa",
+      "morph_readable": "Ncmsa",
+      "normalized": "לבב",
       "occurrence_index": 7,
-      "part_of_speech": "suffix",
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 24:4",
         "Psalm 73:1",
@@ -1035,17 +997,17 @@
         "Psalm 111:1",
         "Psalm 119:7"
       ],
-      "ref": "Psalm 101:5#10",
+      "ref": "Psalm 101:5#9",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:4"
       ],
       "semantic_role": null,
       "stem": null,
-      "strong": "H853",
-      "surface": "אֹ֝ת֗וֹ",
+      "strong": "H3824",
+      "surface": "לֵבָ֑ב",
       "syntax_role": null,
-      "token_id": "ps101.v005.t010",
+      "token_id": "ps101.v005.t009",
       "transliteration": "lēḇāḇ",
       "word_sense": "of.heart"
     },
@@ -1144,11 +1106,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Tn",
-      "morph_readable": "Tn",
-      "normalized": "לא",
-      "occurrence_index": 3137,
-      "part_of_speech": "particle",
+      "morph_code": "To/Sp3ms",
+      "morph_readable": "To/Sp3ms",
+      "normalized": "אתו",
+      "occurrence_index": 3162,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1175,7 +1137,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 101:5#11",
+      "ref": "Psalm 101:5#10",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:1",
@@ -1187,10 +1149,10 @@
       ],
       "semantic_role": null,
       "stem": null,
-      "strong": "H3808",
-      "surface": "לֹ֣א",
+      "strong": "H853",
+      "surface": "אֹ֝ת֗וֹ",
       "syntax_role": null,
-      "token_id": "ps101.v005.t011",
+      "token_id": "ps101.v005.t010",
       "transliteration": null,
       "word_sense": "him"
     },
@@ -1262,11 +1224,12 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech",
+            "part_of_speech"
+          ],
+          "missing_fields": [
             "stem"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "status": "partial"
         }
       },
       "gloss_parts": [
@@ -1276,14 +1239,15 @@
       "greek_strong": "3756",
       "lemma": "לֹא",
       "missing_enrichments": [
+        "oshb:stem",
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vqi1cs",
-      "morph_readable": "Vqi1cs",
-      "normalized": "אוכל",
+      "morph_code": "Tn",
+      "morph_readable": "Tn",
+      "normalized": "לא",
       "occurrence_index": 237,
-      "part_of_speech": "verb",
+      "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 1:1",
         "Psalm 1:3",
@@ -1310,7 +1274,7 @@
         "Psalm 18:38",
         "Psalm 18:39"
       ],
-      "ref": "Psalm 101:5#12",
+      "ref": "Psalm 101:5#11",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 101:3",
@@ -1318,13 +1282,109 @@
         "Psalm 101:7"
       ],
       "semantic_role": null,
+      "stem": null,
+      "strong": "H3808",
+      "surface": "לֹ֣א",
+      "syntax_role": "adv",
+      "token_id": "ps101.v005.t011",
+      "transliteration": "lōʾ",
+      "word_sense": "not"
+    },
+    {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "endure"
+        ],
+        "gloss_fragments": [
+          "I will be able"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb"
+        ],
+        "raw_pos": [
+          "verb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 18:39",
+        "Psalm 21:12",
+        "Psalm 36:13",
+        "Psalm 40:13",
+        "Psalm 78:19",
+        "Psalm 78:20",
+        "Psalm 129:2",
+        "Psalm 139:6"
+      ],
+      "display_gloss": "I will be able",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
+      "gloss_parts": [
+        "I.will.be.able"
+      ],
+      "greek": "συνήσθιον",
+      "greek_strong": null,
+      "lemma": "יָכֹל",
+      "missing_enrichments": [
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Vqi1cs",
+      "morph_readable": "Vqi1cs",
+      "normalized": "אוכל",
+      "occurrence_index": 7,
+      "part_of_speech": "verb",
+      "psalms_occurrence_refs": [
+        "Psalm 18:39",
+        "Psalm 21:12",
+        "Psalm 36:13",
+        "Psalm 40:13",
+        "Psalm 78:19",
+        "Psalm 78:20",
+        "Psalm 129:2",
+        "Psalm 139:6"
+      ],
+      "ref": "Psalm 101:5#12",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
       "stem": "qal",
       "strong": "H3201",
       "surface": "אוּכָֽל",
-      "syntax_role": "adv",
+      "syntax_role": "v",
       "token_id": "ps101.v005.t012",
-      "transliteration": "lōʾ",
-      "word_sense": "not"
+      "transliteration": "ʾûḵāl:",
+      "word_sense": "I.will.be.able"
     }
   ],
   "unit_id": "ps101.v005.a",

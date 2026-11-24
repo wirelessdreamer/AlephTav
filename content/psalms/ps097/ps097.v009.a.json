@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps097.v009.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c277fbddc9683cb9bb1725d95002321f82063f9619c274c85dd10050a1097cc3",
+      "audit_id": "aud.ps097.v009.a.0001",
+      "before_hash": "476cdcb0cbe63060e882b6182fbc79258db6578f56aa8eef4923563483023a4d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.862671+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps097.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps097.v009.a.0001"
@@ -859,6 +878,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -872,8 +892,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -918,7 +937,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 111,
+      "occurrence_index": 112,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -930,6 +949,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -943,8 +963,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 97:9#7",
       "referent": null,
@@ -988,6 +1007,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -1008,8 +1028,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -1052,11 +1071,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 16,
+      "occurrence_index": 17,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -1077,8 +1097,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "ref": "Psalm 97:9#8",
       "referent": null,

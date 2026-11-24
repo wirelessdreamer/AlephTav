@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps050.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2ffa3ff5aa80b6ebba6bfbee8da3d682c55b454c600093589dc92072b043f46c",
+      "audit_id": "aud.ps050.v003.a.0001",
+      "before_hash": "bdcd16ff4bf90d59efd43b012627c64c275b0929065e43c58d4251025e701761",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.432402+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps050.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps050.v003.a.0001"
@@ -263,7 +282,7 @@
       "morph_code": "Ncmpc/Sp1cp",
       "morph_readable": "Ncmpc/Sp1cp",
       "normalized": "אלהינו",
-      "occurrence_index": 1555,
+      "occurrence_index": 1562,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -778,7 +797,7 @@
       "morph_code": "R/Ncbpc/Sp3ms",
       "morph_readable": "R/Ncbpc/Sp3ms",
       "normalized": "לפניו",
-      "occurrence_index": 1556,
+      "occurrence_index": 1563,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1059,7 +1078,7 @@
       "morph_code": "C/Ncbsc/Sp3ms",
       "morph_readable": "C/Ncbsc/Sp3ms",
       "normalized": "וסביביו",
-      "occurrence_index": 1557,
+      "occurrence_index": 1564,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1216,6 +1235,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -1236,8 +1256,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -1280,11 +1299,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 9,
+      "occurrence_index": 10,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -1305,8 +1325,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "ref": "Psalm 50:3#10",
       "referent": null,

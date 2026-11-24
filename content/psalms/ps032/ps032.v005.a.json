@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps032.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d50662a5476b4157c8383bace29c911904e88bb2fc7db1753079b40bc8bc3f41",
+      "audit_id": "aud.ps032.v005.a.0001",
+      "before_hash": "1f2afd4afede1599e0972c4c69cadc345ab0609e4b982061ad9d81f8d59e55ba",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.065387+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps032.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps032.v005.a.0001"
@@ -140,7 +159,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "חטאתי",
-      "occurrence_index": 925,
+      "occurrence_index": 929,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -287,7 +306,7 @@
       "morph_code": "Vhi1cs/Sp2ms",
       "morph_readable": "Vhi1cs/Sp2ms",
       "normalized": "אודיעך",
-      "occurrence_index": 926,
+      "occurrence_index": 930,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -442,7 +461,7 @@
       "morph_code": "C/Ncbsc/Sp1cs",
       "morph_readable": "C/Ncbsc/Sp1cs",
       "normalized": "ועוני",
-      "occurrence_index": 927,
+      "occurrence_index": 931,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1218,7 +1237,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "פשעי",
-      "occurrence_index": 928,
+      "occurrence_index": 932,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1882,7 +1901,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "חטאתי",
-      "occurrence_index": 929,
+      "occurrence_index": 933,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1965,6 +1984,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 39:6",
         "Psalm 39:12",
@@ -1977,8 +1997,7 @@
         "Psalm 49:14",
         "Psalm 49:16",
         "Psalm 50:6",
-        "Psalm 52:5",
-        "Psalm 52:7"
+        "Psalm 52:5"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -2022,7 +2041,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 13,
+      "occurrence_index": 14,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -2035,6 +2054,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 39:6",
         "Psalm 39:12",
@@ -2047,8 +2067,7 @@
         "Psalm 49:14",
         "Psalm 49:16",
         "Psalm 50:6",
-        "Psalm 52:5",
-        "Psalm 52:7"
+        "Psalm 52:5"
       ],
       "ref": "Psalm 32:5#15",
       "referent": null,

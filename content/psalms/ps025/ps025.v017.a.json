@@ -11,7 +11,8 @@
     "aud.ps025.v017.a.0003",
     "aud.ps025.v017.a.0004",
     "aud.ps025.v017.a.0005",
-    "aud.ps025.v017.a.0006"
+    "aud.ps025.v017.a.0006",
+    "aud.ps025.v017.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2a349faf0f118ab0c315657ddfbbc77ba3e8a24ac40295fb5b14e45095f446e1",
+      "audit_id": "aud.ps025.v017.a.0007",
+      "before_hash": "4db6518e16e6a742eabba2583cbcdf6f6d0ae7a012b6e3db5c87a60394a1bd4a",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.094622+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v017.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -795,7 +812,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבבי",
-      "occurrence_index": 687,
+      "occurrence_index": 690,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1044,7 +1061,7 @@
       "morph_code": "R/Ncfpc/Sp1cs",
       "morph_readable": "R/Ncfpc/Sp1cs",
       "normalized": "ממצוקותי",
-      "occurrence_index": 688,
+      "occurrence_index": 691,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1195,7 +1212,7 @@
       "morph_code": "Vhv2ms/Sp1cs",
       "morph_readable": "Vhv2ms/Sp1cs",
       "normalized": "הוציאני",
-      "occurrence_index": 689,
+      "occurrence_index": 692,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

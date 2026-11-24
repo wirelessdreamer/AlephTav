@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps078.v029.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a7dd6aad7c36286903ee0002735afec601d99845ea6416eb58f7eee8862d55dd",
+      "audit_id": "aud.ps078.v029.a.0001",
+      "before_hash": "8a251dbe11229a263e113b376f97c424ec05d71f3409f65508c01a103518fa8d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.840988+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps078.v029.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps078.v029.a.0001"
@@ -298,6 +317,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -318,8 +338,7 @@
         "Psalm 116:10",
         "Psalm 119:4",
         "Psalm 119:8",
-        "Psalm 119:43",
-        "Psalm 119:51"
+        "Psalm 119:43"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -362,11 +381,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 10,
+      "occurrence_index": 11,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -387,8 +407,7 @@
         "Psalm 116:10",
         "Psalm 119:4",
         "Psalm 119:8",
-        "Psalm 119:43",
-        "Psalm 119:51"
+        "Psalm 119:43"
       ],
       "ref": "Psalm 78:29#3",
       "referent": null,
@@ -510,7 +529,7 @@
       "morph_code": "C/Ncfsc/Sp3mp",
       "morph_readable": "C/Ncfsc/Sp3mp",
       "normalized": "ותאותם",
-      "occurrence_index": 2439,
+      "occurrence_index": 2459,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -793,7 +812,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "להם",
-      "occurrence_index": 2440,
+      "occurrence_index": 2460,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps143.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7605478f2c8c1643fed2a8397c2b5013d56ae2addee1cc952a3d03a178ed0b2f",
+      "audit_id": "aud.ps143.v010.a.0001",
+      "before_hash": "9ab6750c41bd00dd40290d681d6dc1317fbaf32d9671764afd7dba293c1ea0f4",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.490863+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps143.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps143.v010.a.0001"
@@ -133,7 +152,7 @@
       "morph_code": "Vpv2ms/Sp1cs",
       "morph_readable": "Vpv2ms/Sp1cs",
       "normalized": "למדני",
-      "occurrence_index": 4547,
+      "occurrence_index": 4582,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -419,7 +438,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "רצונך",
-      "occurrence_index": 4548,
+      "occurrence_index": 4583,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -836,7 +855,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלוהי",
-      "occurrence_index": 4549,
+      "occurrence_index": 4584,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -989,7 +1008,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "רוחך",
-      "occurrence_index": 4550,
+      "occurrence_index": 4585,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1080,6 +1099,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -1087,8 +1107,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "good",
       "enrichment_sources": {
@@ -1131,7 +1150,7 @@
       "morph_code": "Aafsa",
       "morph_readable": "Aafsa",
       "normalized": "טובה",
-      "occurrence_index": 58,
+      "occurrence_index": 59,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -1149,6 +1168,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -1156,8 +1176,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 143:10#8",
       "referent": null,
@@ -1269,7 +1288,7 @@
       "morph_code": "Vhi2ms/Sp1cs",
       "morph_readable": "Vhi2ms/Sp1cs",
       "normalized": "תנחני",
-      "occurrence_index": 4551,
+      "occurrence_index": 4586,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1358,6 +1377,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1371,8 +1391,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "in a land",
       "enrichment_sources": {
@@ -1417,7 +1436,7 @@
       "morph_code": "R/Ncbsc",
       "morph_readable": "R/Ncbsc",
       "normalized": "בארץ",
-      "occurrence_index": 171,
+      "occurrence_index": 172,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1429,6 +1448,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1442,8 +1462,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 143:10#10",
       "referent": null,

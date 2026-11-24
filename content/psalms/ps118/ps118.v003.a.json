@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps118.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "bd3d6a8946c6c0461bb82d6a0239f6a396ec12b850106ede7698cb6d6871292c",
+      "audit_id": "aud.ps118.v003.a.0001",
+      "before_hash": "67ebc239de965cfce3ddd2c51ab18a25f77c70558a84d46294f0748b4fe2ad45",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.953509+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps118.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps118.v003.a.0001"
@@ -677,6 +696,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -693,8 +713,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "is forever",
       "enrichment_sources": {
@@ -739,7 +758,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעולם",
-      "occurrence_index": 87,
+      "occurrence_index": 88,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -748,6 +767,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -764,8 +784,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 118:3#6",
       "referent": null,
@@ -885,7 +904,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "חסדו",
-      "occurrence_index": 3692,
+      "occurrence_index": 3721,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

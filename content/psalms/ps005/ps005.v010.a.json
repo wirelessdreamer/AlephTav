@@ -16,7 +16,8 @@
     "aud.ps005.v010.a.0006",
     "aud.ps005.v010.a.0007",
     "aud.ps005.v010.a.0008",
-    "aud.ps005.v010.a.0009"
+    "aud.ps005.v010.a.0009",
+    "aud.ps005.v010.a.0010"
   ],
   "audit_records": [
     {
@@ -160,6 +161,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8c08b668ed2356e247c150b69795f594c1e2b81a72e889a1dbd9ce3b0452826d",
+      "audit_id": "aud.ps005.v010.a.0010",
+      "before_hash": "207ae85aeb95e1cdb9511f61380092966442b2a260efabfa6794d8ea710dd5cb",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.085540+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps005.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1395,7 +1412,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "בפיהו",
-      "occurrence_index": 85,
+      "occurrence_index": 86,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1675,7 +1692,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "קרבם",
-      "occurrence_index": 86,
+      "occurrence_index": 87,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -2121,7 +2138,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "גרונם",
-      "occurrence_index": 87,
+      "occurrence_index": 88,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -2273,7 +2290,7 @@
       "morph_code": "Ncbsc/Sp3mp",
       "morph_readable": "Ncbsc/Sp3mp",
       "normalized": "לשונם",
-      "occurrence_index": 88,
+      "occurrence_index": 89,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -2377,9 +2394,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "display_gloss": "they make smooth",
       "enrichment_sources": {
@@ -2446,9 +2463,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "ref": "Psalm 5:10#11",
       "referent": null,

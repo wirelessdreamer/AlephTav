@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps112.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d92f410f8892954e77cb0db2372f2a1559e3da689cddeaf2e3e80441a5f648ac",
+      "audit_id": "aud.ps112.v003.a.0001",
+      "before_hash": "5cc36bad6e724cdc75fafa32f234034ea26bfb3314d65dc90609e78b3dc36005",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.664412+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps112.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps112.v003.a.0001"
@@ -309,7 +328,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "בביתו",
-      "occurrence_index": 3609,
+      "occurrence_index": 3638,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -463,7 +482,7 @@
       "morph_code": "C/Ncfsc/Sp3ms",
       "morph_readable": "C/Ncfsc/Sp3ms",
       "normalized": "וצדקתו",
-      "occurrence_index": 3610,
+      "occurrence_index": 3639,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -671,6 +690,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -690,8 +710,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "forever forever",
       "enrichment_sources": {
@@ -735,12 +754,13 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעד",
-      "occurrence_index": 81,
+      "occurrence_index": 82,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -760,8 +780,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 112:3#6",
       "referent": null,

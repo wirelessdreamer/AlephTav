@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps101.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "98bc2f493c33e34fa20d8c889179f3f491a869dc55a9bfe0295261b372eacb29",
+      "audit_id": "aud.ps101.v004.a.0001",
+      "before_hash": "94470d3e9cd986d31dea509c9a8edc7b14a871f0daf4b6253bb4d455482ab41f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.077818+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps101.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps101.v004.a.0001"
@@ -424,7 +443,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 3134,
+      "occurrence_index": 3159,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -823,7 +842,7 @@
       "morph_code": "Vqi1cs",
       "morph_readable": "Vqi1cs",
       "normalized": "אדע",
-      "occurrence_index": 53,
+      "occurrence_index": 54,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",

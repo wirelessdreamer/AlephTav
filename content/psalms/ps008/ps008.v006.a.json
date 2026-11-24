@@ -8,7 +8,8 @@
     "aud.ps008.v006.a.0001",
     "aud.ps008.v006.a.0002",
     "aud.ps008.v006.a.0003",
-    "aud.ps008.v006.a.0004"
+    "aud.ps008.v006.a.0004",
+    "aud.ps008.v006.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0177ce09199fff41006af54874857d68d62c153ee776010a14a7308b9c30d24f",
+      "audit_id": "aud.ps008.v006.a.0005",
+      "before_hash": "5e7538a167e85d74f631d76e8e40481526d682d1973da098a5ae51723089a74f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.304168+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps008.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -491,7 +508,7 @@
       "morph_code": "C/Vpw2ms/Sp3ms",
       "morph_readable": "C/Vpw2ms/Sp3ms",
       "normalized": "ותחסרהו",
-      "occurrence_index": 165,
+      "occurrence_index": 166,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1116,7 +1133,7 @@
       "morph_code": "Vpi2ms/Sp3ms",
       "morph_readable": "Vpi2ms/Sp3ms",
       "normalized": "תעטרהו",
-      "occurrence_index": 166,
+      "occurrence_index": 167,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

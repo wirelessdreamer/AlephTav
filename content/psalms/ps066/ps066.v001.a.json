@@ -8,7 +8,8 @@
     "aud.ps066.v001.a.0002",
     "aud.ps066.v001.a.0003",
     "aud.ps066.v001.a.0004",
-    "aud.ps066.v001.a.0005"
+    "aud.ps066.v001.a.0005",
+    "aud.ps066.v001.a.0006"
   ],
   "audit_records": [
     {
@@ -88,6 +89,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2e233a8ae9d18fea05d3f82a4cd6a4c3ec41bc894ec253b6a8dd9f97c7160289",
+      "audit_id": "aud.ps066.v001.a.0006",
+      "before_hash": "db672f30079d8afe6058e0a94701b052d28aecd208c1ac8359013dc0065ca3d9",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.920205+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1102,6 +1119,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1115,8 +1133,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -1161,7 +1178,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 58,
+      "occurrence_index": 59,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1173,6 +1190,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1186,8 +1204,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 66:1#7",
       "referent": null,

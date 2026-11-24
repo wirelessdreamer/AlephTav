@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps024.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8e87f05b3c9d4c0834dbb560e58b9d15c180ea8dbbf30409c85fb473b88f01dc",
+      "audit_id": "aud.ps024.v001.a.0001",
+      "before_hash": "2d9a78dbec8e2e7f251f7aba48645d11e5eb0f43db8db507620d43b2c3d56c48",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.884299+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps024.v001.a.0001"
@@ -476,6 +495,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -489,8 +509,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -535,7 +554,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -547,6 +566,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -560,8 +580,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 24:1#4",
       "referent": null,
@@ -681,7 +700,7 @@
       "morph_code": "C/Ncmsc/Sp3fs",
       "morph_readable": "C/Ncmsc/Sp3fs",
       "normalized": "ומלואה",
-      "occurrence_index": 633,
+      "occurrence_index": 636,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1076,7 +1095,7 @@
       "morph_code": "R/Sp3fs",
       "morph_readable": "R/Sp3fs",
       "normalized": "בה",
-      "occurrence_index": 634,
+      "occurrence_index": 637,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

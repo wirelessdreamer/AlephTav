@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps048.v011.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "22fc49975171d2ef24c766a511d0281e212944948e6247ad50de45ee226614fb",
+      "audit_id": "aud.ps048.v011.a.0001",
+      "before_hash": "3d84c5fae3f7db1238f84ea4c9403f4bef748e61ffeacb74ede98a2cff66372e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.229726+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps048.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps048.v011.a.0001"
@@ -140,7 +159,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "כשמך",
-      "occurrence_index": 1509,
+      "occurrence_index": 1515,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -560,7 +579,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "תהלתך",
-      "occurrence_index": 1510,
+      "occurrence_index": 1516,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -861,6 +880,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -874,8 +894,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -919,7 +938,7 @@
       "morph_code": "Ncbsa",
       "morph_readable": "Ncbsa",
       "normalized": "ארץ",
-      "occurrence_index": 43,
+      "occurrence_index": 44,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -931,6 +950,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -944,8 +964,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 48:11#7",
       "referent": null,
@@ -1318,7 +1337,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "ימינך",
-      "occurrence_index": 1511,
+      "occurrence_index": 1517,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

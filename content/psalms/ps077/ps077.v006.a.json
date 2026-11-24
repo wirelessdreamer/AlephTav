@@ -17,7 +17,8 @@
     "aud.ps077.v006.a.0008",
     "aud.ps077.v006.a.0009",
     "aud.ps077.v006.a.0010",
-    "aud.ps077.v006.a.0011"
+    "aud.ps077.v006.a.0011",
+    "aud.ps077.v006.a.0012"
   ],
   "audit_records": [
     {
@@ -193,6 +194,22 @@
       "rationale": "Preserve the original translation rationale during source-anchor recovery",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "cddb7c3797528630f859b3643adabfba5c41ef6d9ac0dcbcfad82d55a554541d",
+      "audit_id": "aud.ps077.v006.a.0012",
+      "before_hash": "895ea1610c08518ff24bdcf610e9ef6a6813773a25deceafef96a5e00a3444ff",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.517285+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps077.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1183,6 +1200,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1199,8 +1217,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "of antiquiti(es)",
       "enrichment_sources": {
@@ -1244,7 +1261,7 @@
       "morph_code": "Ncmpa",
       "morph_readable": "Ncmpa",
       "normalized": "עולמים",
-      "occurrence_index": 43,
+      "occurrence_index": 44,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1253,6 +1270,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1269,8 +1287,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 77:6#5",
       "referent": null,

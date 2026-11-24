@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps140.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "705079836bb8c7cbc4d43a5b54aedbb6704f51c99e9a9d827609c9d4a5f6a481",
+      "audit_id": "aud.ps140.v012.a.0001",
+      "before_hash": "036bd8d208e0e1d0d8a5c4654d09790b36a58e20a7e38d25a841d39bdad48917",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.304326+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps140.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps140.v012.a.0001"
@@ -566,6 +585,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -579,8 +599,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "in the land",
       "enrichment_sources": {
@@ -626,7 +645,7 @@
       "morph_code": "Rd/Ncbsa",
       "morph_readable": "Rd/Ncbsa",
       "normalized": "בארץ",
-      "occurrence_index": 166,
+      "occurrence_index": 167,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -638,6 +657,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -651,8 +671,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 140:12#5",
       "referent": null,
@@ -1136,7 +1155,7 @@
       "morph_code": "Vqj3ms/Sp3ms",
       "morph_readable": "Vqj3ms/Sp3ms",
       "normalized": "יצודנו",
-      "occurrence_index": 4458,
+      "occurrence_index": 4493,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

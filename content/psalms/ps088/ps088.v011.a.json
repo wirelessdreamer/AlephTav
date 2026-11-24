@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps088.v011.a.0001",
-    "aud.ps088.v011.a.0002"
+    "aud.ps088.v011.a.0002",
+    "aud.ps088.v011.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a247434a2edb84a888681009e326a89d226c4610f418838dab7d913bf3005d59",
+      "audit_id": "aud.ps088.v011.a.0003",
+      "before_hash": "01b4644913e8de7efda55b165ea77822bfda093923933c89dd229a9e8b075c35",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.906762+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps088.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1008,7 +1025,7 @@
       "morph_code": "Vhi3mp/Sp2ms",
       "morph_readable": "Vhi3mp/Sp2ms",
       "normalized": "יודוך",
-      "occurrence_index": 2784,
+      "occurrence_index": 2804,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1095,6 +1112,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1107,8 +1125,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1152,7 +1169,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 61,
+      "occurrence_index": 63,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1165,6 +1182,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1177,8 +1195,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "ref": "Psalm 88:11#8",
       "referent": null,

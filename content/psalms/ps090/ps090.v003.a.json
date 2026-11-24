@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps090.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d431405d1d2ddfca60ffd70cb348e55cab762ae5ed2ce1e3207affc04275a580",
+      "audit_id": "aud.ps090.v003.a.0001",
+      "before_hash": "60a41829096c33b8f7073695bcca29999124603837f51e0f8dec30053ff47d74",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.244286+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps090.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps090.v003.a.0001"
@@ -120,7 +139,7 @@
       "morph_code": "Vhi2ms",
       "morph_readable": "Vhi2ms",
       "normalized": "תשב",
-      "occurrence_index": 44,
+      "occurrence_index": 45,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",
@@ -291,6 +310,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -310,8 +330,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "to",
       "enrichment_sources": {
@@ -355,12 +374,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 59,
+      "occurrence_index": 60,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -380,8 +400,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 90:3#3",
       "referent": null,
@@ -704,7 +723,7 @@
       "morph_code": "Vqv2mp",
       "morph_readable": "Vqv2mp",
       "normalized": "שובו",
-      "occurrence_index": 45,
+      "occurrence_index": 46,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",

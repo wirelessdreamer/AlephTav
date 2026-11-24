@@ -15,7 +15,8 @@
     "aud.ps077.v019.a.0006",
     "aud.ps077.v019.a.0007",
     "aud.ps077.v019.a.0008",
-    "aud.ps077.v019.a.0009"
+    "aud.ps077.v019.a.0009",
+    "aud.ps077.v019.a.0010"
   ],
   "audit_records": [
     {
@@ -159,6 +160,22 @@
       "rationale": "Preserve the original translation rationale during source-anchor recovery",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "608fe3cb481784884f94792f884d9ae5af680efe6c8a4175289530207092e64b",
+      "audit_id": "aud.ps077.v019.a.0010",
+      "before_hash": "763e50a054822b70e5c8d2c59d4803c297e5b3939f6830c30e963e99f1e50e83",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.652985+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps077.v019.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1015,7 +1032,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "רעמך",
-      "occurrence_index": 2395,
+      "occurrence_index": 2415,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1055,9 +1072,9 @@
         "Psalm 77:9",
         "Psalm 77:10",
         "Psalm 77:11",
+        "Psalm 77:12",
         "Psalm 77:13",
-        "Psalm 77:14",
-        "Psalm 77:15"
+        "Psalm 77:14"
       ],
       "semantic_role": null,
       "stem": null,
@@ -1709,6 +1726,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1722,8 +1740,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -1768,7 +1785,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 85,
+      "occurrence_index": 86,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1780,6 +1797,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1793,8 +1811,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 77:19#9",
       "referent": null,

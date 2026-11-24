@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps096.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "9adb0f07f20bed40f2ef1553c71e14318bc4e758bdd5b30b1abde2ae95eaf7d2",
+      "audit_id": "aud.ps096.v002.a.0001",
+      "before_hash": "1d33b7b87771f974f1e4f91535803345a72470d1c1b178513afc7911a94294f9",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.725606+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps096.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps096.v002.a.0001"
@@ -536,7 +555,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "שמו",
-      "occurrence_index": 3061,
+      "occurrence_index": 3085,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1042,7 +1061,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "ישועתו",
-      "occurrence_index": 3062,
+      "occurrence_index": 3086,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

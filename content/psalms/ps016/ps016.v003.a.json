@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps016.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3e93b208e3fa81c7ef2338ae6e6bb68637e76740b3aa5fd8b2ff9c82ee51dbc6",
+      "audit_id": "aud.ps016.v003.a.0001",
+      "before_hash": "bdf8fc094347a006f0916ee24ee523683a63f7ac4f859f7441f829151e8f0e18",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.810396+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps016.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps016.v003.a.0001"
@@ -319,6 +338,7 @@
         "Psalm 8:10",
         "Psalm 10:18",
         "Psalm 12:7",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -333,8 +353,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "in the land",
       "enrichment_sources": {
@@ -391,6 +410,7 @@
         "Psalm 8:10",
         "Psalm 10:18",
         "Psalm 12:7",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -405,8 +425,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 16:3#3",
       "referent": null,
@@ -880,7 +899,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "חפצי",
-      "occurrence_index": 277,
+      "occurrence_index": 279,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1033,7 +1052,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "בם",
-      "occurrence_index": 278,
+      "occurrence_index": 280,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

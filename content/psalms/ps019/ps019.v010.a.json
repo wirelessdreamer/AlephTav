@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps019.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e279566c7ad0efdd0ea2c6d70e63bd2ea979e07b5fa7f052e35c77add85a4714",
+      "audit_id": "aud.ps019.v010.a.0001",
+      "before_hash": "4da603196a70692ee150f6dbd77c1d958875d57e8ca8725e12216cd29601cc2f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.350785+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps019.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps019.v010.a.0001"
@@ -504,6 +523,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -523,8 +543,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "display_gloss": "forever forever",
       "enrichment_sources": {
@@ -568,12 +587,13 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעד",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -593,8 +613,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "ref": "Psalm 19:10#5",
       "referent": null,

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v074.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4ba7cec4dc5bfe755266b92f03c8229c91fbad2fa9c514ddd288e8034a76d070",
+      "audit_id": "aud.ps119.v074.a.0001",
+      "before_hash": "3ebff75151860ee29b1d7639dbac1c9414146ed4184a30ab54865fb379f8e1b4",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.429937+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v074.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v074.a.0001"
@@ -131,7 +150,7 @@
       "morph_code": "Aampc/Sp2ms",
       "morph_readable": "Aampc/Sp2ms",
       "normalized": "יראיך",
-      "occurrence_index": 3890,
+      "occurrence_index": 3919,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -282,7 +301,7 @@
       "morph_code": "Vqi3mp/Sp1cs",
       "morph_readable": "Vqi3mp/Sp1cs",
       "normalized": "יראוני",
-      "occurrence_index": 3891,
+      "occurrence_index": 3920,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -716,7 +735,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "לדברך",
-      "occurrence_index": 3892,
+      "occurrence_index": 3921,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -868,7 +887,8 @@
       "same_psalm_occurrence_refs": [
         "Psalm 119:43",
         "Psalm 119:81",
-        "Psalm 119:114"
+        "Psalm 119:114",
+        "Psalm 119:147"
       ],
       "semantic_role": null,
       "stem": "piel",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps060.v011.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4296a42272fffb98599dc8fc02bee473875c0da92b607d3597e8a2ca08261809",
+      "audit_id": "aud.ps060.v011.a.0001",
+      "before_hash": "5306029c93da3b24d0e6ba5c32dce2da733a083057d0e39267326debdeee04d2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.537074+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps060.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps060.v011.a.0001"
@@ -260,7 +279,7 @@
       "morph_code": "Vhi3ms/Sp1cs",
       "morph_readable": "Vhi3ms/Sp1cs",
       "normalized": "יבלני",
-      "occurrence_index": 1857,
+      "occurrence_index": 1871,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -745,7 +764,7 @@
       "morph_code": "Vqp3ms/Sp1cs",
       "morph_readable": "Vqp3ms/Sp1cs",
       "normalized": "נחני",
-      "occurrence_index": 1858,
+      "occurrence_index": 1872,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -825,6 +844,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -844,8 +864,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "to",
       "enrichment_sources": {
@@ -889,12 +908,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 35,
+      "occurrence_index": 36,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -914,8 +934,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 60:11#7",
       "referent": null,

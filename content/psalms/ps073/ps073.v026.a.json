@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps073.v026.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "75b5cb77b5c98cc3f5e419b6464d1439e2d4637265aa26230c0201be7ace2836",
+      "audit_id": "aud.ps073.v026.a.0001",
+      "before_hash": "72342a78ae5d2ef1ab8d4ed73be8ad33dde880d52d698a9f15a48c8e47c3f4d6",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.140378+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps073.v026.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps073.v026.a.0001"
@@ -63,6 +82,7 @@
         "Psalm 69:4",
         "Psalm 71:9",
         "Psalm 71:13",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -122,6 +142,7 @@
         "Psalm 69:4",
         "Psalm 71:9",
         "Psalm 71:13",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -245,7 +266,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "שארי",
-      "occurrence_index": 2309,
+      "occurrence_index": 2328,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -404,7 +425,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "ולבבי",
-      "occurrence_index": 2310,
+      "occurrence_index": 2329,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -671,7 +692,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבבי",
-      "occurrence_index": 2311,
+      "occurrence_index": 2330,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -830,7 +851,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "וחלקי",
-      "occurrence_index": 2312,
+      "occurrence_index": 2331,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1050,6 +1071,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1066,8 +1088,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -1112,7 +1133,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעולם",
-      "occurrence_index": 41,
+      "occurrence_index": 42,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1121,6 +1142,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1137,8 +1159,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 73:26#8",
       "referent": null,

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps122.v009.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "9af274149f54dabe29e7002f0c121d64e1b66582ea3f2bfe521459747cd72671",
+      "audit_id": "aud.ps122.v009.a.0001",
+      "before_hash": "9fcb02d6cfba23f5b318cc42b591924f0db4c229316c55b98c7184a0694934b5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.200113+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps122.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps122.v009.a.0001"
@@ -533,7 +552,7 @@
       "morph_code": "Ncmpc/Sp1cp",
       "morph_readable": "Ncmpc/Sp1cp",
       "normalized": "אלהינו",
-      "occurrence_index": 4162,
+      "occurrence_index": 4193,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -741,6 +760,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -748,8 +768,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "good",
       "enrichment_sources": {
@@ -792,7 +811,7 @@
       "morph_code": "Aamsa",
       "morph_readable": "Aamsa",
       "normalized": "טוב",
-      "occurrence_index": 51,
+      "occurrence_index": 52,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -810,6 +829,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -817,8 +837,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 122:9#6",
       "referent": null,
@@ -934,7 +953,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "לך",
-      "occurrence_index": 4163,
+      "occurrence_index": 4194,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

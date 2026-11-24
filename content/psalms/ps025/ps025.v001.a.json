@@ -56,7 +56,8 @@
     "aud.ps025.v001.a.0048",
     "aud.ps025.v001.a.0049",
     "aud.ps025.v001.a.0050",
-    "aud.ps025.v001.a.0051"
+    "aud.ps025.v001.a.0051",
+    "aud.ps025.v001.a.0052"
   ],
   "audit_records": [
     {
@@ -874,6 +875,22 @@
       "summary": "Record briefing decision: Redeeming Israel",
       "triggered_by_issue": null,
       "triggered_by_pr": null
+    },
+    {
+      "after_hash": "408fcb6c0475a6edaa29fe059abdb55cee3c2e687ca9a46ff4d6338e55064c4e",
+      "audit_id": "aud.ps025.v001.a.0052",
+      "before_hash": "25f9499aebb64d508bf393c0122f623e94ba8f1fd571161f7cf1e2f41360a657",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.949319+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
     }
   ],
   "canonical_rendering_ids": [],
@@ -1551,7 +1568,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "אליך",
-      "occurrence_index": 647,
+      "occurrence_index": 650,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1846,7 +1863,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 648,
+      "occurrence_index": 651,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

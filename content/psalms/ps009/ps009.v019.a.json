@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps009.v019.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e0a842b42587e14a2a8432ce24e35c8c2582a6034ce92e3a68b7c718c1b890c5",
+      "audit_id": "aud.ps009.v019.a.0001",
+      "before_hash": "c8e14f22605778d3115167d4250074fadb3f85764038193041d527058f13bc53",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.479198+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps009.v019.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps009.v019.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּ֤י לֹ֣א לָ֭נֶצַח יִשָּׁכַ֣ח אֶבְי֑וֹן תִּקְוַ֥ת תֹּאבַ֥ד לָעַֽד׃",
-  "source_transliteration": "kiy lōʾ lāneṣaḥ yiššāḵaḥ ʾeḇyôn tiqwaṯ **ʿăniyyiym tōʾḇaḏ",
+  "source_transliteration": "kiy lōʾ lāneṣaḥ yiššāḵaḥ ʾeḇyôn tiqwaṯ **ʿăniyyiym tōʾḇaḏ lāʿaḏ:",
   "status": "draft",
   "token_ids": [
     "ps009.v019.t001",
@@ -593,7 +612,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "display_gloss": "the needy",
       "enrichment_sources": {
@@ -657,7 +677,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "ref": "Psalm 9:19#5",
       "referent": null,
@@ -753,65 +774,6 @@
       "word_sense": "[the].hope"
     },
     {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [
-            "lemma",
-            "stem"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "oshb:stem",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Aampa",
-      "morph_readable": "Aampa",
-      "normalized": "ענוים",
-      "occurrence_index": 1,
-      "part_of_speech": "adjective",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 9:19#7",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": null,
-      "strong": "H6035",
-      "surface": "ענוים",
-      "syntax_role": null,
-      "token_id": "ps009.v019.t007",
-      "transliteration": null,
-      "word_sense": null
-    },
-    {
       "compiler_features": {
         "component_count": 1,
         "conjunction_role": null,
@@ -879,11 +841,12 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech",
+            "part_of_speech"
+          ],
+          "missing_fields": [
             "stem"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "status": "partial"
         }
       },
       "gloss_parts": [
@@ -893,15 +856,16 @@
       "greek_strong": "3993",
       "lemma": "עָנִי",
       "missing_enrichments": [
+        "oshb:stem",
         "macula:syntax_role",
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vqi3fs",
-      "morph_readable": "Vqi3fs",
-      "normalized": "תאבד",
+      "morph_code": "Aampa",
+      "morph_readable": "Aampa",
+      "normalized": "ענוים",
       "occurrence_index": 1,
-      "part_of_speech": "verb",
+      "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 10:2",
         "Psalm 10:9",
@@ -928,15 +892,15 @@
         "Psalm 109:22",
         "Psalm 140:13"
       ],
-      "ref": "Psalm 9:19#8",
+      "ref": "Psalm 9:19#7",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
-      "stem": "qal",
-      "strong": "H6",
-      "surface": "תֹּאבַ֥ד",
+      "stem": null,
+      "strong": "H6035",
+      "surface": "ענוים",
       "syntax_role": null,
-      "token_id": "ps009.v019.t008",
+      "token_id": "ps009.v019.t007",
       "transliteration": "**ʿăniyyiym",
       "word_sense": "of.afflicted.[people]"
     },
@@ -1022,11 +986,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "R/Ncmsa",
-      "morph_readable": "R/Ncmsa",
-      "normalized": "לעד",
+      "morph_code": "Vqi3fs",
+      "morph_readable": "Vqi3fs",
+      "normalized": "תאבד",
       "occurrence_index": 7,
-      "part_of_speech": "noun",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
         "Psalm 2:12",
@@ -1050,7 +1014,7 @@
         "Psalm 143:12",
         "Psalm 146:4"
       ],
-      "ref": "Psalm 9:19#9",
+      "ref": "Psalm 9:19#8",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 9:4",
@@ -1059,12 +1023,148 @@
       ],
       "semantic_role": null,
       "stem": "qal",
-      "strong": "H5703",
-      "surface": "לָעַֽד",
+      "strong": "H6",
+      "surface": "תֹּאבַ֥ד",
       "syntax_role": "v",
-      "token_id": "ps009.v019.t009",
+      "token_id": "ps009.v019.t008",
       "transliteration": "tōʾḇaḏ",
       "word_sense": "it.will.be.lost"
+    },
+    {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "ever"
+        ],
+        "gloss_fragments": [
+          "forever"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 4:3",
+        "Psalm 6:4",
+        "Psalm 10:16",
+        "Psalm 13:2",
+        "Psalm 13:3",
+        "Psalm 18:38",
+        "Psalm 18:51",
+        "Psalm 19:10",
+        "Psalm 21:5",
+        "Psalm 21:7",
+        "Psalm 22:27",
+        "Psalm 28:9",
+        "Psalm 36:6",
+        "Psalm 37:29",
+        "Psalm 38:7",
+        "Psalm 38:9",
+        "Psalm 40:13",
+        "Psalm 41:14",
+        "Psalm 42:5",
+        "Psalm 45:7",
+        "Psalm 45:18",
+        "Psalm 46:10",
+        "Psalm 48:9",
+        "Psalm 48:15"
+      ],
+      "display_gloss": "forever ever",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "gloss_parts": [
+        "forever"
+      ],
+      "greek": "εἰς",
+      "greek_strong": "1519",
+      "lemma": "עַד",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "R/Ncmsa",
+      "morph_readable": "R/Ncmsa",
+      "normalized": "לעד",
+      "occurrence_index": 4,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 4:3",
+        "Psalm 6:4",
+        "Psalm 10:16",
+        "Psalm 13:2",
+        "Psalm 13:3",
+        "Psalm 18:38",
+        "Psalm 18:51",
+        "Psalm 19:10",
+        "Psalm 21:5",
+        "Psalm 21:7",
+        "Psalm 22:27",
+        "Psalm 28:9",
+        "Psalm 36:6",
+        "Psalm 37:29",
+        "Psalm 38:7",
+        "Psalm 38:9",
+        "Psalm 40:13",
+        "Psalm 41:14",
+        "Psalm 42:5",
+        "Psalm 45:7",
+        "Psalm 45:18",
+        "Psalm 46:10",
+        "Psalm 48:9",
+        "Psalm 48:15"
+      ],
+      "ref": "Psalm 9:19#9",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 9:6"
+      ],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H5703",
+      "surface": "לָעַֽד",
+      "syntax_role": null,
+      "token_id": "ps009.v019.t009",
+      "transliteration": "lāʿaḏ:",
+      "word_sense": "forever"
     }
   ],
   "unit_id": "ps009.v019.a",

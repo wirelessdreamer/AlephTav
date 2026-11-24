@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps102.v020.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "33df58f888ebaca30411b937aee8da4cfe17a5b06bbd4d3d28c2a5679d0d03b5",
+      "audit_id": "aud.ps102.v020.a.0001",
+      "before_hash": "a5474d3f2019ca9970395b457a27a36c768a07b5a105e1b919f793d8f2979c92",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.248784+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps102.v020.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps102.v020.a.0001"
@@ -470,7 +489,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "קדשו",
-      "occurrence_index": 3179,
+      "occurrence_index": 3204,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -965,6 +984,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -978,8 +998,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "earth",
       "enrichment_sources": {
@@ -1023,7 +1042,7 @@
       "morph_code": "Ncbsa",
       "morph_readable": "Ncbsa",
       "normalized": "ארץ",
-      "occurrence_index": 120,
+      "occurrence_index": 121,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1035,6 +1054,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1048,8 +1068,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 102:20#8",
       "referent": null,

@@ -11,7 +11,8 @@
     "aud.ps025.v012.a.0003",
     "aud.ps025.v012.a.0004",
     "aud.ps025.v012.a.0005",
-    "aud.ps025.v012.a.0006"
+    "aud.ps025.v012.a.0006",
+    "aud.ps025.v012.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d830983a54787a2eae7460647205c602e7727bcf52defa5ed90dbb468ab0fdc2",
+      "audit_id": "aud.ps025.v012.a.0007",
+      "before_hash": "256760776c106b54b729a1e61b13665a6eeef0072acd28b8aadfdca7819d560a",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.050132+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1314,7 +1331,7 @@
       "morph_code": "Vhi3ms/Sp3ms",
       "morph_readable": "Vhi3ms/Sp3ms",
       "normalized": "יורנו",
-      "occurrence_index": 676,
+      "occurrence_index": 679,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

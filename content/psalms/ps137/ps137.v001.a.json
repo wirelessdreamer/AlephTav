@@ -9,7 +9,8 @@
     "aud.ps137.v001.a.0002",
     "aud.ps137.v001.a.0003",
     "aud.ps137.v001.a.0004",
-    "aud.ps137.v001.a.0005"
+    "aud.ps137.v001.a.0005",
+    "aud.ps137.v001.a.0006"
   ],
   "audit_records": [
     {
@@ -89,6 +90,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "98a20cc51ce35e2f041dcf64388d151747439490c135dc3e86a77c05a0d5eb71",
+      "audit_id": "aud.ps137.v001.a.0006",
+      "before_hash": "41bf669f5d40ec6555b3442631d2b7c35fd3459ee791f18140dbe5847e786717",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.968087+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps137.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1282,7 +1299,7 @@
       "morph_code": "R/Vqc/Sp1cp",
       "morph_readable": "R/Vqc/Sp1cp",
       "normalized": "בזכרנו",
-      "occurrence_index": 4345,
+      "occurrence_index": 4377,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

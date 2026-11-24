@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps039.v006.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "70fd8bde91623a3e42874ac2cbbb9bf7ff9b523c2167057ca8c986d859bc1d0b",
+      "audit_id": "aud.ps039.v006.a.0001",
+      "before_hash": "f5fbbad1924a13c49377d68d64ae9b5de30a7bbc6983901970ef2d46ac96d7ba",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.971994+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps039.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps039.v006.a.0001"
@@ -478,7 +497,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "ימי",
-      "occurrence_index": 1215,
+      "occurrence_index": 1219,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -637,7 +656,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "וחלדי",
-      "occurrence_index": 1216,
+      "occurrence_index": 1220,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -927,7 +946,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "נגדך",
-      "occurrence_index": 1217,
+      "occurrence_index": 1221,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1727,6 +1746,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1739,8 +1759,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1784,7 +1803,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1797,6 +1816,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1809,8 +1829,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "ref": "Psalm 39:6#14",
       "referent": null,

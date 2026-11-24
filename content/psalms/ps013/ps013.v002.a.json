@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps013.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ad3bda1fa8d5932327c8002684a4e45bd667b0b1305b507d8267fdf943a1877c",
+      "audit_id": "aud.ps013.v002.a.0001",
+      "before_hash": "3370ec696dad2089472d92f64c7245151fab925f860cc1be7bb2878ed13f3443",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.682590+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps013.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps013.v002.a.0001"
@@ -62,6 +81,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -81,8 +101,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -126,12 +145,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 5,
+      "occurrence_index": 6,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -151,8 +171,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "ref": "Psalm 13:2#1",
       "referent": null,
@@ -489,7 +508,7 @@
       "morph_code": "Vqi2ms/Sp1cs",
       "morph_readable": "Vqi2ms/Sp1cs",
       "normalized": "תשכחני",
-      "occurrence_index": 243,
+      "occurrence_index": 245,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -677,6 +696,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -696,8 +716,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -741,12 +760,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 6,
+      "occurrence_index": 7,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -766,8 +786,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "ref": "Psalm 13:2#6",
       "referent": null,
@@ -1216,7 +1235,7 @@
       "morph_code": "Ncbpc/Sp2ms",
       "morph_readable": "Ncbpc/Sp2ms",
       "normalized": "פניך",
-      "occurrence_index": 244,
+      "occurrence_index": 246,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1362,7 +1381,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 245,
+      "occurrence_index": 247,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

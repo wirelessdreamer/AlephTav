@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps147.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "67fae0b63a1f03b93b8eada8a2b77a3fcced009fe2f07f3b33e0b6a7a69d03ba",
+      "audit_id": "aud.ps147.v002.a.0001",
+      "before_hash": "b03f1a1886e7beb11be8b8eb19639783f3ca372e388576f50a5489938e9d3a78",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.781624+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps147.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps147.v002.a.0001"
@@ -577,7 +596,9 @@
       ],
       "ref": "Psalm 147:2#5",
       "referent": null,
-      "same_psalm_occurrence_refs": [],
+      "same_psalm_occurrence_refs": [
+        "Psalm 147:19"
+      ],
       "semantic_role": null,
       "stem": null,
       "strong": "H3478",

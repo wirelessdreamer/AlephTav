@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps129.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cb3e3b0d5f39080964370aab5e9967134d2d47dc7226340c71c3c8bef7db435f",
+      "audit_id": "aud.ps129.v008.a.0001",
+      "before_hash": "910fa0720729222d3279c4c7388e33b5139067e4429681972a3d84e136a68011",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.474292+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps129.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps129.v008.a.0001"
@@ -767,7 +786,7 @@
       "morph_code": "R/Sp2mp",
       "morph_readable": "R/Sp2mp",
       "normalized": "אליכם",
-      "occurrence_index": 4224,
+      "occurrence_index": 4256,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1038,7 +1057,7 @@
       "morph_code": "To/Sp2mp",
       "morph_readable": "To/Sp2mp",
       "normalized": "אתכם",
-      "occurrence_index": 4225,
+      "occurrence_index": 4257,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

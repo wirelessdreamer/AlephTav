@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps101.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "050c59178265a1941c1f0e19180255f6ba8bdf8f3c236b20a2b5cec4e0d15058",
+      "audit_id": "aud.ps101.v007.a.0001",
+      "before_hash": "80b327cdfe0061b0635964fb46b1724af6daae578c21705946aae3f01cd80e45",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.105490+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps101.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps101.v007.a.0001"
@@ -511,7 +530,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "ביתי",
-      "occurrence_index": 3142,
+      "occurrence_index": 3167,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1515,7 +1534,7 @@
       "morph_code": "Ncbdc/Sp1cs",
       "morph_readable": "Ncbdc/Sp1cs",
       "normalized": "עיני",
-      "occurrence_index": 3143,
+      "occurrence_index": 3168,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

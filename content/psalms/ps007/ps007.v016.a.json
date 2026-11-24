@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v016.a.0001",
     "aud.ps007.v016.a.0002",
-    "aud.ps007.v016.a.0003"
+    "aud.ps007.v016.a.0003",
+    "aud.ps007.v016.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3f94e5649a2e46d2872ae673f85cf3bb2fe52f5dcb3e9c4c494d045f87e0125a",
+      "audit_id": "aud.ps007.v016.a.0004",
+      "before_hash": "c1bd0d2cb26166f8126b91e5078ffac8b5014453b61a3ab8a2dfab7e05b69c51",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.255038+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v016.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -378,6 +395,7 @@
       },
       "corpus_occurrence_refs": [
         "Psalm 28:1",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 88:5",
         "Psalm 88:7",
@@ -428,6 +446,7 @@
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 28:1",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 88:5",
         "Psalm 88:7",
@@ -636,7 +655,7 @@
       "morph_code": "C/Vqw3ms/Sp3ms",
       "morph_readable": "C/Vqw3ms/Sp3ms",
       "normalized": "ויחפרהו",
-      "occurrence_index": 151,
+      "occurrence_index": 152,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

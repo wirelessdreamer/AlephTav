@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps037.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "656b9e8a039b57e7c682f37653b67ee229ee6e0eedcc81b2ab99788e0a141454",
+      "audit_id": "aud.ps037.v002.a.0001",
+      "before_hash": "9cb9c8151ab3abb8e96c9c1ce28fc42f6ea283228df0faf414d01c759c57f190",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.537544+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps037.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps037.v002.a.0001"
@@ -382,6 +401,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 58:8",
         "Psalm 106:2"
       ],
       "display_gloss": "they will wither",
@@ -426,6 +446,7 @@
       "occurrence_index": 1,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
+        "Psalm 58:8",
         "Psalm 106:2"
       ],
       "ref": "Psalm 37:2#4",
@@ -668,10 +689,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "display_gloss": "they will fade",
       "enrichment_sources": {
@@ -737,10 +758,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "ref": "Psalm 37:2#7",
       "referent": null,

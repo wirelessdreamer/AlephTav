@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps148.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "42468d8229e7df6d2c814f85e4a51945bcfee9eec4e3343bf96bc13b4235a865",
+      "audit_id": "aud.ps148.v005.a.0001",
+      "before_hash": "0b9b9aed9798f40ea20601d73e32ebc9e92b55e18ad572753210d7ae2f3fb30e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.897485+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps148.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps148.v005.a.0001"
@@ -785,7 +804,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 4689,
+      "occurrence_index": 4726,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

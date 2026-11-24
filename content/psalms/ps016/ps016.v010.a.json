@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps016.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6f3dda8656bd9d2cf83d5e2d9db280aac07299fad1f2564a8f2e720491eec576",
+      "audit_id": "aud.ps016.v010.a.0001",
+      "before_hash": "2c47d89e0940ad72a09316871c82e1a1c8bce25a965978c74b958ce3c0189273",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.851192+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps016.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps016.v010.a.0001"
@@ -497,7 +516,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 296,
+      "occurrence_index": 298,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1021,7 +1040,7 @@
       "morph_code": "Aamsc/Sp2ms",
       "morph_readable": "Aamsc/Sp2ms",
       "normalized": "חסידך",
-      "occurrence_index": 297,
+      "occurrence_index": 299,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

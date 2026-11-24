@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps121.v003.a.0001",
     "aud.ps121.v003.a.0002",
-    "aud.ps121.v003.a.0003"
+    "aud.ps121.v003.a.0003",
+    "aud.ps121.v003.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d0f2b713014b6a89138e28a4c59b86248024f289d940666b6bf8d62f4e0c36db",
+      "audit_id": "aud.ps121.v003.a.0004",
+      "before_hash": "2cdda47e777481d7ecf40b1a24753515fcdfd10fc40323b9663a56db2235de27",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.119136+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps121.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -857,7 +874,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "רגלך",
-      "occurrence_index": 4142,
+      "occurrence_index": 4173,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1217,7 +1234,7 @@
       "morph_code": "Vqrmsc/Sp2ms",
       "morph_readable": "Vqrmsc/Sp2ms",
       "normalized": "שמרך",
-      "occurrence_index": 4143,
+      "occurrence_index": 4174,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

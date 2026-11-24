@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps021.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "5d4aebefe85e75f6e8206185cc5cb3c297fdc5c079e47faeb38694d5c90194d6",
+      "audit_id": "aud.ps021.v012.a.0001",
+      "before_hash": "4efcf98fdcd58bc6d28902d90be4b1212e1876c0f1e3b2f9319b0900b5ad4002",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.572309+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps021.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps021.v012.a.0001"
@@ -395,7 +414,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "עליך",
-      "occurrence_index": 539,
+      "occurrence_index": 542,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -935,6 +954,7 @@
         "Psalm 40:13",
         "Psalm 78:19",
         "Psalm 78:20",
+        "Psalm 101:5",
         "Psalm 129:2",
         "Psalm 139:6"
       ],
@@ -985,6 +1005,7 @@
         "Psalm 40:13",
         "Psalm 78:19",
         "Psalm 78:20",
+        "Psalm 101:5",
         "Psalm 129:2",
         "Psalm 139:6"
       ],

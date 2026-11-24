@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps083.v019.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "15cf8020b476554339607d732d25fe9b2c3f3e21b029a78ae3b8f6ff28a8a16c",
+      "audit_id": "aud.ps083.v019.a.0001",
+      "before_hash": "eb610702de89cdeb2daab15a8b890f9ebbf2f55f455fbcaaa02e6264570efba7",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.523536+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps083.v019.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps083.v019.a.0001"
@@ -127,7 +146,7 @@
       "morph_code": "C/Vqi3mp",
       "morph_readable": "C/Vqi3mp",
       "normalized": "וידעו",
-      "occurrence_index": 41,
+      "occurrence_index": 42,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
@@ -533,7 +552,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "שמך",
-      "occurrence_index": 2650,
+      "occurrence_index": 2670,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -822,7 +841,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "לבדך",
-      "occurrence_index": 2651,
+      "occurrence_index": 2671,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1302,6 +1321,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1315,8 +1335,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -1361,7 +1380,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 94,
+      "occurrence_index": 95,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1373,6 +1392,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1386,8 +1406,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 83:19#10",
       "referent": null,

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps130.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c5ced53ed8ee65a5ad4e7495d0ca5d31da3b0c3fd80e132df89faffb82dd48f4",
+      "audit_id": "aud.ps130.v007.a.0001",
+      "before_hash": "a14074eb775807be7403f59d71247ff344fe10123a49dbead839441075009969",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.507029+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps130.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps130.v007.a.0001"
@@ -72,6 +91,7 @@
         "Psalm 119:74",
         "Psalm 119:81",
         "Psalm 119:114",
+        "Psalm 119:147",
         "Psalm 131:3",
         "Psalm 147:11"
       ],
@@ -114,7 +134,7 @@
       "morph_code": "Vpv2ms",
       "morph_readable": "Vpv2ms",
       "normalized": "יחל",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 31:25",
@@ -130,6 +150,7 @@
         "Psalm 119:74",
         "Psalm 119:81",
         "Psalm 119:114",
+        "Psalm 119:147",
         "Psalm 131:3",
         "Psalm 147:11"
       ],
@@ -1277,7 +1298,7 @@
       "morph_code": "R/Sp3ms",
       "morph_readable": "R/Sp3ms",
       "normalized": "עמו",
-      "occurrence_index": 4237,
+      "occurrence_index": 4269,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

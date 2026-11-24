@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "04640d79e0791fd40ec63ada81a7526a6eb0edd55a1df75a693af5a598632fa8",
+      "audit_id": "aud.ps119.v004.a.0001",
+      "before_hash": "cafa1b39ad6d7404c0a4d1fa18a6a1b7f201c03f42d0bc4ba39b63d5469d70b2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.088818+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v004.a.0001"
@@ -375,7 +394,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "פקדיך",
-      "occurrence_index": 3731,
+      "occurrence_index": 3760,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -600,6 +619,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -620,8 +640,7 @@
         "Psalm 109:30",
         "Psalm 112:1",
         "Psalm 116:10",
-        "Psalm 139:14",
-        "Psalm 142:7"
+        "Psalm 139:14"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -664,11 +683,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 23,
+      "occurrence_index": 24,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -689,8 +709,7 @@
         "Psalm 109:30",
         "Psalm 112:1",
         "Psalm 116:10",
-        "Psalm 139:14",
-        "Psalm 142:7"
+        "Psalm 139:14"
       ],
       "ref": "Psalm 119:4#5",
       "referent": null,

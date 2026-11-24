@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps017.v014.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "feea17d1f3b0340308f6c21ad0d4d516d3f89c8694d39354586c62e7785ba6b5",
+      "audit_id": "aud.ps017.v014.a.0001",
+      "before_hash": "538a1efe1abd03a40e0a88f2c937d2ff2ae7a29f47c7ee7d998c5062f02a7940",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.927790+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps017.v014.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps017.v014.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִֽמְתִ֥ים יָדְךָ֨׀ יְהוָ֡ה מִֽמְתִ֬ים מֵחֶ֗לֶד חֶלְקָ֥ם בַּֽחַיִּים֮ תְּמַלֵּ֢א בִ֫טְנָ֥ם יִשְׂבּ֥עוּ בָנִ֑ים וְהִנִּ֥יחוּ יִ֝תְרָ֗ם לְעוֹלְלֵֽיהֶם׃",
-  "source_transliteration": "miməṯiym yəhwāh miməṯiym mēḥeleḏ ba–ḥayyîm **û təmallēʾ yiśbəʿû ḇāniym wəhinniyḥû",
+  "source_transliteration": "miməṯiym yəhwāh miməṯiym mēḥeleḏ ba–ḥayyîm **û təmallēʾ yiśbəʿû ḇāniym wəhinniyḥû lə",
   "status": "draft",
   "token_ids": [
     "ps017.v014.t001",
@@ -232,7 +251,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "ידך",
-      "occurrence_index": 336,
+      "occurrence_index": 338,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -704,7 +723,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "חלקם",
-      "occurrence_index": 337,
+      "occurrence_index": 339,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -869,65 +888,6 @@
       "word_sense": "life"
     },
     {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [
-            "lemma",
-            "stem"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "oshb:stem",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "C/Ncmsc/Sp2ms",
-      "morph_readable": "C/Ncmsc/Sp2ms",
-      "normalized": "וצפינך",
-      "occurrence_index": 1,
-      "part_of_speech": "suffix",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 17:14#8",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": null,
-      "strong": "H6840",
-      "surface": "וצפינך",
-      "syntax_role": null,
-      "token_id": "ps017.v014.t008",
-      "transliteration": null,
-      "word_sense": null
-    },
-    {
       "compiler_features": {
         "component_count": 3,
         "conjunction_role": "additive",
@@ -1028,11 +988,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vpi2ms",
-      "morph_readable": "Vpi2ms",
-      "normalized": "תמלא",
-      "occurrence_index": 338,
-      "part_of_speech": "verb",
+      "morph_code": "C/Ncmsc/Sp2ms",
+      "morph_readable": "C/Ncmsc/Sp2ms",
+      "normalized": "וצפינך",
+      "occurrence_index": 340,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1059,7 +1019,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 17:14#9",
+      "ref": "Psalm 17:14#8",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 17:1",
@@ -1076,11 +1036,11 @@
         "Psalm 17:12"
       ],
       "semantic_role": null,
-      "stem": "piel",
-      "strong": "H4390",
-      "surface": "תְּמַלֵּ֪א",
+      "stem": "qal",
+      "strong": "H6840",
+      "surface": "וצפינך",
       "syntax_role": null,
-      "token_id": "ps017.v014.t009",
+      "token_id": "ps017.v014.t008",
       "transliteration": "**û",
       "word_sense": "[thing]"
     },
@@ -1168,11 +1128,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncfsc/Sp3mp",
-      "morph_readable": "Ncfsc/Sp3mp",
-      "normalized": "בטנם",
+      "morph_code": "Vpi2ms",
+      "morph_readable": "Vpi2ms",
+      "normalized": "תמלא",
       "occurrence_index": 2,
-      "part_of_speech": "suffix",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 10:7",
         "Psalm 20:5",
@@ -1198,15 +1158,15 @@
         "Psalm 129:7",
         "Psalm 144:13"
       ],
-      "ref": "Psalm 17:14#10",
+      "ref": "Psalm 17:14#9",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "piel",
-      "strong": "H990",
-      "surface": "בִ֫טְנָ֥ם",
+      "strong": "H4390",
+      "surface": "תְּמַלֵּ֪א",
       "syntax_role": "v",
-      "token_id": "ps017.v014.t010",
+      "token_id": "ps017.v014.t009",
       "transliteration": "təmallēʾ",
       "word_sense": "you.fill"
     },
@@ -1287,11 +1247,12 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech",
+            "part_of_speech"
+          ],
+          "missing_fields": [
             "stem"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "status": "partial"
         }
       },
       "gloss_parts": [
@@ -1302,15 +1263,16 @@
       "greek_strong": null,
       "lemma": "הוּא",
       "missing_enrichments": [
+        "oshb:stem",
         "macula:syntax_role",
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vqi3mp",
-      "morph_readable": "Vqi3mp",
-      "normalized": "ישבעו",
-      "occurrence_index": 339,
-      "part_of_speech": "verb",
+      "morph_code": "Ncfsc/Sp3mp",
+      "morph_readable": "Ncfsc/Sp3mp",
+      "normalized": "בטנם",
+      "occurrence_index": 341,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1337,7 +1299,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 17:14#11",
+      "ref": "Psalm 17:14#10",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 17:1",
@@ -1354,11 +1316,11 @@
         "Psalm 17:12"
       ],
       "semantic_role": null,
-      "stem": "qal",
-      "strong": "H7646",
-      "surface": "יִשְׂבְּע֥וּ",
+      "stem": null,
+      "strong": "H990",
+      "surface": "בִ֫טְנָ֥ם",
       "syntax_role": null,
-      "token_id": "ps017.v014.t011",
+      "token_id": "ps017.v014.t010",
       "transliteration": null,
       "word_sense": "their"
     },
@@ -1438,11 +1400,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncmpa",
-      "morph_readable": "Ncmpa",
-      "normalized": "בנים",
+      "morph_code": "Vqi3mp",
+      "morph_readable": "Vqi3mp",
+      "normalized": "ישבעו",
       "occurrence_index": 1,
-      "part_of_speech": "noun",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 22:27",
         "Psalm 37:19",
@@ -1460,17 +1422,17 @@
         "Psalm 132:15",
         "Psalm 145:16"
       ],
-      "ref": "Psalm 17:14#12",
+      "ref": "Psalm 17:14#11",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 17:15"
       ],
       "semantic_role": null,
       "stem": "qal",
-      "strong": "H1121",
-      "surface": "בָנִ֑ים",
+      "strong": "H7646",
+      "surface": "יִשְׂבְּע֥וּ",
       "syntax_role": "v",
-      "token_id": "ps017.v014.t012",
+      "token_id": "ps017.v014.t011",
       "transliteration": "yiśbəʿû",
       "word_sense": "they.are.satisfied"
     },
@@ -1542,11 +1504,12 @@
             "strong",
             "morph_code",
             "morph_readable",
-            "part_of_speech",
+            "part_of_speech"
+          ],
+          "missing_fields": [
             "stem"
           ],
-          "missing_fields": [],
-          "status": "complete"
+          "status": "partial"
         }
       },
       "gloss_parts": [
@@ -1556,14 +1519,15 @@
       "greek_strong": "5207",
       "lemma": "בֵּן",
       "missing_enrichments": [
+        "oshb:stem",
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "C/Vhq3cp",
-      "morph_readable": "C/Vhq3cp",
-      "normalized": "והניחו",
+      "morph_code": "Ncmpa",
+      "morph_readable": "Ncmpa",
+      "normalized": "בנים",
       "occurrence_index": 8,
-      "part_of_speech": "verb",
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 7:1",
@@ -1590,15 +1554,15 @@
         "Psalm 48:1",
         "Psalm 49:1"
       ],
-      "ref": "Psalm 17:14#13",
+      "ref": "Psalm 17:14#12",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
-      "stem": "hiphil",
-      "strong": "H3240",
-      "surface": "וְהִנִּ֥יחוּ",
+      "stem": null,
+      "strong": "H1121",
+      "surface": "בָנִ֑ים",
       "syntax_role": "o",
-      "token_id": "ps017.v014.t013",
+      "token_id": "ps017.v014.t012",
       "transliteration": "ḇāniym",
       "word_sense": "sons"
     },
@@ -1669,23 +1633,23 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncmsc/Sp3mp",
-      "morph_readable": "Ncmsc/Sp3mp",
-      "normalized": "יתרם",
+      "morph_code": "C/Vhq3cp",
+      "morph_readable": "C/Vhq3cp",
+      "normalized": "והניחו",
       "occurrence_index": 1,
-      "part_of_speech": "suffix",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 105:14"
       ],
-      "ref": "Psalm 17:14#14",
+      "ref": "Psalm 17:14#13",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "hiphil",
-      "strong": "H3499",
-      "surface": "יִ֝תְרָ֗ם",
+      "strong": "H3240",
+      "surface": "וְהִנִּ֥יחוּ",
       "syntax_role": "v",
-      "token_id": "ps017.v014.t014",
+      "token_id": "ps017.v014.t013",
       "transliteration": "wəhinniyḥû",
       "word_sense": "they.leave"
     },
@@ -1787,10 +1751,169 @@
         "macula:semantic_role",
         "macula:referent"
       ],
+      "morph_code": "Ncmsc/Sp3mp",
+      "morph_readable": "Ncmsc/Sp3mp",
+      "normalized": "יתרם",
+      "occurrence_index": 342,
+      "part_of_speech": "suffix",
+      "psalms_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "ref": "Psalm 17:14#14",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 17:1",
+        "Psalm 17:2",
+        "Psalm 17:3",
+        "Psalm 17:4",
+        "Psalm 17:5",
+        "Psalm 17:6",
+        "Psalm 17:7",
+        "Psalm 17:8",
+        "Psalm 17:9",
+        "Psalm 17:10",
+        "Psalm 17:11",
+        "Psalm 17:12"
+      ],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H3499",
+      "surface": "יִ֝תְרָ֗ם",
+      "syntax_role": null,
+      "token_id": "ps017.v014.t014",
+      "transliteration": null,
+      "word_sense": "their"
+    },
+    {
+      "compiler_features": {
+        "component_count": 3,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "to",
+          "children",
+          "their"
+        ],
+        "gloss_fragments": [
+          "to",
+          "children",
+          "their"
+        ],
+        "preposition_role": "to",
+        "raw_classes": [
+          "prep",
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "preposition",
+          "noun",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "their"
+        },
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "display_gloss": "to their children",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "gloss_parts": [
+        "to",
+        "children",
+        "their"
+      ],
+      "greek": "τοῖς νηπίοις αὐτῶν",
+      "greek_strong": "846",
+      "lemma": "הוּא",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
       "morph_code": "R/Ncmpc/Sp3mp",
       "morph_readable": "R/Ncmpc/Sp3mp",
       "normalized": "לעולליהם",
-      "occurrence_index": 340,
+      "occurrence_index": 343,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1840,7 +1963,7 @@
       "surface": "לְעוֹלְלֵיהֶֽם",
       "syntax_role": null,
       "token_id": "ps017.v014.t015",
-      "transliteration": null,
+      "transliteration": "lə",
       "word_sense": "their"
     }
   ],

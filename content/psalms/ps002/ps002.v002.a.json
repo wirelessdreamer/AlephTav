@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps002.v002.a.0001",
-    "aud.ps002.v002.a.0002"
+    "aud.ps002.v002.a.0002",
+    "aud.ps002.v002.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f3094d494992947a033fd7aff57b5290943a3189a2d70612948e830c1fabf90",
+      "audit_id": "aud.ps002.v002.a.0003",
+      "before_hash": "631b66fa7c1dca6cf57c020412c31c7a3608c047bef689c7a20bd7c805d09b66",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:14.905608+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps002.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -520,6 +537,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -536,8 +554,7 @@
         "Psalm 37:3",
         "Psalm 37:9",
         "Psalm 37:11",
-        "Psalm 37:22",
-        "Psalm 37:29"
+        "Psalm 37:22"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -590,6 +607,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -606,8 +624,7 @@
         "Psalm 37:3",
         "Psalm 37:9",
         "Psalm 37:11",
-        "Psalm 37:22",
-        "Psalm 37:29"
+        "Psalm 37:22"
       ],
       "ref": "Psalm 2:2#3",
       "referent": null,

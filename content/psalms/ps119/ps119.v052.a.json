@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v052.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e3a5355e2e508c3ed9fcb2bfed5cdfb826c5a2b22e7ae9953b87da03e8753c47",
+      "audit_id": "aud.ps119.v052.a.0001",
+      "before_hash": "4f73cf8356b85a5d537dc93d4a762053b443e6618e4a8ddd937831f612196cdf",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.326061+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v052.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v052.a.0001"
@@ -261,7 +280,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "משפטיך",
-      "occurrence_index": 3842,
+      "occurrence_index": 3871,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -348,6 +367,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -364,8 +384,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "from long ago",
       "enrichment_sources": {
@@ -410,7 +429,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "מעולם",
-      "occurrence_index": 91,
+      "occurrence_index": 92,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -419,6 +438,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -435,8 +455,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 119:52#3",
       "referent": null,

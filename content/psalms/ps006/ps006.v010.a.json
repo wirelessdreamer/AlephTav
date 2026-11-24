@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps006.v010.a.0001",
-    "aud.ps006.v010.a.0002"
+    "aud.ps006.v010.a.0002",
+    "aud.ps006.v010.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "59b391567a1e25fba262a31b114948fdee5e9231012cbd2a26158bad786fbae4",
+      "audit_id": "aud.ps006.v010.a.0003",
+      "before_hash": "2234c2a17b31f0d00352df04b26952b1eb3c5f2050213e35b3bf36b84ad06846",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.156714+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps006.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -584,7 +601,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "תחנתי",
-      "occurrence_index": 120,
+      "occurrence_index": 121,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -871,7 +888,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "תפלתי",
-      "occurrence_index": 121,
+      "occurrence_index": 122,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

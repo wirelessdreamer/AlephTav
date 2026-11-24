@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps004.v005.a.0001",
-    "aud.ps004.v005.a.0002"
+    "aud.ps004.v005.a.0002",
+    "aud.ps004.v005.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "61f8c19760dacff4de2314ae546f4f5a5c14d80322095b2d0c6fb954743e1b04",
+      "audit_id": "aud.ps004.v005.a.0003",
+      "before_hash": "657ee7083e23825394b45f167f39156628edcafdc56816c099a8242bd2c15e19",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.021041+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps004.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1270,6 +1287,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1284,8 +1302,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1340,6 +1357,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1354,8 +1372,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "ref": "Psalm 4:5#9",
       "referent": null,

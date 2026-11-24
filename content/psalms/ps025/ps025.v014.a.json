@@ -11,7 +11,8 @@
     "aud.ps025.v014.a.0003",
     "aud.ps025.v014.a.0004",
     "aud.ps025.v014.a.0005",
-    "aud.ps025.v014.a.0006"
+    "aud.ps025.v014.a.0006",
+    "aud.ps025.v014.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1fb1af6500539f892cd7ba7a1b666e195bc94949ee5935c9a58ce4cdc8255893",
+      "audit_id": "aud.ps025.v014.a.0007",
+      "before_hash": "7fd35ee3f192816a65f05a5402d8cc38c6ffc489e309aac4dcc6d6eb471ebd26",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.070598+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v014.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -881,7 +898,7 @@
       "morph_code": "R/Aampc/Sp3ms",
       "morph_readable": "R/Aampc/Sp3ms",
       "normalized": "ליראיו",
-      "occurrence_index": 679,
+      "occurrence_index": 682,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1040,7 +1057,7 @@
       "morph_code": "C/Ncfsc/Sp3ms",
       "morph_readable": "C/Ncfsc/Sp3ms",
       "normalized": "ובריתו",
-      "occurrence_index": 680,
+      "occurrence_index": 683,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1196,7 +1213,7 @@
       "morph_code": "R/Vhc/Sp3mp",
       "morph_readable": "R/Vhc/Sp3mp",
       "normalized": "להודיעם",
-      "occurrence_index": 681,
+      "occurrence_index": 684,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

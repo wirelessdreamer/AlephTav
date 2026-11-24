@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps081.v011.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "97029ea036fe33a9dbaf77b909add9480a185ef31c6e98bf3b7472dd7b2eb8bc",
+      "audit_id": "aud.ps081.v011.a.0001",
+      "before_hash": "54ee8cb236b7ef971f63b9796c1933e50c800711cafa5411985203c8714fdeb2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.358352+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps081.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps081.v011.a.0001"
@@ -373,7 +392,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "אלהיך",
-      "occurrence_index": 2608,
+      "occurrence_index": 2628,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -529,7 +548,7 @@
       "morph_code": "Td/Vhrmsc/Sp2ms",
       "morph_readable": "Td/Vhrmsc/Sp2ms",
       "normalized": "המעלך",
-      "occurrence_index": 2609,
+      "occurrence_index": 2629,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -619,6 +638,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -632,8 +652,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "from the land",
       "enrichment_sources": {
@@ -678,7 +697,7 @@
       "morph_code": "R/Ncbsc",
       "morph_readable": "R/Ncbsc",
       "normalized": "מארץ",
-      "occurrence_index": 91,
+      "occurrence_index": 92,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -690,6 +709,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -703,8 +723,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 81:11#5",
       "referent": null,
@@ -1022,7 +1041,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "פיך",
-      "occurrence_index": 2610,
+      "occurrence_index": 2630,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1178,7 +1197,7 @@
       "morph_code": "C/Vpi1cs/Sp3ms",
       "morph_readable": "C/Vpi1cs/Sp3ms",
       "normalized": "ואמלאהו",
-      "occurrence_index": 2611,
+      "occurrence_index": 2631,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

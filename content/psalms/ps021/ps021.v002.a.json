@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps021.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0fca47bdfdc4bb39bd9142cab99bc9d4976d852c9241f9a30decd708a74b85f8",
+      "audit_id": "aud.ps021.v002.a.0001",
+      "before_hash": "f656c61a5f3d2851f2e2cc2917146b724da524466fcce5720bf5ee4a4d59ca0f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.474789+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps021.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps021.v002.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יְֽהוָ֗ה בְּעָזְּךָ֥ יִשְׂמַח־מֶ֑לֶךְ וּ֝בִישׁ֥וּעָתְךָ֗ מַה־מְאֹֽד׃",
-  "source_transliteration": "yəhwāh bə yiśmaḥ- meleḵ ûḇi mah- yyāḡel",
+  "source_transliteration": "yəhwāh bə yiśmaḥ- meleḵ ûḇi mah- yyāḡel məʾōḏ:",
   "status": "draft",
   "token_ids": [
     "ps021.v002.t001",
@@ -273,7 +292,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "בעזך",
-      "occurrence_index": 513,
+      "occurrence_index": 516,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -696,7 +715,7 @@
       "morph_code": "C/R/Ncfsc/Sp2ms",
       "morph_readable": "C/R/Ncfsc/Sp2ms",
       "normalized": "ובישועתך",
-      "occurrence_index": 514,
+      "occurrence_index": 517,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -879,64 +898,6 @@
       "word_sense": "how!"
     },
     {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech",
-            "stem"
-          ],
-          "missing_fields": [
-            "lemma"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Vqi3ms",
-      "morph_readable": "Vqi3ms",
-      "normalized": "יגיל",
-      "occurrence_index": 1,
-      "part_of_speech": "verb",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 21:2#7",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": "qal",
-      "strong": "H1523",
-      "surface": "יגיל",
-      "syntax_role": null,
-      "token_id": "ps021.v002.t007",
-      "transliteration": null,
-      "word_sense": null
-    },
-    {
       "compiler_features": {
         "component_count": 1,
         "conjunction_role": null,
@@ -1016,11 +977,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "D",
-      "morph_readable": "D",
-      "normalized": "מאד",
+      "morph_code": "Vqi3ms",
+      "morph_readable": "Vqi3ms",
+      "normalized": "יגיל",
       "occurrence_index": 7,
-      "part_of_speech": "adverb",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 2:11",
         "Psalm 9:15",
@@ -1042,17 +1003,147 @@
         "Psalm 118:24",
         "Psalm 149:2"
       ],
-      "ref": "Psalm 21:2#8",
+      "ref": "Psalm 21:2#7",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "qal",
-      "strong": "H3966",
-      "surface": "מְאֹֽד",
+      "strong": "H1523",
+      "surface": "יגיל",
       "syntax_role": "v",
-      "token_id": "ps021.v002.t008",
+      "token_id": "ps021.v002.t007",
       "transliteration": "yyāḡel",
       "word_sense": "he.exults"
+    },
+    {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "greatly"
+        ],
+        "gloss_fragments": [
+          "exceedingly"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adv"
+        ],
+        "raw_pos": [
+          "adverb"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 6:4",
+        "Psalm 6:11",
+        "Psalm 31:12",
+        "Psalm 38:7",
+        "Psalm 38:9",
+        "Psalm 46:2",
+        "Psalm 47:10",
+        "Psalm 48:2",
+        "Psalm 50:3",
+        "Psalm 78:29",
+        "Psalm 78:59",
+        "Psalm 79:8",
+        "Psalm 92:6",
+        "Psalm 93:5",
+        "Psalm 96:4",
+        "Psalm 97:9",
+        "Psalm 104:1",
+        "Psalm 105:24",
+        "Psalm 107:38",
+        "Psalm 109:30",
+        "Psalm 112:1",
+        "Psalm 116:10",
+        "Psalm 119:4",
+        "Psalm 119:8"
+      ],
+      "display_gloss": "exceedingly",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "gloss_parts": [
+        "exceedingly"
+      ],
+      "greek": "σφόδρα",
+      "greek_strong": "4970",
+      "lemma": "מְאֹד",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "D",
+      "morph_readable": "D",
+      "normalized": "מאד",
+      "occurrence_index": 3,
+      "part_of_speech": "adverb",
+      "psalms_occurrence_refs": [
+        "Psalm 6:4",
+        "Psalm 6:11",
+        "Psalm 31:12",
+        "Psalm 38:7",
+        "Psalm 38:9",
+        "Psalm 46:2",
+        "Psalm 47:10",
+        "Psalm 48:2",
+        "Psalm 50:3",
+        "Psalm 78:29",
+        "Psalm 78:59",
+        "Psalm 79:8",
+        "Psalm 92:6",
+        "Psalm 93:5",
+        "Psalm 96:4",
+        "Psalm 97:9",
+        "Psalm 104:1",
+        "Psalm 105:24",
+        "Psalm 107:38",
+        "Psalm 109:30",
+        "Psalm 112:1",
+        "Psalm 116:10",
+        "Psalm 119:4",
+        "Psalm 119:8"
+      ],
+      "ref": "Psalm 21:2#8",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H3966",
+      "surface": "מְאֹֽד",
+      "syntax_role": "adv",
+      "token_id": "ps021.v002.t008",
+      "transliteration": "məʾōḏ:",
+      "word_sense": "exceedingly"
     }
   ],
   "unit_id": "ps021.v002.a",

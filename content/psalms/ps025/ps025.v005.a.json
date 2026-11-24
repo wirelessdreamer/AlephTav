@@ -11,7 +11,8 @@
     "aud.ps025.v005.a.0003",
     "aud.ps025.v005.a.0004",
     "aud.ps025.v005.a.0005",
-    "aud.ps025.v005.a.0006"
+    "aud.ps025.v005.a.0006",
+    "aud.ps025.v005.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e13f1ab4ae97e08c57596c3e2d389f4f515288b568f12c172c2603ea65ca8c8f",
+      "audit_id": "aud.ps025.v005.a.0007",
+      "before_hash": "ae16837c00350a4491158ec34cd4837fdc14e97c0f183fefa7fe3a14218a6fdd",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.989182+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -658,7 +675,7 @@
       "morph_code": "Vhv2ms/Sp1cs",
       "morph_readable": "Vhv2ms/Sp1cs",
       "normalized": "הדריכני",
-      "occurrence_index": 658,
+      "occurrence_index": 661,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -817,7 +834,7 @@
       "morph_code": "R/Ncfsc/Sp2ms",
       "morph_readable": "R/Ncfsc/Sp2ms",
       "normalized": "באמתך",
-      "occurrence_index": 659,
+      "occurrence_index": 662,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -973,7 +990,7 @@
       "morph_code": "C/Vpv2ms/Sp1cs",
       "morph_readable": "C/Vpv2ms/Sp1cs",
       "normalized": "ולמדני",
-      "occurrence_index": 660,
+      "occurrence_index": 663,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1529,7 +1546,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "ישעי",
-      "occurrence_index": 661,
+      "occurrence_index": 664,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1680,7 +1697,7 @@
       "morph_code": "To/Sp2ms",
       "morph_readable": "To/Sp2ms",
       "normalized": "אותך",
-      "occurrence_index": 662,
+      "occurrence_index": 665,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps066.v015.a.0001",
-    "aud.ps066.v015.a.0002"
+    "aud.ps066.v015.a.0002",
+    "aud.ps066.v015.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f773a4356c0065f5594ad3761df9150a4a0ff0d4de8f89b6c342d68c2f71a58",
+      "audit_id": "aud.ps066.v015.a.0003",
+      "before_hash": "d8fe34d20e01536ee3c03391e228c8d4ddbca2f35b4a84bd500c7ae80233b296",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.102145+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v015.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -619,7 +636,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "לך",
-      "occurrence_index": 2010,
+      "occurrence_index": 2024,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1439,6 +1456,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1451,8 +1469,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1496,7 +1513,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 40,
+      "occurrence_index": 42,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1509,6 +1526,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1521,13 +1539,13 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "ref": "Psalm 66:15#12",
       "referent": null,
       "same_psalm_occurrence_refs": [
-        "Psalm 66:4"
+        "Psalm 66:4",
+        "Psalm 66:7"
       ],
       "semantic_role": null,
       "stem": null,

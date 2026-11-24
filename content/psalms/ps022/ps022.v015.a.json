@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps022.v015.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "13e170c97d7d21af2e0c9e67ffa5f71abcd317bc1d580b4b3dbf1f148ed586b3",
+      "audit_id": "aud.ps022.v015.a.0001",
+      "before_hash": "cf3a69e4d8282946ee30e2fc1c71cb904de1dcc14064ab921da17153ff50f84b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.695173+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps022.v015.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps022.v015.a.0001"
@@ -202,8 +221,10 @@
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -254,8 +275,10 @@
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -598,7 +621,7 @@
       "morph_code": "Ncfpc/Sp1cs",
       "morph_readable": "Ncfpc/Sp1cs",
       "normalized": "עצמותי",
-      "occurrence_index": 573,
+      "occurrence_index": 576,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -880,7 +903,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבי",
-      "occurrence_index": 574,
+      "occurrence_index": 577,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1315,7 +1338,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "מעי",
-      "occurrence_index": 575,
+      "occurrence_index": 578,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -11,7 +11,8 @@
     "aud.ps025.v010.a.0003",
     "aud.ps025.v010.a.0004",
     "aud.ps025.v010.a.0005",
-    "aud.ps025.v010.a.0006"
+    "aud.ps025.v010.a.0006",
+    "aud.ps025.v010.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "aafa5f0a94fe59570f571693cc55a6456b6c748cbfa8e27dc6fe54f66b16ac69",
+      "audit_id": "aud.ps025.v010.a.0007",
+      "before_hash": "30c2aa91a7992b89b4ed2cd1fe5aa494de03f4f2eb229ab5840e37b4af0f0d09",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.038668+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1414,7 +1431,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "בריתו",
-      "occurrence_index": 671,
+      "occurrence_index": 674,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1573,7 +1590,7 @@
       "morph_code": "C/Ncfpc/Sp3ms",
       "morph_readable": "C/Ncfpc/Sp3ms",
       "normalized": "ועדתיו",
-      "occurrence_index": 672,
+      "occurrence_index": 675,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

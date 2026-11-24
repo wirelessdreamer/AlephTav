@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps128.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c0468010fe18073d2018211ce35f07f389cff397d1597ad749e3c15b606e067c",
+      "audit_id": "aud.ps128.v002.a.0001",
+      "before_hash": "75ef22c2fedda481f3f3d6028bbbdde6ac570e5ea9fd831a5e28d97d79210fd2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.405476+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps128.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps128.v002.a.0001"
@@ -213,7 +232,7 @@
       "morph_code": "Ncfdc/Sp2ms",
       "morph_readable": "Ncfdc/Sp2ms",
       "normalized": "כפיך",
-      "occurrence_index": 4206,
+      "occurrence_index": 4237,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -610,7 +629,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "אשריך",
-      "occurrence_index": 4207,
+      "occurrence_index": 4238,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -698,6 +717,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -705,8 +725,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "and good",
       "enrichment_sources": {
@@ -748,7 +767,7 @@
       "morph_code": "C/Vqq3ms",
       "morph_readable": "C/Vqq3ms",
       "normalized": "וטוב",
-      "occurrence_index": 53,
+      "occurrence_index": 54,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -766,6 +785,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -773,8 +793,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 128:2#6",
       "referent": null,
@@ -890,7 +909,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "לך",
-      "occurrence_index": 4208,
+      "occurrence_index": 4239,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

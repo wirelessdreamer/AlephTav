@@ -11,7 +11,8 @@
     "aud.ps025.v009.a.0003",
     "aud.ps025.v009.a.0004",
     "aud.ps025.v009.a.0005",
-    "aud.ps025.v009.a.0006"
+    "aud.ps025.v009.a.0006",
+    "aud.ps025.v009.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f57cc314dadafc27561b7c4ae81e3b10d2e2ba55581298d4e877389aeee0f79",
+      "audit_id": "aud.ps025.v009.a.0007",
+      "before_hash": "444d9d9b6bb550d2c4c1309a55d24cc35dfe89fc393c9f17c57944d53c258cdc",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.031478+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -641,6 +658,8 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 34:3",
@@ -691,9 +710,11 @@
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
       "normalized": "ענוים",
-      "occurrence_index": 3,
+      "occurrence_index": 5,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 34:3",
@@ -980,6 +1001,8 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 34:3",
@@ -1030,9 +1053,11 @@
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
       "normalized": "ענוים",
-      "occurrence_index": 4,
+      "occurrence_index": 6,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 34:3",
@@ -1155,7 +1180,7 @@
       "morph_code": "Ncbsc/Sp3ms",
       "morph_readable": "Ncbsc/Sp3ms",
       "normalized": "דרכו",
-      "occurrence_index": 670,
+      "occurrence_index": 673,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

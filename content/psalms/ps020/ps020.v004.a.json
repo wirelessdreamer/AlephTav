@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps020.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8fb05cfd104ca993628562b7c512f5a82b525c7d855fecd1d1b0f40b4c2efede",
+      "audit_id": "aud.ps020.v004.a.0001",
+      "before_hash": "129b46678546ef11c98f1170762331df04ef77beccaea301d2e4925fadac7449",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.408584+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps020.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps020.v004.a.0001"
@@ -395,7 +414,7 @@
       "morph_code": "Ncfpc/Sp2ms",
       "morph_readable": "Ncfpc/Sp2ms",
       "normalized": "מנחתך",
-      "occurrence_index": 498,
+      "occurrence_index": 501,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -549,7 +568,7 @@
       "morph_code": "C/Ncfsc/Sp2ms",
       "morph_readable": "C/Ncfsc/Sp2ms",
       "normalized": "ועולתך",
-      "occurrence_index": 499,
+      "occurrence_index": 502,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -770,6 +789,7 @@
         "Psalm 9:17",
         "Psalm 9:21",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -783,8 +803,7 @@
         "Psalm 47:5",
         "Psalm 48:9",
         "Psalm 49:14",
-        "Psalm 49:16",
-        "Psalm 50:6"
+        "Psalm 49:16"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -840,6 +859,7 @@
         "Psalm 9:17",
         "Psalm 9:21",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -853,8 +873,7 @@
         "Psalm 47:5",
         "Psalm 48:9",
         "Psalm 49:14",
-        "Psalm 49:16",
-        "Psalm 50:6"
+        "Psalm 49:16"
       ],
       "ref": "Psalm 20:4#6",
       "referent": null,

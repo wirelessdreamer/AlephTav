@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps090.v015.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3d7320a46fae920b6dae5020bf6a5e869de6c4ee2dc9b4a73be74fbc9bc3e30a",
+      "audit_id": "aud.ps090.v015.a.0001",
+      "before_hash": "e2abc19124ab45ca367ef72d3b3f3b359e2ecfc47a49393bdf315bf683754071",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.311726+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps090.v015.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps090.v015.a.0001"
@@ -128,7 +147,7 @@
       "morph_code": "Vpv2ms/Sp1cp",
       "morph_readable": "Vpv2ms/Sp1cp",
       "normalized": "שמחנו",
-      "occurrence_index": 2936,
+      "occurrence_index": 2959,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -418,7 +437,7 @@
       "morph_code": "Vpp2ms/Sp1cp",
       "morph_readable": "Vpp2ms/Sp1cp",
       "normalized": "עניתנו",
-      "occurrence_index": 2937,
+      "occurrence_index": 2960,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

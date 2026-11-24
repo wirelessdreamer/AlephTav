@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps078.v039.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "759facd16c7b984fcfcd0acab1746684fef01c9366eb80a4c879d98086a6ae62",
+      "audit_id": "aud.ps078.v039.a.0001",
+      "before_hash": "0dafd1bb6aaa27c23052696ba22598bf8a5abf3a5ad8b9ae6fde083685df745c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.897348+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps078.v039.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps078.v039.a.0001"
@@ -1019,7 +1038,7 @@
       "morph_code": "Vqi3ms",
       "morph_readable": "Vqi3ms",
       "normalized": "ישוב",
-      "occurrence_index": 34,
+      "occurrence_index": 35,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",

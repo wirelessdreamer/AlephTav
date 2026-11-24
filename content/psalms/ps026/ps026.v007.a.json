@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps026.v007.a.0001",
     "aud.ps026.v007.a.0002",
-    "aud.ps026.v007.a.0003"
+    "aud.ps026.v007.a.0003",
+    "aud.ps026.v007.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "495c4f54854d3d4479b68912d40bb3515ed6e30c633a3309f81c75443ac40154",
+      "audit_id": "aud.ps026.v007.a.0004",
+      "before_hash": "20caae15e7bb7c789264c92f91e2d391680cc90b4530f331954ae4f139574fa0",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.359988+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps026.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4777,7 +4794,7 @@
       "morph_code": "VNrfpc/Sp2ms",
       "morph_readable": "VNrfpc/Sp2ms",
       "normalized": "נפלאותיך",
-      "occurrence_index": 711,
+      "occurrence_index": 715,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

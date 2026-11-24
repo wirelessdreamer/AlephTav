@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps099.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2e1244d8db565a39063d16e31eae1bb4e80bbcb02a89184849f55eaea162c002",
+      "audit_id": "aud.ps099.v003.a.0001",
+      "before_hash": "b6ab96930f0973228ee9c9e56213c34f3bb5e19325228ebd7ca9e5c619e4ea9c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.944148+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps099.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps099.v003.a.0001"
@@ -259,7 +278,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "שמך",
-      "occurrence_index": 3097,
+      "occurrence_index": 3121,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -770,7 +789,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 3098,
+      "occurrence_index": 3122,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps102.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7375b6ce4986bc61540964f9a1d47d6534c0b564e2791f492b0df26c0881afc3",
+      "audit_id": "aud.ps102.v008.a.0001",
+      "before_hash": "e6502086ebb0aabf28744d921b672f4150ac7a258ada770e67dbc711a056e1fc",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.172011+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps102.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps102.v008.a.0001"
@@ -276,6 +295,7 @@
       },
       "corpus_occurrence_refs": [
         "Psalm 8:9",
+        "Psalm 11:1",
         "Psalm 84:4",
         "Psalm 104:17",
         "Psalm 124:7",
@@ -324,10 +344,11 @@
       "morph_code": "R/Ncbsa",
       "morph_readable": "R/Ncbsa",
       "normalized": "כצפור",
-      "occurrence_index": 3,
+      "occurrence_index": 4,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 8:9",
+        "Psalm 11:1",
         "Psalm 84:4",
         "Psalm 104:17",
         "Psalm 124:7",

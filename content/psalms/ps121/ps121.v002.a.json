@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps121.v002.a.0001",
     "aud.ps121.v002.a.0002",
-    "aud.ps121.v002.a.0003"
+    "aud.ps121.v002.a.0003",
+    "aud.ps121.v002.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bfe3ca408965bb9fe478cf1b008733df949c09324bbfa77c646ae221fceeb286",
+      "audit_id": "aud.ps121.v002.a.0004",
+      "before_hash": "037de5ed390f3b46baa38f395397b6402233f37e4251a48ab750c32a429fdd9b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.111511+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps121.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -456,7 +473,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "עזרי",
-      "occurrence_index": 4141,
+      "occurrence_index": 4172,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1071,6 +1088,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1084,8 +1102,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "and earth",
       "enrichment_sources": {
@@ -1130,7 +1147,7 @@
       "morph_code": "C/Ncbsa",
       "morph_readable": "C/Ncbsa",
       "normalized": "וארץ",
-      "occurrence_index": 158,
+      "occurrence_index": 159,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1142,6 +1159,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1155,8 +1173,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 121:2#6",
       "referent": null,

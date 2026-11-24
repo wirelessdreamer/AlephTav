@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps069.v033.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "589965bb1f2c647ab6d3ca25ae5e3ac6de65f8f8918f97b0e39089aace24ac29",
+      "audit_id": "aud.ps069.v033.a.0001",
+      "before_hash": "0bb136f1b4e0cf8a05afd156af184a514d1030f1e473c654a5f65a9537b4c323",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.645673+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps069.v033.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps069.v033.a.0001"
@@ -185,6 +204,8 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 25:9",
@@ -235,9 +256,11 @@
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
       "normalized": "ענוים",
-      "occurrence_index": 7,
+      "occurrence_index": 9,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 25:9",
@@ -849,7 +872,7 @@
       "morph_code": "Ncmsc/Sp2mp",
       "morph_readable": "Ncmsc/Sp2mp",
       "normalized": "לבבכם",
-      "occurrence_index": 2167,
+      "occurrence_index": 2181,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

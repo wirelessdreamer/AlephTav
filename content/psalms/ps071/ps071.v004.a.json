@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps071.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ca5398e9f480f9c8b3bbce6c1b17fa82101bc9c3f73362b4a79560568a9f575e",
+      "audit_id": "aud.ps071.v004.a.0001",
+      "before_hash": "e155741ff147ce980672ba868c194dcc6b59be7dd5da2758ec8eb1aa423e149c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.745641+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps071.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps071.v004.a.0001"
@@ -132,7 +151,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלהי",
-      "occurrence_index": 2198,
+      "occurrence_index": 2212,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -283,7 +302,7 @@
       "morph_code": "Vpv2ms/Sp1cs",
       "morph_readable": "Vpv2ms/Sp1cs",
       "normalized": "פלטני",
-      "occurrence_index": 2199,
+      "occurrence_index": 2213,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

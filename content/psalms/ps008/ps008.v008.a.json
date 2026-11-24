@@ -8,7 +8,8 @@
     "aud.ps008.v008.a.0001",
     "aud.ps008.v008.a.0002",
     "aud.ps008.v008.a.0003",
-    "aud.ps008.v008.a.0004"
+    "aud.ps008.v008.a.0004",
+    "aud.ps008.v008.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ea5ec927cfb3767714d04ab4d0e0bc208afc41b9f02d0226ab402d7d19072bc9",
+      "audit_id": "aud.ps008.v008.a.0005",
+      "before_hash": "49f2c3d4b5a5d4c9e64b411c7373705769cccebad4d35308aef1e1ce63959d8c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.312519+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps008.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -663,7 +680,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "כלם",
-      "occurrence_index": 170,
+      "occurrence_index": 171,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

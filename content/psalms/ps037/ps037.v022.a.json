@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps037.v022.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "77352e1ad900b81d35eb448ac205840db21ecbb4d6a90fef9179ee97cac8f998",
+      "audit_id": "aud.ps037.v022.a.0001",
+      "before_hash": "d2b4715ca310300b8fe9ba7fc7cc8ff695a27a089b75071a5fc2dff9dac69cd6",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.642452+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps037.v022.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps037.v022.a.0001"
@@ -268,7 +287,7 @@
       "morph_code": "VPsmpc/Sp3ms",
       "morph_readable": "VPsmpc/Sp3ms",
       "normalized": "מברכיו",
-      "occurrence_index": 1118,
+      "occurrence_index": 1122,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -449,6 +468,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -462,8 +482,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 41:3",
-        "Psalm 42:7"
+        "Psalm 41:3"
       ],
       "display_gloss": "the land",
       "enrichment_sources": {
@@ -506,7 +525,7 @@
       "morph_code": "Ncbsa",
       "morph_readable": "Ncbsa",
       "normalized": "ארץ",
-      "occurrence_index": 26,
+      "occurrence_index": 27,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -518,6 +537,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -531,8 +551,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 41:3",
-        "Psalm 42:7"
+        "Psalm 41:3"
       ],
       "ref": "Psalm 37:22#4",
       "referent": null,
@@ -656,7 +675,7 @@
       "morph_code": "C/VPsmpc/Sp3ms",
       "morph_readable": "C/VPsmpc/Sp3ms",
       "normalized": "ומקלליו",
-      "occurrence_index": 1119,
+      "occurrence_index": 1123,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

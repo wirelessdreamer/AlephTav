@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps030.v006.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f301a19f178b8035fafc885e3a9763d966ce04a3dd7d02a0fc4c2b7dbc83955a",
+      "audit_id": "aud.ps030.v006.a.0001",
+      "before_hash": "a58b8d1cea3697b07dcbd316f5df662926b95703a243bf15af969a1abc28c960",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.819476+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps030.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps030.v006.a.0001"
@@ -357,7 +376,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "באפו",
-      "occurrence_index": 828,
+      "occurrence_index": 832,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -615,7 +634,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "ברצונו",
-      "occurrence_index": 829,
+      "occurrence_index": 833,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -801,6 +820,7 @@
         "Psalm 25:13",
         "Psalm 49:13",
         "Psalm 55:8",
+        "Psalm 59:16",
         "Psalm 91:1"
       ],
       "display_gloss": "it passes the night",
@@ -848,6 +868,7 @@
         "Psalm 25:13",
         "Psalm 49:13",
         "Psalm 55:8",
+        "Psalm 59:16",
         "Psalm 91:1"
       ],
       "ref": "Psalm 30:6#7",

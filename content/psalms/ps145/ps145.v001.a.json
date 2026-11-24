@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps145.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d48122d91b5dc7386789a415f9ba1e05281eedfb9d7196373e8ab636f71f8875",
+      "audit_id": "aud.ps145.v001.a.0001",
+      "before_hash": "2415e2649fdb0bdb76620639b549422ec9e1f5b1b441f27a5ccf61884e55a826",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.612215+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps145.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps145.v001.a.0001"
@@ -231,7 +250,7 @@
       "morph_code": "R/Np",
       "morph_readable": "R/Np",
       "normalized": "לדוד",
-      "occurrence_index": 87,
+      "occurrence_index": 88,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 3:1",
@@ -369,7 +388,7 @@
       "morph_code": "Voh1cs/Sp2ms",
       "morph_readable": "Voh1cs/Sp2ms",
       "normalized": "ארוממך",
-      "occurrence_index": 4601,
+      "occurrence_index": 4636,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -523,7 +542,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלוהי",
-      "occurrence_index": 4602,
+      "occurrence_index": 4637,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -948,7 +967,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "שמך",
-      "occurrence_index": 4603,
+      "occurrence_index": 4638,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1035,6 +1054,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1051,8 +1071,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -1097,7 +1116,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעולם",
-      "occurrence_index": 136,
+      "occurrence_index": 137,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1106,6 +1125,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1122,8 +1142,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 145:1#8",
       "referent": null,
@@ -1172,6 +1191,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -1191,8 +1211,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "and ever",
       "enrichment_sources": {
@@ -1237,12 +1256,13 @@
       "morph_code": "C/Ncmsa",
       "morph_readable": "C/Ncmsa",
       "normalized": "ועד",
-      "occurrence_index": 106,
+      "occurrence_index": 107,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -1262,8 +1282,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 145:1#9",
       "referent": null,

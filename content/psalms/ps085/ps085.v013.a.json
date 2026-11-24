@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps085.v013.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "423e814014b461d04b6b421bfd9dbed65366f0b6f4d59b67b9ddaaed1b7b36ae",
+      "audit_id": "aud.ps085.v013.a.0001",
+      "before_hash": "ae697c62509aaa7d9b4489ae0d0ad60b7b62c1375c631d9634aacc2bc8d936fd",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.675352+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps085.v013.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps085.v013.a.0001"
@@ -470,6 +489,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -477,8 +497,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "the what is good",
       "enrichment_sources": {
@@ -523,7 +542,7 @@
       "morph_code": "Td/Aamsa",
       "morph_readable": "Td/Aamsa",
       "normalized": "הטוב",
-      "occurrence_index": 29,
+      "occurrence_index": 30,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -541,6 +560,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -548,8 +568,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 85:13#4",
       "referent": null,
@@ -669,7 +688,7 @@
       "morph_code": "C/Ncbsc/Sp1cp",
       "morph_readable": "C/Ncbsc/Sp1cp",
       "normalized": "וארצנו",
-      "occurrence_index": 2696,
+      "occurrence_index": 2716,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -951,7 +970,7 @@
       "morph_code": "Ncmsc/Sp3fs",
       "morph_readable": "Ncmsc/Sp3fs",
       "normalized": "יבולה",
-      "occurrence_index": 2697,
+      "occurrence_index": 2717,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps138.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "caa4d544feb8ef7ba8b9bae2423a3ceeef1d6293687dfc6bcaf109a7fec138bf",
+      "audit_id": "aud.ps138.v004.a.0001",
+      "before_hash": "7b76265c273dcf3d55eeb15b2a092ecc7b9e3aee23cd3fc96eff99cb4ef79839",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.052099+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps138.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps138.v004.a.0001"
@@ -131,7 +150,7 @@
       "morph_code": "Vhi3mp/Sp2ms",
       "morph_readable": "Vhi3mp/Sp2ms",
       "normalized": "יודוך",
-      "occurrence_index": 4375,
+      "occurrence_index": 4407,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -610,6 +629,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -623,8 +643,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -668,7 +687,7 @@
       "morph_code": "Ncbsa",
       "morph_readable": "Ncbsa",
       "normalized": "ארץ",
-      "occurrence_index": 164,
+      "occurrence_index": 165,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -680,6 +699,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -693,8 +713,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 138:4#5",
       "referent": null,
@@ -1161,7 +1180,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "פיך",
-      "occurrence_index": 4376,
+      "occurrence_index": 4408,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

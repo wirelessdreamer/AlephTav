@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps066.v012.a.0001",
-    "aud.ps066.v012.a.0002"
+    "aud.ps066.v012.a.0002",
+    "aud.ps066.v012.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6fffec4479948203891d9c1f9d229de35bc54a5e9910cae6fc60aa8c3f6e7893",
+      "audit_id": "aud.ps066.v012.a.0003",
+      "before_hash": "0ea62574b4237f07b65ce48bda1ea1494e2fb2b291a8148771c6be92884cc5b4",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.075876+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -518,7 +535,7 @@
       "morph_code": "R/Ncmsc/Sp1cp",
       "morph_readable": "R/Ncmsc/Sp1cp",
       "normalized": "לראשנו",
-      "occurrence_index": 2002,
+      "occurrence_index": 2016,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1089,7 +1106,7 @@
       "morph_code": "C/Vhw2ms/Sp1cp",
       "morph_readable": "C/Vhw2ms/Sp1cp",
       "normalized": "ותוציאנו",
-      "occurrence_index": 2003,
+      "occurrence_index": 2017,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

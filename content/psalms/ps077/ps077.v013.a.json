@@ -15,7 +15,8 @@
     "aud.ps077.v013.a.0006",
     "aud.ps077.v013.a.0007",
     "aud.ps077.v013.a.0008",
-    "aud.ps077.v013.a.0009"
+    "aud.ps077.v013.a.0009",
+    "aud.ps077.v013.a.0010"
   ],
   "audit_records": [
     {
@@ -159,6 +160,22 @@
       "rationale": "Preserve the original translation rationale during source-anchor recovery",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "41d2cff18138d39ead6b7791631c17b42a2f94e6b7ef1b3f9107f1185006d5c6",
+      "audit_id": "aud.ps077.v013.a.0010",
+      "before_hash": "7fb75a18a1e1abd8e908f5cc6e298843d28796882700306371e339fda2a0d73c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.587631+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps077.v013.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -983,7 +1000,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "פעלך",
-      "occurrence_index": 2387,
+      "occurrence_index": 2407,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1023,9 +1040,9 @@
         "Psalm 77:9",
         "Psalm 77:10",
         "Psalm 77:11",
+        "Psalm 77:12",
         "Psalm 77:14",
-        "Psalm 77:15",
-        "Psalm 77:16"
+        "Psalm 77:15"
       ],
       "semantic_role": null,
       "stem": null,
@@ -1147,7 +1164,7 @@
       "morph_code": "C/R/Ncfpc/Sp2ms",
       "morph_readable": "C/R/Ncfpc/Sp2ms",
       "normalized": "ובעלילותיך",
-      "occurrence_index": 2388,
+      "occurrence_index": 2408,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1187,9 +1204,9 @@
         "Psalm 77:9",
         "Psalm 77:10",
         "Psalm 77:11",
+        "Psalm 77:12",
         "Psalm 77:14",
-        "Psalm 77:15",
-        "Psalm 77:16"
+        "Psalm 77:15"
       ],
       "semantic_role": null,
       "stem": null,

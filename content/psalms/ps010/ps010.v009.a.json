@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps010.v009.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "61b82167dc3beb6ad0612d25040de1cdcfb3d6ebfea57c5a0da3da2a9582333e",
+      "audit_id": "aud.ps010.v009.a.0001",
+      "before_hash": "9d3b195c23e005c8e1a05cfabe81fc18951aedc18cfd1f14568c610ee0d45c7c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.542153+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps010.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps010.v009.a.0001"
@@ -418,7 +437,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "בסכה",
-      "occurrence_index": 211,
+      "occurrence_index": 213,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1077,7 +1096,7 @@
       "morph_code": "R/Vqc/Sp3ms",
       "morph_readable": "R/Vqc/Sp3ms",
       "normalized": "במשכו",
-      "occurrence_index": 212,
+      "occurrence_index": 214,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1236,7 +1255,7 @@
       "morph_code": "R/Ncfsc/Sp3ms",
       "morph_readable": "R/Ncfsc/Sp3ms",
       "normalized": "ברשתו",
-      "occurrence_index": 213,
+      "occurrence_index": 215,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

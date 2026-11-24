@@ -16,7 +16,8 @@
     "aud.ps005.v012.a.0006",
     "aud.ps005.v012.a.0007",
     "aud.ps005.v012.a.0008",
-    "aud.ps005.v012.a.0009"
+    "aud.ps005.v012.a.0009",
+    "aud.ps005.v012.a.0010"
   ],
   "audit_records": [
     {
@@ -160,6 +161,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "74cf8b5462e472479918962a6779eb4515c79bc3dd6181ae750fe7bcefd3d512",
+      "audit_id": "aud.ps005.v012.a.0010",
+      "before_hash": "420f261eac134a6452dffddaf9b0f6c3a3a2fb701d4d7750b088f2562848bb6b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.101689+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps005.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1641,7 +1658,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "בך",
-      "occurrence_index": 94,
+      "occurrence_index": 95,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1725,6 +1742,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1742,8 +1760,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -1796,6 +1813,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1813,8 +1831,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "ref": "Psalm 5:12#5",
       "referent": null,
@@ -2144,7 +2161,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "עלימו",
-      "occurrence_index": 95,
+      "occurrence_index": 96,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -2388,7 +2405,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "בך",
-      "occurrence_index": 96,
+      "occurrence_index": 97,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -2669,7 +2686,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "שמך",
-      "occurrence_index": 97,
+      "occurrence_index": 98,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

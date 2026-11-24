@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps107.v040.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a19783c110a4d49692e02df05c8afe3eeb7f8f19743d02bd790d7de69b3a12e2",
+      "audit_id": "aud.ps107.v040.a.0001",
+      "before_hash": "fd8dbee1482fd5fb93c14e4960dfe4dd80d861e3027f383c88b320c988fe0657",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.287240+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps107.v040.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps107.v040.a.0001"
@@ -60,8 +79,10 @@
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 142:3"
@@ -105,15 +126,17 @@
       "morph_code": "Vqrmsa",
       "morph_readable": "Vqrmsa",
       "normalized": "שפך",
-      "occurrence_index": 9,
+      "occurrence_index": 11,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 22:15",
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 142:3"
@@ -547,7 +570,7 @@
       "morph_code": "C/Vhw3ms/Sp3mp",
       "morph_readable": "C/Vhw3ms/Sp3mp",
       "normalized": "ויתעם",
-      "occurrence_index": 3490,
+      "occurrence_index": 3519,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

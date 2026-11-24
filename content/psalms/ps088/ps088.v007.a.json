@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps088.v007.a.0001",
-    "aud.ps088.v007.a.0002"
+    "aud.ps088.v007.a.0002",
+    "aud.ps088.v007.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "774f2a27190b0f3455cccaafa0192856538d033825f71e7a55c824809d576ee0",
+      "audit_id": "aud.ps088.v007.a.0003",
+      "before_hash": "6ebc2f65527e0c9ed4d059f6cd592c7b4191c1967b49a90385d0114cffb9c4c5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.883030+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps088.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -290,7 +307,7 @@
       "morph_code": "Vqp2ms/Sp1cs",
       "morph_readable": "Vqp2ms/Sp1cs",
       "normalized": "שתני",
-      "occurrence_index": 2772,
+      "occurrence_index": 2792,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -373,6 +390,7 @@
       "corpus_occurrence_refs": [
         "Psalm 7:16",
         "Psalm 28:1",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 143:7"
       ],
@@ -419,11 +437,12 @@
       "morph_code": "R/Ncmsc",
       "morph_readable": "R/Ncmsc",
       "normalized": "בבור",
-      "occurrence_index": 5,
+      "occurrence_index": 6,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 7:16",
         "Psalm 28:1",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 143:7"
       ],

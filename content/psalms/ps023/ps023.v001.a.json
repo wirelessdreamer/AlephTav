@@ -9,7 +9,8 @@
     "aud.ps023.v001.a.0003",
     "aud.ps023.v001.a.0004",
     "aud.ps023.v001.a.0005",
-    "aud.ps023.v001.a.0006"
+    "aud.ps023.v001.a.0006",
+    "aud.ps023.v001.a.0007"
   ],
   "audit_records": [
     {
@@ -105,6 +106,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e094054fe8ffcb0238fbb544fccc0ea41ab330be63f906047489fd954d649332",
+      "audit_id": "aud.ps023.v001.a.0007",
+      "before_hash": "8b4ddefdc262c5b46c5cdd7cc5e245890550a68def832b9d5b493f27330e596c",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.833772+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps023.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -783,7 +800,7 @@
       "morph_code": "Vqrmsc/Sp1cs",
       "morph_readable": "Vqrmsc/Sp1cs",
       "normalized": "רעי",
-      "occurrence_index": 617,
+      "occurrence_index": 620,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

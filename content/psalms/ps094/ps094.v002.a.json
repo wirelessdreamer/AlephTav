@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps094.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "943c77ec8208f3ac4811d8a227c829e079b10c93e98c744350b3c419028f15c8",
+      "audit_id": "aud.ps094.v002.a.0001",
+      "before_hash": "57562f6911f19b6454551e012e26e947a9d492198b58ff69b7478030c023fad5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.512298+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps094.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps094.v002.a.0001"
@@ -317,6 +336,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -330,8 +350,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -376,7 +395,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 102,
+      "occurrence_index": 103,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -388,6 +407,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -401,8 +421,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 94:2#3",
       "referent": null,
@@ -504,7 +523,7 @@
       "morph_code": "Vhv2ms",
       "morph_readable": "Vhv2ms",
       "normalized": "השב",
-      "occurrence_index": 46,
+      "occurrence_index": 47,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",

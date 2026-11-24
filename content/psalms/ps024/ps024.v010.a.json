@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps024.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "de3c679c30fcb418ed50fa233e1e10fc7ea7191fd2060b6991fbb65c11398880",
+      "audit_id": "aud.ps024.v010.a.0001",
+      "before_hash": "5f4b7ee96d26a30488c8393bf627581f9e1326e972c755656e1ea533fa7275ba",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.932170+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps024.v010.a.0001"
@@ -259,7 +278,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 645,
+      "occurrence_index": 648,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1042,7 +1061,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 646,
+      "occurrence_index": 649,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1455,7 +1474,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1485,7 +1504,9 @@
       ],
       "ref": "Psalm 24:10#11",
       "referent": null,
-      "same_psalm_occurrence_refs": [],
+      "same_psalm_occurrence_refs": [
+        "Psalm 24:6"
+      ],
       "semantic_role": null,
       "stem": null,
       "strong": "H5542",

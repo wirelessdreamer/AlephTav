@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps034.v017.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b0461d17dbb48522b21b99050f680b83f28de336d027161e7a3c82d1393c1d4c",
+      "audit_id": "aud.ps034.v017.a.0001",
+      "before_hash": "683be2c40f1a2024f5d922972f255fda12949a61c41ada25727b1c12737d0856",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.277924+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps034.v017.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps034.v017.a.0001"
@@ -724,6 +743,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -737,8 +757,7 @@
         "Psalm 33:14",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "from the earth",
       "enrichment_sources": {
@@ -783,7 +802,7 @@
       "morph_code": "R/Ncbsa",
       "morph_readable": "R/Ncbsa",
       "normalized": "מארץ",
-      "occurrence_index": 21,
+      "occurrence_index": 22,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -795,6 +814,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -808,8 +828,7 @@
         "Psalm 33:14",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 34:17#6",
       "referent": null,
@@ -924,7 +943,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "זכרם",
-      "occurrence_index": 998,
+      "occurrence_index": 1002,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

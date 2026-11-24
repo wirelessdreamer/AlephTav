@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps139.v024.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "907582caec5ccdf0e57e98a3b4098ec105545883e1db388d1cf1fa37ccde02c2",
+      "audit_id": "aud.ps139.v024.a.0001",
+      "before_hash": "ca0173f102135584a4f2a481bad2e9066c325478ec1d90695a7a06a6366fa185",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.233955+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps139.v024.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps139.v024.a.0001"
@@ -615,7 +634,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "בי",
-      "occurrence_index": 4437,
+      "occurrence_index": 4471,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -771,7 +790,7 @@
       "morph_code": "C/Vqv2ms/Sp1cs",
       "morph_readable": "C/Vqv2ms/Sp1cs",
       "normalized": "ונחני",
-      "occurrence_index": 4438,
+      "occurrence_index": 4472,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -990,6 +1009,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1006,8 +1026,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "of antiquity",
       "enrichment_sources": {
@@ -1051,7 +1070,7 @@
       "morph_code": "Ncmsa",
       "morph_readable": "Ncmsa",
       "normalized": "עולם",
-      "occurrence_index": 134,
+      "occurrence_index": 135,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1060,6 +1079,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1076,8 +1096,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 139:24#8",
       "referent": null,

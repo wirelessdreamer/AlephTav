@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps088.v019.a.0001",
-    "aud.ps088.v019.a.0002"
+    "aud.ps088.v019.a.0002",
+    "aud.ps088.v019.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "15da6a499c65fe2defe539c62e2e0d6d01bd563bb1ade28cdb6410463bcaedd4",
+      "audit_id": "aud.ps088.v019.a.0003",
+      "before_hash": "4967960c5883f32b5a11dfa69d4040c28bd9f49c4cc8136d719d194da4f5308d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.953828+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps088.v019.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -418,7 +435,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 2802,
+      "occurrence_index": 2822,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -789,7 +806,7 @@
       "morph_code": "VPsmpc/Sp1cs",
       "morph_readable": "VPsmpc/Sp1cs",
       "normalized": "מידעי",
-      "occurrence_index": 2803,
+      "occurrence_index": 2823,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

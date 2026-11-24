@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps145.v009.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c4b9613cc4a5405f55c30f526495d1500f00473fabb2da7a19888bbfb682390a",
+      "audit_id": "aud.ps145.v009.a.0001",
+      "before_hash": "121fed03b307bb8254ec4dd348da36ec9acf05b9ecd07176e68acc0f46e420e7",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.647024+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps145.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps145.v009.a.0001"
@@ -70,6 +89,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -77,8 +97,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "is good",
       "enrichment_sources": {
@@ -121,7 +140,7 @@
       "morph_code": "Aamsa",
       "morph_readable": "Aamsa",
       "normalized": "טוב",
-      "occurrence_index": 59,
+      "occurrence_index": 60,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -139,6 +158,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -146,8 +166,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 145:9#1",
       "referent": null,
@@ -557,7 +576,7 @@
       "morph_code": "C/Ncmpc/Sp3ms",
       "morph_readable": "C/Ncmpc/Sp3ms",
       "normalized": "ורחמיו",
-      "occurrence_index": 4615,
+      "occurrence_index": 4651,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -984,7 +1003,7 @@
       "morph_code": "Ncmpc/Sp3ms",
       "morph_readable": "Ncmpc/Sp3ms",
       "normalized": "מעשיו",
-      "occurrence_index": 4616,
+      "occurrence_index": 4652,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

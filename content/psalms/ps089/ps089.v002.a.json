@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps089.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "da37251292a85446e54109bb4d985e7f6ec0801f86a437c77b61c3fa39e76121",
+      "audit_id": "aud.ps089.v002.a.0001",
+      "before_hash": "4bad71951b9df4df47b1e54d487764984c9fa23f66b9b146b29c0d6f68086202",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.961298+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps089.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps089.v002.a.0001"
@@ -335,6 +354,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -351,8 +371,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "forever",
       "enrichment_sources": {
@@ -395,7 +414,7 @@
       "morph_code": "Ncmsa",
       "morph_readable": "Ncmsa",
       "normalized": "עולם",
-      "occurrence_index": 51,
+      "occurrence_index": 52,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -404,6 +423,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -420,8 +440,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 89:2#3",
       "referent": null,
@@ -934,7 +953,7 @@
       "morph_code": "Vhi1cs",
       "morph_readable": "Vhi1cs",
       "normalized": "אודיע",
-      "occurrence_index": 43,
+      "occurrence_index": 44,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
@@ -1077,7 +1096,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "אמונתך",
-      "occurrence_index": 2804,
+      "occurrence_index": 2824,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1236,7 +1255,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "בפי",
-      "occurrence_index": 2805,
+      "occurrence_index": 2825,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

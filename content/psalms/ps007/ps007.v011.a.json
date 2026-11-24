@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v011.a.0001",
     "aud.ps007.v011.a.0002",
-    "aud.ps007.v011.a.0003"
+    "aud.ps007.v011.a.0003",
+    "aud.ps007.v011.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3d98ceff3ffd2c4e920483247911ad1f512c6a4ae68495e12875be6117a86657",
+      "audit_id": "aud.ps007.v011.a.0004",
+      "before_hash": "7ac5cbf2f2b3eb9522b4c353ffa7bc646fd6818bbf02f09d3c7860dac7977f7e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.235559+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -469,7 +486,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "מגני",
-      "occurrence_index": 145,
+      "occurrence_index": 146,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

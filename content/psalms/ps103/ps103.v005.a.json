@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps103.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4731ada0938e446a9bc9594c1128cdded03800afcd9f84a1b3ced0e4c8ed3d2c",
+      "audit_id": "aud.ps103.v005.a.0001",
+      "before_hash": "4a5ca96800231307f68757a1591b4b789628a9d278552c10a08aa33eade0e35e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.316804+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps103.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps103.v005.a.0001"
@@ -193,6 +212,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -200,8 +220,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "with the good",
       "enrichment_sources": {
@@ -247,7 +266,7 @@
       "morph_code": "Rd/Aamsa",
       "morph_readable": "Rd/Aamsa",
       "normalized": "בטוב",
-      "occurrence_index": 33,
+      "occurrence_index": 34,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -265,6 +284,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -272,8 +292,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 103:5#2",
       "referent": null,
@@ -388,7 +407,7 @@
       "morph_code": "Ncmsc/Sp2fs",
       "morph_readable": "Ncmsc/Sp2fs",
       "normalized": "עדיך",
-      "occurrence_index": 3203,
+      "occurrence_index": 3229,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -716,7 +735,7 @@
       "morph_code": "Ncbpc/Sp2fs",
       "morph_readable": "Ncbpc/Sp2fs",
       "normalized": "נעוריכי",
-      "occurrence_index": 3204,
+      "occurrence_index": 3230,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

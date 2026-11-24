@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps050.v023.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8876bd3c77d839ea57bd09c9b748145bf177f7ea2f43b09d0953b7727686aa64",
+      "audit_id": "aud.ps050.v023.a.0001",
+      "before_hash": "5e8b57d830e68072d0c45e7e38fd9c290ebafe1b6e62525b94ce9c84ded24703",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.626010+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps050.v023.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps050.v023.a.0001"
@@ -330,7 +349,7 @@
       "morph_code": "Vpi3ms/Sp1cs",
       "morph_readable": "Vpi3ms/Sp1cs",
       "normalized": "יכבדנני",
-      "occurrence_index": 1598,
+      "occurrence_index": 1605,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -744,7 +763,7 @@
       "morph_code": "Vhi1cs/Sp3ms",
       "morph_readable": "Vhi1cs/Sp3ms",
       "normalized": "אראנו",
-      "occurrence_index": 1599,
+      "occurrence_index": 1606,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

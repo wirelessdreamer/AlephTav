@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps068.v030.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c0d3656c954347b1468f21380c5fe07413f1ea81cf919e06cdea207613e99273",
+      "audit_id": "aud.ps068.v030.a.0001",
+      "before_hash": "d8aa6b0fb3a2489de23212cb1f558ea84be2fdda308ce35a67a8c1a270c1c8a2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.403635+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps068.v030.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps068.v030.a.0001"
@@ -137,7 +156,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "מהיכלך",
-      "occurrence_index": 2079,
+      "occurrence_index": 2093,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -540,7 +559,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "לך",
-      "occurrence_index": 2080,
+      "occurrence_index": 2094,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

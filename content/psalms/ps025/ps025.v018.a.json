@@ -11,7 +11,8 @@
     "aud.ps025.v018.a.0003",
     "aud.ps025.v018.a.0004",
     "aud.ps025.v018.a.0005",
-    "aud.ps025.v018.a.0006"
+    "aud.ps025.v018.a.0006",
+    "aud.ps025.v018.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7332afd4aa37d1e37c3da3fcce2e83afc2c3b4573332df481e370c84dc326b6d",
+      "audit_id": "aud.ps025.v018.a.0007",
+      "before_hash": "ee1f74d349b2a9ea221b5df98186e19f0b6310e2467fdbf6583bc194457f93de",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.101345+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v018.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -801,7 +818,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "עניי",
-      "occurrence_index": 690,
+      "occurrence_index": 693,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -960,7 +977,7 @@
       "morph_code": "C/Ncbsc/Sp1cs",
       "morph_readable": "C/Ncbsc/Sp1cs",
       "normalized": "ועמלי",
-      "occurrence_index": 691,
+      "occurrence_index": 694,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1390,7 +1407,7 @@
       "morph_code": "Ncfpc/Sp1cs",
       "morph_readable": "Ncfpc/Sp1cs",
       "normalized": "חטאותי",
-      "occurrence_index": 692,
+      "occurrence_index": 695,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

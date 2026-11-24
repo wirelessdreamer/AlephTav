@@ -8,7 +8,8 @@
     "aud.ps008.v010.a.0001",
     "aud.ps008.v010.a.0002",
     "aud.ps008.v010.a.0003",
-    "aud.ps008.v010.a.0004"
+    "aud.ps008.v010.a.0004",
+    "aud.ps008.v010.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9d027e50295a2b336105a060e9f014e946f4530a9dea0abefc28e4998d3ae5d1",
+      "audit_id": "aud.ps008.v010.a.0005",
+      "before_hash": "b74b0c23795caa243bdd42a46a4de92c54859571553aa536b69789039f56e632",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.389675+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps008.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -598,7 +615,7 @@
       "morph_code": "Ncmpc/Sp1cp",
       "morph_readable": "Ncmpc/Sp1cp",
       "normalized": "אדנינו",
-      "occurrence_index": 171,
+      "occurrence_index": 172,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -974,7 +991,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "שמך",
-      "occurrence_index": 172,
+      "occurrence_index": 173,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1196,6 +1213,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1211,8 +1229,7 @@
         "Psalm 35:20",
         "Psalm 37:3",
         "Psalm 37:9",
-        "Psalm 37:11",
-        "Psalm 37:22"
+        "Psalm 37:11"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -1267,6 +1284,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1282,8 +1300,7 @@
         "Psalm 35:20",
         "Psalm 37:3",
         "Psalm 37:9",
-        "Psalm 37:11",
-        "Psalm 37:22"
+        "Psalm 37:11"
       ],
       "ref": "Psalm 8:10#7",
       "referent": null,

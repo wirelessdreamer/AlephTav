@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps066.v002.a.0001",
-    "aud.ps066.v002.a.0002"
+    "aud.ps066.v002.a.0002",
+    "aud.ps066.v002.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fb357c8f006e4ee8896bd9098e33b88489d97c0c63557ed57b728f74b478ef51",
+      "audit_id": "aud.ps066.v002.a.0003",
+      "before_hash": "99f09db5726f4ff1348c26feb5f3c23d7a9c5ca6c4935aa89622e87e2bc38105",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.925844+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -579,7 +596,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "שמו",
-      "occurrence_index": 1981,
+      "occurrence_index": 1995,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -994,7 +1011,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "תהלתו",
-      "occurrence_index": 1982,
+      "occurrence_index": 1996,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps011.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6782becd8d231071e02e9fd86242c26854a33744993464e160a1877daea9d17f",
+      "audit_id": "aud.ps011.v002.a.0001",
+      "before_hash": "85953631adc111e0cee6e6224bfecbb2e5f53d8348332ddce90a10b54a591920",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.601523+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps011.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps011.v002.a.0001"
@@ -492,10 +511,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "display_gloss": "they bend",
       "enrichment_sources": {
@@ -561,10 +580,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "ref": "Psalm 11:2#4",
       "referent": null,
@@ -901,7 +920,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "חצם",
-      "occurrence_index": 227,
+      "occurrence_index": 229,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

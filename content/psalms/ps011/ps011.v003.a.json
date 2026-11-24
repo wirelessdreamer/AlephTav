@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps011.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fbcce28c6fa7d41d42dc1956b90a5937c8e12973e220a1b79b47d010e81da9a9",
+      "audit_id": "aud.ps011.v003.a.0001",
+      "before_hash": "d1ea289065c14c239f98d23188b3297dfe5cdf8489f4fa8e4b16c0443ac82c64",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.611138+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps011.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps011.v003.a.0001"
@@ -300,10 +319,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "display_gloss": "they will be torn down",
       "enrichment_sources": {
@@ -369,10 +388,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "ref": "Psalm 11:3#3",
       "referent": null,

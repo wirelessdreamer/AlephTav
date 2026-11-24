@@ -11,7 +11,8 @@
     "aud.ps025.v006.a.0003",
     "aud.ps025.v006.a.0004",
     "aud.ps025.v006.a.0005",
-    "aud.ps025.v006.a.0006"
+    "aud.ps025.v006.a.0006",
+    "aud.ps025.v006.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f5f251cbfda9f185945614e17235efb800e6b3d40cd79b259b30e59d901f260",
+      "audit_id": "aud.ps025.v006.a.0007",
+      "before_hash": "bccab44ff1bed0f23e1606050f718aaf1a1b162cc1f589029811b69472e6a958",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.001009+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -749,7 +766,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "רחמיך",
-      "occurrence_index": 663,
+      "occurrence_index": 666,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1049,7 +1066,7 @@
       "morph_code": "C/Ncmpc/Sp2ms",
       "morph_readable": "C/Ncmpc/Sp2ms",
       "normalized": "וחסדיך",
-      "occurrence_index": 664,
+      "occurrence_index": 667,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1273,6 +1290,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1289,8 +1307,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "display_gloss": "from long ago",
       "enrichment_sources": {
@@ -1335,7 +1352,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "מעולם",
-      "occurrence_index": 10,
+      "occurrence_index": 11,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1344,6 +1361,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1360,8 +1378,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "ref": "Psalm 25:6#6",
       "referent": null,

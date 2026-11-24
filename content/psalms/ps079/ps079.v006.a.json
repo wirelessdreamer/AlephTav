@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps079.v006.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d524abc197d52e047212a9863e63652655e054f8f963f56c131d0b8231c8ef24",
+      "audit_id": "aud.ps079.v006.a.0001",
+      "before_hash": "7a16bdd36fcb64b5f6f09e84b937a808f685a162463f2904f903a4a29104e879",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.116570+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps079.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps079.v006.a.0001"
@@ -65,6 +84,7 @@
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -109,13 +129,14 @@
       "morph_code": "Vqv2ms",
       "morph_readable": "Vqv2ms",
       "normalized": "שפך",
-      "occurrence_index": 6,
+      "occurrence_index": 7,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 22:15",
         "Psalm 42:5",
         "Psalm 62:9",
         "Psalm 69:25",
+        "Psalm 73:2",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -124,7 +145,8 @@
       "ref": "Psalm 79:6#1",
       "referent": null,
       "same_psalm_occurrence_refs": [
-        "Psalm 79:3"
+        "Psalm 79:3",
+        "Psalm 79:10"
       ],
       "semantic_role": null,
       "stem": "qal",
@@ -236,7 +258,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "חמתך",
-      "occurrence_index": 2532,
+      "occurrence_index": 2552,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -922,7 +944,7 @@
       "morph_code": "Vqp3cp/Sp2ms",
       "morph_readable": "Vqp3cp/Sp2ms",
       "normalized": "ידעוך",
-      "occurrence_index": 2533,
+      "occurrence_index": 2553,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1445,7 +1467,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "בשמך",
-      "occurrence_index": 2534,
+      "occurrence_index": 2554,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

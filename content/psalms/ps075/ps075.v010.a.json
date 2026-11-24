@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps075.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "cbfaa75887c0ef8dedad0674af820dc66a70ec8d0443ea0832d2d2ec4051c805",
+      "audit_id": "aud.ps075.v010.a.0001",
+      "before_hash": "4f5244f4312cf069514c43892201d42323ee01c8f661c98b58528d93cf964e2d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.363652+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps075.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps075.v010.a.0001"
@@ -319,6 +338,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -335,8 +355,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -381,7 +400,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעלם",
-      "occurrence_index": 42,
+      "occurrence_index": 43,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -390,6 +409,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -406,8 +426,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 75:10#3",
       "referent": null,
@@ -731,11 +750,11 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
         "Psalm 99:4",
-        "Psalm 105:6",
-        "Psalm 105:10"
+        "Psalm 105:6"
       ],
       "display_gloss": "of Jacob",
       "enrichment_sources": {
@@ -801,11 +820,11 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
         "Psalm 99:4",
-        "Psalm 105:6",
-        "Psalm 105:10"
+        "Psalm 105:6"
       ],
       "ref": "Psalm 75:10#6",
       "referent": null,

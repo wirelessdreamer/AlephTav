@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps032.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "050ee73f90b89e57878263b2f728c38972bbdf94f60d35827f1c17aa84e8feaa",
+      "audit_id": "aud.ps032.v003.a.0001",
+      "before_hash": "7d0244c81b51904fa63d77ee1a9c2b7898c55328ef042faeaff4d634f3d28eb4",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.052398+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps032.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps032.v003.a.0001"
@@ -441,7 +460,7 @@
       "morph_code": "Ncfpc/Sp1cs",
       "morph_readable": "Ncfpc/Sp1cs",
       "normalized": "עצמי",
-      "occurrence_index": 920,
+      "occurrence_index": 924,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -596,7 +615,7 @@
       "morph_code": "R/Ncfsc/Sp1cs",
       "morph_readable": "R/Ncfsc/Sp1cs",
       "normalized": "בשאגתי",
-      "occurrence_index": 921,
+      "occurrence_index": 925,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

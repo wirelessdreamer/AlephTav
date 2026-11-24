@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps121.v005.a.0001",
     "aud.ps121.v005.a.0002",
-    "aud.ps121.v005.a.0003"
+    "aud.ps121.v005.a.0003",
+    "aud.ps121.v005.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fc42755f7e63fbf6ef983d806d35aafabd581e391f9a6fe1d9a1bd66f72c04e8",
+      "audit_id": "aud.ps121.v005.a.0004",
+      "before_hash": "a779c32fced9d71603fffd3623d0b53577a14bfe47fde33347a605f1ac4b2976",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.135544+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps121.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -581,7 +598,7 @@
       "morph_code": "Vqrmsc/Sp2ms",
       "morph_readable": "Vqrmsc/Sp2ms",
       "normalized": "שמרך",
-      "occurrence_index": 4144,
+      "occurrence_index": 4175,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -863,7 +880,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "צלך",
-      "occurrence_index": 4145,
+      "occurrence_index": 4176,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1273,7 +1290,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "ימינך",
-      "occurrence_index": 4146,
+      "occurrence_index": 4177,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

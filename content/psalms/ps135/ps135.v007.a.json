@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps135.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3b11919d8c64449e680663a3b50f27b5207f2aa8d0a7087927c5c4c14a00aa3f",
+      "audit_id": "aud.ps135.v007.a.0001",
+      "before_hash": "da4b868dac99f9ddda499d599dcdea1a0fe8f6c2dabd8875b05d1b5ed212b4c8",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.731399+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps135.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps135.v007.a.0001"
@@ -363,6 +382,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -376,8 +396,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -422,7 +441,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 162,
+      "occurrence_index": 163,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -434,6 +453,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -447,8 +467,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 135:7#4",
       "referent": null,
@@ -1139,7 +1158,7 @@
       "morph_code": "R/Ncmpc/Sp3ms",
       "morph_readable": "R/Ncmpc/Sp3ms",
       "normalized": "מאוצרותיו",
-      "occurrence_index": 4291,
+      "occurrence_index": 4323,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

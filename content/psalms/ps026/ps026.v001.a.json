@@ -51,7 +51,8 @@
     "aud.ps026.v001.a.0044",
     "aud.ps026.v001.a.0045",
     "aud.ps026.v001.a.0046",
-    "aud.ps026.v001.a.0047"
+    "aud.ps026.v001.a.0047",
+    "aud.ps026.v001.a.0048"
   ],
   "audit_records": [
     {
@@ -803,6 +804,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f02f0141175e2af39be58e41d3f4227f23aa5257f743c1b82fd2e7fe81e5fea6",
+      "audit_id": "aud.ps026.v001.a.0048",
+      "before_hash": "b427ceeb88e5eca9a465671f2f97381230d8668fdde8fa9cecf7d50652b30e51",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.157722+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps026.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4979,7 +4996,7 @@
       "morph_code": "Vqv2ms/Sp1cs",
       "morph_readable": "Vqv2ms/Sp1cs",
       "normalized": "שפטני",
-      "occurrence_index": 701,
+      "occurrence_index": 704,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -5534,7 +5551,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "בתמי",
-      "occurrence_index": 702,
+      "occurrence_index": 705,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
