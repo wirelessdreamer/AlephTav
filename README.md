@@ -112,13 +112,7 @@ npm run test:e2e
 
 ## Screenshots
 
-Refresh the generated documentation screenshots with:
-
-```bash
-npm run capture:screenshots
-```
-
-When Playwright can launch in your environment, this writes PNG views under `app/ui/public/screenshots/`. The committed capture below is a development reference; the feature list above describes the current workbench:
+The committed capture below is a development reference; the feature list above describes the current workbench:
 
 - `app/ui/public/screenshots/live-translation-flow.png`
 

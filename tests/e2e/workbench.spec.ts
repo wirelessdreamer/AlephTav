@@ -1,107 +1,25 @@
 import { expect, test } from '@playwright/test';
 
-test('hovering and pinning a token updates the inspector', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  const firstToken = page.getByTitle(/ps001\.v001\.t001/);
-  await firstToken.hover();
-  await expect(page.getByRole('definition').filter({ hasText: 'fortunate/blessed' })).toBeVisible();
-
-  await firstToken.click();
-  await expect(page.locator('.inspector-rail').getByText(/Psalm 1:1a .* ps001\.v001\.t001/)).toBeVisible();
-
-  await page.getByRole('button', { name: 'Unpin' }).click();
-  await expect(page.getByText('Hover or pin a Hebrew token to inspect lexical details.')).toBeVisible();
-});
-
-test('pinned inspector stays fixed while hovering another token', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  const firstToken = page.getByTitle(/ps001\.v001\.t001/);
-  const secondToken = page.getByTitle(/ps001\.v001\.t002/);
-
-  await firstToken.click();
-  await expect(page.getByRole('definition').filter({ hasText: 'fortunate/blessed' })).toBeVisible();
-
-  await secondToken.hover();
-  await expect(page.getByRole('definition').filter({ hasText: 'fortunate/blessed' })).toBeVisible();
-  await expect(page.getByRole('definition').filter({ hasText: 'man/person' })).not.toBeVisible();
-});
-
-test('workflow actions cover alignment creation, alternate promotion, and release export', async ({ page }) => {
-  await page.goto('/#/workbench');
-  await page.getByRole('button', { name: 'workflow' }).click();
-  const reviewPanel = page.locator('article').filter({ has: page.getByRole('heading', { name: 'Review actions' }) });
-
-  await page.getByTitle(/ps001\.v001\.t001/).click();
-  await page.getByTitle(/spn\.ps001\.v001\.a\.literal\.0001/).click();
-  await page.getByLabel('Alignment notes').fill('Playwright alignment coverage');
-  await page.getByRole('button', { name: 'Create alignment' }).click();
-  await expect(page.getByText(/Alignment created:/)).toBeVisible();
-
-  await page.getByLabel('Alternate layer').selectOption('lyric');
-  await page.getByLabel('Alternate text').fill('Playwright alternate line');
-  await page.getByRole('button', { name: 'Add alternate' }).click();
-  await expect(page.getByText(/Alternate added:/)).toBeVisible();
-
-  await reviewPanel.getByRole('textbox', { name: 'Reviewer' }).fill('playwright-reviewer-1');
-  await reviewPanel.getByRole('combobox').nth(1).selectOption('alignment reviewer');
-  await reviewPanel.getByRole('button', { name: 'Approve' }).click();
-  await expect(page.getByText(/Review action recorded: approve/)).toBeVisible();
-
-  await reviewPanel.getByRole('textbox', { name: 'Reviewer' }).fill('playwright-reviewer-2');
-  await reviewPanel.getByRole('combobox').nth(1).selectOption('theology reviewer');
-  await reviewPanel.getByRole('button', { name: 'Approve' }).click();
-  await expect(page.getByText(/Review action recorded: approve/)).toBeVisible();
-
-  await reviewPanel.getByRole('textbox', { name: 'Reviewer' }).fill('playwright-release-reviewer');
-  await reviewPanel.getByRole('combobox').nth(1).selectOption('release reviewer');
-  await reviewPanel.getByRole('button', { name: 'Promote to canonical' }).click();
-  await expect(page.getByText(/Alternate promoted:/)).toBeVisible();
-
-  await page.getByLabel('Release id').fill('v0.1.0-e2e');
-  await page.getByRole('button', { name: 'Export release' }).click();
-  await expect(page.getByText(/Release validation failed/)).toBeVisible();
-});
-
-test('hovering an English span highlights linked Hebrew tokens', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  const englishSpan = page.getByTitle(/spn\.ps001\.v001\.a\.literal\.0001/);
-  const hebrewToken = page.getByTitle(/ps001\.v001\.t001/);
-
-  await englishSpan.hover();
-  await expect(hebrewToken).toHaveClass(/linked/);
-});
-
-test('source visibility and unresolved warning details are surfaced', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  await expect(page.getByText('export blocked', { exact: true })).toBeVisible();
-  await expect(page.getByText('Witness text present and version-pinned separately.')).toBeVisible();
-  await expect(page.getByLabel('Unit warning details')).toContainText('parallelism_break');
-});
-
 test('welcome page renders without requiring the api-backed workbench route', async ({ page }) => {
   await page.goto('/');
 
   await expect(page.getByRole('heading', { name: 'Psalms Copyleft Workbench' })).toBeVisible();
-  await expect(page.getByText('Quick local demo')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Quick local startup' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Open Workbench' })).toBeVisible();
 });
 
 test('assistant docks beside the workbench and can be reopened after closing', async ({ page }) => {
   await page.goto('/#/workbench');
 
-  const workspaceGrid = page.locator('.workspace-grid');
+  const comparison = page.locator('.comparison-shell');
   const assistantPanel = page.locator('.assistant-panel');
   await expect(assistantPanel).toBeVisible();
 
-  const workspaceBox = await workspaceGrid.boundingBox();
+  const comparisonBox = await comparison.boundingBox();
   const assistantBox = await assistantPanel.boundingBox();
-  expect(workspaceBox).not.toBeNull();
+  expect(comparisonBox).not.toBeNull();
   expect(assistantBox).not.toBeNull();
-  expect(assistantBox!.x).toBeGreaterThan(workspaceBox!.x + workspaceBox!.width - 20);
+  expect(assistantBox!.x).toBeGreaterThan(comparisonBox!.x + comparisonBox!.width - 20);
 
   await page.getByRole('button', { name: 'Close' }).click();
   await expect(page.locator('.assistant-launcher__button')).toBeVisible();
@@ -123,25 +41,13 @@ test('assistant visibility persists across reloads', async ({ page }) => {
   await expect(page.locator('.assistant-panel')).toBeVisible();
 });
 
-test('assistant uses the footer launcher on mobile without blocking the workbench route', async ({ page }) => {
+test('phone workbench uses the phone comparison instead of the shell assistant', async ({ page }) => {
   await page.setViewportSize({ width: 430, height: 1100 });
   await page.goto('/#/workbench');
 
-  await page.getByRole('button', { name: 'Close' }).click();
-  const launcher = page.getByRole('button', { name: 'Open assistant footer' });
-  await expect(launcher).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Phrase And Concept Cloud' })).toBeVisible();
-});
-
-
-test('workbench defaults to a full-psalm visual flow canvas with cloud-driven retrieval', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  await expect(page.getByRole('heading', { name: 'Phrase And Concept Cloud' })).toBeVisible();
-  await expect(page.locator('.flow-unit-card').filter({ has: page.getByText('Psalm 1:1a') })).toHaveCount(2);
-
-  await page.locator('.cloud-node').first().click();
-  await expect(page.getByText(/Retrieved support/).first()).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Verse comparison', exact: true })).toBeVisible();
+  await expect(page.locator('.assistant-panel')).toHaveCount(0);
+  await expect(page.locator('.assistant-launcher__button')).toHaveCount(0);
 });
 
 test('psalm selector exposes the full audited corpus', async ({ page }) => {
@@ -158,50 +64,3 @@ test('psalm selector exposes the full audited corpus', async ({ page }) => {
   ]);
 });
 
-test('layered english flow renders populated content and falls back when the selected layer is missing', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
-  const layerSelect = page.locator('label').filter({ hasText: 'Workflow layer' }).locator('select');
-  await expect(layerSelect.locator('option')).toHaveText(['gloss', 'literal', 'phrase', 'lyric']);
-
-  await psalmSelect.selectOption('ps023');
-  await layerSelect.selectOption('lyric');
-  await expect(page.getByText('The LORD, my shepherd, stays near')).toBeVisible();
-
-  await psalmSelect.selectOption('ps051');
-  await layerSelect.selectOption('phrase');
-  await expect(page.getByText('God, show me mercy')).toBeVisible();
-
-  await psalmSelect.selectOption('ps019');
-  await layerSelect.selectOption('literal');
-  await expect(page.getByText('The heavens are declaring')).toBeVisible();
-
-  await page.getByRole('button', { name: 'compare' }).click();
-  await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare left' }) }).getByText('rnd.ps051.v001.a.literal.can.0001')).toBeVisible();
-  await expect(page.locator('.compare-card').filter({ has: page.getByRole('heading', { name: 'Compare right' }) }).getByText('rnd.ps051.v001.a.phrase.alt.0001')).toBeVisible();
-});
-
-test('alternate review surfaces basis filters and source badges', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  const psalmSelect = page.locator('label').filter({ hasText: 'Psalm' }).locator('select');
-  const layerSelect = page.locator('label').filter({ hasText: 'Workflow layer' }).locator('select');
-  await psalmSelect.selectOption('ps023');
-  await layerSelect.selectOption('lyric');
-  await page.getByRole('button', { name: 'compare' }).click();
-  await expect(page.locator('label').filter({ hasText: 'Basis' }).locator('select')).toBeVisible();
-  await expect(page.getByText('From Hebrew')).toBeVisible();
-});
-
-test('selected untranslated unit opens guided translation controls in the right pane', async ({ page }) => {
-  await page.goto('/#/workbench');
-
-  await page.getByRole('button', { name: 'Psalm 1:2 ps001.v002.a' }).click();
-
-  const guidedCard = page.locator('.guided-translation-card');
-  await expect(guidedCard.getByText('Guided translation')).toBeVisible();
-  await expect(guidedCard.getByRole('button', { name: 'Generate starter' })).toBeVisible();
-  await expect(guidedCard.getByRole('button', { name: 'Save proposed draft' })).toBeDisabled();
-  await expect(guidedCard.getByRole('textbox', { name: 'Draft translation' })).toBeVisible();
-});

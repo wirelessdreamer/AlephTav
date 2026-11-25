@@ -14,7 +14,8 @@ concurrency:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Pinned: Playwright has no Chromium build for ubuntu-latest (26.04) yet.
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       ALEPHTAV_ROOT_DIR: /tmp/alephtav-ci
@@ -32,3 +33,4 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test
       - run: npm run test:e2e
+      - run: npx playwright test -c playwright.pages.config.ts
