@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import Callable
+from contextvars import ContextVar
 from typing import Any, Literal
 
 from fastapi import HTTPException, Request
@@ -125,12 +126,17 @@ def _call(fn: Callable[..., Any], *args: Any, **kwargs: Any) -> str:
     return json.dumps(result, ensure_ascii=False, default=str)
 
 
+# How the tools were reached; ``psalms-workbench tool call`` sets this to ``cli``.
+channel: ContextVar[str] = ContextVar("channel", default="mcp")
+
+
 def _mcp(name: str) -> str:
-    """Who acted, marked as acting through the MCP: ``claude`` becomes ``mcp:claude``."""
+    """Who acted, marked by how they reached the tools: ``claude`` becomes ``mcp:claude``."""
+    prefix = channel.get()
     name = name.strip()
     if not name:
-        return "mcp"
-    return name if name.startswith("mcp:") else f"mcp:{name}"
+        return prefix
+    return name if name.startswith(f"{prefix}:") else f"{prefix}:{name}"
 
 
 def _payload(**fields: Any) -> dict[str, Any]:

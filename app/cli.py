@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+from typing import Annotated
 
+import anyio
 import typer
 
 from app.core.config import get_settings
@@ -220,6 +223,72 @@ def greek_audit_lookups(preview_only: bool = False) -> None:
 @app.command("open-settings")
 def open_settings() -> None:
     typer.echo(json.dumps(get_settings().as_dict(), indent=2))
+
+
+tool_app = typer.Typer(
+    help="Run the workbench's MCP tools in-process; what they write is stamped cli:<name>."
+)
+app.add_typer(tool_app, name="tool")
+
+
+@tool_app.command("list")
+def list_tools() -> None:
+    """List every tool with the first line of its description."""
+    from app.api.mcp_server import server
+
+    for tool in anyio.run(server.list_tools):
+        summary = (tool.description or "").strip().splitlines()[0:1]
+        typer.echo(f"{tool.name}  {summary[0] if summary else ''}")
+
+
+@tool_app.command("describe")
+def describe_tool(name: str) -> None:
+    """Show a tool's description and the arguments it takes."""
+    from app.api.mcp_server import server
+
+    tool = next((tool for tool in anyio.run(server.list_tools) if tool.name == name), None)
+    if tool is None:
+        typer.echo(f"Unknown tool: {name}", err=True)
+        raise typer.Exit(1)
+    typer.echo((tool.description or "").strip())
+    typer.echo(json.dumps(tool.input_schema, indent=2, ensure_ascii=False))
+
+
+@tool_app.command("call")
+def call_tool(
+    name: str,
+    arguments: Annotated[
+        list[str] | None, typer.Argument(help="key=value; lists and objects as JSON")
+    ] = None,
+) -> None:
+    """Call a tool, e.g. `tool call get_unit unit_id=ps001.v001.a`."""
+    from mcp.server.mcpserver.exceptions import ToolError
+    from mcp.types import CallToolResult, TextContent
+
+    from app.api.mcp_server import channel, server
+
+    payload: dict[str, str] = {}
+    for argument in arguments or []:
+        key, sep, value = argument.partition("=")
+        if not sep:
+            raise typer.BadParameter(f"Expected key=value, got {argument!r}")
+        payload[key] = value
+    token = channel.set("cli")
+    try:
+        result = anyio.run(server.call_tool, name, payload)
+    except ToolError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    finally:
+        channel.reset(token)
+    # Every tool answers with one JSON text (see mcp_server._call).
+    assert isinstance(result, CallToolResult) and isinstance(result.content[0], TextContent)
+    text = result.content[0].text
+    # Hebrew and Greek must survive a redirected stdout, which Windows opens as cp1252.
+    reconfigure = getattr(sys.stdout, "reconfigure", None)
+    if reconfigure is not None:
+        reconfigure(encoding="utf-8")
+    typer.echo(json.dumps(json.loads(text), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
