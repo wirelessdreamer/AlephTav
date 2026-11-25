@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps096.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "5a41859c035f6386283c8643ea4d5d0e4e237bbe6e77a08887d7b9dce02e72d7",
+      "audit_id": "aud.ps096.v004.a.0001",
+      "before_hash": "4a4af78aa5e67a5cad3232b1a01379d3210a9346cdf17c0bf3aade06184b6625",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.745510+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps096.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps096.v004.a.0001"
@@ -594,6 +613,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -614,8 +634,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -658,11 +677,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -683,8 +703,7 @@
         "Psalm 112:1",
         "Psalm 116:10",
         "Psalm 119:4",
-        "Psalm 119:8",
-        "Psalm 119:43"
+        "Psalm 119:8"
       ],
       "ref": "Psalm 96:4#5",
       "referent": null,
@@ -916,7 +935,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 3065,
+      "occurrence_index": 3089,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

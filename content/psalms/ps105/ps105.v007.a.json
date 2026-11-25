@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps105.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8e1761620d8036d8fac29847c51bdc6a0c2799016de14f1a491dec6c6cd05988",
+      "audit_id": "aud.ps105.v007.a.0001",
+      "before_hash": "b0e32e843a49685ebec7c207313643a4965d61b13cecd80c60a99bacb8cc91da",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.581423+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps105.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps105.v007.a.0001"
@@ -120,7 +139,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 3298,
+      "occurrence_index": 3324,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -410,7 +429,7 @@
       "morph_code": "Ncmpc/Sp1cp",
       "morph_readable": "Ncmpc/Sp1cp",
       "normalized": "אלהינו",
-      "occurrence_index": 3299,
+      "occurrence_index": 3325,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -643,6 +662,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -656,8 +676,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -702,7 +721,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 130,
+      "occurrence_index": 131,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -714,6 +733,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -727,8 +747,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 105:7#5",
       "referent": null,
@@ -849,7 +868,7 @@
       "morph_code": "Ncmpc/Sp3ms",
       "morph_readable": "Ncmpc/Sp3ms",
       "normalized": "משפטיו",
-      "occurrence_index": 3300,
+      "occurrence_index": 3326,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

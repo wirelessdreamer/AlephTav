@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps041.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "56e2c66d1dce429533a7b4f3c543cc697d0cd34b39cf41e4eb4aa06263964031",
+      "audit_id": "aud.ps041.v003.a.0001",
+      "before_hash": "b38664d8202483f08bda54660bde0ecf976a9dbc25f2c53f597e2915353e046b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:19.340353+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps041.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps041.v003.a.0001"
@@ -267,7 +286,7 @@
       "morph_code": "Vqi3ms/Sp3ms",
       "morph_readable": "Vqi3ms/Sp3ms",
       "normalized": "ישמרהו",
-      "occurrence_index": 1290,
+      "occurrence_index": 1294,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -422,7 +441,7 @@
       "morph_code": "C/Vpi3ms/Sp3ms",
       "morph_readable": "C/Vpi3ms/Sp3ms",
       "normalized": "ויחיהו",
-      "occurrence_index": 1291,
+      "occurrence_index": 1295,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -473,65 +492,6 @@
       "token_id": "ps041.v003.t003",
       "transliteration": "wi",
       "word_sense": "will.preserve.him.alive"
-    },
-    {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [
-            "lemma",
-            "stem"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "oshb:stem",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Ti",
-      "morph_readable": "Ti",
-      "normalized": "יאשר",
-      "occurrence_index": 1,
-      "part_of_speech": "particle",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 41:3#4",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": null,
-      "strong": "H833",
-      "surface": "יאשר",
-      "syntax_role": null,
-      "token_id": "ps041.v003.t004",
-      "transliteration": null,
-      "word_sense": null
     },
     {
       "compiler_features": {
@@ -598,21 +558,21 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Rd/Ncbsa",
-      "morph_readable": "Rd/Ncbsa",
-      "normalized": "בארץ",
+      "morph_code": "Ti",
+      "morph_readable": "Ti",
+      "normalized": "יאשר",
       "occurrence_index": 1,
-      "part_of_speech": "noun",
+      "part_of_speech": "particle",
       "psalms_occurrence_refs": [],
-      "ref": "Psalm 41:3#5",
+      "ref": "Psalm 41:3#4",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "pual",
-      "strong": "H776",
-      "surface": "בָּאָ֑רֶץ",
+      "strong": "H833",
+      "surface": "יאשר",
       "syntax_role": "v",
-      "token_id": "ps041.v003.t005",
+      "token_id": "ps041.v003.t004",
       "transliteration": "**wə**ʾuššar",
       "word_sense": "he.will.be.called.blessed"
     },
@@ -657,6 +617,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -670,8 +631,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "in the land",
       "enrichment_sources": {
@@ -714,11 +674,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "C/Tn",
-      "morph_readable": "C/Tn",
-      "normalized": "ואל",
-      "occurrence_index": 29,
-      "part_of_speech": "particle",
+      "morph_code": "Rd/Ncbsa",
+      "morph_readable": "Rd/Ncbsa",
+      "normalized": "בארץ",
+      "occurrence_index": 30,
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
         "Psalm 2:8",
@@ -729,6 +689,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -742,18 +703,17 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
-      "ref": "Psalm 41:3#6",
+      "ref": "Psalm 41:3#5",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H408",
-      "surface": "וְאַֽל",
+      "strong": "H776",
+      "surface": "בָּאָ֑רֶץ",
       "syntax_role": null,
-      "token_id": "ps041.v003.t006",
+      "token_id": "ps041.v003.t005",
       "transliteration": "bā–ʾāreṣ",
       "word_sense": "land"
     },
@@ -849,11 +809,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vqj2ms/Sp3ms",
-      "morph_readable": "Vqj2ms/Sp3ms",
-      "normalized": "תתנהו",
+      "morph_code": "C/Tn",
+      "morph_readable": "C/Tn",
+      "normalized": "ואל",
       "occurrence_index": 43,
-      "part_of_speech": "suffix",
+      "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 4:5",
         "Psalm 6:2",
@@ -880,15 +840,15 @@
         "Psalm 35:25",
         "Psalm 36:12"
       ],
-      "ref": "Psalm 41:3#7",
+      "ref": "Psalm 41:3#6",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H5414",
-      "surface": "תִּ֝תְּנֵ֗הוּ",
+      "strong": "H408",
+      "surface": "וְאַֽל",
       "syntax_role": "adv",
-      "token_id": "ps041.v003.t007",
+      "token_id": "ps041.v003.t006",
       "transliteration": "wəʾal-",
       "word_sense": "do.not"
     },
@@ -987,11 +947,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "R/Ncbsc",
-      "morph_readable": "R/Ncbsc",
-      "normalized": "בנפש",
-      "occurrence_index": 1292,
-      "part_of_speech": "noun",
+      "morph_code": "Vqj2ms/Sp3ms",
+      "morph_readable": "Vqj2ms/Sp3ms",
+      "normalized": "תתנהו",
+      "occurrence_index": 1296,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1018,7 +978,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 41:3#8",
+      "ref": "Psalm 41:3#7",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 41:2",
@@ -1035,10 +995,10 @@
       ],
       "semantic_role": null,
       "stem": "qal",
-      "strong": "H5315",
-      "surface": "בְּנֶ֣פֶשׁ",
+      "strong": "H5414",
+      "surface": "תִּ֝תְּנֵ֗הוּ",
       "syntax_role": "v",
-      "token_id": "ps041.v003.t008",
+      "token_id": "ps041.v003.t007",
       "transliteration": null,
       "word_sense": "him"
     },
@@ -1122,11 +1082,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Vqrmpc/Sp3ms",
-      "morph_readable": "Vqrmpc/Sp3ms",
-      "normalized": "איביו",
+      "morph_code": "R/Ncbsc",
+      "morph_readable": "R/Ncbsc",
+      "normalized": "בנפש",
       "occurrence_index": 5,
-      "part_of_speech": "suffix",
+      "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 17:9",
         "Psalm 19:8",
@@ -1140,17 +1100,168 @@
         "Psalm 97:10",
         "Psalm 107:9"
       ],
-      "ref": "Psalm 41:3#9",
+      "ref": "Psalm 41:3#8",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
+      "strong": "H5315",
+      "surface": "בְּנֶ֣פֶשׁ",
+      "syntax_role": null,
+      "token_id": "ps041.v003.t008",
+      "transliteration": "bənep̄eš",
+      "word_sense": "the.desire"
+    },
+    {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": true,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "enemies",
+          "his"
+        ],
+        "gloss_fragments": [
+          "his enemies",
+          "his"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "singular",
+          "person": "third",
+          "text": "his"
+        },
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "display_gloss": "his enemies",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
+      "gloss_parts": [
+        "his.enemies",
+        "his"
+      ],
+      "greek": "ἐξθροῦ αὐτοῦ",
+      "greek_strong": "846",
+      "lemma": "הוּא",
+      "missing_enrichments": [
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Vqrmpc/Sp3ms",
+      "morph_readable": "Vqrmpc/Sp3ms",
+      "normalized": "איביו",
+      "occurrence_index": 1297,
+      "part_of_speech": "suffix",
+      "psalms_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "ref": "Psalm 41:3#9",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 41:2",
+        "Psalm 41:4",
+        "Psalm 41:5",
+        "Psalm 41:6",
+        "Psalm 41:7",
+        "Psalm 41:8",
+        "Psalm 41:9",
+        "Psalm 41:10",
+        "Psalm 41:11",
+        "Psalm 41:12",
+        "Psalm 41:13"
+      ],
+      "semantic_role": null,
+      "stem": "qal",
       "strong": "H341",
       "surface": "אֹיְבָֽיו",
       "syntax_role": null,
       "token_id": "ps041.v003.t009",
-      "transliteration": "bənep̄eš",
-      "word_sense": "the.desire"
+      "transliteration": null,
+      "word_sense": "his"
     }
   ],
   "unit_id": "ps041.v003.a",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps102.v016.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ff9d5c01f417e7b8a609874d7a06fae174c8066b0eb24535cd4e759dba3b8961",
+      "audit_id": "aud.ps102.v016.a.0001",
+      "before_hash": "2ba4b173cf8265ec5ca6de78a3b5ff6144f6ac77e1d8b77218ea8723c901130e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.227546+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps102.v016.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps102.v016.a.0001"
@@ -1006,6 +1025,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1019,8 +1039,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -1065,7 +1084,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 119,
+      "occurrence_index": 120,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1077,6 +1096,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1090,8 +1110,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 102:16#8",
       "referent": null,
@@ -1340,7 +1359,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "כבודך",
-      "occurrence_index": 3176,
+      "occurrence_index": 3201,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

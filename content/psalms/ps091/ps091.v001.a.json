@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps091.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "35d4f389f30e79b398a822b4b8e1cb19fedee6997b715d294bed4952f59254a4",
+      "audit_id": "aud.ps091.v001.a.0001",
+      "before_hash": "810f478cce1863369e3717181c6dc3201976e8f9d8aa9abfa3ea2077268218aa",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.326749+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps091.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps091.v001.a.0001"
@@ -599,7 +618,8 @@
         "Psalm 25:13",
         "Psalm 30:6",
         "Psalm 49:13",
-        "Psalm 55:8"
+        "Psalm 55:8",
+        "Psalm 59:16"
       ],
       "display_gloss": "he will lodge",
       "enrichment_sources": {
@@ -640,13 +660,14 @@
       "morph_code": "Vri3ms",
       "morph_readable": "Vri3ms",
       "normalized": "יתלונן",
-      "occurrence_index": 5,
+      "occurrence_index": 6,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 25:13",
         "Psalm 30:6",
         "Psalm 49:13",
-        "Psalm 55:8"
+        "Psalm 55:8",
+        "Psalm 59:16"
       ],
       "ref": "Psalm 91:1#6",
       "referent": null,

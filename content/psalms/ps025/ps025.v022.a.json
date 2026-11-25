@@ -11,7 +11,8 @@
     "aud.ps025.v022.a.0003",
     "aud.ps025.v022.a.0004",
     "aud.ps025.v022.a.0005",
-    "aud.ps025.v022.a.0006"
+    "aud.ps025.v022.a.0006",
+    "aud.ps025.v022.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f857eacaf2456bfbac042d36b5bc549311c8914000b7d2f3e7a708b55c392ffc",
+      "audit_id": "aud.ps025.v022.a.0007",
+      "before_hash": "07315326b218f0bec55dfa3a69a57ef29fad63803d9641773cb3b79f598c4ee9",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.127007+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v022.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1294,7 +1311,7 @@
       "morph_code": "Ncfpc/Sp3ms",
       "morph_readable": "Ncfpc/Sp3ms",
       "normalized": "צרותיו",
-      "occurrence_index": 700,
+      "occurrence_index": 703,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -10,7 +10,8 @@
     "aud.ps024.v005.a.0002",
     "aud.ps024.v005.a.0003",
     "aud.ps024.v005.a.0004",
-    "aud.ps024.v005.a.0005"
+    "aud.ps024.v005.a.0005",
+    "aud.ps024.v005.a.0006"
   ],
   "audit_records": [
     {
@@ -90,6 +91,22 @@
       "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "129327338141bbf87a0a42b9202f652097e334c5e0976604c06747fcf093e9c2",
+      "audit_id": "aud.ps024.v005.a.0006",
+      "before_hash": "9bd982c41afa43315868bb4a232d0b0abb068ee6b8255c2b6f86a14a2ff5f278",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:13.279569+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1336,7 +1353,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "ישעו",
-      "occurrence_index": 640,
+      "occurrence_index": 643,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

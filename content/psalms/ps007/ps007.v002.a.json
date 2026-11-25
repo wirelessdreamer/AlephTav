@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v002.a.0001",
     "aud.ps007.v002.a.0002",
-    "aud.ps007.v002.a.0003"
+    "aud.ps007.v002.a.0003",
+    "aud.ps007.v002.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8107b0aa9b2efbffcaf92555f77e8d41bb9c30c12e8aeb4252bd1f6d76d27609",
+      "audit_id": "aud.ps007.v002.a.0004",
+      "before_hash": "f80652702e06d01ff525753bba26fe8197ae1329c76b1275488ce7c15bbdb5a0",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.172845+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -576,7 +593,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלהי",
-      "occurrence_index": 123,
+      "occurrence_index": 124,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -731,7 +748,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "בך",
-      "occurrence_index": 124,
+      "occurrence_index": 125,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1006,7 +1023,7 @@
       "morph_code": "Vhv2ms/Sp1cs",
       "morph_readable": "Vhv2ms/Sp1cs",
       "normalized": "הושיעני",
-      "occurrence_index": 125,
+      "occurrence_index": 126,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1296,7 +1313,7 @@
       "morph_code": "Vqrmpc/Sp1cs",
       "morph_readable": "Vqrmpc/Sp1cs",
       "normalized": "רדפי",
-      "occurrence_index": 126,
+      "occurrence_index": 127,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1452,7 +1469,7 @@
       "morph_code": "C/Vhv2ms/Sp1cs",
       "morph_readable": "C/Vhv2ms/Sp1cs",
       "normalized": "והצילני",
-      "occurrence_index": 127,
+      "occurrence_index": 128,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps106.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "955ef1639294b760bbcd7c744cd1f42dd684abd1677a9c8577e0677a72308717",
+      "audit_id": "aud.ps106.v002.a.0001",
+      "before_hash": "c9abe53776604e35bcf550e75753179542ccde968ce067f16ee110b08107292b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.807714+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps106.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps106.v002.a.0001"
@@ -185,7 +204,8 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
-        "Psalm 37:2"
+        "Psalm 37:2",
+        "Psalm 58:8"
       ],
       "display_gloss": "will he utter",
       "enrichment_sources": {
@@ -226,10 +246,11 @@
       "morph_code": "Vpi3ms",
       "morph_readable": "Vpi3ms",
       "normalized": "ימלל",
-      "occurrence_index": 2,
+      "occurrence_index": 3,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
-        "Psalm 37:2"
+        "Psalm 37:2",
+        "Psalm 58:8"
       ],
       "ref": "Psalm 106:2#2",
       "referent": null,
@@ -844,7 +865,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "תהלתו",
-      "occurrence_index": 3362,
+      "occurrence_index": 3390,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

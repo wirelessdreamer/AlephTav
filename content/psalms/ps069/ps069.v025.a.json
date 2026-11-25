@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps069.v025.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "66aba0337e620ace968eeea5291872349ee6396e9bc0355b17cda412d2a74691",
+      "audit_id": "aud.ps069.v025.a.0001",
+      "before_hash": "daf6ef8ce6b95eba472ec9b4d71ce42e6fa6e2a2c6bbfc579ac1a1981046f415",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.605941+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps069.v025.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps069.v025.a.0001"
@@ -57,8 +76,10 @@
         "Psalm 22:15",
         "Psalm 42:5",
         "Psalm 62:9",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -109,8 +130,10 @@
         "Psalm 22:15",
         "Psalm 42:5",
         "Psalm 62:9",
+        "Psalm 73:2",
         "Psalm 79:3",
         "Psalm 79:6",
+        "Psalm 79:10",
         "Psalm 102:1",
         "Psalm 106:38",
         "Psalm 107:40",
@@ -229,7 +252,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "עליהם",
-      "occurrence_index": 2155,
+      "occurrence_index": 2169,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -383,7 +406,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "זעמך",
-      "occurrence_index": 2156,
+      "occurrence_index": 2170,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -631,7 +654,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "אפך",
-      "occurrence_index": 2157,
+      "occurrence_index": 2171,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -782,7 +805,7 @@
       "morph_code": "Vhi3ms/Sp3mp",
       "morph_readable": "Vhi3ms/Sp3mp",
       "normalized": "ישיגם",
-      "occurrence_index": 2158,
+      "occurrence_index": 2172,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

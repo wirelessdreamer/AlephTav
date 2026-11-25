@@ -11,7 +11,8 @@
     "aud.ps025.v004.a.0003",
     "aud.ps025.v004.a.0004",
     "aud.ps025.v004.a.0005",
-    "aud.ps025.v004.a.0006"
+    "aud.ps025.v004.a.0006",
+    "aud.ps025.v004.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3dc129d4055065b8b4467fcb30e22fe33d1a97304d8972a78bafe253d60fa859",
+      "audit_id": "aud.ps025.v004.a.0007",
+      "before_hash": "01051c13243a7ef09af6db89cd33a933467b3ecdaed335b1506fb7b20f2714cc",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.978235+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -627,7 +644,7 @@
       "morph_code": "Ncbpc/Sp2ms",
       "morph_readable": "Ncbpc/Sp2ms",
       "normalized": "דרכיך",
-      "occurrence_index": 654,
+      "occurrence_index": 657,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -919,7 +936,7 @@
       "morph_code": "Vhv2ms/Sp1cs",
       "morph_readable": "Vhv2ms/Sp1cs",
       "normalized": "הודיעני",
-      "occurrence_index": 655,
+      "occurrence_index": 658,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1073,7 +1090,7 @@
       "morph_code": "Ncbpc/Sp2ms",
       "morph_readable": "Ncbpc/Sp2ms",
       "normalized": "ארחותיך",
-      "occurrence_index": 656,
+      "occurrence_index": 659,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1224,7 +1241,7 @@
       "morph_code": "Vpv2ms/Sp1cs",
       "morph_readable": "Vpv2ms/Sp1cs",
       "normalized": "למדני",
-      "occurrence_index": 657,
+      "occurrence_index": 660,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps065.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6ca475006bbda200040c8327b54c609d5448616e8bff2867f9d52e62ec52e9f4",
+      "audit_id": "aud.ps065.v012.a.0001",
+      "before_hash": "5e8f5cb781e0e67e426e5c5d43da5873a8278a3a332a034bc5106e9469dd1276",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.903860+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps065.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps065.v012.a.0001"
@@ -306,7 +325,7 @@
       "morph_code": "Aafsc/Sp2ms",
       "morph_readable": "Aafsc/Sp2ms",
       "normalized": "טובתך",
-      "occurrence_index": 1979,
+      "occurrence_index": 1993,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -463,7 +482,7 @@
       "morph_code": "C/Ncmpc/Sp2ms",
       "morph_readable": "C/Ncmpc/Sp2ms",
       "normalized": "ומעגליך",
-      "occurrence_index": 1980,
+      "occurrence_index": 1994,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -568,9 +587,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "display_gloss": "they drip",
       "enrichment_sources": {
@@ -637,9 +656,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "ref": "Psalm 65:12#5",
       "referent": null,

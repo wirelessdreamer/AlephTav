@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps071.v014.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "049dbff19c6ed866728e9f212bda595654cadac4b05501e23809ef4bc6a35fc4",
+      "audit_id": "aud.ps071.v014.a.0001",
+      "before_hash": "093f9235aa4ace5c2d301fcd717a8e3a05ca919fa2edf073dcd79ec7932f8b7b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.813040+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps071.v014.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps071.v014.a.0001"
@@ -329,6 +348,7 @@
         "Psalm 119:74",
         "Psalm 119:81",
         "Psalm 119:114",
+        "Psalm 119:147",
         "Psalm 130:5",
         "Psalm 130:7",
         "Psalm 131:3",
@@ -388,6 +408,7 @@
         "Psalm 119:74",
         "Psalm 119:81",
         "Psalm 119:114",
+        "Psalm 119:147",
         "Psalm 130:5",
         "Psalm 130:7",
         "Psalm 131:3",
@@ -872,7 +893,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "תהלתך",
-      "occurrence_index": 2226,
+      "occurrence_index": 2240,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

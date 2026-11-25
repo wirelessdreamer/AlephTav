@@ -11,7 +11,8 @@
     "aud.ps025.v008.a.0003",
     "aud.ps025.v008.a.0004",
     "aud.ps025.v008.a.0005",
-    "aud.ps025.v008.a.0006"
+    "aud.ps025.v008.a.0006",
+    "aud.ps025.v008.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "af6e9e4cc96ce7044c1a3518279bc08206916ccf2416a8ac005a608364445da5",
+      "audit_id": "aud.ps025.v008.a.0007",
+      "before_hash": "153b70ef44c8dcc2479371ef8ca72e64a1c9139034c2be0df30ed1c242aa76af",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.023769+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -565,6 +582,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -574,8 +592,7 @@
         "Psalm 54:8",
         "Psalm 63:4",
         "Psalm 69:17",
-        "Psalm 73:1",
-        "Psalm 73:28"
+        "Psalm 73:1"
       ],
       "display_gloss": "is good",
       "enrichment_sources": {
@@ -635,6 +652,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -644,8 +662,7 @@
         "Psalm 54:8",
         "Psalm 63:4",
         "Psalm 69:17",
-        "Psalm 73:1",
-        "Psalm 73:28"
+        "Psalm 73:1"
       ],
       "ref": "Psalm 25:8#1",
       "referent": null,

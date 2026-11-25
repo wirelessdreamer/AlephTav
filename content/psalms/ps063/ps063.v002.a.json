@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps063.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7609ebea14847067ec67ef23346b870dc2a87525c68e09c029c420746693a2b3",
+      "audit_id": "aud.ps063.v002.a.0001",
+      "before_hash": "cd5b7975c8d4a294bf04a819e55ac15272d9e54a046a78591efebdf46a313a9f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.703877+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps063.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps063.v002.a.0001"
@@ -273,7 +292,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "אלי",
-      "occurrence_index": 1910,
+      "occurrence_index": 1924,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -553,7 +572,7 @@
       "morph_code": "Vpi1cs/Sp2ms",
       "morph_readable": "Vpi1cs/Sp2ms",
       "normalized": "אשחרך",
-      "occurrence_index": 1911,
+      "occurrence_index": 1925,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -791,7 +810,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "לך",
-      "occurrence_index": 1912,
+      "occurrence_index": 1926,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -944,7 +963,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 1913,
+      "occurrence_index": 1927,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1176,7 +1195,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "לך",
-      "occurrence_index": 1914,
+      "occurrence_index": 1928,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1329,7 +1348,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "בשרי",
-      "occurrence_index": 1915,
+      "occurrence_index": 1929,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1418,6 +1437,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1431,8 +1451,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "in a land",
       "enrichment_sources": {
@@ -1477,7 +1496,7 @@
       "morph_code": "R/Ncbsc",
       "morph_readable": "R/Ncbsc",
       "normalized": "בארץ",
-      "occurrence_index": 54,
+      "occurrence_index": 55,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1489,6 +1508,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1502,8 +1522,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 63:2#11",
       "referent": null,

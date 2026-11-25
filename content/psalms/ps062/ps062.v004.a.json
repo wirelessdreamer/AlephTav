@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps062.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "853f72b770dd1c243a8080bd8de3af83f999824f6c3eb3d595e2205472ea54bb",
+      "audit_id": "aud.ps062.v004.a.0001",
+      "before_hash": "c03b9c1d65e8c409541918f692f34a04ce25e5c149d3f17b6aa8a1a14d75a844",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.641004+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps062.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps062.v004.a.0001"
@@ -62,6 +81,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -81,8 +101,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -126,12 +145,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 37,
+      "occurrence_index": 38,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -151,8 +171,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 62:4#1",
       "referent": null,
@@ -784,7 +803,7 @@
       "morph_code": "Ncmsc/Sp2mp",
       "morph_readable": "Ncmsc/Sp2mp",
       "normalized": "כלכם",
-      "occurrence_index": 1887,
+      "occurrence_index": 1901,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps018.v038.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "bffd77d8210847d4d0d797069fae6eaaf30084d69f0dd472170b6401d33e6298",
+      "audit_id": "aud.ps018.v038.a.0001",
+      "before_hash": "a0bfcd6273f1fdbf6ce81f248df3f16175a878ab1fccba3857460720f1cbc9e9",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.212230+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps018.v038.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps018.v038.a.0001"
@@ -222,7 +241,7 @@
       "morph_code": "Vqrmpc/Sp1cs",
       "morph_readable": "Vqrmpc/Sp1cs",
       "normalized": "אויבי",
-      "occurrence_index": 437,
+      "occurrence_index": 440,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -378,7 +397,7 @@
       "morph_code": "C/Vhi1cs/Sp3mp",
       "morph_readable": "C/Vhi1cs/Sp3mp",
       "normalized": "ואשיגם",
-      "occurrence_index": 438,
+      "occurrence_index": 441,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -731,6 +750,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -750,8 +770,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -795,12 +814,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 9,
+      "occurrence_index": 10,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -820,8 +840,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "ref": "Psalm 18:38#6",
       "referent": null,
@@ -935,7 +954,7 @@
       "morph_code": "Vpc/Sp3mp",
       "morph_readable": "Vpc/Sp3mp",
       "normalized": "כלותם",
-      "occurrence_index": 439,
+      "occurrence_index": 442,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

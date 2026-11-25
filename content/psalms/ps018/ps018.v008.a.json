@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps018.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4c995b5c73adfc20f5b1bc444713576f2316f31170ea8c3539eef9ca64f0707b",
+      "audit_id": "aud.ps018.v008.a.0001",
+      "before_hash": "47de5e314e46466a6facb3e7614381c57fc7c81668b12ac77244233be4198797",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.999535+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps018.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps018.v008.a.0001"
@@ -251,6 +270,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 19:5",
         "Psalm 21:11",
         "Psalm 22:28",
@@ -264,8 +284,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -310,7 +329,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 10,
+      "occurrence_index": 11,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -322,6 +341,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 19:5",
         "Psalm 21:11",
         "Psalm 22:28",
@@ -335,8 +355,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 18:8#3",
       "referent": null,
@@ -1068,7 +1087,7 @@
       "morph_code": "R/Sp3ms",
       "morph_readable": "R/Sp3ms",
       "normalized": "לו",
-      "occurrence_index": 368,
+      "occurrence_index": 371,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps053.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "779a2f2dfa5385976c66cacab0cd4c27cadd58b3dcff65dea04ec73848bc694a",
+      "audit_id": "aud.ps053.v002.a.0001",
+      "before_hash": "de88f6e39aec6bd7ce30d81ee7746533c615cbac0f6d866728ebaabd8f2efa3a",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.850926+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps053.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps053.v002.a.0001"
@@ -359,7 +378,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "בלבו",
-      "occurrence_index": 1659,
+      "occurrence_index": 1667,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1240,6 +1259,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -1247,8 +1267,7 @@
         "Psalm 54:8",
         "Psalm 63:4",
         "Psalm 69:17",
-        "Psalm 73:1",
-        "Psalm 73:28"
+        "Psalm 73:1"
       ],
       "display_gloss": "(of) good",
       "enrichment_sources": {
@@ -1292,7 +1311,7 @@
       "morph_code": "Aamsa",
       "morph_readable": "Aamsa",
       "normalized": "טוב",
-      "occurrence_index": 20,
+      "occurrence_index": 21,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -1310,6 +1329,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -1317,8 +1337,7 @@
         "Psalm 54:8",
         "Psalm 63:4",
         "Psalm 69:17",
-        "Psalm 73:1",
-        "Psalm 73:28"
+        "Psalm 73:1"
       ],
       "ref": "Psalm 53:2#11",
       "referent": null,

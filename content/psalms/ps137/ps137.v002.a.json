@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps137.v002.a.0001",
     "aud.ps137.v002.a.0002",
-    "aud.ps137.v002.a.0003"
+    "aud.ps137.v002.a.0003",
+    "aud.ps137.v002.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b4723af7665b18a472e02b409b310b773872b6746fa5fb837c72212fd485451a",
+      "audit_id": "aud.ps137.v002.a.0004",
+      "before_hash": "caa5c7be646ca18b8ed72eee336a230f3813fab5a903c971ae768761c2180b96",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.976481+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps137.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -687,7 +704,7 @@
       "morph_code": "R/Ncmsc/Sp3fs",
       "morph_readable": "R/Ncmsc/Sp3fs",
       "normalized": "בתוכה",
-      "occurrence_index": 4346,
+      "occurrence_index": 4378,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -914,7 +931,7 @@
       "morph_code": "Ncmpc/Sp1cp",
       "morph_readable": "Ncmpc/Sp1cp",
       "normalized": "כנרותינו",
-      "occurrence_index": 4347,
+      "occurrence_index": 4379,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

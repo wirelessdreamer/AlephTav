@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v004.a.0001",
     "aud.ps007.v004.a.0002",
-    "aud.ps007.v004.a.0003"
+    "aud.ps007.v004.a.0003",
+    "aud.ps007.v004.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f71028d533494bafbd8afdfc4535ec39e95235934f4727c63375ef8c1af9c7d",
+      "audit_id": "aud.ps007.v004.a.0004",
+      "before_hash": "533f94fc1220f1ab9d9806daf0162fd694a075f7d06e75bb5581ce64f9894f18",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.186514+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -587,7 +604,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלהי",
-      "occurrence_index": 129,
+      "occurrence_index": 130,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1442,7 +1459,7 @@
       "morph_code": "R/Ncfdc/Sp1cs",
       "morph_readable": "R/Ncfdc/Sp1cs",
       "normalized": "בכפי",
-      "occurrence_index": 130,
+      "occurrence_index": 131,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

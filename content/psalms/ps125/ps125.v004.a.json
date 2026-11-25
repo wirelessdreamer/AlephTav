@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps125.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "1c90f7343b9b4339197dc98b159d8d561e9926b800fed31dfb2d4d98ba89fe6b",
+      "audit_id": "aud.ps125.v004.a.0001",
+      "before_hash": "adc03080f883c5b80b6407682a7db521ffcaf1321c57372a9454bd15eedaa811",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.305119+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps125.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps125.v004.a.0001"
@@ -127,7 +146,7 @@
       "morph_code": "Vhv2ms/Sh",
       "morph_readable": "Vhv2ms/Sh",
       "normalized": "היטיבה",
-      "occurrence_index": 129,
+      "occurrence_index": 130,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -351,6 +370,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -358,8 +378,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "to people the good",
       "enrichment_sources": {
@@ -405,7 +424,7 @@
       "morph_code": "Rd/Aampa",
       "morph_readable": "Rd/Aampa",
       "normalized": "לטובים",
-      "occurrence_index": 52,
+      "occurrence_index": 53,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -423,6 +442,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -430,8 +450,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 125:4#3",
       "referent": null,
@@ -692,7 +711,7 @@
       "morph_code": "R/Ncfpc/Sp3mp",
       "morph_readable": "R/Ncfpc/Sp3mp",
       "normalized": "בלבותם",
-      "occurrence_index": 4191,
+      "occurrence_index": 4222,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

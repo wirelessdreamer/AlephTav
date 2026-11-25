@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps018.v013.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c33dd3cbc1c0b0b4ea3d0de5b1672709305c376ea2b61346ed8701991458032d",
+      "audit_id": "aud.ps018.v013.a.0001",
+      "before_hash": "bf80c62568442c41833a42bee9bc219ededffb8aeae62fef1e88ff273b0e0ac5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.035347+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps018.v013.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps018.v013.a.0001"
@@ -218,7 +237,7 @@
       "morph_code": "R/Sp3ms",
       "morph_readable": "R/Sp3ms",
       "normalized": "נגדו",
-      "occurrence_index": 376,
+      "occurrence_index": 379,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -372,7 +391,7 @@
       "morph_code": "Ncbpc/Sp3ms",
       "morph_readable": "Ncbpc/Sp3ms",
       "normalized": "עביו",
-      "occurrence_index": 377,
+      "occurrence_index": 380,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

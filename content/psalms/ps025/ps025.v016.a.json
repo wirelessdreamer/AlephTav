@@ -11,7 +11,8 @@
     "aud.ps025.v016.a.0003",
     "aud.ps025.v016.a.0004",
     "aud.ps025.v016.a.0005",
-    "aud.ps025.v016.a.0006"
+    "aud.ps025.v016.a.0006",
+    "aud.ps025.v016.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8b7b7bde549afb7526d80f7644bc2668e23dc6d2720ad5a30b6656bd7d477707",
+      "audit_id": "aud.ps025.v016.a.0007",
+      "before_hash": "96c06dc61890de9ade7b3587ce48097c697c883aef2a06fd906440e33538cc54",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.086975+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v016.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -765,7 +782,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "אלי",
-      "occurrence_index": 685,
+      "occurrence_index": 688,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -921,7 +938,7 @@
       "morph_code": "C/Vqv2ms/Sp1cs",
       "morph_readable": "C/Vqv2ms/Sp1cs",
       "normalized": "וחנני",
-      "occurrence_index": 686,
+      "occurrence_index": 689,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

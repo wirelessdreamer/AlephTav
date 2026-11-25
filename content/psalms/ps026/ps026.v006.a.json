@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps026.v006.a.0001",
     "aud.ps026.v006.a.0002",
-    "aud.ps026.v006.a.0003"
+    "aud.ps026.v006.a.0003",
+    "aud.ps026.v006.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "befaf1e54103cbffab6792b9e71a579f5f92fdca266a128fe3a243cb37387ec5",
+      "audit_id": "aud.ps026.v006.a.0004",
+      "before_hash": "e3975eebad800422f62985f621091e1ffaa156b06808f727212376ebf7019411",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.321607+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps026.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4307,7 +4324,7 @@
       "morph_code": "Ncfdc/Sp1cs",
       "morph_readable": "Ncfdc/Sp1cs",
       "normalized": "כפי",
-      "occurrence_index": 709,
+      "occurrence_index": 713,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4682,7 +4699,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "מזבחך",
-      "occurrence_index": 710,
+      "occurrence_index": 714,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

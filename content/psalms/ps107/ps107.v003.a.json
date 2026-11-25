@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps107.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "30f61bea4a4c629654c7e60cced8742f2b1f24b157e6e1bdfc963996cc525e7d",
+      "audit_id": "aud.ps107.v003.a.0001",
+      "before_hash": "a30956e83a1fec0ff05d7b0f169d12fcdb327b01427732945b8fc242ee098273",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.085099+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps107.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps107.v003.a.0001"
@@ -71,6 +90,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -84,8 +104,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "and from the lands",
       "enrichment_sources": {
@@ -131,7 +150,7 @@
       "morph_code": "C/R/Ncbpa",
       "morph_readable": "C/R/Ncbpa",
       "normalized": "ומארצות",
-      "occurrence_index": 141,
+      "occurrence_index": 142,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -143,6 +162,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -156,8 +176,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 107:3#1",
       "referent": null,
@@ -272,7 +291,7 @@
       "morph_code": "Vpp3ms/Sp3mp",
       "morph_readable": "Vpp3ms/Sp3mp",
       "normalized": "קבצם",
-      "occurrence_index": 3444,
+      "occurrence_index": 3473,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

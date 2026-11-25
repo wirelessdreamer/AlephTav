@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps010.v016.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0151119dc6f35b4ff277874e54a05723af8f6b3c35266284441e7500acd6d2f6",
+      "audit_id": "aud.ps010.v016.a.0001",
+      "before_hash": "2f2f50cefdaeb614441acef9824ec33e3c43070829586068caa6aba20d65f771",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.577301+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps010.v016.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps010.v016.a.0001"
@@ -325,6 +344,7 @@
         "Psalm 9:8",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -342,8 +362,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "display_gloss": "forever",
       "enrichment_sources": {
@@ -395,6 +414,7 @@
         "Psalm 9:8",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -412,8 +432,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "ref": "Psalm 10:16#3",
       "referent": null,
@@ -458,6 +477,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 13:2",
         "Psalm 13:3",
         "Psalm 18:38",
@@ -477,8 +497,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "display_gloss": "and ever",
       "enrichment_sources": {
@@ -523,12 +542,13 @@
       "morph_code": "C/Ncmsa",
       "morph_readable": "C/Ncmsa",
       "normalized": "ועד",
-      "occurrence_index": 4,
+      "occurrence_index": 5,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 13:2",
         "Psalm 13:3",
         "Psalm 18:38",
@@ -548,8 +568,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "ref": "Psalm 10:16#4",
       "referent": null,
@@ -927,7 +946,7 @@
       "morph_code": "R/Ncbsc/Sp3ms",
       "morph_readable": "R/Ncbsc/Sp3ms",
       "normalized": "מארצו",
-      "occurrence_index": 222,
+      "occurrence_index": 224,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

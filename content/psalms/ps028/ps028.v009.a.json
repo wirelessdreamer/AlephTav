@@ -8,7 +8,8 @@
     "aud.ps028.v009.a.0001",
     "aud.ps028.v009.a.0002",
     "aud.ps028.v009.a.0003",
-    "aud.ps028.v009.a.0004"
+    "aud.ps028.v009.a.0004",
+    "aud.ps028.v009.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "Imported from bundle bone-and-ash.ps028.289d386d0e064b50a180f9603d9d930e (archive sha256 b65dcfdfccee87eb75e5e6738ffbbb6e2ce7a7aba8e06cf6ae95047496f5d14a). Donor records adopted with their original ids and audit history: the donor's Psalm 28 history starts from this workspace's prior state and no id collides. Statuses unchanged (proposed); no approvals added.",
       "review_signoff": {},
       "summary": "Import Bone and Ash Psalm 28 work from export",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ff62956799164029584048745453caaf13653044f6f8a1d3aa87c8b9b06b9f40",
+      "audit_id": "aud.ps028.v009.a.0005",
+      "before_hash": "f47b8d4139dbcadea84e26aba392ee693904327f5d2f6f966f1be8ccb8b9a7e5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:15.848686+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps028.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -3952,7 +3969,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "עמך",
-      "occurrence_index": 806,
+      "occurrence_index": 810,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4364,7 +4381,7 @@
       "morph_code": "Ncfsc/Sp2ms",
       "morph_readable": "Ncfsc/Sp2ms",
       "normalized": "נחלתך",
-      "occurrence_index": 807,
+      "occurrence_index": 811,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4516,7 +4533,7 @@
       "morph_code": "C/Vqv2ms/Sp3mp",
       "morph_readable": "C/Vqv2ms/Sp3mp",
       "normalized": "ורעם",
-      "occurrence_index": 808,
+      "occurrence_index": 812,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4668,7 +4685,7 @@
       "morph_code": "C/Vpv2ms/Sp3mp",
       "morph_readable": "C/Vpv2ms/Sp3mp",
       "normalized": "ונשאם",
-      "occurrence_index": 809,
+      "occurrence_index": 813,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4744,6 +4761,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -4763,8 +4781,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -4808,12 +4825,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -4833,8 +4851,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "ref": "Psalm 28:9#9",
       "referent": null,
@@ -4881,6 +4898,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -4897,8 +4915,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "display_gloss": "the perpetuity",
       "enrichment_sources": {
@@ -4943,7 +4960,7 @@
       "morph_code": "Td/Ncmsa",
       "morph_readable": "Td/Ncmsa",
       "normalized": "העולם",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -4952,6 +4969,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -4968,8 +4986,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "ref": "Psalm 28:9#10",
       "referent": null,

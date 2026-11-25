@@ -11,7 +11,8 @@
     "aud.ps025.v020.a.0003",
     "aud.ps025.v020.a.0004",
     "aud.ps025.v020.a.0005",
-    "aud.ps025.v020.a.0006"
+    "aud.ps025.v020.a.0006",
+    "aud.ps025.v020.a.0007"
   ],
   "audit_records": [
     {
@@ -107,6 +108,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9b3d472fdb7cd4fb04000c2930941ad7122d49bac7082a2d1fa57d139ce1c65b",
+      "audit_id": "aud.ps025.v020.a.0007",
+      "before_hash": "51f6b3494f5ad643dd16424b183798d4be5dd05ee5ddcf6e514cb8a3377e6622",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.115801+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps025.v020.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -810,7 +827,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 695,
+      "occurrence_index": 698,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -966,7 +983,7 @@
       "morph_code": "C/Vhv2ms/Sp1cs",
       "morph_readable": "C/Vhv2ms/Sp1cs",
       "normalized": "והצילני",
-      "occurrence_index": 696,
+      "occurrence_index": 699,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1646,7 +1663,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "בך",
-      "occurrence_index": 697,
+      "occurrence_index": 700,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

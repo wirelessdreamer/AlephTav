@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps109.v022.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "a85a6dc3df28fafaba426d469d2dcf4f15a616032680e10c9fc287ec8a1fd297",
+      "audit_id": "aud.ps109.v022.a.0001",
+      "before_hash": "a8d0b086dba526c4bfcdccddf2337edc58713eaa09f85449bd74380203d9ab7d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.519447+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps109.v022.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps109.v022.a.0001"
@@ -340,7 +359,8 @@
         "Psalm 86:1",
         "Psalm 107:41",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "display_gloss": "and needy",
       "enrichment_sources": {
@@ -404,7 +424,8 @@
         "Psalm 86:1",
         "Psalm 107:41",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "ref": "Psalm 109:22#3",
       "referent": null,
@@ -633,7 +654,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "ולבי",
-      "occurrence_index": 3558,
+      "occurrence_index": 3587,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -882,7 +903,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "בקרבי",
-      "occurrence_index": 3559,
+      "occurrence_index": 3588,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

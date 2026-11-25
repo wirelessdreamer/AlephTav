@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps022.v028.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "fc3570b870e71938b337f5c4e4e4f8a2958631633917f62da17f7f45f8b3c4bb",
+      "audit_id": "aud.ps022.v028.a.0001",
+      "before_hash": "49c6c8eb0ce598cdcfaaebff66ea688e17961cb4bcc72a2af981da072242d083",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.800635+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps022.v028.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps022.v028.a.0001"
@@ -830,6 +849,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -843,8 +863,7 @@
         "Psalm 35:20",
         "Psalm 37:3",
         "Psalm 37:9",
-        "Psalm 37:11",
-        "Psalm 37:22"
+        "Psalm 37:11"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -888,7 +907,7 @@
       "morph_code": "Ncbsa",
       "morph_readable": "Ncbsa",
       "normalized": "ארץ",
-      "occurrence_index": 13,
+      "occurrence_index": 14,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -900,6 +919,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -913,8 +933,7 @@
         "Psalm 35:20",
         "Psalm 37:3",
         "Psalm 37:9",
-        "Psalm 37:11",
-        "Psalm 37:22"
+        "Psalm 37:11"
       ],
       "ref": "Psalm 22:28#7",
       "referent": null,
@@ -1150,7 +1169,7 @@
       "morph_code": "R/Ncbpc/Sp2ms",
       "morph_readable": "R/Ncbpc/Sp2ms",
       "normalized": "לפניך",
-      "occurrence_index": 611,
+      "occurrence_index": 614,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

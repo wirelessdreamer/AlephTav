@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps034.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4fdf8102b1a1e41436fb35330cc95f0772c6f2d060148bd842864304bdbc3997",
+      "audit_id": "aud.ps034.v003.a.0001",
+      "before_hash": "00742325c072791122d658b457416e8f4dba3e19552a547918bd55d7e309d518",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.204743+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps034.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps034.v003.a.0001"
@@ -408,7 +427,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 976,
+      "occurrence_index": 980,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -617,6 +636,8 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 25:9",
@@ -667,9 +688,11 @@
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
       "normalized": "ענוים",
-      "occurrence_index": 5,
+      "occurrence_index": 7,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
+        "Psalm 9:13",
+        "Psalm 10:12",
         "Psalm 10:17",
         "Psalm 22:27",
         "Psalm 25:9",

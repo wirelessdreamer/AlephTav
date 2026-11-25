@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps078.v059.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7775ae5540e67f9551d3888e8c5e7f67ebb4c1a37b3d7f4a7259735308eebf8c",
+      "audit_id": "aud.ps078.v059.a.0001",
+      "before_hash": "665f39c10e2abd2c007e266d0f39c7847a1a148380a6fe74cf7167cb173f8e12",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.000293+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps078.v059.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps078.v059.a.0001"
@@ -560,6 +579,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -580,8 +600,7 @@
         "Psalm 116:10",
         "Psalm 119:4",
         "Psalm 119:8",
-        "Psalm 119:43",
-        "Psalm 119:51"
+        "Psalm 119:43"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -624,11 +643,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -649,8 +669,7 @@
         "Psalm 116:10",
         "Psalm 119:4",
         "Psalm 119:8",
-        "Psalm 119:43",
-        "Psalm 119:51"
+        "Psalm 119:43"
       ],
       "ref": "Psalm 78:59#5",
       "referent": null,

@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps121.v006.a.0001",
     "aud.ps121.v006.a.0002",
-    "aud.ps121.v006.a.0003"
+    "aud.ps121.v006.a.0003",
+    "aud.ps121.v006.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f3078c6e529d601586945ce52b8a7cb27133644d57666884e3b12b4a987ef519",
+      "audit_id": "aud.ps121.v006.a.0004",
+      "before_hash": "bd99a32d7d7a5e18cde0243e9a47865ec999cd4d17c779f62d662e5415023816",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.143378+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps121.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -793,7 +810,7 @@
       "morph_code": "Vhi3ms/Sp2ms",
       "morph_readable": "Vhi3ms/Sp2ms",
       "normalized": "יככה",
-      "occurrence_index": 4147,
+      "occurrence_index": 4178,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

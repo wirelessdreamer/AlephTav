@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps011.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6361790e199721981103b17c69ce24d960d2cc8619355bf950f0cd1fe2f19292",
+      "audit_id": "aud.ps011.v001.a.0001",
+      "before_hash": "116cecc49835934965248aee219b551e93a833285264b89d11b04707be8a00ef",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.592587+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps011.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps011.v001.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לַמְנַצֵּ֗חַ לְדָ֫וִ֥ד בַּֽיהוָ֨ה׀ חָסִ֗יתִי אֵ֭יךְ תֹּאמְר֣וּ לְנַפְשִׁ֑י הַרְכֶ֥ם צִפּֽוֹר׃",
-  "source_transliteration": "la–mənaṣṣēᵃḥ ləḏāwiḏ bayhwāh ḥāsiyṯî ʾêḵ tōʾmərû lə **nûḏî",
+  "source_transliteration": "la–mənaṣṣēᵃḥ ləḏāwiḏ bayhwāh ḥāsiyṯî ʾêḵ tōʾmərû lə **nûḏî ṣipôr:",
   "status": "draft",
   "token_ids": [
     "ps011.v001.t001",
@@ -893,7 +912,7 @@
       "morph_code": "R/Ncbsc/Sp1cs",
       "morph_readable": "R/Ncbsc/Sp1cs",
       "normalized": "לנפשי",
-      "occurrence_index": 225,
+      "occurrence_index": 227,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -938,64 +957,6 @@
       "token_id": "ps011.v001.t007",
       "transliteration": "lə",
       "word_sense": "my"
-    },
-    {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech",
-            "stem"
-          ],
-          "missing_fields": [
-            "lemma"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Vqv2mp",
-      "morph_readable": "Vqv2mp",
-      "normalized": "נודו",
-      "occurrence_index": 1,
-      "part_of_speech": "verb",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 11:1#8",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": "qal",
-      "strong": "H5110",
-      "surface": "נודו",
-      "syntax_role": null,
-      "token_id": "ps011.v001.t008",
-      "transliteration": null,
-      "word_sense": null
     },
     {
       "compiler_features": {
@@ -1059,23 +1020,23 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncmsc/Sp2mp",
-      "morph_readable": "Ncmsc/Sp2mp",
-      "normalized": "הרכם",
+      "morph_code": "Vqv2mp",
+      "morph_readable": "Vqv2mp",
+      "normalized": "נודו",
       "occurrence_index": 1,
-      "part_of_speech": "suffix",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 69:21"
       ],
-      "ref": "Psalm 11:1#9",
+      "ref": "Psalm 11:1#8",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": "qal",
-      "strong": "H2022",
-      "surface": "הַרְכֶ֥ם",
+      "strong": "H5110",
+      "surface": "נודו",
       "syntax_role": "v",
-      "token_id": "ps011.v001.t009",
+      "token_id": "ps011.v001.t008",
       "transliteration": "**nûḏî",
       "word_sense": "take.flight"
     },
@@ -1177,11 +1138,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Ncbsa",
-      "morph_readable": "Ncbsa",
-      "normalized": "צפור",
-      "occurrence_index": 226,
-      "part_of_speech": "noun",
+      "morph_code": "Ncmsc/Sp2mp",
+      "morph_readable": "Ncmsc/Sp2mp",
+      "normalized": "הרכם",
+      "occurrence_index": 228,
+      "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
         "Psalm 1:3",
@@ -1208,7 +1169,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 11:1#10",
+      "ref": "Psalm 11:1#9",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 11:2",
@@ -1219,12 +1180,106 @@
       ],
       "semantic_role": null,
       "stem": null,
-      "strong": "H6833",
-      "surface": "צִפּֽוֹר",
+      "strong": "H2022",
+      "surface": "הַרְכֶ֥ם",
       "syntax_role": null,
-      "token_id": "ps011.v001.t010",
+      "token_id": "ps011.v001.t009",
       "transliteration": null,
       "word_sense": "your"
+    },
+    {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "bird"
+        ],
+        "gloss_fragments": [
+          "a bird"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 8:9",
+        "Psalm 84:4",
+        "Psalm 102:8",
+        "Psalm 104:17",
+        "Psalm 124:7",
+        "Psalm 148:10"
+      ],
+      "display_gloss": "a bird",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "gloss_parts": [
+        "a.bird"
+      ],
+      "greek": "στρουθίον",
+      "greek_strong": null,
+      "lemma": "צִפּוֹר",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Ncbsa",
+      "morph_readable": "Ncbsa",
+      "normalized": "צפור",
+      "occurrence_index": 2,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 8:9",
+        "Psalm 84:4",
+        "Psalm 102:8",
+        "Psalm 104:17",
+        "Psalm 124:7",
+        "Psalm 148:10"
+      ],
+      "ref": "Psalm 11:1#10",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H6833",
+      "surface": "צִפּֽוֹר",
+      "syntax_role": "adv",
+      "token_id": "ps011.v001.t010",
+      "transliteration": "ṣipôr:",
+      "word_sense": "a.bird"
     }
   ],
   "unit_id": "ps011.v001.a",

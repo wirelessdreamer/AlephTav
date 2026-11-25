@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps015.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "9a1edd0557530773c659e04e73c0df0cd2e7b81524310855ce4091aa675d490f",
+      "audit_id": "aud.ps015.v005.a.0001",
+      "before_hash": "e6e490843ee267b7ff5e741fa88f21fbac8ae1f133c0b6d4dcda2d4d97d3f53d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.789247+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps015.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps015.v005.a.0001"
@@ -139,7 +158,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "כספו",
-      "occurrence_index": 271,
+      "occurrence_index": 273,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1593,6 +1612,7 @@
         "Psalm 9:8",
         "Psalm 10:16",
         "Psalm 12:8",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1610,8 +1630,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -1664,6 +1683,7 @@
         "Psalm 9:8",
         "Psalm 10:16",
         "Psalm 12:8",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -1681,8 +1701,7 @@
         "Psalm 41:14",
         "Psalm 44:9",
         "Psalm 45:3",
-        "Psalm 45:7",
-        "Psalm 45:18"
+        "Psalm 45:7"
       ],
       "ref": "Psalm 15:5#14",
       "referent": null,

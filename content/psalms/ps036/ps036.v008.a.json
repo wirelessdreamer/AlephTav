@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps036.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "62a217d2ae874baebaf20691a6a975f088339fe482f9c5a53bfb1afac2e670b8",
+      "audit_id": "aud.ps036.v008.a.0001",
+      "before_hash": "ec653fef9d609a7db5ce2481e646d3d760fd73509439a30c1c38a9348c965e35",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.504658+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps036.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps036.v008.a.0001"
@@ -352,7 +371,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "חסדך",
-      "occurrence_index": 1085,
+      "occurrence_index": 1089,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1008,7 +1027,7 @@
       "morph_code": "Ncfdc/Sp2ms",
       "morph_readable": "Ncfdc/Sp2ms",
       "normalized": "כנפיך",
-      "occurrence_index": 1086,
+      "occurrence_index": 1090,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1111,10 +1130,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "display_gloss": "they take refuge",
       "enrichment_sources": {
@@ -1180,10 +1199,10 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
         "Psalm 82:7",
-        "Psalm 83:3",
-        "Psalm 89:16"
+        "Psalm 83:3"
       ],
       "ref": "Psalm 36:8#9",
       "referent": null,

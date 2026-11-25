@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps054.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6a97e966e819517bbe0d257ee7d126468d9c6632b2e2c89023fa9dc2c1cfa7ae",
+      "audit_id": "aud.ps054.v007.a.0001",
+      "before_hash": "1e30596ba1a714e6c46d387fbdf9ba288c2508b361cc5a8b90711f3a35655cc5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.943046+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps054.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps054.v007.a.0001"
@@ -29,64 +48,6 @@
     "ps054.v007.t005"
   ],
   "tokens": [
-    {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech",
-            "stem"
-          ],
-          "missing_fields": [
-            "lemma"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Vqi3ms",
-      "morph_readable": "Vqi3ms",
-      "normalized": "ישוב",
-      "occurrence_index": 1,
-      "part_of_speech": "verb",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 54:7#1",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": "qal",
-      "strong": "H7725",
-      "surface": "ישוב",
-      "syntax_role": null,
-      "token_id": "ps054.v007.t001",
-      "transliteration": null,
-      "word_sense": null
-    },
     {
       "compiler_features": {
         "component_count": 1,
@@ -172,11 +133,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Td/Aamsa",
-      "morph_readable": "Td/Aamsa",
-      "normalized": "הרע",
+      "morph_code": "Vqi3ms",
+      "morph_readable": "Vqi3ms",
+      "normalized": "ישוב",
       "occurrence_index": 17,
-      "part_of_speech": "adjective",
+      "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",
         "Psalm 7:13",
@@ -203,15 +164,15 @@
         "Psalm 69:5",
         "Psalm 70:4"
       ],
-      "ref": "Psalm 54:7#2",
+      "ref": "Psalm 54:7#1",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
-      "stem": "hiphil",
-      "strong": "H7451",
-      "surface": "הָ֭רַע",
+      "stem": "qal",
+      "strong": "H7725",
+      "surface": "ישוב",
       "syntax_role": "v",
-      "token_id": "ps054.v007.t002",
+      "token_id": "ps054.v007.t001",
       "transliteration": "**yāšiyḇ",
       "word_sense": "may.he.bring.back"
     },
@@ -308,11 +269,11 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "R/Ncmpc/Sp1cs",
-      "morph_readable": "R/Ncmpc/Sp1cs",
-      "normalized": "לשררי",
+      "morph_code": "Td/Aamsa",
+      "morph_readable": "Td/Aamsa",
+      "normalized": "הרע",
       "occurrence_index": 16,
-      "part_of_speech": "suffix",
+      "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 5:5",
         "Psalm 7:5",
@@ -339,15 +300,15 @@
         "Psalm 109:20",
         "Psalm 112:7"
       ],
-      "ref": "Psalm 54:7#3",
+      "ref": "Psalm 54:7#2",
       "referent": null,
       "same_psalm_occurrence_refs": [],
       "semantic_role": null,
       "stem": null,
-      "strong": "H8324",
-      "surface": "לְשֹׁרְרָ֑י",
+      "strong": "H7451",
+      "surface": "הָ֭רַע",
       "syntax_role": null,
-      "token_id": "ps054.v007.t003",
+      "token_id": "ps054.v007.t002",
       "transliteration": "hāraʿ",
       "word_sense": "evil"
     },
@@ -454,10 +415,10 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "R/Ncfsc/Sp2ms",
-      "morph_readable": "R/Ncfsc/Sp2ms",
-      "normalized": "באמתך",
-      "occurrence_index": 1678,
+      "morph_code": "R/Ncmpc/Sp1cs",
+      "morph_readable": "R/Ncmpc/Sp1cs",
+      "normalized": "לשררי",
+      "occurrence_index": 1686,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -485,7 +446,7 @@
         "Psalm 4:3",
         "Psalm 4:4"
       ],
-      "ref": "Psalm 54:7#4",
+      "ref": "Psalm 54:7#3",
       "referent": null,
       "same_psalm_occurrence_refs": [
         "Psalm 54:2",
@@ -498,10 +459,10 @@
       ],
       "semantic_role": null,
       "stem": null,
-      "strong": "H571",
-      "surface": "בַּ֝אֲמִתְּךָ֗",
+      "strong": "H8324",
+      "surface": "לְשֹׁרְרָ֑י",
       "syntax_role": null,
-      "token_id": "ps054.v007.t004",
+      "token_id": "ps054.v007.t003",
       "transliteration": "lə",
       "word_sense": "my"
     },
@@ -608,10 +569,156 @@
         "macula:semantic_role",
         "macula:referent"
       ],
+      "morph_code": "R/Ncfsc/Sp2ms",
+      "morph_readable": "R/Ncfsc/Sp2ms",
+      "normalized": "באמתך",
+      "occurrence_index": 1687,
+      "part_of_speech": "suffix",
+      "psalms_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "ref": "Psalm 54:7#4",
+      "referent": null,
+      "same_psalm_occurrence_refs": [
+        "Psalm 54:2",
+        "Psalm 54:3",
+        "Psalm 54:4",
+        "Psalm 54:5",
+        "Psalm 54:6",
+        "Psalm 54:8",
+        "Psalm 54:9"
+      ],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H571",
+      "surface": "בַּ֝אֲמִתְּךָ֗",
+      "syntax_role": null,
+      "token_id": "ps054.v007.t004",
+      "transliteration": "ba",
+      "word_sense": "your"
+    },
+    {
+      "compiler_features": {
+        "component_count": 2,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "destroy",
+          "them"
+        ],
+        "gloss_fragments": [
+          "destroy",
+          "them"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "verb",
+          "pron"
+        ],
+        "raw_pos": [
+          "verb",
+          "suffix"
+        ],
+        "suffix_pronoun": {
+          "gender": "masculine",
+          "number": "plural",
+          "person": "third",
+          "text": "them"
+        },
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 1:2",
+        "Psalm 1:3",
+        "Psalm 1:4",
+        "Psalm 2:2",
+        "Psalm 2:3",
+        "Psalm 2:4",
+        "Psalm 2:5",
+        "Psalm 2:6",
+        "Psalm 2:7",
+        "Psalm 2:8",
+        "Psalm 2:9",
+        "Psalm 2:12",
+        "Psalm 3:1",
+        "Psalm 3:2",
+        "Psalm 3:3",
+        "Psalm 3:4",
+        "Psalm 3:5",
+        "Psalm 3:6",
+        "Psalm 3:7",
+        "Psalm 3:8",
+        "Psalm 3:9",
+        "Psalm 4:2",
+        "Psalm 4:3",
+        "Psalm 4:4"
+      ],
+      "display_gloss": "them destroy",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "syntax_role",
+            "word_sense"
+          ],
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech",
+            "stem"
+          ],
+          "missing_fields": [],
+          "status": "complete"
+        }
+      },
+      "gloss_parts": [
+        "destroy",
+        "them"
+      ],
+      "greek": "ἐχολέθρευσον αὐτούς",
+      "greek_strong": "848",
+      "lemma": "הוּא",
+      "missing_enrichments": [
+        "macula:semantic_role",
+        "macula:referent"
+      ],
       "morph_code": "Vhv2ms/Sp3mp",
       "morph_readable": "Vhv2ms/Sp3mp",
       "normalized": "הצמיתם",
-      "occurrence_index": 1679,
+      "occurrence_index": 1688,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -651,13 +758,13 @@
         "Psalm 54:9"
       ],
       "semantic_role": null,
-      "stem": null,
+      "stem": "hiphil",
       "strong": "H6789",
       "surface": "הַצְמִיתֵֽם",
-      "syntax_role": null,
+      "syntax_role": "v",
       "token_id": "ps054.v007.t005",
-      "transliteration": "ba",
-      "word_sense": "your"
+      "transliteration": null,
+      "word_sense": "them"
     }
   ],
   "unit_id": "ps054.v007.a",

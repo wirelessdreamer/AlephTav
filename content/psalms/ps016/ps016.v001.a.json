@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps016.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b8754f40dbd54a0266c36b55c6805173daf9ceb2d567a891984c3253596b3817",
+      "audit_id": "aud.ps016.v001.a.0001",
+      "before_hash": "79af788724d3d06f743cca4cf661fbe11b809d4f5b7293a517fac9a33f51a16b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.796003+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps016.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps016.v001.a.0001"
@@ -357,7 +376,7 @@
       "morph_code": "Vqv2ms/Sp1cs",
       "morph_readable": "Vqv2ms/Sp1cs",
       "normalized": "שמרני",
-      "occurrence_index": 272,
+      "occurrence_index": 274,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -897,7 +916,7 @@
       "morph_code": "R/Sp2fs",
       "morph_readable": "R/Sp2fs",
       "normalized": "בך",
-      "occurrence_index": 273,
+      "occurrence_index": 275,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

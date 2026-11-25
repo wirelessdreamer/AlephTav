@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps064.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b4a51a5f8db6b4a78f7f5649ffda2494631e0ffcabe06c1724456541540e5dc7",
+      "audit_id": "aud.ps064.v010.a.0001",
+      "before_hash": "be3c029187ef70d6dd6a940c5c7d12bc1ae580aa625725d73d6062e4b440ce5f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.825537+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps064.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps064.v010.a.0001"
@@ -882,7 +901,7 @@
       "morph_code": "C/Ncmsc/Sp3ms",
       "morph_readable": "C/Ncmsc/Sp3ms",
       "normalized": "ומעשהו",
-      "occurrence_index": 1955,
+      "occurrence_index": 1969,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps085.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "175b0a29499989910d02eac026827c15dcf596abea32aa360c1e4d2a0ea2bd4b",
+      "audit_id": "aud.ps085.v002.a.0001",
+      "before_hash": "6536f1df027280137374ca5d16275ec6d32bc9c017955320f734b6e8e2b13a0b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.613322+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps085.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps085.v002.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "רָצִ֣יתָ יְהוָ֣ה אַרְצֶ֑ךָ שַׁ֝֗בְתָּ יַעֲקֹֽב׃",
-  "source_transliteration": "rāṣiyṯā yəhwāh šaḇətā **šəḇiyṯ",
+  "source_transliteration": "rāṣiyṯā yəhwāh šaḇətā **šəḇiyṯ yaʿăqōḇ:",
   "status": "draft",
   "token_ids": [
     "ps085.v002.t001",
@@ -368,7 +387,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "ארצך",
-      "occurrence_index": 2673,
+      "occurrence_index": 2693,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -507,7 +526,7 @@
       "morph_code": "Vqp2ms",
       "morph_readable": "Vqp2ms",
       "normalized": "שבת",
-      "occurrence_index": 39,
+      "occurrence_index": 40,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",
@@ -550,65 +569,6 @@
       "token_id": "ps085.v002.t004",
       "transliteration": "šaḇətā",
       "word_sense": "you.turned.back"
-    },
-    {
-      "compiler_features": {},
-      "corpus_occurrence_refs": [],
-      "display_gloss": null,
-      "enrichment_sources": {
-        "macula": {
-          "available_fields": [],
-          "missing_fields": [
-            "syntax_role",
-            "semantic_role",
-            "referent",
-            "word_sense"
-          ],
-          "status": "missing"
-        },
-        "oshb": {
-          "available_fields": [
-            "strong",
-            "morph_code",
-            "morph_readable",
-            "part_of_speech"
-          ],
-          "missing_fields": [
-            "lemma",
-            "stem"
-          ],
-          "status": "partial"
-        }
-      },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
-      "missing_enrichments": [
-        "oshb:lemma",
-        "oshb:stem",
-        "macula:syntax_role",
-        "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
-      ],
-      "morph_code": "Ncfsc",
-      "morph_readable": "Ncfsc",
-      "normalized": "שבות",
-      "occurrence_index": 1,
-      "part_of_speech": "noun",
-      "psalms_occurrence_refs": [],
-      "ref": "Psalm 85:2#5",
-      "referent": null,
-      "same_psalm_occurrence_refs": [],
-      "semantic_role": null,
-      "stem": null,
-      "strong": "H7622",
-      "surface": "שבות",
-      "syntax_role": null,
-      "token_id": "ps085.v002.t005",
-      "transliteration": null,
-      "word_sense": null
     },
     {
       "compiler_features": {
@@ -673,12 +633,143 @@
         "macula:semantic_role",
         "macula:referent"
       ],
-      "morph_code": "Np",
-      "morph_readable": "Np",
-      "normalized": "יעקב",
+      "morph_code": "Ncfsc",
+      "morph_readable": "Ncfsc",
+      "normalized": "שבות",
       "occurrence_index": 1,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [],
+      "ref": "Psalm 85:2#5",
+      "referent": null,
+      "same_psalm_occurrence_refs": [],
+      "semantic_role": null,
+      "stem": null,
+      "strong": "H7622",
+      "surface": "שבות",
+      "syntax_role": null,
+      "token_id": "ps085.v002.t005",
+      "transliteration": "**šəḇiyṯ",
+      "word_sense": "the.captivity"
+    },
+    {
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "Jacob"
+        ],
+        "gloss_fragments": [
+          "of Jacob"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "noun"
+        ],
+        "raw_pos": [
+          "noun"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
+      "corpus_occurrence_refs": [
+        "Psalm 14:7",
+        "Psalm 20:2",
+        "Psalm 22:24",
+        "Psalm 24:6",
+        "Psalm 44:5",
+        "Psalm 46:8",
+        "Psalm 46:12",
+        "Psalm 47:5",
+        "Psalm 53:7",
+        "Psalm 59:14",
+        "Psalm 75:10",
+        "Psalm 76:7",
+        "Psalm 77:16",
+        "Psalm 78:5",
+        "Psalm 78:21",
+        "Psalm 78:71",
+        "Psalm 79:7",
+        "Psalm 81:2",
+        "Psalm 81:5",
+        "Psalm 84:9",
+        "Psalm 87:2",
+        "Psalm 94:7",
+        "Psalm 99:4",
+        "Psalm 105:6"
+      ],
+      "display_gloss": "of Jacob",
+      "enrichment_sources": {
+        "macula": {
+          "available_fields": [
+            "word_sense"
+          ],
+          "missing_fields": [
+            "syntax_role",
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
+        },
+        "oshb": {
+          "available_fields": [
+            "lemma",
+            "strong",
+            "morph_code",
+            "morph_readable",
+            "part_of_speech"
+          ],
+          "missing_fields": [
+            "stem"
+          ],
+          "status": "partial"
+        }
+      },
+      "gloss_parts": [
+        "of.Jacob"
+      ],
+      "greek": "ιακωβ",
+      "greek_strong": "2384",
+      "lemma": "יַעֲקֹב",
+      "missing_enrichments": [
+        "oshb:stem",
+        "macula:syntax_role",
+        "macula:semantic_role",
+        "macula:referent"
+      ],
+      "morph_code": "Np",
+      "morph_readable": "Np",
+      "normalized": "יעקב",
+      "occurrence_index": 21,
+      "part_of_speech": "noun",
+      "psalms_occurrence_refs": [
+        "Psalm 14:7",
+        "Psalm 20:2",
+        "Psalm 22:24",
+        "Psalm 24:6",
+        "Psalm 44:5",
+        "Psalm 46:8",
+        "Psalm 46:12",
+        "Psalm 47:5",
+        "Psalm 53:7",
+        "Psalm 59:14",
+        "Psalm 75:10",
+        "Psalm 76:7",
+        "Psalm 77:16",
+        "Psalm 78:5",
+        "Psalm 78:21",
+        "Psalm 78:71",
+        "Psalm 79:7",
+        "Psalm 81:2",
+        "Psalm 81:5",
+        "Psalm 84:9",
+        "Psalm 87:2",
+        "Psalm 94:7",
+        "Psalm 99:4",
+        "Psalm 105:6"
+      ],
       "ref": "Psalm 85:2#6",
       "referent": null,
       "same_psalm_occurrence_refs": [],
@@ -688,8 +779,8 @@
       "surface": "יַעֲקֹֽב",
       "syntax_role": null,
       "token_id": "ps085.v002.t006",
-      "transliteration": "**šəḇiyṯ",
-      "word_sense": "the.captivity"
+      "transliteration": "yaʿăqōḇ:",
+      "word_sense": "of.Jacob"
     }
   ],
   "unit_id": "ps085.v002.a",

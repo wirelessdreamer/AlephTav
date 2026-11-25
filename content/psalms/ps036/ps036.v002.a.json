@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps036.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "330262b8817b1bffef00879ff3a8de8a32f8fa7201ea132b6259d9b221c488e7",
+      "audit_id": "aud.ps036.v002.a.0001",
+      "before_hash": "f7f4ac12da60c8b624145b0dfe27e1d64b05903d4ce75e91161b3093362252e8",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.466303+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps036.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps036.v002.a.0001"
@@ -560,7 +579,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבי",
-      "occurrence_index": 1074,
+      "occurrence_index": 1078,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1186,7 +1205,7 @@
       "morph_code": "Ncbdc/Sp3ms",
       "morph_readable": "Ncbdc/Sp3ms",
       "normalized": "עיניו",
-      "occurrence_index": 1075,
+      "occurrence_index": 1079,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

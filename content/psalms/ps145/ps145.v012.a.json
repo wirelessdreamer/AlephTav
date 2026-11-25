@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps145.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "dc20eb02c7be924bad57c0e4d26b09c469ed0e5815bfc9759661cb964db5fd66",
+      "audit_id": "aud.ps145.v012.a.0001",
+      "before_hash": "49f32f413e7f397bdedb11171d6da062f56bfcc1a4cc8c35a3276d162c95244b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.659501+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps145.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps145.v012.a.0001"
@@ -124,7 +143,7 @@
       "morph_code": "R/Vhc",
       "morph_readable": "R/Vhc",
       "normalized": "להודיע",
-      "occurrence_index": 74,
+      "occurrence_index": 75,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
@@ -537,7 +556,7 @@
       "morph_code": "Ncfpc/Sp3ms",
       "morph_readable": "Ncfpc/Sp3ms",
       "normalized": "גבורתיו",
-      "occurrence_index": 4623,
+      "occurrence_index": 4659,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -931,7 +950,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "מלכותו",
-      "occurrence_index": 4624,
+      "occurrence_index": 4660,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

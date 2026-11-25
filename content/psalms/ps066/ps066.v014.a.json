@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps066.v014.a.0001",
-    "aud.ps066.v014.a.0002"
+    "aud.ps066.v014.a.0002",
+    "aud.ps066.v014.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "d915c691a96099d23f53bda8d4faf0153a373d7bbddaaf5fb800b65c6207e470",
+      "audit_id": "aud.ps066.v014.a.0003",
+      "before_hash": "71e34ecb45f974102b0267d0204c11e7baa8f524315c5ab4dc1cbefcd5d3bdc7",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.091750+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v014.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -544,7 +561,7 @@
       "morph_code": "Ncfdc/Sp1cs",
       "morph_readable": "Ncfdc/Sp1cs",
       "normalized": "שפתי",
-      "occurrence_index": 2007,
+      "occurrence_index": 2021,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -831,7 +848,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "פי",
-      "occurrence_index": 2008,
+      "occurrence_index": 2022,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1108,7 +1125,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "לי",
-      "occurrence_index": 2009,
+      "occurrence_index": 2023,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

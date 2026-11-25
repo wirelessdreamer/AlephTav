@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v081.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "e911299dfe8fa043440f3ef456c655e56e7e15451e87288bbd587a4bdbcf042a",
+      "audit_id": "aud.ps119.v081.a.0001",
+      "before_hash": "157b1dd95537bf85ecf71be837b856c98c1569dfc0c74cca7b7077fbe8ae2a85",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.474033+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v081.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v081.a.0001"
@@ -61,6 +80,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -107,7 +127,7 @@
       "morph_code": "Vqp3fs",
       "morph_readable": "Vqp3fs",
       "normalized": "כלתה",
-      "occurrence_index": 16,
+      "occurrence_index": 17,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 31:11",
@@ -118,6 +138,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -246,7 +267,7 @@
       "morph_code": "R/Ncfsc/Sp2ms",
       "morph_readable": "R/Ncfsc/Sp2ms",
       "normalized": "לתשועתך",
-      "occurrence_index": 3909,
+      "occurrence_index": 3939,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -400,7 +421,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 3910,
+      "occurrence_index": 3940,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -559,7 +580,7 @@
       "morph_code": "R/Ncmsc/Sp2ms",
       "morph_readable": "R/Ncmsc/Sp2ms",
       "normalized": "לדברך",
-      "occurrence_index": 3911,
+      "occurrence_index": 3941,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -711,7 +732,8 @@
       "same_psalm_occurrence_refs": [
         "Psalm 119:43",
         "Psalm 119:74",
-        "Psalm 119:114"
+        "Psalm 119:114",
+        "Psalm 119:147"
       ],
       "semantic_role": null,
       "stem": "piel",

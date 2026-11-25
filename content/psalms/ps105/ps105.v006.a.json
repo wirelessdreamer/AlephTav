@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps105.v006.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "24d79d5e97f0406a55d3e07e478606a7440247fc8a4a6d2eec0df3eb0166e04c",
+      "audit_id": "aud.ps105.v006.a.0001",
+      "before_hash": "2b402f108dcc3d36973becfddc88d32dc9464b27c88c4882b357d798c102cf79",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:26.576620+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps105.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps105.v006.a.0001"
@@ -312,7 +331,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "עבדו",
-      "occurrence_index": 3296,
+      "occurrence_index": 3322,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -540,10 +559,10 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
-        "Psalm 99:4",
-        "Psalm 114:1"
+        "Psalm 99:4"
       ],
       "display_gloss": "of Jacob",
       "enrichment_sources": {
@@ -587,7 +606,7 @@
       "morph_code": "Np",
       "morph_readable": "Np",
       "normalized": "יעקב",
-      "occurrence_index": 24,
+      "occurrence_index": 25,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 14:7",
@@ -610,10 +629,10 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
-        "Psalm 99:4",
-        "Psalm 114:1"
+        "Psalm 99:4"
       ],
       "ref": "Psalm 105:6#5",
       "referent": null,
@@ -731,7 +750,7 @@
       "morph_code": "Aampc/Sp3ms",
       "morph_readable": "Aampc/Sp3ms",
       "normalized": "בחיריו",
-      "occurrence_index": 3297,
+      "occurrence_index": 3323,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

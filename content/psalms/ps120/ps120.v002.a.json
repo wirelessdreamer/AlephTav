@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps120.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7ac8aa2b4ac67b1306233cefa7845f773567bab8d7c7a58b591d5c90723842f8",
+      "audit_id": "aud.ps120.v002.a.0001",
+      "before_hash": "298b756001b5dece5ef3e93e7e09a822edc34ad5c5b45b3f89f7b0b46306e41a",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.052240+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps120.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps120.v002.a.0001"
@@ -260,7 +279,7 @@
       "morph_code": "Vhv2ms/Sh",
       "morph_readable": "Vhv2ms/Sh",
       "normalized": "הצילה",
-      "occurrence_index": 125,
+      "occurrence_index": 126,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -403,7 +422,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 4133,
+      "occurrence_index": 4164,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

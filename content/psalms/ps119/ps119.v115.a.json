@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v115.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "67f5407cdc14a3bd641221dc560fc4da20b9be850f8baa6f044d45401d643a5c",
+      "audit_id": "aud.ps119.v115.a.0001",
+      "before_hash": "82d430d7010ad316ba046b8dcc73b2ffa444f0251436ed2abdc0c0cef3be79aa",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.636646+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v115.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v115.a.0001"
@@ -234,7 +253,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 3985,
+      "occurrence_index": 4015,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -687,7 +706,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "אלהי",
-      "occurrence_index": 3986,
+      "occurrence_index": 4016,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

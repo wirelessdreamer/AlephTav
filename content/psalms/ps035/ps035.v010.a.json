@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps035.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "b08bd3ab32e369d8e9ac1b4a5f6256ae2531efee4f521665fd12d411621a7857",
+      "audit_id": "aud.ps035.v010.a.0001",
+      "before_hash": "456cefe823898036b7f6b1e87df83ecd6869b1e383f4aa4d94c73bec02fff51d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.358164+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps035.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps035.v010.a.0001"
@@ -271,7 +290,7 @@
       "morph_code": "Ncfpc/Sp1cs",
       "morph_readable": "Ncfpc/Sp1cs",
       "normalized": "עצמותי",
-      "occurrence_index": 1025,
+      "occurrence_index": 1029,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -827,7 +846,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "כמוך",
-      "occurrence_index": 1026,
+      "occurrence_index": 1030,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1305,7 +1324,7 @@
       "morph_code": "R/Sp1cp",
       "morph_readable": "R/Sp1cp",
       "normalized": "ממנו",
-      "occurrence_index": 1027,
+      "occurrence_index": 1031,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1540,7 +1559,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "display_gloss": "and the needy",
       "enrichment_sources": {
@@ -1606,7 +1626,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "ref": "Psalm 35:10#12",
       "referent": null,
@@ -1724,7 +1745,7 @@
       "morph_code": "R/Vqrmsc/Sp3ms",
       "morph_readable": "R/Vqrmsc/Sp3ms",
       "normalized": "מגזלו",
-      "occurrence_index": 1028,
+      "occurrence_index": 1032,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

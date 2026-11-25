@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps131.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "419dc5ea5e09d9d62c2d2626d4b8cc12ea86ce610aa06941f484156477dcde18",
+      "audit_id": "aud.ps131.v001.a.0001",
+      "before_hash": "0ff146233132ccc0f40313c122ac29c42c5809c1c4a529179c1434dce1a4ebf6",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.517998+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps131.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps131.v001.a.0001"
@@ -382,7 +401,7 @@
       "morph_code": "R/Np",
       "morph_readable": "R/Np",
       "normalized": "לדוד",
-      "occurrence_index": 73,
+      "occurrence_index": 74,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 3:1",
@@ -872,7 +891,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבי",
-      "occurrence_index": 4240,
+      "occurrence_index": 4272,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1280,7 +1299,7 @@
       "morph_code": "Ncbdc/Sp1cs",
       "morph_readable": "Ncbdc/Sp1cs",
       "normalized": "עיני",
-      "occurrence_index": 4241,
+      "occurrence_index": 4273,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1932,7 +1951,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 4242,
+      "occurrence_index": 4274,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v167.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "bc5aeeb60013ea1a2b01a14ba88664162e94cdae838b5114862db74ed883dbfa",
+      "audit_id": "aud.ps119.v167.a.0001",
+      "before_hash": "a9edffb2a67737ef520d7307bc6f33a7b8084d5467219b530827bd2de5942993",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.963975+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v167.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v167.a.0001"
@@ -271,7 +290,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 4098,
+      "occurrence_index": 4129,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -425,7 +444,7 @@
       "morph_code": "Ncfpc/Sp2ms",
       "morph_readable": "Ncfpc/Sp2ms",
       "normalized": "עדתיך",
-      "occurrence_index": 4099,
+      "occurrence_index": 4130,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -581,7 +600,7 @@
       "morph_code": "C/Vqw1cs/Sp3mp",
       "morph_readable": "C/Vqw1cs/Sp3mp",
       "normalized": "ואהבם",
-      "occurrence_index": 4100,
+      "occurrence_index": 4131,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -660,6 +679,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -680,8 +700,7 @@
         "Psalm 109:30",
         "Psalm 112:1",
         "Psalm 116:10",
-        "Psalm 139:14",
-        "Psalm 142:7"
+        "Psalm 139:14"
       ],
       "display_gloss": "exceedingly",
       "enrichment_sources": {
@@ -724,11 +743,12 @@
       "morph_code": "D",
       "morph_readable": "D",
       "normalized": "מאד",
-      "occurrence_index": 31,
+      "occurrence_index": 32,
       "part_of_speech": "adverb",
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 6:11",
+        "Psalm 21:2",
         "Psalm 31:12",
         "Psalm 38:7",
         "Psalm 38:9",
@@ -749,8 +769,7 @@
         "Psalm 109:30",
         "Psalm 112:1",
         "Psalm 116:10",
-        "Psalm 139:14",
-        "Psalm 142:7"
+        "Psalm 139:14"
       ],
       "ref": "Psalm 119:167#5",
       "referent": null,

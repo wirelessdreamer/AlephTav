@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps135.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "2b42ac760e7a21e6fc860e75f9ce9c2b02de15d0126339d8783ae766e9c6140b",
+      "audit_id": "aud.ps135.v008.a.0001",
+      "before_hash": "9970fa8ee7b1aadd723ad2704c3b54893f39f18ce1855dacc5a133e646de94f0",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.737221+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps135.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps135.v008.a.0001"
@@ -504,6 +523,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -523,8 +543,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "unto",
       "enrichment_sources": {
@@ -568,12 +587,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 103,
+      "occurrence_index": 104,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -593,8 +613,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 135:8#5",
       "referent": null,

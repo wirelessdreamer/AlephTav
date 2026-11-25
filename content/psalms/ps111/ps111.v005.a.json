@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps111.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "02b50bb5f04742fa8abb5e0b82c6c08c43e2f4e9538636fcdcde5667a3a57f5c",
+      "audit_id": "aud.ps111.v005.a.0001",
+      "before_hash": "73ea605b17b22d977ba5cde8d34aa9075a04ea729ece6c050385821c2febf021",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:27.620374+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps111.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps111.v005.a.0001"
@@ -354,7 +373,7 @@
       "morph_code": "R/Aampc/Sp3ms",
       "morph_readable": "R/Aampc/Sp3ms",
       "normalized": "ליראיו",
-      "occurrence_index": 3595,
+      "occurrence_index": 3624,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -564,6 +583,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -580,8 +600,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -626,7 +645,7 @@
       "morph_code": "R/Ncmsa",
       "morph_readable": "R/Ncmsa",
       "normalized": "לעולם",
-      "occurrence_index": 77,
+      "occurrence_index": 78,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -635,6 +654,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -651,8 +671,7 @@
         "Psalm 41:13",
         "Psalm 41:14",
         "Psalm 44:9",
-        "Psalm 45:3",
-        "Psalm 45:7"
+        "Psalm 45:3"
       ],
       "ref": "Psalm 111:5#5",
       "referent": null,
@@ -770,7 +789,7 @@
       "morph_code": "Ncfsc/Sp3ms",
       "morph_readable": "Ncfsc/Sp3ms",
       "normalized": "בריתו",
-      "occurrence_index": 3596,
+      "occurrence_index": 3625,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

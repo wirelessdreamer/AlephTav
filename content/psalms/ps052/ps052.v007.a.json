@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps052.v007.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c1ba563a7297716d81eb00b5d91cad0ffdb4dfb26943e4066c7389d8a40c4b18",
+      "audit_id": "aud.ps052.v007.a.0001",
+      "before_hash": "8c18a5ba71dc811cd988f9ab43557c64d156b48b3dd334b60238f05a37eabf5f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:20.800132+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps052.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps052.v007.a.0001"
@@ -397,7 +416,7 @@
       "morph_code": "Vqi3ms/Sp2ms",
       "morph_readable": "Vqi3ms/Sp2ms",
       "normalized": "יתצך",
-      "occurrence_index": 1648,
+      "occurrence_index": 1656,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -663,7 +682,7 @@
       "morph_code": "Vqi3ms/Sp2ms",
       "morph_readable": "Vqi3ms/Sp2ms",
       "normalized": "יחתך",
-      "occurrence_index": 1649,
+      "occurrence_index": 1657,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -812,7 +831,7 @@
       "morph_code": "C/Vqi3ms/Sp2ms",
       "morph_readable": "C/Vqi3ms/Sp2ms",
       "normalized": "ויסחך",
-      "occurrence_index": 1650,
+      "occurrence_index": 1658,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1067,7 +1086,7 @@
       "morph_code": "C/Vpq3ms/Sp2ms",
       "morph_readable": "C/Vpq3ms/Sp2ms",
       "normalized": "ושרשך",
-      "occurrence_index": 1651,
+      "occurrence_index": 1659,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1150,6 +1169,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1163,8 +1183,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "from the land",
       "enrichment_sources": {
@@ -1209,7 +1228,7 @@
       "morph_code": "R/Ncbsc",
       "morph_readable": "R/Ncbsc",
       "normalized": "מארץ",
-      "occurrence_index": 46,
+      "occurrence_index": 47,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1221,6 +1240,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1234,8 +1254,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 52:7#9",
       "referent": null,
@@ -1392,6 +1411,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1404,8 +1424,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1449,7 +1468,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 27,
+      "occurrence_index": 28,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1462,6 +1481,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1474,8 +1494,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "ref": "Psalm 52:7#11",
       "referent": null,

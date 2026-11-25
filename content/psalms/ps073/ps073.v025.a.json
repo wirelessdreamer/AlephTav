@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps073.v025.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f204cb91de88e994e732249cc75ae69e76ee1dfd7aa5b68df212a1cfac75b8a4",
+      "audit_id": "aud.ps073.v025.a.0001",
+      "before_hash": "bc9c98bcef738a4428f2533ee4d9bdc5130d71d9ecd21278f24ca68ae434ae01",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.135755+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps073.v025.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps073.v025.a.0001"
@@ -263,7 +282,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "לי",
-      "occurrence_index": 2307,
+      "occurrence_index": 2326,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -565,7 +584,7 @@
       "morph_code": "C/R/Sp2ms",
       "morph_readable": "C/R/Sp2ms",
       "normalized": "ועמך",
-      "occurrence_index": 2308,
+      "occurrence_index": 2327,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -914,6 +933,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -927,8 +947,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "on the earth",
       "enrichment_sources": {
@@ -974,7 +993,7 @@
       "morph_code": "Rd/Ncbsa",
       "morph_readable": "Rd/Ncbsa",
       "normalized": "בארץ",
-      "occurrence_index": 74,
+      "occurrence_index": 75,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -986,6 +1005,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -999,8 +1019,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 73:25#7",
       "referent": null,

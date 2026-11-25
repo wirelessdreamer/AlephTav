@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps004.v003.a.0001",
-    "aud.ps004.v003.a.0002"
+    "aud.ps004.v003.a.0002",
+    "aud.ps004.v003.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c58afe0f1831c1a71f1620d8a98a8e6dd243b36283b166424244cfb44c85f1d1",
+      "audit_id": "aud.ps004.v003.a.0003",
+      "before_hash": "672acb41dfb365468fd1d176aa98821a7596b2bfa079566e5facc44688a7c762",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.009263+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps004.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -543,6 +560,7 @@
       "corpus_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -563,8 +581,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -613,6 +630,7 @@
       "psalms_occurrence_refs": [
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -633,8 +651,7 @@
         "Psalm 45:7",
         "Psalm 45:18",
         "Psalm 46:10",
-        "Psalm 48:9",
-        "Psalm 48:15"
+        "Psalm 48:9"
       ],
       "ref": "Psalm 4:3#3",
       "referent": null,
@@ -1076,9 +1093,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "display_gloss": "you love? will",
       "enrichment_sources": {
@@ -1145,9 +1162,9 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
+        "Psalm 74:6",
         "Psalm 78:44",
-        "Psalm 82:7",
-        "Psalm 83:3"
+        "Psalm 82:7"
       ],
       "ref": "Psalm 4:3#7",
       "referent": null,
@@ -1495,6 +1512,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1509,8 +1527,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1565,6 +1582,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1579,8 +1597,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "ref": "Psalm 4:3#11",
       "referent": null,

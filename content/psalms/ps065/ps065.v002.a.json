@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps065.v002.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7ed97c9f4d6bd545274a9319f9fb7511303577f711319e33faadda3b8aac5a03",
+      "audit_id": "aud.ps065.v002.a.0001",
+      "before_hash": "9716e94cf6dd9ae046ed365d1a6a91848ac3281c0cbceb2ede2ac1767abe0033",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.842051+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps065.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps065.v002.a.0001"
@@ -134,7 +153,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "לך",
-      "occurrence_index": 1957,
+      "occurrence_index": 1971,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -752,7 +771,7 @@
       "morph_code": "C/R/Sp2ms",
       "morph_readable": "C/R/Sp2ms",
       "normalized": "ולך",
-      "occurrence_index": 1958,
+      "occurrence_index": 1972,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

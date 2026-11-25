@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps088.v013.a.0001",
-    "aud.ps088.v013.a.0002"
+    "aud.ps088.v013.a.0002",
+    "aud.ps088.v013.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "35604b9983c478737eaab94519080a00adc25d1b7ba10d704c1c4926fc638c85",
+      "audit_id": "aud.ps088.v013.a.0003",
+      "before_hash": "4ec44d6cd33c07e09834c134c520f8d37f12e779aacb7b384d29684e511cfaef",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.917711+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps088.v013.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -326,7 +343,7 @@
       "morph_code": "Ti/VNi3ms",
       "morph_readable": "Ti/VNi3ms",
       "normalized": "היודע",
-      "occurrence_index": 42,
+      "occurrence_index": 43,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
@@ -578,7 +595,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "פלאך",
-      "occurrence_index": 2787,
+      "occurrence_index": 2807,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -737,7 +754,7 @@
       "morph_code": "C/Ncfsc/Sp2ms",
       "morph_readable": "C/Ncfsc/Sp2ms",
       "normalized": "וצדקתך",
-      "occurrence_index": 2788,
+      "occurrence_index": 2808,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -827,6 +844,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -840,8 +858,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "in the land",
       "enrichment_sources": {
@@ -886,7 +903,7 @@
       "morph_code": "R/Ncbsc",
       "morph_readable": "R/Ncbsc",
       "normalized": "בארץ",
-      "occurrence_index": 96,
+      "occurrence_index": 97,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -898,6 +915,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -911,8 +929,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 88:13#5",
       "referent": null,

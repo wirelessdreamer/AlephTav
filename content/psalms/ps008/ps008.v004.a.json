@@ -8,7 +8,8 @@
     "aud.ps008.v004.a.0001",
     "aud.ps008.v004.a.0002",
     "aud.ps008.v004.a.0003",
-    "aud.ps008.v004.a.0004"
+    "aud.ps008.v004.a.0004",
+    "aud.ps008.v004.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b83ca7acf2356c2b85cd86143474154d1be7c3b2eb6c2533db6f9172f32cf955",
+      "audit_id": "aud.ps008.v004.a.0005",
+      "before_hash": "8e6ab417838c181cba3c73bbc5d868dd4b1534d30d150026ba47c74851780111",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.290691+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps008.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -733,7 +750,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "שמיך",
-      "occurrence_index": 161,
+      "occurrence_index": 162,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -995,7 +1012,7 @@
       "morph_code": "Ncfpc/Sp2ms",
       "morph_readable": "Ncfpc/Sp2ms",
       "normalized": "אצבעתיך",
-      "occurrence_index": 162,
+      "occurrence_index": 163,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

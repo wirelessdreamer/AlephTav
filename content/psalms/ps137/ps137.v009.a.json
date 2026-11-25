@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps137.v009.a.0001",
     "aud.ps137.v009.a.0002",
-    "aud.ps137.v009.a.0003"
+    "aud.ps137.v009.a.0003",
+    "aud.ps137.v009.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9c23262815e0e23627d70c09d1b3b9472546eed3fac9ed9d0701ca5a52c4fe9e",
+      "audit_id": "aud.ps137.v009.a.0004",
+      "before_hash": "01708857592e33f4f0f79cc79ea81f215c0478c4ffc9cb4de04bd6d87635a093",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.027862+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps137.v009.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -885,7 +902,7 @@
       "morph_code": "Ncmpc/Sp2fs",
       "morph_readable": "Ncmpc/Sp2fs",
       "normalized": "עלליך",
-      "occurrence_index": 4362,
+      "occurrence_index": 4394,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

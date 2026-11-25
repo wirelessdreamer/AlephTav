@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from app.services import ingest_service, registry_service
+from app.services import full_psalm_import_service, ingest_service, registry_service
 from tests.support import bootstrap_fixture_repo
 
 
@@ -29,7 +29,13 @@ def test_reimporting_keeps_translation_work_and_refreshes_the_source() -> None:
         after = registry_service.read_json(registry_service.unit_path("ps001.v002.a"))
         assert after["renderings"] == [rendering]
         assert after["verse_notes"][0]["text"] == "keep the and"
-        assert after["audit_records"] == [{"audit_id": "aud.ps001.v002.a.0001"}]
+        assert after["audit_records"][0] == {"audit_id": "aud.ps001.v002.a.0001"}
+        # Refreshing the stale gloss is a content change, so it is audited.
+        refresh = after["audit_records"][1]
+        assert refresh["audit_id"] == "aud.ps001.v002.a.0002"
+        assert refresh["change_type"] == "import"
+        assert refresh["before_hash"] != refresh["after_hash"]
+        assert len(after["audit_records"]) == 2
         assert after["status"] == "reviewed"
         # What the corpus owns is refreshed.
         assert after["tokens"][0]["display_gloss"] == unit["tokens"][0]["display_gloss"]
@@ -101,3 +107,40 @@ def test_vendored_import_seeds_full_psalms_corpus() -> None:
         assert "(" not in second_token["display_gloss"]
     finally:
         bootstrap_fixture_repo()
+
+
+def test_ketiv_reads_as_its_qere_and_later_words_keep_their_own_enrichment() -> None:
+    # MACULA numbers each qere word after its ketiv and has nothing at the ketiv's number;
+    # OSHB puts the qere in a note. Joining on the OSHB position shifted every later gloss
+    # back one word, so the Selah of Psalm 24:6 read "O Jacob".
+    oshb = full_psalm_import_service._load_oshb_tokens()
+    macula = full_psalm_import_service._load_macula_words()
+
+    def glosses(psalm: int, verse: int) -> list[str | None]:
+        unit = full_psalm_import_service._build_unit(
+            psalm, verse, "", oshb[(psalm, verse)], macula, {}
+        )
+        assert unit["token_ids"] == [
+            f"ps{psalm:03d}.v{verse:03d}.t{index:03d}"
+            for index in range(1, len(oshb[(psalm, verse)]) + 1)
+        ]
+        return [token["display_gloss"] for token in unit["tokens"]]
+
+    # t003 is the ketiv דרשו.
+    assert glosses(24, 6) == [
+        "this",
+        "is the generation",
+        "of those who seek him",
+        "those who seek",
+        "(of) your face",
+        "O Jacob",
+        "Selah",
+    ]
+    # Two ketivs in one verse; the second (t005) is read as two qere words.
+    assert glosses(10, 10) == [
+        "he is crushed",
+        "he is bowed down",
+        "and he falls",
+        "among ones his mighty",
+        "an army of disheartened people",
+    ]

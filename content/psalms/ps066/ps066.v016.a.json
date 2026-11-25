@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps066.v016.a.0001",
-    "aud.ps066.v016.a.0002"
+    "aud.ps066.v016.a.0002",
+    "aud.ps066.v016.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3768d43f815e75e69e43dd683097e58cf5eba0960b18e152e2cbd46ddcf1100f",
+      "audit_id": "aud.ps066.v016.a.0003",
+      "before_hash": "3414ac590adb86e3e96f08919c4bdd2a558776386978b55224226be39ea35c65",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.113677+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps066.v016.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1380,7 +1397,7 @@
       "morph_code": "R/Ncbsc/Sp1cs",
       "morph_readable": "R/Ncbsc/Sp1cs",
       "normalized": "לנפשי",
-      "occurrence_index": 2011,
+      "occurrence_index": 2025,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

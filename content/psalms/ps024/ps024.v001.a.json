@@ -20,7 +20,8 @@
     "aud.ps024.v001.a.0012",
     "aud.ps024.v001.a.0013",
     "aud.ps024.v001.a.0014",
-    "aud.ps024.v001.a.0015"
+    "aud.ps024.v001.a.0015",
+    "aud.ps024.v001.a.0016"
   ],
   "audit_records": [
     {
@@ -260,6 +261,22 @@
       "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "05762e18defe82a7faa526d76a47f383bb3017bd36570cd7e316c2d81a3a7fa8",
+      "audit_id": "aud.ps024.v001.a.0016",
+      "before_hash": "eb2fa5122099108e627980e9d9363198cac8198eb438cee3acda1752730915c0",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:13.207076+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1119,6 +1136,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1132,8 +1150,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -1178,7 +1195,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 15,
+      "occurrence_index": 16,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1190,6 +1207,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1203,8 +1221,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 24:1#4",
       "referent": null,
@@ -1324,7 +1341,7 @@
       "morph_code": "C/Ncmsc/Sp3fs",
       "morph_readable": "C/Ncmsc/Sp3fs",
       "normalized": "ומלואה",
-      "occurrence_index": 633,
+      "occurrence_index": 636,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1719,7 +1736,7 @@
       "morph_code": "R/Sp3fs",
       "morph_readable": "R/Sp3fs",
       "normalized": "בה",
-      "occurrence_index": 634,
+      "occurrence_index": 637,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

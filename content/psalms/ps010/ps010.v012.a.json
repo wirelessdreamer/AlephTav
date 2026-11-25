@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps010.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d82f4bf7e0c5350ac0098c3e533fb269ab2278bae9a77cafe5f6de3ffc27e26c",
+      "audit_id": "aud.ps010.v012.a.0001",
+      "before_hash": "c8ed6264a8c2ddc3d160c652dc167fd7610ca2166949433213b98ee6d373a6d7",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.557561+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps010.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps010.v012.a.0001"
@@ -19,7 +38,7 @@
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "קוּמָ֤ה יְהוָ֗ה אֵ֭ל נְשָׂ֣א יָדֶ֑ךָ אַל־תִּשְׁכַּ֥ח",
-  "source_transliteration": "yəhwāh ʾēl nəśāʾ ʾal- tiškaḥ",
+  "source_transliteration": "yəhwāh ʾēl nəśāʾ ʾal- tiškaḥ **ʿănāwîm:",
   "status": "draft",
   "token_ids": [
     "ps010.v012.t001",
@@ -666,7 +685,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "ידך",
-      "occurrence_index": 217,
+      "occurrence_index": 219,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -980,47 +999,76 @@
       "word_sense": "forget"
     },
     {
-      "compiler_features": {},
+      "compiler_features": {
+        "component_count": 1,
+        "conjunction_role": null,
+        "construct_state": false,
+        "discourse_marker": null,
+        "divine_name": false,
+        "english_parts": [
+          "afflicted"
+        ],
+        "gloss_fragments": [
+          "humble people"
+        ],
+        "preposition_role": null,
+        "raw_classes": [
+          "adj"
+        ],
+        "raw_pos": [
+          "adjective"
+        ],
+        "suffix_pronoun": null,
+        "temporal_pair_candidate": false
+      },
       "corpus_occurrence_refs": [
-        "Psalm 9:13"
+        "Psalm 9:13",
+        "Psalm 22:27",
+        "Psalm 25:9",
+        "Psalm 34:3",
+        "Psalm 37:11",
+        "Psalm 69:33",
+        "Psalm 76:10",
+        "Psalm 147:6",
+        "Psalm 149:4"
       ],
-      "display_gloss": null,
+      "display_gloss": "humble people",
       "enrichment_sources": {
         "macula": {
-          "available_fields": [],
-          "missing_fields": [
+          "available_fields": [
             "syntax_role",
-            "semantic_role",
-            "referent",
             "word_sense"
           ],
-          "status": "missing"
+          "missing_fields": [
+            "semantic_role",
+            "referent"
+          ],
+          "status": "partial"
         },
         "oshb": {
           "available_fields": [
+            "lemma",
             "strong",
             "morph_code",
             "morph_readable",
             "part_of_speech"
           ],
           "missing_fields": [
-            "lemma",
             "stem"
           ],
           "status": "partial"
         }
       },
-      "gloss_parts": [],
-      "greek": null,
-      "greek_strong": null,
-      "lemma": null,
+      "gloss_parts": [
+        "humble.[people]"
+      ],
+      "greek": "πενήτων",
+      "greek_strong": "3993",
+      "lemma": "עָנָו",
       "missing_enrichments": [
-        "oshb:lemma",
         "oshb:stem",
-        "macula:syntax_role",
         "macula:semantic_role",
-        "macula:referent",
-        "macula:word_sense"
+        "macula:referent"
       ],
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
@@ -1028,19 +1076,29 @@
       "occurrence_index": 2,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
-        "Psalm 9:13"
+        "Psalm 9:13",
+        "Psalm 22:27",
+        "Psalm 25:9",
+        "Psalm 34:3",
+        "Psalm 37:11",
+        "Psalm 69:33",
+        "Psalm 76:10",
+        "Psalm 147:6",
+        "Psalm 149:4"
       ],
       "ref": "Psalm 10:12#8",
       "referent": null,
-      "same_psalm_occurrence_refs": [],
+      "same_psalm_occurrence_refs": [
+        "Psalm 10:17"
+      ],
       "semantic_role": null,
       "stem": null,
       "strong": "H6041",
       "surface": "עניים",
-      "syntax_role": null,
+      "syntax_role": "o",
       "token_id": "ps010.v012.t008",
-      "transliteration": null,
-      "word_sense": null
+      "transliteration": "**ʿănāwîm:",
+      "word_sense": "humble.[people]"
     }
   ],
   "unit_id": "ps010.v012.a",

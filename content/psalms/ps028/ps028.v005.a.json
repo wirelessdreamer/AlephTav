@@ -8,7 +8,8 @@
     "aud.ps028.v005.a.0001",
     "aud.ps028.v005.a.0002",
     "aud.ps028.v005.a.0003",
-    "aud.ps028.v005.a.0004"
+    "aud.ps028.v005.a.0004",
+    "aud.ps028.v005.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "Imported from bundle bone-and-ash.ps028.289d386d0e064b50a180f9603d9d930e (archive sha256 b65dcfdfccee87eb75e5e6738ffbbb6e2ce7a7aba8e06cf6ae95047496f5d14a). Donor records adopted with their original ids and audit history: the donor's Psalm 28 history starts from this workspace's prior state and no id collides. Statuses unchanged (proposed); no approvals added.",
       "review_signoff": {},
       "summary": "Import Bone and Ash Psalm 28 work from export",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6e0a704e559efa656cae22c7300a274aefa2d759b66dc1c9e3a999a83f305031",
+      "audit_id": "aud.ps028.v005.a.0005",
+      "before_hash": "b228a89df56c8c95822a2628ef426fb5dbfc7ae70725b3842c92201ac1b51435",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:15.692882+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps028.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4692,7 +4709,7 @@
       "morph_code": "Ncbdc/Sp3ms",
       "morph_readable": "Ncbdc/Sp3ms",
       "normalized": "ידיו",
-      "occurrence_index": 792,
+      "occurrence_index": 796,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4839,7 +4856,7 @@
       "morph_code": "Vqi3ms/Sp3mp",
       "morph_readable": "Vqi3ms/Sp3mp",
       "normalized": "יהרסם",
-      "occurrence_index": 793,
+      "occurrence_index": 797,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -5121,7 +5138,7 @@
       "morph_code": "Vqi3ms/Sp3mp",
       "morph_readable": "Vqi3ms/Sp3mp",
       "normalized": "יבנם",
-      "occurrence_index": 794,
+      "occurrence_index": 798,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

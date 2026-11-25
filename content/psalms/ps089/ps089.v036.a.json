@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps089.v036.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "20d09d2c18b05d649209c7cbb84b46b30b0d817bc0fb0665b702a5523fa40693",
+      "audit_id": "aud.ps089.v036.a.0001",
+      "before_hash": "56c18fc084788fa6305981c6fb5c3d7de22a0f92c87ab15e972acb1479ae388d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.145564+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps089.v036.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps089.v036.a.0001"
@@ -335,7 +354,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "בקדשי",
-      "occurrence_index": 2883,
+      "occurrence_index": 2905,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -618,7 +637,7 @@
       "morph_code": "R/Np",
       "morph_readable": "R/Np",
       "normalized": "לדוד",
-      "occurrence_index": 63,
+      "occurrence_index": 64,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 3:1",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps141.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "ab06787434e4645e9161d368adbbeedf03183b370e860428cf6d4090344d85ad",
+      "audit_id": "aud.ps141.v010.a.0001",
+      "before_hash": "08a49fffefc3fb4fcf5303927a65c2b1630f2f3af46fedd8511ba85e3d2ad1b2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.373151+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps141.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps141.v010.a.0001"
@@ -265,7 +284,7 @@
       "morph_code": "R/Ncmpc/Sp3ms",
       "morph_readable": "R/Ncmpc/Sp3ms",
       "normalized": "במכמריו",
-      "occurrence_index": 4488,
+      "occurrence_index": 4523,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -686,6 +705,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -705,8 +725,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -750,12 +769,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 105,
+      "occurrence_index": 106,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -775,8 +795,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 141:10#6",
       "referent": null,

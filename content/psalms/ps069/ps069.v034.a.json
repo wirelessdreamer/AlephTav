@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps069.v034.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "10f425f5bc5993b56d0d8093d7247586a1820c3d05c4f1f188768228f63c9f22",
+      "audit_id": "aud.ps069.v034.a.0001",
+      "before_hash": "b9625b3b5846cf8fca5e5e63b33f848170162409e1a401abc76ff34567e33654",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.652789+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps069.v034.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps069.v034.a.0001"
@@ -474,7 +493,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "display_gloss": "needy people",
       "enrichment_sources": {
@@ -539,7 +559,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "ref": "Psalm 69:34#4",
       "referent": null,
@@ -922,7 +943,7 @@
       "morph_code": "Ncmpc/Sp3ms",
       "morph_readable": "Ncmpc/Sp3ms",
       "normalized": "אסיריו",
-      "occurrence_index": 2168,
+      "occurrence_index": 2182,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

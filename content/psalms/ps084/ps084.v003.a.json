@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps084.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "31bd4b4c981d3c5fdab1723712db3f2f612b8c214fe8769075c41941dec31d64",
+      "audit_id": "aud.ps084.v003.a.0001",
+      "before_hash": "55a0bbca14397f44971cd3692960abb1b6b0053dcf893a89ae76ffe1b818774d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.540201+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps084.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps084.v003.a.0001"
@@ -290,6 +309,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 90:7",
         "Psalm 90:9",
@@ -339,7 +359,7 @@
       "morph_code": "Vqp3fs",
       "morph_readable": "Vqp3fs",
       "normalized": "כלתה",
-      "occurrence_index": 12,
+      "occurrence_index": 13,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 31:11",
@@ -350,6 +370,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 90:7",
         "Psalm 90:9",
@@ -472,7 +493,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 2653,
+      "occurrence_index": 2673,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -856,7 +877,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבי",
-      "occurrence_index": 2654,
+      "occurrence_index": 2674,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1012,7 +1033,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "ובשרי",
-      "occurrence_index": 2655,
+      "occurrence_index": 2675,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

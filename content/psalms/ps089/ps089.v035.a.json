@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps089.v035.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "7a30336724cfd8de6ad5395322915f623b82a9a45d4979223dc3339cfd06d4aa",
+      "audit_id": "aud.ps089.v035.a.0001",
+      "before_hash": "3662058da3b0ee3dd41bb240347b81f097d6e1cd36bfdaef53b577d82c4dd0f8",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.141511+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps089.v035.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps089.v035.a.0001"
@@ -358,7 +377,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "בריתי",
-      "occurrence_index": 2881,
+      "occurrence_index": 2903,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -608,7 +627,7 @@
       "morph_code": "Ncfdc/Sp1cs",
       "morph_readable": "Ncfdc/Sp1cs",
       "normalized": "שפתי",
-      "occurrence_index": 2882,
+      "occurrence_index": 2904,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

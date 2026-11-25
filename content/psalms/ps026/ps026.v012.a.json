@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps026.v012.a.0001",
     "aud.ps026.v012.a.0002",
-    "aud.ps026.v012.a.0003"
+    "aud.ps026.v012.a.0003",
+    "aud.ps026.v012.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4cece087154a5e479bfc95e225dd217815fe4306a6f074da7d900355943bdbdf",
+      "audit_id": "aud.ps026.v012.a.0004",
+      "before_hash": "fb13e01395e70b8df4e6542de4311dfc71288ad0609e57a9314bf3864c06b202",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:17.562076+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps026.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4101,7 +4118,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "רגלי",
-      "occurrence_index": 721,
+      "occurrence_index": 725,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps072.v010.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f18a5cf7a804ff719553804f070817c5ec37cb31bc6e84a2b878b1bbf23ee590",
+      "audit_id": "aud.ps072.v010.a.0001",
+      "before_hash": "97fa546fb74992ae1f66bf7ea3cee841df9c2d8bdde5411f9296de943875bb00",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.955934+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps072.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps072.v010.a.0001"
@@ -521,7 +540,7 @@
       "morph_code": "Vhi3mp",
       "morph_readable": "Vhi3mp",
       "normalized": "ישיבו",
-      "occurrence_index": 28,
+      "occurrence_index": 29,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 6:11",

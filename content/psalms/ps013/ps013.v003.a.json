@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps013.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "98b3e67ac0f9599d095c0e02a562e13d58a89ec4c7b78cc50e411babf6535275",
+      "audit_id": "aud.ps013.v003.a.0001",
+      "before_hash": "dca9b2ed6f7e03b60a79e2636fa981471693290713fd8f81e94f3d4531ac4a92",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.691020+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps013.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps013.v003.a.0001"
@@ -64,6 +83,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -83,8 +103,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -128,12 +147,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 7,
+      "occurrence_index": 8,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -153,8 +173,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "ref": "Psalm 13:3#1",
       "referent": null,
@@ -575,7 +594,7 @@
       "morph_code": "R/Ncbsc/Sp1cs",
       "morph_readable": "R/Ncbsc/Sp1cs",
       "normalized": "בנפשי",
-      "occurrence_index": 246,
+      "occurrence_index": 248,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -814,7 +833,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "בלבבי",
-      "occurrence_index": 247,
+      "occurrence_index": 249,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -986,6 +1005,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -1005,8 +1025,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -1050,12 +1069,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 8,
+      "occurrence_index": 9,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 18:38",
         "Psalm 18:51",
@@ -1075,8 +1095,7 @@
         "Psalm 45:18",
         "Psalm 46:10",
         "Psalm 48:9",
-        "Psalm 48:15",
-        "Psalm 49:20"
+        "Psalm 48:15"
       ],
       "ref": "Psalm 13:3#9",
       "referent": null,
@@ -1408,7 +1427,7 @@
       "morph_code": "Vqrmsc/Sp1cs",
       "morph_readable": "Vqrmsc/Sp1cs",
       "normalized": "איבי",
-      "occurrence_index": 248,
+      "occurrence_index": 250,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1554,7 +1573,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "עלי",
-      "occurrence_index": 249,
+      "occurrence_index": 251,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

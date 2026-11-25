@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps071.v019.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "89ca80d8a8ea139da2c1b4e746edf9aa8e153b17530a34378b9962423bfabcb8",
+      "audit_id": "aud.ps071.v019.a.0001",
+      "before_hash": "85d91e6786660c0324eee889e1c065fc789d651faebbcdd7f4acbcc820ac26ee",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:22.858484+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps071.v019.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps071.v019.a.0001"
@@ -140,7 +159,7 @@
       "morph_code": "C/Ncfsc/Sp2ms",
       "morph_readable": "C/Ncfsc/Sp2ms",
       "normalized": "וצדקתך",
-      "occurrence_index": 2239,
+      "occurrence_index": 2253,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -356,6 +375,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -375,8 +395,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "to",
       "enrichment_sources": {
@@ -420,12 +439,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 42,
+      "occurrence_index": 43,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -445,8 +465,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 71:19#3",
       "referent": null,
@@ -1329,7 +1348,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "כמוך",
-      "occurrence_index": 2240,
+      "occurrence_index": 2254,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

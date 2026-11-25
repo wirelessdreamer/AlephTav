@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps135.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3b229fd1a5320260f4a685c96adbb65b42b82e7712a3c2d7149f704a2098e990",
+      "audit_id": "aud.ps135.v005.a.0001",
+      "before_hash": "2b6f7b72409f2a3b3ffef505ab00d33d79e8f45ba570463efcd15e898ccda159",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.717849+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps135.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps135.v005.a.0001"
@@ -384,7 +403,7 @@
       "morph_code": "Vqp1cs",
       "morph_readable": "Vqp1cs",
       "normalized": "ידעתי",
-      "occurrence_index": 64,
+      "occurrence_index": 65,
       "part_of_speech": "verb",
       "psalms_occurrence_refs": [
         "Psalm 1:6",
@@ -935,7 +954,7 @@
       "morph_code": "C/Ncmpc/Sp1cp",
       "morph_readable": "C/Ncmpc/Sp1cp",
       "normalized": "ואדנינו",
-      "occurrence_index": 4290,
+      "occurrence_index": 4322,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

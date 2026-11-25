@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps023.v005.a.0001",
-    "aud.ps023.v005.a.0002"
+    "aud.ps023.v005.a.0002",
+    "aud.ps023.v005.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f68ed17dc493f9f688fb986af81c18f7ad3a02498a1f953e7a029ee1a4fb67fd",
+      "audit_id": "aud.ps023.v005.a.0003",
+      "before_hash": "bf8c03e4a6792f10297afb15e2a2cf96554ab4fe99745dbaf96d3c794b6cdbfb",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.867199+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps023.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -428,7 +445,7 @@
       "morph_code": "R/Ncbpc/Sp1cs",
       "morph_readable": "R/Ncbpc/Sp1cs",
       "normalized": "לפני",
-      "occurrence_index": 627,
+      "occurrence_index": 630,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -770,7 +787,7 @@
       "morph_code": "Vqrmpc/Sp1cs",
       "morph_readable": "Vqrmpc/Sp1cs",
       "normalized": "צררי",
-      "occurrence_index": 628,
+      "occurrence_index": 631,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1111,7 +1128,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "ראשי",
-      "occurrence_index": 629,
+      "occurrence_index": 632,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1258,7 +1275,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "כוסי",
-      "occurrence_index": 630,
+      "occurrence_index": 633,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

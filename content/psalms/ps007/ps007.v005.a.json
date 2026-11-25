@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v005.a.0001",
     "aud.ps007.v005.a.0002",
-    "aud.ps007.v005.a.0003"
+    "aud.ps007.v005.a.0003",
+    "aud.ps007.v005.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4311567d484688b92a8765045e17c06022db76b82818ef20db188ecef7f1d3d9",
+      "audit_id": "aud.ps007.v005.a.0004",
+      "before_hash": "71e06b7be0d58d73b2e2ca6cb5cda612cfa354d8a71c4c9fb1311f451145006b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.192608+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -682,7 +699,7 @@
       "morph_code": "Vqrmsc/Sp1cs",
       "morph_readable": "Vqrmsc/Sp1cs",
       "normalized": "שולמי",
-      "occurrence_index": 131,
+      "occurrence_index": 132,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1112,7 +1129,7 @@
       "morph_code": "Vqrmsc/Sp1cs",
       "morph_readable": "Vqrmsc/Sp1cs",
       "normalized": "צוררי",
-      "occurrence_index": 132,
+      "occurrence_index": 133,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

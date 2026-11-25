@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v032.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "0dc86d13f034ae83ff7a40c573b9c58ab1177d14344243d565e9cc39656fe177",
+      "audit_id": "aud.ps119.v032.a.0001",
+      "before_hash": "9537bd29bd817e2f86736ee52ca9e9c78ddc0e385cf4d8a72a29273d4d6c3f75",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.222984+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v032.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v032.a.0001"
@@ -269,7 +288,7 @@
       "morph_code": "Ncfpc/Sp2ms",
       "morph_readable": "Ncfpc/Sp2ms",
       "normalized": "מצותיך",
-      "occurrence_index": 3795,
+      "occurrence_index": 3824,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -743,7 +762,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "לבי",
-      "occurrence_index": 3796,
+      "occurrence_index": 3825,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

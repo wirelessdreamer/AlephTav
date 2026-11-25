@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps119.v039.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d3c1d0ddcbe0d04d8bd7950b07e3865e42395f699f91f003a2a9f4776af3a48b",
+      "audit_id": "aud.ps119.v039.a.0001",
+      "before_hash": "6f0149ad35afba3bc70e8b064c45c850821112a0829206799c52f5cf5689e4f4",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:28.258228+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps119.v039.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps119.v039.a.0001"
@@ -262,7 +281,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "חרפתי",
-      "occurrence_index": 3814,
+      "occurrence_index": 3843,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -775,7 +794,7 @@
       "morph_code": "Ncmpc/Sp2ms",
       "morph_readable": "Ncmpc/Sp2ms",
       "normalized": "משפטיך",
-      "occurrence_index": 3815,
+      "occurrence_index": 3844,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -867,6 +886,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -874,8 +894,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "display_gloss": "are good",
       "enrichment_sources": {
@@ -918,7 +937,7 @@
       "morph_code": "Aampa",
       "morph_readable": "Aampa",
       "normalized": "טובים",
-      "occurrence_index": 45,
+      "occurrence_index": 46,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -936,6 +955,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 39:3",
         "Psalm 45:2",
         "Psalm 52:5",
@@ -943,8 +963,7 @@
         "Psalm 53:2",
         "Psalm 53:4",
         "Psalm 54:8",
-        "Psalm 63:4",
-        "Psalm 69:17"
+        "Psalm 63:4"
       ],
       "ref": "Psalm 119:39#7",
       "referent": null,

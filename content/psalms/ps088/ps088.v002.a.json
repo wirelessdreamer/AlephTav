@@ -5,7 +5,8 @@
   ],
   "audit_ids": [
     "aud.ps088.v002.a.0001",
-    "aud.ps088.v002.a.0002"
+    "aud.ps088.v002.a.0002",
+    "aud.ps088.v002.a.0003"
   ],
   "audit_records": [
     {
@@ -37,6 +38,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "09b3b3f7ba8affbac2a6a3f77b850f59f9f9f3bc5b9e899ef36b835c7f7ec6f8",
+      "audit_id": "aud.ps088.v002.a.0003",
+      "before_hash": "4fd0848eb96ce7eff92140025100dea26f63e6d8b6b83dbfa181a76a639e8257",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.851496+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps088.v002.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -581,7 +598,7 @@
       "morph_code": "Ncfsc/Sp1cs",
       "morph_readable": "Ncfsc/Sp1cs",
       "normalized": "ישועתי",
-      "occurrence_index": 2762,
+      "occurrence_index": 2782,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1097,7 +1114,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "נגדך",
-      "occurrence_index": 2763,
+      "occurrence_index": 2783,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps092.v001.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c882ba8ae9f73dd5572b59e30daf206a081b07a97e245995c73558e7e203442e",
+      "audit_id": "aud.ps092.v001.a.0001",
+      "before_hash": "1979184c4b6c24eb6e412843fd76e566a96fc9554b81bbd0551554fcbf4deab1",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.406587+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps092.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps092.v001.a.0001"
@@ -118,7 +137,7 @@
       "morph_code": "Ncmsa",
       "morph_readable": "Ncmsa",
       "normalized": "מזמור",
-      "occurrence_index": 46,
+      "occurrence_index": 47,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 3:1",

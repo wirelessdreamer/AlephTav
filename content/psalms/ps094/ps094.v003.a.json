@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps094.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "8838a0887a3a298b2a9a691db4c4f154afa470275187f3b097b5d585cc449556",
+      "audit_id": "aud.ps094.v003.a.0001",
+      "before_hash": "d293e54013526df140376ca43cef6175f42e9a4a76763934b02e375e9b9cee6d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.519391+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps094.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps094.v003.a.0001"
@@ -59,6 +78,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -78,8 +98,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -123,12 +142,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 63,
+      "occurrence_index": 64,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -148,8 +168,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 94:3#1",
       "referent": null,
@@ -190,6 +209,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 6:4",
         "Psalm 41:6",
         "Psalm 42:3",
         "Psalm 74:10",
@@ -242,9 +262,10 @@
       "morph_code": "Ti",
       "morph_readable": "Ti",
       "normalized": "מתי",
-      "occurrence_index": 7,
+      "occurrence_index": 8,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
+        "Psalm 6:4",
         "Psalm 41:6",
         "Psalm 42:3",
         "Psalm 74:10",
@@ -568,6 +589,7 @@
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -587,8 +609,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "display_gloss": "until",
       "enrichment_sources": {
@@ -632,12 +653,13 @@
       "morph_code": "R",
       "morph_readable": "R",
       "normalized": "עד",
-      "occurrence_index": 64,
+      "occurrence_index": 65,
       "part_of_speech": "preposition",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
         "Psalm 6:4",
         "Psalm 9:6",
+        "Psalm 9:19",
         "Psalm 10:16",
         "Psalm 13:2",
         "Psalm 13:3",
@@ -657,8 +679,7 @@
         "Psalm 42:5",
         "Psalm 45:7",
         "Psalm 45:18",
-        "Psalm 46:10",
-        "Psalm 48:9"
+        "Psalm 46:10"
       ],
       "ref": "Psalm 94:3#5",
       "referent": null,
@@ -699,6 +720,7 @@
         "temporal_pair_candidate": false
       },
       "corpus_occurrence_refs": [
+        "Psalm 6:4",
         "Psalm 41:6",
         "Psalm 42:3",
         "Psalm 74:10",
@@ -751,9 +773,10 @@
       "morph_code": "Ti",
       "morph_readable": "Ti",
       "normalized": "מתי",
-      "occurrence_index": 8,
+      "occurrence_index": 9,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
+        "Psalm 6:4",
         "Psalm 41:6",
         "Psalm 42:3",
         "Psalm 74:10",

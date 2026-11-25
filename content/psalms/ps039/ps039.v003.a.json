@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps039.v003.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4ec7bd3efc0bb2a2620a4aa39af0784b2ebd74f0a3797e902bd02432cc870e0d",
+      "audit_id": "aud.ps039.v003.a.0001",
+      "before_hash": "c1425245004868a9b3d870efc90d74d76f297b8ff6b49073f7b677507b29f0fc",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.941981+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps039.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps039.v003.a.0001"
@@ -329,6 +348,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 45:2",
         "Psalm 52:5",
         "Psalm 52:11",
@@ -336,8 +356,7 @@
         "Psalm 53:4",
         "Psalm 54:8",
         "Psalm 63:4",
-        "Psalm 69:17",
-        "Psalm 73:1"
+        "Psalm 69:17"
       ],
       "display_gloss": "from good",
       "enrichment_sources": {
@@ -382,7 +401,7 @@
       "morph_code": "R/Aamsa",
       "morph_readable": "R/Aamsa",
       "normalized": "מטוב",
-      "occurrence_index": 16,
+      "occurrence_index": 17,
       "part_of_speech": "adjective",
       "psalms_occurrence_refs": [
         "Psalm 4:7",
@@ -400,6 +419,7 @@
         "Psalm 37:3",
         "Psalm 37:16",
         "Psalm 37:27",
+        "Psalm 38:21",
         "Psalm 45:2",
         "Psalm 52:5",
         "Psalm 52:11",
@@ -407,8 +427,7 @@
         "Psalm 53:4",
         "Psalm 54:8",
         "Psalm 63:4",
-        "Psalm 69:17",
-        "Psalm 73:1"
+        "Psalm 69:17"
       ],
       "ref": "Psalm 39:3#4",
       "referent": null,
@@ -528,7 +547,7 @@
       "morph_code": "C/Ncmsc/Sp1cs",
       "morph_readable": "C/Ncmsc/Sp1cs",
       "normalized": "וכאבי",
-      "occurrence_index": 1207,
+      "occurrence_index": 1211,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

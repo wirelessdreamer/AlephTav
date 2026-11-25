@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps078.v020.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "16ae3eaf48f18642750464a5719361e9f7ee7038734a951c099d56491642bb57",
+      "audit_id": "aud.ps078.v020.a.0001",
+      "before_hash": "6b23efb0347ef29338dd4bd9e89c30c8462a779b322b6845a9a83cbcc1003347",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.793621+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps078.v020.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps078.v020.a.0001"
@@ -1021,6 +1040,7 @@
         "Psalm 21:12",
         "Psalm 36:13",
         "Psalm 40:13",
+        "Psalm 101:5",
         "Psalm 129:2",
         "Psalm 139:6"
       ],
@@ -1070,6 +1090,7 @@
         "Psalm 21:12",
         "Psalm 36:13",
         "Psalm 40:13",
+        "Psalm 101:5",
         "Psalm 129:2",
         "Psalm 139:6"
       ],
@@ -1672,7 +1693,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "לעמו",
-      "occurrence_index": 2430,
+      "occurrence_index": 2450,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

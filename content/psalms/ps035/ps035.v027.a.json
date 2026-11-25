@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps035.v027.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c5d7c2fe314b7ae37cb130b6fe2911a9ec5254fe0a9dabcb00e8e32f22024ec7",
+      "audit_id": "aud.ps035.v027.a.0001",
+      "before_hash": "be1e5349a94cf4193cf92f678c5b93436cd7a3df4948be81a2fd5ab98a94ff7e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:18.453141+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps035.v027.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps035.v027.a.0001"
@@ -526,7 +545,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "צדקי",
-      "occurrence_index": 1069,
+      "occurrence_index": 1073,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1450,7 +1469,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "עבדו",
-      "occurrence_index": 1070,
+      "occurrence_index": 1074,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

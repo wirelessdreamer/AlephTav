@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v006.a.0001",
     "aud.ps007.v006.a.0002",
-    "aud.ps007.v006.a.0003"
+    "aud.ps007.v006.a.0003",
+    "aud.ps007.v006.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1ac878845d24d38629d0ca5da1b8b62a426d99cb3aea7fcae37417c031230f67",
+      "audit_id": "aud.ps007.v006.a.0004",
+      "before_hash": "715be62094ac1b03a9e702b785e619aa3cd4db383584eca01fbda039c00d2ccd",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.202685+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v006.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -701,7 +718,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "נפשי",
-      "occurrence_index": 133,
+      "occurrence_index": 134,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -964,6 +981,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -978,8 +996,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "to the ground",
       "enrichment_sources": {
@@ -1036,6 +1053,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1050,8 +1068,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 7:6#6",
       "referent": null,
@@ -1166,7 +1183,7 @@
       "morph_code": "Ncmpc/Sp1cs",
       "morph_readable": "Ncmpc/Sp1cs",
       "normalized": "חיי",
-      "occurrence_index": 134,
+      "occurrence_index": 135,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1325,7 +1342,7 @@
       "morph_code": "C/Ncbsc/Sp1cs",
       "morph_readable": "C/Ncbsc/Sp1cs",
       "normalized": "וכבודי",
-      "occurrence_index": 135,
+      "occurrence_index": 136,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1648,6 +1665,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1661,8 +1679,7 @@
         "Psalm 47:5",
         "Psalm 48:9",
         "Psalm 49:14",
-        "Psalm 49:16",
-        "Psalm 50:6"
+        "Psalm 49:16"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1718,6 +1735,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1731,8 +1749,7 @@
         "Psalm 47:5",
         "Psalm 48:9",
         "Psalm 49:14",
-        "Psalm 49:16",
-        "Psalm 50:6"
+        "Psalm 49:16"
       ],
       "ref": "Psalm 7:6#11",
       "referent": null,

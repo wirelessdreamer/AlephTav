@@ -8,7 +8,8 @@
     "aud.ps028.v008.a.0001",
     "aud.ps028.v008.a.0002",
     "aud.ps028.v008.a.0003",
-    "aud.ps028.v008.a.0004"
+    "aud.ps028.v008.a.0004",
+    "aud.ps028.v008.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "Imported from bundle bone-and-ash.ps028.289d386d0e064b50a180f9603d9d930e (archive sha256 b65dcfdfccee87eb75e5e6738ffbbb6e2ce7a7aba8e06cf6ae95047496f5d14a). Donor records adopted with their original ids and audit history: the donor's Psalm 28 history starts from this workspace's prior state and no id collides. Statuses unchanged (proposed); no approvals added.",
       "review_signoff": {},
       "summary": "Import Bone and Ash Psalm 28 work from export",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "789117eade8b19519fd9ebe539d54bd48cb206490206cc287348a1db7a2cf668",
+      "audit_id": "aud.ps028.v008.a.0005",
+      "before_hash": "ac49afd09b0a4064a213e9bd035cfb024d3fbc8ddbd183823683834250d291b5",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:15.809939+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps028.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4008,7 +4025,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "למו",
-      "occurrence_index": 803,
+      "occurrence_index": 807,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4369,7 +4386,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "משיחו",
-      "occurrence_index": 804,
+      "occurrence_index": 808,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4508,7 +4525,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 805,
+      "occurrence_index": 809,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

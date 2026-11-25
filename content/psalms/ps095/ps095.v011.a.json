@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps095.v011.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "6ce10eb1ca48352194d81bc7b040247b786944f92f044015fb67cb3e9948c6ed",
+      "audit_id": "aud.ps095.v011.a.0001",
+      "before_hash": "7efd6567605f3e0f0ba33b03fcbc652e759285a09b32692a12eab756664426e0",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:25.712563+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps095.v011.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps095.v011.a.0001"
@@ -374,7 +393,7 @@
       "morph_code": "R/Ncmsc/Sp1cs",
       "morph_readable": "R/Ncmsc/Sp1cs",
       "normalized": "באפי",
-      "occurrence_index": 3059,
+      "occurrence_index": 3083,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -611,8 +630,8 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
-        "Psalm 78:44",
-        "Psalm 82:7"
+        "Psalm 74:6",
+        "Psalm 78:44"
       ],
       "display_gloss": "they will go",
       "enrichment_sources": {
@@ -655,7 +674,7 @@
       "morph_code": "Vqi3mp/Sn",
       "morph_readable": "Vqi3mp/Sn",
       "normalized": "יבאון",
-      "occurrence_index": 32,
+      "occurrence_index": 33,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 4:3",
@@ -680,8 +699,8 @@
         "Psalm 68:13",
         "Psalm 68:14",
         "Psalm 68:17",
-        "Psalm 78:44",
-        "Psalm 82:7"
+        "Psalm 74:6",
+        "Psalm 78:44"
       ],
       "ref": "Psalm 95:11#5",
       "referent": null,
@@ -927,7 +946,7 @@
       "morph_code": "Ncbsc/Sp1cs",
       "morph_readable": "Ncbsc/Sp1cs",
       "normalized": "מנוחתי",
-      "occurrence_index": 3060,
+      "occurrence_index": 3084,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

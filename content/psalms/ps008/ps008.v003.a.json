@@ -8,7 +8,8 @@
     "aud.ps008.v003.a.0001",
     "aud.ps008.v003.a.0002",
     "aud.ps008.v003.a.0003",
-    "aud.ps008.v003.a.0004"
+    "aud.ps008.v003.a.0004",
+    "aud.ps008.v003.a.0005"
   ],
   "audit_records": [
     {
@@ -72,6 +73,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5c7d61230198d8f4de5d185e967a09eae5c63920cc640b2342fb2ebfdeef0194",
+      "audit_id": "aud.ps008.v003.a.0005",
+      "before_hash": "b5f1c49090b62bf8759b31cb59994f9f837e18626f3f8561b0df73a542128a5f",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.283450+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps008.v003.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1097,7 +1114,7 @@
       "morph_code": "Vqrmpc/Sp2ms",
       "morph_readable": "Vqrmpc/Sp2ms",
       "normalized": "צורריך",
-      "occurrence_index": 160,
+      "occurrence_index": 161,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

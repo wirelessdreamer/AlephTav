@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps121.v007.a.0001",
     "aud.ps121.v007.a.0002",
-    "aud.ps121.v007.a.0003"
+    "aud.ps121.v007.a.0003",
+    "aud.ps121.v007.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "67bb2aa679ea73602076103609952d74d5720e341a1419be72c27ac856b9ee31",
+      "audit_id": "aud.ps121.v007.a.0004",
+      "before_hash": "1a0429081536a84089e2db82c20331abbee93129c306020ea57f37f315de009b",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:29.149038+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps121.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -578,7 +595,7 @@
       "morph_code": "Vqi3ms/Sp2ms",
       "morph_readable": "Vqi3ms/Sp2ms",
       "normalized": "ישמרך",
-      "occurrence_index": 4148,
+      "occurrence_index": 4179,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1251,7 +1268,7 @@
       "morph_code": "Ncbsc/Sp2ms",
       "morph_readable": "Ncbsc/Sp2ms",
       "normalized": "נפשך",
-      "occurrence_index": 4149,
+      "occurrence_index": 4180,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

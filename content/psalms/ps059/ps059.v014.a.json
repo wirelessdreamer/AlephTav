@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps059.v014.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c0a1e59732d15852da828fdaece3c01c1a97b28c03e27cd10189c3d696e2de3b",
+      "audit_id": "aud.ps059.v014.a.0001",
+      "before_hash": "4cab8cb6f28c5f1b15b49e8a302fbb3194779f074c6c8e3f739b514fe2584ccb",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:21.417337+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps059.v014.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps059.v014.a.0001"
@@ -67,6 +86,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -126,6 +146,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -275,6 +296,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -334,6 +356,7 @@
         "Psalm 71:9",
         "Psalm 71:13",
         "Psalm 73:26",
+        "Psalm 74:11",
         "Psalm 78:33",
         "Psalm 84:3",
         "Psalm 90:7",
@@ -461,7 +484,7 @@
       "morph_code": "C/Tn/Sp3mp",
       "morph_readable": "C/Tn/Sp3mp",
       "normalized": "ואינמו",
-      "occurrence_index": 1829,
+      "occurrence_index": 1842,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1070,11 +1093,11 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
         "Psalm 99:4",
-        "Psalm 105:6",
-        "Psalm 105:10"
+        "Psalm 105:6"
       ],
       "display_gloss": "over Jacob",
       "enrichment_sources": {
@@ -1141,11 +1164,11 @@
         "Psalm 81:2",
         "Psalm 81:5",
         "Psalm 84:9",
+        "Psalm 85:2",
         "Psalm 87:2",
         "Psalm 94:7",
         "Psalm 99:4",
-        "Psalm 105:6",
-        "Psalm 105:10"
+        "Psalm 105:6"
       ],
       "ref": "Psalm 59:14#9",
       "referent": null,
@@ -1294,6 +1317,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1307,8 +1331,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "display_gloss": "of the earth",
       "enrichment_sources": {
@@ -1353,7 +1376,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 51,
+      "occurrence_index": 52,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -1365,6 +1388,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 19:5",
         "Psalm 21:11",
@@ -1378,8 +1402,7 @@
         "Psalm 33:14",
         "Psalm 34:17",
         "Psalm 35:20",
-        "Psalm 37:3",
-        "Psalm 37:9"
+        "Psalm 37:3"
       ],
       "ref": "Psalm 59:14#11",
       "referent": null,
@@ -1427,6 +1450,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1439,8 +1463,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1484,7 +1507,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 34,
+      "occurrence_index": 35,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1497,6 +1520,7 @@
         "Psalm 9:21",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1509,8 +1533,7 @@
         "Psalm 46:12",
         "Psalm 47:5",
         "Psalm 48:9",
-        "Psalm 49:14",
-        "Psalm 49:16"
+        "Psalm 49:14"
       ],
       "ref": "Psalm 59:14#12",
       "referent": null,

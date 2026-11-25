@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps147.v012.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "c92c3c63a158448058774a7c7a0a68c79adbbc1c4b529cbe7299b8175075f941",
+      "audit_id": "aud.ps147.v012.a.0001",
+      "before_hash": "a9defe6e5b91bdef23d86934b0cd728803bf63d7459be07938bd99423c4df2fc",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:30.832672+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps147.v012.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps147.v012.a.0001"
@@ -729,7 +748,7 @@
       "morph_code": "Ncmpc/Sp2fs",
       "morph_readable": "Ncmpc/Sp2fs",
       "normalized": "אלהיך",
-      "occurrence_index": 4665,
+      "occurrence_index": 4701,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

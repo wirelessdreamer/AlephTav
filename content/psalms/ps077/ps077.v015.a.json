@@ -15,7 +15,8 @@
     "aud.ps077.v015.a.0006",
     "aud.ps077.v015.a.0007",
     "aud.ps077.v015.a.0008",
-    "aud.ps077.v015.a.0009"
+    "aud.ps077.v015.a.0009",
+    "aud.ps077.v015.a.0010"
   ],
   "audit_records": [
     {
@@ -159,6 +160,22 @@
       "rationale": "Preserve the original translation rationale during source-anchor recovery",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "79b9cb30356b682036d7d2cdfba342cfb9eca808e771cd931e47d45d4e59fee6",
+      "audit_id": "aud.ps077.v015.a.0010",
+      "before_hash": "bb4b78733547063ecbfff1ea221b5f30eb1991d6c60ca6c0fff21d85bc214529",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:23.610192+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps077.v015.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -1244,7 +1261,9 @@
       ],
       "ref": "Psalm 77:15#5",
       "referent": null,
-      "same_psalm_occurrence_refs": [],
+      "same_psalm_occurrence_refs": [
+        "Psalm 77:20"
+      ],
       "semantic_role": null,
       "stem": "hiphil",
       "strong": "H3045",
@@ -1496,7 +1515,7 @@
       "morph_code": "Ncmsc/Sp2ms",
       "morph_readable": "Ncmsc/Sp2ms",
       "normalized": "עזך",
-      "occurrence_index": 2390,
+      "occurrence_index": 2410,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1536,9 +1555,9 @@
         "Psalm 77:9",
         "Psalm 77:10",
         "Psalm 77:11",
+        "Psalm 77:12",
         "Psalm 77:13",
-        "Psalm 77:14",
-        "Psalm 77:16"
+        "Psalm 77:14"
       ],
       "semantic_role": null,
       "stem": null,

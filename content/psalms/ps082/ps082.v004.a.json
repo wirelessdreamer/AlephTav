@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps082.v004.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "45c84e020cb0e4008782f28f5c18232ae93cc11eb0047684e5e839903dd1aff2",
+      "audit_id": "aud.ps082.v004.a.0001",
+      "before_hash": "66909764e3ad198073d25eb31c955f46ef81e6894e2a9f3c948cace1d2da0d51",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:24.407849+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps082.v004.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps082.v004.a.0001"
@@ -245,7 +264,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "display_gloss": "and the needy",
       "enrichment_sources": {
@@ -311,7 +331,8 @@
         "Psalm 109:22",
         "Psalm 109:31",
         "Psalm 112:9",
-        "Psalm 113:7"
+        "Psalm 113:7",
+        "Psalm 140:13"
       ],
       "ref": "Psalm 82:4#3",
       "referent": null,

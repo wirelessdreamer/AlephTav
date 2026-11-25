@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps009.v017.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "4acc9f7f9f19fb29c5b25b4a1dca8635dfc2ecc0e6842a7ef08282a88e1937c4",
+      "audit_id": "aud.ps009.v017.a.0001",
+      "before_hash": "057e72aa40268c00cdf77e05557256a2cfdb405d9c104e8b02469bcc29c646cd",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.469052+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps009.v017.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps009.v017.a.0001"
@@ -760,7 +779,7 @@
       "morph_code": "Ncfdc/Sp3ms",
       "morph_readable": "Ncfdc/Sp3ms",
       "normalized": "כפיו",
-      "occurrence_index": 197,
+      "occurrence_index": 198,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1148,6 +1167,7 @@
         "Psalm 7:6",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1162,8 +1182,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "display_gloss": "Selah",
       "enrichment_sources": {
@@ -1218,6 +1237,7 @@
         "Psalm 7:6",
         "Psalm 20:4",
         "Psalm 21:3",
+        "Psalm 24:6",
         "Psalm 24:10",
         "Psalm 32:4",
         "Psalm 32:5",
@@ -1232,8 +1252,7 @@
         "Psalm 48:9",
         "Psalm 49:14",
         "Psalm 49:16",
-        "Psalm 50:6",
-        "Psalm 52:5"
+        "Psalm 50:6"
       ],
       "ref": "Psalm 9:17#10",
       "referent": null,

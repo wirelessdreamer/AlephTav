@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps009.v008.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "419818f0ce31a2f28b5859d30de46f41a4a8b5fbe9453169c75e7f370dc29746",
+      "audit_id": "aud.ps009.v008.a.0001",
+      "before_hash": "486593aff93c370a762464ddc8e9190cd055445d470753d9ff02e3c1c301761d",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.425762+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps009.v008.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps009.v008.a.0001"
@@ -206,6 +225,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -224,8 +244,7 @@
         "Psalm 44:9",
         "Psalm 45:3",
         "Psalm 45:7",
-        "Psalm 45:18",
-        "Psalm 48:9"
+        "Psalm 45:18"
       ],
       "display_gloss": "forever of perpetuity",
       "enrichment_sources": {
@@ -277,6 +296,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 24:7",
         "Psalm 24:9",
@@ -295,8 +315,7 @@
         "Psalm 44:9",
         "Psalm 45:3",
         "Psalm 45:7",
-        "Psalm 45:18",
-        "Psalm 48:9"
+        "Psalm 45:18"
       ],
       "ref": "Psalm 9:8#2",
       "referent": null,
@@ -814,7 +833,7 @@
       "morph_code": "Ncmsc/Sp3ms",
       "morph_readable": "Ncmsc/Sp3ms",
       "normalized": "כסאו",
-      "occurrence_index": 183,
+      "occurrence_index": 184,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

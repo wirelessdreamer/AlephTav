@@ -45,7 +45,8 @@
     "aud.ps028.v001.a.0038",
     "aud.ps028.v001.a.0039",
     "aud.ps028.v001.a.0040",
-    "aud.ps028.v001.a.0041"
+    "aud.ps028.v001.a.0041",
+    "aud.ps028.v001.a.0042"
   ],
   "audit_records": [
     {
@@ -701,6 +702,22 @@
       "rationale": "Imported from bundle bone-and-ash.ps028.289d386d0e064b50a180f9603d9d930e (archive sha256 b65dcfdfccee87eb75e5e6738ffbbb6e2ce7a7aba8e06cf6ae95047496f5d14a). Donor records adopted with their original ids and audit history: the donor's Psalm 28 history starts from this workspace's prior state and no id collides. Statuses unchanged (proposed); no approvals added.",
       "review_signoff": {},
       "summary": "Import Bone and Ash Psalm 28 translation, song setting and analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1e3881145e3ef827f1873d48cddf3b9d09133d6c94f8d1a5e120ba91390278c3",
+      "audit_id": "aud.ps028.v001.a.0042",
+      "before_hash": "8a8548fbdcf120b7b3b96c695f6cf881ce4dd7c239cd915aa83dd1ac8e49f713",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:15.506956+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps028.v001.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -4468,7 +4485,7 @@
       "morph_code": "R/Sp2ms",
       "morph_readable": "R/Sp2ms",
       "normalized": "אליך",
-      "occurrence_index": 772,
+      "occurrence_index": 776,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -4882,7 +4899,7 @@
       "morph_code": "Ncmsc/Sp1cs",
       "morph_readable": "Ncmsc/Sp1cs",
       "normalized": "צורי",
-      "occurrence_index": 773,
+      "occurrence_index": 777,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -5258,7 +5275,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 774,
+      "occurrence_index": 778,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -5591,7 +5608,7 @@
       "morph_code": "R/Sp1cs",
       "morph_readable": "R/Sp1cs",
       "normalized": "ממני",
-      "occurrence_index": 775,
+      "occurrence_index": 779,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -6024,6 +6041,7 @@
       },
       "corpus_occurrence_refs": [
         "Psalm 7:16",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 88:5",
         "Psalm 88:7",
@@ -6075,6 +6093,7 @@
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 7:16",
+        "Psalm 30:4",
         "Psalm 40:3",
         "Psalm 88:5",
         "Psalm 88:7",

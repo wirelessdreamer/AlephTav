@@ -10,7 +10,8 @@
     "aud.ps024.v010.a.0002",
     "aud.ps024.v010.a.0003",
     "aud.ps024.v010.a.0004",
-    "aud.ps024.v010.a.0005"
+    "aud.ps024.v010.a.0005",
+    "aud.ps024.v010.a.0006"
   ],
   "audit_records": [
     {
@@ -90,6 +91,22 @@
       "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0925921a8c20c8ed4b1004212e24f9b7a7b1ebf9101942d48301632017c23a64",
+      "audit_id": "aud.ps024.v010.a.0006",
+      "before_hash": "e4fd09db73666ed6e83001e4dd5894b3a5e051ee2947e79f0decb67433f0023e",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:13.347082+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v010.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -734,7 +751,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 645,
+      "occurrence_index": 648,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1517,7 +1534,7 @@
       "morph_code": "Pp3ms",
       "morph_readable": "Pp3ms",
       "normalized": "הוא",
-      "occurrence_index": 646,
+      "occurrence_index": 649,
       "part_of_speech": "pronoun",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1930,7 +1947,7 @@
       "morph_code": "Tj",
       "morph_readable": "Tj",
       "normalized": "סלה",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "particle",
       "psalms_occurrence_refs": [
         "Psalm 3:3",
@@ -1960,7 +1977,9 @@
       ],
       "ref": "Psalm 24:10#11",
       "referent": null,
-      "same_psalm_occurrence_refs": [],
+      "same_psalm_occurrence_refs": [
+        "Psalm 24:6"
+      ],
       "semantic_role": null,
       "stem": null,
       "strong": "H5542",

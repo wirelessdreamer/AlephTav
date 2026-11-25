@@ -10,7 +10,8 @@
     "aud.ps024.v007.a.0002",
     "aud.ps024.v007.a.0003",
     "aud.ps024.v007.a.0004",
-    "aud.ps024.v007.a.0005"
+    "aud.ps024.v007.a.0005",
+    "aud.ps024.v007.a.0006"
   ],
   "audit_records": [
     {
@@ -90,6 +91,22 @@
       "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
       "review_signoff": {},
       "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f7f0bc996402f2344611b9aa4bac943752cbb01abc43272db4d399c5209e602",
+      "audit_id": "aud.ps024.v007.a.0006",
+      "before_hash": "c4a24a3b2eb3bf1696f1f1a239900d89e3d60933a93f1a7730d725ed9972e257",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-25T22:11:13.309726+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps024.v007.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -843,7 +860,7 @@
       "morph_code": "Ncmpc/Sp2mp",
       "morph_readable": "Ncmpc/Sp2mp",
       "normalized": "ראשיכם",
-      "occurrence_index": 643,
+      "occurrence_index": 646,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1142,6 +1159,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 25:6",
         "Psalm 28:9",
@@ -1158,8 +1176,7 @@
         "Psalm 44:9",
         "Psalm 45:3",
         "Psalm 45:7",
-        "Psalm 45:18",
-        "Psalm 48:9"
+        "Psalm 45:18"
       ],
       "display_gloss": "of antiquity",
       "enrichment_sources": {
@@ -1203,7 +1220,7 @@
       "morph_code": "Ncmsa",
       "morph_readable": "Ncmsa",
       "normalized": "עולם",
-      "occurrence_index": 8,
+      "occurrence_index": 9,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 5:12",
@@ -1212,6 +1229,7 @@
         "Psalm 10:16",
         "Psalm 12:8",
         "Psalm 15:5",
+        "Psalm 18:51",
         "Psalm 21:5",
         "Psalm 25:6",
         "Psalm 28:9",
@@ -1228,8 +1246,7 @@
         "Psalm 44:9",
         "Psalm 45:3",
         "Psalm 45:7",
-        "Psalm 45:18",
-        "Psalm 48:9"
+        "Psalm 45:18"
       ],
       "ref": "Psalm 24:7#6",
       "referent": null,

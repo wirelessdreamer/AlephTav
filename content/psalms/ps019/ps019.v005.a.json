@@ -1,8 +1,27 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps019.v005.a.0001"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "f81712ce55123e163fdea8e268345e510470fd94b32e698bfe69775e0bea34f2",
+      "audit_id": "aud.ps019.v005.a.0001",
+      "before_hash": "cfdf784b60b79b0603b66e33074b28c56e2d8e70002b5a0cc46815058dc980c2",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:16.319841+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps019.v005.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps019.v005.a.0001"
@@ -208,6 +227,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 21:11",
         "Psalm 22:28",
@@ -221,8 +241,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "display_gloss": "the earth",
       "enrichment_sources": {
@@ -267,7 +286,7 @@
       "morph_code": "Td/Ncbsa",
       "morph_readable": "Td/Ncbsa",
       "normalized": "הארץ",
-      "occurrence_index": 11,
+      "occurrence_index": 12,
       "part_of_speech": "noun",
       "psalms_occurrence_refs": [
         "Psalm 2:2",
@@ -279,6 +298,7 @@
         "Psalm 10:18",
         "Psalm 12:7",
         "Psalm 16:3",
+        "Psalm 17:11",
         "Psalm 18:8",
         "Psalm 21:11",
         "Psalm 22:28",
@@ -292,8 +312,7 @@
         "Psalm 34:17",
         "Psalm 35:20",
         "Psalm 37:3",
-        "Psalm 37:9",
-        "Psalm 37:11"
+        "Psalm 37:9"
       ],
       "ref": "Psalm 19:5#2",
       "referent": null,
@@ -530,7 +549,7 @@
       "morph_code": "Ncmsc/Sp3mp",
       "morph_readable": "Ncmsc/Sp3mp",
       "normalized": "קום",
-      "occurrence_index": 474,
+      "occurrence_index": 477,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -892,7 +911,7 @@
       "morph_code": "Ncfpc/Sp3mp",
       "morph_readable": "Ncfpc/Sp3mp",
       "normalized": "מליהם",
-      "occurrence_index": 475,
+      "occurrence_index": 478,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
@@ -1390,7 +1409,7 @@
       "morph_code": "R/Sp3mp",
       "morph_readable": "R/Sp3mp",
       "normalized": "בהם",
-      "occurrence_index": 476,
+      "occurrence_index": 479,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",

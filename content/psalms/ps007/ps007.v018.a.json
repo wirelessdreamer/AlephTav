@@ -7,7 +7,8 @@
   "audit_ids": [
     "aud.ps007.v018.a.0001",
     "aud.ps007.v018.a.0002",
-    "aud.ps007.v018.a.0003"
+    "aud.ps007.v018.a.0003",
+    "aud.ps007.v018.a.0004"
   ],
   "audit_records": [
     {
@@ -55,6 +56,22 @@
       "rationale": "codex analysis pass",
       "review_signoff": {},
       "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5a613ed1e69c7e30649634a57c05a315d28310e86dc702f97b25498b8bf45730",
+      "audit_id": "aud.ps007.v018.a.0004",
+      "before_hash": "a1cc32455f42a610a2b1862500e7dc974d8aeefc2c1843166f764deeaccdc2b8",
+      "change_type": "import",
+      "checks": [],
+      "created_at": "2026-11-23T23:59:15.268536+00:00",
+      "created_by": "import-psalms",
+      "entity_id": "ps007.v018.a",
+      "entity_type": "unit",
+      "rationale": "Re-import from UXLC, OSHB and MACULA changed fields the corpus owns.",
+      "review_signoff": {},
+      "summary": "Refresh source text and tokens from the vendored corpus",
       "triggered_by_issue": null,
       "triggered_by_pr": null
     }
@@ -729,7 +746,7 @@
       "morph_code": "R/Ncmsc/Sp3ms",
       "morph_readable": "R/Ncmsc/Sp3ms",
       "normalized": "כצדקו",
-      "occurrence_index": 156,
+      "occurrence_index": 157,
       "part_of_speech": "suffix",
       "psalms_occurrence_refs": [
         "Psalm 1:2",
