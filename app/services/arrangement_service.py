@@ -853,7 +853,11 @@ def liberties(
 
 
 def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
-    """The setting, coverage and edition-mapped Greek evidence for each Hebrew verse."""
+    """The setting with its coverage of the Hebrew and its liberties.
+
+    The Greek evidence is ``arrangement_sources``: it can take seconds, and the setting
+    must not wait for it.
+    """
     psalm = registry_service.load_psalm(psalm_id)
     arrangement = _find_arrangement(psalm, arrangement_id)
     sung = sung_lines(arrangement)
@@ -866,9 +870,6 @@ def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
             by_kind[kind] = by_kind.get(kind, 0) + 1
     by_kind["repeated"] = sum(1 for item in items if item["kind"] == "repeated")
     by_kind["dropped"] = cov["totals"]["dropped"]
-    from app.services import source_origin_service
-
-    greek = briefing_source_service.greek_evidence(psalm_id)
     return {
         "arrangement": arrangement,
         "sung": sung,
@@ -880,6 +881,17 @@ def arrangement_view(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
             "by_kind": by_kind,
         },
         "required_approvals": required_approvals(),
+    }
+
+
+def arrangement_sources(psalm_id: str, arrangement_id: str) -> dict[str, Any]:
+    """Edition-mapped Greek evidence for each Hebrew verse, and the setting's source choices."""
+    from app.services import source_origin_service
+
+    psalm = registry_service.load_psalm(psalm_id)
+    arrangement = _find_arrangement(psalm, arrangement_id)
+    greek = briefing_source_service.greek_evidence(psalm_id)
+    return {
         "greek_sources": greek,
         "source_choices": source_origin_service.arrangement_choices(psalm, arrangement, greek),
     }

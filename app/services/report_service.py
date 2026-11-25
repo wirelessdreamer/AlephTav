@@ -6,7 +6,7 @@ from typing import Any
 from app.core.config import get_settings
 from app.core.errors import ReleaseValidationError
 from app.services import audit_service, registry_service, review_service
-from scripts.validate_content import validate_all_content
+from app.services.content_validation_service import validate_all_content
 
 
 def _parse_timestamp(value: str | None) -> datetime | None:
@@ -22,8 +22,8 @@ def _review_summary(unit: dict[str, Any], target_id: str) -> dict[str, Any]:
             "reviewer_role": item["reviewer_role"],
             "timestamp": item["timestamp"],
         }
-        for item in unit.get("review_decisions", [])
-        if item.get("target_id") == target_id and item.get("decision") == "approve"
+        for item in review_service.legacy_review_decisions(unit, target_id)
+        if item.get("decision") == "approve"
     ]
     return {"approval_count": len(approvals), "approvals": approvals}
 
@@ -151,7 +151,11 @@ def validate_release(release_id: str) -> dict[str, Any]:
     for unit in registry_service.list_units():
         for decision in unit.get("review_decisions", []):
             if (
-                decision.get("reviewer_role") == release_role
+                "contract_version" not in decision
+                and not review_service.has_versioned_review_decisions(
+                    unit, decision.get("target_id", "")
+                )
+                and decision.get("reviewer_role") == release_role
                 and decision.get("decision") == "approve"
             ):
                 release_signoff_units.add(unit["unit_id"])

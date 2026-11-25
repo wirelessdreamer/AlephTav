@@ -1,12 +1,17 @@
 import type { TranslationContextEvent } from '../types';
 import { shortTime } from './verseActions';
+import { TranslationChoiceDetails } from './TranslationChoices';
 
 export function TranslationContextDetails({ event }: { event: TranslationContextEvent }) {
+  if (event.kind === 'intentional_choice' && event.choice) {
+    return <TranslationChoiceDetails choice={event.choice} targetState={event.target_state}
+      supersededBy={event.superseded_by_audit_id} />;
+  }
   return <div className="translation-context-details">
     {event.previous_guidance !== undefined ? <details>
       <summary>Previous guidance</summary><p className="note-prose">{event.previous_guidance || '(none)'}</p>
     </details> : null}
-    <p className="note-prose"><strong>Guidance at this step</strong>{'\n'}{event.guidance || '(none)'}</p>
+    {event.guidance !== undefined ? <p className="note-prose"><strong>Guidance at this step</strong>{'\n'}{event.guidance || '(none)'}</p> : null}
     {event.inferences ? <>
       <p>Suggestions inferred from the existing translation, not recovered user answers.
         They guide translation only after you choose to use them.</p>
@@ -40,10 +45,10 @@ export function TranslationContextDetails({ event }: { event: TranslationContext
 
 export function TranslationContextHistory({ events }: { events: TranslationContextEvent[] }) {
   return <details className="translation-context-history">
-    <summary>Briefing &amp; guidance history ({events.length})</summary>
+    <summary>Briefing, guidance &amp; choices history ({events.length})</summary>
     {events.length === 0 ? <p>Prepared briefings and saved guidance, decisions, and notes will appear here.</p> : null}
     <ol>{[...events].reverse().map(event => <li key={event.audit_id}>
-      <details><summary>{shortTime(event.created_at)} · {event.summary} · {event.created_by}</summary>
+      <details><summary>{event.kind === 'intentional_choice' ? 'Recorded ' : ''}{shortTime(event.created_at)} · {event.summary} · {event.created_by}</summary>
         <TranslationContextDetails event={event} />
         <span className="basis">{event.audit_id}</span>
       </details>

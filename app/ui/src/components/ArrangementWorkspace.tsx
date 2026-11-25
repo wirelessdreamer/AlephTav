@@ -1,8 +1,9 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 
 import {
   type ArrangementEdit,
   isMissingRoute,
+  useArrangementSources,
   useArrangementView,
   useArrangements,
   useCreateArrangement,
@@ -15,6 +16,7 @@ import { ArrangementSources } from './ArrangementSources';
 import { ArrangementText } from './ArrangementText';
 import { SourceOrigins } from './SourceOrigins';
 import { RequestStatus } from './RequestStatus';
+import { TranslationChoices } from './TranslationChoices';
 
 export type ArrangementPane = 'arrangement' | 'sources' | 'liberties' | 'text';
 
@@ -74,6 +76,19 @@ export function ArrangementWorkspace({
       ? selectedId
       : preferred(arrangements, englishLayer);
   const view = useArrangementView(psalmId, current);
+  const sources = useArrangementSources(psalmId, current, pane === 'sources');
+  // The flow map shows at once; the Greek column fills in when its evidence arrives.
+  const sourcesView = useMemo(() => view.data && {
+    ...view.data,
+    ...(sources.data ?? {
+      source_choices: [],
+      greek_sources: {
+        available: false,
+        by_mt_unit: {},
+        message: sources.error ? 'Could not load the Greek source.' : 'Loading the Greek source…',
+      },
+    }),
+  }, [view.data, sources.data, sources.error]);
   const edit = useEditArrangement(psalmId, current);
   const create = useCreateArrangement(psalmId, translationId);
   const [title, setTitle] = useState('');
@@ -140,6 +155,10 @@ export function ArrangementWorkspace({
       {current ? <RequestStatus loading={view.isLoading} error={view.error && readable(view.error)}
         label={view.isLoading ? `Loading ${pane === 'sources' ? 'source flow and word meanings' : pane === 'liberties' ? 'liberties and coverage' : 'song setting'}…` : 'Could not load the song setting.'}
         onRetry={() => void view.refetch()} /> : null}
+      {current && view.data && pane === 'sources' ? <RequestStatus loading={sources.isLoading}
+        error={sources.error && readable(sources.error)}
+        label={sources.isLoading ? 'Loading Greek sources and word meanings…' : 'Could not load the Greek sources.'}
+        onRetry={() => void sources.refetch()} /> : null}
       {edit.isPending ? <RequestStatus loading label="Saving arrangement changes…" /> : null}
       {view.isFetching && !view.isLoading ? <RequestStatus loading label="Updating song setting…" /> : null}
 
@@ -203,15 +222,15 @@ export function ArrangementWorkspace({
       {view.data ? (
         pane === 'arrangement' ? (
           <ArrangementEditor view={view.data} edit={apply} pending={edit.isPending} />
-        ) : pane === 'sources' ? (
+        ) : pane === 'sources' && sourcesView ? (
           <Fragment>
-            <ArrangementSources key={arrangement?.arrangement_id} view={view.data} rows={rows} englishLayer={englishLayer} showLicenses={!view.data.source_choices?.length} />
-            <SourceOrigins key={`origins:${arrangement?.arrangement_id}`} view={view.data} rows={rows} englishLayer={englishLayer} />
+            <ArrangementSources key={arrangement?.arrangement_id} view={sourcesView} rows={rows} englishLayer={englishLayer} showLicenses={!sourcesView.source_choices?.length} />
+            <SourceOrigins key={`origins:${arrangement?.arrangement_id}`} view={sourcesView} rows={rows} englishLayer={englishLayer} />
           </Fragment>
         ) : pane === 'text' ? (
           <ArrangementText view={view.data} />
         ) : (
-          <ArrangementLiberties
+          <Fragment><ArrangementLiberties
             view={view.data}
             edit={apply}
             pending={edit.isPending}
@@ -219,6 +238,9 @@ export function ArrangementWorkspace({
             sections={sections}
             englishLayer={englishLayer}
           />
+          <TranslationChoices psalmId={psalmId} translationId={translationId}
+            arrangementId={view.data.arrangement.arrangement_id} />
+          </Fragment>
         )
       ) : null}
     </section>

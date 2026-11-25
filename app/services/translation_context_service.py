@@ -57,7 +57,9 @@ def append(
 ) -> dict[str, Any]:
     translations.require(psalm_id, translation_id)
     meta = registry_service.load_psalm_meta(psalm_id)
-    unit = registry_service.load_unit(meta["unit_ids"][0])
+    # Audit-only writes preserve stored content instead of persisting enrichment
+    # that normal unit readers may add to their in-memory view.
+    unit = registry_service.read_json(registry_service.unit_path(meta["unit_ids"][0]))
     payload = {"kind": kind, "translation_id": translation_id, **snapshot}
     record = audit_service.create_audit_record(
         unit,

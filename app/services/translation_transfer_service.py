@@ -5,7 +5,7 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-from app.core.errors import ValidationError
+from app.core.errors import ReviewRequiredError, ValidationError
 from app.services import (
     arrangement_service,
     audit_service,
@@ -115,6 +115,16 @@ def move_translation_and_replace_bundle(
     if wrong_renderings:
         raise ValidationError(
             f"Renderings do not belong to {source_translation_id}: {', '.join(wrong_renderings)}"
+        )
+    canonical_renderings = sorted(
+        rendering_id
+        for rendering_id, rendering in selected_renderings.items()
+        if rendering["status"] == "canonical"
+    )
+    if canonical_renderings:
+        raise ReviewRequiredError(
+            "A canonical rendering cannot move to another translation without review: "
+            + ", ".join(canonical_renderings)
         )
 
     arrangements = {item["arrangement_id"]: item for item in meta_snapshot.get("arrangements", [])}

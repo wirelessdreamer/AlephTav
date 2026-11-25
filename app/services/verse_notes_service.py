@@ -15,7 +15,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from typing import Any
 
-from app.core.errors import NotFoundError, ValidationError
+from app.core.errors import NotFoundError, ReviewRequiredError, ValidationError
 from app.services import audit_service, registry_service
 from app.services import psalm_translations_service as translations
 
@@ -413,6 +413,16 @@ def discard_rebuild(unit_id: str, rebuild_id: str, created_by: str = "reviewer")
     rebuild = _find_rebuild(unit, rebuild_id)
     if rebuild["status"] != REBUILD_PENDING:
         raise ValidationError(f"Rebuild {rebuild_id} is already {rebuild['status']}")
+    renderings = {item["rendering_id"]: item for item in unit.get("renderings", [])}
+    for rendering_id in rebuild["rendering_ids"].values():
+        rendering = renderings.get(rendering_id)
+        if rendering is None:
+            raise NotFoundError(rendering_id)
+        if rendering["status"] == "canonical":
+            raise ReviewRequiredError(
+                "A rebuild with a canonical rendering cannot be discarded; "
+                "review and promote an alternate instead"
+            )
 
     def discard(unit: dict[str, Any]) -> dict[str, Any]:
         rebuild = _find_rebuild(unit, rebuild_id)
@@ -431,9 +441,10 @@ def discard_rebuild(unit_id: str, rebuild_id: str, created_by: str = "reviewer")
         rebuild_id,
     )
     for rendering_id in discarded["rendering_ids"].values():
-        rendering_service.update_rendering(
+        rendering_service.set_alternate_status(
             rendering_id,
-            {"status": "rejected", "rationale": f"discarded with {rebuild_id}"},
+            "rejected",
+            rationale=f"discarded with {rebuild_id}",
             created_by=created_by,
         )
     return discarded

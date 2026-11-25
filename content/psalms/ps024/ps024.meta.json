@@ -1,6 +1,2902 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps024.v001.a.0006"
+      ],
+      "citations": [],
+      "created_at": "2026-11-18T13:40:50.280613+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–2 speak of the earth and its fullness belonging to Yahweh because he founded and established it over waters.",
+            "claim": "The psalm declares Yahweh's ownership of the earth and relates it to his founding of the world."
+          },
+          {
+            "basis": "Verses 3–4 ask who may ascend and stand there, then describe clean hands, a pure heart, and avoidance of falsehood and deceitful oaths.",
+            "claim": "Approach to Yahweh's holy place is associated with moral integrity."
+          },
+          {
+            "basis": "Verses 8 and 10 answer the question about the king with descriptions of Yahweh, culminating in Yahweh of hosts.",
+            "claim": "The closing exchange identifies the king of glory with Yahweh."
+          },
+          {
+            "basis": "The supplied arrangement marks lines B, C, and B,C and labels a section 'CALL AND RESPONSE.'",
+            "claim": "The setting uses alternating and combined voices."
+          },
+          {
+            "basis": "Examples in the full arrangement include fire at the holy place, holy thunder, and the petition 'draw us nearer.'",
+            "claim": "The setting introduces imagery and petitions beyond the Hebrew."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David was the historical author.",
+            "why_not": "The traditional heading associates the psalm with David but does not independently establish authorship."
+          },
+          {
+            "claim": "The psalm was written for a particular historical event or festival.",
+            "why_not": "Neither the heading nor the psalm's imagery names an occasion."
+          },
+          {
+            "claim": "The gate exchange records an actual procession or prescribes its performance.",
+            "why_not": "The dialogue and entrance imagery are compatible with worship but do not document a specific performance."
+          },
+          {
+            "claim": "The imported English reproduces or adapts a particular identifiable published translation.",
+            "why_not": "The supplied comparisons share the psalm's underlying content but do not establish a distinctive verbal source for this setting; its provenance is not supplied."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.348d824ef362",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The mountain of Yahweh, holy place, questions about who may enter, and summons to gates suggest worship and an entrance setting. The text does not establish a particular historical procession, festival, temple ceremony, or performance.",
+        "heading_attribution": "The Hebrew heading identifies the composition as a psalm associated with David. The expression is traditionally read as 'of David,' but the heading alone does not establish that David wrote it or identify the circumstances of composition. The English lyric does not sing the heading."
+      },
+      "method": "The architectural analysis compares the supplied Hebrew and English verse assignments, then uses the full pasted arrangement to identify section labels, repetitions, and performance apparatus. The compact literal sense is based on the supplied Hebrew and token glosses, with visible token/gloss inconsistencies resolved against the Hebrew itself. Translation similarities were checked against the three supplied English texts; no external edition or lexicon was consulted.",
+      "non_source_material": [
+        {
+          "kind": "section_label",
+          "note": "An arrangement label with a duration.",
+          "text": "[INTRO - 4 bars]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "Specifies instruments, meter, and musical texture.",
+          "text": "[piano in 6/8, ascending motif, soft guitar swells]"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "Assigns lines to voices; the labels do not specify who those singers are.",
+          "text": "B:; C:; B,C:"
+        },
+        {
+          "kind": "section_label",
+          "note": "Arrangement labels include performance and dynamic directions.",
+          "text": "[VERSE 1 - quiet, awestruck]; [VERSE 2 - searching, rhythmic]; [PRE-CHORUS - lift]; [CHORUS 1 - strong, rising]; [CALL AND RESPONSE - half-time feel]; [CHORUS 2 - bigger]; [BRIDGE - dramatic, building]; [FINAL CHORUS - full band, triumphant]; [OUTRO - repeat softer, then final hit]"
+        },
+        {
+          "kind": "instrumentation",
+          "note": "An instrumental interlude and its performance direction.",
+          "text": "[INSTRUMENTAL TURN - 2 bars]; [guitar echoes the vocal melody]"
+        }
+      ],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps024.0001",
+      "psalm_id": "ps024",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The opening moves from universal ownership and inhabitants to the earth's establishment over waters.",
+          "first_verse": 1,
+          "last_verse": 2,
+          "theme": "The earth belongs to Yahweh, who founded it.",
+          "title": "Verse 1"
+        },
+        {
+          "arc_note": "Questions about ascent and standing lead to ethical descriptions and a promise of blessing and vindication.",
+          "first_verse": 3,
+          "last_verse": 5,
+          "theme": "Approach to the holy place and the character and blessing of the one who may enter.",
+          "title": "Verse 2"
+        },
+        {
+          "arc_note": "Repeated responses turn the identification of seekers into a communal plea.",
+          "first_verse": 6,
+          "last_verse": 6,
+          "theme": "The generation seeking God's face.",
+          "title": "Pre-Chorus"
+        },
+        {
+          "arc_note": "The lyric builds an entrance refrain around the radiant king.",
+          "first_verse": 7,
+          "last_verse": 7,
+          "theme": "The gates are summoned to admit the king.",
+          "title": "Chorus 1"
+        },
+        {
+          "arc_note": "Alternating questions and answers dramatize the identification.",
+          "first_verse": 8,
+          "last_verse": 8,
+          "theme": "The king's identity as Yahweh, mighty in battle.",
+          "title": "Call and Response"
+        },
+        {
+          "arc_note": "The first chorus returns as the psalm repeats its entrance command.",
+          "first_verse": 9,
+          "last_verse": 9,
+          "theme": "The renewed summons to the gates.",
+          "title": "Chorus 2"
+        },
+        {
+          "arc_note": "Repeated questions and answers culminate in the declaration of the radiant king; the full arrangement then returns to the chorus.",
+          "first_verse": 10,
+          "last_verse": 10,
+          "theme": "Yahweh of hosts is the king of glory.",
+          "title": "Bridge"
+        }
+      ],
+      "similar_translations": [],
+      "source_fingerprint": "772d1bad7223b3296bb65cff6509a20ddac9505c98d93eb65b045d2f77edfe95",
+      "status": "proposed",
+      "structural_seams": [
+        {
+          "after_verse": 6,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        },
+        {
+          "after_verse": 10,
+          "aligns_with_section": true,
+          "marker": "Selah"
+        }
+      ],
+      "summary": "The setting moves from Yahweh's ownership and founding of the earth to questions about approach to his holy place, an account of the seekers, and a repeated welcome for the king. Its lyric expands the psalm's images and turns the final exchange into a dramatic call and response. The full arrangement returns to the gate chorus and closes by recalling its opening. All ten verses were imported from an existing setting, but its author or published source cannot be identified from the supplied evidence; no particular translation can be named as one it reproduces or adapts.",
+      "translation_id": "tr.ps024.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps024.0001",
+      "audit_ids": [
+        "aud.ps024.v001.a.0004"
+      ],
+      "created_at": "2026-11-18T13:37:43.444994+00:00",
+      "created_by": "import",
+      "created_via": "import",
+      "generation_run_id": "cxr.a85b6e904445",
+      "guidance": "From the imported translation:\n4 bars\n[piano in 6/8, ascending motif, soft guitar swells]\nquiet, awestruck\nsearching, rhythmic\nlift\n2 bars\n[guitar echoes the vocal melody]\nstrong, rising\nhalf-time feel\nbigger\ndramatic, building\nfull band, triumphant\nrepeat softer, then final hit",
+      "layer": "lyric",
+      "omissions": [
+        {
+          "approvals": [],
+          "rationale": "The setting does not sing the attribution to David or the designation of a psalm.",
+          "token_ids": [
+            "ps024.v001.t001",
+            "ps024.v001.t002"
+          ],
+          "unit_id": "ps024.v001.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The causal connection is left implicit.",
+          "token_ids": [
+            "ps024.v002.t001"
+          ],
+          "unit_id": "ps024.v002.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "God's salvation is not stated.",
+          "token_ids": [
+            "ps024.v005.t007"
+          ],
+          "unit_id": "ps024.v005.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The supplied token is not separately represented in the lyric.",
+          "token_ids": [
+            "ps024.v006.t003"
+          ],
+          "unit_id": "ps024.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The setting does not sing either occurrence of Selah.",
+          "token_ids": [
+            "ps024.v006.t007"
+          ],
+          "unit_id": "ps024.v006.a"
+        },
+        {
+          "approvals": [],
+          "rationale": "The setting does not sing either occurrence of Selah.",
+          "token_ids": [
+            "ps024.v010.t011"
+          ],
+          "unit_id": "ps024.v010.a"
+        }
+      ],
+      "prompt_template_version": "codex-arrangement-import-v1",
+      "psalm_id": "ps024",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "INTRO - 4 bars",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0001",
+              "rationale": "This is an instrumental direction.",
+              "text": "[piano in 6/8, ascending motif, soft guitar swells]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 1 - quiet, awestruck",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t004"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "The earth becomes the ground beneath the singers.",
+              "text": "B: All ground beneath us"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "belongs to Yahweh;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t005",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "Breath evokes the living inhabitants of the earth.",
+              "text": "every breath here"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0005",
+              "rationale": "The image of movement in God's hand is added.",
+              "text": "moves in his hand."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t005",
+                    "ps024.v001.t007"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Nations specify the inhabitants and fullness of the earth.",
+              "text": "B: Every nation,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t005"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "Creatures specify what fills the earth.",
+              "text": "every creature,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t007"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0008",
+              "rationale": "Waking recasts dwelling as an image of living.",
+              "text": "all who wake"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t006",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0009",
+              "rationale": "Sea and land expand the setting of the world and its inhabitants.",
+              "text": "on sea and land."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t002",
+                    "ps024.v002.t005"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0010",
+              "rationale": "Pillars make the founding of the earth into a construction image.",
+              "text": "B: He laid its pillars"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t003",
+                    "ps024.v002.t004"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "Deep waters recast the seas.",
+              "text": "over deep waters;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t008"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "Drawing borders is an added image for establishing the earth.",
+              "text": "he drew its borders"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t006",
+                    "ps024.v002.t007"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "The rivers become the flood.",
+              "text": "above the flood."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t002",
+                    "ps024.v002.t008"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "B: He made it steady,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0015",
+              "rationale": "The singing earth is an added image.",
+              "text": "he made it singing,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0016",
+              "rationale": "The image of being held together extends the preceding thought.",
+              "text": "held together"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0017",
+              "rationale": "The verse does not mention God's word.",
+              "text": "by his word."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "VERSE 2 - searching, rhythmic",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t001",
+                    "ps024.v003.t002"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "B: Who can go up"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t003",
+                    "ps024.v003.t004"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "High describes the mountain beyond the Hebrew wording.",
+              "text": "to his high mountain?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t005",
+                    "ps024.v003.t006"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Remaining interprets standing as staying.",
+              "text": "Who can remain"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t007",
+                    "ps024.v003.t008"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0021",
+              "rationale": "Fire is an added image for the holy place.",
+              "text": "where his fire dwells?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t001",
+                    "ps024.v004.t002"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0022",
+              "rationale": "Unbloodied gives clean hands a specific moral image.",
+              "text": "B: Hands unbloodied,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t003",
+                    "ps024.v004.t004"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0023",
+              "rationale": "Undivided interprets purity of heart as single devotion.",
+              "text": "hearts undivided,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0024",
+              "rationale": "The reference to lips introduces an added detail.",
+              "text": "lips that do not"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0025",
+              "rationale": "Spells are not mentioned in the Hebrew verse.",
+              "text": "trade in spells."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t005",
+                    "ps024.v004.t006",
+                    "ps024.v004.t007",
+                    "ps024.v004.t009"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0026",
+              "rationale": "Giving the soul recasts lifting up the desire.",
+              "text": "B: No soul given"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t008"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "over to nothing,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t010",
+                    "ps024.v004.t011"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "Fastening an oath recasts swearing.",
+              "text": "no oath fastened"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t012"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0029",
+              "rationale": "",
+              "text": "to a lie."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t001"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0030",
+              "rationale": "Such a one makes the subject explicit from the preceding verse.",
+              "text": "B: Such a one will"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t001",
+                    "ps024.v005.t002"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "carry blessing,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t005"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0032",
+              "rationale": "Vindication interprets righteousness as a favorable judgment.",
+              "text": "vindicated"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t003",
+                    "ps024.v005.t004",
+                    "ps024.v005.t006"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0033",
+              "rationale": "The two references to Yahweh and God are folded into one title.",
+              "text": "by God Most High."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "other",
+          "label": "PRE-CHORUS - lift",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t001",
+                    "ps024.v006.t002"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0034",
+              "rationale": "",
+              "text": "B: This is the generation"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0035",
+              "rationale": "Running after him intensifies seeking.",
+              "text": "running after him;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "The response repeats the intensified image of seeking.",
+              "text": "C: running after him."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t001",
+                    "ps024.v006.t002"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0037",
+              "rationale": "The line restates the identification of the generation.",
+              "text": "B: These are the ones"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004",
+                    "ps024.v006.t005"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0038",
+              "rationale": "",
+              "text": "who are seeking your face;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004",
+                    "ps024.v006.t005"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0039",
+              "rationale": "",
+              "text": "C: seeking your face."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t006"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0040",
+              "rationale": "The setting addresses the God of Jacob where the Hebrew names Jacob.",
+              "text": "B: God of Jacob,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0041",
+              "rationale": "This petition is added.",
+              "text": "draw us nearer;"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0042",
+              "rationale": "The response repeats the added petition.",
+              "text": "C: draw us nearer."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "other",
+          "label": "INSTRUMENTAL TURN - 2 bars",
+          "lines": [
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0043",
+              "rationale": "This is an instrumental direction.",
+              "text": "[guitar echoes the vocal melody]"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "chorus",
+          "label": "CHORUS 1 - strong, rising",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t004"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0044",
+              "rationale": "Opening wide interprets the command to be lifted.",
+              "text": "B,C: Open wide,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t005",
+                    "ps024.v007.t006"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0045",
+              "rationale": "Stone adds a material to the ancient doorways.",
+              "text": "you old stone doorways!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t001",
+                    "ps024.v007.t003"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0046",
+              "rationale": "Crowns recasts the heads of the gates.",
+              "text": "B,C: Lift your crowns,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t002",
+                    "ps024.v007.t006"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0047",
+              "rationale": "The description of age moves from the doors to the gates.",
+              "text": "you gates of age!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t007"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0048",
+              "rationale": "Making a road expands the command to let the king come in.",
+              "text": "B,C: Make the road"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t008"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0049",
+              "rationale": "Heaven's ruler adds a celestial description of the king.",
+              "text": "for heaven’s ruler!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t008",
+                    "ps024.v007.t009"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0050",
+              "rationale": "Radiant interprets the king's glory as light.",
+              "text": "B,C: Let the radiant King"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t007"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0051",
+              "rationale": "",
+              "text": "come in!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "other",
+          "label": "CALL AND RESPONSE - half-time feel",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t001",
+                    "ps024.v008.t002"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0052",
+              "rationale": "The question introduces an image of clothing.",
+              "text": "B: Who comes clothed"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t003",
+                    "ps024.v008.t004"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0053",
+              "rationale": "Burning honor recasts the king's glory as an image of fire.",
+              "text": "in burning honor?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t005",
+                    "ps024.v008.t006",
+                    "ps024.v008.t007"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0054",
+              "rationale": "Mighty combines the descriptions strong and mighty.",
+              "text": "C: Yahweh, mighty."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t005",
+                    "ps024.v008.t007"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0055",
+              "rationale": "Fearless interprets the description of might.",
+              "text": "C: Yahweh, fearless."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t001",
+                    "ps024.v008.t002",
+                    "ps024.v008.t003"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0056",
+              "rationale": "The repeated question adds an image of a crown.",
+              "text": "B: Who comes crowned"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t004"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0057",
+              "rationale": "Holy thunder expands the image of glory.",
+              "text": "with holy thunder?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t008",
+                    "ps024.v008.t009"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0058",
+              "rationale": "Ready interprets might as readiness.",
+              "text": "C: Yahweh, ready"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t010"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0059",
+              "rationale": "",
+              "text": "for the war."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "chorus",
+          "label": "CHORUS 2 - bigger",
+          "lines": [],
+          "repeat_of": "sec.0006",
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "bridge",
+          "label": "BRIDGE - dramatic, building",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0060",
+              "rationale": "",
+              "text": "B: Who is he,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t004",
+                    "ps024.v010.t005"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0061",
+              "rationale": "A blaze before the singers recasts the king of glory as a fire image.",
+              "text": "the blaze before us?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0062",
+              "rationale": "",
+              "text": "C: Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0063",
+              "rationale": "",
+              "text": "B: Who is he,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t004",
+                    "ps024.v010.t005"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0064",
+              "rationale": "Victorious adds a description to the king.",
+              "text": "the Lord victorious?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0065",
+              "rationale": "",
+              "text": "C: Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0066",
+              "rationale": "",
+              "text": "B: Who is he,"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0067",
+              "rationale": "The song of heaven is an added image.",
+              "text": "the song of heaven?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0068",
+              "rationale": "",
+              "text": "C: Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t008",
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0069",
+              "rationale": "Radiant interprets glory as light.",
+              "text": "B,C: He is the radiant King."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t008",
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0070",
+              "rationale": "The repeated line retains the image of glory as light.",
+              "text": "B,C: He is the radiant King."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "chorus",
+          "label": "FINAL CHORUS - full band, triumphant",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0071",
+              "rationale": "",
+              "text": "B,C: Yahweh of hosts,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0072",
+              "rationale": "Victorious adds a description of Yahweh.",
+              "text": "the Lord victorious;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0073",
+              "rationale": "",
+              "text": "B,C: Yahweh of hosts,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0074",
+              "rationale": "Radiant interprets glory as light.",
+              "text": "the radiant King."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0075",
+              "rationale": "",
+              "text": "B,C: Yahweh of hosts,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0076",
+              "rationale": "The repeated line retains the added description victorious.",
+              "text": "the Lord victorious;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0077",
+              "rationale": "",
+              "text": "B,C: Yahweh of hosts,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0078",
+              "rationale": "The repeated line retains the image of glory as light.",
+              "text": "the radiant King."
+            }
+          ],
+          "repeat_of": "sec.0006",
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "outro",
+          "label": "OUTRO - repeat softer, then final hit",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t004"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0079",
+              "rationale": "The earth becomes the ground beneath the singers.",
+              "text": "B: All ground beneath us"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0080",
+              "rationale": "",
+              "text": "belongs to Yahweh."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t005",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0081",
+              "rationale": "Breath evokes the living inhabitants of the earth.",
+              "text": "C: Every breath here"
+            },
+            {
+              "anchors": [],
+              "approvals": [],
+              "liberty": "added",
+              "line_id": "ln.0082",
+              "rationale": "The image of movement in God's hand is added.",
+              "text": "moves in his hand."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        }
+      ],
+      "status": "proposed",
+      "title": "Psalm 24",
+      "translation_id": "tr.ps024.0001",
+      "updated_at": "2026-11-18T13:37:43.444994+00:00"
+    },
+    {
+      "arrangement_id": "arr.ps024.0002",
+      "audit_ids": [
+        "aud.ps024.v001.a.0009",
+        "aud.ps024.v001.a.0014"
+      ],
+      "created_at": "2026-11-23T23:36:13.393270+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.b2e8e28469ef",
+      "guidance": "",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v2",
+      "psalm_id": "ps024",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t001",
+                    "ps024.v001.t002"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0001",
+              "rationale": "The English places the psalm before its attribution to David.",
+              "text": "A psalm of David."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003",
+                    "ps024.v001.t004",
+                    "ps024.v001.t005"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0002",
+              "rationale": "",
+              "text": "The earth is Yahweh’s, and all that fills it,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t006",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "The world and all who dwell within."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t001",
+                    "ps024.v002.t002",
+                    "ps024.v002.t003",
+                    "ps024.v002.t004",
+                    "ps024.v002.t005"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0004",
+              "rationale": "",
+              "text": "For he has founded it upon the seas,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t006",
+                    "ps024.v002.t007",
+                    "ps024.v002.t008"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "And on the rivers made it firm."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t001",
+                    "ps024.v003.t002",
+                    "ps024.v003.t003",
+                    "ps024.v003.t004"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "Who shall ascend the hill of Yahweh?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t005",
+                    "ps024.v003.t006",
+                    "ps024.v003.t007",
+                    "ps024.v003.t008"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "Who in his holy place shall stand?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t001",
+                    "ps024.v004.t002",
+                    "ps024.v004.t003",
+                    "ps024.v004.t004"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0008",
+              "rationale": "Heart and hands exchange their Hebrew order for the sung line.",
+              "text": "The one whose heart is pure, whose hands are clean,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t005",
+                    "ps024.v004.t006",
+                    "ps024.v004.t007",
+                    "ps024.v004.t008",
+                    "ps024.v004.t009"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "Who lifts not my soul to what is false,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t010",
+                    "ps024.v004.t011",
+                    "ps024.v004.t012"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0010",
+              "rationale": "",
+              "text": "And swears no oath with words of deceit."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t001",
+                    "ps024.v005.t002",
+                    "ps024.v005.t003",
+                    "ps024.v005.t004"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "That one receives blessing from Yahweh,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t005",
+                    "ps024.v005.t006",
+                    "ps024.v005.t007"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0012",
+              "rationale": "The line renders the God of his salvation as the God who saves, leaving the possessive implicit.",
+              "text": "And righteousness from the God who saves."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t001",
+                    "ps024.v006.t002",
+                    "ps024.v006.t003",
+                    "ps024.v006.t004"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0013",
+              "rationale": "The repeated seeking represented by the textual forms is folded into one phrase.",
+              "text": "This is the generation seeking him,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004",
+                    "ps024.v006.t005",
+                    "ps024.v006.t006"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "Who seek your face, O Jacob."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t007"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "Selah"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t001",
+                    "ps024.v007.t002",
+                    "ps024.v007.t003"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0016",
+              "rationale": "",
+              "text": "Lift up your heads, O gates!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t004",
+                    "ps024.v007.t005",
+                    "ps024.v007.t006"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "Be lifted up, you ancient doors,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t007",
+                    "ps024.v007.t008",
+                    "ps024.v007.t009"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "That the King of glory may come in."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t001",
+                    "ps024.v008.t002",
+                    "ps024.v008.t003",
+                    "ps024.v008.t004"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0019",
+              "rationale": "",
+              "text": "Who is this King of glory?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t005",
+                    "ps024.v008.t006",
+                    "ps024.v008.t007"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "Yahweh, strong and mighty,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t008",
+                    "ps024.v008.t009",
+                    "ps024.v008.t010"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "Yahweh, mighty in battle."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t001",
+                    "ps024.v009.t002",
+                    "ps024.v009.t003"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "Lift up your heads, O gates!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t004",
+                    "ps024.v009.t005",
+                    "ps024.v009.t006"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "Be lifted up, you ancient doors,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t007",
+                    "ps024.v009.t008",
+                    "ps024.v009.t009"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "That the King of glory may come in."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003",
+                    "ps024.v010.t004",
+                    "ps024.v010.t005"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "Who is this King of glory?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007",
+                    "ps024.v010.t008",
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0026",
+              "rationale": "",
+              "text": "Yahweh of hosts, he is the King of glory."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t011"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "Selah"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        }
+      ],
+      "status": "superseded",
+      "title": "The King of Glory",
+      "translation_id": "tr.ps024.0002",
+      "updated_at": "2026-11-23T23:47:45.957059+00:00"
+    },
+    {
+      "arrangement_id": "arr.ps024.0003",
+      "audit_ids": [
+        "aud.ps024.v001.a.0012"
+      ],
+      "created_at": "2026-11-23T23:46:48.200499+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.677b32197a4e",
+      "guidance": "Keep the language, imagery and form of the earlier Bone and Ash setting of this psalm, given below: its wording, its B / C call and response, its sections and their musical directions, and phrases such as \"the radiant King\", \"you old stone doorways\", \"Lift your crowns, you gates of age\", \"Hands unbloodied, hearts undivided\", \"where his fire dwells\", \"Yahweh, ready for the war\", \"the blaze before us\", \"the Lord victorious\". Expanding or compressing the Hebrew's images is welcome.\n\nDo not invent lines for cadence. Every sung line must render words of the Hebrew. The earlier setting's lines that rendered nothing in the Hebrew are marked \"left out\" below and must not come back in any form. Where leaving one out breaks a sentence (\"every breath here\", \"God of Jacob,\", the third \"Who is he,\"), finish it from that verse's own Hebrew or rework the lines around it, without adding a line the Hebrew does not have. Put musical directions in section labels, not in lines.\n\nSing Selah where the Hebrew has it: after 24:6 (end of the pre-chorus) and after 24:10.\n\nThe earlier setting:\n\n[INTRO - 4 bars: piano in 6/8, ascending motif, soft guitar swells]\n[VERSE 1 - quiet, awestruck]\n   B: All ground beneath us / belongs to Yahweh; / every breath here\n   (left out: moves in his hand.)\n   B: Every nation, / every creature, / all who wake / on sea and land.\n   B: He laid its pillars / over deep waters; / he drew its borders / above the flood.\n   B: He made it steady,\n   (left out: he made it singing, / held together / by his word.)\n[VERSE 2 - searching, rhythmic]\n   B: Who can go up / to his high mountain? / Who can remain / where his fire dwells?\n   B: Hands unbloodied, / hearts undivided,\n   (left out: lips that do not / trade in spells.)\n   B: No soul given / over to nothing, / no oath fastened / to a lie.\n   B: Such a one will / carry blessing, / vindicated / by God Most High.\n[PRE-CHORUS - lift]\n   B: This is the generation / running after him; / C: running after him.\n   B: These are the ones / who are seeking your face; / C: seeking your face.\n   B: God of Jacob,\n   (left out: draw us nearer; / C: draw us nearer.)\n[INSTRUMENTAL TURN - 2 bars: guitar echoes the vocal melody]\n[CHORUS 1 - strong, rising]\n   B,C: Open wide, / you old stone doorways! / B,C: Lift your crowns, / you gates of age! / B,C: Make the road / for heaven's ruler! / B,C: Let the radiant King / come in!\n[CALL AND RESPONSE - half-time feel]\n   B: Who comes clothed / in burning honor? / C: Yahweh, mighty. / C: Yahweh, fearless.\n   B: Who comes crowned / with holy thunder? / C: Yahweh, ready / for the war.\n[CHORUS 2 - bigger: Chorus 1 sung again]\n[BRIDGE - dramatic, building]\n   B: Who is he, / the blaze before us? / C: Yahweh of hosts.\n   B: Who is he, / the Lord victorious? / C: Yahweh of hosts.\n   B: Who is he,\n   (left out: the song of heaven?)\n   C: Yahweh of hosts.\n   B,C: He is the radiant King. / B,C: He is the radiant King.\n[FINAL CHORUS - full band, triumphant: Chorus 1 sung again, then]\n   B,C: Yahweh of hosts, / the Lord victorious; / B,C: Yahweh of hosts, / the radiant King. (twice)\n[OUTRO - repeat softer, then final hit]\n   B: All ground beneath us / belongs to Yahweh. / C: Every breath here\n   (left out: moves in his hand.)",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v2",
+      "psalm_id": "ps024",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro — 4 bars: piano in 6/8, ascending motif, soft guitar swells",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1 — B: quiet, awestruck",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t001",
+                    "ps024.v001.t002"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0001",
+              "rationale": "The attribution follows the word psalm in English.",
+              "text": "A psalm of David."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003",
+                    "ps024.v001.t004",
+                    "ps024.v001.t005",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0002",
+              "rationale": "Ground beneath us and every breath expand the earth and its inhabitants, while the repeated belonging completes the sentence.",
+              "text": "All ground beneath us belongs to Yahweh; every breath here belongs to him."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t005",
+                    "ps024.v001.t006",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0003",
+              "rationale": "Nations and creatures expand the world, its fullness, and its inhabitants.",
+              "text": "Every nation, every creature, all who dwell upon the earth."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v002.t001",
+                    "ps024.v002.t002",
+                    "ps024.v002.t003",
+                    "ps024.v002.t004",
+                    "ps024.v002.t005",
+                    "ps024.v002.t006",
+                    "ps024.v002.t007",
+                    "ps024.v002.t008"
+                  ],
+                  "unit_id": "ps024.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0004",
+              "rationale": "Pillars make the founding of the earth an architectural image.",
+              "text": "For he laid its pillars over the seas; he made it steady above the rivers."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2 — B: searching, rhythmic",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t001",
+                    "ps024.v003.t002",
+                    "ps024.v003.t003",
+                    "ps024.v003.t004"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0005",
+              "rationale": "High describes the mountain and Yahweh’s name is carried by the possessive.",
+              "text": "Who can go up to his high mountain?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v003.t005",
+                    "ps024.v003.t006",
+                    "ps024.v003.t007",
+                    "ps024.v003.t008"
+                  ],
+                  "unit_id": "ps024.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0006",
+              "rationale": "Fire dwelling evokes his holy place and remain expands the image of standing.",
+              "text": "Who can remain where his fire dwells?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t001",
+                    "ps024.v004.t002",
+                    "ps024.v004.t003",
+                    "ps024.v004.t004"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0007",
+              "rationale": "Unbloodied hands and undivided hearts interpret the Hebrew’s clean hands and pure heart.",
+              "text": "Hands unbloodied, hearts undivided,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v004.t005",
+                    "ps024.v004.t006",
+                    "ps024.v004.t007",
+                    "ps024.v004.t008",
+                    "ps024.v004.t009",
+                    "ps024.v004.t010",
+                    "ps024.v004.t011",
+                    "ps024.v004.t012"
+                  ],
+                  "unit_id": "ps024.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0008",
+              "rationale": "The line recasts lifting the soul to falsehood as giving a soul to nothing and leaves the Hebrew possessive unstated.",
+              "text": "No soul given over to nothing, no oath fastened to a lie."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t001",
+                    "ps024.v005.t002",
+                    "ps024.v005.t003",
+                    "ps024.v005.t004"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "Such a one will carry blessing from Yahweh,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v005.t005",
+                    "ps024.v005.t006",
+                    "ps024.v005.t007"
+                  ],
+                  "unit_id": "ps024.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0010",
+              "rationale": "Vindication interprets the gift of righteousness and the possessive in his salvation is left implicit.",
+              "text": "Vindicated by the God of salvation."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "other",
+          "label": "Pre-chorus — lift; B leads, C answers on alternating lines",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t001",
+                    "ps024.v006.t002",
+                    "ps024.v006.t003",
+                    "ps024.v006.t004"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0011",
+              "rationale": "Running after him intensifies seeking him and folds the textual forms of seeking together.",
+              "text": "This is the generation running after him;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t003",
+                    "ps024.v006.t004"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0012",
+              "rationale": "The response repeats and intensifies the seeking of him.",
+              "text": "Running after him."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t001",
+                    "ps024.v006.t002",
+                    "ps024.v006.t004",
+                    "ps024.v006.t005"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0013",
+              "rationale": "",
+              "text": "These are the ones who are seeking your face;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004",
+                    "ps024.v006.t005"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "Seeking your face."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t004",
+                    "ps024.v006.t005",
+                    "ps024.v006.t006"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0015",
+              "rationale": "Greek Psalm 23:6 supplies the God of Jacob, where the Hebrew reads your face, Jacob; the Greek source is Swete 1896, transcribed by the rahlfs1931-psalter project, CC BY-SA 4.0.",
+              "text": "Seeking the face of the God of Jacob."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v006.t007"
+                  ],
+                  "unit_id": "ps024.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0016",
+              "rationale": "",
+              "text": "Selah"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "other",
+          "label": "Instrumental turn — 2 bars: guitar echoes the vocal melody",
+          "lines": [],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus 1 — B and C: strong, rising",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t004",
+                    "ps024.v007.t005",
+                    "ps024.v007.t006"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0017",
+              "rationale": "Opening wide and stone expand the command to lift the ancient doors.",
+              "text": "Open wide, you old stone doorways!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t001",
+                    "ps024.v007.t002",
+                    "ps024.v007.t003",
+                    "ps024.v007.t006"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0018",
+              "rationale": "Crowns interpret the gates’ heads and of age carries the antiquity of the neighboring doors.",
+              "text": "Lift your crowns, you gates of age!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v007.t007",
+                    "ps024.v007.t008",
+                    "ps024.v007.t009"
+                  ],
+                  "unit_id": "ps024.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0019",
+              "rationale": "Radiant interprets the glory of the King.",
+              "text": "Let the radiant King come in!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "other",
+          "label": "Call and response — half-time feel; B calls, C answers",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t001",
+                    "ps024.v008.t002",
+                    "ps024.v008.t003",
+                    "ps024.v008.t004"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0020",
+              "rationale": "Clothing and burning honor expand the question about the King of glory.",
+              "text": "Who comes clothed in burning honor?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t005",
+                    "ps024.v008.t006",
+                    "ps024.v008.t007"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0021",
+              "rationale": "Fearless interprets strength and might, and Yahweh’s name is repeated in the response.",
+              "text": "Yahweh, mighty; Yahweh, fearless."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t001",
+                    "ps024.v008.t002",
+                    "ps024.v008.t003",
+                    "ps024.v008.t004"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "Who is this King of glory?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v008.t008",
+                    "ps024.v008.t009",
+                    "ps024.v008.t010"
+                  ],
+                  "unit_id": "ps024.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0023",
+              "rationale": "Ready for the war interprets Yahweh’s might in battle.",
+              "text": "Yahweh, ready for the war."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus 2 — B and C: bigger",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t004",
+                    "ps024.v009.t005",
+                    "ps024.v009.t006"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0024",
+              "rationale": "Opening wide and stone expand the command to lift the ancient doors.",
+              "text": "Open wide, you old stone doorways!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t001",
+                    "ps024.v009.t002",
+                    "ps024.v009.t003",
+                    "ps024.v009.t006"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0025",
+              "rationale": "Crowns interpret the gates’ heads and of age carries the antiquity of the neighboring doors.",
+              "text": "Lift your crowns, you gates of age!"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v009.t007",
+                    "ps024.v009.t008",
+                    "ps024.v009.t009"
+                  ],
+                  "unit_id": "ps024.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0026",
+              "rationale": "Radiant interprets the glory of the King.",
+              "text": "Let the radiant King come in!"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge — dramatic, building; B calls, C answers, then B and C together",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003",
+                    "ps024.v010.t004",
+                    "ps024.v010.t005"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0027",
+              "rationale": "The blaze before us interprets the glory of the King as visible radiance.",
+              "text": "Who is he, the blaze before us?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0028",
+              "rationale": "",
+              "text": "Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003",
+                    "ps024.v010.t004",
+                    "ps024.v010.t005",
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0029",
+              "rationale": "Lord victorious interprets the King of glory and Yahweh of hosts through the battle imagery of the preceding verse.",
+              "text": "Who is he, the Lord victorious?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t001",
+                    "ps024.v010.t002",
+                    "ps024.v010.t003",
+                    "ps024.v010.t004",
+                    "ps024.v010.t005"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "Who is this King of glory?"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0032",
+              "rationale": "",
+              "text": "Yahweh of hosts."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t008",
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0033",
+              "rationale": "Radiant interprets the glory of the King.",
+              "text": "He is the radiant King."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t011"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0034",
+              "rationale": "",
+              "text": "Selah"
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "chorus",
+          "label": "Final chorus — B and C: full band, triumphant",
+          "lines": [],
+          "repeat_of": "sec.0006",
+          "section_id": "sec.0010"
+        },
+        {
+          "kind": "refrain",
+          "label": "Final refrain — B and C",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0035",
+              "rationale": "Lord victorious interprets Yahweh of hosts through the psalm’s battle imagery.",
+              "text": "Yahweh of hosts, the Lord victorious;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v010.t006",
+                    "ps024.v010.t007",
+                    "ps024.v010.t008",
+                    "ps024.v010.t009",
+                    "ps024.v010.t010"
+                  ],
+                  "unit_id": "ps024.v010.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0036",
+              "rationale": "Radiant interprets the glory of the King.",
+              "text": "Yahweh of hosts, the radiant King."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0011"
+        },
+        {
+          "kind": "refrain",
+          "label": "Final refrain — repeat",
+          "lines": [],
+          "repeat_of": "sec.0011",
+          "section_id": "sec.0012"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro — softer, then final hit; B leads, C answers",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003",
+                    "ps024.v001.t004"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0037",
+              "rationale": "Ground beneath us expands the image of the earth.",
+              "text": "All ground beneath us belongs to Yahweh."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps024.v001.t003",
+                    "ps024.v001.t007",
+                    "ps024.v001.t008"
+                  ],
+                  "unit_id": "ps024.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0038",
+              "rationale": "Every breath here evokes the inhabitants of the world and applies the opening statement of belonging to them.",
+              "text": "Every breath here belongs to him."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0013"
+        }
+      ],
+      "status": "proposed",
+      "title": "The Radiant King",
+      "translation_id": "tr.ps024.0002",
+      "updated_at": "2026-11-23T23:46:48.200499+00:00"
+    }
+  ],
   "psalm_id": "ps024",
   "title": "Psalm 24",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps024.v001.a.0001",
+        "aud.ps024.v001.a.0007"
+      ],
+      "collection_id": "col.0005",
+      "created_at": "2026-11-18T13:34:38.894883+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "From the imported translation:\n4 bars\n[piano in 6/8, ascending motif, soft guitar swells]\nquiet, awestruck\nsearching, rhythmic\nlift\n2 bars\n[guitar echoes the vocal melody]\nstrong, rising\nhalf-time feel\nbigger\ndramatic, building\nfull band, triumphant\nrepeat softer, then final hit",
+      "psalm_id": "ps024",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps024.0001"
+    },
+    {
+      "audit_ids": [
+        "aud.ps024.v001.a.0008"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-11-23T23:29:14.038613+00:00",
+      "created_by": "mcp:claude",
+      "created_via": "human",
+      "guidance": "Keep the language, imagery and form of the earlier Bone and Ash setting of this psalm, given below: its wording, its B / C call and response, its sections and their musical directions, and phrases such as \"the radiant King\", \"you old stone doorways\", \"Lift your crowns, you gates of age\", \"Hands unbloodied, hearts undivided\", \"where his fire dwells\", \"Yahweh, ready for the war\", \"the blaze before us\", \"the Lord victorious\". Expanding or compressing the Hebrew's images is welcome.\n\nDo not invent lines for cadence. Every sung line must render words of the Hebrew. The earlier setting's lines that rendered nothing in the Hebrew are marked \"left out\" below and must not come back in any form. Where leaving one out breaks a sentence (\"every breath here\", \"God of Jacob,\", the third \"Who is he,\"), finish it from that verse's own Hebrew or rework the lines around it, without adding a line the Hebrew does not have. Put musical directions in section labels, not in lines.\n\nSing Selah where the Hebrew has it: after 24:6 (end of the pre-chorus) and after 24:10.\n\nThe earlier setting:\n\n[INTRO - 4 bars: piano in 6/8, ascending motif, soft guitar swells]\n[VERSE 1 - quiet, awestruck]\n   B: All ground beneath us / belongs to Yahweh; / every breath here\n   (left out: moves in his hand.)\n   B: Every nation, / every creature, / all who wake / on sea and land.\n   B: He laid its pillars / over deep waters; / he drew its borders / above the flood.\n   B: He made it steady,\n   (left out: he made it singing, / held together / by his word.)\n[VERSE 2 - searching, rhythmic]\n   B: Who can go up / to his high mountain? / Who can remain / where his fire dwells?\n   B: Hands unbloodied, / hearts undivided,\n   (left out: lips that do not / trade in spells.)\n   B: No soul given / over to nothing, / no oath fastened / to a lie.\n   B: Such a one will / carry blessing, / vindicated / by God Most High.\n[PRE-CHORUS - lift]\n   B: This is the generation / running after him; / C: running after him.\n   B: These are the ones / who are seeking your face; / C: seeking your face.\n   B: God of Jacob,\n   (left out: draw us nearer; / C: draw us nearer.)\n[INSTRUMENTAL TURN - 2 bars: guitar echoes the vocal melody]\n[CHORUS 1 - strong, rising]\n   B,C: Open wide, / you old stone doorways! / B,C: Lift your crowns, / you gates of age! / B,C: Make the road / for heaven's ruler! / B,C: Let the radiant King / come in!\n[CALL AND RESPONSE - half-time feel]\n   B: Who comes clothed / in burning honor? / C: Yahweh, mighty. / C: Yahweh, fearless.\n   B: Who comes crowned / with holy thunder? / C: Yahweh, ready / for the war.\n[CHORUS 2 - bigger: Chorus 1 sung again]\n[BRIDGE - dramatic, building]\n   B: Who is he, / the blaze before us? / C: Yahweh of hosts.\n   B: Who is he, / the Lord victorious? / C: Yahweh of hosts.\n   B: Who is he,\n   (left out: the song of heaven?)\n   C: Yahweh of hosts.\n   B,C: He is the radiant King. / B,C: He is the radiant King.\n[FINAL CHORUS - full band, triumphant: Chorus 1 sung again, then]\n   B,C: Yahweh of hosts, / the Lord victorious; / B,C: Yahweh of hosts, / the radiant King. (twice)\n[OUTRO - repeat softer, then final hit]\n   B: All ground beneath us / belongs to Yahweh. / C: Every breath here\n   (left out: moves in his hand.)",
+      "psalm_id": "ps024",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps024.0002"
+    }
+  ],
   "unit_ids": [
     "ps024.v001.a",
     "ps024.v002.a",

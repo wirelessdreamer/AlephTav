@@ -91,7 +91,7 @@ async function mountedFixture(page: Page, blocked = false, long = false, preview
   await page.route('**/psalms/ps009/briefing?*', route => route.fulfill({ json: { briefing: null, history: [], greek_sources: greek } }));
   await page.route('**/psalms/ps009/translation-guidance?*', route => route.fulfill({ json: { translation_guidance: '' } }));
   await page.route('**/psalms/ps009/arrangements?*', route => route.fulfill({ json: { arrangements: [arrangement], refrains: [] } }));
-  await page.route('**/psalms/ps009/arrangements/arr.fixture', route => route.fulfill({ json: {
+  await page.route('**/psalms/ps009/arrangements/arr.fixture/sources', route => route.fulfill({ json: {
     source_choices: origins ? [{ choice_id: 'ln.1:ps009.v001.a', line_id: 'ln.1', unit_id: unitId(1),
       mt_reference: 'Psalm 9:1', greek_reference: 'Greek Psalm 8:5', edition_id: 'authored', text_revision_id: 'r0001',
       source_version: 'authored:r0001:fixture', rendering_id: 'rnd.fixture', text: lines[0].text,
@@ -100,7 +100,10 @@ async function mountedFixture(page: Page, blocked = false, long = false, preview
       decisions: [{ briefing_run_id: 'brief.fixture', question_index: 0,
         question: { topic: 'A source choice', verses: [1], question: 'Which reading?', background: '', options: [] },
         answer: 'Follow the Greek reading.', notes: 'Preserve this recorded reason.' }] }] : [],
-    arrangement, greek_sources: greek, coverage: { units, totals: { words: 4, once: 4, repeated: 0, dropped: 0 } },
+    greek_sources: greek,
+  } }));
+  await page.route('**/psalms/ps009/arrangements/arr.fixture', route => route.fulfill({ json: {
+    arrangement, coverage: { units, totals: { words: 4, once: 4, repeated: 0, dropped: 0 } },
     sung: lines.map((line, i) => ({ position: i + 1, section_id: 'sec.fixture', section_label: 'First stanza',
       kind: 'verse', time: 1, repeat: false, variation: false, line })),
     liberties: [], summary: { sung_lines: 4, open: 0, by_kind: {} }, required_approvals: {},

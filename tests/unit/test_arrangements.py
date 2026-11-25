@@ -387,3 +387,45 @@ def test_a_codex_draft_naming_unknown_tokens_stores_nothing() -> None:
     assert result["status"] == translation.RUN_INVALID_OUTPUT
     assert "Tokens not in ps001" in result["error"]
     assert "arrangements" not in registry_service.load_psalm_meta(PSALM_ID)
+
+
+def test_a_codex_draft_cannot_add_lines() -> None:
+    liberty = drafting.DRAFT_VALIDATOR.schema["properties"]["sections"]["items"]["properties"][
+        "lines"
+    ]["items"]["properties"]["liberty"]
+    reply = _draft_reply(_tokens()[:1])
+    assert not list(drafting.DRAFT_VALIDATOR.iter_errors(reply))
+    reply["sections"][0]["lines"][0]["liberty"] = "added"
+
+    assert "added" not in liberty["enum"]
+    assert list(drafting.DRAFT_VALIDATOR.iter_errors(reply))
+    assert "Never add a line" in drafting.build_arrangement_prompt(PSALM_ID, "lyric")
+
+
+def _with_selah() -> str:
+    """Make the fixture verse's second word a Selah; the autouse fixture restores it."""
+    unit = registry_service.load_unit(UNIT_ID)
+    unit["tokens"][1]["normalized"] = drafting.SELAH
+    registry_service.save_unit(unit)
+    return unit["tokens"][1]["token_id"]
+
+
+def test_a_codex_draft_that_leaves_out_selah_stores_nothing() -> None:
+    selah = _with_selah()
+    client, session_id = _session([_draft_reply(_tokens()[:1])])
+
+    result = drafting.draft_arrangement(client, session_id, PSALM_ID)
+
+    assert selah in client.transport.prompts()[0]
+    assert result["status"] == translation.RUN_INVALID_OUTPUT
+    assert f"left out Selah at {selah}" in result["error"]
+    assert "arrangements" not in registry_service.load_psalm_meta(PSALM_ID)
+
+
+def test_a_codex_draft_that_sings_selah_is_stored() -> None:
+    _with_selah()
+    client, session_id = _session([_draft_reply(_tokens()[:2])])
+
+    result = drafting.draft_arrangement(client, session_id, PSALM_ID)
+
+    assert result["status"] == translation.RUN_COMPLETED

@@ -13,11 +13,14 @@ Core workflow and policy docs:
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): contributor workflow and repo expectations
 - [`TRANSLATION_POLICY.md`](TRANSLATION_POLICY.md): canonical vs alternate rendering policy
 - [`REVIEW_POLICY.md`](REVIEW_POLICY.md): review gates, roles, and promotion expectations
+- [`REVIEW_EVIDENCE_CONTRACT.md`](REVIEW_EVIDENCE_CONTRACT.md): versioned evidence, payload/policy bindings, compatibility and read-only migration preview
 - [`AUDIT_POLICY.md`](AUDIT_POLICY.md): audit requirements, open-concern reporting, and release checks
+- [`TRANSLATION_CHOICES.md`](TRANSLATION_CHOICES.md): record intentional wording choices, unknown context and append-only corrections
 - [`STYLE_PROFILES.md`](STYLE_PROFILES.md): rendering style profiles and target constraints
 - [`DATA_SOURCES.md`](DATA_SOURCES.md): upstream sources, licenses, and usage restrictions
 - [`RELEASE_PROCESS.md`](RELEASE_PROCESS.md): release workflow, protection rules, and export bundles
 - [`research/local_translation_model_report.md`](research/local_translation_model_report.md): local Hebrew-to-English model research baseline and benchmark plan
+- [`planning/review_enforcement_and_translation_quality_plan.md`](planning/review_enforcement_and_translation_quality_plan.md): prioritized review-enforcement fixes, human quality validation, and a small reproducible publication pilot
 - Generate the integrated research portfolio dashboard: `python scripts/generate_research_portfolio_dashboard.py`
 - Generate the visual model research dashboard: `python scripts/generate_local_model_research_report.py`
 - Generate the visual Psalms corpus profile: `python scripts/generate_psalms_corpus_profile.py`

@@ -15,6 +15,7 @@ const arrangement = { arrangement_id: 'arr.fixture', psalm_id: 'ps009', title: '
   status: 'draft', guidance: '', created_via: 'human', sections: [], omissions: [], audit_ids: [] };
 const arrangementView = { arrangement, sung: [], coverage: { units: [], totals: { words: 0, once: 0, repeated: 0, dropped: 0 } },
   liberties: [], summary: { sung_lines: 0, open: 0, by_kind: {} }, required_approvals: {} };
+const arrangementSources = { source_choices: [], greek_sources: { available: false, by_mt_unit: {}, message: 'No authored Greek source.' } };
 
 async function fixture(page: Page) {
   await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
@@ -29,6 +30,7 @@ async function fixture(page: Page) {
   await page.route('**/psalms/ps009/briefing?*', route => route.fulfill({ json: { briefing: null, history: [], greek_sources: { available: false, by_mt_unit: {}, message: 'No authored Greek source.' } } }));
   await page.route('**/psalms/ps009/arrangements?*', route => route.fulfill({ json: { arrangements: [arrangement], refrains: [] } }));
   await page.route('**/psalms/ps009/arrangements/arr.fixture', route => route.fulfill({ json: arrangementView }));
+  await page.route('**/psalms/ps009/arrangements/arr.fixture/sources', route => route.fulfill({ json: arrangementSources }));
 }
 
 // Controlled requests expose intermediate UI without timing-dependent sleeps.
@@ -58,6 +60,7 @@ test('comparison and Sources report both stages of loading and finish with conte
   const comparison = await hold(page, '**/psalms/ps009/comparison-table?*', { psalm_id: 'ps009', title: 'Psalm 9', rows: [row], analysis: null });
   const settings = await hold(page, '**/psalms/ps009/arrangements?*', { arrangements: [arrangement], refrains: [] });
   const sources = await hold(page, '**/psalms/ps009/arrangements/arr.fixture', arrangementView);
+  const greek = await hold(page, '**/psalms/ps009/arrangements/arr.fixture/sources', arrangementSources);
   await page.goto('/#/workbench');
   await expect(page.getByRole('status').filter({ hasText: 'Loading comparison…' })).toBeVisible();
   comparison();
@@ -68,8 +71,12 @@ test('comparison and Sources report both stages of loading and finish with conte
   await expect(page.getByRole('status').filter({ hasText: 'Loading source flow and word meanings…' })).toBeVisible();
   await page.screenshot({ path: '.run/loading-feedback-sources.png' });
   sources();
+  // The setting shows while its Greek evidence is still on the way.
   await expect(page.getByRole('textbox', { name: 'Setting title' })).toHaveValue('Authored setting');
   await expect(page.getByRole('status').filter({ hasText: 'Loading source flow' })).toHaveCount(0);
+  await expect(page.getByRole('status').filter({ hasText: 'Loading Greek sources and word meanings…' })).toBeVisible();
+  greek();
+  await expect(page.getByRole('status').filter({ hasText: 'Loading Greek sources' })).toHaveCount(0);
 });
 
 test('guidance stays protected while saved content loads, then becomes editable', async ({ page }) => {

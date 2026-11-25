@@ -179,6 +179,7 @@ Activate the venv first (`source .venv/bin/activate`).
 | Add alternate | `psalms-workbench add-alternate <unit_id> <layer> "<text>" "<rationale>"` |
 | Promote alternate | `psalms-workbench promote-alternate <rendering_id>` |
 | Link issue / PR | `psalms-workbench link-issue <unit_id> <#>` / `link-pr` |
+| Any MCP tool, no API needed | `psalms-workbench tool list` / `tool describe <name>` / `tool call <name> key=value ...` |
 | Fixture-only fast bootstrap | `./setup.sh --fixture --skip-start` |
 | Run API | `python -m uvicorn app.api.main:app --host 127.0.0.1 --port 43174 --reload` |
 

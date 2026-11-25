@@ -43,9 +43,18 @@ def create_arrangement(psalm_id: str, payload: dict) -> dict:
 
 @router.get(BASE + "/{arrangement_id}")
 def get_arrangement(psalm_id: str, arrangement_id: str) -> dict:
-    """Read the setting with MT coverage and verified edition-mapped Greek sources."""
+    """Read the setting with its MT coverage and liberties."""
     try:
         return arrangements.arrangement_view(psalm_id, arrangement_id)
+    except Exception as error:
+        raise_as_http(error)
+
+
+@router.get(BASE + "/{arrangement_id}/sources")
+def get_arrangement_sources(psalm_id: str, arrangement_id: str) -> dict:
+    """Verified edition-mapped Greek sources for the setting, and its recorded source choices."""
+    try:
+        return arrangements.arrangement_sources(psalm_id, arrangement_id)
     except Exception as error:
         raise_as_http(error)
 

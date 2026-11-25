@@ -3,7 +3,14 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
-from app.services import alignment_service, audit_service, composer_suggestion_service, registry_service, review_service, search_service
+from app.services import (
+    alignment_service,
+    composer_suggestion_service,
+    raw_mutation_policy_service,
+    registry_service,
+    review_service,
+    search_service,
+)
 
 router = APIRouter(tags=["units"])
 
@@ -22,18 +29,7 @@ def get_unit(unit_id: str) -> dict:
 @router.patch("/units/{unit_id}")
 def patch_unit(unit_id: str, payload: dict) -> dict:
     try:
-        before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
-        unit.update(payload)
-        audit_service.create_audit_record(
-            unit,
-            before_hash=registry_service.file_hash(before),
-            after_hash=registry_service.file_hash(unit),
-            summary="Patch unit",
-            rationale=payload.get("rationale", "API unit patch"),
-            created_by=payload.get("created_by", "api"),
-        )
-        registry_service.save_unit(unit)
-        return unit
+        raw_mutation_policy_service.reject_unit_update()
     except Exception as error:  # pragma: no cover
         raise_as_http(error)
 

@@ -7,7 +7,9 @@ param(
     [switch]$SkipStart,
     [int]$ApiPort = 43174,
     [int]$UiPort = 43173,
-    [switch]$Yes
+    [switch]$Yes,
+    [switch]$Install,
+    [switch]$Rebuild
 )
 
 $ErrorActionPreference = 'Stop'
@@ -18,6 +20,7 @@ $VenvDir = Join-Path $RootDir '.venv'
 $VenvPython = Join-Path $VenvDir 'Scripts\python.exe'
 $RebuildStateScript = Join-Path $RootDir 'scripts\setup_rebuild_state.py'
 $ManagedServicesFile = Join-Path $RunDir 'managed-services.json'
+$InstallDependencies = $Install -and -not $SkipInstall
 
 $ApiProcess = $null
 $UiProcess = $null
@@ -304,6 +307,10 @@ function Ensure-SystemRuntimes {
         return
     }
 
+    if (-not $InstallDependencies) {
+        Fail-Setup 'Required system runtimes are missing. Run .\setup.ps1 -Install to set up AlephTav.'
+    }
+
     $manager = Get-PackageManager
     if ($null -eq $manager) {
         Fail-Setup 'No supported package manager was detected. Install Python 3.11+ and Node.js/npm manually, then re-run .\setup.ps1.'
@@ -351,10 +358,16 @@ function Invoke-Step {
 
     Write-Setup $Description
     & $Action
+    if ($LASTEXITCODE -ne 0) {
+        Fail-Setup "$Description failed."
+    }
 }
 
 function Ensure-Venv {
-    if (-not (Test-Path $VenvDir)) {
+    if (-not (Test-Path -LiteralPath $VenvPython -PathType Leaf)) {
+        if (-not $InstallDependencies) {
+            Fail-Setup 'Python virtual environment is missing. Run .\setup.ps1 -Install to set up AlephTav.'
+        }
         Invoke-Step 'Creating virtual environment' {
             Invoke-PythonCommand -PythonCommand $script:PythonCommand -Arguments @('-m', 'venv', $VenvDir)
         }
@@ -363,8 +376,8 @@ function Ensure-Venv {
         Write-Setup "Using existing virtual environment at $VenvDir"
     }
 
-    if (-not (Test-Path $VenvPython)) {
-        Fail-Setup "Expected virtual environment interpreter at $VenvPython"
+    if (-not (Test-Path -LiteralPath $VenvPython -PathType Leaf)) {
+        Fail-Setup "Expected virtual environment interpreter at $VenvPython."
     }
 }
 
@@ -402,48 +415,31 @@ function Run-DataPipeline {
     }
 }
 
-function Invoke-RebuildState {
-    param(
-        [ValidateSet('check', 'mark')]
-        [string]$Action,
-        [string]$Mode
-    )
-
-    $output = & $VenvPython $RebuildStateScript $Action '--mode' $Mode 2>&1
+function Test-DataOutputs {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $output = & $VenvPython $RebuildStateScript check '--mode' $DataMode 2>&1
     $exitCode = $LASTEXITCODE
-    return [pscustomobject]@{
-        ExitCode = $exitCode
-        Output = ($output | Out-String).Trim()
+    if ($output) {
+        Write-Setup (($output | Out-String).Trim())
     }
+    return $exitCode
 }
 
-function Invoke-TrackedDataPipeline {
-    $status = Invoke-RebuildState -Action check -Mode $DataMode
-    if ($status.Output) {
-        Write-Setup $status.Output
-    }
-
-    if ($status.ExitCode -eq 0) {
-        $mark = Invoke-RebuildState -Action mark -Mode $DataMode
-        if ($mark.ExitCode -ne 0) {
-            $message = if ($mark.Output) { $mark.Output } else { 'Unable to record rebuild state.' }
-            Fail-Setup $message
+function Invoke-DataPipelineIfNeeded {
+    if (-not $Rebuild) {
+        $status = Test-DataOutputs
+        if ($status -eq 0) {
+            Write-Setup 'Skipping data bootstrap/rebuild because required outputs are present.'
+            return
         }
-        if ($mark.Output) {
-            Write-Setup $mark.Output
+        if ($status -ne 3) {
+            Fail-Setup 'Unable to check required data outputs.'
         }
-        Write-Setup 'Skipping data bootstrap/rebuild because tracked outputs are current.'
-        return
     }
 
     Run-DataPipeline
-    $mark = Invoke-RebuildState -Action mark -Mode $DataMode
-    if ($mark.ExitCode -ne 0) {
-        $message = if ($mark.Output) { $mark.Output } else { 'Unable to record rebuild state.' }
-        Fail-Setup $message
-    }
-    if ($mark.Output) {
-        Write-Setup $mark.Output
+    if ((Test-DataOutputs) -ne 0) {
+        Fail-Setup 'Unable to verify required data outputs after rebuild.'
     }
 }
 
@@ -489,11 +485,17 @@ function Wait-ForUrl {
     param(
         [string]$Url,
         [string]$Label,
+        [System.Diagnostics.Process]$Process,
+        [string]$ErrLog,
         [int]$TimeoutSeconds = 60
     )
 
     $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
     while ((Get-Date) -lt $deadline) {
+        if ($Process.HasExited) {
+            $errTail = (Get-Content -Path $ErrLog -Tail 30 -ErrorAction SilentlyContinue) -join "`n"
+            Fail-Setup "$Label exited with code $($Process.ExitCode) before it was ready. See $ErrLog`n$errTail"
+        }
         try {
             $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 2
             if ($response.StatusCode -lt 500) {
@@ -506,7 +508,7 @@ function Wait-ForUrl {
         Start-Sleep -Seconds 1
     }
 
-    Fail-Setup "$Label failed to report ready startup in ${TimeoutSeconds}s."
+    Fail-Setup "$Label failed to report ready startup in ${TimeoutSeconds}s. See $ErrLog"
 }
 
 function Start-Services {
@@ -533,7 +535,8 @@ function Start-Services {
     Write-Setup "Starting API on $apiBaseUrl"
     $script:ApiProcess = Start-Process -FilePath $VenvPython -ArgumentList @('-m', 'uvicorn', 'app.api.main:app', '--host', '127.0.0.1', '--port', "$ApiPort") -WorkingDirectory $RootDir -RedirectStandardOutput $ApiLog -RedirectStandardError $apiErrLog -WindowStyle Hidden -PassThru
     Write-ManagedServicesState
-    Wait-ForUrl -Url "$apiBaseUrl/health" -Label 'API'
+    # A cold first import after a reinstall or rebuild can take well over a minute on Windows.
+    Wait-ForUrl -Url "$apiBaseUrl/health" -Label 'API' -Process $ApiProcess -ErrLog $apiErrLog -TimeoutSeconds 180
 
     Write-Setup "Starting UI on http://127.0.0.1:$UiPort"
     $previousApiBaseUrl = $env:VITE_API_BASE_URL
@@ -546,7 +549,7 @@ function Start-Services {
         $env:VITE_API_BASE_URL = $previousApiBaseUrl
     }
     Write-ManagedServicesState
-    Wait-ForUrl -Url "http://127.0.0.1:$UiPort" -Label 'UI'
+    Wait-ForUrl -Url "http://127.0.0.1:$UiPort" -Label 'UI' -Process $UiProcess -ErrLog $uiErrLog
 
     Write-Host ''
     Write-Setup 'Setup complete.'
@@ -580,7 +583,7 @@ try {
     Ensure-SystemRuntimes
     Ensure-Venv
 
-    if (-not $SkipInstall) {
+    if ($InstallDependencies) {
         Install-ProjectDependencies
     }
     else {
@@ -588,7 +591,7 @@ try {
     }
 
     if (-not $SkipRebuild) {
-        Invoke-TrackedDataPipeline
+        Invoke-DataPipelineIfNeeded
     }
     else {
         Write-Setup 'Skipping data bootstrap/rebuild.'

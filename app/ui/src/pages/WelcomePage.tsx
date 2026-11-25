@@ -6,8 +6,8 @@ const publicSite = import.meta.env.VITE_PUBLIC_SITE === 'true';
 const quickStart = [
   'git clone https://github.com/wirelessdreamer/AlephTav.git',
   'cd AlephTav',
-  './setup.sh          # macOS / Linux',
-  '.\\setup.ps1       # Windows PowerShell',
+  './setup.sh --install    # macOS / Linux',
+  '.\\setup.ps1 -Install    # Windows PowerShell',
 ];
 
 const fullSetup = [
@@ -145,7 +145,7 @@ export function WelcomePage() {
         <div className="section-heading">
           <p className="eyebrow">Run It</p>
           <h2>Quick local startup</h2>
-          <p>The workbench runs on your computer. Use Python 3.11+, Node.js 20+, and npm, then run the setup script for your platform to install dependencies, prepare data, and start the local UI and API.</p>
+          <p>Use Python 3.11+, Node.js 20+, and npm. Run the setup script with the install flag the first time. On later launches, run the script by itself to reuse installed dependencies and prepare any missing data.</p>
           {publicSite ? <p>This public site describes the application. Translation, saved projects, and assistant connections run in your local installation.</p> : null}
         </div>
         <div className="command-grid">

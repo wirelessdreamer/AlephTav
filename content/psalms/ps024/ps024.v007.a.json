@@ -1,17 +1,106 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v007.a.lyric.alt.0001",
+    "rnd.ps024.v007.a.lyric.alt.0002",
+    "rnd.ps024.v007.a.lyric.alt.0003"
+  ],
   "audit_ids": [
-    "aud.ps024.v007.a.0001"
+    "aud.ps024.v007.a.0001",
+    "aud.ps024.v007.a.0002",
+    "aud.ps024.v007.a.0003",
+    "aud.ps024.v007.a.0004",
+    "aud.ps024.v007.a.0005",
+    "aud.ps024.v007.a.0006"
   ],
   "audit_records": [
     {
-      "after_hash": "c04fbdbd40746b8ba6b10995bcb6bddd5d3a15c5bed071811dfb5eae1c1cdd40",
+      "after_hash": "0649916c2cccb580d6bcea578c2e102b0a51700e66420f7699321b68dead5d74",
       "audit_id": "aud.ps024.v007.a.0001",
       "before_hash": "f62dcb1f487070a5dc6967ba8a5638573c6fe72f37a0bb9d08a5106cde79c793",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.794718+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v007.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9ef5bafaadcaccc5186c8deb7d03a2983ecc6e97c8875c56b92d1a32866f2607",
+      "audit_id": "aud.ps024.v007.a.0002",
+      "before_hash": "704f7396cdf0a8229473d053f499e639a1bcd191e7e039371582be55ac7d831a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:39:27.830100+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v007.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1c5e7eb4972ce52f6ef37e0bb04030ba3a6d805c536f1c78922b7cd0e17cf241",
+      "audit_id": "aud.ps024.v007.a.0003",
+      "before_hash": "bd235db57c63dceca90d0ded36410dab1a3745a6d7e0b4c65894ff4d404fc7be",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:44.392315+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v007.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f0043b8021655e19e004f910885553aab57e4eab8aa747ee675d9d5cde1413ac",
+      "audit_id": "aud.ps024.v007.a.0004",
+      "before_hash": "c45deb4c3697cc91d31fb4c0855699f1413b1cb8669302f936876305be933f3b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:36.362803+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v007.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "430c6d20f971d9d25afad0ff3fe6f62642181c175cd6d1778e611fae13d6d4ce",
+      "audit_id": "aud.ps024.v007.a.0005",
+      "before_hash": "4c7cfee6928b15408332268cd5ef2e13c2c66c89a26c1f123f35190a257de005",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:56.359924+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v007.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f7f0bc996402f2344611b9aa4bac943752cbb01abc43272db4d399c5209e602",
+      "audit_id": "aud.ps024.v007.a.0006",
+      "before_hash": "c4a24a3b2eb3bf1696f1f1a239900d89e3d60933a93f1a7730d725ed9972e257",
       "change_type": "import",
       "checks": [],
-      "created_at": "2026-11-23T23:59:16.914709+00:00",
+      "created_at": "2026-11-25T22:11:13.309726+00:00",
       "created_by": "import-psalms",
       "entity_id": "ps024.v007.a",
       "entity_type": "unit",
@@ -23,6 +112,84 @@
     }
   ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric addresses the ancient doorways and gates, calls for them to open or lift, and welcomes the king's entry. It reverses the order of gates and doorways.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "dea06308edc4e01c6c8c569acef89abbfa4666efce71ce9f0d0485fc27e34266",
+      "audit_ids": [
+        "aud.ps024.v007.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v007.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Opening wide interprets being lifted, stone supplies a material, and crowns recasts the gates' heads. Making a road and calling the king heaven's ruler expand the welcome; radiant interprets glory as light.",
+      "display_reference": "Psalm 24:7",
+      "english_rendering_id": "rnd.ps024.v007.a.lyric.alt.0001",
+      "generation_run_id": "cxr.77854d058987",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "שְׂא֤וּ שְׁעָרִ֨ים׀ רָֽאשֵׁיכֶ֗ם וְֽ֭הִנָּשְׂאוּ פִּתְחֵ֣י עוֹלָ֑ם וְ֝יָב֗וֹא מֶ֣לֶךְ הַכָּבֽוֹד׃",
+      "literal_backbone": [
+        "Lift up your heads, O gates.",
+        "And be lifted up, O ancient doorways.",
+        "And the king of glory will come in."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:7",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing four times.",
+          "text": "B,C:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v007.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "lift up, gates, your heads",
+          "note": "Crowns recasts the gates' heads, and 'of age' transfers the description of antiquity from the doorways.",
+          "rendered_as": "Lift your crowns,\nyou gates of age!",
+          "token_ids": [
+            "ps024.v007.t001",
+            "ps024.v007.t002",
+            "ps024.v007.t003"
+          ],
+          "transliteration": "śəʾû šəʿārîm rāʾšêḵem",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "be lifted up, doorways of antiquity or of old",
+          "note": "Opening interprets being lifted, and stone is added.",
+          "rendered_as": "Open wide,\nyou old stone doorways!",
+          "token_ids": [
+            "ps024.v007.t004",
+            "ps024.v007.t005",
+            "ps024.v007.t006"
+          ],
+          "transliteration": "wəhinnāśəʾû pitḥê ʿôlām",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "and the king of glory or honor will come in",
+          "note": "Making a road and the reference to heaven expand the entry; radiant interprets glory.",
+          "rendered_as": "Make the road\nfor heaven’s ruler!\nB,C: Let the radiant King\ncome in!",
+          "token_ids": [
+            "ps024.v007.t007",
+            "ps024.v007.t008",
+            "ps024.v007.t009"
+          ],
+          "transliteration": "wəyāḇōʾ meleḵ hakkāḇôḏ",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v007.a.0001"
   ],
@@ -34,7 +201,314 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:7",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 34,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.24,
+        "singability_score": 0.13,
+        "stress_approximation": 0.66,
+        "syllable_count": 45,
+        "syllables": 45
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v007.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B,C: Open wide,\nyou old stone doorways!\nB,C: Lift your crowns,\nyou gates of age!\n\nB,C: Make the road\nfor heaven’s ruler!\nB,C: Let the radiant King\ncome in!",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.05,
+        "singability_score": 0.09,
+        "stress_approximation": 0.62,
+        "syllable_count": 25,
+        "syllables": 25
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v007.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Lift up your heads, O gates!\nBe lifted up, you ancient doors,\nThat the King of glory may come in.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 19,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.05,
+        "singability_score": 0.09,
+        "stress_approximation": 0.71,
+        "syllable_count": 27,
+        "syllables": 27
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v007.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Open wide, you old stone doorways!\nLift your crowns, you gates of age!\nLet the radiant King come in!",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v007.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "שְׂא֤וּ שְׁעָרִ֨ים׀ רָֽאשֵׁיכֶ֗ם וְֽ֭הִנָּשְׂאוּ פִּתְחֵ֣י עוֹלָ֑ם וְ֝יָב֗וֹא מֶ֣לֶךְ הַכָּבֽוֹד׃",

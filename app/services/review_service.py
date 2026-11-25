@@ -1,11 +1,13 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from copy import deepcopy
+from datetime import UTC, datetime
 from typing import Any
 
-from app.core.errors import ReviewRequiredError, ValidationError
+from app.core.errors import NotFoundError, ReviewRequiredError, ValidationError
 from app.core.ids import decision_id, unit_id_from_entity_id
 from app.services import audit_service, registry_service, rendering_service
+from app.services.review_evidence_service import is_legacy_review_decision
 
 REVIEWER_ROLES = (
     "lexical reviewer",
@@ -15,6 +17,26 @@ REVIEWER_ROLES = (
     "theology reviewer",
     "release reviewer",
 )
+
+
+def has_versioned_review_decisions(unit: dict[str, Any], target_id: str) -> bool:
+    """Versioned targets cannot fall back to the unauthenticated legacy engine."""
+    return any(
+        isinstance(item, dict)
+        and item.get("target_id") == target_id
+        and "contract_version" in item
+        for item in unit.get("review_decisions", [])
+    )
+
+
+def legacy_review_decisions(unit: dict[str, Any], target_id: str) -> list[dict[str, Any]]:
+    if has_versioned_review_decisions(unit, target_id):
+        return []
+    return [
+        item
+        for item in unit.get("review_decisions", [])
+        if is_legacy_review_decision(item) and item.get("target_id") == target_id
+    ]
 
 
 def review_policy(project: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -53,8 +75,9 @@ def summarize_rendering_review(unit: dict[str, Any], target_id: str, rendering: 
     project = registry_service.load_project()
     policy = review_policy(project)
     target = rendering or next(item for item in unit.get("renderings", []) if item["rendering_id"] == target_id)
-    decisions = [item for item in unit.get("review_decisions", []) if item["target_id"] == target_id]
-    existing = dict(target.get("review_signoff", {}))
+    versioned = has_versioned_review_decisions(unit, target_id)
+    decisions = legacy_review_decisions(unit, target_id)
+    existing = {} if versioned else dict(target.get("review_signoff", {}))
     approvals = _approver_entries(decisions, {"approve"})
     alternate_approvals = _approver_entries(decisions, {"approve", "accept-alternate"})
     release_signoff = dict(existing.get("release_signoff", {})) if isinstance(existing.get("release_signoff"), dict) else {}
@@ -63,12 +86,16 @@ def summarize_rendering_review(unit: dict[str, Any], target_id: str, rendering: 
     alternate_approval_count = max(len(alternate_approvals), int(existing.get("alternate_approval_count", 0) or 0))
     canonical_required = int(policy["canonical_required_approvals"])
     alternate_required = int(policy["alternate_required_approvals"])
-    eligible_for_alternate = alternate_approval_count >= alternate_required
-    eligible_for_canonical = approval_count >= canonical_required
+    eligible_for_alternate = not versioned and alternate_approval_count >= alternate_required
+    eligible_for_canonical = not versioned and approval_count >= canonical_required
     latest_decision = max(decisions, key=lambda item: item["timestamp"], default=None)
 
     status = "unreviewed"
-    if target["status"] == "rejected" or (latest_decision and latest_decision["decision"] == "reject"):
+    if versioned:
+        status = "under_review"
+    elif target["status"] == "rejected" or (
+        latest_decision and latest_decision["decision"] == "reject"
+    ):
         status = "rejected"
     elif latest_decision and latest_decision["decision"] == "request_changes":
         status = "changes_requested"
@@ -100,6 +127,7 @@ def summarize_rendering_review(unit: dict[str, Any], target_id: str, rendering: 
         "publication_ready": target["status"] == "canonical" and eligible_for_canonical and has_release_signoff,
         "latest_decision": latest_decision["decision"] if latest_decision else None,
         "updated_at": latest_decision["timestamp"] if latest_decision else existing.get("updated_at"),
+        **({"evidence_contract_status": "versioned_pending_activation"} if versioned else {}),
     }
 
 
@@ -109,10 +137,30 @@ def hydrate_unit_review_state(unit: dict[str, Any]) -> dict[str, Any]:
     return unit
 
 
-def add_review_decision(target_id: str, decision: str, reviewer: str, reviewer_role: str, notes: str = "") -> dict[str, Any]:
-    unit_id = unit_id_from_entity_id("rendering_id", target_id)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+def add_review_decision(
+    target_id: str, decision: str, reviewer: str, reviewer_role: str, notes: str = ""
+) -> dict[str, Any]:
+    if decision not in {"approve", "accept-alternate", "reject", "request_changes"}:
+        raise ValidationError(f"invalid review decision: {decision}")
     reviewer, reviewer_role = validate_reviewer_identity(reviewer, reviewer_role)
+    unit_id = unit_id_from_entity_id("rendering_id", target_id)
+    unit = registry_service.load_unit(unit_id)
+    target = next(
+        (item for item in unit.get("renderings", []) if item["rendering_id"] == target_id),
+        None,
+    )
+    if target is None:
+        raise NotFoundError(target_id)
+    if has_versioned_review_decisions(unit, target_id):
+        raise ReviewRequiredError(
+            "Versioned evidence requires an authenticated versioned review workflow; "
+            "legacy review cannot reattest or downgrade it"
+        )
+    if target["status"] == "canonical" and decision != "approve":
+        raise ReviewRequiredError(
+            "A canonical rendering changes only by promoting a reviewed alternate"
+        )
+    before = deepcopy(unit)
     existing_ids = [item["decision_id"] for item in unit.get("review_decisions", [])]
     record = {
         "decision_id": decision_id(unit_id, existing_ids),
@@ -121,9 +169,15 @@ def add_review_decision(target_id: str, decision: str, reviewer: str, reviewer_r
         "reviewer": reviewer,
         "decision": decision,
         "notes": notes,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": datetime.now(UTC).isoformat(),
     }
     unit.setdefault("review_decisions", []).append(record)
+    if decision == "accept-alternate":
+        summary = summarize_rendering_review(unit, target_id, target)
+        if not summary["eligible_for_alternate"]:
+            raise ReviewRequiredError(
+                "A qualified reviewer signoff is required before accepting an alternate"
+            )
     audit_service.create_audit_record(
         unit,
         before_hash=registry_service.file_hash(before),
@@ -139,12 +193,18 @@ def add_review_decision(target_id: str, decision: str, reviewer: str, reviewer_r
     hydrate_unit_review_state(unit)
     registry_service.save_unit(unit)
     if decision == "accept-alternate":
-        summary = summarize_rendering_review(unit, target_id)
-        if not summary["eligible_for_alternate"]:
-            raise ReviewRequiredError("A qualified reviewer signoff is required before accepting an alternate")
-        return rendering_service.update_rendering(target_id, {"status": "accepted_as_alternate", "rationale": notes}, created_by=reviewer)
+        return rendering_service.set_alternate_status(
+            target_id, "accepted_as_alternate", rationale=notes, created_by=reviewer
+        )
     elif decision == "reject":
-        return rendering_service.update_rendering(target_id, {"status": "rejected", "rationale": notes}, created_by=reviewer)
+        return rendering_service.set_alternate_status(
+            target_id, "rejected", rationale=notes, created_by=reviewer
+        )
     elif decision == "request_changes":
-        return rendering_service.update_rendering(target_id, {"status": "under_review", "rationale": notes or "changes requested"}, created_by=reviewer)
+        return rendering_service.set_alternate_status(
+            target_id,
+            "under_review",
+            rationale=notes or "changes requested",
+            created_by=reviewer,
+        )
     return record

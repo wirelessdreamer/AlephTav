@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+from typing import Annotated
 
+import anyio
 import typer
 
 from app.core.config import get_settings
+from app.core.errors import ContentError
 from app.services import (
     concordance_service,
     export_service,
@@ -19,6 +23,83 @@ from app.services import (
 )
 
 app = typer.Typer(help="Psalms translation workbench CLI")
+
+
+@app.command("list-translation-choices")
+def list_translation_choices(
+    psalm_id: str,
+    translation_id: Annotated[str | None, typer.Option("--translation-id")] = None,
+    unit_id: Annotated[str | None, typer.Option("--unit-id")] = None,
+    arrangement_id: Annotated[str | None, typer.Option("--arrangement-id")] = None,
+) -> None:
+    """Read intentional-choice history and current target revisions."""
+    from app.services import translation_choices_service
+
+    try:
+        result = translation_choices_service.choices_view(
+            psalm_id, translation_id, unit_id=unit_id, arrangement_id=arrangement_id
+        )
+    except ContentError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    typer.echo(json.dumps(result, indent=2, allow_nan=False))
+
+
+@app.command("record-translation-choice")
+def record_translation_choice(
+    psalm_id: str,
+    target_kind: Annotated[str, typer.Option("--target-kind")],
+    target_id: Annotated[list[str], typer.Option("--target-id")],
+    expected_revision: Annotated[list[str], typer.Option("--expected-revision")],
+    decision: Annotated[str, typer.Option("--decision")],
+    rationale: Annotated[str, typer.Option("--rationale")],
+    context_note: Annotated[str, typer.Option("--context-note")],
+    created_by: Annotated[str, typer.Option("--created-by")],
+    translation_id: Annotated[str | None, typer.Option("--translation-id")] = None,
+    arrangement_id: Annotated[str | None, typer.Option("--arrangement-id")] = None,
+    context_status: Annotated[str, typer.Option("--context-status")] = "not_established",
+    supersedes_audit_id: Annotated[str | None, typer.Option("--supersedes-audit-id")] = None,
+) -> None:
+    """Append an intentional choice; repeat target/revision options for multiple lines."""
+    from app.services import translation_choices_service
+
+    if len(target_id) != len(expected_revision):
+        raise typer.BadParameter("Supply one --expected-revision for each --target-id")
+    targets = []
+    for identity, revision in zip(target_id, expected_revision, strict=True):
+        target = {"kind": target_kind, "id": identity, "expected_revision": revision}
+        if arrangement_id is not None:
+            target["arrangement_id"] = arrangement_id
+        targets.append(target)
+    try:
+        result = translation_choices_service.record_choice(
+            psalm_id,
+            translation_id,
+            targets=targets,
+            decision=decision,
+            rationale=rationale,
+            context_status=context_status,
+            context_note=context_note,
+            created_by=created_by,
+            supersedes_audit_id=supersedes_audit_id,
+        )
+    except ContentError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    typer.echo(json.dumps(result, indent=2, allow_nan=False))
+
+
+@app.command("preview-review-migration")
+def preview_review_migration(
+    root: Annotated[Path | None, typer.Option("--root")] = None,
+) -> None:
+    """Inspect stored review evidence without changing files or granting approvals."""
+    from app.services.review_migration_service import preview_review_migration as preview
+
+    report = preview(root)
+    typer.echo(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
+    if not report["scan_complete"]:
+        raise typer.Exit(1)
 
 
 @app.command("migrate-operational-state")
@@ -58,7 +139,7 @@ def build_indexes() -> None:
 
 @app.command("validate-content")
 def validate_content() -> None:
-    from scripts.validate_content import validate_all_content
+    from app.services.content_validation_service import validate_all_content
 
     result = validate_all_content()
     typer.echo(json.dumps(result, indent=2))
@@ -104,11 +185,12 @@ def list_alternates(unit_id: str) -> None:
 
 @app.command("add-alternate")
 def add_alternate(unit_id: str, layer: str, text: str, rationale: str) -> None:
+    """Create an unreviewed proposal; acceptance requires a separate human review."""
     rendering = rendering_service.create_rendering(
         unit_id=unit_id,
         layer=layer,
         text=text,
-        status="accepted_as_alternate",
+        status="proposed",
         rationale=rationale,
         created_by="cli:add-alternate",
     )
@@ -220,6 +302,72 @@ def greek_audit_lookups(preview_only: bool = False) -> None:
 @app.command("open-settings")
 def open_settings() -> None:
     typer.echo(json.dumps(get_settings().as_dict(), indent=2))
+
+
+tool_app = typer.Typer(
+    help="Run the workbench's MCP tools in-process; what they write is stamped cli:<name>."
+)
+app.add_typer(tool_app, name="tool")
+
+
+@tool_app.command("list")
+def list_tools() -> None:
+    """List every tool with the first line of its description."""
+    from app.api.mcp_server import server
+
+    for tool in anyio.run(server.list_tools):
+        summary = (tool.description or "").strip().splitlines()[0:1]
+        typer.echo(f"{tool.name}  {summary[0] if summary else ''}")
+
+
+@tool_app.command("describe")
+def describe_tool(name: str) -> None:
+    """Show a tool's description and the arguments it takes."""
+    from app.api.mcp_server import server
+
+    tool = next((tool for tool in anyio.run(server.list_tools) if tool.name == name), None)
+    if tool is None:
+        typer.echo(f"Unknown tool: {name}", err=True)
+        raise typer.Exit(1)
+    typer.echo((tool.description or "").strip())
+    typer.echo(json.dumps(tool.input_schema, indent=2, ensure_ascii=False))
+
+
+@tool_app.command("call")
+def call_tool(
+    name: str,
+    arguments: Annotated[
+        list[str] | None, typer.Argument(help="key=value; lists and objects as JSON")
+    ] = None,
+) -> None:
+    """Call a tool, e.g. `tool call get_unit unit_id=ps001.v001.a`."""
+    from mcp.server.mcpserver.exceptions import ToolError
+    from mcp.types import CallToolResult, TextContent
+
+    from app.api.mcp_server import channel, server
+
+    payload: dict[str, str] = {}
+    for argument in arguments or []:
+        key, sep, value = argument.partition("=")
+        if not sep:
+            raise typer.BadParameter(f"Expected key=value, got {argument!r}")
+        payload[key] = value
+    token = channel.set("cli")
+    try:
+        result = anyio.run(server.call_tool, name, payload)
+    except ToolError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    finally:
+        channel.reset(token)
+    # Every tool answers with one JSON text (see mcp_server._call).
+    assert isinstance(result, CallToolResult) and isinstance(result.content[0], TextContent)
+    text = result.content[0].text
+    # Hebrew and Greek must survive a redirected stdout, which Windows opens as cp1252.
+    reconfigure = getattr(sys.stdout, "reconfigure", None)
+    if reconfigure is not None:
+        reconfigure(encoding="utf-8")
+    typer.echo(json.dumps(json.loads(text), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

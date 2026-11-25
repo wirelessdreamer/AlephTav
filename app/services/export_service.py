@@ -33,6 +33,13 @@ def _ensure_exportable() -> None:
     for unit in registry_service.list_units():
         review_service.hydrate_unit_review_state(unit)
         for rendering in unit.get("renderings", []):
+            if rendering.get("status") == "accepted_as_alternate" and (
+                review_service.has_versioned_review_decisions(unit, rendering["rendering_id"])
+            ):
+                raise ReviewRequiredError(
+                    "Versioned review evidence cannot authorize export of accepted alternate "
+                    + rendering["rendering_id"]
+                )
             if rendering.get("status") != "canonical":
                 continue
             if not rendering.get("review_signoff", {}).get("publication_ready"):

@@ -1,6 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import type { ArrangementDraft, ArrangementList, ArrangementView } from '../types';
+import type {
+  ArrangementDraft,
+  ArrangementList,
+  ArrangementSources,
+  ArrangementView,
+} from '../types';
 
 async function sendJson<T>(url: string, method: string, payload?: unknown): Promise<T> {
   const response = await fetch(url, {
@@ -46,6 +51,21 @@ export function useArrangementView(psalmId: string | null, arrangementId: string
   });
 }
 
+/** The setting's Greek evidence and source choices: slower than the setting, so read apart. */
+export function useArrangementSources(
+  psalmId: string | null,
+  arrangementId: string | null,
+  enabled = true,
+) {
+  return useQuery({
+    queryKey: ['arrangement-sources', psalmId, arrangementId],
+    queryFn: () =>
+      sendJson<ArrangementSources>(`${base(psalmId as string)}/${arrangementId}/sources`, 'GET'),
+    enabled: enabled && Boolean(psalmId && arrangementId),
+    retry,
+  });
+}
+
 export interface ArrangementEdit {
   method: 'POST' | 'PATCH' | 'DELETE';
   /** Below the arrangement: '' for the setting itself, 'sections', 'lines/ln.0001', … */
@@ -64,7 +84,12 @@ export function useEditArrangement(psalmId: string | null, arrangementId: string
         body ?? (method === 'DELETE' ? undefined : {}),
       ),
     onSuccess: (view) => {
+      void queryClient.invalidateQueries({ queryKey: ['translation-choices', psalmId] });
       queryClient.setQueryData(['arrangement', psalmId, arrangementId], view);
+      // Source choices follow the lines; the Greek itself is unchanged and cached server-side.
+      void queryClient.invalidateQueries({
+        queryKey: ['arrangement-sources', psalmId, arrangementId],
+      });
       void queryClient.invalidateQueries({ queryKey: ['arrangements', psalmId] });
     },
   });

@@ -15,6 +15,12 @@ Merge policy:
 - Canonical promotion/change: at least 2 qualified approvals.
 - Release: release reviewer signoff plus passing audit workflows.
 
+The [versioned review-evidence contract](REVIEW_EVIDENCE_CONTRACT.md) defines R3's
+stored evidence, deterministic payload/policy bindings and read-only migration
+preview. Historical approvals remain unchanged. Versioned evidence is held pending
+authenticated review and eligibility activation in R4/R5; matching hashes alone
+do not grant approval.
+
 Song settings (arrangements):
 
 A song setting may span verses, sing a section again, and depart from the Hebrew.

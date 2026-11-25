@@ -43,27 +43,32 @@ GitHub Pages hosts the feature and setup site. The actual workbench, saved proje
 
 ## Run The Workbench
 
-Use the platform setup script from the repo root. It verifies required runtimes, installs dependencies, prepares source data and derived indexes, and starts both the FastAPI backend and Vite UI. The PowerShell setup reuses tracked rebuild state when its outputs are current.
+Run the setup script for your platform from the repo root. Install dependencies on the first run and when they need updating. On subsequent launches, the scripts reuse installed dependencies and rebuild only when required data or index files are missing.
 
 ### macOS / Linux
 
 ```bash
+# First run or dependency update
+./setup.sh --install
+
+# Subsequent launches
 ./setup.sh
 ```
 
 ### Windows PowerShell
 
 ```powershell
+# First run or dependency update
+.\setup.ps1 -Install
+
+# Subsequent launches
 .\setup.ps1
 ```
 
 By default the scripts:
 
 - require Python `>=3.11`, Node.js, and npm
-- create or reuse `.venv`
-- install `pip install -e .[dev]`
-- run `npm install`
-- run the full content rebuild pipeline
+- reuse the `.venv` created during installation
 - start the API on `http://127.0.0.1:43174`
 - start the UI on `http://127.0.0.1:43173`
 
@@ -76,19 +81,21 @@ Useful setup options:
 
 ```bash
 ./setup.sh --fixture
+./setup.sh --rebuild
 ./setup.sh --skip-start
 ./setup.sh --api-port 8010 --ui-port 5174
 ```
 
 ```powershell
 .\setup.ps1 -DataMode fixture
+.\setup.ps1 -Rebuild
 .\setup.ps1 -SkipStart
 .\setup.ps1 -ApiPort 8010 -UiPort 5174
 ```
 
 ## Rebuild And Validate Content
 
-This is the explicit manual sequence behind the setup scripts when you want to regenerate local project state yourself.
+Use `./setup.sh --rebuild` or `.\setup.ps1 -Rebuild` to refresh existing data and indexes. To run each step yourself, use this sequence.
 
 ```bash
 source .venv/bin/activate

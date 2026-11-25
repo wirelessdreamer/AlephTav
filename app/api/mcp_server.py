@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import Callable
+from contextvars import ContextVar
 from typing import Any, Literal
 
 from fastapi import HTTPException, Request
@@ -41,6 +42,7 @@ from app.api.routes import (
     source_map,
     speech,
     tokens,
+    translation_choices,
     translations,
     units,
     verse_notes,
@@ -49,8 +51,8 @@ from app.core.errors import ContentError
 from app.services import (
     alignment_service,
     arrangement_service,
-    registry_service,
     rendering_service,
+    translation_choices_service,
 )
 from app.services import verse_notes_service as notes
 
@@ -125,12 +127,17 @@ def _call(fn: Callable[..., Any], *args: Any, **kwargs: Any) -> str:
     return json.dumps(result, ensure_ascii=False, default=str)
 
 
+# How the tools were reached; ``psalms-workbench tool call`` sets this to ``cli``.
+channel: ContextVar[str] = ContextVar("channel", default="mcp")
+
+
 def _mcp(name: str) -> str:
-    """Who acted, marked as acting through the MCP: ``claude`` becomes ``mcp:claude``."""
+    """Who acted, marked by how they reached the tools: ``claude`` becomes ``mcp:claude``."""
+    prefix = channel.get()
     name = name.strip()
     if not name:
-        return "mcp"
-    return name if name.startswith("mcp:") else f"mcp:{name}"
+        return prefix
+    return name if name.startswith(f"{prefix}:") else f"{prefix}:{name}"
 
 
 def _payload(**fields: Any) -> dict[str, Any]:
@@ -612,24 +619,6 @@ def update_rendering(rendering_id: str, changes: dict[str, Any], created_by: str
     Status changes go through review_rendering, promote_rendering and deprecate_alternate; a
     canonical rendering changes only by promoting an alternate after review.
     """
-    if "status" in changes:
-        raise ToolError(
-            "Status changes go through review_rendering, promote_rendering or deprecate_alternate"
-        )
-    try:
-        unit = registry_service.load_unit(rendering_service._rendering_unit_id(rendering_id))
-    except ContentError as error:
-        raise ToolError(str(error)) from error
-    current = next(
-        (r for r in unit.get("renderings", []) if r["rendering_id"] == rendering_id), None
-    )
-    if current is None:
-        raise ToolError(f"No rendering {rendering_id}")
-    if current["status"] == "canonical":
-        raise ToolError(
-            "A canonical rendering changes only by review: add an alternate with "
-            "create_rendering, then review and promote it"
-        )
     return _call(rendering_service.update_rendering, rendering_id, changes, _mcp(created_by))
 
 
@@ -739,6 +728,57 @@ def update_alignment(alignment_id: str, changes: dict[str, Any]) -> Any:
 def delete_alignment(alignment_id: str) -> Any:
     """Remove an alignment."""
     return _call(alignments.delete_alignment, alignment_id)
+
+
+# --- Recorded translation choices -------------------------------------------------------
+
+
+@_tool(translation_choices.list_translation_choices, read_only=True)
+def list_translation_choices(
+    psalm_id: str,
+    translation_id: str | None = None,
+    unit_id: str | None = None,
+    arrangement_id: str | None = None,
+) -> str:
+    """Read intentional choices and current target revisions for a translation."""
+    return _call(
+        translation_choices_service.choices_view,
+        psalm_id,
+        translation_id,
+        unit_id=unit_id,
+        arrangement_id=arrangement_id,
+    )
+
+
+@_tool(translation_choices.record_translation_choice)
+def record_translation_choice(
+    psalm_id: str,
+    targets: list[dict[str, Any]],
+    decision: str,
+    rationale: str,
+    context_note: str,
+    created_by: str,
+    context_status: Literal["not_established", "provided_by_translator"] = "not_established",
+    translation_id: str | None = None,
+    supersedes_audit_id: str | None = None,
+) -> str:
+    """Log stated intent against exact revisions, with an explicit context limitation.
+
+    Targets need kind, id, expected_revision, and arrangement_id for arrangement lines.
+    This records an MCP observation; it never supplies human approval or source support.
+    """
+    return _call(
+        translation_choices_service.record_choice,
+        psalm_id,
+        translation_id,
+        targets=targets,
+        decision=decision,
+        rationale=rationale,
+        context_status=context_status,
+        context_note=context_note,
+        created_by=_mcp(created_by),
+        supersedes_audit_id=supersedes_audit_id,
+    )
 
 
 # --- Assessments, verse notes, rebuilds --------------------------------------------------
@@ -946,6 +986,13 @@ def list_song_settings(psalm_id: str, translation_id: str | None = None) -> Any:
 def get_song_setting(psalm_id: str, arrangement_id: str) -> Any:
     """One song setting with its sections, lines, anchors and approvals."""
     return _call(arrangements.get_arrangement, psalm_id, arrangement_id)
+
+
+@_tool(arrangements.get_arrangement_sources, read_only=True)
+def get_song_setting_sources(psalm_id: str, arrangement_id: str) -> Any:
+    """The Greek (LXX) evidence beside each Hebrew verse of a song setting, and its source
+    choices. Slow the first time after the API starts."""
+    return _call(arrangements.get_arrangement_sources, psalm_id, arrangement_id)
 
 
 @_tool(arrangements.create_arrangement)

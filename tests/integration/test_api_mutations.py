@@ -70,8 +70,8 @@ def test_release_export_endpoint_blocks_forbidden_source_licenses() -> None:
     for source in project["source_manifests"]:
         if source["source_id"] == "sefaria":
             source["allowed_for_export"] = True
-    patch = client.patch("/project", json={"source_manifests": project["source_manifests"]})
-    assert patch.status_code == 200
+    # Arrange forbidden fixture metadata without relying on a production raw-write path.
+    registry_service.save_project(project)
 
     export_response = client.post("/export/release", json={"release_id": "blocked-release"})
 
