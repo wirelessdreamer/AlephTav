@@ -1,9 +1,184 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v010.a.lyric.alt.0001",
+    "rnd.ps024.v010.a.lyric.alt.0002",
+    "rnd.ps024.v010.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v010.a.0001",
+    "aud.ps024.v010.a.0002",
+    "aud.ps024.v010.a.0003",
+    "aud.ps024.v010.a.0004",
+    "aud.ps024.v010.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "27bd5507f77ad5ac6e27b6b825b3c8e8905eae2d60b27e3147c26e4dd49b7852",
+      "audit_id": "aud.ps024.v010.a.0001",
+      "before_hash": "5f4b7ee96d26a30488c8393bf627581f9e1326e972c755656e1ea533fa7275ba",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.853151+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v010.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "050ba8fbc2d8339c38bd650c055e09a4e641a3753eb2001447d56f81ce2b7936",
+      "audit_id": "aud.ps024.v010.a.0002",
+      "before_hash": "8b9aca9844ac0d847b132de2930c0a7fcad1b8a868c2266c7bad49da94b63e4e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:40:12.724093+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v010.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "451b68e2db23c85476c9217630d2b63b6835d6b4fafd27819819ea60e453169b",
+      "audit_id": "aud.ps024.v010.a.0003",
+      "before_hash": "2e27a0a8d4029f77aa7349fa6b63220eb8805d3f50b519513071f2733aae7fef",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:50.959738+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v010.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "82b4f9912bec2a9d962df654f99b7cb9e6b4e951ab622d85830ff938188b5872",
+      "audit_id": "aud.ps024.v010.a.0004",
+      "before_hash": "16501286c8611c91137a2a755686f05c15c8f3309f2a89d60f9531031eb0a412",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:43.261659+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v010.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "fcbf9cd88dad3f8be6306e2ca0c870f03fc00b84605dc24cba9ae3c7b1269286",
+      "audit_id": "aud.ps024.v010.a.0005",
+      "before_hash": "06b29aca5025239c0b4caadde7ef5de581d050fcd5e5430345fece9ca9a5cdcf",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:57.093305+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v010.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the question of the king's identity, the answer 'Yahweh of hosts,' and the declaration that he is the king. It does not render Selah.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "e31343ac8681fa33cd2d9be26d97fca523ceca3c0432779b27c3e677d6037505",
+      "audit_ids": [
+        "aud.ps024.v010.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v010.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "The question and answer are repeated. 'The blaze before us' adds a fire image, 'victorious' adds a description of the Lord, and 'radiant' interprets glory as light.",
+      "display_reference": "Psalm 24:10",
+      "english_rendering_id": "rnd.ps024.v010.a.lyric.alt.0001",
+      "generation_run_id": "cxr.7fbf6e505a61",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִ֤י ה֣וּא זֶה֮ מֶ֤לֶךְ הַכָּ֫ב֥וֹד יְהוָ֥ה צְבָא֑וֹת ה֤וּא מֶ֖לֶךְ הַכָּב֣וֹד סֶֽלָה׃",
+      "literal_backbone": [
+        "Who is this king of glory?",
+        "Yahweh of hosts, he is the king of glory.",
+        "Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:10",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "B:"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "C:"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "A joint vocal assignment.",
+          "text": "B,C:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v010.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "king of glory or honor",
+          "note": "The repeated questions recast the king with a fire image and a description of victory.",
+          "rendered_as": "the blaze before us; the Lord victorious",
+          "token_ids": [
+            "ps024.v010.t004",
+            "ps024.v010.t005"
+          ],
+          "transliteration": "meleḵ hakkāḇôḏ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "king of glory or honor",
+          "note": "Radiant interprets glory as light.",
+          "rendered_as": "the radiant King",
+          "token_ids": [
+            "ps024.v010.t009",
+            "ps024.v010.t010"
+          ],
+          "transliteration": "meleḵ hakkāḇôḏ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Selah, a musical or liturgical notation of uncertain meaning",
+          "note": "Selah is not sung in the supplied lyric.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps024.v010.t011"
+          ],
+          "transliteration": "selâ",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v010.a.0001"
   ],
@@ -15,7 +190,307 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:10",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 30,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.47,
+        "singability_score": 0.17,
+        "stress_approximation": 0.6,
+        "syllable_count": 38,
+        "syllables": 38
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v010.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: Who is he,\nthe blaze before us?\nC: Yahweh of hosts.\n\nB: Who is he,\nthe Lord victorious?\nC: Yahweh of hosts.\n\nB,C: He is the radiant King.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.31,
+        "singability_score": 0.14,
+        "stress_approximation": 0.62,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v010.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who is this King of glory?\nYahweh of hosts, he is the King of glory.\nSelah",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 34,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.5,
+        "singability_score": 0.18,
+        "stress_approximation": 0.63,
+        "syllable_count": 45,
+        "syllables": 45
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v010.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who is he, the blaze before us?\nYahweh of hosts.\nWho is he, the Lord victorious?\nYahweh of hosts.\nWho is this King of glory?\nYahweh of hosts.\nHe is the radiant King.\nSelah",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v010.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִ֤י ה֣וּא זֶה֮ מֶ֤לֶךְ הַכָּ֫ב֥וֹד יְהוָ֥ה צְבָא֑וֹת ה֤וּא מֶ֖לֶךְ הַכָּב֣וֹד סֶֽלָה׃",

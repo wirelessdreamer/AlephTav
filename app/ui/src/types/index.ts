@@ -1139,13 +1139,75 @@ export interface BriefingAnnotation {
   question?: BriefingQuestion;
 }
 
+export interface TranslationChoiceTarget {
+  kind: 'rendering' | 'arrangement_line';
+  id: string;
+  arrangement_id?: string;
+  unit_id?: string;
+  translation_id?: string | null;
+  shared?: boolean;
+  layer: string;
+  text: string;
+  context_text: string;
+  revision: { version: 1; algorithm: 'sha256'; value: string };
+}
+
+export interface TranslationChoice {
+  version: 1;
+  targets: TranslationChoiceTarget[];
+  decision: string;
+  rationale: string;
+  context_status: 'not_established' | 'provided_by_translator';
+  context_note: string;
+  supersedes_audit_id: string | null;
+}
+
+export interface IntentionalTranslationChoice {
+  audit_id: string;
+  created_at: string;
+  created_by: string;
+  summary: string;
+  kind: 'intentional_choice';
+  choice: TranslationChoice;
+  target_state: 'current' | 'changed' | 'missing';
+  superseded_by_audit_id: string | null;
+  counts_for_publication: false;
+}
+
+export interface TranslationChoicesView {
+  psalm_id: string;
+  translation_id: string | null;
+  targets: TranslationChoiceTarget[];
+  choices: IntentionalTranslationChoice[];
+}
+
+export interface RecordTranslationChoice {
+  translation_id: string | null;
+  targets: Array<{
+    kind: TranslationChoiceTarget['kind'];
+    id: string;
+    arrangement_id?: string;
+    expected_revision: string;
+  }>;
+  decision: string;
+  rationale: string;
+  context_status: TranslationChoice['context_status'];
+  context_note: string;
+  created_by: string;
+  supersedes_audit_id?: string | null;
+}
+
 export interface TranslationContextEvent {
   audit_id: string;
   created_at: string;
   created_by: string;
   summary: string;
-  kind: 'briefing' | 'guidance' | 'briefing_decision' | 'briefing_inference';
-  guidance: string;
+  kind: 'briefing' | 'guidance' | 'briefing_decision' | 'briefing_inference' | 'intentional_choice';
+  guidance?: string;
+  choice?: TranslationChoice;
+  target_state?: IntentionalTranslationChoice['target_state'];
+  superseded_by_audit_id?: string | null;
+  counts_for_publication?: false;
   previous_guidance?: string;
   briefing?: PsalmBriefing | null;
   annotations?: BriefingAnnotation[];
@@ -1402,6 +1464,7 @@ export interface ArrangementSection {
 export interface Arrangement {
   arrangement_id: string;
   psalm_id: string;
+  translation_id?: string | null;
   title: string;
   layer: string;
   status: 'draft' | 'proposed' | 'accepted' | 'superseded';
@@ -1479,7 +1542,14 @@ export interface SourceChoice {
   status: 'proposed';
 }
 
+/** GET …/arrangements/{id}/sources: read apart from the setting, which must not wait for it. */
+export interface ArrangementSources {
+  source_choices: SourceChoice[];
+  greek_sources: BriefingGreekSources;
+}
+
 export interface ArrangementView {
+  /** Merged in from ArrangementSources once it arrives. */
   source_choices?: SourceChoice[];
   /** Current permitted Greek evidence, keyed by explicit edition-map MT unit endpoints. */
   greek_sources?: BriefingGreekSources;

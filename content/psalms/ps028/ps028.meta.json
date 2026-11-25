@@ -1,6 +1,834 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps028.v001.a.0039"
+      ],
+      "citations": [
+        "Supplied Masoretic Hebrew of Psalm 28, identified earlier as uxlc, vendored-2026.04.",
+        "Supplied King James Version, American Standard Version and World English Bible, Psalm 28.",
+        "Supplied Greek Psalm 27: H. B. Swete, The Old Testament in Greek according to the Septuagint, vol. 2 (Cambridge, 1896), Psalms; transcribed from page images by the rahlfs1931-psalter project, licensed CC BY-SA 4.0. Source version: swete1896:r0001:edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e."
+      ],
+      "created_at": "2026-11-04T12:53:00.938507+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "The supplied nine verses contain neither Selah nor instrumental, vocal or sectional instructions; the divisions above follow changes of discourse.",
+            "claim": "The received Hebrew has no Selah or explicit internal performance directions here."
+          },
+          {
+            "basis": "Verse 2 requests hearing of 'the voice of my pleading'; verse 6 repeats that phrase after 'he has heard'.",
+            "claim": "The setting preserves the request-and-answer link between pleading and hearing."
+          },
+          {
+            "basis": "The speaker lifts hands in verse 2; verse 4 names the enemies' work and hands; verse 5 names Yahweh's works and hands.",
+            "claim": "The setting preserves a network of hands and work images."
+          },
+          {
+            "basis": "Hebrew has 'drag me' and one prohibition. Swete's Greek Psalm 27:3 explicitly includes the speaker's soul or life and a second prohibition against shared destruction.",
+            "claim": "Verse 3 incorporates material supported by the supplied Greek but not separately expressed in the Hebrew."
+          },
+          {
+            "basis": "Hebrew לָמוֹ supplies 'to them'; Swete's Greek Psalm 27:8 explicitly names 'his people'.",
+            "claim": "Verse 8 names the people by adopting the supplied Greek reading."
+          },
+          {
+            "basis": "Verse 5 says 'may he tear them down', selecting a volitive interpretation rather than a predictive rendering of the Hebrew third-person forms.",
+            "claim": "The judgment remains a request in this English setting."
+          },
+          {
+            "basis": "Goodwill and malice explain the peace/evil contrast in verse 3; disrespect interprets failure to regard in verse 5; praise expresses the blessing formula in verse 6; belonging explains inheritance in verse 9.",
+            "claim": "The English interprets several expressions without changing their broad contextual function."
+          },
+          {
+            "basis": "Direct petitions frame third-person statements in verses 5–8; no new speaker, quotation or responding choir is marked.",
+            "claim": "The setting retains one continuous speaker while shifting between addressing God and speaking about him."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally wrote the psalm during a particular event.",
+            "why_not": "The heading supplies an attribution without a historical notice or independently verifiable circumstances."
+          },
+          {
+            "claim": "The danger was specifically illness, epidemic, war or Absalom's rebellion.",
+            "why_not": "The pit and wicked associates establish danger but do not identify its historical mechanism."
+          },
+          {
+            "claim": "A documented rescue or priestly oracle occurred between verses 5 and 6.",
+            "why_not": "The turn to heard prayer gives no narrative account of an intervening event or oracle."
+          },
+          {
+            "claim": "The anointed is explicitly identified as David, a later king, the whole people or Jesus.",
+            "why_not": "The setting retains 'his anointed' without naming its referent; particular identifications require interpretation beyond that wording."
+          },
+          {
+            "claim": "The singer stands inside the sanctuary's inner room.",
+            "why_not": "Verse 2 describes hands directed toward that room, not entry into it."
+          },
+          {
+            "claim": "The closing section originated separately or belonged to a different performer.",
+            "why_not": "The shift toward the people permits structural discussion but supplies no compositional history or performer assignment."
+          },
+          {
+            "claim": "The words alone demonstrate a fully realized 6/8 musical setting.",
+            "why_not": "The earlier guidance specifies 6/8, but no melody, durations or bar divisions accompany the audited text."
+          },
+          {
+            "claim": "Recognizable English phrasing establishes dependence on a particular published translation.",
+            "why_not": "Shared source readings and independently natural English can produce resemblance without borrowing."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.bbb4c25507c5",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "Raised hands directed toward God's holy inner sanctuary imply prayer oriented toward a sacred dwelling. The anointed figure and closing petition for the people give the prayer a communal and potentially royal horizon. These features do not establish a particular temple ceremony, the worshipper's physical location, a priestly role, or a date.",
+        "heading_attribution": "'Of David' preserves לְדָוִד without adding 'a psalm' or 'a song'. It expresses a Davidic attribution or association, traditionally understood as authorship; it does not independently establish David's composition, identify the speaker historically, or name an occasion."
+      },
+      "method": "Compared the English directly with the supplied Hebrew clauses, verbal forms and repeated vocabulary, and checked the declared Greek departures against the supplied Swete Psalm 27. The literal backbones used for judgment retain the Hebrew's single dragging prohibition, unspecified plural pronoun in verse 8, and inheritance metaphor in verse 9. Supplied KJV, ASV and WEB wording was compared for distinctive combinations of choices rather than generic biblical phrasing. Recalled resemblance is labeled separately. No external source was consulted for this audit.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps028.0001",
+      "psalm_id": "ps028",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The heading stands apart from the prayer. Address to the rock leads into the concrete gesture of hands raised toward the holy inner room.",
+          "first_verse": 1,
+          "last_verse": 2,
+          "theme": "A hearing sought against the threat of silence and descent to the pit.",
+          "title": "Opening plea — unlabeled"
+        },
+        {
+          "arc_note": "The Greek-supported second prohibition intensifies the danger. Repeated repayment requests contrast their handiwork with God's handiwork. 'May he' keeps the section in petition rather than moving already into prediction.",
+          "first_verse": 3,
+          "last_verse": 5,
+          "theme": "Do not share the wicked's fate; repay their deeds.",
+          "title": "Petition for distinction and judgment — unlabeled"
+        },
+        {
+          "arc_note": "'The voice of my pleading' answers verse 2 exactly. The repeated heart now trusts and rejoices, contrasting with the malicious hearts of verse 3.",
+          "first_verse": 6,
+          "last_verse": 7,
+          "theme": "The pleading voice has been heard; trust gives way to help, joy and thanks.",
+          "title": "Thanksgiving — unlabeled"
+        },
+        {
+          "arc_note": "The explicit Greek-supported 'his people' clarifies the widening scope. Four closing requests retain salvation, blessing, shepherding and carrying, with no added assurance after the prayer.",
+          "first_verse": 8,
+          "last_verse": 9,
+          "theme": "Protection for the people and the anointed, followed by enduring pastoral care.",
+          "title": "Communal affirmation and closing prayer — unlabeled"
+        }
+      ],
+      "similar_translations": [
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "Closest supplied comparison: verse 1 combines present calling with 'don't be deaf'; verse 5 interprets neglect as disrespect; verse 7 combines completed trust with song-based thanking; verse 8 retains 'stronghold of salvation'. The Greek expansions and verse 5's wish prevent describing the setting as a reproduction.",
+          "translation": "World English Bible"
+        },
+        {
+          "basis": "supplied",
+          "closeness": "echoes",
+          "evidence": "Verses 1, 8 and 9 share the distinguishing combination of deafness followed by silence, a 'stronghold of salvation', and shepherding with bearing up. The supplied KJV instead has silence twice, saving strength, and feeding.",
+          "translation": "American Standard Version"
+        },
+        {
+          "basis": "recalled",
+          "closeness": "echoes",
+          "evidence": "Verse 7 recalls the distinctive phrase 'my heart leaps for joy'. This is a local resemblance, not evidence of dependence throughout.",
+          "translation": "New International Version"
+        }
+      ],
+      "source_fingerprint": "94db2951311a124d6a98ea586eedda5b19f853df990f688e59df81ec54b34f60",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "The setting preserves the movement from threatened silence and personal petition (1–2), through judgment on deceitful evildoers (3–5), to thanksgiving (6–7) and prayer for the people (8–9). Short lines, contractions and repeated phrases make it conversational without adding a chorus or changing speakers. It retains rock, hands, heart, shield, stronghold and shepherd imagery. Its principal departures from the Hebrew are the Greek-supported expansion about life and shared destruction in verse 3 and explicit 'his people' in verse 8. It interprets verse 5 as a wish, presents help and joy as current in verse 7, and explains inheritance as belonging to God in verse 9.",
+      "translation_id": "tr.ps028.0001"
+    }
+  ],
+  "arrangements": [
+    {
+      "arrangement_id": "arr.ps028.0001",
+      "audit_ids": [
+        "aud.ps028.v001.a.0003"
+      ],
+      "created_at": "2026-11-03T19:11:54.568884+00:00",
+      "created_by": "codex",
+      "created_via": "codex",
+      "generation_run_id": "cxr.cee80d97062f",
+      "guidance": "target 6/8 meter",
+      "layer": "lyric",
+      "omissions": [],
+      "prompt_template_version": "codex-arrangement-v1",
+      "psalm_id": "ps028",
+      "sections": [
+        {
+          "kind": "intro",
+          "label": "Intro — lilting 6/8; proposed setting for review",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v001.t001"
+                  ],
+                  "unit_id": "ps028.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0001",
+              "rationale": "Adds 'a song' to make the attribution a sung opening, with the final syllable sustained.",
+              "text": "A song of David."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0001"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 1",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v001.t002",
+                    "ps028.v001.t003",
+                    "ps028.v001.t004",
+                    "ps028.v001.t005"
+                  ],
+                  "unit_id": "ps028.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0002",
+              "rationale": "Moves 'my Rock' before 'I cry' to give the phrase a strong sung cadence, retaining the Hebrew image rather than Greek Psalm 27:1's 'my God'.",
+              "text": "To you, O Yahweh, my Rock, I cry;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v001.t006",
+                    "ps028.v001.t007",
+                    "ps028.v001.t008"
+                  ],
+                  "unit_id": "ps028.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0003",
+              "rationale": "",
+              "text": "do not turn a deaf ear to me."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v001.t009",
+                    "ps028.v001.t010",
+                    "ps028.v001.t011",
+                    "ps028.v001.t012"
+                  ],
+                  "unit_id": "ps028.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0004",
+              "rationale": "Recasts the feared consequence as an if-clause and leaves the repeated 'to me' implicit.",
+              "text": "If you are silent, then I shall be"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v001.t012",
+                    "ps028.v001.t013",
+                    "ps028.v001.t014",
+                    "ps028.v001.t015"
+                  ],
+                  "unit_id": "ps028.v001.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0005",
+              "rationale": "",
+              "text": "like those who go down to the pit."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0002"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 2",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v002.t001",
+                    "ps028.v002.t002",
+                    "ps028.v002.t003"
+                  ],
+                  "unit_id": "ps028.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0006",
+              "rationale": "",
+              "text": "Hear the voice of my pleading,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v002.t004",
+                    "ps028.v002.t005"
+                  ],
+                  "unit_id": "ps028.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0007",
+              "rationale": "",
+              "text": "as I cry for help to you;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v002.t006",
+                    "ps028.v002.t007"
+                  ],
+                  "unit_id": "ps028.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0008",
+              "rationale": "",
+              "text": "as I lift up my hands"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v002.t008",
+                    "ps028.v002.t009",
+                    "ps028.v002.t010"
+                  ],
+                  "unit_id": "ps028.v002.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0009",
+              "rationale": "",
+              "text": "toward your holy inner room."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0003"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 3",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v003.t001",
+                    "ps028.v003.t002",
+                    "ps028.v003.t003",
+                    "ps028.v003.t004"
+                  ],
+                  "unit_id": "ps028.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0010",
+              "rationale": "",
+              "text": "Do not drag me away with the wicked,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v003.t005",
+                    "ps028.v003.t006",
+                    "ps028.v003.t007"
+                  ],
+                  "unit_id": "ps028.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0011",
+              "rationale": "",
+              "text": "with those who are doing wrong;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v003.t008",
+                    "ps028.v003.t009",
+                    "ps028.v003.t010",
+                    "ps028.v003.t011"
+                  ],
+                  "unit_id": "ps028.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0012",
+              "rationale": "",
+              "text": "who speak to their neighbors of peace,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v003.t012",
+                    "ps028.v003.t013"
+                  ],
+                  "unit_id": "ps028.v003.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0013",
+              "rationale": "Adds 'deep' to emphasize the contrast between peaceful speech and inward evil.",
+              "text": "while evil lies deep in their hearts."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0004"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 4",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v004.t001",
+                    "ps028.v004.t002",
+                    "ps028.v004.t003"
+                  ],
+                  "unit_id": "ps028.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0014",
+              "rationale": "",
+              "text": "Repay them for all they have done,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v004.t004",
+                    "ps028.v004.t005"
+                  ],
+                  "unit_id": "ps028.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0015",
+              "rationale": "",
+              "text": "for the evil of all of their deeds;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v004.t006",
+                    "ps028.v004.t007",
+                    "ps028.v004.t008",
+                    "ps028.v004.t009"
+                  ],
+                  "unit_id": "ps028.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "reordered",
+              "line_id": "ln.0016",
+              "rationale": "Places the imperative first to repeat the opening line's musical and verbal pattern.",
+              "text": "repay them for work of their hands;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v004.t010",
+                    "ps028.v004.t011",
+                    "ps028.v004.t012"
+                  ],
+                  "unit_id": "ps028.v004.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0017",
+              "rationale": "",
+              "text": "return the reward they deserve."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0005"
+        },
+        {
+          "kind": "verse",
+          "label": "Verse 5",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v005.t001",
+                    "ps028.v005.t002",
+                    "ps028.v005.t003",
+                    "ps028.v005.t004",
+                    "ps028.v005.t005",
+                    "ps028.v005.t006"
+                  ],
+                  "unit_id": "ps028.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0018",
+              "rationale": "",
+              "text": "For they heed not the deeds of Yahweh,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v005.t007",
+                    "ps028.v005.t008",
+                    "ps028.v005.t009"
+                  ],
+                  "unit_id": "ps028.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0019",
+              "rationale": "",
+              "text": "nor the work that his hands have done;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v005.t010"
+                  ],
+                  "unit_id": "ps028.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0020",
+              "rationale": "",
+              "text": "he will tear them down;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v005.t011",
+                    "ps028.v005.t012"
+                  ],
+                  "unit_id": "ps028.v005.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0021",
+              "rationale": "",
+              "text": "he will not build them up again."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0006"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v006.t001",
+                    "ps028.v006.t002",
+                    "ps028.v006.t003",
+                    "ps028.v006.t004"
+                  ],
+                  "unit_id": "ps028.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0022",
+              "rationale": "",
+              "text": "Blessed be Yahweh, for he has heard"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v006.t005",
+                    "ps028.v006.t006"
+                  ],
+                  "unit_id": "ps028.v006.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0023",
+              "rationale": "",
+              "text": "the voice of my pleading."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v007.t001",
+                    "ps028.v007.t002",
+                    "ps028.v007.t003"
+                  ],
+                  "unit_id": "ps028.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0024",
+              "rationale": "",
+              "text": "Yahweh is my strength and my shield;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v007.t004",
+                    "ps028.v007.t005",
+                    "ps028.v007.t006",
+                    "ps028.v007.t007"
+                  ],
+                  "unit_id": "ps028.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0025",
+              "rationale": "",
+              "text": "my heart trusted him; I was helped."
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v007.t008",
+                    "ps028.v007.t009"
+                  ],
+                  "unit_id": "ps028.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0026",
+              "rationale": "",
+              "text": "My heart leapt for joy,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v007.t010",
+                    "ps028.v007.t011"
+                  ],
+                  "unit_id": "ps028.v007.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0027",
+              "rationale": "",
+              "text": "and with song I will give him my thanks."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0007"
+        },
+        {
+          "kind": "bridge",
+          "label": "Bridge",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v008.t001",
+                    "ps028.v008.t002",
+                    "ps028.v008.t003"
+                  ],
+                  "unit_id": "ps028.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "expanded",
+              "line_id": "ln.0028",
+              "rationale": "Adopts Greek Psalm 27:8's explicit 'his people' in place of Hebrew 'their', retaining the Hebrew divine name; basis: septuagint_greek_to_english; source_ids: [lxx, swete1896]; source_version: swete1896:r0001:edda9c613905b0a0161deb0fe7fd5a0a79beda5d0f83fe13cf354f514d3f957e; attribution: H. B. Swete, The Old Testament in Greek according to the Septuagint, vol. 2 (Cambridge, 1896), Psalms; transcribed from page images by the rahlfs1931-psalter project, licensed CC BY-SA 4.0; this variant choice and its supplied verse mapping remain proposed for review.",
+              "text": "Yahweh is strength for his people,"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v008.t004",
+                    "ps028.v008.t005",
+                    "ps028.v008.t006",
+                    "ps028.v008.t007"
+                  ],
+                  "unit_id": "ps028.v008.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "compressed",
+              "line_id": "ln.0029",
+              "rationale": "Renders the Hebrew 'refuge of salvations' as 'the refuge who saves', folding the plural noun into an active verb.",
+              "text": "the refuge who saves his anointed."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0008"
+        },
+        {
+          "kind": "chorus",
+          "label": "Chorus — repeat",
+          "lines": [],
+          "repeat_of": "sec.0007",
+          "section_id": "sec.0009"
+        },
+        {
+          "kind": "outro",
+          "label": "Outro",
+          "lines": [
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v009.t001",
+                    "ps028.v009.t002",
+                    "ps028.v009.t003",
+                    "ps028.v009.t004"
+                  ],
+                  "unit_id": "ps028.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0030",
+              "rationale": "",
+              "text": "Save your people and bless"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v009.t005",
+                    "ps028.v009.t006"
+                  ],
+                  "unit_id": "ps028.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0031",
+              "rationale": "",
+              "text": "your own inheritance;"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v009.t007",
+                    "ps028.v009.t008"
+                  ],
+                  "unit_id": "ps028.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0032",
+              "rationale": "",
+              "text": "be their shepherd and carry them"
+            },
+            {
+              "anchors": [
+                {
+                  "token_ids": [
+                    "ps028.v009.t009",
+                    "ps028.v009.t010"
+                  ],
+                  "unit_id": "ps028.v009.a"
+                }
+              ],
+              "approvals": [],
+              "liberty": "tracks",
+              "line_id": "ln.0033",
+              "rationale": "",
+              "text": "forever and ever."
+            }
+          ],
+          "repeat_of": null,
+          "section_id": "sec.0010"
+        }
+      ],
+      "status": "proposed",
+      "title": "My Rock, My Strength, My Shield",
+      "translation_id": "tr.ps028.0001",
+      "updated_at": "2026-11-03T19:11:54.568884+00:00"
+    }
+  ],
   "psalm_id": "ps028",
   "title": "Psalm 28",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps028.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-11-03T19:10:00.296661+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "guidance": "target 6/8 meter",
+      "psalm_id": "ps028",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps028.0001"
+    }
+  ],
   "unit_ids": [
     "ps028.v001.a",
     "ps028.v002.a",

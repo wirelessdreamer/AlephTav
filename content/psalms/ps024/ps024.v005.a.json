@@ -1,9 +1,163 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v005.a.lyric.alt.0001",
+    "rnd.ps024.v005.a.lyric.alt.0002",
+    "rnd.ps024.v005.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v005.a.0001",
+    "aud.ps024.v005.a.0002",
+    "aud.ps024.v005.a.0003",
+    "aud.ps024.v005.a.0004",
+    "aud.ps024.v005.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "135e73c4dcbb91473f2f0cad9883e2384bbd202c4eb207078119007eb97433df",
+      "audit_id": "aud.ps024.v005.a.0001",
+      "before_hash": "42cdd5ab2a8526e24008e3e8b285a7a279b1accc02a2fb34aa9292a3fbb20559",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.757091+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v005.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0d1da3a73b211c671626407302a4047305afe7baee15d5570303a906e41e26fc",
+      "audit_id": "aud.ps024.v005.a.0002",
+      "before_hash": "0ab2d5f64a8c663bc3cdfd6775e5150757ccc4dc298c3177065c8bcd86285c20",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:38:57.185750+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v005.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7707a4ea7220f7877e39f46a825a73bfc165339670a8bce89c724c32b5d9e0ef",
+      "audit_id": "aud.ps024.v005.a.0003",
+      "before_hash": "36904afdaf323e6628d2cbf5bfa750f98776bae6d60964c56d8edd255e39a26b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:39.945151+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7690a6a9402de7792d3c1a408ba7f97daad2f42d999118d33b4aec602c5fddcf",
+      "audit_id": "aud.ps024.v005.a.0004",
+      "before_hash": "86c72d75ca4be2949cead23a0a95bb1824f5c114cbc5149327e11cd2668feae4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:31.815994+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v005.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "91b611bf35b26af3730bd9f9830cb9048c025d24b372418aa5324586d976b4f1",
+      "audit_id": "aud.ps024.v005.a.0005",
+      "before_hash": "8bfe2e6a8a2bb4fa74b322cd1f7e7a3f496be987e3626298aa6b8b1de06a184c",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:56.003980+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v005.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric retains the person's future receipt of blessing and associates vindication with God. It combines the verse's two references to the divine giver.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "0c15b6fee9c70c508d59f4daefa4762d91f525cda6383a3d90b9c471ee7f01af",
+      "audit_ids": [
+        "aud.ps024.v005.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v005.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Vindicated interprets righteousness as a favorable judgment. God Most High is an added title; the name Yahweh and the description of God as the person's salvation are not explicit.",
+      "display_reference": "Psalm 24:5",
+      "english_rendering_id": "rnd.ps024.v005.a.lyric.alt.0001",
+      "generation_run_id": "cxr.ff77c76ee162",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "יִשָּׂ֣א בְ֭רָכָה מֵאֵ֣ת יְהוָ֑ה וּ֝צְדָקָ֗ה מֵאֱלֹהֵ֥י יִשְׁעֽוֹ׃",
+      "literal_backbone": [
+        "He will receive blessing from Yahweh.",
+        "And righteousness from the God of his salvation."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:5",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment.",
+          "text": "B:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v005.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "and righteousness, justice, vindication",
+          "note": "The lyric interprets the noun as the person's vindication.",
+          "rendered_as": "vindicated",
+          "token_ids": [
+            "ps024.v005.t005"
+          ],
+          "transliteration": "ûṣəḏāqāh",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "Yahweh; from the God of his salvation",
+          "note": "The lyric combines the references to the giver and adds 'Most High,' leaving Yahweh's name and his salvation unexpressed.",
+          "rendered_as": "by God Most High",
+          "token_ids": [
+            "ps024.v005.t004",
+            "ps024.v005.t006",
+            "ps024.v005.t007"
+          ],
+          "transliteration": "yəhwāh; mēʾĕlōhê yišʿô",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v005.a.0001"
   ],
@@ -15,7 +169,320 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:5",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 12,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.23,
+        "stress_approximation": 0.67,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v005.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: Such a one will\ncarry blessing,\nvindicated\nby God Most High.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.08,
+        "singability_score": 0.21,
+        "stress_approximation": 0.73,
+        "syllable_count": 21,
+        "syllables": 21
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v005.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "That one receives blessing from Yahweh,\nAnd righteousness from the God who saves.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "added_doctrine",
+          "confidence": 0.93,
+          "message": "Lyric line adds doctrinal vocabulary not present in the canonical literal line.",
+          "severity": "high"
+        },
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.16,
+        "stress_approximation": 0.71,
+        "syllable_count": 23,
+        "syllables": 23
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v005.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Such a one will carry blessing from Yahweh,\nVindicated by the God of salvation.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v005.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "יִשָּׂ֣א בְ֭רָכָה מֵאֵ֣ת יְהוָ֑ה וּ֝צְדָקָ֗ה מֵאֱלֹהֵ֥י יִשְׁעֽוֹ׃",

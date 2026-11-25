@@ -3,6 +3,7 @@ import { RequestStatus } from './RequestStatus';
 import { Diff } from './RebuildReview';
 import { layerLabel, shortTime } from './verseActions';
 import { TranslationContextDetails, TranslationContextHistory } from './TranslationContextHistory';
+import { TranslationChoices } from './TranslationChoices';
 
 const STATUS_LABEL = { pending: 'Waiting for a decision', accepted: 'Kept', discarded: 'Discarded' };
 
@@ -16,6 +17,7 @@ export function VerseHistoryPanel({ unitId, translationId }: { unitId: string; t
   return (
     <div className="verse-history">
       <section aria-label="History">
+        <TranslationChoices psalmId={unitId.split('.')[0]} translationId={translationId} unitId={unitId} />
         {data.events.length === 0 ? <p className="verse-notes__hint">No verse history recorded yet.</p> : null}
         <ol className="verse-history__timeline">
           {data.events.map((event) => (

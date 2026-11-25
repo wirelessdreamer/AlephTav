@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from app.api.deps import raise_as_http
-from app.services import registry_service
+from app.services import raw_mutation_policy_service, registry_service
 
 router = APIRouter(tags=["project"])
 
@@ -19,9 +19,6 @@ def get_project() -> dict:
 @router.patch("/project")
 def patch_project(payload: dict) -> dict:
     try:
-        project = registry_service.load_project()
-        project.update(payload)
-        registry_service.save_project(project)
-        return project
+        raw_mutation_policy_service.reject_project_update()
     except Exception as error:  # pragma: no cover
         raise_as_http(error)

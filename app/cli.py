@@ -9,6 +9,7 @@ import anyio
 import typer
 
 from app.core.config import get_settings
+from app.core.errors import ContentError
 from app.services import (
     concordance_service,
     export_service,
@@ -22,6 +23,83 @@ from app.services import (
 )
 
 app = typer.Typer(help="Psalms translation workbench CLI")
+
+
+@app.command("list-translation-choices")
+def list_translation_choices(
+    psalm_id: str,
+    translation_id: Annotated[str | None, typer.Option("--translation-id")] = None,
+    unit_id: Annotated[str | None, typer.Option("--unit-id")] = None,
+    arrangement_id: Annotated[str | None, typer.Option("--arrangement-id")] = None,
+) -> None:
+    """Read intentional-choice history and current target revisions."""
+    from app.services import translation_choices_service
+
+    try:
+        result = translation_choices_service.choices_view(
+            psalm_id, translation_id, unit_id=unit_id, arrangement_id=arrangement_id
+        )
+    except ContentError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    typer.echo(json.dumps(result, indent=2, allow_nan=False))
+
+
+@app.command("record-translation-choice")
+def record_translation_choice(
+    psalm_id: str,
+    target_kind: Annotated[str, typer.Option("--target-kind")],
+    target_id: Annotated[list[str], typer.Option("--target-id")],
+    expected_revision: Annotated[list[str], typer.Option("--expected-revision")],
+    decision: Annotated[str, typer.Option("--decision")],
+    rationale: Annotated[str, typer.Option("--rationale")],
+    context_note: Annotated[str, typer.Option("--context-note")],
+    created_by: Annotated[str, typer.Option("--created-by")],
+    translation_id: Annotated[str | None, typer.Option("--translation-id")] = None,
+    arrangement_id: Annotated[str | None, typer.Option("--arrangement-id")] = None,
+    context_status: Annotated[str, typer.Option("--context-status")] = "not_established",
+    supersedes_audit_id: Annotated[str | None, typer.Option("--supersedes-audit-id")] = None,
+) -> None:
+    """Append an intentional choice; repeat target/revision options for multiple lines."""
+    from app.services import translation_choices_service
+
+    if len(target_id) != len(expected_revision):
+        raise typer.BadParameter("Supply one --expected-revision for each --target-id")
+    targets = []
+    for identity, revision in zip(target_id, expected_revision, strict=True):
+        target = {"kind": target_kind, "id": identity, "expected_revision": revision}
+        if arrangement_id is not None:
+            target["arrangement_id"] = arrangement_id
+        targets.append(target)
+    try:
+        result = translation_choices_service.record_choice(
+            psalm_id,
+            translation_id,
+            targets=targets,
+            decision=decision,
+            rationale=rationale,
+            context_status=context_status,
+            context_note=context_note,
+            created_by=created_by,
+            supersedes_audit_id=supersedes_audit_id,
+        )
+    except ContentError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(1) from error
+    typer.echo(json.dumps(result, indent=2, allow_nan=False))
+
+
+@app.command("preview-review-migration")
+def preview_review_migration(
+    root: Annotated[Path | None, typer.Option("--root")] = None,
+) -> None:
+    """Inspect stored review evidence without changing files or granting approvals."""
+    from app.services.review_migration_service import preview_review_migration as preview
+
+    report = preview(root)
+    typer.echo(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
+    if not report["scan_complete"]:
+        raise typer.Exit(1)
 
 
 @app.command("migrate-operational-state")
@@ -61,7 +139,7 @@ def build_indexes() -> None:
 
 @app.command("validate-content")
 def validate_content() -> None:
-    from scripts.validate_content import validate_all_content
+    from app.services.content_validation_service import validate_all_content
 
     result = validate_all_content()
     typer.echo(json.dumps(result, indent=2))
@@ -107,11 +185,12 @@ def list_alternates(unit_id: str) -> None:
 
 @app.command("add-alternate")
 def add_alternate(unit_id: str, layer: str, text: str, rationale: str) -> None:
+    """Create an unreviewed proposal; acceptance requires a separate human review."""
     rendering = rendering_service.create_rendering(
         unit_id=unit_id,
         layer=layer,
         text=text,
-        status="accepted_as_alternate",
+        status="proposed",
         rationale=rationale,
         created_by="cli:add-alternate",
     )

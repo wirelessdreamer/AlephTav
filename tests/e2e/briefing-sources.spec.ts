@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-async function briefingFixture(page: Page, { sourceGate = undefined as Promise<void> | undefined, briefingGate = undefined as Promise<void> | undefined, preview = true, generation = false, lexical = false, missing = false, review = false, markVariant = false, long = false, literal = null as string | null, decisions = false, inference = false } = {}) {
+async function briefingFixture(page: Page, { sourceGate = undefined as Promise<void> | undefined, briefingGate = undefined as Promise<void> | undefined, preview = true, generation = false, lexical = false, missing = false, review = false, markVariant = false, long = false, literal = null as string | null, decisions = false, inference = false, unavailable = false } = {}) {
   await page.addInitScript(() => localStorage.setItem('aleph-tav.full-workbench', 'true'));
   await page.addInitScript(() => localStorage.setItem('aleph-tav.assistant-ui', JSON.stringify({ visibility: 'closed', placement: 'footer' })));
   const tokenId = 'lxx.authored.r0001.ps025.v001.t001';
@@ -82,7 +82,9 @@ async function briefingFixture(page: Page, { sourceGate = undefined as Promise<v
           { choice: 'Ask for judgment.', held_by: 'Fixture', effect: 'Open judgment.' },
           { choice: 'Ask for vindication.', held_by: 'Fixture', effect: 'Expected outcome.' },
         ] : [] }],
-    }, history, greek_sources: greek,
+    }, history, greek_sources: unavailable
+      ? { available: false, by_mt_unit: {}, message: 'Greek study is awaiting source release approval.' }
+      : greek,
   } });
   });
   await page.route('**/psalms/ps026/translation-guidance?*', route => route.fulfill({ json: { translation_guidance: '' } }));
@@ -394,4 +396,23 @@ test('a pending saved briefing never appears as a missing briefing', async ({ pa
   await expect(page.getByText('Briefing & guidance history (0)')).toHaveCount(0);
   releaseBriefing();
   await expect(page.locator('.briefing-panel').getByRole('radio', { name: /Ask for vindication/ })).toBeVisible();
+});
+
+test('verse table shows the mapped Greek beside the Hebrew and in the open verse', async ({ page }) => {
+  await briefingFixture(page, { preview: false });
+  const verses = page.getByRole('region', { name: 'Verses' });
+  const greek = verses.locator('.verse-row__grc');
+  await expect(greek).toHaveText('Κρῖνόν με, Κύριε.');
+  await expect(greek).toHaveAttribute('title', 'Greek Psalm 25:1');
+  await verses.locator('.verse-row').first().click();
+  const open = verses.getByLabel('Greek LXX source');
+  await expect(open).toContainText('Greek Psalm 25:1');
+  await open.getByRole('button', { name: /Study Greek Κρῖνόν/ }).hover();
+  await expect(page.getByRole('tooltip')).toContainText('judge, decide');
+});
+
+test('verse table says why the Greek column is empty', async ({ page }) => {
+  await briefingFixture(page, { unavailable: true });
+  await expect(page.getByText('Greek (LXX): Greek study is awaiting source release approval.')).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Verses' }).locator('.verse-row__grc')).toHaveText('—');
 });

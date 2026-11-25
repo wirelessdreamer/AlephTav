@@ -1,9 +1,172 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v002.a.lyric.alt.0001",
+    "rnd.ps024.v002.a.lyric.alt.0002",
+    "rnd.ps024.v002.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v002.a.0001",
+    "aud.ps024.v002.a.0002",
+    "aud.ps024.v002.a.0003",
+    "aud.ps024.v002.a.0004",
+    "aud.ps024.v002.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "d4331222c8560909a1a0d73fab2b875cadc4fbd1b97be4f2a05f433983d2ad84",
+      "audit_id": "aud.ps024.v002.a.0001",
+      "before_hash": "1939a7ec911fe32ceaf7d3df7200fb0f518e6835a9e900a2cc13a343ca6d1b2d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.693801+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v002.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "62c2de27a0e73e64abc8d2c8ca010e322fe4f62972386770d858dbbc42c3f812",
+      "audit_id": "aud.ps024.v002.a.0002",
+      "before_hash": "1e21ce086296b62e9545223d453b060a8dae48f6245f8266f3f5ec032e4fbe23",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:38:13.591576+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v002.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "7671f79f263a8c68fe749ff85c009a5e9e490ac6cd6d92dda0386544dc84ca41",
+      "audit_id": "aud.ps024.v002.a.0003",
+      "before_hash": "533f0bf7b360c29f8e0de0f22db4825d9aac0ec0fd0f7e0dd46012e636159c34",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:33.242112+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v002.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c8b40b6fbf5f9b8e43a2f2075f359aa374a5b07e7fb542c012815b83d2196a33",
+      "audit_id": "aud.ps024.v002.a.0004",
+      "before_hash": "713b6c5126e6f26ec1a4c85d334037fc24292c3793d90c8c3b02fccfb88ab4a0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:25.305963+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v002.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "e170cdf0e1bef06fbc42739321146345cf76f74c737482457a4b0b37c7633583",
+      "audit_id": "aud.ps024.v002.a.0005",
+      "before_hash": "ab4c041b4c7e4e096d766351cf6773e7d21f8fd714308199d7dca7c1e86b3f5b",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:54.034344+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v002.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric retains God's founding and establishing of the earth above waters, and reiterates that he made it steady. The causal connection to the preceding verse is implicit.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "3eb286a92d1c15511b6e8051413763a90a125c65d6516457438520b51af29764",
+      "audit_ids": [
+        "aud.ps024.v002.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v002.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Pillars and borders supply construction and boundary images absent from the Hebrew. Deep waters and the flood recast the seas and rivers.",
+      "display_reference": "Psalm 24:2",
+      "english_rendering_id": "rnd.ps024.v002.a.lyric.alt.0001",
+      "generation_run_id": "cxr.dd93491d756c",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "כִּי־ה֭וּא עַל־יַמִּ֣ים יְסָדָ֑הּ וְעַל־נְ֝הָר֗וֹת יְכוֹנְנֶֽהָ׃",
+      "literal_backbone": [
+        "For he founded it on the seas.",
+        "And he established it on the rivers."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:2",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "B:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v002.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "seas; rivers or streams",
+          "note": "The lyric recasts the bodies of water and adds depth and flood imagery.",
+          "rendered_as": "deep waters; the flood",
+          "token_ids": [
+            "ps024.v002.t004",
+            "ps024.v002.t007"
+          ],
+          "transliteration": "yammîm; nəhārôṯ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "he founded or laid the foundation of it",
+          "note": "Pillars add a specific architectural image to founding.",
+          "rendered_as": "He laid its pillars",
+          "token_ids": [
+            "ps024.v002.t005"
+          ],
+          "transliteration": "yəsāḏāh",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "he establishes, makes firm, or prepares it",
+          "note": "Making it steady reflects establishment; drawing borders adds a boundary image.",
+          "rendered_as": "he drew its borders; He made it steady",
+          "token_ids": [
+            "ps024.v002.t008"
+          ],
+          "transliteration": "yəḵōnənehā",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v002.a.0001"
   ],
@@ -15,7 +178,293 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:2",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 20,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.12,
+        "stress_approximation": 0.68,
+        "syllable_count": 28,
+        "syllables": 28
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v002.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: He laid its pillars\nover deep waters;\nhe drew its borders\nabove the flood.\n\nB: He made it steady,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.14,
+        "stress_approximation": 0.63,
+        "syllable_count": 19,
+        "syllables": 19
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v002.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For he has founded it upon the seas,\nAnd on the rivers made it firm.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.13,
+        "singability_score": 0.14,
+        "stress_approximation": 0.7,
+        "syllable_count": 22,
+        "syllables": 22
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v002.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "For he laid its pillars over the seas; he made it steady above the rivers.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v002.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "כִּי־ה֭וּא עַל־יַמִּ֣ים יְסָדָ֑הּ וְעַל־נְ֝הָר֗וֹת יְכוֹנְנֶֽהָ׃",

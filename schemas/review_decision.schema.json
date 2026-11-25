@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VersionedReviewDecision",
+  "oneOf": [
+    { "$ref": "review_decision_v1.schema.json" },
+    { "$ref": "review_decision_v2.schema.json" }
+  ]
+}

@@ -114,11 +114,9 @@ def recover_source_anchors(*, apply: bool = False) -> dict[str, Any]:
                 continue
             row["action"] = "recoverable"
             if apply:
-                rendering_service.update_rendering(
+                rendering_service.restore_proposed_source_anchor(
                     rendering["rendering_id"],
-                    {
-                        "source_anchor": candidates[0]["source_anchor"],
-                    },
+                    candidates[0]["source_anchor"],
                     created_by="codex-source-anchor-recovery",
                     audit_rationale=f"Recover original source anchor from {run['run_id']}",
                 )

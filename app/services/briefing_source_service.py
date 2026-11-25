@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from copy import deepcopy
 from typing import Any
 
 from jsonschema import ValidationError as SchemaValidationError  # type: ignore[import-untyped]
@@ -133,7 +134,7 @@ def _greek_evidence(psalm_id: str) -> dict[str, Any]:
 def _preview_greek_evidence(psalm_id: str) -> dict[str, Any] | None:
     """The owner-approved unreleased preview, or None when no preview is approved."""
     try:
-        preview = greek_preview_service.load_preview()
+        preview = greek_preview_service.load_preview(copy=False)
         if preview is None:
             return None
         greek_units = {unit["unit_id"]: unit for unit in preview["units"]}
@@ -145,6 +146,8 @@ def _preview_greek_evidence(psalm_id: str) -> dict[str, Any] | None:
             {},
             statuses={"proposed", "reviewed"},
         )
+        # The units still share values with the cached package; enrich writes into them.
+        by_mt = deepcopy(by_mt)
     except LicensePolicyError:
         return {
             "by_mt_unit": {},

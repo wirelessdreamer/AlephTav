@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from copy import deepcopy
 from datetime import UTC, datetime
 from typing import Any
 
@@ -20,6 +21,25 @@ from app.services import (
 
 ALTERNATE_STATUSES = {"accepted_as_alternate", "proposed", "under_review", "rejected", "deprecated"}
 BASIS_FILTERS = {"hebrew-derived", "septuagint-derived"}
+EDITABLE_FIELDS = {
+    "text",
+    "style_tags",
+    "target_spans",
+    "rationale",
+    "variation_basis",
+    "preserved_source_images",
+    "differentiator",
+    "delivery_profile",
+    "style_goal",
+    "metric_profile",
+    "issue_links",
+    "pr_links",
+}
+
+
+def _load_for_mutation(unit_id: str) -> tuple[dict[str, Any], dict[str, Any]]:
+    before = registry_service.load_unit(unit_id)
+    return before, deepcopy(before)
 
 
 def _rendering_unit_id(rendering_id_value: str) -> str:
@@ -61,7 +81,12 @@ def _sync_rendering_membership(unit: dict[str, Any]) -> None:
 
 
 def _has_release_approval(rendering: dict[str, Any]) -> bool:
-    return rendering["status"] in {"canonical", "accepted_as_alternate"}
+    return rendering.get("review_signoff", {}).get(
+        "evidence_contract_status"
+    ) != "versioned_pending_activation" and rendering["status"] in {
+        "canonical",
+        "accepted_as_alternate",
+    }
 
 
 def _matches_style_filter(rendering: dict[str, Any], style_filter: str | None) -> bool:
@@ -266,8 +291,10 @@ def create_rendering(
         raise ReviewRequiredError(
             "Create proposed or under-review renderings first, then accept after review"
         )
+    if status not in {"draft", "proposed", "under_review", "rejected", "deprecated"}:
+        raise ValidationError(f"invalid rendering status: {status}")
     psalm_translations_service.require(unit_id.split(".")[0], translation_id)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+    before, unit = _load_for_mutation(unit_id)
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
         layer=layer,
@@ -362,11 +389,40 @@ def update_rendering(
     *,
     audit_rationale: str | None = None,
 ) -> dict[str, Any]:
+    """Edit proposed content; publication state and provenance have explicit operations."""
+    if "status" in payload:
+        raise ReviewRequiredError(
+            "Status changes go through review, promotion or alternate status operations"
+        )
+    protected = payload.keys() - EDITABLE_FIELDS
+    if protected:
+        raise ValidationError(f"Fields cannot be edited: {', '.join(sorted(protected))}")
     unit_id = _rendering_unit_id(rendering_id_value)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+    before, unit = _load_for_mutation(unit_id)
     rendering = _rendering_lookup(unit, rendering_id_value)
-    previous_status = rendering["status"]
-    rendering.update(payload)
+    if rendering["status"] == "canonical":
+        raise ReviewRequiredError(
+            "A canonical rendering changes only by review: add an alternate, "
+            "then review and promote it"
+        )
+    rendering.update(deepcopy(payload))
+    return _save_rendering_change(
+        before,
+        unit,
+        rendering,
+        created_by=created_by,
+        rationale=audit_rationale or payload.get("rationale", "rendering update"),
+    )
+
+
+def _save_rendering_change(
+    before: dict[str, Any],
+    unit: dict[str, Any],
+    rendering: dict[str, Any],
+    *,
+    created_by: str,
+    rationale: str,
+) -> dict[str, Any]:
     analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
         unit=unit,
         layer=rendering["layer"],
@@ -379,30 +435,8 @@ def update_rendering(
     rendering["drift_flags"] = analyzed_flags
     rendering["metrics"] = analyzed_metrics
     _ensure_publication_constraints(rendering)
-    if payload.get("status") != "canonical":
-        rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
+    rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
     alignment_service._sync_rendering_alignment_ids(unit)
-    if rendering["status"] == "canonical":
-        for candidate in unit.get("renderings", []):
-            if (
-                candidate["rendering_id"] != rendering_id_value
-                and candidate["layer"] == rendering["layer"]
-                and candidate["status"] == "canonical"
-            ):
-                candidate["status"] = "accepted_as_alternate"
-    elif previous_status == "canonical":
-        replacement = next(
-            (
-                item
-                for item in _sort_renderings(unit.get("renderings", []))
-                if item["rendering_id"] != rendering_id_value
-                and item["layer"] == rendering["layer"]
-                and item["status"] == "canonical"
-            ),
-            None,
-        )
-        if replacement is None and payload.get("status") != "canonical":
-            rendering["status"] = "accepted_as_alternate"
     from app.services import review_service
 
     review_service.hydrate_unit_review_state(unit)
@@ -412,13 +446,33 @@ def update_rendering(
         before_hash=registry_service.file_hash(before),
         after_hash=registry_service.file_hash(unit),
         summary="Update rendering",
-        rationale=audit_rationale or payload.get("rationale", "rendering update"),
+        rationale=rationale,
         created_by=created_by,
         entity_type="rendering",
-        entity_id=rendering_id_value,
+        entity_id=rendering["rendering_id"],
     )
     registry_service.save_unit(unit)
     return rendering
+
+
+def restore_proposed_source_anchor(
+    rendering_id_value: str,
+    source_anchor: dict[str, Any],
+    *,
+    audit_rationale: str,
+    created_by: str = "codex-source-anchor-recovery",
+) -> dict[str, Any]:
+    """Restore an anchor after the recovery service verifies the original candidate."""
+    before, unit = _load_for_mutation(_rendering_unit_id(rendering_id_value))
+    rendering = _rendering_lookup(unit, rendering_id_value)
+    if rendering["status"] != "proposed":
+        raise ReviewRequiredError("Source-anchor recovery is limited to proposed renderings")
+    if rendering.get("source_anchor"):
+        raise ValidationError("Source-anchor recovery cannot replace an existing anchor")
+    rendering["source_anchor"] = deepcopy(source_anchor)
+    return _save_rendering_change(
+        before, unit, rendering, created_by=created_by, rationale=audit_rationale
+    )
 
 
 def move_rendering_to_translation(
@@ -431,7 +485,7 @@ def move_rendering_to_translation(
     unit_id = _rendering_unit_id(rendering_id_value)
     psalm_id = unit_id.split(".")[0]
     psalm_translations_service.require(psalm_id, translation_id)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+    before, unit = _load_for_mutation(unit_id)
     rendering = _rendering_lookup(unit, rendering_id_value)
     if rendering["layer"] in psalm_translations_service.SHARED_LAYERS:
         raise ValidationError(
@@ -440,6 +494,10 @@ def move_rendering_to_translation(
     previous = rendering.get("translation_id")
     if previous == translation_id:
         return rendering
+    if rendering["status"] == "canonical":
+        raise ReviewRequiredError(
+            "A canonical rendering cannot move to another translation without review"
+        )
     if translation_id is None:
         rendering.pop("translation_id", None)
     else:
@@ -461,16 +519,18 @@ def move_rendering_to_translation(
 
 
 def _approvals_for(unit: dict[str, Any], target_id: str) -> int:
+    from app.services import review_service
+
     return sum(
         1
-        for item in unit.get("review_decisions", [])
-        if item["target_id"] == target_id and item["decision"] == "approve"
+        for item in review_service.legacy_review_decisions(unit, target_id)
+        if item["decision"] == "approve"
     )
 
 
 def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str) -> dict[str, Any]:
     unit_id = _rendering_unit_id(rendering_id_value)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
+    before, unit = _load_for_mutation(unit_id)
     from app.services import review_service
 
     reviewer, reviewer_role = review_service.validate_reviewer_identity(reviewer, reviewer_role)
@@ -530,27 +590,10 @@ def promote_rendering(rendering_id_value: str, reviewer: str, reviewer_role: str
 
 
 def demote_rendering(rendering_id_value: str, created_by: str = "api") -> dict[str, Any]:
-    unit_id = _rendering_unit_id(rendering_id_value)
-    before, unit = registry_service.update_unit(unit_id, lambda existing: existing)
-    rendering = _rendering_lookup(unit, rendering_id_value)
-    rendering["status"] = "accepted_as_alternate"
-    rendering.setdefault("review_signoff", {}).pop("release_signoff", None)
-    from app.services import review_service
-
-    review_service.hydrate_unit_review_state(unit)
-    _sync_rendering_membership(unit)
-    audit_service.create_audit_record(
-        unit,
-        before_hash=registry_service.file_hash(before),
-        after_hash=registry_service.file_hash(unit),
-        summary="Demote canonical rendering",
-        rationale="manual demotion",
-        created_by=created_by,
-        entity_type="rendering",
-        entity_id=rendering_id_value,
+    raise ReviewRequiredError(
+        "Standalone demotion is not permitted; replace a canonical rendering by "
+        "reviewing and promoting an alternate"
     )
-    registry_service.save_unit(unit)
-    return rendering
 
 
 def set_alternate_status(
@@ -561,11 +604,11 @@ def set_alternate_status(
 ) -> dict[str, Any]:
     if status not in ALTERNATE_STATUSES:
         raise ValidationError(f"invalid alternate status: {status}")
-    unit = registry_service.load_unit(_rendering_unit_id(rendering_id_value))
+    before, unit = _load_for_mutation(_rendering_unit_id(rendering_id_value))
     rendering = _rendering_lookup(unit, rendering_id_value)
     if rendering["status"] == "canonical":
-        raise ValidationError(
-            "canonical rendering must be demoted instead of using alternate actions"
+        raise ReviewRequiredError(
+            "A canonical rendering changes only by reviewing and promoting an alternate"
         )
     if status == "accepted_as_alternate":
         from app.services import review_service
@@ -575,10 +618,14 @@ def set_alternate_status(
             raise ReviewRequiredError(
                 "A qualified reviewer signoff is required before accepting an alternate"
             )
-    return update_rendering(
-        rendering_id_value,
-        {"status": status, "rationale": rationale or f"set alternate status to {status}"},
+    rendering["status"] = status
+    rendering["rationale"] = rationale or f"set alternate status to {status}"
+    return _save_rendering_change(
+        before,
+        unit,
+        rendering,
         created_by=created_by,
+        rationale=rendering["rationale"],
     )
 
 

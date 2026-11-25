@@ -47,6 +47,7 @@ import { VerseDetail } from './VerseDetail';
 import { WordSummary, type WordSummaryItem } from './WordSummary';
 import type {
   AccuracyRating,
+  BriefingGreekSources,
   ComparisonStatus,
   ComparisonTableRow,
   ImportResult,
@@ -61,6 +62,13 @@ const CLOSENESS_LABELS: Record<SimilarTranslation['closeness'], string> = {
   adapts: 'adapted',
   echoes: 'echoed in places',
 };
+
+/** The Greek verses mapped to a row's Hebrew units, each once, in map order. */
+function greekUnitsFor(row: ComparisonTableRow, sources: BriefingGreekSources | undefined) {
+  if (!sources?.available) return [];
+  const units = row.unit_ids.flatMap((id) => sources.by_mt_unit[id]?.units ?? []);
+  return [...new Map(units.map((unit) => [unit.unit_id, unit])).values()];
+}
 
 function download(filename: string, body: string, mime: string) {
   const url = URL.createObjectURL(new Blob([body], { type: mime }));
@@ -1496,10 +1504,18 @@ export function TranslationComparisonTable({
         }}
       />
 
+      {briefingSources.data && !briefingSources.data.available ? (
+        <p className="verse-notes__hint">
+          Greek (LXX): {briefingSources.data.message ?? 'Greek source evidence is unavailable.'}
+        </p>
+      ) : null}
       <section className="verse-list" aria-label="Verses">
         <div className="verse-list__head" aria-hidden="true">
           <span>Verse</span>
           <span className="verse-list__he">Hebrew</span>
+          <span title={briefingSources.data?.preview ? briefingSources.data.message : undefined}>
+            Greek (LXX){briefingSources.data?.preview ? ' · preview' : ''}
+          </span>
           <span>{englishLayer.replace(/_/g, ' ')}</span>
           <span>Fidelity</span>
         </div>
@@ -1519,6 +1535,7 @@ export function TranslationComparisonTable({
               token.note ? [token.note.token_ids.join(',')] : [],
             ),
           ).size;
+          const greekUnits = greekUnitsFor(row, briefingSources.data);
           return (
             <Fragment key={key}>
               {band ? (
@@ -1569,6 +1586,31 @@ export function TranslationComparisonTable({
                     <>
                       <span className="verse-row__he" dir="rtl" lang="he">
                         {row.hebrew_text}
+                      </span>
+                      <span
+                        className="verse-row__grc"
+                        lang="grc"
+                        title={greekUnits
+                          .map((unit) => `${unit.ref}${unit.partial ? ' (partial correspondence)' : ''}`)
+                          .join(' · ') || undefined}
+                      >
+                        {greekUnits.length > 0 ? (
+                          greekUnits.map((unit) => unit.source_greek).join(' ')
+                        ) : (
+                          // The notice above the table says why; a bare dash only adds noise.
+                          <em
+                            className="cell-missing"
+                            aria-hidden={
+                              !briefingSources.isPending && !briefingSources.data?.available
+                            }
+                          >
+                            {briefingSources.isPending
+                              ? 'Loading…'
+                              : briefingSources.data?.available
+                                ? 'No Greek mapped'
+                                : '—'}
+                          </em>
+                        )}
                       </span>
                       <span className="verse-row__en">
                         {row.english_text ? (
@@ -1625,6 +1667,7 @@ export function TranslationComparisonTable({
                       onOpenRendering={onOpenRendering}
                       psalmId={psalmId}
                       translationId={translationId}
+                      greekSources={briefingSources.data}
                       onSaveText={({ layer, text }) =>
                         saveVerseText.mutateAsync({
                           unitId: row.unit_ids[0],

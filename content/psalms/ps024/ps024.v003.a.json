@@ -1,9 +1,172 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v003.a.lyric.alt.0001",
+    "rnd.ps024.v003.a.lyric.alt.0002",
+    "rnd.ps024.v003.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v003.a.0001",
+    "aud.ps024.v003.a.0002",
+    "aud.ps024.v003.a.0003",
+    "aud.ps024.v003.a.0004",
+    "aud.ps024.v003.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "30dd65c88994c97be9fbd40527d152ba7b0bcd03f75b0b252c820d993fd47a28",
+      "audit_id": "aud.ps024.v003.a.0001",
+      "before_hash": "4882e6b5655f888ff011775dd570be8ce18303ec9eb55049539c896f76b33d0e",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.714970+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v003.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0cd8e71154a995a6ef32f36206daa8d6fe363153bdeafabff6b8099c1cb08b83",
+      "audit_id": "aud.ps024.v003.a.0002",
+      "before_hash": "81dc1ec59acf72aed0528e6275103ab4162e813f9ee84e95e5b1117e6c3fb5ce",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:38:28.227479+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v003.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "bb7a2e652afc318ad555c38d3f41230671a3c66b30c300641230118323e668ef",
+      "audit_id": "aud.ps024.v003.a.0003",
+      "before_hash": "f02edbba31f0c135c8c3f134b4ea87ce14c1931af7f58dec81d1a4fa15112151",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:35.467196+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "02f5c4516beb13c083bf6cea982276370bd32a5519bbb6a5f804cf7fe6736784",
+      "audit_id": "aud.ps024.v003.a.0004",
+      "before_hash": "59f655db9632ef0317871a1913384c02400395931cc7ead4d130974503cc83df",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:27.454398+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v003.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "754272e0f79c27fdf7672a3d86af91ca9516d73e131e8d8846164507e2e9136e",
+      "audit_id": "aud.ps024.v003.a.0005",
+      "before_hash": "54782f8394f4cb32f1ae46cf74788d77614d3796793d2ff2f3c16bcc0a4b80b3",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:54.227713+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v003.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the two questions about going up God's mountain and being in his place. It refers to Yahweh as 'his,' relying on context for the antecedent.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "941259aa462057326d7d2cf85520dfa1d47a2c54369028e0440afa7a0fc3b72d",
+      "audit_ids": [
+        "aud.ps024.v003.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v003.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "High describes the mountain, remaining interprets standing, and fire replaces the explicit description of the place as holy.",
+      "display_reference": "Psalm 24:3",
+      "english_rendering_id": "rnd.ps024.v003.a.lyric.alt.0001",
+      "generation_run_id": "cxr.f6bc6ae620fc",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִֽי־יַעֲלֶ֥ה בְהַר־יְהוָ֑ה וּמִי־יָ֝קוּם בִּמְק֥וֹם קָדְשֽׁוֹ׃",
+      "literal_backbone": [
+        "Who may ascend the mountain of Yahweh?",
+        "And who may stand in his holy place?"
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:3",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment.",
+          "text": "B:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v003.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "on or in the mountain, hill",
+          "note": "High is an added description.",
+          "rendered_as": "to his high mountain",
+          "token_ids": [
+            "ps024.v003.t003"
+          ],
+          "transliteration": "ḇəhar",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "stand, rise, remain",
+          "note": "Remain emphasizes staying in the place rather than the posture of standing.",
+          "rendered_as": "remain",
+          "token_ids": [
+            "ps024.v003.t006"
+          ],
+          "transliteration": "yāqûm",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "in the place of his holiness; in his holy place",
+          "note": "Fire is an added image, and holiness is left implicit.",
+          "rendered_as": "where his fire dwells",
+          "token_ids": [
+            "ps024.v003.t007",
+            "ps024.v003.t008"
+          ],
+          "transliteration": "biməqôm qoḏšô",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v003.a.0001"
   ],
@@ -15,7 +178,293 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:3",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.62,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v003.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: Who can go up\nto his high mountain?\nWho can remain\nwhere his fire dwells?",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.64,
+        "syllable_count": 18,
+        "syllables": 18
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v003.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who shall ascend the hill of Yahweh?\nWho in his holy place shall stand?",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 15,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.2,
+        "singability_score": 0.16,
+        "stress_approximation": 0.63,
+        "syllable_count": 19,
+        "syllables": 19
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v003.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who can go up to his high mountain?\nWho can remain where his fire dwells?",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v003.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִֽי־יַעֲלֶ֥ה בְהַר־יְהוָ֑ה וּמִי־יָ֝קוּם בִּמְק֥וֹם קָדְשֽׁוֹ׃",

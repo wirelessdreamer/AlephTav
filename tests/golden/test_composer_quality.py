@@ -32,7 +32,7 @@ def _all_fixture_unit_ids(fixture: dict[str, object]) -> list[str]:
 
 
 @pytest.fixture(scope="module")
-def composer_outputs(tmp_path_factory):
+def composer_outputs(tmp_path_factory, fixture_sources):
     fixture = _load_fixture()
     bootstrap_vendored_repo()
     return build_composer_outputs(

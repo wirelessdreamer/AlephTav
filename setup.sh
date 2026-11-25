@@ -10,7 +10,9 @@ REBUILD_STATE_SCRIPT="${ROOT_DIR}/scripts/setup_rebuild_state.py"
 MANAGED_SERVICES_FILE="${RUN_DIR}/managed-services.json"
 
 DATA_MODE="full"
+INSTALL=0
 SKIP_INSTALL=0
+REBUILD=0
 SKIP_REBUILD=0
 SKIP_START=0
 NONINTERACTIVE=0
@@ -27,14 +29,16 @@ usage() {
 Usage: ./setup.sh [options]
 
 Options:
-  --full             Run the full rebuild pipeline (default)
+  --full             Use the full corpus (default)
   --fixture          Bootstrap fixture data instead of the full rebuild pipeline
-  --skip-install     Skip Python and Node dependency installation
+  --install          Install missing runtimes and Python and Node project dependencies
+  --skip-install     Skip dependency installation (default)
+  --rebuild          Rebuild data even if the required outputs exist
   --skip-rebuild     Skip data bootstrap/rebuild
-  --skip-start       Verify and install only; do not start the app
+  --skip-start       Prepare the workspace without starting the app
   --api-port PORT    Override the API port (default: 43174)
   --ui-port PORT     Override the UI port (default: 43173)
-  --yes              Non-interactive mode; auto-approve derived system package manager commands
+  --yes              With --install, auto-approve system package manager commands
   --help             Show this help message
 EOF
 }
@@ -233,8 +237,16 @@ while [[ $# -gt 0 ]]; do
       DATA_MODE="fixture"
       shift
       ;;
+    --install)
+      INSTALL=1
+      shift
+      ;;
     --skip-install)
       SKIP_INSTALL=1
+      shift
+      ;;
+    --rebuild)
+      REBUILD=1
       shift
       ;;
     --skip-rebuild)
@@ -268,6 +280,10 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+if [[ "${SKIP_INSTALL}" -eq 1 ]]; then
+  INSTALL=0
+fi
 
 cd "${ROOT_DIR}"
 mkdir -p "${RUN_DIR}"
@@ -395,6 +411,10 @@ ensure_system_runtimes() {
     return 0
   fi
 
+  if [[ "${INSTALL}" -eq 0 ]]; then
+    die "Install the missing system runtimes or re-run ./setup.sh --install."
+  fi
+
   if manager="$(detect_package_manager)"; then
     build_install_commands "${manager}" "${need_python}" "${need_node}"
     cat <<EOF
@@ -507,12 +527,13 @@ run_step() {
 }
 
 ensure_venv() {
-  if [[ ! -e "${VENV_DIR}" ]]; then
+  VENV_PYTHON="${VENV_DIR}/bin/python"
+  if [[ ! -x "${VENV_PYTHON}" ]]; then
+    [[ "${INSTALL}" -eq 1 ]] || die "Run ./setup.sh --install to set up the project dependencies."
     run_step "Creating virtual environment" "${PYTHON_CMD}" -m venv "${VENV_DIR}"
   else
     log "Using existing virtual environment at ${VENV_DIR}"
   fi
-  VENV_PYTHON="${VENV_DIR}/bin/python"
   [[ -x "${VENV_PYTHON}" ]] || die "Expected virtual environment interpreter at ${VENV_PYTHON}"
 }
 
@@ -533,28 +554,29 @@ run_data_pipeline() {
   run_step "Validating content" "${VENV_PYTHON}" scripts/validate_content.py
 }
 
-sync_rebuild_state() {
-  local action="$1"
-  local output
-  if ! output="$("${VENV_PYTHON}" "${REBUILD_STATE_SCRIPT}" "${action}" --mode "${DATA_MODE}" 2>&1)"; then
-    printf '%s\n' "${output}" >&2
-    return 1
+check_data_outputs() {
+  local output status=0
+  output="$("${VENV_PYTHON}" "${REBUILD_STATE_SCRIPT}" check --mode "${DATA_MODE}" 2>&1)" || status=$?
+  if [[ -n "${output}" ]]; then
+    log "${output}"
   fi
-  [[ -n "${output}" ]] && log "${output}"
+  return "${status}"
 }
 
 maybe_run_data_pipeline() {
-  local output
-  if output="$("${VENV_PYTHON}" "${REBUILD_STATE_SCRIPT}" check --mode "${DATA_MODE}" 2>&1)"; then
-    [[ -n "${output}" ]] && log "${output}"
-    sync_rebuild_state mark
-    log "Skipping data bootstrap/rebuild because tracked outputs are current."
-    return 0
+  if [[ "${REBUILD}" -eq 0 ]]; then
+    local status
+    if check_data_outputs; then
+      log "Skipping data bootstrap/rebuild because required outputs are present."
+      return 0
+    else
+      status=$?
+    fi
+    [[ "${status}" -eq 3 ]] || die "Could not check the required data outputs."
   fi
 
-  [[ -n "${output}" ]] && log "${output}"
   run_data_pipeline
-  sync_rebuild_state mark
+  check_data_outputs || die "Data bootstrap/rebuild did not produce the required outputs."
 }
 
 wait_for_url() {
@@ -641,7 +663,7 @@ VENV_PYTHON=""
 ensure_system_runtimes
 ensure_venv
 
-if [[ "${SKIP_INSTALL}" -eq 0 ]]; then
+if [[ "${INSTALL}" -eq 1 ]]; then
   install_project_deps
 else
   log "Skipping dependency installation."

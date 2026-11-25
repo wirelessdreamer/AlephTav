@@ -96,9 +96,19 @@ def test_entity_parser_rejects_ids_without_a_unit() -> None:
         ("audit_record", "properties.audit_id", "aud.lxx.ps023.v001.a.0001"),
         ("unit", "properties.unit_id", "lxx.ps023.v001.a"),
         (
-            "unit",
-            "properties.review_decisions.items.properties.decision_id",
+            "review_decision_v1",
+            "properties.decision_id",
             "rev.lxx.ps023.v001.a.0001",
+        ),
+        (
+            "review_decision_v2",
+            "properties.decision_id",
+            "rev.lxx.ps023.v001.a.0001",
+        ),
+        (
+            "review_decision_v2",
+            "properties.target_id",
+            "rnd.lxx.ps023.v001.a.literal.alt.0001",
         ),
         ("token", "properties.token_id", "lxx.ps023.v001.t001"),
         ("rendering", "properties.unit_id", "lxx.ps023.v001.a"),
@@ -130,6 +140,8 @@ def test_schema_id_fields_accept_only_the_supported_corpus_prefix(
     validator = Draft202012Validator(field)
     validator.validate(value)
     validator.validate(value.replace("lxx.", ""))
+    if schema_name in {"review_decision_v1", "review_decision_v2"}:
+        validator.validate(value.replace("lxx.", "lxx.swete.r0001."))
     for malformed in (
         value.replace("lxx.", "lxx.lxx."),
         value.replace("lxx.", "grc."),

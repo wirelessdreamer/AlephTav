@@ -1,9 +1,176 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v004.a.lyric.alt.0001",
+    "rnd.ps024.v004.a.lyric.alt.0002",
+    "rnd.ps024.v004.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v004.a.0001",
+    "aud.ps024.v004.a.0002",
+    "aud.ps024.v004.a.0003",
+    "aud.ps024.v004.a.0004",
+    "aud.ps024.v004.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "31021581f122417a228f4c99da68b8d6693dd38ebe2399b2139482ee57f7b0fe",
+      "audit_id": "aud.ps024.v004.a.0001",
+      "before_hash": "8d6ccdc9f889e0b7089fbac0516486927b623fae9b048787bfaa3d33dc10c13b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.734736+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v004.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "ea8f24c31eaeae9725ee53f5fb5cf74ed889679a85d38b901eb7b6252c51eb2c",
+      "audit_id": "aud.ps024.v004.a.0002",
+      "before_hash": "f72b1e14dd403e8123b03ca9709af92646de3e1e2a3b1996ee8c740553264501",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:38:44.323917+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v004.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1249be998882e336f71c5f8daf2b096c876ed2a1dc6fd94e31dd12c273542a6f",
+      "audit_id": "aud.ps024.v004.a.0003",
+      "before_hash": "61705d9f6afc5a65685b2124dbba24b0706e915e49c0219bb6bd6db7edb7686d",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:37.740727+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v004.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "686f5e85b9bd47110582e4240580cda47fe9877c1fa5f9563e5fa866e8b704f5",
+      "audit_id": "aud.ps024.v004.a.0004",
+      "before_hash": "27389c0e92aff924d5241ff0073c00188d7bfd2f2d1d27508d9af414fa53fac0",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:29.657789+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v004.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f347ed8340d45916421518369184e0b60c6db123a2d05568216f143039f127d7",
+      "audit_id": "aud.ps024.v004.a.0005",
+      "before_hash": "a41f49970b094fdf09950d99776ce558ff926bed3a4e00d8facdbd26d2020393",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:54.783389+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v004.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the sequence of clean hands, a pure heart, refusal to give the soul over to what is empty, and refusal to swear falsely.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "db941fd013768b871cb0ac010ee6b72d1a5a0410c540659793bedf17dd43d0ab",
+      "audit_ids": [
+        "aud.ps024.v004.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v004.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Unbloodied specifies the innocence of the hands, and undivided interprets purity of heart as single devotion. Giving the soul over recasts lifting it up; the English leaves the Masoretic first-person suffix on 'my soul' unexpressed.",
+      "display_reference": "Psalm 24:4",
+      "english_rendering_id": "rnd.ps024.v004.a.lyric.alt.0001",
+      "generation_run_id": "cxr.70f022778587",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "נְקִ֥י כַפַּ֗יִם וּֽבַר־לֵ֫בָ֥ב אֲשֶׁ֤ר׀ לֹא־נָשָׂ֣א לַשָּׁ֣וְא נַפְשִׁ֑י וְלֹ֖א נִשְׁבַּ֣ע לְמִרְמָֽה׃",
+      "literal_backbone": [
+        "One clean of hands and pure of heart.",
+        "Who has not lifted up my soul to falsehood or emptiness.",
+        "And has not sworn deceitfully."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:4",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "B:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v004.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "clean or innocent of hands",
+          "note": "Unbloodied gives the broader image of clean hands a specific sense.",
+          "rendered_as": "Hands unbloodied",
+          "token_ids": [
+            "ps024.v004.t001",
+            "ps024.v004.t002"
+          ],
+          "transliteration": "nəqî ḵappayim",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "and pure of heart",
+          "note": "Undivided interprets purity of heart as single devotion.",
+          "rendered_as": "hearts undivided",
+          "token_ids": [
+            "ps024.v004.t003",
+            "ps024.v004.t004"
+          ],
+          "transliteration": "ûḇar lēḇāḇ",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "lifted up my soul or life to emptiness or falsehood",
+          "note": "Giving over interprets lifting up; 'nothing' represents emptiness, while the first-person suffix is not expressed.",
+          "rendered_as": "No soul given\nover to nothing",
+          "token_ids": [
+            "ps024.v004.t007",
+            "ps024.v004.t008",
+            "ps024.v004.t009"
+          ],
+          "transliteration": "nāśāʾ laššāwʾ nap̄šî",
+          "verdict": "defensible"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v004.a.0001"
   ],
@@ -15,7 +182,314 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:4",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 18,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.17,
+        "singability_score": 0.11,
+        "stress_approximation": 0.67,
+        "syllable_count": 28,
+        "syllables": 28
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v004.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: Hands unbloodied,\nhearts undivided,\n\nB: No soul given\nover to nothing,\nno oath fastened\nto a lie.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.07,
+        "singability_score": 0.09,
+        "stress_approximation": 0.63,
+        "syllable_count": 34,
+        "syllables": 34
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v004.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "The one whose heart is pure, whose hands are clean,\nWho lifts not my soul to what is false,\nAnd swears no oath with words of deceit.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 16,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.12,
+        "singability_score": 0.1,
+        "stress_approximation": 0.69,
+        "syllable_count": 26,
+        "syllables": 26
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v004.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Hands unbloodied, hearts undivided,\nNo soul given over to nothing, no oath fastened to a lie.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v004.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "נְקִ֥י כַפַּ֗יִם וּֽבַר־לֵ֫בָ֥ב אֲשֶׁ֤ר׀ לֹא־נָשָׂ֣א לַשָּׁ֣וְא נַפְשִׁ֑י וְלֹ֖א נִשְׁבַּ֣ע לְמִרְמָֽה׃",

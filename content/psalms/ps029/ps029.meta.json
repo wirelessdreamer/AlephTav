@@ -1,6 +1,102 @@
 {
+  "analyses": [
+    {
+      "audit_ids": [
+        "aud.ps029.v001.a.0002"
+      ],
+      "citations": [],
+      "created_at": "2026-11-24T13:23:50.816835+00:00",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "epistemics": {
+        "known_from_text": [
+          {
+            "basis": "Verses 1–2 repeat the call to ascribe and to worship.",
+            "claim": "The psalm calls its addressees to ascribe glory and strength to the LORD."
+          },
+          {
+            "basis": "Verses 3–9 describe thunder, broken cedars, shaking wilderness and other effects of the voice.",
+            "claim": "The LORD's voice is associated with thunder and powerful effects in the natural world."
+          },
+          {
+            "basis": "Verses 10–11 speak of kingship forever and strength and peace for his people.",
+            "claim": "The psalm proclaims the LORD's enduring kingship and blessing of his people."
+          }
+        ],
+        "not_known_from_text": [
+          {
+            "claim": "David personally wrote the psalm.",
+            "why_not": "The heading associates it with David but does not independently establish authorship."
+          },
+          {
+            "claim": "The psalm was composed for a particular festival or historical storm.",
+            "why_not": "The text names no such occasion or event."
+          },
+          {
+            "claim": "The English arrangement follows particular sections, instrumentation or performance directions.",
+            "why_not": "No English text or arrangement apparatus is supplied."
+          }
+        ]
+      },
+      "generation_run_id": "cxr.fdc8f9cb4897",
+      "generator_provider": "codex-app-server",
+      "guardrails": {
+        "cultic_setting": "The calls to worship and the cry of glory in the LORD's temple give the psalm a worship setting. They do not establish a particular historical ceremony, festival or performance location.",
+        "heading_attribution": "The heading associates the psalm with David; the Hebrew wording can mark an association and does not by itself establish that David composed it or identify the circumstances of composition."
+      },
+      "method": "The textual movement and heading were assessed from the supplied translations and general knowledge of the Hebrew psalm. The section titles are descriptive analytical labels, not supplied arrangement labels. No literal renderings were produced, and no Hebrew edition or lexicon was independently checked.",
+      "non_source_material": [],
+      "prompt_template_version": "codex-psalm-analysis-v2",
+      "psalm_analysis_id": "anl.ps029.0001",
+      "psalm_id": "ps029",
+      "revision_of": null,
+      "sections": [
+        {
+          "arc_note": "The psalm opens with repeated calls to ascribe glory and strength.",
+          "first_verse": 1,
+          "last_verse": 2,
+          "theme": "The heavenly or mighty beings are called to honor and worship the LORD.",
+          "title": "Call to ascribe glory"
+        },
+        {
+          "arc_note": "Repeated references to the voice build toward the cry of glory in the temple.",
+          "first_verse": 3,
+          "last_verse": 9,
+          "theme": "The LORD's voice thunders and acts across waters, mountains, forests and wilderness.",
+          "title": "The voice of the LORD"
+        },
+        {
+          "arc_note": "The psalm closes by moving from divine kingship to blessing for the LORD's people.",
+          "first_verse": 10,
+          "last_verse": 11,
+          "theme": "The LORD is king forever and gives his people strength and peace.",
+          "title": "King and blessing"
+        }
+      ],
+      "similar_translations": [],
+      "source_fingerprint": "7b5fa0b7b172b04a370e02dbee49cff7ab69ebd3c9e3db2bc8f9fc8ff118b720",
+      "status": "proposed",
+      "structural_seams": [],
+      "summary": "No English setting is stored for any verse, so its treatment of the psalm cannot be assessed. The received psalm moves from a call to honor the LORD, through a depiction of his voice over waters, forests and wilderness, to his enduring kingship and blessing of his people.",
+      "translation_id": "tr.ps029.0001"
+    }
+  ],
   "psalm_id": "ps029",
   "title": "Psalm 29",
+  "translations": [
+    {
+      "audit_ids": [
+        "aud.ps029.v001.a.0001"
+      ],
+      "collection_id": "col.0001",
+      "created_at": "2026-11-24T13:22:24.463143+00:00",
+      "created_by": "reviewer",
+      "created_via": "human",
+      "psalm_id": "ps029",
+      "title": "Bone and Ash",
+      "translation_id": "tr.ps029.0001"
+    }
+  ],
   "unit_ids": [
     "ps029.v001.a",
     "ps029.v002.a",

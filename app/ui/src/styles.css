@@ -3193,7 +3193,7 @@ button.composer-path-chip {
 .verse-list__head,
 .verse-row {
   display: grid;
-  grid-template-columns: 4rem minmax(0, 26rem) minmax(0, 1fr) 11rem 2.5rem;
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr) 11rem 2.5rem;
   align-items: center;
 }
 
@@ -3264,6 +3264,14 @@ button.composer-path-chip {
   text-overflow: ellipsis;
 }
 
+.verse-row__grc {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .verse-row__en {
   font-family: var(--serif);
   font-size: 1rem;
@@ -3272,8 +3280,12 @@ button.composer-path-chip {
   text-overflow: ellipsis;
 }
 
+.verse-greek {
+  margin-bottom: 1rem;
+}
+
 .verse-row__meta {
-  grid-column: 2 / 4;
+  grid-column: 2 / 5;
   color: var(--muted);
   font-size: 0.8rem;
 }
@@ -4706,6 +4718,7 @@ button.composer-path-chip {
   }
 
   .verse-row__he,
+  .verse-row__grc,
   .verse-row__fidelity {
     display: none;
   }

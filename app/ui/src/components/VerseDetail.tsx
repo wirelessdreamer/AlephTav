@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from 'react';
 
 import { useOccurrenceContext } from '../hooks/useComparisonAssessments';
-import type { ComparisonTableRow, StudyToken, VerseNote } from '../types';
+import type { BriefingGreekSources, ComparisonTableRow, StudyToken, VerseNote } from '../types';
+import { ArrangementGreekSource } from './ArrangementGreekSource';
 import { RebuildReview } from './RebuildReview';
 import { positionHint, type RebuildProgress, type VerseCodex } from './verseActions';
 import { VerseHistoryPanel } from './VerseHistoryPanel';
@@ -347,6 +348,8 @@ interface Props {
   rebuildProgress: RebuildProgress | null;
   /** Save a human edit of this verse's text; absent when editing is not offered. */
   onSaveText?: (edit: { layer: 'literal' | 'english'; text: string }) => Promise<unknown>;
+  /** The psalm's Greek (LXX) mapped to its Hebrew verses; absent until loaded. */
+  greekSources?: BriefingGreekSources;
 }
 
 /** Quote the reader's selection inside ``element``, or all of it when nothing is selected. */
@@ -419,6 +422,7 @@ export function VerseDetail({
   codex,
   rebuildProgress,
   onSaveText,
+  greekSources,
 }: Props) {
   const tokens = row.tokens ?? [];
   const selected = tokens.find((token) => token.token_id === selectedTokenId) ?? null;
@@ -643,6 +647,14 @@ export function VerseDetail({
           {row.hebrew_text}
         </p>
       )}
+
+      {greekSources ? (
+        <div className="verse-greek">
+          {row.unit_ids.map((id) => (
+            <ArrangementGreekSource key={id} unitId={id} sources={greekSources} />
+          ))}
+        </div>
+      ) : null}
 
       <div className="verse-columns">
         <div>

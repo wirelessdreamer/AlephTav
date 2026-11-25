@@ -1691,7 +1691,7 @@ export function WorkbenchPage() {
           <p className="eyebrow">Workbench Unavailable</p>
           <h1>Start the local API before opening the workbench.</h1>
           <p className="subtle">
-            The workbench expects the FastAPI backend on the configured local API port. GitHub Pages can show the welcome page, but the live editor remains local-only. Use the repo setup script to verify dependencies, rebuild local data, and launch both services.
+            The workbench expects the FastAPI backend on the configured local API port. Run the setup script to start both services and prepare any missing data. Add <code>--install</code> on macOS or Linux or <code>-Install</code> on Windows for first-time setup.
           </p>
           <pre>
             <code>{['./setup.sh', '.\\setup.ps1'].join('\n')}</code>

@@ -59,8 +59,10 @@ def test_arrangement_read_attaches_snapshot_bound_greek_without_mutating_sources
     files_before = {
         path.relative_to(root): path.read_bytes() for path in root.rglob("*") if path.is_file()
     }
-    result = arrangements.arrangement_view("ps025", "arr.ps025.0001")
-    assert [unit["tokens"][0]["surface"] for unit in result["coverage"]["units"]] == ["דָּבָר", "אֵל"]
+    view = arrangements.arrangement_view("ps025", "arr.ps025.0001")
+    assert [unit["tokens"][0]["surface"] for unit in view["coverage"]["units"]] == ["דָּבָר", "אֵל"]
+    assert "greek_sources" not in view
+    result = arrangements.arrangement_sources("ps025", "arr.ps025.0001")
     assert result["greek_sources"]["study_snapshot_id"] == "study.test"
     assert result["greek_sources"]["policy_revision_id"] == "policy.test"
     greek = result["greek_sources"]["by_mt_unit"]["ps025.v001.a"]["units"][0]
@@ -93,21 +95,25 @@ def test_arrangement_route_keeps_hebrew_when_greek_is_missing_or_blocked(
     app.include_router(routes.router)
     with TestClient(app) as client:
         response = client.get("/psalms/ps025/arrangements/arr.ps025.0001")
+        sources_response = client.get("/psalms/ps025/arrangements/arr.ps025.0001/sources")
     assert response.status_code == 200
     payload = response.json()
     assert len(payload["coverage"]["units"]) == 2
     assert payload["coverage"]["units"][0]["tokens"][0]["surface"] == "דָּבָר"
+    assert sources_response.status_code == 200
+    payload = sources_response.json()
+    assert payload["source_choices"] == []
     assert payload["greek_sources"]["available"] is False
     assert payload["greek_sources"]["by_mt_unit"] == {}
     assert payload["greek_sources"]["message"]
-    assert "FORBIDDEN-HEBREW-ORDER-HINT" not in response.text
+    assert "FORBIDDEN-HEBREW-ORDER-HINT" not in response.text + sources_response.text
 
 
 def test_arrangement_route_returns_greek_for_the_correct_mt_unit(arrangement_psalm):
     app = FastAPI()
     app.include_router(routes.router)
     with TestClient(app) as client:
-        response = client.get("/psalms/ps025/arrangements/arr.ps025.0001")
+        response = client.get("/psalms/ps025/arrangements/arr.ps025.0001/sources")
     assert response.status_code == 200
     greek = response.json()["greek_sources"]
     assert greek["edition_id"] == "authored" and greek["text_revision_id"] == "r0001"

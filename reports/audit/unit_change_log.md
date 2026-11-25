@@ -484,42 +484,65 @@
 ## ps008.v001.a
 - 2026-09-28T01:23:36.312989+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
 - 2026-09-28T01:27:52.995740+00:00: Record psalm analysis (codex-analysis)
+- 2026-10-20T00:00:18.004736+00:00: Move translation “Bone and Ash” to “Anime Psalm Book” (reviewer)
+- 2026-10-20T00:00:55.485905+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-20T00:01:16.395018+00:00: Save translation guidance and notes (reviewer)
+- 2026-10-20T00:02:08.291205+00:00: Create song setting “Psalm 8” (import)
+- 2026-10-20T00:04:30.670543+00:00: Record psalm analysis (codex-analysis)
 
 ## ps008.v002.a
 - 2026-09-28T01:23:55.268945+00:00: Create rendering (import)
 - 2026-09-28T01:25:48.661500+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.413080+00:00: Create rendering (import)
+- 2026-10-20T00:02:23.968433+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v003.a
 - 2026-09-28T01:23:55.285695+00:00: Create rendering (import)
 - 2026-09-28T01:26:02.940085+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.431872+00:00: Create rendering (import)
+- 2026-10-20T00:02:33.656628+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v004.a
 - 2026-09-28T01:23:55.302535+00:00: Create rendering (import)
 - 2026-09-28T01:26:11.834897+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.450077+00:00: Create rendering (import)
+- 2026-10-20T00:02:38.793364+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v005.a
 - 2026-09-28T01:23:55.319045+00:00: Create rendering (import)
 - 2026-09-28T01:26:20.862342+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.471583+00:00: Create rendering (import)
+- 2026-10-20T00:02:49.356996+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v006.a
 - 2026-09-28T01:23:55.335933+00:00: Create rendering (import)
 - 2026-09-28T01:26:33.189665+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.490353+00:00: Create rendering (import)
+- 2026-10-20T00:02:58.812141+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v007.a
 - 2026-09-28T01:23:55.352714+00:00: Create rendering (import)
 - 2026-09-28T01:26:40.848955+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.508120+00:00: Create rendering (import)
+- 2026-10-20T00:03:04.796714+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v008.a
 - 2026-09-28T01:23:55.367802+00:00: Create rendering (import)
 - 2026-09-28T01:26:49.060295+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.526378+00:00: Create rendering (import)
+- 2026-10-20T00:03:11.082277+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v009.a
 - 2026-09-28T01:23:55.386879+00:00: Create rendering (import)
 - 2026-09-28T01:26:55.150335+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.543467+00:00: Create rendering (import)
+- 2026-10-20T00:03:16.259203+00:00: Create comparison assessment (codex-analysis)
 
 ## ps008.v010.a
 - 2026-09-28T01:23:55.407598+00:00: Create rendering (import)
 - 2026-09-28T01:27:04.754403+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T00:01:16.563157+00:00: Create rendering (import)
+- 2026-10-20T00:03:20.029657+00:00: Create comparison assessment (codex-analysis)
 
 ## ps009.v001.a
 - 2026-10-11T14:54:36.350396+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
@@ -966,36 +989,112 @@
 ## ps022.v032.a
 
 ## ps023.v001.a
+- 2026-10-20T15:59:56.341878+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-20T16:00:10.180204+00:00: Save translation guidance and notes (reviewer)
+- 2026-10-20T16:00:10.281950+00:00: Create rendering (import)
+- 2026-10-20T16:01:01.197262+00:00: Create song setting “Psalm 23” (import)
+- 2026-10-20T16:01:20.576422+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-20T16:04:08.439424+00:00: Record psalm analysis (codex-analysis)
 
 ## ps023.v002.a
+- 2026-10-20T16:00:10.303359+00:00: Create rendering (import)
+- 2026-10-20T16:01:34.906727+00:00: Create comparison assessment (codex-analysis)
 
 ## ps023.v003.a
+- 2026-10-20T16:00:10.325665+00:00: Create rendering (import)
+- 2026-10-20T16:01:45.124842+00:00: Create comparison assessment (codex-analysis)
 
 ## ps023.v004.a
+- 2026-10-20T16:00:10.351509+00:00: Create rendering (import)
+- 2026-10-20T16:02:02.369668+00:00: Create comparison assessment (codex-analysis)
 
 ## ps023.v005.a
+- 2026-10-20T16:00:10.373222+00:00: Create rendering (import)
+- 2026-10-20T16:02:21.539825+00:00: Create comparison assessment (codex-analysis)
 
 ## ps023.v006.a
+- 2026-10-20T16:00:10.395753+00:00: Create rendering (import)
+- 2026-10-20T16:02:48.315869+00:00: Create comparison assessment (codex-analysis)
 
 ## ps024.v001.a
+- 2026-11-18T13:34:40.260697+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-11-18T13:36:02.648032+00:00: Save translation guidance and notes (reviewer)
+- 2026-11-18T13:36:02.677016+00:00: Create rendering (import)
+- 2026-11-18T13:37:43.452052+00:00: Create song setting “Psalm 24” (import)
+- 2026-11-18T13:38:01.234784+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-18T13:40:50.287121+00:00: Record psalm analysis (codex-analysis)
+- 2026-11-23T23:23:49.339859+00:00: Move translation “Bone and Ash” to “Earlier settings” (mcp:claude)
+- 2026-11-23T23:29:14.043893+00:00: Create translation “Bone and Ash” in “Bone and Ash” (mcp:claude)
+- 2026-11-23T23:36:13.395381+00:00: Create song setting “The King of Glory” (codex)
+- 2026-11-23T23:44:29.751148+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:45:27.871592+00:00: Save translation guidance and notes (mcp:claude)
+- 2026-11-23T23:46:48.206379+00:00: Create song setting “The Radiant King” (codex)
+- 2026-11-23T23:47:23.160029+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:45.959775+00:00: Update song setting (mcp:claude)
+- 2026-11-23T23:47:47.068408+00:00: Update rendering (mcp:claude)
 
 ## ps024.v002.a
+- 2026-11-18T13:36:02.693801+00:00: Create rendering (import)
+- 2026-11-18T13:38:13.591576+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:33.242112+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:25.305963+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:54.034344+00:00: Update rendering (mcp:claude)
 
 ## ps024.v003.a
+- 2026-11-18T13:36:02.714970+00:00: Create rendering (import)
+- 2026-11-18T13:38:28.227479+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:35.467196+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:27.454398+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:54.227713+00:00: Update rendering (mcp:claude)
 
 ## ps024.v004.a
+- 2026-11-18T13:36:02.734736+00:00: Create rendering (import)
+- 2026-11-18T13:38:44.323917+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:37.740727+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:29.657789+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:54.783389+00:00: Update rendering (mcp:claude)
 
 ## ps024.v005.a
+- 2026-11-18T13:36:02.757091+00:00: Create rendering (import)
+- 2026-11-18T13:38:57.185750+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:39.945151+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:31.815994+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:56.003980+00:00: Update rendering (mcp:claude)
 
 ## ps024.v006.a
+- 2026-11-18T13:36:02.775534+00:00: Create rendering (import)
+- 2026-11-18T13:39:11.870133+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:42.141953+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:34.159173+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:56.186038+00:00: Update rendering (mcp:claude)
 
 ## ps024.v007.a
+- 2026-11-18T13:36:02.794718+00:00: Create rendering (import)
+- 2026-11-18T13:39:27.830100+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:44.392315+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:36.362803+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:56.359924+00:00: Update rendering (mcp:claude)
 
 ## ps024.v008.a
+- 2026-11-18T13:36:02.815139+00:00: Create rendering (import)
+- 2026-11-18T13:39:41.764732+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:46.643477+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:38.710117+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:56.601494+00:00: Update rendering (mcp:claude)
 
 ## ps024.v009.a
+- 2026-11-18T13:36:02.833365+00:00: Create rendering (import)
+- 2026-11-18T13:39:58.323055+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:48.901438+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:40.910838+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:56.847232+00:00: Update rendering (mcp:claude)
 
 ## ps024.v010.a
+- 2026-11-18T13:36:02.853151+00:00: Create rendering (import)
+- 2026-11-18T13:40:12.724093+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T23:44:50.959738+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:43.261659+00:00: Create rendering (mcp:claude)
+- 2026-11-23T23:47:57.093305+00:00: Update rendering (mcp:claude)
 
 ## ps025.v001.a
 - 2026-09-25T19:51:38.752254+00:00: Create rendering (codex)
@@ -1009,6 +1108,46 @@
 - 2026-10-17T17:36:41.392709+00:00: Record psalm analysis (codex-analysis)
 - 2026-10-17T17:52:09.040348+00:00: Create song setting “Show Me Your Ways — Psalm 25” (codex)
 - 2026-10-17T18:15:22.647924+00:00: Preserve earlier translator's briefing (briefing-history-migration)
+- 2026-10-20T20:36:59.055621+00:00: Infer briefing suggestions from Psalm 25 lyric and setting; original selections unrecovered (codex:translation-outcome-inference)
+- 2026-10-20T22:32:24.832813+00:00: Record briefing decision: Divine names (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:24.891068+00:00: Record briefing decision: Disturbed acrostic positions (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:24.939899+00:00: Record briefing decision: Human gender and number (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:24.984049+00:00: Record briefing decision: The heart’s distress (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.061624+00:00: Record briefing decision: The chooser of the way (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.107254+00:00: Record briefing decision: Counsel, friendship, or strength (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.174085+00:00: Record briefing decision: Protecting virtues or upright companions (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.222819+00:00: Record briefing decision: Assurance or prayer about shame (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.278196+00:00: Record briefing decision: Guidance as statement or wish (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.327028+00:00: Record briefing decision: Pardon requested or expected (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.393202+00:00: Record briefing decision: Guarding requested or assured (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.435111+00:00: Record briefing decision: Truth and faithfulness (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.508923+00:00: Record briefing decision: Soul, life, and the lifted self (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.556568+00:00: Record briefing decision: Waiting and hoping (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.650026+00:00: Record briefing decision: Shame and failed trust (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.701524+00:00: Record briefing decision: Treacherous conduct and reqam (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.745565+00:00: Record briefing decision: Ways, paths, and instruction (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.802394+00:00: Record briefing decision: Salvation and rescue (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.868504+00:00: Record briefing decision: Mercy from ancient times (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.923308+00:00: Record briefing decision: Remembering mercy and wrongdoing (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:25.978148+00:00: Record briefing decision: Wrongdoing or ignorance (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.032384+00:00: Record briefing decision: The humble and the afflicted (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.077107+00:00: Record briefing decision: Justice and right conduct (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.131442+00:00: Record briefing decision: Covenant and testimonies (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.180289+00:00: Record briefing decision: Keeping or seeking the covenant (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.245783+00:00: Record briefing decision: The divine name as a reason (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.292852+00:00: Record briefing decision: Fear of God (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.350879+00:00: Record briefing decision: The rhetorical question (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.408046+00:00: Record briefing decision: Dwelling in goodness (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.461829+00:00: Record briefing decision: Descendants and the land (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.532578+00:00: Record briefing decision: Who makes the covenant known (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.586160+00:00: Record briefing decision: Eyes, feet, and the snare (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.666313+00:00: Record briefing decision: Alone or an only child (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.734322+00:00: Record briefing decision: Poor or afflicted (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.802745+00:00: Record briefing decision: Suffering and forgiveness (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.865576+00:00: Record briefing decision: Numerous enemies and violent hatred (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:26.980284+00:00: Record briefing decision: Whose integrity (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:27.038071+00:00: Record briefing decision: The national ending (codex:user-approved-inference-adoption)
+- 2026-10-20T22:32:27.096729+00:00: Record briefing decision: Redeeming Israel (codex:user-approved-inference-adoption)
 
 ## ps025.v002.a
 - 2026-09-25T19:51:38.760976+00:00: Create rendering (codex)
@@ -1179,30 +1318,113 @@
 - 2026-10-17T17:34:36.556224+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v001.a
+- 2026-10-20T00:25:29.922200+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-20T00:25:45.018841+00:00: Save translation guidance and notes (reviewer)
+- 2026-10-20T00:33:27.262204+00:00: Prepare translator's briefing (codex)
+- 2026-10-20T17:28:35.399092+00:00: Prepare translator's briefing (codex)
+- 2026-10-20T22:11:49.594475+00:00: Record briefing decision: Fitting the 6/8 target (reviewer)
+- 2026-10-20T22:12:06.005038+00:00: Record briefing decision: Judgment or vindication (reviewer)
+- 2026-10-20T22:13:01.564604+00:00: Record briefing decision: The claim to integrity (reviewer)
+- 2026-10-20T22:13:15.031058+00:00: Record briefing decision: The divine name (reviewer)
+- 2026-10-20T22:13:21.484668+00:00: Record briefing decision: The divine name (reviewer)
+- 2026-10-20T22:13:55.498669+00:00: Record briefing decision: Time and continuing commitment (reviewer)
+- 2026-10-20T22:14:04.564946+00:00: Record briefing decision: Presenting the heading (reviewer)
+- 2026-10-20T22:14:08.381041+00:00: Record briefing decision: Presenting the heading (reviewer)
+- 2026-10-20T22:16:19.055589+00:00: Record briefing decision: The omitted refining verb (reviewer)
+- 2026-10-20T22:16:33.883528+00:00: Record briefing decision: Kidneys and heart (reviewer)
+- 2026-10-20T22:17:04.585744+00:00: Record briefing decision: Washing and innocence (reviewer)
+- 2026-10-20T22:17:28.228179+00:00: Record briefing decision: Circling the altar (reviewer)
+- 2026-10-20T22:18:11.388149+00:00: Record briefing decision: Making heard or hearing (reviewer)
+- 2026-10-20T22:18:57.915313+00:00: Record briefing decision: Dwelling or beauty (reviewer)
+- 2026-10-20T22:19:07.652961+00:00: Record briefing decision: Gendered descriptions (reviewer)
+- 2026-10-20T22:20:25.889107+00:00: Record briefing decision: Repeated movement imagery (reviewer)
+- 2026-10-20T22:21:17.223726+00:00: Record briefing decision: Trust without wavering (reviewer)
+- 2026-10-20T22:22:16.598892+00:00: Record briefing decision: Loyal love (reviewer)
+- 2026-10-20T22:22:49.257411+00:00: Record briefing decision: Walking in truth (reviewer)
+- 2026-10-20T22:23:09.684033+00:00: Record briefing decision: People of emptiness (reviewer)
+- 2026-10-20T22:23:27.532882+00:00: Record briefing decision: Hidden people (reviewer)
+- 2026-10-20T22:23:52.410183+00:00: Record briefing decision: Strength of rejection (reviewer)
+- 2026-10-20T22:24:24.290711+00:00: Record briefing decision: Sequence, purpose, and accompaniment (reviewer)
+- 2026-10-20T22:24:43.906945+00:00: Record briefing decision: Thanksgiving and wonders (reviewer)
+- 2026-10-20T22:25:02.502518+00:00: Record briefing decision: House, sanctuary, or temple (reviewer)
+- 2026-10-20T22:25:20.259947+00:00: Record briefing decision: Glory or honor (reviewer)
+- 2026-10-20T22:25:34.265411+00:00: Record briefing decision: Being gathered with sinners (reviewer)
+- 2026-10-20T22:25:42.796343+00:00: Record briefing decision: Soul, self, and life (reviewer)
+- 2026-10-20T22:25:55.630745+00:00: Record briefing decision: Men of blood (reviewer)
+- 2026-10-20T22:26:23.369328+00:00: Record briefing decision: Men of blood (reviewer)
+- 2026-10-20T22:26:39.105294+00:00: Record briefing decision: Wickedness or schemes (reviewer)
+- 2026-10-20T22:27:18.930132+00:00: Record briefing decision: Giving or taking bribes (reviewer)
+- 2026-10-20T22:27:26.794251+00:00: Record briefing decision: Giving or taking bribes (reviewer)
+- 2026-10-20T22:27:36.286309+00:00: Record briefing decision: Redeem or rescue (reviewer)
+- 2026-10-20T22:28:10.438571+00:00: Record briefing decision: Grace or mercy (reviewer)
+- 2026-10-20T22:28:29.250852+00:00: Record briefing decision: Level ground and uprightness (reviewer)
+- 2026-10-20T22:29:18.028122+00:00: Record briefing decision: Assemblies and belonging (reviewer)
+- 2026-10-20T22:29:52.088792+00:00: Record briefing decision: The final act of praise (reviewer)
+- 2026-10-20T23:02:07.621791+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:15.920920+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:13:33.802127+00:00: Create song setting “Psalm 26 — Judge Me, O LORD” (codex)
+- 2026-10-21T11:40:39.741707+00:00: Create comparison assessment (codex-analysis)
+- 2026-10-21T11:47:19.850727+00:00: Record psalm analysis (codex-analysis)
 
 ## ps026.v002.a
+- 2026-10-20T23:02:07.665875+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:15.948044+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:41:16.434231+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v003.a
+- 2026-10-20T23:02:07.698247+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:19.618702+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:41:31.158199+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v004.a
+- 2026-10-20T23:02:07.728732+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:19.654542+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:41:48.264432+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v005.a
+- 2026-10-20T23:02:07.764318+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:19.685967+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:42:04.244687+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v006.a
+- 2026-10-20T23:02:07.799562+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:22.060620+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:42:17.922170+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v007.a
+- 2026-10-20T23:02:07.831689+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:25.791735+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:42:40.158030+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v008.a
+- 2026-10-20T23:02:07.874845+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:28.076047+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:42:58.635775+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v009.a
+- 2026-10-20T23:02:07.912686+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:28.114343+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:43:15.270461+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v010.a
+- 2026-10-20T23:02:07.939100+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:28.149872+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:43:26.150171+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v011.a
+- 2026-10-20T23:02:07.973008+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:28.175806+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:43:42.942882+00:00: Create comparison assessment (codex-analysis)
 
 ## ps026.v012.a
+- 2026-10-20T23:02:08.003179+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-20T23:06:28.204550+00:00: Create rendering (codex:owner-authorized-greek-retry)
+- 2026-10-21T11:44:00.007292+00:00: Create comparison assessment (codex-analysis)
 
 ## ps027.v001.a
+- 2026-10-30T03:31:29.102849+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-10-30T03:33:31.998394+00:00: Create song setting “Whom Shall I Fear?” (codex)
+- 2026-10-30T03:44:57.735132+00:00: Prepare translator's briefing (codex)
 
 ## ps027.v002.a
 
@@ -1231,24 +1453,99 @@
 ## ps027.v014.a
 
 ## ps028.v001.a
+- 2026-11-03T19:10:00.301120+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-11-03T19:10:12.908782+00:00: Save translation guidance and notes (reviewer)
+- 2026-11-03T19:11:54.572316+00:00: Create song setting “My Rock, My Strength, My Shield” (codex)
+- 2026-11-03T19:19:00.176399+00:00: Prepare translator's briefing (codex)
+- 2026-11-03T19:19:08.539220+00:00: Record briefing decision: Divine name (reviewer)
+- 2026-11-03T19:29:09.696522+00:00: Record briefing decision: Rejoicing heart or renewed flesh (reviewer)
+- 2026-11-03T19:29:18.854721+00:00: Record briefing decision: Song, willingness or whole body (reviewer)
+- 2026-11-03T19:29:49.222760+00:00: Record briefing decision: Their strength or the people’s strength (reviewer)
+- 2026-11-03T19:30:02.448925+00:00: Record briefing decision: The anointed figure (reviewer)
+- 2026-11-03T19:30:18.509625+00:00: Record briefing decision: Prayer or prediction in verse 5 (reviewer)
+- 2026-11-03T23:30:51.891378+00:00: Record briefing decision: Time and the turn to thanksgiving (reviewer)
+- 2026-11-04T11:43:40.062438+00:00: Record briefing decision: Fitting the required 6/8 (reviewer)
+- 2026-11-04T11:43:53.136270+00:00: Record briefing decision: Heading in text and performance (reviewer)
+- 2026-11-04T12:12:23.797694+00:00: Record briefing decision: Voice and communal ending (reviewer)
+- 2026-11-04T12:13:00.136834+00:00: Record briefing decision: Rock or God (reviewer)
+- 2026-11-04T12:13:08.790051+00:00: Record briefing decision: Deafness and silence (reviewer)
+- 2026-11-04T12:13:17.195002+00:00: Record briefing decision: The pit and the feared consequence (reviewer)
+- 2026-11-04T12:13:38.098464+00:00: Record briefing decision: The sanctuary (reviewer)
+- 2026-11-04T12:13:48.773824+00:00: Record briefing decision: The sanctuary (reviewer)
+- 2026-11-04T12:13:57.490450+00:00: Record briefing decision: The repeated plea (reviewer)
+- 2026-11-04T12:14:10.968023+00:00: Record briefing decision: Being dragged away or counted with evildoers (reviewer)
+- 2026-11-04T12:14:19.333942+00:00: Record briefing decision: The longer Greek plea (reviewer)
+- 2026-11-04T12:14:35.142333+00:00: Record briefing decision: Peaceful speech and inward evil (reviewer)
+- 2026-11-04T12:14:46.674078+00:00: Record briefing decision: Recompense and repeated imperatives (reviewer)
+- 2026-11-04T12:15:13.486855+00:00: Record briefing decision: Ignoring or failing to understand God’s works (reviewer)
+- 2026-11-04T12:15:27.782531+00:00: Record briefing decision: Linked handiwork and building images (reviewer)
+- 2026-11-04T12:15:36.983874+00:00: Record briefing decision: Strength and shield (reviewer)
+- 2026-11-04T12:16:11.267988+00:00: Record briefing decision: Thanking or praising (reviewer)
+- 2026-11-04T12:16:27.124891+00:00: Record briefing decision: Saving stronghold (reviewer)
+- 2026-11-04T12:16:36.281933+00:00: Record briefing decision: God’s inheritance (reviewer)
+- 2026-11-04T12:16:45.050859+00:00: Record briefing decision: Shepherding, feeding or governing (reviewer)
+- 2026-11-04T12:16:56.245961+00:00: Record briefing decision: Carrying or exalting (reviewer)
+- 2026-11-04T12:17:11.382192+00:00: Record briefing decision: Human gender and divine pronouns (reviewer)
+- 2026-11-04T12:17:19.239834+00:00: Record briefing decision: Blessing God and blessing the people (reviewer)
+- 2026-11-04T12:18:06.702409+00:00: Record briefing decision: Duration of the closing care (reviewer)
+- 2026-11-04T12:21:45.363968+00:00: Create rendering (codex)
+- 2026-11-04T12:25:41.916584+00:00: Create rendering (codex)
+- 2026-11-04T12:49:07.984800+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-04T12:53:00.943727+00:00: Record psalm analysis (codex-analysis)
+- 2026-11-23T01:52:39.924841+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
+- 2026-11-23T01:52:39.926005+00:00: Import Bone and Ash Psalm 28 translation, song setting and analysis (import:bone-and-ash-ps028)
 
 ## ps028.v002.a
+- 2026-11-04T12:21:45.374500+00:00: Create rendering (codex)
+- 2026-11-04T12:25:41.932366+00:00: Create rendering (codex)
+- 2026-11-04T12:49:22.670505+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:39.952534+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v003.a
+- 2026-11-04T12:21:45.385250+00:00: Create rendering (codex)
+- 2026-11-04T12:25:44.227675+00:00: Create rendering (codex)
+- 2026-11-04T12:49:44.568736+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:39.977367+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v004.a
+- 2026-11-04T12:21:45.395325+00:00: Create rendering (codex)
+- 2026-11-04T12:25:44.243229+00:00: Create rendering (codex)
+- 2026-11-04T12:49:59.923606+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.004892+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v005.a
+- 2026-11-04T12:21:45.405760+00:00: Create rendering (codex)
+- 2026-11-04T12:25:44.261221+00:00: Create rendering (codex)
+- 2026-11-04T12:50:16.743077+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.030640+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v006.a
+- 2026-11-04T12:21:45.415786+00:00: Create rendering (codex)
+- 2026-11-04T12:25:44.276631+00:00: Create rendering (codex)
+- 2026-11-04T12:50:28.973482+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.052793+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v007.a
+- 2026-11-04T12:21:45.428380+00:00: Create rendering (codex)
+- 2026-11-04T12:25:44.292104+00:00: Create rendering (codex)
+- 2026-11-04T12:50:40.013674+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.077111+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v008.a
+- 2026-11-04T12:21:45.439275+00:00: Create rendering (codex)
+- 2026-11-04T12:25:46.028594+00:00: Create rendering (codex)
+- 2026-11-04T12:50:53.957088+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.096788+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps028.v009.a
+- 2026-11-04T12:21:45.452660+00:00: Create rendering (codex)
+- 2026-11-04T12:25:46.043566+00:00: Create rendering (codex)
+- 2026-11-04T12:51:06.839183+00:00: Create comparison assessment (codex-analysis)
+- 2026-11-23T01:52:40.121096+00:00: Import Bone and Ash Psalm 28 work from export (import:bone-and-ash-ps028)
 
 ## ps029.v001.a
+- 2026-11-24T13:22:24.481581+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
+- 2026-11-24T13:23:50.821871+00:00: Record psalm analysis (codex-analysis)
 
 ## ps029.v002.a
 
@@ -3599,6 +3896,10 @@
 - 2026-09-26T23:29:22.370438+00:00: Create translation “Bone and Ash” in “Bone and Ash” (reviewer)
 - 2026-09-26T23:32:15.163569+00:00: Create song setting “God of my salvation” (import)
 - 2026-09-26T23:36:58.138713+00:00: Record psalm analysis (codex-analysis)
+- 2026-11-06T04:03:09.351302+00:00: Record intentional translation choice (codex:user-reported-intent)
+- 2026-11-06T04:03:10.748259+00:00: Record intentional translation choice (codex:user-reported-intent)
+- 2026-11-06T04:12:50.235102+00:00: Record intentional translation choice (codex:user-requested-context-annotation)
+- 2026-11-06T04:12:51.103407+00:00: Record intentional translation choice (codex:user-requested-context-annotation)
 
 ## ps088.v002.a
 - 2026-09-26T23:29:49.825001+00:00: Create rendering (import)

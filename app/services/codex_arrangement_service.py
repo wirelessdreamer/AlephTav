@@ -8,6 +8,7 @@ stored, and is stored as a proposed arrangement for review.
 
 from __future__ import annotations
 
+import copy
 from typing import Any
 
 from jsonschema import Draft202012Validator
@@ -20,7 +21,7 @@ from app.services import comparison_assessment_service as comparisons
 from app.services import registry_service
 from app.services.codex_import_service import not_in_paste
 
-ARRANGE_TEMPLATE_VERSION = "codex-arrangement-v1"
+ARRANGE_TEMPLATE_VERSION = "codex-arrangement-v2"
 IMPORT_ARRANGE_TEMPLATE_VERSION = "codex-arrangement-import-v1"
 KIND_ARRANGEMENT = "arrangement"
 
@@ -83,6 +84,31 @@ ARRANGE_VALIDATOR = Draft202012Validator(
     }
 )
 
+SELAH = "סלה"
+
+
+def _draft_schema() -> dict[str, Any]:
+    """A drafted setting adds no lines: every line renders at least one Hebrew token."""
+    schema = copy.deepcopy(ARRANGE_VALIDATOR.schema)
+    line = schema["properties"]["sections"]["items"]["properties"]["lines"]["items"]
+    line["properties"]["liberty"]["enum"] = [
+        liberty for liberty in arrangements.LINE_LIBERTIES if liberty != "added"
+    ]
+    line["properties"]["token_ids"]["minItems"] = 1
+    return schema
+
+
+DRAFT_VALIDATOR = Draft202012Validator(_draft_schema())
+
+
+def _selah_tokens(units: list[dict[str, Any]]) -> list[str]:
+    return [
+        token["token_id"]
+        for unit in units
+        for token in unit.get("tokens", [])
+        if token.get("normalized") == SELAH
+    ]
+
 
 def _verse_block(unit: dict[str, Any], layer: str, translation_id: str | None = None) -> list[str]:
     lines = [f"### {unit['ref']} ({unit['unit_id']})", unit["source_hebrew"]]
@@ -138,20 +164,27 @@ def build_arrangement_prompt(psalm_id: str, layer: str, translation_id: str | No
         "  - let a line carry words from more than one verse, or spread a verse over lines;",
         "  - sing a section again: give the repeat its own key and set repeat_of to the key",
         "    of the section it repeats; its lines are only what that time adds, usually none;",
-        "  - compress, expand, reorder or add, where the guidance or the song calls for it.",
+        "  - compress, expand or reorder, where the guidance or the song calls for it.",
+        "Never add a line the Hebrew does not have: every line renders Hebrew tokens of this",
+        "psalm. Singing a section again is a repeat, not new lines. Instrumental and",
+        "performance directions go in a section's label, never in a line.",
         "Every departure is declared, never hidden. For each line give:",
         "  text: the line as sung;",
-        "  token_ids: the Hebrew tokens the line renders, exact ids from above, or none",
-        "    when the line renders nothing in the Hebrew;",
+        "  token_ids: the Hebrew tokens the line renders, exact ids from above, at least one;",
         "  liberty: tracks (renders its tokens closely), compressed (folds them together or",
-        "    leaves part out), expanded (adds to them), reordered (changes their order), or",
-        "    added (not in the Hebrew there);",
+        "    leaves part out), expanded (adds to them), or reordered (changes their order);",
         "  rationale: one sentence for any liberty but tracks; empty for tracks.",
         "Carry every Hebrew token in some line at least once. List any you leave out in",
         "omissions, with the reason. Words the Hebrew repeats are sung the same way each",
         "time unless there is a reason to vary them. Keys are short names you choose",
         '("V1", "C"); labels are what a singer reads ("Verse 1", "Chorus").',
     ]
+    selahs = _selah_tokens(psalm["units"])
+    if selahs:
+        sections += [
+            "Selah stands in the Hebrew at " + ", ".join(selahs) + ". Sing each one as a line",
+            '"Selah" where the Hebrew has it, with that token\'s id. Never leave Selah out.',
+        ]
     return "\n".join(sections)
 
 
@@ -267,12 +300,29 @@ def draft_arrangement(
         prompt=build_arrangement_prompt(
             psalm_id, layer, translation.session_translation(session_id)
         ),
-        validator=ARRANGE_VALIDATOR,
+        validator=DRAFT_VALIDATOR,
         kind=KIND_ARRANGEMENT,
         psalm_id=psalm_id,
         layer=layer,
         prompt_template_version=ARRANGE_TEMPLATE_VERSION,
     )
+    if run["status"] == translation.RUN_COMPLETED:
+        sung = {
+            token_id
+            for section in run["payload"]["sections"]
+            for line in section["lines"]
+            for token_id in line["token_ids"]
+        }
+        units = registry_service.load_psalm(psalm_id)["units"]
+        missing = [token_id for token_id in _selah_tokens(units) if token_id not in sung]
+        if missing:
+            return {
+                "psalm_id": psalm_id,
+                "status": translation.RUN_INVALID_OUTPUT,
+                "error": "Codex's setting left out Selah at " + ", ".join(missing),
+                "run_id": run["run_id"],
+                "view": None,
+            }
     return _store(run, psalm_id, layer, created_by, "codex", ARRANGE_TEMPLATE_VERSION)
 
 

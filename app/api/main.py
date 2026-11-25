@@ -26,6 +26,7 @@ from app.api.routes import (
     source_map,
     speech,
     tokens,
+    translation_choices,
     translations,
     units,
     verse_notes,
@@ -93,6 +94,7 @@ app.include_router(jobs.router)
 app.include_router(speech.router)
 app.include_router(verse_notes.router)
 app.include_router(arrangements.router)
+app.include_router(translation_choices.router)
 app.include_router(translations.router)
 
 # The same operations as MCP tools at /mcp, for an outside LLM (see app/api/mcp_server.py).

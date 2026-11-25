@@ -1,9 +1,180 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v008.a.lyric.alt.0001",
+    "rnd.ps024.v008.a.lyric.alt.0002",
+    "rnd.ps024.v008.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v008.a.0001",
+    "aud.ps024.v008.a.0002",
+    "aud.ps024.v008.a.0003",
+    "aud.ps024.v008.a.0004",
+    "aud.ps024.v008.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "385ffab8891298e46e0f3069960393702aef4ba33c2036ba2d8035359ba6a317",
+      "audit_id": "aud.ps024.v008.a.0001",
+      "before_hash": "93bdd53105da60eb4cc89f84a5284b10f27cf8eae4ffbe3b0a4a5308afb8560b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.815139+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v008.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8d445ba1101b44afda132d6534b4ff6807894e369a036c6b7df6f1792ba90d7d",
+      "audit_id": "aud.ps024.v008.a.0002",
+      "before_hash": "80300698188a4d8fb95db15cbecaa579e9abc19ed82798f2e80d70881372fe3c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:39:41.764732+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v008.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "c5464e4b023cbe7879d397f64b8a0568b0338225b0d21b4048088ca0c271c473",
+      "audit_id": "aud.ps024.v008.a.0003",
+      "before_hash": "2c1d604f42acc0210064f8a7755430176ef7d24a5bcaea311eedd55590952881",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:46.643477+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v008.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4bbac873fc1dbdf1b4bb3bd21f40dca92b0d103b8915090f5ef34dc95ed5b9f6",
+      "audit_id": "aud.ps024.v008.a.0004",
+      "before_hash": "8eb5014ccd5e886cd41e92b021a58b3ccf4bca091c71586cb9ce0e21b6e1c560",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:38.710117+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v008.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "134dc61ebfa711b25102e72d90e0e94070d33978e37e202d5cb9ea966f186d8e",
+      "audit_id": "aud.ps024.v008.a.0005",
+      "before_hash": "aa28e2227065eb8d20da30d8e52cf1f370fd0f9ef1fe7c98f180470b28ad9d12",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:56.601494+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v008.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves a question about an honored figure and identifies Yahweh as mighty and associated with war. It repeats the question and Yahweh's name in a call and response.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "b9c96225f5f15f98956b9a02d00504d1a5305f0b4edf22f0f5e3f48ebdc52a3d",
+      "audit_ids": [
+        "aud.ps024.v008.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v008.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Clothing, burning honor, a crown, and holy thunder elaborate the question; the explicit title 'king of glory' is absent. Fearless and ready for war interpret strength and might in battle.",
+      "display_reference": "Psalm 24:8",
+      "english_rendering_id": "rnd.ps024.v008.a.lyric.alt.0001",
+      "generation_run_id": "cxr.f52a7945aa7d",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "מִ֥י זֶה֮ מֶ֤לֶךְ הַכָּ֫ב֥וֹד יְ֭הוָה עִזּ֣וּז וְגִבּ֑וֹר יְ֝הוָ֗ה גִּבּ֥וֹר מִלְחָמָֽה׃",
+      "literal_backbone": [
+        "Who is this king of glory?",
+        "Yahweh, strong and mighty.",
+        "Yahweh, mighty in battle."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:8",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "B:"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing three times.",
+          "text": "C:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v008.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "king of glory or honor",
+          "note": "The lyric elaborates honor with images of clothing, fire, a crown, and thunder; it does not explicitly name the king.",
+          "rendered_as": "clothed\nin burning honor; crowned\nwith holy thunder",
+          "token_ids": [
+            "ps024.v008.t003",
+            "ps024.v008.t004"
+          ],
+          "transliteration": "meleḵ hakkāḇôḏ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "strong and mighty",
+          "note": "Fearless interprets strength and might as courage.",
+          "rendered_as": "mighty; fearless",
+          "token_ids": [
+            "ps024.v008.t006",
+            "ps024.v008.t007"
+          ],
+          "transliteration": "ʿizzûz wəḡibbôr",
+          "verdict": "defensible"
+        },
+        {
+          "lexical_gloss": "mighty in battle or war",
+          "note": "Readiness for war leaves the explicit claim of might in battle unstated.",
+          "rendered_as": "ready\nfor the war",
+          "token_ids": [
+            "ps024.v008.t009",
+            "ps024.v008.t010"
+          ],
+          "transliteration": "gibbôr milḥāmāh",
+          "verdict": "narrowing"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v008.a.0001"
   ],
@@ -15,7 +186,293 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:8",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 26,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.27,
+        "singability_score": 0.13,
+        "stress_approximation": 0.77,
+        "syllable_count": 40,
+        "syllables": 40
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v008.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: Who comes clothed\nin burning honor?\n\nC: Yahweh, mighty.\nC: Yahweh, fearless.\n\nB: Who comes crowned\nwith holy thunder?\n\nC: Yahweh, ready\nfor the war.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 14,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.18,
+        "stress_approximation": 0.71,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v008.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who is this King of glory?\nYahweh, strong and mighty,\nYahweh, mighty in battle.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.76,
+        "syllable_count": 32,
+        "syllables": 32
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v008.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "Who comes clothed in burning honor?\nYahweh, mighty; Yahweh, fearless.\nWho is this King of glory?\nYahweh, ready for the war.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v008.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "מִ֥י זֶה֮ מֶ֤לֶךְ הַכָּ֫ב֥וֹד יְ֭הוָה עִזּ֣וּז וְגִבּ֑וֹר יְ֝הוָ֗ה גִּבּ֥וֹר מִלְחָמָֽה׃",

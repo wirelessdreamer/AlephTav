@@ -1,0 +1,247 @@
+"""Validation of the committed content tree against its schemas and policies.
+
+Run it with ``python scripts/validate_content.py``; the app and CLI import it from here.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from jsonschema import Draft202012Validator, RefResolver  # type: ignore[import-untyped]
+from jsonschema import ValidationError as SchemaValidationError
+
+from app.core.config import get_settings
+from app.core.errors import ValidationError as ContentValidationError
+from app.services import poetic_analysis_service, registry_service
+from app.services.foundation_contract_service import (
+    validate_contract,
+    validate_greek_unit,
+)
+from app.services.review_evidence_service import validate_review_decision
+
+
+def _load_schema(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _validator(schema_name: str) -> Draft202012Validator:
+    settings = get_settings()
+    base_uri = settings.schemas_dir.resolve().as_uri() + "/"
+    schema = _load_schema(settings.schemas_dir / schema_name)
+    resolver = RefResolver(base_uri=base_uri, referrer=schema)
+    return Draft202012Validator(schema, resolver=resolver)
+
+
+def _deterministic_text(payload: Any) -> str:
+    return registry_service.deterministic_json(payload)
+
+
+def _display_path(path: Path) -> str:
+    settings = get_settings()
+    try:
+        return str(path.relative_to(settings.root_dir))
+    except ValueError:
+        return str(path)
+
+
+def validate_all_content() -> dict[str, Any]:
+    settings = get_settings()
+    errors: list[str] = []
+    validated_files: list[str] = []
+    unit_validator = _validator("unit.schema.json")
+    meta_validator = _validator("psalm_meta.schema.json")
+    project_validator = _validator("project.schema.json")
+
+    if settings.project_file.exists():
+        project = registry_service.read_json(settings.project_file)
+        for error in project_validator.iter_errors(project):
+            errors.append(f"project.json: {error.message}")
+        if settings.project_file.read_text(encoding="utf-8") != _deterministic_text(project):
+            errors.append("project.json: non-deterministic serialization")
+        validated_files.append(settings.project_file.relative_to(settings.root_dir).as_posix())
+    else:
+        errors.append("content/project.json missing")
+
+    # The projects translations are kept in; the default one is built in.
+    collection_ids = {"col.default"}
+    if settings.collections_file.exists():
+        collections = registry_service.read_json(settings.collections_file)
+        for error in _validator("collections.schema.json").iter_errors(collections):
+            errors.append(f"collections.json: {error.message}")
+        if settings.collections_file.read_text(encoding="utf-8") != _deterministic_text(
+            collections
+        ):
+            errors.append("collections.json: non-deterministic serialization")
+        collection_ids.update(c.get("collection_id") for c in collections.get("collections", []))
+        validated_files.append(settings.collections_file.relative_to(settings.root_dir).as_posix())
+
+    id_kinds = ["unit", "token", "alignment", "rendering", "audit", "concept"]
+    seen_ids: dict[str, set[str]] = {key: set() for key in id_kinds}
+
+    for path in sorted(settings.psalms_dir.glob("ps*/ps*.json")):
+        if path.name.endswith(".meta.json"):
+            meta = registry_service.read_json(path)
+            for error in meta_validator.iter_errors(meta):
+                errors.append(f"{path.relative_to(settings.root_dir)}: {error.message}")
+            if path.read_text(encoding="utf-8") != _deterministic_text(meta):
+                errors.append(
+                    f"{path.relative_to(settings.root_dir)}: non-deterministic serialization"
+                )
+            _validate_collections_of(path, meta, collection_ids, errors)
+            validated_files.append(path.relative_to(settings.root_dir).as_posix())
+            continue
+        unit = registry_service.read_json(path)
+        for error in unit_validator.iter_errors(unit):
+            if error.absolute_path and error.absolute_path[0] == "review_decisions":
+                # oneOf messages can echo the complete private review record.
+                errors.append(
+                    f"{path.relative_to(settings.root_dir)}: "
+                    f"review_decisions violates {error.validator}"
+                )
+            else:
+                errors.append(f"{path.relative_to(settings.root_dir)}: {error.message}")
+        decisions = unit.get("review_decisions", [])
+        if isinstance(decisions, list):
+            for index, decision in enumerate(decisions):
+                try:
+                    validate_review_decision(decision)
+                except ContentValidationError as error:
+                    errors.append(
+                        f"{path.relative_to(settings.root_dir)}: review_decisions[{index}]: {error}"
+                    )
+        if path.read_text(encoding="utf-8") != _deterministic_text(unit):
+            errors.append(f"{path.relative_to(settings.root_dir)}: non-deterministic serialization")
+        if path.stem != unit.get("unit_id"):
+            errors.append(f"{path.relative_to(settings.root_dir)}: filename does not match unit_id")
+        _register_unique(
+            seen_ids["unit"], unit.get("unit_id"), errors, f"duplicate unit_id in {path}"
+        )
+        for value in unit.get("concept_ids", []):
+            _register_unique(seen_ids["concept"], value, errors, f"duplicate concept_id {value}")
+        for token in unit.get("tokens", []):
+            _register_unique(
+                seen_ids["token"],
+                token["token_id"],
+                errors,
+                f"duplicate token_id {token['token_id']}",
+            )
+        for alignment in unit.get("alignments", []):
+            _register_unique(
+                seen_ids["alignment"],
+                alignment["alignment_id"],
+                errors,
+                f"duplicate alignment_id {alignment['alignment_id']}",
+            )
+        for rendering in unit.get("renderings", []):
+            _register_unique(
+                seen_ids["rendering"],
+                rendering["rendering_id"],
+                errors,
+                f"duplicate rendering_id {rendering['rendering_id']}",
+            )
+            _validate_rendering_analysis(path, unit, rendering, errors)
+        for audit in unit.get("audit_records", []):
+            _register_unique(
+                seen_ids["audit"],
+                audit["audit_id"],
+                errors,
+                f"duplicate audit_id {audit['audit_id']}",
+            )
+        if len(unit.get("token_ids", [])) != len(unit.get("tokens", [])):
+            errors.append(f"{path.relative_to(settings.root_dir)}: token_ids length mismatch")
+        recorded_audit_ids = sorted(audit["audit_id"] for audit in unit.get("audit_records", []))
+        if sorted(unit.get("audit_ids", [])) != recorded_audit_ids:
+            errors.append(
+                f"{path.relative_to(settings.root_dir)}: audit_ids do not mirror audit_records"
+            )
+        validated_files.append(path.relative_to(settings.root_dir).as_posix())
+
+    for path in sorted(settings.content_dir.glob("lxx/editions/*/*/psalms/ps*/*.json")):
+        try:
+            unit = registry_service.read_json(path)
+            validate_greek_unit(unit)
+            if path != registry_service.unit_path(unit["unit_id"]):
+                raise ValueError("Greek unit storage path does not match its identity")
+            if path.read_text(encoding="utf-8") != _deterministic_text(unit):
+                raise ValueError("non-deterministic serialization")
+        except (ValueError, KeyError, SchemaValidationError) as error:
+            # Schema errors are reported with the same file attribution as MT.
+            errors.append(f"{_display_path(path)}: {error}")
+        validated_files.append(path.relative_to(settings.root_dir).as_posix())
+    contracts = [
+        ("source_registry.json", "source_registry.schema.json"),
+        ("lxx/editions/*/*/package.json", "source_package.schema.json"),
+        ("lexicons/grc/*/*/package.json", "source_package.schema.json"),
+        ("lexemes/grc/*/package.json", "source_package.schema.json"),
+        ("mt/source_snapshots/*/source_tokens.json", "mt_source_snapshot.schema.json"),
+        ("audit/packages/*.json", "audit_record.schema.json"),
+        ("study_snapshots/study.*.json", "study_snapshot.schema.json"),
+    ]
+    for pattern, schema_name in contracts:
+        for path in sorted(settings.content_dir.glob(pattern)):
+            try:
+                validate_contract(schema_name, registry_service.read_json(path))
+            except (ValueError, SchemaValidationError) as error:
+                errors.append(f"{_display_path(path)}: {error}")
+            validated_files.append(path.relative_to(settings.root_dir).as_posix())
+    return {"validated_files": validated_files, "errors": errors}
+
+
+def _validate_collections_of(
+    path: Path, meta: dict[str, Any], collection_ids: set[str], errors: list[str]
+) -> None:
+    """Each translation is in a project that exists, and no project has the psalm twice."""
+    placed = [meta.get("main_collection_id", "col.default")] + [
+        t.get("collection_id") for t in meta.get("translations", [])
+    ]
+    for collection_id in placed:
+        if collection_id not in collection_ids:
+            errors.append(f"{_display_path(path)}: unknown project {collection_id}")
+    for collection_id in {c for c in placed if placed.count(c) > 1}:
+        errors.append(f"{_display_path(path)}: project {collection_id} has the psalm twice")
+
+
+def _register_unique(bucket: set[str], value: str | None, errors: list[str], message: str) -> None:
+    if value is None:
+        return
+    if value in bucket:
+        errors.append(message)
+    bucket.add(value)
+
+
+def _validate_rendering_analysis(
+    path: Path, unit: dict[str, Any], rendering: dict[str, Any], errors: list[str]
+) -> None:
+    analyzed_flags, analyzed_metrics = poetic_analysis_service.analyze_rendering(
+        unit=unit,
+        layer=rendering["layer"],
+        text=rendering["text"],
+        style_tags=rendering.get("style_tags"),
+        target_spans=rendering.get("target_spans"),
+        existing_flags=rendering.get("drift_flags"),
+        existing_metrics=rendering.get("metrics"),
+    )
+    current_flags = [
+        poetic_analysis_service.normalize_flag(flag) for flag in rendering.get("drift_flags", [])
+    ]
+    if current_flags != analyzed_flags:
+        errors.append(f"{_display_path(path)}: {rendering['rendering_id']} drift_flags are stale")
+    for key, value in analyzed_metrics.items():
+        if rendering.get("metrics", {}).get(key) != value:
+            errors.append(
+                f"{_display_path(path)}: {rendering['rendering_id']} metric {key} is stale"
+            )
+    if rendering.get("status") != "canonical":
+        return
+    missing_metrics = poetic_analysis_service.missing_required_lyric_metrics(rendering)
+    if missing_metrics:
+        errors.append(
+            f"{_display_path(path)}: {rendering['rendering_id']} missing canonical lyric metrics "
+            f"{', '.join(missing_metrics)}"
+        )
+    if poetic_analysis_service.has_blocking_drift(rendering):
+        errors.append(
+            f"{_display_path(path)}: {rendering['rendering_id']} has unresolved high-severity drift"
+        )

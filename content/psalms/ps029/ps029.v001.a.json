@@ -1,8 +1,44 @@
 {
   "alignments": [],
   "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "audit_ids": [
+    "aud.ps029.v001.a.0001",
+    "aud.ps029.v001.a.0002"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "3d43542e564be9d64e463a808d9818fb981e248040671dacdd0784c072c4c09b",
+      "audit_id": "aud.ps029.v001.a.0001",
+      "before_hash": "c83974c2f38d1194eb3fbe438b2b7b7d1977c55592494361d002dd7ba29c471b",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-24T13:22:24.481581+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps029.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0cfa298347c8c73f6fa7272b7ebebc64457624cd8b0fb2f06d675e4ae9b76b42",
+      "audit_id": "aud.ps029.v001.a.0002",
+      "before_hash": "bdf70b9ce9232b0b137da420976d8f98231a6d1c92dc009375344f8778ced39c",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-24T13:23:50.821871+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps029.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
   "concept_ids": [
     "cpt.ps029.v001.a.0001"

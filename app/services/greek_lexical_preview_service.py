@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import threading
 from collections import Counter, defaultdict
 from collections.abc import Iterator
 from functools import lru_cache
@@ -18,6 +19,7 @@ from urllib.request import urlopen
 from app.core.config import get_settings
 from app.core.errors import LicensePolicyError
 from app.core.ids import parse_unit_id
+from app.services import derived_json_cache as derived_cache
 from app.services import greek_analysis_service as analysis
 from app.services import greek_dictionary_service as dictionary
 from app.services import source_capability_service as policy
@@ -216,8 +218,29 @@ def _corpus_books(
             )
 
 
+_BUILD_LOCK = threading.Lock()
+
+
 @lru_cache(maxsize=2)
 def _parsed(root: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Parsed once per pinned input set and parser, then read back from disk on restart.
+
+    Every caller verifies the input bytes against ``FILES`` first, so a stored result keyed
+    on those hashes is the parse of exactly the bytes on disk.
+    """
+    key = derived_cache.fingerprint(
+        root,
+        deterministic_json([FILES, SOURCES, CORPUS_CATALOG]),
+        _resolver_hash(),
+        Path(dictionary.__file__),
+    )
+    parsed, rows = derived_cache.load_or_build(
+        "greek-lexical-parse", key, lambda: _parse_inputs(root)
+    )
+    return parsed, rows
+
+
+def _parse_inputs(root: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     inputs = _read_inputs(Path(root))
     result = dictionary.parse_step_dictionary(
         inputs["tbesg.txt"].decode("utf-8-sig"),
@@ -283,7 +306,8 @@ def _parsed(root: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
 @lru_cache(maxsize=2)
 def _lookup_index(root: str) -> LexicalIndex:
     parsed, rows = _parsed(root)
-    return LexicalIndex(parsed["entries"], rows)
+    with derived_cache.paused_gc():
+        return LexicalIndex(parsed["entries"], rows)
 
 
 def enable(*, reviewer_id: str, rationale: str) -> dict[str, Any]:
@@ -442,10 +466,10 @@ def enrich(units: list[dict[str, Any]], text_manifest_sha256: str | None) -> dic
         policy_id = policy.policy_revision()
         _require_policy()
         _verify_inputs(root)  # Cache reuse never skips immutable-byte verification.
-        parsed, rows = _parsed(str(root))
-        candidates = lexical_candidates(
-            units, parsed["entries"], rows, index=_lookup_index(str(root))
-        )
+        with _BUILD_LOCK:  # Requests arriving together share one build.
+            parsed, rows = _parsed(str(root))
+            index = _lookup_index(str(root))
+        candidates = lexical_candidates(units, parsed["entries"], rows, index=index)
         if approval.read_bytes() != raw_approval or policy.policy_revision() != policy_id:
             raise ValueError("Greek lexical authorization changed during read")
     except (OSError, ValueError, KeyError, TypeError, LicensePolicyError):

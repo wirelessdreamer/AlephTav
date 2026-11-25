@@ -16,6 +16,7 @@ from app.services import (
     export_service,
     generation_service,
     lexical_service,
+    raw_mutation_policy_service,
     registry_service,
     rendering_service,
     review_service,
@@ -132,10 +133,7 @@ def _select_alignment(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _patch_project(payload: dict[str, Any]) -> dict[str, Any]:
-    project = registry_service.load_project()
-    project.update(payload.get("patch", {}))
-    registry_service.save_project(project)
-    return project
+    raw_mutation_policy_service.reject_project_update()
 
 
 def _list_psalms(_: dict[str, Any]) -> list[dict[str, Any]]:
@@ -482,7 +480,10 @@ ACTION_DEFINITIONS: list[dict[str, Any]] = [
     {
         "action_id": "project.patch",
         "label": "Patch Project",
-        "description": "Update top-level project fields.",
+        "description": (
+            "Unavailable: raw project updates require an authorized, audited "
+            "administration workflow. Confirmation does not enable this action."
+        ),
         "kind": "write",
         "input_schema": {
             "type": "object",

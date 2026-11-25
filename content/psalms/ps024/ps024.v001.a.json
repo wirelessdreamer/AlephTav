@@ -1,9 +1,345 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v001.a.lyric.alt.0001",
+    "rnd.ps024.v001.a.lyric.alt.0002",
+    "rnd.ps024.v001.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v001.a.0001",
+    "aud.ps024.v001.a.0002",
+    "aud.ps024.v001.a.0003",
+    "aud.ps024.v001.a.0004",
+    "aud.ps024.v001.a.0005",
+    "aud.ps024.v001.a.0006",
+    "aud.ps024.v001.a.0007",
+    "aud.ps024.v001.a.0008",
+    "aud.ps024.v001.a.0009",
+    "aud.ps024.v001.a.0010",
+    "aud.ps024.v001.a.0011",
+    "aud.ps024.v001.a.0012",
+    "aud.ps024.v001.a.0013",
+    "aud.ps024.v001.a.0014",
+    "aud.ps024.v001.a.0015"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "83c1136b6bca682e0a34aaeb7845053a05be07ec659a2995ed93eed45726c004",
+      "audit_id": "aud.ps024.v001.a.0001",
+      "before_hash": "0d9e65065491a7c7fedfac387c0cead94b4d5ac365bf15e3cac227eb262cdcad",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:34:40.260697+00:00",
+      "created_by": "reviewer",
+      "entity_id": "tr.ps024.0001",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "2a205512c4198c95caf7d0d601ded00c0ebd4fb8d5ce41dc884cbec20f5e40a2",
+      "audit_id": "aud.ps024.v001.a.0002",
+      "before_hash": "bd85bcdb8d4e613a79cb62d0903946ad10c83e63dc75f67614c159c0dbf4d184",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.648032+00:00",
+      "created_by": "reviewer",
+      "entity_id": "ctx.cd05bed9405a",
+      "entity_type": "translation_context",
+      "rationale": "{\"kind\": \"guidance\", \"translation_id\": \"tr.ps024.0001\", \"previous_guidance\": \"\", \"guidance\": \"From the imported translation:\\n4 bars\\n[piano in 6/8, ascending motif, soft guitar swells]\\nquiet, awestruck\\nsearching, rhythmic\\nlift\\n2 bars\\n[guitar echoes the vocal melody]\\nstrong, rising\\nhalf-time feel\\nbigger\\ndramatic, building\\nfull band, triumphant\\nrepeat softer, then final hit\", \"annotations\": [], \"briefing\": null}",
+      "review_signoff": {},
+      "summary": "Save translation guidance and notes",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "1ee22ca9ec1622115bc12b9ebed0fb42f21077dd4a24c730e41811d770cc40e9",
+      "audit_id": "aud.ps024.v001.a.0003",
+      "before_hash": "861754b7f343b4b4a24df28e6667f5fb218ff1ba3101b0e54214c4a85d0a16b2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.677016+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v001.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "960dba81581409e32f46a7fca807ab7123a64a7c1e21110ce08d9f5697318e15",
+      "audit_id": "aud.ps024.v001.a.0004",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:37:43.452052+00:00",
+      "created_by": "import",
+      "entity_id": "arr.ps024.0001",
+      "entity_type": "arrangement",
+      "rationale": "import arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “Psalm 24”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5195dfd4705c891fa80fd5e345c17c54fc82caace72bdba4e34660ca396368d9",
+      "audit_id": "aud.ps024.v001.a.0005",
+      "before_hash": "8b7e339732f5087aba28443fcbdf3ce193e84cb91c1995f4d399e1f116a48718",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:38:01.234784+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v001.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "6551f92f14e74c329b7440c44289a307fed39b0e63672b784f75b5159388fa5b",
+      "audit_id": "aud.ps024.v001.a.0006",
+      "before_hash": "2b55dd6078ebb27db39ced753da0adb9d10ae22b3c903fbf69f1a60cf0f13dea",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:40:50.287121+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "anl.ps024.0001",
+      "entity_type": "psalm_analysis",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Record psalm analysis",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "a4a5248dbfc3e43a8af06d30660948320f86f82473fa75307fec462d3d5a262a",
+      "audit_id": "aud.ps024.v001.a.0007",
+      "before_hash": "02459c06da19a677f49cb65f723e1382e91b51d4cc15cce5ac38c6ac75ff07f5",
+      "change_type": "move",
+      "checks": [],
+      "created_at": "2026-11-23T23:23:49.339859+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "tr.ps024.0001",
+      "entity_type": "translation",
+      "rationale": "from “Bone and Ash”",
+      "review_signoff": {},
+      "summary": "Move translation “Bone and Ash” to “Earlier settings”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "f408cbe4439f3dd17dfec4d4fdf552416cc87340906c0ee15bd9a39d9136d25e",
+      "audit_id": "aud.ps024.v001.a.0008",
+      "before_hash": "1484c448651919a8e705e66c8656b86fa488a9dfcd88e4033acfba14d06ccfe2",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:29:14.043893+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "tr.ps024.0002",
+      "entity_type": "translation",
+      "rationale": "human translation",
+      "review_signoff": {},
+      "summary": "Create translation “Bone and Ash” in “Bone and Ash”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "77b00fb5af2c0c79d34914313c0aad504d5717832ddffeec9427d4b4c06c185a",
+      "audit_id": "aud.ps024.v001.a.0009",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:36:13.395381+00:00",
+      "created_by": "codex",
+      "entity_id": "arr.ps024.0002",
+      "entity_type": "arrangement",
+      "rationale": "codex arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “The King of Glory”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "641419747ef935ed151914c3f170ccacdd5258b61aa0d0d88438ee130e3dd612",
+      "audit_id": "aud.ps024.v001.a.0010",
+      "before_hash": "7e5ff0ec6420add219f3649f6e36cb5f93bf11a87b2e655ae13f4b14808dfbe4",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:29.751148+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v001.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "5129d8144efc3e248bd735824a857d634c3c5504a321cce5ca2c0521baa08d89",
+      "audit_id": "aud.ps024.v001.a.0011",
+      "before_hash": "bd85bcdb8d4e613a79cb62d0903946ad10c83e63dc75f67614c159c0dbf4d184",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:45:27.871592+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "ctx.c53c5d45948f",
+      "entity_type": "translation_context",
+      "rationale": "{\"kind\": \"guidance\", \"translation_id\": \"tr.ps024.0002\", \"previous_guidance\": \"\", \"guidance\": \"Keep the language, imagery and form of the earlier Bone and Ash setting of this psalm, given below: its wording, its B / C call and response, its sections and their musical directions, and phrases such as \\\"the radiant King\\\", \\\"you old stone doorways\\\", \\\"Lift your crowns, you gates of age\\\", \\\"Hands unbloodied, hearts undivided\\\", \\\"where his fire dwells\\\", \\\"Yahweh, ready for the war\\\", \\\"the blaze before us\\\", \\\"the Lord victorious\\\". Expanding or compressing the Hebrew's images is welcome.\\n\\nDo not invent lines for cadence. Every sung line must render words of the Hebrew. The earlier setting's lines that rendered nothing in the Hebrew are marked \\\"left out\\\" below and must not come back in any form. Where leaving one out breaks a sentence (\\\"every breath here\\\", \\\"God of Jacob,\\\", the third \\\"Who is he,\\\"), finish it from that verse's own Hebrew or rework the lines around it, without adding a line the Hebrew does not have. Put musical directions in section labels, not in lines.\\n\\nSing Selah where the Hebrew has it: after 24:6 (end of the pre-chorus) and after 24:10.\\n\\nThe earlier setting:\\n\\n[INTRO - 4 bars: piano in 6/8, ascending motif, soft guitar swells]\\n[VERSE 1 - quiet, awestruck]\\n   B: All ground beneath us / belongs to Yahweh; / every breath here\\n   (left out: moves in his hand.)\\n   B: Every nation, / every creature, / all who wake / on sea and land.\\n   B: He laid its pillars / over deep waters; / he drew its borders / above the flood.\\n   B: He made it steady,\\n   (left out: he made it singing, / held together / by his word.)\\n[VERSE 2 - searching, rhythmic]\\n   B: Who can go up / to his high mountain? / Who can remain / where his fire dwells?\\n   B: Hands unbloodied, / hearts undivided,\\n   (left out: lips that do not / trade in spells.)\\n   B: No soul given / over to nothing, / no oath fastened / to a lie.\\n   B: Such a one will / carry blessing, / vindicated / by God Most High.\\n[PRE-CHORUS - lift]\\n   B: This is the generation / running after him; / C: running after him.\\n   B: These are the ones / who are seeking your face; / C: seeking your face.\\n   B: God of Jacob,\\n   (left out: draw us nearer; / C: draw us nearer.)\\n[INSTRUMENTAL TURN - 2 bars: guitar echoes the vocal melody]\\n[CHORUS 1 - strong, rising]\\n   B,C: Open wide, / you old stone doorways! / B,C: Lift your crowns, / you gates of age! / B,C: Make the road / for heaven's ruler! / B,C: Let the radiant King / come in!\\n[CALL AND RESPONSE - half-time feel]\\n   B: Who comes clothed / in burning honor? / C: Yahweh, mighty. / C: Yahweh, fearless.\\n   B: Who comes crowned / with holy thunder? / C: Yahweh, ready / for the war.\\n[CHORUS 2 - bigger: Chorus 1 sung again]\\n[BRIDGE - dramatic, building]\\n   B: Who is he, / the blaze before us? / C: Yahweh of hosts.\\n   B: Who is he, / the Lord victorious? / C: Yahweh of hosts.\\n   B: Who is he,\\n   (left out: the song of heaven?)\\n   C: Yahweh of hosts.\\n   B,C: He is the radiant King. / B,C: He is the radiant King.\\n[FINAL CHORUS - full band, triumphant: Chorus 1 sung again, then]\\n   B,C: Yahweh of hosts, / the Lord victorious; / B,C: Yahweh of hosts, / the radiant King. (twice)\\n[OUTRO - repeat softer, then final hit]\\n   B: All ground beneath us / belongs to Yahweh. / C: Every breath here\\n   (left out: moves in his hand.)\", \"annotations\": [], \"briefing\": null}",
+      "review_signoff": {},
+      "summary": "Save translation guidance and notes",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "0df2af08893f04e27ce67feb8609dafac2fdd98c95c292709fa51bd5c11396b0",
+      "audit_id": "aud.ps024.v001.a.0012",
+      "before_hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:46:48.206379+00:00",
+      "created_by": "codex",
+      "entity_id": "arr.ps024.0003",
+      "entity_type": "arrangement",
+      "rationale": "codex arrangement",
+      "review_signoff": {},
+      "summary": "Create song setting “The Radiant King”",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "8f9cc70e107e1774d3af1acb9f7bcce078a1bf39c395afe2582b1b793d1a5edd",
+      "audit_id": "aud.ps024.v001.a.0013",
+      "before_hash": "fd2b6420e7be3f9a1cf65caf07b8350aa0f237f49cca22caac8c53e47c8b4f03",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:23.160029+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v001.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "07b9ddd18de19df061f127f4209abe43bba24b09511bbe672957f7a9aacefd88",
+      "audit_id": "aud.ps024.v001.a.0014",
+      "before_hash": "77b00fb5af2c0c79d34914313c0aad504d5717832ddffeec9427d4b4c06c185a",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:45.959775+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "arr.ps024.0002",
+      "entity_type": "arrangement",
+      "rationale": "status superseded",
+      "review_signoff": {},
+      "summary": "Update song setting",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "4f8638b700e7daebdba3b29d423d81a124b5728dadbe7b852aa26870a692dfca",
+      "audit_id": "aud.ps024.v001.a.0015",
+      "before_hash": "51139e5d77e698fdee181eefd8cd3892834503beff40eb32f0da174d16433009",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:47.068408+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v001.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric preserves the earth's belonging to Yahweh and evokes its fullness and inhabitants. It does not state the attribution to David or identify the text as a psalm.",
+      "accuracy_rating": "interpretive",
+      "analyzed_text_hash": "915ab1898dd3ffe8dea65581b7416a26a6a8387e3abc09bdfabc5661f0078df2",
+      "audit_ids": [
+        "aud.ps024.v001.a.0005"
+      ],
+      "comparison_id": "cmp.ps024.v001.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Ground beneath us narrows the earth to a viewpoint; nations, creatures, breath, waking, sea and land expand or recast the world and its inhabitants. The image of breath moving in God's hand is added.",
+      "display_reference": "Psalm 24:1",
+      "english_rendering_id": "rnd.ps024.v001.a.lyric.alt.0001",
+      "generation_run_id": "cxr.dca6d0e400e3",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "לְדָוִ֗ד מִ֫זְמ֥וֹר לַֽ֭יהוָה הָאָ֣רֶץ וּמְלוֹאָ֑הּ תֵּ֝בֵ֗ל וְיֹ֣שְׁבֵי בָֽהּ׃",
+      "literal_backbone": [
+        "Of David, a psalm.",
+        "To Yahweh belongs the earth and its fullness, the world and those who dwell in it."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:1",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "B:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v001.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "of or belonging to David; a psalm",
+          "note": "The attribution and psalm designation are absent.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps024.v001.t001",
+            "ps024.v001.t002"
+          ],
+          "transliteration": "ləḏāwiḏ mizəmôr",
+          "verdict": "omitted"
+        },
+        {
+          "lexical_gloss": "earth, land, ground",
+          "note": "The lyric locates the earth as ground beneath the singers.",
+          "rendered_as": "All ground beneath us",
+          "token_ids": [
+            "ps024.v001.t004"
+          ],
+          "transliteration": "hāʾāreṣ",
+          "verdict": "narrowing"
+        },
+        {
+          "lexical_gloss": "its fullness; the world and those dwelling in it",
+          "note": "The lyric evokes fullness and inhabitants through specific images and adds their movement in God's hand.",
+          "rendered_as": "every breath here\nmoves in his hand.\n\nB: Every nation,\nevery creature,\nall who wake\non sea and land.",
+          "token_ids": [
+            "ps024.v001.t005",
+            "ps024.v001.t006",
+            "ps024.v001.t007",
+            "ps024.v001.t008"
+          ],
+          "transliteration": "ûməlōʾāh tēḇēl wəyōšəḇê ḇāh",
+          "verdict": "expansion"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v001.a.0001"
   ],
@@ -15,7 +351,314 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:1",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.15,
+        "singability_score": 0.11,
+        "stress_approximation": 0.7,
+        "syllable_count": 42,
+        "syllables": 42
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v001.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: All ground beneath us\nbelongs to Yahweh;\nevery breath here\nmoves in his hand.\n\nB: Every nation,\nevery creature,\nall who wake\non sea and land.",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 21,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.14,
+        "singability_score": 0.11,
+        "stress_approximation": 0.57,
+        "syllable_count": 24,
+        "syllables": 24
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v001.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "A psalm of David.\nThe earth is Yahweh’s, and all that fills it,\nThe world and all who dwell within.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 27,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.19,
+        "singability_score": 0.12,
+        "stress_approximation": 0.72,
+        "syllable_count": 43,
+        "syllables": 43
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v001.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "A psalm of David.\nAll ground beneath us belongs to Yahweh; every breath here belongs to him.\nEvery nation, every creature, all who dwell upon the earth.",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v001.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "לְדָוִ֗ד מִ֫זְמ֥וֹר לַֽ֭יהוָה הָאָ֣רֶץ וּמְלוֹאָ֑הּ תֵּ֝בֵ֗ל וְיֹ֣שְׁבֵי בָֽהּ׃",

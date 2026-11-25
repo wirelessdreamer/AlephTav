@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import threading
 from copy import deepcopy
 from functools import lru_cache
 from pathlib import Path
@@ -18,6 +19,7 @@ from typing import Any
 from app.core.config import get_settings
 from app.core.errors import LicensePolicyError
 from app.core.license_rules import evaluate_manifest
+from app.services import derived_json_cache as derived_cache
 from app.services import source_capability_service
 from app.services.greek_package_intake_service import _relative_file, inspect_package
 from app.services.immutable_file_service import atomic_write, sha256_file, workspace_lock
@@ -128,8 +130,14 @@ def approve_preview(
     return {**record, "audit_id": audit["audit_id"]}
 
 
-def _load_staged(staged: str, manifest_sha256: str) -> dict[str, Any]:
-    """Recheck every locked byte on each read; only strict parsing is cached."""
+_BUILD_LOCK = threading.Lock()
+
+
+def _load_staged(staged: str, manifest_sha256: str, *, copy: bool = True) -> dict[str, Any]:
+    """Recheck every locked byte on each read; only strict parsing is cached.
+
+    ``copy=False`` returns the cached package itself, for a caller that only reads it.
+    """
     root = Path(staged)
     manifest_bytes = _relative_file(root, "package.json").read_bytes()
     if hashlib.sha256(manifest_bytes).hexdigest() != manifest_sha256:
@@ -142,14 +150,35 @@ def _load_staged(staged: str, manifest_sha256: str) -> dict[str, Any]:
             or hashlib.sha256(data).hexdigest() != record["sha256"]
         ):
             raise ValueError(f"Greek preview file changed since staging: {record['path']}")
-    return deepcopy(_validated_package(staged, manifest_sha256))
+    with _BUILD_LOCK:  # Requests arriving together share one validation.
+        package = _validated_package(staged, manifest_sha256)
+    return deepcopy(package) if copy else package
 
 
 @lru_cache(maxsize=2)
 def _validated_package(staged: str, manifest_sha256: str) -> dict[str, Any]:
+    """Strict validation once per manifest, schemas and validator, read back on restart.
+
+    ``_load_staged`` has checked every file against the manifest before this is reached, so
+    the manifest hash stands for the package bytes the stored inspection was made from.
+    """
     manifest_path = _relative_file(Path(staged), "package.json")
     manifest_bytes = manifest_path.read_bytes()
-    inspection = inspect_package(Path(staged), require_full_psalter=False)
+    services = Path(__file__).parent
+    key = derived_cache.fingerprint(
+        staged,
+        manifest_sha256,
+        get_settings().schemas_dir,
+        services / "greek_package_intake_service.py",
+        services / "foundation_contract_service.py",
+        services / "greek_analysis_service.py",
+        services.parent / "core" / "ids.py",
+    )
+    inspection = derived_cache.load_or_build(
+        "greek-preview-package",
+        key,
+        lambda: inspect_package(Path(staged), require_full_psalter=False),
+    )
     if (
         hashlib.sha256(manifest_bytes).hexdigest() != manifest_sha256
         or inspection["manifest"] != json.loads(manifest_bytes)
@@ -159,8 +188,12 @@ def _validated_package(staged: str, manifest_sha256: str) -> dict[str, Any]:
     return inspection
 
 
-def load_preview() -> dict[str, Any] | None:
-    """The approved preview's units, verse-map records and attribution; None if unapproved."""
+def load_preview(*, copy: bool = True) -> dict[str, Any] | None:
+    """The approved preview's units, verse-map records and attribution; None if unapproved.
+
+    ``copy=False`` shares the cached units and records, which the caller must not change:
+    copying the whole Psalter's Greek takes seconds when one psalm's verses are wanted.
+    """
     path = _approval_path()
     if not path.exists():
         return None
@@ -175,7 +208,7 @@ def load_preview() -> dict[str, Any] | None:
             "The approved Greek preview package is not staged. "
             "Run psalms-workbench greek-build-swete to rebuild it."
         )
-    package = _load_staged(str(staged), approval["manifest_sha256"])
+    package = _load_staged(str(staged), approval["manifest_sha256"], copy=copy)
     manifest = package["manifest"]
     if (manifest["package_id"], manifest["package_revision"], manifest["source_id"]) != (
         approval["package_id"],

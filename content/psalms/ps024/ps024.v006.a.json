@@ -1,9 +1,177 @@
 {
   "alignments": [],
-  "alternate_rendering_ids": [],
-  "audit_ids": [],
-  "audit_records": [],
+  "alternate_rendering_ids": [
+    "rnd.ps024.v006.a.lyric.alt.0001",
+    "rnd.ps024.v006.a.lyric.alt.0002",
+    "rnd.ps024.v006.a.lyric.alt.0003"
+  ],
+  "audit_ids": [
+    "aud.ps024.v006.a.0001",
+    "aud.ps024.v006.a.0002",
+    "aud.ps024.v006.a.0003",
+    "aud.ps024.v006.a.0004",
+    "aud.ps024.v006.a.0005"
+  ],
+  "audit_records": [
+    {
+      "after_hash": "83da3878a3fd00550149f33addc1d2e160d3549f5f90e0e595fdb61e7424522c",
+      "audit_id": "aud.ps024.v006.a.0001",
+      "before_hash": "d4ecbfadb239cf437e49add2a8574aafda2a3a49bb48c1b694d89228386fe45a",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:36:02.775534+00:00",
+      "created_by": "import",
+      "entity_id": "rnd.ps024.v006.a.lyric.alt.0001",
+      "entity_type": "rendering",
+      "rationale": "Imported from an existing translation",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "17f1da0c49bf54249280ecbae47ffff997eb224e3eecf91ad6e575b2a6e80e41",
+      "audit_id": "aud.ps024.v006.a.0002",
+      "before_hash": "4d5168cb42a3388a4bd00d4e2eb3383646443267b7da86d38eaff532bd861abe",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-18T13:39:11.870133+00:00",
+      "created_by": "codex-analysis",
+      "entity_id": "cmp.ps024.v006.a.0001",
+      "entity_type": "comparison_assessment",
+      "rationale": "codex analysis pass",
+      "review_signoff": {},
+      "summary": "Create comparison assessment",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "9bbd76d8a2188b25f8bdb5bee9ffee9c67300368579ab10985c9ac4ef9fe5d21",
+      "audit_id": "aud.ps024.v006.a.0003",
+      "before_hash": "aa5f6c25260b623fc170ed1f1239b48c641618f42f98d7acc6e7ef674345c448",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:44:42.141953+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The King of Glory\" (arr.ps024.0002) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "3b2ad383e34193eed0ec20ae9d74e17532fb88f1dd4eef3eb22424d4ab603647",
+      "audit_id": "aud.ps024.v006.a.0004",
+      "before_hash": "77c5196c111fccf23f907ce187c989b7bd261a4006b75190b047603242b08c44",
+      "change_type": "create",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:34.159173+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v006.a.lyric.alt.0003",
+      "entity_type": "rendering",
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "review_signoff": {},
+      "summary": "Create rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    },
+    {
+      "after_hash": "b4341f4af9df1a48e7309a47bf1c127de67e34499f3a8fdce448fb5d36444359",
+      "audit_id": "aud.ps024.v006.a.0005",
+      "before_hash": "4d5ef05c7c55e2bef8bd650ccd19c795662b0c53d48ffe64e15aae7a229c0cd0",
+      "change_type": "update",
+      "checks": [],
+      "created_at": "2026-11-23T23:47:56.186038+00:00",
+      "created_by": "mcp:claude",
+      "entity_id": "rnd.ps024.v006.a.lyric.alt.0002",
+      "entity_type": "rendering",
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "review_signoff": {},
+      "summary": "Update rendering",
+      "triggered_by_issue": null,
+      "triggered_by_pr": null
+    }
+  ],
   "canonical_rendering_ids": [],
+  "comparison_assessments": [
+    {
+      "accuracy_note": "The lyric identifies a generation of seekers, retains seeking the addressed person's face, and names Jacob. It does not render Selah.",
+      "accuracy_rating": "adapted",
+      "analyzed_text_hash": "afe8ad61211f7a124d515f004decc4d198ddd06fe64ffb1cd99330fff5ec64a8",
+      "audit_ids": [
+        "aud.ps024.v006.a.0002"
+      ],
+      "comparison_id": "cmp.ps024.v006.a.0001",
+      "created_by": "codex-analysis",
+      "created_via": "codex",
+      "creative_liberties_note": "Running after him intensifies seeking and supplies an object. 'God of Jacob' makes Jacob part of a divine title, while the supplied Hebrew names Jacob without the word 'God.' The seeking phrases are repeated for the song.",
+      "display_reference": "Psalm 24:6",
+      "english_rendering_id": "rnd.ps024.v006.a.lyric.alt.0001",
+      "generation_run_id": "cxr.b37ecac84b3d",
+      "generator_provider": "codex-app-server",
+      "hebrew_text": "זֶ֭ה דּ֣וֹר מְבַקְשֵׁ֨י פָנֶ֖יךָ יַעֲקֹ֣ב סֶֽלָה׃",
+      "literal_backbone": [
+        "This is the generation of those seeking your face, Jacob.",
+        "Selah."
+      ],
+      "literal_rendering_id": null,
+      "mt_reference": "Psalm 24:6",
+      "non_source_material": [
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing three times.",
+          "text": "B:"
+        },
+        {
+          "kind": "vocal_assignment",
+          "note": "A vocal assignment appearing twice.",
+          "text": "C:"
+        }
+      ],
+      "psalm_id": "ps024",
+      "reviewed_at": null,
+      "reviewer_id": null,
+      "revision_of": null,
+      "status": "proposed",
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v006.a",
+      "word_notes": [
+        {
+          "lexical_gloss": "those seeking; your face or presence",
+          "note": "Running intensifies seeking, and 'him' supplies an object not present in the displayed Hebrew phrase.",
+          "rendered_as": "running after him; who are seeking your face",
+          "token_ids": [
+            "ps024.v006.t004",
+            "ps024.v006.t005"
+          ],
+          "transliteration": "məḇaqšê pāneḵā",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "Jacob",
+          "note": "The lyric adds 'God of' to the name Jacob.",
+          "rendered_as": "God of Jacob",
+          "token_ids": [
+            "ps024.v006.t006"
+          ],
+          "transliteration": "yaʿăqōḇ",
+          "verdict": "expansion"
+        },
+        {
+          "lexical_gloss": "Selah, a musical or liturgical notation of uncertain meaning",
+          "note": "Selah is not sung in the supplied lyric.",
+          "rendered_as": "",
+          "token_ids": [
+            "ps024.v006.t007"
+          ],
+          "transliteration": "selāh",
+          "verdict": "omitted"
+        }
+      ]
+    }
+  ],
   "concept_ids": [
     "cpt.ps024.v006.a.0001"
   ],
@@ -15,7 +183,314 @@
   "pr_links": [],
   "psalm_id": "ps024",
   "ref": "Psalm 24:6",
-  "renderings": [],
+  "renderings": [
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 30,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.37,
+        "singability_score": 0.15,
+        "stress_approximation": 0.73,
+        "syllable_count": 46,
+        "syllables": 46
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "generator": "import",
+        "imported": true,
+        "prompt_template_version": "codex-import-v1",
+        "provider": "codex-app-server",
+        "run_id": "cxr.0f60fe3f0bfb",
+        "source_ids": [
+          "import"
+        ],
+        "translation_basis": {
+          "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "import"
+          ],
+          "source_language": "en",
+          "source_version": "imported"
+        }
+      },
+      "rationale": "Imported from an existing translation",
+      "rendering_id": "rnd.ps024.v006.a.lyric.alt.0001",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "B: This is the generation\nrunning after him;\nC: running after him.\n\nB: These are the ones\nwho are seeking your face;\nC: seeking your face.\n\nB: God of Jacob,",
+      "translation_basis": {
+        "basis_note": "Imported from an existing translation; its source basis is not recorded.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "import"
+        ],
+        "source_language": "en",
+        "source_version": "imported"
+      },
+      "translation_id": "tr.ps024.0001",
+      "unit_id": "ps024.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 13,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.0,
+        "singability_score": 0.19,
+        "stress_approximation": 0.69,
+        "syllable_count": 20,
+        "syllables": 20
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0002",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.b2e8e28469ef",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "Superseded: from the plain draft arr.ps024.0002; replaced by the lines of \"The Radiant King\" (arr.ps024.0003), which keep the Bone and Ash language.",
+      "rendering_id": "rnd.ps024.v006.a.lyric.alt.0002",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "deprecated",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "This is the generation seeking him,\nWho seek your face, O Jacob.\nSelah",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    },
+    {
+      "alignment_ids": [],
+      "delivery_profile": null,
+      "differentiator": null,
+      "drift_flags": [
+        {
+          "code": "speaker_addressee_change",
+          "confidence": 0.9,
+          "message": "Pronoun or person marking diverges from source morphology.",
+          "severity": "high"
+        }
+      ],
+      "grounding_confidence": null,
+      "issue_links": [],
+      "layer": "lyric",
+      "metric_profile": null,
+      "metrics": {
+        "line_length": 31,
+        "parallelism_preservation_score": 1.0,
+        "repetition_score": 0.42,
+        "singability_score": 0.16,
+        "stress_approximation": 0.77,
+        "syllable_count": 50,
+        "syllables": 50
+      },
+      "pr_links": [],
+      "preserved_source_images": [],
+      "provenance": {
+        "arrangement_id": "arr.ps024.0003",
+        "generator": "mcp:claude",
+        "prompt_template_version": "codex-arrangement-v2",
+        "provider": "codex-app-server",
+        "run_id": "cxr.677b32197a4e",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "translation_basis": {
+          "basis_note": "Canonical Hebrew-first translation basis.",
+          "basis_type": "hebrew_to_english",
+          "source_ids": [
+            "uxlc",
+            "oshb",
+            "macula"
+          ],
+          "source_language": "he",
+          "source_version": "vendored-2026.04"
+        }
+      },
+      "rationale": "The lines of the song setting \"The Radiant King\" (arr.ps024.0003) anchored to this verse.",
+      "rendering_id": "rnd.ps024.v006.a.lyric.alt.0003",
+      "review_signoff": {
+        "alternate_approval_count": 0,
+        "alternate_approvers": [],
+        "approval_count": 0,
+        "approvers": [],
+        "eligible_for_alternate": false,
+        "eligible_for_canonical": false,
+        "has_release_signoff": false,
+        "latest_decision": null,
+        "publication_ready": false,
+        "release_required_role": "release reviewer",
+        "release_signoff": {},
+        "required_approvals": {
+          "alternate": 1,
+          "canonical": 2
+        },
+        "reviewer_roles": [
+          "lexical reviewer",
+          "Hebrew reviewer",
+          "alignment reviewer",
+          "lyric reviewer",
+          "theology reviewer",
+          "release reviewer"
+        ],
+        "status": "unreviewed",
+        "updated_at": null
+      },
+      "source_anchor": null,
+      "status": "proposed",
+      "style_goal": null,
+      "style_tags": [
+        "lyric"
+      ],
+      "target_spans": [],
+      "text": "This is the generation running after him;\nRunning after him.\nThese are the ones who are seeking your face;\nSeeking your face.\nSeeking the face of the God of Jacob.\nSelah",
+      "translation_basis": {
+        "basis_note": "Canonical Hebrew-first translation basis.",
+        "basis_type": "hebrew_to_english",
+        "source_ids": [
+          "uxlc",
+          "oshb",
+          "macula"
+        ],
+        "source_language": "he",
+        "source_version": "vendored-2026.04"
+      },
+      "translation_id": "tr.ps024.0002",
+      "unit_id": "ps024.v006.a",
+      "variation_basis": [
+        "cadence_or_emphasis_shift"
+      ]
+    }
+  ],
   "review_decisions": [],
   "segmentation_type": "verse",
   "source_hebrew": "זֶ֭ה דּ֣וֹר מְבַקְשֵׁ֨י פָנֶ֖יךָ יַעֲקֹ֣ב סֶֽלָה׃",
